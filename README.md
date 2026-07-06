@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # IMPERATOR — Strategic Documentation System (Phase 0, No Code)
 
 Status: **Idea & Market Validation** (no software implementation)
