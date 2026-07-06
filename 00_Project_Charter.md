@@ -9,8 +9,10 @@ Startup concept + Final Degree Project (TFG)
 ## Current Phase
 Phase 0 — Idea Creation and Validation (No code)
 
-## Mission
-Transform fragmented operational events into business-grade operational intelligence with full traceability and enterprise context.
+## Core Mission
+Transform operational events into business intelligence.
+
+Every enterprise decision should become searchable, explainable, measurable and optimizable. IMPERATOR is the Enterprise Operational Intelligence Platform.
 
 ## Strategic Objective
 Build the intelligence layer that lets organizations answer, within seconds:

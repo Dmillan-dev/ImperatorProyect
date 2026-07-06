@@ -29,4 +29,4 @@ We are not another cloud tool.
 
 ## Short Commercial Message
 
-“We tell you what happened, why it happened, who is responsible, what it cost, and how to optimize it.”
+"Reduce incident investigation time by 80%. IMPERATOR gives your teams instant visibility into operational decisions across all cloud, SaaS, and AI systems—so you know what happened, who decided it, and what it cost. In minutes, not hours. Then optimize costs and risks."
