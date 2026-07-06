@@ -28,6 +28,15 @@ This documentation system defines IMPERATOR’s canonical context for:
 - [13_Glossary_and_Canonical_Language.md](13_Glossary_and_Canonical_Language.md)
 - [14_Decision_Log.md](14_Decision_Log.md)
 - [15_Context_Boundaries_and_Non_Goals.md](15_Context_Boundaries_and_Non_Goals.md)
+- [16_Sales_Narrative_and_Commercial_Case.md](16_Sales_Narrative_and_Commercial_Case.md)
+- [17_Product_Surface_and_Context_Engine_Thesis.md](17_Product_Surface_and_Context_Engine_Thesis.md)
+
+### Operating Templates (recommended)
+- [Hypothesis.md](Hypothesis.md)
+- [Experiment_Record.md](Experiment_Record.md)
+
+### Agent Operations (optional)
+- [AI_Weekly_Context_Toning_Prompt_Imperator_v2.md](AI_Weekly_Context_Toning_Prompt_Imperator_v2.md)
 
 ## Canonical Definition
 

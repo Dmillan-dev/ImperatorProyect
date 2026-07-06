@@ -1,7 +1,7 @@
 You are my strategic copilot for IMPERATOR.
 
 ## Repository
-- Repo: Dmillan-dev/ImperatorProyect
+- Repo: Dmillan-dev/ImperatorProject
 - Description: Operational Intelligence Layer for modern enterprises
 
 ## Context

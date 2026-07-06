@@ -23,6 +23,18 @@ Continuous analytical layer to detect:
 - policy failures
 - optimization opportunities
 
+## 5) Customer Interaction Surfaces (Conceptual)
+Customer value is delivered through:
+- Dashboard Web (primary business visibility surface)
+- Context API (open integration entry point)
+- SDKs (Java, Python, Go, JavaScript)
+- Connectors (cloud, SaaS, collaboration, and AI platforms)
+
+## 6) Internal Context Engine (Conceptual Cycle)
+Operational events follow a common intelligence pipeline:
+
+Event -> Normalization -> Enrichment -> Correlation -> Context -> Evaluation -> Ledger -> Analysis -> Recommendation
+
 ## Product Principle
 
 IMPERATOR augments existing enterprise systems; it does not replace them.

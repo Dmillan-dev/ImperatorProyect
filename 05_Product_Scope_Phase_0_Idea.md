@@ -7,6 +7,7 @@ Define, prioritize, and validate business/product hypotheses without building so
 ## In Scope
 
 - conceptual capability definition
+- customer interaction surface definition (Dashboard, API, SDKs, Connectors)
 - buyer-persona messaging
 - land-and-expand sequence
 - measurable value hypotheses
@@ -20,7 +21,7 @@ Define, prioritize, and validate business/product hypotheses without building so
 
 ## Exit Deliverables
 
-1. Stable canonical documentation (00–15)
+1. Stable canonical documentation (00–17)
 2. Market-entry hypotheses
 3. Prioritized wedge use case
 4. Explicit assumptions and risks
