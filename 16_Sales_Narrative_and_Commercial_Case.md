@@ -345,6 +345,122 @@ For a SaaS company of 250 employees, this translates to:
 
 ---
 
+## Anticipated Objections (From the Buyer's Perspective)
+
+These are real questions your CTO, CFO, and CISO will ask. Here are the answers.
+
+### The CTO: "Another API? Another Tool?"
+
+**The Objection:**
+"We have AWS, Azure, GitHub, Jira, Slack, and a hundred other integrations. Why would I add *another* system?"
+
+**The Answer:**
+"You're right. The last thing you need is another dashboard.
+
+IMPERATOR isn't a tool that replaces what you have. It's a **connection layer** between the tools that already exist.
+
+Think of it like this:
+- AWS knows AWS logs.
+- GitHub knows GitHub commits.
+- Slack knows Slack conversations.
+- Your databases know their data.
+
+But **none of them know the other's data.**
+
+When an incident happens, you have to jump between all of them manually. IMPERATOR connects them so you don't have to.
+
+**Is it another API call?** Yes.  
+**Does it send your data to a black box?** No. IMPERATOR runs in your environment and only records what you explicitly tell it to.
+
+**Do you have to use it for everything?** No. Start with incident investigations. If it's valuable in 30 days, expand."
+
+---
+
+### The CFO: "Where's the ROI?"
+
+**The Objection:**
+"Software is expensive. How do I know this will actually save money?"
+
+**The Answer:**
+"Let's quantify it.
+
+On average, your team spends 6–8 hours investigating an incident. That's not engineering time building features—it's firefighting time.
+
+- If you have 15 incidents/month, that's 90–120 hours of engineering time lost.
+- At €70/hour (salary + benefits), that's €6,300–8,400/month gone.
+
+IMPERATOR reduces that to <30 minutes per incident. So instead of 120 hours, you spend 20 hours. That's **100 hours saved = €7,000/month.**
+
+For a 250-person SaaS company, IMPERATOR costs less than €2,000/month. So the labor savings alone—before any hidden cost recovery or compliance benefit—give you a **3.5× ROI in Year 1.**
+
+We give you a 30-day pilot to measure this yourself. If the ROI isn't there, you don't pay full price."
+
+---
+
+### The CISO: "Why Do I Need Operational Intelligence?"
+
+**The Objection:**
+"I have a SIEM. I have security tools. Why would I need another platform?"
+
+**The Answer:**
+"Your SIEM is excellent at detecting *attacks*. IMPERATOR is excellent at detecting *mistakes and drift.*
+
+A SIEM will tell you:
+- Someone logged in from an unusual location.
+- A file was accessed at 3 AM.
+
+IMPERATOR will tell you:
+- That login was a developer with a leaked API key (and here's the cost impact).
+- That file access happened because an automated AI agent misconfigured itself (and here's how to prevent it next time).
+- Policies are being violated by 12 teams across your infrastructure (and here's a chart of who and what).
+
+In short: your SIEM catches security events. IMPERATOR catches operational risk events that can become security events.
+
+**During an audit:** Auditor asks, 'Show me every system change in the last 6 months, who approved it, and how it aligned with policy.' Your SIEM doesn't have that context. IMPERATOR does. Your audit cycle goes from 3 weeks to 2 days."
+
+---
+
+### The Engineering Manager: "Will This Slow Down My Team?"
+
+**The Objection:**
+"Adoption friction. Won't this require extra work to use?"
+
+**The Answer:**
+"No. IMPERATOR is opt-in for the first 30 days.
+
+You don't have to 'report' incidents to IMPERATOR. It's listening already. When your team investigates an incident, IMPERATOR captures:
+- What systems were accessed
+- Who accessed them
+- What changed
+- What the cost impact was
+- How long the investigation took
+
+After the incident is resolved, you open IMPERATOR and see: 'Here's the timeline, here's the cost, here's why it happened.'
+
+**It saves time; it doesn't consume time.**"
+
+---
+
+## Why This Matters: B2B Software Doesn't Sell Technology
+
+Here's the truth about enterprise software:
+
+**Companies don't buy APIs.**  
+**Companies don't buy dashboards.**  
+**Companies don't buy AI.**
+
+**Companies buy improvements to metrics they already track.**
+
+Your CTO tracks MTTR.  
+Your CFO tracks cloud spend and audit cost.  
+Your CISO tracks policy violations and risk score.
+
+If IMPERATOR improves one of those metrics measurably, it stops being "another tool" and becomes a business investment.
+
+That's the difference between software that gets abandoned and software that becomes essential infrastructure.
+
+---
+
 ## How IMPERATOR Works (High Level)
 
 IMPERATOR is a **centralized operational intelligence platform** that:

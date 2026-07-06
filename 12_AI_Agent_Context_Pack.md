@@ -12,9 +12,12 @@ Agents must not assume undefined technical implementation.
 ## Canonical Mandates
 
 1. Use term: **Enterprise Context Intelligence**.
-2. Keep ICP: Enterprise SaaS multi-cloud (100–500 employees, 50+ SaaS apps, active AI usage, Platform+DevOps+Security).
-3. Keep wedge: Cross-platform Decision Traceability.
-4. Do not change category/ICP/wedge without logging in `14_Decision_Log.md`.
+2. Use core narrative: **"We transform operational chaos into business decisions."**
+3. Keep ICP: Enterprise SaaS multi-cloud (100–500 employees, 50+ SaaS apps, active AI usage, Platform+DevOps+Security).
+4. Keep wedge: Cross-platform Decision Traceability.
+5. Emphasize: Multi-stakeholder simultaneous value (Platform Eng → MTTR; Finance → costs; Security → risk; CTO → strategic visibility).
+6. Emphasize: Neutrality as competitive moat (vs hyperscalers who cannot be neutral).
+7. Do not change category/ICP/wedge without logging in `14_Decision_Log.md`.
 
 ## Writing Style
 

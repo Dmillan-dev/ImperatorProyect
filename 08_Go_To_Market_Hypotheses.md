@@ -9,7 +9,13 @@
 - Platform Engineering has immediate, tangible pain: incident investigations take 6-8 hours
 - Clear ROI: reduce to <30 minutes = measurable labor cost savings (€7–15K/month depending on org size)
 - Works across all cloud/SaaS platforms → no competitive perception (not a "dashboard")
+- **Critical: Same platform delivers simultaneous value to multiple stakeholders:**
+  - Platform Engineering sees faster incident resolution (MTTR reduction)
+  - Finance sees cost attribution and hidden waste detection (AI agents, duplicate tools)
+  - Security sees policy compliance and risk pattern detection
+  - CTO sees unified operational visibility + strategic decision-making data
 - Natural expansion into Security, Finance, Compliance once core value is proven
+- **Multi-departmental adoption is a retention advantage** — higher switching cost once multiple teams depend on IMPERATOR
 
 ### Entry Point Messaging (Launch)
 
