@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package imperator.proto;
+
+message Model {
+  string id = 1;
+  string name = 2;
+  string provider = 3; // e.g., openai, anthropic, local
+  string version = 4;
+  map<string, string> metadata = 5;
+}

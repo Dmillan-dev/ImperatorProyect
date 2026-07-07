@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package imperator.proto;
+
+import "google/protobuf/timestamp.proto";
+
+message Incident {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+  repeated string related_decision_ids = 4;
+  google.protobuf.Timestamp started_at = 5;
+  google.protobuf.Timestamp resolved_at = 6;
+  map<string, string> metadata = 7;
+}

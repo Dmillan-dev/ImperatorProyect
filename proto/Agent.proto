@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package imperator.proto;
+
+message Agent {
+  string id = 1;
+  string name = 2;
+  string type = 3; // human, automated, ai
+  string owner_id = 4; // Person or Team
+  map<string, string> metadata = 5;
+}

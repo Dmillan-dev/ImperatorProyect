@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package imperator.proto;
+
+import "google/protobuf/timestamp.proto";
+
+message Risk {
+  enum Level {
+    UNKNOWN = 0;
+    LOW = 1;
+    MEDIUM = 2;
+    HIGH = 3;
+  }
+  Level level = 1;
+  string reason = 2;
+}
+
+message Decision {
+  string id = 1;
+  string organization = 2;
+  string project = 3;
+  string owner = 4;
+  string source = 5; // e.g., aws, github, slack
+  double cost = 6;
+  Risk risk = 7;
+  google.protobuf.Timestamp timestamp = 8;
+  string summary = 9;
+  map<string, string> metadata = 10;
+  repeated string related_entity_ids = 11; // links to Person/Team/Resource/Incident/etc by id
+  string created_by = 12; // actor id
+  string sensitivity = 13; // e.g., low, medium, high
+}

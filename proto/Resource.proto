@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package imperator.proto;
+
+message Resource {
+  string id = 1;
+  string name = 2;
+  string provider = 3; // e.g., aws, azure, gcp
+  string type = 4; // e.g., ec2, s3, rds
+  string owner_id = 5; // Person.id or Team.id
+  double monthly_cost = 6;
+  map<string, string> metadata = 7;
+}

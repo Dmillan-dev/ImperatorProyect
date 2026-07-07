@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package imperator.proto;
+
+message Team {
+  string id = 1;
+  string name = 2;
+  string parent_team_id = 3;
+  repeated string member_ids = 4; // Person.id
+  map<string, string> metadata = 5;
+}

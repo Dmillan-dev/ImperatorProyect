@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package imperator.proto;
+
+message Policy {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  repeated string affected_entity_ids = 4; // IDs of resources, models, etc.
+  map<string, string> metadata = 5;
+}

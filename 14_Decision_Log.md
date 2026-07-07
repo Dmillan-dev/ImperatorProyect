@@ -56,3 +56,18 @@ Format: one entry per decision with date, rationale, and impact.
 - Decision: define customer-facing product model as a SaaS platform with a primary Dashboard Web surface, supported by an open Context API, SDKs, and connectors; formalize the internal context-engine cycle as the hardest-to-replicate capability.
 - Rationale: enterprise buyers validate value through visibility and outcomes, while technical teams require integration speed and ecosystem fit. This dual-entry model improves adoption and supports land-and-expand without changing category, ICP, or wedge.
 - Impact: new canonical document 17_Product_Surface_and_Context_Engine_Thesis.md; updates to README index; update to Phase-0 scope and core capabilities language to include customer interaction surfaces at conceptual level.
+
+### [2026-07-07] D011 — Arquitectura (Tesis): responsabilidades separadas y capa de contexto
+- Decision: adoptar una tesis arquitectónica conceptual que priorice responsabilidades (Operational Intelligence Layer, Context Layer, AI Intelligence Layer) y que recomiende, de forma no vinculante, ingesta optimizada para JVM (Java) y experimentación IA en Python. Registrar el documento canónico `18_Architecture_Thesis.md`.
+- Rationale: separando las responsabilidades (ingesta a escala vs razonamiento contextual) se reduce la complejidad operacional y se preserva la capacidad de experimentación IA; el Context Layer (modelo de grafo de decisiones) es el activo estratégico y debe ser tratado como tal.
+- Impact: añade `18_Architecture_Thesis.md` como documento de alineación; mantiene el foco en `Enterprise Context Intelligence` y `Cross-platform Decision Traceability`; cualquier cambio de arquitectura o expansión del ICP deberá registrarse en este log.
+
+### [2026-07-07] D012 — Recomendación: gRPC + Protobuf desde Day 1
+- Decision: recomendar el uso de **gRPC** como mecanismo RPC y **Protocol Buffers** como formato de contrato canónico (incluyendo mensajes en Kafka) para comunicación Java ⇄ Python desde la fase inicial, manteniéndolo como recomendación no vinculante hasta validación del MVP.
+- Rationale: contratos tipados, interoperabilidad entre lenguajes, facilidad para evolucionar servicios sin romper integraciones, y coherencia de mensajes a través de la plataforma.
+- Impact: crear ADR D012; proponer un `proto/Decision.proto` inicial y validar un ejemplo end-to-end ingestion → AI.
+
+### [2026-07-07] D013 — Mandato: gRPC+Protobuf para comunicaciones internas (vinculante)
+- Decision: establecer como decisión vinculante que todas las comunicaciones entre servicios internos usen gRPC con Protocol Buffers como formato canónico; no exponer gRPC como API pública del SaaS.
+- Rationale: reduce la fricción entre equipos, garantiza contratos tipados y facilita la evolución independiente de motores internos (ingesta vs IA).
+- Impact: requiere repositorio `proto/` mantenido, CI de generación de bindings, y gobernanza de cambios breaking sobre `.proto`.
