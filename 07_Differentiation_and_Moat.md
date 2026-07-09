@@ -17,6 +17,10 @@ We compete on **better cross-system decision context**.
 IMPERATOR links, in one operational decision entity:
 technical action + ownership + policy + cost + risk + outcome.
 
+For the MVP, this becomes:
+
+business intent + code change + infrastructure cost + AI consumption + ROI recommendation.
+
 **Critical insight:** We are not the executor—we are the unifier.
 
 - AWS knows AWS. But not Azure, GCP, or GitHub.
@@ -33,6 +37,7 @@ We can:
 - detect costs and risks that hyperscalers don't track
 - optimize spending without vendor bias
 - enforce policies consistently across entire landscape
+- explain the ROI of one decision across Jira, GitHub, AWS and OpenAI/Azure OpenAI
 
 **Hyperscalers cannot do this.** Their business model depends on lock-in, not cross-platform clarity.
 

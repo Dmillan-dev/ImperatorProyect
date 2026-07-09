@@ -11,9 +11,12 @@ Possible pricing axes:
 ## Defensible Value Unit
 
 Value is created through:
-- investigation MTTR reduction,
-- hidden-cost reduction,
+- recovered operational value,
+- decision-level hidden-cost reduction,
+- investigation effort reduction,
 - audit-effort reduction.
+
+The preferred value unit for MVP validation is one **Decision ROI Timeline** with current monthly cost, estimated value signal and annualized recovery opportunity.
 
 ## Willingness-to-Pay Hypothesis
 

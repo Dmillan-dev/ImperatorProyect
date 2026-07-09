@@ -25,6 +25,18 @@ Esta capa es el activo diferencial. Debe modelarse como un grafo conceptual de d
 Decision → Owner → Department → Project → Cloud Resource → Cost → Policy → Risk → Timeline → Evidence
 ```
 
+Para el MVP, el grafo debe poder expresar una Decision ROI Timeline:
+
+```
+Business Context → Code & Deployment → Infrastructure & Cost → AI Consumption → ROI Recommendation
+```
+
+Sistemas iniciales:
+- Business Context: Jira
+- Code & Deployment: GitHub
+- Infrastructure & Cost: AWS
+- AI Consumption: OpenAI / Azure OpenAI
+
 Componentes clave:
 - Decision Ledger: registro inmutable de decisiones y su metadatos.
 - Context Engine: normalización, enrichments, correlación y construcción de contexto reutilizable.
@@ -36,18 +48,18 @@ Evento → Ingesta → Decision Pipeline → Decision Ledger → Context Engine 
 
 Notas operativas:
 - La IA nunca debe operar sobre fuentes crudas; siempre trabaja sobre contexto preparado.
-- Comunicación interna: por decisión vinculante D013, la comunicación entre servicios internos usará gRPC con Protocol Buffers como formato canónico desde Day‑1. Las APIs públicas del SaaS deberán exponerse a través de una capa de gateway (HTTP/REST o GraphQL) que traduzca a gRPC internamente si es necesario.
+- Comunicación interna: por decisión D013, gRPC con Protocol Buffers es el mandato para futuras comunicaciones internas cuando existan servicios internos. En Phase 0 esto debe tratarse como contrato conceptual, no como obligación de construir servicios.
 - Apache Arrow y optimizaciones avanzadas se dejan para fases maduras.
 
 ## Comunicación y contratos
 
-- Recomendación operativa: usar **Protocol Buffers** como contrato canónico y **gRPC** para la comunicación Java ⇄ Python desde el día uno si ya existe la decisión de separar responsabilidades. Beneficios: tipado fuerte, contratos estables, interoperabilidad entre lenguajes y facilidad para evolucionar el motor de IA sin romper el motor de ingesta.
+- Recomendación operativa: usar **Protocol Buffers** como contrato canónico y **gRPC** para comunicación interna entre servicios cuando la fase de producto lo requiera. Beneficios: tipado fuerte, contratos estables, interoperabilidad entre lenguajes y facilidad para evolucionar el motor de IA sin romper el motor de ingesta.
 - Kafka puede transportar mensajes codificados en Protobuf para mantener coherencia de contratos en toda la plataforma (mensajes tipados en broker).
 - Nota: estas recomendaciones son **conceptuales** para Phase 0. Registrar cualquier adopción firme en `14_Decision_Log.md`.
 
 ## Roadmap evolutivo (sugerido)
 
-- Año 1 (MVP): React + API Gateway + Spring Boot/Java para ingesta básica + Python AI prototipos + PostgreSQL.
+- Año 1 (MVP): validar la Decision ROI Timeline con GitHub, AWS, Jira y OpenAI/Azure OpenAI antes de ampliar conectores o stack operativo.
 - Año 2 (escala inicial): API Gateway, Kafka para eventos, Java ingestion scalable, Python services desacoplados, Redis para caches, mejoras en Context Engine.
 - Año 3 (plataforma): Clústeres de ingesta (Java), clústeres de AI (Python), Knowledge Graph/Vector DB, OpenSearch/analytics, Data Lake.
 
@@ -56,7 +68,7 @@ Notas operativas:
 - Mantener la tesis centrada en responsabilidades: "qué hace cada capa" antes de "cómo".
 - Evitar decisiones irrevocables en Phase 0; priorizar rapidez para validar producto y GTM.
 - Registrar cualquier cambio conceptual mayor en `14_Decision_Log.md`.
-- Respetar el lenguaje canónico: `Enterprise Context Intelligence` y el wedge `Cross-platform Decision Traceability`.
+- Respetar el lenguaje canónico: `Enterprise Context Intelligence`, `Cross-platform Decision Traceability` y `Decision ROI Timeline`.
 
 ## Riesgos y mitigaciones
 

@@ -21,8 +21,12 @@ Do not claim:
 ## Focus Rule
 
 Any new initiative must answer:
-1. Does it strengthen the traceability wedge?
+1. Does it strengthen the Decision ROI Timeline?
 2. Does it improve the cross-system context layer?
 3. Does it increase buyer clarity?
 
 If fewer than 2/3 are true, defer it.
+
+## MVP Boundary
+
+For v1, do not expand beyond GitHub, AWS, Jira and OpenAI/Azure OpenAI unless a validated customer pilot requires it.

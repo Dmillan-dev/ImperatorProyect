@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IMPERATOR — Executive Decision Workspace</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <nav class="app-nav" aria-label="Product navigation">
+      <a class="is-active" href="index.html">Executive Workspace</a>
+      <a href="decision_detail.html">Decisions</a>
+      <a href="decision_ledger.html">Decision Ledger</a>
+      <a href="decision_ledger.html#business-value">Business Value</a>
+      <a href="decision_ledger.html#integrations">Integrations</a>
+      <a href="decision_ledger.html#policies">Policies</a>
+      <a href="decision_ledger.html#settings">Settings</a>
+    </nav>
+
+    <header class="header compact-header">
+      <div class="eyebrow">IMPERATOR / Decision Engine</div>
+      <h1>Executive Decision Workspace</h1>
+      <p class="subtitle">Money, decision, evidence and action. Everything else is available in the decision detail.</p>
+    </header>
+
+    <section class="summary-layout" aria-labelledby="summary-title">
+      <article class="summary-card">
+        <div class="section-label">Summary</div>
+        <h2 id="summary-title">Projected Annual Savings</h2>
+        <div class="hero-number">€184.320</div>
+        <span class="trend-chip">+18% vs last month</span>
+        <div class="value-breakdown compact" aria-label="Annual business value components">
+          <div>
+            <span>Cost Saved</span>
+            <strong>€92.000</strong>
+          </div>
+          <div>
+            <span>Time Recovered</span>
+            <strong>€41.000</strong>
+          </div>
+          <div>
+            <span>Risk Avoided</span>
+            <strong>€31.000</strong>
+          </div>
+          <div>
+            <span>Compliance Automation</span>
+            <strong>€20.320</strong>
+          </div>
+        </div>
+      </article>
+
+      <article class="recommendation-card" aria-labelledby="recommendation-title">
+        <div class="section-label">Selected Decision</div>
+        <h2 id="recommendation-title">Recommendation</h2>
+        <p class="recommendation-lead">Approve the GPT model downgrade.</p>
+        <div class="recommendation-facts">
+          <div>
+            <span>Expected annual savings</span>
+            <strong>€19.440</strong>
+          </div>
+          <div>
+            <span>Risk</span>
+            <strong>Low</strong>
+          </div>
+          <div>
+            <span>Confidence</span>
+            <strong>92%</strong>
+          </div>
+          <div>
+            <span>Business impact</span>
+            <strong>High</strong>
+          </div>
+        </div>
+        <a class="primary-link" href="decision_detail.html">Review Decision</a>
+      </article>
+    </section>
+
+    <section class="panel decision-list-panel">
+      <h2 class="panel-title">Decision Queue</h2>
+      <div class="decision-table" role="table" aria-label="Decision queue">
+        <div class="decision-table-head" role="row">
+          <span role="columnheader">Decision</span>
+          <span role="columnheader">Save</span>
+        </div>
+        <a class="decision-row is-selected" href="decision_detail.html" role="row">
+          <span role="cell">Downgrade GPT model</span>
+          <strong role="cell">€1.620/mo</strong>
+        </a>
+        <a class="decision-row" href="decision_detail.html" role="row">
+          <span role="cell">Remove unused agent</span>
+          <strong role="cell">€430/mo</strong>
+        </a>
+        <a class="decision-row" href="decision_detail.html" role="row">
+          <span role="cell">Consolidate SaaS</span>
+          <strong role="cell">€820/mo</strong>
+        </a>
+      </div>
+    </section>
+
+    <section class="panel evidence-panel-simple">
+      <div>
+        <h2 class="panel-title">Evidence</h2>
+        <ul class="why-list">
+          <li>Usage dropped 82%.</li>
+          <li>Active users decreased from 61 to 17.</li>
+          <li>GPT-4o is unnecessary for the observed workload.</li>
+        </ul>
+      </div>
+      <div class="confidence-box">
+        <span>Confidence</span>
+        <strong>92%</strong>
+        <em>Based on 18.420 events.</em>
+      </div>
+    </section>
+
+    <section class="action-strip" aria-label="Action">
+      <div>
+        <span>Action</span>
+        <strong>Review the recommendation before approval.</strong>
+      </div>
+      <a class="primary-link" href="decision_detail.html">Review Decision</a>
+    </section>
+  </main>
+</body>
+</html>

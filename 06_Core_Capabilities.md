@@ -12,6 +12,7 @@ Automatic enrichment with:
 - ownership
 - team/department
 - cost signal
+- usage/value signal
 - risk signal
 - applied policies
 - involved systems/models
@@ -22,18 +23,23 @@ Continuous analytical layer to detect:
 - operational risk patterns
 - policy failures
 - optimization opportunities
+- negative-ROI or low-value decisions
 
 ## 5) Customer Interaction Surfaces (Conceptual)
 Customer value is delivered through:
 - Dashboard Web (primary business visibility surface)
 - Context API (open integration entry point)
 - SDKs (Java, Python, Go, JavaScript)
-- Connectors (cloud, SaaS, collaboration, and AI platforms)
+- Information-domain integrations (Business Context, Code & Deployment, Infrastructure & Cost, AI Consumption)
 
 ## 6) Internal Context Engine (Conceptual Cycle)
 Operational events follow a common intelligence pipeline:
 
 Event -> Normalization -> Enrichment -> Correlation -> Context -> Evaluation -> Ledger -> Analysis -> Recommendation
+
+MVP narrative object:
+
+Business decision -> Timeline -> Current cost -> Usage/value signal -> ROI recommendation
 
 ## Product Principle
 

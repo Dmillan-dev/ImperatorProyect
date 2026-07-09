@@ -13,6 +13,20 @@ Definir el modelo conceptual inicial del Knowledge Graph (KG) para IMPERATOR, y 
 - Permitir consultas relacionales y traversals para análisis de impacto, riesgo y coste.
 - Soportar RAG/embeddings para preguntas de negocio y búsqueda semántica.
 - Mantener privacidad y sensibilidad de datos para RAG.
+- Expresar la Decision ROI Timeline del MVP conectando Business Context, Code & Deployment, Infrastructure & Cost y AI Consumption.
+
+## MVP information domains
+
+El modelo debe priorizar cuatro dominios de información antes de ampliar conectores:
+
+- Business Context: Jira aporta proyecto, ticket, epic, prioridad, responsable y estado.
+- Code & Deployment: GitHub aporta pull requests, commits, reviews, deploys, autor y fecha.
+- Infrastructure & Cost: AWS aporta Cost Explorer, CloudWatch, Lambda, ECS, EC2 y EKS.
+- AI Consumption: OpenAI / Azure OpenAI aporta modelos, tokens, coste, usuario y aplicación.
+
+La pregunta de producto que debe soportar el grafo es:
+
+> Esta decisión cuesta X hoy, aporta Y valor estimado y tiene una acción que puede recuperar Z al año.
 
 ## Mapping protos → esquema inicial (Postgres)
 
@@ -46,6 +60,7 @@ Design principle: modelar entidades como tablas y relaciones explícitas en tabl
 - `decisions` (from `Decision.proto`)
   - id, organization, project, owner, source, cost, risk (jsonb), timestamp, summary, metadata (jsonb), created_by, sensitivity
   - `decision_entities(decision_id, entity_type, entity_id)` to link to persons/teams/resources/incidents/etc
+  - `metadata` should include MVP domain hints where needed (business_context, code_deployment, infrastructure_cost, ai_consumption) until a later contract formalizes them.
 
 Optional general edge table for faster graph traversals:
 

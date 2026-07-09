@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IMPERATOR — Decision Ledger</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <nav class="app-nav" aria-label="Product navigation">
+      <a href="index.html">Executive Workspace</a>
+      <a href="decision_detail.html">Decisions</a>
+      <a class="is-active" href="decision_ledger.html">Decision Ledger</a>
+      <a href="#business-value">Business Value</a>
+      <a href="#integrations">Integrations</a>
+      <a href="#policies">Policies</a>
+      <a href="#settings">Settings</a>
+    </nav>
+
+    <header class="header compact-header">
+      <div class="eyebrow">IMPERATOR / Ledger</div>
+      <h1>Decision Ledger</h1>
+      <p class="subtitle">The operating record of recommended, approved, implemented and validated business decisions.</p>
+    </header>
+
+    <section class="panel ledger-panel">
+      <div class="section-heading-row">
+        <h2 class="panel-title">Recorded Decisions</h2>
+        <a class="secondary-link" href="index.html">Open workspace</a>
+      </div>
+      <div class="ledger-table" role="table" aria-label="Decision ledger">
+        <div class="ledger-row ledger-head" role="row">
+          <span role="columnheader">Decision</span>
+          <span role="columnheader">Status</span>
+          <span role="columnheader">Approver</span>
+          <span role="columnheader">Outcome</span>
+          <span role="columnheader">Recovered</span>
+        </div>
+        <a class="ledger-row" href="decision_detail.html" role="row">
+          <strong role="cell">Downgrade GPT model</strong>
+          <span role="cell">Pending approval</span>
+          <span role="cell">CTO</span>
+          <span role="cell">Forecast ready</span>
+          <strong role="cell">€19.440/year</strong>
+        </a>
+        <a class="ledger-row" href="decision_detail.html" role="row">
+          <strong role="cell">Remove unused agent</strong>
+          <span role="cell">Validated</span>
+          <span role="cell">VP Engineering</span>
+          <span role="cell">96% of estimate</span>
+          <strong role="cell">€5.160/year</strong>
+        </a>
+        <a class="ledger-row" href="decision_detail.html" role="row">
+          <strong role="cell">Consolidate SaaS</strong>
+          <span role="cell">Implemented</span>
+          <span role="cell">CFO</span>
+          <span role="cell">Tracking</span>
+          <strong role="cell">€9.840/year</strong>
+        </a>
+      </div>
+    </section>
+
+    <section class="ledger-sections">
+      <article class="panel" id="business-value">
+        <h2 class="panel-title">Business Value</h2>
+        <div class="value-breakdown ledger-value">
+          <div>
+            <span>Cost Saved</span>
+            <strong>€92.000</strong>
+          </div>
+          <div>
+            <span>Time Recovered</span>
+            <strong>€41.000</strong>
+          </div>
+          <div>
+            <span>Risk Avoided</span>
+            <strong>€31.000</strong>
+          </div>
+          <div>
+            <span>Compliance Automation</span>
+            <strong>€20.320</strong>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel" id="integrations">
+        <h2 class="panel-title">Integrations</h2>
+        <div class="mini-grid">
+          <div><span>Business Context</span><strong>Jira</strong></div>
+          <div><span>Code & Deployment</span><strong>GitHub</strong></div>
+          <div><span>Infrastructure & Cost</span><strong>AWS</strong></div>
+          <div><span>AI Consumption</span><strong>OpenAI / Azure OpenAI</strong></div>
+        </div>
+      </article>
+
+      <article class="panel" id="policies">
+        <h2 class="panel-title">Policies</h2>
+        <div class="detail-list">
+          <div class="detail-row">
+            <span>Execution</span>
+            <strong>Recommendation only</strong>
+          </div>
+          <div class="detail-row">
+            <span>Approval</span>
+            <strong>Company controlled</strong>
+          </div>
+          <div class="detail-row">
+            <span>Audit</span>
+            <strong>Decision ledger required</strong>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel" id="settings">
+        <h2 class="panel-title">Settings</h2>
+        <div class="detail-list">
+          <div class="detail-row">
+            <span>Workspace Default</span>
+            <strong>High ROI first</strong>
+          </div>
+          <div class="detail-row">
+            <span>Currency</span>
+            <strong>EUR</strong>
+          </div>
+          <div class="detail-row">
+            <span>Approval Role</span>
+            <strong>CTO</strong>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

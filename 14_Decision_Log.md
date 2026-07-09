@@ -71,3 +71,43 @@ Format: one entry per decision with date, rationale, and impact.
 - Decision: establecer como decisión vinculante que todas las comunicaciones entre servicios internos usen gRPC con Protocol Buffers como formato canónico; no exponer gRPC como API pública del SaaS.
 - Rationale: reduce la fricción entre equipos, garantiza contratos tipados y facilita la evolución independiente de motores internos (ingesta vs IA).
 - Impact: requiere repositorio `proto/` mantenido, CI de generación de bindings, y gobernanza de cambios breaking sobre `.proto`.
+
+### [2026-07-08] D014 — Executive dashboard hierarchy shift
+- Decision: reframe the executive dashboard demo around one dominant hero KPI, a concise executive summary, and action-oriented cards instead of equal-weight charts and blocks.
+- Rationale: the sales story is stronger when the first screen answers "what matters now" before showing supporting detail.
+- Impact: updated `demos/executive_dashboard_demo/index.html` and `demos/executive_dashboard_demo/style.css` to emphasize narrative hierarchy and one-click action paths.
+
+### [2026-07-08] D015 — Approval-first executive action model
+- Decision: present executive actions as review-based approvals, not autonomous changes; use explicit decision states and evidence-backed confidence framing.
+- Rationale: CTOs and CEOs want assistance with judgment, not unapproved automation.
+- Impact: updated the executive dashboard demo to show interactive flow states, confidence evidence, and approval-oriented CTA language.
+
+### [2026-07-08] D016 — MVP focus: information domains and Decision ROI Timeline
+- Decision: reframe the MVP around four normalized information domains — Business Context, Code & Deployment, Infrastructure & Cost, and AI Consumption — with GitHub, AWS, Jira, and OpenAI/Azure OpenAI as the initial systems. Adopt **"One Decision. One Timeline. One ROI."** as the technical product rule for v1.
+- Rationale: the strongest MVP is not broad connector coverage; it is one complete business story that links why a decision existed, who implemented it, what resources it created, what AI it consumed, and what ROI action is available now.
+- Impact: updates canonical messaging, buyer map, GTM, validation, product surface, executive summary, and dashboard demo. Cross-platform Decision Traceability remains the foundation, but the MVP narrative is now the living ROI of a business decision.
+
+### [2026-07-08] D017 — Executive decision dashboard: future-facing approval model
+- Decision: evolve the executive dashboard from a backward-looking recovered-value report into a future-facing approval surface. The primary frame is now "If approved today" with annual savings, payback, risk and confidence, supported by a Why block, ownership, decision status and a Decision Lifecycle.
+- Rationale: executives do not buy charts; they buy answers. IMPERATOR should help a CEO/CTO/CFO decide what to approve today, why it matters, who owns it and how much value will be recovered.
+- Impact: updated the executive dashboard demo and executive summary. "Executive Decision Intelligence" may describe the dashboard experience, while `Enterprise Context Intelligence` remains the canonical intelligence domain.
+
+### [2026-07-08] D018 — Executive Decision Workspace value model
+- Decision: evolve the dashboard demo into an **Executive Decision Workspace**. The workspace shows a large Projected Annual Savings number, a four-part Annual Business Value breakdown, a decision queue with monthly savings, a future-facing approval CTA, ROI/business impact, confidence based on event count, chronology and clickable lifecycle evidence.
+- Rationale: the CFO buys ROI and the CEO buys fast executive answers. Monthly savings make the decision queue actionable, while annualized value and component breakdown explain total business value beyond cost reduction.
+- Impact: updated the executive dashboard demo and supporting demo README. The workspace remains answer-first and chart-light.
+
+### [2026-07-08] D019 — MVP dashboard density reduction
+- Decision: simplify the primary executive workspace to six blocks: Summary, Decision Queue, Selected Decision, Evidence, Lifecycle and Review action. Move ownership, status, chronology, full financial impact and detailed lifecycle evidence into a separate decision detail page.
+- Rationale: the MVP screen must make the most important answer obvious at a glance. Dense evidence belongs behind review, not on the executive summary surface.
+- Impact: updated the dashboard demo with `index.html` as the glanceable workspace and `decision_detail.html` as the review/investigation page. The CTA changed from direct execution to `Review Decision`, preserving the principle that IMPERATOR recommends and the company decides.
+
+### [2026-07-08] D020 — Workspace -> Decision -> Ledger product surface
+- Decision: define the commercial product surface as `Workspace -> Decision -> Ledger` with navigation for Executive Workspace, Decisions, Decision Ledger, Business Value, Integrations, Policies and Settings.
+- Rationale: IMPERATOR should feel like a decision operating system, not a monitoring dashboard. The Workspace prioritizes executive attention, the Decision Detail validates trust through evidence, and the Ledger records accountability and outcomes.
+- Impact: added product navigation to the demo, introduced `decision_ledger.html`, and updated product-surface and agent-context guidance to separate prioritization, evidence review and audit record.
+
+### [2026-07-08] D021 — Workspace lifecycle removal and dark executive visual language
+- Decision: remove the Decision Lifecycle from the primary Executive Workspace and keep lifecycle evidence inside each Decision Detail. Shift the demo visual language toward a dark, minimal executive workspace with teal value accents and stronger card hierarchy.
+- Rationale: the Workspace should answer what deserves attention now without repeating the evidence structure that already appears per decision. A darker, more shaped visual system makes the experience feel less like a generic dashboard and more like an executive decision workspace.
+- Impact: updated `index.html`, `style.css`, demo README and product-surface guidance. The Workspace now centers on money, decision, evidence and action.

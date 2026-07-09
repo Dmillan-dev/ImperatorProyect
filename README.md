@@ -30,6 +30,8 @@ This documentation system defines IMPERATOR’s canonical context for:
 - [15_Context_Boundaries_and_Non_Goals.md](15_Context_Boundaries_and_Non_Goals.md)
 - [16_Sales_Narrative_and_Commercial_Case.md](16_Sales_Narrative_and_Commercial_Case.md)
 - [17_Product_Surface_and_Context_Engine_Thesis.md](17_Product_Surface_and_Context_Engine_Thesis.md)
+- [18_Architecture_Thesis.md](18_Architecture_Thesis.md)
+- [19_Executive_Summary.md](19_Executive_Summary.md)
 
 ### Operating Templates (recommended)
 - [Hypothesis.md](Hypothesis.md)
@@ -42,9 +44,18 @@ This documentation system defines IMPERATOR’s canonical context for:
 
 **IMPERATOR is the Operational Intelligence Layer for modern enterprises.**
 
+MVP technical rule:
+- **One Decision. One Timeline. One ROI.**
+
 Canonical intelligence term:
 - ✅ Enterprise Context Intelligence
 - ❌ Decision Intelligence (as primary category term)
+
+MVP information domains:
+- Business Context: Jira
+- Code & Deployment: GitHub
+- Infrastructure & Cost: AWS
+- AI Consumption: OpenAI / Azure OpenAI
 
 ## Documentation Evolution Rule
 

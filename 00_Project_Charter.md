@@ -14,6 +14,8 @@ Transform operational events into business intelligence.
 
 Every enterprise decision should become searchable, explainable, measurable and optimizable. IMPERATOR is the Enterprise Operational Intelligence Platform.
 
+MVP rule: **One Decision. One Timeline. One ROI.**
+
 ## Strategic Objective
 Build the intelligence layer that lets organizations answer, within seconds:
 - what happened,
@@ -41,6 +43,6 @@ Build the intelligence layer that lets organizations answer, within seconds:
 ## Success Criteria (Phase 0)
 1. Clear and defensible ICP.
 2. Consistent and differentiated commercial narrative.
-3. One clear entry wedge use case.
+3. One clear entry wedge use case: Decision ROI Timeline.
 4. Buyer-path clarity per persona.
 5. Stable, versioned context for humans and AI agents.

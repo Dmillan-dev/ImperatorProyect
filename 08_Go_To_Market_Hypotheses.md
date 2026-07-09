@@ -3,62 +3,72 @@
 ## Land Strategy (Land and Expand Model)
 
 ### Primary Entry Point
-**Operational Decision Traceability (MTTR reduction) for Platform Engineering + DevOps + SRE.**
+**Decision ROI Timeline for one high-cost business decision.**
 
-**Why this wedge:**
-- Platform Engineering has immediate, tangible pain: incident investigations take 6-8 hours
-- Clear ROI: reduce to <30 minutes = measurable labor cost savings (€7–15K/month depending on org size)
-- Works across all cloud/SaaS platforms → no competitive perception (not a "dashboard")
-- **Critical: Same platform delivers simultaneous value to multiple stakeholders:**
-  - Platform Engineering sees faster incident resolution (MTTR reduction)
-  - Finance sees cost attribution and hidden waste detection (AI agents, duplicate tools)
-  - Security sees policy compliance and risk pattern detection
-  - CTO sees unified operational visibility + strategic decision-making data
-- Natural expansion into Security, Finance, Compliance once core value is proven
-- **Multi-departmental adoption is a retention advantage** — higher switching cost once multiple teams depend on IMPERATOR
+The launch wedge should answer:
+
+**"This decision is costing X today, appears to create Y estimated value, and can recover Z per year through this action."**
+
+### Why This Wedge
+
+- CTO / VP Engineering sees which approved work is now creating cost, risk or operational drag.
+- Platform Engineering gets the technical evidence path without manual reconstruction.
+- CFO / FinOps sees decision-level cost and recovery potential.
+- Security and Compliance can reuse the same timeline as evidence.
+- The story is narrower than "connect everything" and more valuable than "show another dashboard."
+
+### MVP System Boundary
+
+The v1 story uses four systems because each answers a different information question:
+
+| Domain | Initial system | Question answered |
+|---|---|---|
+| Business Context | Jira | Why was this decision made? |
+| Code & Deployment | GitHub | Who implemented it and what changed? |
+| Infrastructure & Cost | AWS | What resources does it consume and what does it cost? |
+| AI Consumption | OpenAI / Azure OpenAI | Which models, tokens, users and applications drive AI spend? |
+
+Expansion systems such as Slack, Microsoft 365, Salesforce, Anthropic, Azure DevOps, ServiceNow, Azure and GCP should remain future roadmap items until the four-system story is validated.
 
 ### Entry Point Messaging (Launch)
 
-**Not:** "Understand your AI costs better."  
-**This:** "Reduce incident investigation time by 80%. Know exactly what happened, who decided it, and what it cost—in minutes, not hours."
+**Not:** "We connect all your tools."
+**This:** "In 30 days, we will reconstruct one expensive business decision across Jira, GitHub, AWS and AI consumption, then show what it costs today and what you can recover."
 
 ### Initial 30-Day Value Promise
-"In 30 days, measure:
-- How much time your Platform/Ops teams spend investigating incidents (baseline)
-- One incident resolution with IMPERATOR (target: <30 min)
-- Clear cost/benefit: if you resolve 8 incidents/month × 6 hours/incident = 48 hours saved = €3,400/month labor recovery"
+
+In 30 days, measure:
+- one real decision timeline from Jira intent to GitHub change to AWS cost to OpenAI/Azure OpenAI consumption
+- current monthly cost of that decision
+- usage or value signal available from existing customer data
+- recommended action and annualized recovery estimate
+- manual reconstruction effort avoided using the canonical ROI assumptions in `04_Value_Proposition.md`
 
 ## Expand Strategy (Months 2–12)
 
-### Phase 1 (Month 1–2): Platform + DevOps + SRE
-Entry wedge: Decision Traceability, incident response, MTTR reduction
+### Phase 1 (Month 1–2): CTO + Platform + FinOps
+Entry wedge: Decision ROI Timeline for one high-cost feature, AI workflow or infrastructure change.
 
-### Phase 2 (Month 2–4): Finance + FinOps (Secondary)
-Emerges naturally: "Now that we know what decisions cost, let's optimize AI spending"
-- Cost attribution by team/agent/project
-- Wasteful agent detection
-- Licensing optimization
+### Phase 2 (Month 2–4): Finance + FinOps
+Expand into decision-level cost attribution, AI model optimization and recurring recovery reviews.
 
-### Phase 3 (Month 4–6): Security + Risk
-- Risk pattern detection
-- Policy compliance monitoring
-- Audit trail automation
+### Phase 3 (Month 4–6): Security + Compliance
+Reuse decision timelines for audit evidence, policy visibility and risk review.
 
-### Phase 4 (Month 6+): Compliance + Legal + Executive
-- Automated audit reporting
-- Strategic KPI dashboards
-- Benchmarking analytics
+### Phase 4 (Month 6+): Executive Operating System
+Expose recovered operational value, top negative-ROI decisions and approved optimization actions at executive level.
 
-**Land and Expand Logic:** Each phase is a new revenue module; same customer, no re-acquisition cost.
+**Land and Expand Logic:** Each phase uses the same context engine and decision timeline, but different stakeholders extract different value.
 
 ## Commercial Thesis
 
 IMPERATOR is purchased for operational outcomes:
-- faster investigations,
-- lower risk exposure,
-- reduced compliance effort,
-- better cost control.
+- recovered operational value,
+- clearer decision accountability,
+- lower AI and cloud waste,
+- faster investigation when incidents, audits or cost spikes occur,
+- better executive control over operational ROI.
 
 ## Recommended Sales Message
 
-"We help organizations reduce incident investigation time by 80%. Instead of spending 6 hours reconstructing what happened across AWS, Azure, GitHub, Slack, and a dozen other systems, you'll know—in minutes—exactly what decision was made, who made it, what it cost, and what the impact was. Then we help you optimize AI costs and reduce risk."
+"We help leadership see the live ROI of decisions after they ship. IMPERATOR links Jira, GitHub, AWS and OpenAI/Azure OpenAI so you know why a decision exists, who implemented it, what it costs today, whether it is being used, and what action can recover money."

@@ -11,12 +11,14 @@ Each enterprise platform stores only its local truth:
 - AI model and agent usage.
 
 No platform provides complete cross-system business context for operational decisions.
+No platform shows the living ROI of a decision after it moves from business approval to code, infrastructure and AI consumption.
 
 ## Consequences
 
 - Slow investigations (hours/days)
 - Diffuse accountability
 - Hidden AI and cloud costs
+- Lost decision-level ROI visibility
 - Incomplete end-to-end risk visibility
 - Expensive and manual compliance work
 

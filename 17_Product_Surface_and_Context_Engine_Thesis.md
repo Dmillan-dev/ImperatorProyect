@@ -23,20 +23,48 @@ POST /decision
 
 IMPERATOR registers an operational decision with business context metadata.
 
-## 2) Dashboard Web (Primary Commercial Surface)
+## 2) Executive Workspace, Decisions and Ledger (Primary Commercial Surface)
 
 Primary users: CTO, CIO, CISO, CFO, Platform leaders.
 
-Main visibility domains:
-- costs
-- risks
-- decisions
-- KPIs
-- investigations
-- AI usage and governance
-- audit context
+Surface thesis:
+The commercial surface should feel like an operating system for business decisions, not a chart-heavy analytics dashboard.
 
-Commercial thesis: the dashboard proves business value quickly and improves buyer clarity.
+Primary screen model:
+- Executive Workspace: answers which decision deserves attention now
+- Decisions: answers whether the organization can trust a recommendation enough to approve it
+- Decision Ledger: records recommended, approved, implemented and validated decisions over time
+
+Navigation model:
+- Executive Workspace
+- Decisions
+- Decision Ledger
+- Business Value
+- Integrations
+- Policies
+- Settings
+
+For MVP density, the Executive Workspace should show only Summary, Decision Queue, Selected Decision, Evidence and Review action. Lifecycle belongs inside each Decision Detail, together with ownership, status, chronology, historical outcomes and lifecycle evidence.
+
+Main visibility domains:
+- projected annual savings
+- annual business value breakdown
+- monthly decision savings queue
+- decision ROI timelines
+- "If approved today" impact
+- ROI / business impact
+- recommendation rationale
+- ownership and approval accountability
+- decision status
+- chronology
+- clickable lifecycle evidence
+- current cost and annualized recovery
+- ownership and approval evidence
+- usage/value signals
+- risk and audit context
+- AI usage and governance
+
+Commercial thesis: the Workspace proves business value quickly by answering what decision deserves attention, why, and what value approval can recover. The Decision Detail proves trust. The Decision Ledger proves accountability.
 
 ## 3) SDKs (Adoption Accelerators)
 
@@ -48,20 +76,34 @@ Initial language candidates:
 - Go
 - JavaScript
 
-## 4) Connectors (Scalable Value Distribution)
+## 4) Information Domains (MVP Value Distribution)
 
-Goal: ingest cross-system signals without custom one-off integration work by each customer.
+Goal: normalize cross-system signals by information type, not by connector breadth.
 
-Priority connector families:
-- cloud: AWS, Azure
-- engineering: GitHub, Jira
+V1 domains and systems:
+- Business Context: Jira
+- Code & Deployment: GitHub
+- Infrastructure & Cost: AWS
+- AI Consumption: OpenAI / Azure OpenAI
+
+Deferred expansion systems:
 - collaboration: Slack, Microsoft 365
-- AI platforms: OpenAI, Anthropic
 - business systems: Salesforce
+- AI platforms: Anthropic
+- engineering work systems: Azure DevOps, ServiceNow
+- infrastructure platforms: Azure, Google Cloud
+
+Expansion should happen only after the MVP proves one complete decision story:
+
+Jira -> GitHub -> AWS -> OpenAI/Azure OpenAI -> Decision ROI Timeline -> Executive Workspace.
+
+The preferred Decision Lifecycle progression is:
+
+Business Decision -> Technical Change -> Infrastructure -> AI Consumption -> Financial Impact -> Recommendation -> Result.
 
 ## Where the Deep Technical Moat Lives
 
-The strategic moat is not the API alone and not the dashboard alone.
+The strategic moat is not the API alone and not the interface alone.
 The hardest-to-replicate capability is the internal context engine.
 
 Conceptual processing cycle:
@@ -72,6 +114,7 @@ Why this matters:
 - converts isolated technical events into accountable business decisions
 - creates reusable organizational decision history over time
 - improves traceability, risk detection, and optimization quality as data depth grows
+- turns each decision into an economic object with current cost, estimated value and recommended recovery action
 
 ## Strategic Framing for Market Positioning
 
@@ -79,13 +122,17 @@ Recommended framing:
 IMPERATOR is a SaaS platform with an open API, not only an API with a UI.
 
 Reasoning:
-- executive buyers need visible business outcomes (dashboard)
-- technical teams need embedability and automation (API, SDKs, connectors)
+- executive buyers need visible business outcomes (Workspace)
+- technical teams need embedability and automation (API, SDKs, future connectors)
 - dual entry model improves adoption and expansion potential
 
 ## Alignment Check (Current Canonical Strategy)
 
 - Preserves canonical intelligence domain: Enterprise Context Intelligence
-- Preserves wedge: Cross-platform Decision Traceability
+- Preserves wedge: Cross-platform Decision Traceability, expressed in the MVP as Decision ROI Timeline
 - Preserves principle: augment existing systems, do not replace them
 - Supports land-and-expand by serving multiple stakeholders on one platform
+- Applies v1 rule: One Decision. One Timeline. One ROI.
+- Protects the Workspace from drifting into chart density; executives need answers first.
+- Protects the MVP from evidence overload; detail exists behind review.
+- Protects the product model: Workspace prioritizes, Decision Detail validates, Decision Ledger records.

@@ -7,10 +7,11 @@ Define, prioritize, and validate business/product hypotheses without building so
 ## In Scope
 
 - conceptual capability definition
-- customer interaction surface definition (Dashboard, API, SDKs, Connectors)
+- customer interaction surface definition (Dashboard, API, SDKs, information-domain integrations)
 - buyer-persona messaging
 - land-and-expand sequence
 - measurable value hypotheses
+- MVP Decision ROI Timeline definition
 
 ## Out of Scope
 
@@ -21,7 +22,8 @@ Define, prioritize, and validate business/product hypotheses without building so
 
 ## Exit Deliverables
 
-1. Stable canonical documentation (00–17)
+1. Stable canonical documentation (00–19)
 2. Market-entry hypotheses
 3. Prioritized wedge use case
-4. Explicit assumptions and risks
+4. Four-domain MVP boundary (Business Context, Code & Deployment, Infrastructure & Cost, AI Consumption)
+5. Explicit assumptions and risks

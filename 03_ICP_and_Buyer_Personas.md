@@ -17,20 +17,33 @@
 
 ## Buying Map
 
-### Primary Operational Buyer
-- Platform Engineering Manager
+### Primary Business Owner
+- CTO or VP Engineering
 
 ### Internal Champion
 - Staff Engineer (Platform / Infrastructure)
+- Platform Engineering Manager
 
-### Technical Buyer
-- CTO
-
-### Economic Buyer
+### Economic Buyer / Co-buyer
+- CFO or FinOps Manager
 - CIO or VP Engineering
+
+### Security / Compliance Influencer
+- Security Manager
+- Compliance lead
+
+## Buyer Logic
+
+The MVP should be sold as a cross-functional ROI story:
+- Platform validates the technical timeline and evidence.
+- CTO / VP Engineering owns the operational decision.
+- CFO / FinOps validates the economic impact.
+- Security and Compliance use the same timeline as audit-ready evidence.
 
 ## Strong Pain Signals
 
 - “We can’t quickly reconstruct who decided what.”
 - “AI and cloud costs are not properly attributable.”
 - “Audits are too manual and slow.”
+- “We approved features that now cost real money, but we cannot prove whether they are worth it.”
+- “We need one view that links Jira, GitHub, AWS and AI consumption.”

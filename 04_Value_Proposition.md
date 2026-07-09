@@ -2,44 +2,69 @@
 
 ## Core Value Proposition
 
-IMPERATOR unifies cross-platform operational context and transforms it into traceability, risk intelligence, and cost optimization.
+IMPERATOR turns cross-platform operational context into a **Decision ROI Timeline**: one business decision, one accountable timeline, one measurable ROI view.
+
+The MVP does not compete on connecting everything. It proves value by normalizing four information domains:
+- Business Context: Jira explains why the decision exists.
+- Code & Deployment: GitHub explains who implemented it and what changed.
+- Infrastructure & Cost: AWS explains which resources were created and what they cost.
+- AI Consumption: OpenAI / Azure OpenAI explains model, token, user and application cost.
+
+## Primary MVP Question
+
+**This business decision costs X today, appears to create Y estimated value, and has an action that can recover Z per year.**
 
 ## Painkillers (Prioritized by Buying Urgency)
 
-### 1) Operational Decision Traceability (Primary Entry Wedge) 
-Problem: "When an incident happens, we spend 6-8 hours reconstructing what happened across multiple systems."
+### 1) Decision ROI Timeline (Primary Entry Wedge)
+Problem: "We approved work weeks ago, but we cannot see what it costs today, who owns it, whether it is used, or whether it is worth keeping."
 
 Outcomes:
-- reduce investigation time (MTTR) by 80%
-- full traceability across person/agent/policy/cost/outcome/owner
-- immediate accountability and reduced incident repeat rate
-- audit-ready decision trails
+- link Jira intent, GitHub implementation, AWS cost and AI consumption in one timeline
+- expose current monthly cost, owner, usage signal and recommended action
+- create CFO-ready and CTO-ready ROI evidence for one decision
+- reduce investigation effort because the traceability path is already assembled
 
-**Why first:** Direct labor cost savings (100+ hours/month for a 250-person company = €7K/month = €84K/year). Immediate, measurable ROI. Works for all teams (Platform, Security, Finance, Ops).
+**Why first:** It turns traceability into an executive outcome. Platform teams still get the technical timeline, while Finance/FinOps and CTO leadership get a quantified business decision.
 
-**Real ROI example:** 15 engineers × 2 hours × 6 people per incident × 10 incidents/month = 120 hours/month lost to investigation. Reduce to 20 minutes/incident (2 hours/month total) = 118 hours saved/month = €8,260/month labor cost recovery.
-
-### 2) AI Cost Attribution & Governance (Secondary—Flows from Traceability)
-Problem: "We see the bills, but can't attribute cost to teams, agents, or projects. We don't know if AI is delivering value."
+### 2) Cross-platform Decision Traceability
+Problem: "When an incident, audit request or cost spike happens, we spend hours reconstructing what happened across multiple systems."
 
 Outcomes:
-- cost visibility by team, AI agent, and project
-- automatic detection of unused or inefficient agents
-- foundation for cost optimization and policy enforcement
+- answer who changed what, when, why and with whose approval
+- preserve audit-ready evidence across Jira, GitHub, AWS and AI platforms
+- shorten incident or cost-spike investigation time
+- reduce repeated manual reconstruction
 
-**Why second:** Emerges naturally from decision traceability. Once you know what each decision cost, optimizing AI spending becomes obvious.
+**Why second:** Traceability is the foundation, but the MVP should not stop at "what happened." It should convert that trace into cost, value and recommendation.
 
-### 3) Operational Risk Intelligence & Policy Compliance
-Problem: "We don't know where operational risk is. Policy violations are discovered by audit, not proactively."
+### 3) AI and Cloud Cost Optimization
+Problem: "We see the bills, but cannot attribute spend to decisions, features, teams or AI usage patterns."
 
 Outcomes:
-- excessive access detection
-- risky agent behavior patterns
-- ownerless resources and orphaned decisions
-- policy non-compliance visibility and alerts
+- cost visibility by decision, project, owner and AI model
+- detection of low-usage or inefficient AI features
+- optimization recommendations such as model downgrade, quota changes or retirement
+- annualized recovery estimate for each action
 
-**Why third:** Security and Compliance teams adopt; drives long-term contract value and risk mitigation.
+**Why third:** Optimization becomes credible once the decision timeline shows the business reason, implementation path, infrastructure footprint and AI consumption.
+
+## Canonical ROI Assumptions (Use Consistently)
+
+| Assumption | Canonical value |
+|---|---:|
+| Fully loaded engineering cost | €70/hour |
+| Baseline investigation effort | 6 people × 2 hours = 12 hours |
+| Baseline investigation cost | €840 per investigation |
+| Pilot target assessment effort | 1 person × 30 minutes = 0.5 hours |
+| Pilot target assessment cost | €35 per investigation |
+| Savings per reconstructed decision | €805 |
+| Example volume | 10 investigations/month |
+| Monthly labor recovery | €8,050/month |
+| Annual labor recovery | €96,600/year |
+
+Use these numbers as validation assumptions, not guaranteed customer outcomes.
 
 ## Recommended North-Star KPI
 
-**Reduce operational investigation time (MTTR) from hours/days to minutes (target: <30 min).**
+**Recovered Operational Value**: estimated money saved, time recovered and risk avoided by acting on decision-level recommendations.
