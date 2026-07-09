@@ -20,9 +20,9 @@ IMPERATOR rebuilds that thread.
 
 The MVP links:
 
-Jira -> GitHub -> AWS -> OpenAI/Azure OpenAI -> Executive Dashboard.
+Jira -> GitHub -> AWS -> OpenAI + Anthropic Claude -> Executive Workspace -> Decision Detail -> Decision Ledger.
 
-The dashboard should always answer:
+The product should always answer:
 
 **"This decision costs X today, appears to create Y estimated value, and has an action that can recover Z per year."**
 
@@ -32,7 +32,7 @@ Forty-two days ago, Product approved a Jira ticket:
 
 **"Create an AI assistant for customer onboarding."**
 
-Engineering implemented it through GitHub. The feature was deployed on AWS Lambda. It uses GPT-4o through OpenAI/Azure OpenAI.
+Engineering implemented it through GitHub. The feature was deployed on AWS Lambda. It uses a high-cost model through OpenAI + Anthropic Claude.
 
 Today, Finance asks:
 
@@ -42,7 +42,7 @@ Without IMPERATOR, the team must manually reconstruct:
 - the Jira ticket, epic, owner, priority and status,
 - the GitHub pull requests, commits, reviews and deploys,
 - the AWS services and monthly cost,
-- the OpenAI/Azure OpenAI models, tokens, users and applications,
+- the OpenAI + Anthropic Claude models, tokens, users and applications,
 - the usage or value signal that proves whether the feature is working.
 
 The data exists, but the business answer does not.
@@ -72,9 +72,25 @@ This is the commercial product moment. The customer does not buy another dashboa
 | Business Context | Jira | Why was this decision made? |
 | Code & Deployment | GitHub | Who implemented it and what changed? |
 | Infrastructure & Cost | AWS | What resources does it consume and what does it cost? |
-| AI Consumption | OpenAI / Azure OpenAI | Which models, tokens, users and applications drive AI spend? |
+| AI Consumption | OpenAI + Anthropic Claude | Which models, tokens, users and applications drive AI spend? |
 
-Slack, Microsoft 365, Salesforce, Anthropic, Azure DevOps, ServiceNow, Azure and GCP are expansion candidates, not MVP dependencies.
+Slack, Microsoft 365, Salesforce, Azure OpenAI, Google Gemini, Mistral, Azure DevOps, ServiceNow, Azure and GCP are expansion candidates, not MVP dependencies.
+
+## Priority MVP Recommendations
+
+The first commercial version should focus on recommendations with obvious economic impact:
+
+| Priority | Recommendation | Economic impact |
+|---|---|---|
+| 5/5 | Downgrade or change AI model | Very high |
+| 5/5 | Remove unused AI agents | Very high |
+| 4/5 | Detect underutilized AWS resources | High |
+| 4/5 | Identify features with negative ROI | High |
+| 4/5 | Consolidate duplicated services or agents | High |
+
+This creates the core sales message:
+
+> IMPERATOR finds hidden money in daily operations and explains exactly which decision to approve to recover it.
 
 ## Why This Matters
 
@@ -147,7 +163,7 @@ Separate from labor recovery, each recommendation should include a decision-spec
 
 ### CTO: "Is this just another dashboard?"
 
-No. The MVP is not a generic dashboard. It is a decision reconstruction layer that answers one business question with evidence from Jira, GitHub, AWS and OpenAI/Azure OpenAI.
+No. The MVP is not a generic dashboard. It is a decision reconstruction layer that answers one business question with evidence from Jira, GitHub, AWS and OpenAI + Anthropic Claude.
 
 ### CFO: "Where is the ROI?"
 
@@ -163,15 +179,15 @@ The Phase 0 / pilot framing should use selected decisions, approved exports or r
 
 ### CTO: "Will this integrate with our stack?"
 
-The MVP starts with GitHub, AWS, Jira and OpenAI/Azure OpenAI. Other systems are roadmap expansion, not a promise for the first pilot.
+The MVP starts with Jira, GitHub, AWS and OpenAI + Anthropic Claude. Other systems are roadmap expansion, not a promise for the first pilot.
 
 ## 30-Day Pilot
 
 1. Select one high-cost or high-visibility decision.
-2. Reconstruct the Jira -> GitHub -> AWS -> OpenAI/Azure OpenAI timeline.
+2. Reconstruct the Jira -> GitHub -> AWS -> OpenAI + Anthropic Claude timeline.
 3. Measure current monthly cost.
 4. Capture an available usage or value signal.
-5. Produce one recommendation with annualized recovery.
+5. Produce one recommendation with annualized recovery from the five MVP recommendation families.
 6. Compare manual reconstruction effort with pilot reconstruction effort.
 
 ## Success Looks Like

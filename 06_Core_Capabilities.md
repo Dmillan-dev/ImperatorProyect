@@ -25,9 +25,20 @@ Continuous analytical layer to detect:
 - optimization opportunities
 - negative-ROI or low-value decisions
 
+Initial MVP recommendation families:
+- downgrade or change AI model
+- remove unused AI agents
+- detect underutilized AWS resources
+- identify features with negative ROI
+- consolidate duplicated services or agents
+
 ## 5) Customer Interaction Surfaces (Conceptual)
 Customer value is delivered through:
-- Dashboard Web (primary business visibility surface)
+- Executive Workspace (company-status Home for CEO/CIO/CTO)
+- Decisions (evidence and approval workspace)
+- Decision Ledger (immutable decision history)
+- Business Value (economic proof page)
+- Integrations (operating connectivity map)
 - Context API (open integration entry point)
 - SDKs (Java, Python, Go, JavaScript)
 - Information-domain integrations (Business Context, Code & Deployment, Infrastructure & Cost, AI Consumption)
@@ -39,7 +50,13 @@ Event -> Normalization -> Enrichment -> Correlation -> Context -> Evaluation -> 
 
 MVP narrative object:
 
-Business decision -> Timeline -> Current cost -> Usage/value signal -> ROI recommendation
+Decision ROI Case:
+
+Business Decision -> Technical Change -> Infrastructure -> AI Consumption -> Recommendation -> Result
+
+MVP correlation path:
+
+Jira -> GitHub -> AWS -> OpenAI + Anthropic Claude -> Recommendation -> Result
 
 ## Product Principle
 

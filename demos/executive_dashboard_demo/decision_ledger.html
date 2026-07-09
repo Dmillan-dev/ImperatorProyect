@@ -12,102 +12,105 @@
       <a href="index.html">Executive Workspace</a>
       <a href="decision_detail.html">Decisions</a>
       <a class="is-active" href="decision_ledger.html">Decision Ledger</a>
-      <a href="#business-value">Business Value</a>
-      <a href="#integrations">Integrations</a>
+      <a href="business_value.html">Business Value</a>
+      <a href="integrations.html">Integrations</a>
       <a href="#policies">Policies</a>
       <a href="#settings">Settings</a>
     </nav>
 
     <header class="header compact-header">
-      <div class="eyebrow">IMPERATOR / Ledger</div>
+      <div class="eyebrow">IMPERATOR / Immutable Record</div>
       <h1>Decision Ledger</h1>
-      <p class="subtitle">The operating record of recommended, approved, implemented and validated business decisions.</p>
+      <p class="subtitle">The immutable history of every business decision the company has approved, rejected, implemented or validated.</p>
     </header>
+
+    <section class="panel ai-advisor-panel">
+      <div>
+        <h2 class="panel-title">AI Advisor</h2>
+        <p class="advisor-copy">Future vision: ask the ledger questions in natural language.</p>
+      </div>
+      <div class="advisor-search" role="search">
+        <span>Ask</span>
+        <strong>Show every decision approved by Finance in 2026.</strong>
+      </div>
+      <div class="advisor-prompts" aria-label="Example AI Advisor prompts">
+        <button type="button">Show every decision with ROI &gt;300%.</button>
+        <button type="button">Show every rejected recommendation.</button>
+        <button type="button">Show every AI decision approved this year.</button>
+      </div>
+    </section>
 
     <section class="panel ledger-panel">
       <div class="section-heading-row">
-        <h2 class="panel-title">Recorded Decisions</h2>
-        <a class="secondary-link" href="index.html">Open workspace</a>
+        <h2 class="panel-title">Company Decision Ledger</h2>
+        <span class="muted-note">Business Decision -> Technical Change -> Infrastructure -> AI -> Approval -> Financial Result</span>
       </div>
-      <div class="ledger-table" role="table" aria-label="Decision ledger">
+      <div class="ledger-table full-ledger" role="table" aria-label="Immutable decision ledger">
         <div class="ledger-row ledger-head" role="row">
+          <span role="columnheader">Date</span>
           <span role="columnheader">Decision</span>
+          <span role="columnheader">Owner</span>
           <span role="columnheader">Status</span>
-          <span role="columnheader">Approver</span>
-          <span role="columnheader">Outcome</span>
-          <span role="columnheader">Recovered</span>
+          <span role="columnheader">Annual Impact</span>
         </div>
         <a class="ledger-row" href="decision_detail.html" role="row">
-          <strong role="cell">Downgrade GPT model</strong>
-          <span role="cell">Pending approval</span>
-          <span role="cell">CTO</span>
-          <span role="cell">Forecast ready</span>
-          <strong role="cell">€19.440/year</strong>
+          <span role="cell">14 May</span>
+          <strong role="cell">GPT downgrade</strong>
+          <span role="cell">Platform</span>
+          <span role="cell">Approved</span>
+          <strong role="cell">+€19.440</strong>
         </a>
         <a class="ledger-row" href="decision_detail.html" role="row">
-          <strong role="cell">Remove unused agent</strong>
-          <span role="cell">Validated</span>
-          <span role="cell">VP Engineering</span>
-          <span role="cell">96% of estimate</span>
-          <strong role="cell">€5.160/year</strong>
+          <span role="cell">20 May</span>
+          <strong role="cell">Remove Agents</strong>
+          <span role="cell">AI Team</span>
+          <span role="cell">Approved</span>
+          <strong role="cell">+€12.800</strong>
         </a>
         <a class="ledger-row" href="decision_detail.html" role="row">
-          <strong role="cell">Consolidate SaaS</strong>
+          <span role="cell">2 Jun</span>
+          <strong role="cell">Archive Lambda</strong>
+          <span role="cell">Cloud</span>
           <span role="cell">Implemented</span>
-          <span role="cell">CFO</span>
-          <span role="cell">Tracking</span>
-          <strong role="cell">€9.840/year</strong>
+          <strong role="cell">+€7.200</strong>
+        </a>
+        <a class="ledger-row" href="decision_detail.html" role="row">
+          <span role="cell">19 Jun</span>
+          <strong role="cell">Reject SaaS renewal</strong>
+          <span role="cell">Finance</span>
+          <span role="cell">Rejected</span>
+          <strong role="cell">€0</strong>
         </a>
       </div>
     </section>
 
+    <section class="panel ledger-flow-panel">
+      <h2 class="panel-title">Ledger Structure</h2>
+      <div class="ledger-flow" aria-label="Decision ledger structure">
+        <span>Business Decision</span>
+        <span>Technical Change</span>
+        <span>Infrastructure</span>
+        <span>AI</span>
+        <span>Approval</span>
+        <span>Financial Result</span>
+      </div>
+    </section>
+
     <section class="ledger-sections">
-      <article class="panel" id="business-value">
-        <h2 class="panel-title">Business Value</h2>
-        <div class="value-breakdown ledger-value">
-          <div>
-            <span>Cost Saved</span>
-            <strong>€92.000</strong>
-          </div>
-          <div>
-            <span>Time Recovered</span>
-            <strong>€41.000</strong>
-          </div>
-          <div>
-            <span>Risk Avoided</span>
-            <strong>€31.000</strong>
-          </div>
-          <div>
-            <span>Compliance Automation</span>
-            <strong>€20.320</strong>
-          </div>
-        </div>
-      </article>
-
-      <article class="panel" id="integrations">
-        <h2 class="panel-title">Integrations</h2>
-        <div class="mini-grid">
-          <div><span>Business Context</span><strong>Jira</strong></div>
-          <div><span>Code & Deployment</span><strong>GitHub</strong></div>
-          <div><span>Infrastructure & Cost</span><strong>AWS</strong></div>
-          <div><span>AI Consumption</span><strong>OpenAI / Azure OpenAI</strong></div>
-        </div>
-      </article>
-
       <article class="panel" id="policies">
         <h2 class="panel-title">Policies</h2>
         <div class="detail-list">
+          <div class="detail-row">
+            <span>Record Scope</span>
+            <strong>All decisions</strong>
+          </div>
           <div class="detail-row">
             <span>Execution</span>
             <strong>Recommendation only</strong>
           </div>
           <div class="detail-row">
-            <span>Approval</span>
-            <strong>Company controlled</strong>
-          </div>
-          <div class="detail-row">
             <span>Audit</span>
-            <strong>Decision ledger required</strong>
+            <strong>Immutable ledger required</strong>
           </div>
         </div>
       </article>
@@ -116,16 +119,16 @@
         <h2 class="panel-title">Settings</h2>
         <div class="detail-list">
           <div class="detail-row">
-            <span>Workspace Default</span>
-            <strong>High ROI first</strong>
+            <span>Default View</span>
+            <strong>Approved first</strong>
           </div>
           <div class="detail-row">
             <span>Currency</span>
             <strong>EUR</strong>
           </div>
           <div class="detail-row">
-            <span>Approval Role</span>
-            <strong>CTO</strong>
+            <span>Retention</span>
+            <strong>Permanent</strong>
           </div>
         </div>
       </article>

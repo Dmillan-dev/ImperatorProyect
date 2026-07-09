@@ -26,9 +26,9 @@ The v1 story uses four systems because each answers a different information ques
 | Business Context | Jira | Why was this decision made? |
 | Code & Deployment | GitHub | Who implemented it and what changed? |
 | Infrastructure & Cost | AWS | What resources does it consume and what does it cost? |
-| AI Consumption | OpenAI / Azure OpenAI | Which models, tokens, users and applications drive AI spend? |
+| AI Consumption | OpenAI + Anthropic Claude | Which models, tokens, users and applications drive AI spend? |
 
-Expansion systems such as Slack, Microsoft 365, Salesforce, Anthropic, Azure DevOps, ServiceNow, Azure and GCP should remain future roadmap items until the four-system story is validated.
+Expansion systems such as Slack, Microsoft 365, Salesforce, Azure OpenAI, Google Gemini, Mistral, Azure DevOps, ServiceNow, Azure and GCP should remain future roadmap items until the four-domain story is validated.
 
 ### Entry Point Messaging (Launch)
 
@@ -38,11 +38,21 @@ Expansion systems such as Slack, Microsoft 365, Salesforce, Anthropic, Azure Dev
 ### Initial 30-Day Value Promise
 
 In 30 days, measure:
-- one real decision timeline from Jira intent to GitHub change to AWS cost to OpenAI/Azure OpenAI consumption
+- one real decision timeline from Jira intent to GitHub change to AWS cost to OpenAI + Anthropic Claude consumption
 - current monthly cost of that decision
 - usage or value signal available from existing customer data
 - recommended action and annualized recovery estimate
 - manual reconstruction effort avoided using the canonical ROI assumptions in `04_Value_Proposition.md`
+
+### Priority Recommendation Wedge
+
+The first commercial motion should test five recommendation families:
+
+1. Downgrade or change AI model.
+2. Remove unused AI agents.
+3. Detect underutilized AWS resources.
+4. Identify features with negative ROI.
+5. Consolidate duplicated services or agents.
 
 ## Expand Strategy (Months 2–12)
 
@@ -71,4 +81,4 @@ IMPERATOR is purchased for operational outcomes:
 
 ## Recommended Sales Message
 
-"We help leadership see the live ROI of decisions after they ship. IMPERATOR links Jira, GitHub, AWS and OpenAI/Azure OpenAI so you know why a decision exists, who implemented it, what it costs today, whether it is being used, and what action can recover money."
+"We help leadership see the live ROI of decisions after they ship. IMPERATOR links Jira, GitHub, AWS and OpenAI + Anthropic Claude so you know why a decision exists, who implemented it, what it costs today, whether it is being used, and what action can recover money."

@@ -32,6 +32,7 @@ This documentation system defines IMPERATOR’s canonical context for:
 - [17_Product_Surface_and_Context_Engine_Thesis.md](17_Product_Surface_and_Context_Engine_Thesis.md)
 - [18_Architecture_Thesis.md](18_Architecture_Thesis.md)
 - [19_Executive_Summary.md](19_Executive_Summary.md)
+- [20_MVP_Decision_ROI_Platform_Blueprint.md](20_MVP_Decision_ROI_Platform_Blueprint.md)
 
 ### Operating Templates (recommended)
 - [Hypothesis.md](Hypothesis.md)
@@ -42,7 +43,9 @@ This documentation system defines IMPERATOR’s canonical context for:
 
 ## Canonical Definition
 
-**IMPERATOR is the Operational Intelligence Layer for modern enterprises.**
+**IMPERATOR is a Decision ROI Platform for Executive Operational Intelligence.**
+
+It finds hidden operational money inside shipped technology decisions and explains which action leadership should approve to recover it.
 
 MVP technical rule:
 - **One Decision. One Timeline. One ROI.**
@@ -51,11 +54,21 @@ Canonical intelligence term:
 - ✅ Enterprise Context Intelligence
 - ❌ Decision Intelligence (as primary category term)
 
+Canonical MVP blueprint:
+- [20_MVP_Decision_ROI_Platform_Blueprint.md](20_MVP_Decision_ROI_Platform_Blueprint.md)
+
 MVP information domains:
 - Business Context: Jira
 - Code & Deployment: GitHub
 - Infrastructure & Cost: AWS
-- AI Consumption: OpenAI / Azure OpenAI
+- AI Consumption: OpenAI + Anthropic Claude
+
+MVP recommendation families:
+- AI model downgrade or model change
+- unused AI agent removal
+- underutilized AWS resource detection
+- negative-ROI feature identification
+- duplicated service or agent consolidation
 
 ## Documentation Evolution Rule
 

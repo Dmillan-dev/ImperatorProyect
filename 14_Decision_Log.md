@@ -83,14 +83,14 @@ Format: one entry per decision with date, rationale, and impact.
 - Impact: updated the executive dashboard demo to show interactive flow states, confidence evidence, and approval-oriented CTA language.
 
 ### [2026-07-08] D016 — MVP focus: information domains and Decision ROI Timeline
-- Decision: reframe the MVP around four normalized information domains — Business Context, Code & Deployment, Infrastructure & Cost, and AI Consumption — with GitHub, AWS, Jira, and OpenAI/Azure OpenAI as the initial systems. Adopt **"One Decision. One Timeline. One ROI."** as the technical product rule for v1.
+- Decision: reframe the MVP around four normalized information domains — Business Context, Code & Deployment, Infrastructure & Cost, and AI Consumption — with Jira, GitHub, AWS, and OpenAI + Anthropic Claude as the initial systems. Adopt **"One Decision. One Timeline. One ROI."** as the technical product rule for v1.
 - Rationale: the strongest MVP is not broad connector coverage; it is one complete business story that links why a decision existed, who implemented it, what resources it created, what AI it consumed, and what ROI action is available now.
 - Impact: updates canonical messaging, buyer map, GTM, validation, product surface, executive summary, and dashboard demo. Cross-platform Decision Traceability remains the foundation, but the MVP narrative is now the living ROI of a business decision.
 
 ### [2026-07-08] D017 — Executive decision dashboard: future-facing approval model
 - Decision: evolve the executive dashboard from a backward-looking recovered-value report into a future-facing approval surface. The primary frame is now "If approved today" with annual savings, payback, risk and confidence, supported by a Why block, ownership, decision status and a Decision Lifecycle.
 - Rationale: executives do not buy charts; they buy answers. IMPERATOR should help a CEO/CTO/CFO decide what to approve today, why it matters, who owns it and how much value will be recovered.
-- Impact: updated the executive dashboard demo and executive summary. "Executive Decision Intelligence" may describe the dashboard experience, while `Enterprise Context Intelligence` remains the canonical intelligence domain.
+- Impact: updated the executive dashboard demo and executive summary. `Executive Operational Intelligence` describes the executive experience, while `Enterprise Context Intelligence` remains the canonical intelligence domain.
 
 ### [2026-07-08] D018 — Executive Decision Workspace value model
 - Decision: evolve the dashboard demo into an **Executive Decision Workspace**. The workspace shows a large Projected Annual Savings number, a four-part Annual Business Value breakdown, a decision queue with monthly savings, a future-facing approval CTA, ROI/business impact, confidence based on event count, chronology and clickable lifecycle evidence.
@@ -111,3 +111,13 @@ Format: one entry per decision with date, rationale, and impact.
 - Decision: remove the Decision Lifecycle from the primary Executive Workspace and keep lifecycle evidence inside each Decision Detail. Shift the demo visual language toward a dark, minimal executive workspace with teal value accents and stronger card hierarchy.
 - Rationale: the Workspace should answer what deserves attention now without repeating the evidence structure that already appears per decision. A darker, more shaped visual system makes the experience feel less like a generic dashboard and more like an executive decision workspace.
 - Impact: updated `index.html`, `style.css`, demo README and product-surface guidance. The Workspace now centers on money, decision, evidence and action.
+
+### [2026-07-09] D022 — Expanded executive product surface: Home, Decisions, Ledger, Business Value, Integrations
+- Decision: evolve the HTML demo into five distinct surfaces: Executive Workspace as the company-status Home, Decisions as the evidence and approval workspace, Decision Ledger as the immutable record of all business decisions, Business Value as the economic proof page, and Integrations as the operating connectivity map.
+- Rationale: executives need a simple Home, responsible teams need decision evidence, the company needs an audit ledger, the CIO needs renewal proof, and the MVP needs clear integration boundaries.
+- Impact: removed the final Action rectangle from `index.html`, added a decision list and final approval action to `decision_detail.html`, rewrote `decision_ledger.html`, created `business_value.html` and `integrations.html`, and updated demo styling/documentation.
+
+### [2026-07-09] D023 — Canonical MVP Blueprint and AI provider normalization
+- Decision: add `20_MVP_Decision_ROI_Platform_Blueprint.md` as the canonical MVP blueprint and normalize the AI Consumption boundary to **OpenAI + Anthropic Claude**.
+- Rationale: the project needed one authoritative MVP structure covering category, integrations, core object, priority recommendations, product surfaces and validation criteria. Normalizing the AI provider language prevents drift between OpenAI, Claude, Anthropic and Azure OpenAI wording.
+- Impact: updated core strategy docs, sales narrative, validation plan, architecture thesis, RFC, demo copy and agent guidance around the Decision ROI Platform / Executive Operational Intelligence MVP.

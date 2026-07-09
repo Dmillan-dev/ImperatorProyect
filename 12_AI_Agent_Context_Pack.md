@@ -22,17 +22,21 @@ Agents must not assume undefined technical implementation.
    - Business Context: Jira
    - Code & Deployment: GitHub
    - Infrastructure & Cost: AWS
-   - AI Consumption: OpenAI / Azure OpenAI
-9. Defer Slack, Microsoft 365, Salesforce, Anthropic, Azure DevOps, ServiceNow, Azure and GCP as expansion systems unless explicitly needed for a validated pilot.
+   - AI Consumption: OpenAI + Anthropic Claude
+9. Defer Slack, Microsoft 365, Salesforce, Azure OpenAI, Google Gemini, Mistral, Azure DevOps, ServiceNow, Azure and GCP as expansion systems unless explicitly needed for a validated pilot.
 10. Treat the product surface as `Workspace -> Decision -> Ledger`, not as a generic dashboard.
 11. Navigation should use: Executive Workspace, Decisions, Decision Ledger, Business Value, Integrations, Policies, Settings.
-12. Executive Workspace answers: which decision deserves attention now? It should show Summary -> Decision Queue -> Selected Decision -> Evidence -> Review action. Lifecycle belongs inside each Decision Detail.
-13. Decision Detail answers: can the company trust this recommendation enough to approve it? Put ownership, status, chronology, historical outcomes and deep lifecycle evidence there.
-14. Decision Ledger answers: what was recommended, approved, implemented and validated over time?
-15. Use monthly savings in decision queues and annualized value for executive summaries.
-16. Do not let product surface work drift into chart-heavy analytics or evidence overload.
-17. Use `Review Decision` on the executive workspace; use `Approve Recommendation` only inside the decision detail page.
-18. Do not change category/ICP/wedge without logging in `14_Decision_Log.md`.
+12. Executive Workspace answers: how is the company right now? It should show executive summary, projected annual savings, recovered value, business impact, time saved, AI spend, compliance score, decision queue, selected decision and evidence. Lifecycle belongs inside each Decision Detail.
+13. Decision Detail answers: can the company trust this recommendation enough to approve it? It needs a decision list, ownership, status, chronology, historical outcomes, deep lifecycle evidence and the final `Approve Recommendation` action at the end.
+14. Decision Ledger answers: what has the company decided over time? It is an immutable ledger of all business decisions, not only recommendations.
+15. Business Value answers: what economic value has IMPERATOR generated? It should prove recovered value, recovered time and customer ROI.
+16. Integrations answers: what operating systems are connected? For MVP, focus on AWS, GitHub, Jira and OpenAI + Anthropic Claude.
+17. Use monthly savings in decision queues and annualized value for executive summaries.
+18. Prioritize five MVP recommendation families: AI model downgrade/change, unused AI agent removal, underutilized AWS resource detection, negative-ROI feature identification and duplicated service/agent consolidation.
+19. Do not let product surface work drift into chart-heavy analytics or evidence overload.
+20. Use `Review Decision` on the executive workspace; use `Approve Recommendation` only inside the decision detail page.
+21. Use `20_MVP_Decision_ROI_Platform_Blueprint.md` as the canonical MVP blueprint.
+22. Do not change category/ICP/wedge without logging in `14_Decision_Log.md`.
 
 ## Writing Style
 

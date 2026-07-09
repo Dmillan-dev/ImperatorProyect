@@ -31,20 +31,27 @@ Para el MVP, el grafo debe poder expresar una Decision ROI Timeline:
 Business Context → Code & Deployment → Infrastructure & Cost → AI Consumption → ROI Recommendation
 ```
 
+El objeto narrativo que atraviesa las capas debe ser el **Decision ROI Case**:
+
+```
+Business Decision → Technical Change → Infrastructure → AI Consumption → Recommendation → Result
+```
+
 Sistemas iniciales:
 - Business Context: Jira
 - Code & Deployment: GitHub
 - Infrastructure & Cost: AWS
-- AI Consumption: OpenAI / Azure OpenAI
+- AI Consumption: OpenAI + Anthropic Claude
 
 Componentes clave:
 - Decision Ledger: registro inmutable de decisiones y su metadatos.
 - Context Engine: normalización, enrichments, correlación y construcción de contexto reutilizable.
 - Knowledge Graph / modelo relacional: representación conceptual de entidades y relaciones (puede comenzar en PostgreSQL, migrable a DB de grafos si se justifica).
+- Recommendation Engine: evaluación conceptual de las cinco familias MVP de recuperación económica.
 
 ## Integración y flujo (conceptual)
 
-Evento → Ingesta → Decision Pipeline → Decision Ledger → Context Engine → Risk Engine → Knowledge Graph → AI Engine → Recomendaciones → Dashboard
+Evento → Ingesta → Decision Pipeline → Decision Ledger → Context Engine → Risk Engine → Knowledge Graph → AI Engine → Recomendaciones → Executive Workspace / Decision Detail
 
 Notas operativas:
 - La IA nunca debe operar sobre fuentes crudas; siempre trabaja sobre contexto preparado.
@@ -59,7 +66,7 @@ Notas operativas:
 
 ## Roadmap evolutivo (sugerido)
 
-- Año 1 (MVP): validar la Decision ROI Timeline con GitHub, AWS, Jira y OpenAI/Azure OpenAI antes de ampliar conectores o stack operativo.
+- Año 1 (MVP): validar la Decision ROI Timeline con Jira, GitHub, AWS y OpenAI + Anthropic Claude antes de ampliar conectores o stack operativo.
 - Año 2 (escala inicial): API Gateway, Kafka para eventos, Java ingestion scalable, Python services desacoplados, Redis para caches, mejoras en Context Engine.
 - Año 3 (plataforma): Clústeres de ingesta (Java), clústeres de AI (Python), Knowledge Graph/Vector DB, OpenSearch/analytics, Data Lake.
 

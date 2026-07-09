@@ -8,11 +8,25 @@ The MVP does not compete on connecting everything. It proves value by normalizin
 - Business Context: Jira explains why the decision exists.
 - Code & Deployment: GitHub explains who implemented it and what changed.
 - Infrastructure & Cost: AWS explains which resources were created and what they cost.
-- AI Consumption: OpenAI / Azure OpenAI explains model, token, user and application cost.
+- AI Consumption: OpenAI + Anthropic Claude explains model, token, request, user and application cost.
 
 ## Primary MVP Question
 
 **This business decision costs X today, appears to create Y estimated value, and has an action that can recover Z per year.**
+
+## Priority MVP Recommendations
+
+| Priority | Recommendation | Economic impact |
+|---|---|---|
+| 5/5 | Downgrade or change AI model | Very high |
+| 5/5 | Remove unused AI agents | Very high |
+| 4/5 | Detect underutilized AWS resources | High |
+| 4/5 | Identify features with negative ROI | High |
+| 4/5 | Consolidate duplicated services or agents | High |
+
+These five recommendation families are the MVP value spine. They support the commercial message:
+
+**IMPERATOR finds hidden money in daily operations and explains exactly which decision to take to recover it.**
 
 ## Painkillers (Prioritized by Buying Urgency)
 
@@ -48,6 +62,14 @@ Outcomes:
 - annualized recovery estimate for each action
 
 **Why third:** Optimization becomes credible once the decision timeline shows the business reason, implementation path, infrastructure footprint and AI consumption.
+
+## Recommended MVP Object
+
+The canonical MVP object is the **Decision ROI Case**:
+
+Business Decision -> Technical Change -> Infrastructure -> AI Consumption -> Recommendation -> Result.
+
+Each case must include current cost, usage/value proxy, owner, approver, confidence and annualized recovery.
 
 ## Canonical ROI Assumptions (Use Consistently)
 

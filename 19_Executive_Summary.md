@@ -2,7 +2,7 @@
 
 ## What it is
 
-IMPERATOR is an Enterprise Operational Intelligence Platform. Its purpose is to transform operational events from cloud, SaaS, code and AI systems into business context that is searchable, explainable, measurable and actionable.
+IMPERATOR is a Decision ROI Platform for Executive Operational Intelligence. Its purpose is to transform operational events from cloud, code and AI systems into business context that is searchable, explainable, measurable and actionable.
 
 The MVP thesis is simple:
 
@@ -25,13 +25,13 @@ The MVP normalizes four information domains:
 | Business Context | Jira | Why the decision exists: project, ticket, epic, priority, owner, status |
 | Code & Deployment | GitHub | Who implemented it: pull requests, commits, reviews, deploys, author, date |
 | Infrastructure & Cost | AWS | What it consumes: Cost Explorer, CloudWatch, Lambda, ECS, EC2, EKS |
-| AI Consumption | OpenAI / Azure OpenAI | What AI costs: models, tokens, cost, user, application |
+| AI Consumption | OpenAI + Anthropic Claude | What AI costs: models, tokens, cost, user, application |
 
 The Executive Workspace should answer the same question every time:
 
 **"This decision costs X today, appears to create Y estimated value, and has an action that can recover Z per year."**
 
-The executive surface can be described as **Executive Decision Intelligence** and expressed as **Workspace -> Decision -> Ledger**: it does not analyze servers, logs or costs as isolated objects; it analyzes business decisions, the evidence behind them and the record of what was approved.
+The executive surface is **Executive Operational Intelligence** expressed as **Workspace -> Decision -> Ledger**: it does not analyze servers, logs or costs as isolated objects; it analyzes business decisions, the evidence behind them and the record of what was approved.
 
 ## Who it is for
 
@@ -65,7 +65,14 @@ IMPERATOR is designed to become the intelligence layer that helps enterprises an
 
 The MVP should prove that through one complete story:
 
-Jira -> GitHub -> AWS -> OpenAI/Azure OpenAI -> Executive Workspace -> Decision Detail -> Decision Ledger.
+Jira -> GitHub -> AWS -> OpenAI + Anthropic Claude -> Executive Workspace -> Decision Detail -> Decision Ledger.
+
+The first MVP recommendations should be:
+- downgrade or change AI model,
+- remove unused AI agents,
+- detect underutilized AWS resources,
+- identify features with negative ROI,
+- consolidate duplicated services or agents.
 
 ## Strategic recommendations
 

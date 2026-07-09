@@ -25,7 +25,7 @@ business intent + code change + infrastructure cost + AI consumption + ROI recom
 
 - AWS knows AWS. But not Azure, GCP, or GitHub.
 - Microsoft knows Azure. But not AWS, OpenAI, or Slack.
-- OpenAI knows LLMs. But not the enterprise context where they run.
+- OpenAI and Anthropic know LLMs. But not the enterprise context where they run.
 
 A modern enterprise uses **all of them simultaneously.**
 
@@ -37,7 +37,9 @@ We can:
 - detect costs and risks that hyperscalers don't track
 - optimize spending without vendor bias
 - enforce policies consistently across entire landscape
-- explain the ROI of one decision across Jira, GitHub, AWS and OpenAI/Azure OpenAI
+- explain the ROI of one decision across Jira, GitHub, AWS and OpenAI + Anthropic Claude
+
+The MVP moat is not broad connector coverage. It is the ability to correlate a Decision ROI Case across business context, code, infrastructure and AI consumption, then produce a recommendation leadership can approve.
 
 **Hyperscalers cannot do this.** Their business model depends on lock-in, not cross-platform clarity.
 

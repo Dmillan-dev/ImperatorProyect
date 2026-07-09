@@ -10,9 +10,9 @@ Startup concept + Final Degree Project (TFG)
 Phase 0 — Idea Creation and Validation (No code)
 
 ## Core Mission
-Transform operational events into business intelligence.
+Transform operational events into decision-level ROI intelligence.
 
-Every enterprise decision should become searchable, explainable, measurable and optimizable. IMPERATOR is the Enterprise Operational Intelligence Platform.
+Every enterprise technology decision should become searchable, explainable, measurable and optimizable. IMPERATOR is a **Decision ROI Platform** for **Executive Operational Intelligence**.
 
 MVP rule: **One Decision. One Timeline. One ROI.**
 
@@ -24,6 +24,8 @@ Build the intelligence layer that lets organizations answer, within seconds:
 - what it cost,
 - what value it generated,
 - and how to optimize it.
+
+The MVP objective is to correlate Jira, GitHub, AWS and OpenAI + Anthropic Claude into credible, approval-ready ROI recommendations.
 
 ## Phase Scope (IN)
 - Category and positioning definition
@@ -45,4 +47,5 @@ Build the intelligence layer that lets organizations answer, within seconds:
 2. Consistent and differentiated commercial narrative.
 3. One clear entry wedge use case: Decision ROI Timeline.
 4. Buyer-path clarity per persona.
-5. Stable, versioned context for humans and AI agents.
+5. Five prioritized MVP recommendations tied to economic impact.
+6. Stable, versioned context for humans and AI agents.

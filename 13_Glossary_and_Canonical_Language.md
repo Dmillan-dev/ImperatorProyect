@@ -3,6 +3,8 @@
 ## Canonical Terms
 
 - Operational Intelligence Layer
+- Decision ROI Platform
+- Executive Operational Intelligence
 - Enterprise Context Intelligence
 - Context API
 - Context Ledger
@@ -10,7 +12,6 @@
 - Decision ROI Timeline
 - Decision Lifecycle
 - Decision Ledger
-- Executive Decision Intelligence
 - Executive Decision Workspace
 - Recovered Operational Value
 - Operational Risk Intelligence
@@ -22,9 +23,11 @@
 - “another AI platform”
 - “traditional observability” as primary definition
 - “Decision Intelligence” as core category label
+- “Executive Decision Intelligence” as primary category label
 - “connector-first platform” as MVP framing
 - chart-heavy dashboard as executive value proof
 - dashboard as the primary product metaphor
+- autonomous execution as MVP promise
 
 ## Master Phrases
 
@@ -36,3 +39,5 @@
 6. “Executives buy answers, not charts.”
 7. “Use monthly savings for decisions and annual savings for executive summaries.”
 8. “Workspace prioritizes. Decision validates. Ledger records.”
+9. “IMPERATOR recommends. The company decides.”
+10. “Find hidden operational money and explain the decision to recover it.”

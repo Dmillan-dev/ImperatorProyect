@@ -12,8 +12,8 @@
       <a href="index.html">Executive Workspace</a>
       <a class="is-active" href="decision_detail.html">Decisions</a>
       <a href="decision_ledger.html">Decision Ledger</a>
-      <a href="decision_ledger.html#business-value">Business Value</a>
-      <a href="decision_ledger.html#integrations">Integrations</a>
+      <a href="business_value.html">Business Value</a>
+      <a href="integrations.html">Integrations</a>
       <a href="decision_ledger.html#policies">Policies</a>
       <a href="decision_ledger.html#settings">Settings</a>
     </nav>
@@ -24,6 +24,31 @@
       <p class="subtitle">Full evidence behind the recommendation. IMPERATOR recommends; the company decides.</p>
       <a class="secondary-link" href="index.html">Back to workspace</a>
     </header>
+
+    <section class="panel decision-switcher">
+      <div class="section-heading-row">
+        <h2 class="panel-title">Decision List</h2>
+        <span class="muted-note">Switch context before approving.</span>
+      </div>
+      <div class="decision-table" role="table" aria-label="Decision list">
+        <div class="decision-table-head" role="row">
+          <span role="columnheader">Decision</span>
+          <span role="columnheader">Annual Impact</span>
+        </div>
+        <a class="decision-row is-selected" href="decision_detail.html" role="row">
+          <span role="cell">GPT model downgrade</span>
+          <strong role="cell">+€19.440</strong>
+        </a>
+        <a class="decision-row" href="decision_detail.html" role="row">
+          <span role="cell">Remove idle AI agents</span>
+          <strong role="cell">+€12.800</strong>
+        </a>
+        <a class="decision-row" href="decision_detail.html" role="row">
+          <span role="cell">Archive unused Lambda</span>
+          <strong role="cell">+€7.200</strong>
+        </a>
+      </div>
+    </section>
 
     <section class="detail-hero">
       <article class="recommendation-card detail-recommendation">
@@ -47,7 +72,6 @@
             <strong>96%</strong>
           </div>
         </div>
-        <button class="primary-button" type="button">Approve Recommendation</button>
       </article>
 
       <article class="panel financial-impact">
@@ -323,6 +347,15 @@
           <strong>-82% usage</strong>
         </div>
       </div>
+    </section>
+
+    <section class="final-approval-card" aria-label="Final approval">
+      <div>
+        <span>Final Step</span>
+        <strong>Approve this recommendation after reviewing the full evidence.</strong>
+        <em>Equivalent to opening an executive Jira ticket, with financial impact, ownership and audit trail attached.</em>
+      </div>
+      <button class="primary-button" type="button">Approve Recommendation</button>
     </section>
 
     <script>

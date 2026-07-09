@@ -22,11 +22,22 @@ El modelo debe priorizar cuatro dominios de información antes de ampliar conect
 - Business Context: Jira aporta proyecto, ticket, epic, prioridad, responsable y estado.
 - Code & Deployment: GitHub aporta pull requests, commits, reviews, deploys, autor y fecha.
 - Infrastructure & Cost: AWS aporta Cost Explorer, CloudWatch, Lambda, ECS, EC2 y EKS.
-- AI Consumption: OpenAI / Azure OpenAI aporta modelos, tokens, coste, usuario y aplicación.
+- AI Consumption: OpenAI + Anthropic Claude aporta modelos, tokens, coste, usuario y aplicación.
 
 La pregunta de producto que debe soportar el grafo es:
 
 > Esta decisión cuesta X hoy, aporta Y valor estimado y tiene una acción que puede recuperar Z al año.
+
+El objeto narrativo canónico es el **Decision ROI Case**:
+
+Business Decision -> Technical Change -> Infrastructure -> AI Consumption -> Recommendation -> Result.
+
+El grafo debe poder soportar las cinco recomendaciones MVP:
+- downgrade o cambio de modelo IA
+- eliminación de agentes IA sin uso
+- detección de recursos AWS infrautilizados
+- identificación de funcionalidades con ROI negativo
+- consolidación de servicios o agentes duplicados
 
 ## Mapping protos → esquema inicial (Postgres)
 

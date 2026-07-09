@@ -2,9 +2,9 @@
 
 ## Vision
 
-**IMPERATOR is the Operational Intelligence Layer for modern enterprises.**
+**IMPERATOR is a Decision ROI Platform for Executive Operational Intelligence.**
 
-As organizations adopt multi-cloud, SaaS, AI models, and autonomous agents, critical decisions are distributed across disconnected systems. IMPERATOR unifies that operational context into one decision timeline with measurable ROI.
+As organizations adopt cloud, SaaS, AI models and autonomous agents, critical decisions are distributed across disconnected systems. IMPERATOR unifies that operational context into one decision timeline with measurable ROI.
 
 ## Positioning
 
@@ -13,7 +13,7 @@ IMPERATOR makes them work together with business context.
 
 ## Category
 
-**Enterprise Operational Intelligence Platform**
+**Decision ROI Platform / Executive Operational Intelligence**
 
 Primary intelligence domain:
 
@@ -34,11 +34,11 @@ The first product story should connect one business decision across four informa
 - Business Context: why the decision exists.
 - Code & Deployment: who implemented it and what changed.
 - Infrastructure & Cost: what resources it consumes and what it costs.
-- AI Consumption: which models, tokens, users, and applications drive AI spend.
+- AI Consumption: which OpenAI + Anthropic Claude models, tokens, users, and applications drive AI spend.
 
 ## Short Commercial Message
 
-"When a business decision ships, its context gets scattered across Jira, GitHub, AWS, and AI platforms. IMPERATOR rebuilds the full timeline in minutes: why it was approved, who implemented it, what it costs today, what value it appears to create, and which action can recover spend."
+"When a business decision ships, its context gets scattered across Jira, GitHub, AWS and AI providers. IMPERATOR rebuilds the full timeline in minutes: why it was approved, who implemented it, what it costs today, what value it appears to create, and which action can recover spend."
 
 ## Why This Matters
 
