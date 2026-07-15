@@ -9,6 +9,18 @@ Startup concept + Final Degree Project (TFG)
 ## Current Phase
 Phase 0 — Idea Creation and Validation (No code)
 
+## Context Control
+
+The founder-mode prompt provides ambition, quality bar and CTO posture. The repository documents provide current authority.
+
+For conflicts, use:
+- `docs/decisions/14_Decision_Log.md` for accepted changes.
+- `docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md` for MVP product scope.
+- `docs/product/CORE_DOMAIN_MODEL.md` for domain entities and relationships.
+- `docs/product/API_SPECIFICATION.md` for conceptual API surface.
+- `docs/architecture/21_Technical_Architecture_Context.md` for target architecture context.
+- `docs/ai/12_AI_Agent_Context_Pack.md` and `docs/product/13_Glossary_and_Canonical_Language.md` for agent behavior and canonical language.
+
 ## Core Mission
 Transform operational events into decision-level ROI intelligence.
 

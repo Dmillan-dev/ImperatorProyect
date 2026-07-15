@@ -59,6 +59,17 @@ This creates a direct ROI story through:
 
 This project is currently in Phase 0: idea creation and validation, with no software implementation yet. The work is focused on positioning, ICP definition, value proposition, market assumptions, conceptual product scope and stable strategic context for future product and AI-agent work.
 
+## Current canonical interpretation
+
+The founder-mode ambition remains valid: act like a CTO building an enterprise-grade SaaS. The current repository decisions refine that ambition into a narrower Phase 0 mandate:
+
+- MVP wedge: Decision ROI Timeline built on cross-platform decision traceability.
+- Product category: Decision ROI Platform for Executive Operational Intelligence.
+- Intelligence domain: Enterprise Context Intelligence.
+- Product surface: Workspace -> Decision -> Ledger.
+- MVP integrations: Jira, GitHub, AWS and OpenAI + Anthropic Claude.
+- Architecture status: target context for Phase 1 planning, not permission to build production services in Phase 0.
+
 ## Bottom line
 
 IMPERATOR is designed to become the intelligence layer that helps enterprises answer, in seconds, what happened, why it happened, who is responsible, what it costs, what value it generates and how to optimize it.

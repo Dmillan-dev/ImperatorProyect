@@ -3,6 +3,8 @@
 Date: 2026-07-07
 Status: Accepted
 
+Phase 0 note: this mandate defines future internal service-to-service communication. It does not authorize runnable services, generated production bindings, production connectors or deployment configuration during Phase 0.
+
 ## Context
 
 La arquitectura de IMPERATOR separa responsabilidades entre un motor de ingesta (Operational Intelligence Layer) y un motor de razonamiento (AI Intelligence Layer). Se requiere un contrato estable y tipado entre servicios internos escritos en diferentes lenguajes.
@@ -29,6 +31,6 @@ El uso obligatorio de gRPC+Protobuf para el plano interno reduce fricción entre
 
 ## Next Steps
 
-1. Registrar D013 en `14_Decision_Log.md`.
+1. Registrar D013 en `docs/decisions/14_Decision_Log.md`.
 2. Completar el set inicial de protos canónicos (Decision, Person, Team, Resource, Agent, Model, Policy, Cost, Incident).
 3. Añadir plantilla de CI para generación de bindings y pruebas de compatibilidad.

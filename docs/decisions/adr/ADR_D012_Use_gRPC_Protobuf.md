@@ -1,7 +1,9 @@
 # ADR D012 — Usar gRPC y Protocol Buffers desde el día uno (recomendación no vinculante)
 
 Date: 2026-07-07
-Status: Proposed
+Status: Superseded by ADR D013
+
+Phase 0 note: this ADR is retained as historical rationale. ADR D013 is the accepted internal communication mandate. Neither ADR authorizes runnable services or generated production bindings during Phase 0.
 
 ## Context
 
@@ -23,6 +25,6 @@ gRPC+Protobuf asegura un contrato estable entre Java y Python, mejora el rendimi
 
 ## Next Steps
 
-1. Si aprobada, registrar la decisión en `14_Decision_Log.md` (D012).
+1. Si aprobada, registrar la decisión en `docs/decisions/14_Decision_Log.md` (D012).
 2. Crear un repositorio `proto/` con primeros mensajes (p. ej. `Decision.proto`).
 3. Generar artefactos en Java y Python y validar un ejemplo end-to-end entre ingestion → AI service.

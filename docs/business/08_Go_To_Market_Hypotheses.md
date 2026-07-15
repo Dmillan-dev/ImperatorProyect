@@ -42,7 +42,7 @@ In 30 days, measure:
 - current monthly cost of that decision
 - usage or value signal available from existing customer data
 - recommended action and annualized recovery estimate
-- manual reconstruction effort avoided using the canonical ROI assumptions in `04_Value_Proposition.md`
+- manual reconstruction effort avoided using the canonical ROI assumptions in `docs/business/04_Value_Proposition.md`
 
 ### Priority Recommendation Wedge
 

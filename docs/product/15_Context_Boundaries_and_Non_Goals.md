@@ -4,6 +4,17 @@
 
 Prevent strategic drift and preserve execution focus.
 
+## Context Authority Boundaries
+
+- Master prompts and historical documents are inputs, not overrides.
+- `docs/decisions/14_Decision_Log.md` owns accepted strategic and architectural changes.
+- `docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md` owns the MVP product boundary.
+- `docs/product/CORE_DOMAIN_MODEL.md` owns core entities, relationships and business invariants.
+- `docs/product/API_SPECIFICATION.md` owns conceptual API intent before implementation.
+- `docs/architecture/21_Technical_Architecture_Context.md` owns target architecture context and guardrails.
+- Agent and service READMEs describe responsibilities and scaffolding only during Phase 0.
+- If a prompt asks for production code, broad connector expansion or category changes during Phase 0, pause and require an explicit decision-log update.
+
 ## Non-goals (current phase)
 
 - building a full SIEM platform

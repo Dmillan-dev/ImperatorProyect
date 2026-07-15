@@ -30,37 +30,37 @@ Format: one entry per decision with date, rationale, and impact.
 ### [2026-07-06] D005 — Sales narrative + land-and-expand model
 - Decision: adopt explicit "land and expand" commercial messaging; create detailed Sales Narrative document for internal alignment; launch with specific problem focus (decision traceability + AI governance + cost attribution) rather than horizontal coverage.
 - Rationale: reduces buyer skepticism, increases credibility, matches B2B SaaS investor expectations, creates natural upsell path (Platform → Security → Compliance → FinOps → Legal → Exec).
-- Impact: new document (16_Sales_Narrative_and_Commercial_Case.md); updates to GTM hypotheses; refined commercial claims in core positioning documents.
+- Impact: new document (docs/business/16_Sales_Narrative_and_Commercial_Case.md); updates to GTM hypotheses; refined commercial claims in core positioning documents.
 
 ### [2026-07-06] D006 — Entry point pivot: Decision Traceability (MTTR) over AI Cost Attribution
 - Decision: primary entry point is **Operational Decision Traceability** (with measurable MTTR reduction); AI cost attribution becomes secondary painkiller (flows from traceability, not primary driver).
 - Rationale: "AI Cost Attribution" creates perception of dashboard competition (AWS, OpenAI already show costs); "Decision Traceability" solves tangible pain (80% MTTR reduction, 7K€/month labor savings per customer). Easier to justify, stronger differentiation, better ROI story (100 hours/month saved = 84K€/year for 250-person company).
-- Impact: reorder painkillers in 04_Value_Proposition.md; update entry point and ROI in 08_Go_To_Market_Hypotheses.md; maintain "land and expand" thesis but with clearer primary wedge.
+- Impact: reorder painkillers in docs/business/04_Value_Proposition.md; update entry point and ROI in docs/business/08_Go_To_Market_Hypotheses.md; maintain "land and expand" thesis but with clearer primary wedge.
 
 ### [2026-07-06] D007 — Core brand message evolution
 - Decision: strengthen brand thesis from "We are a layer" to **"We transform operational chaos into business decisions"**; emphasize that IMPERATOR connects existing systems, not replaces them.
 - Rationale: original framing is infrastructure-focused (inside-out); market-leading positioning must be buyer-centric (outside-in). New framing directly addresses CTO/CFO pain: chaos → clarity. Aligns with B2B software principle: companies buy outcome improvements, not features.
-- Impact: updated 01_Vision_and_Positioning.md; strengthens external sales messaging; clearer positioning against "another tool" objection.
+- Impact: updated docs/business/01_Vision_and_Positioning.md; strengthens external sales messaging; clearer positioning against "another tool" objection.
 
 ### [2026-07-06] D008 — Multi-stakeholder simultaneous value as competitive advantage
 - Decision: explicitly design IMPERATOR so that each stakeholder (Platform Eng Manager, Finance, Security, CTO) sees **different primary benefit on the same platform** during Year 1; this multi-departmental adoption is a moat against replacement and drives land-and-expand expansion.
 - Rationale: B2B SaaS products that create value for >1 department have 3× higher retention and faster expansion. Platform Eng Manager cares about MTTR; CFO cares about cost attribution; CISO cares about risk; CTO cares about strategic visibility. If IMPERATOR delivers all four simultaneously, switching cost increases dramatically.
-- Impact: influences product design priorities; shapes GTM messaging (lead with MTTR, but ensure Finance/Security/CTO see value in 30-day pilot); updates 08_Go_To_Market_Hypotheses.md and 16_Sales_Narrative_and_Commercial_Case.md with multi-buyer narrative.
+- Impact: influences product design priorities; shapes GTM messaging (lead with MTTR, but ensure Finance/Security/CTO see value in 30-day pilot); updates docs/business/08_Go_To_Market_Hypotheses.md and docs/business/16_Sales_Narrative_and_Commercial_Case.md with multi-buyer narrative.
 
 ### [2026-07-06] D009 — Neutrality as irreplicable competitive moat
 - Decision: explicitly position IMPERATOR's **neutrality across hyperscalers** (AWS, Azure, GCP, OpenAI, etc.) as the core competitive advantage; recognize that no hyperscaler can be truly neutral due to lock-in business model.
 - Rationale: this is the deepest moat. AWS, Microsoft, and OpenAI are vendors; IMPERATOR is an independent layer. Over time, IMPERATOR builds an operational knowledge base (millions of enriched decisions with cost, risk, outcome patterns) that cannot be easily replicated. Hyperscalers lack both neutrality and cross-system context.
-- Impact: updated 07_Differentiation_and_Moat.md; clarifies moat defensibility in investor conversations; differentiates from "another observability dashboard" perception; supports position that IMPERATOR can remain independent long-term.
+- Impact: updated docs/business/07_Differentiation_and_Moat.md; clarifies moat defensibility in investor conversations; differentiates from "another observability dashboard" perception; supports position that IMPERATOR can remain independent long-term.
 
 ### [2026-07-06] D010 — Product surface model: Dashboard-led SaaS + open API
 - Decision: define customer-facing product model as a SaaS platform with a primary Dashboard Web surface, supported by an open Context API, SDKs, and connectors; formalize the internal context-engine cycle as the hardest-to-replicate capability.
 - Rationale: enterprise buyers validate value through visibility and outcomes, while technical teams require integration speed and ecosystem fit. This dual-entry model improves adoption and supports land-and-expand without changing category, ICP, or wedge.
-- Impact: new canonical document 17_Product_Surface_and_Context_Engine_Thesis.md; updates to README index; update to Phase-0 scope and core capabilities language to include customer interaction surfaces at conceptual level.
+- Impact: new canonical document docs/product/17_Product_Surface_and_Context_Engine_Thesis.md; updates to README index; update to Phase-0 scope and core capabilities language to include customer interaction surfaces at conceptual level.
 
 ### [2026-07-07] D011 — Arquitectura (Tesis): responsabilidades separadas y capa de contexto
-- Decision: adoptar una tesis arquitectónica conceptual que priorice responsabilidades (Operational Intelligence Layer, Context Layer, AI Intelligence Layer) y que recomiende, de forma no vinculante, ingesta optimizada para JVM (Java) y experimentación IA en Python. Registrar el documento canónico `18_Architecture_Thesis.md`.
+- Decision: adoptar una tesis arquitectónica conceptual que priorice responsabilidades (Operational Intelligence Layer, Context Layer, AI Intelligence Layer) y que recomiende, de forma no vinculante, ingesta optimizada para JVM (Java) y experimentación IA en Python. Registrar el documento canónico `docs/architecture/18_Architecture_Thesis.md`.
 - Rationale: separando las responsabilidades (ingesta a escala vs razonamiento contextual) se reduce la complejidad operacional y se preserva la capacidad de experimentación IA; el Context Layer (modelo de grafo de decisiones) es el activo estratégico y debe ser tratado como tal.
-- Impact: añade `18_Architecture_Thesis.md` como documento de alineación; mantiene el foco en `Enterprise Context Intelligence` y `Cross-platform Decision Traceability`; cualquier cambio de arquitectura o expansión del ICP deberá registrarse en este log.
+- Impact: añade `docs/architecture/18_Architecture_Thesis.md` como documento de alineación; mantiene el foco en `Enterprise Context Intelligence` y `Cross-platform Decision Traceability`; cualquier cambio de arquitectura o expansión del ICP deberá registrarse en este log.
 
 ### [2026-07-07] D012 — Recomendación: gRPC + Protobuf desde Day 1
 - Decision: recomendar el uso de **gRPC** como mecanismo RPC y **Protocol Buffers** como formato de contrato canónico (incluyendo mensajes en Kafka) para comunicación Java ⇄ Python desde la fase inicial, manteniéndolo como recomendación no vinculante hasta validación del MVP.
@@ -118,6 +118,21 @@ Format: one entry per decision with date, rationale, and impact.
 - Impact: removed the final Action rectangle from `index.html`, added a decision list and final approval action to `decision_detail.html`, rewrote `decision_ledger.html`, created `business_value.html` and `integrations.html`, and updated demo styling/documentation.
 
 ### [2026-07-09] D023 — Canonical MVP Blueprint and AI provider normalization
-- Decision: add `20_MVP_Decision_ROI_Platform_Blueprint.md` as the canonical MVP blueprint and normalize the AI Consumption boundary to **OpenAI + Anthropic Claude**.
+- Decision: add `docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md` as the canonical MVP blueprint and normalize the AI Consumption boundary to **OpenAI + Anthropic Claude**.
 - Rationale: the project needed one authoritative MVP structure covering category, integrations, core object, priority recommendations, product surfaces and validation criteria. Normalizing the AI provider language prevents drift between OpenAI, Claude, Anthropic and Azure OpenAI wording.
 - Impact: updated core strategy docs, sales narrative, validation plan, architecture thesis, RFC, demo copy and agent guidance around the Decision ROI Platform / Executive Operational Intelligence MVP.
+
+### [2026-07-13] D024 — Canonical Technical Architecture Context
+- Decision: add `docs/architecture/21_Technical_Architecture_Context.md` as the canonical target architecture context for IMPERATOR.
+- Rationale: the project needed a controlled architecture map that connects the Decision ROI Platform strategy with future implementation responsibilities: product surfaces, bounded contexts, connector boundaries, Context Engine, ROI Engine, Recommendation Engine, AI layer, Decision Ledger, communication contracts and Phase 0 guardrails.
+- Impact: updated architecture thesis, README, AI agent context pack, repo structure docs, Phase 0 guidelines, RFC guidance and agent/service READMEs. This does not start implementation; it prepares Phase 1 planning while preserving Phase 0 no-code boundaries.
+
+### [2026-07-15] D025 — Context authority and Phase 0 interpretation
+- Decision: establish an explicit context authority order: Decision Log -> MVP Blueprint -> Technical Architecture Context -> AI Agent Context Pack -> Glossary. Treat founder-mode prompts and older documents as ambition or historical context when they conflict with current canonical decisions.
+- Rationale: the project now has a strong founder/CTO master prompt plus several evolved strategic documents. Without an authority order, agents can accidentally revive older framing such as AI Cost Attribution as the primary wedge, dashboard-led product language, Enterprise Decision Intelligence as the current category, or production-ready implementation during Phase 0.
+- Impact: updated README, Project Charter, AI Agent Context Pack, Glossary, Context Boundaries, Executive Summary, Architecture Thesis, Technical Architecture Context, weekly prompt, docs/decisions/adr/RFC notes and agent/service READMEs. Phase 0 permits documentation, conceptual architecture, contracts and scaffolding, but not runnable production services.
+
+### [2026-07-15] D026 — Documentation zoning and core domain contracts
+- Decision: organize documentation under `docs/business`, `docs/product`, `docs/architecture`, `docs/ai`, `docs/rfcs`, `docs/decisions` and `docs/research`. Add `docs/product/CORE_DOMAIN_MODEL.md` as the canonical business domain model and `docs/product/API_SPECIFICATION.md` as the conceptual API surface before implementation.
+- Rationale: the project is already large enough that mixing business, product and technical documents creates navigation and authority risk. The domain model is the shared business contract that Java, Python, PostgreSQL, React and AI agents must follow before code exists.
+- Impact: moved strategic documents into zones, moved ADRs under `docs/decisions/adr`, renamed RFC location to `docs/rfcs`, added `docs/README.md`, updated root README and internal references, and established Core Domain Model + API Specification as product-level contracts.

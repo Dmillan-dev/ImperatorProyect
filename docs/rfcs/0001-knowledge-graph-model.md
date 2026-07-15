@@ -3,9 +3,11 @@
 Date: 2026-07-07
 Status: Proposed
 
+Phase 0 note: this RFC is conceptual planning. It does not authorize runnable ETL, RAG pipelines, generated bindings, database migrations or production services during Phase 0.
+
 ## Purpose
 
-Definir el modelo conceptual inicial del Knowledge Graph (KG) para IMPERATOR, y mapear los `.proto` canónicos a un esquema inicial en PostgreSQL (con opción de migrar a DB de grafos). Este RFC guía la implementación del Context Layer y sirve como contrato entre Backend, AI y Product.
+Definir el modelo conceptual inicial del Knowledge Graph (KG) para IMPERATOR, y mapear los `.proto` canónicos a un esquema inicial en PostgreSQL (con opción de migrar a DB de grafos). Este RFC guía el diseño futuro del Context Layer y sirve como contrato conceptual entre Backend, AI y Product.
 
 ## Goals
 
@@ -124,8 +126,8 @@ Phase 2: If traversals/graph algorithms dominate, migrate hot subgraph to a grap
 - Keep `.proto` as source of truth; generate regular dumps to validate DB schema mapping.
 - Add retention and TTL policies for cost/metrics if needed.
 
-## Next steps
+## Phase 1 candidate next steps
 
-1. Approve RFC and add SQL DDL for initial Postgres schema.
-2. Implement minimal ETL from `Decision.proto` to `decisions` table and `decision_entities` links.
-3. Add RAG pipeline prototype and embedding storage.
+1. Approve RFC and draft SQL DDL for an initial Postgres schema.
+2. Design a minimal ETL plan from `Decision.proto` to `decisions` table and `decision_entities` links.
+3. Design a RAG prototype plan and embedding storage approach.

@@ -7,7 +7,21 @@ Ensure consistent output when AI agents collaborate on strategy, documentation, 
 ## Current State
 
 Phase 0 (Idea).  
-Agents must not assume undefined technical implementation.
+Agents must not create runnable implementation or infer product decisions that are not present in the canonical documents.
+
+## Authority Order
+
+When context conflicts, agents must use this order:
+
+1. `docs/decisions/14_Decision_Log.md` for accepted decisions and chronology.
+2. `docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md` for MVP product boundary.
+3. `docs/product/CORE_DOMAIN_MODEL.md` for domain entities, relationships and invariants.
+4. `docs/product/API_SPECIFICATION.md` for conceptual API surface.
+5. `docs/architecture/21_Technical_Architecture_Context.md` for target architecture context.
+6. This file for agent behavior and response consistency.
+7. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
+
+Founder-mode or master-prompt guidance sets ambition and quality bar. It does not override current decisions when it uses older framing such as AI Cost Attribution as the primary wedge, dashboard-led language, Enterprise Decision Intelligence as the current category, or production-ready implementation during Phase 0.
 
 ## Canonical Mandates
 
@@ -35,8 +49,11 @@ Agents must not assume undefined technical implementation.
 18. Prioritize five MVP recommendation families: AI model downgrade/change, unused AI agent removal, underutilized AWS resource detection, negative-ROI feature identification and duplicated service/agent consolidation.
 19. Do not let product surface work drift into chart-heavy analytics or evidence overload.
 20. Use `Review Decision` on the executive workspace; use `Approve Recommendation` only inside the decision detail page.
-21. Use `20_MVP_Decision_ROI_Platform_Blueprint.md` as the canonical MVP blueprint.
-22. Do not change category/ICP/wedge without logging in `14_Decision_Log.md`.
+21. Use `docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md` as the canonical MVP blueprint.
+22. Use `docs/product/CORE_DOMAIN_MODEL.md` as the canonical domain model.
+23. Use `docs/product/API_SPECIFICATION.md` as the conceptual API contract before implementation.
+24. Use `docs/architecture/21_Technical_Architecture_Context.md` as the canonical architecture context.
+25. Do not change category/ICP/wedge/domain/API/architecture boundary without logging in `docs/decisions/14_Decision_Log.md`.
 
 ## Writing Style
 
@@ -54,14 +71,17 @@ Do not introduce:
 - ROI claims that are not tied to explicit assumptions
 - dashboards that prioritize charts over executive decisions
 - product screens that repeat the same KPI summary instead of separating prioritization, evidence and audit record
+- architecture proposals that bypass `docs/architecture/21_Technical_Architecture_Context.md`
+- implementation details that violate Phase 0 no-code boundaries
 
 ## Implementation references
 
 For consistency between teams and agents, the following guidance applies for Phase 0. Note: the internal communication mandate D013 requires gRPC + Protocol Buffers for all internal service-to-service communication — this is binding for internal contracts. This mandate does **not** expose gRPC as a public SaaS API.
 
 - Protocol Buffers (`.proto`) is the canonical contract format for internal messages. Maintain `proto/` as source of truth.
-- gRPC is the required transport for internal RPCs between Operational, Context, AI and other internal services (see ADR D013 in `adr/`).
+- gRPC is the required transport for internal RPCs between Operational, Context, AI and other internal services (see ADR D013 in `docs/decisions/adr/`).
 - Kafka messages used as event transport SHOULD be encoded in Protobuf to keep contracts consistent across brokers.
 - The Context Layer is the canonical input for any AI agent; agents must not read directly from raw sources. Use the Context Engine outputs (Decision Ledger, enriched records) as the agent input.
+- Target architecture context lives in `docs/architecture/21_Technical_Architecture_Context.md`. It is authoritative for layer responsibilities, bounded contexts, product surface mapping and future stack direction.
 
-Any further changes to this mandate or expansions must be recorded in `14_Decision_Log.md`.
+Any further changes to this mandate or expansions must be recorded in `docs/decisions/14_Decision_Log.md`.
