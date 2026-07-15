@@ -17,9 +17,13 @@ When context conflicts, agents must use this order:
 2. `docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md` for MVP product boundary.
 3. `docs/product/CORE_DOMAIN_MODEL.md` for domain entities, relationships and invariants.
 4. `docs/product/API_SPECIFICATION.md` for conceptual API surface.
-5. `docs/architecture/21_Technical_Architecture_Context.md` for target architecture context.
-6. This file for agent behavior and response consistency.
-7. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
+5. `docs/product/DECISION_LEDGER_V2.md` for Decision Ledger module behavior.
+6. `docs/architecture/21_Technical_Architecture_Context.md` for target architecture context.
+7. `docs/architecture/DATABASE_MODEL.md` for conceptual data model.
+8. `docs/architecture/CONNECTOR_FRAMEWORK.md` for integration boundaries.
+9. `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
+10. This file for agent behavior and response consistency.
+11. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
 
 Founder-mode or master-prompt guidance sets ambition and quality bar. It does not override current decisions when it uses older framing such as AI Cost Attribution as the primary wedge, dashboard-led language, Enterprise Decision Intelligence as the current category, or production-ready implementation during Phase 0.
 
@@ -42,7 +46,7 @@ Founder-mode or master-prompt guidance sets ambition and quality bar. It does no
 11. Navigation should use: Executive Workspace, Decisions, Decision Ledger, Business Value, Integrations, Policies, Settings.
 12. Executive Workspace answers: how is the company right now? It should show executive summary, projected annual savings, recovered value, business impact, time saved, AI spend, compliance score, decision queue, selected decision and evidence. Lifecycle belongs inside each Decision Detail.
 13. Decision Detail answers: can the company trust this recommendation enough to approve it? It needs a decision list, ownership, status, chronology, historical outcomes, deep lifecycle evidence and the final `Approve Recommendation` action at the end.
-14. Decision Ledger answers: what has the company decided over time? It is an immutable ledger of all business decisions, not only recommendations.
+14. Decision Ledger answers: what has the company decided over time? It is an immutable ledger of all business decisions, not only recommendations. Ledger v2 records approval, rejection, deferral, implementation and result-validation history without becoming a workflow engine.
 15. Business Value answers: what economic value has IMPERATOR generated? It should prove recovered value, recovered time and customer ROI.
 16. Integrations answers: what operating systems are connected? For MVP, focus on AWS, GitHub, Jira and OpenAI + Anthropic Claude.
 17. Use monthly savings in decision queues and annualized value for executive summaries.
@@ -52,8 +56,12 @@ Founder-mode or master-prompt guidance sets ambition and quality bar. It does no
 21. Use `docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md` as the canonical MVP blueprint.
 22. Use `docs/product/CORE_DOMAIN_MODEL.md` as the canonical domain model.
 23. Use `docs/product/API_SPECIFICATION.md` as the conceptual API contract before implementation.
-24. Use `docs/architecture/21_Technical_Architecture_Context.md` as the canonical architecture context.
-25. Do not change category/ICP/wedge/domain/API/architecture boundary without logging in `docs/decisions/14_Decision_Log.md`.
+24. Use `docs/product/DECISION_LEDGER_V2.md` as the Decision Ledger module contract.
+25. Use `docs/architecture/DATABASE_MODEL.md` as the conceptual database model.
+26. Use `docs/architecture/CONNECTOR_FRAMEWORK.md` as the connector expansion model.
+27. Use `docs/rfcs/0002-module-communication-architecture.md` for communication design rationale.
+28. Use `docs/architecture/21_Technical_Architecture_Context.md` as the canonical architecture context.
+29. Do not change category/ICP/wedge/domain/API/database/connector/architecture boundary without logging in `docs/decisions/14_Decision_Log.md`.
 
 ## Writing Style
 

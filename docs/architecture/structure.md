@@ -3,7 +3,7 @@
 - `docs/` — sistema documental organizado por zonas.
   - `docs/business/` — negocio, mercado, ICP, GTM, ventas y validación.
   - `docs/product/` — producto, dominio, API conceptual, capacidades y lenguaje canónico.
-  - `docs/architecture/` — arquitectura conceptual, contexto técnico objetivo y reglas Phase 0.
+  - `docs/architecture/` — arquitectura conceptual, datos, conectores, contexto técnico objetivo y reglas Phase 0.
   - `docs/ai/` — contexto operativo para agentes y prompts recurrentes.
   - `docs/rfcs/` — propuestas estilo RFC antes de cambios relevantes.
   - `docs/decisions/` — decision log y decisiones aceptadas.
@@ -28,6 +28,18 @@ Documento canónico del dominio:
 Documento canónico de API conceptual:
 
 - `docs/product/API_SPECIFICATION.md` — superficie API antes de OpenAPI, protobuf o implementación.
+
+Documento canónico del Decision Ledger:
+
+- `docs/product/DECISION_LEDGER_V2.md` — contrato funcional del ledger: casos de uso, modelo, API conceptual, eventos, riesgos y criterios de aceptación.
+
+Documento canónico de datos:
+
+- `docs/architecture/DATABASE_MODEL.md` — modelo conceptual de datos y responsabilidades de almacenamiento sin SQL detallado.
+
+Documento canónico de conectores:
+
+- `docs/architecture/CONNECTOR_FRAMEWORK.md` — framework conceptual para añadir integraciones sin modificar el núcleo del dominio.
 
 Documento canónico de arquitectura:
 

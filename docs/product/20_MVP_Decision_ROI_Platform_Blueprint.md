@@ -206,6 +206,12 @@ Ledger flow:
 
 Business Decision -> Technical Change -> Infrastructure -> AI -> Approval -> Financial Result
 
+Decision Ledger v2 module contract:
+- `docs/product/DECISION_LEDGER_V2.md`
+
+MVP rule:
+The ledger should first appear inside Decision Detail as the accountability history of one Decision ROI Case. A standalone Decision Ledger surface becomes valuable after enough approved, rejected, deferred and validated decisions exist to support audit and accumulated-value review.
+
 ### Business Value
 
 Question:

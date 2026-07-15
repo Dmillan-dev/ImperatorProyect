@@ -8,6 +8,9 @@ This is not OpenAPI, not protobuf and not a final transport contract. It defines
 
 The API must expose the Decision ROI Platform without leaking connector-specific implementation details.
 
+Decision Ledger behavior is defined in:
+- `docs/product/DECISION_LEDGER_V2.md`
+
 ## API Principles
 
 - The API revolves around Decision ROI Cases.
@@ -31,6 +34,9 @@ The API must expose the Decision ROI Platform without leaking connector-specific
 - Policy
 - Integration
 - Ledger Entry
+- Evidence Snapshot
+- ROI Snapshot
+- Assumptions Snapshot
 
 ## API Surface Summary
 
@@ -49,6 +55,12 @@ The API must expose the Decision ROI Platform without leaking connector-specific
 | Approval | `POST /recommendations/{recommendationId}/defer` | Defer a recommendation |
 | Ledger | `GET /ledger` | List immutable decision history |
 | Ledger | `GET /ledger/{entryId}` | Get one ledger entry |
+| Ledger | `GET /decisions/{decisionId}/ledger` | Get full ledger history for one Decision ROI Case |
+| Ledger | `POST /decisions/{decisionId}/ledger/approve` | Record approval with evidence, ROI and assumptions snapshots |
+| Ledger | `POST /decisions/{decisionId}/ledger/reject` | Record rejection with reason |
+| Ledger | `POST /decisions/{decisionId}/ledger/defer` | Record deferral with required evidence or review date |
+| Ledger | `POST /decisions/{decisionId}/ledger/mark-implemented` | Record external implementation of an approved action |
+| Ledger | `POST /decisions/{decisionId}/ledger/validate-result` | Record realized value after implementation |
 | Business Value | `GET /business-value` | Show recovered value, time and risk avoided |
 | Integrations | `GET /integrations` | List integration status and health |
 | Policies | `GET /policies` | List policies affecting recommendations |
@@ -210,6 +222,8 @@ This endpoint must not execute infrastructure or AI-provider changes.
 
 ## Approval API
 
+Approval API describes product intent. Decision Ledger v2 commands are the canonical way to record approval, rejection and deferral because they preserve immutable snapshots.
+
 ### `POST /recommendations/{recommendationId}/approve`
 
 Question:
@@ -228,6 +242,10 @@ Effect:
 - ledger entry is created,
 - execution remains outside MVP unless explicitly approved in a later phase.
 
+Ledger v2 note:
+
+The canonical approval record is the ledger command `POST /decisions/{decisionId}/ledger/approve`, because it preserves evidence, ROI and assumptions snapshots.
+
 ### `POST /recommendations/{recommendationId}/reject`
 
 Records rejection reason and ledger evidence.
@@ -238,21 +256,34 @@ Records deferral reason, review date and required evidence.
 
 ## Ledger API
 
+Ledger v2 records business accountability. It is append-only and does not execute changes.
+
 ### `GET /ledger`
 
 Question:
 
 What has the company decided over time?
 
+Conceptual filters:
+- decision ROI case ID,
+- decision state,
+- entry type,
+- actor,
+- owner,
+- recommendation family,
+- date range.
+
 Returns conceptually:
 - ledger entry ID,
-- decision,
-- recommendation,
-- approver,
+- related Decision ROI Case,
+- entry type,
+- actor,
 - decision state,
-- financial result,
 - timestamp,
-- evidence references.
+- estimated saving,
+- realized saving,
+- confidence,
+- evidence reference.
 
 ### `GET /ledger/{entryId}`
 
@@ -260,7 +291,114 @@ Question:
 
 What exactly was recorded for this business decision?
 
-Returns one immutable ledger entry with evidence, approval state, assumptions and outcome.
+Returns one immutable ledger entry with:
+- evidence snapshot,
+- ROI snapshot,
+- assumptions snapshot,
+- previous entry reference,
+- related recommendation,
+- related Decision ROI Case.
+
+### `GET /decisions/{decisionId}/ledger`
+
+Question:
+
+What is the full accountability history of this Decision ROI Case?
+
+Returns conceptually:
+- ordered ledger entries,
+- state transitions,
+- approvals,
+- rejections,
+- deferrals,
+- implementation records,
+- result validations,
+- estimated versus realized value.
+
+### `POST /decisions/{decisionId}/ledger/approve`
+
+Question:
+
+Who approved this recommendation and under which evidence, ROI and assumptions?
+
+Conceptual command input:
+- actor ID,
+- recommendation ID,
+- approval note,
+- accepted assumptions,
+- expected business value.
+
+Effect:
+- creates an immutable approved ledger entry,
+- records evidence, ROI and assumptions snapshots,
+- changes recommendation state to approved,
+- does not execute external changes.
+
+### `POST /decisions/{decisionId}/ledger/reject`
+
+Question:
+
+Why was this recommendation rejected?
+
+Conceptual command input:
+- actor ID,
+- recommendation ID,
+- rejection reason.
+
+Effect:
+- creates an immutable rejected ledger entry,
+- preserves evidence and ROI reviewed at rejection time.
+
+### `POST /decisions/{decisionId}/ledger/defer`
+
+Question:
+
+What evidence or timing is missing before this recommendation can be decided?
+
+Conceptual command input:
+- actor ID,
+- recommendation ID,
+- deferral reason,
+- required evidence,
+- review date.
+
+Effect:
+- creates an immutable deferred ledger entry,
+- records the evidence gap or future review point.
+
+### `POST /decisions/{decisionId}/ledger/mark-implemented`
+
+Question:
+
+Was the approved action implemented outside IMPERATOR?
+
+Conceptual command input:
+- actor ID,
+- implementation note,
+- implementation period,
+- implementation evidence.
+
+Effect:
+- creates an immutable implementation-marked ledger entry,
+- links implementation to the prior approval entry.
+
+### `POST /decisions/{decisionId}/ledger/validate-result`
+
+Question:
+
+What realized value was observed after implementation?
+
+Conceptual command input:
+- actor ID,
+- realized saving,
+- currency,
+- validation period,
+- validation evidence,
+- outcome note.
+
+Effect:
+- creates an immutable result-validated ledger entry,
+- makes realized value available to Business Value reporting.
 
 ## Business Value API
 
@@ -278,6 +416,10 @@ Returns conceptually:
 - value by recommendation family,
 - estimated ROI of IMPERATOR,
 - realized versus projected value.
+
+Rule:
+
+Realized value must come from `result_validated` ledger entries. Estimated value may be shown separately, but it must not be counted as realized recovery.
 
 ## Integration API
 
@@ -326,8 +468,11 @@ The MVP API should support:
 - showing ROI,
 - listing recommendations,
 - approving or rejecting recommendations,
+- deferring recommendations with required evidence,
 - reading ledger history,
-- proving business value.
+- marking external implementation,
+- validating realized results,
+- proving business value from validated outcomes.
 
 The MVP API should not support:
 - autonomous execution,
@@ -335,4 +480,3 @@ The MVP API should not support:
 - raw provider payload exploration,
 - generic observability queries,
 - customer-facing gRPC as the public API.
-

@@ -21,7 +21,12 @@ It is subordinate to:
 1. `docs/decisions/14_Decision_Log.md` for accepted strategic and architectural decisions.
 2. `docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md` for MVP product boundary.
 3. `docs/product/CORE_DOMAIN_MODEL.md` for business domain meaning.
-4. `docs/architecture/phase0-guidelines.md` for Phase 0 repository rules.
+4. `docs/product/API_SPECIFICATION.md` for conceptual API surface.
+5. `docs/product/DECISION_LEDGER_V2.md` for Decision Ledger module behavior.
+6. `docs/architecture/DATABASE_MODEL.md` for conceptual data model.
+7. `docs/architecture/CONNECTOR_FRAMEWORK.md` for connector boundaries.
+8. `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
+9. `docs/architecture/phase0-guidelines.md` for Phase 0 repository rules.
 
 Founder-mode prompts should be interpreted as ambition and quality standards. If they conflict with this document, the current repository context wins unless a new decision is recorded in `docs/decisions/14_Decision_Log.md`.
 
@@ -61,7 +66,7 @@ The system revolves around the **Decision ROI Case**.
 
 Canonical flow:
 
-Business Decision -> Technical Change -> Infrastructure -> AI Consumption -> Recommendation -> Approval -> Result -> Decision Ledger
+Business Decision -> Technical Change -> Infrastructure -> AI Consumption -> Recommendation -> Approval -> Implementation -> Result Validation -> Decision Ledger
 
 Every module must either enrich this object, evaluate it, expose it, govern it or record it.
 
@@ -227,21 +232,37 @@ AI services must never read raw external sources directly. They consume prepared
 ### 9) Decision Ledger
 
 Purpose:
-Immutable record of all business decisions, not only recommendations.
+Immutable accountability record for reviewed Decision ROI Cases.
 
 Ledger flow:
 
-Business Decision -> Technical Change -> Infrastructure -> AI -> Approval -> Financial Result
+Business Decision -> Technical Change -> Infrastructure -> AI -> Recommendation -> Approval/Rejection/Deferral -> Implementation -> Result Validation
 
 Stores:
 - decision ID
 - owner
-- evidence references
-- approval state
-- financial result
+- recommendation ID
+- actor and role
+- evidence snapshots
+- ROI snapshots
+- assumptions snapshots
+- approval, rejection or deferral state
+- implementation marker
+- estimated saving
+- realized saving
 - ROI
-- savings
 - status
+
+Rules:
+- ledger entries are append-only
+- approval must preserve evidence, ROI and assumptions snapshots
+- rejection must preserve a reason
+- deferral must preserve required evidence or review date
+- realized value must be recorded through result validation, not by mutating estimates
+- the ledger records accountability but does not execute changes
+
+Canonical module contract:
+- `docs/product/DECISION_LEDGER_V2.md`
 
 ### 10) Infrastructure and Runtime
 
@@ -258,6 +279,8 @@ Future scale primitives:
 - data lake for long-term operational history
 
 ## Communication Model
+
+The detailed communication rationale lives in `docs/rfcs/0002-module-communication-architecture.md`.
 
 Internal service communication:
 - gRPC
@@ -305,7 +328,9 @@ Owns cost calculations, assumptions, recovery estimates and realized value.
 Owns recommendation generation, confidence, risk and explanation.
 
 ### Ledger Context
-Owns immutable decision history and audit evidence.
+Owns immutable decision history, evidence snapshots, ROI snapshots, assumptions snapshots and result validation records.
+
+It records state transitions. It does not orchestrate workflow execution.
 
 ### Identity and Policy Context
 Owns users, roles, permissions, tenant boundaries and governance policies.
@@ -328,6 +353,10 @@ Authoritative documents:
 - `docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md` for MVP product boundaries.
 - `docs/product/CORE_DOMAIN_MODEL.md` for core business entities and relationships.
 - `docs/product/API_SPECIFICATION.md` for conceptual API surface before OpenAPI or implementation.
+- `docs/product/DECISION_LEDGER_V2.md` for Decision Ledger module behavior.
+- `docs/architecture/DATABASE_MODEL.md` for conceptual data model.
+- `docs/architecture/CONNECTOR_FRAMEWORK.md` for integration and connector boundaries.
+- `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
 - `docs/architecture/21_Technical_Architecture_Context.md` for architecture context.
 - `docs/architecture/18_Architecture_Thesis.md` for conceptual architecture thesis.
 - `docs/decisions/14_Decision_Log.md` for strategic and architectural decisions.
@@ -352,6 +381,8 @@ The current project is healthy if:
 - ROI calculations expose assumptions
 - recommendations remain approval-based, not autonomous execution
 - Decision Ledger remains immutable and central
+- Decision Ledger separates estimated savings from realized savings
+- Decision Ledger records accountability without becoming a workflow engine
 
 ## Architecture Risks
 

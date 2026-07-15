@@ -9,6 +9,7 @@ Responsabilidades:
 - Generar recomendaciones explicables para Decision ROI Cases, empezando por las cinco familias MVP.
 - Tratar OpenAI + Anthropic Claude como el límite AI Consumption del MVP.
 - Seguir `docs/architecture/21_Technical_Architecture_Context.md`; la IA trabaja sobre contexto preparado, no sobre fuentes crudas.
+- Seguir `docs/rfcs/0002-module-communication-architecture.md` para entender qué contexto preparado puede consumir la IA.
 
 Entregables iniciales:
 

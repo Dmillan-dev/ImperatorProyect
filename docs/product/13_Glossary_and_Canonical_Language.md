@@ -14,6 +14,12 @@
 - Decision ROI Timeline
 - Decision Lifecycle
 - Decision Ledger
+- Decision Ledger v2
+- Ledger Entry
+- Evidence Snapshot
+- ROI Snapshot
+- Assumptions Snapshot
+- Result Validation
 - Executive Decision Workspace
 - ROI Engine
 - Recommendation Engine

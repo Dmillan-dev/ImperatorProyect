@@ -135,6 +135,54 @@ The business authorization to accept, reject, defer or request more evidence for
 
 Approval is not execution. Approval records company intent and accountability.
 
+### Decision Ledger
+
+The immutable accountability history of Decision ROI Cases.
+
+The Decision Ledger records what the company decided, why, who acted, which evidence and assumptions were reviewed, and what result was later validated.
+
+For the MVP, ledger history should first live inside each Decision ROI Case. A standalone Decision Ledger surface becomes valuable after enough decisions have been reviewed to audit outcomes and accumulated value.
+
+Canonical module contract:
+- `docs/product/DECISION_LEDGER_V2.md`
+
+### Ledger Entry
+
+An append-only record of a business-relevant state change in a Decision ROI Case.
+
+Examples:
+- recommendation created,
+- recommendation approved,
+- recommendation rejected,
+- recommendation deferred,
+- implementation marked,
+- result validated,
+- case closed.
+
+A Ledger Entry must preserve actor, timestamp, decision state, reason, evidence snapshot, ROI snapshot, assumptions snapshot, estimated saving and realized saving when available.
+
+### Evidence Snapshot
+
+A versioned record of the evidence used at the moment of a ledger decision.
+
+Evidence Snapshots prevent historical approvals from changing meaning when new evidence arrives or when a connector is disabled.
+
+### ROI Snapshot
+
+A versioned record of the ROI view used at the moment of a ledger decision.
+
+ROI Snapshots preserve current monthly cost, estimated recovery, confidence, risk and assumptions at decision time.
+
+### Assumptions Snapshot
+
+A versioned record of the assumptions reviewed or accepted for a recommendation, approval, rejection, deferral or result validation.
+
+### Result Validation
+
+The act of recording realized business value after an approved recommendation is implemented outside IMPERATOR.
+
+Result Validation creates a new Ledger Entry and must not overwrite the original estimate.
+
 ### Business Value
 
 The measurable or estimated value created by a Decision or by acting on a Recommendation.
@@ -169,6 +217,84 @@ Examples:
 - approval policy,
 - data sensitivity policy,
 - compliance evidence policy.
+
+### Resource
+
+An operational asset that consumes cost or supports a shipped decision.
+
+Examples:
+- AWS Lambda function,
+- ECS service,
+- EC2 instance,
+- database,
+- storage bucket,
+- AI application runtime,
+- internal service.
+
+A Resource can be linked to a Decision ROI Case when evidence can explain why it exists, who owns it and what value or cost it produces.
+
+### Cost
+
+A monetary signal associated with a Resource, AI Usage, Project, Decision ROI Case or Organization over a period of time.
+
+Cost must include:
+- amount,
+- currency,
+- period,
+- source,
+- related owner or decision when known,
+- confidence or assumption when attribution is incomplete.
+
+Cost is not the same as ROI. Cost is an input; ROI is the interpretation.
+
+### Usage Signal
+
+An observable signal that helps estimate whether a decision, resource, feature or agent is being used.
+
+Examples:
+- active users,
+- request volume,
+- token usage,
+- runtime utilization,
+- deployment frequency,
+- feature adoption,
+- project activity.
+
+Usage Signal supports ROI confidence but does not prove business value by itself.
+
+### AI Model
+
+An AI model used by an application, workflow or agent.
+
+Examples:
+- OpenAI model,
+- Anthropic Claude model,
+- future provider model.
+
+AI Model is relevant when model choice affects cost, quality, risk or policy.
+
+### AI Usage
+
+Observed consumption of an AI Model.
+
+AI Usage may include:
+- provider,
+- model,
+- requests,
+- tokens,
+- user/team/application,
+- time period,
+- cost.
+
+AI Usage can become Evidence for model downgrade, unused agent or duplicated service recommendations.
+
+### AI Agent
+
+An automated or semi-automated AI workflow that performs tasks for users, teams or systems.
+
+An AI Agent can have owner, model usage, cost, usage signal, policy risk and recommendation history.
+
+AI Agent is not automatically allowed to execute changes. In the MVP, IMPERATOR recommends and the company decides.
 
 ### Integration
 
@@ -218,6 +344,12 @@ A business unit or functional area inside an Organization.
 
 Departments help explain ownership, budget, approval path and value allocation.
 
+### Team
+
+A group of users inside a Department or Organization.
+
+Teams can own Decisions, Resources, AI Agents, Projects, Recommendations or approval responsibilities.
+
 ### Project
 
 A business or technical initiative that groups decisions, work, resources, cost and outcomes.
@@ -256,10 +388,17 @@ Initial Role concepts:
 | Organization | defines | Policy |
 | Department | owns | Project |
 | Department | contains | User |
+| Department | contains | Team |
+| Team | contains | User |
 | User | has | Role |
 | User or Team | owns | Decision |
+| User or Team | owns | Resource |
+| User or Team | owns | AI Agent |
 | Decision | belongs to | Project |
 | Decision | produces | Timeline |
+| Decision | may create or use | Resource |
+| Decision | may use | AI Model |
+| Decision | may generate | AI Usage |
 | Timeline | contains | Evidence |
 | Evidence | is derived from | Operational Event |
 | Operational Event | comes from | Integration |
@@ -270,6 +409,16 @@ Initial Role concepts:
 | Recommendation | requires | Approval |
 | Approval | is made by | User |
 | Approval | is governed by | Policy |
+| Approval | creates | Ledger Entry |
+| Ledger Entry | references | Evidence Snapshot |
+| Ledger Entry | references | ROI Snapshot |
+| Ledger Entry | references | Assumptions Snapshot |
+| Result Validation | creates | Ledger Entry |
+| Cost | is associated with | Resource |
+| Cost | is associated with | AI Usage |
+| Usage Signal | supports | ROI |
+| AI Usage | uses | AI Model |
+| AI Agent | uses | AI Model |
 | Decision | records | Business Value |
 | Incident | may involve | Decision |
 | Workflow | advances | Decision ROI Case |
@@ -280,11 +429,18 @@ Initial Role concepts:
 - A Recommendation cannot be approval-ready without Evidence.
 - A Decision ROI Case cannot claim ROI without explicit assumptions.
 - A Decision Ledger entry must preserve who approved, rejected or deferred the action.
+- A Decision Ledger entry must be append-only.
+- A Decision Ledger approval must reference evidence, ROI and assumptions snapshots.
+- A rejected recommendation must preserve a rejection reason.
+- A deferred recommendation must preserve required evidence or a review date.
 - AI reasoning must consume prepared context, not raw external sources.
 - A Connector cannot own business logic.
 - A Timeline must preserve source lineage.
 - A Decision can exist without a Recommendation; a Recommendation cannot exist without a Decision ROI Case.
+- Cost is an input to ROI; it is not an ROI claim by itself.
+- Usage Signal can increase or decrease confidence; it does not prove value alone.
 - Realized Business Value must be separated from estimated Business Value.
+- Realized savings must be recorded through Result Validation, not by mutating estimated savings.
 - Monthly savings are used for decision queues; annualized value is used for executive summaries.
 
 ## Domain Boundaries
@@ -298,9 +454,17 @@ Initial Role concepts:
 - ownership,
 - approvals,
 - ROI,
+- cost,
+- usage signals,
+- resources,
+- AI models,
+- AI usage,
+- AI agents,
 - policies,
 - business value,
 - ledger history,
+- ledger snapshots,
+- result validation,
 - integration health as context.
 
 ### Out Of Domain For MVP
@@ -322,4 +486,4 @@ Every major product or architecture proposal should answer:
 4. Which user can approve or reject the recommendation?
 5. Which ROI assumption is being used?
 6. Which ledger entry preserves accountability?
-
+7. Which result validation separates estimated value from realized value?

@@ -29,6 +29,7 @@ Authoritative product documents:
 - `20_MVP_Decision_ROI_Platform_Blueprint.md`
 - `CORE_DOMAIN_MODEL.md`
 - `API_SPECIFICATION.md`
+- `DECISION_LEDGER_V2.md`
 - `13_Glossary_and_Canonical_Language.md`
 - `15_Context_Boundaries_and_Non_Goals.md`
 
@@ -39,6 +40,8 @@ Conceptual and target technical architecture.
 Use for:
 - architecture thesis,
 - target architecture context,
+- conceptual database model,
+- connector framework,
 - Phase 0 repository rules,
 - repository structure,
 - layer and bounded-context guidance.
@@ -57,6 +60,10 @@ Use for:
 Proposal documents for substantial product, domain or architecture evolution.
 
 RFCs should be created before adding new bounded contexts, major data models, product surfaces or cross-team contracts.
+
+Current RFCs:
+- `0001-knowledge-graph-model.md`
+- `0002-module-communication-architecture.md`
 
 ### `decisions/`
 
@@ -77,9 +84,14 @@ When documents conflict:
 1. `decisions/14_Decision_Log.md`
 2. `product/20_MVP_Decision_ROI_Platform_Blueprint.md`
 3. `product/CORE_DOMAIN_MODEL.md`
-4. `architecture/21_Technical_Architecture_Context.md`
-5. `ai/12_AI_Agent_Context_Pack.md`
-6. `product/13_Glossary_and_Canonical_Language.md`
+4. `product/API_SPECIFICATION.md`
+5. `product/DECISION_LEDGER_V2.md`
+6. `architecture/21_Technical_Architecture_Context.md`
+7. `architecture/DATABASE_MODEL.md`
+8. `architecture/CONNECTOR_FRAMEWORK.md`
+9. `rfcs/0002-module-communication-architecture.md`
+10. `ai/12_AI_Agent_Context_Pack.md`
+11. `product/13_Glossary_and_Canonical_Language.md`
 
 ## Growth Rule
 

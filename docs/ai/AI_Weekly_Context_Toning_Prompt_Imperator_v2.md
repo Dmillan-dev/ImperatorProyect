@@ -16,6 +16,9 @@ Always use:
 - docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md
 - docs/product/CORE_DOMAIN_MODEL.md
 - docs/product/API_SPECIFICATION.md
+- docs/architecture/DATABASE_MODEL.md
+- docs/architecture/CONNECTOR_FRAMEWORK.md
+- docs/rfcs/0002-module-communication-architecture.md
 - docs/architecture/21_Technical_Architecture_Context.md
 
 Reference for consistency:
@@ -56,6 +59,8 @@ Run a stability check with this 6-point checklist:
    - docs/ai/12_AI_Agent_Context_Pack.md
    - docs/product/CORE_DOMAIN_MODEL.md
    - docs/product/API_SPECIFICATION.md
+   - docs/architecture/DATABASE_MODEL.md
+   - docs/architecture/CONNECTOR_FRAMEWORK.md
    - docs/product/13_Glossary_and_Canonical_Language.md
 5. If strategic edits are proposed, draft a new log entry for docs/decisions/14_Decision_Log.md with:
    - Date (YYYY-MM-DD)

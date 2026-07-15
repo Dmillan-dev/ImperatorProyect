@@ -6,6 +6,16 @@ Universal entry point to register/validate operational decisions and events with
 ## 2) Context Ledger
 Persistent, immutable record of business-relevant operational decisions.
 
+Decision Ledger v2 defines the current module contract:
+- approval, rejection and deferral records
+- evidence, ROI and assumptions snapshots
+- implementation markers
+- result validation
+- separation of estimated and realized savings
+
+Canonical reference:
+- `docs/product/DECISION_LEDGER_V2.md`
+
 ## 3) Enterprise Context Enrichment
 Automatic enrichment with:
 - actor (person/agent)

@@ -5,6 +5,8 @@ Status: Proposed
 
 Phase 0 note: this RFC is conceptual planning. It does not authorize runnable ETL, RAG pipelines, generated bindings, database migrations or production services during Phase 0.
 
+Canonical data model note: `docs/architecture/DATABASE_MODEL.md` owns the conceptual database model. This RFC remains a proposal for graph/storage mapping and evolution.
+
 ## Purpose
 
 Definir el modelo conceptual inicial del Knowledge Graph (KG) para IMPERATOR, y mapear los `.proto` canónicos a un esquema inicial en PostgreSQL (con opción de migrar a DB de grafos). Este RFC guía el diseño futuro del Context Layer y sirve como contrato conceptual entre Backend, AI y Product.
@@ -118,8 +120,8 @@ Optional general edge table for faster graph traversals:
 
 ## Migration path to graph DB
 
-Phase 1: Implement in Postgres with `edges` table and indexes. Validate query patterns and performance.
-Phase 2: If traversals/graph algorithms dominate, migrate hot subgraph to a graph DB (e.g., Neo4j), keeping Postgres as canonical store for OLTP and ledger.
+Phase 1 candidate: start with PostgreSQL plus explicit relationship/edge modeling if pilot query patterns justify it.
+Phase 2 candidate: if traversals/graph algorithms dominate, consider migrating hot subgraphs to a graph DB while keeping the canonical store stable.
 
 ## Operational notes
 

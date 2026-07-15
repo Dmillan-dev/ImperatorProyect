@@ -6,6 +6,8 @@ Responsabilidades:
 - Mantener y revisar la `docs/architecture/18_Architecture_Thesis.md`.
 - Mantener y revisar `docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md` como frontera funcional del MVP.
 - Mantener y revisar `docs/architecture/21_Technical_Architecture_Context.md` como contexto técnico objetivo.
+- Mantener y revisar `docs/architecture/DATABASE_MODEL.md` y `docs/architecture/CONNECTOR_FRAMEWORK.md`.
+- Mantener y revisar RFCs de arquitectura en `docs/rfcs/`.
 - Definir dirección de stack y estrategias de escalabilidad para Phase 1 planning.
 - Coordinar revisiones entre agentes.
 

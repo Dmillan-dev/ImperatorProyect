@@ -25,6 +25,7 @@ Product:
 - [MVP Blueprint](docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md)
 - [Core Domain Model](docs/product/CORE_DOMAIN_MODEL.md)
 - [API Specification](docs/product/API_SPECIFICATION.md)
+- [Decision Ledger v2](docs/product/DECISION_LEDGER_V2.md)
 - [Core Capabilities](docs/product/06_Core_Capabilities.md)
 - [Product Surface and Context Engine Thesis](docs/product/17_Product_Surface_and_Context_Engine_Thesis.md)
 - [Glossary and Canonical Language](docs/product/13_Glossary_and_Canonical_Language.md)
@@ -32,6 +33,8 @@ Product:
 Architecture:
 - [Technical Architecture Context](docs/architecture/21_Technical_Architecture_Context.md)
 - [Architecture Thesis](docs/architecture/18_Architecture_Thesis.md)
+- [Database Model](docs/architecture/DATABASE_MODEL.md)
+- [Connector Framework](docs/architecture/CONNECTOR_FRAMEWORK.md)
 - [Phase 0 Guidelines](docs/architecture/phase0-guidelines.md)
 - [Repository Structure](docs/architecture/structure.md)
 
@@ -43,6 +46,8 @@ Decisions and RFCs:
 - [Decision Log](docs/decisions/14_Decision_Log.md)
 - [Architecture Decision Records](docs/decisions/adr/)
 - [RFCs](docs/rfcs/)
+  - [RFC 0001 — Knowledge Graph Model](docs/rfcs/0001-knowledge-graph-model.md)
+  - [RFC 0002 — Module Communication Architecture](docs/rfcs/0002-module-communication-architecture.md)
 
 Research:
 - [Hypothesis Template](docs/research/Hypothesis.md)
@@ -70,6 +75,9 @@ Canonical domain model:
 Canonical conceptual API:
 - [docs/product/API_SPECIFICATION.md](docs/product/API_SPECIFICATION.md)
 
+Canonical Decision Ledger module:
+- [docs/product/DECISION_LEDGER_V2.md](docs/product/DECISION_LEDGER_V2.md)
+
 Canonical technical architecture context:
 - [docs/architecture/21_Technical_Architecture_Context.md](docs/architecture/21_Technical_Architecture_Context.md)
 
@@ -94,10 +102,14 @@ When documents or prompts conflict, use this order:
 2. `docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md` for MVP product boundary.
 3. `docs/product/CORE_DOMAIN_MODEL.md` for domain entities, relationships and invariants.
 4. `docs/product/API_SPECIFICATION.md` for conceptual API surface.
-5. `docs/architecture/21_Technical_Architecture_Context.md` for target architecture context.
-6. `docs/ai/12_AI_Agent_Context_Pack.md` for AI-agent operating rules.
-7. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
-8. Older documents, demos, prompts, ADRs and RFC drafts as historical context unless updated by the documents above.
+5. `docs/product/DECISION_LEDGER_V2.md` for Decision Ledger module behavior.
+6. `docs/architecture/21_Technical_Architecture_Context.md` for target architecture context.
+7. `docs/architecture/DATABASE_MODEL.md` for conceptual data model.
+8. `docs/architecture/CONNECTOR_FRAMEWORK.md` for future integration rules.
+9. `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
+10. `docs/ai/12_AI_Agent_Context_Pack.md` for AI-agent operating rules.
+11. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
+12. Older documents, demos, prompts, ADRs and RFC drafts as historical context unless updated by the documents above.
 
 Founder-mode or master-prompt instructions define ambition and quality bar. They do not override the current repository decisions when they mention older framing such as AI Cost Attribution as the primary wedge, dashboard-led product language, Enterprise Decision Intelligence as the current category, or production-ready implementation during Phase 0.
 

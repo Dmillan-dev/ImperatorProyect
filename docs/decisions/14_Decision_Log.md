@@ -136,3 +136,13 @@ Format: one entry per decision with date, rationale, and impact.
 - Decision: organize documentation under `docs/business`, `docs/product`, `docs/architecture`, `docs/ai`, `docs/rfcs`, `docs/decisions` and `docs/research`. Add `docs/product/CORE_DOMAIN_MODEL.md` as the canonical business domain model and `docs/product/API_SPECIFICATION.md` as the conceptual API surface before implementation.
 - Rationale: the project is already large enough that mixing business, product and technical documents creates navigation and authority risk. The domain model is the shared business contract that Java, Python, PostgreSQL, React and AI agents must follow before code exists.
 - Impact: moved strategic documents into zones, moved ADRs under `docs/decisions/adr`, renamed RFC location to `docs/rfcs`, added `docs/README.md`, updated root README and internal references, and established Core Domain Model + API Specification as product-level contracts.
+
+### [2026-07-15] D027 — Future development context foundations
+- Decision: add three Phase 0 theoretical foundations for future development: `docs/rfcs/0002-module-communication-architecture.md`, `docs/architecture/DATABASE_MODEL.md` and `docs/architecture/CONNECTOR_FRAMEWORK.md`.
+- Rationale: before implementation, IMPERATOR needs explicit context for how modules communicate, how data is conceptually organized and how connectors can be added without modifying the core Decision ROI Case domain.
+- Impact: clarified the five future-development foundations: Domain Model, API Specification, Architecture RFC, Database Model and Connector Framework. Updated documentation indexes, AI agent context, architecture context and agent READMEs to reference these foundations. No runnable code or implementation work is authorized.
+
+### [2026-07-16] D028 — Decision Ledger v2 module contract
+- Decision: add `docs/product/DECISION_LEDGER_V2.md` as the canonical functional contract for the Decision Ledger module.
+- Rationale: the ledger is strategically important for trust and accountability, but it must stay narrower than a workflow engine, compliance suite or autonomous execution system. The module needs explicit use cases, domain model, conceptual API, events, risks and acceptance criteria before implementation.
+- Impact: Decision Ledger v2 records immutable approval, rejection, deferral, implementation and result-validation history for Decision ROI Cases. It preserves evidence, ROI and assumptions snapshots, separates estimated from realized savings, feeds Business Value only through validated outcomes and remains subordinate to the MVP rule: One Decision. One Timeline. One ROI.
