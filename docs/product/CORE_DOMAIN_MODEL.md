@@ -72,10 +72,12 @@ Key business questions:
 
 An evidence-backed action proposed by IMPERATOR to recover money, time or risk.
 
-MVP families:
+MVP paid-wedge recommendation focus:
 - downgrade or change AI model,
 - remove unused AI agents,
-- detect underutilized AWS resources,
+- detect underutilized AWS resources tied to the same Decision ROI Case.
+
+Deferred recommendation families:
 - identify features with negative ROI,
 - consolidate duplicated services or agents.
 

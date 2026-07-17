@@ -8,7 +8,7 @@ Recommended files:
 Architecture Decision Records live in `docs/decisions/adr/`.
 
 Current RFCs:
-- `0001-knowledge-graph-model.md` — conceptual graph/storage mapping.
+- `0001-knowledge-graph-model.md` — conceptual graph/storage mapping; post-validation, not MVP dependency.
 - `0002-module-communication-architecture.md` — module communication model and rationale.
 
 Architecture RFCs should reference:

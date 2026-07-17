@@ -59,5 +59,5 @@ The MVP objective is to correlate Jira, GitHub, AWS and OpenAI + Anthropic Claud
 2. Consistent and differentiated commercial narrative.
 3. One clear entry wedge use case: Decision ROI Timeline.
 4. Buyer-path clarity per persona.
-5. Five prioritized MVP recommendations tied to economic impact.
+5. Paid-wedge recommendation focus tied to economic impact.
 6. Stable, versioned context for humans and AI agents.

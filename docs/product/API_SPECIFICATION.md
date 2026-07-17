@@ -40,6 +40,8 @@ Decision Ledger behavior is defined in:
 
 ## API Surface Summary
 
+The table below is the conceptual platform surface. The MVP should not implement every endpoint at once.
+
 | Area | Endpoint | Purpose |
 |---|---|---|
 | Decisions | `GET /decisions` | List Decision ROI Cases for review |
@@ -64,6 +66,23 @@ Decision Ledger behavior is defined in:
 | Business Value | `GET /business-value` | Show recovered value, time and risk avoided |
 | Integrations | `GET /integrations` | List integration status and health |
 | Policies | `GET /policies` | List policies affecting recommendations |
+
+## MVP API Refactor
+
+For the first paid workflow, API intent should collapse around one aggregate:
+
+**Decision ROI Case**
+
+Minimum MVP API responsibilities:
+- read one Decision ROI Case,
+- read its timeline,
+- read its evidence,
+- read its ROI assumptions,
+- read its recommendation,
+- record approve, reject or defer through Ledger v2,
+- record implementation and result validation later.
+
+Do not prioritize public API, SDKs, GraphQL, broad policy APIs or connector marketplace APIs before the Decision Recovery Workflow is validated.
 
 ## Decision API
 

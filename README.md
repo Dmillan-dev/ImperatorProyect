@@ -23,6 +23,7 @@ Business:
 
 Product:
 - [MVP Blueprint](docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md)
+- [Visual Operational Explainer](docs/product/23_IMPERATOR_Visual_Operational_Explainer.md)
 - [Core Domain Model](docs/product/CORE_DOMAIN_MODEL.md)
 - [API Specification](docs/product/API_SPECIFICATION.md)
 - [Decision Ledger v2](docs/product/DECISION_LEDGER_V2.md)
@@ -32,6 +33,7 @@ Product:
 
 Architecture:
 - [Technical Architecture Context](docs/architecture/21_Technical_Architecture_Context.md)
+- [Technical Investor Audit](docs/architecture/22_Technical_Investor_Audit.md)
 - [Architecture Thesis](docs/architecture/18_Architecture_Thesis.md)
 - [Database Model](docs/architecture/DATABASE_MODEL.md)
 - [Connector Framework](docs/architecture/CONNECTOR_FRAMEWORK.md)
@@ -62,6 +64,9 @@ It finds hidden operational money inside shipped technology decisions and explai
 MVP technical rule:
 - **One Decision. One Timeline. One ROI.**
 
+Current paid wedge:
+- **Decision Recovery Workflow for AI/cloud spend**
+
 Canonical intelligence term:
 - ✅ Enterprise Context Intelligence
 - ❌ Decision Intelligence (as primary category term)
@@ -81,16 +86,21 @@ Canonical Decision Ledger module:
 Canonical technical architecture context:
 - [docs/architecture/21_Technical_Architecture_Context.md](docs/architecture/21_Technical_Architecture_Context.md)
 
+Current technical investor audit:
+- [docs/architecture/22_Technical_Investor_Audit.md](docs/architecture/22_Technical_Investor_Audit.md)
+
 MVP information domains:
 - Business Context: Jira
 - Code & Deployment: GitHub
 - Infrastructure & Cost: AWS
 - AI Consumption: OpenAI + Anthropic Claude
 
-MVP recommendation families:
+MVP paid-wedge recommendation focus:
 - AI model downgrade or model change
 - unused AI agent removal
-- underutilized AWS resource detection
+- underutilized AWS resource detection tied to the same Decision ROI Case
+
+Deferred recommendation families:
 - negative-ROI feature identification
 - duplicated service or agent consolidation
 

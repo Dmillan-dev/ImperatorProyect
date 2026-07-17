@@ -187,7 +187,7 @@ The contract should answer:
 - Which permissions are required?
 - Which data is sensitive?
 - Which failure states are expected?
-- Which MVP recommendation families can it support?
+- Which MVP paid-wedge recommendation focus or validated expansion family can it support?
 
 ## MVP Connector Contracts
 
@@ -328,4 +328,3 @@ Examples:
 3. Align connector contracts with `docs/architecture/DATABASE_MODEL.md`.
 4. Map connector outputs to `docs/product/CORE_DOMAIN_MODEL.md`.
 5. Create RFC before adding any new integration domain.
-

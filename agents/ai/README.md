@@ -3,10 +3,10 @@
 Responsabilidades:
 
 - Diseño conceptual del AI Intelligence Layer objetivo (Python).
-- Investigación documental de LangGraph, RAG y LLMs para Phase 1 planning.
-- Diseño conceptual del uso de Knowledge Graph y Vector DB.
+- Investigación documental de LangGraph, RAG y LLMs como expansión futura, no como dependencia del primer MVP.
+- Diseño conceptual del uso futuro de Knowledge Graph y Vector DB solo si la evidencia del Decision Recovery Workflow lo justifica.
 - Consumir outputs del Context Layer (no acceder a fuentes crudas).
-- Generar recomendaciones explicables para Decision ROI Cases, empezando por las cinco familias MVP.
+- Generar explicaciones para Decision ROI Cases, empezando por el paid wedge: model downgrade, unused agent removal y AWS underutilization ligada al mismo caso.
 - Tratar OpenAI + Anthropic Claude como el límite AI Consumption del MVP.
 - Seguir `docs/architecture/21_Technical_Architecture_Context.md`; la IA trabaja sobre contexto preparado, no sobre fuentes crudas.
 - Seguir `docs/rfcs/0002-module-communication-architecture.md` para entender qué contexto preparado puede consumir la IA.
@@ -14,5 +14,5 @@ Responsabilidades:
 Entregables iniciales:
 
 - `services/ai/` scaffold documental para futuro entorno Python y consumo de contratos.
-- Plan de prototipo RAG y consultas sobre Decision records.
-- Diseño conceptual de scoring para model downgrade, unused agent removal and negative-ROI feature detection.
+- Plan de explicación sobre contexto preparado.
+- Diseño conceptual de scoring para model downgrade, unused agent removal y AWS underutilization.

@@ -21,6 +21,9 @@ El contexto técnico operativo de referencia vive en `docs/architecture/21_Techn
 
 Separar responsabilidades es más importante que elegir un lenguaje. La arquitectura objetivo divide la plataforma en capas de presentación, API/aplicación, conectores, ingesta/normalización, contexto, decisión, ROI, recomendación, IA y ledger. Las decisiones de stack se tratan como dirección objetivo para Phase 1, no como implementación obligatoria en Phase 0.
 
+Refactor de inversor técnico:
+Phase 1 debe empezar como un modular monolith o servicio estrechamente acotado que pruebe el Decision Recovery Workflow. Los bounded contexts son límites conceptuales, no una obligación de microservicios desde el primer build.
+
 ## Dos 'cerebros' (resumen)
 
 - Operational Intelligence Layer (ingesta y procesamiento a escala): recibe millones de eventos, valida, normaliza, enriquece y almacena. Diseño optimizado para concurrencia, estabilidad y throughput. Recomendación operativa: soluciones basadas en JVM son una opción madura para esta capa, pero la decisión final queda para etapas posteriores.
@@ -100,7 +103,7 @@ Notas operativas:
 
 ## Roadmap evolutivo (sugerido)
 
-- Año 1 (MVP): validar la Decision ROI Timeline con Jira, GitHub, AWS y OpenAI + Anthropic Claude antes de ampliar conectores o stack operativo.
+- Año 1 (MVP): validar el Decision Recovery Workflow con Jira, GitHub, AWS y OpenAI + Anthropic Claude antes de ampliar conectores, superficies o stack operativo.
 - Año 2 (escala inicial): API Gateway, Kafka para eventos, Java ingestion scalable, Python services desacoplados, Redis para caches, mejoras en Context Engine.
 - Año 3 (plataforma): Clústeres de ingesta (Java), clústeres de AI (Python), Knowledge Graph/Vector DB, OpenSearch/analytics, Data Lake.
 

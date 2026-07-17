@@ -1,7 +1,10 @@
 # 06 — Core Capabilities
 
 ## 1) Context API
-Universal entry point to register/validate operational decisions and events with business metadata.
+Future entry point to register/validate operational decisions and events with business metadata.
+
+MVP note:
+Do not build a public Context API or SDKs before the Decision Recovery Workflow is validated.
 
 ## 2) Context Ledger
 Persistent, immutable record of business-relevant operational decisions.
@@ -28,22 +31,25 @@ Automatic enrichment with:
 - involved systems/models
 
 ## 4) Enterprise Context Intelligence
-Continuous analytical layer to detect:
+Analytical layer to detect:
 - inefficiencies
 - operational risk patterns
 - policy failures
 - optimization opportunities
 - negative-ROI or low-value decisions
 
-Initial MVP recommendation families:
+Initial paid wedge:
 - downgrade or change AI model
 - remove unused AI agents
-- detect underutilized AWS resources
+- detect underutilized AWS resources tied to the same Decision ROI Case
+
+Deferred recommendation families:
 - identify features with negative ROI
 - consolidate duplicated services or agents
 
 ## 5) Customer Interaction Surfaces (Conceptual)
 Customer value is delivered through:
+- Decision Review Workspace (MVP)
 - Executive Workspace (company-status Home for CEO/CIO/CTO)
 - Decisions (evidence and approval workspace)
 - Decision Ledger (immutable decision history)
@@ -52,6 +58,9 @@ Customer value is delivered through:
 - Context API (open integration entry point)
 - SDKs (Java, Python, Go, JavaScript)
 - Information-domain integrations (Business Context, Code & Deployment, Infrastructure & Cost, AI Consumption)
+
+MVP note:
+The first customer-facing surface should be the Decision Review Workspace. Other surfaces support expansion after multiple Decision ROI Cases exist.
 
 ## 6) Internal Context Engine (Conceptual Cycle)
 Operational events follow a common intelligence pipeline:

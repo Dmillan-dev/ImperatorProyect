@@ -146,3 +146,18 @@ Format: one entry per decision with date, rationale, and impact.
 - Decision: add `docs/product/DECISION_LEDGER_V2.md` as the canonical functional contract for the Decision Ledger module.
 - Rationale: the ledger is strategically important for trust and accountability, but it must stay narrower than a workflow engine, compliance suite or autonomous execution system. The module needs explicit use cases, domain model, conceptual API, events, risks and acceptance criteria before implementation.
 - Impact: Decision Ledger v2 records immutable approval, rejection, deferral, implementation and result-validation history for Decision ROI Cases. It preserves evidence, ROI and assumptions snapshots, separates estimated from realized savings, feeds Business Value only through validated outcomes and remains subordinate to the MVP rule: One Decision. One Timeline. One ROI.
+
+### [2026-07-16] D029 — Technical investor refactor: Decision Recovery Workflow
+- Decision: refactor the current MVP interpretation around a narrower paid wedge: **Decision Recovery Workflow** for AI/cloud spend. Keep the long-term Decision ROI Platform vision, but treat broad surfaces, SDKs, public API, AI Advisor, policy engine, graph/vector infrastructure, multi-cloud expansion, negative-ROI feature analysis and duplicate service/agent consolidation as post-validation.
+- Rationale: a technical investor would fund a repeatable paid workflow before a broad platform. The previous documentation correctly defined the strategic vision, but it risked overbuilding product surfaces, recommendation engines and architecture before proving that customers will approve and pay for one recovery action.
+- Impact: updated MVP blueprint, value proposition, GTM, ICP subsegment, business model, risks, validation plan, sales narrative, API boundary, architecture context, AI agent guidance and context boundaries. Phase 1 should prove the Decision Recovery Workflow with a simple architecture before expanding platform scope.
+
+### [2026-07-17] D030 — MVP context coherence audit
+- Decision: preserve the Decision Recovery Workflow as the only MVP execution focus and clarify ambiguous wording that could imply five recommendation families or broad product surfaces in v1.
+- Rationale: the documentation now contains the right foundations, but future readers and AI agents need a crisp distinction between the paid wedge and post-validation expansion areas.
+- Impact: no strategic scope change. Updated product, business and investor-audit wording so AI model optimization, unused AI agent removal and underutilized AWS resource detection remain the MVP paid-wedge focus; negative-ROI feature analysis and duplicate service/agent consolidation remain deferred.
+
+### [2026-07-17] D031 — Visual operational explainer
+- Decision: add `docs/product/23_IMPERATOR_Visual_Operational_Explainer.md` as a derived teaching document for explaining IMPERATOR through diagrams, demo mapping and an operational walkthrough.
+- Rationale: the project needs one didactic artifact that explains the product without forcing readers to traverse the full strategy, architecture, domain model and demo files.
+- Impact: no change to MVP scope or authority order. The explainer must remain subordinate to the MVP Blueprint, Core Domain Model, API Specification, Decision Ledger v2 and Architecture Context.

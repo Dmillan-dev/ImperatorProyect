@@ -15,7 +15,7 @@ Not all buyers interact with IMPERATOR in the same way.
 
 ## 1) Context API (Integration Entry Point)
 
-Primary user: developers and platform teams.
+Future primary user: developers and platform teams.
 
 Example interaction:
 
@@ -23,7 +23,30 @@ POST /decision
 
 IMPERATOR registers an operational decision with business context metadata.
 
-## 2) Executive Workspace, Decisions and Ledger (Primary Commercial Surface)
+MVP note:
+Do not lead with Context API or SDKs before the Decision Recovery Workflow is validated.
+
+## 2) Decision Review Workspace (MVP Commercial Surface)
+
+Primary users: CTO, Platform leaders, FinOps.
+
+Surface thesis:
+The first paid product should help one buyer group decide whether to approve one recovery action.
+
+It contains:
+- decision summary,
+- evidence chain,
+- ROI assumptions,
+- current monthly cost,
+- estimated annualized recovery,
+- recommendation rationale,
+- owner and approver,
+- approve, reject or defer action,
+- ledger history for this Decision ROI Case.
+
+This is the MVP surface. It should come before the full navigation model.
+
+## 3) Executive Workspace, Decisions and Ledger (Expansion Surface)
 
 Primary users: CTO, CIO, CISO, CFO, Platform leaders.
 
@@ -46,7 +69,8 @@ Navigation model:
 - Policies
 - Settings
 
-For MVP density, the Executive Workspace should show only the company-status answer: executive summary, projected annual savings, recovered value, business impact, time saved, AI spend, compliance score, decision queue, selected decision and evidence. Lifecycle belongs inside each Decision Detail, together with ownership, status, chronology, historical outcomes, lifecycle evidence and final approval.
+Expansion note:
+The Executive Workspace should show company-status answers only after multiple Decision ROI Cases exist. In MVP, do not build this as the primary surface.
 
 Main visibility domains:
 - projected annual savings
@@ -75,7 +99,7 @@ Commercial thesis: the Workspace proves company status quickly. The Decision Det
 MVP ledger note:
 Decision Ledger v2 should be visible inside Decision Detail before it becomes a standalone surface. It should preserve approval, rejection, deferral, implementation and result-validation history for each Decision ROI Case without becoming a workflow engine.
 
-## 3) SDKs (Adoption Accelerators)
+## 4) SDKs (Adoption Accelerators)
 
 Goal: reduce integration friction and time-to-value.
 
@@ -85,7 +109,10 @@ Initial language candidates:
 - Go
 - JavaScript
 
-## 4) Information Domains (MVP Value Distribution)
+Phase:
+Post-MVP. SDKs should not be built before customers repeatedly ask to operationalize Decision ROI Case creation.
+
+## 5) Information Domains (MVP Value Distribution)
 
 Goal: normalize cross-system signals by information type, not by connector breadth.
 
@@ -104,7 +131,7 @@ Deferred expansion systems:
 
 Expansion should happen only after the MVP proves one complete decision story:
 
-Jira -> GitHub -> AWS -> OpenAI + Anthropic Claude -> Decision ROI Timeline -> Executive Workspace.
+Jira -> GitHub -> AWS -> OpenAI + Anthropic Claude -> Decision Review Workspace -> Ledger History -> Result Validation.
 
 The preferred Decision Lifecycle progression is:
 

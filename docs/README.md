@@ -33,6 +33,9 @@ Authoritative product documents:
 - `13_Glossary_and_Canonical_Language.md`
 - `15_Context_Boundaries_and_Non_Goals.md`
 
+Supporting product explainers:
+- `23_IMPERATOR_Visual_Operational_Explainer.md`
+
 ### `architecture/`
 
 Conceptual and target technical architecture.
@@ -40,6 +43,7 @@ Conceptual and target technical architecture.
 Use for:
 - architecture thesis,
 - target architecture context,
+- technical investor audit,
 - conceptual database model,
 - connector framework,
 - Phase 0 repository rules,

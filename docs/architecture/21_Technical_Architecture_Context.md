@@ -47,6 +47,13 @@ The architecture must optimize for:
 
 Never optimize only for a quick demo if it damages the future ability to scale the context engine, the decision ledger or recommendation quality.
 
+Investor refactor:
+
+Phase 1 should optimize for proving one paid workflow before proving the full platform architecture.
+
+Canonical audit reference:
+- `docs/architecture/22_Technical_Investor_Audit.md`
+
 ## MVP Boundary
 
 The MVP must correlate one Decision ROI Case across four integrations:
@@ -86,6 +93,32 @@ External Platforms
   -> Decision Ledger
 ```
 
+## Phase 1 Architecture Refactor
+
+The first build should be a modular monolith or tightly bounded service, not a distributed microservice system.
+
+Initial modules:
+- Integration Intake
+- Context Builder
+- ROI Calculator
+- Recommendation Rules
+- Ledger
+- Decision Review UI
+
+Deferred until repeated customer demand or scale requires them:
+- independent AI Intelligence service,
+- event broker,
+- graph database,
+- vector store,
+- public API gateway,
+- SDKs,
+- policy engine,
+- multi-cloud connector expansion,
+- Kubernetes,
+- OpenSearch or analytics lake.
+
+D013 still applies when internal services exist. It should not force premature service separation before the MVP value loop is validated.
+
 ## Logical Layers
 
 ### 1) Presentation Layer
@@ -98,13 +131,12 @@ Target stack:
 - shadcn/ui or equivalent component system
 
 Product surfaces:
-- Executive Workspace
-- Decisions
-- Decision Ledger
-- Business Value
-- Integrations
-- Policies
-- Settings
+- Decision Review Workspace for MVP
+- Executive Workspace after multiple Decision ROI Cases exist
+- Decision Ledger as standalone surface after enough ledger history exists
+- Business Value after result validation exists
+- Integrations as supporting configuration and health context
+- Policies and Settings after governance needs are validated
 
 Rule:
 The UI must not become a generic dashboard. Each screen answers one product question.
@@ -192,13 +224,15 @@ Every ROI number must be explainable and tied to explicit evidence or assumption
 
 ### 7) Recommendation Engine
 
-Initial recommendation families:
+Initial recommendation focus:
 
 1. Downgrade or change AI model.
 2. Remove unused AI agents.
-3. Detect underutilized AWS resources.
-4. Identify features with negative ROI.
-5. Consolidate duplicated services or agents.
+3. Detect underutilized AWS resources tied to the same Decision ROI Case.
+
+Deferred:
+- identify features with negative ROI,
+- consolidate duplicated services or agents.
 
 Each recommendation must include:
 - reason
@@ -219,15 +253,16 @@ Target stack:
 - FastAPI
 
 Responsibilities:
-- LLM orchestration
-- semantic similarity
-- prompt and agent analysis
-- recommendation explanation
-- embeddings and retrieval
-- AI Advisor queries over prepared context
+- recommendation explanation over prepared context
+- evidence summarization
+- optional prompt and agent analysis after the first recovery wedge is validated
+- optional semantic similarity, embeddings and AI Advisor later
 
 Rule:
 AI services must never read raw external sources directly. They consume prepared context from the Context Engine and Decision Ledger.
+
+Phase 1 rule:
+Do not make AI orchestration a critical dependency for the first proof. Use deterministic rules and explicit assumptions first; use LLMs for explanation only when evidence quality is already trusted.
 
 ### 9) Decision Ledger
 
@@ -278,6 +313,8 @@ Future scale primitives:
 - OpenSearch or analytics store for search and large-scale exploration
 - data lake for long-term operational history
 
+These are not Phase 1 requirements.
+
 ## Communication Model
 
 The detailed communication rationale lives in `docs/rfcs/0002-module-communication-architecture.md`.
@@ -312,6 +349,8 @@ Source of truth:
 
 ## Bounded Contexts
 
+These are conceptual ownership boundaries. They are not mandatory service boundaries for Phase 1.
+
 ### Integration Context
 Owns connectors, provider health, authentication metadata and sync state.
 
@@ -339,6 +378,7 @@ Owns users, roles, permissions, tenant boundaries and governance policies.
 
 | Surface | Primary question | Backing contexts |
 |---|---|---|
+| Decision Review Workspace | Can we trust and approve this recovery action? | Decision, Context, ROI, Recommendation, Ledger |
 | Executive Workspace | How is the company right now? | ROI, Recommendation, Decision |
 | Decisions | Can we trust this recommendation? | Decision, Context, Ledger, ROI |
 | Decision Ledger | What has the company decided over time? | Ledger, Decision, ROI |
@@ -388,6 +428,8 @@ The current project is healthy if:
 
 - premature connector expansion
 - overbuilding before pilot validation
+- treating conceptual bounded contexts as mandatory microservices
+- making AI, graph, vector or event-broker infrastructure a prerequisite for first value
 - AI recommendations without explainable evidence
 - ROI estimates without explicit assumptions
 - mixing connector logic with domain logic
@@ -400,3 +442,4 @@ The current project is healthy if:
 3. Update the Core Domain Model and create RFCs before adding new bounded contexts or major data models.
 4. Create ADRs before locking implementation stack choices beyond current mandates.
 5. Validate one complete Decision ROI Case before expanding integrations.
+6. Validate the Decision Recovery Workflow before building broad platform surfaces.

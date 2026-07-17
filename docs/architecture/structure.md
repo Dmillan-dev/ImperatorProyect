@@ -45,6 +45,10 @@ Documento canónico de arquitectura:
 
 - `docs/architecture/21_Technical_Architecture_Context.md` — contexto técnico objetivo: capas, bounded contexts, responsabilidades, stack direction, control model y guardrails.
 
+Documento de auditoría técnica:
+
+- `docs/architecture/22_Technical_Investor_Audit.md` — revisión tipo inversor técnico: qué eliminar, qué falta, qué está sobreingenierizado y cómo enfocar Phase 1.
+
 Estructura de control:
 
 - `docs/decisions/14_Decision_Log.md` — cambios estratégicos y arquitectónicos relevantes.

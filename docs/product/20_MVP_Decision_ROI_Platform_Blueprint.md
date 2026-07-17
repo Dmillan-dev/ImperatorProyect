@@ -12,7 +12,7 @@ IMPERATOR finds hidden operational money inside shipped technology decisions and
 
 Commercial message:
 
-> IMPERATOR automatically identifies technology decisions destroying economic value and recommends the highest-ROI actions to recover money.
+> IMPERATOR reconstructs expensive shipped technology decisions and recommends approval-ready actions to recover money.
 
 ## MVP Category
 
@@ -33,6 +33,23 @@ Canonical intelligence domain:
 **One Decision. One Timeline. One ROI.**
 
 The MVP must not try to connect everything. It must prove one complete decision story across four information domains.
+
+## MVP Paid Wedge
+
+The first paid product motion is the **Decision Recovery Workflow**.
+
+Promise:
+
+**In 30 days, reconstruct one expensive AI/cloud decision and produce one approval-ready recovery action.**
+
+The workflow must prove:
+- why the decision exists,
+- who implemented it,
+- what it costs now,
+- what usage or value signal exists,
+- what action can recover money,
+- who can approve, reject or defer the action,
+- what value was later validated.
 
 ## MVP Integrations
 
@@ -60,23 +77,32 @@ Each case should contain:
 - Recommendation: action, annual saving, risk, confidence, owner and approver
 - Result: approved, rejected, implemented, validated and realized saving
 
-## Priority Recommendations
+## Recommendation Focus
 
-The MVP should focus on five recommendation families:
+The MVP should not build five engines at once.
 
-| Priority | Recommendation | Economic impact |
+Primary paid wedge:
+
+| Priority | Recommendation | MVP role |
 |---|---|---|
-| 5/5 | Downgrade or change AI model | Very high |
-| 5/5 | Remove unused AI agents | Very high |
-| 4/5 | Detect underutilized AWS resources | High |
-| 4/5 | Identify features with negative ROI | High |
-| 4/5 | Consolidate duplicated services or agents | High |
+| 5/5 | Downgrade or change AI model | Primary |
+| 5/5 | Remove unused AI agents | Primary |
+| 4/5 | Detect underutilized AWS resources tied to the same decision | Supporting |
 
-These five recommendations support the strongest commercial message:
+Deferred until after repeatable ROI:
 
-> IMPERATOR finds hidden money in daily operations and explains exactly which decision to take to recover it.
+| Recommendation | Reason to defer |
+|---|---|
+| Identify features with negative ROI | Requires stronger usage/value signals and business-value attribution |
+| Consolidate duplicated services or agents | Requires similarity analysis and broader graph depth |
 
-## MVP Recommendation Examples
+This paid-wedge focus supports the strongest commercial message:
+
+> IMPERATOR finds hidden AI/cloud waste inside shipped decisions and explains exactly which action leadership should approve to recover it.
+
+## Recommendation Examples and Deferred Families
+
+Examples 1-3 belong to the MVP paid wedge. Examples 4-5 are documented only as post-validation expansion context.
 
 ### 1) AI Model Downgrade
 
@@ -121,7 +147,7 @@ Recommendation:
 
 Archive, downsize or stop resources with low usage and clear ownership.
 
-### 4) Negative-ROI Features
+### 4) Negative-ROI Features — Deferred
 
 Signals:
 - Jira business goal
@@ -133,7 +159,11 @@ Recommendation:
 
 Review, disable or redesign a shipped feature whose operating cost exceeds observable value.
 
-### 5) Duplicate Services or Agents
+Phase:
+
+Post-MVP, after value-signal reliability is validated.
+
+### 5) Duplicate Services or Agents — Deferred
 
 Signals:
 - similar prompts or embeddings
@@ -145,6 +175,10 @@ Signals:
 Recommendation:
 
 Merge duplicated agents or services when overlap is high and ownership is clear.
+
+Phase:
+
+Post-MVP, after enough decision, service and agent history exists to make similarity analysis trustworthy.
 
 ## Correlation Engine
 
@@ -164,37 +198,34 @@ Correlation signals:
 
 ## Product Surfaces
 
-### Executive Workspace
+### MVP Surface: Decision Review Workspace
+
+Question:
+
+**Can we trust and approve this recovery action?**
+
+Answers:
+- decision summary,
+- timeline,
+- evidence,
+- current cost,
+- usage or value signal,
+- ROI assumptions,
+- recommendation,
+- approval, rejection or deferral controls,
+- ledger history for this Decision ROI Case.
+
+For MVP, this single surface is enough. It can be presented as a Decision Detail or pilot workspace, but it should not require a full navigation suite.
+
+### Deferred Surface: Executive Workspace
 
 Question:
 
 **How is the company right now?**
 
-Answers:
-- how much money is at risk
-- how much can be recovered
-- which decision should be reviewed today
-- what risk exists
-- which teams generate the most value
+This becomes valuable after multiple Decision ROI Cases exist.
 
-The Executive Workspace is the Home. It should not contain detailed lifecycle evidence or final approval actions.
-
-### Decisions
-
-Question:
-
-**Can we trust this recommendation enough to approve it?**
-
-Answers:
-- decision list
-- evidence chain
-- financial impact
-- lifecycle evidence
-- ownership
-- status
-- final approval action
-
-### Decision Ledger
+### Deferred Surface: Decision Ledger
 
 Question:
 
@@ -212,7 +243,7 @@ Decision Ledger v2 module contract:
 MVP rule:
 The ledger should first appear inside Decision Detail as the accountability history of one Decision ROI Case. A standalone Decision Ledger surface becomes valuable after enough approved, rejected, deferred and validated decisions exist to support audit and accumulated-value review.
 
-### Business Value
+### Deferred Surface: Business Value
 
 Question:
 
@@ -225,7 +256,9 @@ Answers:
 - recovered time
 - ROI of IMPERATOR
 
-### Integrations
+Business Value should count realized value only from validated ledger outcomes.
+
+### Supporting Surface: Integrations
 
 Question:
 
@@ -250,17 +283,22 @@ Validation sequence:
 5. Generate one recommendation.
 6. Estimate annual recovery.
 7. Ask CTO/Platform/FinOps if the recommendation is credible enough to approve.
+8. Record approval, rejection or deferral in the ledger.
+9. Validate realized value if the company implements the recommendation.
 
 ## Go Criteria
 
 Proceed to Phase 1 product design if:
 
-- at least one customer recognizes the four-domain reconstruction as painful
-- a real decision can be correlated across the four MVP integrations
-- one of the five recommendation families produces credible annual savings
+- at least 3 real customer decisions can be reconstructed
+- at least 2 recommendations are judged approval-ready by technical owners
+- at least 1 recommendation is approved by CTO, VP Engineering or FinOps
+- at least 1 measurable monthly saving or avoided cost is identified
 - a technical owner trusts the evidence
 - an economic buyer understands the ROI
 - the buyer asks to review more decisions
+
+Do not expand surfaces, connectors or recommendation families before these conditions are met.
 
 ## Non-Goals
 

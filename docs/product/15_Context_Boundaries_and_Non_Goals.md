@@ -37,7 +37,7 @@ Any new initiative must answer:
 1. Does it strengthen the Decision ROI Timeline?
 2. Does it improve the cross-system context layer?
 3. Does it increase buyer clarity?
-4. Does it support one of the five MVP recommendation families?
+4. Does it support the MVP paid-wedge recommendation focus?
 
 If fewer than 3/4 are true, defer it.
 
@@ -45,9 +45,13 @@ If fewer than 3/4 are true, defer it.
 
 For v1, do not expand beyond Jira, GitHub, AWS and OpenAI + Anthropic Claude unless a validated customer pilot requires it.
 
-The five MVP recommendation families are:
+The MVP paid-wedge recommendation focus is:
 - downgrade or change AI model
 - remove unused AI agents
-- detect underutilized AWS resources
+- detect underutilized AWS resources tied to the same Decision ROI Case
+
+Deferred recommendation families:
 - identify features with negative ROI
 - consolidate duplicated services or agents
+
+Do not build new standalone product surfaces before the Decision Recovery Workflow is validated.

@@ -16,7 +16,7 @@ Modern companies approve features, AI workflows and infrastructure changes throu
 
 ## The solution
 
-IMPERATOR connects operational signals and turns them into a **Decision ROI Timeline**.
+IMPERATOR connects operational signals and turns them into a **Decision Recovery Workflow** built around a Decision ROI Timeline.
 
 The MVP normalizes four information domains:
 
@@ -27,15 +27,15 @@ The MVP normalizes four information domains:
 | Infrastructure & Cost | AWS | What it consumes: Cost Explorer, CloudWatch, Lambda, ECS, EC2, EKS |
 | AI Consumption | OpenAI + Anthropic Claude | What AI costs: models, tokens, cost, user, application |
 
-The Executive Workspace should answer the same question every time:
+The Decision Review Workspace should answer the same question every time:
 
 **"This decision costs X today, appears to create Y estimated value, and has an action that can recover Z per year."**
 
-The executive surface is **Executive Operational Intelligence** expressed as **Workspace -> Decision -> Ledger**: it does not analyze servers, logs or costs as isolated objects; it analyzes business decisions, the evidence behind them and the record of what was approved.
+The MVP surface should be a **Decision Review Workspace**: it does not analyze servers, logs or costs as isolated objects; it reviews one business decision, the evidence behind it, the recovery action and the ledger record.
 
 ## Who it is for
 
-The initial focus is enterprise SaaS organizations with multi-cloud usage, heavy SaaS adoption, active AI usage and a clear need for governance. The buyer path is:
+The long-term focus is enterprise SaaS organizations with multi-cloud usage, heavy SaaS adoption, active AI usage and a clear need for governance. The v1 paid-validation subsegment is AWS-first B2B SaaS using Jira, GitHub and OpenAI or Anthropic Claude in production. The buyer path is:
 
 - Primary business owner: CTO or VP Engineering
 - Internal champion: Staff Engineer, Platform lead or Platform Engineering Manager
@@ -66,7 +66,7 @@ The founder-mode ambition remains valid: act like a CTO building an enterprise-g
 - MVP wedge: Decision ROI Timeline built on cross-platform decision traceability.
 - Product category: Decision ROI Platform for Executive Operational Intelligence.
 - Intelligence domain: Enterprise Context Intelligence.
-- Product surface: Workspace -> Decision -> Ledger.
+- Product surface: Decision Review Workspace first; Workspace -> Decision -> Ledger after repeated decisions exist.
 - MVP integrations: Jira, GitHub, AWS and OpenAI + Anthropic Claude.
 - Architecture status: target context for Phase 1 planning, not permission to build production services in Phase 0.
 
@@ -76,30 +76,24 @@ IMPERATOR is designed to become the intelligence layer that helps enterprises an
 
 The MVP should prove that through one complete story:
 
-Jira -> GitHub -> AWS -> OpenAI + Anthropic Claude -> Executive Workspace -> Decision Detail -> Decision Ledger.
+Jira -> GitHub -> AWS -> OpenAI + Anthropic Claude -> Decision Review Workspace -> Decision Ledger history -> Result Validation.
 
 The first MVP recommendations should be:
 - downgrade or change AI model,
 - remove unused AI agents,
-- detect underutilized AWS resources,
-- identify features with negative ROI,
-- consolidate duplicated services or agents.
+- detect underutilized AWS resources tied to the same decision.
+
+Negative-ROI feature analysis and duplicated service/agent consolidation should remain post-MVP until the first wedge is repeatable.
 
 ## Strategic recommendations
 
-### Executive Workspace first
+### Decision Review Workspace first
 
 The first screen should not start with logs or charts. It should start with one future-facing decision answer:
 
 > "If approved today: annual savings €19.440, payback immediate, risk low, confidence 92%."
 
-At workspace level, the main number should be annualized and large:
-
-> Projected Annual Savings: €184.320
-
-Annual Business Value should be separated into cost saved, time recovered, risk avoided and compliance automation. The decision queue should use monthly savings because that is the most actionable approval unit.
-
-The Workspace should then explain why:
+The review workspace should then explain why:
 
 - Usage dropped 82%.
 - Active users decreased from 61 to 17.
@@ -133,7 +127,7 @@ Each lifecycle step should open evidence. For example, AI Consumption should exp
 
 ### Core KPI
 
-All demos should surface a single KPI: **Recovered Operational Value** — money saved, time recovered and risks avoided, expressed as estimated economic value.
+All demos should surface a single KPI: **Validated Recovered Operational Value** — realized money saved, time recovered or risk avoided after approval and result validation.
 
 ### Strategic rule
 

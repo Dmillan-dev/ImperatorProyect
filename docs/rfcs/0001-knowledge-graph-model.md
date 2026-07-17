@@ -7,6 +7,8 @@ Phase 0 note: this RFC is conceptual planning. It does not authorize runnable ET
 
 Canonical data model note: `docs/architecture/DATABASE_MODEL.md` owns the conceptual database model. This RFC remains a proposal for graph/storage mapping and evolution.
 
+Investor refactor note: this RFC is **post-validation architecture context**. The first MVP should not require a graph database, vector database, RAG pipeline or semantic search to prove the Decision Recovery Workflow.
+
 ## Purpose
 
 Definir el modelo conceptual inicial del Knowledge Graph (KG) para IMPERATOR, y mapear los `.proto` canónicos a un esquema inicial en PostgreSQL (con opción de migrar a DB de grafos). Este RFC guía el diseño futuro del Context Layer y sirve como contrato conceptual entre Backend, AI y Product.
@@ -128,8 +130,8 @@ Phase 2 candidate: if traversals/graph algorithms dominate, consider migrating h
 - Keep `.proto` as source of truth; generate regular dumps to validate DB schema mapping.
 - Add retention and TTL policies for cost/metrics if needed.
 
-## Phase 1 candidate next steps
+## Post-Validation Candidate Next Steps
 
-1. Approve RFC and draft SQL DDL for an initial Postgres schema.
-2. Design a minimal ETL plan from `Decision.proto` to `decisions` table and `decision_entities` links.
-3. Design a RAG prototype plan and embedding storage approach.
+1. Validate at least 3 real Decision ROI Cases without graph/vector infrastructure.
+2. Identify traversal or similarity queries that cannot be handled by simple relational modeling.
+3. Only then draft SQL/edge modeling or embedding storage plans.

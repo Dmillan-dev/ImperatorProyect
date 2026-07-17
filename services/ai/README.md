@@ -6,9 +6,9 @@ Phase 0 note: this folder is documentation/scaffold only. Do not add runnable AI
 
 Tasks:
 - Document future consumption of `proto/Decision.proto` from Python.
-- Describe prototype plan for RAG and LangGraph pipelines.
+- Describe future RAG and LangGraph pipeline options only after the Decision Recovery Workflow is validated.
 - Document future virtual environment and dependency approach.
-- Define recommendation reasoning assumptions for the five MVP recommendation families.
+- Define recommendation reasoning assumptions for model downgrade, unused agent removal and AWS underutilization tied to one Decision ROI Case.
 - Provider boundary for MVP: OpenAI + Anthropic Claude.
 - Target stack context: Python and FastAPI.
 - Follow `docs/architecture/21_Technical_Architecture_Context.md`; AI must consume prepared context, not raw external sources.

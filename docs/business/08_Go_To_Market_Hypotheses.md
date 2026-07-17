@@ -3,7 +3,7 @@
 ## Land Strategy (Land and Expand Model)
 
 ### Primary Entry Point
-**Decision ROI Timeline for one high-cost business decision.**
+**Decision Recovery Workflow for one high-cost AI/cloud decision.**
 
 The launch wedge should answer:
 
@@ -46,13 +46,15 @@ In 30 days, measure:
 
 ### Priority Recommendation Wedge
 
-The first commercial motion should test five recommendation families:
+The first commercial motion should test a narrow AI/cloud spend recovery wedge:
 
 1. Downgrade or change AI model.
 2. Remove unused AI agents.
-3. Detect underutilized AWS resources.
-4. Identify features with negative ROI.
-5. Consolidate duplicated services or agents.
+3. Detect underutilized AWS resources tied to the same decision.
+
+Deferred until repeatable ROI is proven:
+- identify features with negative ROI,
+- consolidate duplicated services or agents.
 
 ## Expand Strategy (Months 2–12)
 
@@ -63,7 +65,7 @@ Entry wedge: Decision ROI Timeline for one high-cost feature, AI workflow or inf
 Expand into decision-level cost attribution, AI model optimization and recurring recovery reviews.
 
 ### Phase 3 (Month 4–6): Security + Compliance
-Reuse decision timelines for audit evidence, policy visibility and risk review.
+Reuse decision timelines and ledger history for audit evidence and risk review.
 
 ### Phase 4 (Month 6+): Executive Operating System
 Expose recovered operational value, top negative-ROI decisions and approved optimization actions at executive level.
@@ -82,3 +84,11 @@ IMPERATOR is purchased for operational outcomes:
 ## Recommended Sales Message
 
 "We help leadership see the live ROI of decisions after they ship. IMPERATOR links Jira, GitHub, AWS and OpenAI + Anthropic Claude so you know why a decision exists, who implemented it, what it costs today, whether it is being used, and what action can recover money."
+
+## Expansion Gate
+
+Do not expand the product surface, connector roadmap or recommendation families until:
+- 3 real customer decisions have been reconstructed,
+- 2 recommendations are judged approval-ready,
+- 1 recommendation is approved by CTO, VP Engineering or FinOps,
+- 1 measurable monthly saving or avoided cost is identified.

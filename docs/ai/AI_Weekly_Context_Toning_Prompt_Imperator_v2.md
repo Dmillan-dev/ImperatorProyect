@@ -16,10 +16,12 @@ Always use:
 - docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md
 - docs/product/CORE_DOMAIN_MODEL.md
 - docs/product/API_SPECIFICATION.md
+- docs/product/DECISION_LEDGER_V2.md
 - docs/architecture/DATABASE_MODEL.md
 - docs/architecture/CONNECTOR_FRAMEWORK.md
 - docs/rfcs/0002-module-communication-architecture.md
 - docs/architecture/21_Technical_Architecture_Context.md
+- docs/architecture/22_Technical_Investor_Audit.md
 
 Reference for consistency:
 - docs/business/01_Vision_and_Positioning.md
@@ -89,10 +91,12 @@ E) Freeze list + next focus
 ## Current canonical assumptions (must preserve unless explicitly changed)
 - IMPERATOR is a Decision ROI Platform for Executive Operational Intelligence.
 - Canonical intelligence domain: Enterprise Context Intelligence.
-- Primary ICP: Enterprise SaaS multi-cloud (100–500 employees, 50+ SaaS apps, active AI usage, Platform+DevOps+Security).
+- Long-term ICP: Enterprise SaaS multi-cloud (100–500 employees, 50+ SaaS apps, active AI usage, Platform+DevOps+Security).
+- V1 paid validation subsegment: AWS-first B2B SaaS using Jira, GitHub and OpenAI or Anthropic Claude in production.
 - Entry wedge: Decision ROI Timeline built on Cross-platform Decision Traceability.
 - MVP rule: One Decision. One Timeline. One ROI.
 - MVP systems: Jira, GitHub, AWS, OpenAI + Anthropic Claude.
 - Canonical MVP blueprint: docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md.
-- Priority recommendation families: AI model downgrade/change, unused AI agent removal, underutilized AWS resources, negative-ROI features and duplicated service/agent consolidation.
+- Priority paid wedge: AI model downgrade/change, unused AI agent removal and underutilized AWS resources tied to the same Decision ROI Case.
+- Deferred recommendation families: negative-ROI features and duplicated service/agent consolidation.
 - Land-and-expand sequence: CTO/VP Engineering + Platform + FinOps → Security/Compliance → Executive operating layer.

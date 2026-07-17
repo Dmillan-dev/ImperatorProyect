@@ -1,6 +1,6 @@
 # 03 — ICP and Buyer Personas
 
-## Primary ICP (Winner Focus)
+## Long-Term ICP (Winner Focus)
 
 **Enterprise SaaS Multi-cloud** with:
 - 100–500 employees
@@ -13,7 +13,15 @@
 
 ## Recommended Initial Subsegment (v1)
 
-**B2B SaaS under compliance pressure (SOC2/ISO27001) with high operational complexity.**
+**AWS-first B2B SaaS under compliance pressure (SOC2/ISO27001), using Jira, GitHub and OpenAI or Anthropic Claude in production.**
+
+This subsegment is narrower than the long-term ICP on purpose. Multi-cloud remains a strategic expansion signal, but the first paid wedge should not require more than AWS for infrastructure and cost evidence.
+
+Strong v1 qualifiers:
+- at least one expensive AI workflow, agent or AI-enabled feature in production,
+- visible AWS cost tied to a shipped feature or service,
+- Jira and GitHub are used consistently enough to reconstruct decision intent and implementation,
+- CTO, Platform and FinOps can jointly review an approval-ready recovery action.
 
 ## Buying Map
 

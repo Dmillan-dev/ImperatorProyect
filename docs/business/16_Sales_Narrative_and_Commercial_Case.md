@@ -20,7 +20,7 @@ IMPERATOR rebuilds that thread.
 
 The MVP links:
 
-Jira -> GitHub -> AWS -> OpenAI + Anthropic Claude -> Executive Workspace -> Decision Detail -> Decision Ledger.
+Jira -> GitHub -> AWS -> OpenAI + Anthropic Claude -> Decision Review Workspace -> Decision Ledger history -> Result Validation.
 
 The product should always answer:
 
@@ -76,17 +76,19 @@ This is the commercial product moment. The customer does not buy another dashboa
 
 Slack, Microsoft 365, Salesforce, Azure OpenAI, Google Gemini, Mistral, Azure DevOps, ServiceNow, Azure and GCP are expansion candidates, not MVP dependencies.
 
-## Priority MVP Recommendations
+## MVP Paid-Wedge Recommendations
 
-The first commercial version should focus on recommendations with obvious economic impact:
+The first commercial version should focus on a narrow AI/cloud spend recovery wedge:
 
-| Priority | Recommendation | Economic impact |
+| Priority | Recommendation | MVP role |
 |---|---|---|
-| 5/5 | Downgrade or change AI model | Very high |
-| 5/5 | Remove unused AI agents | Very high |
-| 4/5 | Detect underutilized AWS resources | High |
-| 4/5 | Identify features with negative ROI | High |
-| 4/5 | Consolidate duplicated services or agents | High |
+| 5/5 | Downgrade or change AI model | Primary |
+| 5/5 | Remove unused AI agents | Primary |
+| 4/5 | Detect underutilized AWS resources tied to the same decision | Supporting |
+
+Deferred until the first wedge is repeatable:
+- identify features with negative ROI,
+- consolidate duplicated services or agents.
 
 This creates the core sales message:
 
@@ -187,8 +189,10 @@ The MVP starts with Jira, GitHub, AWS and OpenAI + Anthropic Claude. Other syste
 2. Reconstruct the Jira -> GitHub -> AWS -> OpenAI + Anthropic Claude timeline.
 3. Measure current monthly cost.
 4. Capture an available usage or value signal.
-5. Produce one recommendation with annualized recovery from the five MVP recommendation families.
+5. Produce one recommendation with annualized recovery from the AI/cloud spend recovery wedge.
 6. Compare manual reconstruction effort with pilot reconstruction effort.
+7. Record approval, rejection or deferral.
+8. Validate realized value if the customer implements the recommendation.
 
 ## Success Looks Like
 

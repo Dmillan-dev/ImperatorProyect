@@ -14,19 +14,27 @@ The MVP does not compete on connecting everything. It proves value by normalizin
 
 **This business decision costs X today, appears to create Y estimated value, and has an action that can recover Z per year.**
 
-## Priority MVP Recommendations
+## Paid MVP Wedge
 
-| Priority | Recommendation | Economic impact |
+The first paid motion is the **Decision Recovery Workflow** for AI/cloud spend.
+
+It should prove one expensive shipped decision before presenting IMPERATOR as a broad platform.
+
+## MVP Paid-Wedge Recommendations
+
+| Priority | Recommendation | MVP role |
 |---|---|---|
-| 5/5 | Downgrade or change AI model | Very high |
-| 5/5 | Remove unused AI agents | Very high |
-| 4/5 | Detect underutilized AWS resources | High |
-| 4/5 | Identify features with negative ROI | High |
-| 4/5 | Consolidate duplicated services or agents | High |
+| 5/5 | Downgrade or change AI model | Primary paid wedge |
+| 5/5 | Remove unused AI agents | Primary paid wedge |
+| 4/5 | Detect underutilized AWS resources tied to the same decision | Supporting |
 
-These five recommendation families are the MVP value spine. They support the commercial message:
+Deferred until the first wedge is repeatable:
+- identify features with negative ROI,
+- consolidate duplicated services or agents.
 
-**IMPERATOR finds hidden money in daily operations and explains exactly which decision to take to recover it.**
+This paid-wedge focus supports the commercial message:
+
+**IMPERATOR finds hidden AI/cloud waste inside shipped decisions and explains exactly which action leadership should approve to recover it.**
 
 ## Painkillers (Prioritized by Buying Urgency)
 
@@ -71,6 +79,8 @@ Business Decision -> Technical Change -> Infrastructure -> AI Consumption -> Rec
 
 Each case must include current cost, usage/value proxy, owner, approver, confidence and annualized recovery.
 
+For MVP, this object should be reviewed inside one **Decision Review Workspace**, not spread across a full platform navigation model.
+
 ## Canonical ROI Assumptions (Use Consistently)
 
 | Assumption | Canonical value |
@@ -89,4 +99,6 @@ Use these numbers as validation assumptions, not guaranteed customer outcomes.
 
 ## Recommended North-Star KPI
 
-**Recovered Operational Value**: estimated money saved, time recovered and risk avoided by acting on decision-level recommendations.
+**Validated Recovered Operational Value**: realized money saved, time recovered or risk avoided after a recommendation is approved and later validated.
+
+Estimated recovery may be shown during review, but it must remain separate from validated value.

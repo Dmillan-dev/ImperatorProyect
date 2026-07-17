@@ -453,7 +453,7 @@ The MVP conceptual database model must support:
 - AWS resource, usage and cost signals,
 - OpenAI + Anthropic Claude usage and cost signals,
 - Decision ROI Timeline,
-- five recommendation families,
+- MVP paid-wedge recommendation focus,
 - approval record,
 - ledger history,
 - business value reporting.
