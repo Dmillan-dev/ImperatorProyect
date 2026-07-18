@@ -74,7 +74,7 @@ The project needs a crisp pilot workflow:
 2. IMPERATOR reconstructs the Jira -> GitHub -> AWS -> AI chain,
 3. customer validates cost and usage evidence,
 4. IMPERATOR proposes one action,
-5. CTO/FinOps approves, rejects or defers,
+5. CTO or VP Engineering approves, rejects or defers after FinOps review,
 6. realized value is validated later.
 
 ### 3. Proof Thresholds
@@ -83,7 +83,7 @@ The MVP needs thresholds before product expansion:
 
 - 3 real customer decisions reconstructed,
 - 2 recommendations judged approval-ready,
-- 1 recommendation approved by CTO/FinOps,
+- 1 recommendation approved by CTO or VP Engineering after FinOps review,
 - one measurable monthly saving or avoided cost,
 - evidence trusted by a technical owner.
 

@@ -6,7 +6,7 @@ Define the first end-to-end MVP slice for IMPERATOR without creating implementat
 
 This document turns the platform vision into one demonstrable product path:
 
-**Event -> Connector -> Decision Engine -> Decision Ledger -> ROI Engine -> Executive Dashboard / Decision Review Workspace**
+**Event -> Connector -> Decision Engine -> ROI Engine -> Recommendation -> Decision Ledger -> Decision Review Workspace**
 
 It is a Phase 0 planning artifact. It does not authorize services, connectors, databases, API handlers, infrastructure or executable code.
 
@@ -17,6 +17,10 @@ It is a Phase 0 planning artifact. It does not authorize services, connectors, d
 - `docs/product/DECISION_LEDGER_V2.md`
 - `docs/product/API_SPECIFICATION.md`
 - `docs/product/25_MVP_ROI_Slice.md`
+- `docs/product/26_Manual_Evidence_Pack_AI_Onboarding_Assistant.md`
+- `docs/product/27_MVP_Acceptance_Test_Plan.md`
+- `docs/product/28_Identity_Access_Approval_Model.md`
+- `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`
 - `docs/architecture/21_Technical_Architecture_Context.md`
 - `docs/architecture/24_MVP_Project_Structure.md`
 
@@ -79,9 +83,9 @@ flowchart TD
     CON --> NE[Normalized Evidence]
     NE --> CASE[Decision ROI Case]
     CASE --> DE[Decision Engine]
-    DE --> REC[Recommendation]
+    DE --> ROI[ROI Engine]
+    ROI --> REC[Recommendation]
     REC --> LEDGER[Decision Ledger Entry]
-    CASE --> ROI[ROI Engine]
     LEDGER --> UI[Decision Review Workspace]
     ROI --> UI
 ```
@@ -198,6 +202,8 @@ Recommendation must include:
 
 The ledger records the review outcome.
 
+The ledger depends on evidence, ROI and assumptions snapshots. It records accountability after the case can be reviewed; it must not become the component that calculates ROI.
+
 Minimum ledger events for the slice:
 - recommendation created,
 - recommendation approved, rejected or deferred,
@@ -312,6 +318,14 @@ Before implementation, prepare these as documentation or validation assets:
 
 These artifacts may live in docs or research templates. They should not require runnable services.
 
+The first evidence artifact now lives in `docs/product/26_Manual_Evidence_Pack_AI_Onboarding_Assistant.md`.
+
+The acceptance test plan now lives in `docs/product/27_MVP_Acceptance_Test_Plan.md`.
+
+The identity, access and approval model now lives in `docs/product/28_Identity_Access_Approval_Model.md`.
+
+The first screen contract now lives in `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`.
+
 ## TFG Defense Angle
 
 The slice is defensible academically because it demonstrates:
@@ -343,6 +357,9 @@ Do not begin implementation until this vertical slice is reviewed against:
 - `docs/product/API_SPECIFICATION.md`,
 - `docs/product/DECISION_LEDGER_V2.md`,
 - `docs/product/25_MVP_ROI_Slice.md`,
+- `docs/product/27_MVP_Acceptance_Test_Plan.md`,
+- `docs/product/28_Identity_Access_Approval_Model.md`,
+- `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`,
 - `docs/architecture/24_MVP_Project_Structure.md`,
 - `docs/architecture/21_Technical_Architecture_Context.md`.
 

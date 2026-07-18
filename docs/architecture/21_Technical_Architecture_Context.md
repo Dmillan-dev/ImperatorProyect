@@ -25,8 +25,13 @@ It is subordinate to:
 5. `docs/product/DECISION_LEDGER_V2.md` for Decision Ledger module behavior.
 6. `docs/architecture/DATABASE_MODEL.md` for conceptual data model.
 7. `docs/architecture/CONNECTOR_FRAMEWORK.md` for connector boundaries.
-8. `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
-9. `docs/architecture/phase0-guidelines.md` for Phase 0 repository rules.
+8. `docs/architecture/26_Security_Data_Governance_Threat_Model.md` for evidence sensitivity, AI boundaries and security threat model.
+9. `docs/product/28_Identity_Access_Approval_Model.md` for roles, permissions and approval authority.
+10. `docs/product/27_MVP_Acceptance_Test_Plan.md` for pre-code acceptance gates.
+11. `docs/product/29_Decision_Review_Workspace_Screen_Contract.md` for first MVP screen behavior.
+12. `docs/architecture/27_Quality_Attributes.md` for MVP non-functional quality expectations.
+13. `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
+14. `docs/architecture/phase0-guidelines.md` for Phase 0 repository rules.
 
 Founder-mode prompts should be interpreted as ambition and quality standards. If they conflict with this document, the current repository context wins unless a new decision is recorded in `docs/decisions/14_Decision_Log.md`.
 
@@ -73,7 +78,9 @@ The system revolves around the **Decision ROI Case**.
 
 Canonical flow:
 
-Business Decision -> Technical Change -> Infrastructure -> AI Consumption -> Recommendation -> Approval -> Implementation -> Result Validation -> Decision Ledger
+Business Decision -> Technical Change -> Infrastructure -> AI Consumption -> ROI -> Recommendation -> Approval/Rejection/Deferral -> Implementation -> Result Validation
+
+The Decision Ledger records review, approval, rejection, deferral, implementation and validation states across that flow. It does not sit at the end as a passive archive.
 
 Every module must either enrich this object, evaluate it, expose it, govern it or record it.
 
@@ -86,11 +93,11 @@ External Platforms
   -> Connector Layer
   -> Ingestion and Normalization
   -> Context Engine
-  -> Decision Graph
+  -> Decision ROI Case
   -> ROI Engine
   -> Recommendation Engine
-  -> Product Surfaces
   -> Decision Ledger
+  -> Product Surfaces
 ```
 
 ## Phase 1 Architecture Refactor
@@ -387,6 +394,10 @@ Owns users, roles, permissions, tenant boundaries and governance policies.
 | Policies | What can be recommended or approved? | Identity, Policy, Recommendation |
 | Settings | How is the organization configured? | Identity, Integration |
 
+Decision Review Workspace behavior is defined in `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`.
+
+MVP quality attributes are defined in `docs/architecture/27_Quality_Attributes.md`.
+
 ## Repository Control Model
 
 Authoritative documents:
@@ -396,6 +407,11 @@ Authoritative documents:
 - `docs/product/DECISION_LEDGER_V2.md` for Decision Ledger module behavior.
 - `docs/architecture/DATABASE_MODEL.md` for conceptual data model.
 - `docs/architecture/CONNECTOR_FRAMEWORK.md` for integration and connector boundaries.
+- `docs/architecture/26_Security_Data_Governance_Threat_Model.md` for evidence sensitivity, AI boundaries, permissions and threat model.
+- `docs/product/28_Identity_Access_Approval_Model.md` for MVP role and approval authority.
+- `docs/product/27_MVP_Acceptance_Test_Plan.md` for MVP acceptance scenarios before implementation.
+- `docs/product/29_Decision_Review_Workspace_Screen_Contract.md` for the first MVP review surface behavior.
+- `docs/architecture/27_Quality_Attributes.md` for explainability, auditability, freshness, traceability, latency, resilience, observability and performance non-goals.
 - `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
 - `docs/architecture/21_Technical_Architecture_Context.md` for architecture context.
 - `docs/architecture/18_Architecture_Thesis.md` for conceptual architecture thesis.
@@ -423,6 +439,7 @@ The current project is healthy if:
 - Decision Ledger remains immutable and central
 - Decision Ledger separates estimated savings from realized savings
 - Decision Ledger records accountability without becoming a workflow engine
+- quality attributes stay focused on trust for one Decision ROI Case, not premature scale
 
 ## Architecture Risks
 
@@ -443,3 +460,4 @@ The current project is healthy if:
 4. Create ADRs before locking implementation stack choices beyond current mandates.
 5. Validate one complete Decision ROI Case before expanding integrations.
 6. Validate the Decision Recovery Workflow before building broad platform surfaces.
+7. Use `docs/architecture/27_Quality_Attributes.md` before turning target architecture into implementation tasks.

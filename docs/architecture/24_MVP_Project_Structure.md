@@ -80,7 +80,7 @@ They are not implementation modules.
 
 The first implementation should prove one vertical slice:
 
-**Event -> Connector -> Decision Engine -> Decision Ledger -> ROI Engine -> Decision Review Workspace**
+**Event -> Connector -> Decision Engine -> ROI Engine -> Recommendation -> Decision Ledger -> Decision Review Workspace**
 
 It should start as a modular monolith or tightly bounded service, not as distributed microservices.
 
@@ -156,6 +156,8 @@ Do not split these into separate services at the start.
 
 The first frontend should focus on the Decision Review Workspace.
 
+The screen behavior contract is defined in `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`.
+
 | Feature | Purpose |
 |---|---|
 | `decision-review` | main MVP screen |
@@ -229,7 +231,7 @@ Future infrastructure may be introduced only when:
 | Core Engine Layer | context builder | define Decision ROI Case construction |
 | Decision Intelligence Layer | Decision Engine + ROI + recommendation | keep as product capability |
 | Ledger & Governance Layer | Decision Ledger v2 | use existing ledger contract |
-| Presentation Layer | Decision Review Workspace | use demo and product docs |
+| Presentation Layer | Decision Review Workspace | use `docs/product/29_Decision_Review_Workspace_Screen_Contract.md` |
 | Kafka | future event streaming | defer |
 | Policy Engine | future governance | defer |
 | Kubernetes / Terraform | future operations | defer |
@@ -253,10 +255,15 @@ The project structure is healthy if:
 1. Review `docs/product/24_MVP_Vertical_Slice.md`.
 2. Review `docs/product/25_MVP_ROI_Slice.md`.
 3. Validate the AI Onboarding Assistant Recovery scenario.
-4. Prepare manual evidence tables as documentation.
-5. Prepare one expected Decision ROI Case narrative.
-6. Prepare one expected ledger sequence.
-7. Only after that, decide whether to create implementation scaffolding.
+4. Use `docs/product/26_Manual_Evidence_Pack_AI_Onboarding_Assistant.md` as the manual evidence table.
+5. Use `docs/product/27_MVP_Acceptance_Test_Plan.md` as the manual acceptance gate.
+6. Use `docs/product/28_Identity_Access_Approval_Model.md` for role and approval authority.
+7. Use `docs/product/29_Decision_Review_Workspace_Screen_Contract.md` for first-screen behavior.
+8. Use `docs/architecture/27_Quality_Attributes.md` for non-functional expectations.
+9. Prepare one expected Decision ROI Case narrative.
+10. Prepare one expected ledger sequence.
+11. Create per-connector MVP contracts.
+12. Only after that, decide whether to create implementation scaffolding.
 
 ## Explicit Non-Decision
 

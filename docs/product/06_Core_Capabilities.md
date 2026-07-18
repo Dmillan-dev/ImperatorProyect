@@ -65,17 +65,17 @@ The first customer-facing surface should be the Decision Review Workspace. Other
 ## 6) Internal Context Engine (Conceptual Cycle)
 Operational events follow a common intelligence pipeline:
 
-Event -> Normalization -> Enrichment -> Correlation -> Context -> Evaluation -> Ledger -> Analysis -> Recommendation
+Event -> Normalization -> Enrichment -> Correlation -> Decision ROI Case -> ROI -> Recommendation -> Human Review -> Decision Ledger -> Result Validation
 
 MVP narrative object:
 
 Decision ROI Case:
 
-Business Decision -> Technical Change -> Infrastructure -> AI Consumption -> Recommendation -> Result
+Business Decision -> Technical Change -> Infrastructure -> AI Consumption -> ROI -> Recommendation -> Approval -> Result Validation
 
 MVP correlation path:
 
-Jira -> GitHub -> AWS -> OpenAI + Anthropic Claude -> Recommendation -> Result
+Jira -> GitHub -> AWS -> OpenAI + Anthropic Claude -> ROI View -> Recommendation -> Decision Ledger -> Result Validation
 
 ## Product Principle
 

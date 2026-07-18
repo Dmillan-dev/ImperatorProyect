@@ -10,6 +10,12 @@ It is the immutable business record for reviewed Decision ROI Cases. It answers:
 
 The ledger is not a raw log store, workflow engine, compliance suite or autonomous executor. It records business intent, evidence, decision state and outcome.
 
+MVP approval authority is defined in `docs/product/28_Identity_Access_Approval_Model.md`.
+
+MVP screen behavior is defined in `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`.
+
+MVP quality attributes are defined in `docs/architecture/27_Quality_Attributes.md`.
+
 ## Product Position
 
 Decision Ledger v2 supports the canonical product rule:
@@ -442,7 +448,7 @@ Preserve source metadata, observed facts and evidence summaries inside snapshots
 - Historical entries cannot be edited.
 - Estimated saving and realized saving are always separate.
 - Business Value can calculate realized value only from validated result entries.
-- Decision Detail can show ledger history without reading raw source systems.
+- Decision Review Workspace can show ledger history without reading raw source systems.
 - Ledger entries remain understandable after an integration is disabled.
 - No ledger command executes external infrastructure, AI-provider or SaaS changes.
 - Every state transition creates a new ledger entry.

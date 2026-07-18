@@ -165,7 +165,7 @@ Format: one entry per decision with date, rationale, and impact.
 ### [2026-07-17] D032 — Operating System for Operational Intelligence positioning
 - Decision: adopt **Operating System for Operational Intelligence** as the primary commercial metaphor and allow **Enterprise Decision Intelligence Platform** as the external category label when paired with the Decision ROI and operational intelligence narrative.
 - Rationale: the ERP/CRM/SIEM/Observability comparison makes the category easier to understand: ERP manages resources, CRM manages customers, SIEM manages security, Observability manages systems, and IMPERATOR manages decisions.
-- Impact: no change to MVP scope. The MVP still demonstrates the Decision Recovery Workflow through one end-to-end flow: Event -> Connector -> Decision Engine -> Decision Ledger -> ROI Engine -> Executive Dashboard / Decision Review Workspace.
+- Impact: no change to MVP scope. The MVP still demonstrates the Decision Recovery Workflow through one end-to-end flow, later clarified in D036 as: Event -> Connector -> Decision Engine -> ROI Engine -> Recommendation -> Decision Ledger -> Decision Review Workspace.
 
 ### [2026-07-17] D033 — MVP vertical slice and project structure before code
 - Decision: add `docs/product/24_MVP_Vertical_Slice.md` and `docs/architecture/24_MVP_Project_Structure.md` to define the first end-to-end MVP path and future project structure without creating services or code.
@@ -181,3 +181,38 @@ Format: one entry per decision with date, rationale, and impact.
 - Decision: add `docs/ai/IMPERATOR_One_Page_Project_Prompt_ES.md` as a concise Spanish prompt for quickly explaining or resuming IMPERATOR context.
 - Rationale: the project now has enough canonical material that future AI sessions and human collaborators need a short onboarding artifact that preserves MVP focus without reopening the whole documentation set.
 - Impact: no scope change and no code added. The prompt summarizes the current positioning, MVP rule, vertical slice, ROI rules, product surface and context authority.
+
+### [2026-07-18] D036 — Pre-code architecture readiness audit
+- Decision: add `docs/architecture/25_Pre_Code_Architecture_Readiness_Audit.md` and clarify the canonical MVP flow as Event -> Connector -> Decision Engine -> ROI Engine -> Recommendation -> Decision Ledger -> Decision Review Workspace.
+- Rationale: the ledger must preserve evidence, ROI and assumptions snapshots after a case is reviewable; it should not appear to calculate ROI or orchestrate workflow. Before code, the project also needs explicit gates for manual evidence, security/data boundaries, approval authority, acceptance tests and quality attributes.
+- Impact: no code added. Updated MVP blueprint, vertical slice, visual explainer, architecture context and repository structure docs to keep the MVP coherent and documentation-only during Phase 0.
+
+### [2026-07-18] D037 — Manual Evidence Pack for AI Onboarding Assistant Recovery
+- Decision: add `docs/product/26_Manual_Evidence_Pack_AI_Onboarding_Assistant.md` as the first manual evidence pack for the MVP vertical slice.
+- Rationale: before implementation, IMPERATOR must prove that Jira, GitHub, AWS and OpenAI + Anthropic Claude evidence can manually reconstruct one Decision ROI Case, feed ROI, justify one recommendation and create valid Decision Ledger snapshots.
+- Impact: no code added. Updated product and architecture indexes, MVP vertical slice, ROI slice, project structure and AI prompt references. The next pre-code priority becomes security/data governance, approval authority and acceptance testing.
+
+### [2026-07-18] D038 — Security, Data Governance and Threat Model
+- Decision: add `docs/architecture/26_Security_Data_Governance_Threat_Model.md` as the canonical Phase 0 security and data-governance context for evidence, connectors, AI input, ledger snapshots and product surfaces.
+- Rationale: IMPERATOR's value depends on trusted evidence. Before real connectors or customer data exist, the project needs explicit boundaries for sensitivity, least privilege, tenant isolation, raw-payload handling, prompt-injection risk, AI filtering, ledger integrity and manual pilot data handling.
+- Impact: no code added. Updated README, documentation map, architecture structure, database model, connector framework, technical architecture context, pre-code audit, manual evidence pack and AI prompt authority order. The next pre-code priority becomes `docs/product/27_MVP_Acceptance_Test_Plan.md`.
+
+### [2026-07-18] D039 — MVP Acceptance Test Plan
+- Decision: add `docs/product/27_MVP_Acceptance_Test_Plan.md` as the canonical pre-code acceptance plan for the first MVP slice.
+- Rationale: Phase 1 should not invent behavior during implementation. The project needs manual acceptance scenarios for evidence, Decision ROI Case reconstruction, ROI, recommendation readiness, approval/rejection/deferral, ledger snapshots, security boundaries, conceptual API intent and Decision Review Workspace behavior.
+- Impact: no code added. Updated README, documentation map, architecture structure, technical architecture context, vertical slice, security model, pre-code audit and AI prompt authority order. The acceptance plan exposes the next P0 gap: `docs/product/28_Identity_Access_Approval_Model.md`.
+
+### [2026-07-18] D040 — Identity, Access and Approval Model
+- Decision: add `docs/product/28_Identity_Access_Approval_Model.md` as the canonical MVP product-governance model for roles, evidence access, approval, rejection, deferral, implementation marking and result validation.
+- Rationale: the acceptance plan defined what must happen, but the MVP still needed explicit human authority. For the AI Onboarding Assistant Recovery slice, Business Owner confirms impact, Platform Lead confirms feasibility and marks implementation, FinOps validates cost and realized value, Security can defer for data risk, and CTO or VP Engineering owns final approval or rejection. AI and connectors have no decision authority.
+- Impact: no code added. Updated README, documentation map, architecture structure, technical architecture context, API specification, Decision Ledger v2, security model, pre-code audit, acceptance plan and AI prompt authority order. The next product contract is `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`.
+
+### [2026-07-18] D041 — Decision Review Workspace Screen Contract
+- Decision: add `docs/product/29_Decision_Review_Workspace_Screen_Contract.md` as the canonical MVP screen contract for the first operational review surface.
+- Rationale: the project already defined what must be proven and who may act. The first MVP screen now needs exact rules for what it shows, hides, blocks and records so Phase 1 does not invent UI behavior during implementation.
+- Impact: no code added. Updated README, documentation map, architecture structure, technical architecture context, MVP project structure, vertical slice, security model, pre-code audit, acceptance plan, identity model, AI context prompts, glossary and secondary product/business docs. The next architecture artifact is `docs/architecture/27_Quality_Attributes.md`.
+
+### [2026-07-18] D042 — MVP Quality Attributes
+- Decision: add `docs/architecture/27_Quality_Attributes.md` as the canonical MVP non-functional quality contract before implementation.
+- Rationale: after defining evidence, ROI, ledger, security, acceptance, identity and first-screen behavior, the project needed explicit quality expectations for explainability, auditability, evidence freshness, traceability, latency, reliability, graceful degradation, observability, reversibility and performance non-goals.
+- Impact: no code added. Updated README, documentation map, architecture structure, technical architecture context, MVP project structure, security model, pre-code audit, acceptance plan, identity model and AI context prompts. The next architecture artifacts are per-connector MVP contracts and event/evidence vocabulary.

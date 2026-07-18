@@ -37,6 +37,10 @@ Supporting product explainers:
 - `23_IMPERATOR_Visual_Operational_Explainer.md`
 - `24_MVP_Vertical_Slice.md`
 - `25_MVP_ROI_Slice.md`
+- `26_Manual_Evidence_Pack_AI_Onboarding_Assistant.md`
+- `27_MVP_Acceptance_Test_Plan.md`
+- `28_Identity_Access_Approval_Model.md`
+- `29_Decision_Review_Workspace_Screen_Contract.md`
 
 ### `architecture/`
 
@@ -47,6 +51,9 @@ Use for:
 - target architecture context,
 - technical investor audit,
 - MVP project structure,
+- pre-code readiness audits,
+- security, data governance and threat models,
+- quality attributes and non-functional expectations,
 - conceptual database model,
 - connector framework,
 - Phase 0 repository rules,
@@ -99,9 +106,14 @@ When documents conflict:
 8. `architecture/21_Technical_Architecture_Context.md`
 9. `architecture/DATABASE_MODEL.md`
 10. `architecture/CONNECTOR_FRAMEWORK.md`
-11. `rfcs/0002-module-communication-architecture.md`
-12. `ai/12_AI_Agent_Context_Pack.md`
-13. `product/13_Glossary_and_Canonical_Language.md`
+11. `architecture/26_Security_Data_Governance_Threat_Model.md`
+12. `product/28_Identity_Access_Approval_Model.md`
+13. `product/27_MVP_Acceptance_Test_Plan.md`
+14. `product/29_Decision_Review_Workspace_Screen_Contract.md`
+15. `architecture/27_Quality_Attributes.md`
+16. `rfcs/0002-module-communication-architecture.md`
+17. `ai/12_AI_Agent_Context_Pack.md`
+18. `product/13_Glossary_and_Canonical_Language.md`
 
 ## Growth Rule
 

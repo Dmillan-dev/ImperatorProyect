@@ -67,9 +67,11 @@ The workflow must prove:
 
 Minimum demonstrable MVP flow:
 
-Event -> Connector -> Decision Engine -> Decision Ledger -> ROI Engine -> Executive Dashboard / Decision Review Workspace
+Event -> Connector -> Decision Engine -> ROI Engine -> Recommendation -> Decision Ledger -> Decision Review Workspace
 
 In this MVP framing, `Decision Engine` is a product/narrative block for correlation, context and recommendation reasoning. It does not require a separate microservice before the end-to-end value loop is proven.
+
+The Decision Ledger records reviewed recommendations, approvals, rejections, deferrals and result validation. It preserves ROI, evidence and assumptions snapshots; it does not calculate ROI.
 
 ## MVP Integrations
 
@@ -312,7 +314,7 @@ Proceed to Phase 1 product design if:
 
 - at least 3 real customer decisions can be reconstructed
 - at least 2 recommendations are judged approval-ready by technical owners
-- at least 1 recommendation is approved by CTO, VP Engineering or FinOps
+- at least 1 recommendation is approved by CTO or VP Engineering after FinOps review
 - at least 1 measurable monthly saving or avoided cost is identified
 - a technical owner trusts the evidence
 - an economic buyer understands the ROI

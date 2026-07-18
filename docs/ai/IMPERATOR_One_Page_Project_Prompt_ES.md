@@ -18,7 +18,7 @@ El movimiento pagable inicial es el **Decision Recovery Workflow for AI/cloud sp
 
 El flujo minimo defendible es:
 
-**Event -> Connector -> Decision Engine -> Decision Ledger -> ROI Engine -> Decision Review Workspace**
+**Event -> Connector -> Decision Engine -> ROI Engine -> Recommendation -> Decision Ledger -> Decision Review Workspace**
 
 La unidad central del dominio es el **Decision ROI Case**. Todo debe girar alrededor de ese objeto, no alrededor de conectores, logs, servicios ni dashboards. Un Decision ROI Case une decision de negocio, evidencia, timeline, coste, supuestos ROI, recomendacion, aprobacion, ledger y resultado validado.
 
@@ -31,12 +31,14 @@ Las integraciones MVP son solo cuatro dominios:
 
 La primera vertical slice es **AI Onboarding Assistant Recovery**. Ejemplo: una empresa aprobo un asistente AI de onboarding; se implemento en GitHub, corre en AWS y usa OpenAI o Claude. IMPERATOR reconstruye la decision y muestra: coste mensual actual, uso observable, recomendacion de downgrade/cambio de modelo, ahorro mensual estimado, ahorro anualizado, riesgo, confianza, owner, approver y entrada en el Decision Ledger.
 
+El primer pack de evidencia manual vive en `docs/product/26_Manual_Evidence_Pack_AI_Onboarding_Assistant.md`. Usalo para comprobar que dominio, ROI, recomendacion, ledger y conectores encajan antes de codigo.
+
 El ROI debe ser explicable. Nunca muestres ROI como una cifra magica. Debe incluir coste actual, recuperacion estimada, supuestos, evidencia, periodo, confianza, riesgo y estado en ledger. El valor estimado no es valor realizado. **Business Value solo cuenta valor realizado despues de validacion en Decision Ledger.**
 
-La primera superficie de producto es **Decision Review Workspace**. Responde una pregunta: **podemos confiar y aprobar esta accion de recuperacion?** Debe mostrar resumen de decision, timeline, evidencia, coste actual, senal de uso/valor, supuestos ROI, recomendacion, approve/reject/defer y ledger history.
+La primera superficie de producto es **Decision Review Workspace**. Responde una pregunta: **podemos confiar y aprobar esta accion de recuperacion?** Debe mostrar resumen de decision, timeline, evidencia, coste actual, senal de uso/valor, supuestos ROI, recomendacion, approve/reject/defer y ledger history. Su contrato vive en `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`.
 
 No expandas el MVP hacia Slack, Microsoft 365, Salesforce, Azure, GCP, Azure OpenAI, Gemini, Mistral, SDKs, API publica, policy engine, AI Advisor, graph/vector stack, microservicios, autonomous execution, negative-ROI portfolio analysis ni duplicated service/agent consolidation.
 
-Cuando trabajes sobre el proyecto, respeta este orden de autoridad: Decision Log, MVP Blueprint, MVP Vertical Slice, MVP ROI Slice, Core Domain Model, API Specification, Decision Ledger v2, Technical Architecture Context, Database Model, Connector Framework, RFC 0002, AI Agent Context Pack y Glossary.
+Cuando trabajes sobre el proyecto, respeta este orden de autoridad: Decision Log, MVP Blueprint, MVP Vertical Slice, MVP ROI Slice, Core Domain Model, API Specification, Decision Ledger v2, Technical Architecture Context, Database Model, Connector Framework, Security/Data Governance Threat Model, Identity/Access/Approval Model, MVP Acceptance Test Plan, Decision Review Workspace Screen Contract, Quality Attributes, RFC 0002, AI Agent Context Pack y Glossary.
 
 Tu respuesta debe ser clara, operativa, en lenguaje de negocio y producto, con foco en MVP. Si una idea no fortalece el Decision ROI Case o el flujo end-to-end, propon diferirla.

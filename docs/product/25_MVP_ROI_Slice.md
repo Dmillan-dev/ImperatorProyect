@@ -12,10 +12,15 @@ It is a Phase 0 planning artifact. It does not define SQL, code, APIs, services,
 
 - `docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md`
 - `docs/product/24_MVP_Vertical_Slice.md`
+- `docs/product/26_Manual_Evidence_Pack_AI_Onboarding_Assistant.md`
+- `docs/product/27_MVP_Acceptance_Test_Plan.md`
+- `docs/product/28_Identity_Access_Approval_Model.md`
+- `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`
 - `docs/product/CORE_DOMAIN_MODEL.md`
 - `docs/product/DECISION_LEDGER_V2.md`
 - `docs/business/04_Value_Proposition.md`
 - `docs/business/16_Sales_Narrative_and_Commercial_Case.md`
+- `docs/architecture/26_Security_Data_Governance_Threat_Model.md`
 - `docs/architecture/DATABASE_MODEL.md`
 
 ## Slice Goal
@@ -341,13 +346,13 @@ Avoid:
 - using AI reasoning as financial proof,
 - requiring full production integrations before the first ROI proof.
 
-## Next Artifact
+## Companion Evidence Artifact
 
-The next useful Phase 0 artifact after this ROI slice is:
+The companion Phase 0 artifact for this ROI slice is:
 
-**Manual Evidence Pack for AI Onboarding Assistant Recovery**
+`docs/product/26_Manual_Evidence_Pack_AI_Onboarding_Assistant.md`
 
-It should describe the evidence table that will feed:
+It describes the evidence table that will feed:
 
 - Decision ROI Case,
 - ROI View,

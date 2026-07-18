@@ -70,6 +70,7 @@ The founder-mode ambition remains valid: act like a CTO building an enterprise-g
 - MVP product model: Decision ROI Platform for Executive Operational Intelligence.
 - Intelligence domain: Enterprise Context Intelligence.
 - Product surface: Decision Review Workspace first; Workspace -> Decision -> Ledger after repeated decisions exist.
+- First screen contract: `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`.
 - MVP integrations: Jira, GitHub, AWS and OpenAI + Anthropic Claude.
 - Architecture status: target context for Phase 1 planning, not permission to build production services in Phase 0.
 
@@ -98,17 +99,17 @@ The first screen should not start with logs or charts. It should start with one 
 
 The review workspace should then explain why:
 
-- Usage dropped 82%.
-- Active users decreased from 61 to 17.
-- GPT-4o is unnecessary for the observed workload.
-- GPT-4.1 mini gives identical quality in pilot evaluation.
+- Current monthly cost is EUR2,340.
+- AI usage cost is EUR1,930 and dominates the case.
+- The assistant has 17 active users in the review period.
+- A lower-cost model is acceptable for routine onboarding answers if the quality review is accepted.
 
 Ownership must be explicit:
 
-- Owner: Platform Team
-- Business Sponsor: VP Product
-- Financial Owner: Finance
-- Approver: CTO
+- Business Owner: Head of Customer Success
+- Technical Owner: Platform Lead
+- Financial Reviewer: FinOps owner
+- Approver: CTO or VP Engineering
 
 ### The real product: decision operating system + quantification engine
 
@@ -124,7 +125,7 @@ The Decision Engine turns scattered operational events into reviewable decisions
 
 The product should evolve every decision through the same lifecycle:
 
-Business Decision -> Technical Change -> Infrastructure -> AI Consumption -> Financial Impact -> Recommendation -> Result.
+Business Need -> Decision Created -> Implementation -> Deployment -> AI Consumption -> Impact Analysis -> Recommendation -> Approval/Rejection/Deferral -> Implementation Marked -> Result Validation.
 
 Each lifecycle step should open evidence. For example, AI Consumption should expose tokens, model, users, cost and evolution.
 

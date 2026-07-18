@@ -46,6 +46,8 @@ It contains:
 
 This is the MVP surface. It should come before the full navigation model.
 
+Detailed MVP screen behavior is defined in `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`.
+
 ## 3) Executive Workspace, Decisions and Ledger (Expansion Surface)
 
 Primary users: CTO, CIO, CISO, CFO, Platform leaders.
@@ -131,11 +133,11 @@ Deferred expansion systems:
 
 Expansion should happen only after the MVP proves one complete decision story:
 
-Jira -> GitHub -> AWS -> OpenAI + Anthropic Claude -> Decision Review Workspace -> Ledger History -> Result Validation.
+Jira -> GitHub -> AWS -> OpenAI + Anthropic Claude -> ROI View -> Recommendation -> Decision Review Workspace -> Ledger History -> Result Validation.
 
 The preferred Decision Lifecycle progression is:
 
-Business Decision -> Technical Change -> Infrastructure -> AI Consumption -> Financial Impact -> Recommendation -> Result.
+Business Need -> Decision Created -> Implementation -> Deployment -> AI Consumption -> Impact Analysis -> Recommendation -> Approval/Rejection/Deferral -> Implementation Marked -> Result Validation.
 
 ## Where the Deep Technical Moat Lives
 
@@ -144,7 +146,7 @@ The hardest-to-replicate capability is the internal context engine.
 
 Conceptual processing cycle:
 
-Event -> Normalization -> Enrichment -> Correlation -> Context -> Evaluation -> Ledger -> Analysis -> Recommendation
+Event -> Normalization -> Enrichment -> Correlation -> Decision ROI Case -> ROI -> Recommendation -> Human Review -> Decision Ledger -> Result Validation
 
 Why this matters:
 - converts isolated technical events into accountable business decisions

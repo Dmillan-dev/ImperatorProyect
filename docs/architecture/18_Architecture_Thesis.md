@@ -36,11 +36,11 @@ External Platforms
   -> Connector Layer
   -> Ingestion and Normalization
   -> Context Engine
-  -> Decision Graph
+  -> Decision ROI Case
   -> ROI Engine
   -> Recommendation Engine
-  -> Product Surfaces
   -> Decision Ledger
+  -> Product Surfaces
 ```
 
 Stack objetivo para Phase 1 planning:
@@ -82,13 +82,15 @@ Componentes clave:
 - Decision Ledger: registro inmutable de decisiones y su metadatos.
 - Context Engine: normalización, enrichments, correlación y construcción de contexto reutilizable.
 - Knowledge Graph / modelo relacional: representación conceptual de entidades y relaciones (puede comenzar en PostgreSQL, migrable a DB de grafos si se justifica).
-- Recommendation Engine: evaluación conceptual de las cinco familias MVP de recuperación económica.
+- Recommendation Engine: evaluación conceptual de las familias del paid wedge MVP y de expansiones diferidas.
 - ROI Engine: cálculo de coste actual, ahorro anualizado, valor recuperado, confianza y supuestos.
 - Integration Context: estado, sincronización, errores y salud de Jira, GitHub, AWS y OpenAI + Anthropic Claude.
 
 ## Integración y flujo (conceptual)
 
-Evento → Ingesta → Decision Pipeline → Decision Ledger → Context Engine → Risk Engine → Knowledge Graph → AI Engine → Recomendaciones → Executive Workspace / Decision Detail
+Evento -> Ingesta -> Context Engine -> Decision ROI Case -> ROI Engine -> Recommendation Engine -> Decision Ledger -> Decision Review Workspace
+
+El Decision Ledger registra snapshots de evidencia, ROI y supuestos despues de que el caso sea revisable. No calcula ROI, no orquesta workflow y no ejecuta cambios externos.
 
 Notas operativas:
 - La IA nunca debe operar sobre fuentes crudas; siempre trabaja sobre contexto preparado.
@@ -121,6 +123,6 @@ Notas operativas:
 
 ## Próximos pasos sugeridos
 
-- Revisar esta tesis con stakeholders (producto, plataforma, seguridad, finanzas).
-- Si hay acuerdo estratégico, registrar la decisión (entrada D011 añadida a `docs/decisions/14_Decision_Log.md`).
+- Revisar esta tesis contra `docs/architecture/25_Pre_Code_Architecture_Readiness_Audit.md` antes de escribir codigo.
+- Preparar evidencias manuales, acceptance tests, seguridad/datos y roles de aprobacion antes de iniciar Phase 1.
 - Mantener este documento en Phase 0 como guía de alineación; evolucionarlo con anotaciones de diseño cuando se avance a implementación.

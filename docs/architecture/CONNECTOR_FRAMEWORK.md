@@ -10,6 +10,8 @@ This document is conceptual. It does not define connector code, SDKs, deployment
 
 - `docs/product/CORE_DOMAIN_MODEL.md`
 - `docs/architecture/DATABASE_MODEL.md`
+- `docs/architecture/26_Security_Data_Governance_Threat_Model.md`
+- `docs/architecture/27_Quality_Attributes.md`
 - `docs/rfcs/0002-module-communication-architecture.md`
 - `docs/architecture/21_Technical_Architecture_Context.md`
 
@@ -281,9 +283,18 @@ Before adding a connector:
 3. Write a connector contract.
 4. Identify evidence types and correlation keys.
 5. Identify ownership, cost, usage and policy signals.
-6. Confirm no provider-specific concept leaks into the core domain.
-7. Update RFC or architecture context if a new domain concept is required.
-8. Record significant boundary changes in `docs/decisions/14_Decision_Log.md`.
+6. Define sensitivity, least-privilege permissions and raw-payload exclusions.
+7. Confirm no provider-specific concept leaks into the core domain.
+8. Update RFC or architecture context if a new domain concept is required.
+9. Record significant boundary changes in `docs/decisions/14_Decision_Log.md`.
+
+Default MVP permission posture:
+
+- read-only,
+- least privilege,
+- no autonomous execution scopes,
+- no raw prompt or completion capture,
+- no secrets in evidence, logs or ledger.
 
 ## Expansion Guardrails
 

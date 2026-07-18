@@ -57,9 +57,9 @@ For that single decision, IMPERATOR should produce a Decision ROI Timeline:
 >
 > Solo la usan 17 personas.
 >
-> ROI negativo.
+> Coste alto frente al uso observable.
 >
-> Recomendación: cambiar a GPT-4.1 mini.
+> Recomendación: cambiar a un modelo de menor coste con fallback.
 >
 > Ahorro estimado: €1.620/mes."
 

@@ -12,6 +12,8 @@ This is not SQL, not an ORM model and not a migration plan. It explains which da
 - `docs/product/API_SPECIFICATION.md`
 - `docs/product/DECISION_LEDGER_V2.md`
 - `docs/architecture/21_Technical_Architecture_Context.md`
+- `docs/architecture/26_Security_Data_Governance_Threat_Model.md`
+- `docs/architecture/27_Quality_Attributes.md`
 - `docs/rfcs/0001-knowledge-graph-model.md`
 - `docs/rfcs/0002-module-communication-architecture.md`
 
@@ -443,6 +445,7 @@ Candidate future technology:
 - No provider payload as canonical domain object.
 - No realized savings recorded as estimated savings.
 - No Business Value realized total without a result validation entry.
+- No Evidence without sensitivity classification.
 
 ## MVP Data Boundary
 

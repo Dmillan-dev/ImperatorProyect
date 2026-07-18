@@ -23,9 +23,14 @@ When context conflicts, agents must use this order:
 8. `docs/architecture/21_Technical_Architecture_Context.md` for target architecture context.
 9. `docs/architecture/DATABASE_MODEL.md` for conceptual data model.
 10. `docs/architecture/CONNECTOR_FRAMEWORK.md` for integration boundaries.
-11. `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
-12. This file for agent behavior and response consistency.
-13. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
+11. `docs/architecture/26_Security_Data_Governance_Threat_Model.md` for evidence sensitivity, AI boundaries and security threat model.
+12. `docs/product/28_Identity_Access_Approval_Model.md` for roles, permissions and approval authority.
+13. `docs/product/27_MVP_Acceptance_Test_Plan.md` for pre-code acceptance gates.
+14. `docs/product/29_Decision_Review_Workspace_Screen_Contract.md` for first MVP screen behavior.
+15. `docs/architecture/27_Quality_Attributes.md` for MVP non-functional quality expectations.
+16. `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
+17. This file for agent behavior and response consistency.
+18. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
 
 Founder-mode or master-prompt guidance sets ambition and quality bar. It does not override current decisions when it uses older framing such as AI Cost Attribution as the primary wedge, dashboard-led language, generic Decision Intelligence without the operating-system and Decision ROI framing, or production-ready implementation during Phase 0.
 
@@ -62,11 +67,17 @@ Founder-mode or master-prompt guidance sets ambition and quality bar. It does no
 25. Use `docs/product/DECISION_LEDGER_V2.md` as the Decision Ledger module contract.
 26. Use `docs/product/24_MVP_Vertical_Slice.md` as the first end-to-end MVP path.
 27. Use `docs/product/25_MVP_ROI_Slice.md` for ROI calculations, assumptions, confidence, risk and result validation.
-28. Use `docs/architecture/DATABASE_MODEL.md` as the conceptual database model.
-29. Use `docs/architecture/CONNECTOR_FRAMEWORK.md` as the connector expansion model.
-30. Use `docs/rfcs/0002-module-communication-architecture.md` for communication design rationale.
-31. Use `docs/architecture/21_Technical_Architecture_Context.md` as the canonical architecture context.
-32. Do not change category/ICP/wedge/domain/API/database/connector/architecture boundary without logging in `docs/decisions/14_Decision_Log.md`.
+28. Use `docs/product/26_Manual_Evidence_Pack_AI_Onboarding_Assistant.md` as the first manual evidence proof.
+29. Use `docs/architecture/26_Security_Data_Governance_Threat_Model.md` for evidence visibility, AI filtering and Restricted-data boundaries.
+30. Use `docs/product/27_MVP_Acceptance_Test_Plan.md` as the pre-code acceptance gate.
+31. Use `docs/product/28_Identity_Access_Approval_Model.md` for roles, permissions and approval authority.
+32. Use `docs/product/29_Decision_Review_Workspace_Screen_Contract.md` for what the first MVP screen shows, hides, blocks and records.
+33. Use `docs/architecture/27_Quality_Attributes.md` for explainability, auditability, freshness, traceability, latency, resilience, observability and performance non-goals.
+34. Use `docs/architecture/DATABASE_MODEL.md` as the conceptual database model.
+35. Use `docs/architecture/CONNECTOR_FRAMEWORK.md` as the connector expansion model.
+36. Use `docs/rfcs/0002-module-communication-architecture.md` for communication design rationale.
+37. Use `docs/architecture/21_Technical_Architecture_Context.md` as the canonical architecture context.
+38. Do not change category/ICP/wedge/domain/API/database/connector/architecture boundary without logging in `docs/decisions/14_Decision_Log.md`.
 
 ## Writing Style
 

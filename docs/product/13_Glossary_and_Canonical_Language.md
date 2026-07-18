@@ -22,8 +22,8 @@
 - ROI Snapshot
 - Assumptions Snapshot
 - Result Validation
+- Decision Review Workspace
 - Executive Decision Workspace
-- Executive Dashboard
 - Decision Engine
 - ROI Engine
 - Recommendation Engine
@@ -42,6 +42,7 @@
 - “Executive Decision Intelligence” as primary category label
 - “AI Cost Attribution” as the primary MVP wedge
 - “connector-first platform” as MVP framing
+- “Executive Dashboard” as the current MVP surface
 - “dashboard-led SaaS” as the current product surface model
 - chart-heavy dashboard as executive value proof
 - dashboard as the primary product metaphor
@@ -53,6 +54,7 @@
 - `Operating System for Operational Intelligence` is the primary commercial metaphor.
 - `Enterprise Decision Intelligence Platform` is the external category label when paired with the operating-system and Decision ROI framing.
 - `Decision Engine` is a product/narrative block for correlation, context and recommendation reasoning; it does not mandate a separate microservice in the MVP.
+- `Decision Review Workspace` is the first MVP product surface. `Executive Workspace` and older dashboard language are expansion or historical context.
 
 ## Master Phrases
 
@@ -66,7 +68,7 @@
 8. “Workspace prioritizes. Decision validates. Ledger records.”
 9. “IMPERATOR recommends. The company decides.”
 10. “Find hidden operational money and explain the decision to recover it.”
-11. “Decision Log decides. MVP Blueprint bounds. Architecture Context guides.”
+11. “Decision Log decides. MVP Blueprint bounds. Screen Contract defines the first surface.”
 12. “Phase 0 may define context, contracts and scaffolds; it does not build production services.”
 13. “ERP manages resources. CRM manages customers. SIEM manages security. Observability manages systems. IMPERATOR manages decisions.”
 14. “IMPERATOR is the Operating System for Operational Intelligence.”

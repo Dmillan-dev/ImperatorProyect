@@ -11,13 +11,24 @@ The API must expose the Decision ROI Platform without leaking connector-specific
 Decision Ledger behavior is defined in:
 - `docs/product/DECISION_LEDGER_V2.md`
 
+MVP approval authority is defined in:
+- `docs/product/28_Identity_Access_Approval_Model.md`
+
+MVP first-screen behavior is defined in:
+- `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`
+
+MVP quality attributes are defined in:
+- `docs/architecture/27_Quality_Attributes.md`
+
 ## API Principles
 
 - The API revolves around Decision ROI Cases.
 - Queries return prepared context, not raw provider payloads.
 - Commands change business state such as approval, review or recommendation status.
+- Commands that approve, reject, defer, mark implementation or validate result require role authority from `docs/product/28_Identity_Access_Approval_Model.md`.
 - Every ROI response must expose assumptions.
 - Every recommendation response must expose evidence, confidence and risk.
+- Future reads and commands must support the quality expectations for explainability, auditability, freshness, latency and graceful degradation.
 - Public customer APIs can be HTTP/REST or GraphQL later.
 - Internal service APIs follow the architecture mandate in `docs/architecture/21_Technical_Architecture_Context.md`.
 
@@ -81,6 +92,8 @@ Minimum MVP API responsibilities:
 - read its recommendation,
 - record approve, reject or defer through Ledger v2,
 - record implementation and result validation later.
+
+The first consumer of this subset is the Decision Review Workspace.
 
 Do not prioritize public API, SDKs, GraphQL, broad policy APIs or connector marketplace APIs before the Decision Recovery Workflow is validated.
 

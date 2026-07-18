@@ -22,7 +22,7 @@
 - estimate current monthly cost, usage signal and annualized recovery opportunity
 - validate whether CFO/FinOps joins the buying path when ROI is shown
 - validate whether at least 2 recommendations are considered approval-ready
-- validate whether at least 1 recommendation is approved by CTO, VP Engineering or FinOps
+- validate whether at least 1 recommendation is approved by CTO or VP Engineering after FinOps review
 - decide readiness for Phase 1 product design around Jira, GitHub, AWS and OpenAI + Anthropic Claude
 
 ## Go/No-Go Criteria

@@ -15,6 +15,12 @@ It is not a technical implementation plan.
 
 Canonical sources:
 - `docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md`
+- `docs/product/24_MVP_Vertical_Slice.md`
+- `docs/product/25_MVP_ROI_Slice.md`
+- `docs/product/26_Manual_Evidence_Pack_AI_Onboarding_Assistant.md`
+- `docs/product/27_MVP_Acceptance_Test_Plan.md`
+- `docs/product/28_Identity_Access_Approval_Model.md`
+- `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`
 - `docs/product/CORE_DOMAIN_MODEL.md`
 - `docs/product/DECISION_LEDGER_V2.md`
 - `docs/business/16_Sales_Narrative_and_Commercial_Case.md`
@@ -156,14 +162,17 @@ For a TFG or first startup proof, the MVP should demonstrate only this end-to-en
 flowchart TD
     EVT[Event] --> CON[Connector<br/>GitHub / AWS / OpenAI]
     CON --> DE[Decision Engine]
-    DE --> LEDGER[Decision Ledger]
-    LEDGER --> ROI[ROI Engine]
-    ROI --> DASH[Executive Dashboard<br/>Decision Review Workspace]
+    DE --> ROI[ROI Engine]
+    ROI --> REC[Recommendation]
+    REC --> LEDGER[Decision Ledger]
+    LEDGER --> DASH[Decision Review Workspace]
 ```
 
-If this flow works end to end, IMPERATOR has a defensible MVP: a real event becomes a reviewed decision, the decision is recorded, and the executive surface shows financial impact.
+If this flow works end to end, IMPERATOR has a defensible MVP: a real event becomes a reviewed decision, the ROI is explainable, the decision is recorded, and the product surface shows financial impact.
 
 In this explainer, `Decision Engine` means the product capability that correlates events, builds context and prepares a recommendation. It does not require a separate implementation service during Phase 0 or the first proof.
+
+The Decision Ledger records the reviewed recommendation and the later outcome. It preserves ROI, evidence and assumptions snapshots; it is not the ROI calculator.
 
 ## The Story to Tell
 
@@ -240,7 +249,7 @@ Plain-language version:
 | 3. Correlate | Signals are linked to one Decision ROI Case. | The product does not review isolated logs, it reviews one business decision. |
 | 4. Evaluate ROI | Cost, usage and assumptions are made explicit. | Leadership can trust the number and challenge the assumptions. |
 | 5. Recommend | IMPERATOR proposes one recovery action. | The output is operational, not just analytical. |
-| 6. Review | CTO, Platform and FinOps approve, reject or defer. | The company decides; IMPERATOR does not execute autonomously. |
+| 6. Review | CTO or VP Engineering approves, rejects or defers after Business Owner, Platform and FinOps review. | The company decides; IMPERATOR does not execute autonomously. |
 | 7. Record | The ledger preserves evidence, ROI and approval history. | Accountability survives beyond the meeting. |
 | 8. Validate | Realized saving is checked later. | Estimated value and realized value stay separate. |
 
@@ -337,6 +346,8 @@ Required blocks:
 - recommendation,
 - approval, rejection or deferral controls,
 - ledger history for this Decision ROI Case.
+
+Detailed behavior for this screen is defined in `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`.
 
 ## What Each Stakeholder Understands
 
@@ -445,7 +456,7 @@ Use this short version when presenting live:
 The MVP is working if:
 - 3 real customer decisions can be reconstructed,
 - 2 recommendations are judged approval-ready,
-- 1 recommendation is approved by CTO, VP Engineering or FinOps,
+- 1 recommendation is approved by CTO or VP Engineering after FinOps review,
 - 1 measurable monthly saving or avoided cost is identified,
 - a technical owner trusts the evidence,
 - an economic buyer understands the ROI,

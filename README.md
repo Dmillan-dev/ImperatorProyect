@@ -26,6 +26,10 @@ Product:
 - [Visual Operational Explainer](docs/product/23_IMPERATOR_Visual_Operational_Explainer.md)
 - [MVP Vertical Slice](docs/product/24_MVP_Vertical_Slice.md)
 - [MVP ROI Slice](docs/product/25_MVP_ROI_Slice.md)
+- [Manual Evidence Pack - AI Onboarding Assistant](docs/product/26_Manual_Evidence_Pack_AI_Onboarding_Assistant.md)
+- [MVP Acceptance Test Plan](docs/product/27_MVP_Acceptance_Test_Plan.md)
+- [Identity, Access and Approval Model](docs/product/28_Identity_Access_Approval_Model.md)
+- [Decision Review Workspace Screen Contract](docs/product/29_Decision_Review_Workspace_Screen_Contract.md)
 - [Core Domain Model](docs/product/CORE_DOMAIN_MODEL.md)
 - [API Specification](docs/product/API_SPECIFICATION.md)
 - [Decision Ledger v2](docs/product/DECISION_LEDGER_V2.md)
@@ -37,6 +41,9 @@ Architecture:
 - [Technical Architecture Context](docs/architecture/21_Technical_Architecture_Context.md)
 - [Technical Investor Audit](docs/architecture/22_Technical_Investor_Audit.md)
 - [MVP Project Structure](docs/architecture/24_MVP_Project_Structure.md)
+- [Pre-Code Architecture Readiness Audit](docs/architecture/25_Pre_Code_Architecture_Readiness_Audit.md)
+- [Security, Data Governance and Threat Model](docs/architecture/26_Security_Data_Governance_Threat_Model.md)
+- [Quality Attributes](docs/architecture/27_Quality_Attributes.md)
 - [Architecture Thesis](docs/architecture/18_Architecture_Thesis.md)
 - [Database Model](docs/architecture/DATABASE_MODEL.md)
 - [Connector Framework](docs/architecture/CONNECTOR_FRAMEWORK.md)
@@ -101,6 +108,24 @@ Canonical technical architecture context:
 Current technical investor audit:
 - [docs/architecture/22_Technical_Investor_Audit.md](docs/architecture/22_Technical_Investor_Audit.md)
 
+Current pre-code architecture readiness audit:
+- [docs/architecture/25_Pre_Code_Architecture_Readiness_Audit.md](docs/architecture/25_Pre_Code_Architecture_Readiness_Audit.md)
+
+Current security and data-governance context:
+- [docs/architecture/26_Security_Data_Governance_Threat_Model.md](docs/architecture/26_Security_Data_Governance_Threat_Model.md)
+
+Current MVP acceptance test plan:
+- [docs/product/27_MVP_Acceptance_Test_Plan.md](docs/product/27_MVP_Acceptance_Test_Plan.md)
+
+Current identity, access and approval model:
+- [docs/product/28_Identity_Access_Approval_Model.md](docs/product/28_Identity_Access_Approval_Model.md)
+
+Current Decision Review Workspace screen contract:
+- [docs/product/29_Decision_Review_Workspace_Screen_Contract.md](docs/product/29_Decision_Review_Workspace_Screen_Contract.md)
+
+Current quality attributes:
+- [docs/architecture/27_Quality_Attributes.md](docs/architecture/27_Quality_Attributes.md)
+
 MVP information domains:
 - Business Context: Jira
 - Code & Deployment: GitHub
@@ -130,10 +155,15 @@ When documents or prompts conflict, use this order:
 8. `docs/architecture/21_Technical_Architecture_Context.md` for target architecture context.
 9. `docs/architecture/DATABASE_MODEL.md` for conceptual data model.
 10. `docs/architecture/CONNECTOR_FRAMEWORK.md` for future integration rules.
-11. `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
-12. `docs/ai/12_AI_Agent_Context_Pack.md` for AI-agent operating rules.
-13. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
-14. Older documents, demos, prompts, ADRs and RFC drafts as historical context unless updated by the documents above.
+11. `docs/architecture/26_Security_Data_Governance_Threat_Model.md` for evidence sensitivity, AI boundaries, permissions and security threat model.
+12. `docs/product/28_Identity_Access_Approval_Model.md` for roles, permissions and approval authority.
+13. `docs/product/27_MVP_Acceptance_Test_Plan.md` for pre-code MVP acceptance gates.
+14. `docs/product/29_Decision_Review_Workspace_Screen_Contract.md` for first MVP screen behavior.
+15. `docs/architecture/27_Quality_Attributes.md` for MVP non-functional quality expectations.
+16. `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
+17. `docs/ai/12_AI_Agent_Context_Pack.md` for AI-agent operating rules.
+18. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
+19. Older documents, demos, prompts, ADRs and RFC drafts as historical context unless updated by the documents above.
 
 Founder-mode or master-prompt instructions define ambition and quality bar. They do not override the current repository decisions when they mention older framing such as AI Cost Attribution as the primary wedge, dashboard-led product language, generic Decision Intelligence without the operating-system and Decision ROI framing, or production-ready implementation during Phase 0.
 

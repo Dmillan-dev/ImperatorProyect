@@ -90,5 +90,5 @@ IMPERATOR is purchased for operational outcomes:
 Do not expand the product surface, connector roadmap or recommendation families until:
 - 3 real customer decisions have been reconstructed,
 - 2 recommendations are judged approval-ready,
-- 1 recommendation is approved by CTO, VP Engineering or FinOps,
+- 1 recommendation is approved by CTO or VP Engineering after FinOps review,
 - 1 measurable monthly saving or avoided cost is identified.

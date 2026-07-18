@@ -17,6 +17,15 @@ Always use:
 - docs/product/CORE_DOMAIN_MODEL.md
 - docs/product/API_SPECIFICATION.md
 - docs/product/DECISION_LEDGER_V2.md
+- docs/product/24_MVP_Vertical_Slice.md
+- docs/product/25_MVP_ROI_Slice.md
+- docs/product/26_Manual_Evidence_Pack_AI_Onboarding_Assistant.md
+- docs/product/27_MVP_Acceptance_Test_Plan.md
+- docs/product/28_Identity_Access_Approval_Model.md
+- docs/product/29_Decision_Review_Workspace_Screen_Contract.md
+- docs/architecture/25_Pre_Code_Architecture_Readiness_Audit.md
+- docs/architecture/26_Security_Data_Governance_Threat_Model.md
+- docs/architecture/27_Quality_Attributes.md
 - docs/architecture/DATABASE_MODEL.md
 - docs/architecture/CONNECTOR_FRAMEWORK.md
 - docs/rfcs/0002-module-communication-architecture.md
