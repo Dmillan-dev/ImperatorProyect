@@ -2,7 +2,7 @@
 
 ## Vision
 
-**IMPERATOR is a Decision ROI Platform for Executive Operational Intelligence.**
+**IMPERATOR is an Operating System for Operational Intelligence.**
 
 As organizations adopt cloud, SaaS, AI models and autonomous agents, critical decisions are distributed across disconnected systems. IMPERATOR unifies that operational context into one decision timeline with measurable ROI.
 
@@ -13,6 +13,12 @@ IMPERATOR makes them work together with business context.
 
 ## Category
 
+Commercial category:
+
+**Enterprise Decision Intelligence Platform**
+
+MVP product model:
+
 **Decision ROI Platform / Executive Operational Intelligence**
 
 Primary intelligence domain:
@@ -20,6 +26,12 @@ Primary intelligence domain:
 **Enterprise Context Intelligence**
 
 ## Brand Thesis
+
+- ERP manages resources.
+- CRM manages customers.
+- SIEM manages security.
+- Observability manages systems.
+- **IMPERATOR manages decisions.**
 
 We do not replace enterprise systems.  
 We transform operational chaos into business decisions.

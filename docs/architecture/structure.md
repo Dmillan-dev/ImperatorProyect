@@ -49,6 +49,18 @@ Documento de auditoría técnica:
 
 - `docs/architecture/22_Technical_Investor_Audit.md` — revisión tipo inversor técnico: qué eliminar, qué falta, qué está sobreingenierizado y cómo enfocar Phase 1.
 
+Documento de estructura MVP:
+
+- `docs/architecture/24_MVP_Project_Structure.md` — estructura futura recomendada para el primer MVP sin crear servicios, código ni infraestructura durante Phase 0.
+
+Documento de vertical slice MVP:
+
+- `docs/product/24_MVP_Vertical_Slice.md` — definición del primer recorrido end-to-end defendible: Event -> Connector -> Decision Engine -> Decision Ledger -> ROI Engine -> Decision Review Workspace.
+
+Documento de ROI slice MVP:
+
+- `docs/product/25_MVP_ROI_Slice.md` — modelo conceptual de coste actual, recuperación estimada, supuestos, confianza, riesgo y valor realizado para un Decision ROI Case.
+
 Estructura de control:
 
 - `docs/decisions/14_Decision_Log.md` — cambios estratégicos y arquitectónicos relevantes.

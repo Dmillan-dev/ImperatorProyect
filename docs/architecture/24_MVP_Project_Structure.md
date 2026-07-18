@@ -1,0 +1,274 @@
+# 24 — MVP Project Structure
+
+## Purpose
+
+Define the future project structure for the first IMPERATOR MVP without creating services, source code or infrastructure yet.
+
+This document is a planning boundary between Phase 0 documentation and future Phase 1 implementation.
+
+It answers:
+
+- what should exist now,
+- what should not exist yet,
+- what structure should be used once implementation starts,
+- how to keep the first build aligned with the MVP vertical slice.
+
+## Phase 0 Rule
+
+During Phase 0, do not create:
+
+- `src/`,
+- runnable backend services,
+- runnable frontend apps,
+- connector implementations,
+- Docker runtime configuration,
+- Kubernetes manifests,
+- Terraform modules,
+- Kafka configuration,
+- generated bindings,
+- production `.env` files,
+- database migrations.
+
+Allowed in Phase 0:
+
+- documentation,
+- conceptual contracts,
+- diagrams,
+- validation scripts only if explicitly approved later,
+- README scaffolds,
+- sample narratives,
+- manual pilot artifacts.
+
+## Current Repository Shape
+
+Current structure remains documentation-first:
+
+```text
+docs/
+  business/
+  product/
+  architecture/
+  ai/
+  rfcs/
+  decisions/
+  research/
+
+demos/
+  executive_dashboard_demo/
+
+agents/
+  ai/
+  backend/
+  cto/
+  frontend/
+  product/
+  security/
+
+services/
+  ai/
+  backend/
+  frontend/
+
+proto/
+```
+
+The current `services/` folders are documentation placeholders only.
+
+They are not implementation modules.
+
+## MVP Build Principle
+
+The first implementation should prove one vertical slice:
+
+**Event -> Connector -> Decision Engine -> Decision Ledger -> ROI Engine -> Decision Review Workspace**
+
+It should start as a modular monolith or tightly bounded service, not as distributed microservices.
+
+## Future Phase 1 Structure
+
+When implementation is explicitly approved, use this structure as the preferred starting point:
+
+```text
+imperator/
+  docs/
+  demos/
+  proto/
+
+  src/
+    backend/
+      app/
+      modules/
+        intake/
+        evidence/
+        decision_case/
+        roi/
+        recommendation/
+        ledger/
+      shared/
+      tests/
+
+    frontend/
+      app/
+      components/
+      features/
+        decision-review/
+        evidence-chain/
+        roi-summary/
+        recommendation-review/
+        ledger-history/
+      styles/
+      tests/
+
+    ai/
+      explanation/
+      evaluation/
+      prompts/
+      tests/
+
+  samples/
+    decision-cases/
+      ai-onboarding-assistant/
+
+  infra/
+    README.md
+```
+
+This is a future structure, not a current task.
+
+Do not create it during Phase 0 unless a new decision explicitly authorizes implementation scaffolding.
+
+## Recommended First Backend Modules
+
+When implementation starts, keep modules inside one backend boundary:
+
+| Module | Responsibility | Should not own |
+|---|---|---|
+| `intake` | receive selected source signals or pilot imports | business meaning |
+| `evidence` | normalize and preserve evidence lineage | recommendation logic |
+| `decision_case` | build and expose Decision ROI Case | provider API details |
+| `roi` | calculate cost, savings and assumptions | ledger mutation |
+| `recommendation` | generate approval-ready recommendation | autonomous execution |
+| `ledger` | append approval, rejection, deferral and result events | workflow orchestration |
+
+Do not split these into separate services at the start.
+
+## Recommended First Frontend Features
+
+The first frontend should focus on the Decision Review Workspace.
+
+| Feature | Purpose |
+|---|---|
+| `decision-review` | main MVP screen |
+| `evidence-chain` | prove why the recommendation is trustworthy |
+| `roi-summary` | show cost, savings and assumptions |
+| `recommendation-review` | approve, reject or defer |
+| `ledger-history` | show accountability history |
+
+Executive Workspace, Business Value, standalone Decision Ledger, Integrations, Policies and Settings are expansion surfaces.
+
+## Recommended First AI Boundary
+
+AI should not be a critical dependency for first proof.
+
+If used later, it should be limited to:
+
+- explanation,
+- evidence summarization,
+- recommendation wording,
+- confidence narrative.
+
+AI must consume prepared Decision ROI Case context.
+
+AI must not read raw Jira, GitHub, AWS, OpenAI or Anthropic Claude payloads directly.
+
+## Samples Boundary
+
+The future `samples/` folder should contain non-production validation assets.
+
+Preferred sample structure:
+
+```text
+samples/
+  decision-cases/
+    ai-onboarding-assistant/
+      README.md
+      evidence_table.md
+      roi_assumptions.md
+      expected_decision_roi_case.md
+      expected_ledger_sequence.md
+```
+
+Do not add JSON fixtures, scripts or executable loaders until implementation is approved.
+
+## Future Infrastructure Boundary
+
+The first proof should not require:
+
+- Kafka,
+- Kubernetes,
+- Terraform,
+- OpenSearch,
+- graph database,
+- vector database,
+- public API gateway,
+- production CI/CD.
+
+Future infrastructure may be introduced only when:
+
+- the vertical slice is validated,
+- at least one real Decision ROI Case has been reconstructed,
+- the architecture change is recorded in `docs/decisions/14_Decision_Log.md`.
+
+## Mapping From Vision Diagram To MVP Structure
+
+| Vision diagram element | MVP interpretation | Phase 0 action |
+|---|---|---|
+| AWS / GitHub / Jira / OpenAI / Claude | evidence sources | document source evidence needs |
+| Connectors | intake boundary | define contracts, do not implement |
+| Event Ingestion Layer | selected source signal capture | keep conceptual |
+| Core Engine Layer | context builder | define Decision ROI Case construction |
+| Decision Intelligence Layer | Decision Engine + ROI + recommendation | keep as product capability |
+| Ledger & Governance Layer | Decision Ledger v2 | use existing ledger contract |
+| Presentation Layer | Decision Review Workspace | use demo and product docs |
+| Kafka | future event streaming | defer |
+| Policy Engine | future governance | defer |
+| Kubernetes / Terraform | future operations | defer |
+
+## Structure Health Check
+
+The project structure is healthy if:
+
+- `docs/` remains the source of truth during Phase 0,
+- the MVP is explainable through one vertical slice,
+- future code structure follows domain modules, not premature microservices,
+- connectors do not own business logic,
+- Decision ROI Case remains central,
+- Decision Ledger remains append-only,
+- ROI exposes assumptions,
+- recommendation remains approval-based,
+- demo surfaces do not redefine MVP scope.
+
+## Next Structuring Steps
+
+1. Review `docs/product/24_MVP_Vertical_Slice.md`.
+2. Review `docs/product/25_MVP_ROI_Slice.md`.
+3. Validate the AI Onboarding Assistant Recovery scenario.
+4. Prepare manual evidence tables as documentation.
+5. Prepare one expected Decision ROI Case narrative.
+6. Prepare one expected ledger sequence.
+7. Only after that, decide whether to create implementation scaffolding.
+
+## Explicit Non-Decision
+
+This document does not decide:
+
+- Java package names,
+- Python package names,
+- frontend framework routes,
+- database schema,
+- OpenAPI specification,
+- protobuf changes,
+- deployment topology,
+- local development setup.
+
+Those decisions belong to future ADRs or RFCs after the vertical slice is accepted.

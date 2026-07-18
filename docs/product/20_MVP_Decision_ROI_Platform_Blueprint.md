@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Define the canonical MVP structure for IMPERATOR as a **Decision ROI Platform** and **Executive Operational Intelligence** product.
+Define the canonical MVP structure for IMPERATOR as a **Decision ROI Platform** and **Executive Operational Intelligence** product inside the broader commercial positioning of an **Operating System for Operational Intelligence**.
 
 This document is the operating blueprint for Phase 0 validation and Phase 1 product design.
 
@@ -16,7 +16,11 @@ Commercial message:
 
 ## MVP Category
 
-Primary product category:
+External commercial category:
+
+**Enterprise Decision Intelligence Platform**
+
+Primary MVP product model:
 
 **Decision ROI Platform**
 
@@ -27,6 +31,16 @@ Executive framing:
 Canonical intelligence domain:
 
 **Enterprise Context Intelligence**
+
+Category analogy:
+
+| System category | Manages |
+|---|---|
+| ERP | resources |
+| CRM | customers |
+| SIEM | security |
+| Observability | systems |
+| IMPERATOR | decisions |
 
 ## MVP Rule
 
@@ -50,6 +64,12 @@ The workflow must prove:
 - what action can recover money,
 - who can approve, reject or defer the action,
 - what value was later validated.
+
+Minimum demonstrable MVP flow:
+
+Event -> Connector -> Decision Engine -> Decision Ledger -> ROI Engine -> Executive Dashboard / Decision Review Workspace
+
+In this MVP framing, `Decision Engine` is a product/narrative block for correlation, context and recommendation reasoning. It does not require a separate microservice before the end-to-end value loop is proven.
 
 ## MVP Integrations
 

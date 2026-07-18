@@ -24,6 +24,8 @@ Business:
 Product:
 - [MVP Blueprint](docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md)
 - [Visual Operational Explainer](docs/product/23_IMPERATOR_Visual_Operational_Explainer.md)
+- [MVP Vertical Slice](docs/product/24_MVP_Vertical_Slice.md)
+- [MVP ROI Slice](docs/product/25_MVP_ROI_Slice.md)
 - [Core Domain Model](docs/product/CORE_DOMAIN_MODEL.md)
 - [API Specification](docs/product/API_SPECIFICATION.md)
 - [Decision Ledger v2](docs/product/DECISION_LEDGER_V2.md)
@@ -34,6 +36,7 @@ Product:
 Architecture:
 - [Technical Architecture Context](docs/architecture/21_Technical_Architecture_Context.md)
 - [Technical Investor Audit](docs/architecture/22_Technical_Investor_Audit.md)
+- [MVP Project Structure](docs/architecture/24_MVP_Project_Structure.md)
 - [Architecture Thesis](docs/architecture/18_Architecture_Thesis.md)
 - [Database Model](docs/architecture/DATABASE_MODEL.md)
 - [Connector Framework](docs/architecture/CONNECTOR_FRAMEWORK.md)
@@ -42,6 +45,7 @@ Architecture:
 
 AI:
 - [AI Agent Context Pack](docs/ai/12_AI_Agent_Context_Pack.md)
+- [One-Page Project Prompt ES](docs/ai/IMPERATOR_One_Page_Project_Prompt_ES.md)
 - [AI Weekly Context Toning Prompt](docs/ai/AI_Weekly_Context_Toning_Prompt_Imperator_v2.md)
 
 Decisions and RFCs:
@@ -57,9 +61,15 @@ Research:
 
 ## Canonical Definition
 
-**IMPERATOR is a Decision ROI Platform for Executive Operational Intelligence.**
+**IMPERATOR is an Operating System for Operational Intelligence.**
 
-It finds hidden operational money inside shipped technology decisions and explains which action leadership should approve to recover it.
+Commercial category:
+- **Enterprise Decision Intelligence Platform**
+
+MVP product model:
+- **Decision ROI Platform for Executive Operational Intelligence**
+
+It manages decisions across cloud, code and AI systems, finds hidden operational money inside shipped technology decisions, and explains which action leadership should approve to recover it.
 
 MVP technical rule:
 - **One Decision. One Timeline. One ROI.**
@@ -67,9 +77,11 @@ MVP technical rule:
 Current paid wedge:
 - **Decision Recovery Workflow for AI/cloud spend**
 
-Canonical intelligence term:
-- ✅ Enterprise Context Intelligence
-- ❌ Decision Intelligence (as primary category term)
+Canonical positioning terms:
+- Operating System for Operational Intelligence
+- Enterprise Decision Intelligence Platform
+- Decision ROI Platform
+- Enterprise Context Intelligence
 
 Canonical MVP blueprint:
 - [docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md](docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md)
@@ -110,18 +122,20 @@ When documents or prompts conflict, use this order:
 
 1. `docs/decisions/14_Decision_Log.md` for accepted decisions and chronology.
 2. `docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md` for MVP product boundary.
-3. `docs/product/CORE_DOMAIN_MODEL.md` for domain entities, relationships and invariants.
-4. `docs/product/API_SPECIFICATION.md` for conceptual API surface.
-5. `docs/product/DECISION_LEDGER_V2.md` for Decision Ledger module behavior.
-6. `docs/architecture/21_Technical_Architecture_Context.md` for target architecture context.
-7. `docs/architecture/DATABASE_MODEL.md` for conceptual data model.
-8. `docs/architecture/CONNECTOR_FRAMEWORK.md` for future integration rules.
-9. `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
-10. `docs/ai/12_AI_Agent_Context_Pack.md` for AI-agent operating rules.
-11. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
-12. Older documents, demos, prompts, ADRs and RFC drafts as historical context unless updated by the documents above.
+3. `docs/product/24_MVP_Vertical_Slice.md` for the first end-to-end MVP path.
+4. `docs/product/25_MVP_ROI_Slice.md` for ROI calculation, assumptions and validation rules.
+5. `docs/product/CORE_DOMAIN_MODEL.md` for domain entities, relationships and invariants.
+6. `docs/product/API_SPECIFICATION.md` for conceptual API surface.
+7. `docs/product/DECISION_LEDGER_V2.md` for Decision Ledger module behavior.
+8. `docs/architecture/21_Technical_Architecture_Context.md` for target architecture context.
+9. `docs/architecture/DATABASE_MODEL.md` for conceptual data model.
+10. `docs/architecture/CONNECTOR_FRAMEWORK.md` for future integration rules.
+11. `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
+12. `docs/ai/12_AI_Agent_Context_Pack.md` for AI-agent operating rules.
+13. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
+14. Older documents, demos, prompts, ADRs and RFC drafts as historical context unless updated by the documents above.
 
-Founder-mode or master-prompt instructions define ambition and quality bar. They do not override the current repository decisions when they mention older framing such as AI Cost Attribution as the primary wedge, dashboard-led product language, Enterprise Decision Intelligence as the current category, or production-ready implementation during Phase 0.
+Founder-mode or master-prompt instructions define ambition and quality bar. They do not override the current repository decisions when they mention older framing such as AI Cost Attribution as the primary wedge, dashboard-led product language, generic Decision Intelligence without the operating-system and Decision ROI framing, or production-ready implementation during Phase 0.
 
 ## Documentation Evolution Rule
 

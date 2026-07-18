@@ -161,3 +161,23 @@ Format: one entry per decision with date, rationale, and impact.
 - Decision: add `docs/product/23_IMPERATOR_Visual_Operational_Explainer.md` as a derived teaching document for explaining IMPERATOR through diagrams, demo mapping and an operational walkthrough.
 - Rationale: the project needs one didactic artifact that explains the product without forcing readers to traverse the full strategy, architecture, domain model and demo files.
 - Impact: no change to MVP scope or authority order. The explainer must remain subordinate to the MVP Blueprint, Core Domain Model, API Specification, Decision Ledger v2 and Architecture Context.
+
+### [2026-07-17] D032 — Operating System for Operational Intelligence positioning
+- Decision: adopt **Operating System for Operational Intelligence** as the primary commercial metaphor and allow **Enterprise Decision Intelligence Platform** as the external category label when paired with the Decision ROI and operational intelligence narrative.
+- Rationale: the ERP/CRM/SIEM/Observability comparison makes the category easier to understand: ERP manages resources, CRM manages customers, SIEM manages security, Observability manages systems, and IMPERATOR manages decisions.
+- Impact: no change to MVP scope. The MVP still demonstrates the Decision Recovery Workflow through one end-to-end flow: Event -> Connector -> Decision Engine -> Decision Ledger -> ROI Engine -> Executive Dashboard / Decision Review Workspace.
+
+### [2026-07-17] D033 — MVP vertical slice and project structure before code
+- Decision: add `docs/product/24_MVP_Vertical_Slice.md` and `docs/architecture/24_MVP_Project_Structure.md` to define the first end-to-end MVP path and future project structure without creating services or code.
+- Rationale: the project needs one defendable implementation target before Phase 1. The first structure should prove a single Decision ROI Case instead of creating premature microservices, infrastructure or broad platform surfaces.
+- Impact: no runnable implementation added. The accepted next structuring step is to validate the AI Onboarding Assistant Recovery slice and prepare manual evidence/ROI/ledger artifacts before any source-code scaffolding.
+
+### [2026-07-18] D034 — MVP ROI slice before implementation
+- Decision: add `docs/product/25_MVP_ROI_Slice.md` to define how the MVP calculates, explains and validates ROI for one Decision ROI Case.
+- Rationale: ROI is the executive proof point of IMPERATOR. Before implementation, the project needs a shared model for current cost, estimated recovery, assumptions, confidence, risk, approval snapshots and realized value validation.
+- Impact: no code added. The ROI slice separates estimated recovery from validated recovered value and keeps Business Value dependent on ledger-backed result validation.
+
+### [2026-07-18] D035 — Spanish one-page project prompt
+- Decision: add `docs/ai/IMPERATOR_One_Page_Project_Prompt_ES.md` as a concise Spanish prompt for quickly explaining or resuming IMPERATOR context.
+- Rationale: the project now has enough canonical material that future AI sessions and human collaborators need a short onboarding artifact that preserves MVP focus without reopening the whole documentation set.
+- Impact: no scope change and no code added. The prompt summarizes the current positioning, MVP rule, vertical slice, ROI rules, product surface and context authority.

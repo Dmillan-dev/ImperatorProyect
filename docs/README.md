@@ -35,6 +35,8 @@ Authoritative product documents:
 
 Supporting product explainers:
 - `23_IMPERATOR_Visual_Operational_Explainer.md`
+- `24_MVP_Vertical_Slice.md`
+- `25_MVP_ROI_Slice.md`
 
 ### `architecture/`
 
@@ -44,6 +46,7 @@ Use for:
 - architecture thesis,
 - target architecture context,
 - technical investor audit,
+- MVP project structure,
 - conceptual database model,
 - connector framework,
 - Phase 0 repository rules,
@@ -56,6 +59,7 @@ AI-agent operating context and recurring AI collaboration prompts.
 
 Use for:
 - agent context packs,
+- one-page project prompts,
 - weekly context toning prompts,
 - AI collaboration guardrails.
 
@@ -87,15 +91,17 @@ When documents conflict:
 
 1. `decisions/14_Decision_Log.md`
 2. `product/20_MVP_Decision_ROI_Platform_Blueprint.md`
-3. `product/CORE_DOMAIN_MODEL.md`
-4. `product/API_SPECIFICATION.md`
-5. `product/DECISION_LEDGER_V2.md`
-6. `architecture/21_Technical_Architecture_Context.md`
-7. `architecture/DATABASE_MODEL.md`
-8. `architecture/CONNECTOR_FRAMEWORK.md`
-9. `rfcs/0002-module-communication-architecture.md`
-10. `ai/12_AI_Agent_Context_Pack.md`
-11. `product/13_Glossary_and_Canonical_Language.md`
+3. `product/24_MVP_Vertical_Slice.md`
+4. `product/25_MVP_ROI_Slice.md`
+5. `product/CORE_DOMAIN_MODEL.md`
+6. `product/API_SPECIFICATION.md`
+7. `product/DECISION_LEDGER_V2.md`
+8. `architecture/21_Technical_Architecture_Context.md`
+9. `architecture/DATABASE_MODEL.md`
+10. `architecture/CONNECTOR_FRAMEWORK.md`
+11. `rfcs/0002-module-communication-architecture.md`
+12. `ai/12_AI_Agent_Context_Pack.md`
+13. `product/13_Glossary_and_Canonical_Language.md`
 
 ## Growth Rule
 

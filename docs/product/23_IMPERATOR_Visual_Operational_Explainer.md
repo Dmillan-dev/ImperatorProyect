@@ -23,11 +23,31 @@ Canonical sources:
 
 ## One-Sentence Explanation
 
-**IMPERATOR reconstructs expensive shipped technology decisions and shows leadership which approval-ready action can recover money.**
+**IMPERATOR is an Operating System for Operational Intelligence: it manages decisions across cloud, code, AI and business systems.**
 
 Shorter version:
 
 **One Decision. One Timeline. One ROI.**
+
+## Category Positioning
+
+Use this comparison when explaining the category:
+
+| Existing category | What it manages |
+|---|---|
+| ERP | Resources |
+| CRM | Customers |
+| SIEM | Security |
+| Observability | Systems |
+| IMPERATOR | Decisions |
+
+Commercial category:
+
+**Enterprise Decision Intelligence Platform**
+
+MVP product model:
+
+**Decision ROI Platform for Executive Operational Intelligence**
 
 ## What Problem It Solves
 
@@ -45,6 +65,40 @@ flowchart LR
 ```
 
 Without IMPERATOR, answering that question requires manual reconstruction across teams and systems.
+
+## Full Platform Picture
+
+The long-term platform connects operating systems of record to the decision layer.
+
+```mermaid
+flowchart TB
+    subgraph Sources[Enterprise systems]
+        AWS[AWS]
+        GH[GitHub]
+        J[Jira]
+        OAI[OpenAI]
+        CL[Claude]
+    end
+
+    AWS --> CEL[Connector and Event Layer]
+    GH --> CEL
+    J --> CEL
+    OAI --> CEL
+    CL --> CEL
+
+    CEL --> DE[Decision Engine<br/>Correlation + Context + AI Analysis]
+    DE --> DL[Decision Ledger]
+    DE --> ES[Evidence Store]
+    DE --> ROI[ROI Engine]
+    DL --> WS[Executive Decision Workspace]
+    ES --> WS
+    ROI --> WS
+    WS --> OUT[Measurable Business Outcomes]
+    OUT --> SPEND[Lower AI spend]
+    OUT --> TIME[Lower investigation time]
+    OUT --> RISK[Lower operational risk]
+    OUT --> VALUE[Higher ROI and executive visibility]
+```
 
 ## What IMPERATOR Does
 
@@ -93,6 +147,23 @@ flowchart TD
 MVP promise:
 
 **In 30 days, reconstruct one expensive AI/cloud decision and produce one approval-ready recovery action.**
+
+## Minimum MVP Demonstration
+
+For a TFG or first startup proof, the MVP should demonstrate only this end-to-end path:
+
+```mermaid
+flowchart TD
+    EVT[Event] --> CON[Connector<br/>GitHub / AWS / OpenAI]
+    CON --> DE[Decision Engine]
+    DE --> LEDGER[Decision Ledger]
+    LEDGER --> ROI[ROI Engine]
+    ROI --> DASH[Executive Dashboard<br/>Decision Review Workspace]
+```
+
+If this flow works end to end, IMPERATOR has a defensible MVP: a real event becomes a reviewed decision, the decision is recorded, and the executive surface shows financial impact.
+
+In this explainer, `Decision Engine` means the product capability that correlates events, builds context and prepares a recommendation. It does not require a separate implementation service during Phase 0 or the first proof.
 
 ## The Story to Tell
 
@@ -292,6 +363,10 @@ IMPERATOR is:
 ```mermaid
 mindmap
   root((IMPERATOR))
+    Operating System for Operational Intelligence
+      Enterprise Decision Intelligence Platform
+      Manages decisions
+      Produces business outcomes
     Decision ROI Platform
       One Decision
       One Timeline

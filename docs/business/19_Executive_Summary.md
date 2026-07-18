@@ -2,7 +2,9 @@
 
 ## What it is
 
-IMPERATOR is a Decision ROI Platform for Executive Operational Intelligence. Its purpose is to transform operational events from cloud, code and AI systems into business context that is searchable, explainable, measurable and actionable.
+IMPERATOR is an **Operating System for Operational Intelligence**: an **Enterprise Decision Intelligence Platform** that manages decisions across cloud, code, AI and business systems.
+
+Its MVP product model is a **Decision ROI Platform for Executive Operational Intelligence**. Its purpose is to transform operational events from cloud, code and AI systems into business context that is searchable, explainable, measurable and actionable.
 
 The MVP thesis is simple:
 
@@ -64,7 +66,8 @@ This project is currently in Phase 0: idea creation and validation, with no soft
 The founder-mode ambition remains valid: act like a CTO building an enterprise-grade SaaS. The current repository decisions refine that ambition into a narrower Phase 0 mandate:
 
 - MVP wedge: Decision ROI Timeline built on cross-platform decision traceability.
-- Product category: Decision ROI Platform for Executive Operational Intelligence.
+- Commercial category: Operating System for Operational Intelligence / Enterprise Decision Intelligence Platform.
+- MVP product model: Decision ROI Platform for Executive Operational Intelligence.
 - Intelligence domain: Enterprise Context Intelligence.
 - Product surface: Decision Review Workspace first; Workspace -> Decision -> Ledger after repeated decisions exist.
 - MVP integrations: Jira, GitHub, AWS and OpenAI + Anthropic Claude.
@@ -107,9 +110,9 @@ Ownership must be explicit:
 - Financial Owner: Finance
 - Approver: CTO
 
-### The real product: quantification engine
+### The real product: decision operating system + quantification engine
 
-IMPERATOR is not primarily a decision engine; it is a quantification engine. Each decision should answer:
+The Decision Engine turns scattered operational events into reviewable decisions. The ROI Engine quantifies those decisions. Together they answer:
 
 - ¿Cuánto cuesta hoy?
 - ¿Quién la aprobó y quién la implementó?

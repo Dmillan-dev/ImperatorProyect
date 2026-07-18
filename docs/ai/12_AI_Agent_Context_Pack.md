@@ -15,53 +15,58 @@ When context conflicts, agents must use this order:
 
 1. `docs/decisions/14_Decision_Log.md` for accepted decisions and chronology.
 2. `docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md` for MVP product boundary.
-3. `docs/product/CORE_DOMAIN_MODEL.md` for domain entities, relationships and invariants.
-4. `docs/product/API_SPECIFICATION.md` for conceptual API surface.
-5. `docs/product/DECISION_LEDGER_V2.md` for Decision Ledger module behavior.
-6. `docs/architecture/21_Technical_Architecture_Context.md` for target architecture context.
-7. `docs/architecture/DATABASE_MODEL.md` for conceptual data model.
-8. `docs/architecture/CONNECTOR_FRAMEWORK.md` for integration boundaries.
-9. `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
-10. This file for agent behavior and response consistency.
-11. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
+3. `docs/product/24_MVP_Vertical_Slice.md` for the first end-to-end MVP path.
+4. `docs/product/25_MVP_ROI_Slice.md` for ROI calculation, assumptions and validation rules.
+5. `docs/product/CORE_DOMAIN_MODEL.md` for domain entities, relationships and invariants.
+6. `docs/product/API_SPECIFICATION.md` for conceptual API surface.
+7. `docs/product/DECISION_LEDGER_V2.md` for Decision Ledger module behavior.
+8. `docs/architecture/21_Technical_Architecture_Context.md` for target architecture context.
+9. `docs/architecture/DATABASE_MODEL.md` for conceptual data model.
+10. `docs/architecture/CONNECTOR_FRAMEWORK.md` for integration boundaries.
+11. `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
+12. This file for agent behavior and response consistency.
+13. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
 
-Founder-mode or master-prompt guidance sets ambition and quality bar. It does not override current decisions when it uses older framing such as AI Cost Attribution as the primary wedge, dashboard-led language, Enterprise Decision Intelligence as the current category, or production-ready implementation during Phase 0.
+Founder-mode or master-prompt guidance sets ambition and quality bar. It does not override current decisions when it uses older framing such as AI Cost Attribution as the primary wedge, dashboard-led language, generic Decision Intelligence without the operating-system and Decision ROI framing, or production-ready implementation during Phase 0.
 
 ## Canonical Mandates
 
-1. Use term: **Enterprise Context Intelligence**.
-2. Use core narrative: **"We transform operational chaos into business decisions."**
-3. Keep long-term ICP: Enterprise SaaS multi-cloud (100–500 employees, 50+ SaaS apps, active AI usage, Platform+DevOps+Security). For v1 paid validation, prefer AWS-first B2B SaaS using Jira, GitHub and OpenAI or Anthropic Claude in production.
-4. Keep wedge: Cross-platform Decision Traceability, now expressed through a **Decision ROI Timeline** for the MVP.
-5. Emphasize: Multi-stakeholder simultaneous value (Platform Eng → traceability; Finance/FinOps → ROI and costs; Security → risk; CTO → strategic visibility).
-6. Emphasize: Neutrality as competitive moat (vs hyperscalers who cannot be neutral).
-7. Use MVP rule: **"One Decision. One Timeline. One ROI."**
-8. For v1, prioritize information domains over connector breadth:
+1. Use commercial positioning: **Operating System for Operational Intelligence** / **Enterprise Decision Intelligence Platform**.
+2. Use intelligence-domain term: **Enterprise Context Intelligence**.
+3. Use core narrative: **"We transform operational chaos into business decisions."**
+4. Keep long-term ICP: Enterprise SaaS multi-cloud (100–500 employees, 50+ SaaS apps, active AI usage, Platform+DevOps+Security). For v1 paid validation, prefer AWS-first B2B SaaS using Jira, GitHub and OpenAI or Anthropic Claude in production.
+5. Keep wedge: Cross-platform Decision Traceability, now expressed through a **Decision ROI Timeline** for the MVP.
+6. Emphasize: Multi-stakeholder simultaneous value (Platform Eng → traceability; Finance/FinOps → ROI and costs; Security → risk; CTO → strategic visibility).
+7. Emphasize: Neutrality as competitive moat (vs hyperscalers who cannot be neutral).
+8. Use MVP rule: **"One Decision. One Timeline. One ROI."**
+9. For v1, prioritize information domains over connector breadth:
    - Business Context: Jira
    - Code & Deployment: GitHub
    - Infrastructure & Cost: AWS
    - AI Consumption: OpenAI + Anthropic Claude
-9. Defer Slack, Microsoft 365, Salesforce, Azure OpenAI, Google Gemini, Mistral, Azure DevOps, ServiceNow, Azure and GCP as expansion systems unless explicitly needed for a validated pilot.
-10. Treat the MVP product surface as **Decision Review Workspace**. The broader `Workspace -> Decision -> Ledger` model is expansion after multiple Decision ROI Cases exist.
-11. Do not require full navigation for MVP. Executive Workspace, standalone Ledger, Business Value, Policies and Settings are expansion surfaces.
-12. Decision Review Workspace answers: can the company trust and approve this recovery action? It needs decision summary, timeline, evidence, ROI assumptions, recommendation, owner, approver, approve/reject/defer action and ledger history.
-13. Decision Detail and Decision Review Workspace are the same MVP product idea unless a later product decision separates them.
-14. Decision Ledger answers: what has the company decided over time? It is an immutable ledger of all business decisions, not only recommendations. Ledger v2 records approval, rejection, deferral, implementation and result-validation history without becoming a workflow engine.
-15. Business Value answers: what economic value has IMPERATOR generated? It should use validated ledger outcomes and remain separate from estimated recovery.
-16. Integrations answers: what operating systems are connected? For MVP, focus on AWS, GitHub, Jira and OpenAI + Anthropic Claude.
-17. Use monthly savings in decision queues and annualized value for executive summaries.
-18. Prioritize the MVP paid wedge: AI model downgrade/change, unused AI agent removal and underutilized AWS resource detection tied to the same Decision ROI Case. Defer negative-ROI feature analysis and duplicated service/agent consolidation.
-19. Do not let product surface work drift into chart-heavy analytics or evidence overload.
-20. Use `Review Decision` on the executive workspace; use `Approve Recommendation` only inside the decision detail page.
-21. Use `docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md` as the canonical MVP blueprint.
-22. Use `docs/product/CORE_DOMAIN_MODEL.md` as the canonical domain model.
-23. Use `docs/product/API_SPECIFICATION.md` as the conceptual API contract before implementation.
-24. Use `docs/product/DECISION_LEDGER_V2.md` as the Decision Ledger module contract.
-25. Use `docs/architecture/DATABASE_MODEL.md` as the conceptual database model.
-26. Use `docs/architecture/CONNECTOR_FRAMEWORK.md` as the connector expansion model.
-27. Use `docs/rfcs/0002-module-communication-architecture.md` for communication design rationale.
-28. Use `docs/architecture/21_Technical_Architecture_Context.md` as the canonical architecture context.
-29. Do not change category/ICP/wedge/domain/API/database/connector/architecture boundary without logging in `docs/decisions/14_Decision_Log.md`.
+10. Defer Slack, Microsoft 365, Salesforce, Azure OpenAI, Google Gemini, Mistral, Azure DevOps, ServiceNow, Azure and GCP as expansion systems unless explicitly needed for a validated pilot.
+11. Treat the MVP product surface as **Decision Review Workspace**. The broader `Workspace -> Decision -> Ledger` model is expansion after multiple Decision ROI Cases exist.
+12. Do not require full navigation for MVP. Executive Workspace, standalone Ledger, Business Value, Policies and Settings are expansion surfaces.
+13. Decision Review Workspace answers: can the company trust and approve this recovery action? It needs decision summary, timeline, evidence, ROI assumptions, recommendation, owner, approver, approve/reject/defer action and ledger history.
+14. Decision Detail and Decision Review Workspace are the same MVP product idea unless a later product decision separates them.
+15. Decision Ledger answers: what has the company decided over time? It is an immutable ledger of all business decisions, not only recommendations. Ledger v2 records approval, rejection, deferral, implementation and result-validation history without becoming a workflow engine.
+16. Business Value answers: what economic value has IMPERATOR generated? It should use validated ledger outcomes and remain separate from estimated recovery.
+17. Integrations answers: what operating systems are connected? For MVP, focus on AWS, GitHub, Jira and OpenAI + Anthropic Claude.
+18. Use monthly savings in decision queues and annualized value for executive summaries.
+19. Prioritize the MVP paid wedge: AI model downgrade/change, unused AI agent removal and underutilized AWS resource detection tied to the same Decision ROI Case. Defer negative-ROI feature analysis and duplicated service/agent consolidation.
+20. Do not let product surface work drift into chart-heavy analytics or evidence overload.
+21. Use `Review Decision` on the executive workspace; use `Approve Recommendation` only inside the decision detail page.
+22. Use `docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md` as the canonical MVP blueprint.
+23. Use `docs/product/CORE_DOMAIN_MODEL.md` as the canonical domain model.
+24. Use `docs/product/API_SPECIFICATION.md` as the conceptual API contract before implementation.
+25. Use `docs/product/DECISION_LEDGER_V2.md` as the Decision Ledger module contract.
+26. Use `docs/product/24_MVP_Vertical_Slice.md` as the first end-to-end MVP path.
+27. Use `docs/product/25_MVP_ROI_Slice.md` for ROI calculations, assumptions, confidence, risk and result validation.
+28. Use `docs/architecture/DATABASE_MODEL.md` as the conceptual database model.
+29. Use `docs/architecture/CONNECTOR_FRAMEWORK.md` as the connector expansion model.
+30. Use `docs/rfcs/0002-module-communication-architecture.md` for communication design rationale.
+31. Use `docs/architecture/21_Technical_Architecture_Context.md` as the canonical architecture context.
+32. Do not change category/ICP/wedge/domain/API/database/connector/architecture boundary without logging in `docs/decisions/14_Decision_Log.md`.
 
 ## Writing Style
 

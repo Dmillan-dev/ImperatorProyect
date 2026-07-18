@@ -3,6 +3,8 @@
 ## Canonical Terms
 
 - Operational Intelligence Layer
+- Operating System for Operational Intelligence
+- Enterprise Decision Intelligence Platform
 - Decision ROI Platform
 - Executive Operational Intelligence
 - Enterprise Context Intelligence
@@ -21,6 +23,8 @@
 - Assumptions Snapshot
 - Result Validation
 - Executive Decision Workspace
+- Executive Dashboard
+- Decision Engine
 - ROI Engine
 - Recommendation Engine
 - Recovered Operational Value
@@ -34,9 +38,8 @@
 
 - “another AI platform”
 - “traditional observability” as primary definition
-- “Decision Intelligence” as core category label
+- “Decision Intelligence” as a generic standalone category label
 - “Executive Decision Intelligence” as primary category label
-- “Enterprise Decision Intelligence Platform” as current category label
 - “AI Cost Attribution” as the primary MVP wedge
 - “connector-first platform” as MVP framing
 - “dashboard-led SaaS” as the current product surface model
@@ -44,6 +47,12 @@
 - dashboard as the primary product metaphor
 - autonomous execution as MVP promise
 - production-ready code as a Phase 0 instruction
+
+## Interpretation Notes
+
+- `Operating System for Operational Intelligence` is the primary commercial metaphor.
+- `Enterprise Decision Intelligence Platform` is the external category label when paired with the operating-system and Decision ROI framing.
+- `Decision Engine` is a product/narrative block for correlation, context and recommendation reasoning; it does not mandate a separate microservice in the MVP.
 
 ## Master Phrases
 
@@ -59,3 +68,5 @@
 10. “Find hidden operational money and explain the decision to recover it.”
 11. “Decision Log decides. MVP Blueprint bounds. Architecture Context guides.”
 12. “Phase 0 may define context, contracts and scaffolds; it does not build production services.”
+13. “ERP manages resources. CRM manages customers. SIEM manages security. Observability manages systems. IMPERATOR manages decisions.”
+14. “IMPERATOR is the Operating System for Operational Intelligence.”
