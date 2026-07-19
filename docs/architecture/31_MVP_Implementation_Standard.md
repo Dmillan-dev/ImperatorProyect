@@ -141,7 +141,7 @@ Each external dependency must be replaceable:
 - OpenAI + Anthropic Claude are adapters.
 - PostgreSQL is an adapter.
 - OAuth providers are adapters.
-- Future AI explanation service is an adapter.
+- AI explanation service is an adapter.
 
 Changing an adapter must not change the core Decision ROI Case domain.
 

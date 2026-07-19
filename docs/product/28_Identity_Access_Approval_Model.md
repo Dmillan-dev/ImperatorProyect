@@ -88,7 +88,7 @@ Approval must be:
 | Engineer | Implementation contributor | Provides technical evidence; may be assigned implementation evidence tasks |
 | Admin | Organization/configuration administrator | Manages configuration later; not automatically a business approver |
 | Viewer | Limited reader | Views allowed summaries only |
-| AI Component | Future explanation/summarization helper | Reads prepared context only; never approves, rejects, defers, implements or validates |
+| AI Component | Explanation/summarization helper | Reads prepared context only; never approves, rejects, defers, implements or validates |
 | IMPERATOR Analyst / System Later | Manual analyst now, system capability later | Creates or prepares recommendations; not final business authority |
 
 ## MVP Approval Doctrine

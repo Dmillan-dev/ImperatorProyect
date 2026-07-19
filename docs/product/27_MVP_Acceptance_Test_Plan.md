@@ -95,7 +95,7 @@ The product question is:
 | FinOps owner | Confirms cost evidence, ROI assumptions and validation period |
 | CTO or VP Engineering | Approves, rejects or defers the recommendation |
 | Security or Compliance reviewer | Confirms evidence exposure, sensitivity and AI boundaries |
-| AI component | Not an approver; may only explain prepared context later |
+| AI component | Not an approver; may only explain prepared context |
 
 The exact role and permission matrix is defined in `docs/product/28_Identity_Access_Approval_Model.md`.
 
@@ -224,7 +224,7 @@ Prove that the recommendation is approval-ready but not autonomous.
 | D05 | Missing owner | Remove `E-OWNER-001` or `E-OWNER-002` | Recommendation is not approval-ready | P0 |
 | D06 | Missing approver | Remove `E-OWNER-003` | Recommendation cannot be approved | P0 |
 | D07 | Missing quality evidence | Remove `E-AI-005` | Risk becomes Medium/High and recommendation should be deferred | P0 |
-| D08 | AI-generated explanation | Future AI explanation over prepared context | Explanation is advisory and must cite evidence IDs | P1 |
+| D08 | AI-generated explanation | Phase 1 AI explanation over prepared context | Explanation is advisory, cites evidence IDs and does not change the recommendation | P0 |
 
 Pass rule:
 

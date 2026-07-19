@@ -131,19 +131,19 @@ No portfolio optimization.
 
 Phase 1 should keep the model intentionally small.
 
-Allowed minimum entities:
+Allowed minimum domain concepts:
 
-| Entity | Why it exists in Phase 1 |
+| Concept | Why it exists in Phase 1 |
 |---|---|
-| `Actor` | Identifies the authenticated human user. |
-| `Role` | Controls basic review visibility and allowed actions. |
-| `SourceConnection` | Represents one connected or imported evidence source. |
-| `DecisionROICase` | Central business object of the MVP. |
-| `Evidence` | Supports claims about cost, usage, owner, implementation and risk. |
-| `ROIView` | Holds deterministic cost, recovery, assumptions, confidence and risk. |
-| `Recommendation` | Stores exactly one approval-ready proposed action. |
-| `AIExplanation` | Natural-language explanation generated from prepared context. |
-| `LedgerEntry` | Records recommendation, approval, rejection, deferral, implementation and result-validation states. |
+| User / Actor | Identifies the authenticated human user. |
+| Role | Controls basic review visibility and allowed actions. |
+| Evidence Source / minimal Integration reference | Represents one connected, imported or manual evidence source using existing domain language. |
+| Decision ROI Case | Central business object of the MVP. |
+| Evidence | Supports claims about cost, usage, owner, implementation and risk. |
+| ROI View | Holds deterministic cost, recovery, assumptions, confidence and risk. |
+| Recommendation | Stores exactly one approval-ready proposed action. |
+| AI Explanation | Natural-language explanation generated from prepared context. |
+| Ledger Entry | Records recommendation, approval, rejection, deferral, implementation and result-validation states. |
 
 Do not add tables or persistent objects that do not directly serve the Decision ROI Case.
 
@@ -165,7 +165,7 @@ Treat these as high-control decisions before implementation:
 
 | Decision | Why it matters |
 |---|---|
-| Centrality of `DecisionROICase` | All services, UI and persistence must orbit this object. |
+| Centrality of Decision ROI Case | All services, UI and persistence must orbit this object. |
 | Hexagonal Architecture | Domain must remain independent from Jira, GitHub, AWS, AI providers, PostgreSQL and UI frameworks. |
 | Deterministic recommendation rules | The business outcome must be explainable and testable without relying on LLM judgment. |
 | Append-only ledger semantics | Trust depends on not mutating historical review snapshots. |
@@ -208,7 +208,7 @@ Authorized future scaffolding is limited to:
 - one minimal backend boundary,
 - one minimal frontend surface,
 - one minimal persistence boundary if needed,
-- one AI explanation adapter or boundary if included,
+- one AI explanation adapter or boundary,
 - one or two minimal source adapters,
 - basic auth boundary,
 - basic health, logs and metrics.
@@ -332,6 +332,25 @@ Recommendation
 ```
 
 The LLM explains the deterministic recommendation. It does not decide the recommendation.
+
+## Result Validation Boundary
+
+The full IMPERATOR lifecycle keeps Result Validation as the point where estimated recovery becomes realized Business Value.
+
+Phase 1 must preserve this rule, but it does not need to prove a real post-action saving to be considered complete.
+
+Phase 1 must show:
+
+- the recommendation requires later validation,
+- realized value is not counted before validation,
+- a future result-validation ledger state is representable,
+- FinOps owns realized-value validation when post-action evidence exists.
+
+Phase 1 must not:
+
+- count estimated recovery as realized Business Value,
+- require a real customer implementation before the first MVP can be demonstrated,
+- mutate the original recommendation or approval snapshot when validation evidence appears later.
 
 ## Initial Data Model Limit
 
