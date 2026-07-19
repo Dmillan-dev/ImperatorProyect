@@ -12,7 +12,7 @@ The MVP does not compete on connecting everything. It proves value by normalizin
 
 ## Primary MVP Question
 
-**This business decision costs X today, appears to create Y estimated value, and has an action that can recover Z per year.**
+**This business decision costs X today, has Y observable usage or value signal, and has an action that can recover Z per year.**
 
 ## Paid MVP Wedge
 
@@ -75,7 +75,7 @@ Outcomes:
 
 The canonical MVP object is the **Decision ROI Case**:
 
-Business Decision -> Technical Change -> Infrastructure -> AI Consumption -> Recommendation -> Result.
+Business Decision -> Technical Change -> Infrastructure -> AI Consumption -> ROI View -> Recommendation -> Approval/Rejection/Deferral -> Decision Ledger -> Result Validation.
 
 Each case must include current cost, usage/value proxy, owner, approver, confidence and annualized recovery.
 

@@ -21,10 +21,14 @@ It is a Phase 0 product and governance artifact. It does not define authenticati
 - `docs/product/25_MVP_ROI_Slice.md`
 - `docs/product/26_Manual_Evidence_Pack_AI_Onboarding_Assistant.md`
 - `docs/product/27_MVP_Acceptance_Test_Plan.md`
+- `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`
 - `docs/product/CORE_DOMAIN_MODEL.md`
 - `docs/product/API_SPECIFICATION.md`
 - `docs/product/DECISION_LEDGER_V2.md`
 - `docs/architecture/26_Security_Data_Governance_Threat_Model.md`
+- `docs/architecture/27_Quality_Attributes.md`
+- `docs/architecture/28_Per_Connector_MVP_Contracts.md`
+- `docs/architecture/29_Event_Evidence_Vocabulary.md`
 - `docs/architecture/DATABASE_MODEL.md`
 
 ## Product Principle
@@ -446,20 +450,17 @@ Before Phase 1, this model is acceptable only if:
 9. AI has no decision authority.
 10. Ledger entries record actor and role.
 
-## Next Document
+## Companion Documents
 
-The next useful Phase 0 artifact is:
+The companion screen, quality, connector, vocabulary and control artifacts are now created:
 
-`docs/product/29_Decision_Review_Workspace_Screen_Contract.md`
-
-Status: created.
+- `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`
+- `docs/architecture/27_Quality_Attributes.md`
+- `docs/architecture/28_Per_Connector_MVP_Contracts.md`
+- `docs/architecture/29_Event_Evidence_Vocabulary.md`
+- `docs/rnd/30_RD_Activity_Evidence_Dossier.md`
+- `docs/architecture/30_Phase_0_Closure_Readiness_Review.md`
 
 Reason:
 
-The project now knows what must be proven and who may act. The next product contract should define exactly what the first review surface shows, hides, blocks and records for the AI Onboarding Assistant Recovery slice.
-
-The next useful architecture artifact is `docs/architecture/27_Quality_Attributes.md`.
-
-Status: created.
-
-The next useful architecture artifact is `docs/architecture/28_Per_Connector_MVP_Contracts.md`.
+The project now knows who may act, what the first review surface shows, hides, blocks and records, how MVP connectors provide evidence and which event/evidence labels future agents should use.

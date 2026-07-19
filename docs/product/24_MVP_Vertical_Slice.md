@@ -6,7 +6,7 @@ Define the first end-to-end MVP slice for IMPERATOR without creating implementat
 
 This document turns the platform vision into one demonstrable product path:
 
-**Event -> Connector -> Decision Engine -> ROI Engine -> Recommendation -> Decision Ledger -> Decision Review Workspace**
+**Event -> Connector -> Decision Engine -> ROI Engine -> Recommendation -> Decision Ledger -> Decision Review Workspace -> Result Validation**
 
 It is a Phase 0 planning artifact. It does not authorize services, connectors, databases, API handlers, infrastructure or executable code.
 
@@ -88,6 +88,8 @@ flowchart TD
     REC --> LEDGER[Decision Ledger Entry]
     LEDGER --> UI[Decision Review Workspace]
     ROI --> UI
+    UI --> VAL[Result Validation]
+    VAL --> LEDGER
 ```
 
 ## Slice Objects
@@ -360,6 +362,7 @@ Do not begin implementation until this vertical slice is reviewed against:
 - `docs/product/27_MVP_Acceptance_Test_Plan.md`,
 - `docs/product/28_Identity_Access_Approval_Model.md`,
 - `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`,
+- `docs/architecture/30_Phase_0_Closure_Readiness_Review.md`,
 - `docs/architecture/24_MVP_Project_Structure.md`,
 - `docs/architecture/21_Technical_Architecture_Context.md`.
 

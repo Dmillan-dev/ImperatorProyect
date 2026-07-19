@@ -28,9 +28,16 @@ When context conflicts, agents must use this order:
 13. `docs/product/27_MVP_Acceptance_Test_Plan.md` for pre-code acceptance gates.
 14. `docs/product/29_Decision_Review_Workspace_Screen_Contract.md` for first MVP screen behavior.
 15. `docs/architecture/27_Quality_Attributes.md` for MVP non-functional quality expectations.
-16. `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
-17. This file for agent behavior and response consistency.
-18. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
+16. `docs/architecture/28_Per_Connector_MVP_Contracts.md` for Jira, GitHub, AWS and OpenAI + Anthropic Claude connector contracts.
+17. `docs/architecture/29_Event_Evidence_Vocabulary.md` for event names, evidence types, lifecycle states and blockers.
+18. `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
+19. `agents/README.md` for agent work partition and handoff rules.
+20. This file for agent behavior and response consistency.
+21. `docs/rnd/30_RD_Activity_Evidence_Dossier.md` for development evidence, hours, objects, experiments and tests.
+22. `docs/architecture/30_Phase_0_Closure_Readiness_Review.md` for final Phase 0 readiness gates and go/no-go control.
+23. `docs/architecture/31_MVP_Implementation_Standard.md` for future MVP implementation standards.
+24. `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` for exact Phase 1 objective, minimal data model, connector limit, AI explanation boundary, scaffolding authorization and exit criteria.
+25. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
 
 Founder-mode or master-prompt guidance sets ambition and quality bar. It does not override current decisions when it uses older framing such as AI Cost Attribution as the primary wedge, dashboard-led language, generic Decision Intelligence without the operating-system and Decision ROI framing, or production-ready implementation during Phase 0.
 
@@ -73,11 +80,18 @@ Founder-mode or master-prompt guidance sets ambition and quality bar. It does no
 31. Use `docs/product/28_Identity_Access_Approval_Model.md` for roles, permissions and approval authority.
 32. Use `docs/product/29_Decision_Review_Workspace_Screen_Contract.md` for what the first MVP screen shows, hides, blocks and records.
 33. Use `docs/architecture/27_Quality_Attributes.md` for explainability, auditability, freshness, traceability, latency, resilience, observability and performance non-goals.
-34. Use `docs/architecture/DATABASE_MODEL.md` as the conceptual database model.
-35. Use `docs/architecture/CONNECTOR_FRAMEWORK.md` as the connector expansion model.
-36. Use `docs/rfcs/0002-module-communication-architecture.md` for communication design rationale.
-37. Use `docs/architecture/21_Technical_Architecture_Context.md` as the canonical architecture context.
-38. Do not change category/ICP/wedge/domain/API/database/connector/architecture boundary without logging in `docs/decisions/14_Decision_Log.md`.
+34. Use `docs/architecture/28_Per_Connector_MVP_Contracts.md` for Jira, GitHub, AWS and OpenAI + Anthropic Claude source objects, evidence, permissions, freshness, sensitivity and failures.
+35. Use `docs/architecture/29_Event_Evidence_Vocabulary.md` for normalized event names, evidence types, lifecycle states, blockers, freshness, sensitivity and confidence labels.
+36. Use `agents/README.md` to keep CTO, Product, Connector, Backend, Frontend, AI, Security, FinOps and QA work separated.
+37. Use `docs/rnd/30_RD_Activity_Evidence_Dossier.md` to document future architecture, code, hours, objects, experiments and tests without inventing activity.
+38. Use `docs/architecture/30_Phase_0_Closure_Readiness_Review.md` as the final Phase 0 readiness gate before Phase 1 authorization.
+39. Use `docs/architecture/31_MVP_Implementation_Standard.md` for future Phase 1 standards: reduced scope, hexagonal architecture, auth direction and minimal observability.
+40. Use `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` before proposing Phase 1 scaffolding, data model, connector work, AI explanation flow or exit tests.
+41. Use `docs/architecture/DATABASE_MODEL.md` as the conceptual database model.
+42. Use `docs/architecture/CONNECTOR_FRAMEWORK.md` as the connector expansion model.
+43. Use `docs/rfcs/0002-module-communication-architecture.md` for communication design rationale.
+44. Use `docs/architecture/21_Technical_Architecture_Context.md` as the canonical architecture context.
+45. Do not change category/ICP/wedge/domain/API/database/connector/architecture boundary without logging in `docs/decisions/14_Decision_Log.md`.
 
 ## Writing Style
 
@@ -97,7 +111,14 @@ Do not introduce:
 - product screens that repeat the same KPI summary instead of separating prioritization, evidence and audit record
 - product surfaces that expand before the Decision Recovery Workflow is validated
 - architecture proposals that bypass `docs/architecture/21_Technical_Architecture_Context.md`
+- implementation proposals that bypass `docs/architecture/31_MVP_Implementation_Standard.md`
+- Phase 1 proposals that bypass `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
 - architecture proposals that treat conceptual bounded contexts as mandatory Phase 1 microservices
+- AI behavior that modifies persistent data, executes business rules, replaces the Decision Engine, approves, rejects, defers, marks implementation or validates results
+- multiple recommendations, ranking or learning systems as prerequisites for Phase 1
+- agent work that bypasses `agents/README.md` ownership and handoff rules
+- event/evidence names that bypass `docs/architecture/29_Event_Evidence_Vocabulary.md`
+- I+D/R&D claims, hours or test results that are not evidenced in `docs/rnd/`
 - implementation details that violate Phase 0 no-code boundaries
 
 ## Implementation references
@@ -109,5 +130,7 @@ For consistency between teams and agents, the following guidance applies for Pha
 - Kafka messages used as event transport SHOULD be encoded in Protobuf if and when broker-based ingestion is introduced.
 - The Context Layer is the canonical input for any AI agent; agents must not read directly from raw sources. Use the Context Engine outputs (Decision Ledger, enriched records) as the agent input.
 - Target architecture context lives in `docs/architecture/21_Technical_Architecture_Context.md`. It is authoritative for layer responsibilities, bounded contexts, product surface mapping and future stack direction.
+- MVP implementation standard lives in `docs/architecture/31_MVP_Implementation_Standard.md`. It is authoritative for future Phase 1 reduced scope, hexagonal boundaries, auth direction and minimal observability.
+- Phase 1 execution contract lives in `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`. It is authoritative for one Decision ROI Case, one deterministic recommendation, limited connector scope, AI-as-explainer-only behavior and final exit criteria.
 
 Any further changes to this mandate or expansions must be recorded in `docs/decisions/14_Decision_Log.md`.

@@ -47,7 +47,7 @@ There is no logical drift if the first product surface remains a review surface 
 | Acceptance plan | Coherent | Suite H now has a concrete screen behavior contract. |
 | Project structure | Coherent | No code or service scaffolding is needed yet. |
 
-The next Phase 0 architecture gap after this document was non-functional quality expectations. That gap is addressed by `docs/architecture/27_Quality_Attributes.md`; future per-connector contracts remain.
+The Phase 0 architecture gaps after this document are now closed for non-functional quality expectations and per-connector MVP contracts through `docs/architecture/27_Quality_Attributes.md` and `docs/architecture/28_Per_Connector_MVP_Contracts.md`.
 
 ## Canonical References
 
@@ -63,6 +63,9 @@ The next Phase 0 architecture gap after this document was non-functional quality
 - `docs/architecture/21_Technical_Architecture_Context.md`
 - `docs/architecture/24_MVP_Project_Structure.md`
 - `docs/architecture/26_Security_Data_Governance_Threat_Model.md`
+- `docs/architecture/27_Quality_Attributes.md`
+- `docs/architecture/28_Per_Connector_MVP_Contracts.md`
+- `docs/architecture/29_Event_Evidence_Vocabulary.md`
 - `docs/architecture/DATABASE_MODEL.md`
 - `docs/architecture/CONNECTOR_FRAMEWORK.md`
 
@@ -155,7 +158,7 @@ The screen may display future lifecycle slots, but it must not pretend that impl
 | Executive | Impact reader | Executive summary and relevant business impact | Request review or acknowledge | Final-approve unless also CTO/VP Eng or delegated |
 | Admin | Configuration operator later | Configuration context if authorized | Manage future configuration | Business approval by role alone |
 | Viewer | Limited reader | Allowed summaries only | Read | View Confidential evidence or act |
-| AI Component | Advisory explanation later | Prepared, filtered context only | Explain with evidence IDs | Approve, reject, defer, implement, validate or see raw data |
+| AI Component | Advisory explanation | Prepared, filtered context only | Explain with evidence IDs | Approve, reject, defer, implement, validate or see raw data |
 
 ## Information Architecture
 
@@ -614,9 +617,9 @@ Before Phase 1 UI design, manually verify:
 11. No raw provider data or Restricted data is needed to trust the case.
 12. There is no autonomous execution path.
 
-## Next Document
+## Companion Documents
 
-The next useful Phase 0 artifact is:
+The companion quality artifact is:
 
 `docs/architecture/27_Quality_Attributes.md`
 
@@ -626,4 +629,14 @@ Reason:
 
 The project needed to define quality attributes such as explainability, auditability, freshness, latency, reliability, reversibility, observability and performance non-goals before implementation.
 
-The next useful architecture artifacts are `docs/architecture/28_Per_Connector_MVP_Contracts.md` and `docs/architecture/29_Event_Evidence_Vocabulary.md`.
+The companion vocabulary artifact is `docs/architecture/29_Event_Evidence_Vocabulary.md`.
+
+Status: created.
+
+The companion Phase 0 control artifact is `docs/rnd/30_RD_Activity_Evidence_Dossier.md`.
+
+Status: created.
+
+The final Phase 0 closure artifact is `docs/architecture/30_Phase_0_Closure_Readiness_Review.md`.
+
+Status: created.

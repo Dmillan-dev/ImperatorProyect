@@ -20,6 +20,12 @@ MVP first-screen behavior is defined in:
 MVP quality attributes are defined in:
 - `docs/architecture/27_Quality_Attributes.md`
 
+MVP implementation standard is defined in:
+- `docs/architecture/31_MVP_Implementation_Standard.md`
+
+Phase 1 scope and exit criteria are defined in:
+- `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
+
 ## API Principles
 
 - The API revolves around Decision ROI Cases.
@@ -29,6 +35,9 @@ MVP quality attributes are defined in:
 - Every ROI response must expose assumptions.
 - Every recommendation response must expose evidence, confidence and risk.
 - Future reads and commands must support the quality expectations for explainability, auditability, freshness, latency and graceful degradation.
+- Future implementation should be JWT/OAuth2-compatible, but the first MVP must not require multiple identity providers.
+- Future implementation should preserve hexagonal boundaries: provider and persistence details stay behind adapters.
+- Phase 1 API work must serve one Decision ROI Case, one deterministic recommendation and the exact exit criteria in `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`.
 - Public customer APIs can be HTTP/REST or GraphQL later.
 - Internal service APIs follow the architecture mandate in `docs/architecture/21_Technical_Architecture_Context.md`.
 
@@ -96,6 +105,10 @@ Minimum MVP API responsibilities:
 The first consumer of this subset is the Decision Review Workspace.
 
 Do not prioritize public API, SDKs, GraphQL, broad policy APIs or connector marketplace APIs before the Decision Recovery Workflow is validated.
+
+Do not require multiple OAuth providers, full enterprise SSO or a full observability stack before the Decision Recovery Workflow is validated.
+
+Do not require multiple recommendations, ranking, learning systems or broad connector APIs for Phase 1.
 
 ## Decision API
 

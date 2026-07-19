@@ -14,6 +14,9 @@ This is not SQL, not an ORM model and not a migration plan. It explains which da
 - `docs/architecture/21_Technical_Architecture_Context.md`
 - `docs/architecture/26_Security_Data_Governance_Threat_Model.md`
 - `docs/architecture/27_Quality_Attributes.md`
+- `docs/architecture/28_Per_Connector_MVP_Contracts.md`
+- `docs/architecture/29_Event_Evidence_Vocabulary.md`
+- `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
 - `docs/rfcs/0001-knowledge-graph-model.md`
 - `docs/rfcs/0002-module-communication-architecture.md`
 
@@ -27,6 +30,14 @@ This is not SQL, not an ORM model and not a migration plan. It explains which da
 - Connector sync state must not pollute core business entities.
 - AI-readable context must be prepared, filtered and policy-aware.
 - Raw source data, normalized evidence and executive views are different data layers.
+
+## Phase 1 Data Reduction
+
+This document describes the conceptual data model for the broader product.
+
+Phase 1 implementation must use the smaller persistence boundary in `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`.
+
+If a table or stored object does not directly support one Decision ROI Case, one evidence chain, one ROI view, one deterministic recommendation, one AI explanation or one ledger state, it is out of Phase 1 scope.
 
 ## Conceptual Data Areas
 
@@ -446,6 +457,8 @@ Candidate future technology:
 - No realized savings recorded as estimated savings.
 - No Business Value realized total without a result validation entry.
 - No Evidence without sensitivity classification.
+- No connector evidence attached to a Decision ROI Case without an accepted correlation key or manual review.
+- No new normalized event, ledger event, lifecycle state or blocker label outside `docs/architecture/29_Event_Evidence_Vocabulary.md`.
 
 ## MVP Data Boundary
 

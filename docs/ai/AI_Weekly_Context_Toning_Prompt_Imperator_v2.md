@@ -26,6 +26,13 @@ Always use:
 - docs/architecture/25_Pre_Code_Architecture_Readiness_Audit.md
 - docs/architecture/26_Security_Data_Governance_Threat_Model.md
 - docs/architecture/27_Quality_Attributes.md
+- docs/architecture/28_Per_Connector_MVP_Contracts.md
+- docs/architecture/29_Event_Evidence_Vocabulary.md
+- agents/README.md
+- docs/rnd/30_RD_Activity_Evidence_Dossier.md
+- docs/architecture/30_Phase_0_Closure_Readiness_Review.md
+- docs/architecture/31_MVP_Implementation_Standard.md
+- docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md
 - docs/architecture/DATABASE_MODEL.md
 - docs/architecture/CONNECTOR_FRAMEWORK.md
 - docs/rfcs/0002-module-communication-architecture.md
@@ -105,6 +112,13 @@ E) Freeze list + next focus
 - Entry wedge: Decision ROI Timeline built on Cross-platform Decision Traceability.
 - MVP rule: One Decision. One Timeline. One ROI.
 - MVP systems: Jira, GitHub, AWS, OpenAI + Anthropic Claude.
+- Per-connector MVP contracts: docs/architecture/28_Per_Connector_MVP_Contracts.md.
+- Event/evidence vocabulary: docs/architecture/29_Event_Evidence_Vocabulary.md.
+- Agent work partition: agents/README.md.
+- I+D/R&D evidence documentation: docs/rnd/30_RD_Activity_Evidence_Dossier.md.
+- Phase 0 closure gate: docs/architecture/30_Phase_0_Closure_Readiness_Review.md.
+- MVP implementation standard: docs/architecture/31_MVP_Implementation_Standard.md.
+- Phase 1 scope and exit criteria: docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md.
 - Canonical MVP blueprint: docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md.
 - Priority paid wedge: AI model downgrade/change, unused AI agent removal and underutilized AWS resources tied to the same Decision ROI Case.
 - Deferred recommendation families: negative-ROI features and duplicated service/agent consolidation.

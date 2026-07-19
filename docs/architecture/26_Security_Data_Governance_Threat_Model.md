@@ -24,6 +24,8 @@ This is a Phase 0 architecture artifact. It does not define production security 
 - `docs/architecture/DATABASE_MODEL.md`
 - `docs/architecture/CONNECTOR_FRAMEWORK.md`
 - `docs/architecture/25_Pre_Code_Architecture_Readiness_Audit.md`
+- `docs/architecture/31_MVP_Implementation_Standard.md`
+- `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
 
 ## Architect Verdict
 
@@ -70,6 +72,23 @@ This document does not attempt to define:
 - autonomous remediation.
 
 Those belong to future security, legal, compliance and implementation work.
+
+## Authentication Direction
+
+Target SaaS direction:
+
+- OAuth2 / OpenID Connect,
+- JWT-compatible token/session model,
+- provider adapters for Google, Microsoft and GitHub.
+
+MVP reduction:
+
+- document OAuth2/JWT compatibility from the beginning,
+- implement one provider only if the first pilot needs real login,
+- allow a minimal controlled auth mode for local demo or internal validation if explicitly recorded,
+- do not build full enterprise SSO, SCIM, multi-provider administration or fine-grained policy engine in the first MVP.
+
+Authentication identifies the actor. Authorization controls evidence visibility and allowed actions. Approval authority remains governed by `docs/product/28_Identity_Access_Approval_Model.md`, not by generic admin access.
 
 ## Data Trust Boundaries
 
@@ -205,7 +224,7 @@ Rules:
 
 ### Boundary 10 - AI Context Boundary
 
-AI can help explain or summarize prepared context later. AI must not become the source of truth.
+AI can help explain or summarize prepared context. AI must not become the source of truth.
 
 AI input must be:
 
@@ -219,7 +238,7 @@ AI output must:
 
 - cite evidence IDs or assumptions,
 - remain advisory,
-- never approve, reject, defer, execute or validate results.
+- never approve, reject, defer, execute, persist data, mark implementation or validate results.
 
 ## Data Classification
 
@@ -278,6 +297,8 @@ Any connector requiring write permission is out of scope for the MVP.
 6. AI output cannot create approval, rejection, deferral, implementation or result-validation authority.
 7. AI-generated wording cannot replace evidence, ROI formulas or ledger snapshots.
 8. AI confidence is not ROI confidence.
+9. AI cannot modify persistent data.
+10. AI cannot execute business rules or replace the Decision Engine.
 
 ## Prompt Injection And Source Text Risk
 
@@ -318,13 +339,15 @@ Required behavior:
 | T14 | Manual pilot export mishandled | Sensitive spreadsheet or export leaks | Manual pilot records must be approved, minimized and classified |
 | T15 | Stale evidence treated as current | Bad ROI or recommendation | Evidence includes timestamp/period and freshness affects confidence |
 | T16 | Owner or approver unknown | No accountable action | Recommendation cannot be approval-ready |
+| T17 | Authentication treated as approval authority | Admin or logged-in user can approve incorrectly | Approval remains role/domain governed; JWT/OAuth identity is not enough |
+| T18 | Too many auth providers built too early | MVP complexity increases without proving value | Start with one provider or controlled minimal auth mode |
 
 ## Controls By MVP Stage
 
 | Stage | Required controls |
 |---|---|
 | Manual evidence collection | approved source summaries, sensitivity labels, no restricted data |
-| Connector intake later | least privilege, read-only, source IDs, sync run, freshness and sensitivity hint |
+| Connector intake | least privilege, read-only, source IDs, sync run or import reference, freshness and sensitivity hint |
 | Normalization | drop unnecessary fields, classify sensitivity, preserve lineage |
 | Evidence creation | evidence ID, observed fact, source reference, period, confidence contribution |
 | Decision ROI Case | tenant boundary, role-filtered evidence, owner and approver |
@@ -333,7 +356,7 @@ Required behavior:
 | Approval | authorized human actor, accepted assumptions, ledger snapshots |
 | Ledger | append-only, no raw provider payloads, immutable snapshots |
 | Result validation | validation evidence, period, variance, realized value only after validation |
-| AI explanation later | prepared context only, sensitivity filtering, advisory output |
+| AI explanation | prepared context only, sensitivity filtering, advisory output |
 
 ## Evidence Display Policy
 
@@ -419,6 +442,7 @@ When implementation is approved, future code must enforce these requirements:
 - ledger events do not contain raw provider payloads,
 - ROI responses expose assumptions and evidence references,
 - approvals require authorized human actors,
+- JWT/OAuth identity is mapped to product roles before evidence/action access,
 - logs redact sensitive fields,
 - test cases include authorization, redaction and cross-tenant isolation scenarios.
 
@@ -431,28 +455,19 @@ These are resolved or partially resolved by `docs/product/28_Identity_Access_App
 - What customer data processing terms are required before real pilots?
 - Which retention defaults are acceptable for early customer discovery?
 
-## Next Document
+## Companion Documents
 
-The companion acceptance artifact is:
+The companion acceptance, identity, screen, quality, connector, vocabulary and control artifacts are now created:
 
-`docs/product/27_MVP_Acceptance_Test_Plan.md`
+- `docs/product/27_MVP_Acceptance_Test_Plan.md`
+- `docs/product/28_Identity_Access_Approval_Model.md`
+- `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`
+- `docs/architecture/27_Quality_Attributes.md`
+- `docs/architecture/28_Per_Connector_MVP_Contracts.md`
+- `docs/architecture/29_Event_Evidence_Vocabulary.md`
+- `docs/rnd/30_RD_Activity_Evidence_Dossier.md`
+- `docs/architecture/30_Phase_0_Closure_Readiness_Review.md`
 
 Reason:
 
-The project now has manual evidence and security boundaries. The next step is to turn these rules into acceptance scenarios that future code must pass without inventing behavior during implementation.
-
-The next useful Phase 0 artifact after the acceptance plan is:
-
-`docs/product/28_Identity_Access_Approval_Model.md`
-
-The next useful Phase 0 artifact after the identity model is:
-
-`docs/product/29_Decision_Review_Workspace_Screen_Contract.md`
-
-Status: created.
-
-The next useful architecture artifact is `docs/architecture/27_Quality_Attributes.md`.
-
-Status: created.
-
-The next useful architecture artifact is `docs/architecture/28_Per_Connector_MVP_Contracts.md`.
+The project now has manual evidence, security boundaries, acceptance rules, authority, screen behavior, quality attributes, per-connector contracts, controlled event/evidence language, development evidence tracking and a final Phase 0 closure gate.

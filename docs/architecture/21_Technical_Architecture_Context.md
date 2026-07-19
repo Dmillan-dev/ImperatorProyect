@@ -30,8 +30,14 @@ It is subordinate to:
 10. `docs/product/27_MVP_Acceptance_Test_Plan.md` for pre-code acceptance gates.
 11. `docs/product/29_Decision_Review_Workspace_Screen_Contract.md` for first MVP screen behavior.
 12. `docs/architecture/27_Quality_Attributes.md` for MVP non-functional quality expectations.
-13. `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
-14. `docs/architecture/phase0-guidelines.md` for Phase 0 repository rules.
+13. `docs/architecture/28_Per_Connector_MVP_Contracts.md` for Jira, GitHub, AWS and OpenAI + Anthropic Claude connector contracts.
+14. `docs/architecture/29_Event_Evidence_Vocabulary.md` for event, evidence, blocker, lifecycle and label vocabulary.
+15. `docs/rnd/30_RD_Activity_Evidence_Dossier.md` for future development evidence, hours, objects, experiments and tests.
+16. `docs/architecture/30_Phase_0_Closure_Readiness_Review.md` for final Phase 0 readiness gates and go/no-go control.
+17. `docs/architecture/31_MVP_Implementation_Standard.md` for future Phase 1 MVP implementation standards.
+18. `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` for exact Phase 1 objective, connector limit, data limit, AI boundary, scaffolding authorization and exit criteria.
+19. `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
+20. `docs/architecture/phase0-guidelines.md` for Phase 0 repository rules.
 
 Founder-mode prompts should be interpreted as ambition and quality standards. If they conflict with this document, the current repository context wins unless a new decision is recorded in `docs/decisions/14_Decision_Log.md`.
 
@@ -59,9 +65,15 @@ Phase 1 should optimize for proving one paid workflow before proving the full pl
 Canonical audit reference:
 - `docs/architecture/22_Technical_Investor_Audit.md`
 
+Canonical MVP implementation standard:
+- `docs/architecture/31_MVP_Implementation_Standard.md`
+
+Canonical Phase 1 scope and exit criteria:
+- `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
+
 ## MVP Boundary
 
-The MVP must correlate one Decision ROI Case across four integrations:
+The MVP context must be able to explain one Decision ROI Case across four information domains:
 
 | Domain | MVP integration | Architecture responsibility |
 |---|---|---|
@@ -70,7 +82,9 @@ The MVP must correlate one Decision ROI Case across four integrations:
 | Infrastructure & Cost | AWS | resources, utilization, cost and operational metrics |
 | AI Consumption | OpenAI + Anthropic Claude | model, tokens, requests, user/team, application and cost |
 
-Future integrations are allowed in the roadmap, but they must not shape the MVP architecture before the four-domain story is validated.
+Phase 1 implementation does not need to automate every domain as a live connector. It may use one or two narrow read-only connectors plus approved manual/static or import evidence for the remaining domains, as defined in `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`.
+
+Future integrations are allowed in the roadmap, but they must not shape the MVP architecture before the first Decision ROI Case is validated.
 
 ## Central Domain Object
 
@@ -104,6 +118,20 @@ External Platforms
 
 The first build should be a modular monolith or tightly bounded service, not a distributed microservice system.
 
+The first build should follow Hexagonal Architecture / Ports and Adapters inside that boundary.
+
+Dependency direction:
+
+```text
+Controller / Interface
+-> Application Use Case
+-> Domain
+-> Ports
+-> Adapters
+```
+
+Domain must not depend on Spring, PostgreSQL, Jira, GitHub, AWS, OpenAI, Anthropic Claude, OAuth providers or AI services.
+
 Initial modules:
 - Integration Intake
 - Context Builder
@@ -111,6 +139,8 @@ Initial modules:
 - Recommendation Rules
 - Ledger
 - Decision Review UI
+- Identity and Authorization
+- Minimal Observability
 
 Deferred until repeated customer demand or scale requires them:
 - independent AI Intelligence service,
@@ -120,6 +150,9 @@ Deferred until repeated customer demand or scale requires them:
 - public API gateway,
 - SDKs,
 - policy engine,
+- full enterprise SSO / SCIM,
+- multi-provider auth administration,
+- full observability platform,
 - multi-cloud connector expansion,
 - Kubernetes,
 - OpenSearch or analytics lake.
@@ -165,6 +198,14 @@ Responsibilities:
 - Decision Ledger write/read APIs
 - integration health APIs
 
+MVP auth direction:
+- JWT-compatible session/token model,
+- OAuth2 / OpenID Connect compatibility,
+- one provider only if needed for the first pilot,
+- Google, Microsoft and GitHub as future provider adapters, not mandatory first-build scope.
+
+Authentication must identify the actor. Authorization and approval authority remain product/domain rules governed by `docs/product/28_Identity_Access_Approval_Model.md`.
+
 ### 3) Connector and Ingestion Layer
 
 Initial connectors:
@@ -182,6 +223,12 @@ Responsibilities:
 
 Connector rule:
 Every connector must be replaceable. No business logic should live inside connector-specific code.
+
+Hexagonal interpretation:
+Jira, GitHub, AWS, OpenAI + Anthropic Claude and PostgreSQL are adapters behind ports. Replacing any adapter must not change the Decision ROI Case domain.
+
+MVP connector contracts:
+`docs/architecture/28_Per_Connector_MVP_Contracts.md` defines the source objects, evidence, permissions, freshness, sensitivity and failure behavior for Jira, GitHub, AWS and OpenAI + Anthropic Claude.
 
 ### 4) Context Engine
 
@@ -309,10 +356,10 @@ Canonical module contract:
 ### 10) Infrastructure and Runtime
 
 Phase 1 target primitives:
-- Docker for local development and packaging
 - PostgreSQL for canonical storage
-- Redis for caching and short-lived computation state
-- object storage for evidence artifacts and exports
+- optional Docker for local development and packaging, only after implementation is authorized
+- optional Redis for caching and short-lived computation state, only if the first implementation needs it
+- optional object storage for evidence artifacts and exports, only if summaries/source references are not enough
 
 Future scale primitives:
 - Kafka for event streams
@@ -321,6 +368,27 @@ Future scale primitives:
 - data lake for long-term operational history
 
 These are not Phase 1 requirements.
+
+### 11) Minimal Observability
+
+Phase 1 should include observability only where it helps debugging, trust and auditability.
+
+Minimum future expectations:
+- structured logs,
+- request/correlation ID,
+- health endpoint,
+- connector/intake status,
+- basic metrics for requests, errors and latency,
+- ledger action audit events,
+- evidence import or normalization failures.
+
+Preferred future-compatible tools:
+- Spring Boot Actuator,
+- Micrometer,
+- OpenTelemetry when useful,
+- Prometheus/Grafana after runtime exists.
+
+Do not make a full observability stack a prerequisite for proving one Decision ROI Case.
 
 ## Communication Model
 
@@ -345,7 +413,7 @@ Source of truth:
 
 - Clean Architecture for separation of concerns.
 - Domain-Driven Design for the Decision ROI Case and bounded contexts.
-- Hexagonal Architecture for connectors and external systems.
+- Hexagonal Architecture / Ports and Adapters for connectors, persistence, identity, AI and external systems.
 - Event-driven design for ingestion and future scale.
 - CQRS is a future option for separating ledger writes from executive reads.
 - Every connector must be replaceable.
@@ -412,6 +480,12 @@ Authoritative documents:
 - `docs/product/27_MVP_Acceptance_Test_Plan.md` for MVP acceptance scenarios before implementation.
 - `docs/product/29_Decision_Review_Workspace_Screen_Contract.md` for the first MVP review surface behavior.
 - `docs/architecture/27_Quality_Attributes.md` for explainability, auditability, freshness, traceability, latency, resilience, observability and performance non-goals.
+- `docs/architecture/28_Per_Connector_MVP_Contracts.md` for per-source MVP connector contracts.
+- `docs/architecture/29_Event_Evidence_Vocabulary.md` for canonical normalized event names, evidence types, states and blockers.
+- `docs/rnd/30_RD_Activity_Evidence_Dossier.md` for future development evidence, hours, objects, experiments and tests.
+- `docs/architecture/30_Phase_0_Closure_Readiness_Review.md` for final Phase 0 readiness gates and go/no-go control.
+- `docs/architecture/31_MVP_Implementation_Standard.md` for hexagonal MVP implementation standard, auth direction, minimal observability and scope reduction.
+- `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` for the exact Phase 1 objective, data limit, connector limit, AI boundary and exit criteria.
 - `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
 - `docs/architecture/21_Technical_Architecture_Context.md` for architecture context.
 - `docs/architecture/18_Architecture_Thesis.md` for conceptual architecture thesis.
@@ -440,6 +514,12 @@ The current project is healthy if:
 - Decision Ledger separates estimated savings from realized savings
 - Decision Ledger records accountability without becoming a workflow engine
 - quality attributes stay focused on trust for one Decision ROI Case, not premature scale
+- connector contracts stay source-specific and do not move ROI, approval or recommendation logic into adapters
+- hexagonal boundaries keep GitHub, Jira, AWS, OpenAI + Anthropic Claude, PostgreSQL and OAuth providers outside the domain
+- event and evidence names stay controlled through `docs/architecture/29_Event_Evidence_Vocabulary.md`
+- future code work is traceable through `docs/rnd/30_RD_Activity_Evidence_Dossier.md`
+- Phase 1 starts only after `docs/architecture/30_Phase_0_Closure_Readiness_Review.md` is used for a recorded go/no-go decision
+- Phase 1 implementation proposals satisfy `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
 
 ## Architecture Risks
 
@@ -450,6 +530,9 @@ The current project is healthy if:
 - AI recommendations without explainable evidence
 - ROI estimates without explicit assumptions
 - mixing connector logic with domain logic
+- treating adapters as domain services
+- implementing multiple auth providers before one B2B pilot needs them
+- building Grafana/OpenTelemetry infrastructure before there is useful runtime behavior to observe
 - treating the Executive Workspace as a technical dashboard
 
 ## Next Architecture Steps
@@ -461,3 +544,9 @@ The current project is healthy if:
 5. Validate one complete Decision ROI Case before expanding integrations.
 6. Validate the Decision Recovery Workflow before building broad platform surfaces.
 7. Use `docs/architecture/27_Quality_Attributes.md` before turning target architecture into implementation tasks.
+8. Use `docs/architecture/28_Per_Connector_MVP_Contracts.md` before assigning connector work to future agents.
+9. Use `docs/architecture/29_Event_Evidence_Vocabulary.md` before implementation to lock normalized event and evidence language.
+10. Use `docs/rnd/30_RD_Activity_Evidence_Dossier.md` to document future development activity, hours, objects, experiments and tests.
+11. Use `docs/architecture/30_Phase_0_Closure_Readiness_Review.md` as the final Phase 0 control before any Phase 1 authorization.
+12. Use `docs/architecture/31_MVP_Implementation_Standard.md` to reduce Phase 1 scope and keep backend, connectors, auth, security and observability aligned.
+13. Use `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` before creating any Phase 1 scaffolding or implementation exit plan.

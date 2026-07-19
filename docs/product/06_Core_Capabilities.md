@@ -71,7 +71,7 @@ MVP narrative object:
 
 Decision ROI Case:
 
-Business Decision -> Technical Change -> Infrastructure -> AI Consumption -> ROI -> Recommendation -> Approval -> Result Validation
+Business Decision -> Technical Change -> Infrastructure -> AI Consumption -> ROI -> Recommendation -> Approval/Rejection/Deferral -> Decision Ledger -> Result Validation
 
 MVP correlation path:
 

@@ -27,6 +27,13 @@ This audit is subordinate to:
 13. `docs/product/27_MVP_Acceptance_Test_Plan.md`
 14. `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`
 15. `docs/architecture/27_Quality_Attributes.md`
+16. `docs/architecture/28_Per_Connector_MVP_Contracts.md`
+17. `docs/architecture/29_Event_Evidence_Vocabulary.md`
+18. `agents/README.md`
+19. `docs/rnd/30_RD_Activity_Evidence_Dossier.md`
+20. `docs/architecture/30_Phase_0_Closure_Readiness_Review.md`
+21. `docs/architecture/31_MVP_Implementation_Standard.md`
+22. `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
 
 ## Executive Verdict
 
@@ -42,9 +49,11 @@ The project has the right foundation for a future MVP:
 - conceptual API, database model, connector framework and ledger contract,
 - vertical slice and ROI slice defined before implementation.
 
-However, the project should still avoid coding until the remaining Phase 0 gates are reviewed.
+However, the project should still avoid coding until a recorded go/no-go decision explicitly authorizes Phase 1.
 
-The remaining risk is not lack of technology. Manual evidence, security boundaries, approval authority, acceptance tests, first-screen behavior and quality attributes now exist. The next risk to close is future connector-specific contracts and event/evidence vocabulary before broad build-out.
+The remaining risk is not lack of technology. Manual evidence, security boundaries, approval authority, acceptance tests, first-screen behavior, quality attributes, per-connector MVP contracts, event/evidence vocabulary, agent ownership and development evidence tracking now exist. The remaining action is a disciplined manual go/no-go review using `docs/architecture/30_Phase_0_Closure_Readiness_Review.md`.
+
+If Phase 1 is authorized, implementation should use `docs/architecture/31_MVP_Implementation_Standard.md` to reduce scope and apply Hexagonal Architecture, JWT/OAuth2-compatible auth direction and minimal observability, then use `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` to enforce the exact first-build objective and exit criteria.
 
 ## Coherence Check
 
@@ -54,8 +63,9 @@ The remaining risk is not lack of technology. Manual evidence, security boundari
 | MVP scope | Green | Decision Recovery Workflow is narrow enough for a TFG and startup pilot. |
 | Domain model | Green | Decision ROI Case, Evidence, ROI, Recommendation, Approval and Ledger are clear. |
 | API specification | Green with boundary | Conceptual API exists. MVP must use only the Decision ROI Case subset. |
-| Database model | Green with missing policy detail | Conceptual data areas are correct. Retention, sensitivity and access rules need a dedicated gate. |
-| Connector framework | Green with missing contracts | Connector boundary is correct. Per-connector MVP contracts are still needed. |
+| Database model | Green | Conceptual data areas are correct and now cross-reference security, connector and event/evidence vocabulary boundaries. |
+| Connector framework | Green | Connector boundary is correct and per-connector MVP contracts now exist for Jira, GitHub, AWS and OpenAI + Anthropic Claude. |
+| Event/evidence vocabulary | Green | Normalized events, evidence types, blockers, lifecycle states and labels are controlled. |
 | Decision Ledger | Green | Append-only, snapshot-based and not an executor. This is the right trust model. |
 | ROI slice | Green | Estimated and realized value are separated. Assumptions are explicit. |
 | Demo/product surface | Green | Useful for storytelling. The MVP surface remains Decision Review Workspace and now has a screen contract. |
@@ -103,10 +113,17 @@ Reason:
 | MVP Acceptance Test Plan | Yes | `docs/product/27_MVP_Acceptance_Test_Plan.md` |
 | Decision Review Workspace Screen Contract | Yes | `docs/product/29_Decision_Review_Workspace_Screen_Contract.md` |
 | Quality Attributes | Yes | `docs/architecture/27_Quality_Attributes.md` |
+| Per-Connector MVP Contracts | Yes | `docs/architecture/28_Per_Connector_MVP_Contracts.md` |
+| Event and Evidence Vocabulary | Yes | `docs/architecture/29_Event_Evidence_Vocabulary.md` |
+| AI Agent Operating Model | Yes | `agents/README.md` |
+| I+D/R&D Evidence Dossier | Yes | `docs/rnd/30_RD_Activity_Evidence_Dossier.md` |
+| Phase 0 Closure Readiness Review | Yes | `docs/architecture/30_Phase_0_Closure_Readiness_Review.md` |
+| MVP Implementation Standard | Yes | `docs/architecture/31_MVP_Implementation_Standard.md` |
+| Phase 1 MVP Scope and Exit Criteria | Yes | `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` |
 
-## Missing Before Code
+## Foundations Closed Before Code
 
-### P0 - Must Exist Before Phase 1
+### P0 - Required Before Phase 1
 
 1. Manual Evidence Pack for AI Onboarding Assistant Recovery
 
@@ -193,7 +210,7 @@ Define MVP expectations for:
 
 Status: created as `docs/architecture/27_Quality_Attributes.md`.
 
-### P1 - Should Exist Before Broad Build-Out
+### P1 - Required Before Broad Build-Out
 
 1. Per-Connector MVP Contracts
 
@@ -206,6 +223,8 @@ Create one conceptual contract each for:
 
 Each contract should list source objects, normalized events, evidence types, correlation keys, permissions, sensitivity and failure states.
 
+Status: created as `docs/architecture/28_Per_Connector_MVP_Contracts.md`.
+
 2. Event and Evidence Vocabulary
 
 Create a small controlled vocabulary for the first slice:
@@ -217,8 +236,26 @@ Create a small controlled vocabulary for the first slice:
 - `ai_usage_observed`,
 - `usage_signal_observed`,
 - `recommendation_created`,
-- `approval_recorded`,
+- `approved`,
 - `result_validated`.
+
+Status: created as `docs/architecture/29_Event_Evidence_Vocabulary.md`.
+
+3. I+D/R&D Activity Evidence Dossier
+
+Define how to document future development activity:
+
+- architecture evidence,
+- code evidence,
+- hours,
+- technical objects,
+- experiments,
+- tests,
+- monthly summaries,
+- costs and resources,
+- routine versus I+D/i candidate work.
+
+Status: created as `docs/rnd/30_RD_Activity_Evidence_Dossier.md`.
 
 ## Pre-Code Go / No-Go Gates
 
@@ -236,6 +273,12 @@ Do not begin implementation until these gates are true:
 | G8 - Acceptance tests exist | Can Phase 1 verify the slice without inventing requirements during coding? |
 | G9 - Screen behavior is explicit | Does the Decision Review Workspace define what it shows, hides, blocks and records? |
 | G10 - Quality attributes are explicit | Are explainability, auditability, freshness, traceability, latency, resilience, observability and performance non-goals defined? |
+| G11 - Connector contracts are explicit | Do Jira, GitHub, AWS and OpenAI + Anthropic Claude define source objects, evidence, permissions, freshness, sensitivity and failure behavior? |
+| G12 - Vocabulary is explicit | Are event names, evidence types, lifecycle states, blockers and labels controlled before code? |
+| G13 - Development evidence model exists | Can future architecture, code, hours, objects, experiments and tests be documented by work package? |
+| G14 - Closure gate exists | Can the founder/architect make a recorded go/no-go decision without inventing missing context? |
+| G15 - Implementation standard exists | Can future Phase 1 work reduce scope and apply hexagonal/auth/observability rules consistently? |
+| G16 - Phase 1 scope contract exists | Can future implementation prove one Decision ROI Case without drifting into platform build-out? |
 
 ## What Not To Add Yet
 
@@ -286,9 +329,9 @@ Projected savings may guide approvals. Realized value must come only after imple
 
 Evidence is the product. Evidence access, sensitivity and retention must be designed before connectors exist.
 
-## Recommended Next Documents
+## Completed Pre-Code Documents
 
-Create these in order:
+These were created in order:
 
 1. `docs/product/26_Manual_Evidence_Pack_AI_Onboarding_Assistant.md` - created
 2. `docs/architecture/26_Security_Data_Governance_Threat_Model.md` - created
@@ -296,18 +339,38 @@ Create these in order:
 4. `docs/product/28_Identity_Access_Approval_Model.md` - created
 5. `docs/product/29_Decision_Review_Workspace_Screen_Contract.md` - created
 6. `docs/architecture/27_Quality_Attributes.md` - created
-7. `docs/architecture/28_Per_Connector_MVP_Contracts.md`
-8. `docs/architecture/29_Event_Evidence_Vocabulary.md`
+7. `docs/architecture/28_Per_Connector_MVP_Contracts.md` - created
+8. `docs/architecture/29_Event_Evidence_Vocabulary.md` - created
+9. `docs/rnd/30_RD_Activity_Evidence_Dossier.md` - created
+10. `docs/architecture/30_Phase_0_Closure_Readiness_Review.md` - created
+11. `docs/architecture/31_MVP_Implementation_Standard.md` - created
+12. `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` - created
 
-The next immediate document should be `docs/architecture/28_Per_Connector_MVP_Contracts.md`. The project now knows what must be proven, who can act, what the first review surface shows, hides, blocks and records, and which quality attributes constrain implementation.
+The immediate control step is a recorded manual go/no-go review using `docs/architecture/30_Phase_0_Closure_Readiness_Review.md` and the execution boundary in `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`. The project now knows what must be proven, who can act, what the first review surface shows, hides, blocks and records, which quality attributes constrain implementation, how each MVP connector contributes evidence safely and how future development work should be evidenced.
+
+If Phase 1 is authorized, use `docs/architecture/31_MVP_Implementation_Standard.md` and `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` before creating any scaffolding.
 
 ## Final Architect Assessment
 
 IMPERATOR is not missing more vision.
 
-It is now missing the remaining connector-specific architecture detail:
+It now has the core pre-code architecture and evidence-control documents needed before implementation:
 
+- domain model,
+- conceptual API,
+- database model,
+- connector framework,
+- ledger contract,
+- manual evidence pack,
+- acceptance plan,
+- identity and approval model,
+- screen contract,
+- quality attributes,
 - per-connector MVP contracts,
-- controlled event and evidence vocabulary.
+- event/evidence vocabulary,
+- I+D/R&D evidence dossier,
+- Phase 0 closure readiness review,
+- MVP implementation standard,
+- Phase 1 MVP scope and exit criteria.
 
-Once those are documented or explicitly deferred, Phase 1 can start with much less risk and without inventing product behavior or connector semantics during implementation.
+The remaining task before code is not another big vision document. It is a recorded go/no-go decision: confirm that `DRC-AOA-001` can be reconstructed, accepted, governed and documented end to end, then either freeze Phase 0 or authorize limited Phase 1 scaffolding under the scope contract.

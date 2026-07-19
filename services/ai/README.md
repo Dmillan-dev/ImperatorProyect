@@ -12,3 +12,5 @@ Tasks:
 - Provider boundary for MVP: OpenAI + Anthropic Claude.
 - Target stack context: Python and FastAPI.
 - Follow `docs/architecture/21_Technical_Architecture_Context.md`; AI must consume prepared context, not raw external sources.
+- Follow `docs/architecture/31_MVP_Implementation_Standard.md`; AI explanation is non-authoritative for the first MVP.
+- Follow `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`; AI may explain only and must not decide, persist, execute, approve, reject, defer, mark implementation or validate results.

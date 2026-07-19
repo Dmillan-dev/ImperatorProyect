@@ -30,6 +30,10 @@ It is a Phase 0 product and architecture validation artifact. It does not create
 - `docs/product/DECISION_LEDGER_V2.md`
 - `docs/architecture/25_Pre_Code_Architecture_Readiness_Audit.md`
 - `docs/architecture/26_Security_Data_Governance_Threat_Model.md`
+- `docs/architecture/27_Quality_Attributes.md`
+- `docs/architecture/28_Per_Connector_MVP_Contracts.md`
+- `docs/architecture/29_Event_Evidence_Vocabulary.md`
+- `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
 - `docs/architecture/CONNECTOR_FRAMEWORK.md`
 - `docs/architecture/DATABASE_MODEL.md`
 
@@ -339,6 +343,9 @@ These tests are intentionally designed to fail unsafe or over-broad behavior.
 | N08 | Add public API or SDKs before validation | Reject; deferred |
 | N09 | Let connector own recommendation logic | Reject; connector is adapter only |
 | N10 | Mutate historical ledger entry after new evidence | Reject; create new entry or snapshot |
+| N11 | Let provider or persistence adapters change the domain model | Reject; use hexagonal ports and adapters |
+| N12 | Require multiple OAuth providers or full observability stack for the first MVP | Reject; keep auth and observability minimal |
+| N13 | Require multiple recommendations, ranking or learning to prove Phase 1 | Reject; Phase 1 produces one deterministic recommendation |
 
 ## Traceability Matrix
 
@@ -353,7 +360,11 @@ These tests are intentionally designed to fail unsafe or over-broad behavior.
 | API intent | `API_SPECIFICATION.md` | G |
 | Decision Ledger | `DECISION_LEDGER_V2.md` | E, N |
 | Connector framework | `CONNECTOR_FRAMEWORK.md` | A, F, N |
+| Per-connector contracts | `28_Per_Connector_MVP_Contracts.md` | A, F, N |
+| Event/evidence vocabulary | `29_Event_Evidence_Vocabulary.md` | A, B, E, F, H, N |
 | Database model | `DATABASE_MODEL.md` | A, E, F |
+| MVP implementation standard | `31_MVP_Implementation_Standard.md` | F, G, N |
+| Phase 1 scope and exit criteria | `32_Phase_1_MVP_Scope_and_Exit_Criteria.md` | B, D, F, G, H, N |
 
 ## Go / No-Go Decision
 
@@ -396,28 +407,18 @@ Resolved by `docs/product/28_Identity_Access_Approval_Model.md`:
 
 Approval tests are now locked at the product-governance level. Future implementation may still need technical RBAC details.
 
-## Next Document
+## Companion Documents
 
-The companion identity and approval artifact is:
+The companion identity, screen, quality, connector, vocabulary and control artifacts are now created:
 
-`docs/product/28_Identity_Access_Approval_Model.md`
-
-Status: created.
+- `docs/product/28_Identity_Access_Approval_Model.md`
+- `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`
+- `docs/architecture/27_Quality_Attributes.md`
+- `docs/architecture/28_Per_Connector_MVP_Contracts.md`
+- `docs/architecture/29_Event_Evidence_Vocabulary.md`
+- `docs/rnd/30_RD_Activity_Evidence_Dossier.md`
+- `docs/architecture/30_Phase_0_Closure_Readiness_Review.md`
 
 Reason:
 
-The acceptance plan defines what must be true. The next document should define exactly who is allowed to see, decide, defer, implement and validate each part of the MVP workflow.
-
-The next useful Phase 0 artifact after the identity model is:
-
-`docs/product/29_Decision_Review_Workspace_Screen_Contract.md`
-
-Status: created.
-
-The next useful architecture artifact is `docs/architecture/27_Quality_Attributes.md`.
-
-Status: created.
-
-Quality attributes should be treated as the non-functional companion to this acceptance plan.
-
-The next useful architecture artifact is `docs/architecture/28_Per_Connector_MVP_Contracts.md`.
+The acceptance plan defines what must be true. Identity defines who may act, the screen contract defines what is shown or blocked, quality attributes define non-functional expectations, per-connector contracts define source-specific evidence behavior and the event/evidence vocabulary defines shared labels.

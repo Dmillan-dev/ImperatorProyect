@@ -13,3 +13,5 @@ Tasks:
 - Target stack context: Java 21 and Spring Boot.
 - Phase 1 architecture guidance: modular monolith or tightly bounded service first.
 - Follow `docs/architecture/21_Technical_Architecture_Context.md` before proposing backend structure.
+- Follow `docs/architecture/31_MVP_Implementation_Standard.md` for hexagonal boundaries, reduced scope, auth direction and minimal observability.
+- Follow `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` before creating any future backend scaffolding, data model, connector adapter or exit-test plan.

@@ -9,6 +9,8 @@ Canonical data model note: `docs/architecture/DATABASE_MODEL.md` owns the concep
 
 Investor refactor note: this RFC is **post-validation architecture context**. The first MVP should not require a graph database, vector database, RAG pipeline or semantic search to prove the Decision Recovery Workflow.
 
+Current MVP authority note: the active MVP flow, lifecycle and recommendation scope are governed by `docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md`, `docs/product/CORE_DOMAIN_MODEL.md`, `docs/architecture/29_Event_Evidence_Vocabulary.md` and `docs/architecture/30_Phase_0_Closure_Readiness_Review.md`. This RFC must not broaden Phase 1 implementation.
+
 ## Purpose
 
 Definir el modelo conceptual inicial del Knowledge Graph (KG) para IMPERATOR, y mapear los `.proto` canónicos a un esquema inicial en PostgreSQL (con opción de migrar a DB de grafos). Este RFC guía el diseño futuro del Context Layer y sirve como contrato conceptual entre Backend, AI y Product.
@@ -32,18 +34,22 @@ El modelo debe priorizar cuatro dominios de información antes de ampliar conect
 
 La pregunta de producto que debe soportar el grafo es:
 
-> Esta decisión cuesta X hoy, aporta Y valor estimado y tiene una acción que puede recuperar Z al año.
+> Esta decisión cuesta X hoy, tiene Y señal observable de uso o valor y tiene una acción que puede recuperar Z al año.
 
 El objeto narrativo canónico es el **Decision ROI Case**:
 
-Business Decision -> Technical Change -> Infrastructure -> AI Consumption -> Recommendation -> Result.
+Business Decision -> Technical Change -> Infrastructure -> AI Consumption -> ROI View -> Recommendation -> Approval/Rejection/Deferral -> Decision Ledger -> Result Validation.
 
-El grafo debe poder soportar las cinco recomendaciones MVP:
-- downgrade o cambio de modelo IA
-- eliminación de agentes IA sin uso
-- detección de recursos AWS infrautilizados
-- identificación de funcionalidades con ROI negativo
-- consolidación de servicios o agentes duplicados
+El grafo debe poder soportar primero el foco MVP pagable:
+
+- downgrade o cambio de modelo IA,
+- eliminación de agentes IA sin uso,
+- detección de recursos AWS infrautilizados ligados al mismo Decision ROI Case.
+
+Quedan como expansión post-validación:
+
+- identificación de funcionalidades con ROI negativo,
+- consolidación de servicios o agentes duplicados.
 
 ## Mapping protos → esquema inicial (Postgres)
 

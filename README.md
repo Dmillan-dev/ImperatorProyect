@@ -44,6 +44,11 @@ Architecture:
 - [Pre-Code Architecture Readiness Audit](docs/architecture/25_Pre_Code_Architecture_Readiness_Audit.md)
 - [Security, Data Governance and Threat Model](docs/architecture/26_Security_Data_Governance_Threat_Model.md)
 - [Quality Attributes](docs/architecture/27_Quality_Attributes.md)
+- [Per-Connector MVP Contracts](docs/architecture/28_Per_Connector_MVP_Contracts.md)
+- [Event and Evidence Vocabulary](docs/architecture/29_Event_Evidence_Vocabulary.md)
+- [Phase 0 Closure Readiness Review](docs/architecture/30_Phase_0_Closure_Readiness_Review.md)
+- [MVP Implementation Standard](docs/architecture/31_MVP_Implementation_Standard.md)
+- [Phase 1 MVP Scope and Exit Criteria](docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md)
 - [Architecture Thesis](docs/architecture/18_Architecture_Thesis.md)
 - [Database Model](docs/architecture/DATABASE_MODEL.md)
 - [Connector Framework](docs/architecture/CONNECTOR_FRAMEWORK.md)
@@ -55,6 +60,9 @@ AI:
 - [One-Page Project Prompt ES](docs/ai/IMPERATOR_One_Page_Project_Prompt_ES.md)
 - [AI Weekly Context Toning Prompt](docs/ai/AI_Weekly_Context_Toning_Prompt_Imperator_v2.md)
 
+Agent work model:
+- [AI Agent Operating Model](agents/README.md)
+
 Decisions and RFCs:
 - [Decision Log](docs/decisions/14_Decision_Log.md)
 - [Architecture Decision Records](docs/decisions/adr/)
@@ -65,6 +73,14 @@ Decisions and RFCs:
 Research:
 - [Hypothesis Template](docs/research/Hypothesis.md)
 - [Experiment Record Template](docs/research/Experiment_Record.md)
+
+I+D / R&D evidence:
+- [I+D Evidence Documentation](docs/rnd/README.md)
+- [I+D Activity Evidence Dossier](docs/rnd/30_RD_Activity_Evidence_Dossier.md)
+- [Activity Log Template](docs/rnd/templates/01_ACTIVITY_LOG_TEMPLATE.md)
+- [Technical Object Register Template](docs/rnd/templates/02_TECHNICAL_OBJECT_REGISTER_TEMPLATE.md)
+- [Experiment and Test Record Template](docs/rnd/templates/03_EXPERIMENT_TEST_RECORD_TEMPLATE.md)
+- [Monthly I+D Summary Template](docs/rnd/templates/04_MONTHLY_RD_SUMMARY_TEMPLATE.md)
 
 ## Canonical Definition
 
@@ -126,6 +142,27 @@ Current Decision Review Workspace screen contract:
 Current quality attributes:
 - [docs/architecture/27_Quality_Attributes.md](docs/architecture/27_Quality_Attributes.md)
 
+Current per-connector MVP contracts:
+- [docs/architecture/28_Per_Connector_MVP_Contracts.md](docs/architecture/28_Per_Connector_MVP_Contracts.md)
+
+Current event and evidence vocabulary:
+- [docs/architecture/29_Event_Evidence_Vocabulary.md](docs/architecture/29_Event_Evidence_Vocabulary.md)
+
+Current AI-agent work partition:
+- [agents/README.md](agents/README.md)
+
+Current I+D/R&D evidence dossier:
+- [docs/rnd/30_RD_Activity_Evidence_Dossier.md](docs/rnd/30_RD_Activity_Evidence_Dossier.md)
+
+Current Phase 0 closure review:
+- [docs/architecture/30_Phase_0_Closure_Readiness_Review.md](docs/architecture/30_Phase_0_Closure_Readiness_Review.md)
+
+Current MVP implementation standard:
+- [docs/architecture/31_MVP_Implementation_Standard.md](docs/architecture/31_MVP_Implementation_Standard.md)
+
+Current Phase 1 MVP scope and exit criteria:
+- [docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md](docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md)
+
 MVP information domains:
 - Business Context: Jira
 - Code & Deployment: GitHub
@@ -160,10 +197,17 @@ When documents or prompts conflict, use this order:
 13. `docs/product/27_MVP_Acceptance_Test_Plan.md` for pre-code MVP acceptance gates.
 14. `docs/product/29_Decision_Review_Workspace_Screen_Contract.md` for first MVP screen behavior.
 15. `docs/architecture/27_Quality_Attributes.md` for MVP non-functional quality expectations.
-16. `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
-17. `docs/ai/12_AI_Agent_Context_Pack.md` for AI-agent operating rules.
-18. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
-19. Older documents, demos, prompts, ADRs and RFC drafts as historical context unless updated by the documents above.
+16. `docs/architecture/28_Per_Connector_MVP_Contracts.md` for source objects, evidence, permissions, freshness, sensitivity and failures per MVP connector.
+17. `docs/architecture/29_Event_Evidence_Vocabulary.md` for canonical event names, evidence types, blockers, lifecycle states and labels.
+18. `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
+19. `agents/README.md` for AI-agent work partition and handoff rules.
+20. `docs/ai/12_AI_Agent_Context_Pack.md` for AI-agent operating rules.
+21. `docs/rnd/30_RD_Activity_Evidence_Dossier.md` for documenting future development evidence, hours, objects and tests.
+22. `docs/architecture/30_Phase_0_Closure_Readiness_Review.md` for final Phase 0 readiness gates and go/no-go control.
+23. `docs/architecture/31_MVP_Implementation_Standard.md` for future MVP implementation standards: hexagonal boundaries, reduced scope, auth direction and minimal observability.
+24. `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` for the exact Phase 1 objective, data limit, connector limit, AI boundary, scaffolding authorization and exit criteria.
+25. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
+26. Older documents, demos, prompts, ADRs and RFC drafts as historical context unless updated by the documents above.
 
 Founder-mode or master-prompt instructions define ambition and quality bar. They do not override the current repository decisions when they mention older framing such as AI Cost Attribution as the primary wedge, dashboard-led product language, generic Decision Intelligence without the operating-system and Decision ROI framing, or production-ready implementation during Phase 0.
 

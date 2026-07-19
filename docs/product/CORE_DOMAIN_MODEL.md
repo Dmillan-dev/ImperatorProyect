@@ -14,7 +14,7 @@ A Decision ROI Case connects a business decision to evidence, ownership, cost, v
 
 Canonical lifecycle:
 
-Business Decision -> Operational Event -> Evidence -> Timeline -> ROI -> Recommendation -> Approval -> Business Value -> Decision Ledger
+Business Decision -> Operational Event -> Evidence -> Timeline -> ROI -> Recommendation -> Approval/Rejection/Deferral -> Decision Ledger Entry -> Implementation Marked -> Result Validation -> Business Value
 
 ## Domain Principles
 
@@ -40,11 +40,16 @@ It contains:
 - one ROI view,
 - zero or more Recommendations,
 - approval state,
-- resulting Business Value when action is taken.
+- ledger state,
+- resulting Business Value only after result validation.
+
+Phase 1 reduction:
+
+`docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` limits the first implementation to one Decision ROI Case and exactly one deterministic recommendation.
 
 MVP reconstruction:
 
-Jira -> GitHub -> AWS -> OpenAI + Anthropic Claude -> Recommendation -> Result
+Jira -> GitHub -> AWS -> OpenAI + Anthropic Claude -> ROI View -> Recommendation -> Decision Ledger -> Decision Review Workspace -> Result Validation
 
 ## Core Entities
 
@@ -122,8 +127,10 @@ The MVP Timeline connects:
 - AI Consumption,
 - Financial Impact,
 - Recommendation,
-- Approval,
-- Result.
+- Approval, rejection or deferral,
+- Decision Ledger,
+- Implementation Marked,
+- Result Validation.
 
 ### Owner
 
@@ -187,7 +194,9 @@ Result Validation creates a new Ledger Entry and must not overwrite the original
 
 ### Business Value
 
-The measurable or estimated value created by a Decision or by acting on a Recommendation.
+The measurable value recorded after a Decision ROI Case has an approved action, external implementation and result validation.
+
+Estimated recovery may guide review, but it is not realized Business Value.
 
 Business Value may include:
 - cost saved,
@@ -421,7 +430,8 @@ Initial Role concepts:
 | Usage Signal | supports | ROI |
 | AI Usage | uses | AI Model |
 | AI Agent | uses | AI Model |
-| Decision | records | Business Value |
+| Result Validation | records | Business Value |
+| Business Value | derives from | validated Ledger Entry |
 | Incident | may involve | Decision |
 | Workflow | advances | Decision ROI Case |
 | Decision ROI Case | is recorded in | Decision Ledger |
@@ -443,6 +453,7 @@ Initial Role concepts:
 - Usage Signal can increase or decrease confidence; it does not prove value alone.
 - Realized Business Value must be separated from estimated Business Value.
 - Realized savings must be recorded through Result Validation, not by mutating estimated savings.
+- Realized Business Value requires a `result_validated` Ledger Entry.
 - Monthly savings are used for decision queues; annualized value is used for executive summaries.
 
 ## Domain Boundaries

@@ -2,6 +2,9 @@ IMPERATOR — Executive Decision Workspace demo
 
 Open `index.html` in a browser to view a sales-focused executive decision workspace.
 
+Phase 0 note:
+This demo is useful for storytelling and buyer comprehension. It does not override the MVP scope defined in `docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md` or the closure gate in `docs/architecture/30_Phase_0_Closure_Readiness_Review.md`.
+
 What's included:
 - `index.html`: CEO/CIO/CTO Home answering company status, recoverable value, today's decision, risk and top value teams
 - `decision_detail.html`: evidence-first Decision Detail with decision list, trust evidence, usage evolution, historical outcomes, ownership, status, chronology, clickable lifecycle evidence and final approval

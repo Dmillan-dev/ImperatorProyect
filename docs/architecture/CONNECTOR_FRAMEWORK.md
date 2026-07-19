@@ -12,6 +12,10 @@ This document is conceptual. It does not define connector code, SDKs, deployment
 - `docs/architecture/DATABASE_MODEL.md`
 - `docs/architecture/26_Security_Data_Governance_Threat_Model.md`
 - `docs/architecture/27_Quality_Attributes.md`
+- `docs/architecture/28_Per_Connector_MVP_Contracts.md`
+- `docs/architecture/29_Event_Evidence_Vocabulary.md`
+- `docs/architecture/31_MVP_Implementation_Standard.md`
+- `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
 - `docs/rfcs/0002-module-communication-architecture.md`
 - `docs/architecture/21_Technical_Architecture_Context.md`
 
@@ -20,6 +24,10 @@ This document is conceptual. It does not define connector code, SDKs, deployment
 Connectors are adapters.
 
 They bring external signals into IMPERATOR, but they do not own business meaning.
+
+In the MVP implementation standard, connectors sit behind ports. Jira, GitHub, AWS and OpenAI + Anthropic Claude can change without changing the Decision ROI Case domain.
+
+In Phase 1, the implementation may start with one or two narrow read-only adapters plus approved manual/static or imported evidence for the remaining domains. Full connector automation is not required to prove the first Decision ROI Case.
 
 The core product should understand:
 - Decision,
@@ -43,12 +51,22 @@ The connector should understand:
 
 Adding a new connector must not require changing the core Decision ROI Case model.
 
+Hexagonal rule:
+
+The domain asks for evidence through ports. Provider-specific adapters satisfy those ports.
+
 If adding a connector requires changing the core domain, one of two things is true:
 
 1. the connector is leaking provider-specific concepts into the product, or
 2. the domain model is missing a real business concept and must be updated through decision log and RFC.
 
 ## Connector Boundary
+
+### Connector as adapter
+
+A connector is an adapter for a source system.
+
+It may implement a future evidence/intake port, but it must not become a domain service.
 
 ### Connector owns
 
@@ -271,8 +289,14 @@ Signals:
 Supports:
 - model downgrade recommendation,
 - unused agent detection,
-- duplicated agent or service analysis,
 - AI cost attribution to Decision ROI Case.
+
+Post-validation only:
+- duplicated agent or service analysis.
+
+Detailed MVP contracts for Jira, GitHub, AWS and OpenAI + Anthropic Claude are now defined in `docs/architecture/28_Per_Connector_MVP_Contracts.md`.
+
+Canonical normalized event names, evidence types, blocker states and labels are defined in `docs/architecture/29_Event_Evidence_Vocabulary.md`.
 
 ## Connector Addition Process
 
@@ -334,8 +358,8 @@ Examples:
 
 ## Phase 1 Candidate Next Steps
 
-1. Draft connector contracts for Jira, GitHub, AWS and OpenAI + Anthropic Claude.
-2. Define normalized event vocabulary for the four MVP information domains.
+1. Use `docs/architecture/28_Per_Connector_MVP_Contracts.md` as the source of truth for Jira, GitHub, AWS and OpenAI + Anthropic Claude.
+2. Use `docs/architecture/29_Event_Evidence_Vocabulary.md` for normalized event vocabulary and evidence labels.
 3. Align connector contracts with `docs/architecture/DATABASE_MODEL.md`.
 4. Map connector outputs to `docs/product/CORE_DOMAIN_MODEL.md`.
 5. Create RFC before adding any new integration domain.

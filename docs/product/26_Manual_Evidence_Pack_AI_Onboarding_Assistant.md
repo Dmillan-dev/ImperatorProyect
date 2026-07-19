@@ -21,6 +21,15 @@ It is a Phase 0 validation artifact. It does not create executable fixtures, ser
 - `docs/architecture/CONNECTOR_FRAMEWORK.md`
 - `docs/architecture/DATABASE_MODEL.md`
 - `docs/architecture/25_Pre_Code_Architecture_Readiness_Audit.md`
+- `docs/architecture/26_Security_Data_Governance_Threat_Model.md`
+- `docs/product/27_MVP_Acceptance_Test_Plan.md`
+- `docs/product/28_Identity_Access_Approval_Model.md`
+- `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`
+- `docs/architecture/27_Quality_Attributes.md`
+- `docs/architecture/28_Per_Connector_MVP_Contracts.md`
+- `docs/architecture/29_Event_Evidence_Vocabulary.md`
+- `docs/rnd/30_RD_Activity_Evidence_Dossier.md`
+- `docs/architecture/30_Phase_0_Closure_Readiness_Review.md`
 
 ## What This Pack Must Prove
 
@@ -204,7 +213,7 @@ Owner and approver contribution: **5/5**
 | GitHub | PR, commit, review, deployment reference | `code_change_merged` and `deployment_reference_observed` | Implementation evidence, actor, review, shipped date | `IMP-214`, branch name, PR title, deployment name |
 | AWS | Cost export, resource tags, utilization summary | `cloud_cost_observed` | Resource cost, usage, ownership, attribution | `jira_ticket=IMP-214`, resource name, project tag, period |
 | OpenAI + Anthropic Claude | Usage export, model summary, token/request counts | `ai_usage_observed` | AI model, token/request volume, AI cost, app/team usage | application name, project tag, user/team, period |
-| Manual pilot record | Owner note, quality note, approval note | `usage_signal_observed` or `approval_context_observed` | Value proxy, quality risk, approval path | case ID, owner, review date |
+| Manual pilot record | Owner note, quality note, approval note | `usage_signal_observed` or `approval_path_observed` | Value proxy, quality risk, approval path | case ID, owner, review date |
 
 The connector boundary is healthy if these mappings can be prepared without changing the core Decision ROI Case model.
 
@@ -384,7 +393,7 @@ The approval ledger entry should preserve:
 
 | Sequence | Entry type | State | Actor | Required snapshot | Notes |
 |---:|---|---|---|---|---|
-| 1 | `recommendation_created` | `recommended` | IMPERATOR analyst / system later | Evidence + ROI + assumptions | Creates reviewable recommendation |
+| 1 | `recommendation_created` | `review_ready` | IMPERATOR analyst / system later | Evidence + ROI + assumptions | Creates reviewable recommendation |
 | 2A | `approved` | `approved` | CTO or VP Engineering | Evidence + ROI + assumptions | If action is approved |
 | 2B | `rejected` | `rejected` | CTO or VP Engineering | Evidence + ROI | Requires rejection reason |
 | 2C | `deferred` | `deferred` | CTO, VP Engineering or FinOps | Evidence gap + current ROI | Requires missing evidence or review date |
@@ -452,20 +461,20 @@ Remaining future-pilot questions:
 - What validation period is acceptable for each customer before realized savings can be recorded?
 - How long should evidence summaries and snapshots be retained in production?
 
-## Next Document
+## Companion Documents
 
-The companion security artifact is:
+The companion Phase 0 artifacts are now created:
 
-`docs/architecture/26_Security_Data_Governance_Threat_Model.md`
+- `docs/architecture/26_Security_Data_Governance_Threat_Model.md`
+- `docs/product/27_MVP_Acceptance_Test_Plan.md`
+- `docs/product/28_Identity_Access_Approval_Model.md`
+- `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`
+- `docs/architecture/27_Quality_Attributes.md`
+- `docs/architecture/28_Per_Connector_MVP_Contracts.md`
+- `docs/architecture/29_Event_Evidence_Vocabulary.md`
+- `docs/rnd/30_RD_Activity_Evidence_Dossier.md`
+- `docs/architecture/30_Phase_0_Closure_Readiness_Review.md`
 
 Reason:
 
-This pack proves the evidence chain, but it also shows that evidence access, sensitivity, privacy, retention and AI boundaries must be defined before real connectors or customer data exist.
-
-The next useful Phase 0 artifact after the security model is:
-
-`docs/product/27_MVP_Acceptance_Test_Plan.md`
-
-Status: created.
-
-The current companion screen contract is `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`.
+This pack proves the evidence chain. The companion artifacts define who can act, what is shown, what is blocked, which quality attributes apply, how connectors contribute evidence, which vocabulary is valid and how future development activity should be evidenced.

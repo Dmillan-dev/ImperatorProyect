@@ -18,7 +18,7 @@ El movimiento pagable inicial es el **Decision Recovery Workflow for AI/cloud sp
 
 El flujo minimo defendible es:
 
-**Event -> Connector -> Decision Engine -> ROI Engine -> Recommendation -> Decision Ledger -> Decision Review Workspace**
+**Event -> Connector -> Decision Engine -> ROI Engine -> Recommendation -> Decision Ledger -> Decision Review Workspace -> Result Validation**
 
 La unidad central del dominio es el **Decision ROI Case**. Todo debe girar alrededor de ese objeto, no alrededor de conectores, logs, servicios ni dashboards. Un Decision ROI Case une decision de negocio, evidencia, timeline, coste, supuestos ROI, recomendacion, aprobacion, ledger y resultado validado.
 
@@ -28,6 +28,10 @@ Las integraciones MVP son solo cuatro dominios:
 - **Code & Deployment:** GitHub, para explicar quien implemento que y cuando.
 - **Infrastructure & Cost:** AWS, para explicar recursos, uso y coste.
 - **AI Consumption:** OpenAI + Anthropic Claude, para explicar modelos, tokens, peticiones, usuarios, aplicaciones y coste AI.
+
+Los contratos MVP por conector viven en `docs/architecture/28_Per_Connector_MVP_Contracts.md`. Usa ese documento para objetos fuente, evidencia, permisos, frescura, sensibilidad y fallos de Jira, GitHub, AWS y OpenAI + Anthropic Claude.
+
+El vocabulario comun de eventos, evidencias, bloqueos, estados y etiquetas vive en `docs/architecture/29_Event_Evidence_Vocabulary.md`.
 
 La primera vertical slice es **AI Onboarding Assistant Recovery**. Ejemplo: una empresa aprobo un asistente AI de onboarding; se implemento en GitHub, corre en AWS y usa OpenAI o Claude. IMPERATOR reconstruye la decision y muestra: coste mensual actual, uso observable, recomendacion de downgrade/cambio de modelo, ahorro mensual estimado, ahorro anualizado, riesgo, confianza, owner, approver y entrada en el Decision Ledger.
 
@@ -39,6 +43,18 @@ La primera superficie de producto es **Decision Review Workspace**. Responde una
 
 No expandas el MVP hacia Slack, Microsoft 365, Salesforce, Azure, GCP, Azure OpenAI, Gemini, Mistral, SDKs, API publica, policy engine, AI Advisor, graph/vector stack, microservicios, autonomous execution, negative-ROI portfolio analysis ni duplicated service/agent consolidation.
 
-Cuando trabajes sobre el proyecto, respeta este orden de autoridad: Decision Log, MVP Blueprint, MVP Vertical Slice, MVP ROI Slice, Core Domain Model, API Specification, Decision Ledger v2, Technical Architecture Context, Database Model, Connector Framework, Security/Data Governance Threat Model, Identity/Access/Approval Model, MVP Acceptance Test Plan, Decision Review Workspace Screen Contract, Quality Attributes, RFC 0002, AI Agent Context Pack y Glossary.
+El trabajo futuro por agentes se organiza en `agents/README.md`: CTO, Product, Connector, Backend, Frontend, AI, Security, FinOps y QA. Ningun agente debe crear servicios, codigo, conectores reales ni infraestructura durante Phase 0.
+
+La evidencia futura de desarrollo, horas, objetos tecnicos, experimentos y pruebas se organiza en `docs/rnd/30_RD_Activity_Evidence_Dossier.md`. No inventes horas, codigo ni resultados no ejecutados.
+
+El cierre inicial de Phase 0 vive en `docs/architecture/30_Phase_0_Closure_Readiness_Review.md`. Usalo como gate final antes de recomendar Phase 1.
+
+El estandar futuro de implementacion MVP vive en `docs/architecture/31_MVP_Implementation_Standard.md`. Si Phase 1 se autoriza, usa arquitectura hexagonal / ports and adapters, backend Java/Spring, frontend Next.js, PostgreSQL, auth JWT/OAuth2 compatible y observabilidad minima. La vision completa puede seguir documentada, pero el MVP se construye con el menor numero posible de componentes.
+
+El contrato exacto de Phase 1 vive en `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`. Phase 1 debe demostrar un unico Decision ROI Case end to end: usuario autenticado, al menos una fuente conectada o importada, evidencia, reglas deterministas, una sola recomendacion, explicacion generada por IA, revision humana, estado en ledger, logs, metricas, `/health` y `/ready`. La IA solo explica; no modifica datos persistentes, no ejecuta reglas de negocio, no sustituye al Decision Engine y no aprueba, rechaza, difiere, marca implementacion ni valida resultados.
+
+Regla absoluta de alcance para Phase 1: **todo lo que no sea imprescindible para demostrar un unico Decision ROI Case queda automaticamente fuera del alcance.**
+
+Cuando trabajes sobre el proyecto, respeta este orden de autoridad: Decision Log, MVP Blueprint, MVP Vertical Slice, MVP ROI Slice, Core Domain Model, API Specification, Decision Ledger v2, Technical Architecture Context, Database Model, Connector Framework, Security/Data Governance Threat Model, Identity/Access/Approval Model, MVP Acceptance Test Plan, Decision Review Workspace Screen Contract, Quality Attributes, Per-Connector MVP Contracts, Event/Evidence Vocabulary, RFC 0002, AI Agent Operating Model, AI Agent Context Pack, I+D/R&D Evidence Dossier, Phase 0 Closure Readiness Review, MVP Implementation Standard, Phase 1 MVP Scope and Exit Criteria y Glossary.
 
 Tu respuesta debe ser clara, operativa, en lenguaje de negocio y producto, con foco en MVP. Si una idea no fortalece el Decision ROI Case o el flujo end-to-end, propon diferirla.

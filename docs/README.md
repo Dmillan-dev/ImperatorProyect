@@ -1,6 +1,6 @@
 # IMPERATOR Documentation Map
 
-This folder separates business, product, architecture, AI, decisions, RFCs and research context.
+This folder separates business, product, architecture, AI, decisions, RFCs, research and I+D/R&D evidence context.
 
 Use this structure to avoid mixing strategic business documents with technical planning documents as the project grows.
 
@@ -54,6 +54,11 @@ Use for:
 - pre-code readiness audits,
 - security, data governance and threat models,
 - quality attributes and non-functional expectations,
+- per-connector MVP contracts,
+- event and evidence vocabulary,
+- Phase 0 closure readiness reviews,
+- MVP implementation standards,
+- Phase 1 MVP scope and exit criteria,
 - conceptual database model,
 - connector framework,
 - Phase 0 repository rules,
@@ -92,6 +97,18 @@ Use for:
 
 Templates and records for validation, hypotheses and experiments.
 
+### `rnd/`
+
+I+D/R&D evidence documentation for future startup diligence or accreditation support.
+
+Use for:
+- development activity logs,
+- hours and contributor traceability,
+- technical object registers,
+- experiment and test records,
+- monthly I+D summaries,
+- architecture/code/test evidence once implementation is approved.
+
 ## Authority Order
 
 When documents conflict:
@@ -111,9 +128,28 @@ When documents conflict:
 13. `product/27_MVP_Acceptance_Test_Plan.md`
 14. `product/29_Decision_Review_Workspace_Screen_Contract.md`
 15. `architecture/27_Quality_Attributes.md`
-16. `rfcs/0002-module-communication-architecture.md`
-17. `ai/12_AI_Agent_Context_Pack.md`
-18. `product/13_Glossary_and_Canonical_Language.md`
+16. `architecture/28_Per_Connector_MVP_Contracts.md`
+17. `architecture/29_Event_Evidence_Vocabulary.md`
+18. `rfcs/0002-module-communication-architecture.md`
+19. `../agents/README.md`
+20. `ai/12_AI_Agent_Context_Pack.md`
+21. `rnd/30_RD_Activity_Evidence_Dossier.md`
+22. `architecture/30_Phase_0_Closure_Readiness_Review.md`
+23. `architecture/31_MVP_Implementation_Standard.md`
+24. `architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
+25. `product/13_Glossary_and_Canonical_Language.md`
+
+## Agent Work Model
+
+The top-level `agents/` folder separates future AI workstreams by responsibility.
+
+Use `../agents/README.md` before assigning work to CTO, Product, Connector, Backend, Frontend, AI, Security, FinOps or QA agents.
+
+Use `architecture/30_Phase_0_Closure_Readiness_Review.md` as the final Phase 0 readiness gate before authorizing Phase 1 planning or implementation scaffolding.
+
+Use `architecture/31_MVP_Implementation_Standard.md` to keep future Phase 1 work reduced, hexagonal, auth-aware and observable without overbuilding.
+
+Use `architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` to define the exact first-build objective, data-model limit, connector limit, AI explanation boundary, scaffolding authorization and Phase 1 completion criteria.
 
 ## Growth Rule
 

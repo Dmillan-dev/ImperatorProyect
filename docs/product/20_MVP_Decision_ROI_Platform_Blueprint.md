@@ -67,7 +67,7 @@ The workflow must prove:
 
 Minimum demonstrable MVP flow:
 
-Event -> Connector -> Decision Engine -> ROI Engine -> Recommendation -> Decision Ledger -> Decision Review Workspace
+Event -> Connector -> Decision Engine -> ROI Engine -> Recommendation -> Decision Ledger -> Decision Review Workspace -> Result Validation
 
 In this MVP framing, `Decision Engine` is a product/narrative block for correlation, context and recommendation reasoning. It does not require a separate microservice before the end-to-end value loop is proven.
 
@@ -86,6 +86,8 @@ The MVP uses four integration domains:
 
 Do not expand beyond these four domains until the MVP proves repeatable decision-level ROI.
 
+Phase 1 implementation may start with one or two narrow read-only connectors plus approved manual/static or imported evidence for the remaining domains. The four-domain table defines the evidence story; it does not require full connector automation in the first build.
+
 ## Core Object
 
 The central product object is the **Decision ROI Case**.
@@ -96,12 +98,16 @@ Each case should contain:
 - Technical Change: GitHub pull request, commits, reviews, author and deployment reference
 - Infrastructure: AWS resource, usage, cost, runtime and idle signals
 - AI Consumption: provider, model, tokens, requests, user or team, application and cost
+- ROI View: current cost, estimated recovery, assumptions, confidence and risk
 - Recommendation: action, annual saving, risk, confidence, owner and approver
-- Result: approved, rejected, implemented, validated and realized saving
+- Ledger State: recommendation created, approved, rejected, deferred, implemented or validated
+- Result: realized saving only after result validation
 
 ## Recommendation Focus
 
 The MVP should not build five engines at once.
+
+Phase 1 should implement exactly one recommendation from the paid wedge. The default is AI model downgrade or model change unless a later decision changes it.
 
 Primary paid wedge:
 
@@ -206,7 +212,7 @@ Post-MVP, after enough decision, service and agent history exists to make simila
 
 The MVP correlation engine should produce one explainable chain:
 
-Jira -> GitHub -> AWS -> OpenAI + Anthropic Claude -> Recommendation -> Result
+Jira -> GitHub -> AWS -> OpenAI + Anthropic Claude -> ROI View -> Recommendation -> Decision Ledger -> Decision Review Workspace -> Result Validation
 
 Correlation signals:
 - ticket IDs in branches, commits and pull requests
@@ -257,7 +263,7 @@ The ledger is the immutable history of all business decisions, not only recommen
 
 Ledger flow:
 
-Business Decision -> Technical Change -> Infrastructure -> AI -> Approval -> Financial Result
+Business Decision -> Technical Change -> Infrastructure -> AI -> ROI -> Recommendation -> Approval/Rejection/Deferral -> Decision Ledger -> Implementation -> Result Validation -> Business Value
 
 Decision Ledger v2 module contract:
 - `docs/product/DECISION_LEDGER_V2.md`
@@ -321,6 +327,24 @@ Proceed to Phase 1 product design if:
 - the buyer asks to review more decisions
 
 Do not expand surfaces, connectors or recommendation families before these conditions are met.
+
+## Implementation Standard
+
+If Phase 1 is authorized, the MVP should use the reduced implementation standard in:
+
+- `docs/architecture/31_MVP_Implementation_Standard.md`
+
+The exact Phase 1 scope, data-model limit, connector limit, AI explanation boundary, scaffolding authorization and exit criteria are defined in:
+
+- `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
+
+Product interpretation:
+
+- keep the full platform vision documented,
+- build the smallest end-to-end value loop,
+- use Hexagonal Architecture so providers and persistence remain adapters,
+- keep JWT/OAuth2 and observability minimal,
+- do not introduce deferred infrastructure to prove the first Decision ROI Case.
 
 ## Non-Goals
 

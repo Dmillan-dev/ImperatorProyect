@@ -36,6 +36,7 @@ Vision and Positioning
 -> Identity, Access and Approval Model
 -> Decision Review Workspace Screen Contract
 -> Quality Attributes
+-> Per-Connector MVP Contracts
 ```
 
 This document does not expand the MVP. It constrains future implementation so the first build proves one trustworthy Decision ROI Case instead of becoming a broad platform.
@@ -56,6 +57,8 @@ This document does not expand the MVP. It constrains future implementation so th
 - `docs/architecture/24_MVP_Project_Structure.md`
 - `docs/architecture/25_Pre_Code_Architecture_Readiness_Audit.md`
 - `docs/architecture/26_Security_Data_Governance_Threat_Model.md`
+- `docs/architecture/28_Per_Connector_MVP_Contracts.md`
+- `docs/architecture/29_Event_Evidence_Vocabulary.md`
 - `docs/architecture/DATABASE_MODEL.md`
 - `docs/architecture/CONNECTOR_FRAMEWORK.md`
 
@@ -265,7 +268,7 @@ Phase 1 candidate targets for one prepared Decision ROI Case:
 | Record approve/reject/defer | p95 <= 3 seconds | Ledger command must be atomic in future implementation |
 | Mark implementation | p95 <= 3 seconds | Records external action only |
 | Validate result | p95 <= 3 seconds | Requires post-action evidence |
-| AI explanation later | Non-blocking | Should not block approval readiness |
+| AI explanation | Non-blocking | Included as advisory language; must not block approval readiness |
 
 These are design targets, not production SLAs.
 
@@ -281,6 +284,10 @@ Future operators must know whether the evidence chain is healthy enough to suppo
 
 Future implementation should expose:
 
+- structured logs,
+- request/correlation ID,
+- health endpoint,
+- basic request, error and latency metrics,
 - last source sync or manual import period,
 - stale evidence count,
 - missing required evidence,
@@ -292,6 +299,17 @@ Future implementation should expose:
 - duplicate command detection,
 - review-screen read latency,
 - connector health once connectors exist.
+
+Future-compatible tooling:
+
+- Spring Boot Actuator,
+- Micrometer,
+- OpenTelemetry when useful,
+- Prometheus/Grafana after runtime exists and the MVP needs dashboards.
+
+MVP reduction:
+
+Do not make a full observability platform a prerequisite for proving one Decision ROI Case.
 
 Phase 0 note:
 
@@ -400,7 +418,7 @@ This document extends `docs/product/27_MVP_Acceptance_Test_Plan.md` without repl
 | `recommendation` | Produce evidence-backed, risk-aware, non-autonomous recommendation |
 | `ledger` | Append immutable entries and preserve snapshots |
 | `decision-review` | Show role-filtered evidence, blockers, actions and ledger history |
-| `ai/explanation` later | Explain prepared context only and cite evidence IDs |
+| `ai/explanation` | Explain prepared context only and cite evidence IDs |
 
 These are future responsibilities. They do not authorize implementation during Phase 0.
 
@@ -436,7 +454,7 @@ Before Phase 1 design, verify:
 7. Ledger history can preserve the reviewed state.
 8. Result validation is separate from estimated recovery.
 9. Provider unavailability has a visible degradation path.
-10. AI is optional and advisory.
+10. AI explanation is included as advisory language only.
 11. Future screen reads can use prepared context.
 12. Performance non-goals are still deferred.
 
@@ -454,13 +472,14 @@ Reject any future MVP design that:
 - requires Kafka, Kubernetes, Terraform, graph database or vector database for the first proof,
 - introduces public APIs or SDKs before the Decision Recovery Workflow is validated.
 
-## Next Documents
+## Companion Documents
 
-The next useful Phase 0 architecture artifacts are:
+The companion event/evidence vocabulary and Phase 0 control artifacts are now created:
 
-1. `docs/architecture/28_Per_Connector_MVP_Contracts.md`
-2. `docs/architecture/29_Event_Evidence_Vocabulary.md`
+- `docs/architecture/29_Event_Evidence_Vocabulary.md`
+- `docs/rnd/30_RD_Activity_Evidence_Dossier.md`
+- `docs/architecture/30_Phase_0_Closure_Readiness_Review.md`
 
 Reason:
 
-Quality attributes are now defined. The remaining architecture gaps are connector-specific evidence contracts and a controlled event/evidence vocabulary for the first MVP slice.
+Quality attributes and per-connector MVP contracts are now defined. The event/evidence vocabulary now locks the names future tests, agents and code should use.

@@ -16,6 +16,8 @@ MVP screen behavior is defined in `docs/product/29_Decision_Review_Workspace_Scr
 
 MVP quality attributes are defined in `docs/architecture/27_Quality_Attributes.md`.
 
+Phase 1 scope and exit criteria are defined in `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`.
+
 ## Product Position
 
 Decision Ledger v2 supports the canonical product rule:
@@ -166,8 +168,9 @@ Allowed values:
 ### Decision State
 
 Allowed values:
-- `open`
-- `recommended`
+- `draft_case`
+- `not_reviewable`
+- `review_ready`
 - `approved`
 - `rejected`
 - `deferred`

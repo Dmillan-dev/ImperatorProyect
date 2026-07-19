@@ -9,13 +9,18 @@
   - `docs/decisions/` — decision log y decisiones aceptadas.
   - `docs/decisions/adr/` — Architecture Decision Records.
   - `docs/research/` — hipótesis, experimentos y plantillas de validación.
+  - `docs/rnd/` — evidencia documental de I+D/R&D: actividades, horas, objetos tecnicos, pruebas y dossier de desarrollo.
 - `proto/` — archivos `.proto` canónicos como contratos internos futuros.
-- `agents/` — agentes lógicos responsables de áreas (CTO, Backend, AI, Frontend, Product, Security).
+- `agents/` — agentes lógicos responsables de áreas (CTO, Product, Connector, Backend, Frontend, AI, Security, FinOps, QA).
 - `services/` — scaffolding documental por stack futuro durante Phase 0.
 - `demos/` — demos HTML de experiencia y narrativa.
 - `infra/` — reservado para infra-as-code, despliegue y scripts en fases posteriores.
 
-Propósito: permitir que 'agentes' trabajen de forma separada en sus áreas, manteniendo contratos claros (`proto/`) y ADRs para decisiones técnicas.
+Propósito: permitir que agentes trabajen de forma separada en sus áreas, manteniendo contratos claros, autoridad documental y handoffs explícitos.
+
+Documento canónico de trabajo por agentes:
+
+- `agents/README.md` — operating model para dividir trabajo futuro entre CTO, Product, Connector, Backend, Frontend, AI, Security, FinOps y QA sin crear implementación durante Phase 0.
 
 Documento canónico del MVP:
 
@@ -41,6 +46,26 @@ Documento canónico de conectores:
 
 - `docs/architecture/CONNECTOR_FRAMEWORK.md` — framework conceptual para añadir integraciones sin modificar el núcleo del dominio.
 
+Documento canónico de contratos MVP por conector:
+
+- `docs/architecture/28_Per_Connector_MVP_Contracts.md` — contratos pre-code para Jira, GitHub, AWS y OpenAI + Anthropic Claude: objetos fuente, evidencia, permisos, frescura, sensibilidad, fallos y ownership por agente.
+
+Documento canónico de vocabulario evento/evidencia:
+
+- `docs/architecture/29_Event_Evidence_Vocabulary.md` — vocabulario controlado de eventos normalizados, tipos de evidencia, estados, bloqueos, frescura, sensibilidad y confianza.
+
+Documento canónico de cierre Phase 0:
+
+- `docs/architecture/30_Phase_0_Closure_Readiness_Review.md` — auditoría final de coherencia, gates, riesgos residuales y trabajo por agentes antes de autorizar Phase 1.
+
+Documento canónico de implementación MVP:
+
+- `docs/architecture/31_MVP_Implementation_Standard.md` — estándar futuro para aplicar alcance reducido, arquitectura hexagonal, auth JWT/OAuth2 compatible, observabilidad mínima y separación de adapters.
+
+Documento canónico de alcance y cierre Phase 1:
+
+- `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` — contrato exacto de objetivo Phase 1: un Decision ROI Case, una recomendacion determinista, modelo de datos mínimo, conectores limitados, IA solo explicativa, scaffolding controlado y criterios de salida.
+
 Documento canónico de arquitectura:
 
 - `docs/architecture/21_Technical_Architecture_Context.md` — contexto técnico objetivo: capas, bounded contexts, responsabilidades, stack direction, control model y guardrails.
@@ -63,7 +88,7 @@ Documento de seguridad y gobierno de datos:
 
 Documento de vertical slice MVP:
 
-- `docs/product/24_MVP_Vertical_Slice.md` — definición del primer recorrido end-to-end defendible: Event -> Connector -> Decision Engine -> ROI Engine -> Recommendation -> Decision Ledger -> Decision Review Workspace.
+- `docs/product/24_MVP_Vertical_Slice.md` — definición del primer recorrido end-to-end defendible: Event -> Connector -> Decision Engine -> ROI Engine -> Recommendation -> Decision Ledger -> Decision Review Workspace -> Result Validation.
 
 Documento de ROI slice MVP:
 
@@ -89,6 +114,18 @@ Documento de atributos de calidad MVP:
 
 - `docs/architecture/27_Quality_Attributes.md` — expectativas no funcionales pre-code para explicabilidad, auditabilidad, frescura, trazabilidad, latencia, resiliencia, observabilidad y limites de rendimiento.
 
+Documento de evidencia I+D/R&D:
+
+- `docs/rnd/30_RD_Activity_Evidence_Dossier.md` — sistema para documentar arquitectura, futuro codigo, horas, objetos tecnicos, experimentos, pruebas, costes y actividad de desarrollo.
+
+Documento de estándar MVP:
+
+- `docs/architecture/31_MVP_Implementation_Standard.md` — contrato práctico para que agentes de Backend, Frontend, Connectors, Security, FinOps, QA y AI planifiquen Phase 1 sin sobredimensionar el MVP.
+
+Documento de contrato Phase 1:
+
+- `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` — referencia obligatoria antes de crear scaffolding, data model inicial, conectores, flujo IA explicativo o tests de salida Phase 1.
+
 Estructura de control:
 
 - `docs/decisions/14_Decision_Log.md` — cambios estratégicos y arquitectónicos relevantes.
@@ -96,3 +133,4 @@ Estructura de control:
 - `docs/rfcs/` — propuestas de evolución técnica antes de implementar.
 - `proto/` — contratos internos canónicos.
 - `services/` — solo scaffolding/documentación durante Phase 0.
+- `docs/rnd/` — evidencia de desarrollo e I+D/R&D, sin inventar horas, codigo ni resultados no ejecutados.

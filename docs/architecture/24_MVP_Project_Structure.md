@@ -52,6 +52,7 @@ docs/
   rfcs/
   decisions/
   research/
+  rnd/
 
 demos/
   executive_dashboard_demo/
@@ -59,9 +60,12 @@ demos/
 agents/
   ai/
   backend/
+  connectors/
   cto/
+  finops/
   frontend/
   product/
+  qa/
   security/
 
 services/
@@ -80,9 +84,21 @@ They are not implementation modules.
 
 The first implementation should prove one vertical slice:
 
-**Event -> Connector -> Decision Engine -> ROI Engine -> Recommendation -> Decision Ledger -> Decision Review Workspace**
+**Event -> Connector -> Decision Engine -> ROI Engine -> Recommendation -> Decision Ledger -> Decision Review Workspace -> Result Validation**
 
 It should start as a modular monolith or tightly bounded service, not as distributed microservices.
+
+It should follow Hexagonal Architecture / Ports and Adapters:
+
+```text
+Controller / Interface
+-> Application Use Case
+-> Domain
+-> Ports
+-> Adapters
+```
+
+GitHub, Jira, AWS, OpenAI + Anthropic Claude, PostgreSQL and future OAuth providers are adapters. They must not shape the domain model.
 
 ## Future Phase 1 Structure
 
@@ -104,6 +120,8 @@ imperator/
         roi/
         recommendation/
         ledger/
+        identity/
+        observability/
       shared/
       tests/
 
@@ -149,8 +167,13 @@ When implementation starts, keep modules inside one backend boundary:
 | `roi` | calculate cost, savings and assumptions | ledger mutation |
 | `recommendation` | generate approval-ready recommendation | autonomous execution |
 | `ledger` | append approval, rejection, deferral and result events | workflow orchestration |
+| `identity` | actor, role and authorization context | business approval authority by default |
+| `observability` | structured logs, correlation ID and basic metrics | full monitoring platform |
 
 Do not split these into separate services at the start.
+
+Hexagonal rule:
+Each module may define ports needed by its application use cases, but provider-specific code belongs in adapters.
 
 ## Recommended First Frontend Features
 
@@ -221,17 +244,21 @@ Future infrastructure may be introduced only when:
 - at least one real Decision ROI Case has been reconstructed,
 - the architecture change is recorded in `docs/decisions/14_Decision_Log.md`.
 
+Minimal observability for the first build may include structured logs, correlation ID, health checks and basic metrics. Full Grafana/OpenTelemetry deployment is future scope unless explicitly needed.
+
 ## Mapping From Vision Diagram To MVP Structure
 
 | Vision diagram element | MVP interpretation | Phase 0 action |
 |---|---|---|
 | AWS / GitHub / Jira / OpenAI / Claude | evidence sources | document source evidence needs |
-| Connectors | intake boundary | define contracts, do not implement |
+| Connectors | intake boundary | use `docs/architecture/28_Per_Connector_MVP_Contracts.md`, do not implement |
 | Event Ingestion Layer | selected source signal capture | keep conceptual |
 | Core Engine Layer | context builder | define Decision ROI Case construction |
 | Decision Intelligence Layer | Decision Engine + ROI + recommendation | keep as product capability |
 | Ledger & Governance Layer | Decision Ledger v2 | use existing ledger contract |
 | Presentation Layer | Decision Review Workspace | use `docs/product/29_Decision_Review_Workspace_Screen_Contract.md` |
+| OAuth2 / JWT | future identity adapter | document compatibility; implement only minimal auth needed |
+| Micrometer / OpenTelemetry / Grafana | future observability stack | keep minimal until runtime exists |
 | Kafka | future event streaming | defer |
 | Policy Engine | future governance | defer |
 | Kubernetes / Terraform | future operations | defer |
@@ -244,11 +271,13 @@ The project structure is healthy if:
 - the MVP is explainable through one vertical slice,
 - future code structure follows domain modules, not premature microservices,
 - connectors do not own business logic,
+- adapters do not change the domain,
 - Decision ROI Case remains central,
 - Decision Ledger remains append-only,
 - ROI exposes assumptions,
 - recommendation remains approval-based,
 - demo surfaces do not redefine MVP scope.
+- `agents/README.md` keeps AI-agent workstreams separated by ownership.
 
 ## Next Structuring Steps
 
@@ -260,10 +289,15 @@ The project structure is healthy if:
 6. Use `docs/product/28_Identity_Access_Approval_Model.md` for role and approval authority.
 7. Use `docs/product/29_Decision_Review_Workspace_Screen_Contract.md` for first-screen behavior.
 8. Use `docs/architecture/27_Quality_Attributes.md` for non-functional expectations.
-9. Prepare one expected Decision ROI Case narrative.
-10. Prepare one expected ledger sequence.
-11. Create per-connector MVP contracts.
-12. Only after that, decide whether to create implementation scaffolding.
+9. Use `docs/architecture/28_Per_Connector_MVP_Contracts.md` for Jira, GitHub, AWS and OpenAI + Anthropic Claude contracts.
+10. Prepare one expected Decision ROI Case narrative.
+11. Prepare one expected ledger sequence.
+12. Use `docs/architecture/29_Event_Evidence_Vocabulary.md` to lock normalized events and evidence labels.
+13. Use `docs/rnd/30_RD_Activity_Evidence_Dossier.md` to track future architecture, code, hours, technical objects, experiments and tests.
+14. Use `docs/architecture/30_Phase_0_Closure_Readiness_Review.md` as the final go/no-go control before Phase 1.
+15. Use `docs/architecture/31_MVP_Implementation_Standard.md` to reduce first-build scope and apply hexagonal, auth and observability standards.
+16. Use `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` to enforce one Decision ROI Case, one recommendation, connector limits, AI explanation boundaries and exit criteria.
+17. Only after that, decide whether to create implementation scaffolding.
 
 ## Explicit Non-Decision
 
