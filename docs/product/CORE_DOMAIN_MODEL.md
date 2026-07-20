@@ -102,6 +102,18 @@ Evidence must answer:
 - confidence contribution,
 - sensitivity level.
 
+### Enterprise Evidence Event
+
+The canonical provider-neutral evidence envelope produced by every connector or import adapter.
+
+GitHub, AWS, Jira, OpenAI, Anthropic Claude, manual imports and future connectors must all normalize into Enterprise Evidence Events before the domain reasons over them.
+
+The domain must not depend on provider-specific source objects.
+
+For Phase 1, the canonical contract is governed by:
+
+- `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md`
+
 ### Operational Event
 
 An observed event from an enterprise system that may become evidence after normalization and correlation.
@@ -131,6 +143,21 @@ The MVP Timeline connects:
 - Decision Ledger,
 - Implementation Marked,
 - Result Validation.
+
+### Decision Graph
+
+The internal relationship model connecting evidence, decisions, recommendations, human actions, ledger entries and validated outcomes.
+
+Decision Graph is a domain concept, not a requirement to use Graph DB in Phase 1.
+
+For the first MVP, relationships should be persistable in PostgreSQL so future correlation is not lost.
+
+Examples:
+
+- evidence supports a Decision ROI Case,
+- a recommendation is explained by AI text,
+- a human review is recorded as a Ledger Entry,
+- a result validation realizes Business Value.
 
 ### Owner
 
@@ -378,16 +405,12 @@ Users can create, review, approve, own or audit Decision ROI Cases depending on 
 A permission and responsibility label.
 
 Initial Role concepts:
-- Executive,
-- CTO / VP Engineering,
-- Platform Lead,
-- Engineer,
-- FinOps,
-- Security,
-- Compliance,
-- Finance,
 - Admin,
-- Viewer.
+- Platform Engineer,
+- Finance,
+- Auditor.
+
+Broader enterprise roles such as Executive, CTO / VP Engineering, Security, Compliance and Viewer remain valid future mappings, but Phase 1 demo RBAC is intentionally reduced.
 
 ## Primary Relationships
 
@@ -407,15 +430,18 @@ Initial Role concepts:
 | User or Team | owns | AI Agent |
 | Decision | belongs to | Project |
 | Decision | produces | Timeline |
+| Decision ROI Case | participates in | Decision Graph |
 | Decision | may create or use | Resource |
 | Decision | may use | AI Model |
 | Decision | may generate | AI Usage |
 | Timeline | contains | Evidence |
+| Evidence | is normalized from | Enterprise Evidence Event |
 | Evidence | is derived from | Operational Event |
 | Operational Event | comes from | Integration |
 | Connector | syncs | Integration |
 | Decision | may trigger | Recommendation |
 | Recommendation | references | Evidence |
+| Recommendation | is explained by | AI Explanation |
 | Recommendation | estimates | ROI |
 | Recommendation | requires | Approval |
 | Approval | is made by | User |
@@ -432,6 +458,7 @@ Initial Role concepts:
 | AI Agent | uses | AI Model |
 | Result Validation | records | Business Value |
 | Business Value | derives from | validated Ledger Entry |
+| Decision Graph | connects | Evidence, Decision ROI Case, Recommendation, Ledger Entry and Business Value |
 | Incident | may involve | Decision |
 | Workflow | advances | Decision ROI Case |
 | Decision ROI Case | is recorded in | Decision Ledger |
@@ -447,7 +474,9 @@ Initial Role concepts:
 - A deferred recommendation must preserve required evidence or a review date.
 - AI reasoning must consume prepared context, not raw external sources.
 - A Connector cannot own business logic.
+- A Connector must normalize provider objects into Enterprise Evidence Events.
 - A Timeline must preserve source lineage.
+- Decision Graph relationships must distinguish correlation from proven causality.
 - A Decision can exist without a Recommendation; a Recommendation cannot exist without a Decision ROI Case.
 - Cost is an input to ROI; it is not an ROI claim by itself.
 - Usage Signal can increase or decrease confidence; it does not prove value alone.

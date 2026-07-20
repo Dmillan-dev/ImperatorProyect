@@ -59,6 +59,8 @@ Use for:
 - Phase 0 closure readiness reviews,
 - MVP implementation standards,
 - Phase 1 MVP scope and exit criteria,
+- Phase 1 foundational implementation decisions,
+- final MVP implementation blueprint,
 - conceptual database model,
 - connector framework,
 - Phase 0 repository rules,
@@ -137,7 +139,11 @@ When documents conflict:
 22. `architecture/30_Phase_0_Closure_Readiness_Review.md`
 23. `architecture/31_MVP_Implementation_Standard.md`
 24. `architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
-25. `product/13_Glossary_and_Canonical_Language.md`
+25. `architecture/33_Phase_1_Foundational_Implementation_Decisions.md`
+26. `architecture/34_MVP_Implementation_Blueprint.md`
+27. `../agents/phase1/README.md`
+28. `../agents/phase1/12_phase1_closure.md`
+29. `product/13_Glossary_and_Canonical_Language.md`
 
 ## Agent Work Model
 
@@ -145,11 +151,19 @@ The top-level `agents/` folder separates future AI workstreams by responsibility
 
 Use `../agents/README.md` before assigning work to CTO, Product, Connector, Backend, Frontend, AI, Security, FinOps or QA agents.
 
+Use `../agents/phase1/README.md` before splitting Phase 1 into autonomous agent stages.
+
+Use `../agents/phase1/12_phase1_closure.md` before starting any future Phase 1 implementation scaffolding.
+
 Use `architecture/30_Phase_0_Closure_Readiness_Review.md` as the final Phase 0 readiness gate before authorizing Phase 1 planning or implementation scaffolding.
 
 Use `architecture/31_MVP_Implementation_Standard.md` to keep future Phase 1 work reduced, hexagonal, auth-aware and observable without overbuilding.
 
 Use `architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` to define the exact first-build objective, data-model limit, connector limit, AI explanation boundary, scaffolding authorization and Phase 1 completion criteria.
+
+Use `architecture/33_Phase_1_Foundational_Implementation_Decisions.md` to lock Canonical Evidence Model, PostgreSQL, Explanation Provider, JWT/RBAC and Decision Graph before coding.
+
+Use `architecture/34_MVP_Implementation_Blueprint.md` as the final contract before Phase 2 technical scaffolding.
 
 ## Growth Rule
 

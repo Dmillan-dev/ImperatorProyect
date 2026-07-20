@@ -32,6 +32,8 @@ Not meaning:
 
 Phase 1 may start only after an explicit go/no-go decision is recorded in `docs/decisions/14_Decision_Log.md`.
 
+`D049` records a limited GO for Phase 1 MVP scaffolding through `agents/phase1/00_context_control.md`.
+
 Limited future implementation scaffolding is controlled by `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`; it is not a mandate to build the full platform.
 
 ## Canonical MVP Flow
@@ -145,6 +147,8 @@ These do not block Phase 0 closure, but must remain visible:
 
 Future work should be split into bounded packages. Each package must cite its source documents and hand off outputs through the agent model.
 
+Staged Phase 1 agent execution is defined in `agents/phase1/README.md`.
+
 | Work package | Lead agent | Inputs | Output before code |
 |---|---|---|---|
 | WP00 Context Control | CTO Agent | Decision Log, this closure review, AI Context Pack | confirms scope, authority and no-code boundary |
@@ -195,9 +199,10 @@ The minimum context for future agents is:
 17. `docs/architecture/28_Per_Connector_MVP_Contracts.md`
 18. `docs/architecture/29_Event_Evidence_Vocabulary.md`
 19. `agents/README.md`
-20. `docs/rnd/30_RD_Activity_Evidence_Dossier.md`
-21. `docs/architecture/31_MVP_Implementation_Standard.md`
-22. `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
+20. `agents/phase1/README.md`
+21. `docs/rnd/30_RD_Activity_Evidence_Dossier.md`
+22. `docs/architecture/31_MVP_Implementation_Standard.md`
+23. `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
 
 ## Closure Statement
 

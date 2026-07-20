@@ -350,7 +350,7 @@ Minimum expectations:
 
 Pass condition:
 
-The future structure can implement one case without requiring Kafka, Kubernetes, graph database, vector database, policy engine or public API.
+The future structure can implement one case without requiring Kafka, Kubernetes, Graph DB, vector database, policy engine or public API.
 
 ## Quality Scenarios
 
@@ -469,7 +469,7 @@ Reject any future MVP design that:
 - treats connector availability as required to read past ledger history,
 - counts unvalidated estimates as realized Business Value,
 - writes approval without complete snapshots,
-- requires Kafka, Kubernetes, Terraform, graph database or vector database for the first proof,
+- requires Kafka, Kubernetes, Terraform, Graph DB or vector database for the first proof,
 - introduces public APIs or SDKs before the Decision Recovery Workflow is validated.
 
 ## Companion Documents

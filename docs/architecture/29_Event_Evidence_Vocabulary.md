@@ -17,6 +17,7 @@ This document closes shared language for:
 - confidence labels,
 - ledger event names,
 - future agent handoffs.
+- Enterprise Evidence Event envelope.
 
 It is a Phase 0 architecture artifact. It does not define code, queues, schemas, generated bindings, APIs, migrations, services, connectors, tests, Docker, Kubernetes, Terraform or runtime infrastructure.
 
@@ -212,6 +213,35 @@ Rules:
 | ROI assumptions | `A-ROI-001`, `A-ROI-002`, `A-ROI-003`, `A-ROI-004` |
 | Labor assumptions | `A-LABOR-001`, `A-LABOR-002` |
 
+## Enterprise Evidence Event Vocabulary
+
+Every connector/import adapter must produce an Enterprise Evidence Event before evidence is normalized for the domain.
+
+Required conceptual fields:
+
+| Field | Rule |
+|---|---|
+| `id` | Stable evidence-event identifier |
+| `schema_version` | Contract version |
+| `timestamp` | Source event time or observation time |
+| `ingested_at` | IMPERATOR intake time |
+| `source` | Concrete source system |
+| `source_type` | Controlled source category |
+| `source_object_ref` | Non-secret source reference |
+| `entity` | Observed business or technical object |
+| `event_type` | Controlled normalized event name |
+| `severity` | `info`, `low`, `medium`, `high` or `critical` when applicable |
+| `actor` | Human, system or service actor if known |
+| `evidence_type` | Controlled evidence type |
+| `case_hint` | Optional Decision ROI Case hint |
+| `sensitivity` | Public, Internal, Confidential or Restricted |
+| `confidence` | Low, Medium or High |
+| `freshness` | Fresh, stale, unknown or not applicable |
+| `metadata` | Sanitized reasoning context |
+| `raw_payload` | Controlled descriptor; Phase 1 mode must be `not_stored` |
+
+Provider-specific fields belong inside sanitized `metadata` only when safe and useful.
+
 ## Evidence Item Required Fields
 
 Every evidence item must include:
@@ -228,7 +258,7 @@ Every evidence item must include:
 | `correlation_key` | Yes | Link to case, project, owner or source chain |
 | `sensitivity` | Yes | Public, Internal, Confidential or Restricted |
 | `confidence_contribution` | Yes | Contribution or qualitative effect |
-| `raw_payload_needed` | Yes | Must be `No` for MVP review evidence |
+| `raw_payload.mode` | Yes | Must be `not_stored` for MVP review evidence |
 | `review_status` | Yes | accepted, rejected, missing, stale, disputed or needs_review |
 
 ## Lifecycle State Vocabulary

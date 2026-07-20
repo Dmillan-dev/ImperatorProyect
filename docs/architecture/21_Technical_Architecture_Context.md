@@ -145,7 +145,7 @@ Initial modules:
 Deferred until repeated customer demand or scale requires them:
 - independent AI Intelligence service,
 - event broker,
-- graph database,
+- Graph DB,
 - vector store,
 - public API gateway,
 - SDKs,
@@ -200,9 +200,9 @@ Responsibilities:
 
 MVP auth direction:
 - JWT-compatible session/token model,
-- OAuth2 / OpenID Connect compatibility,
-- one provider only if needed for the first pilot,
-- Google, Microsoft and GitHub as future provider adapters, not mandatory first-build scope.
+- simple RBAC roles: `ADMIN`, `PLATFORM_ENGINEER`, `FINANCE`, `AUDITOR`,
+- static policies,
+- Azure AD, Okta, Keycloak, Google and GitHub as future provider adapters, not mandatory first-build scope.
 
 Authentication must identify the actor. Authorization and approval authority remain product/domain rules governed by `docs/product/28_Identity_Access_Approval_Model.md`.
 
@@ -218,6 +218,7 @@ Responsibilities:
 - fetch or receive external events
 - preserve source metadata
 - normalize provider-specific payloads
+- output Enterprise Evidence Events
 - attach tenant, owner and system identifiers
 - emit canonical events for the context layer
 
@@ -246,8 +247,12 @@ This is the strategic moat of IMPERATOR.
 
 Recommended initial model:
 - PostgreSQL as canonical relational store
-- explicit relationship tables or edge table for graph traversal
+- explicit relationship tables or edge table for Decision Graph traversal
 - optional vector store or pgvector for semantic search later
+
+Phase 1 rule:
+- Decision Graph relationships are stored in PostgreSQL.
+- Graph DB is not required for Phase 1.
 
 Core entities:
 - Decision
@@ -358,12 +363,12 @@ Canonical module contract:
 Phase 1 target primitives:
 - PostgreSQL for canonical storage
 - optional Docker for local development and packaging, only after implementation is authorized
-- optional Redis for caching and short-lived computation state, only if the first implementation needs it
 - optional object storage for evidence artifacts and exports, only if summaries/source references are not enough
 
 Future scale primitives:
 - Kafka for event streams
 - Kubernetes for service orchestration
+- Redis for cache or short-lived computation if later justified
 - OpenSearch or analytics store for search and large-scale exploration
 - data lake for long-term operational history
 

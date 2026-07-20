@@ -1,6 +1,6 @@
 # IMPERATOR — Strategic Documentation System (Phase 0, No Code)
 
-Status: **Idea & Market Validation** (no software implementation)
+Status: **Phase 1 Complete** (final implementation blueprint closed; no software implementation created yet)
 
 This documentation system defines IMPERATOR’s canonical context for:
 1. human strategic execution,
@@ -49,6 +49,8 @@ Architecture:
 - [Phase 0 Closure Readiness Review](docs/architecture/30_Phase_0_Closure_Readiness_Review.md)
 - [MVP Implementation Standard](docs/architecture/31_MVP_Implementation_Standard.md)
 - [Phase 1 MVP Scope and Exit Criteria](docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md)
+- [Phase 1 Foundational Implementation Decisions](docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md)
+- [MVP Implementation Blueprint](docs/architecture/34_MVP_Implementation_Blueprint.md)
 - [Architecture Thesis](docs/architecture/18_Architecture_Thesis.md)
 - [Database Model](docs/architecture/DATABASE_MODEL.md)
 - [Connector Framework](docs/architecture/CONNECTOR_FRAMEWORK.md)
@@ -62,6 +64,7 @@ AI:
 
 Agent work model:
 - [AI Agent Operating Model](agents/README.md)
+- [Phase 1 Agentic MVP Creation Guide](agents/phase1/README.md)
 
 Decisions and RFCs:
 - [Decision Log](docs/decisions/14_Decision_Log.md)
@@ -151,6 +154,9 @@ Current event and evidence vocabulary:
 Current AI-agent work partition:
 - [agents/README.md](agents/README.md)
 
+Current Phase 1 agentic build process:
+- [agents/phase1/README.md](agents/phase1/README.md)
+
 Current I+D/R&D evidence dossier:
 - [docs/rnd/30_RD_Activity_Evidence_Dossier.md](docs/rnd/30_RD_Activity_Evidence_Dossier.md)
 
@@ -206,8 +212,10 @@ When documents or prompts conflict, use this order:
 22. `docs/architecture/30_Phase_0_Closure_Readiness_Review.md` for final Phase 0 readiness gates and go/no-go control.
 23. `docs/architecture/31_MVP_Implementation_Standard.md` for future MVP implementation standards: hexagonal boundaries, reduced scope, auth direction and minimal observability.
 24. `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` for the exact Phase 1 objective, data limit, connector limit, AI boundary, scaffolding authorization and exit criteria.
-25. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
-26. Older documents, demos, prompts, ADRs and RFC drafts as historical context unless updated by the documents above.
+25. `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md` for Canonical Evidence Model, PostgreSQL, Explanation Provider, JWT/RBAC and Decision Graph.
+26. `docs/architecture/34_MVP_Implementation_Blueprint.md` for the final six-week implementation contract.
+27. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
+28. Older documents, demos, prompts, ADRs and RFC drafts as historical context unless updated by the documents above.
 
 Founder-mode or master-prompt instructions define ambition and quality bar. They do not override the current repository decisions when they mention older framing such as AI Cost Attribution as the primary wedge, dashboard-led product language, generic Decision Intelligence without the operating-system and Decision ROI framing, or production-ready implementation during Phase 0.
 

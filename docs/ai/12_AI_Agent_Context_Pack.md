@@ -6,8 +6,10 @@ Ensure consistent output when AI agents collaborate on strategy, documentation, 
 
 ## Current State
 
-Phase 0 (Idea).  
-Agents must not create runnable implementation or infer product decisions that are not present in the canonical documents.
+Phase 1 Complete for a limited MVP.
+Agents must not create runnable implementation or infer product decisions beyond `agents/phase1/12_phase1_closure.md`, `agents/phase1/README.md`, `docs/architecture/31_MVP_Implementation_Standard.md`, `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`, `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md` and `docs/architecture/34_MVP_Implementation_Blueprint.md`.
+
+No more conceptual Phase 1 documents should be added unless a contradiction is discovered. The next phase is Phase 2 - Technical Scaffolding.
 
 ## Authority Order
 
@@ -37,7 +39,10 @@ When context conflicts, agents must use this order:
 22. `docs/architecture/30_Phase_0_Closure_Readiness_Review.md` for final Phase 0 readiness gates and go/no-go control.
 23. `docs/architecture/31_MVP_Implementation_Standard.md` for future MVP implementation standards.
 24. `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` for exact Phase 1 objective, minimal data model, connector limit, AI explanation boundary, scaffolding authorization and exit criteria.
-25. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
+25. `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md` for Canonical Evidence Model, PostgreSQL, Explanation Provider, JWT/RBAC and Decision Graph.
+26. `docs/architecture/34_MVP_Implementation_Blueprint.md` for the final six-week implementation contract.
+27. `agents/phase1/README.md` and `agents/phase1/12_phase1_closure.md` for Phase 1 stage sequencing, closure and future implementation handoff.
+28. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
 
 Founder-mode or master-prompt guidance sets ambition and quality bar. It does not override current decisions when it uses older framing such as AI Cost Attribution as the primary wedge, dashboard-led language, generic Decision Intelligence without the operating-system and Decision ROI framing, or production-ready implementation during Phase 0.
 
@@ -83,15 +88,18 @@ Founder-mode or master-prompt guidance sets ambition and quality bar. It does no
 34. Use `docs/architecture/28_Per_Connector_MVP_Contracts.md` for Jira, GitHub, AWS and OpenAI + Anthropic Claude source objects, evidence, permissions, freshness, sensitivity and failures.
 35. Use `docs/architecture/29_Event_Evidence_Vocabulary.md` for normalized event names, evidence types, lifecycle states, blockers, freshness, sensitivity and confidence labels.
 36. Use `agents/README.md` to keep CTO, Product, Connector, Backend, Frontend, AI, Security, FinOps and QA work separated.
-37. Use `docs/rnd/30_RD_Activity_Evidence_Dossier.md` to document future architecture, code, hours, objects, experiments and tests without inventing activity.
-38. Use `docs/architecture/30_Phase_0_Closure_Readiness_Review.md` as the final Phase 0 readiness gate before Phase 1 authorization.
-39. Use `docs/architecture/31_MVP_Implementation_Standard.md` for future Phase 1 standards: reduced scope, hexagonal architecture, auth direction and minimal observability.
-40. Use `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` before proposing Phase 1 scaffolding, data model, connector work, AI explanation flow or exit tests.
-41. Use `docs/architecture/DATABASE_MODEL.md` as the conceptual database model.
-42. Use `docs/architecture/CONNECTOR_FRAMEWORK.md` as the connector expansion model.
-43. Use `docs/rfcs/0002-module-communication-architecture.md` for communication design rationale.
-44. Use `docs/architecture/21_Technical_Architecture_Context.md` as the canonical architecture context.
-45. Do not change category/ICP/wedge/domain/API/database/connector/architecture boundary without logging in `docs/decisions/14_Decision_Log.md`.
+37. Use `agents/phase1/README.md` before splitting Phase 1 into autonomous agent stages.
+38. Use `docs/rnd/30_RD_Activity_Evidence_Dossier.md` to document future architecture, code, hours, objects, experiments and tests without inventing activity.
+39. Use `docs/architecture/30_Phase_0_Closure_Readiness_Review.md` as the final Phase 0 readiness gate before Phase 1 authorization.
+40. Use `docs/architecture/31_MVP_Implementation_Standard.md` for future Phase 1 standards: reduced scope, hexagonal architecture, auth direction and minimal observability.
+41. Use `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` before proposing Phase 1 scaffolding, data model, connector work, AI explanation flow or exit tests.
+42. Use `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md` before choosing evidence format, persistence, AI provider boundary, auth model or Decision Graph model.
+43. Use `docs/architecture/34_MVP_Implementation_Blueprint.md` before Phase 2 technical scaffolding or Phase 3 MVP implementation.
+44. Use `docs/architecture/DATABASE_MODEL.md` as the conceptual database model.
+45. Use `docs/architecture/CONNECTOR_FRAMEWORK.md` as the connector expansion model.
+46. Use `docs/rfcs/0002-module-communication-architecture.md` for communication design rationale.
+47. Use `docs/architecture/21_Technical_Architecture_Context.md` as the canonical architecture context.
+48. Do not change category/ICP/wedge/domain/API/database/connector/architecture boundary without logging in `docs/decisions/14_Decision_Log.md`.
 
 ## Writing Style
 
@@ -113,6 +121,8 @@ Do not introduce:
 - architecture proposals that bypass `docs/architecture/21_Technical_Architecture_Context.md`
 - implementation proposals that bypass `docs/architecture/31_MVP_Implementation_Standard.md`
 - Phase 1 proposals that bypass `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
+- scaffolding or implementation proposals that bypass `docs/architecture/34_MVP_Implementation_Blueprint.md`
+- staged Phase 1 agent work that bypasses `agents/phase1/README.md`
 - architecture proposals that treat conceptual bounded contexts as mandatory Phase 1 microservices
 - AI behavior that modifies persistent data, executes business rules, replaces the Decision Engine, approves, rejects, defers, marks implementation or validates results
 - multiple recommendations, ranking or learning systems as prerequisites for Phase 1
@@ -132,5 +142,6 @@ For consistency between teams and agents, the following guidance applies for Pha
 - Target architecture context lives in `docs/architecture/21_Technical_Architecture_Context.md`. It is authoritative for layer responsibilities, bounded contexts, product surface mapping and future stack direction.
 - MVP implementation standard lives in `docs/architecture/31_MVP_Implementation_Standard.md`. It is authoritative for future Phase 1 reduced scope, hexagonal boundaries, auth direction and minimal observability.
 - Phase 1 execution contract lives in `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`. It is authoritative for one Decision ROI Case, one deterministic recommendation, limited connector scope, AI-as-explainer-only behavior and final exit criteria.
+- Final MVP implementation blueprint lives in `docs/architecture/34_MVP_Implementation_Blueprint.md`. It is authoritative for Phase 2 technical scaffolding and Phase 3 MVP implementation order.
 
 Any further changes to this mandate or expansions must be recorded in `docs/decisions/14_Decision_Log.md`.

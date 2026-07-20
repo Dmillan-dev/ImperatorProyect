@@ -29,6 +29,7 @@ It is a Phase 0 product and governance artifact. It does not define authenticati
 - `docs/architecture/27_Quality_Attributes.md`
 - `docs/architecture/28_Per_Connector_MVP_Contracts.md`
 - `docs/architecture/29_Event_Evidence_Vocabulary.md`
+- `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md`
 - `docs/architecture/DATABASE_MODEL.md`
 
 ## Product Principle
@@ -90,6 +91,23 @@ Approval must be:
 | Viewer | Limited reader | Views allowed summaries only |
 | AI Component | Explanation/summarization helper | Reads prepared context only; never approves, rejects, defers, implements or validates |
 | IMPERATOR Analyst / System Later | Manual analyst now, system capability later | Creates or prepares recommendations; not final business authority |
+
+## Phase 1 Demo RBAC Reduction
+
+The broader role model above remains valid product language.
+
+The first implementation should reduce RBAC to four demo roles:
+
+| Phase 1 role | Product meaning |
+|---|---|
+| `ADMIN` | Controlled demo approver and local system operator; represents CTO/VP Engineering authority for Phase 1 only. |
+| `PLATFORM_ENGINEER` | Technical owner behavior; can defer technical blockers and mark implementation after approval. |
+| `FINANCE` | FinOps/Finance behavior; can review ROI/cost evidence and validate result when available. |
+| `AUDITOR` | Security/compliance/audit behavior; read-only by default and may flag or defer audit/security blockers if enabled. |
+
+This reduction is governed by `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md`.
+
+`ADMIN` as demo approver is an explicit Phase 1 simplification. It must not be treated as permanent enterprise approval semantics.
 
 ## MVP Approval Doctrine
 

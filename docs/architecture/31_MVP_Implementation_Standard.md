@@ -20,6 +20,10 @@ The exact Phase 1 objective, data-model limit, connector limit, AI explanation b
 
 - `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
 
+The final pre-code foundational choices are defined in:
+
+- `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md`
+
 ## Executive Standard
 
 Build the smallest product that proves the value loop.
@@ -51,6 +55,8 @@ The first implementation should include only:
 | Product object | One Decision ROI Case |
 | First case | AI Onboarding Assistant Recovery, unless a new decision changes it |
 | Evidence input | Manual/static evidence first; imported files or narrow read-only intake only if approved |
+| Canonical evidence | Enterprise Evidence Event for every connector/import adapter |
+| First import file | JSONL, one Enterprise Evidence Event per line |
 | Backend shape | Modular monolith or tightly bounded service |
 | Architecture style | Hexagonal Architecture with clear ports and adapters |
 | Backend stack | Java 21 + Spring Boot |
@@ -60,9 +66,10 @@ The first implementation should include only:
 | Recommendation | One approval-ready recommendation family |
 | Ledger | Append-only state history and snapshots |
 | Security | Role-aware evidence visibility and no Restricted data |
-| Auth | Minimal JWT/OAuth2-compatible foundation; one provider only if needed |
+| Auth | JWT-compatible demo login with simple RBAC |
 | Observability | Structured logs, request/correlation ID, health checks and basic metrics |
 | AI | Explanation over prepared context only |
+| Internal relationships | Decision Graph relationships stored in PostgreSQL, not Graph DB |
 
 ### Out Of The First Build
 
@@ -122,10 +129,12 @@ Dependency rule:
 | Port | Purpose | Possible adapter |
 |---|---|---|
 | `DecisionCaseRepository` | load/save Decision ROI Case state | PostgreSQL adapter |
-| `EvidenceSourcePort` | provide normalized evidence candidates | manual file adapter, future Jira/GitHub/AWS/AI adapters |
+| `EvidenceSourcePort` | provide Enterprise Evidence Events and normalized evidence candidates | manual file adapter, future Jira/GitHub/AWS/AI adapters |
 | `CostEvidencePort` | provide cost evidence summaries | manual import, AWS adapter, AI usage adapter |
 | `LedgerRepository` | append/read ledger entries | PostgreSQL adapter |
-| `IdentityContextPort` | provide current actor and role | JWT/OAuth2 adapter |
+| `IdentityContextPort` | provide current actor and role | JWT-compatible RBAC adapter |
+| `ExplanationProvider` | generate explanation from prepared context | OpenAI, Claude, Ollama, Azure OpenAI or Gemini adapter |
+| `DecisionGraphRepository` | persist relationships between evidence, decisions, recommendations, reviews and outcomes | PostgreSQL adapter |
 | `ClockPort` | provide current time for deterministic tests | system clock adapter |
 | `ObservationPort` | emit structured events/metrics | log/metrics adapter |
 
@@ -161,11 +170,12 @@ Recommended first backend modules inside one boundary:
 | Module | Responsibility |
 |---|---|
 | `intake` | receive manual/static evidence or approved narrow intake |
-| `evidence` | normalize evidence and preserve lineage |
+| `evidence` | normalize Enterprise Evidence Events and preserve lineage |
 | `decision_case` | assemble and expose Decision ROI Case |
 | `roi` | calculate deterministic ROI and assumptions |
 | `recommendation` | prepare approval-ready recommendation |
 | `ledger` | append approval, rejection, deferral, implementation and validation entries |
+| `decision_graph` | preserve relationships between evidence, recommendation, ledger and outcome |
 | `identity` | actor, role and authorization context |
 | `observability` | structured logs, correlation ID and basic metrics |
 
@@ -236,19 +246,28 @@ Initial canonical store:
 
 Use PostgreSQL for:
 
+- Enterprise Evidence Events,
 - Decision ROI Case state,
 - evidence summaries,
 - ROI assumptions,
 - recommendations,
 - ledger entries,
 - actor/role references,
-- source references and lineage.
+- source references and lineage,
+- Decision Graph relationship records.
 
-Optional later:
+Do not use as Phase 1 source of truth:
 
-- Redis for cache or short-lived computation state,
+- in-memory store,
+- JSON files,
+- SQLite,
+- MongoDB,
+- Redis.
+
+Optional later after repeated cases prove the need:
+
 - object storage for evidence artifacts or exports,
-- graph/vector/search stores only after repeated cases prove the need.
+- Graph DB/vector/search stores.
 
 ## Authentication And Authorization Standard
 
@@ -256,13 +275,13 @@ Target SaaS direction:
 
 - OAuth2 / OpenID Connect,
 - JWT,
-- provider adapters for Google, Microsoft and GitHub.
+- provider adapters for Azure AD, Okta, Keycloak, Google and GitHub.
 
 MVP reduction:
 
-- document OAuth2/JWT compatibility from the start,
-- implement one provider only when needed,
-- for local demo or controlled pilot, a minimal auth mode may be acceptable if explicitly recorded,
+- use JWT-compatible local/demo login,
+- use simple RBAC roles: `ADMIN`, `PLATFORM_ENGINEER`, `FINANCE`, `AUDITOR`,
+- use static policies,
 - do not build full enterprise SSO, SCIM, multi-provider admin or fine-grained policy engine in the first MVP.
 
 Security rule:
@@ -334,6 +353,10 @@ First implementation tests should prove:
 
 Under the Phase 1 execution contract, AI explanation is included as a non-authoritative language layer.
 
+Use an `ExplanationProvider` port with conceptual `generateExplanation(preparedContext)`.
+
+Adapters may later include OpenAI, Anthropic Claude, Ollama, Azure OpenAI or Google Gemini.
+
 If used, it may:
 
 - explain prepared evidence,
@@ -368,7 +391,7 @@ Future AI agents should use this ownership split:
 | QA Agent | acceptance tests, negative tests and traceability |
 | AI Agent | prepared-context explanation only |
 
-Any agent proposing Kafka, Kubernetes, graph/vector infrastructure, multiple OAuth providers or new connectors for the first MVP must mark it as post-MVP unless a new decision explicitly authorizes it.
+Any agent proposing Kafka, Kubernetes, Graph DB/vector infrastructure, multiple OAuth providers or new connectors for the first MVP must mark it as post-MVP unless a new decision explicitly authorizes it.
 
 ## Phase 1 Entry Checklist
 
@@ -379,10 +402,13 @@ Before writing code, record:
 3. first auth mode,
 4. minimum observability level,
 5. PostgreSQL usage boundary,
-6. whether AI explanation is included or deferred,
-7. first UI route/surface,
-8. R&D evidence capture method,
-9. ADR authorizing implementation scaffolding.
+6. Enterprise Evidence Event import boundary,
+7. Explanation Provider prepared-context boundary,
+8. JWT/RBAC role and policy boundary,
+9. Decision Graph relationship boundary,
+10. first UI route/surface,
+11. R&D evidence capture method,
+12. ADR authorizing implementation scaffolding.
 
 Then verify that the planned work satisfies `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`.
 

@@ -233,7 +233,7 @@ The first proof should not require:
 - Kubernetes,
 - Terraform,
 - OpenSearch,
-- graph database,
+- Graph DB,
 - vector database,
 - public API gateway,
 - production CI/CD.

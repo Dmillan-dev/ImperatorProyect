@@ -17,6 +17,7 @@ This is not SQL, not an ORM model and not a migration plan. It explains which da
 - `docs/architecture/28_Per_Connector_MVP_Contracts.md`
 - `docs/architecture/29_Event_Evidence_Vocabulary.md`
 - `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
+- `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md`
 - `docs/rfcs/0001-knowledge-graph-model.md`
 - `docs/rfcs/0002-module-communication-architecture.md`
 
@@ -25,7 +26,10 @@ This is not SQL, not an ORM model and not a migration plan. It explains which da
 - The database model must serve the Decision ROI Case.
 - Business meaning comes from the domain model, not from provider payloads.
 - Evidence lineage must be preserved.
+- Every connector/import must normalize into Enterprise Evidence Event before core domain use.
 - Ledger history must be append-only.
+- Phase 1 source of truth is PostgreSQL.
+- Decision Graph relationships must be representable without requiring Graph DB.
 - Estimated value and realized value must be separated.
 - Connector sync state must not pollute core business entities.
 - AI-readable context must be prepared, filtered and policy-aware.
@@ -35,7 +39,7 @@ This is not SQL, not an ORM model and not a migration plan. It explains which da
 
 This document describes the conceptual data model for the broader product.
 
-Phase 1 implementation must use the smaller persistence boundary in `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`.
+Phase 1 implementation must use the smaller persistence boundary in `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` and the foundational choices in `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md`.
 
 If a table or stored object does not directly support one Decision ROI Case, one evidence chain, one ROI view, one deterministic recommendation, one AI explanation or one ledger state, it is out of Phase 1 scope.
 
@@ -90,6 +94,7 @@ Purpose:
 Preserve why IMPERATOR believes a fact is true.
 
 Conceptual records:
+- Enterprise Evidence Event
 - Operational Event
 - Normalized Event
 - Evidence
@@ -99,13 +104,16 @@ Conceptual records:
 
 Key relationships:
 - Operational Event comes from Integration.
+- Enterprise Evidence Event is produced by Connector or Import Adapter.
 - Normalized Event is derived from Operational Event.
+- Evidence may be normalized from Enterprise Evidence Event.
 - Evidence is derived from Normalized Event.
 - Evidence supports Timeline, ROI or Recommendation.
 - Evidence has lineage and sensitivity.
 
 Layering:
-- raw source metadata: provider-specific and isolated,
+- raw source metadata: provider-specific, isolated and not Phase 1 source of truth,
+- Enterprise Evidence Event: provider-neutral connector/import envelope,
 - normalized events: platform-shaped facts,
 - evidence: trusted business-context facts.
 
@@ -128,7 +136,7 @@ Conceptual records:
 Key relationships:
 - Organization configures Integration.
 - Integration uses Connector.
-- Connector produces Operational Events.
+- Connector produces Enterprise Evidence Events.
 - Sync Run records fetch/receive activity.
 - Integration Health affects Decision ROI Case confidence.
 
@@ -399,6 +407,10 @@ Purpose:
 Candidate future technology:
 - PostgreSQL.
 
+Phase 1 decision:
+- PostgreSQL is the first implementation source of truth.
+- Do not use in-memory store, JSON files, SQLite, MongoDB or Redis as Phase 1 source of truth.
+
 ### Relationship / graph layer
 
 Purpose:
@@ -408,8 +420,8 @@ Purpose:
 - duplicate service or agent analysis.
 
 Candidate future approach:
-- explicit relationship tables or edge model first,
-- graph database only if traversal complexity justifies it.
+- explicit relationship tables or edge model first in PostgreSQL,
+- Graph DB only if traversal complexity justifies it.
 
 ### Evidence artifact storage
 
@@ -441,6 +453,9 @@ Purpose:
 
 Candidate future technology:
 - Redis.
+
+Phase 1 rule:
+- Redis is not a source of truth and is not required for the MVP.
 
 ## Data Invariants
 

@@ -339,7 +339,7 @@ These tests are intentionally designed to fail unsafe or over-broad behavior.
 | N04 | Approve recommendation without ROI assumptions | Reject; ROI is not decision-grade |
 | N05 | Let AI approve or execute action | Reject; company decides |
 | N06 | Include raw prompts or completions in evidence | Reject; Restricted data |
-| N07 | Require Kafka, Kubernetes, Terraform or graph/vector stack | Reject; not MVP dependency |
+| N07 | Require Kafka, Kubernetes, Terraform or Graph DB/vector stack | Reject; not MVP dependency |
 | N08 | Add public API or SDKs before validation | Reject; deferred |
 | N09 | Let connector own recommendation logic | Reject; connector is adapter only |
 | N10 | Mutate historical ledger entry after new evidence | Reject; create new entry or snapshot |

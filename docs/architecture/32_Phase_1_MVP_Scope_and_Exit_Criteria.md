@@ -15,6 +15,8 @@ This document turns the reduced MVP strategy into a controlled execution boundar
 - what observability is enough,
 - when Phase 1 is considered complete.
 
+Foundational choices for evidence format, persistence, AI provider boundary, auth model and Decision Graph are locked in `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md`.
+
 It is a scope and exit-criteria document. It does not create source code, services, connectors, database migrations, OpenAPI contracts, OAuth applications, Docker, Kubernetes, Terraform, cloud resources or production data handling.
 
 ## Phase 1 Objective
@@ -138,12 +140,15 @@ Allowed minimum domain concepts:
 | User / Actor | Identifies the authenticated human user. |
 | Role | Controls basic review visibility and allowed actions. |
 | Evidence Source / minimal Integration reference | Represents one connected, imported or manual evidence source using existing domain language. |
+| Enterprise Evidence Event | Canonical event envelope produced by every connector/import adapter. |
+| Evidence import file | JSONL file with one Enterprise Evidence Event per line. |
 | Decision ROI Case | Central business object of the MVP. |
 | Evidence | Supports claims about cost, usage, owner, implementation and risk. |
 | ROI View | Holds deterministic cost, recovery, assumptions, confidence and risk. |
 | Recommendation | Stores exactly one approval-ready proposed action. |
 | AI Explanation | Natural-language explanation generated from prepared context. |
 | Ledger Entry | Records recommendation, approval, rejection, deferral, implementation and result-validation states. |
+| Decision Graph relationship | Connects evidence, case, recommendation, review, ledger and result for future correlation. |
 
 Do not add tables or persistent objects that do not directly serve the Decision ROI Case.
 
@@ -156,7 +161,7 @@ Out of Phase 1 data model:
 - granular policy engine,
 - connector marketplace,
 - organization hierarchy beyond the minimum needed for ownership,
-- graph/vector/search projections,
+- Graph DB/vector/search projections,
 - analytics warehouse.
 
 ### What Decisions Are Irreversible Or Expensive To Reverse?
@@ -170,6 +175,11 @@ Treat these as high-control decisions before implementation:
 | Deterministic recommendation rules | The business outcome must be explainable and testable without relying on LLM judgment. |
 | Append-only ledger semantics | Trust depends on not mutating historical review snapshots. |
 | AI as explainer only | Prevents future agents from turning the product into autonomous AI decisioning. |
+| Explanation Provider port | Prevents the Decision Engine from depending on OpenAI, Claude or any specific provider. |
+| PostgreSQL source of truth | The ledger, evidence and graph relationships must survive process restarts from day one. |
+| Canonical Evidence Model | Every connector must produce Enterprise Evidence Events before domain reasoning. |
+| JWT/RBAC demo auth | Keeps authentication simple while preserving replaceability for future SSO. |
+| Decision Graph internal model | Preserves relationships early without requiring Graph DB infrastructure. |
 | Restricted-data exclusion | Raw prompts, completions, secrets and customer conversations must stay out of evidence, ledger, logs and AI context. |
 
 ### What Can Be Postponed?
@@ -180,7 +190,7 @@ Postpone everything that does not prove the first Decision ROI Case:
 - Kubernetes,
 - Terraform,
 - OpenSearch,
-- graph database,
+- Graph DB,
 - vector database,
 - data lake,
 - public API gateway,
@@ -299,7 +309,9 @@ It must not include:
 
 AI is included in Phase 1 only as an explainer.
 
-The AI component may:
+Use an `ExplanationProvider` boundary with conceptual `generateExplanation(preparedContext)`.
+
+The AI explanation adapter may:
 
 - explain prepared evidence,
 - summarize the Decision ROI Case,
@@ -307,7 +319,7 @@ The AI component may:
 - cite evidence IDs,
 - explain ROI assumptions in natural language.
 
-The AI component must not:
+The AI explanation adapter must not:
 
 - modify persistent data,
 - execute business rules,
@@ -362,12 +374,14 @@ Allowed persistence should cover only:
 
 - authenticated actor and role reference,
 - source connection/import metadata,
+- Enterprise Evidence Events,
 - Decision ROI Case,
 - evidence summaries and lineage,
 - ROI assumptions and calculated values,
 - one recommendation,
 - AI explanation text and evidence references,
-- append-only ledger entries.
+- append-only ledger entries,
+- Decision Graph relationship records.
 
 Do not implement:
 
@@ -386,14 +400,15 @@ Phase 1 requires that a user can authenticate.
 
 Acceptable first implementation direction:
 
-- JWT/OAuth2-compatible foundation,
-- one provider only if needed,
-- controlled local/demo auth only if explicitly recorded,
-- basic role mapping aligned with the Identity, Access and Approval Model.
+- JWT-compatible local/demo login,
+- simple RBAC roles: `ADMIN`, `PLATFORM_ENGINEER`, `FINANCE`, `AUDITOR`,
+- static policies,
+- future mapping to Azure AD, Okta, Keycloak, Google or GitHub without domain changes.
 
 Do not implement:
 
 - Google + Microsoft + GitHub all at once,
+- OAuth before the MVP needs it,
 - SCIM,
 - full enterprise SSO,
 - advanced permission builder,
@@ -464,15 +479,38 @@ Phase 1 is not complete if:
 - AI can modify persistent data,
 - Restricted data enters evidence, logs, ledger or AI context,
 - a broad dashboard replaces the Decision Review Workspace,
-- Kafka, Kubernetes, Terraform, graph/vector stores or a full observability platform become prerequisites.
+- Kafka, Kubernetes, Terraform, Graph DB/vector stores or a full observability platform become prerequisites.
 
 ## Phase Sequencing
 
 ### Phase 1
 
-Functional MVP with one complete Decision ROI Case and architecture prepared to grow.
+Documentation, scope, foundational decisions and final implementation blueprint for one complete Decision ROI Case.
 
 ### Phase 2
+
+Technical Scaffolding.
+
+Create project structure only:
+
+- repository folders,
+- backend/frontend skeleton,
+- build configuration,
+- empty module boundaries,
+- PostgreSQL migration framework,
+- auth scaffolding,
+- health/readiness scaffolding,
+- R&D evidence capture scaffolding.
+
+Do not implement business logic in Phase 2.
+
+### Phase 3
+
+MVP Implementation.
+
+Build the complete `DRC-AOA-001` value loop described in `docs/architecture/34_MVP_Implementation_Blueprint.md`.
+
+### Later Phases
 
 Expand capabilities and connectors while preserving ports and adapters.
 
@@ -483,12 +521,7 @@ Candidate additions:
 - AWS live read-only connector,
 - AI provider usage connector,
 - additional recommendation families,
-- broader Decision Ledger views.
-
-### Later Phases
-
-Add platform capabilities only after repeatable value is proven:
-
+- broader Decision Ledger views,
 - Kubernetes,
 - Terraform,
 - event streaming,

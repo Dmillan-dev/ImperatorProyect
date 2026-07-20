@@ -269,7 +269,7 @@ Do not begin implementation until these gates are true:
 | G4 - Approval is explicit | Is it clear who can approve, reject, defer and validate? |
 | G5 - Ledger snapshots are defined | Do approval actions preserve evidence, ROI and assumptions snapshots? |
 | G6 - MVP API subset is clear | Are future endpoints reduced to the few needed for one case? |
-| G7 - No accidental platform build | Are public API, SDKs, Kafka, Kubernetes, Terraform, policy engine, graph/vector and AI Advisor still deferred? |
+| G7 - No accidental platform build | Are public API, SDKs, Kafka, Kubernetes, Terraform, policy engine, Graph DB/vector and AI Advisor still deferred? |
 | G8 - Acceptance tests exist | Can Phase 1 verify the slice without inventing requirements during coding? |
 | G9 - Screen behavior is explicit | Does the Decision Review Workspace define what it shows, hides, blocks and records? |
 | G10 - Quality attributes are explicit | Are explainability, auditability, freshness, traceability, latency, resilience, observability and performance non-goals defined? |
@@ -296,7 +296,7 @@ Do not add until P0 acceptance scenarios pass, approval authority is resolved, t
 - Terraform,
 - public API gateway,
 - SDKs,
-- graph database,
+- Graph DB,
 - vector database,
 - AI Advisor,
 - autonomous execution,

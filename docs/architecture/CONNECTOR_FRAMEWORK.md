@@ -16,6 +16,7 @@ This document is conceptual. It does not define connector code, SDKs, deployment
 - `docs/architecture/29_Event_Evidence_Vocabulary.md`
 - `docs/architecture/31_MVP_Implementation_Standard.md`
 - `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
+- `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md`
 - `docs/rfcs/0002-module-communication-architecture.md`
 - `docs/architecture/21_Technical_Architecture_Context.md`
 
@@ -28,6 +29,14 @@ They bring external signals into IMPERATOR, but they do not own business meaning
 In the MVP implementation standard, connectors sit behind ports. Jira, GitHub, AWS and OpenAI + Anthropic Claude can change without changing the Decision ROI Case domain.
 
 In Phase 1, the implementation may start with one or two narrow read-only adapters plus approved manual/static or imported evidence for the remaining domains. Full connector automation is not required to prove the first Decision ROI Case.
+
+Every connector or import adapter must output the same internal envelope:
+
+```text
+Enterprise Evidence Event
+```
+
+GitHub must not create a GitHub-shaped domain model, AWS must not create an AWS-shaped domain model, and AI providers must not create provider-shaped domain models inside the core.
 
 The core product should understand:
 - Decision,
@@ -55,6 +64,16 @@ Hexagonal rule:
 
 The domain asks for evidence through ports. Provider-specific adapters satisfy those ports.
 
+The adapter path is:
+
+```text
+Provider object
+-> adapter parser
+-> Enterprise Evidence Event
+-> Evidence Normalizer
+-> Evidence Store
+```
+
 If adding a connector requires changing the core domain, one of two things is true:
 
 1. the connector is leaking provider-specific concepts into the product, or
@@ -79,7 +98,8 @@ It may implement a future evidence/intake port, but it must not become a domain 
 - sync status,
 - provider-specific error mapping,
 - source object IDs,
-- source timestamps.
+- source timestamps,
+- mapping provider objects into Enterprise Evidence Events.
 
 ### Connector does not own
 
@@ -118,7 +138,7 @@ Examples:
 The connector fetches or receives source data.
 
 Conceptual output:
-- Operational Event with source metadata.
+- Enterprise Evidence Event with source metadata.
 
 ### 4. Preserve
 

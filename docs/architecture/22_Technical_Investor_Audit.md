@@ -35,7 +35,7 @@ The first paid product should reconstruct one expensive AI/cloud decision, prove
 - Five recommendation families at once.
 - Public API and SDK story.
 - Multi-cloud as a v1 buying requirement.
-- AI Advisor, semantic search and graph/vector architecture.
+- AI Advisor, semantic search and Graph DB/vector architecture.
 - Full policy/governance surface.
 
 ## What I Would Eliminate From MVP
@@ -160,7 +160,7 @@ Defer:
 - AI Intelligence Layer as autonomous service,
 - event broker,
 - vector store,
-- graph database,
+- Graph DB,
 - public API gateway,
 - policy engine,
 - multi-tenant enterprise admin surface.

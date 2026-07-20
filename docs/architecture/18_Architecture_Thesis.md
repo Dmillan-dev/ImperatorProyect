@@ -47,7 +47,7 @@ Stack objetivo para Phase 1 planning:
 - Frontend: Next.js, React, TypeScript, Tailwind CSS, shadcn/ui o sistema equivalente.
 - Backend/Application: Java 21, Spring Boot.
 - AI Intelligence Layer: Python, FastAPI.
-- Storage: PostgreSQL como store canónico inicial, Redis para cache/estado efímero, object storage para evidencias/exportaciones.
+- Storage: PostgreSQL como store canónico inicial. Redis queda post-MVP solo para cache/estado efímero si se justifica. Object storage queda para evidencias/exportaciones si los resúmenes no bastan.
 - Future scale: Kafka, Kubernetes, OpenSearch/analytics, data lake.
 
 Estas tecnologías no autorizan implementación en Phase 0. Son contexto de diseño.

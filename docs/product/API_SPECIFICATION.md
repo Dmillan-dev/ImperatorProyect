@@ -26,9 +26,13 @@ MVP implementation standard is defined in:
 Phase 1 scope and exit criteria are defined in:
 - `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
 
+Phase 1 foundational implementation decisions are defined in:
+- `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md`
+
 ## API Principles
 
 - The API revolves around Decision ROI Cases.
+- Evidence input revolves around Enterprise Evidence Events, not provider-specific source objects.
 - Queries return prepared context, not raw provider payloads.
 - Commands change business state such as approval, review or recommendation status.
 - Commands that approve, reject, defer, mark implementation or validate result require role authority from `docs/product/28_Identity_Access_Approval_Model.md`.
@@ -36,6 +40,7 @@ Phase 1 scope and exit criteria are defined in:
 - Every recommendation response must expose evidence, confidence and risk.
 - Future reads and commands must support the quality expectations for explainability, auditability, freshness, latency and graceful degradation.
 - Future implementation should be JWT/OAuth2-compatible, but the first MVP must not require multiple identity providers.
+- Phase 1 auth uses JWT-compatible RBAC with `ADMIN`, `PLATFORM_ENGINEER`, `FINANCE` and `AUDITOR`.
 - Future implementation should preserve hexagonal boundaries: provider and persistence details stay behind adapters.
 - Phase 1 API work must serve one Decision ROI Case, one deterministic recommendation and the exact exit criteria in `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`.
 - Public customer APIs can be HTTP/REST or GraphQL later.
@@ -47,6 +52,7 @@ Phase 1 scope and exit criteria are defined in:
 - Decision ROI Case
 - Recommendation
 - Evidence
+- Enterprise Evidence Event
 - Timeline
 - ROI
 - Approval
@@ -94,6 +100,7 @@ For the first paid workflow, API intent should collapse around one aggregate:
 **Decision ROI Case**
 
 Minimum MVP API responsibilities:
+- accept or load Enterprise Evidence Events through an approved JSONL import boundary,
 - read one Decision ROI Case,
 - read its timeline,
 - read its evidence,

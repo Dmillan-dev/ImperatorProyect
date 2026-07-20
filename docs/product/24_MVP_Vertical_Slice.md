@@ -285,7 +285,7 @@ Do not include in this slice:
 - Kafka,
 - Kubernetes,
 - Terraform,
-- graph database,
+- Graph DB,
 - vector database,
 - policy engine,
 - full workflow engine.

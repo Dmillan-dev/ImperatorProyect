@@ -12,6 +12,7 @@
   - `docs/rnd/` — evidencia documental de I+D/R&D: actividades, horas, objetos tecnicos, pruebas y dossier de desarrollo.
 - `proto/` — archivos `.proto` canónicos como contratos internos futuros.
 - `agents/` — agentes lógicos responsables de áreas (CTO, Product, Connector, Backend, Frontend, AI, Security, FinOps, QA).
+  - `agents/phase1/` — guia documental para dividir Phase 1 en etapas con agentes autonomos; no es runtime ni codigo.
 - `services/` — scaffolding documental por stack futuro durante Phase 0.
 - `demos/` — demos HTML de experiencia y narrativa.
 - `infra/` — reservado para infra-as-code, despliegue y scripts en fases posteriores.
@@ -21,6 +22,8 @@ Propósito: permitir que agentes trabajen de forma separada en sus áreas, mante
 Documento canónico de trabajo por agentes:
 
 - `agents/README.md` — operating model para dividir trabajo futuro entre CTO, Product, Connector, Backend, Frontend, AI, Security, FinOps y QA sin crear implementación durante Phase 0.
+- `agents/phase1/README.md` — proceso recomendado para crear Phase 1 por etapas con agentes autonomos, handoffs, gates y disciplina de evidencia.
+- `agents/phase1/12_phase1_closure.md` — cierre del dossier documental Phase 1: contexto listo para futuro scaffolding limitado, sin afirmar que exista software implementado.
 
 Documento canónico del MVP:
 
@@ -65,6 +68,9 @@ Documento canónico de implementación MVP:
 Documento canónico de alcance y cierre Phase 1:
 
 - `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` — contrato exacto de objetivo Phase 1: un Decision ROI Case, una recomendacion determinista, modelo de datos mínimo, conectores limitados, IA solo explicativa, scaffolding controlado y criterios de salida.
+- `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md` — decisiones finales antes de codigo: Enterprise Evidence Event, PostgreSQL, Explanation Provider, JWT/RBAC simple y Decision Graph interno sobre PostgreSQL.
+- `docs/architecture/34_MVP_Implementation_Blueprint.md` — contrato final de implementacion MVP: flujo, componentes, objetos, repositorios, servicios, API, tablas, seguridad, NFRs, out-of-scope y plan de 6 semanas.
+- `agents/phase1/12_phase1_closure.md` — contrato de cierre operativo para agentes antes de iniciar cualquier scaffolding futuro de Phase 1.
 
 Documento canónico de arquitectura:
 
@@ -125,6 +131,9 @@ Documento de estándar MVP:
 Documento de contrato Phase 1:
 
 - `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` — referencia obligatoria antes de crear scaffolding, data model inicial, conectores, flujo IA explicativo o tests de salida Phase 1.
+- `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md` — referencia obligatoria antes de elegir formato de evidencia, persistencia, auth, proveedor IA o modelo relacional del Decision Graph.
+- `docs/architecture/34_MVP_Implementation_Blueprint.md` — referencia obligatoria antes de iniciar Phase 2 Technical Scaffolding o Phase 3 MVP Implementation.
+- `agents/phase1/12_phase1_closure.md` — referencia obligatoria para confirmar que el dossier Phase 1 esta cerrado como contexto y que el software aun no se ha construido.
 
 Estructura de control:
 
