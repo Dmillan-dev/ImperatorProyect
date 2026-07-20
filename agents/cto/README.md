@@ -9,6 +9,7 @@ Responsabilidades:
 - Mantener y revisar `docs/architecture/DATABASE_MODEL.md` y `docs/architecture/CONNECTOR_FRAMEWORK.md`.
 - Mantener y revisar `docs/architecture/27_Quality_Attributes.md` y `docs/architecture/28_Per_Connector_MVP_Contracts.md`.
 - Mantener y revisar `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` como contrato de objetivo, alcance y cierre Phase 1.
+- Mantener y revisar `docs/architecture/37_Implementation_Contract.md` y `agents/phase2/README.md` como contrato de implementacion y plan de sprints.
 - Mantener `agents/README.md` como modelo operativo de trabajo entre agentes.
 - Mantener y revisar RFCs de arquitectura en `docs/rfcs/`.
 - Definir dirección de stack y estrategias de escalabilidad para Phase 1 planning.
@@ -22,4 +23,5 @@ Entregables iniciales:
 - Check de alineación: Jira, GitHub, AWS, OpenAI + Anthropic Claude antes de ampliar conectores.
 - Architecture health check against layer separation, bounded contexts and Phase 0 no-code boundaries.
 - Gate Phase 1: un Decision ROI Case, una recomendacion determinista, IA solo explicativa, conectores limitados y observabilidad minima.
+- Gate Phase 2: fundacion tecnica sin inteligencia de negocio y con un solo modulo por iteracion de agente.
 - Gate de no implementación: no `src/`, servicios ejecutables, conectores reales, credenciales, Docker/Kubernetes/Terraform ni bindings generados hasta decisión explícita.

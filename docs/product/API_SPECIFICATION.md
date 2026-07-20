@@ -35,6 +35,9 @@ Final MVP implementation contract is defined in:
 Phase 2 route-shell scope is defined in:
 - `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`
 
+Implementation API rules are defined in:
+- `docs/architecture/37_Implementation_Contract.md`
+
 ## API Principles
 
 - The API revolves around Decision ROI Cases.
@@ -51,6 +54,7 @@ Phase 2 route-shell scope is defined in:
 - MVP API work must serve one Decision ROI Case, one deterministic recommendation and the exact exit criteria in `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`.
 - REST resources should use plural resource naming, for example `/decisions/{decisionId}`.
 - Phase 2 may create route shells only. Route shells must return `Not implemented` and must not contain ROI, recommendation, AI or connector business logic.
+- Phase 2 route shells must follow the one-module-per-iteration rule in `docs/architecture/37_Implementation_Contract.md`.
 - Public customer APIs can be HTTP/REST or GraphQL later.
 - Internal service APIs follow the architecture mandate in `docs/architecture/21_Technical_Architecture_Context.md`.
 
@@ -83,12 +87,12 @@ The table below is the conceptual platform surface. The MVP should not implement
 | Timeline | `GET /decisions/{decisionId}/timeline` | Get the ordered decision timeline |
 | Evidence | `GET /decisions/{decisionId}/evidence` | Get supporting evidence and lineage |
 | ROI | `GET /decisions/{decisionId}/roi` | Get cost, savings, value and assumptions |
-| Recommendations | `GET /recommendations` | List active recommendations |
+| Recommendations | `GET /recommendations` | Post-MVP list of active recommendations |
 | Recommendations | `GET /recommendations/{recommendationId}` | Get one recommendation with evidence |
-| Recommendations | `POST /recommendations` | Request or register a recommendation for a Decision ROI Case |
-| Approval | `POST /recommendations/{recommendationId}/approve` | Approve a recommendation |
-| Approval | `POST /recommendations/{recommendationId}/reject` | Reject a recommendation |
-| Approval | `POST /recommendations/{recommendationId}/defer` | Defer a recommendation |
+| Recommendations | `POST /recommendations` | Post-MVP only: request or register a recommendation for a Decision ROI Case |
+| Approval | `POST /recommendations/{recommendationId}/approve` | Post-MVP alias only; MVP uses ledger command |
+| Approval | `POST /recommendations/{recommendationId}/reject` | Post-MVP alias only; MVP uses ledger command |
+| Approval | `POST /recommendations/{recommendationId}/defer` | Post-MVP alias only; MVP uses ledger command |
 | Ledger | `GET /ledger` | List immutable decision history |
 | Ledger | `GET /ledger/{entryId}` | Get one ledger entry |
 | Ledger | `GET /decisions/{decisionId}/ledger` | Get full ledger history for one Decision ROI Case |
@@ -257,6 +261,8 @@ No ROI number should be returned without assumptions and evidence references.
 
 ### `GET /recommendations`
 
+Post-MVP list endpoint.
+
 Question:
 
 Which approval-ready actions should the company review?
@@ -291,6 +297,10 @@ Returns conceptually:
 
 ### `POST /recommendations`
 
+Post-MVP only.
+
+Do not implement this route in Phase 2 route shells or Phase 3 MVP unless a later decision explicitly broadens recommendation creation.
+
 Question:
 
 Create, request or register a recommendation for a Decision ROI Case.
@@ -308,9 +318,13 @@ This endpoint must not execute infrastructure or AI-provider changes.
 
 ## Approval API
 
-Approval API describes product intent. Decision Ledger v2 commands are the canonical way to record approval, rejection and deferral because they preserve immutable snapshots.
+Approval API describes post-MVP product intent. Decision Ledger v2 commands are the canonical MVP way to record approval, rejection and deferral because they preserve immutable snapshots.
+
+Do not implement recommendation approval aliases in Phase 2 route shells or Phase 3 MVP.
 
 ### `POST /recommendations/{recommendationId}/approve`
+
+Post-MVP alias only.
 
 Question:
 
@@ -334,9 +348,13 @@ The canonical approval record is the ledger command `POST /decisions/{decisionId
 
 ### `POST /recommendations/{recommendationId}/reject`
 
+Post-MVP alias only.
+
 Records rejection reason and ledger evidence.
 
 ### `POST /recommendations/{recommendationId}/defer`
+
+Post-MVP alias only.
 
 Records deferral reason, review date and required evidence.
 

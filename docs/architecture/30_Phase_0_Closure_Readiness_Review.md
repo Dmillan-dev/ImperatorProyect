@@ -45,6 +45,9 @@ As of D064:
 - The next phase is `Phase 2 - Platform Foundation`, not generic technical scaffolding.
 - Phase 2 is governed by `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`.
 - Any implementation work must also follow `docs/architecture/35_Coding_Principles.md`.
+- Implementation mechanics are governed by `docs/architecture/37_Implementation_Contract.md`.
+- Phase 2 sprint/module sequencing is governed by `agents/phase2/README.md`.
+- No Phase 2 agent may generate more than one module per iteration.
 
 This update does not change the original Phase 0 closure assessment. It clarifies the current phase path:
 

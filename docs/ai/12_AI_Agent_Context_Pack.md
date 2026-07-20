@@ -7,9 +7,9 @@ Ensure consistent output when AI agents collaborate on strategy, documentation, 
 ## Current State
 
 Phase 1 Complete for a limited MVP. Phase 2 Platform Foundation is defined but not started.
-Agents must not create runnable implementation or infer product decisions beyond `agents/phase1/12_phase1_closure.md`, `agents/phase1/README.md`, `docs/architecture/31_MVP_Implementation_Standard.md`, `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`, `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md`, `docs/architecture/34_MVP_Implementation_Blueprint.md`, `docs/architecture/35_Coding_Principles.md` and `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`.
+Agents must not create runnable implementation or infer product decisions beyond `agents/phase1/12_phase1_closure.md`, `agents/phase1/README.md`, `agents/phase2/README.md`, `docs/architecture/31_MVP_Implementation_Standard.md`, `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`, `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md`, `docs/architecture/34_MVP_Implementation_Blueprint.md`, `docs/architecture/35_Coding_Principles.md`, `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`, `docs/architecture/37_Implementation_Contract.md` and `docs/architecture/38_Sprint_0_Contract_Gate_Report.md`.
 
-No more conceptual Phase 1 documents should be added unless a contradiction is discovered. The next phase is Phase 2 - Platform Foundation, which may later build technical foundation only and must not implement business intelligence.
+No more conceptual Phase 1 documents should be added unless a contradiction is discovered. The next phase is Phase 2 - Platform Foundation, which may later build technical foundation only and must not implement business intelligence. Future implementation must follow the Implementation Contract and the one-module-per-iteration rule. Sprint 0 is GO only for Sprint 1 - Repository and Project Shell.
 
 ## Authority Order
 
@@ -43,8 +43,11 @@ When context conflicts, agents must use this order:
 26. `docs/architecture/34_MVP_Implementation_Blueprint.md` for the final six-week implementation contract.
 27. `docs/architecture/35_Coding_Principles.md` for coding boundaries, hexagonal layering and AI-agent implementation discipline.
 28. `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` for Phase 2 Platform Foundation scope.
-29. `agents/phase1/README.md` and `agents/phase1/12_phase1_closure.md` for Phase 1 stage sequencing, closure and future implementation handoff.
-30. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
+29. `docs/architecture/37_Implementation_Contract.md` for mandatory implementation rules and one-module agent execution.
+30. `agents/phase2/README.md` for Phase 2 sprint sequencing and prompt control.
+31. `docs/architecture/38_Sprint_0_Contract_Gate_Report.md` for the current GO gate and first-agent instruction.
+32. `agents/phase1/README.md` and `agents/phase1/12_phase1_closure.md` for Phase 1 stage sequencing, closure and future implementation handoff.
+33. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
 
 Founder-mode or master-prompt guidance sets ambition and quality bar. It does not override current decisions when it uses older framing such as AI Cost Attribution as the primary wedge, dashboard-led language, generic Decision Intelligence without the operating-system and Decision ROI framing, or production-ready implementation during Phase 0.
 
@@ -99,11 +102,14 @@ Founder-mode or master-prompt guidance sets ambition and quality bar. It does no
 43. Use `docs/architecture/34_MVP_Implementation_Blueprint.md` before Phase 2 Platform Foundation or Phase 3 MVP implementation.
 44. Use `docs/architecture/35_Coding_Principles.md` before creating backend, Python, frontend, database, API, auth, observability or CI code.
 45. Use `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` before starting Phase 2 Platform Foundation. Phase 2 creates foundation only: no ROI calculation, no recommendations, no real AI calls, no live connectors and no business rules.
-46. Use `docs/architecture/DATABASE_MODEL.md` as the conceptual database model.
-47. Use `docs/architecture/CONNECTOR_FRAMEWORK.md` as the connector expansion model.
-48. Use `docs/rfcs/0002-module-communication-architecture.md` for communication design rationale.
-49. Use `docs/architecture/21_Technical_Architecture_Context.md` as the canonical architecture context.
-50. Do not change category/ICP/wedge/domain/API/database/connector/architecture boundary without logging in `docs/decisions/14_Decision_Log.md`.
+46. Use `docs/architecture/37_Implementation_Contract.md` before any implementation task. No agent may generate more than one module per iteration.
+47. Use `agents/phase2/README.md` before splitting Phase 2 into sprints or giving module prompts to agents.
+48. Use `docs/architecture/38_Sprint_0_Contract_Gate_Report.md` before executing Sprint 1. Sprint 0 authorizes only repository/project shell, not full backend generation.
+49. Use `docs/architecture/DATABASE_MODEL.md` as the conceptual database model.
+50. Use `docs/architecture/CONNECTOR_FRAMEWORK.md` as the connector expansion model.
+51. Use `docs/rfcs/0002-module-communication-architecture.md` for communication design rationale.
+52. Use `docs/architecture/21_Technical_Architecture_Context.md` as the canonical architecture context.
+53. Do not change category/ICP/wedge/domain/API/database/connector/architecture boundary without logging in `docs/decisions/14_Decision_Log.md`.
 
 ## Writing Style
 
@@ -128,6 +134,10 @@ Do not introduce:
 - scaffolding or implementation proposals that bypass `docs/architecture/34_MVP_Implementation_Blueprint.md`
 - implementation work that bypasses `docs/architecture/35_Coding_Principles.md`
 - Phase 2 work that bypasses `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`
+- implementation work that bypasses `docs/architecture/37_Implementation_Contract.md`
+- Phase 2 sprint work that bypasses `agents/phase2/README.md`
+- Sprint 1 work that bypasses `docs/architecture/38_Sprint_0_Contract_Gate_Report.md`
+- agent prompts that ask for more than one implementation module per iteration
 - staged Phase 1 agent work that bypasses `agents/phase1/README.md`
 - architecture proposals that treat conceptual bounded contexts as mandatory Phase 1 microservices
 - AI behavior that modifies persistent data, executes business rules, replaces the Decision Engine, approves, rejects, defers, marks implementation or validates results
@@ -151,5 +161,8 @@ For consistency between teams and agents, the following guidance applies before 
 - Final MVP implementation blueprint lives in `docs/architecture/34_MVP_Implementation_Blueprint.md`. It is authoritative for the MVP value-loop contract used by Phase 2 Platform Foundation and Phase 3 MVP implementation.
 - Coding principles live in `docs/architecture/35_Coding_Principles.md`. They are authoritative for future implementation layering, ports/adapters discipline and AI-agent coding rules.
 - Phase 2 Platform Foundation blueprint lives in `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`. It is authoritative for creating technical foundation without business intelligence.
+- Implementation contract lives in `docs/architecture/37_Implementation_Contract.md`. It is mandatory for layer rules, dependency rules, packages, naming, API behavior, database behavior, events, logging, AI boundaries, security, testing, Git, agent execution and done definitions.
+- Phase 2 sprint plan lives in `agents/phase2/README.md`. It is mandatory for sprint sequencing and one-module-per-iteration prompts.
+- Sprint 0 contract gate lives in `docs/architecture/38_Sprint_0_Contract_Gate_Report.md`. It is the current GO decision and authorizes only Sprint 1 - Repository and Project Shell.
 
 Any further changes to this mandate or expansions must be recorded in `docs/decisions/14_Decision_Log.md`.

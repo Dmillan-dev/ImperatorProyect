@@ -15,6 +15,8 @@ This agent validates financial logic. It is not the final business approver by d
 - `docs/architecture/27_Quality_Attributes.md`
 - `docs/architecture/28_Per_Connector_MVP_Contracts.md`
 - `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
+- `docs/architecture/37_Implementation_Contract.md`
+- `agents/phase2/README.md`
 
 ## Responsibilities
 
@@ -26,6 +28,7 @@ This agent validates financial logic. It is not the final business approver by d
 - Define result-validation evidence requirements.
 - Handoff source mapping questions to Connector Agent.
 - Handoff approval authority questions to Security/Product/CTO.
+- Enforce one-module-per-iteration control for any future FinOps/ROI implementation task.
 
 ## Must Not Do
 

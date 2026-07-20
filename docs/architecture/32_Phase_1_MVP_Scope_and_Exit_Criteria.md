@@ -513,6 +513,12 @@ Do not implement ROI calculation, recommendation generation, real AI provider ca
 
 Detailed scope lives in `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`.
 
+Implementation mechanics live in `docs/architecture/37_Implementation_Contract.md`.
+
+Sprint and module sequencing lives in `agents/phase2/README.md`.
+
+No Phase 2 agent may generate more than one module per iteration.
+
 ### Phase 3
 
 MVP Implementation.

@@ -55,6 +55,10 @@ Phase 2 foundation boundary:
 
 `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` may create structural entities and interfaces only, without domain behavior.
 
+Implementation mechanics:
+
+`docs/architecture/37_Implementation_Contract.md` governs package boundaries, naming, dependencies and agent execution when domain skeletons are created.
+
 MVP reconstruction:
 
 Jira -> GitHub -> AWS -> OpenAI + Anthropic Claude -> ROI View -> Recommendation -> Decision Ledger -> Decision Review Workspace -> Result Validation

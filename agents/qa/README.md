@@ -15,6 +15,8 @@ This agent does not create automated tests during Phase 0.
 - `docs/architecture/26_Security_Data_Governance_Threat_Model.md`
 - `docs/architecture/28_Per_Connector_MVP_Contracts.md`
 - `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
+- `docs/architecture/37_Implementation_Contract.md`
+- `agents/phase2/README.md`
 
 ## Responsibilities
 
@@ -23,6 +25,7 @@ This agent does not create automated tests during Phase 0.
 - Maintain quality gates for explainability, auditability, freshness, traceability, latency, resilience and observability.
 - Track negative rules that block premature implementation.
 - Verify Phase 1 exit criteria: one authenticated user, one source boundary, one Decision ROI Case, one deterministic recommendation, AI explanation, ledger state, logs, metrics, `/health` and `/ready`.
+- For Phase 2, verify foundation checks only and enforce one module per agent iteration.
 - Handoff product ambiguity to Product Agent.
 - Handoff architecture ambiguity to CTO Agent.
 - Handoff sensitivity issues to Security Agent.
@@ -32,6 +35,7 @@ This agent does not create automated tests during Phase 0.
 - Do not create test code.
 - Do not create fixtures or loaders.
 - Do not authorize implementation scaffolding.
+- Do not accept sprint output that generated more than one module in one iteration.
 - Do not invent behavior not present in canonical docs.
 - Do not weaken Phase 0 no-code boundaries.
 

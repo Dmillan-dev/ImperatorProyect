@@ -13,6 +13,7 @@
 - `proto/` — archivos `.proto` canónicos como contratos internos futuros.
 - `agents/` — agentes lógicos responsables de áreas (CTO, Product, Connector, Backend, Frontend, AI, Security, FinOps, QA).
   - `agents/phase1/` — guia documental para dividir Phase 1 en etapas con agentes autonomos; no es runtime ni codigo.
+  - `agents/phase2/` — guia de sprints para Phase 2 Platform Foundation; controla un modulo por iteracion.
 - `services/` — scaffolding documental por stack futuro durante Phase 0.
 - `demos/` — demos HTML de experiencia y narrativa.
 - `infra/` — reservado para infra-as-code, despliegue y scripts en fases posteriores.
@@ -24,6 +25,7 @@ Documento canónico de trabajo por agentes:
 - `agents/README.md` — operating model para dividir trabajo futuro entre CTO, Product, Connector, Backend, Frontend, AI, Security, FinOps y QA sin crear implementación durante Phase 0.
 - `agents/phase1/README.md` — proceso recomendado para crear Phase 1 por etapas con agentes autonomos, handoffs, gates y disciplina de evidencia.
 - `agents/phase1/12_phase1_closure.md` — cierre del dossier documental Phase 1: contexto listo para futuro scaffolding limitado, sin afirmar que exista software implementado.
+- `agents/phase2/README.md` — plan de sprints para Phase 2 Platform Foundation: contrato gate, project shell, Java Domain, Application Layer, PostgreSQL, API shells, JWT/RBAC, Python, React, Docker, observabilidad y CI/R&D evidence.
 
 Documento canónico del MVP:
 
@@ -72,6 +74,8 @@ Documento canónico de alcance y cierre Phase 1:
 - `docs/architecture/34_MVP_Implementation_Blueprint.md` — contrato final de implementacion MVP: flujo, componentes, objetos, repositorios, servicios, API, tablas, seguridad, NFRs, out-of-scope y plan de 6 semanas.
 - `docs/architecture/35_Coding_Principles.md` — reglas de implementacion para agentes: arquitectura hexagonal, capas, adapters, DTOs, seguridad, observabilidad y limites de IA.
 - `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` — contrato de Phase 2 Platform Foundation: fundacion tecnica sin ROI, recomendaciones, IA real, conectores live ni reglas de negocio.
+- `docs/architecture/37_Implementation_Contract.md` — contrato obligatorio de implementacion: capas, dependencias, paquetes, naming, API, base de datos, eventos, logs, IA, seguridad, testing, Git, agentes y done definition.
+- `docs/architecture/38_Sprint_0_Contract_Gate_Report.md` — gate formal Sprint 0: valida Phase 2, corrige el orden a domain-first y autoriza solo Sprint 1 project shell.
 - `agents/phase1/12_phase1_closure.md` — contrato de cierre operativo para agentes antes de iniciar cualquier scaffolding futuro de Phase 1.
 
 Documento canónico de arquitectura:
@@ -137,6 +141,9 @@ Documento de contrato Phase 1:
 - `docs/architecture/34_MVP_Implementation_Blueprint.md` — referencia obligatoria antes de iniciar Phase 2 Platform Foundation o Phase 3 MVP Implementation.
 - `docs/architecture/35_Coding_Principles.md` — referencia obligatoria antes de crear codigo de backend, Python, frontend, base de datos, API, auth, observabilidad o CI.
 - `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` — referencia obligatoria antes de iniciar Phase 2 Platform Foundation; no autoriza logica de negocio.
+- `docs/architecture/37_Implementation_Contract.md` — referencia obligatoria antes de cualquier tarea de implementacion; ningun agente puede generar mas de un modulo por iteracion.
+- `agents/phase2/README.md` — referencia obligatoria para dividir Phase 2 en sprints y prompts de agente con alcance preciso.
+- `docs/architecture/38_Sprint_0_Contract_Gate_Report.md` — referencia obligatoria antes de ejecutar Sprint 1; contiene el primer prompt de agente autorizado.
 - `agents/phase1/12_phase1_closure.md` — referencia obligatoria para confirmar que el dossier Phase 1 esta cerrado como contexto y que el software aun no se ha construido.
 
 Estructura de control:
@@ -146,4 +153,5 @@ Estructura de control:
 - `docs/rfcs/` — propuestas de evolución técnica antes de implementar.
 - `proto/` — contratos internos canónicos.
 - `services/` — solo scaffolding/documentación durante Phase 0.
+- `agents/phase2/` — control futuro de sprints Phase 2 sin convertirse en runtime.
 - `docs/rnd/` — evidencia de desarrollo e I+D/R&D, sin inventar horas, codigo ni resultados no ejecutados.

@@ -13,6 +13,7 @@ Responsabilidades:
 - Seguir `docs/architecture/28_Per_Connector_MVP_Contracts.md` para permisos minimos por conector.
 - Seguir `docs/architecture/31_MVP_Implementation_Standard.md` para reducir auth inicial y evitar multi-provider SSO prematuro.
 - Seguir `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` para limitar auth, permisos, IA explicativa, datos persistentes y criterios de salida.
+- Seguir `docs/architecture/37_Implementation_Contract.md` y `agents/phase2/README.md` antes de cualquier implementacion de JWT/RBAC, logging o middleware. Un agente no puede generar mas de un modulo por iteracion.
 
 Entregables iniciales:
 

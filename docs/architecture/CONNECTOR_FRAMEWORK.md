@@ -20,6 +20,7 @@ This document is conceptual. It does not define connector code, SDKs, deployment
 - `docs/architecture/34_MVP_Implementation_Blueprint.md`
 - `docs/architecture/35_Coding_Principles.md`
 - `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`
+- `docs/architecture/37_Implementation_Contract.md`
 - `docs/rfcs/0002-module-communication-architecture.md`
 - `docs/architecture/21_Technical_Architecture_Context.md`
 
@@ -31,7 +32,7 @@ They bring external signals into IMPERATOR, but they do not own business meaning
 
 In the MVP implementation standard, connectors sit behind ports. Jira, GitHub, AWS and OpenAI + Anthropic Claude can change without changing the Decision ROI Case domain.
 
-Phase 2 may create connector interfaces and adapter skeletons only.
+Phase 2 may create connector interfaces and adapter skeletons only, under the one-module-per-iteration rule in `docs/architecture/37_Implementation_Contract.md`.
 
 Phase 3 MVP implementation may start with one or two narrow read-only adapters plus approved manual/static or imported evidence for the remaining domains. Full connector automation is not required to prove the first Decision ROI Case.
 
@@ -388,4 +389,5 @@ Examples:
 3. Align connector contracts with `docs/architecture/DATABASE_MODEL.md`.
 4. Map connector outputs to `docs/product/CORE_DOMAIN_MODEL.md`.
 5. Use `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` before creating connector skeletons in Phase 2.
-6. Create RFC before adding any new integration domain.
+6. Use `docs/architecture/37_Implementation_Contract.md` and `agents/phase2/README.md` before assigning connector skeleton work to agents.
+7. Create RFC before adding any new integration domain.

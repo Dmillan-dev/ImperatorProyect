@@ -39,10 +39,8 @@ Continuous compliance and audit automation are becoming strategic requirements.
 
 Build a Decision ROI Platform that converts technical events into explainable, measurable and optimizable business decisions.
 
-The MVP opportunity is to prove a narrow AI/cloud spend recovery wedge:
+The MVP opportunity is to prove a narrow AI/cloud spend recovery wedge with one first action:
 
 1. Downgrade or change AI model.
-2. Remove unused AI agents.
-3. Detect underutilized AWS resources tied to the same Decision ROI Case.
 
-After this wedge is repeatable, IMPERATOR can expand into negative-ROI feature analysis and duplicated service or agent consolidation.
+After this wedge is repeatable, IMPERATOR can expand into unused AI agent removal, underutilized AWS resource detection tied to the same Decision ROI Case, negative-ROI feature analysis and duplicated service or agent consolidation.

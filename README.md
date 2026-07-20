@@ -1,6 +1,6 @@
 # IMPERATOR — Strategic Documentation System (No Software Implementation Yet)
 
-Status: **Phase 1 Complete; Phase 2 Platform Foundation Defined** (no software implementation created yet)
+Status: **Phase 1 Complete; Phase 2 Platform Foundation Defined; Sprint 0 GO For Sprint 1 Only** (no software implementation created yet)
 
 This documentation system defines IMPERATOR’s canonical context for:
 1. human strategic execution,
@@ -53,6 +53,8 @@ Architecture:
 - [MVP Implementation Blueprint](docs/architecture/34_MVP_Implementation_Blueprint.md)
 - [Coding Principles](docs/architecture/35_Coding_Principles.md)
 - [Phase 2 Platform Foundation Blueprint](docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md)
+- [Implementation Contract](docs/architecture/37_Implementation_Contract.md)
+- [Sprint 0 Contract Gate Report](docs/architecture/38_Sprint_0_Contract_Gate_Report.md)
 - [Architecture Thesis](docs/architecture/18_Architecture_Thesis.md)
 - [Database Model](docs/architecture/DATABASE_MODEL.md)
 - [Connector Framework](docs/architecture/CONNECTOR_FRAMEWORK.md)
@@ -67,6 +69,7 @@ AI:
 Agent work model:
 - [AI Agent Operating Model](agents/README.md)
 - [Phase 1 Agentic MVP Creation Guide](agents/phase1/README.md)
+- [Phase 2 Platform Foundation Sprint Plan](agents/phase2/README.md)
 
 Decisions and RFCs:
 - [Decision Log](docs/decisions/14_Decision_Log.md)
@@ -177,6 +180,15 @@ Current coding principles:
 Current Phase 2 Platform Foundation blueprint:
 - [docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md](docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md)
 
+Current implementation contract:
+- [docs/architecture/37_Implementation_Contract.md](docs/architecture/37_Implementation_Contract.md)
+
+Current Phase 2 sprint plan:
+- [agents/phase2/README.md](agents/phase2/README.md)
+
+Current Sprint 0 contract gate:
+- [docs/architecture/38_Sprint_0_Contract_Gate_Report.md](docs/architecture/38_Sprint_0_Contract_Gate_Report.md)
+
 MVP information domains:
 - Business Context: Jira
 - Code & Deployment: GitHub
@@ -224,8 +236,11 @@ When documents or prompts conflict, use this order:
 26. `docs/architecture/34_MVP_Implementation_Blueprint.md` for the final six-week implementation contract.
 27. `docs/architecture/35_Coding_Principles.md` for implementation coding rules, hexagonal boundaries and AI-agent coding discipline.
 28. `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` for the controlled Phase 2 foundation scope.
-29. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
-30. Older documents, demos, prompts, ADRs and RFC drafts as historical context unless updated by the documents above.
+29. `docs/architecture/37_Implementation_Contract.md` for mandatory implementation mechanics, layer rules and one-module agent execution.
+30. `agents/phase2/README.md` for Phase 2 sprint sequencing and precise agent prompt control.
+31. `docs/architecture/38_Sprint_0_Contract_Gate_Report.md` for the current Phase 2 go/no-go decision and first-agent instruction.
+32. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
+33. Older documents, demos, prompts, ADRs and RFC drafts as historical context unless updated by the documents above.
 
 Founder-mode or master-prompt instructions define ambition and quality bar. They do not override the current repository decisions when they mention older framing such as AI Cost Attribution as the primary wedge, dashboard-led product language, generic Decision Intelligence without the operating-system and Decision ROI framing, or production-ready implementation during Phase 0.
 

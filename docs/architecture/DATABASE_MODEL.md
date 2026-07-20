@@ -20,6 +20,7 @@ This is not SQL, not an ORM model and not a migration plan. It explains which da
 - `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md`
 - `docs/architecture/34_MVP_Implementation_Blueprint.md`
 - `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`
+- `docs/architecture/37_Implementation_Contract.md`
 - `docs/rfcs/0001-knowledge-graph-model.md`
 - `docs/rfcs/0002-module-communication-architecture.md`
 
@@ -41,7 +42,7 @@ This is not SQL, not an ORM model and not a migration plan. It explains which da
 
 This document describes the conceptual data model for the broader product.
 
-Phase 2 may create the PostgreSQL schema foundation only under `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`.
+Phase 2 may create the PostgreSQL schema foundation only under `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` and `docs/architecture/37_Implementation_Contract.md`.
 
 Phase 3 MVP implementation must use the smaller persistence boundary in `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`, the foundational choices in `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md` and the value-loop contract in `docs/architecture/34_MVP_Implementation_Blueprint.md`.
 

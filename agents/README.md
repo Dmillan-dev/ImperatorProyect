@@ -10,6 +10,10 @@ Phase 1 staged agentic work is defined in:
 
 - `agents/phase1/README.md`
 
+Phase 2 sprint execution is defined in:
+
+- `agents/phase2/README.md`
+
 ## Phase 0 Rule
 
 Agents may:
@@ -47,7 +51,9 @@ When implementation scaffolding is requested, agents must follow:
 7. `docs/architecture/34_MVP_Implementation_Blueprint.md`
 8. `docs/architecture/35_Coding_Principles.md`
 9. `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`
-10. `docs/rnd/30_RD_Activity_Evidence_Dossier.md`
+10. `docs/architecture/37_Implementation_Contract.md`
+11. `agents/phase2/README.md`
+12. `docs/rnd/30_RD_Activity_Evidence_Dossier.md`
 
 ## Phase 2 Platform Foundation Rule
 
@@ -78,6 +84,17 @@ Phase 2 agents must not create:
 - production deployment.
 
 Use `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` as the phase contract.
+Use `docs/architecture/37_Implementation_Contract.md` as the implementation contract.
+Use `agents/phase2/README.md` as the sprint sequencing guide.
+Use `docs/architecture/38_Sprint_0_Contract_Gate_Report.md` as the current GO gate before Sprint 1.
+
+No Phase 2 agent may generate more than one module per iteration.
+
+Current Sprint 0 result:
+
+- `STATUS: GO`
+- authorized next action: Sprint 1 - Repository and Project Shell only
+- first code-bearing module after Sprint 1 acceptance: `backend-java/domain`
 
 ## Authority Order
 
@@ -110,9 +127,12 @@ Before acting, every agent must respect:
 25. `docs/architecture/34_MVP_Implementation_Blueprint.md`
 26. `docs/architecture/35_Coding_Principles.md`
 27. `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`
-28. `agents/phase1/README.md`
-29. `agents/phase1/12_phase1_closure.md`
-30. `docs/product/13_Glossary_and_Canonical_Language.md`
+28. `docs/architecture/37_Implementation_Contract.md`
+29. `agents/phase2/README.md`
+30. `docs/architecture/38_Sprint_0_Contract_Gate_Report.md`
+31. `agents/phase1/README.md`
+32. `agents/phase1/12_phase1_closure.md`
+33. `docs/product/13_Glossary_and_Canonical_Language.md`
 
 ## Agent Areas
 
@@ -160,6 +180,9 @@ Before acting, every agent must respect:
 | Phase 1 final implementation blueprint | CTO | All | MVP Implementation Blueprint |
 | Coding principles | CTO | Backend, Frontend, Connector, AI, Security, QA | Coding Principles |
 | Phase 2 Platform Foundation | CTO | Backend, Frontend, AI, Security, QA | Phase 2 Platform Foundation Blueprint |
+| Implementation contract | CTO | All | Implementation Contract |
+| Phase 2 sprint control | CTO | All | agents/phase2/README.md |
+| Sprint 0 contract gate | CTO | All | Sprint 0 Contract Gate Report |
 | Phase 1 staged agentic process | CTO | All | agents/phase1/README.md |
 | Phase 1 stage dossier closure | CTO | All | agents/phase1/12_phase1_closure.md |
 
@@ -181,8 +204,11 @@ Before an agent edits anything:
 12. Use `docs/architecture/34_MVP_Implementation_Blueprint.md` before starting Phase 2 Platform Foundation or Phase 3 MVP Implementation.
 13. Use `docs/architecture/35_Coding_Principles.md` before creating implementation files.
 14. Use `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` before starting Phase 2 Platform Foundation.
-15. Use `agents/phase1/README.md` before splitting Phase 1 into autonomous agent stages.
-16. Use `agents/phase1/12_phase1_closure.md` before starting Phase 2 Platform Foundation or Phase 3 MVP Implementation.
+15. Use `docs/architecture/37_Implementation_Contract.md` before any implementation task.
+16. Use `agents/phase2/README.md` before splitting Phase 2 into sprint/module work.
+17. Use `docs/architecture/38_Sprint_0_Contract_Gate_Report.md` before executing Sprint 1.
+18. Use `agents/phase1/README.md` before splitting Phase 1 into autonomous agent stages.
+19. Use `agents/phase1/12_phase1_closure.md` before starting Phase 2 Platform Foundation or Phase 3 MVP Implementation.
 
 ## Current MVP Boundary
 

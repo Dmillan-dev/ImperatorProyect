@@ -30,8 +30,16 @@ Phase 2 must follow:
 4. `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md`
 5. `docs/architecture/34_MVP_Implementation_Blueprint.md`
 6. `docs/architecture/35_Coding_Principles.md`
+7. `docs/architecture/37_Implementation_Contract.md`
+8. `agents/phase2/README.md`
 
 If a Phase 2 task needs product behavior, it belongs to Phase 3.
+
+Implementation control:
+
+- `docs/architecture/37_Implementation_Contract.md` governs how implementation is written.
+- `agents/phase2/README.md` governs sprint sequencing and one-module agent execution.
+- No agent may generate more than one module per iteration.
 
 ## Phase 2 Goal
 

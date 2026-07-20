@@ -63,6 +63,8 @@ Use for:
 - final MVP implementation blueprint,
 - coding principles,
 - Phase 2 Platform Foundation blueprint,
+- implementation contract,
+- Sprint 0 contract gate,
 - conceptual database model,
 - connector framework,
 - Phase 0 repository rules,
@@ -145,9 +147,12 @@ When documents conflict:
 26. `architecture/34_MVP_Implementation_Blueprint.md`
 27. `architecture/35_Coding_Principles.md`
 28. `architecture/36_Phase_2_Platform_Foundation_Blueprint.md`
-29. `../agents/phase1/README.md`
-30. `../agents/phase1/12_phase1_closure.md`
-31. `product/13_Glossary_and_Canonical_Language.md`
+29. `architecture/37_Implementation_Contract.md`
+30. `../agents/phase2/README.md`
+31. `architecture/38_Sprint_0_Contract_Gate_Report.md`
+32. `../agents/phase1/README.md`
+33. `../agents/phase1/12_phase1_closure.md`
+34. `product/13_Glossary_and_Canonical_Language.md`
 
 ## Agent Work Model
 
@@ -172,6 +177,12 @@ Use `architecture/34_MVP_Implementation_Blueprint.md` as the final MVP contract 
 Use `architecture/35_Coding_Principles.md` to keep future implementation hexagonal, deterministic, testable, observable and adapter-safe.
 
 Use `architecture/36_Phase_2_Platform_Foundation_Blueprint.md` before starting Phase 2 Platform Foundation. Phase 2 may build the SaaS technical foundation, but must not implement ROI, recommendations, real AI calls, live connectors or business rules.
+
+Use `architecture/37_Implementation_Contract.md` before any implementation task. It defines layer, dependency, package, naming, API, database, event, logging, AI, security, testing, Git, agent and done rules.
+
+Use `../agents/phase2/README.md` before splitting Phase 2 into sprint work. No agent may generate more than one module per iteration.
+
+Use `architecture/38_Sprint_0_Contract_Gate_Report.md` as the current Sprint 0 GO gate. It authorizes only Sprint 1 - Repository and Project Shell, not business logic or full backend generation.
 
 ## Growth Rule
 

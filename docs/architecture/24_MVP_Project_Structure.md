@@ -127,6 +127,10 @@ Do not create it during documentation-only work unless the founder explicitly au
 
 Detailed Phase 2 scope lives in `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`.
 
+Implementation mechanics live in `docs/architecture/37_Implementation_Contract.md`.
+
+Sprint/module sequencing lives in `agents/phase2/README.md`.
+
 ## Future Backend Java Internal Shape
 
 When Phase 2 creates `backend-java/`, use a modular monolith shape with hexagonal boundaries:
@@ -328,6 +332,8 @@ The project structure is healthy if:
 17. Use `docs/architecture/34_MVP_Implementation_Blueprint.md` as the final MVP contract.
 18. Use `docs/architecture/35_Coding_Principles.md` before creating implementation files.
 19. Use `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` before starting Phase 2 Platform Foundation.
+20. Use `docs/architecture/37_Implementation_Contract.md` before any implementation task.
+21. Use `agents/phase2/README.md` before assigning Phase 2 work to agents.
 
 ## Explicit Non-Decision
 

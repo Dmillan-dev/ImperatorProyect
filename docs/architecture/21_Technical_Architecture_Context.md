@@ -8,7 +8,7 @@ This document translates the product strategy into a modern, controlled architec
 
 ## Current Status
 
-Phase 1 documentation is complete and Phase 2 Platform Foundation is defined but not started.
+Phase 1 documentation is complete. Phase 2 Platform Foundation and the Implementation Contract are defined but implementation has not started.
 
 This architecture is a target context, not a command to build services yet.
 
@@ -40,8 +40,10 @@ It is subordinate to:
 20. `docs/architecture/34_MVP_Implementation_Blueprint.md` for the final MVP value-loop contract.
 21. `docs/architecture/35_Coding_Principles.md` for coding discipline, layering and adapter boundaries.
 22. `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` for Phase 2 Platform Foundation scope.
-23. `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
-24. `docs/architecture/phase0-guidelines.md` for Phase 0 repository rules.
+23. `docs/architecture/37_Implementation_Contract.md` for mandatory implementation mechanics and one-module agent execution.
+24. `agents/phase2/README.md` for Phase 2 sprint sequencing and prompt control.
+25. `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
+26. `docs/architecture/phase0-guidelines.md` for Phase 0 repository rules.
 
 Founder-mode prompts should be interpreted as ambition and quality standards. If they conflict with this document, the current repository context wins unless a new decision is recorded in `docs/decisions/14_Decision_Log.md`.
 
@@ -77,6 +79,12 @@ Canonical Phase 1 scope and exit criteria:
 
 Canonical Phase 2 Platform Foundation scope:
 - `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`
+
+Canonical implementation contract:
+- `docs/architecture/37_Implementation_Contract.md`
+
+Canonical Phase 2 sprint control:
+- `agents/phase2/README.md`
 
 ## MVP Boundary
 
@@ -507,6 +515,8 @@ Authoritative documents:
 - `docs/architecture/34_MVP_Implementation_Blueprint.md` for the final MVP value-loop contract.
 - `docs/architecture/35_Coding_Principles.md` for implementation layering and adapter discipline.
 - `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` for Phase 2 Platform Foundation scope.
+- `docs/architecture/37_Implementation_Contract.md` for implementation mechanics, one-module agent execution and done definitions.
+- `agents/phase2/README.md` for Phase 2 sprint sequencing and module prompts.
 - `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
 - `docs/architecture/21_Technical_Architecture_Context.md` for architecture context.
 - `docs/architecture/18_Architecture_Thesis.md` for conceptual architecture thesis.
@@ -541,6 +551,8 @@ The current project is healthy if:
 - future code work is traceable through `docs/rnd/30_RD_Activity_Evidence_Dossier.md`
 - Phase 2 Platform Foundation starts only after explicit founder authorization
 - Phase 2 proposals satisfy `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`
+- implementation tasks satisfy `docs/architecture/37_Implementation_Contract.md`
+- Phase 2 sprint/module prompts satisfy `agents/phase2/README.md`
 - Phase 3 MVP implementation proposals satisfy `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` and `docs/architecture/34_MVP_Implementation_Blueprint.md`
 
 ## Architecture Risks
@@ -572,4 +584,6 @@ The current project is healthy if:
 11. Use `docs/architecture/31_MVP_Implementation_Standard.md` to keep backend, connectors, auth, security and observability aligned.
 12. Use `docs/architecture/35_Coding_Principles.md` before creating implementation files.
 13. Use `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` before starting Phase 2 Platform Foundation.
-14. Use `docs/architecture/34_MVP_Implementation_Blueprint.md` before starting Phase 3 MVP Implementation.
+14. Use `docs/architecture/37_Implementation_Contract.md` before any implementation task.
+15. Use `agents/phase2/README.md` before splitting Phase 2 into sprint/module prompts.
+16. Use `docs/architecture/34_MVP_Implementation_Blueprint.md` before starting Phase 3 MVP Implementation.

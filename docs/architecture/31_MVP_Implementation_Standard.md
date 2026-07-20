@@ -28,6 +28,8 @@ Coding rules and Phase 2 scope are defined in:
 
 - `docs/architecture/35_Coding_Principles.md`
 - `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`
+- `docs/architecture/37_Implementation_Contract.md`
+- `agents/phase2/README.md`
 
 ## Executive Standard
 
@@ -420,6 +422,8 @@ Then verify that the planned work satisfies `docs/architecture/32_Phase_1_MVP_Sc
 If the planned work is Phase 2, also verify `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`.
 
 If the planned work creates implementation files, also verify `docs/architecture/35_Coding_Principles.md`.
+
+If the planned work is assigned to an AI agent, also verify `docs/architecture/37_Implementation_Contract.md` and `agents/phase2/README.md`. No agent may generate more than one module per iteration.
 
 ## Final Rule
 

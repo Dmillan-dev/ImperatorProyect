@@ -71,8 +71,12 @@ Before Phase 2 starts, use:
 
 - `docs/architecture/35_Coding_Principles.md`
 - `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`
+- `docs/architecture/37_Implementation_Contract.md`
+- `agents/phase2/README.md`
 
 Phase 2 may build technical foundation only. It must not implement ROI calculation, recommendation generation, real AI provider calls, live connectors or business rules.
+
+No Phase 2 agent may generate more than one module per iteration.
 
 ## Coherence Check
 

@@ -15,6 +15,8 @@ This agent does not implement connectors. It defines what future connectors may 
 - `docs/architecture/27_Quality_Attributes.md`
 - `docs/architecture/31_MVP_Implementation_Standard.md`
 - `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
+- `docs/architecture/37_Implementation_Contract.md`
+- `agents/phase2/README.md`
 - `docs/product/27_MVP_Acceptance_Test_Plan.md`
 
 ## Responsibilities
@@ -30,10 +32,12 @@ This agent does not implement connectors. It defines what future connectors may 
 - Handoff cost interpretation to FinOps Agent.
 - Handoff future intake/read-model implications to Backend Agent.
 - For Phase 1, prefer one or two narrow read-only adapters plus approved manual/static or imported evidence for the remaining domains.
+- For Phase 2, create connector ports or adapter skeletons only as one module per iteration.
 
 ## Must Not Do
 
 - Do not create provider API clients.
+- Do not create more than one connector module per iteration.
 - Do not request credentials.
 - Do not add OAuth apps.
 - Do not create production sync jobs.

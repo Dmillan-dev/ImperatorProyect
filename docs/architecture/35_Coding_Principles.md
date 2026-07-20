@@ -19,6 +19,11 @@ This document must respect:
 5. `docs/architecture/34_MVP_Implementation_Blueprint.md`
 6. `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`
 
+Implementation mechanics and one-module agent execution are governed by:
+
+- `docs/architecture/37_Implementation_Contract.md`
+- `agents/phase2/README.md`
+
 When this document conflicts with the Decision Log, the Decision Log wins.
 
 ## Core Rule

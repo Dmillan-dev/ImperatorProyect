@@ -11,9 +11,11 @@ Responsabilidades:
 - Seguir `docs/architecture/27_Quality_Attributes.md` para expectativas de usabilidad, latencia, degradación y blockers.
 - Seguir `docs/architecture/31_MVP_Implementation_Standard.md` para mantener el primer frontend limitado al Decision Review Workspace.
 - Seguir `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`; la primera pantalla debe demostrar un Decision ROI Case, una recomendacion y los criterios de salida Phase 1.
+- Seguir `docs/architecture/37_Implementation_Contract.md` y `agents/phase2/README.md` antes de cualquier implementacion frontend. Un agente no puede generar mas de un modulo por iteracion.
 
 Entregables iniciales:
 
 - `services/frontend/` scaffold documental con design tokens y component library plan.
 - Low-fidelity mockup for the Decision Review Workspace first; broader surfaces only after the workflow is validated.
+- Plan Phase 2 frontend por modulos separados: project foundation, layout, navigation, theme, route placeholders y API client shell.
 - Handoff a QA Agent para empty states, blockers y acciones role-aware.

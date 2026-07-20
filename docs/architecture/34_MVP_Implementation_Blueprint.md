@@ -1262,4 +1262,8 @@ Phase 3 - MVP Implementation
 
 Phase 2 should create the controlled technical foundation only: project structure, module boundaries, route shells, persistence foundation, auth foundation, observability foundation, Docker/local development foundation and CI foundation, without business intelligence.
 
+Phase 2 implementation mechanics are governed by `docs/architecture/37_Implementation_Contract.md`.
+
+Phase 2 sprint sequencing is governed by `agents/phase2/README.md`.
+
 Phase 3 should implement the complete `DRC-AOA-001` value loop.

@@ -15,6 +15,7 @@ Responsabilidades:
 - Seguir `docs/architecture/28_Per_Connector_MVP_Contracts.md` antes de proponer intake o read models por conector.
 - Seguir `docs/architecture/31_MVP_Implementation_Standard.md` antes de proponer estructura, puertos, adapters, auth u observabilidad.
 - Seguir `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` antes de proponer scaffolding, modelo de datos inicial, conectores o tests de cierre.
+- Seguir `docs/architecture/37_Implementation_Contract.md` y `agents/phase2/README.md` antes de cualquier tarea de implementacion backend. Un agente no puede generar mas de un modulo por iteracion.
 
 Entregables iniciales:
 
@@ -24,4 +25,5 @@ Entregables iniciales:
 - RFCs para cualquier cambio de modelo o nuevo bounded context; no convertir bounded contexts conceptuales en microservicios por defecto.
 - Plan hexagonal futuro: Controller/Application/Domain/Ports/Adapters sin crear código durante Phase 0.
 - Plan Phase 1 limitado a un Decision ROI Case, una recomendacion determinista y persistencia minima.
+- Plan Phase 2 por modulos: project shell, domain skeletons, ports, route shells, persistence foundation, auth foundation y observability foundation en iteraciones separadas.
 - Handoff a Connector Agent para objetos fuente y a FinOps Agent para semántica de coste.
