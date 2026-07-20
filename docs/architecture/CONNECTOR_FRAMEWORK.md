@@ -17,6 +17,9 @@ This document is conceptual. It does not define connector code, SDKs, deployment
 - `docs/architecture/31_MVP_Implementation_Standard.md`
 - `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
 - `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md`
+- `docs/architecture/34_MVP_Implementation_Blueprint.md`
+- `docs/architecture/35_Coding_Principles.md`
+- `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`
 - `docs/rfcs/0002-module-communication-architecture.md`
 - `docs/architecture/21_Technical_Architecture_Context.md`
 
@@ -28,7 +31,9 @@ They bring external signals into IMPERATOR, but they do not own business meaning
 
 In the MVP implementation standard, connectors sit behind ports. Jira, GitHub, AWS and OpenAI + Anthropic Claude can change without changing the Decision ROI Case domain.
 
-In Phase 1, the implementation may start with one or two narrow read-only adapters plus approved manual/static or imported evidence for the remaining domains. Full connector automation is not required to prove the first Decision ROI Case.
+Phase 2 may create connector interfaces and adapter skeletons only.
+
+Phase 3 MVP implementation may start with one or two narrow read-only adapters plus approved manual/static or imported evidence for the remaining domains. Full connector automation is not required to prove the first Decision ROI Case.
 
 Every connector or import adapter must output the same internal envelope:
 
@@ -376,10 +381,11 @@ Examples:
 - missing cost signal -> recommendation cannot claim savings,
 - missing evidence lineage -> not approval-ready.
 
-## Phase 1 Candidate Next Steps
+## Connector Candidate Next Steps
 
 1. Use `docs/architecture/28_Per_Connector_MVP_Contracts.md` as the source of truth for Jira, GitHub, AWS and OpenAI + Anthropic Claude.
 2. Use `docs/architecture/29_Event_Evidence_Vocabulary.md` for normalized event vocabulary and evidence labels.
 3. Align connector contracts with `docs/architecture/DATABASE_MODEL.md`.
 4. Map connector outputs to `docs/product/CORE_DOMAIN_MODEL.md`.
-5. Create RFC before adding any new integration domain.
+5. Use `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` before creating connector skeletons in Phase 2.
+6. Create RFC before adding any new integration domain.

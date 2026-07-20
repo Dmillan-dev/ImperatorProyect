@@ -414,7 +414,7 @@ Manual pilot rules:
 
 ## Minimum Security Acceptance Criteria
 
-Before Phase 1 implementation, IMPERATOR should be able to answer:
+Before Phase 3 MVP implementation, IMPERATOR should be able to answer:
 
 1. Which evidence fields are Public, Internal, Confidential or Restricted?
 2. Which future component can read each sensitivity level?

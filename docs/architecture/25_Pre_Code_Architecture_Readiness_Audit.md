@@ -55,6 +55,25 @@ The remaining risk is not lack of technology. Manual evidence, security boundari
 
 If Phase 1 is authorized, implementation should use `docs/architecture/31_MVP_Implementation_Standard.md` to reduce scope and apply Hexagonal Architecture, JWT/OAuth2-compatible auth direction and minimal observability, then use `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` to enforce the exact first-build objective and exit criteria.
 
+## Post-Audit Phase Update
+
+As of D064, this audit should be read as a historical pre-code readiness snapshot.
+
+Current phase control is:
+
+```text
+Phase 1 Complete
+-> Phase 2 Platform Foundation
+-> Phase 3 MVP Implementation
+```
+
+Before Phase 2 starts, use:
+
+- `docs/architecture/35_Coding_Principles.md`
+- `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`
+
+Phase 2 may build technical foundation only. It must not implement ROI calculation, recommendation generation, real AI provider calls, live connectors or business rules.
+
 ## Coherence Check
 
 | Area | Status | Architect verdict |
@@ -277,7 +296,7 @@ Do not begin implementation until these gates are true:
 | G12 - Vocabulary is explicit | Are event names, evidence types, lifecycle states, blockers and labels controlled before code? |
 | G13 - Development evidence model exists | Can future architecture, code, hours, objects, experiments and tests be documented by work package? |
 | G14 - Closure gate exists | Can the founder/architect make a recorded go/no-go decision without inventing missing context? |
-| G15 - Implementation standard exists | Can future Phase 1 work reduce scope and apply hexagonal/auth/observability rules consistently? |
+| G15 - Implementation standard exists | Can future MVP work reduce scope and apply hexagonal/auth/observability rules consistently? |
 | G16 - Phase 1 scope contract exists | Can future implementation prove one Decision ROI Case without drifting into platform build-out? |
 
 ## What Not To Add Yet

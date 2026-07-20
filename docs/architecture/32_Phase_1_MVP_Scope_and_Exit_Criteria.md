@@ -489,20 +489,29 @@ Documentation, scope, foundational decisions and final implementation blueprint 
 
 ### Phase 2
 
-Technical Scaffolding.
+Platform Foundation.
 
-Create project structure only:
+Create the technical SaaS foundation without business intelligence:
 
 - repository folders,
-- backend/frontend skeleton,
+- backend Java foundation,
+- backend Python foundation,
+- frontend shell,
 - build configuration,
 - empty module boundaries,
-- PostgreSQL migration framework,
-- auth scaffolding,
-- health/readiness scaffolding,
+- structural entities and interfaces,
+- REST route shells,
+- PostgreSQL migration and schema foundation,
+- auth foundation,
+- health/readiness foundation,
+- observability foundation,
+- local Docker foundation,
+- no-deploy CI foundation,
 - R&D evidence capture scaffolding.
 
-Do not implement business logic in Phase 2.
+Do not implement ROI calculation, recommendation generation, real AI provider calls, live connectors, approval workflow logic or other business rules in Phase 2.
+
+Detailed scope lives in `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`.
 
 ### Phase 3
 
@@ -535,6 +544,6 @@ Candidate additions:
 
 ## Final Architect Verdict
 
-The project context is coherent for closing Phase 0 and preparing Phase 1 under strict control.
+The project context is coherent for closing Phase 0 and preserving Phase 1 under strict control.
 
-The next engineering movement is not platform construction. It is a disciplined implementation of one deterministic, evidence-backed Decision ROI Case with AI explanation and minimal operational visibility.
+The next controlled movement is Phase 2 Platform Foundation if explicitly authorized: build the technical base, but no business intelligence. The first business implementation remains Phase 3: one deterministic, evidence-backed Decision ROI Case with AI explanation and minimal operational visibility.

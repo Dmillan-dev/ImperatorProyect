@@ -282,15 +282,15 @@ flowchart TB
 
 IMPERATOR should not build five recommendation engines at once.
 
-For the MVP, focus on the paid wedge:
+For the MVP, focus on one paid-wedge recommendation:
 
 | Priority | Recommendation | MVP role |
 |---|---|---|
 | 5/5 | Downgrade or change AI model | Primary |
-| 5/5 | Remove unused AI agents | Primary |
-| 4/5 | Detect underutilized AWS resources tied to the same decision | Supporting |
 
-Deferred until repeatable ROI is proven:
+Expansion candidates after repeatable ROI is proven:
+- remove unused AI agents,
+- detect underutilized AWS resources tied to the same decision,
 - negative-ROI feature analysis,
 - duplicated service or agent consolidation.
 
@@ -446,7 +446,7 @@ Use this short version when presenting live:
 1. Companies approve technology decisions, but after launch the business context fragments across Jira, GitHub, AWS and AI providers.
 2. IMPERATOR reconstructs one decision as a Decision ROI Case.
 3. The case shows why the decision exists, who implemented it, what it costs now, what usage exists and what recovery action is available.
-4. The MVP focuses on AI/cloud spend recovery: model downgrade, unused AI agents and underutilized AWS resources.
+4. The MVP focuses on one AI/cloud spend recovery action: AI model downgrade or model change.
 5. The first screen is not a generic dashboard. It is a Decision Review Workspace.
 6. IMPERATOR recommends; the company approves, rejects or defers.
 7. The Decision Ledger records the evidence, ROI assumptions and result so the company builds decision accountability over time.

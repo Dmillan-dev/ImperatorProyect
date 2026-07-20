@@ -61,9 +61,9 @@ Keep enough to prove:
 
 Do not persist broad platform structures before the first value loop works.
 
-When implementation starts, PostgreSQL is the Phase 1 source of truth.
+When implementation starts, PostgreSQL is the MVP source of truth.
 
-Do not use in-memory storage, JSON files, SQLite, MongoDB or Redis as the Phase 1 source of truth.
+Do not use in-memory storage, JSON files, SQLite, MongoDB or Redis as the MVP source of truth.
 
 ## Minimal Persistent Concepts
 

@@ -49,10 +49,10 @@ In 30 days, measure:
 The first commercial motion should test a narrow AI/cloud spend recovery wedge:
 
 1. Downgrade or change AI model.
-2. Remove unused AI agents.
-3. Detect underutilized AWS resources tied to the same decision.
 
-Deferred until repeatable ROI is proven:
+Expansion candidates after repeatable ROI is proven:
+- remove unused AI agents,
+- detect underutilized AWS resources tied to the same decision,
 - identify features with negative ROI,
 - consolidate duplicated services or agents.
 

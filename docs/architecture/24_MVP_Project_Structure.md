@@ -4,13 +4,13 @@
 
 Define the future project structure for the first IMPERATOR MVP without creating services, source code or infrastructure yet.
 
-This document is a planning boundary between Phase 0 documentation and future Phase 1 implementation.
+This document is a planning boundary between documentation and future Phase 2/Phase 3 implementation.
 
 It answers:
 
 - what should exist now,
 - what should not exist yet,
-- what structure should be used once implementation starts,
+- what structure should be used once Phase 2 Platform Foundation starts,
 - how to keep the first build aligned with the MVP vertical slice.
 
 ## Phase 0 Rule
@@ -100,64 +100,92 @@ Controller / Interface
 
 GitHub, Jira, AWS, OpenAI + Anthropic Claude, PostgreSQL and future OAuth providers are adapters. They must not shape the domain model.
 
-## Future Phase 1 Structure
+## Future Phase 2 Platform Foundation Structure
 
-When implementation is explicitly approved, use this structure as the preferred starting point:
+When Phase 2 Platform Foundation is explicitly approved, use this structure as the preferred starting point:
 
 ```text
 imperator/
+  backend-java/
+  backend-python/
+  frontend/
+  database/
+  infra/
   docs/
-  demos/
+  agents/
+  scripts/
   proto/
-
-  src/
-    backend/
-      app/
-      modules/
-        intake/
-        evidence/
-        decision_case/
-        roi/
-        recommendation/
-        ledger/
-        identity/
-        observability/
-      shared/
-      tests/
-
-    frontend/
-      app/
-      components/
-      features/
-        decision-review/
-        evidence-chain/
-        roi-summary/
-        recommendation-review/
-        ledger-history/
-      styles/
-      tests/
-
-    ai/
-      explanation/
-      evaluation/
-      prompts/
-      tests/
-
   samples/
     decision-cases/
       ai-onboarding-assistant/
-
-  infra/
-    README.md
+  demos/
 ```
 
 This is a future structure, not a current task.
 
-Do not create it during Phase 0 unless a new decision explicitly authorizes implementation scaffolding.
+Do not create it during documentation-only work unless the founder explicitly authorizes Phase 2 Platform Foundation.
+
+Detailed Phase 2 scope lives in `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`.
+
+## Future Backend Java Internal Shape
+
+When Phase 2 creates `backend-java/`, use a modular monolith shape with hexagonal boundaries:
+
+```text
+backend-java/
+  controllers/
+  application/
+  domain/
+  ports/
+  adapters/
+  repositories/
+  config/
+  dto/
+  tests/
+```
+
+This shape is conceptual until code is authorized.
+
+Business behavior belongs to Phase 3.
+
+## Future Backend Python Internal Shape
+
+When Phase 2 creates `backend-python/`, use it only for the AI explanation-provider foundation:
+
+```text
+backend-python/
+  providers/
+  models/
+  api/
+  config/
+  tests/
+```
+
+Phase 2 Python must not call real AI providers.
+
+It proves the provider boundary, not intelligence.
+
+If Java later calls Python as an internal product service, the contract must follow the existing gRPC/Protobuf decisions unless a new decision changes them.
+
+## Future Frontend Internal Shape
+
+When Phase 2 creates `frontend/`, use it as an application shell:
+
+```text
+frontend/
+  app/
+  components/
+  routes/
+  services/
+  styles/
+  tests/
+```
+
+The first real product surface remains Decision Review Workspace in Phase 3.
 
 ## Recommended First Backend Modules
 
-When implementation starts, keep modules inside one backend boundary:
+When Phase 3 MVP implementation starts, keep business modules inside one backend boundary:
 
 | Module | Responsibility | Should not own |
 |---|---|---|
@@ -244,7 +272,7 @@ Future infrastructure may be introduced only when:
 - at least one real Decision ROI Case has been reconstructed,
 - the architecture change is recorded in `docs/decisions/14_Decision_Log.md`.
 
-Minimal observability for the first build may include structured logs, correlation ID, health checks and basic metrics. Full Grafana/OpenTelemetry deployment is future scope unless explicitly needed.
+Minimal observability for the first build must include structured logs, correlation ID, health checks and basic metrics. Phase 2 may add local/developer OpenTelemetry, Prometheus and Grafana wiring, but full production observability remains future scope.
 
 ## Mapping From Vision Diagram To MVP Structure
 
@@ -258,7 +286,7 @@ Minimal observability for the first build may include structured logs, correlati
 | Ledger & Governance Layer | Decision Ledger v2 | use existing ledger contract |
 | Presentation Layer | Decision Review Workspace | use `docs/product/29_Decision_Review_Workspace_Screen_Contract.md` |
 | OAuth2 / JWT | future identity adapter | document compatibility; implement only minimal auth needed |
-| Micrometer / OpenTelemetry / Grafana | future observability stack | keep minimal until runtime exists |
+| Micrometer / OpenTelemetry / Grafana | observability foundation | allow local/dev wiring in Phase 2; keep production observability future |
 | Kafka | future event streaming | defer |
 | Policy Engine | future governance | defer |
 | Kubernetes / Terraform | future operations | defer |
@@ -297,7 +325,9 @@ The project structure is healthy if:
 14. Use `docs/architecture/30_Phase_0_Closure_Readiness_Review.md` as the final go/no-go control before Phase 1.
 15. Use `docs/architecture/31_MVP_Implementation_Standard.md` to reduce first-build scope and apply hexagonal, auth and observability standards.
 16. Use `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` to enforce one Decision ROI Case, one recommendation, connector limits, AI explanation boundaries and exit criteria.
-17. Only after that, decide whether to create implementation scaffolding.
+17. Use `docs/architecture/34_MVP_Implementation_Blueprint.md` as the final MVP contract.
+18. Use `docs/architecture/35_Coding_Principles.md` before creating implementation files.
+19. Use `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` before starting Phase 2 Platform Foundation.
 
 ## Explicit Non-Decision
 
@@ -310,6 +340,6 @@ This document does not decide:
 - OpenAPI specification,
 - protobuf changes,
 - deployment topology,
-- local development setup.
+- exact local development commands.
 
 Those decisions belong to future ADRs or RFCs after the vertical slice is accepted.

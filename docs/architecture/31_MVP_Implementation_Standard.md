@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Standardize how the first IMPERATOR MVP should be built when Phase 1 is explicitly authorized.
+Standardize how the first IMPERATOR MVP should be built when implementation is explicitly authorized.
 
 This document translates the Phase 0 context into a practical implementation standard without creating code.
 
@@ -14,7 +14,7 @@ It defines:
 - what remains future vision,
 - how independent AI agents should work together during implementation planning.
 
-It is an architecture standard for future Phase 1. It does not authorize source code, runnable services, real connectors, database migrations, OpenAPI generation, OAuth apps, Docker, Kubernetes, Terraform or cloud resources during Phase 0.
+It is an architecture standard for future Phase 2 Platform Foundation and Phase 3 MVP Implementation. It does not authorize source code, runnable services, real connectors, database migrations, OpenAPI generation, OAuth apps, Docker, Kubernetes, Terraform or cloud resources during documentation-only work.
 
 The exact Phase 1 objective, data-model limit, connector limit, AI explanation boundary, limited scaffolding authorization and exit criteria are defined in:
 
@@ -23,6 +23,11 @@ The exact Phase 1 objective, data-model limit, connector limit, AI explanation b
 The final pre-code foundational choices are defined in:
 
 - `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md`
+
+Coding rules and Phase 2 scope are defined in:
+
+- `docs/architecture/35_Coding_Principles.md`
+- `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`
 
 ## Executive Standard
 
@@ -256,7 +261,7 @@ Use PostgreSQL for:
 - source references and lineage,
 - Decision Graph relationship records.
 
-Do not use as Phase 1 source of truth:
+Do not use as MVP source of truth:
 
 - in-memory store,
 - JSON files,
@@ -328,9 +333,9 @@ Recommended future-compatible tools:
 - Spring Boot Actuator,
 - Micrometer,
 - OpenTelemetry when useful,
-- Prometheus/Grafana after runtime exists.
+- local Prometheus/Grafana foundation during Phase 2 if explicitly authorized.
 
-Do not build a full observability stack before the application exists and the MVP needs it.
+Do not build a full production observability stack before the application exists and the MVP needs it.
 
 ## Testing Standard
 
@@ -393,7 +398,7 @@ Future AI agents should use this ownership split:
 
 Any agent proposing Kafka, Kubernetes, Graph DB/vector infrastructure, multiple OAuth providers or new connectors for the first MVP must mark it as post-MVP unless a new decision explicitly authorizes it.
 
-## Phase 1 Entry Checklist
+## Implementation Entry Checklist
 
 Before writing code, record:
 
@@ -408,9 +413,13 @@ Before writing code, record:
 9. Decision Graph relationship boundary,
 10. first UI route/surface,
 11. R&D evidence capture method,
-12. ADR authorizing implementation scaffolding.
+12. explicit authorization for Phase 2 Platform Foundation or Phase 3 MVP Implementation.
 
 Then verify that the planned work satisfies `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`.
+
+If the planned work is Phase 2, also verify `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`.
+
+If the planned work creates implementation files, also verify `docs/architecture/35_Coding_Principles.md`.
 
 ## Final Rule
 

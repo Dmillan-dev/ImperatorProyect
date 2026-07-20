@@ -76,17 +76,17 @@ This is the commercial product moment. The customer does not buy another dashboa
 
 Slack, Microsoft 365, Salesforce, Azure OpenAI, Google Gemini, Mistral, Azure DevOps, ServiceNow, Azure and GCP are expansion candidates, not MVP dependencies.
 
-## MVP Paid-Wedge Recommendations
+## MVP Paid-Wedge Recommendation
 
 The first commercial version should focus on a narrow AI/cloud spend recovery wedge:
 
 | Priority | Recommendation | MVP role |
 |---|---|---|
 | 5/5 | Downgrade or change AI model | Primary |
-| 5/5 | Remove unused AI agents | Primary |
-| 4/5 | Detect underutilized AWS resources tied to the same decision | Supporting |
 
-Deferred until the first wedge is repeatable:
+Expansion candidates after the first wedge is repeatable:
+- remove unused AI agents,
+- detect underutilized AWS resources tied to the same decision,
 - identify features with negative ROI,
 - consolidate duplicated services or agents.
 

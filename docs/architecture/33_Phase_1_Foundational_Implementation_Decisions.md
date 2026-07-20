@@ -153,7 +153,7 @@ Connectors must not:
 
 ## Decision 2 - PostgreSQL From Day One
 
-Phase 1 implementation should start with PostgreSQL as the source of truth.
+MVP implementation should start with PostgreSQL as the source of truth.
 
 Reason:
 
@@ -163,7 +163,7 @@ Reason:
 - PostgreSQL is mature, free, robust and enough for the MVP;
 - starting with memory or JSON files creates migration debt almost immediately.
 
-Do not use as Phase 1 source of truth:
+Do not use as MVP source of truth:
 
 - in-memory store,
 - JSON files,
@@ -452,7 +452,7 @@ These are implementation details, not open architecture decisions.
 
 ## Acceptance Impact
 
-Future Phase 1 implementation must prove:
+Future MVP implementation must prove:
 
 1. an import adapter can produce Enterprise Evidence Events;
 2. evidence is normalized without leaking raw payloads;

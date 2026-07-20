@@ -47,10 +47,10 @@ For v1, do not expand beyond Jira, GitHub, AWS and OpenAI + Anthropic Claude unl
 
 The MVP paid-wedge recommendation focus is:
 - downgrade or change AI model
+
+Expansion recommendation families:
 - remove unused AI agents
 - detect underutilized AWS resources tied to the same Decision ROI Case
-
-Deferred recommendation families:
 - identify features with negative ROI
 - consolidate duplicated services or agents
 

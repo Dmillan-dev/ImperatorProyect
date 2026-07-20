@@ -402,7 +402,7 @@ Reject any future vocabulary proposal that:
 
 ## Manual Review Checklist
 
-Before Phase 1 implementation planning, verify:
+Before Phase 2 or Phase 3 implementation planning, verify:
 
 1. Every MVP event has one canonical name.
 2. Every evidence item has an accepted ID format.

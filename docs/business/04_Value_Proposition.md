@@ -20,15 +20,15 @@ The first paid motion is the **Decision Recovery Workflow** for AI/cloud spend.
 
 It should prove one expensive shipped decision before presenting IMPERATOR as a broad platform.
 
-## MVP Paid-Wedge Recommendations
+## MVP Paid-Wedge Recommendation
 
 | Priority | Recommendation | MVP role |
 |---|---|---|
 | 5/5 | Downgrade or change AI model | Primary paid wedge |
-| 5/5 | Remove unused AI agents | Primary paid wedge |
-| 4/5 | Detect underutilized AWS resources tied to the same decision | Supporting |
 
-Deferred until the first wedge is repeatable:
+Expansion candidates after the first wedge is repeatable:
+- remove unused AI agents,
+- detect underutilized AWS resources tied to the same decision,
 - identify features with negative ROI,
 - consolidate duplicated services or agents.
 

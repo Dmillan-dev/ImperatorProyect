@@ -1,6 +1,6 @@
-# IMPERATOR — Strategic Documentation System (Phase 0, No Code)
+# IMPERATOR — Strategic Documentation System (No Software Implementation Yet)
 
-Status: **Phase 1 Complete** (final implementation blueprint closed; no software implementation created yet)
+Status: **Phase 1 Complete; Phase 2 Platform Foundation Defined** (no software implementation created yet)
 
 This documentation system defines IMPERATOR’s canonical context for:
 1. human strategic execution,
@@ -51,6 +51,8 @@ Architecture:
 - [Phase 1 MVP Scope and Exit Criteria](docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md)
 - [Phase 1 Foundational Implementation Decisions](docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md)
 - [MVP Implementation Blueprint](docs/architecture/34_MVP_Implementation_Blueprint.md)
+- [Coding Principles](docs/architecture/35_Coding_Principles.md)
+- [Phase 2 Platform Foundation Blueprint](docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md)
 - [Architecture Thesis](docs/architecture/18_Architecture_Thesis.md)
 - [Database Model](docs/architecture/DATABASE_MODEL.md)
 - [Connector Framework](docs/architecture/CONNECTOR_FRAMEWORK.md)
@@ -169,6 +171,12 @@ Current MVP implementation standard:
 Current Phase 1 MVP scope and exit criteria:
 - [docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md](docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md)
 
+Current coding principles:
+- [docs/architecture/35_Coding_Principles.md](docs/architecture/35_Coding_Principles.md)
+
+Current Phase 2 Platform Foundation blueprint:
+- [docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md](docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md)
+
 MVP information domains:
 - Business Context: Jira
 - Code & Deployment: GitHub
@@ -176,11 +184,11 @@ MVP information domains:
 - AI Consumption: OpenAI + Anthropic Claude
 
 MVP paid-wedge recommendation focus:
-- AI model downgrade or model change
-- unused AI agent removal
-- underutilized AWS resource detection tied to the same Decision ROI Case
+- AI model downgrade or model change for `DRC-AOA-001`
 
 Deferred recommendation families:
+- unused AI agent removal
+- underutilized AWS resource detection tied to the same Decision ROI Case
 - negative-ROI feature identification
 - duplicated service or agent consolidation
 
@@ -214,8 +222,10 @@ When documents or prompts conflict, use this order:
 24. `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` for the exact Phase 1 objective, data limit, connector limit, AI boundary, scaffolding authorization and exit criteria.
 25. `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md` for Canonical Evidence Model, PostgreSQL, Explanation Provider, JWT/RBAC and Decision Graph.
 26. `docs/architecture/34_MVP_Implementation_Blueprint.md` for the final six-week implementation contract.
-27. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
-28. Older documents, demos, prompts, ADRs and RFC drafts as historical context unless updated by the documents above.
+27. `docs/architecture/35_Coding_Principles.md` for implementation coding rules, hexagonal boundaries and AI-agent coding discipline.
+28. `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` for the controlled Phase 2 foundation scope.
+29. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
+30. Older documents, demos, prompts, ADRs and RFC drafts as historical context unless updated by the documents above.
 
 Founder-mode or master-prompt instructions define ambition and quality bar. They do not override the current repository decisions when they mention older framing such as AI Cost Attribution as the primary wedge, dashboard-led product language, generic Decision Intelligence without the operating-system and Decision ROI framing, or production-ready implementation during Phase 0.
 

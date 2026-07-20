@@ -19,7 +19,7 @@ Future primary user: developers and platform teams.
 
 Example interaction:
 
-POST /decision
+POST /decisions
 
 IMPERATOR registers an operational decision with business context metadata.
 

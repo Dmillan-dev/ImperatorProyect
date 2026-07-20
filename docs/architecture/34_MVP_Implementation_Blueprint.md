@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Define the final Phase 1 implementation blueprint for IMPERATOR MVP development.
+Define the final MVP value-loop implementation blueprint for IMPERATOR development.
 
 This is the contract between architecture and development.
 
@@ -838,6 +838,8 @@ Intent:
 
 No OpenAPI is defined here.
 
+Route convention uses plural REST resources, for example `/decisions/{id}`.
+
 ### `POST /evidence/import`
 
 Behavior:
@@ -861,13 +863,43 @@ Behavior:
 
 Phase 1 may return only `DRC-AOA-001`.
 
-### `GET /decision/{id}`
+### `GET /decisions/{id}`
 
 Behavior:
 
 - returns one Decision ROI Case view with evidence, ROI, recommendation, explanation status, review state and ledger summary.
 
-### `POST /decision/{id}/approve`
+### `GET /decisions/{id}/timeline`
+
+Behavior:
+
+- returns ordered lifecycle entries with evidence references.
+
+### `GET /decisions/{id}/evidence`
+
+Behavior:
+
+- returns filtered evidence summaries and lineage for the case.
+
+### `GET /decisions/{id}/roi`
+
+Behavior:
+
+- returns deterministic ROI, assumptions, risk and confidence for the case.
+
+### `GET /recommendations/{id}`
+
+Behavior:
+
+- returns one recommendation with evidence references, ROI link, risk, confidence and approval path.
+
+### `GET /decisions/{id}/ledger`
+
+Behavior:
+
+- returns append-only ledger history for one Decision ROI Case.
+
+### `POST /decisions/{id}/ledger/approve`
 
 Behavior:
 
@@ -875,7 +907,7 @@ Behavior:
 - requires recommendation ready,
 - creates append-only ledger entry.
 
-### `POST /decision/{id}/reject`
+### `POST /decisions/{id}/ledger/reject`
 
 Behavior:
 
@@ -883,7 +915,7 @@ Behavior:
 - requires rejection reason,
 - creates append-only ledger entry.
 
-### `POST /decision/{id}/defer`
+### `POST /decisions/{id}/ledger/defer`
 
 Behavior:
 
@@ -891,6 +923,33 @@ Behavior:
 - requires deferral reason,
 - records blocker or required evidence,
 - creates append-only ledger entry.
+
+### `POST /decisions/{id}/ledger/mark-implemented`
+
+Behavior:
+
+- requires authorized technical owner,
+- records external implementation marker,
+- creates append-only ledger entry.
+
+Must not:
+
+- mutate external providers,
+- validate realized value.
+
+### `POST /decisions/{id}/ledger/validate-result`
+
+Behavior:
+
+- requires authorized FinOps or business reviewer,
+- records result validation when post-action evidence exists,
+- creates append-only ledger entry,
+- enables Business Value to become realized.
+
+Must not:
+
+- count estimated recovery as realized value,
+- mutate original ROI or approval snapshots.
 
 ### `GET /business-value`
 
@@ -1088,7 +1147,11 @@ Implement:
 
 - Decision ROI Case assembly,
 - `GET /decisions`,
-- `GET /decision/{id}`,
+- `GET /decisions/{id}`,
+- `GET /decisions/{id}/timeline`,
+- `GET /decisions/{id}/evidence`,
+- `GET /decisions/{id}/roi`,
+- `GET /recommendations/{id}`,
 - deterministic ROI calculation,
 - ROI assumptions,
 - one deterministic recommendation,
@@ -1193,11 +1256,10 @@ No more conceptual Phase 1 documents should be added unless a contradiction is d
 Next phases:
 
 ```text
-Phase 2 - Technical Scaffolding
+Phase 2 - Platform Foundation
 Phase 3 - MVP Implementation
 ```
 
-Phase 2 should create project structure only.
+Phase 2 should create the controlled technical foundation only: project structure, module boundaries, route shells, persistence foundation, auth foundation, observability foundation, Docker/local development foundation and CI foundation, without business intelligence.
 
 Phase 3 should implement the complete `DRC-AOA-001` value loop.
-

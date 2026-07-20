@@ -47,6 +47,14 @@ Phase 1 reduction:
 
 `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` limits the first implementation to one Decision ROI Case and exactly one deterministic recommendation.
 
+Final MVP implementation flow:
+
+`docs/architecture/34_MVP_Implementation_Blueprint.md` defines the final value-loop contract.
+
+Phase 2 foundation boundary:
+
+`docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` may create structural entities and interfaces only, without domain behavior.
+
 MVP reconstruction:
 
 Jira -> GitHub -> AWS -> OpenAI + Anthropic Claude -> ROI View -> Recommendation -> Decision Ledger -> Decision Review Workspace -> Result Validation
@@ -78,7 +86,9 @@ Key business questions:
 An evidence-backed action proposed by IMPERATOR to recover money, time or risk.
 
 MVP paid-wedge recommendation focus:
-- downgrade or change AI model,
+- downgrade or change AI model for `DRC-AOA-001`.
+
+Expansion candidates after the first value loop works:
 - remove unused AI agents,
 - detect underutilized AWS resources tied to the same Decision ROI Case.
 
@@ -113,6 +123,7 @@ The domain must not depend on provider-specific source objects.
 For Phase 1, the canonical contract is governed by:
 
 - `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md`
+- `docs/architecture/34_MVP_Implementation_Blueprint.md`
 
 ### Operational Event
 
@@ -148,7 +159,7 @@ The MVP Timeline connects:
 
 The internal relationship model connecting evidence, decisions, recommendations, human actions, ledger entries and validated outcomes.
 
-Decision Graph is a domain concept, not a requirement to use Graph DB in Phase 1.
+Decision Graph is a domain concept, not a requirement to use Graph DB in the MVP.
 
 For the first MVP, relationships should be persistable in PostgreSQL so future correlation is not lost.
 

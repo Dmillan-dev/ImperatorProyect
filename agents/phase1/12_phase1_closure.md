@@ -319,7 +319,7 @@ These are implementation details, not open architecture decisions.
 
 Phase 1 documentation, control context and final implementation blueprint are closed.
 
-IMPERATOR is ready for Phase 2 - Technical Scaffolding, but only under the locked Phase 1 scope:
+IMPERATOR is ready for Phase 2 - Platform Foundation, but only under the locked Phase 1 scope:
 
 ```text
 One Decision ROI Case.
@@ -332,6 +332,6 @@ One append-only ledger history.
 Minimal auth, security and observability.
 ```
 
-Phase 2 creates technical scaffolding only.
+Phase 2 creates the technical SaaS foundation only: structure, modules, route shells, persistence foundation, auth foundation, observability foundation, Docker/local developer foundation and CI foundation. It does not implement business intelligence.
 
 Phase 3 implements the MVP value loop.

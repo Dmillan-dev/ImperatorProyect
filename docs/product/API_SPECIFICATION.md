@@ -29,6 +29,12 @@ Phase 1 scope and exit criteria are defined in:
 Phase 1 foundational implementation decisions are defined in:
 - `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md`
 
+Final MVP implementation contract is defined in:
+- `docs/architecture/34_MVP_Implementation_Blueprint.md`
+
+Phase 2 route-shell scope is defined in:
+- `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`
+
 ## API Principles
 
 - The API revolves around Decision ROI Cases.
@@ -42,7 +48,9 @@ Phase 1 foundational implementation decisions are defined in:
 - Future implementation should be JWT/OAuth2-compatible, but the first MVP must not require multiple identity providers.
 - Phase 1 auth uses JWT-compatible RBAC with `ADMIN`, `PLATFORM_ENGINEER`, `FINANCE` and `AUDITOR`.
 - Future implementation should preserve hexagonal boundaries: provider and persistence details stay behind adapters.
-- Phase 1 API work must serve one Decision ROI Case, one deterministic recommendation and the exact exit criteria in `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`.
+- MVP API work must serve one Decision ROI Case, one deterministic recommendation and the exact exit criteria in `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`.
+- REST resources should use plural resource naming, for example `/decisions/{decisionId}`.
+- Phase 2 may create route shells only. Route shells must return `Not implemented` and must not contain ROI, recommendation, AI or connector business logic.
 - Public customer APIs can be HTTP/REST or GraphQL later.
 - Internal service APIs follow the architecture mandate in `docs/architecture/21_Technical_Architecture_Context.md`.
 
@@ -115,7 +123,33 @@ Do not prioritize public API, SDKs, GraphQL, broad policy APIs or connector mark
 
 Do not require multiple OAuth providers, full enterprise SSO or a full observability stack before the Decision Recovery Workflow is validated.
 
-Do not require multiple recommendations, ranking, learning systems or broad connector APIs for Phase 1.
+Do not require multiple recommendations, ranking, learning systems or broad connector APIs for the MVP.
+
+## MVP Implementation Route Subset
+
+The first implemented route surface is intentionally smaller than the conceptual platform surface above.
+
+Phase 2 route shells and Phase 3 MVP implementation should use:
+
+- `POST /evidence/import`
+- `GET /decisions`
+- `GET /decisions/{decisionId}`
+- `GET /decisions/{decisionId}/timeline`
+- `GET /decisions/{decisionId}/evidence`
+- `GET /decisions/{decisionId}/roi`
+- `GET /recommendations/{recommendationId}`
+- `GET /decisions/{decisionId}/ledger`
+- `POST /decisions/{decisionId}/ledger/approve`
+- `POST /decisions/{decisionId}/ledger/reject`
+- `POST /decisions/{decisionId}/ledger/defer`
+- `POST /decisions/{decisionId}/ledger/mark-implemented`
+- `POST /decisions/{decisionId}/ledger/validate-result`
+- `GET /business-value`
+- `GET /ledger`
+
+The approve/reject/defer routes are MVP ledger commands. Their implementation must create append-only ledger entries and preserve reviewed snapshots.
+
+The broader ledger-specific API surface remains valid product intent for later expansion.
 
 ## Decision API
 

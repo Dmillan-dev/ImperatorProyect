@@ -4,17 +4,17 @@
 
 Prepare the canonical technical architecture context for IMPERATOR without starting production implementation.
 
-This document translates the product strategy into a modern, controlled architecture structure for Phase 1 planning.
+This document translates the product strategy into a modern, controlled architecture structure for Phase 2 Platform Foundation and Phase 3 MVP implementation planning.
 
 ## Current Status
 
-Phase 0 remains documentation, validation and structure only.
+Phase 1 documentation is complete and Phase 2 Platform Foundation is defined but not started.
 
 This architecture is a target context, not a command to build services yet.
 
 ## Authority and Interpretation
 
-This document is authoritative for target architecture context, layer responsibilities, bounded contexts, communication model and Phase 1 planning.
+This document is authoritative for target architecture context, layer responsibilities, bounded contexts, communication model and implementation-phase planning.
 
 It is subordinate to:
 
@@ -34,14 +34,18 @@ It is subordinate to:
 14. `docs/architecture/29_Event_Evidence_Vocabulary.md` for event, evidence, blocker, lifecycle and label vocabulary.
 15. `docs/rnd/30_RD_Activity_Evidence_Dossier.md` for future development evidence, hours, objects, experiments and tests.
 16. `docs/architecture/30_Phase_0_Closure_Readiness_Review.md` for final Phase 0 readiness gates and go/no-go control.
-17. `docs/architecture/31_MVP_Implementation_Standard.md` for future Phase 1 MVP implementation standards.
+17. `docs/architecture/31_MVP_Implementation_Standard.md` for future MVP implementation standards.
 18. `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` for exact Phase 1 objective, connector limit, data limit, AI boundary, scaffolding authorization and exit criteria.
-19. `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
-20. `docs/architecture/phase0-guidelines.md` for Phase 0 repository rules.
+19. `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md` for Canonical Evidence Model, PostgreSQL, Explanation Provider, JWT/RBAC and Decision Graph.
+20. `docs/architecture/34_MVP_Implementation_Blueprint.md` for the final MVP value-loop contract.
+21. `docs/architecture/35_Coding_Principles.md` for coding discipline, layering and adapter boundaries.
+22. `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` for Phase 2 Platform Foundation scope.
+23. `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
+24. `docs/architecture/phase0-guidelines.md` for Phase 0 repository rules.
 
 Founder-mode prompts should be interpreted as ambition and quality standards. If they conflict with this document, the current repository context wins unless a new decision is recorded in `docs/decisions/14_Decision_Log.md`.
 
-Target stack choices are planning context. They do not authorize runnable services, generated bindings, production connectors, cloud infrastructure or deployment configuration during Phase 0.
+Target stack choices are planning context. They do not authorize runnable services, generated bindings, production connectors, cloud infrastructure or deployment configuration unless the founder explicitly authorizes the relevant implementation phase.
 
 ## Product Architecture Goal
 
@@ -60,7 +64,7 @@ Never optimize only for a quick demo if it damages the future ability to scale t
 
 Investor refactor:
 
-Phase 1 should optimize for proving one paid workflow before proving the full platform architecture.
+Phase 2 should create technical foundation only. Phase 3 should optimize for proving one paid workflow before proving the full platform architecture.
 
 Canonical audit reference:
 - `docs/architecture/22_Technical_Investor_Audit.md`
@@ -70,6 +74,9 @@ Canonical MVP implementation standard:
 
 Canonical Phase 1 scope and exit criteria:
 - `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
+
+Canonical Phase 2 Platform Foundation scope:
+- `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`
 
 ## MVP Boundary
 
@@ -82,7 +89,7 @@ The MVP context must be able to explain one Decision ROI Case across four inform
 | Infrastructure & Cost | AWS | resources, utilization, cost and operational metrics |
 | AI Consumption | OpenAI + Anthropic Claude | model, tokens, requests, user/team, application and cost |
 
-Phase 1 implementation does not need to automate every domain as a live connector. It may use one or two narrow read-only connectors plus approved manual/static or import evidence for the remaining domains, as defined in `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`.
+Phase 3 MVP implementation does not need to automate every domain as a live connector. It may use one or two narrow read-only connectors plus approved manual/static or import evidence for the remaining domains, as defined in `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`.
 
 Future integrations are allowed in the roadmap, but they must not shape the MVP architecture before the first Decision ROI Case is validated.
 
@@ -114,7 +121,7 @@ External Platforms
   -> Product Surfaces
 ```
 
-## Phase 1 Architecture Refactor
+## MVP Architecture Refactor
 
 The first build should be a modular monolith or tightly bounded service, not a distributed microservice system.
 
@@ -250,9 +257,9 @@ Recommended initial model:
 - explicit relationship tables or edge table for Decision Graph traversal
 - optional vector store or pgvector for semantic search later
 
-Phase 1 rule:
+MVP rule:
 - Decision Graph relationships are stored in PostgreSQL.
-- Graph DB is not required for Phase 1.
+- Graph DB is not required for the MVP.
 
 Core entities:
 - Decision
@@ -283,13 +290,15 @@ Every ROI number must be explainable and tied to explicit evidence or assumption
 
 ### 7) Recommendation Engine
 
-Initial recommendation focus:
+MVP recommendation focus:
 
-1. Downgrade or change AI model.
-2. Remove unused AI agents.
-3. Detect underutilized AWS resources tied to the same Decision ROI Case.
+The MVP produces exactly one deterministic recommendation:
 
-Deferred:
+1. Downgrade or change AI model for `DRC-AOA-001`.
+
+Expansion candidates after the first value loop works:
+- remove unused AI agents,
+- detect underutilized AWS resources tied to the same Decision ROI Case,
 - identify features with negative ROI,
 - consolidate duplicated services or agents.
 
@@ -311,6 +320,9 @@ Target stack:
 - Python
 - FastAPI
 
+Communication note:
+FastAPI is allowed for Python service shell, health/dev surface and provider-boundary organization. Internal Java/Python product calls remain governed by the existing gRPC/Protobuf decisions unless a later decision changes them.
+
 Responsibilities:
 - recommendation explanation over prepared context
 - evidence summarization
@@ -320,7 +332,7 @@ Responsibilities:
 Rule:
 AI services must never read raw external sources directly. They consume prepared context from the Context Engine and Decision Ledger.
 
-Phase 1 rule:
+MVP rule:
 Do not make AI orchestration a critical dependency for the first proof. Use deterministic rules and explicit assumptions first; use LLMs for explanation only when evidence quality is already trusted.
 
 ### 9) Decision Ledger
@@ -360,9 +372,9 @@ Canonical module contract:
 
 ### 10) Infrastructure and Runtime
 
-Phase 1 target primitives:
+Phase 2/3 target primitives:
 - PostgreSQL for canonical storage
-- optional Docker for local development and packaging, only after implementation is authorized
+- Docker for local development and packaging during Phase 2 Platform Foundation, only after implementation is authorized
 - optional object storage for evidence artifacts and exports, only if summaries/source references are not enough
 
 Future scale primitives:
@@ -372,11 +384,11 @@ Future scale primitives:
 - OpenSearch or analytics store for search and large-scale exploration
 - data lake for long-term operational history
 
-These are not Phase 1 requirements.
+These are not Phase 2 Platform Foundation or Phase 3 MVP Implementation requirements.
 
 ### 11) Minimal Observability
 
-Phase 1 should include observability only where it helps debugging, trust and auditability.
+The MVP should include observability only where it helps debugging, trust and auditability.
 
 Minimum future expectations:
 - structured logs,
@@ -391,9 +403,9 @@ Preferred future-compatible tools:
 - Spring Boot Actuator,
 - Micrometer,
 - OpenTelemetry when useful,
-- Prometheus/Grafana after runtime exists.
+- local Prometheus/Grafana foundation during Phase 2 if explicitly authorized.
 
-Do not make a full observability stack a prerequisite for proving one Decision ROI Case.
+Do not make a full production observability stack a prerequisite for proving one Decision ROI Case.
 
 ## Communication Model
 
@@ -491,6 +503,10 @@ Authoritative documents:
 - `docs/architecture/30_Phase_0_Closure_Readiness_Review.md` for final Phase 0 readiness gates and go/no-go control.
 - `docs/architecture/31_MVP_Implementation_Standard.md` for hexagonal MVP implementation standard, auth direction, minimal observability and scope reduction.
 - `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` for the exact Phase 1 objective, data limit, connector limit, AI boundary and exit criteria.
+- `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md` for Canonical Evidence Model, PostgreSQL, Explanation Provider, JWT/RBAC and Decision Graph.
+- `docs/architecture/34_MVP_Implementation_Blueprint.md` for the final MVP value-loop contract.
+- `docs/architecture/35_Coding_Principles.md` for implementation layering and adapter discipline.
+- `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` for Phase 2 Platform Foundation scope.
 - `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
 - `docs/architecture/21_Technical_Architecture_Context.md` for architecture context.
 - `docs/architecture/18_Architecture_Thesis.md` for conceptual architecture thesis.
@@ -523,8 +539,9 @@ The current project is healthy if:
 - hexagonal boundaries keep GitHub, Jira, AWS, OpenAI + Anthropic Claude, PostgreSQL and OAuth providers outside the domain
 - event and evidence names stay controlled through `docs/architecture/29_Event_Evidence_Vocabulary.md`
 - future code work is traceable through `docs/rnd/30_RD_Activity_Evidence_Dossier.md`
-- Phase 1 starts only after `docs/architecture/30_Phase_0_Closure_Readiness_Review.md` is used for a recorded go/no-go decision
-- Phase 1 implementation proposals satisfy `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
+- Phase 2 Platform Foundation starts only after explicit founder authorization
+- Phase 2 proposals satisfy `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`
+- Phase 3 MVP implementation proposals satisfy `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` and `docs/architecture/34_MVP_Implementation_Blueprint.md`
 
 ## Architecture Risks
 
@@ -537,12 +554,12 @@ The current project is healthy if:
 - mixing connector logic with domain logic
 - treating adapters as domain services
 - implementing multiple auth providers before one B2B pilot needs them
-- building Grafana/OpenTelemetry infrastructure before there is useful runtime behavior to observe
+- building full production Grafana/OpenTelemetry infrastructure before there is useful runtime behavior to observe
 - treating the Executive Workspace as a technical dashboard
 
 ## Next Architecture Steps
 
-1. Keep Phase 0 documentation-only.
+1. Keep the current repository documentation-only until the founder explicitly authorizes Phase 2.
 2. Use this document as context for future architecture agents.
 3. Update the Core Domain Model and create RFCs before adding new bounded contexts or major data models.
 4. Create ADRs before locking implementation stack choices beyond current mandates.
@@ -552,6 +569,7 @@ The current project is healthy if:
 8. Use `docs/architecture/28_Per_Connector_MVP_Contracts.md` before assigning connector work to future agents.
 9. Use `docs/architecture/29_Event_Evidence_Vocabulary.md` before implementation to lock normalized event and evidence language.
 10. Use `docs/rnd/30_RD_Activity_Evidence_Dossier.md` to document future development activity, hours, objects, experiments and tests.
-11. Use `docs/architecture/30_Phase_0_Closure_Readiness_Review.md` as the final Phase 0 control before any Phase 1 authorization.
-12. Use `docs/architecture/31_MVP_Implementation_Standard.md` to reduce Phase 1 scope and keep backend, connectors, auth, security and observability aligned.
-13. Use `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` before creating any Phase 1 scaffolding or implementation exit plan.
+11. Use `docs/architecture/31_MVP_Implementation_Standard.md` to keep backend, connectors, auth, security and observability aligned.
+12. Use `docs/architecture/35_Coding_Principles.md` before creating implementation files.
+13. Use `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` before starting Phase 2 Platform Foundation.
+14. Use `docs/architecture/34_MVP_Implementation_Blueprint.md` before starting Phase 3 MVP Implementation.

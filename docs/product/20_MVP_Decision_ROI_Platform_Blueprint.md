@@ -86,7 +86,7 @@ The MVP uses four integration domains:
 
 Do not expand beyond these four domains until the MVP proves repeatable decision-level ROI.
 
-Phase 1 implementation may start with one or two narrow read-only connectors plus approved manual/static or imported evidence for the remaining domains. The four-domain table defines the evidence story; it does not require full connector automation in the first build.
+Phase 3 MVP implementation may start with one or two narrow read-only connectors plus approved manual/static or imported evidence for the remaining domains. The four-domain table defines the evidence story; it does not require full connector automation in the first build.
 
 ## Core Object
 
@@ -107,20 +107,20 @@ Each case should contain:
 
 The MVP should not build five engines at once.
 
-Phase 1 should implement exactly one recommendation from the paid wedge. The default is AI model downgrade or model change unless a later decision changes it.
+MVP implementation should implement exactly one recommendation from the paid wedge. The default is AI model downgrade or model change unless a later decision changes it.
 
 Primary paid wedge:
 
 | Priority | Recommendation | MVP role |
 |---|---|---|
 | 5/5 | Downgrade or change AI model | Primary |
-| 5/5 | Remove unused AI agents | Primary |
-| 4/5 | Detect underutilized AWS resources tied to the same decision | Supporting |
 
-Deferred until after repeatable ROI:
+Expansion candidates after the first value loop works:
 
 | Recommendation | Reason to defer |
 |---|---|
+| Remove unused AI agents | Similar evidence family, but not needed for the first deterministic recommendation |
+| Detect underutilized AWS resources tied to the same decision | Useful supporting family after the model-change case is proven |
 | Identify features with negative ROI | Requires stronger usage/value signals and business-value attribution |
 | Consolidate duplicated services or agents | Requires similarity analysis and broader graph depth |
 
@@ -130,7 +130,7 @@ This paid-wedge focus supports the strongest commercial message:
 
 ## Recommendation Examples and Deferred Families
 
-Examples 1-3 belong to the MVP paid wedge. Examples 4-5 are documented only as post-validation expansion context.
+Example 1 is the MVP recommendation family. Examples 2-5 are documented only as post-validation expansion context.
 
 ### 1) AI Model Downgrade
 
@@ -319,7 +319,7 @@ Validation sequence:
 Proceed to Phase 1 product design if:
 
 - at least 3 real customer decisions can be reconstructed
-- at least 2 recommendations are judged approval-ready by technical owners
+- at least 1 recommendation is judged approval-ready by technical owners
 - at least 1 recommendation is approved by CTO or VP Engineering after FinOps review
 - at least 1 measurable monthly saving or avoided cost is identified
 - a technical owner trusts the evidence

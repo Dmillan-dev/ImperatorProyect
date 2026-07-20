@@ -36,6 +36,24 @@ Phase 1 may start only after an explicit go/no-go decision is recorded in `docs/
 
 Limited future implementation scaffolding is controlled by `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`; it is not a mandate to build the full platform.
 
+## Post-Closure Phase Update
+
+As of D064:
+
+- Phase 1 documentation and control context are complete.
+- `docs/architecture/34_MVP_Implementation_Blueprint.md` is the final MVP value-loop contract.
+- The next phase is `Phase 2 - Platform Foundation`, not generic technical scaffolding.
+- Phase 2 is governed by `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`.
+- Any implementation work must also follow `docs/architecture/35_Coding_Principles.md`.
+
+This update does not change the original Phase 0 closure assessment. It clarifies the current phase path:
+
+```text
+Phase 1 Complete
+-> Phase 2 Platform Foundation
+-> Phase 3 MVP Implementation
+```
+
 ## Canonical MVP Flow
 
 The active MVP flow is:

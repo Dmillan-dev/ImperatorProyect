@@ -61,6 +61,8 @@ Use for:
 - Phase 1 MVP scope and exit criteria,
 - Phase 1 foundational implementation decisions,
 - final MVP implementation blueprint,
+- coding principles,
+- Phase 2 Platform Foundation blueprint,
 - conceptual database model,
 - connector framework,
 - Phase 0 repository rules,
@@ -141,9 +143,11 @@ When documents conflict:
 24. `architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
 25. `architecture/33_Phase_1_Foundational_Implementation_Decisions.md`
 26. `architecture/34_MVP_Implementation_Blueprint.md`
-27. `../agents/phase1/README.md`
-28. `../agents/phase1/12_phase1_closure.md`
-29. `product/13_Glossary_and_Canonical_Language.md`
+27. `architecture/35_Coding_Principles.md`
+28. `architecture/36_Phase_2_Platform_Foundation_Blueprint.md`
+29. `../agents/phase1/README.md`
+30. `../agents/phase1/12_phase1_closure.md`
+31. `product/13_Glossary_and_Canonical_Language.md`
 
 ## Agent Work Model
 
@@ -157,13 +161,17 @@ Use `../agents/phase1/12_phase1_closure.md` before starting any future Phase 1 i
 
 Use `architecture/30_Phase_0_Closure_Readiness_Review.md` as the final Phase 0 readiness gate before authorizing Phase 1 planning or implementation scaffolding.
 
-Use `architecture/31_MVP_Implementation_Standard.md` to keep future Phase 1 work reduced, hexagonal, auth-aware and observable without overbuilding.
+Use `architecture/31_MVP_Implementation_Standard.md` to keep future MVP work reduced, hexagonal, auth-aware and observable without overbuilding.
 
 Use `architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` to define the exact first-build objective, data-model limit, connector limit, AI explanation boundary, scaffolding authorization and Phase 1 completion criteria.
 
 Use `architecture/33_Phase_1_Foundational_Implementation_Decisions.md` to lock Canonical Evidence Model, PostgreSQL, Explanation Provider, JWT/RBAC and Decision Graph before coding.
 
-Use `architecture/34_MVP_Implementation_Blueprint.md` as the final contract before Phase 2 technical scaffolding.
+Use `architecture/34_MVP_Implementation_Blueprint.md` as the final MVP contract before implementation phases.
+
+Use `architecture/35_Coding_Principles.md` to keep future implementation hexagonal, deterministic, testable, observable and adapter-safe.
+
+Use `architecture/36_Phase_2_Platform_Foundation_Blueprint.md` before starting Phase 2 Platform Foundation. Phase 2 may build the SaaS technical foundation, but must not implement ROI, recommendations, real AI calls, live connectors or business rules.
 
 ## Growth Rule
 

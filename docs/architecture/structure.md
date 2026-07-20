@@ -70,6 +70,8 @@ Documento canónico de alcance y cierre Phase 1:
 - `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` — contrato exacto de objetivo Phase 1: un Decision ROI Case, una recomendacion determinista, modelo de datos mínimo, conectores limitados, IA solo explicativa, scaffolding controlado y criterios de salida.
 - `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md` — decisiones finales antes de codigo: Enterprise Evidence Event, PostgreSQL, Explanation Provider, JWT/RBAC simple y Decision Graph interno sobre PostgreSQL.
 - `docs/architecture/34_MVP_Implementation_Blueprint.md` — contrato final de implementacion MVP: flujo, componentes, objetos, repositorios, servicios, API, tablas, seguridad, NFRs, out-of-scope y plan de 6 semanas.
+- `docs/architecture/35_Coding_Principles.md` — reglas de implementacion para agentes: arquitectura hexagonal, capas, adapters, DTOs, seguridad, observabilidad y limites de IA.
+- `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` — contrato de Phase 2 Platform Foundation: fundacion tecnica sin ROI, recomendaciones, IA real, conectores live ni reglas de negocio.
 - `agents/phase1/12_phase1_closure.md` — contrato de cierre operativo para agentes antes de iniciar cualquier scaffolding futuro de Phase 1.
 
 Documento canónico de arquitectura:
@@ -132,7 +134,9 @@ Documento de contrato Phase 1:
 
 - `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` — referencia obligatoria antes de crear scaffolding, data model inicial, conectores, flujo IA explicativo o tests de salida Phase 1.
 - `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md` — referencia obligatoria antes de elegir formato de evidencia, persistencia, auth, proveedor IA o modelo relacional del Decision Graph.
-- `docs/architecture/34_MVP_Implementation_Blueprint.md` — referencia obligatoria antes de iniciar Phase 2 Technical Scaffolding o Phase 3 MVP Implementation.
+- `docs/architecture/34_MVP_Implementation_Blueprint.md` — referencia obligatoria antes de iniciar Phase 2 Platform Foundation o Phase 3 MVP Implementation.
+- `docs/architecture/35_Coding_Principles.md` — referencia obligatoria antes de crear codigo de backend, Python, frontend, base de datos, API, auth, observabilidad o CI.
+- `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` — referencia obligatoria antes de iniciar Phase 2 Platform Foundation; no autoriza logica de negocio.
 - `agents/phase1/12_phase1_closure.md` — referencia obligatoria para confirmar que el dossier Phase 1 esta cerrado como contexto y que el software aun no se ha construido.
 
 Estructura de control:

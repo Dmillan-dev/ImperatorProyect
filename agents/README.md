@@ -45,7 +45,39 @@ When implementation scaffolding is requested, agents must follow:
 5. `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
 6. `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md`
 7. `docs/architecture/34_MVP_Implementation_Blueprint.md`
-8. `docs/rnd/30_RD_Activity_Evidence_Dossier.md`
+8. `docs/architecture/35_Coding_Principles.md`
+9. `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`
+10. `docs/rnd/30_RD_Activity_Evidence_Dossier.md`
+
+## Phase 2 Platform Foundation Rule
+
+Phase 2 is named `Platform Foundation`.
+
+It may be started only when the founder explicitly asks for implementation of Phase 2.
+
+Phase 2 agents may create technical foundation only:
+
+- project structure,
+- module boundaries,
+- route shells,
+- persistence foundation,
+- auth foundation,
+- observability foundation,
+- Docker/local developer foundation,
+- no-deploy CI foundation.
+
+Phase 2 agents must not create:
+
+- ROI calculation,
+- recommendation generation,
+- real AI provider calls,
+- live provider connectors,
+- approval workflow logic,
+- fake business evidence,
+- fake ledger state,
+- production deployment.
+
+Use `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` as the phase contract.
 
 ## Authority Order
 
@@ -76,9 +108,11 @@ Before acting, every agent must respect:
 23. `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
 24. `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md`
 25. `docs/architecture/34_MVP_Implementation_Blueprint.md`
-26. `agents/phase1/README.md`
-27. `agents/phase1/12_phase1_closure.md`
-28. `docs/product/13_Glossary_and_Canonical_Language.md`
+26. `docs/architecture/35_Coding_Principles.md`
+27. `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`
+28. `agents/phase1/README.md`
+29. `agents/phase1/12_phase1_closure.md`
+30. `docs/product/13_Glossary_and_Canonical_Language.md`
 
 ## Agent Areas
 
@@ -124,6 +158,8 @@ Before acting, every agent must respect:
 | Phase 1 execution contract | CTO | All | Phase 1 MVP Scope and Exit Criteria |
 | Phase 1 foundational decisions | CTO | Backend, Connector, Security, AI, QA | Phase 1 Foundational Implementation Decisions |
 | Phase 1 final implementation blueprint | CTO | All | MVP Implementation Blueprint |
+| Coding principles | CTO | Backend, Frontend, Connector, AI, Security, QA | Coding Principles |
+| Phase 2 Platform Foundation | CTO | Backend, Frontend, AI, Security, QA | Phase 2 Platform Foundation Blueprint |
 | Phase 1 staged agentic process | CTO | All | agents/phase1/README.md |
 | Phase 1 stage dossier closure | CTO | All | agents/phase1/12_phase1_closure.md |
 
@@ -142,9 +178,11 @@ Before an agent edits anything:
 9. Use `docs/architecture/31_MVP_Implementation_Standard.md` before proposing implementation structure, auth, observability or connector adapters.
 10. Use `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` before proposing any Phase 1 scaffolding, data model, connector implementation, AI explanation flow or exit test.
 11. Use `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md` before choosing evidence format, persistence, AI provider boundary, auth model or graph relationship model.
-12. Use `docs/architecture/34_MVP_Implementation_Blueprint.md` before starting Phase 2 Technical Scaffolding or Phase 3 MVP Implementation.
-13. Use `agents/phase1/README.md` before splitting Phase 1 into autonomous agent stages.
-14. Use `agents/phase1/12_phase1_closure.md` before starting any future Phase 1 implementation scaffolding.
+12. Use `docs/architecture/34_MVP_Implementation_Blueprint.md` before starting Phase 2 Platform Foundation or Phase 3 MVP Implementation.
+13. Use `docs/architecture/35_Coding_Principles.md` before creating implementation files.
+14. Use `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` before starting Phase 2 Platform Foundation.
+15. Use `agents/phase1/README.md` before splitting Phase 1 into autonomous agent stages.
+16. Use `agents/phase1/12_phase1_closure.md` before starting Phase 2 Platform Foundation or Phase 3 MVP Implementation.
 
 ## Current MVP Boundary
 
@@ -162,6 +200,6 @@ Operational Event
 -> Result Validation
 ```
 
-Any agent proposal that requires broad platform surfaces, autonomous execution, public APIs, SDKs, Kafka, Kubernetes, Terraform, Graph DB/vector infrastructure, full observability platform, multiple OAuth providers or new connectors is post-MVP unless a new decision explicitly changes the scope.
+Any agent proposal that requires broad platform surfaces, autonomous execution, public APIs, SDKs, Kafka, Kubernetes, Terraform, Graph DB/vector infrastructure, full production observability platform, multiple OAuth providers or new connectors is post-MVP unless a new decision explicitly changes the scope.
 
 Any Phase 1 proposal that requires more than one Decision ROI Case, multiple recommendations, ranking, learning, broad connector automation or AI as decision-maker violates the Phase 1 scope contract.

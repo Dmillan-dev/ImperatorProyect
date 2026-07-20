@@ -18,6 +18,8 @@ This is not SQL, not an ORM model and not a migration plan. It explains which da
 - `docs/architecture/29_Event_Evidence_Vocabulary.md`
 - `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
 - `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md`
+- `docs/architecture/34_MVP_Implementation_Blueprint.md`
+- `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`
 - `docs/rfcs/0001-knowledge-graph-model.md`
 - `docs/rfcs/0002-module-communication-architecture.md`
 
@@ -28,20 +30,22 @@ This is not SQL, not an ORM model and not a migration plan. It explains which da
 - Evidence lineage must be preserved.
 - Every connector/import must normalize into Enterprise Evidence Event before core domain use.
 - Ledger history must be append-only.
-- Phase 1 source of truth is PostgreSQL.
+- MVP implementation source of truth is PostgreSQL.
 - Decision Graph relationships must be representable without requiring Graph DB.
 - Estimated value and realized value must be separated.
 - Connector sync state must not pollute core business entities.
 - AI-readable context must be prepared, filtered and policy-aware.
 - Raw source data, normalized evidence and executive views are different data layers.
 
-## Phase 1 Data Reduction
+## MVP Data Reduction
 
 This document describes the conceptual data model for the broader product.
 
-Phase 1 implementation must use the smaller persistence boundary in `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` and the foundational choices in `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md`.
+Phase 2 may create the PostgreSQL schema foundation only under `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`.
 
-If a table or stored object does not directly support one Decision ROI Case, one evidence chain, one ROI view, one deterministic recommendation, one AI explanation or one ledger state, it is out of Phase 1 scope.
+Phase 3 MVP implementation must use the smaller persistence boundary in `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`, the foundational choices in `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md` and the value-loop contract in `docs/architecture/34_MVP_Implementation_Blueprint.md`.
+
+If a table or stored object does not directly support one Decision ROI Case, one evidence chain, one ROI view, one deterministic recommendation, one AI explanation or one ledger state, it is out of MVP scope.
 
 ## Conceptual Data Areas
 
@@ -112,7 +116,7 @@ Key relationships:
 - Evidence has lineage and sensitivity.
 
 Layering:
-- raw source metadata: provider-specific, isolated and not Phase 1 source of truth,
+- raw source metadata: provider-specific, isolated and not MVP source of truth,
 - Enterprise Evidence Event: provider-neutral connector/import envelope,
 - normalized events: platform-shaped facts,
 - evidence: trusted business-context facts.
@@ -407,9 +411,9 @@ Purpose:
 Candidate future technology:
 - PostgreSQL.
 
-Phase 1 decision:
+MVP decision:
 - PostgreSQL is the first implementation source of truth.
-- Do not use in-memory store, JSON files, SQLite, MongoDB or Redis as Phase 1 source of truth.
+- Do not use in-memory store, JSON files, SQLite, MongoDB or Redis as MVP source of truth.
 
 ### Relationship / graph layer
 
@@ -454,7 +458,7 @@ Purpose:
 Candidate future technology:
 - Redis.
 
-Phase 1 rule:
+MVP rule:
 - Redis is not a source of truth and is not required for the MVP.
 
 ## Data Invariants

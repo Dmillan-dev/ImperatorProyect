@@ -38,12 +38,12 @@ Analytical layer to detect:
 - optimization opportunities
 - negative-ROI or low-value decisions
 
-Initial paid wedge:
+MVP first paid-wedge action:
 - downgrade or change AI model
+
+Expansion paid-wedge families:
 - remove unused AI agents
 - detect underutilized AWS resources tied to the same Decision ROI Case
-
-Deferred recommendation families:
 - identify features with negative ROI
 - consolidate duplicated services or agents
 

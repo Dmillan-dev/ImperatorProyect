@@ -82,12 +82,10 @@ The MVP should prove that through one complete story:
 
 Jira -> GitHub -> AWS -> OpenAI + Anthropic Claude -> Decision Review Workspace -> Decision Ledger history -> Result Validation.
 
-The first MVP recommendations should be:
-- downgrade or change AI model,
-- remove unused AI agents,
-- detect underutilized AWS resources tied to the same decision.
+The first MVP recommendation should be:
+- downgrade or change AI model.
 
-Negative-ROI feature analysis and duplicated service/agent consolidation should remain post-MVP until the first wedge is repeatable.
+Unused AI agent removal, underutilized AWS resource detection, negative-ROI feature analysis and duplicated service/agent consolidation should remain post-MVP until the first wedge is repeatable.
 
 ## Strategic recommendations
 

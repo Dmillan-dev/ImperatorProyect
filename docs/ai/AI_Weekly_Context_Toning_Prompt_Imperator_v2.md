@@ -120,6 +120,6 @@ E) Freeze list + next focus
 - MVP implementation standard: docs/architecture/31_MVP_Implementation_Standard.md.
 - Phase 1 scope and exit criteria: docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md.
 - Canonical MVP blueprint: docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md.
-- Priority paid wedge: AI model downgrade/change, unused AI agent removal and underutilized AWS resources tied to the same Decision ROI Case.
-- Deferred recommendation families: negative-ROI features and duplicated service/agent consolidation.
+- Priority paid wedge for the MVP: AI model downgrade/change for `DRC-AOA-001`.
+- Deferred recommendation families: unused AI agent removal, underutilized AWS resources, negative-ROI features and duplicated service/agent consolidation.
 - Land-and-expand sequence: CTO/VP Engineering + Platform + FinOps → Security/Compliance → Executive operating layer.
