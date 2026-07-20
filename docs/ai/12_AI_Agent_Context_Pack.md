@@ -11,6 +11,20 @@ Agents must not create runnable implementation or infer product decisions beyond
 
 No more conceptual Phase 1 documents should be added unless a contradiction is discovered. The next phase is Phase 2 - Platform Foundation, which may later build technical foundation only and must not implement business intelligence. Future implementation must follow the Implementation Contract and the one-module-per-iteration rule. Sprint 0 is GO only for Sprint 1 - Repository and Project Shell.
 
+From Sprint 1 onward, do not create new documents unless they justify a technical decision required to implement code.
+
+No sprint may begin unless the previous sprint gate is green or explicitly waived by founder/CTO.
+
+From Sprint 1 onward, use separated sprint roles: Architecture Guardian, Implementation Agent, Quality Agent, Context Keeper and CTO/Product Guardian. Only the Implementation Agent writes implementation files. Architecture Guardian and CTO/Product Guardian have veto power.
+
+Every sprint reports ASI. Targets: Sprint 1 = 100%, Sprint 2 = 100%, Sprint 3 >= 95%, Sprint 4 and later >= 95%.
+
+Every sprint reports Decision Stability. Target for Sprint 1, Sprint 2 and Sprint 3 is 0 modified prior decisions.
+
+Golden file rule: if an agent wants to create, modify, move or delete a file outside the sprint deliverable, stop and ask for authorization.
+
+No sprint may last more than one week.
+
 ## Authority Order
 
 When context conflicts, agents must use this order:
@@ -138,6 +152,13 @@ Do not introduce:
 - Phase 2 sprint work that bypasses `agents/phase2/README.md`
 - Sprint 1 work that bypasses `docs/architecture/38_Sprint_0_Contract_Gate_Report.md`
 - agent prompts that ask for more than one implementation module per iteration
+- new documents that do not justify an implementation-critical technical decision
+- sprint starts without the previous sprint green-gate table passing
+- sprint execution that collapses Architecture Guardian, Implementation Agent, Quality Agent, Context Keeper and CTO/Product Guardian into one uncontrolled implementation role
+- ASI below target without explicit founder/CTO exception
+- Decision Stability above target without explicit founder/CTO exception
+- file creation outside the sprint deliverable without explicit authorization
+- sprints longer than one week
 - staged Phase 1 agent work that bypasses `agents/phase1/README.md`
 - architecture proposals that treat conceptual bounded contexts as mandatory Phase 1 microservices
 - AI behavior that modifies persistent data, executes business rules, replaces the Decision Engine, approves, rejects, defers, marks implementation or validates results
@@ -164,5 +185,6 @@ For consistency between teams and agents, the following guidance applies before 
 - Implementation contract lives in `docs/architecture/37_Implementation_Contract.md`. It is mandatory for layer rules, dependency rules, packages, naming, API behavior, database behavior, events, logging, AI boundaries, security, testing, Git, agent execution and done definitions.
 - Phase 2 sprint plan lives in `agents/phase2/README.md`. It is mandatory for sprint sequencing and one-module-per-iteration prompts.
 - Sprint 0 contract gate lives in `docs/architecture/38_Sprint_0_Contract_Gate_Report.md`. It is the current GO decision and authorizes only Sprint 1 - Repository and Project Shell.
+- Phase 2 sprint roles and ASI discipline live in `docs/architecture/37_Implementation_Contract.md` and `agents/phase2/README.md`.
 
 Any further changes to this mandate or expansions must be recorded in `docs/decisions/14_Decision_Log.md`.

@@ -51,6 +51,299 @@ Every implementation task must state:
 Phase 2 creates foundation only.
 Phase 3 implements the MVP value loop.
 
+## Design Freeze Rule
+
+The design phase is closed.
+
+From Sprint 1 onward, do not modify architecture, domain, API, phase, sprint or stack decisions because the team is still designing.
+
+Important changes are allowed only when real implementation work demonstrates a need.
+
+Any proposed change to documents 31-38 must include:
+
+1. the sprint and module that exposed the need,
+2. the concrete code or verification evidence,
+3. the decision or contract affected,
+4. the smallest possible change,
+5. founder/CTO approval.
+
+Default answer for architecture changes is no.
+
+## Golden File Boundary Rule
+
+If an agent wants to create, modify, move or delete a file that is not explicitly part of the sprint deliverable, the agent must stop and request authorization.
+
+Examples for Sprint 1:
+
+| File or folder | Status |
+|---|---|
+| `backend-java/` | Allowed only as repository shell boundary |
+| `backend-java/pom.xml` | Forbidden |
+| `backend-java/src/` | Forbidden |
+| `docker-compose.yml` | Forbidden |
+| `package.json` | Forbidden |
+| `pyproject.toml` | Forbidden |
+
+No "helpful" adjacent files.
+No opportunistic setup.
+No unrequested framework files.
+
+## Documentation Creation Rule
+
+From Sprint 1 onward, a new document may be created only if it justifies a technical decision required to implement code.
+
+Do not create a new document for:
+
+- broad product vision,
+- general brainstorming,
+- duplicate summaries,
+- cosmetic process description,
+- concepts already covered by existing authority documents.
+
+If a needed rule can be added to an existing contract, update the existing contract instead of creating a new document.
+
+Required justification for any new document:
+
+1. implementation decision it controls,
+2. module or sprint it affects,
+3. code risk it prevents,
+4. authority document it extends,
+5. reason it cannot be a small update to an existing document.
+
+## Sprint Green-Gate Rule
+
+Every sprint must end with a mandatory engineering status table.
+
+No sprint may begin unless the previous sprint is fully green or the founder/CTO explicitly records an exception.
+
+Each sprint produces exactly one deliverable.
+
+Do not describe work as "create backend", "create frontend" or "create platform".
+Describe it as a single deliverable, for example:
+
+- Repository Shell,
+- Domain Layer,
+- Application Layer,
+- Persistence Adapter,
+- API Route Shells,
+- Auth Foundation.
+
+Mandatory table:
+
+| Criterion | Status |
+|---|---|
+| Builds/compiles or valid no-code equivalent | Pending |
+| Tests/checks pass or valid no-test justification | Pending |
+| Architecture respected | Pending |
+| No critical technical debt | Pending |
+| No dead code | Pending |
+| No unresolved TODOs | Pending |
+| Documentation synchronized | Pending |
+| Architectural Stability Index target met | Pending |
+| Decision Stability target met | Pending |
+| Sprint duration within one week | Pending |
+
+For documentation-only or structure-only sprints, use "N/A - justified" only when there is truly no code to compile or test.
+
+Mandatory sprint close status:
+
+```text
+STATUS: PASS
+
+Architecture Guardian: PASS
+Quality Agent: PASS
+Context Keeper: PASS
+Product Guardian: PASS
+Implementation Agent: PASS
+ASI: <score>%
+Decision Stability: <number of D001-D069 decisions modified>
+```
+
+If any line does not pass, the sprint is not complete.
+
+There is no "90% done" sprint.
+
+## Architectural Stability Index
+
+Every sprint must report an Architectural Stability Index, abbreviated as ASI.
+
+Purpose:
+
+Detect whether implementation is forcing architecture churn.
+
+Baseline:
+
+```text
+ASI starts at 100%.
+```
+
+Subtract:
+
+| Change | Penalty |
+|---|---:|
+| Any document in the authority range 31-38 had to change during the sprint | -10 |
+| A foundational decision had to change | -20 |
+| Folder structure outside the assigned deliverable had to change | -10 |
+| A contract was broken and then repaired | -10 |
+| An unplanned dependency was added | -5 |
+| A forbidden responsibility entered a layer and had to be removed | -10 |
+
+Targets:
+
+| Sprint | Minimum ASI |
+|---|---:|
+| Sprint 1 | 100% |
+| Sprint 2 | 100% |
+| Sprint 3 | 95% |
+| Sprint 4 and later | 95% |
+
+If ASI falls below target, the next sprint must not start until the Architecture Guardian and CTO/Product Guardian accept the reason.
+
+## Decision Stability
+
+Every sprint must report how many accepted decisions in `docs/decisions/14_Decision_Log.md` had to be modified.
+
+Scope:
+
+- count modifications to existing decisions `D001` through the latest decision at sprint start;
+- appending a new decision after founder/CTO approval does not count as modifying an old decision;
+- clarifying typos without changing meaning may be recorded as `0` only if the Context Keeper and Architecture Guardian agree.
+
+Targets:
+
+| Sprint | Target |
+|---|---:|
+| Sprint 1 | 0 modified prior decisions |
+| Sprint 2 | 0 modified prior decisions |
+| Sprint 3 | 0 modified prior decisions |
+| Sprint 4 and later | 0 by default; any exception requires founder/CTO approval |
+
+If implementation repeatedly changes old decisions, stop implementation and review the architecture before continuing.
+
+## Sprint Duration Rule
+
+No sprint may last more than one week.
+
+If the work cannot be completed in one week, reduce the deliverable. Do not extend the sprint by adding scope.
+
+The purpose is delivery, not perfection.
+
+## Phase 2 Sprint Agent Roles
+
+From Sprint 1 onward, implementation work uses five specialized agent roles.
+
+### Architecture Guardian
+
+Writes no code.
+
+Owns:
+
+- context control,
+- architecture review,
+- contract compliance,
+- dependency review,
+- PR/generation veto.
+
+Checks:
+
+- Hexagonal Architecture,
+- DDD boundaries,
+- documents 31-38,
+- forbidden dependencies,
+- layer violations,
+- technical debt,
+- contract drift,
+- ASI score.
+
+Power:
+
+- may veto any sprint output.
+
+### Implementation Agent
+
+The only role allowed to write implementation files.
+
+Owns:
+
+- the single assigned module,
+- the single sprint deliverable,
+- minimal changes required by the prompt.
+
+Must not:
+
+- create unassigned modules,
+- modify authority documents,
+- improvise architecture,
+- add dependencies not allowed by the sprint,
+- broaden scope.
+
+### Quality Agent
+
+Writes no product functionality.
+
+Owns review of:
+
+- naming,
+- complexity,
+- duplication,
+- dead code,
+- imports,
+- coupling,
+- SOLID,
+- Clean Architecture,
+- unused files,
+- unresolved TODOs.
+
+### Context Keeper
+
+Writes no implementation code.
+
+Owns synchronization of:
+
+- README files,
+- Decision Log,
+- changelog or activity notes when applicable,
+- technical documentation directly tied to the implemented deliverable,
+- R&D evidence references.
+
+Must obey the Documentation Creation Rule.
+
+### CTO / Product Guardian
+
+Writes no implementation code.
+
+Answers one question:
+
+```text
+Does this implementation increase MVP product value?
+```
+
+Operational CTO question:
+
+```text
+Does this sprint move IMPERATOR closer to demonstrating economic savings to a customer?
+```
+
+If the answer is no, the work probably does not belong to the MVP.
+
+Default answer for premature infrastructure is no.
+
+Reject by default in the MVP:
+
+- Redis,
+- Kafka,
+- RabbitMQ,
+- Kubernetes,
+- Terraform,
+- microservices,
+- Event Sourcing,
+- new cloud services,
+- extra auth providers,
+- new connector families,
+- new recommendation families.
+
+May approve only when the change directly strengthens the single Decision ROI Case and does not violate Phase 2/Phase 3 boundaries.
+
 ## 1. Layer Rules
 
 ### Frontend
@@ -937,6 +1230,7 @@ During editing:
 
 - edit only the assigned module and directly required test/config files;
 - do not create more than one module;
+- stop before touching any file outside the sprint deliverable;
 - do not modify product or architecture decisions unless the task is explicitly documentation governance;
 - do not infer missing business behavior;
 - do not add provider calls;
@@ -992,17 +1286,23 @@ A sprint item is finished when:
 - integration checks pass,
 - documentation maps remain accurate,
 - R&D evidence is updated for real implementation activity,
-- open risks are listed.
+- open risks are listed,
+- the sprint green-gate table is complete,
+- Decision Stability is reported,
+- sprint duration is one week or less.
 
 ### Accepted
 
 A sprint is accepted when:
 
-- reviewer confirms alignment with documents 31-37,
+- reviewer confirms alignment with documents 31-38,
 - one-module-per-iteration rule was respected,
 - Phase 2 contains no business intelligence,
 - Phase 3 contains only the authorized MVP value-loop behavior,
 - CI or equivalent verification passes,
+- every green-gate criterion is green or explicitly justified as N/A,
+- mandatory sprint close status is `STATUS: PASS`,
+- Decision Stability target is met or explicitly waived by founder/CTO,
 - no authority document was contradicted.
 
 ## Final Control Statement

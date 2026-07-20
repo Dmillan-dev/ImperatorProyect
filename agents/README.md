@@ -96,6 +96,64 @@ Current Sprint 0 result:
 - authorized next action: Sprint 1 - Repository and Project Shell only
 - first code-bearing module after Sprint 1 acceptance: `backend-java/domain`
 
+Documentation rule:
+
+- From Sprint 1 onward, create a new document only if it justifies a technical decision required to implement code.
+- If an existing contract can absorb the rule, update the existing contract instead.
+
+Sprint gate rule:
+
+- Every sprint must finish with the green-gate table from `docs/architecture/37_Implementation_Contract.md`.
+- No sprint may start unless the previous sprint is green or founder/CTO records an explicit exception.
+- No sprint may last more than one week.
+
+Golden file rule:
+
+- If an agent wants to create, modify, move or delete a file outside the sprint deliverable, it must stop and ask for authorization.
+
+ASI rule:
+
+- Every sprint reports Architectural Stability Index.
+- Sprint 1 target is 100%.
+- Sprint 2 target is 100%.
+- Sprint 3 target is at least 95%.
+- Sprint 4 and later target is at least 95%.
+
+Decision Stability rule:
+
+- Every sprint reports how many prior accepted decisions had to be modified.
+- Sprint 1 target is 0.
+- Sprint 2 target is 0.
+- Sprint 3 target is 0.
+- Later sprints also target 0 unless founder/CTO records an exception.
+
+## Phase 2 Sprint Execution Roles
+
+From Sprint 1 onward, do not use one general-purpose agent for implementation.
+
+Use five separated roles:
+
+| Role | Writes code | Purpose | Veto |
+|---|---|---|---|
+| Architecture Guardian | No | Checks hexagonal architecture, DDD, documents 31-38, dependencies, debt and contract drift. | Yes |
+| Implementation Agent | Yes | Implements only the assigned sprint deliverable/module. | No |
+| Quality Agent | No product functionality | Reviews naming, complexity, duplication, dead code, imports, coupling, SOLID and Clean Architecture. | Can block acceptance |
+| Context Keeper | No implementation code | Synchronizes README, Decision Log and implementation-critical docs only. | Can block documentation sync |
+| CTO / Product Guardian | No implementation code | Confirms the change increases MVP product value and rejects premature infrastructure. | Yes |
+
+Default CTO / Product Guardian answer is no for:
+
+- Redis,
+- Kafka,
+- RabbitMQ,
+- Kubernetes,
+- Terraform,
+- microservices,
+- Event Sourcing,
+- extra auth providers,
+- new connector families,
+- new recommendation families.
+
 ## Authority Order
 
 Before acting, every agent must respect:
@@ -209,6 +267,8 @@ Before an agent edits anything:
 17. Use `docs/architecture/38_Sprint_0_Contract_Gate_Report.md` before executing Sprint 1.
 18. Use `agents/phase1/README.md` before splitting Phase 1 into autonomous agent stages.
 19. Use `agents/phase1/12_phase1_closure.md` before starting Phase 2 Platform Foundation or Phase 3 MVP Implementation.
+20. Do not create new documentation unless it justifies a technical decision needed to implement code.
+21. Do not start a sprint unless the previous sprint gate is green or explicitly waived.
 
 ## Current MVP Boundary
 

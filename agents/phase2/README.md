@@ -79,7 +79,7 @@ The corrected order is:
 2. Sprint 1 - Repository and Project Shell
 3. Sprint 2 - Java Domain Foundation
 4. Sprint 3 - Application Layer Foundation
-5. Sprint 4 - PostgreSQL Foundation
+5. Sprint 4 - PostgreSQL Persistence Adapter Foundation
 6. Sprint 5 - API Route Shells
 7. Sprint 6 - JWT/RBAC Foundation
 8. Sprint 7 - Python AI Provider Foundation
@@ -102,6 +102,34 @@ Evidence
 ```
 
 The implementation must shape PostgreSQL, API, security and UI around the domain, not the other way around.
+
+## Sprint Agent Model
+
+From Sprint 1 onward, every sprint uses five specialized roles:
+
+| Role | Writes code | Authority |
+|---|---|---|
+| Architecture Guardian | No | Vetoes architecture, DDD, dependency or contract violations. |
+| Implementation Agent | Yes | Implements only the single assigned deliverable/module. |
+| Quality Agent | No product functionality | Reviews naming, complexity, duplication, coupling, dead code and TODOs. |
+| Context Keeper | No implementation code | Synchronizes README, Decision Log and implementation-critical docs only. |
+| CTO / Product Guardian | No implementation code | Rejects work that does not increase MVP product value. |
+
+Only the Implementation Agent may create implementation files.
+
+Every sprint produces exactly one deliverable.
+
+Every sprint reports ASI using `docs/architecture/37_Implementation_Contract.md`.
+
+Every sprint reports Decision Stability.
+
+Every sprint lasts at most one week.
+
+Golden rule:
+
+```text
+If an agent wants to create or modify a file outside the sprint deliverable, stop and ask for authorization.
+```
 
 ## Sprint 0 - Contract Gate
 
@@ -138,8 +166,21 @@ Goal:
 
 Create only the future top-level implementation structure.
 
+Deliverable:
+
+```text
+Repository Shell
+```
+
+Maximum duration:
+
+```text
+One week
+```
+
 Allowed modules, one per iteration:
 
+- `repository/root-files`
 - `backend-java/`
 - `backend-python/`
 - `frontend/`
@@ -148,19 +189,39 @@ Allowed modules, one per iteration:
 - `scripts/`
 - `proto/` review/alignment only if needed
 
+Allowed files:
+
+- `.gitignore`
+- `.editorconfig`
+- `LICENSE` with founder-approved text or conservative proprietary placeholder only
+- root `README.md` update only if needed to reference the physical structure
+- folder-level `README.md` files
+
 Forbidden:
 
 - source logic,
 - real services,
 - business data,
+- Maven,
+- Gradle,
+- Spring Boot,
+- Java source,
+- Python source,
+- React app,
+- package manifests,
+- PostgreSQL runtime,
+- migrations,
 - Docker runtime before Sprint 8 unless explicitly scoped to a single shell file.
 
 Example prompt:
 
 ```text
-Genera unicamente el modulo backend-java/project-shell respetando docs/architecture/31_MVP_Implementation_Standard.md a docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
-No implementes dominio, API, persistencia, auth, observabilidad ni Docker.
+Genera unicamente el modulo repository/project-shell respetando docs/architecture/31_MVP_Implementation_Standard.md a docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
+Crea solo estructura fisica y README de frontera.
+Puedes crear .gitignore, .editorconfig y LICENSE solo si no inventas una licencia open-source no aprobada.
+No implementes Maven, Gradle, Spring Boot, Java, Python, React, Docker, PostgreSQL, dominio, API, persistencia, auth ni observabilidad.
 No modifiques otros modulos.
+Si necesitas crear un archivo no listado explicitamente como permitido, detente y pide autorizacion.
 ```
 
 ## Sprint 2 - Java Domain Foundation
@@ -168,6 +229,12 @@ No modifiques otros modulos.
 Goal:
 
 Create the first stable Java domain skeleton before database, API or framework behavior.
+
+Deliverable:
+
+```text
+Domain Layer
+```
 
 Allowed modules, one per iteration:
 
@@ -210,6 +277,12 @@ Goal:
 
 Create application use-case shells after the domain exists and before persistence/API adapters.
 
+Deliverable:
+
+```text
+Application Layer
+```
+
 Allowed modules, one per iteration:
 
 - `backend-java/application/import-evidence`
@@ -243,11 +316,17 @@ No implementes API, base de datos, ROI, recomendaciones, conectores, IA ni ledge
 No modifiques ningun otro modulo.
 ```
 
-## Sprint 4 - PostgreSQL Foundation
+## Sprint 4 - PostgreSQL Persistence Adapter Foundation
 
 Goal:
 
-Create database migration foundation and V1 schema boundary without seed business data.
+Create PostgreSQL persistence adapter foundation after domain and application ports exist.
+
+Deliverable:
+
+```text
+Persistence Adapter
+```
 
 Allowed modules, one per iteration:
 
@@ -265,6 +344,7 @@ Forbidden:
 - fake ledger entries,
 - stored secrets,
 - denormalized analytics tables not needed by the MVP contract,
+- database-first domain changes,
 - Graph DB infrastructure.
 
 Example prompt:
@@ -281,6 +361,12 @@ No implementes repositories ni servicios.
 Goal:
 
 Expose documented REST route shells that return controlled not-implemented responses.
+
+Deliverable:
+
+```text
+API Route Shells
+```
 
 Allowed modules, one per iteration:
 
@@ -314,6 +400,12 @@ Goal:
 
 Create authentication and role middleware foundation without OAuth providers.
 
+Deliverable:
+
+```text
+Auth Foundation
+```
+
 Allowed modules, one per iteration:
 
 - `backend-java/security/jwt`
@@ -344,6 +436,12 @@ No implementes aprobacion de negocio ni workflow de ledger.
 Goal:
 
 Create FastAPI and Explanation Provider foundation without real AI integration.
+
+Deliverable:
+
+```text
+AI Provider Foundation
+```
 
 Allowed modules, one per iteration:
 
@@ -377,6 +475,12 @@ No implementes prompts de negocio.
 Goal:
 
 Create the Next.js/React application shell without product logic.
+
+Deliverable:
+
+```text
+Frontend Shell
+```
 
 Allowed modules, one per iteration:
 
@@ -414,6 +518,12 @@ Goal:
 
 Create local developer orchestration for foundation services.
 
+Deliverable:
+
+```text
+Docker Local Foundation
+```
+
 Allowed modules, one per iteration:
 
 - `infra/docker/backend-java`
@@ -449,6 +559,12 @@ Goal:
 
 Create minimal observability wiring from day one.
 
+Deliverable:
+
+```text
+Observability Foundation
+```
+
 Allowed modules, one per iteration:
 
 - `backend-java/observability/logging`
@@ -481,6 +597,12 @@ No implementes metricas de negocio.
 Goal:
 
 Create build verification and development evidence discipline.
+
+Deliverable:
+
+```text
+CI and R&D Evidence Foundation
+```
 
 Allowed modules, one per iteration:
 
@@ -555,12 +677,52 @@ Entrega:
 A sprint is accepted only when:
 
 1. every module was generated in a separate iteration,
-2. the one-module rule was respected,
-3. the sprint created foundation only,
-4. checks passed or failures are documented,
-5. no authority document was contradicted,
-6. R&D evidence is updated only for real work performed,
-7. next sprint can start without agents needing to invent context.
+2. exactly one sprint deliverable was produced,
+3. the one-module rule was respected,
+4. Architecture Guardian did not veto,
+5. Quality Agent did not find blocking debt,
+6. CTO / Product Guardian accepted MVP value alignment,
+7. ASI target was met,
+8. Decision Stability target was met,
+9. sprint duration was one week or less,
+10. the sprint created foundation only,
+11. checks passed or failures are documented,
+12. no authority document was contradicted,
+13. R&D evidence is updated only for real work performed,
+14. next sprint can start without agents needing to invent context.
+
+Every sprint must end with:
+
+| Criterion | Status |
+|---|---|
+| Builds/compiles or valid no-code equivalent | Pending |
+| Tests/checks pass or valid no-test justification | Pending |
+| Architecture respected | Pending |
+| No critical technical debt | Pending |
+| No dead code | Pending |
+| No unresolved TODOs | Pending |
+| Documentation synchronized | Pending |
+| ASI target met | Pending |
+| Decision Stability target met | Pending |
+| Sprint duration within one week | Pending |
+
+No sprint may begin unless the previous sprint is fully green or explicitly waived by founder/CTO.
+
+Mandatory final status:
+
+```text
+STATUS: PASS
+
+Architecture Guardian: PASS
+Quality Agent: PASS
+Context Keeper: PASS
+Product Guardian: PASS
+Implementation Agent: PASS
+ASI: <score>%
+Decision Stability: <number of prior decisions modified>
+```
+
+If any line fails, the sprint is not complete.
 
 ## Phase 2 Completion Gate
 
@@ -568,11 +730,11 @@ Phase 2 is complete only when:
 
 - Java domain foundation exists,
 - application layer foundation exists,
-- Python provider foundation exists,
-- PostgreSQL foundation exists,
+- PostgreSQL persistence adapter foundation exists,
 - API route shells exist,
 - React shell exists,
 - JWT/RBAC foundation exists,
+- Python provider foundation exists,
 - Docker local foundation exists,
 - observability foundation exists,
 - CI foundation exists,

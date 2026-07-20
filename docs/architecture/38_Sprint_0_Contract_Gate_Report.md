@@ -42,7 +42,9 @@ Findings:
 - `agents/phase2/README.md` has been aligned to the domain-first order:
   - Sprint 2 - Java Domain Foundation,
   - Sprint 3 - Application Layer Foundation,
-  - Sprint 4 - PostgreSQL Foundation.
+  - Sprint 4 - PostgreSQL Persistence Adapter Foundation.
+- Sprint execution uses five separated roles: Architecture Guardian, Implementation Agent, Quality Agent, Context Keeper and CTO / Product Guardian.
+- Every sprint must report ASI and pass the green-gate table before the next sprint starts.
 - No code or project structure has been created.
 
 ## 1. Architecture Validation
@@ -97,7 +99,7 @@ Phase 2 may include:
 - backend foundation,
 - domain skeleton,
 - application use-case shells,
-- database foundation,
+- persistence adapter foundation,
 - API route shells,
 - authentication foundation,
 - frontend foundation,
@@ -332,6 +334,34 @@ Forbidden:
 
 ## 7. First Agent Instruction
 
+Sprint 1 must be executed with separated roles:
+
+| Role | Sprint 1 responsibility |
+|---|---|
+| Architecture Guardian | Validate folder boundaries, one-deliverable rule, no framework leakage and ASI. |
+| Implementation Agent | Create only the authorized repository shell files/folders. |
+| Quality Agent | Check naming, empty-folder intent, no dead files and no TODOs. |
+| Context Keeper | Synchronize README/Decision Log only if required by actual changes. |
+| CTO / Product Guardian | Confirm repository shell supports MVP flow and does not add platform bloat. |
+
+ASI target for Sprint 1:
+
+```text
+100%
+```
+
+Decision Stability target for Sprint 1:
+
+```text
+0 modified prior decisions
+```
+
+Maximum Sprint 1 duration:
+
+```text
+One week
+```
+
 ### Sprint 1 Agent Prompt
 
 Use this prompt after Sprint 0 is accepted:
@@ -345,6 +375,7 @@ No instalar dependencias.
 No crear package manifests.
 No crear Dockerfiles.
 No crear migraciones.
+Duracion maxima: una semana.
 
 Objetivo:
 Crear unicamente la estructura superior del proyecto para Phase 2 Platform Foundation.
@@ -353,6 +384,10 @@ Modulo permitido:
 repository/project-shell
 
 Archivos/carpetas permitidos:
+- .gitignore
+- .editorconfig
+- LICENSE con texto aprobado por fundador o placeholder propietario conservador
+- README.md solo si se actualiza para reflejar la estructura fisica
 - backend-java/README.md
 - backend-python/README.md
 - frontend/README.md
@@ -364,18 +399,29 @@ Archivos/carpetas permitidos:
 Archivos/carpetas prohibidos:
 - cualquier src/
 - pom.xml
+- build.gradle
 - package.json
 - pyproject.toml
 - requirements.txt
 - Dockerfile
 - docker-compose.yml
 - migrations SQL
+- Maven
+- Gradle
+- Spring Boot
+- React app
+- PostgreSQL runtime
+- Java source
+- Python source
 - controladores
 - servicios ejecutables
 - codigo de dominio
 - conectores
 - credenciales
 - datos fake de negocio
+
+Golden Rule:
+Si necesitas crear, modificar, mover o borrar un archivo que no esta listado explicitamente como permitido, detente y pide autorizacion.
 
 Documentos obligatorios:
 - docs/decisions/14_Decision_Log.md
@@ -399,6 +445,35 @@ Criterios de aceptacion:
 - no existe base de datos o migracion,
 - no se ha modificado ningun documento de autoridad,
 - no se ha generado mas de un modulo.
+- Decision Stability = 0,
+- ASI = 100%.
+
+Tabla obligatoria de cierre:
+
+| Criterio | Estado |
+|---|---|
+| Compila o N/A justificado | Pendiente |
+| Tests/checks pasan o N/A justificado | Pendiente |
+| Arquitectura respetada | Pendiente |
+| Sin deuda tecnica critica | Pendiente |
+| Sin codigo muerto | Pendiente |
+| Sin TODO pendientes | Pendiente |
+| Documentacion sincronizada | Pendiente |
+| ASI target met | Pendiente |
+| Decision Stability target met | Pendiente |
+| Sprint duration within one week | Pendiente |
+
+Estado final obligatorio:
+
+STATUS: PASS
+
+Architecture Guardian: PASS
+Quality Agent: PASS
+Context Keeper: PASS
+Product Guardian: PASS
+Implementation Agent: PASS
+ASI: 100%
+Decision Stability: 0
 ```
 
 ### First Code-Bearing Agent Prompt After Sprint 1
