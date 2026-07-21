@@ -1,5 +1,10 @@
 # 33 - Phase 1 Foundational Implementation Decisions
 
+Baseline: **v1.0 - Phase 2 Authority**
+
+Freeze rule: this document must not change during Phase 2 unless implementation
+proves an objective contradiction.
+
 ## Purpose
 
 Close the last foundational implementation decisions for IMPERATOR Phase 1 before any code is written.

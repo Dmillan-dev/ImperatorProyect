@@ -1,5 +1,33 @@
 # IMPERATOR Documentation Map
 
+## Rule Zero
+
+Purpose:
+Preserve the canonical business, product, architecture, AI, decision, RFC,
+research and I+D/R&D context for IMPERATOR.
+
+Who uses this folder:
+- Founder / CTO.
+- Architecture Guardian.
+- Product Guardian.
+- Context Keeper.
+- Implementation Agent as read-only authority unless a sprint explicitly allows
+  a documentation update.
+
+Contains:
+- Canonical project context.
+- Architecture and product contracts.
+- Decision records.
+- RFCs.
+- R&D evidence documentation.
+
+Never contains:
+- Application source code.
+- Runtime secrets.
+- Build output.
+- Generated dependency folders.
+- Unapproved implementation artifacts.
+
 This folder separates business, product, architecture, AI, decisions, RFCs, research and I+D/R&D evidence context.
 
 Use this structure to avoid mixing strategic business documents with technical planning documents as the project grows.

@@ -1,5 +1,10 @@
 # 37 - Implementation Contract
 
+Baseline: **v1.0 - Phase 2 Authority**
+
+Freeze rule: this document must not change during Phase 2 unless implementation
+proves an objective contradiction.
+
 ## Purpose
 
 Define the mandatory implementation rules for every future IMPERATOR coding task.
@@ -87,6 +92,28 @@ Examples for Sprint 1:
 No "helpful" adjacent files.
 No opportunistic setup.
 No unrequested framework files.
+
+## Rule Zero - Folder Boundary Rule
+
+Every project folder must be able to answer four questions:
+
+1. Why does this folder exist?
+2. Who uses this folder?
+3. What does this folder contain?
+4. What must this folder never contain?
+
+Each top-level project folder must answer these questions in its local
+`README.md`.
+
+If a sprint creates a new folder, that sprint must either:
+
+- create the folder README as part of the authorized deliverable, or
+- stop and request authorization before creating the folder.
+
+Implementation agents must not place code, configuration, tests, fixtures,
+scripts or runtime assets in a folder whose boundary is undefined.
+
+Rule Zero prevents project folders from becoming mixed responsibility zones.
 
 ## Documentation Creation Rule
 

@@ -1,5 +1,10 @@
 # 31 - MVP Implementation Standard
 
+Baseline: **v1.0 - Phase 2 Authority**
+
+Freeze rule: this document must not change during Phase 2 unless implementation
+proves an objective contradiction.
+
 ## Purpose
 
 Standardize how the first IMPERATOR MVP should be built when implementation is explicitly authorized.

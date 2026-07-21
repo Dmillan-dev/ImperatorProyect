@@ -1,5 +1,30 @@
 # IMPERATOR AI Agent Operating Model
 
+## Rule Zero
+
+Purpose:
+Define how AI agents should work on IMPERATOR without mixing responsibilities.
+
+Who uses this folder:
+- CTO / Product Guardian.
+- Architecture Guardian.
+- Implementation Agent.
+- Quality Agent.
+- Context Keeper.
+
+Contains:
+- Agent roles.
+- Sprint prompts.
+- Phase execution plans.
+- Review and handoff rules.
+
+Never contains:
+- Product runtime code.
+- Build manifests.
+- Application source.
+- Secrets.
+- Business data.
+
 ## Purpose
 
 Define how AI agents should work on IMPERATOR without mixing responsibilities.

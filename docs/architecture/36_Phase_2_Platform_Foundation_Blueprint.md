@@ -1,5 +1,10 @@
 # 36 - Phase 2 Platform Foundation Blueprint
 
+Baseline: **v1.0 - Phase 2 Authority**
+
+Freeze rule: this document must not change during Phase 2 unless implementation
+proves an objective contradiction.
+
 ## Purpose
 
 Define the exact scope of Phase 2 after Phase 1 documentation closure.

@@ -1,11 +1,50 @@
 # IMPERATOR — Strategic Documentation System (No Software Implementation Yet)
 
-Status: **Design Phase Closed; Sprint 0 GO For Sprint 1 Only** (no software implementation created yet)
+Status: **Design Phase Closed; Sprint 1 Repository Shell Created; Baseline v1.0 Frozen** (no software implementation created yet)
 
 This documentation system defines IMPERATOR’s canonical context for:
 1. human strategic execution,
 2. consistent AI-agent collaboration,
 3. controlled evolution from idea phase to product phase.
+
+## Current Physical Shell
+
+Sprint 1 creates repository boundaries only:
+- `backend-java/`
+- `backend-python/`
+- `frontend/`
+- `database/`
+- `infra/`
+- `scripts/`
+- `samples/decision-cases/ai-onboarding-assistant/`
+
+These folders do not contain source code, framework manifests, runtime
+configuration, database migrations, connector logic, AI integrations or business
+logic.
+
+## Rule Zero
+
+Every project folder must answer four questions:
+- Why does it exist?
+- Who uses it?
+- What does it contain?
+- What must it never contain?
+
+Top-level implementation folders answer these questions in their local
+`README.md`. A folder without an explicit boundary is not an implementation
+target for an autonomous agent.
+
+## Baseline v1.0
+
+Documents `31` through `38` are the Phase 2 implementation authority baseline.
+They are frozen for Phase 2.
+
+They may change only if implementation proves an objective contradiction. Any
+change must state:
+- the contradiction found,
+- the implementation evidence,
+- the affected decision or contract,
+- the approved correction.
 
 ## Index
 

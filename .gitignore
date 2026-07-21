@@ -1,0 +1,35 @@
+# OS and editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.jks
+
+# Logs and local runtime output
+*.log
+logs/
+tmp/
+temp/
+
+# Future build and dependency outputs
+target/
+build/
+dist/
+.next/
+node_modules/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+

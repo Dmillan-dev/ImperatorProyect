@@ -1,5 +1,10 @@
 # 32 - Phase 1 MVP Scope and Exit Criteria
 
+Baseline: **v1.0 - Phase 2 Authority**
+
+Freeze rule: this document must not change during Phase 2 unless implementation
+proves an objective contradiction.
+
 ## Purpose
 
 Define the exact Phase 1 implementation contract for IMPERATOR before writing the first line of code.

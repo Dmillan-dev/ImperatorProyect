@@ -1,5 +1,10 @@
 # 35 - Coding Principles
 
+Baseline: **v1.0 - Phase 2 Authority**
+
+Freeze rule: this document must not change during Phase 2 unless implementation
+proves an objective contradiction.
+
 ## Purpose
 
 Define the coding rules that future IMPERATOR agents and developers must follow once implementation is explicitly authorized.

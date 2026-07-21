@@ -1,5 +1,10 @@
 # 34 - MVP Implementation Blueprint
 
+Baseline: **v1.0 - Phase 2 Authority**
+
+Freeze rule: this document must not change during Phase 2 unless implementation
+proves an objective contradiction.
+
 ## Purpose
 
 Define the final MVP value-loop implementation blueprint for IMPERATOR development.
