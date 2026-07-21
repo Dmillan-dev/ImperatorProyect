@@ -1,15 +1,15 @@
-# IMPERATOR — Strategic Documentation System (No Software Implementation Yet)
+# IMPERATOR — Strategic Documentation System
 
-Status: **Design Phase Closed; Sprint 1 Repository Shell Created; Baseline v1.0 Frozen** (no software implementation created yet)
+Status: **Design Phase Closed; Phase 2 Java Domain/Application Contracts In Progress; Baseline v1.0 Frozen With Recorded Implementation-Evidence Clarifications**
 
 This documentation system defines IMPERATOR’s canonical context for:
 1. human strategic execution,
 2. consistent AI-agent collaboration,
 3. controlled evolution from idea phase to product phase.
 
-## Current Physical Shell
+## Current Physical State
 
-Sprint 1 creates repository boundaries only:
+The repository now contains:
 - `backend-java/`
 - `backend-python/`
 - `frontend/`
@@ -18,9 +18,17 @@ Sprint 1 creates repository boundaries only:
 - `scripts/`
 - `samples/decision-cases/ai-onboarding-assistant/`
 
-These folders do not contain source code, framework manifests, runtime
-configuration, database migrations, connector logic, AI integrations or business
-logic.
+Implemented Java foundation exists under `backend-java/`:
+- pure domain objects and value objects,
+- application use cases,
+- inbound and outbound ports,
+- application exceptions,
+- application data-boundary policy.
+
+The repository still does not contain framework manifests, runtime
+configuration, PostgreSQL migrations, REST controllers, connector logic, real AI
+integrations, Docker runtime, JWT runtime, React app code or production
+deployment.
 
 ## Rule Zero
 
@@ -45,6 +53,11 @@ change must state:
 - the implementation evidence,
 - the affected decision or contract,
 - the approved correction.
+
+Current implementation-evidence clarification:
+- `D071` clarifies that Phase 2 forbids recommendation-engine behavior, ROI,
+  real AI and live connectors, while explicitly scoped Java application use
+  cases may create/link/review/append domain objects through ports.
 
 ## Index
 

@@ -100,10 +100,10 @@ Phase 2 agents may create technical foundation only:
 Phase 2 agents must not create:
 
 - ROI calculation,
-- recommendation generation,
+- autonomous, AI-driven or ROI-driven recommendation engine behavior,
 - real AI provider calls,
 - live provider connectors,
-- approval workflow logic,
+- approval workflow logic outside explicitly authorized application use cases,
 - fake business evidence,
 - fake ledger state,
 - production deployment.

@@ -45,9 +45,11 @@ Findings:
 - Phase 2 remains Platform Foundation, not business implementation.
 - The domain-first concern is valid: the sprint plan must not let PostgreSQL, API shells or Spring Boot define the domain.
 - `agents/phase2/README.md` has been aligned to the domain-first order:
-  - Sprint 2 - Java Domain Foundation,
-  - Sprint 3 - Application Layer Foundation,
-  - Sprint 4 - PostgreSQL Persistence Adapter Foundation.
+  - Sprint 2.1-2.3 - Java Domain Foundation,
+  - Sprint 2.4 - Outbound Ports,
+  - Sprint 2.5 - Application Layer,
+  - Sprint 2.6 - Application Contracts,
+  - Sprint 2.7 - PostgreSQL Persistence Adapter Foundation.
 - Sprint execution uses five separated roles: Architecture Guardian, Implementation Agent, Quality Agent, Context Keeper and CTO / Product Guardian.
 - Every sprint must report ASI and pass the green-gate table before the next sprint starts.
 - No code or project structure has been created.
@@ -119,7 +121,7 @@ Phase 2 must not include:
 
 - ROI calculation,
 - recommendation engine,
-- recommendation generation,
+- autonomous, AI-driven or ROI-driven recommendation engine behavior,
 - AI provider calls,
 - live connectors,
 - AWS integration,
@@ -180,7 +182,7 @@ It must not contain:
 - FastAPI code,
 - React code,
 - ROI calculation,
-- recommendation generation,
+- recommendation engine behavior,
 - approval workflow behavior,
 - connector logic,
 - AI calls.
@@ -512,7 +514,7 @@ Prohibido:
 - adapters
 - database code
 - ROI calculation
-- recommendation generation
+- recommendation engine behavior
 - approval workflow behavior
 - connector code
 - AI provider code

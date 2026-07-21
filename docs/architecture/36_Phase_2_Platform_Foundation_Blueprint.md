@@ -171,10 +171,10 @@ Allowed behavior:
 Forbidden behavior:
 
 - ROI calculation;
-- recommendation generation;
+- autonomous, AI-driven or ROI-driven recommendation engine behavior;
 - evidence normalization logic;
 - approval workflow logic;
-- ledger append behavior;
+- ledger append behavior from adapters or infrastructure;
 - connector calls;
 - AI calls.
 
@@ -298,7 +298,7 @@ Allowed:
 Forbidden:
 
 - fake ROI values;
-- fake recommendation generation;
+- fake recommendation output;
 - fake ledger state;
 - hidden business rules;
 - OpenAPI expansion beyond the MVP route shell unless explicitly authorized.
@@ -472,7 +472,7 @@ Acceptance checks:
 12. Minimal metrics/Prometheus/Grafana local wiring exists.
 13. CI can lint/test/build without deployment.
 14. No ROI calculation exists.
-15. No recommendation generation exists.
+15. No autonomous, AI-driven or ROI-driven recommendation engine exists.
 16. No real AI provider call exists.
 17. No live provider connector exists.
 18. No fake ledger, fake evidence or fake Business Value is presented as real.

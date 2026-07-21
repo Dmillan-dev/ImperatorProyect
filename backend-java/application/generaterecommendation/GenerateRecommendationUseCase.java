@@ -94,7 +94,7 @@ public final class GenerateRecommendationUseCase implements GenerateRecommendati
     }
 
     private void ensureDecisionCanReceiveRecommendation(Decision decision) {
-        if (decision.hasRecommendation() || !recommendationRepository.findByDecisionId(decision.id()).isEmpty()) {
+        if (decision.hasRecommendation()) {
             throw new DecisionAlreadyHasRecommendationException(decision.id());
         }
     }

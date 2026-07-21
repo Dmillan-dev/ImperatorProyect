@@ -10,6 +10,5 @@ public interface DecisionRepository {
 
     Optional<Decision> findById(DecisionId id);
 
-    Optional<Decision> findByCaseId(String caseId);
+    boolean existsById(DecisionId id);
 }
-

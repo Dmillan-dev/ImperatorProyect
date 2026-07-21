@@ -74,7 +74,7 @@ Before Phase 2 starts, use:
 - `docs/architecture/37_Implementation_Contract.md`
 - `agents/phase2/README.md`
 
-Phase 2 may build technical foundation only. It must not implement ROI calculation, recommendation generation, real AI provider calls, live connectors or business rules.
+Phase 2 may build technical foundation only. It must not implement ROI calculation, autonomous/AI/ROI-driven recommendation engine behavior, real AI provider calls, live connectors or business rules. Explicitly authorized Java application use cases may create or link deterministic Recommendation objects through ports without becoming the recommendation engine.
 
 No Phase 2 agent may generate more than one module per iteration.
 

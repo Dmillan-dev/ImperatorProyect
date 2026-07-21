@@ -115,7 +115,7 @@ Founder-mode or master-prompt guidance sets ambition and quality bar. It does no
 42. Use `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md` before choosing evidence format, persistence, AI provider boundary, auth model or Decision Graph model.
 43. Use `docs/architecture/34_MVP_Implementation_Blueprint.md` before Phase 2 Platform Foundation or Phase 3 MVP implementation.
 44. Use `docs/architecture/35_Coding_Principles.md` before creating backend, Python, frontend, database, API, auth, observability or CI code.
-45. Use `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` before starting Phase 2 Platform Foundation. Phase 2 creates foundation only: no ROI calculation, no recommendations, no real AI calls, no live connectors and no business rules.
+45. Use `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` before starting Phase 2 Platform Foundation. Phase 2 creates foundation only: no ROI calculation, no autonomous/AI/ROI-driven recommendation engine, no real AI calls, no live connectors and no business rules. Explicitly authorized application-layer contracts may create or link a deterministic Recommendation object without becoming the recommendation engine.
 46. Use `docs/architecture/37_Implementation_Contract.md` before any implementation task. No agent may generate more than one module per iteration.
 47. Use `agents/phase2/README.md` before splitting Phase 2 into sprints or giving module prompts to agents.
 48. Use `docs/architecture/38_Sprint_0_Contract_Gate_Report.md` before executing Sprint 1. Sprint 0 authorizes only repository/project shell, not full backend generation.

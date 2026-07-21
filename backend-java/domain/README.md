@@ -18,13 +18,14 @@ Expresar el lenguaje central de IMPERATOR como dominio Java puro.
 - `ledger/`
 - `businessvalue/`
 
-Sprint 2.1 status:
-- Domain package skeleton only.
-- No classes.
-- No interfaces.
-- No enums.
-- No annotations.
-- No business logic.
+Current Sprint 2 status:
+- Domain package skeleton exists.
+- Shared value objects exist.
+- Evidence, Decision, Recommendation and LedgerEntry domain objects exist.
+- BusinessValue remains a projection decision, not a domain entity.
+- No framework annotations.
+- No persistence mappings.
+- No provider integrations.
 
 ## Never Contains
 
@@ -42,4 +43,3 @@ Sprint 2.1 status:
 ## Domain Purity Score
 
 Target for Sprint 2: 100%.
-

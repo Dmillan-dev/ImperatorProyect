@@ -33,5 +33,5 @@ Sprint 1 status:
 
 ## Authorized Next Use
 
-A later sprint may add migrations only after the domain and application layer
-contracts exist.
+Sprint 2.7 may define PostgreSQL persistence foundation. Database work must
+adapt to the existing domain and ports; it must not force domain changes.

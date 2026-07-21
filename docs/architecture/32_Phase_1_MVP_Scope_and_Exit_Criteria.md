@@ -514,7 +514,7 @@ Create the technical SaaS foundation without business intelligence:
 - no-deploy CI foundation,
 - R&D evidence capture scaffolding.
 
-Do not implement ROI calculation, recommendation generation, real AI provider calls, live connectors, approval workflow logic or other business rules in Phase 2.
+Do not implement ROI calculation, autonomous/AI/ROI-driven recommendation engine behavior, real AI provider calls, live connectors, approval workflow logic or other business rules in Phase 2. Explicitly authorized application-layer contracts may create or link a deterministic Recommendation object without becoming the recommendation engine.
 
 Detailed scope lives in `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`.
 

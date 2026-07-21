@@ -63,7 +63,7 @@ Phase 2 may create:
 Phase 2 must not create:
 
 - ROI calculation,
-- recommendation generation,
+- autonomous, AI-driven or ROI-driven recommendation engine behavior,
 - real AI calls,
 - live Jira/GitHub/AWS/OpenAI/Claude connectors,
 - approval workflow business logic,
@@ -132,6 +132,17 @@ Only the Implementation Agent may create implementation files.
 Every sprint produces exactly one deliverable.
 
 Every sprint reports ASI using `docs/architecture/37_Implementation_Contract.md`.
+
+Every sprint from Sprint 2.7 onward reports Domain Isolation Index (DII).
+
+Target:
+
+```text
+DII: 100%
+```
+
+DII is 100% only when `backend-java/domain` imports no adapters, Spring, SQL,
+PostgreSQL, JPA, REST, HTTP, provider SDKs or runtime infrastructure.
 
 Every sprint reports Decision Stability.
 
@@ -236,7 +247,7 @@ No modifiques otros modulos.
 Si necesitas crear un archivo no listado explicitamente como permitido, detente y pide autorizacion.
 ```
 
-## Sprint 2 - Java Domain Foundation
+## Sprint 2.1-2.3 - Java Domain Foundation
 
 Goal:
 
@@ -268,7 +279,7 @@ Forbidden:
 - adapters,
 - Spring dependencies inside domain objects,
 - ROI rules,
-- recommendation generation,
+- recommendation engine behavior,
 - ledger workflow behavior,
 - connector logic,
 - real provider calls.
@@ -283,7 +294,7 @@ No implementes controllers, API, persistencia, JPA, Spring annotations, ROI, rec
 No modifiques ningun otro modulo.
 ```
 
-## Sprint 3 - Application Layer Foundation
+## Sprint 2.5 - Application Layer Foundation
 
 Goal:
 
@@ -297,14 +308,13 @@ Application Layer
 
 Allowed modules, one per iteration:
 
-- `backend-java/application/import-evidence`
-- `backend-java/application/create-decision`
-- `backend-java/application/review-decision`
-- `backend-java/application/approve-decision`
-- `backend-java/application/reject-decision`
-- `backend-java/application/defer-decision`
+- `backend-java/application/importevidence`
+- `backend-java/application/createdecision`
+- `backend-java/application/generaterecommendation`
+- `backend-java/application/reviewdecision`
+- `backend-java/application/appendledgerentry`
+- `backend-java/application/exceptions`
 - `backend-java/application/shared`
-- `backend-java/ports/in`
 - `backend-java/ports/out`
 
 Forbidden:
@@ -314,9 +324,9 @@ Forbidden:
 - PostgreSQL/JPA,
 - provider SDKs,
 - ROI calculation,
-- recommendation generation,
+- autonomous, AI-driven or ROI-driven recommendation engine behavior,
 - approval workflow business behavior,
-- real ledger mutation.
+- ledger mutation from adapters or infrastructure.
 
 Example prompt:
 
@@ -325,6 +335,43 @@ Genera unicamente el modulo backend-java/application/import-evidence como use-ca
 Respeta docs/product/CORE_DOMAIN_MODEL.md, docs/product/API_SPECIFICATION.md y docs/architecture/31_MVP_Implementation_Standard.md a docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
 Crea solo contratos, comandos o interfaces necesarias para compilar si el dominio existe.
 No implementes API, base de datos, ROI, recomendaciones, conectores, IA ni ledger real.
+No modifiques ningun otro modulo.
+```
+
+## Sprint 2.6 - Application Contracts
+
+Goal:
+
+Close the public application contract before adapters.
+
+Deliverable:
+
+```text
+Application Contracts
+```
+
+Allowed modules, one per iteration:
+
+- `backend-java/ports/in`
+- `backend-java/application/exceptions`
+- `backend-java/application/APPLICATION_DATA_BOUNDARY_POLICY.md`
+
+Forbidden:
+
+- REST controllers,
+- HTTP request or response DTOs,
+- mappers,
+- PostgreSQL/JPA,
+- transaction framework,
+- provider SDKs,
+- domain changes for adapter convenience.
+
+Example prompt:
+
+```text
+Genera unicamente el modulo backend-java/ports/in.
+Respeta docs/architecture/35_Coding_Principles.md, docs/architecture/37_Implementation_Contract.md y backend-java/application/APPLICATION_DATA_BOUNDARY_POLICY.md.
+No implementes REST, HTTP DTOs, mappers, persistencia, Spring, JPA ni cambios de dominio.
 No modifiques ningun otro modulo.
 ```
 
@@ -345,13 +392,13 @@ Persistence Adapter
 
 Allowed modules, one per iteration:
 
-- `database/migration-foundation`
-- `database/schema-v1-evidence`
-- `database/schema-v1-decisions`
-- `database/schema-v1-ledger`
-- `database/schema-v1-business-value`
-- `database/schema-v1-identity`
-- `database/schema-v1-decision-graph`
+- `backend-java/adapters/out/postgresql`
+- `backend-java/adapters/out/postgresql/model`
+- `backend-java/adapters/out/postgresql/mapper`
+- `backend-java/adapters/out/postgresql/repository`
+- `backend-java/adapters/out/postgresql/transaction`
+- `backend-java/adapters/out/postgresql/tests`
+- `database/migration-foundation` only after mapper and repository shape are clear
 
 Forbidden:
 
@@ -360,15 +407,57 @@ Forbidden:
 - stored secrets,
 - denormalized analytics tables not needed by the MVP contract,
 - database-first domain changes,
+- domain changes for PostgreSQL convenience,
 - Graph DB infrastructure.
 
 Example prompt:
 
 ```text
-Genera unicamente el modulo database/schema-v1-evidence.
-Usa PostgreSQL y respeta docs/architecture/DATABASE_MODEL.md, docs/architecture/34_MVP_Implementation_Blueprint.md, docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md, docs/architecture/37_Implementation_Contract.md y docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
-No crees datos seed.
-No implementes repositories ni servicios.
+Genera unicamente el modulo backend-java/adapters/out/postgresql/model.
+Usa PostgreSQL como adapter y respeta docs/architecture/DATABASE_MODEL.md, docs/architecture/34_MVP_Implementation_Blueprint.md, docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md, docs/architecture/37_Implementation_Contract.md, backend-java/application/APPLICATION_DATA_BOUNDARY_POLICY.md y docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
+No modifiques dominio, aplicacion ni ports para acomodar PostgreSQL.
+No crees SQL, migraciones, consultas, JPA, JDBC, Spring, repositorios reales, mappers ni datos seed.
+```
+
+### Sprint 2.7.4 - PostgreSQL Repository Implementations
+
+Goal:
+
+Implement repository adapters in separate microdeliverables without changing
+the domain for PostgreSQL.
+
+Microdeliverables:
+
+1. Sprint 2.7.4.1 - `PostgresEvidenceRepository`
+2. Sprint 2.7.4.2 - `PostgresDecisionRepository`
+3. Sprint 2.7.4.3 - `PostgresRecommendationRepository`
+4. Sprint 2.7.4.4 - `PostgresLedgerRepository`
+
+Repository Minimalism Rule:
+
+- repositories may only persist, retrieve or answer exact existence checks;
+- repositories must not calculate ROI, validate business rules, create entities
+  except by mapper reconstruction from persisted records, execute use cases,
+  generate recommendations, call AI providers, publish events or construct
+  DTOs;
+- query behavior must be limited to exact queries already required by ports;
+- broad search, filtering, dashboard aggregation and analytics belong to future
+  query/projection ports, not MVP repositories.
+
+Ledger Append Rule:
+
+- `LedgerRepository` uses `append`;
+- `LedgerRepository` must not expose `save`, `update` or `delete`;
+- ledger corrections must be modeled as new appended entries.
+
+Example prompt:
+
+```text
+Genera unicamente el modulo backend-java/adapters/out/postgresql/PostgresEvidenceRepository.
+Respeta Repository Minimalism Rule, Mapper Purity Rule, Domain Translation Rule y DII 100%.
+Implementa solo save, findById y existsById segun el port existente.
+No implementes DecisionRepository, RecommendationRepository, LedgerRepository, REST, Spring controllers, JWT, ROI, recomendaciones, IA, eventos, DTOs ni cambios de dominio.
+Si necesitas modificar el dominio para acomodar PostgreSQL, detente y pide autorizacion.
 ```
 
 ## Sprint 2.8 - REST Adapter
@@ -398,7 +487,7 @@ Forbidden:
 - repository calls that imply behavior,
 - ROI computation,
 - approval workflow behavior,
-- recommendation generation.
+- autonomous, AI-driven or ROI-driven recommendation engine behavior.
 
 Example prompt:
 
@@ -718,6 +807,7 @@ Every sprint must end with:
 | No unresolved TODOs | Pending |
 | Documentation synchronized | Pending |
 | ASI target met | Pending |
+| DII target met | Pending |
 | Decision Stability target met | Pending |
 | Sprint duration within one week | Pending |
 
@@ -734,6 +824,7 @@ Context Keeper: PASS
 Product Guardian: PASS
 Implementation Agent: PASS
 ASI: <score>%
+DII: <score>%
 Decision Stability: <number of prior decisions modified>
 ```
 

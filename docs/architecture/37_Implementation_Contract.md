@@ -392,7 +392,7 @@ Allowed responsibilities:
 Forbidden responsibilities:
 
 - ROI calculation,
-- recommendation generation,
+- autonomous, AI-driven or ROI-driven recommendation engine behavior,
 - approval authority decisions,
 - evidence normalization,
 - ledger mutation semantics,
@@ -420,7 +420,7 @@ Forbidden responsibilities:
 
 - business rule execution,
 - ROI calculation,
-- recommendation generation,
+- autonomous, AI-driven or ROI-driven recommendation engine behavior,
 - SQL,
 - provider SDK calls,
 - prompt construction,
@@ -503,6 +503,18 @@ Forbidden responsibilities:
 - AI explanation logic,
 - provider calls,
 - UI formatting.
+
+Repository Minimalism Rule:
+
+- repositories may `save`, `find`, answer exact `exists` checks or `delete`
+  only when the domain explicitly allows deletion;
+- repositories must not calculate ROI, validate business rules, create domain
+  entities except through mapper reconstruction from persisted records, execute
+  use cases, generate recommendations, call AI providers, publish events or
+  build DTOs;
+- broad search, dashboard aggregation and business analytics must use explicit
+  future query/projection ports rather than bloating aggregate repositories;
+- `LedgerRepository` is append-only and must expose `append`, not `save`.
 
 ### Infrastructure
 

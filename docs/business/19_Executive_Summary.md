@@ -59,11 +59,11 @@ This creates a direct ROI story through:
 
 ## Current phase
 
-This project is currently in Phase 0: idea creation and validation, with no software implementation yet. The work is focused on positioning, ICP definition, value proposition, market assumptions, conceptual product scope and stable strategic context for future product and AI-agent work.
+This document was originally created during Phase 0. The current live repository status is now Phase 2 Platform Foundation: Java domain, application use cases, inbound/outbound ports and application contracts exist, while framework runtime, PostgreSQL migrations, REST controllers, JWT runtime, React app code, live connectors and real AI integrations remain unimplemented. Use the root `README.md` and `docs/decisions/14_Decision_Log.md` for current execution state.
 
 ## Current canonical interpretation
 
-The founder-mode ambition remains valid: act like a CTO building an enterprise-grade SaaS. The current repository decisions refine that ambition into a narrower Phase 0 mandate:
+The founder-mode ambition remains valid: act like a CTO building an enterprise-grade SaaS. The current repository decisions refine that ambition into a narrower MVP mandate:
 
 - MVP wedge: Decision ROI Timeline built on cross-platform decision traceability.
 - Commercial category: Operating System for Operational Intelligence / Enterprise Decision Intelligence Platform.
@@ -72,7 +72,7 @@ The founder-mode ambition remains valid: act like a CTO building an enterprise-g
 - Product surface: Decision Review Workspace first; Workspace -> Decision -> Ledger after repeated decisions exist.
 - First screen contract: `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`.
 - MVP integrations: Jira, GitHub, AWS and OpenAI + Anthropic Claude.
-- Architecture status: target context for Phase 1 planning, not permission to build production services in Phase 0.
+- Architecture status: Phase 2 foundation may build controlled implementation modules only; production services and Phase 3 business behavior still require explicit authorization.
 
 ## Bottom line
 

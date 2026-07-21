@@ -12,17 +12,28 @@ Motor principal del dominio y la aplicacion Java de IMPERATOR.
 
 ## Contains
 
-- Future Java domain model.
-- Future application use cases.
-- Future ports and adapters.
+- Java domain model.
+- Application use cases.
+- Inbound and outbound ports.
+- Application exceptions and data-boundary policy.
+- PostgreSQL outbound adapter skeleton.
+- Future adapter implementations when explicitly authorized by sprint scope.
 - Future API layer when explicitly authorized by sprint scope.
 
-Sprint 1 status:
-- Repository shell only.
-- No Java source files.
+Current Phase 2 status:
+- Pure Java domain foundation exists.
+- Application use cases exist.
+- Inbound and outbound ports exist.
+- Application exceptions exist.
+- Application data-boundary policy exists.
+- PostgreSQL outbound adapter skeleton exists.
+- PostgreSQL persistence records exist.
+- PostgreSQL mapper foundation exists.
 - No Maven or Gradle build files.
 - No Spring Boot application.
-- No controllers, services, repositories, adapters or domain implementation.
+- No controllers.
+- No PostgreSQL implementation behavior yet.
+- No SQL, JPA, JDBC or migrations yet.
 
 ## Never Contains
 
@@ -35,4 +46,6 @@ Sprint 1 status:
 
 ## Authorized Next Use
 
-Sprint 2 may create the pure domain layer only after Sprint 1 is accepted.
+Next Sprint 2.7 microtask may create PostgreSQL repository behavior only after
+mapper review passes. PostgreSQL must conform to the existing domain and ports;
+the domain must not be modified to accommodate PostgreSQL.

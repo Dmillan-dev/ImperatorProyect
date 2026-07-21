@@ -159,6 +159,92 @@ Forbidden mapper locations:
 Adapters own translation. Application owns orchestration. Domain owns business
 meaning.
 
+## Mapper Purity Rule
+
+Mappers must be deliberately boring.
+
+Allowed:
+
+- Domain Entity -> Persistence Record;
+- Persistence Record -> Domain Entity;
+- Domain relationship -> Persistence relationship record;
+- Persistence relationship record -> Domain id reference.
+
+Forbidden dependencies:
+
+- Repository;
+- Port;
+- Service;
+- Provider;
+- HTTP;
+- SQL;
+- Spring;
+- Logger.
+
+Forbidden behavior:
+
+- ROI calculation;
+- recommendation selection;
+- approval decisions;
+- ledger append decisions;
+- repository calls;
+- provider calls;
+- hidden business rules.
+
+## Repository Minimalism Rule
+
+Repositories must be deliberately narrow persistence adapters.
+
+Allowed:
+
+- save an aggregate already created or changed by domain/application code;
+- find an aggregate or exact relationship required by a use case;
+- answer existence checks when loading the full aggregate is unnecessary;
+- delete only when the domain explicitly allows deletion.
+
+Forbidden:
+
+- ROI calculation;
+- business rule validation;
+- entity creation except mapper reconstruction from persisted records;
+- use-case execution;
+- recommendation generation;
+- AI/provider calls;
+- event publication;
+- REST, CLI, UI or SDK DTO construction;
+- dashboard analytics.
+
+Ledger append rule:
+
+- `LedgerRepository` exposes `append`, not `save`;
+- ledger entries are historical facts;
+- corrections are represented by additional entries, never updates.
+
+## Domain Translation Rule
+
+Persistence records must never cross into REST, CLI, UI, SDK or application
+responses.
+
+Forbidden:
+
+```text
+Persistence Record -> REST DTO
+Persistence Record -> Domain -> REST DTO
+Persistence Record -> Application Result
+```
+
+Required:
+
+```text
+Persistence Record -> Adapter Mapper -> Domain Entity
+Domain Entity -> Adapter Mapper -> Persistence Record
+Application Result -> Adapter Mapper -> External DTO
+```
+
+Persistence records belong to the PostgreSQL adapter. Domain entities belong to
+the domain. External DTOs belong to inbound/outbound adapters. None of these
+models may replace another.
+
 ## Entity Leak Rule
 
 Domain entities must never cross an adapter boundary.
@@ -274,6 +360,8 @@ Sprint 2.6.3 is complete when:
 - results are documented as small outcome contracts;
 - external DTOs are forbidden from application and domain;
 - mappers are forbidden from application and domain;
+- persistence records are forbidden from REST, CLI, UI, SDK and application
+  responses;
 - query models are separated from domain entities;
 - entity leaks to REST, CLI, UI or SDK boundaries are prohibited;
 - exception-code reservation is recorded without implementing a registry.
