@@ -25,7 +25,7 @@ Documento canónico de trabajo por agentes:
 - `agents/README.md` — operating model para dividir trabajo futuro entre CTO, Product, Connector, Backend, Frontend, AI, Security, FinOps y QA sin crear implementación durante Phase 0.
 - `agents/phase1/README.md` — proceso recomendado para crear Phase 1 por etapas con agentes autonomos, handoffs, gates y disciplina de evidencia.
 - `agents/phase1/12_phase1_closure.md` — cierre del dossier documental Phase 1: contexto listo para futuro scaffolding limitado, sin afirmar que exista software implementado.
-- `agents/phase2/README.md` — plan de sprints para Phase 2 Platform Foundation: contrato gate, project shell, Java Domain, Application Layer, PostgreSQL, API shells, JWT/RBAC, Python, React, Docker, observabilidad y CI/R&D evidence.
+- `agents/phase2/README.md` — plan de sprints para Phase 2 Platform Foundation: contrato gate, project shell, Java Domain, outbound ports, Application Layer, Application Contracts, PostgreSQL persistence adapter, REST adapter, JWT/RBAC, React, Docker, observabilidad y CI/R&D evidence; Python AI-provider foundation queda diferido hasta autorizacion explicita.
 
 Documento canónico del MVP:
 

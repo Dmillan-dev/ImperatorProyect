@@ -73,20 +73,27 @@ Phase 2 must not create:
 
 ## Recommended Sprint Order
 
-The corrected order is:
+The current controlled order is:
 
 1. Sprint 0 - Contract Gate
 2. Sprint 1 - Repository and Project Shell
-3. Sprint 2 - Java Domain Foundation
-4. Sprint 3 - Application Layer Foundation
-5. Sprint 4 - PostgreSQL Persistence Adapter Foundation
-6. Sprint 5 - API Route Shells
-7. Sprint 6 - JWT/RBAC Foundation
-8. Sprint 7 - Python AI Provider Foundation
-9. Sprint 8 - React Frontend Foundation
-10. Sprint 9 - Docker Local Foundation
-11. Sprint 10 - Observability Foundation
-12. Sprint 11 - CI and R&D Evidence Foundation
+3. Sprint 2.1 - Domain Package Skeleton
+4. Sprint 2.2 - Domain Value Objects
+5. Sprint 2.3 - Domain Entities
+6. Sprint 2.4 - Outbound Ports
+7. Sprint 2.5 - Application Layer
+8. Sprint 2.6 - Application Contracts
+9. Sprint 2.7 - PostgreSQL Persistence Adapter Foundation
+10. Sprint 2.8 - REST Adapter
+11. Sprint 2.9 - JWT/RBAC Foundation
+12. Sprint 2.10 - React Frontend Foundation
+13. Sprint 2.11 - Docker Local Foundation
+14. Sprint 2.12 - Observability Foundation
+15. Sprint 2.13 - CI and R&D Evidence Foundation
+
+Deferred Phase 2 capability:
+
+- Python AI Provider Foundation remains defined by the architecture baseline, but it is not required before Sprint 2.7 persistence, Sprint 2.8 REST, Sprint 2.9 JWT/RBAC or Sprint 2.10 React. It requires explicit founder authorization because the Java application already owns the `ExplanationProvider` port and no real AI integration is allowed in Phase 2.
 
 This order is domain-first.
 
@@ -102,6 +109,11 @@ Evidence
 ```
 
 The implementation must shape PostgreSQL, API, security and UI around the domain, not the other way around.
+
+No standalone transaction-boundaries sprint is required before persistence.
+Each application use case is reserved as one future transaction boundary.
+Concrete transaction settings belong to Sprint 2.7, because PostgreSQL,
+persistence adapters and Unit of Work behavior do not exist before then.
 
 ## Sprint Agent Model
 
@@ -211,7 +223,7 @@ Forbidden:
 - package manifests,
 - PostgreSQL runtime,
 - migrations,
-- Docker runtime before Sprint 8 unless explicitly scoped to a single shell file.
+- Docker runtime before Sprint 2.11 unless explicitly scoped to a single shell file.
 
 Example prompt:
 
@@ -316,11 +328,14 @@ No implementes API, base de datos, ROI, recomendaciones, conectores, IA ni ledge
 No modifiques ningun otro modulo.
 ```
 
-## Sprint 4 - PostgreSQL Persistence Adapter Foundation
+## Sprint 2.7 - PostgreSQL Persistence Adapter Foundation
 
 Goal:
 
 Create PostgreSQL persistence adapter foundation after domain and application ports exist.
+
+This is the first sprint where concrete transaction behavior may be decided,
+because PostgreSQL and persistence adapters finally exist.
 
 Deliverable:
 
@@ -356,7 +371,7 @@ No crees datos seed.
 No implementes repositories ni servicios.
 ```
 
-## Sprint 5 - API Route Shells
+## Sprint 2.8 - REST Adapter
 
 Goal:
 
@@ -394,7 +409,7 @@ Los endpoints deben devolver respuesta controlada Not implemented.
 No llames repositorios, motores ROI, IA ni ledger real.
 ```
 
-## Sprint 6 - JWT/RBAC Foundation
+## Sprint 2.9 - JWT/RBAC Foundation
 
 Goal:
 
@@ -431,7 +446,7 @@ Implementa solo foundation RBAC de Phase 2.
 No implementes aprobacion de negocio ni workflow de ledger.
 ```
 
-## Sprint 7 - Python AI Provider Foundation
+## Deferred - Python AI Provider Foundation
 
 Goal:
 
@@ -470,7 +485,7 @@ No hagas llamadas reales a ningun proveedor IA.
 No implementes prompts de negocio.
 ```
 
-## Sprint 8 - React Frontend Foundation
+## Sprint 2.10 - React Frontend Foundation
 
 Goal:
 
@@ -512,7 +527,7 @@ Crea solo layout, sidebar/navbar y slots.
 No implementes datos de negocio, llamadas reales API ni logica ROI.
 ```
 
-## Sprint 9 - Docker Local Foundation
+## Sprint 2.11 - Docker Local Foundation
 
 Goal:
 
@@ -553,7 +568,7 @@ No generes Kubernetes, Terraform, datos seed ni credenciales reales.
 No modifiques otros modulos Docker.
 ```
 
-## Sprint 10 - Observability Foundation
+## Sprint 2.12 - Observability Foundation
 
 Goal:
 
@@ -592,7 +607,7 @@ Implementa solo /health y /ready foundation si el backend existe.
 No implementes metricas de negocio.
 ```
 
-## Sprint 11 - CI and R&D Evidence Foundation
+## Sprint 2.13 - CI and R&D Evidence Foundation
 
 Goal:
 
@@ -734,7 +749,7 @@ Phase 2 is complete only when:
 - API route shells exist,
 - React shell exists,
 - JWT/RBAC foundation exists,
-- Python provider foundation exists,
+- Python provider foundation exists or has explicit founder/CTO deferral,
 - Docker local foundation exists,
 - observability foundation exists,
 - CI foundation exists,
