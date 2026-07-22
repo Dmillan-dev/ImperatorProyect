@@ -115,6 +115,21 @@ Each application use case is reserved as one future transaction boundary.
 Concrete transaction settings belong to Sprint 2.7, because PostgreSQL,
 persistence adapters and Unit of Work behavior do not exist before then.
 
+Current persistence roadmap:
+
+1. Sprint 2.7.5.1 - Persistence Transaction Contract
+2. Sprint 2.7.5.2 - Persistence Transaction Standardization
+3. Sprint 2.7.6 - Database Schema and Migrations
+4. Sprint 2.7.7 - Persistence Integration Tests
+5. Sprint 2.8 - REST Adapter Foundation
+
+Important implementation note:
+
+Some local JDBC transaction handling already exists in PostgreSQL repository
+methods that persist more than one record. Sprint 2.7.5.2 must consolidate,
+standardize and validate that behavior. It must not introduce Spring,
+annotations, domain changes, port changes or a broader transaction framework.
+
 ## Sprint Agent Model
 
 From Sprint 1 onward, every sprint uses five specialized roles:
@@ -459,6 +474,57 @@ Implementa solo save, findById y existsById segun el port existente.
 No implementes DecisionRepository, RecommendationRepository, LedgerRepository, REST, Spring controllers, JWT, ROI, recomendaciones, IA, eventos, DTOs ni cambios de dominio.
 Si necesitas modificar el dominio para acomodar PostgreSQL, detente y pide autorizacion.
 ```
+
+### Sprint 2.7.5 - Persistence Transactions
+
+Goal:
+
+Define and implement persistence transaction handling in controlled
+microdeliverables after repository foundation is complete.
+
+Microdeliverables:
+
+1. Sprint 2.7.5.1 - Persistence Transaction Contract
+2. Sprint 2.7.5.2 - Persistence Transaction Standardization
+
+Sprint 2.7.5.1 status:
+
+- `docs/architecture/39_Persistence_Transaction_Contract.md`
+- no code,
+- no domain changes,
+- no port changes,
+- no adapter changes,
+- logical atomicity only.
+
+Sprint 2.7.5.2 allowed scope:
+
+- standardize local JDBC transaction handling inside the PostgreSQL adapter;
+- ensure multi-record aggregate writes are atomic;
+- ensure single-record writes use the same local transaction boundary where they
+  represent a write use case;
+- preserve the logical boundaries in
+  `docs/architecture/39_Persistence_Transaction_Contract.md`;
+- avoid changing domain, application use cases, ports or mapper contracts.
+
+Sprint 2.7.5.2 forbidden scope:
+
+- Spring,
+- `@Transactional`,
+- isolation-level policy,
+- propagation policy,
+- new Unit of Work abstraction,
+- database schema changes,
+- migrations,
+- integration tests,
+- REST adapter work,
+- domain changes,
+- port changes.
+
+Next order after Sprint 2.7.5:
+
+1. Sprint 2.7.6 - Database Schema and Migrations
+2. Sprint 2.7.7 - Persistence Integration Tests
+3. Sprint 2.8 - REST Adapter Foundation
 
 ## Sprint 2.8 - REST Adapter
 
@@ -829,6 +895,29 @@ Decision Stability: <number of prior decisions modified>
 ```
 
 If any line fails, the sprint is not complete.
+
+## Executability Gate
+
+Every sprint that creates or modifies executable code must pass this gate before
+it can be accepted.
+
+| Criterion | Required status |
+|---|---|
+| Compiles/builds | PASS |
+| Tests pass | PASS when a test harness exists; otherwise explicit founder/CTO waiver required |
+| Module coverage minimum | PASS once coverage tooling exists; otherwise explicit founder/CTO waiver required |
+| No critical warnings | PASS |
+| No new critical technical debt | PASS |
+| Architecture respected | PASS |
+
+Rules:
+
+- compilation is mandatory for every executable Java sprint;
+- test and coverage gaps must be visible, not hidden;
+- from Sprint 2.7.7 onward, persistence code must have integration-test
+  coverage before the persistence foundation can close;
+- a sprint cannot be marked PASS if an executable-code failure is unresolved;
+- waivers must be exceptional and recorded in the sprint closeout.
 
 ## Phase 2 Completion Gate
 

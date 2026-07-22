@@ -126,19 +126,11 @@ public final class PostgresLedgerRepository implements LedgerRepository {
         PostgresLedgerEntryRecord record = mapper.toRecord(item);
         List<PostgresLedgerEvidenceSnapshotRecord> evidenceSnapshotRecords = mapper.toEvidenceSnapshotRecords(item);
 
-        try (Connection connection = dataSource.getConnection()) {
-            boolean previousAutoCommit = connection.getAutoCommit();
-            try {
-                connection.setAutoCommit(false);
+        try {
+            PostgresLocalTransactions.execute(dataSource, connection -> {
                 appendEntry(connection, record);
                 appendEvidenceSnapshots(connection, evidenceSnapshotRecords);
-                connection.commit();
-            } catch (SQLException exception) {
-                rollback(connection);
-                throw exception;
-            } finally {
-                connection.setAutoCommit(previousAutoCommit);
-            }
+            });
         } catch (SQLException exception) {
             throw new IllegalStateException("Could not append ledger entry " + item.id().value(), exception);
         }
@@ -312,10 +304,4 @@ public final class PostgresLedgerRepository implements LedgerRepository {
         }
     }
 
-    private void rollback(Connection connection) {
-        try {
-            connection.rollback();
-        } catch (SQLException ignored) {
-        }
-    }
 }

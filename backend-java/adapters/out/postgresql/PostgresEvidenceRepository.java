@@ -85,12 +85,13 @@ public final class PostgresEvidenceRepository implements EvidenceRepository {
     public void save(Evidence evidence) {
         PostgresEvidenceRecord record = mapper.toRecord(Objects.requireNonNull(evidence, "Evidence is required"));
 
-        try (
-                Connection connection = dataSource.getConnection();
-                PreparedStatement statement = connection.prepareStatement(INSERT_SQL)
-        ) {
-            bindRecord(statement, record);
-            statement.executeUpdate();
+        try {
+            PostgresLocalTransactions.execute(dataSource, connection -> {
+                try (PreparedStatement statement = connection.prepareStatement(INSERT_SQL)) {
+                    bindRecord(statement, record);
+                    statement.executeUpdate();
+                }
+            });
         } catch (SQLException exception) {
             throw new IllegalStateException("Could not persist evidence " + evidence.id().value(), exception);
         }

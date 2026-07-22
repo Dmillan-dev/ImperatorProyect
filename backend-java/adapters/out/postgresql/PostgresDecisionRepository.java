@@ -118,19 +118,11 @@ public final class PostgresDecisionRepository implements DecisionRepository {
         PostgresDecisionRecord record = mapper.toRecord(item);
         List<PostgresDecisionEvidenceRecord> evidenceRecords = mapper.toEvidenceRecords(item);
 
-        try (Connection connection = dataSource.getConnection()) {
-            boolean previousAutoCommit = connection.getAutoCommit();
-            try {
-                connection.setAutoCommit(false);
+        try {
+            PostgresLocalTransactions.execute(dataSource, connection -> {
                 saveDecision(connection, record);
                 replaceEvidenceLinks(connection, item.id(), evidenceRecords);
-                connection.commit();
-            } catch (SQLException exception) {
-                rollback(connection);
-                throw exception;
-            } finally {
-                connection.setAutoCommit(previousAutoCommit);
-            }
+            });
         } catch (SQLException exception) {
             throw new IllegalStateException("Could not persist decision " + item.id().value(), exception);
         }
@@ -276,10 +268,4 @@ public final class PostgresDecisionRepository implements DecisionRepository {
         }
     }
 
-    private void rollback(Connection connection) {
-        try {
-            connection.rollback();
-        } catch (SQLException ignored) {
-        }
-    }
 }
