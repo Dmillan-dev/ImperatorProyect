@@ -64,9 +64,18 @@ public final class PostgresDecisionMapper {
                 new Timestamp(record.createdAt())
         );
 
+        DecisionStatus status = new DecisionStatus(record.status());
+        if (DecisionStatus.DEFERRED.equals(status)) {
+            applyPersistedStatus(decision, record, status);
+            addEvidence(decision, records(evidenceRecords), record);
+            attachRecommendation(decision, record);
+            restoreDeferredUpdatedAt(decision, record);
+            return decision;
+        }
+
         addEvidence(decision, records(evidenceRecords), record);
         attachRecommendation(decision, record);
-        applyPersistedStatus(decision, record);
+        applyPersistedStatus(decision, record, status);
 
         return decision;
     }
@@ -93,8 +102,11 @@ public final class PostgresDecisionMapper {
                 ));
     }
 
-    private void applyPersistedStatus(Decision decision, PostgresDecisionRecord record) {
-        DecisionStatus status = new DecisionStatus(record.status());
+    private void applyPersistedStatus(
+            Decision decision,
+            PostgresDecisionRecord record,
+            DecisionStatus status
+    ) {
         if (DecisionStatus.CREATED.equals(status)) {
             return;
         }
@@ -114,6 +126,15 @@ public final class PostgresDecisionMapper {
         }
         if (DecisionStatus.DEFERRED.equals(status)) {
             decision.defer(reviewer(record), timestamp(record.reviewedAt(), record.updatedAt()), reviewReason(record));
+        }
+    }
+
+    private void restoreDeferredUpdatedAt(Decision decision, PostgresDecisionRecord record) {
+        if (!decision.updatedAt().value().equals(record.updatedAt())) {
+            decision.addEvidence(
+                    new EvidenceId(record.originatingEvidenceId()),
+                    new Timestamp(record.updatedAt())
+            );
         }
     }
 

@@ -28,7 +28,7 @@
         <maven.resources.plugin.version>3.5.0</maven.resources.plugin.version>
         <maven.surefire.plugin.version>3.5.5</maven.surefire.plugin.version>
         <maven.toolchains.plugin.version>3.3.0</maven.toolchains.plugin.version>
-        <flyway.maven.plugin.version>13.0.0</flyway.maven.plugin.version>
+        <flyway-maven-plugin.version>13.0.0</flyway-maven-plugin.version>
     </properties>
 
     <dependencies>
@@ -138,7 +138,14 @@
             <plugin>
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-maven-plugin</artifactId>
-                <version>${flyway.maven.plugin.version}</version>
+                <version>${flyway-maven-plugin.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.flywaydb</groupId>
+                        <artifactId>flyway-database-postgresql</artifactId>
+                        <version>${flyway-maven-plugin.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
