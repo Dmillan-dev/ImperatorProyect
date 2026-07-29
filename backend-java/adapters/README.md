@@ -17,12 +17,15 @@ la aplicacion. Los adapters no definen el dominio; se subordinan a el.
 - Future `in/` inbound adapters only when REST, CLI or other entry points are
   explicitly authorized.
 
-Sprint 2.7.1 status:
-- PostgreSQL outbound repository adapter skeleton only.
-- Sprint 2.7.2 adds PostgreSQL persistence model records only.
-- Sprint 2.7.3 adds PostgreSQL mapper foundation only.
-- No SQL.
-- No framework runtime.
+Sprint 2.7.7 status:
+- PostgreSQL JDBC repositories implement the frozen outbound ports.
+- Persistence records and mappers translate without leaking PostgreSQL into
+  Domain or Application.
+- `PostgresTransactionRunner` provides the explicit transaction port
+  implementation.
+- Repository behavior, schema constraints, aggregate atomicity and all five
+  use-case transaction boundaries are certified against PostgreSQL 18.2.
+- No Spring or framework runtime.
 
 ## Never Contains
 

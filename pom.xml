@@ -195,6 +195,20 @@
                                     <goal>migrate</goal>
                                 </goals>
                             </execution>
+                            <execution>
+                                <id>validate-postgresql-integration-database</id>
+                                <phase>pre-integration-test</phase>
+                                <goals>
+                                    <goal>validate</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>verify-postgresql-integration-idempotency</id>
+                                <phase>pre-integration-test</phase>
+                                <goals>
+                                    <goal>migrate</goal>
+                                </goals>
+                            </execution>
                         </executions>
                     </plugin>
                     <plugin>
@@ -202,6 +216,7 @@
                         <artifactId>maven-failsafe-plugin</artifactId>
                         <version>${maven.failsafe.plugin.version}</version>
                         <configuration>
+                            <failIfNoTests>true</failIfNoTests>
                             <systemPropertyVariables>
                                 <imperator.it.database>${env.IMPERATOR_IT_DATABASE}</imperator.it.database>
                                 <imperator.it.dbUrl>${env.IMPERATOR_IT_DB_URL}</imperator.it.dbUrl>

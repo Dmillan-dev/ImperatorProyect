@@ -1,6 +1,6 @@
 # IMPERATOR — Strategic Documentation System
 
-Status: **Design Phase Closed; Phase 2 Java Domain/Application Contracts In Progress; Baseline v1.0 Frozen With Recorded Implementation-Evidence Clarifications**
+Status: **Design Phase Closed; Phase 2 PostgreSQL Persistence Certified; Sprint 2.8 REST Adapter Not Started**
 
 This documentation system defines IMPERATOR’s canonical context for:
 1. human strategic execution,
@@ -23,12 +23,15 @@ Implemented Java foundation exists under `backend-java/`:
 - application use cases,
 - inbound and outbound ports,
 - application exceptions,
-- application data-boundary policy.
+- application data-boundary policy,
+- Maven Wrapper build on Java 21,
+- JDBC PostgreSQL repository adapters and explicit transaction runner,
+- Flyway V1 schema,
+- real-PostgreSQL repository, constraint, lifecycle and transaction tests.
 
-The repository still does not contain framework manifests, runtime
-configuration, PostgreSQL migrations, REST controllers, connector logic, real AI
-integrations, Docker runtime, JWT runtime, React app code or production
-deployment.
+The repository still does not contain Spring Boot, a production composition
+root, REST controllers, connector logic, real AI integrations, Docker runtime,
+JWT runtime, React app code or production deployment.
 
 ## Rule Zero
 

@@ -16,8 +16,8 @@ Motor principal del dominio y la aplicacion Java de IMPERATOR.
 - Application use cases.
 - Inbound and outbound ports.
 - Application exceptions and data-boundary policy.
-- PostgreSQL outbound adapter skeleton.
-- Future adapter implementations when explicitly authorized by sprint scope.
+- PostgreSQL JDBC outbound adapter implementations.
+- Explicit transaction port and PostgreSQL transaction runner.
 - Future API layer when explicitly authorized by sprint scope.
 
 Current Phase 2 status:
@@ -26,14 +26,38 @@ Current Phase 2 status:
 - Inbound and outbound ports exist.
 - Application exceptions exist.
 - Application data-boundary policy exists.
-- PostgreSQL outbound adapter skeleton exists.
+- Maven Wrapper builds the backend reproducibly with Java 21.
+- PostgreSQL outbound repository implementations exist.
 - PostgreSQL persistence records exist.
-- PostgreSQL mapper foundation exists.
-- No Maven or Gradle build files.
+- PostgreSQL mappers exist.
+- Flyway V1 defines the frozen seven-table schema.
+- PostgreSQL 18.2 integration certification covers repositories, constraints,
+  the full persistence lifecycle and all five use-case transaction boundaries.
 - No Spring Boot application.
 - No controllers.
-- No PostgreSQL implementation behavior yet.
-- No SQL, JPA, JDBC or migrations yet.
+- No JPA.
+
+## Persistence Certification
+
+Run the PostgreSQL certification gate with Java 21 and an empty isolated
+PostgreSQL database:
+
+```text
+mvnw.cmd -Ppostgresql-integration clean verify
+```
+
+Required environment variables:
+
+- `IMPERATOR_IT_DATABASE`
+- `IMPERATOR_IT_DB_URL`
+- `IMPERATOR_IT_ADMIN_USER`
+- `IMPERATOR_IT_ADMIN_PASSWORD`
+- `IMPERATOR_IT_APP_USER`
+- `IMPERATOR_IT_APP_PASSWORD`
+
+The profile executes Flyway migrate, Flyway validate, a second no-op migrate
+and the complete Failsafe integration suite. It fails when no integration test
+is found.
 
 ## Never Contains
 
@@ -46,6 +70,7 @@ Current Phase 2 status:
 
 ## Authorized Next Use
 
-Next Sprint 2.7 microtask may create PostgreSQL repository behavior only after
-mapper review passes. PostgreSQL must conform to the existing domain and ports;
-the domain must not be modified to accommodate PostgreSQL.
+Sprint 2.7.7 persistence is certified. The next authorized roadmap item is
+Sprint 2.8 REST Adapter Foundation. PostgreSQL must continue to conform to the
+existing domain and ports; the domain must not be modified for adapter
+convenience.

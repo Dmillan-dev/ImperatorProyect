@@ -6,6 +6,15 @@ import java.sql.SQLException;
 import java.util.Objects;
 import java.util.function.Supplier;
 
+/**
+ * Owns JDBC connections for one PostgreSQL adapter composition.
+ *
+ * <p>The transaction connection is intentionally bound to the current thread so repository
+ * calls made through one {@link PostgresTransactionRunner} share the same JDBC transaction.
+ * The context is instance-scoped, never static, and is removed in the transaction
+ * {@code finally} block. It is a synchronous JDBC adapter mechanism and must not be used to
+ * propagate a transaction across threads or asynchronous work.</p>
+ */
 public final class PostgresConnectionProvider {
     private final DataSource dataSource;
     private final ThreadLocal<Connection> transactionConnection = new ThreadLocal<>();

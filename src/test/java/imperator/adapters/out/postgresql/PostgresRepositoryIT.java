@@ -53,6 +53,8 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.function.Supplier;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -70,6 +72,7 @@ final class PostgresRepositoryIT {
     private String appRole;
     private PostgresDataSource adminDataSource;
     private PostgresDataSource appDataSource;
+    private PostgresConnectionProvider connectionProvider;
     private EvidenceRepository evidenceRepository;
     private DecisionRepository decisionRepository;
     private RecommendationRepository recommendationRepository;
@@ -97,7 +100,7 @@ final class PostgresRepositoryIT {
                 appRole,
                 requiredProperty("imperator.it.appPassword")
         );
-        PostgresConnectionProvider connectionProvider = new PostgresConnectionProvider(appDataSource);
+        connectionProvider = new PostgresConnectionProvider(appDataSource);
         evidenceRepository = new PostgresEvidenceRepository(connectionProvider);
         decisionRepository = new PostgresDecisionRepository(connectionProvider);
         recommendationRepository = new PostgresRecommendationRepository(connectionProvider);
@@ -157,6 +160,25 @@ final class PostgresRepositoryIT {
     }
 
     @Test
+    void missingRepositoryIdentifiersReturnTheFrozenEmptyBehaviour() {
+        EvidenceId missingEvidenceId = evidenceId();
+        DecisionId missingDecisionId = decisionId();
+        RecommendationId missingRecommendationId = recommendationId();
+        LedgerEntryId missingLedgerEntryId = ledgerEntryId();
+
+        assertAll(
+                () -> assertFalse(evidenceRepository.existsById(missingEvidenceId)),
+                () -> assertTrue(evidenceRepository.findById(missingEvidenceId).isEmpty()),
+                () -> assertFalse(decisionRepository.existsById(missingDecisionId)),
+                () -> assertTrue(decisionRepository.findById(missingDecisionId).isEmpty()),
+                () -> assertFalse(recommendationRepository.existsById(missingRecommendationId)),
+                () -> assertTrue(recommendationRepository.findById(missingRecommendationId).isEmpty()),
+                () -> assertTrue(ledgerRepository.findById(missingLedgerEntryId).isEmpty()),
+                () -> assertTrue(ledgerRepository.findByDecisionId(missingDecisionId).isEmpty())
+        );
+    }
+
+    @Test
     void allRepositoryMethodsPersistAndRehydrateDeterministically() {
         Evidence evidence = evidence("case-repository-round-trip");
 
@@ -210,12 +232,39 @@ final class PostgresRepositoryIT {
         ledgerRepository.append(secondEntry);
 
         assertLedgerRoundTrip(firstEntry, ledgerRepository.findById(firstEntry.id()).orElseThrow());
+        ROIAmount realizedSaving = new ROIAmount(Money.eur(new BigDecimal("118.25")));
+        LedgerEntry resultValidatedEntry = new LedgerEntry(
+                ledgerEntryId(),
+                decision.id(),
+                Optional.of(recommendation.id()),
+                userId(),
+                "FINOPS_APPROVER",
+                timestamp(7),
+                LedgerEntryType.RESULT_VALIDATED,
+                "Realized saving validated",
+                "Post-change evidence confirms the realized saving",
+                Set.of(),
+                Optional.empty(),
+                Optional.of(realizedSaving),
+                Optional.empty(),
+                Optional.empty(),
+                Optional.of(secondEntry.id()),
+                Map.of("source", "postgresql-it")
+        );
+        ledgerRepository.append(resultValidatedEntry);
+
+        assertLedgerRoundTrip(
+                resultValidatedEntry,
+                ledgerRepository.findById(resultValidatedEntry.id()).orElseThrow()
+        );
         List<LedgerEntry> history = ledgerRepository.findByDecisionId(decision.id());
         assertAll(
-                () -> assertEquals(2, history.size()),
+                () -> assertEquals(3, history.size()),
                 () -> assertEquals(firstEntry.id(), history.get(0).id()),
                 () -> assertEquals(secondEntry.id(), history.get(1).id()),
-                () -> assertLedgerRoundTrip(secondEntry, history.get(1))
+                () -> assertEquals(resultValidatedEntry.id(), history.get(2).id()),
+                () -> assertLedgerRoundTrip(secondEntry, history.get(1)),
+                () -> assertLedgerRoundTrip(resultValidatedEntry, history.get(2))
         );
     }
 
@@ -259,6 +308,179 @@ final class PostgresRepositoryIT {
         );
         assertThrows(IllegalStateException.class, () -> ledgerRepository.append(invalidLedgerEntry));
         assertTrue(ledgerRepository.findById(invalidLedgerEntry.id()).isEmpty());
+    }
+
+    @Test
+    void duplicateRepositoryWritesFailWithoutCorruptingExistingAggregates() {
+        PersistedDecisionGraph graph = persistApprovedDecisionGraph("case-repository-duplicates");
+
+        assertRepositoryConstraint(
+                "pk_evidence",
+                () -> evidenceRepository.save(graph.evidence())
+        );
+        assertRepositoryConstraint(
+                "pk_recommendations",
+                () -> recommendationRepository.save(graph.recommendation())
+        );
+
+        Recommendation competingRecommendation = recommendation(graph.decision(), graph.evidence().id());
+        assertRepositoryConstraint(
+                "uq_recommendations_decision_id",
+                () -> recommendationRepository.save(competingRecommendation)
+        );
+
+        LedgerEntry entry = ledgerEntry(
+                graph.decision(),
+                graph.recommendation(),
+                graph.evidence().id(),
+                timestamp(5),
+                Optional.empty()
+        );
+        ledgerRepository.append(entry);
+        assertRepositoryConstraint("pk_ledger_entries", () -> ledgerRepository.append(entry));
+
+        assertAll(
+                () -> assertEvidenceRoundTrip(
+                        graph.evidence(),
+                        evidenceRepository.findById(graph.evidence().id()).orElseThrow()
+                ),
+                () -> assertRecommendationRoundTrip(
+                        graph.recommendation(),
+                        recommendationRepository.findById(graph.recommendation().id()).orElseThrow()
+                ),
+                () -> assertEquals(1, ledgerRepository.findByDecisionId(graph.decision().id()).size())
+        );
+    }
+
+    @Test
+    void representativeSchemaConstraintsRejectInvalidWrites() {
+        PersistedDecisionGraph graph = persistApprovedDecisionGraph("case-schema-constraints");
+
+        assertDatabaseViolation(
+                "23505",
+                "pk_evidence",
+                () -> executeAdminPrepared(
+                        "INSERT INTO evidence SELECT * FROM evidence WHERE id = ?",
+                        graph.evidence().id().value()
+                )
+        );
+        assertDatabaseViolation(
+                "23502",
+                "timestamp",
+                () -> executeAdminPrepared(
+                        "INSERT INTO evidence (id) VALUES (?)",
+                        UUID.randomUUID()
+                )
+        );
+        assertDatabaseViolation(
+                "23503",
+                "fk_decision_evidence_evidence",
+                () -> executeAdminPrepared(
+                        "INSERT INTO decision_evidence (decision_id, evidence_id) VALUES (?, ?)",
+                        graph.decision().id().value(),
+                        UUID.randomUUID()
+                )
+        );
+        assertDatabaseViolation(
+                "23505",
+                "pk_decision_evidence",
+                () -> executeAdminPrepared(
+                        "INSERT INTO decision_evidence (decision_id, evidence_id) VALUES (?, ?)",
+                        graph.decision().id().value(),
+                        graph.evidence().id().value()
+                )
+        );
+        assertDatabaseViolation(
+                "23505",
+                "uq_recommendations_decision_id",
+                () -> executeAdminPrepared(
+                        """
+                        INSERT INTO recommendations (
+                            id,
+                            decision_id,
+                            type,
+                            suggested_action,
+                            reason,
+                            estimated_saving_amount,
+                            estimated_saving_currency,
+                            confidence_percentage,
+                            risk,
+                            owner_id,
+                            required_approver_id,
+                            created_at
+                        )
+                        SELECT
+                            ?,
+                            decision_id,
+                            type,
+                            suggested_action,
+                            reason,
+                            estimated_saving_amount,
+                            estimated_saving_currency,
+                            confidence_percentage,
+                            risk,
+                            owner_id,
+                            required_approver_id,
+                            created_at
+                        FROM recommendations
+                        WHERE id = ?
+                        """,
+                        UUID.randomUUID(),
+                        graph.recommendation().id().value()
+                )
+        );
+        assertDatabaseViolation(
+                "23514",
+                "ck_recommendations_confidence_percentage",
+                () -> executeAdminPrepared(
+                        "UPDATE recommendations SET confidence_percentage = 101 WHERE id = ?",
+                        graph.recommendation().id().value()
+                )
+        );
+        assertDatabaseViolation(
+                "23514",
+                "ck_evidence_severity",
+                () -> executeAdminPrepared(
+                        "UPDATE evidence SET severity = 'INVALID' WHERE id = ?",
+                        graph.evidence().id().value()
+                )
+        );
+
+        LedgerEntry pairProbe = new LedgerEntry(
+                ledgerEntryId(),
+                graph.decision().id(),
+                Optional.empty(),
+                userId(),
+                "FINOPS_APPROVER",
+                timestamp(5),
+                LedgerEntryType.CASE_CLOSED,
+                "Case closed",
+                "Constraint verification probe",
+                Set.of(),
+                Optional.empty(),
+                Optional.empty(),
+                Optional.empty(),
+                Optional.empty(),
+                Optional.empty(),
+                Map.of("source", "postgresql-it")
+        );
+        ledgerRepository.append(pairProbe);
+        assertDatabaseViolation(
+                "23514",
+                "ck_ledger_entries_estimated_saving_pair",
+                () -> executeAdminPrepared(
+                        "UPDATE ledger_entries SET estimated_saving_amount = 1.00 WHERE id = ?",
+                        pairProbe.id().value()
+                )
+        );
+        assertDatabaseViolation(
+                "23514",
+                "ck_ledger_entries_realized_saving_pair",
+                () -> executeAdminPrepared(
+                        "UPDATE ledger_entries SET realized_saving_amount = 1.00 WHERE id = ?",
+                        pairProbe.id().value()
+                )
+        );
     }
 
     @Test
@@ -356,6 +578,11 @@ final class PostgresRepositoryIT {
                 "Savings and risk are acceptable"
         ));
 
+        assertTrue(
+                ledgerRepository.findByDecisionId(decisionId).isEmpty(),
+                "ReviewDecision must not append a ledger entry implicitly"
+        );
+
         LedgerEntryId ledgerEntryId = ledgerEntryId();
         AppendLedgerEntryResult ledgerResult = appendLedgerEntry.appendLedgerEntry(new AppendLedgerEntryCommand(
                 ledgerEntryId,
@@ -395,13 +622,22 @@ final class PostgresRepositoryIT {
         decisionRepository.save(decision);
 
         RecommendationId recommendationId = recommendationId();
+        TrackingTransactionRunner trackedTransactions = new TrackingTransactionRunner(transactionRunner);
+        AtomicBoolean explanationInvoked = new AtomicBoolean();
         DecisionRepository failAfterSave = new FailAfterSaveDecisionRepository(decisionRepository);
         GenerateRecommendationUseCase useCase = new GenerateRecommendationUseCase(
                 failAfterSave,
                 evidenceRepository,
                 recommendationRepository,
-                request -> Optional.empty(),
-                transactionRunner
+                request -> {
+                    assertFalse(
+                            trackedTransactions.isExecuting(),
+                            "ExplanationProvider must run before the database transaction begins"
+                    );
+                    explanationInvoked.set(true);
+                    return Optional.empty();
+                },
+                trackedTransactions
         );
 
         GenerateRecommendationCommand command = new GenerateRecommendationCommand(
@@ -423,9 +659,125 @@ final class PostgresRepositoryIT {
         );
         assertEquals("Injected failure after DecisionRepository.save", failure.getMessage());
         assertAll(
+                () -> assertTrue(explanationInvoked.get()),
                 () -> assertFalse(recommendationRepository.existsById(recommendationId)),
                 () -> assertTrue(
                         decisionRepository.findById(decision.id()).orElseThrow().recommendationId().isEmpty()
+                )
+        );
+    }
+
+    @Test
+    void importEvidenceUseCaseRollsBackWhenItsFinalWriteFails() {
+        EvidenceId evidenceId = evidenceId();
+        ImportEvidenceUseCase useCase = new ImportEvidenceUseCase(
+                new FailAfterSaveEvidenceRepository(evidenceRepository),
+                transactionRunner
+        );
+
+        IllegalStateException failure = assertThrows(
+                IllegalStateException.class,
+                () -> useCase.importEvidence(importEvidenceCommand(evidenceId, "case-import-rollback"))
+        );
+
+        assertAll(
+                () -> assertEquals("Injected failure after EvidenceRepository.save", failure.getMessage()),
+                () -> assertFalse(evidenceRepository.existsById(evidenceId)),
+                () -> assertTrue(evidenceRepository.findById(evidenceId).isEmpty())
+        );
+    }
+
+    @Test
+    void createDecisionUseCaseRollsBackWhenItsFinalWriteFails() {
+        Evidence evidence = evidence("case-create-decision-rollback");
+        evidenceRepository.save(evidence);
+        DecisionId newDecisionId = decisionId();
+        CreateDecisionUseCase useCase = new CreateDecisionUseCase(
+                evidenceRepository,
+                new FailAfterSaveDecisionRepository(decisionRepository),
+                transactionRunner
+        );
+
+        IllegalStateException failure = assertThrows(
+                IllegalStateException.class,
+                () -> useCase.createDecision(new CreateDecisionCommand(
+                        newDecisionId,
+                        evidence.id(),
+                        "Right-size workload",
+                        "Reduce recurring infrastructure cost",
+                        userId(),
+                        userId(),
+                        timestamp(1)
+                ))
+        );
+
+        assertAll(
+                () -> assertEquals("Injected failure after DecisionRepository.save", failure.getMessage()),
+                () -> assertFalse(decisionRepository.existsById(newDecisionId)),
+                () -> assertTrue(decisionRepository.findById(newDecisionId).isEmpty()),
+                () -> assertTrue(evidenceRepository.existsById(evidence.id()))
+        );
+    }
+
+    @Test
+    void reviewDecisionUseCaseRollsBackAndNeverAppendsLedger() {
+        PersistedDecisionGraph graph = persistRecommendationGraph("case-review-rollback");
+        graph.decision().markUnderReview(timestamp(3));
+        decisionRepository.save(graph.decision());
+
+        ReviewDecisionUseCase useCase = new ReviewDecisionUseCase(
+                new FailAfterSaveDecisionRepository(decisionRepository),
+                recommendationRepository,
+                transactionRunner
+        );
+
+        IllegalStateException failure = assertThrows(
+                IllegalStateException.class,
+                () -> useCase.reviewDecision(new ReviewDecisionCommand(
+                        graph.decision().id(),
+                        graph.recommendation().id(),
+                        ReviewDecisionAction.APPROVE,
+                        userId(),
+                        timestamp(4),
+                        "Injected review rollback"
+                ))
+        );
+
+        Decision storedDecision = decisionRepository.findById(graph.decision().id()).orElseThrow();
+        assertAll(
+                () -> assertEquals("Injected failure after DecisionRepository.save", failure.getMessage()),
+                () -> assertEquals(DecisionStatus.UNDER_REVIEW, storedDecision.status()),
+                () -> assertTrue(storedDecision.reviewedBy().isEmpty()),
+                () -> assertTrue(storedDecision.reviewedAt().isEmpty()),
+                () -> assertTrue(storedDecision.reviewReason().isEmpty()),
+                () -> assertTrue(ledgerRepository.findByDecisionId(graph.decision().id()).isEmpty())
+        );
+    }
+
+    @Test
+    void appendLedgerEntryUseCaseRollsBackWhenItsFinalWriteFails() {
+        PersistedDecisionGraph graph = persistApprovedDecisionGraph("case-ledger-use-case-rollback");
+        LedgerEntryId newEntryId = ledgerEntryId();
+        AppendLedgerEntryUseCase useCase = new AppendLedgerEntryUseCase(
+                decisionRepository,
+                recommendationRepository,
+                evidenceRepository,
+                new FailAfterAppendLedgerRepository(ledgerRepository),
+                transactionRunner
+        );
+
+        IllegalStateException failure = assertThrows(
+                IllegalStateException.class,
+                () -> useCase.appendLedgerEntry(approvedLedgerCommand(graph, newEntryId))
+        );
+
+        assertAll(
+                () -> assertEquals("Injected failure after LedgerRepository.append", failure.getMessage()),
+                () -> assertTrue(ledgerRepository.findById(newEntryId).isEmpty()),
+                () -> assertTrue(ledgerRepository.findByDecisionId(graph.decision().id()).isEmpty()),
+                () -> assertEquals(
+                        DecisionStatus.APPROVED,
+                        decisionRepository.findById(graph.decision().id()).orElseThrow().status()
                 )
         );
     }
@@ -554,6 +906,134 @@ final class PostgresRepositoryIT {
             }
         });
         assertEquals("42501", exception.getSQLState());
+    }
+
+    private void executeAdminPrepared(String sql, Object... parameters) throws SQLException {
+        try (
+                Connection connection = adminDataSource.getConnection();
+                PreparedStatement statement = connection.prepareStatement(sql)
+        ) {
+            for (int index = 0; index < parameters.length; index++) {
+                statement.setObject(index + 1, parameters[index]);
+            }
+            statement.executeUpdate();
+        }
+    }
+
+    private void assertDatabaseViolation(
+            String expectedSqlState,
+            String expectedMessageFragment,
+            SqlOperation operation
+    ) {
+        SQLException exception = assertThrows(SQLException.class, operation::execute);
+        assertAll(
+                () -> assertEquals(expectedSqlState, exception.getSQLState()),
+                () -> assertTrue(
+                        exception.getMessage().contains(expectedMessageFragment),
+                        () -> "Expected PostgreSQL error to reference "
+                                + expectedMessageFragment
+                                + " but was: "
+                                + exception.getMessage()
+                )
+        );
+    }
+
+    private void assertRepositoryConstraint(String expectedConstraint, Runnable operation) {
+        IllegalStateException exception = assertThrows(IllegalStateException.class, operation::run);
+        SQLException sqlException = findSqlCause(exception);
+        assertAll(
+                () -> assertEquals("23505", sqlException.getSQLState()),
+                () -> assertTrue(
+                        sqlException.getMessage().contains(expectedConstraint),
+                        () -> "Expected PostgreSQL error to reference "
+                                + expectedConstraint
+                                + " but was: "
+                                + sqlException.getMessage()
+                )
+        );
+    }
+
+    private SQLException findSqlCause(Throwable failure) {
+        Throwable current = failure;
+        while (current != null) {
+            if (current instanceof SQLException sqlException) {
+                return sqlException;
+            }
+            current = current.getCause();
+        }
+        throw new AssertionError("Expected a PostgreSQL SQLException cause", failure);
+    }
+
+    private PersistedDecisionGraph persistRecommendationGraph(String correlationKey) {
+        Evidence evidence = evidence(correlationKey);
+        evidenceRepository.save(evidence);
+
+        Decision decision = decision(evidence);
+        decisionRepository.save(decision);
+
+        Recommendation recommendation = recommendation(decision, evidence.id());
+        decision.attachRecommendation(recommendation.id(), timestamp(2));
+        transactionRunner.execute(() -> {
+            recommendationRepository.save(recommendation);
+            decisionRepository.save(decision);
+            return null;
+        });
+        return new PersistedDecisionGraph(evidence, decision, recommendation);
+    }
+
+    private PersistedDecisionGraph persistApprovedDecisionGraph(String correlationKey) {
+        PersistedDecisionGraph graph = persistRecommendationGraph(correlationKey);
+        graph.decision().markUnderReview(timestamp(3));
+        graph.decision().approve(userId(), timestamp(4), "Approved for integration certification");
+        decisionRepository.save(graph.decision());
+        return graph;
+    }
+
+    private ImportEvidenceCommand importEvidenceCommand(EvidenceId id, String correlationKey) {
+        return new ImportEvidenceCommand(
+                id,
+                timestamp(0),
+                "billing-export",
+                "POSTGRESQL_IT",
+                "source-" + UUID.randomUUID(),
+                "cloud-account",
+                "cost_anomaly",
+                Severity.HIGH,
+                "integration-suite",
+                "COST",
+                "A workload is oversized",
+                "The workload can reduce operating cost",
+                correlationKey,
+                "INTERNAL",
+                "HIGH",
+                "ACCEPTED",
+                "not_stored",
+                Map.of("environment", "integration")
+        );
+    }
+
+    private AppendLedgerEntryCommand approvedLedgerCommand(
+            PersistedDecisionGraph graph,
+            LedgerEntryId entryId
+    ) {
+        return new AppendLedgerEntryCommand(
+                entryId,
+                graph.decision().id(),
+                Optional.of(graph.recommendation().id()),
+                userId(),
+                "FINOPS_APPROVER",
+                timestamp(5),
+                LedgerEntryType.APPROVED,
+                "Recommendation approved",
+                "Savings and risk are acceptable",
+                Set.of(graph.evidence().id()),
+                Optional.of(SAVING),
+                Optional.empty(),
+                Optional.of(CONFIDENCE),
+                Optional.of(Severity.MEDIUM),
+                Optional.empty(),
+                Map.of("source", "postgresql-it")
+        );
     }
 
     private Evidence evidence(String correlationKey) {
@@ -763,6 +1243,42 @@ final class PostgresRepositoryIT {
         return "'" + value.replace("'", "''") + "'";
     }
 
+    @FunctionalInterface
+    private interface SqlOperation {
+        void execute() throws SQLException;
+    }
+
+    private record PersistedDecisionGraph(
+            Evidence evidence,
+            Decision decision,
+            Recommendation recommendation
+    ) {
+    }
+
+    private static final class FailAfterSaveEvidenceRepository implements EvidenceRepository {
+        private final EvidenceRepository delegate;
+
+        private FailAfterSaveEvidenceRepository(EvidenceRepository delegate) {
+            this.delegate = Objects.requireNonNull(delegate, "Evidence repository is required");
+        }
+
+        @Override
+        public void save(Evidence evidence) {
+            delegate.save(evidence);
+            throw new IllegalStateException("Injected failure after EvidenceRepository.save");
+        }
+
+        @Override
+        public Optional<Evidence> findById(EvidenceId id) {
+            return delegate.findById(id);
+        }
+
+        @Override
+        public boolean existsById(EvidenceId id) {
+            return delegate.existsById(id);
+        }
+    }
+
     private static final class FailAfterSaveDecisionRepository implements DecisionRepository {
         private final DecisionRepository delegate;
 
@@ -784,6 +1300,57 @@ final class PostgresRepositoryIT {
         @Override
         public boolean existsById(DecisionId id) {
             return delegate.existsById(id);
+        }
+    }
+
+    private static final class FailAfterAppendLedgerRepository implements LedgerRepository {
+        private final LedgerRepository delegate;
+
+        private FailAfterAppendLedgerRepository(LedgerRepository delegate) {
+            this.delegate = Objects.requireNonNull(delegate, "Ledger repository is required");
+        }
+
+        @Override
+        public void append(LedgerEntry entry) {
+            delegate.append(entry);
+            throw new IllegalStateException("Injected failure after LedgerRepository.append");
+        }
+
+        @Override
+        public Optional<LedgerEntry> findById(LedgerEntryId id) {
+            return delegate.findById(id);
+        }
+
+        @Override
+        public List<LedgerEntry> findByDecisionId(DecisionId decisionId) {
+            return delegate.findByDecisionId(decisionId);
+        }
+    }
+
+    private static final class TrackingTransactionRunner implements TransactionRunner {
+        private final TransactionRunner delegate;
+        private boolean executing;
+
+        private TrackingTransactionRunner(TransactionRunner delegate) {
+            this.delegate = Objects.requireNonNull(delegate, "Transaction runner is required");
+        }
+
+        @Override
+        public <T> T execute(Supplier<T> operation) {
+            if (executing) {
+                return delegate.execute(operation);
+            }
+
+            executing = true;
+            try {
+                return delegate.execute(operation);
+            } finally {
+                executing = false;
+            }
+        }
+
+        private boolean isExecuting() {
+            return executing;
         }
     }
 }
