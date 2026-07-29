@@ -7,7 +7,6 @@ import imperator.domain.decision.Decision;
 import imperator.domain.shared.DecisionId;
 import imperator.ports.out.DecisionRepository;
 
-import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -100,15 +99,15 @@ public final class PostgresDecisionRepository implements DecisionRepository {
             WHERE id = ?
             """;
 
-    private final DataSource dataSource;
+    private final PostgresConnectionProvider connectionProvider;
     private final PostgresDecisionMapper mapper;
 
-    public PostgresDecisionRepository(DataSource dataSource) {
-        this(dataSource, new PostgresDecisionMapper());
+    public PostgresDecisionRepository(PostgresConnectionProvider connectionProvider) {
+        this(connectionProvider, new PostgresDecisionMapper());
     }
 
-    PostgresDecisionRepository(DataSource dataSource, PostgresDecisionMapper mapper) {
-        this.dataSource = Objects.requireNonNull(dataSource, "Data source is required");
+    PostgresDecisionRepository(PostgresConnectionProvider connectionProvider, PostgresDecisionMapper mapper) {
+        this.connectionProvider = Objects.requireNonNull(connectionProvider, "Connection provider is required");
         this.mapper = Objects.requireNonNull(mapper, "Decision mapper is required");
     }
 
@@ -119,7 +118,7 @@ public final class PostgresDecisionRepository implements DecisionRepository {
         List<PostgresDecisionEvidenceRecord> evidenceRecords = mapper.toEvidenceRecords(item);
 
         try {
-            PostgresLocalTransactions.execute(dataSource, connection -> {
+            PostgresLocalTransactions.execute(connectionProvider, connection -> {
                 saveDecision(connection, record);
                 replaceEvidenceLinks(connection, item.id(), evidenceRecords);
             });
@@ -132,7 +131,8 @@ public final class PostgresDecisionRepository implements DecisionRepository {
     public Optional<Decision> findById(DecisionId id) {
         DecisionId decisionId = Objects.requireNonNull(id, "Decision id is required");
 
-        try (Connection connection = dataSource.getConnection()) {
+        try (PostgresConnectionProvider.ConnectionLease connectionLease = connectionProvider.acquire()) {
+            Connection connection = connectionLease.connection();
             Optional<PostgresDecisionRecord> record = findRecordById(connection, decisionId);
             if (record.isEmpty()) {
                 return Optional.empty();
@@ -147,13 +147,13 @@ public final class PostgresDecisionRepository implements DecisionRepository {
     public boolean existsById(DecisionId id) {
         DecisionId decisionId = Objects.requireNonNull(id, "Decision id is required");
 
-        try (
-                Connection connection = dataSource.getConnection();
-                PreparedStatement statement = connection.prepareStatement(EXISTS_BY_ID_SQL)
-        ) {
-            statement.setObject(1, decisionId.value());
-            try (ResultSet resultSet = statement.executeQuery()) {
-                return resultSet.next();
+        try (PostgresConnectionProvider.ConnectionLease connectionLease = connectionProvider.acquire()) {
+            Connection connection = connectionLease.connection();
+            try (PreparedStatement statement = connection.prepareStatement(EXISTS_BY_ID_SQL)) {
+                statement.setObject(1, decisionId.value());
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    return resultSet.next();
+                }
             }
         } catch (SQLException exception) {
             throw new IllegalStateException("Could not check decision existence " + decisionId.value(), exception);

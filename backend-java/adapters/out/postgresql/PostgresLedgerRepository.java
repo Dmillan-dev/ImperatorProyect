@@ -8,7 +8,6 @@ import imperator.domain.shared.DecisionId;
 import imperator.domain.shared.LedgerEntryId;
 import imperator.ports.out.LedgerRepository;
 
-import javax.sql.DataSource;
 import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -108,15 +107,18 @@ public final class PostgresLedgerRepository implements LedgerRepository {
             ORDER BY evidence_id ASC
             """;
 
-    private final DataSource dataSource;
+    private final PostgresConnectionProvider connectionProvider;
     private final PostgresLedgerEntryMapper mapper;
 
-    public PostgresLedgerRepository(DataSource dataSource) {
-        this(dataSource, new PostgresLedgerEntryMapper());
+    public PostgresLedgerRepository(PostgresConnectionProvider connectionProvider) {
+        this(connectionProvider, new PostgresLedgerEntryMapper());
     }
 
-    PostgresLedgerRepository(DataSource dataSource, PostgresLedgerEntryMapper mapper) {
-        this.dataSource = Objects.requireNonNull(dataSource, "Data source is required");
+    PostgresLedgerRepository(
+            PostgresConnectionProvider connectionProvider,
+            PostgresLedgerEntryMapper mapper
+    ) {
+        this.connectionProvider = Objects.requireNonNull(connectionProvider, "Connection provider is required");
         this.mapper = Objects.requireNonNull(mapper, "Ledger entry mapper is required");
     }
 
@@ -127,7 +129,7 @@ public final class PostgresLedgerRepository implements LedgerRepository {
         List<PostgresLedgerEvidenceSnapshotRecord> evidenceSnapshotRecords = mapper.toEvidenceSnapshotRecords(item);
 
         try {
-            PostgresLocalTransactions.execute(dataSource, connection -> {
+            PostgresLocalTransactions.execute(connectionProvider, connection -> {
                 appendEntry(connection, record);
                 appendEvidenceSnapshots(connection, evidenceSnapshotRecords);
             });
@@ -140,7 +142,8 @@ public final class PostgresLedgerRepository implements LedgerRepository {
     public Optional<LedgerEntry> findById(LedgerEntryId id) {
         LedgerEntryId ledgerEntryId = Objects.requireNonNull(id, "Ledger entry id is required");
 
-        try (Connection connection = dataSource.getConnection()) {
+        try (PostgresConnectionProvider.ConnectionLease connectionLease = connectionProvider.acquire()) {
+            Connection connection = connectionLease.connection();
             Optional<PostgresLedgerEntryRecord> record = findRecordById(connection, ledgerEntryId);
             if (record.isEmpty()) {
                 return Optional.empty();
@@ -155,7 +158,8 @@ public final class PostgresLedgerRepository implements LedgerRepository {
     public List<LedgerEntry> findByDecisionId(DecisionId decisionId) {
         DecisionId id = Objects.requireNonNull(decisionId, "Decision id is required");
 
-        try (Connection connection = dataSource.getConnection()) {
+        try (PostgresConnectionProvider.ConnectionLease connectionLease = connectionProvider.acquire()) {
+            Connection connection = connectionLease.connection();
             List<LedgerEntry> ledgerEntries = new ArrayList<>();
             for (PostgresLedgerEntryRecord record : findRecordsByDecisionId(connection, id)) {
                 ledgerEntries.add(mapper.toDomain(record, findEvidenceSnapshots(connection, record.id())));

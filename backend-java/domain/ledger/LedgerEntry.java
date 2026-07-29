@@ -65,7 +65,17 @@ public record LedgerEntry(
         previousEntryId = optional(previousEntryId);
         metadata = sanitizedMetadata(metadata);
 
-        enforceEntryTypeInvariants();
+        enforceEntryTypeInvariants(
+                id,
+                recommendationId,
+                entryType,
+                evidenceSnapshotIds,
+                estimatedSaving,
+                realizedSaving,
+                confidenceSnapshot,
+                riskSnapshot,
+                previousEntryId
+        );
     }
 
     public LedgerEntryType whatHappened() {
@@ -98,7 +108,17 @@ public record LedgerEntry(
         return id.hashCode();
     }
 
-    private void enforceEntryTypeInvariants() {
+    private static void enforceEntryTypeInvariants(
+            LedgerEntryId id,
+            Optional<RecommendationId> recommendationId,
+            LedgerEntryType entryType,
+            Set<EvidenceId> evidenceSnapshotIds,
+            Optional<ROIAmount> estimatedSaving,
+            Optional<ROIAmount> realizedSaving,
+            Optional<ROIConfidence> confidenceSnapshot,
+            Optional<Severity> riskSnapshot,
+            Optional<LedgerEntryId> previousEntryId
+    ) {
         if (entryType.requiresRecommendation() && recommendationId.isEmpty()) {
             throw new IllegalArgumentException("Ledger entry type requires a recommendation id");
         }

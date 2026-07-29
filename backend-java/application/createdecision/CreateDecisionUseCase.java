@@ -7,22 +7,33 @@ import imperator.domain.evidence.Evidence;
 import imperator.ports.in.CreateDecisionInputPort;
 import imperator.ports.out.DecisionRepository;
 import imperator.ports.out.EvidenceRepository;
+import imperator.ports.out.TransactionRunner;
 
 import java.util.Objects;
 
 public final class CreateDecisionUseCase implements CreateDecisionInputPort {
     private final EvidenceRepository evidenceRepository;
     private final DecisionRepository decisionRepository;
+    private final TransactionRunner transactionRunner;
 
-    public CreateDecisionUseCase(EvidenceRepository evidenceRepository, DecisionRepository decisionRepository) {
+    public CreateDecisionUseCase(
+            EvidenceRepository evidenceRepository,
+            DecisionRepository decisionRepository,
+            TransactionRunner transactionRunner
+    ) {
         this.evidenceRepository = Objects.requireNonNull(evidenceRepository, "Evidence repository is required");
         this.decisionRepository = Objects.requireNonNull(decisionRepository, "Decision repository is required");
+        this.transactionRunner = Objects.requireNonNull(transactionRunner, "Transaction runner is required");
     }
 
     @Override
     public CreateDecisionResult createDecision(CreateDecisionCommand command) {
         validateCommand(command);
 
+        return transactionRunner.execute(() -> createDecisionInTransaction(command));
+    }
+
+    private CreateDecisionResult createDecisionInTransaction(CreateDecisionCommand command) {
         Evidence evidence = evidenceRepository.findById(command.originatingEvidenceId())
                 .orElseThrow(() -> new EvidenceNotFoundException(command.originatingEvidenceId()));
 

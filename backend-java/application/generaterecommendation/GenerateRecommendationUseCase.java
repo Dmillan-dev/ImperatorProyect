@@ -16,6 +16,7 @@ import imperator.ports.out.EvidenceRepository;
 import imperator.ports.out.ExplanationProvider;
 import imperator.ports.out.RecommendationExplanationRequest;
 import imperator.ports.out.RecommendationRepository;
+import imperator.ports.out.TransactionRunner;
 
 import java.util.LinkedHashSet;
 import java.util.Objects;
@@ -27,17 +28,20 @@ public final class GenerateRecommendationUseCase implements GenerateRecommendati
     private final EvidenceRepository evidenceRepository;
     private final RecommendationRepository recommendationRepository;
     private final ExplanationProvider explanationProvider;
+    private final TransactionRunner transactionRunner;
 
     public GenerateRecommendationUseCase(
             DecisionRepository decisionRepository,
             EvidenceRepository evidenceRepository,
             RecommendationRepository recommendationRepository,
-            ExplanationProvider explanationProvider
+            ExplanationProvider explanationProvider,
+            TransactionRunner transactionRunner
     ) {
         this.decisionRepository = Objects.requireNonNull(decisionRepository, "Decision repository is required");
         this.evidenceRepository = Objects.requireNonNull(evidenceRepository, "Evidence repository is required");
         this.recommendationRepository = Objects.requireNonNull(recommendationRepository, "Recommendation repository is required");
         this.explanationProvider = Objects.requireNonNull(explanationProvider, "Explanation provider is required");
+        this.transactionRunner = Objects.requireNonNull(transactionRunner, "Transaction runner is required");
     }
 
     @Override
@@ -87,10 +91,17 @@ public final class GenerateRecommendationUseCase implements GenerateRecommendati
             );
         }
 
-        recommendationRepository.save(recommendation);
-        decisionRepository.save(decision);
-
-        return new GenerateRecommendationResult(recommendation.id(), decision.id(), evidence.size(), true, explanation);
+        return transactionRunner.execute(() -> {
+            recommendationRepository.save(recommendation);
+            decisionRepository.save(decision);
+            return new GenerateRecommendationResult(
+                    recommendation.id(),
+                    decision.id(),
+                    evidence.size(),
+                    true,
+                    explanation
+            );
+        });
     }
 
     private void ensureDecisionCanReceiveRecommendation(Decision decision) {

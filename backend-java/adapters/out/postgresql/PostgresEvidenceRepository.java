@@ -6,7 +6,6 @@ import imperator.domain.evidence.Evidence;
 import imperator.domain.shared.EvidenceId;
 import imperator.ports.out.EvidenceRepository;
 
-import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -69,15 +68,15 @@ public final class PostgresEvidenceRepository implements EvidenceRepository {
             WHERE id = ?
             """;
 
-    private final DataSource dataSource;
+    private final PostgresConnectionProvider connectionProvider;
     private final PostgresEvidenceMapper mapper;
 
-    public PostgresEvidenceRepository(DataSource dataSource) {
-        this(dataSource, new PostgresEvidenceMapper());
+    public PostgresEvidenceRepository(PostgresConnectionProvider connectionProvider) {
+        this(connectionProvider, new PostgresEvidenceMapper());
     }
 
-    PostgresEvidenceRepository(DataSource dataSource, PostgresEvidenceMapper mapper) {
-        this.dataSource = Objects.requireNonNull(dataSource, "Data source is required");
+    PostgresEvidenceRepository(PostgresConnectionProvider connectionProvider, PostgresEvidenceMapper mapper) {
+        this.connectionProvider = Objects.requireNonNull(connectionProvider, "Connection provider is required");
         this.mapper = Objects.requireNonNull(mapper, "Evidence mapper is required");
     }
 
@@ -86,7 +85,7 @@ public final class PostgresEvidenceRepository implements EvidenceRepository {
         PostgresEvidenceRecord record = mapper.toRecord(Objects.requireNonNull(evidence, "Evidence is required"));
 
         try {
-            PostgresLocalTransactions.execute(dataSource, connection -> {
+            PostgresLocalTransactions.execute(connectionProvider, connection -> {
                 try (PreparedStatement statement = connection.prepareStatement(INSERT_SQL)) {
                     bindRecord(statement, record);
                     statement.executeUpdate();
@@ -101,16 +100,16 @@ public final class PostgresEvidenceRepository implements EvidenceRepository {
     public Optional<Evidence> findById(EvidenceId id) {
         EvidenceId evidenceId = Objects.requireNonNull(id, "Evidence id is required");
 
-        try (
-                Connection connection = dataSource.getConnection();
-                PreparedStatement statement = connection.prepareStatement(SELECT_BY_ID_SQL)
-        ) {
-            statement.setObject(1, evidenceId.value());
-            try (ResultSet resultSet = statement.executeQuery()) {
-                if (!resultSet.next()) {
-                    return Optional.empty();
+        try (PostgresConnectionProvider.ConnectionLease connectionLease = connectionProvider.acquire()) {
+            Connection connection = connectionLease.connection();
+            try (PreparedStatement statement = connection.prepareStatement(SELECT_BY_ID_SQL)) {
+                statement.setObject(1, evidenceId.value());
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    if (!resultSet.next()) {
+                        return Optional.empty();
+                    }
+                    return Optional.of(mapper.toDomain(recordFrom(resultSet)));
                 }
-                return Optional.of(mapper.toDomain(recordFrom(resultSet)));
             }
         } catch (SQLException exception) {
             throw new IllegalStateException("Could not find evidence " + evidenceId.value(), exception);
@@ -121,13 +120,13 @@ public final class PostgresEvidenceRepository implements EvidenceRepository {
     public boolean existsById(EvidenceId id) {
         EvidenceId evidenceId = Objects.requireNonNull(id, "Evidence id is required");
 
-        try (
-                Connection connection = dataSource.getConnection();
-                PreparedStatement statement = connection.prepareStatement(EXISTS_BY_ID_SQL)
-        ) {
-            statement.setObject(1, evidenceId.value());
-            try (ResultSet resultSet = statement.executeQuery()) {
-                return resultSet.next();
+        try (PostgresConnectionProvider.ConnectionLease connectionLease = connectionProvider.acquire()) {
+            Connection connection = connectionLease.connection();
+            try (PreparedStatement statement = connection.prepareStatement(EXISTS_BY_ID_SQL)) {
+                statement.setObject(1, evidenceId.value());
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    return resultSet.next();
+                }
             }
         } catch (SQLException exception) {
             throw new IllegalStateException("Could not check evidence existence " + evidenceId.value(), exception);

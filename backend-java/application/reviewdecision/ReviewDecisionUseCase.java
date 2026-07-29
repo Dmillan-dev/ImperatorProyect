@@ -10,25 +10,33 @@ import imperator.domain.decision.Recommendation;
 import imperator.ports.in.ReviewDecisionInputPort;
 import imperator.ports.out.DecisionRepository;
 import imperator.ports.out.RecommendationRepository;
+import imperator.ports.out.TransactionRunner;
 
 import java.util.Objects;
 
 public final class ReviewDecisionUseCase implements ReviewDecisionInputPort {
     private final DecisionRepository decisionRepository;
     private final RecommendationRepository recommendationRepository;
+    private final TransactionRunner transactionRunner;
 
     public ReviewDecisionUseCase(
             DecisionRepository decisionRepository,
-            RecommendationRepository recommendationRepository
+            RecommendationRepository recommendationRepository,
+            TransactionRunner transactionRunner
     ) {
         this.decisionRepository = Objects.requireNonNull(decisionRepository, "Decision repository is required");
         this.recommendationRepository = Objects.requireNonNull(recommendationRepository, "Recommendation repository is required");
+        this.transactionRunner = Objects.requireNonNull(transactionRunner, "Transaction runner is required");
     }
 
     @Override
     public ReviewDecisionResult reviewDecision(ReviewDecisionCommand command) {
         validateCommand(command);
 
+        return transactionRunner.execute(() -> reviewDecisionInTransaction(command));
+    }
+
+    private ReviewDecisionResult reviewDecisionInTransaction(ReviewDecisionCommand command) {
         Decision decision = decisionRepository.findById(command.decisionId())
                 .orElseThrow(() -> new DecisionNotFoundException(command.decisionId()));
 

@@ -7,7 +7,6 @@ import imperator.domain.decision.Recommendation;
 import imperator.domain.shared.RecommendationId;
 import imperator.ports.out.RecommendationRepository;
 
-import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -76,15 +75,18 @@ public final class PostgresRecommendationRepository implements RecommendationRep
             WHERE id = ?
             """;
 
-    private final DataSource dataSource;
+    private final PostgresConnectionProvider connectionProvider;
     private final PostgresRecommendationMapper mapper;
 
-    public PostgresRecommendationRepository(DataSource dataSource) {
-        this(dataSource, new PostgresRecommendationMapper());
+    public PostgresRecommendationRepository(PostgresConnectionProvider connectionProvider) {
+        this(connectionProvider, new PostgresRecommendationMapper());
     }
 
-    PostgresRecommendationRepository(DataSource dataSource, PostgresRecommendationMapper mapper) {
-        this.dataSource = Objects.requireNonNull(dataSource, "Data source is required");
+    PostgresRecommendationRepository(
+            PostgresConnectionProvider connectionProvider,
+            PostgresRecommendationMapper mapper
+    ) {
+        this.connectionProvider = Objects.requireNonNull(connectionProvider, "Connection provider is required");
         this.mapper = Objects.requireNonNull(mapper, "Recommendation mapper is required");
     }
 
@@ -95,7 +97,7 @@ public final class PostgresRecommendationRepository implements RecommendationRep
         List<PostgresRecommendationEvidenceRecord> evidenceRecords = mapper.toEvidenceRecords(item);
 
         try {
-            PostgresLocalTransactions.execute(dataSource, connection -> {
+            PostgresLocalTransactions.execute(connectionProvider, connection -> {
                 saveRecommendation(connection, record);
                 saveEvidenceLinks(connection, evidenceRecords);
             });
@@ -108,7 +110,8 @@ public final class PostgresRecommendationRepository implements RecommendationRep
     public Optional<Recommendation> findById(RecommendationId id) {
         RecommendationId recommendationId = Objects.requireNonNull(id, "Recommendation id is required");
 
-        try (Connection connection = dataSource.getConnection()) {
+        try (PostgresConnectionProvider.ConnectionLease connectionLease = connectionProvider.acquire()) {
+            Connection connection = connectionLease.connection();
             Optional<PostgresRecommendationRecord> record = findRecordById(connection, recommendationId);
             if (record.isEmpty()) {
                 return Optional.empty();
@@ -123,13 +126,13 @@ public final class PostgresRecommendationRepository implements RecommendationRep
     public boolean existsById(RecommendationId id) {
         RecommendationId recommendationId = Objects.requireNonNull(id, "Recommendation id is required");
 
-        try (
-                Connection connection = dataSource.getConnection();
-                PreparedStatement statement = connection.prepareStatement(EXISTS_BY_ID_SQL)
-        ) {
-            statement.setObject(1, recommendationId.value());
-            try (ResultSet resultSet = statement.executeQuery()) {
-                return resultSet.next();
+        try (PostgresConnectionProvider.ConnectionLease connectionLease = connectionProvider.acquire()) {
+            Connection connection = connectionLease.connection();
+            try (PreparedStatement statement = connection.prepareStatement(EXISTS_BY_ID_SQL)) {
+                statement.setObject(1, recommendationId.value());
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    return resultSet.next();
+                }
             }
         } catch (SQLException exception) {
             throw new IllegalStateException("Could not check recommendation existence " + recommendationId.value(), exception);

@@ -21,6 +21,7 @@ import imperator.ports.out.DecisionRepository;
 import imperator.ports.out.EvidenceRepository;
 import imperator.ports.out.LedgerRepository;
 import imperator.ports.out.RecommendationRepository;
+import imperator.ports.out.TransactionRunner;
 
 import java.util.Objects;
 import java.util.Optional;
@@ -31,17 +32,20 @@ public final class AppendLedgerEntryUseCase implements AppendLedgerEntryInputPor
     private final RecommendationRepository recommendationRepository;
     private final EvidenceRepository evidenceRepository;
     private final LedgerRepository ledgerRepository;
+    private final TransactionRunner transactionRunner;
 
     public AppendLedgerEntryUseCase(
             DecisionRepository decisionRepository,
             RecommendationRepository recommendationRepository,
             EvidenceRepository evidenceRepository,
-            LedgerRepository ledgerRepository
+            LedgerRepository ledgerRepository,
+            TransactionRunner transactionRunner
     ) {
         this.decisionRepository = Objects.requireNonNull(decisionRepository, "Decision repository is required");
         this.recommendationRepository = Objects.requireNonNull(recommendationRepository, "Recommendation repository is required");
         this.evidenceRepository = Objects.requireNonNull(evidenceRepository, "Evidence repository is required");
         this.ledgerRepository = Objects.requireNonNull(ledgerRepository, "Ledger repository is required");
+        this.transactionRunner = Objects.requireNonNull(transactionRunner, "Transaction runner is required");
     }
 
     @Override
@@ -51,6 +55,20 @@ public final class AppendLedgerEntryUseCase implements AppendLedgerEntryInputPor
         Set<EvidenceId> evidenceSnapshotIds = evidenceSnapshots(command.evidenceSnapshotIds());
         Optional<LedgerEntryId> previousEntryId = optional(command.previousEntryId());
 
+        return transactionRunner.execute(() -> appendLedgerEntryInTransaction(
+                command,
+                recommendationId,
+                evidenceSnapshotIds,
+                previousEntryId
+        ));
+    }
+
+    private AppendLedgerEntryResult appendLedgerEntryInTransaction(
+            AppendLedgerEntryCommand command,
+            Optional<RecommendationId> recommendationId,
+            Set<EvidenceId> evidenceSnapshotIds,
+            Optional<LedgerEntryId> previousEntryId
+    ) {
         Decision decision = decisionRepository.findById(command.decisionId())
                 .orElseThrow(() -> new DecisionNotFoundException(command.decisionId()));
 
