@@ -133,7 +133,9 @@ Current execution state:
 - Sprint 2.7.7 - PostgreSQL persistence certification: complete.
 - Sprint 2.8.0 - Spring Boot Web Runtime Foundation: complete.
 - Sprint 2.8.1 - REST Error and Correlation Contract: complete.
-- Next authorized gate: Sprint 2.8.2 - Evidence Import Route Shell.
+- Sprint 2.8.2 - Evidence Import Route Shell: complete.
+- Sprint 2.8.3 - Decision Collection and Detail Route Shells: complete.
+- Next authorized gate: Sprint 2.8.4 - Decision Context Route Shells.
 
 Important implementation note:
 
@@ -586,8 +588,9 @@ API Route Shells
 Allowed modules, one per iteration:
 
 - `backend-java/api/errors` - completed in Sprint 2.8.1
-- `backend-java/api/evidence` - next authorized module
-- `backend-java/api/decisions`
+- `backend-java/api/evidence` - completed in Sprint 2.8.2
+- `backend-java/api/decisions` - collection/detail completed in Sprint 2.8.3;
+  context routes are the next authorized iteration
 - `backend-java/api/recommendations`
 - `backend-java/api/ledger`
 - `backend-java/api/businessvalue`
@@ -609,10 +612,11 @@ Forbidden:
 Example prompt:
 
 ```text
-Generate only the backend-java/api/decisions module with route shells.
+Extend only the backend-java/api/decisions module with the documented timeline,
+evidence and ROI route shells.
 Follow docs/product/API_SPECIFICATION.md and docs/architecture/34_MVP_Implementation_Blueprint.md through docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
 Endpoints must return a controlled Not Implemented response.
-No llames repositorios, motores ROI, IA ni ledger real.
+Do not call repositories, ROI engines, AI providers or the real ledger.
 ```
 
 ## Sprint 2.9 - JWT/RBAC Foundation
