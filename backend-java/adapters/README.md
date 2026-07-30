@@ -2,8 +2,8 @@
 
 ## Purpose
 
-Contener implementaciones tecnicas que se adaptan a los puertos definidos por
-la aplicacion. Los adapters no definen el dominio; se subordinan a el.
+Contain technical implementations of application-defined ports. Adapters do
+not define the domain; they remain subordinate to it.
 
 ## Who Uses This Folder
 

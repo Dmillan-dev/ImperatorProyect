@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Motor principal del dominio y la aplicacion Java de IMPERATOR.
+Primary Java domain and application runtime for IMPERATOR.
 
 ## Who Uses This Folder
 

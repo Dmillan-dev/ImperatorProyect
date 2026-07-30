@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Representar el modelo de persistencia PostgreSQL separado del dominio.
+Represent the PostgreSQL persistence model separately from the domain.
 
 These records describe adapter-side storage shapes only. They are not domain
 entities, REST DTOs, query models, commands or results.

@@ -2,7 +2,8 @@
 
 ## Purpose
 
-Infraestructura local y futura base operacional para ejecutar IMPERATOR.
+Reserved local infrastructure and future operational foundation for running
+IMPERATOR.
 
 ## Who Uses This Folder
 
@@ -16,8 +17,8 @@ Infraestructura local y futura base operacional para ejecutar IMPERATOR.
 - Future observability configuration.
 - Future local infrastructure files explicitly authorized by sprint scope.
 
-Sprint 1 status:
-- Repository shell only.
+Current status:
+- Documentation boundary only.
 - No Dockerfiles.
 - No docker-compose file.
 - No Kubernetes manifests.

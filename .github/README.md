@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Configuracion de GitHub para automatizacion del repositorio.
+GitHub configuration for repository automation.
 
 ## Who Uses This Folder
 
@@ -14,6 +14,7 @@ Configuracion de GitHub para automatizacion del repositorio.
 
 - Future or existing workflow definitions.
 - Repository automation metadata.
+- Legacy `proto-ci.yml`; this is not the Phase 2.13 Java backend CI foundation.
 
 ## Never Contains
 

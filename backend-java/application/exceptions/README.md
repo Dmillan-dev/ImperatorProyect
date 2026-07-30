@@ -2,9 +2,8 @@
 
 ## Purpose
 
-Definir la taxonomia de errores de aplicacion que los adapters podran mapear a
-protocolos externos sin contaminar los casos de uso con HTTP, REST, JSON o
-frameworks.
+Define the application error taxonomy that adapters may map to external
+protocols without contaminating use cases with HTTP, REST, JSON or frameworks.
 
 ## Who Uses This Folder
 

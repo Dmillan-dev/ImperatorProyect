@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Representar el registro inmutable de decisiones, revisiones y cambios relevantes.
+Represent the immutable record of decisions, reviews and relevant changes.
 
 ## Who Uses This Folder
 

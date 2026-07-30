@@ -2,8 +2,7 @@
 
 ## Purpose
 
-Importar evidencia normalizada como prueba canonica para futuros casos de
-decision.
+Import normalized evidence as canonical proof for future decision cases.
 
 ## Who Uses This Folder
 

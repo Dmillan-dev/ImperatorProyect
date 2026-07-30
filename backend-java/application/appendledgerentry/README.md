@@ -2,8 +2,8 @@
 
 ## Purpose
 
-Registrar un hecho historico en el Decision Ledger sin modificar el estado de
-la Decision ni ejecutar reglas de negocio adicionales.
+Record a historical fact in the Decision Ledger without modifying Decision
+state or executing additional business rules.
 
 ## Who Uses This Folder
 

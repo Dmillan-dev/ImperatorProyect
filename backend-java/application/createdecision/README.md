@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Crear una decision trazable a partir de evidencia ya importada.
+Create a traceable decision from previously imported evidence.
 
 ## Who Uses This Folder
 

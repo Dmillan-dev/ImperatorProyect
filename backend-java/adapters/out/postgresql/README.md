@@ -2,8 +2,8 @@
 
 ## Purpose
 
-Implementar progresivamente el adapter PostgreSQL que persistira el dominio
-existente implementando los puertos de salida.
+Implement the PostgreSQL adapter that persists the existing domain through
+outbound ports.
 
 PostgreSQL must adapt to the domain. The domain must not be modified to
 accommodate PostgreSQL.

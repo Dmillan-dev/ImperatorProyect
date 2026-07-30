@@ -1,157 +1,205 @@
-# Estructura del repositorio
+# Repository Structure
 
-- `docs/` — sistema documental organizado por zonas.
-  - `docs/business/` — negocio, mercado, ICP, GTM, ventas y validación.
-  - `docs/product/` — producto, dominio, API conceptual, capacidades y lenguaje canónico.
-  - `docs/architecture/` — arquitectura conceptual, datos, conectores, contexto técnico objetivo y reglas Phase 0.
-  - `docs/ai/` — contexto operativo para agentes y prompts recurrentes.
-  - `docs/rfcs/` — propuestas estilo RFC antes de cambios relevantes.
-  - `docs/decisions/` — decision log y decisiones aceptadas.
-  - `docs/decisions/adr/` — Architecture Decision Records.
-  - `docs/research/` — hipótesis, experimentos y plantillas de validación.
-  - `docs/rnd/` — evidencia documental de I+D/R&D: actividades, horas, objetos tecnicos, pruebas y dossier de desarrollo.
-- `proto/` — archivos `.proto` canónicos como contratos internos futuros.
-- `agents/` — agentes lógicos responsables de áreas (CTO, Product, Connector, Backend, Frontend, AI, Security, FinOps, QA).
-  - `agents/phase1/` — guia documental para dividir Phase 1 en etapas con agentes autonomos; no es runtime ni codigo.
-  - `agents/phase2/` — guia de sprints para Phase 2 Platform Foundation; controla un modulo por iteracion.
-- `services/` — scaffolding documental por stack futuro durante Phase 0.
-- `demos/` — demos HTML de experiencia y narrativa.
-- `infra/` — reservado para infra-as-code, despliegue y scripts en fases posteriores.
+Status: **Operational reference**
 
-Propósito: permitir que agentes trabajen de forma separada en sus áreas, manteniendo contratos claros, autoridad documental y handoffs explícitos.
+This document defines the physical ownership of the repository. Current phase
+and sprint authorization live in `docs/project/`.
 
-Documento canónico de trabajo por agentes:
+## Top-Level Structure
 
-- `agents/README.md` — operating model para dividir trabajo futuro entre CTO, Product, Connector, Backend, Frontend, AI, Security, FinOps y QA sin crear implementación durante Phase 0.
-- `agents/phase1/README.md` — proceso recomendado para crear Phase 1 por etapas con agentes autonomos, handoffs, gates y disciplina de evidencia.
-- `agents/phase1/12_phase1_closure.md` — cierre del dossier documental Phase 1: contexto listo para futuro scaffolding limitado, sin afirmar que exista software implementado.
-- `agents/phase2/README.md` — plan de sprints para Phase 2 Platform Foundation: contrato gate, project shell, Java Domain, outbound ports, Application Layer, Application Contracts, PostgreSQL persistence adapter, REST adapter, JWT/RBAC, React, Docker, observabilidad y CI/R&D evidence; Python AI-provider foundation queda diferido hasta autorizacion explicita.
+```text
+.github/
+.mvn/
+agents/
+backend-java/
+backend-python/
+database/
+demos/
+docs/
+frontend/
+infra/
+proto/
+samples/
+scripts/
+services/
+src/test/java/
+target/
+```
 
-Documento canónico del MVP:
+## Ownership
 
-- `docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md` — blueprint de la Decision ROI Platform: integraciones MVP, objeto central, recomendaciones prioritarias, superficies de producto y criterios de validación.
+### `.github/`
 
-Documento canónico del dominio:
+Contains repository automation metadata. The existing `proto-ci.yml` workflow
+is a legacy proto-generation check and does not constitute the Phase 2.13 Java
+backend CI foundation.
 
-- `docs/product/CORE_DOMAIN_MODEL.md` — entidades, relaciones e invariantes de negocio que deben guiar Java, Python, PostgreSQL, React y futuros agentes.
+### `.mvn/`
 
-Documento canónico de API conceptual:
+Contains the Maven Wrapper configuration used by the reproducible Java 21
+build.
 
-- `docs/product/API_SPECIFICATION.md` — superficie API antes de OpenAPI, protobuf o implementación.
+### `agents/`
 
-Documento canónico del Decision Ledger:
+Contains AI-agent roles, execution rules, phase plans and sprint prompts.
 
-- `docs/product/DECISION_LEDGER_V2.md` — contrato funcional del ledger: casos de uso, modelo, API conceptual, eventos, riesgos y criterios de aceptación.
+- `agents/README.md` defines the operating model.
+- `agents/phase1/` is the completed Phase 1 stage dossier.
+- `agents/phase2/` is the active Phase 2 sprint plan and historical prompt set.
+- role directories define bounded responsibilities.
 
-Documento canónico de datos:
+It never contains product runtime code, secrets or generated output.
 
-- `docs/architecture/DATABASE_MODEL.md` — modelo conceptual de datos y responsabilidades de almacenamiento sin SQL detallado.
+### `backend-java/`
 
-Documento canónico de conectores:
+Contains the Java modular-monolith foundation:
 
-- `docs/architecture/CONNECTOR_FRAMEWORK.md` — framework conceptual para añadir integraciones sin modificar el núcleo del dominio.
+```text
+backend-java/
+  api/
+  application/
+  bootstrap/
+  domain/
+  ports/
+  adapters/
+```
 
-Documento canónico de contratos MVP por conector:
+The accepted Maven source root is `backend-java`. Java packages use
+`imperator.*`.
 
-- `docs/architecture/28_Per_Connector_MVP_Contracts.md` — contratos pre-code para Jira, GitHub, AWS y OpenAI + Anthropic Claude: objetos fuente, evidencia, permisos, frescura, sensibilidad, fallos y ownership por agente.
+Dependency direction:
 
-Documento canónico de vocabulario evento/evidencia:
+```text
+API / Bootstrap / Adapters
+        -> Ports / Application
+        -> Domain
+```
 
-- `docs/architecture/29_Event_Evidence_Vocabulary.md` — vocabulario controlado de eventos normalizados, tipos de evidencia, estados, bloqueos, frescura, sensibilidad y confianza.
+Domain never depends on outer layers.
 
-Documento canónico de cierre Phase 0:
+### `backend-python/`
 
-- `docs/architecture/30_Phase_0_Closure_Readiness_Review.md` — auditoría final de coherencia, gates, riesgos residuales y trabajo por agentes antes de autorizar Phase 1.
+Reserved for the future explanation-provider boundary. It is not authorized to
+own domain truth, calculate ROI, mutate the ledger or call real providers until
+an explicit sprint allows it.
 
-Documento canónico de implementación MVP:
+### `database/`
 
-- `docs/architecture/31_MVP_Implementation_Standard.md` — estándar futuro para aplicar alcance reducido, arquitectura hexagonal, auth JWT/OAuth2 compatible, observabilidad mínima y separación de adapters.
+Contains versioned database migration artifacts.
 
-Documento canónico de alcance y cierre Phase 1:
+Current migration:
 
-- `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` — contrato exacto de objetivo Phase 1: un Decision ROI Case, una recomendacion determinista, modelo de datos mínimo, conectores limitados, IA solo explicativa, scaffolding controlado y criterios de salida.
-- `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md` — decisiones finales antes de codigo: Enterprise Evidence Event, PostgreSQL, Explanation Provider, JWT/RBAC simple y Decision Graph interno sobre PostgreSQL.
-- `docs/architecture/34_MVP_Implementation_Blueprint.md` — contrato final de implementacion MVP: flujo, componentes, objetos, repositorios, servicios, API, tablas, seguridad, NFRs, out-of-scope y plan de 6 semanas.
-- `docs/architecture/35_Coding_Principles.md` — reglas de implementacion para agentes: arquitectura hexagonal, capas, adapters, DTOs, seguridad, observabilidad y limites de IA.
-- `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` — contrato de Phase 2 Platform Foundation: fundacion tecnica sin ROI, recomendaciones, IA real, conectores live ni reglas de negocio.
-- `docs/architecture/37_Implementation_Contract.md` — contrato obligatorio de implementacion: capas, dependencias, paquetes, naming, API, base de datos, eventos, logs, IA, seguridad, testing, Git, agentes y done definition.
-- `docs/architecture/38_Sprint_0_Contract_Gate_Report.md` — gate formal Sprint 0: valida Phase 2, corrige el orden a domain-first y autoriza solo Sprint 1 project shell.
-- `agents/phase1/12_phase1_closure.md` — contrato de cierre operativo para agentes antes de iniciar cualquier scaffolding futuro de Phase 1.
+```text
+database/migrations/V1__initial_schema.sql
+```
 
-Documento canónico de arquitectura:
+The physical schema is governed by
+`docs/architecture/40_Persistence_Schema_Contract.md`.
 
-- `docs/architecture/21_Technical_Architecture_Context.md` — contexto técnico objetivo: capas, bounded contexts, responsabilidades, stack direction, control model y guardrails.
+### `docs/`
 
-Documento de auditoría técnica:
+Contains the project knowledge system:
 
-- `docs/architecture/22_Technical_Investor_Audit.md` — revisión tipo inversor técnico: qué eliminar, qué falta, qué está sobreingenierizado y cómo enfocar Phase 1.
+```text
+docs/
+  project/       current status, phases, sprints and governance
+  business/      market and commercial context
+  product/       product, domain and API contracts
+  architecture/  architecture and implementation contracts
+  decisions/     accepted decisions and ADRs
+  ai/            canonical AI context
+  rfcs/          proposed changes
+  research/      research templates
+  rnd/           R&D evidence model and templates
+```
 
-Documento de estructura MVP:
+The canonical documentation entry point is `docs/README.md`.
 
-- `docs/architecture/24_MVP_Project_Structure.md` — estructura futura recomendada para el primer MVP sin crear servicios, código ni infraestructura durante Phase 0.
+### `demos/`
 
-Documento de auditoria pre-code:
+Contains static, non-production product demonstrations. Demo files are
+historical narrative artifacts and must not be treated as the React product
+runtime or as evidence that an MVP feature is implemented.
 
-- `docs/architecture/25_Pre_Code_Architecture_Readiness_Audit.md` — revision Phase 0 antes de escribir codigo: coherencia, huecos, gates y proximos documentos recomendados.
+### `frontend/`
 
-Documento de seguridad y gobierno de datos:
+Reserved for the React and TypeScript product surface. Phase 2.10 is not yet
+authorized.
 
-- `docs/architecture/26_Security_Data_Governance_Threat_Model.md` — modelo Phase 0 de boundaries, sensibilidad, IA, permisos minimos de conectores, amenazas y controles antes de datos reales.
+### `infra/`
 
-Documento de vertical slice MVP:
+Reserved for local and deployment infrastructure. It must not contain
+Kubernetes, Terraform or production deployment material before explicit
+authorization.
 
-- `docs/product/24_MVP_Vertical_Slice.md` — definición del primer recorrido end-to-end defendible: Event -> Connector -> Decision Engine -> ROI Engine -> Recommendation -> Decision Ledger -> Decision Review Workspace -> Result Validation.
+### `proto/`
 
-Documento de ROI slice MVP:
+Contains internal contract artifacts. Protobuf presence does not imply a
+microservice boundary or authorize generated runtime bindings.
 
-- `docs/product/25_MVP_ROI_Slice.md` — modelo conceptual de coste actual, recuperación estimada, supuestos, confianza, riesgo y valor realizado para un Decision ROI Case.
+### `samples/`
 
-Documento de evidencia manual MVP:
+Contains approved, non-secret validation material for the first Decision ROI
+Case. Samples must not be represented as production customer data.
 
-- `docs/product/26_Manual_Evidence_Pack_AI_Onboarding_Assistant.md` — pack manual de evidencia para probar que Decision ROI Case, ROI, Recommendation, Ledger y conectores encajan antes de escribir codigo.
+### `scripts/`
 
-Documento de acceptance tests MVP:
+Contains repository automation. Scripts must not bypass build, migration,
+security or sprint gates.
 
-- `docs/product/27_MVP_Acceptance_Test_Plan.md` — escenarios de aceptacion pre-code para evidencia, ROI, recomendacion, ledger, aprobacion, seguridad y Decision Review Workspace.
+### `services/`
 
-Documento de identidad y aprobacion MVP:
+Contains legacy Phase 0 documentation placeholders. New implementation belongs
+under `backend-java/`, `backend-python/` or `frontend/`; no new Phase 2 source
+belongs under `services/`.
 
-- `docs/product/28_Identity_Access_Approval_Model.md` — modelo pre-code de roles, acceso a evidencia, autoridad de aprobacion, rechazo, diferimiento, implementacion y validacion.
+### `src/test/java/`
 
-Documento de contrato de pantalla MVP:
+Contains Maven test sources, including the Spring Boot HTTP contract tests and
+the PostgreSQL repository integration suite.
 
-- `docs/product/29_Decision_Review_Workspace_Screen_Contract.md` — contrato pre-code de lo que la primera pantalla operativa del MVP muestra, oculta, bloquea y registra.
+### `target/`
 
-Documento de atributos de calidad MVP:
+Contains generated Maven build output. It is ignored, non-authoritative and
+must never be committed or referenced as source.
 
-- `docs/architecture/27_Quality_Attributes.md` — expectativas no funcionales pre-code para explicabilidad, auditabilidad, frescura, trazabilidad, latencia, resiliencia, observabilidad y limites de rendimiento.
+## REST Structure
 
-Documento de evidencia I+D/R&D:
+REST implementation uses:
 
-- `docs/rnd/30_RD_Activity_Evidence_Dossier.md` — sistema para documentar arquitectura, futuro codigo, horas, objetos tecnicos, experimentos, pruebas, costes y actividad de desarrollo.
+```text
+backend-java/api/errors
+backend-java/api/evidence
+backend-java/api/decisions
+backend-java/api/recommendations
+backend-java/api/ledger
+backend-java/api/businessvalue
+backend-java/api/pagination
+```
 
-Documento de estándar MVP:
+Java packages use `imperator.api.*`. Public paths use `/api/v1` and retain
+documented HTTP naming, including `/business-value`.
 
-- `docs/architecture/31_MVP_Implementation_Standard.md` — contrato práctico para que agentes de Backend, Frontend, Connectors, Security, FinOps, QA y AI planifiquen Phase 1 sin sobredimensionar el MVP.
+Do not create a parallel `adapters/in` HTTP hierarchy.
 
-Documento de contrato Phase 1:
+## Documentation Structure
 
-- `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` — referencia obligatoria antes de crear scaffolding, data model inicial, conectores, flujo IA explicativo o tests de salida Phase 1.
-- `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md` — referencia obligatoria antes de elegir formato de evidencia, persistencia, auth, proveedor IA o modelo relacional del Decision Graph.
-- `docs/architecture/34_MVP_Implementation_Blueprint.md` — referencia obligatoria antes de iniciar Phase 2 Platform Foundation o Phase 3 MVP Implementation.
-- `docs/architecture/35_Coding_Principles.md` — referencia obligatoria antes de crear codigo de backend, Python, frontend, base de datos, API, auth, observabilidad o CI.
-- `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` — referencia obligatoria antes de iniciar Phase 2 Platform Foundation; no autoriza logica de negocio.
-- `docs/architecture/37_Implementation_Contract.md` — referencia obligatoria antes de cualquier tarea de implementacion; ningun agente puede generar mas de un modulo por iteracion.
-- `agents/phase2/README.md` — referencia obligatoria para dividir Phase 2 en sprints y prompts de agente con alcance preciso.
-- `docs/architecture/38_Sprint_0_Contract_Gate_Report.md` — referencia obligatoria antes de ejecutar Sprint 1; contiene el primer prompt de agente autorizado.
-- `agents/phase1/12_phase1_closure.md` — referencia obligatoria para confirmar que el dossier Phase 1 esta cerrado como contexto y que el software aun no se ha construido.
+Documents are organized by ownership, not by execution order. Execution order
+is maintained in:
 
-Estructura de control:
+- `docs/project/PHASE_AND_SPRINT_MAP.md`;
+- `agents/phase2/README.md`.
 
-- `docs/decisions/14_Decision_Log.md` — cambios estratégicos y arquitectónicos relevantes.
-- `docs/decisions/adr/` — decisiones de arquitectura aceptadas o propuestas.
-- `docs/rfcs/` — propuestas de evolución técnica antes de implementar.
-- `proto/` — contratos internos canónicos.
-- `services/` — solo scaffolding/documentación durante Phase 0.
-- `agents/phase2/` — control futuro de sprints Phase 2 sin convertirse en runtime.
-- `docs/rnd/` — evidencia de desarrollo e I+D/R&D, sin inventar horas, codigo ni resultados no ejecutados.
+Frozen or historical documents remain in place to preserve links and audit
+history. New documents must use English and must declare their purpose or
+status.
+
+## Mutation Rules
+
+- Modify only files authorized by the current sprint.
+- Do not move frozen contracts for cosmetic organization.
+- Do not create duplicate package roots or parallel module hierarchies.
+- Do not place source code under `docs/` or `agents/`.
+- Do not place documentation inside build-output directories.
+- Update project status only after verified execution.
+- Record semantic changes in the Decision Log before changing contracts.

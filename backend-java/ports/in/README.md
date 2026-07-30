@@ -2,8 +2,8 @@
 
 ## Purpose
 
-Definir como entra el mundo exterior a la capa de aplicacion de IMPERATOR sin
-exponer REST, HTTP, JSON, CLI, UI ni detalles de adapters.
+Define how the outside world enters the IMPERATOR Application layer without
+exposing REST, HTTP, JSON, CLI, UI or adapter details.
 
 ## Who Uses This Folder
 

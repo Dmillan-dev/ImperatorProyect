@@ -2,8 +2,7 @@
 
 ## Purpose
 
-Aplicar una accion humana de revision sobre una decision con recomendacion
-existente.
+Apply a human review action to a decision with an existing recommendation.
 
 ## Who Uses This Folder
 

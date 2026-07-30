@@ -2,8 +2,8 @@
 
 ## Purpose
 
-Implementar puertos de salida hacia tecnologia externa sin cambiar los
-contratos de dominio o aplicacion.
+Implement outbound ports for external technology without changing Domain or
+Application contracts.
 
 ## Who Uses This Folder
 

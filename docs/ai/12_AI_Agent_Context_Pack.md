@@ -4,6 +4,18 @@
 
 Ensure consistent output when AI agents collaborate on strategy, documentation, analysis, or planning.
 
+Canonical compact context:
+
+- `docs/ai/IMPERATOR_Project_Context.md`
+
+Current execution control:
+
+- `docs/project/PROJECT_STATUS.md`
+- `docs/project/PHASE_AND_SPRINT_MAP.md`
+
+Use this long context pack only when the task needs broad cross-document
+reasoning. Do not load it for every bounded implementation task.
+
 ## Current State
 
 Phase 1 is complete for a limited MVP. Phase 2 Platform Foundation is in
@@ -191,7 +203,7 @@ For consistency between teams and agents, the following guidance applies before 
 - Phase 2 Platform Foundation blueprint lives in `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`. It is authoritative for creating technical foundation without business intelligence.
 - Implementation contract lives in `docs/architecture/37_Implementation_Contract.md`. It is mandatory for layer rules, dependency rules, packages, naming, API behavior, database behavior, events, logging, AI boundaries, security, testing, Git, agent execution and done definitions.
 - Phase 2 sprint plan lives in `agents/phase2/README.md`. It is mandatory for sprint sequencing and one-module-per-iteration prompts.
-- Sprint 0 contract gate lives in `docs/architecture/38_Sprint_0_Contract_Gate_Report.md`. It is the current GO decision and authorizes only Sprint 1 - Repository and Project Shell.
+- Sprint 0 contract gate lives in `docs/architecture/38_Sprint_0_Contract_Gate_Report.md` as the historical Phase 2 entry record. Current authorization lives in `docs/project/PROJECT_STATUS.md`.
 - Phase 2 sprint roles and ASI discipline live in `docs/architecture/37_Implementation_Contract.md` and `agents/phase2/README.md`.
 
 Any further changes to this mandate or expansions must be recorded in `docs/decisions/14_Decision_Log.md`.

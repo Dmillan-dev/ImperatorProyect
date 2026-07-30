@@ -1,222 +1,172 @@
 # IMPERATOR Documentation Map
 
-## Rule Zero
+Status: **Active index**
 
-Purpose:
-Preserve the canonical business, product, architecture, AI, decision, RFC,
-research and I+D/R&D context for IMPERATOR.
+This directory contains the project knowledge system. Use the project control
+plane to determine what is current before reading historical or supporting
+documents.
 
-Who uses this folder:
-- Founder / CTO.
-- Architecture Guardian.
-- Product Guardian.
-- Context Keeper.
-- Implementation Agent as read-only authority unless a sprint explicitly allows
-  a documentation update.
+## AI-Optimized Entry Point
 
-Contains:
-- Canonical project context.
-- Architecture and product contracts.
-- Decision records.
-- RFCs.
-- R&D evidence documentation.
+Read in this order:
 
-Never contains:
-- Application source code.
-- Runtime secrets.
-- Build output.
-- Generated dependency folders.
-- Unapproved implementation artifacts.
+1. [Documentation Control Plane](project/README.md)
+2. [Current Project Status](project/PROJECT_STATUS.md)
+3. [Phase and Sprint Map](project/PHASE_AND_SPRINT_MAP.md)
+4. [Decision Log](decisions/14_Decision_Log.md)
+5. [Phase 2 Sprint Plan](../agents/phase2/README.md)
+6. Only the contracts required by the current task
 
-This folder separates business, product, architecture, AI, decisions, RFCs, research and I+D/R&D evidence context.
+Do not load all documentation by default.
 
-Use this structure to avoid mixing strategic business documents with technical planning documents as the project grows.
+## Documentation Zones
 
-## Zones
+| Directory | Ownership | Typical document class |
+|---|---|---|
+| `project/` | Current state, lifecycle and documentation governance | Current control |
+| `business/` | Commercial thesis, ICP, GTM and validation | Reference |
+| `product/` | MVP boundary, domain, API, ledger and user experience | Frozen contract or reference |
+| `architecture/` | Architecture, security, quality and implementation contracts | Frozen contract, reference or historical gate |
+| `decisions/` | Accepted decisions and ADRs | Append-only decision history |
+| `ai/` | Canonical AI context and recurring collaboration guidance | Active agent context |
+| `rfcs/` | Proposed substantial changes | Proposal |
+| `research/` | Hypothesis and experiment formats | Template |
+| `rnd/` | R&D activity and evidence control | Evidence model and template |
 
-### `business/`
+Agent execution plans live under `../agents/`, not inside `docs/`.
 
-Commercial, market, buyer and strategy documents.
+## Lifecycle Map
 
-Use for:
-- positioning,
-- ICP,
-- value proposition,
-- GTM,
-- business model,
-- market risks,
-- validation,
-- sales narrative,
-- executive summary.
+### Phase 0 - Strategy and Architecture Readiness
 
-### `product/`
+Status: **Complete**
 
-Product definition, domain language and product contracts.
+Primary material:
 
-Authoritative product documents:
-- `20_MVP_Decision_ROI_Platform_Blueprint.md`
-- `CORE_DOMAIN_MODEL.md`
-- `API_SPECIFICATION.md`
-- `DECISION_LEDGER_V2.md`
-- `13_Glossary_and_Canonical_Language.md`
-- `15_Context_Boundaries_and_Non_Goals.md`
+- `business/`;
+- `product/05_*` through `product/29_*`;
+- `architecture/18_*` through `architecture/30_*`;
+- `architecture/DATABASE_MODEL.md`;
+- `architecture/CONNECTOR_FRAMEWORK.md`;
+- early Decision Log entries and RFCs.
 
-Supporting product explainers:
-- `23_IMPERATOR_Visual_Operational_Explainer.md`
-- `24_MVP_Vertical_Slice.md`
-- `25_MVP_ROI_Slice.md`
-- `26_Manual_Evidence_Pack_AI_Onboarding_Assistant.md`
-- `27_MVP_Acceptance_Test_Plan.md`
-- `28_Identity_Access_Approval_Model.md`
-- `29_Decision_Review_Workspace_Screen_Contract.md`
+These documents define intent and historical readiness. They do not authorize
+the current implementation sprint.
 
-### `architecture/`
+### Phase 1 - Limited MVP Contract
 
-Conceptual and target technical architecture.
+Status: **Complete documentation dossier**
 
-Use for:
-- architecture thesis,
-- target architecture context,
-- technical investor audit,
-- MVP project structure,
-- pre-code readiness audits,
-- security, data governance and threat models,
-- quality attributes and non-functional expectations,
-- per-connector MVP contracts,
-- event and evidence vocabulary,
-- Phase 0 closure readiness reviews,
-- MVP implementation standards,
-- Phase 1 MVP scope and exit criteria,
-- Phase 1 foundational implementation decisions,
-- final MVP implementation blueprint,
-- coding principles,
-- Phase 2 Platform Foundation blueprint,
-- implementation contract,
-- Sprint 0 contract gate,
-- conceptual database model,
-- connector framework,
-- Phase 0 repository rules,
-- repository structure,
-- layer and bounded-context guidance.
+Primary contracts:
 
-### `ai/`
+- `architecture/31_MVP_Implementation_Standard.md`;
+- `architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`;
+- `architecture/33_Phase_1_Foundational_Implementation_Decisions.md`;
+- `architecture/34_MVP_Implementation_Blueprint.md`;
+- `architecture/35_Coding_Principles.md`;
+- `../agents/phase1/`.
 
-AI-agent operating context and recurring AI collaboration prompts.
+### Phase 2 - Platform Foundation
 
-Use for:
-- agent context packs,
-- one-page project prompts,
-- weekly context toning prompts,
-- AI collaboration guardrails.
+Status: **Active**
 
-### `rfcs/`
+Primary controls:
 
-Proposal documents for substantial product, domain or architecture evolution.
+- `architecture/36_Phase_2_Platform_Foundation_Blueprint.md`;
+- `architecture/37_Implementation_Contract.md`;
+- `architecture/38_Sprint_0_Contract_Gate_Report.md` as historical entry gate;
+- `architecture/39_Persistence_Transaction_Contract.md`;
+- `architecture/40_Persistence_Schema_Contract.md`;
+- `../agents/phase2/README.md`;
+- `project/PROJECT_STATUS.md`;
+- `project/PHASE_AND_SPRINT_MAP.md`.
 
-RFCs should be created before adding new bounded contexts, major data models, product surfaces or cross-team contracts.
+### Phase 3 - MVP Business Value Loop
 
-Current RFCs:
-- `0001-knowledge-graph-model.md`
-- `0002-module-communication-architecture.md`
+Status: **Not authorized**
 
-### `decisions/`
+Primary future semantic inputs:
 
-Accepted strategic and architectural decisions.
+- `product/20_MVP_Decision_ROI_Platform_Blueprint.md`;
+- `product/24_MVP_Vertical_Slice.md`;
+- `product/25_MVP_ROI_Slice.md`;
+- `architecture/34_MVP_Implementation_Blueprint.md`;
+- explicit future Phase 3 authorization.
 
-Use for:
-- `14_Decision_Log.md`,
-- ADRs under `decisions/adr/`.
+## Canonical Product Contracts
 
-### `research/`
+| Concern | Document |
+|---|---|
+| MVP product boundary | `product/20_MVP_Decision_ROI_Platform_Blueprint.md` |
+| First vertical slice | `product/24_MVP_Vertical_Slice.md` |
+| ROI semantics | `product/25_MVP_ROI_Slice.md` |
+| Core domain | `product/CORE_DOMAIN_MODEL.md` |
+| Conceptual API | `product/API_SPECIFICATION.md` |
+| Decision Ledger | `product/DECISION_LEDGER_V2.md` |
+| Identity and approval | `product/28_Identity_Access_Approval_Model.md` |
+| First workspace | `product/29_Decision_Review_Workspace_Screen_Contract.md` |
+| Canonical language | `product/13_Glossary_and_Canonical_Language.md` |
 
-Templates and records for validation, hypotheses and experiments.
+## Canonical Technical Contracts
 
-### `rnd/`
+| Concern | Document |
+|---|---|
+| Target architecture | `architecture/21_Technical_Architecture_Context.md` |
+| Security and data governance | `architecture/26_Security_Data_Governance_Threat_Model.md` |
+| Quality attributes | `architecture/27_Quality_Attributes.md` |
+| Connector contracts | `architecture/28_Per_Connector_MVP_Contracts.md` |
+| Event and evidence vocabulary | `architecture/29_Event_Evidence_Vocabulary.md` |
+| Implementation blueprint | `architecture/34_MVP_Implementation_Blueprint.md` |
+| Coding principles | `architecture/35_Coding_Principles.md` |
+| Phase 2 boundary | `architecture/36_Phase_2_Platform_Foundation_Blueprint.md` |
+| Implementation mechanics | `architecture/37_Implementation_Contract.md` |
+| Transaction boundary | `architecture/39_Persistence_Transaction_Contract.md` |
+| Physical schema contract | `architecture/40_Persistence_Schema_Contract.md` |
 
-I+D/R&D evidence documentation for future startup diligence or accreditation support.
+## Conflict Resolution
 
-Use for:
-- development activity logs,
-- hours and contributor traceability,
-- technical object registers,
-- experiment and test records,
-- monthly I+D summaries,
-- architecture/code/test evidence once implementation is approved.
+Use this precedence:
 
-## Authority Order
+1. explicit founder authorization;
+2. `project/PROJECT_STATUS.md` for the current gate;
+3. `decisions/14_Decision_Log.md` for accepted decisions;
+4. frozen product and architecture contracts;
+5. active phase/sprint execution plan;
+6. supporting references;
+7. historical records.
 
-When documents conflict:
+Current-state documents identify authorized work but do not override domain or
+architecture semantics.
 
-1. `decisions/14_Decision_Log.md`
-2. `product/20_MVP_Decision_ROI_Platform_Blueprint.md`
-3. `product/24_MVP_Vertical_Slice.md`
-4. `product/25_MVP_ROI_Slice.md`
-5. `product/CORE_DOMAIN_MODEL.md`
-6. `product/API_SPECIFICATION.md`
-7. `product/DECISION_LEDGER_V2.md`
-8. `architecture/21_Technical_Architecture_Context.md`
-9. `architecture/DATABASE_MODEL.md`
-10. `architecture/CONNECTOR_FRAMEWORK.md`
-11. `architecture/26_Security_Data_Governance_Threat_Model.md`
-12. `product/28_Identity_Access_Approval_Model.md`
-13. `product/27_MVP_Acceptance_Test_Plan.md`
-14. `product/29_Decision_Review_Workspace_Screen_Contract.md`
-15. `architecture/27_Quality_Attributes.md`
-16. `architecture/28_Per_Connector_MVP_Contracts.md`
-17. `architecture/29_Event_Evidence_Vocabulary.md`
-18. `rfcs/0002-module-communication-architecture.md`
-19. `../agents/README.md`
-20. `ai/12_AI_Agent_Context_Pack.md`
-21. `rnd/30_RD_Activity_Evidence_Dossier.md`
-22. `architecture/30_Phase_0_Closure_Readiness_Review.md`
-23. `architecture/31_MVP_Implementation_Standard.md`
-24. `architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
-25. `architecture/33_Phase_1_Foundational_Implementation_Decisions.md`
-26. `architecture/34_MVP_Implementation_Blueprint.md`
-27. `architecture/35_Coding_Principles.md`
-28. `architecture/36_Phase_2_Platform_Foundation_Blueprint.md`
-29. `architecture/37_Implementation_Contract.md`
-30. `../agents/phase2/README.md`
-31. `architecture/38_Sprint_0_Contract_Gate_Report.md`
-32. `../agents/phase1/README.md`
-33. `../agents/phase1/12_phase1_closure.md`
-34. `product/13_Glossary_and_Canonical_Language.md`
+## Language Policy
 
-## Agent Work Model
+English is mandatory for all new or modified human-readable project material,
+including:
 
-The top-level `agents/` folder separates future AI workstreams by responsibility.
+- project control documents;
+- sprint definitions;
+- AI-agent instructions;
+- implementation-facing README files;
+- decisions, contracts and technical guidance;
+- source-code comments, test descriptions, commit messages and change
+  summaries.
 
-Use `../agents/README.md` before assigning work to CTO, Product, Connector, Backend, Frontend, AI, Security, FinOps or QA agents.
+Historical documents may remain in their original language to preserve audit
+meaning. They must not be treated as current execution instructions.
 
-Use `../agents/phase1/README.md` before splitting Phase 1 into autonomous agent stages.
+The canonical compact AI context is
+[IMPERATOR Project Context](ai/IMPERATOR_Project_Context.md). The Spanish
+one-page prompt is retained as a legacy, non-authoritative artifact.
 
-Use `../agents/phase1/12_phase1_closure.md` before starting any future Phase 1 implementation scaffolding.
+## Change Rule
 
-Use `architecture/30_Phase_0_Closure_Readiness_Review.md` as the final Phase 0 readiness gate before authorizing Phase 1 planning or implementation scaffolding.
+When a sprint closes:
 
-Use `architecture/31_MVP_Implementation_Standard.md` to keep future MVP work reduced, hexagonal, auth-aware and observable without overbuilding.
+1. update project status;
+2. update the phase/sprint map;
+3. append a decision only if a decision was made;
+4. update active agent guidance;
+5. preserve completed prompts and reports;
+6. validate links and the relevant build/test gate.
 
-Use `architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` to define the exact first-build objective, data-model limit, connector limit, AI explanation boundary, scaffolding authorization and Phase 1 completion criteria.
-
-Use `architecture/33_Phase_1_Foundational_Implementation_Decisions.md` to lock Canonical Evidence Model, PostgreSQL, Explanation Provider, JWT/RBAC and Decision Graph before coding.
-
-Use `architecture/34_MVP_Implementation_Blueprint.md` as the final MVP contract before implementation phases.
-
-Use `architecture/35_Coding_Principles.md` to keep future implementation hexagonal, deterministic, testable, observable and adapter-safe.
-
-Use `architecture/36_Phase_2_Platform_Foundation_Blueprint.md` before starting Phase 2 Platform Foundation. Phase 2 may build the SaaS technical foundation, but must not implement ROI, recommendations, real AI calls, live connectors or business rules.
-
-Use `architecture/37_Implementation_Contract.md` before any implementation task. It defines layer, dependency, package, naming, API, database, event, logging, AI, security, testing, Git, agent and done rules.
-
-Use `../agents/phase2/README.md` before splitting Phase 2 into sprint work. No agent may generate more than one module per iteration.
-
-Use `architecture/38_Sprint_0_Contract_Gate_Report.md` as the historical Sprint
-0 GO record. Use `../agents/phase2/README.md` and
-`decisions/14_Decision_Log.md` for the current implementation gate. The current
-authorized gate is Sprint 2.8.2 - Evidence Import Route Shell.
-
-## Growth Rule
-
-If a new document does not clearly belong in one of these folders, decide its owner before creating it.
-
-Do not place new strategic documents at the repository root unless they are entry points like `README.md`.
+Do not rewrite frozen contracts solely to reflect progress.

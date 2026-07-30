@@ -2,7 +2,8 @@
 
 ## Purpose
 
-Interfaz web operativa para revisar decisiones, evidencia, ledger y valor de negocio.
+Future operational web interface for reviewing decisions, evidence, ledger
+history and business value.
 
 ## Who Uses This Folder
 
@@ -16,8 +17,8 @@ Interfaz web operativa para revisar decisiones, evidencia, ledger y valor de neg
 - Future routing, layout and workspace screens.
 - Future UI components and API client when explicitly authorized.
 
-Sprint 1 status:
-- Repository shell only.
+Current status:
+- Documentation boundary only.
 - No React application.
 - No TypeScript source files.
 - No package manifest.

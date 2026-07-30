@@ -2,8 +2,8 @@
 
 ## Purpose
 
-Definir lo que la aplicacion necesitara del exterior sin decidir como se
-implementa.
+Define what the Application layer requires from the outside world without
+choosing an implementation.
 
 ## Who Uses This Folder
 

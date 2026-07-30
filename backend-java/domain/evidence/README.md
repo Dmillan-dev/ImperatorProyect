@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Representar la evidencia canonica que alimenta decisiones en IMPERATOR.
+Represent the canonical evidence that supports IMPERATOR decisions.
 
 ## Who Uses This Folder
 

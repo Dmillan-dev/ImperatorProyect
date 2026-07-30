@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Expresar el lenguaje central de IMPERATOR como dominio Java puro.
+Express IMPERATOR's core language as a pure Java domain.
 
 ## Who Uses This Folder
 

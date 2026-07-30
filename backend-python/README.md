@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Motor auxiliar para proveedores de explicacion IA, desacoplado del dominio Java.
+Auxiliary AI explanation-provider boundary, decoupled from the Java domain.
 
 ## Who Uses This Folder
 
@@ -17,8 +17,8 @@ Motor auxiliar para proveedores de explicacion IA, desacoplado del dominio Java.
 - Future provider adapters when explicitly authorized.
 - Future request and response models for natural-language explanations.
 
-Sprint 1 status:
-- Repository shell only.
+Current status:
+- Documentation boundary only.
 - No Python source files.
 - No FastAPI application.
 - No dependencies or provider implementations.

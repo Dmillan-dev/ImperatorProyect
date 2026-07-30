@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Zona historica o provisional previa a la estructura canonical de Phase 2.
+Historical placeholder area created before the canonical Phase 2 structure.
 
 Canonical Phase 2 implementation roots are:
 - `backend-java/`

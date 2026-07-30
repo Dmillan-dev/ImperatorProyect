@@ -2,8 +2,8 @@
 
 ## Purpose
 
-Traducir entre el dominio existente y los records de persistencia PostgreSQL sin
-introducir comportamiento de repositorio, SQL, frameworks o reglas de negocio.
+Translate between the existing domain and PostgreSQL persistence records
+without introducing repository behavior, SQL, frameworks or business rules.
 
 ## Who Uses This Folder
 

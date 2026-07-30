@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Automatizacion auxiliar del repositorio cuando exista una necesidad verificable.
+Auxiliary repository automation when a verified need exists.
 
 ## Who Uses This Folder
 
@@ -16,8 +16,8 @@ Automatizacion auxiliar del repositorio cuando exista una necesidad verificable.
 - Future validation or evidence capture scripts tied to implemented modules.
 - Future CI helper scripts when explicitly authorized.
 
-Sprint 1 status:
-- Repository shell only.
+Current status:
+- Documentation boundary only.
 - No executable scripts.
 - No setup automation.
 - No CI helper scripts.

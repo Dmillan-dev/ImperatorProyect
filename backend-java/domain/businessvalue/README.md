@@ -2,8 +2,8 @@
 
 ## Purpose
 
-Representar el valor economico asociado a decisiones sin acoplarlo a
-infraestructura ni dashboards.
+Represent the economic value associated with decisions without coupling it to
+infrastructure or dashboards.
 
 ## Who Uses This Folder
 

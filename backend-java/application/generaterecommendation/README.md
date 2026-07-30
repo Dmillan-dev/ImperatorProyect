@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Generar una recomendacion trazable para una decision existente.
+Generate a traceable recommendation for an existing decision.
 
 ## Who Uses This Folder
 

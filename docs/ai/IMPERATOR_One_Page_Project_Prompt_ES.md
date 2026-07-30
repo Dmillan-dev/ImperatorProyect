@@ -1,5 +1,9 @@
 # IMPERATOR — Prompt Resumen Del Proyecto (ES)
 
+> Legacy non-authoritative Spanish context. AI agents must use
+> `docs/ai/IMPERATOR_Project_Context.md` as the canonical compact project
+> context and `docs/project/PROJECT_STATUS.md` for the current gate.
+
 Usa este prompt para explicar o retomar el contexto de IMPERATOR sin leer toda la documentación.
 
 ## Prompt

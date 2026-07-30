@@ -2,8 +2,8 @@
 
 ## Purpose
 
-Contratos de comunicacion internos o experimentales cuando sean autorizados por
-arquitectura.
+Internal or experimental communication contracts when explicitly authorized by
+architecture.
 
 ## Who Uses This Folder
 

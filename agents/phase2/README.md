@@ -8,22 +8,27 @@ This file does not authorize code generation by itself.
 
 It explains how to ask agents to create one implementation module at a time while preserving the full project context.
 
+Prompt artifact classification:
+
+- `agents/phase2/SPRINT_ARTIFACT_INDEX.md`
+
 ## Authority
 
 Every Phase 2 agent must use:
 
-1. `docs/decisions/14_Decision_Log.md`
-2. `docs/architecture/31_MVP_Implementation_Standard.md`
-3. `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`
-4. `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md`
-5. `docs/architecture/34_MVP_Implementation_Blueprint.md`
-6. `docs/architecture/35_Coding_Principles.md`
-7. `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`
-8. `docs/architecture/37_Implementation_Contract.md`
-9. `docs/architecture/38_Sprint_0_Contract_Gate_Report.md`
-10. `docs/rnd/30_RD_Activity_Evidence_Dossier.md`
+1. `docs/project/PROJECT_STATUS.md`
+2. `docs/project/PHASE_AND_SPRINT_MAP.md`
+3. `docs/decisions/14_Decision_Log.md`
+4. the task-specific contracts listed in `docs/project/README.md`
+5. `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`
+6. `docs/architecture/37_Implementation_Contract.md`
+7. `docs/rnd/30_RD_Activity_Evidence_Dossier.md` when real R&D evidence applies
 
-If any sprint prompt conflicts with these documents, stop and request CTO/founder resolution.
+`docs/architecture/38_Sprint_0_Contract_Gate_Report.md` is a historical entry
+gate, not current authorization.
+
+If any sprint prompt conflicts with current control or a frozen contract, stop
+and request CTO/founder resolution.
 
 ## Non-Negotiable Rule
 
@@ -36,14 +41,14 @@ Ask for one bounded module.
 Good:
 
 ```text
-Genera unicamente el modulo backend-java/domain/evidence respetando los documentos 31-38.
-No implementes ningun otro modulo.
+Generate only the backend-java/domain/evidence module under documents 31-38.
+Do not implement any other module.
 ```
 
 Bad:
 
 ```text
-Genera todo el backend del MVP.
+Generate the entire MVP backend.
 ```
 
 ## Phase 2 Boundary
@@ -199,10 +204,10 @@ Forbidden:
 Example agent prompt:
 
 ```text
-Revisa unicamente el contexto para autorizar Phase 2 Platform Foundation.
-Usa docs/architecture/31_MVP_Implementation_Standard.md hasta docs/architecture/37_Implementation_Contract.md.
-No generes codigo.
-Devuelve go/no-go, primer modulo recomendado y riesgos de alcance.
+Review only the context required to authorize Phase 2 Platform Foundation.
+Use docs/architecture/31_MVP_Implementation_Standard.md through docs/architecture/37_Implementation_Contract.md.
+Do not generate code.
+Return go/no-go, the first recommended module and scope risks.
 ```
 
 ## Sprint 1 - Repository and Project Shell
@@ -261,15 +266,17 @@ Forbidden:
 Example prompt:
 
 ```text
-Genera unicamente el modulo repository/project-shell respetando docs/architecture/31_MVP_Implementation_Standard.md a docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
-Crea solo estructura fisica y README de frontera.
-Puedes crear .gitignore, .editorconfig y LICENSE solo si no inventas una licencia open-source no aprobada.
-No implementes Maven, Gradle, Spring Boot, Java, Python, React, Docker, PostgreSQL, dominio, API, persistencia, auth ni observabilidad.
-No modifiques otros modulos.
-Si necesitas crear un archivo no listado explicitamente como permitido, detente y pide autorizacion.
+Generate only the repository/project-shell module under docs/architecture/31_MVP_Implementation_Standard.md through docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
+Create only the physical structure and boundary README files.
+You may create `.gitignore`, `.editorconfig` and `LICENSE` only when no unapproved open-source license is invented.
+Do not implement Maven, Gradle, Spring Boot, Java, Python, React, Docker, PostgreSQL, domain, API, persistence, authentication or observability.
+Do not modify other modules.
+If you need to create a file that is not explicitly allowed, stop and request authorization.
 ```
 
 ## Sprint 2.1-2.3 - Java Domain Foundation
+
+Status: **COMPLETE**
 
 Goal:
 
@@ -286,11 +293,12 @@ Allowed modules, one per iteration:
 - `backend-java/domain/shared`
 - `backend-java/domain/evidence`
 - `backend-java/domain/decision`
-- `backend-java/domain/recommendation`
 - `backend-java/domain/ledger`
-- `backend-java/domain/business-value`
-- `backend-java/domain/identity`
-- `backend-java/domain/exceptions`
+- `backend-java/domain/businessvalue`
+
+`Recommendation` belongs to `imperator.domain.decision`; no parallel
+`domain/recommendation` package exists. Identity and application exceptions are
+not domain modules.
 
 Forbidden:
 
@@ -309,14 +317,42 @@ Forbidden:
 Example prompt:
 
 ```text
-Genera unicamente el modulo backend-java/domain/evidence como skeleton de dominio de Phase 2.
-Respeta docs/decisions/14_Decision_Log.md y docs/architecture/31_MVP_Implementation_Standard.md a docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
-Puedes crear entidades estructurales o interfaces vacias necesarias para compilar.
-No implementes controllers, API, persistencia, JPA, Spring annotations, ROI, recomendaciones, ledger workflow, conectores ni IA.
-No modifiques ningun otro modulo.
+Generate only the backend-java/domain/evidence module as a Phase 2 domain skeleton.
+Follow docs/decisions/14_Decision_Log.md and docs/architecture/31_MVP_Implementation_Standard.md through docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
+You may create structural entities or empty interfaces required for compilation.
+Do not implement controllers, API, persistence, JPA, Spring annotations, ROI, recommendations, ledger workflow, connectors or AI.
+Do not modify any other module.
 ```
 
+## Sprint 2.4 - Outbound Ports
+
+Status: **COMPLETE**
+
+Goal:
+
+Define the capabilities required from persistence and external providers
+without choosing concrete technology.
+
+Implemented module:
+
+- `backend-java/ports/out`
+
+Current contents include repository ports for Evidence, Decision,
+Recommendation and Ledger, the Explanation Provider boundary, and the explicit
+transaction runner contract introduced by the certified persistence flow.
+
+Forbidden:
+
+- JDBC or PostgreSQL types;
+- Spring or framework annotations;
+- REST DTOs;
+- provider SDKs;
+- adapter implementation;
+- business behavior.
+
 ## Sprint 2.5 - Application Layer Foundation
+
+Status: **COMPLETE**
 
 Goal:
 
@@ -336,8 +372,6 @@ Allowed modules, one per iteration:
 - `backend-java/application/reviewdecision`
 - `backend-java/application/appendledgerentry`
 - `backend-java/application/exceptions`
-- `backend-java/application/shared`
-- `backend-java/ports/out`
 
 Forbidden:
 
@@ -353,14 +387,16 @@ Forbidden:
 Example prompt:
 
 ```text
-Genera unicamente el modulo backend-java/application/import-evidence como use-case shell de Phase 2.
-Respeta docs/product/CORE_DOMAIN_MODEL.md, docs/product/API_SPECIFICATION.md y docs/architecture/31_MVP_Implementation_Standard.md a docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
-Crea solo contratos, comandos o interfaces necesarias para compilar si el dominio existe.
-No implementes API, base de datos, ROI, recomendaciones, conectores, IA ni ledger real.
-No modifiques ningun otro modulo.
+Generate only the backend-java/application/importevidence module as a Phase 2 use-case shell.
+Follow docs/product/CORE_DOMAIN_MODEL.md, docs/product/API_SPECIFICATION.md and docs/architecture/31_MVP_Implementation_Standard.md through docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
+Create only contracts, commands or interfaces required for compilation when the domain exists.
+Do not implement API, database behavior, ROI, recommendations, connectors, AI or a real ledger.
+Do not modify any other module.
 ```
 
 ## Sprint 2.6 - Application Contracts
+
+Status: **COMPLETE**
 
 Goal:
 
@@ -391,13 +427,15 @@ Forbidden:
 Example prompt:
 
 ```text
-Genera unicamente el modulo backend-java/ports/in.
-Respeta docs/architecture/35_Coding_Principles.md, docs/architecture/37_Implementation_Contract.md y backend-java/application/APPLICATION_DATA_BOUNDARY_POLICY.md.
-No implementes REST, HTTP DTOs, mappers, persistencia, Spring, JPA ni cambios de dominio.
-No modifiques ningun otro modulo.
+Generate only the backend-java/ports/in module.
+Follow docs/architecture/35_Coding_Principles.md, docs/architecture/37_Implementation_Contract.md and backend-java/application/APPLICATION_DATA_BOUNDARY_POLICY.md.
+Do not implement REST, HTTP DTOs, mappers, persistence, Spring, JPA or domain changes.
+Do not modify any other module.
 ```
 
 ## Sprint 2.7 - PostgreSQL Persistence Adapter Foundation
+
+Status: **CERTIFIED**
 
 Goal:
 
@@ -417,10 +455,10 @@ Allowed modules, one per iteration:
 - `backend-java/adapters/out/postgresql`
 - `backend-java/adapters/out/postgresql/model`
 - `backend-java/adapters/out/postgresql/mapper`
-- `backend-java/adapters/out/postgresql/repository`
-- `backend-java/adapters/out/postgresql/transaction`
-- `backend-java/adapters/out/postgresql/tests`
-- `database/migration-foundation` only after mapper and repository shape are clear
+- repository and transaction classes directly under
+  `backend-java/adapters/out/postgresql`
+- `database/migrations`
+- `src/test/java/imperator/adapters/out/postgresql`
 
 Forbidden:
 
@@ -435,9 +473,9 @@ Forbidden:
 Example prompt:
 
 ```text
-Genera unicamente el modulo backend-java/adapters/out/postgresql/model.
-Usa PostgreSQL como adapter y respeta docs/architecture/DATABASE_MODEL.md, docs/architecture/34_MVP_Implementation_Blueprint.md, docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md, docs/architecture/37_Implementation_Contract.md, backend-java/application/APPLICATION_DATA_BOUNDARY_POLICY.md y docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
-No modifiques dominio, aplicacion ni ports para acomodar PostgreSQL.
+Generate only the backend-java/adapters/out/postgresql/model module.
+Use PostgreSQL as an adapter and follow docs/architecture/DATABASE_MODEL.md, docs/architecture/34_MVP_Implementation_Blueprint.md, docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md, docs/architecture/37_Implementation_Contract.md, backend-java/application/APPLICATION_DATA_BOUNDARY_POLICY.md and docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
+Do not modify Domain, Application or Ports to accommodate PostgreSQL.
 No crees SQL, migraciones, consultas, JPA, JDBC, Spring, repositorios reales, mappers ni datos seed.
 ```
 
@@ -475,11 +513,11 @@ Ledger Append Rule:
 Example prompt:
 
 ```text
-Genera unicamente el modulo backend-java/adapters/out/postgresql/PostgresEvidenceRepository.
-Respeta Repository Minimalism Rule, Mapper Purity Rule, Domain Translation Rule y DII 100%.
-Implementa solo save, findById y existsById segun el port existente.
-No implementes DecisionRepository, RecommendationRepository, LedgerRepository, REST, Spring controllers, JWT, ROI, recomendaciones, IA, eventos, DTOs ni cambios de dominio.
-Si necesitas modificar el dominio para acomodar PostgreSQL, detente y pide autorizacion.
+Generate only `backend-java/adapters/out/postgresql/PostgresEvidenceRepository.java`.
+Follow the Repository Minimalism Rule, Mapper Purity Rule, Domain Translation Rule and DII 100%.
+Implement only save, findById and existsById as defined by the existing port.
+Do not implement DecisionRepository, RecommendationRepository, LedgerRepository, REST, Spring controllers, JWT, ROI, recommendations, AI, events, DTOs or domain changes.
+If PostgreSQL would require a domain change, stop and request authorization.
 ```
 
 ### Sprint 2.7.5 - Persistence Transactions
@@ -571,9 +609,9 @@ Forbidden:
 Example prompt:
 
 ```text
-Genera unicamente el modulo backend-java/api/decisions con route shells.
-Respeta docs/product/API_SPECIFICATION.md y docs/architecture/34_MVP_Implementation_Blueprint.md a docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
-Los endpoints deben devolver respuesta controlada Not implemented.
+Generate only the backend-java/api/decisions module with route shells.
+Follow docs/product/API_SPECIFICATION.md and docs/architecture/34_MVP_Implementation_Blueprint.md through docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
+Endpoints must return a controlled Not Implemented response.
 No llames repositorios, motores ROI, IA ni ledger real.
 ```
 
@@ -593,8 +631,8 @@ Allowed modules, one per iteration:
 
 - `backend-java/security/jwt`
 - `backend-java/security/rbac`
-- `backend-java/security/error-handling`
-- `backend-java/security/audit-shell`
+- `backend-java/security/errorhandling`
+- `backend-java/security/audit`
 - `frontend/auth-shell`
 
 Forbidden:
@@ -608,10 +646,10 @@ Forbidden:
 Example prompt:
 
 ```text
-Genera unicamente el modulo backend-java/security/rbac.
-Respeta docs/product/28_Identity_Access_Approval_Model.md y docs/architecture/31_MVP_Implementation_Standard.md a docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
-Implementa solo foundation RBAC de Phase 2.
-No implementes aprobacion de negocio ni workflow de ledger.
+Generate only the backend-java/security/rbac module.
+Follow docs/product/28_Identity_Access_Approval_Model.md and docs/architecture/31_MVP_Implementation_Standard.md through docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
+Implement only the Phase 2 RBAC foundation.
+Do not implement business approval or ledger workflow behavior.
 ```
 
 ## Deferred - Python AI Provider Foundation
@@ -647,10 +685,10 @@ Forbidden:
 Example prompt:
 
 ```text
-Genera unicamente el modulo backend-python/explanation-provider-port.
-Respeta docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md, docs/architecture/35_Coding_Principles.md, docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md, docs/architecture/37_Implementation_Contract.md y docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
-No hagas llamadas reales a ningun proveedor IA.
-No implementes prompts de negocio.
+Generate only the backend-python/explanation-provider-port module.
+Follow docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md, docs/architecture/35_Coding_Principles.md, docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md, docs/architecture/37_Implementation_Contract.md and docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
+Do not make real calls to any AI provider.
+Do not implement business prompts.
 ```
 
 ## Sprint 2.10 - React Frontend Foundation
@@ -689,10 +727,10 @@ Forbidden:
 Example prompt:
 
 ```text
-Genera unicamente el modulo frontend/layout.
-Respeta docs/product/29_Decision_Review_Workspace_Screen_Contract.md y docs/architecture/35_Coding_Principles.md a docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
-Crea solo layout, sidebar/navbar y slots.
-No implementes datos de negocio, llamadas reales API ni logica ROI.
+Generate only the frontend/layout module.
+Follow docs/product/29_Decision_Review_Workspace_Screen_Contract.md and docs/architecture/35_Coding_Principles.md through docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
+Create only layout, sidebar/navigation and slots.
+Do not implement business data, real API calls or ROI logic.
 ```
 
 ## Sprint 2.11 - Docker Local Foundation
@@ -730,10 +768,10 @@ Forbidden:
 Example prompt:
 
 ```text
-Genera unicamente el modulo infra/docker/postgres.
-Respeta docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md, docs/architecture/37_Implementation_Contract.md y docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
-No generes Kubernetes, Terraform, datos seed ni credenciales reales.
-No modifiques otros modulos Docker.
+Generate only the infra/docker/postgres module.
+Follow docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md, docs/architecture/37_Implementation_Contract.md and docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
+Do not generate Kubernetes, Terraform, seed data or real credentials.
+Do not modify other Docker modules.
 ```
 
 ## Sprint 2.12 - Observability Foundation
@@ -769,10 +807,10 @@ Forbidden:
 Example prompt:
 
 ```text
-Genera unicamente el modulo backend-java/observability/health.
-Respeta docs/architecture/27_Quality_Attributes.md, docs/architecture/35_Coding_Principles.md, docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md, docs/architecture/37_Implementation_Contract.md y docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
-Implementa solo /health y /ready foundation si el backend existe.
-No implementes metricas de negocio.
+Generate only the backend-java/observability/health module.
+Follow docs/architecture/27_Quality_Attributes.md, docs/architecture/35_Coding_Principles.md, docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md, docs/architecture/37_Implementation_Contract.md and docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
+Implement only `/health` and `/ready` foundation when the backend exists.
+Do not implement business metrics.
 ```
 
 ## Sprint 2.13 - CI and R&D Evidence Foundation
@@ -807,10 +845,10 @@ Forbidden:
 Example prompt:
 
 ```text
-Genera unicamente el modulo .github/workflows/backend-java.
-Respeta docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md, docs/architecture/37_Implementation_Contract.md, docs/architecture/38_Sprint_0_Contract_Gate_Report.md y docs/rnd/30_RD_Activity_Evidence_Dossier.md.
-Incluye solo build/test/lint foundation.
-No generes despliegue ni credenciales.
+Generate only the `.github/workflows/backend-java.yml` workflow.
+Follow docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md, docs/architecture/37_Implementation_Contract.md, docs/architecture/38_Sprint_0_Contract_Gate_Report.md and docs/rnd/30_RD_Activity_Evidence_Dossier.md.
+Include only build, test and lint foundation.
+Do not generate deployment behavior or credentials.
 ```
 
 ## Standard Agent Prompt Template
@@ -818,7 +856,7 @@ No generes despliegue ni credenciales.
 Use this pattern for every implementation iteration:
 
 ```text
-Genera unicamente el modulo <MODULE>.
+Generate only the <MODULE> module.
 
 Autoridad obligatoria:
 - docs/decisions/14_Decision_Log.md
@@ -835,15 +873,15 @@ Alcance:
 - Phase 2 Platform Foundation.
 - No business intelligence.
 - No ROI.
-- No recomendaciones.
+- No recommendations.
 - No IA real.
-- No conectores live.
+- No live connectors.
 - No datos fake de negocio.
 
 Restricciones:
-- No modifiques otros modulos.
-- No generes mas de un modulo.
-- No cambies decisiones de producto o arquitectura.
+- Do not modify other modules.
+- Do not generate more than one module.
+- Do not change product or architecture decisions.
 - No anadas dependencias innecesarias.
 - No guardes secretos.
 
@@ -852,7 +890,7 @@ Entrega:
 - ficheros tocados,
 - pruebas o checks ejecutados,
 - riesgos pendientes,
-- evidencia R&D que debe registrarse si aplica.
+- R&D evidence that must be recorded when applicable.
 ```
 
 ## Sprint Acceptance Gate

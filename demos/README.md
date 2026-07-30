@@ -2,8 +2,8 @@
 
 ## Purpose
 
-Artefactos demostrativos para explicar IMPERATOR visualmente antes o fuera de
-la implementacion productiva.
+Demonstration artifacts for explaining IMPERATOR outside the production
+implementation.
 
 ## Who Uses This Folder
 

@@ -2,8 +2,8 @@
 
 ## Purpose
 
-Contener primitivas compartidas del dominio sin convertirlas en utilidades
-tecnicas genericas.
+Contain shared domain primitives without turning them into generic technical
+utilities.
 
 ## Who Uses This Folder
 

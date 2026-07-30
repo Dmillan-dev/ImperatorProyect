@@ -2,8 +2,8 @@
 
 ## Purpose
 
-Casos de muestra controlados para validar flujos del MVP sin mezclar datos
-reales, demos visuales ni codigo productivo.
+Controlled sample cases for validating MVP flows without mixing real data,
+visual demos or production code.
 
 ## Who Uses This Folder
 
@@ -13,8 +13,8 @@ reales, demos visuales ni codigo productivo.
 
 ## Contains
 
-- Future approved sample cases.
-- Future fixture boundaries derived from canonical evidence documents.
+- Approved sample cases.
+- Fixture boundaries derived from canonical evidence documents.
 
 ## Never Contains
 

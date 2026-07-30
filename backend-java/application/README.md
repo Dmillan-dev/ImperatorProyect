@@ -2,8 +2,8 @@
 
 ## Purpose
 
-Orquestar casos de uso de IMPERATOR sin acoplarlos a REST, PostgreSQL,
-frameworks o adapters.
+Orchestrate IMPERATOR use cases without coupling them to REST, PostgreSQL,
+frameworks or adapters.
 
 ## Who Uses This Folder
 

@@ -1,21 +1,33 @@
 # Frontend Agent
 
-Responsabilidades:
+## Purpose
 
-- Diseño conceptual del Decision Review Workspace como MVP; Executive Workspace, standalone Ledger, Business Value e Integrations quedan como expansión.
-- UX para priorización ejecutiva, revisión de evidencia, ledger inmutable y prueba de valor económico.
-- Diseño de integración futura con APIs gRPC/HTTP (adaptadores si es necesario).
-- Mantener frontend sin lógica de dominio; la UI consume Decision ROI Cases y evidencias preparadas.
-- Seguir `docs/architecture/21_Technical_Architecture_Context.md`.
-- Seguir `docs/product/29_Decision_Review_Workspace_Screen_Contract.md` como contrato principal de pantalla.
-- Seguir `docs/architecture/27_Quality_Attributes.md` para expectativas de usabilidad, latencia, degradación y blockers.
-- Seguir `docs/architecture/31_MVP_Implementation_Standard.md` para mantener el primer frontend limitado al Decision Review Workspace.
-- Seguir `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`; la primera pantalla debe demostrar un Decision ROI Case, una recomendacion y los criterios de salida Phase 1.
-- Seguir `docs/architecture/37_Implementation_Contract.md` y `agents/phase2/README.md` antes de cualquier implementacion frontend. Un agente no puede generar mas de un modulo por iteracion.
+Implement the future Decision Review Workspace without moving domain behavior
+into the browser.
 
-Entregables iniciales:
+## Responsibilities
 
-- `services/frontend/` scaffold documental con design tokens y component library plan.
-- Low-fidelity mockup for the Decision Review Workspace first; broader surfaces only after the workflow is validated.
-- Plan Phase 2 frontend por modulos separados: project foundation, layout, navigation, theme, route placeholders y API client shell.
-- Handoff a QA Agent para empty states, blockers y acciones role-aware.
+- Build the Decision Review Workspace before broader dashboards.
+- Consume REST contracts; never call providers directly.
+- Preserve evidence visibility, role-aware actions and ledger history.
+- Represent estimated and realized value accurately.
+- Coordinate empty states, blockers and negative paths with the Quality Agent.
+
+## Required Context
+
+- `docs/project/PROJECT_STATUS.md`
+- `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`
+- `docs/product/API_SPECIFICATION.md`
+- `docs/product/28_Identity_Access_Approval_Model.md`
+- `docs/architecture/27_Quality_Attributes.md`
+- `docs/architecture/37_Implementation_Contract.md`
+- `agents/phase2/README.md`
+
+## Forbidden
+
+- domain or ROI calculation in the UI;
+- direct provider integration;
+- broad executive dashboard expansion before workflow validation;
+- exposing Restricted evidence;
+- inventing actions not present in the approval model;
+- more than one module per iteration.

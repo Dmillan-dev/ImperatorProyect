@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Caso de muestra controlado para validar el Decision ROI Case del MVP.
+Controlled sample case for validating the MVP Decision ROI Case.
 
 ## Who Uses This Folder
 
@@ -16,8 +16,8 @@ Caso de muestra controlado para validar el Decision ROI Case del MVP.
 - Future expected outcomes tied to acceptance tests.
 - Future sample payloads derived from documented evidence packs.
 
-Sprint 1 status:
-- Repository shell only.
+Current status:
+- Documentation boundary only.
 - No fake business data.
 - No executable fixtures.
 - No connector payloads.

@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Representar el nucleo del ciclo de decision de IMPERATOR.
+Represent the core of the IMPERATOR decision lifecycle.
 
 ## Who Uses This Folder
 

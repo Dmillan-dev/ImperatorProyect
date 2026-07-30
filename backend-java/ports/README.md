@@ -2,8 +2,8 @@
 
 ## Purpose
 
-Definir los contratos hexagonales que separan aplicacion/dominio de adapters
-externos.
+Define the hexagonal contracts that separate Domain and Application from
+external adapters.
 
 ## Who Uses This Folder
 
