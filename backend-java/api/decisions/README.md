@@ -13,13 +13,17 @@ Own the HTTP entry-point shells for reading decisions.
 ## Contains
 
 - `DecisionController`.
+- `DecisionContextController`.
 - The `GET /api/v1/decisions` route mapping.
 - The `GET /api/v1/decisions/{id}` route mapping.
+- The `GET /api/v1/decisions/{id}/timeline` route mapping.
+- The `GET /api/v1/decisions/{id}/evidence` route mapping.
+- The `GET /api/v1/decisions/{id}/roi` route mapping.
 - Delegation to the shared not-implemented error contract.
 
 ## Never Contains
 
-- Request or response DTOs during Sprint 2.8.3.
+- Request or response DTOs during Phase 2 route-shell sprints.
 - Application use-case calls.
 - Review commands or approval workflow behavior.
 - Persistence, transactions or database access.
@@ -27,7 +31,7 @@ Own the HTTP entry-point shells for reading decisions.
 
 ## Current Boundary
 
-Both routes always raise the existing controlled not-implemented exception. The
+All routes always raise the existing controlled not-implemented exception. The
 global REST error handler returns HTTP `501`, and the existing correlation
 filter propagates `X-Correlation-ID`.
 
