@@ -9,7 +9,7 @@ Current authorization lives in `docs/project/PROJECT_STATUS.md`.
 ## Current Gate
 
 ```text
-Sprint 2.8.4 - Decision Context Route Shells
+Sprint 2.8.5 - Recommendation Detail Route Shell
 ```
 
 No dedicated execution prompt has been created for this gate.
@@ -23,7 +23,7 @@ No dedicated execution prompt has been created for this gate.
 | 2.7.6.2 | `SPRINT_2.7.6.2_FLYWAY_V1_PROMPT.md` | Historical completed prompt |
 | 2.7.7 | `SPRINT_2.7.7_POSTGRESQL_INTEGRATION_PROMPT.md` | Historical completed prompt |
 
-Sprints 2.8.0 through 2.8.3 were executed and accepted without adding
+Sprints 2.8.0 through 2.8.4 were executed and accepted without adding
 dedicated prompt files to this directory. Their governing decisions and current
 state are recorded in:
 
