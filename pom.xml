@@ -178,7 +178,7 @@
                 </executions>
             </plugin>
 
-            <!-- Current open-source Flyway plugin; unconfigured and unbound until 2.7.6.2. -->
+            <!-- Flyway plugin base; the PostgreSQL integration profile below binds migration and validation. -->
             <plugin>
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-maven-plugin</artifactId>

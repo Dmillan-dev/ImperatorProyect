@@ -6,10 +6,17 @@ Ensure consistent output when AI agents collaborate on strategy, documentation, 
 
 ## Current State
 
-Phase 1 Complete for a limited MVP. Phase 2 Platform Foundation is defined but not started.
-Agents must not create runnable implementation or infer product decisions beyond `agents/phase1/12_phase1_closure.md`, `agents/phase1/README.md`, `agents/phase2/README.md`, `docs/architecture/31_MVP_Implementation_Standard.md`, `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md`, `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md`, `docs/architecture/34_MVP_Implementation_Blueprint.md`, `docs/architecture/35_Coding_Principles.md`, `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`, `docs/architecture/37_Implementation_Contract.md` and `docs/architecture/38_Sprint_0_Contract_Gate_Report.md`.
+Phase 1 is complete for a limited MVP. Phase 2 Platform Foundation is in
+progress: PostgreSQL persistence is certified, Spring Boot web runtime exists,
+and Sprint 2.8.1 has frozen the REST error and HTTP correlation contract. The
+next authorized gate is Sprint 2.8.2 - Evidence Import Route Shell.
 
-No more conceptual Phase 1 documents should be added unless a contradiction is discovered. The next phase is Phase 2 - Platform Foundation, which may later build technical foundation only and must not implement business intelligence. Future implementation must follow the Implementation Contract and the one-module-per-iteration rule. Sprint 0 is GO only for Sprint 1 - Repository and Project Shell.
+Agents may create runnable implementation only inside the explicitly
+authorized sprint/module. They must use `agents/phase2/README.md`, the frozen
+architecture baseline, persistence contracts 39 and 40, and
+`docs/decisions/14_Decision_Log.md`. Phase 2 builds technical foundation only
+and must not implement business intelligence. The one-module-per-iteration
+rule remains mandatory.
 
 From Sprint 1 onward, do not create new documents unless they justify a technical decision required to implement code.
 
@@ -115,10 +122,10 @@ Founder-mode or master-prompt guidance sets ambition and quality bar. It does no
 42. Use `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md` before choosing evidence format, persistence, AI provider boundary, auth model or Decision Graph model.
 43. Use `docs/architecture/34_MVP_Implementation_Blueprint.md` before Phase 2 Platform Foundation or Phase 3 MVP implementation.
 44. Use `docs/architecture/35_Coding_Principles.md` before creating backend, Python, frontend, database, API, auth, observability or CI code.
-45. Use `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` before starting Phase 2 Platform Foundation. Phase 2 creates foundation only: no ROI calculation, no autonomous/AI/ROI-driven recommendation engine, no real AI calls, no live connectors and no business rules. Explicitly authorized application-layer contracts may create or link a deterministic Recommendation object without becoming the recommendation engine.
+45. Use `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` as the frozen authority for Phase 2 Platform Foundation. Phase 2 creates foundation only: no ROI calculation, no autonomous/AI/ROI-driven recommendation engine, no real AI calls, no live connectors and no business rules. Explicitly authorized application-layer contracts may create or link a deterministic Recommendation object without becoming the recommendation engine.
 46. Use `docs/architecture/37_Implementation_Contract.md` before any implementation task. No agent may generate more than one module per iteration.
 47. Use `agents/phase2/README.md` before splitting Phase 2 into sprints or giving module prompts to agents.
-48. Use `docs/architecture/38_Sprint_0_Contract_Gate_Report.md` before executing Sprint 1. Sprint 0 authorizes only repository/project shell, not full backend generation.
+48. Use `docs/architecture/38_Sprint_0_Contract_Gate_Report.md` as the historical Sprint 0 authorization record; use `agents/phase2/README.md` and the Decision Log for the current implementation gate.
 49. Use `docs/architecture/DATABASE_MODEL.md` as the conceptual database model.
 50. Use `docs/architecture/CONNECTOR_FRAMEWORK.md` as the connector expansion model.
 51. Use `docs/rfcs/0002-module-communication-architecture.md` for communication design rationale.

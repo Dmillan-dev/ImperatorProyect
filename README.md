@@ -1,6 +1,6 @@
 # IMPERATOR — Strategic Documentation System
 
-Status: **Design Phase Closed; Phase 2 PostgreSQL Persistence Certified; Sprint 2.8 REST Adapter Not Started**
+Status: **Design Phase Closed; PostgreSQL Persistence Certified; Sprint 2.8.1 REST Error and Correlation Contract Complete**
 
 This documentation system defines IMPERATOR’s canonical context for:
 1. human strategic execution,
@@ -27,11 +27,15 @@ Implemented Java foundation exists under `backend-java/`:
 - Maven Wrapper build on Java 21,
 - JDBC PostgreSQL repository adapters and explicit transaction runner,
 - Flyway V1 schema,
-- real-PostgreSQL repository, constraint, lifecycle and transaction tests.
+- real-PostgreSQL repository, constraint, lifecycle and transaction tests,
+- Spring Boot web runtime and executable composition root,
+- deterministic REST error envelope and HTTP correlation propagation,
+- real HTTP contract tests for framework and application-controlled errors.
 
-The repository still does not contain Spring Boot, a production composition
-root, REST controllers, connector logic, real AI integrations, Docker runtime,
-JWT runtime, React app code or production deployment.
+The repository still does not contain product REST controllers, connector
+logic, real AI integrations, Docker runtime, JWT runtime, React app code or
+production deployment. The next authorized implementation gate is Sprint
+2.8.2 - Evidence Import Route Shell.
 
 ## Rule Zero
 
@@ -61,6 +65,9 @@ Current implementation-evidence clarification:
 - `D071` clarifies that Phase 2 forbids recommendation-engine behavior, ROI,
   real AI and live connectors, while explicitly scoped Java application use
   cases may create/link/review/append domain objects through ports.
+- `D075` freezes the REST error envelope and HTTP correlation contract.
+- `D076` records the accepted Maven source root, Java package and REST module
+  conventions already used by the implementation.
 
 ## Index
 

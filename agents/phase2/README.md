@@ -123,6 +123,13 @@ Current persistence roadmap:
 4. Sprint 2.7.7 - Persistence Integration Tests
 5. Sprint 2.8 - REST Adapter Foundation
 
+Current execution state:
+
+- Sprint 2.7.7 - PostgreSQL persistence certification: complete.
+- Sprint 2.8.0 - Spring Boot Web Runtime Foundation: complete.
+- Sprint 2.8.1 - REST Error and Correlation Contract: complete.
+- Next authorized gate: Sprint 2.8.2 - Evidence Import Route Shell.
+
 Important implementation note:
 
 Some local JDBC transaction handling already exists in PostgreSQL repository
@@ -540,12 +547,18 @@ API Route Shells
 
 Allowed modules, one per iteration:
 
-- `backend-java/api/evidence`
+- `backend-java/api/errors` - completed in Sprint 2.8.1
+- `backend-java/api/evidence` - next authorized module
 - `backend-java/api/decisions`
+- `backend-java/api/recommendations`
 - `backend-java/api/ledger`
-- `backend-java/api/business-value`
-- `backend-java/api/errors`
+- `backend-java/api/businessvalue`
 - `backend-java/api/pagination`
+
+Java module and package names must be valid identifiers. Therefore the module
+uses `businessvalue`, while the public HTTP route remains `/business-value`.
+All REST packages use the accepted `imperator.api.*` namespace and all Phase
+2.8 product routes are mounted under `/api/v1`.
 
 Forbidden:
 

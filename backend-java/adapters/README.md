@@ -14,8 +14,8 @@ la aplicacion. Los adapters no definen el dominio; se subordinan a el.
 ## Contains
 
 - `out/` outbound adapter implementations.
-- Future `in/` inbound adapters only when REST, CLI or other entry points are
-  explicitly authorized.
+- No parallel HTTP inbound tree. The accepted REST adapter location is
+  `backend-java/api` with packages under `imperator.api`.
 
 Sprint 2.7.7 status:
 - PostgreSQL JDBC repositories implement the frozen outbound ports.
@@ -25,7 +25,7 @@ Sprint 2.7.7 status:
   implementation.
 - Repository behavior, schema constraints, aggregate atomicity and all five
   use-case transaction boundaries are certified against PostgreSQL 18.2.
-- No Spring or framework runtime.
+- No Spring or framework runtime inside this adapter subtree.
 
 ## Never Contains
 

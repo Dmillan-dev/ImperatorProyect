@@ -210,7 +210,10 @@ Use `architecture/37_Implementation_Contract.md` before any implementation task.
 
 Use `../agents/phase2/README.md` before splitting Phase 2 into sprint work. No agent may generate more than one module per iteration.
 
-Use `architecture/38_Sprint_0_Contract_Gate_Report.md` as the current Sprint 0 GO gate. It authorizes only Sprint 1 - Repository and Project Shell, not business logic or full backend generation.
+Use `architecture/38_Sprint_0_Contract_Gate_Report.md` as the historical Sprint
+0 GO record. Use `../agents/phase2/README.md` and
+`decisions/14_Decision_Log.md` for the current implementation gate. The current
+authorized gate is Sprint 2.8.2 - Evidence Import Route Shell.
 
 ## Growth Rule
 

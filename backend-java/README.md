@@ -18,7 +18,8 @@ Motor principal del dominio y la aplicacion Java de IMPERATOR.
 - Application exceptions and data-boundary policy.
 - PostgreSQL JDBC outbound adapter implementations.
 - Explicit transaction port and PostgreSQL transaction runner.
-- Future API layer when explicitly authorized by sprint scope.
+- Spring Boot web runtime and executable composition root.
+- REST error and HTTP correlation infrastructure under `imperator.api.errors`.
 
 Current Phase 2 status:
 - Pure Java domain foundation exists.
@@ -33,8 +34,9 @@ Current Phase 2 status:
 - Flyway V1 defines the frozen seven-table schema.
 - PostgreSQL 18.2 integration certification covers repositories, constraints,
   the full persistence lifecycle and all five use-case transaction boundaries.
-- No Spring Boot application.
-- No controllers.
+- Spring Boot starts through `imperator.bootstrap.ImperatorApplication`.
+- REST errors use the frozen four-field envelope and `X-Correlation-ID`.
+- No product controllers or product routes.
 - No JPA.
 
 ## Persistence Certification
@@ -70,7 +72,8 @@ is found.
 
 ## Authorized Next Use
 
-Sprint 2.7.7 persistence is certified. The next authorized roadmap item is
-Sprint 2.8 REST Adapter Foundation. PostgreSQL must continue to conform to the
-existing domain and ports; the domain must not be modified for adapter
-convenience.
+Sprint 2.7.7 persistence is certified and Sprints 2.8.0 and 2.8.1 are
+complete. The next authorized roadmap item is Sprint 2.8.2 - Evidence Import
+Route Shell. It may expose only `POST /api/v1/evidence/import` as a controlled
+`501` route shell; it must not call application ports, repositories or
+PostgreSQL.
