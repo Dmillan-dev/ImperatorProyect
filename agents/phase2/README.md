@@ -138,7 +138,8 @@ Current execution state:
 - Sprint 2.8.4 - Decision Context Route Shells: complete.
 - Sprint 2.8.5 - Recommendation Detail Route Shell: complete.
 - Sprint 2.8.6 - Ledger Read Route Shells: complete.
-- Next authorized gate: Sprint 2.8.7 - Ledger Command Route Shells.
+- Sprint 2.8.7 - Ledger Command Route Shells: complete.
+- Next authorized gate: Sprint 2.8.8 - Business Value Route Shell.
 
 Important implementation note:
 
@@ -596,8 +597,8 @@ Allowed modules, one per iteration:
   context routes completed in Sprint 2.8.4
 - `backend-java/api/recommendations` - detail route completed in Sprint 2.8.5
 - `backend-java/api/ledger` - read routes completed in Sprint 2.8.6;
-  command routes are the next authorized boundary
-- `backend-java/api/businessvalue`
+  command routes completed in Sprint 2.8.7
+- `backend-java/api/businessvalue` - next authorized module
 - `backend-java/api/pagination`
 
 Java module and package names must be valid identifiers. Therefore the module
@@ -616,13 +617,12 @@ Forbidden:
 Example prompt:
 
 ```text
-Extend only backend-java/api/ledger with the five Ledger command route shells
-authorized for Sprint 2.8.7: approve, reject, defer, mark-implemented and
-validate-result under /api/v1/decisions/{id}/ledger.
+Generate only backend-java/api/businessvalue with the Business Value read route
+shell authorized for Sprint 2.8.8: GET /api/v1/business-value.
 Follow docs/product/API_SPECIFICATION.md and docs/architecture/34_MVP_Implementation_Blueprint.md through docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
-Every mapped endpoint must return a controlled Not Implemented response.
-Preserve the accepted Ledger read routes. Do not expose the broader Ledger
-entry-detail route and do not implement Ledger behavior.
+The endpoint must return a controlled Not Implemented response.
+Do not calculate ROI or realized value, expose fake Business Value, invoke
+Application or Persistence, or expand the API.
 ```
 
 ## Sprint 2.9 - JWT/RBAC Foundation
