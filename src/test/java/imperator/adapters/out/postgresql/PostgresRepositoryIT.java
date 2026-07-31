@@ -12,6 +12,7 @@ import imperator.application.importevidence.ImportEvidenceUseCase;
 import imperator.application.reviewdecision.ReviewDecisionAction;
 import imperator.application.reviewdecision.ReviewDecisionCommand;
 import imperator.application.reviewdecision.ReviewDecisionUseCase;
+import imperator.bootstrap.ImperatorApplication;
 import imperator.domain.decision.Decision;
 import imperator.domain.decision.Recommendation;
 import imperator.domain.evidence.Evidence;
@@ -29,6 +30,11 @@ import imperator.domain.shared.RecommendationType;
 import imperator.domain.shared.Severity;
 import imperator.domain.shared.Timestamp;
 import imperator.domain.shared.UserId;
+import imperator.ports.in.AppendLedgerEntryInputPort;
+import imperator.ports.in.CreateDecisionInputPort;
+import imperator.ports.in.GenerateRecommendationInputPort;
+import imperator.ports.in.ImportEvidenceInputPort;
+import imperator.ports.in.ReviewDecisionInputPort;
 import imperator.ports.out.DecisionRepository;
 import imperator.ports.out.EvidenceRepository;
 import imperator.ports.out.LedgerRepository;
@@ -39,7 +45,11 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.WebApplicationType;
+import org.springframework.context.ConfigurableApplicationContext;
 
+import javax.sql.DataSource;
 import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -156,6 +166,48 @@ final class PostgresRepositoryIT {
         ) {
             assertTrue(resultSet.next());
             assertEquals(1, resultSet.getInt(1));
+        }
+    }
+
+    @Test
+    void springRuntimeCompositionUsesCertifiedApplicationRole() throws SQLException {
+        SpringApplication application = new SpringApplication(ImperatorApplication.class);
+        application.setWebApplicationType(WebApplicationType.NONE);
+        application.setLogStartupInfo(false);
+        application.setDefaultProperties(Map.of(
+                "imperator.postgresql.enabled", "true",
+                "imperator.postgresql.url", requiredProperty("imperator.it.dbUrl"),
+                "imperator.postgresql.username", appRole,
+                "imperator.postgresql.password", requiredProperty("imperator.it.appPassword")
+        ));
+
+        try (ConfigurableApplicationContext context = application.run(
+                "--spring.main.banner-mode=off",
+                "--debug=false",
+                "--logging.level.root=OFF"
+        )) {
+            assertAll(
+                    () -> assertTrue(context.containsBean("postgresDataSource")),
+                    () -> assertTrue(context.containsBean("postgresConnectionProvider")),
+                    () -> assertTrue(context.getBean(ImportEvidenceInputPort.class)
+                            instanceof ImportEvidenceUseCase),
+                    () -> assertTrue(context.getBean(CreateDecisionInputPort.class)
+                            instanceof CreateDecisionUseCase),
+                    () -> assertTrue(context.getBean(GenerateRecommendationInputPort.class)
+                            instanceof GenerateRecommendationUseCase),
+                    () -> assertTrue(context.getBean(ReviewDecisionInputPort.class)
+                            instanceof ReviewDecisionUseCase),
+                    () -> assertTrue(context.getBean(AppendLedgerEntryInputPort.class)
+                            instanceof AppendLedgerEntryUseCase)
+            );
+
+            DataSource runtimeDataSource = context.getBean(DataSource.class);
+            try (Connection connection = runtimeDataSource.getConnection();
+                 Statement statement = connection.createStatement();
+                 ResultSet resultSet = statement.executeQuery("SELECT current_user")) {
+                assertTrue(resultSet.next());
+                assertEquals(appRole, resultSet.getString(1));
+            }
         }
     }
 

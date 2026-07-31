@@ -19,9 +19,10 @@ Primary Java domain and application runtime for IMPERATOR.
 - PostgreSQL JDBC outbound adapter implementations.
 - Explicit transaction port and PostgreSQL transaction runner.
 - Spring Boot web runtime and executable composition root.
+- Conditional PostgreSQL runtime composition under `imperator.bootstrap`.
 - REST error and HTTP correlation infrastructure under `imperator.api.errors`.
 
-Current Phase 2 status:
+Current Phase 3 foundation:
 - Pure Java domain foundation exists.
 - Application use cases exist.
 - Inbound and outbound ports exist.
@@ -35,9 +36,35 @@ Current Phase 2 status:
 - PostgreSQL 18.2 integration certification covers repositories, constraints,
   the full persistence lifecycle and all five use-case transaction boundaries.
 - Spring Boot starts through `imperator.bootstrap.ImperatorApplication`.
+- Sprint 3.0 composes the existing repositories, transaction runner and five
+  application input ports when PostgreSQL runtime configuration is enabled.
 - REST errors use the frozen four-field envelope and `X-Correlation-ID`.
-- No product controllers or product routes.
+- Six route-shell controllers expose 15 frozen MVP routes as controlled `501`
+  responses.
+- No route invokes an application input port yet.
 - No JPA.
+
+## Functional Runtime Configuration
+
+PostgreSQL composition is opt-in and uses external Spring configuration:
+
+- `IMPERATOR_POSTGRESQL_ENABLED=true`
+- `IMPERATOR_POSTGRESQL_URL`
+- `IMPERATOR_POSTGRESQL_USERNAME`
+- `IMPERATOR_POSTGRESQL_PASSWORD`
+
+When disabled or omitted, the existing web route-shell runtime starts without
+database beans. When enabled, missing or blank connection properties fail
+startup. Bean creation does not open a connection; real connectivity is
+verified by the `postgresql-integration` profile.
+
+Application runtime credentials do not execute DDL. Flyway continues to run
+through the migration profile with its separate administrative principal before
+the application principal is used.
+
+Sprint 3.0 provides an unavailable `ExplanationProvider` fallback that returns
+no explanation and performs no external call. The real prepared-context
+provider belongs to Sprint 3.3.1.
 
 ## Persistence Certification
 
@@ -70,10 +97,9 @@ is found.
 - Database migrations.
 - Connector secrets or credentials.
 
-## Authorized Next Use
+## Authorized Current Use
 
-Sprint 2.7.7 persistence is certified and Sprints 2.8.0 and 2.8.1 are
-complete. The next authorized roadmap item is Sprint 2.8.2 - Evidence Import
-Route Shell. It may expose only `POST /api/v1/evidence/import` as a controlled
-`501` route shell; it must not call application ports, repositories or
-PostgreSQL.
+Sprint 3.0 - Functional Runtime Composition is the sole current gate. It may
+compose existing components and verify PostgreSQL connectivity, but it must not
+replace a route-shell `501`, parse JSONL, calculate ROI, generate a product
+recommendation policy or execute review behavior.
