@@ -140,7 +140,9 @@ Current execution state:
 - Sprint 2.8.6 - Ledger Read Route Shells: complete.
 - Sprint 2.8.7 - Ledger Command Route Shells: complete.
 - Sprint 2.8.8 - Business Value Route Shell: complete.
-- Next authorized gate: Sprint 2.8.8.2 - REST Adapter Foundation Closure.
+- Sprint 2.8.8.2 - REST Adapter Foundation Closure: complete.
+- Sprint 2.8 - REST Adapter Foundation: complete.
+- Next authorized gate: Sprint 2.9 - JWT/RBAC Foundation.
 
 Important implementation note:
 
@@ -600,7 +602,7 @@ Allowed modules, one per iteration:
 - `backend-java/api/ledger` - read routes completed in Sprint 2.8.6;
   command routes completed in Sprint 2.8.7
 - `backend-java/api/businessvalue` - completed in Sprint 2.8.8
-- `backend-java/api/pagination` - pending explicit closure disposition
+- `backend-java/api/pagination` - deferred to Phase 3 functional list queries
 
 Java module and package names must be valid identifiers. Therefore the module
 uses `businessvalue`, while the public HTTP route remains `/business-value`.
@@ -618,13 +620,11 @@ Forbidden:
 Example prompt:
 
 ```text
-Certify the completed Sprint 2.8 REST Adapter Foundation without modifying
-Java, tests, SQL, dependencies or frozen contracts.
-Follow docs/product/API_SPECIFICATION.md and docs/architecture/34_MVP_Implementation_Blueprint.md through docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
-Verify the 15-route MVP inventory, error and correlation contracts, /api/v1
-versioning, HTTP tests and negative boundaries. Record Functional REST, DTOs,
-validation, pagination, security and Application wiring as not started or
-explicitly deferred. Do not implement product behavior.
+Sprint 2.8 is closed by
+docs/architecture/41_REST_Adapter_Foundation_Closure.md.
+Do not add or modify product routes during Sprint 2.9 security work.
+Functional REST, DTOs, validation, pagination and Application wiring remain
+deferred to Phase 3.
 ```
 
 ## Sprint 2.9 - JWT/RBAC Foundation

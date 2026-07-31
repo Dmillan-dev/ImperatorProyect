@@ -15,8 +15,9 @@ Last verified: **2026-07-31**
 | Sprint 2.8.6 acceptance | PASS |
 | Sprint 2.8.7 acceptance | PASS |
 | Sprint 2.8.8 acceptance | PASS |
-| Last completed sprint | Sprint 2.8.8 - Business Value Route Shell |
-| Next authorized sprint | Sprint 2.8.8.2 - REST Adapter Foundation Closure |
+| Sprint 2.8.8.2 acceptance | PASS |
+| Last completed sprint | Sprint 2.8.8.2 - REST Adapter Foundation Closure |
+| Next authorized sprint | Sprint 2.9 - JWT/RBAC Foundation |
 | Phase 3 authorization | Not authorized |
 
 ## Verified Foundation
@@ -33,7 +34,7 @@ Last verified: **2026-07-31**
 | Web runtime | PASS | Spring Boot executable composition root |
 | REST error contract | PASS | Four-field envelope for controlled and framework errors |
 | HTTP correlation | PASS | `X-Correlation-ID` validation, normalization and propagation |
-| Product REST routes | ACTIVE | All frozen MVP route shells return controlled `501` |
+| REST adapter foundation | COMPLETE | All 15 frozen MVP route shells certified by document 41 |
 | Security runtime | NOT STARTED | Planned for Sprint 2.9 |
 | Frontend runtime | NOT STARTED | Planned for Sprint 2.10 |
 | Local container runtime | NOT STARTED | Planned for Sprint 2.11 |
@@ -81,7 +82,7 @@ Real HTTP contract verification:
 
 Documentation integrity verification:
 
-- Markdown files checked: 147;
+- Markdown files checked: 148;
 - broken local links: 0;
 - current gate consistency: PASS;
 - exactly one `NEXT` sprint: PASS;
@@ -102,31 +103,33 @@ The PostgreSQL integration profile was certified previously against PostgreSQL
   validate the Java 21 Maven backend and contains permissive generation steps;
   replacement or hardening belongs to Sprint 2.13.
 
-These risks do not require widening Sprint 2.8.8.2. They must remain visible and
+These risks do not require widening Sprint 2.9. They must remain visible and
 must not be misreported as current backend CI coverage.
 
 ## Next Sprint Boundary
 
-Sprint 2.8.8.2 is a documentation-only certification of the complete REST
-Adapter Foundation.
+Sprint 2.9 creates the JWT/RBAC security foundation without implementing
+external OAuth providers or business approval behavior.
 
 Required behavior:
 
-- certify the complete 15-route frozen MVP inventory;
-- certify the D075 error envelope and correlation contract;
-- certify `/api/v1` versioning and negative route boundaries;
-- record the accepted 53-test HTTP verification baseline;
-- distinguish completed route topology from unimplemented functional REST;
-- resolve the pending pagination roadmap item explicitly;
-- close Sprint 2.8 only if every certification gate passes.
+- freeze one security micro-sprint before implementation;
+- preserve the certified REST route and error contracts;
+- use JWT-compatible authentication and simple MVP RBAC;
+- keep authentication and authorization outside Domain and Application;
+- add security-specific tests for each implemented boundary.
 
 Forbidden behavior:
 
-- Java, tests, SQL, dependencies or runtime configuration changes;
-- new endpoints, controllers, DTOs, validation or application wiring;
-- modifications to frozen contracts 34-40;
-- functional REST or Phase 3 behavior;
-- architecture redesign.
+- Google, Microsoft or GitHub OAuth providers;
+- business approval or Ledger workflow behavior;
+- hardcoded production credentials or stored secrets;
+- Domain, Application, Port, persistence or schema redesign;
+- Phase 3 functional REST behavior.
+
+REST closure authority:
+
+- `docs/architecture/41_REST_Adapter_Foundation_Closure.md`.
 
 ## Current Architectural Invariants
 

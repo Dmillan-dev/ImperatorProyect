@@ -91,8 +91,8 @@ the Phase 3 business workflow.
 | Sprint 2.5 | Application Layer | COMPLETE |
 | Sprint 2.6 | Application Contracts | COMPLETE |
 | Sprint 2.7 | PostgreSQL Persistence Foundation | CERTIFIED |
-| Sprint 2.8 | REST Adapter Foundation | ACTIVE |
-| Sprint 2.9 | JWT/RBAC Foundation | PENDING |
+| Sprint 2.8 | REST Adapter Foundation | COMPLETE |
+| Sprint 2.9 | JWT/RBAC Foundation | NEXT |
 | Sprint 2.10 | React Frontend Foundation | PENDING |
 | Sprint 2.11 | Docker Local Foundation | PENDING |
 | Sprint 2.12 | Observability Foundation | PENDING |
@@ -138,8 +138,8 @@ Frozen persistence authorities:
 | 2.8.6 | Ledger Read Route Shells | COMPLETE |
 | 2.8.7 | Ledger Command Route Shells | COMPLETE |
 | 2.8.8 | Business Value Route Shell | COMPLETE |
-| 2.8.8.2 | REST Adapter Foundation Closure | NEXT |
-| Later 2.8 iteration | Pagination contract where required | PENDING |
+| 2.8.8.2 | REST Adapter Foundation Closure | COMPLETE |
+| Phase 3 list-query implementation | Pagination binding and validation | DEFERRED |
 
 REST module convention:
 
@@ -155,6 +155,10 @@ backend-java/api/pagination       -> imperator.api.pagination
 
 HTTP paths retain documented kebab-case where applicable, for example
 `/api/v1/business-value`.
+
+REST closure authority:
+
+- `docs/architecture/41_REST_Adapter_Foundation_Closure.md`.
 
 ## Phase 3 - First Business Value Loop
 

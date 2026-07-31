@@ -9,7 +9,7 @@ Current authorization lives in `docs/project/PROJECT_STATUS.md`.
 ## Current Gate
 
 ```text
-Sprint 2.8.8.2 - REST Adapter Foundation Closure
+Sprint 2.9 - JWT/RBAC Foundation
 ```
 
 No dedicated execution prompt has been created for this gate.
@@ -23,13 +23,17 @@ No dedicated execution prompt has been created for this gate.
 | 2.7.6.2 | `SPRINT_2.7.6.2_FLYWAY_V1_PROMPT.md` | Historical completed prompt |
 | 2.7.7 | `SPRINT_2.7.7_POSTGRESQL_INTEGRATION_PROMPT.md` | Historical completed prompt |
 
-Sprints 2.8.0 through 2.8.8 were executed and accepted without adding
+Sprints 2.8.0 through 2.8.8.2 were executed and accepted without adding
 dedicated prompt files to this directory. Their governing decisions and current
 state are recorded in:
 
 - `docs/decisions/14_Decision_Log.md`;
 - `docs/project/PROJECT_STATUS.md`;
 - `docs/project/PHASE_AND_SPRINT_MAP.md`.
+
+REST Adapter Foundation closure evidence:
+
+- `docs/architecture/41_REST_Adapter_Foundation_Closure.md`.
 
 ## Agent Rule
 
