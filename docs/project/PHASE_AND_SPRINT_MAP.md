@@ -134,8 +134,8 @@ Frozen persistence authorities:
 | 2.8.2 | Evidence Import Route Shell | COMPLETE |
 | 2.8.3 | Decision Collection and Detail Route Shells | COMPLETE |
 | 2.8.4 | Decision Context Route Shells | COMPLETE |
-| 2.8.5 | Recommendation Detail Route Shell | NEXT |
-| Later 2.8 iteration | Ledger route shells | PENDING |
+| 2.8.5 | Recommendation Detail Route Shell | COMPLETE |
+| 2.8.6 | Ledger Route Shell | NEXT |
 | Later 2.8 iteration | Business Value route shell | PENDING |
 | Later 2.8 iteration | Pagination contract where required | PENDING |
 

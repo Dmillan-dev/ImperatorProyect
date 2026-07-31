@@ -136,7 +136,8 @@ Current execution state:
 - Sprint 2.8.2 - Evidence Import Route Shell: complete.
 - Sprint 2.8.3 - Decision Collection and Detail Route Shells: complete.
 - Sprint 2.8.4 - Decision Context Route Shells: complete.
-- Next authorized gate: Sprint 2.8.5 - Recommendation Detail Route Shell.
+- Sprint 2.8.5 - Recommendation Detail Route Shell: complete.
+- Next authorized gate: Sprint 2.8.6 - Ledger Route Shell.
 
 Important implementation note:
 
@@ -592,8 +593,8 @@ Allowed modules, one per iteration:
 - `backend-java/api/evidence` - completed in Sprint 2.8.2
 - `backend-java/api/decisions` - collection/detail completed in Sprint 2.8.3;
   context routes completed in Sprint 2.8.4
-- `backend-java/api/recommendations` - next authorized module
-- `backend-java/api/ledger`
+- `backend-java/api/recommendations` - detail route completed in Sprint 2.8.5
+- `backend-java/api/ledger` - next authorized module
 - `backend-java/api/businessvalue`
 - `backend-java/api/pagination`
 
@@ -613,11 +614,12 @@ Forbidden:
 Example prompt:
 
 ```text
-Generate only the backend-java/api/recommendations module with the documented
-recommendation detail route shell.
+Generate only the backend-java/api/ledger module with the Ledger routes
+explicitly authorized for Sprint 2.8.6.
 Follow docs/product/API_SPECIFICATION.md and docs/architecture/34_MVP_Implementation_Blueprint.md through docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
-The endpoint must return a controlled Not Implemented response.
-Do not expose the post-MVP recommendation collection or review commands.
+Every mapped endpoint must return a controlled Not Implemented response.
+Do not expose Ledger routes outside the explicitly authorized subset and do
+not implement Ledger behavior.
 ```
 
 ## Sprint 2.9 - JWT/RBAC Foundation

@@ -1,6 +1,6 @@
 # IMPERATOR Project Status
 
-Last verified: **2026-07-30**
+Last verified: **2026-07-31**
 
 ## Current Gate
 
@@ -11,8 +11,9 @@ Last verified: **2026-07-30**
 | Sprint 2.8.2 acceptance | PASS |
 | Sprint 2.8.3 acceptance | PASS |
 | Sprint 2.8.4 acceptance | PASS |
-| Last completed sprint | Sprint 2.8.4 - Decision Context Route Shells |
-| Next authorized sprint | Sprint 2.8.5 - Recommendation Detail Route Shell |
+| Sprint 2.8.5 acceptance | PASS |
+| Last completed sprint | Sprint 2.8.5 - Recommendation Detail Route Shell |
+| Next authorized sprint | Sprint 2.8.6 - Ledger Route Shell |
 | Phase 3 authorization | Not authorized |
 
 ## Verified Foundation
@@ -29,7 +30,7 @@ Last verified: **2026-07-30**
 | Web runtime | PASS | Spring Boot executable composition root |
 | REST error contract | PASS | Four-field envelope for controlled and framework errors |
 | HTTP correlation | PASS | `X-Correlation-ID` validation, normalization and propagation |
-| Product REST routes | ACTIVE | Evidence import and decision read/context shells return controlled `501` |
+| Product REST routes | ACTIVE | Evidence, decision and recommendation detail shells return controlled `501` |
 | Security runtime | NOT STARTED | Planned for Sprint 2.9 |
 | Frontend runtime | NOT STARTED | Planned for Sprint 2.10 |
 | Local container runtime | NOT STARTED | Planned for Sprint 2.11 |
@@ -48,9 +49,9 @@ Latest accepted result:
 
 - Java 21 gate: PASS;
 - Maven Enforcer: PASS;
-- production compilation: 95 files;
-- test compilation: 6 files;
-- tests: 27 passed, 0 failed;
+- production compilation: 96 files;
+- test compilation: 7 files;
+- tests: 33 passed, 0 failed;
 - executable JAR: created.
 
 Real HTTP contract verification:
@@ -61,6 +62,8 @@ Real HTTP contract verification:
 - `GET /api/v1/decisions/{id}/timeline`: controlled `501`;
 - `GET /api/v1/decisions/{id}/evidence`: controlled `501`;
 - `GET /api/v1/decisions/{id}/roi`: controlled `501`;
+- `GET /api/v1/recommendations/{id}`: controlled `501`;
+- post-MVP `GET /api/v1/recommendations`: controlled `404`;
 - unversioned product routes: controlled `404`;
 - unsupported methods: controlled `405`;
 - four-field error envelope: PASS;
@@ -89,25 +92,22 @@ The PostgreSQL integration profile was certified previously against PostgreSQL
   validate the Java 21 Maven backend and contains permissive generation steps;
   replacement or hardening belongs to Sprint 2.13.
 
-These risks do not require widening Sprint 2.8.5. They must remain visible and
+These risks do not require widening Sprint 2.8.6. They must remain visible and
 must not be misreported as current backend CI coverage.
 
 ## Next Sprint Boundary
 
-Sprint 2.8.5 may create only the Recommendation Detail HTTP route shell:
-
-```text
-GET /api/v1/recommendations/{id}
-```
+Sprint 2.8.6 is limited to the Ledger HTTP route-shell boundary under
+`imperator.api.ledger`.
 
 Required behavior:
 
-- the route exists under `imperator.api.recommendations`;
-- the response is controlled HTTP `501`;
-- the D075 error envelope is preserved;
-- `X-Correlation-ID` is preserved;
-- real HTTP contract tests verify the route;
-- `GET /api/v1/recommendations` remains unavailable with HTTP `404`.
+- expose only the Ledger routes explicitly confirmed for Sprint 2.8.6;
+- every mapped route returns controlled HTTP `501`;
+- preserve the D075 error envelope and `X-Correlation-ID`;
+- verify every mapped and intentionally unavailable route through real HTTP
+  contract tests;
+- keep broader or post-MVP Ledger routes unavailable.
 
 Forbidden behavior:
 
@@ -116,9 +116,14 @@ Forbidden behavior:
 - application-port invocation;
 - repository or PostgreSQL access;
 - transaction execution;
-- recommendation retrieval or generation;
-- recommendation collection, approval, rejection or deferral routes;
+- Ledger retrieval, mutation or append behavior;
+- review, approval, rejection, deferral, implementation or result-validation
+  behavior;
 - domain, application, port or schema changes.
+
+This synchronization does not choose between Ledger read routes and Ledger
+command routes. Their exact Sprint 2.8.6 subset requires explicit founder
+confirmation before implementation.
 
 ## Current Architectural Invariants
 
