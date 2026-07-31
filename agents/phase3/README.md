@@ -2,7 +2,7 @@
 
 Status: **ACTIVE**
 
-Current gate: **Sprint 3.0 - Functional Runtime Composition**
+Current gate: **Sprint 3.1 - JSONL Evidence Import, Validation And Normalization**
 
 Authorization: **D079 - Phase 3 Vertical-Slice Acceleration**
 
@@ -81,8 +81,8 @@ Locked constraints:
 
 | Sprint | Objective | Status |
 |---|---|---|
-| 3.0 | Functional Runtime Composition | NEXT |
-| 3.1 | JSONL Evidence Import, Validation And Normalization | PENDING |
+| 3.0 | Functional Runtime Composition | CERTIFIED |
+| 3.1 | JSONL Evidence Import, Validation And Normalization | NEXT |
 | 3.2 | Deterministic Decision Creation | PENDING |
 | 3.3 | Deterministic Recommendation And ROI Policy | PENDING |
 | 3.3.1 | Explanation Provider Integration | PENDING |
@@ -132,6 +132,21 @@ Sprint 3.0 must not:
 
 Before implementation, the Sprint 3.0 file boundary and runtime configuration
 contract must be reviewed against the existing source tree and `pom.xml`.
+
+Certification result:
+
+- PostgreSQL 18.2 runtime: PASS;
+- Flyway migrate, validate and second-migrate idempotency: PASS;
+- Spring runtime composition: PASS;
+- repository and transaction behavior: 14 integration tests passed;
+- `mvnw.cmd -Ppostgresql-integration clean verify`: PASS.
+
+## Sprint 3.1 - JSONL Evidence Import, Validation And Normalization
+
+Sprint 3.1 is the sole next gate. No Sprint 3.1 implementation was created as
+part of the Sprint 3.0 certification. Before changing implementation, the
+agent must review the task-specific import contracts and freeze the bounded
+file, validation, normalization and failure-semantics scope for this sprint.
 
 ## Demonstration And Pilot Boundary
 

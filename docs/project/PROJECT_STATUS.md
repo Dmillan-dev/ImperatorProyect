@@ -16,9 +16,10 @@ Last verified: **2026-07-31**
 | Sprint 2.8.7 acceptance | PASS |
 | Sprint 2.8.8 acceptance | PASS |
 | Sprint 2.8.8.2 acceptance | PASS |
-| Last completed sprint | Sprint 2.8.8.2 - REST Adapter Foundation Closure |
+| Sprint 3.0 acceptance | CERTIFIED |
+| Last completed sprint | Sprint 3.0 - Functional Runtime Composition |
 | Phase 2 closure | COMPLETE under D079; Sprints 2.9-2.13 deferred |
-| Next authorized sprint | Sprint 3.0 - Functional Runtime Composition |
+| Next authorized sprint | Sprint 3.1 - JSONL Evidence Import, Validation And Normalization |
 | Phase 3 authorization | Authorized by D079 |
 
 ## Verified Foundation
@@ -36,7 +37,7 @@ Last verified: **2026-07-31**
 | REST error contract | PASS | Four-field envelope for controlled and framework errors |
 | HTTP correlation | PASS | `X-Correlation-ID` validation, normalization and propagation |
 | REST adapter foundation | COMPLETE | All 15 frozen MVP route shells certified by document 41 |
-| Functional runtime composition | NOT STARTED | Sprint 3.0 is the sole next gate |
+| Functional runtime composition | CERTIFIED | Spring, existing use cases, repositories and transaction runner verified against PostgreSQL 18.2 |
 | Functional REST | NOT STARTED | Route shells remain controlled `501` responses |
 | Security runtime | DEFERRED | Resequenced after the local business-value demo by D079 |
 | Frontend runtime | DEFERRED | Thin Decision Review Workspace follows minimum security |
@@ -46,20 +47,31 @@ Last verified: **2026-07-31**
 
 ## Latest Verification
 
-The latest accepted REST foundation was verified with:
+The latest accepted Sprint 3.0 runtime composition was verified with:
 
 ```text
-mvnw.cmd -o clean verify
+mvnw.cmd -Ppostgresql-integration clean verify
 ```
 
 Latest accepted result:
 
 - Java 21 gate: PASS;
 - Maven Enforcer: PASS;
-- production compilation: 98 files;
-- test compilation: 10 files;
-- tests: 53 passed, 0 failed;
+- production compilation: 100 files;
+- test compilation: 11 files;
+- default unit and HTTP contract tests: 54 passed, 0 failed;
+- PostgreSQL integration tests: 14 passed, 0 failed;
 - executable JAR: created.
+
+Real runtime certification:
+
+- PostgreSQL version: 18.2;
+- Flyway V1 migrate: PASS;
+- Flyway validate: PASS;
+- second Flyway migrate: schema up to date, no pending migration;
+- Spring runtime composition: PASS;
+- repository behavior and use-case transaction boundaries: PASS;
+- PostgreSQL server shutdown after certification: PASS.
 
 Real HTTP contract verification:
 
@@ -92,44 +104,40 @@ Documentation integrity verification:
 - changed control documentation language: English;
 - frozen contracts 34-40 modified: no.
 
-The PostgreSQL integration profile was certified previously against PostgreSQL
-18.2. It was not re-executed during the documentation-only reorganization.
+The PostgreSQL integration profile was re-executed for Sprint 3.0 against an
+isolated disposable PostgreSQL 18.2 runtime.
 
 ## Known Non-Blocking Risks
 
-- The current machine has no `IMPERATOR_IT_*` variables and no running
-  PostgreSQL service, so the real-database certification was not repeated in
-  this gate.
-- Default `clean verify` executes the Spring Boot and HTTP contract suite.
-  `PostgresRepositoryIT` requires the explicit `postgresql-integration` profile.
+- Default `clean verify` executes the Spring Boot and HTTP contract suite only.
+  Real-database certification remains intentionally explicit through the
+  `postgresql-integration` profile and external `IMPERATOR_IT_*` configuration.
 - `.github/workflows/proto-ci.yml` is a legacy proto-only workflow. It does not
   validate the Java 21 Maven backend and contains permissive generation steps;
   replacement or hardening belongs to Sprint 3.6.
 
-These risks do not require widening Sprint 3.0. They must remain visible and
+These risks do not require widening Sprint 3.1. They must remain visible and
 must not be misreported as current backend CI coverage.
 
 ## Next Sprint Boundary
 
-Sprint 3.0 creates the smallest executable composition between the existing
-Spring Boot runtime, application ports, PostgreSQL adapters and transaction
-runner. Product routes remain controlled `501` shells during this sprint.
+Sprint 3.1 implements the bounded JSONL Evidence Import, Validation And
+Normalization behavior. No Sprint 3.1 implementation has started.
 
 Required behavior:
 
-- review the existing composition root, `pom.xml`, ports, use cases and
-  PostgreSQL adapters before changing files;
-- freeze the Sprint 3.0 file and configuration boundary;
-- compose existing components without changing their semantics;
-- use externalized runtime configuration and safe connection lifecycle;
-- verify the relevant Spring and PostgreSQL runtime behavior without claiming
-  unexecuted evidence.
+- read the task-specific import contracts before changing files;
+- inspect the existing evidence route, input port, use case, domain model and
+  certified runtime composition;
+- freeze the Sprint 3.1 file, input and failure-semantics boundary before
+  implementation;
+- preserve deterministic behavior and the single `DRC-AOA-001` slice;
+- run Java 21 verification and the relevant real-runtime tests.
 
 Forbidden behavior:
 
-- replacing any route-shell `501` with functional behavior;
-- Domain, use-case semantic, Port, repository-contract or V1 changes;
-- JSONL parsing, ROI calculation, recommendation policy or review behavior;
+- Decision creation, ROI calculation, recommendation policy or review behavior;
+- Domain, unrelated use-case semantic, repository-contract or V1 changes;
 - security, frontend, live connectors, real AI calls or observability;
 - hardcoded credentials or undocumented runtime assumptions.
 

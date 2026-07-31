@@ -20,8 +20,10 @@ reasoning. Do not load it for every bounded implementation task.
 
 Phase 1 is complete for a limited MVP. Phase 2 Platform Foundation is complete
 under D079: PostgreSQL persistence is certified, Spring Boot web runtime exists,
-and the 15-route REST Adapter Foundation is closed. Phase 3 is active. The next
-authorized gate is Sprint 3.0 - Functional Runtime Composition.
+and the 15-route REST Adapter Foundation is closed. Sprint 3.0 runtime
+composition is certified against PostgreSQL 18.2. Phase 3 is active. The next
+authorized gate is Sprint 3.1 - JSONL Evidence Import, Validation And
+Normalization.
 
 Agents may create runnable implementation only inside the explicitly
 authorized sprint/module. They must use `agents/phase3/README.md`, the frozen

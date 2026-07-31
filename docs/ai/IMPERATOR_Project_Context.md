@@ -28,7 +28,8 @@ spend. The first case is `DRC-AOA-001`, AI Onboarding Assistant Recovery.
 - REST error and HTTP correlation contract: complete.
 - REST adapter foundation: complete with 15 controlled route shells.
 - Phase 3 First Business Value Loop: active.
-- Current gate: Sprint 3.0 - Functional Runtime Composition.
+- Functional runtime composition: certified against PostgreSQL 18.2.
+- Current gate: Sprint 3.1 - JSONL Evidence Import, Validation And Normalization.
 - Sprints 2.9 through 2.13: deferred, not completed.
 
 The live state is maintained in:

@@ -99,7 +99,8 @@ is found.
 
 ## Authorized Current Use
 
-Sprint 3.0 - Functional Runtime Composition is the sole current gate. It may
-compose existing components and verify PostgreSQL connectivity, but it must not
-replace a route-shell `501`, parse JSONL, calculate ROI, generate a product
-recommendation policy or execute review behavior.
+Sprint 3.0 - Functional Runtime Composition is certified against PostgreSQL
+18.2. Sprint 3.1 - JSONL Evidence Import, Validation And Normalization is the
+sole current gate. Its exact implementation boundary must follow the project
+control plane and frozen contracts; later decision, recommendation, ROI and
+review behavior remains unauthorized.

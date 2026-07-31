@@ -189,8 +189,8 @@ not the Phase 2 route-shell plan.
 
 | Sprint | Objective | Status |
 |---|---|---|
-| 3.0 | Functional Runtime Composition | NEXT |
-| 3.1 | JSONL Evidence Import, Validation And Normalization | PENDING |
+| 3.0 | Functional Runtime Composition | CERTIFIED |
+| 3.1 | JSONL Evidence Import, Validation And Normalization | NEXT |
 | 3.2 | Deterministic Decision Creation | PENDING |
 | 3.3 | Deterministic Recommendation And ROI Policy | PENDING |
 | 3.3.1 | Explanation Provider Integration | PENDING |
@@ -215,7 +215,7 @@ Active Phase 3 execution authority:
 
 ## Gate Transition Rule
 
-A sprint changes from `NEXT` to `COMPLETE` only when:
+A sprint changes from `NEXT` to `COMPLETE` or `CERTIFIED` only when:
 
 1. its authorized files and behavior are present;
 2. its required build and tests pass;

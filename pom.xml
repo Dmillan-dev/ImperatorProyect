@@ -252,6 +252,7 @@
                         <artifactId>maven-failsafe-plugin</artifactId>
                         <version>${maven.failsafe.plugin.version}</version>
                         <configuration>
+                            <classesDirectory>${project.build.outputDirectory}</classesDirectory>
                             <failIfNoTests>true</failIfNoTests>
                             <systemPropertyVariables>
                                 <imperator.it.database>${env.IMPERATOR_IT_DATABASE}</imperator.it.database>

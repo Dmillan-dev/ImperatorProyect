@@ -66,12 +66,12 @@ Active Phase 3 sprint execution is defined in:
 Phase 3 is named `First Business Value Loop` and is active under D079.
 
 The current authorized gate is maintained in
-`docs/project/PROJECT_STATUS.md`. At the time of this update it is Sprint 3.0 -
-Functional Runtime Composition.
+`docs/project/PROJECT_STATUS.md`. At the time of this update it is Sprint 3.1 -
+JSONL Evidence Import, Validation And Normalization.
 
 Phase 3 agents may implement only the bounded `DRC-AOA-001` sequence in
-`agents/phase3/README.md`. The current gate may compose the existing runtime but
-must not implement later business behavior.
+`agents/phase3/README.md`. Sprint 3.0 runtime composition is certified; the
+current gate may implement only the bounded JSONL evidence-import behavior.
 
 The completed Phase 2 foundation contains:
 
