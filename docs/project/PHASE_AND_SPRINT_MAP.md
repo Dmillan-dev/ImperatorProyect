@@ -190,8 +190,8 @@ not the Phase 2 route-shell plan.
 | Sprint | Objective | Status |
 |---|---|---|
 | 3.0 | Functional Runtime Composition | CERTIFIED |
-| 3.1 | JSONL Evidence Import, Validation And Normalization | NEXT |
-| 3.2 | Deterministic Decision Creation | PENDING |
+| 3.1 | JSONL Evidence Import, Validation And Normalization | CERTIFIED |
+| 3.2 | Deterministic Decision Creation | NEXT |
 | 3.3 | Deterministic Recommendation And ROI Policy | PENDING |
 | 3.3.1 | Explanation Provider Integration | PENDING |
 | 3.4 | Human Review, Ledger And Result Validation | PENDING |

@@ -2,7 +2,7 @@
 
 Status: **Phase 3 First Business Value Loop active**
 
-Current gate: **Sprint 3.1 - JSONL Evidence Import, Validation And Normalization**
+Current gate: **Sprint 3.2 - Deterministic Decision Creation**
 
 IMPERATOR is an Operating System for Operational Intelligence and an Enterprise
 Decision Intelligence Platform. The MVP proves one evidence-backed decision,
@@ -37,14 +37,17 @@ The Java backend currently contains:
 - JDBC PostgreSQL repository adapters;
 - Flyway V1 with seven frozen application tables;
 - PostgreSQL repository and transaction integration tests;
-- Spring Boot executable web runtime;
+- certified and complete Spring Boot runtime composition;
 - deterministic REST error handling;
 - `X-Correlation-ID` validation and propagation;
-- six REST route-shell controllers exposing 15 frozen MVP routes.
+- six REST controllers preserving the 15 frozen MVP routes;
+- certified JSONL Evidence import with independent per-line processing;
+- controlled route shells for the remaining functional REST surface.
 
 The repository does not yet contain:
 
-- functional REST-to-Application wiring;
+- deterministic Decision, Recommendation and ROI route behavior;
+- Review, Ledger and Result Validation route behavior;
 - JWT/RBAC runtime;
 - React application runtime;
 - live connectors;

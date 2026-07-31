@@ -101,7 +101,7 @@ is found.
 ## Authorized Current Use
 
 Sprint 3.0 - Functional Runtime Composition is certified against PostgreSQL
-18.2. Sprint 3.1 - JSONL Evidence Import, Validation And Normalization is the
-sole current gate. Its exact implementation boundary must follow the project
-control plane and frozen contracts; later decision, recommendation, ROI and
-review behavior remains unauthorized.
+18.2 and complete. Sprint 3.1 - JSONL Evidence Import, Validation And
+Normalization is certified and complete. Sprint 3.2 - Deterministic Decision
+Creation is the sole current gate. Recommendation, ROI, Explanation Provider,
+Review, Ledger and Result Validation behavior remains unauthorized.

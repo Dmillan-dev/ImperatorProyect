@@ -26,10 +26,12 @@ spend. The first case is `DRC-AOA-001`, AI Onboarding Assistant Recovery.
 - PostgreSQL persistence: certified.
 - Spring Boot web runtime: complete.
 - REST error and HTTP correlation contract: complete.
-- REST adapter foundation: complete with 15 controlled route shells.
+- REST adapter foundation: complete with 15 preserved MVP routes.
 - Phase 3 First Business Value Loop: active.
-- Functional runtime composition: certified against PostgreSQL 18.2.
-- Current gate: Sprint 3.1 - JSONL Evidence Import, Validation And Normalization.
+- Functional runtime composition: certified against PostgreSQL 18.2 and complete.
+- JSONL Evidence Import: certified and complete with independent per-line processing.
+- Remaining functional REST route shells: implemented and controlled.
+- Current gate: Sprint 3.2 - Deterministic Decision Creation.
 - Sprints 2.9 through 2.13: deferred, not completed.
 
 The live state is maintained in:
@@ -77,8 +79,10 @@ the single authorized business value loop under D079.
 - Flyway migrations;
 - Spring Boot web runtime;
 - no JPA;
-- six product REST route-shell controllers with 15 controlled routes;
-- no functional REST-to-Application wiring yet;
+- six product REST controllers preserving 15 controlled routes;
+- functional JSONL Evidence import wired through Application and PostgreSQL;
+- remaining Decision, Recommendation, ROI, Review, Ledger and Result Validation
+  business behavior not implemented yet;
 - no security runtime yet.
 
 The implemented Java source root is `backend-java`, with packages under

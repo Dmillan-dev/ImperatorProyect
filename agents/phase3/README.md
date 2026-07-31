@@ -2,7 +2,7 @@
 
 Status: **ACTIVE**
 
-Current gate: **Sprint 3.1 - JSONL Evidence Import, Validation And Normalization**
+Current gate: **Sprint 3.2 - Deterministic Decision Creation**
 
 Authorization: **D079 - Phase 3 Vertical-Slice Acceleration**
 
@@ -82,8 +82,8 @@ Locked constraints:
 | Sprint | Objective | Status |
 |---|---|---|
 | 3.0 | Functional Runtime Composition | CERTIFIED |
-| 3.1 | JSONL Evidence Import, Validation And Normalization | NEXT |
-| 3.2 | Deterministic Decision Creation | PENDING |
+| 3.1 | JSONL Evidence Import, Validation And Normalization | CERTIFIED |
+| 3.2 | Deterministic Decision Creation | NEXT |
 | 3.3 | Deterministic Recommendation And ROI Policy | PENDING |
 | 3.3.1 | Explanation Provider Integration | PENDING |
 | 3.4 | Human Review, Ledger And Result Validation | PENDING |
@@ -143,7 +143,7 @@ Certification result:
 
 ## Sprint 3.1 - JSONL Evidence Import, Validation And Normalization
 
-Sprint 3.1 is the sole next gate. D080 freezes its runtime contract.
+Sprint 3.1 is certified and complete. D080 freezes its runtime contract.
 
 Required flow:
 
@@ -176,6 +176,26 @@ use case for duplicate detection, relevant tests and implementation-facing
 documentation. It must not create or modify a Domain entity, Port contract,
 PostgreSQL repository contract, migration, table, Decision, Recommendation,
 ROI, Review, Ledger, security, connector or provider behavior.
+
+Certification result:
+
+- Java 21 and Maven Enforcer: PASS;
+- default unit and HTTP contract tests: 61 passed;
+- PostgreSQL 18.2 integration tests: 15 passed;
+- Flyway migrate, validate and no-op second migrate: PASS;
+- per-line partial processing and duplicate rejection: PASS;
+- restricted application-role persistence: PASS;
+- Domain, Port, PostgreSQL schema and frozen contracts unchanged;
+- status: **CERTIFIED / COMPLETE**.
+
+## Sprint 3.2 - Deterministic Decision Creation
+
+Sprint 3.2 is the sole next gate. It may implement only the deterministic
+Evidence-to-Decision transition for `DRC-AOA-001` after its exact boundary has
+been reviewed against the frozen contracts and current implementation.
+
+It must not implement Recommendation, ROI, Explanation Provider, Review,
+Ledger, Result Validation or any later Phase 3 capability.
 
 ## Demonstration And Pilot Boundary
 
