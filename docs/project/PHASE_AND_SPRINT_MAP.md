@@ -137,7 +137,8 @@ Frozen persistence authorities:
 | 2.8.5 | Recommendation Detail Route Shell | COMPLETE |
 | 2.8.6 | Ledger Read Route Shells | COMPLETE |
 | 2.8.7 | Ledger Command Route Shells | COMPLETE |
-| 2.8.8 | Business Value Route Shell | NEXT |
+| 2.8.8 | Business Value Route Shell | COMPLETE |
+| 2.8.8.2 | REST Adapter Foundation Closure | NEXT |
 | Later 2.8 iteration | Pagination contract where required | PENDING |
 
 REST module convention:

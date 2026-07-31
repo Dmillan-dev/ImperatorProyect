@@ -139,7 +139,8 @@ Current execution state:
 - Sprint 2.8.5 - Recommendation Detail Route Shell: complete.
 - Sprint 2.8.6 - Ledger Read Route Shells: complete.
 - Sprint 2.8.7 - Ledger Command Route Shells: complete.
-- Next authorized gate: Sprint 2.8.8 - Business Value Route Shell.
+- Sprint 2.8.8 - Business Value Route Shell: complete.
+- Next authorized gate: Sprint 2.8.8.2 - REST Adapter Foundation Closure.
 
 Important implementation note:
 
@@ -598,8 +599,8 @@ Allowed modules, one per iteration:
 - `backend-java/api/recommendations` - detail route completed in Sprint 2.8.5
 - `backend-java/api/ledger` - read routes completed in Sprint 2.8.6;
   command routes completed in Sprint 2.8.7
-- `backend-java/api/businessvalue` - next authorized module
-- `backend-java/api/pagination`
+- `backend-java/api/businessvalue` - completed in Sprint 2.8.8
+- `backend-java/api/pagination` - pending explicit closure disposition
 
 Java module and package names must be valid identifiers. Therefore the module
 uses `businessvalue`, while the public HTTP route remains `/business-value`.
@@ -617,12 +618,13 @@ Forbidden:
 Example prompt:
 
 ```text
-Generate only backend-java/api/businessvalue with the Business Value read route
-shell authorized for Sprint 2.8.8: GET /api/v1/business-value.
+Certify the completed Sprint 2.8 REST Adapter Foundation without modifying
+Java, tests, SQL, dependencies or frozen contracts.
 Follow docs/product/API_SPECIFICATION.md and docs/architecture/34_MVP_Implementation_Blueprint.md through docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
-The endpoint must return a controlled Not Implemented response.
-Do not calculate ROI or realized value, expose fake Business Value, invoke
-Application or Persistence, or expand the API.
+Verify the 15-route MVP inventory, error and correlation contracts, /api/v1
+versioning, HTTP tests and negative boundaries. Record Functional REST, DTOs,
+validation, pagination, security and Application wiring as not started or
+explicitly deferred. Do not implement product behavior.
 ```
 
 ## Sprint 2.9 - JWT/RBAC Foundation

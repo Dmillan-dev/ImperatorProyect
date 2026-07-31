@@ -14,8 +14,9 @@ Last verified: **2026-07-31**
 | Sprint 2.8.5 acceptance | PASS |
 | Sprint 2.8.6 acceptance | PASS |
 | Sprint 2.8.7 acceptance | PASS |
-| Last completed sprint | Sprint 2.8.7 - Ledger Command Route Shells |
-| Next authorized sprint | Sprint 2.8.8 - Business Value Route Shell |
+| Sprint 2.8.8 acceptance | PASS |
+| Last completed sprint | Sprint 2.8.8 - Business Value Route Shell |
+| Next authorized sprint | Sprint 2.8.8.2 - REST Adapter Foundation Closure |
 | Phase 3 authorization | Not authorized |
 
 ## Verified Foundation
@@ -32,7 +33,7 @@ Last verified: **2026-07-31**
 | Web runtime | PASS | Spring Boot executable composition root |
 | REST error contract | PASS | Four-field envelope for controlled and framework errors |
 | HTTP correlation | PASS | `X-Correlation-ID` validation, normalization and propagation |
-| Product REST routes | ACTIVE | Evidence, decision, recommendation and Ledger shells return controlled `501` |
+| Product REST routes | ACTIVE | All frozen MVP route shells return controlled `501` |
 | Security runtime | NOT STARTED | Planned for Sprint 2.9 |
 | Frontend runtime | NOT STARTED | Planned for Sprint 2.10 |
 | Local container runtime | NOT STARTED | Planned for Sprint 2.11 |
@@ -51,9 +52,9 @@ Latest accepted result:
 
 - Java 21 gate: PASS;
 - Maven Enforcer: PASS;
-- production compilation: 97 files;
-- test compilation: 9 files;
-- tests: 47 passed, 0 failed;
+- production compilation: 98 files;
+- test compilation: 10 files;
+- tests: 53 passed, 0 failed;
 - executable JAR: created.
 
 Real HTTP contract verification:
@@ -71,6 +72,8 @@ Real HTTP contract verification:
 - five canonical Ledger command routes: controlled `501`;
 - broader `GET /api/v1/ledger/{entryId}`: controlled `404`;
 - post-MVP recommendation review aliases: controlled `404`;
+- `GET /api/v1/business-value`: controlled `501`;
+- undefined Business Value detail routes: controlled `404`;
 - unversioned product routes: controlled `404`;
 - unsupported methods: controlled `405`;
 - four-field error envelope: PASS;
@@ -78,7 +81,7 @@ Real HTTP contract verification:
 
 Documentation integrity verification:
 
-- Markdown files checked: 146;
+- Markdown files checked: 147;
 - broken local links: 0;
 - current gate consistency: PASS;
 - exactly one `NEXT` sprint: PASS;
@@ -99,37 +102,31 @@ The PostgreSQL integration profile was certified previously against PostgreSQL
   validate the Java 21 Maven backend and contains permissive generation steps;
   replacement or hardening belongs to Sprint 2.13.
 
-These risks do not require widening Sprint 2.8.8. They must remain visible and
+These risks do not require widening Sprint 2.8.8.2. They must remain visible and
 must not be misreported as current backend CI coverage.
 
 ## Next Sprint Boundary
 
-Sprint 2.8.8 may create only the Business Value read route shell:
-
-```text
-GET /api/v1/business-value
-```
+Sprint 2.8.8.2 is a documentation-only certification of the complete REST
+Adapter Foundation.
 
 Required behavior:
 
-- the route returns controlled HTTP `501`;
-- reuse the existing D075 error envelope and `X-Correlation-ID`;
-- keep unversioned and undefined Business Value routes unavailable with HTTP
-  `404`;
-- return HTTP `405` for unsupported methods on the mapped route;
-- verify the route through real HTTP contract tests.
+- certify the complete 15-route frozen MVP inventory;
+- certify the D075 error envelope and correlation contract;
+- certify `/api/v1` versioning and negative route boundaries;
+- record the accepted 53-test HTTP verification baseline;
+- distinguish completed route topology from unimplemented functional REST;
+- resolve the pending pagination roadmap item explicitly;
+- close Sprint 2.8 only if every certification gate passes.
 
 Forbidden behavior:
 
-- request DTO design;
-- pagination or filtering;
-- application-port invocation;
-- repository or PostgreSQL access;
-- transaction execution;
-- Business Value retrieval or calculation;
-- ROI or realized-value calculation;
-- fake Business Value output;
-- domain, application, port or schema changes.
+- Java, tests, SQL, dependencies or runtime configuration changes;
+- new endpoints, controllers, DTOs, validation or application wiring;
+- modifications to frozen contracts 34-40;
+- functional REST or Phase 3 behavior;
+- architecture redesign.
 
 ## Current Architectural Invariants
 
