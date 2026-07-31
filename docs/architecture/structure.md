@@ -45,7 +45,8 @@ Contains AI-agent roles, execution rules, phase plans and sprint prompts.
 
 - `agents/README.md` defines the operating model.
 - `agents/phase1/` is the completed Phase 1 stage dossier.
-- `agents/phase2/` is the active Phase 2 sprint plan and historical prompt set.
+- `agents/phase2/` is the completed Phase 2 plan and historical prompt set.
+- `agents/phase3/` is the active Phase 3 vertical-slice plan.
 - role directories define bounded responsibilities.
 
 It never contains product runtime code, secrets or generated output.

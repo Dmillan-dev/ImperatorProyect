@@ -47,51 +47,66 @@ Phase 2 sprint execution is defined in:
 
 - `agents/phase2/README.md`
 
+Active Phase 3 sprint execution is defined in:
+
+- `agents/phase3/README.md`
+
 ## Completed Phase Records
 
 - Phase 0 strategy and architecture readiness is complete.
 - `agents/phase1/12_phase1_closure.md` closes the Phase 1 documentation and
   control dossier.
-- Phase 0 and Phase 1 agent files are historical inputs. They do not authorize
-  the current sprint.
+- Phase 2 Platform Foundation is complete under D079. Sprints 2.9 through 2.13
+  are deferred, not completed.
+- Phase 0, Phase 1 and Phase 2 agent files are historical inputs. They do not
+  authorize the current sprint.
 
-## Phase 2 Platform Foundation Rule
+## Current Lifecycle Rule
 
-Phase 2 is named `Platform Foundation` and is active.
+Phase 3 is named `First Business Value Loop` and is active under D079.
 
 The current authorized gate is maintained in
-`docs/project/PROJECT_STATUS.md`. At the time of this update it is Sprint 2.8.2
-- Evidence Import Route Shell.
+`docs/project/PROJECT_STATUS.md`. At the time of this update it is Sprint 3.0 -
+Functional Runtime Composition.
 
-Phase 2 agents may create technical foundation only:
+Phase 3 agents may implement only the bounded `DRC-AOA-001` sequence in
+`agents/phase3/README.md`. The current gate may compose the existing runtime but
+must not implement later business behavior.
+
+The completed Phase 2 foundation contains:
 
 - project structure,
 - module boundaries,
 - route shells,
 - persistence foundation,
-- auth foundation,
-- observability foundation,
-- Docker/local developer foundation,
-- no-deploy CI foundation.
+- Spring Boot web runtime.
 
-Phase 2 agents must not create:
+The following remain deferred until their ordered Phase 3 gates:
 
-- ROI calculation,
-- autonomous, AI-driven or ROI-driven recommendation engine behavior,
-- real AI provider calls,
+- functional evidence import and product behavior,
+- Java CI,
+- JWT/RBAC,
+- the thin Decision Review Workspace,
+- Docker and operational hardening,
+- observability expansion.
+
+Phase 3 agents must not create:
+
+- behavior owned by a later sprint,
 - live provider connectors,
-- approval workflow logic outside explicitly authorized application use cases,
-- fake business evidence,
-- fake ledger state,
+- additional cases or recommendation families,
+- AI decision authority,
+- unauthorized schema, route or aggregate changes,
 - production deployment.
 
-Use `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` as the phase contract.
+Use D079 and `agents/phase3/README.md` as the current execution authority.
+Use `docs/architecture/34_MVP_Implementation_Blueprint.md` as the value-loop contract.
 Use `docs/architecture/37_Implementation_Contract.md` as the implementation contract.
-Use `agents/phase2/README.md` as the sprint sequencing guide.
+Use `agents/phase2/README.md` only as the historical Phase 2 sequencing record.
 Use `docs/architecture/38_Sprint_0_Contract_Gate_Report.md` only as the
 historical Phase 2 entry gate.
 
-No Phase 2 agent may generate more than one module per iteration.
+No Phase 3 agent may generate more than one bounded deliverable per iteration.
 
 Documentation rule:
 
@@ -124,7 +139,7 @@ Decision Stability rule:
 - Sprint 3 target is 0.
 - Later sprints also target 0 unless founder/CTO records an exception.
 
-## Phase 2 Sprint Execution Roles
+## Sprint Execution Roles
 
 From Sprint 1 onward, do not use one general-purpose agent for implementation.
 
@@ -159,7 +174,7 @@ Before acting, every agent must respect:
 2. `docs/project/PROJECT_STATUS.md` for the current gate.
 3. `docs/decisions/14_Decision_Log.md` for accepted decisions.
 4. Frozen product and architecture contracts for semantics.
-5. `docs/project/PHASE_AND_SPRINT_MAP.md` and `agents/phase2/README.md` for
+5. `docs/project/PHASE_AND_SPRINT_MAP.md` and `agents/phase3/README.md` for
    execution order.
 6. The specialist references required by the current task.
 7. Historical prompts and gate reports only as audit evidence.
@@ -214,6 +229,7 @@ The task-specific reading matrix lives in `docs/project/README.md`.
 | Phase 2 Platform Foundation | CTO | Backend, Frontend, AI, Security, QA | Phase 2 Platform Foundation Blueprint |
 | Implementation contract | CTO | All | Implementation Contract |
 | Phase 2 sprint control | CTO | All | agents/phase2/README.md |
+| Phase 3 vertical-slice control | CTO | All | agents/phase3/README.md |
 | Sprint 0 contract gate | CTO | All | Sprint 0 Contract Gate Report |
 | Phase 1 staged agentic process | CTO | All | agents/phase1/README.md |
 | Phase 1 stage dossier closure | CTO | All | agents/phase1/12_phase1_closure.md |

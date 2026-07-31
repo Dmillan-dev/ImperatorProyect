@@ -6,7 +6,7 @@ Last verified: **2026-07-31**
 
 | Field | Value |
 |---|---|
-| Product lifecycle | Phase 2 - Platform Foundation |
+| Product lifecycle | Phase 3 - First Business Value Loop |
 | Phase status | Active |
 | Sprint 2.8.2 acceptance | PASS |
 | Sprint 2.8.3 acceptance | PASS |
@@ -17,8 +17,9 @@ Last verified: **2026-07-31**
 | Sprint 2.8.8 acceptance | PASS |
 | Sprint 2.8.8.2 acceptance | PASS |
 | Last completed sprint | Sprint 2.8.8.2 - REST Adapter Foundation Closure |
-| Next authorized sprint | Sprint 2.9 - JWT/RBAC Foundation |
-| Phase 3 authorization | Not authorized |
+| Phase 2 closure | COMPLETE under D079; Sprints 2.9-2.13 deferred |
+| Next authorized sprint | Sprint 3.0 - Functional Runtime Composition |
+| Phase 3 authorization | Authorized by D079 |
 
 ## Verified Foundation
 
@@ -35,11 +36,13 @@ Last verified: **2026-07-31**
 | REST error contract | PASS | Four-field envelope for controlled and framework errors |
 | HTTP correlation | PASS | `X-Correlation-ID` validation, normalization and propagation |
 | REST adapter foundation | COMPLETE | All 15 frozen MVP route shells certified by document 41 |
-| Security runtime | NOT STARTED | Planned for Sprint 2.9 |
-| Frontend runtime | NOT STARTED | Planned for Sprint 2.10 |
-| Local container runtime | NOT STARTED | Planned for Sprint 2.11 |
-| Observability runtime | NOT STARTED | Planned for Sprint 2.12 |
-| Java backend CI | NOT STARTED | Planned for Sprint 2.13; legacy Proto CI exists separately |
+| Functional runtime composition | NOT STARTED | Sprint 3.0 is the sole next gate |
+| Functional REST | NOT STARTED | Route shells remain controlled `501` responses |
+| Security runtime | DEFERRED | Resequenced after the local business-value demo by D079 |
+| Frontend runtime | DEFERRED | Thin Decision Review Workspace follows minimum security |
+| Local container runtime | DEFERRED | Operational hardening follows pilot readiness |
+| Observability runtime | DEFERRED | Minimum expansion follows operational hardening |
+| Java backend CI | NOT STARTED | Required before minimum security and pilot readiness |
 
 ## Latest Verification
 
@@ -82,7 +85,7 @@ Real HTTP contract verification:
 
 Documentation integrity verification:
 
-- Markdown files checked: 148;
+- Markdown files checked: 149;
 - broken local links: 0;
 - current gate consistency: PASS;
 - exactly one `NEXT` sprint: PASS;
@@ -101,34 +104,39 @@ The PostgreSQL integration profile was certified previously against PostgreSQL
   `PostgresRepositoryIT` requires the explicit `postgresql-integration` profile.
 - `.github/workflows/proto-ci.yml` is a legacy proto-only workflow. It does not
   validate the Java 21 Maven backend and contains permissive generation steps;
-  replacement or hardening belongs to Sprint 2.13.
+  replacement or hardening belongs to Sprint 3.6.
 
-These risks do not require widening Sprint 2.9. They must remain visible and
+These risks do not require widening Sprint 3.0. They must remain visible and
 must not be misreported as current backend CI coverage.
 
 ## Next Sprint Boundary
 
-Sprint 2.9 creates the JWT/RBAC security foundation without implementing
-external OAuth providers or business approval behavior.
+Sprint 3.0 creates the smallest executable composition between the existing
+Spring Boot runtime, application ports, PostgreSQL adapters and transaction
+runner. Product routes remain controlled `501` shells during this sprint.
 
 Required behavior:
 
-- freeze one security micro-sprint before implementation;
-- preserve the certified REST route and error contracts;
-- use JWT-compatible authentication and simple MVP RBAC;
-- keep authentication and authorization outside Domain and Application;
-- add security-specific tests for each implemented boundary.
+- review the existing composition root, `pom.xml`, ports, use cases and
+  PostgreSQL adapters before changing files;
+- freeze the Sprint 3.0 file and configuration boundary;
+- compose existing components without changing their semantics;
+- use externalized runtime configuration and safe connection lifecycle;
+- verify the relevant Spring and PostgreSQL runtime behavior without claiming
+  unexecuted evidence.
 
 Forbidden behavior:
 
-- Google, Microsoft or GitHub OAuth providers;
-- business approval or Ledger workflow behavior;
-- hardcoded production credentials or stored secrets;
-- Domain, Application, Port, persistence or schema redesign;
-- Phase 3 functional REST behavior.
+- replacing any route-shell `501` with functional behavior;
+- Domain, use-case semantic, Port, repository-contract or V1 changes;
+- JSONL parsing, ROI calculation, recommendation policy or review behavior;
+- security, frontend, live connectors, real AI calls or observability;
+- hardcoded credentials or undocumented runtime assumptions.
 
-REST closure authority:
+Current execution authorities:
 
+- D079 in `docs/decisions/14_Decision_Log.md`;
+- `agents/phase3/README.md`;
 - `docs/architecture/41_REST_Adapter_Foundation_Closure.md`.
 
 ## Current Architectural Invariants
@@ -139,7 +147,8 @@ REST closure authority:
 - The public REST base path is `/api/v1`.
 - HTTP correlation is not domain evidence correlation.
 - Ledger history is append-only.
-- Phase 2 contains foundation only; business intelligence belongs to Phase 3.
+- Phase 2 is closed; Phase 3 business behavior remains limited to
+  `DRC-AOA-001` and the currently authorized sprint.
 - One module is implemented per agent iteration.
 
 ## Status Update Ownership

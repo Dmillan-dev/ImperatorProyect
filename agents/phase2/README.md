@@ -1,10 +1,16 @@
 # Phase 2 - Platform Foundation Sprint Plan
 
+Status: **COMPLETE**
+
+Closure decision: **D079 - Phase 3 Vertical-Slice Acceleration**
+
 ## Purpose
 
-Define the controlled sprint process for building IMPERATOR's technical foundation after explicit founder authorization.
+Preserve the controlled sprint process that built IMPERATOR's technical
+foundation. This file is now a historical execution plan.
 
-This file does not authorize code generation by itself.
+This file does not authorize new Phase 2 code. Current authorization lives in
+`docs/project/PROJECT_STATUS.md` and the active Phase 3 plan.
 
 It explains how to ask agents to create one implementation module at a time while preserving the full project context.
 
@@ -96,6 +102,11 @@ The current controlled order is:
 14. Sprint 2.12 - Observability Foundation
 15. Sprint 2.13 - CI and R&D Evidence Foundation
 
+D079 closed Phase 2 after the certified REST foundation and deferred Sprints
+2.9 through 2.13 without marking them complete. Their capabilities are
+resequenced in `agents/phase3/README.md` after the first local functional
+business-value demonstration.
+
 Deferred Phase 2 capability:
 
 - Python AI Provider Foundation remains defined by the architecture baseline, but it is not required before Sprint 2.7 persistence, Sprint 2.8 REST, Sprint 2.9 JWT/RBAC or Sprint 2.10 React. It requires explicit founder authorization because the Java application already owns the `ExplanationProvider` port and no real AI integration is allowed in Phase 2.
@@ -142,7 +153,9 @@ Current execution state:
 - Sprint 2.8.8 - Business Value Route Shell: complete.
 - Sprint 2.8.8.2 - REST Adapter Foundation Closure: complete.
 - Sprint 2.8 - REST Adapter Foundation: complete.
-- Next authorized gate: Sprint 2.9 - JWT/RBAC Foundation.
+- Phase 2: complete under D079.
+- Sprints 2.9 through 2.13: deferred, not completed.
+- Next authorized gate: Sprint 3.0 - Functional Runtime Composition.
 
 Important implementation note:
 
@@ -622,12 +635,14 @@ Example prompt:
 ```text
 Sprint 2.8 is closed by
 docs/architecture/41_REST_Adapter_Foundation_Closure.md.
-Do not add or modify product routes during Sprint 2.9 security work.
-Functional REST, DTOs, validation, pagination and Application wiring remain
-deferred to Phase 3.
+Do not add or modify product routes from this historical Phase 2 plan.
+Functional execution is governed by agents/phase3/README.md and the single
+current gate.
 ```
 
 ## Sprint 2.9 - JWT/RBAC Foundation
+
+Status: **DEFERRED BY D079; NOT EXECUTED**
 
 Goal:
 

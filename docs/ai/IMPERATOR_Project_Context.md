@@ -22,12 +22,14 @@ spend. The first case is `DRC-AOA-001`, AI Onboarding Assistant Recovery.
 
 - Phase 0 strategy and architecture readiness: complete.
 - Phase 1 limited-MVP contract dossier: complete.
-- Phase 2 Platform Foundation: active.
+- Phase 2 Platform Foundation: complete under D079.
 - PostgreSQL persistence: certified.
 - Spring Boot web runtime: complete.
 - REST error and HTTP correlation contract: complete.
-- Current gate: Sprint 2.8.2 - Evidence Import Route Shell.
-- Phase 3 business behavior: not authorized.
+- REST adapter foundation: complete with 15 controlled route shells.
+- Phase 3 First Business Value Loop: active.
+- Current gate: Sprint 3.0 - Functional Runtime Composition.
+- Sprints 2.9 through 2.13: deferred, not completed.
 
 The live state is maintained in:
 
@@ -49,8 +51,8 @@ Operational Event
 -> Realized Business Value
 ```
 
-Phase 2 builds the technical foundation for this flow. Phase 3 is the first
-phase allowed to implement the business value loop.
+Phase 2 built the technical foundation for this flow. Phase 3 now implements
+the single authorized business value loop under D079.
 
 ## Canonical Boundaries
 
@@ -74,11 +76,12 @@ phase allowed to implement the business value loop.
 - Flyway migrations;
 - Spring Boot web runtime;
 - no JPA;
-- no product REST controllers yet;
+- six product REST route-shell controllers with 15 controlled routes;
+- no functional REST-to-Application wiring yet;
 - no security runtime yet.
 
 The implemented Java source root is `backend-java`, with packages under
-`imperator.*`. REST packages live under `imperator.api.*`. Public Phase 2 REST
+`imperator.*`. REST packages live under `imperator.api.*`. Public product REST
 routes use `/api/v1`.
 
 ## MVP Evidence Domains
@@ -111,7 +114,7 @@ Do not:
 - generate more than one module per iteration;
 - reopen frozen decisions without implementation evidence;
 - modify Domain or Ports for adapter convenience;
-- introduce business behavior during Phase 2;
+- introduce business behavior outside the single authorized Phase 3 sprint;
 - add speculative abstractions, tables, routes or dependencies;
 - claim progress that was not executed and verified;
 - treat historical prompts as current authorization.
@@ -124,7 +127,7 @@ Use this order:
 2. current gate in `docs/project/PROJECT_STATUS.md`;
 3. accepted decisions in `docs/decisions/14_Decision_Log.md`;
 4. product and architecture contracts;
-5. active Phase 2 sprint plan;
+5. active Phase 3 sprint plan;
 6. supporting references;
 7. historical documents.
 

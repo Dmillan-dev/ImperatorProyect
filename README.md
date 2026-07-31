@@ -1,8 +1,8 @@
 # IMPERATOR
 
-Status: **Phase 2 Platform Foundation active**
+Status: **Phase 3 First Business Value Loop active**
 
-Current gate: **Sprint 2.8.2 - Evidence Import Route Shell**
+Current gate: **Sprint 3.0 - Functional Runtime Composition**
 
 IMPERATOR is an Operating System for Operational Intelligence and an Enterprise
 Decision Intelligence Platform. The MVP proves one evidence-backed decision,
@@ -16,7 +16,7 @@ Humans and AI agents should read:
 2. [Current Project Status](docs/project/PROJECT_STATUS.md)
 3. [Phase and Sprint Map](docs/project/PHASE_AND_SPRINT_MAP.md)
 4. [Decision Log](docs/decisions/14_Decision_Log.md)
-5. [Current Phase 2 Sprint Plan](agents/phase2/README.md)
+5. [Current Phase 3 Sprint Plan](agents/phase3/README.md)
 
 Compact AI context:
 
@@ -39,11 +39,12 @@ The Java backend currently contains:
 - PostgreSQL repository and transaction integration tests;
 - Spring Boot executable web runtime;
 - deterministic REST error handling;
-- `X-Correlation-ID` validation and propagation.
+- `X-Correlation-ID` validation and propagation;
+- six REST route-shell controllers exposing 15 frozen MVP routes.
 
 The repository does not yet contain:
 
-- product REST controllers;
+- functional REST-to-Application wiring;
 - JWT/RBAC runtime;
 - React application runtime;
 - live connectors;
@@ -117,8 +118,8 @@ Evidence
 -> Realized Business Value
 ```
 
-Phase 2 builds foundation only. Phase 3 is the first phase allowed to implement
-the complete business value loop.
+Phase 2 is complete under D079. Phase 3 is active and may implement only the
+single currently authorized `DRC-AOA-001` business-value increment.
 
 ## Documentation Rules
 
@@ -137,7 +138,7 @@ the complete business value loop.
 - Application depends on ports, not concrete adapters.
 - PostgreSQL conforms to the domain.
 - REST code lives under `imperator.api.*`.
-- Public Phase 2 REST routes use `/api/v1`.
+- Public product REST routes use `/api/v1`.
 - AI explanation never becomes business truth.
 - Ledger history is append-only.
 - No speculative modules, dependencies, schema objects or product behavior.

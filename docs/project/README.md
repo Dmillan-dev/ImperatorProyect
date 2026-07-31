@@ -14,7 +14,7 @@ Read these files in order:
 1. [Project Status](PROJECT_STATUS.md)
 2. [Phase and Sprint Map](PHASE_AND_SPRINT_MAP.md)
 3. [Decision Log](../decisions/14_Decision_Log.md)
-4. [Phase 2 Sprint Plan](../../agents/phase2/README.md)
+4. [Phase 3 Sprint Plan](../../agents/phase3/README.md)
 5. The contracts required by the current sprint
 
 For a compact project description, use
@@ -40,7 +40,7 @@ When two documents conflict, use this precedence:
 2. `docs/project/PROJECT_STATUS.md` for the current gate only.
 3. `docs/decisions/14_Decision_Log.md` for accepted decisions.
 4. Frozen product and architecture contracts for semantics.
-5. `agents/phase2/README.md` for Phase 2 execution sequencing.
+5. the active phase plan for execution sequencing.
 6. Supporting references.
 7. Historical documents and prompts.
 
@@ -91,7 +91,7 @@ Then load only the contracts required by the task:
 | REST | API Specification, documents 34-37, D075 and D076 |
 | Security | Security threat model, identity/approval model, documents 35-37 |
 | Frontend | Screen contract, API Specification, identity/approval model |
-| Phase 3 behavior | MVP Blueprint, Vertical Slice, ROI Slice and explicit Phase 3 authorization |
+| Phase 3 behavior | D079, Phase 3 Sprint Plan, MVP Blueprint, Vertical Slice and ROI Slice |
 
 Do not load every project document by default. More context is not automatically
 better context.

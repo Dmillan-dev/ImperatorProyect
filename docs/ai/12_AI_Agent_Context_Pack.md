@@ -18,17 +18,17 @@ reasoning. Do not load it for every bounded implementation task.
 
 ## Current State
 
-Phase 1 is complete for a limited MVP. Phase 2 Platform Foundation is in
-progress: PostgreSQL persistence is certified, Spring Boot web runtime exists,
-and Sprint 2.8.1 has frozen the REST error and HTTP correlation contract. The
-next authorized gate is Sprint 2.8.2 - Evidence Import Route Shell.
+Phase 1 is complete for a limited MVP. Phase 2 Platform Foundation is complete
+under D079: PostgreSQL persistence is certified, Spring Boot web runtime exists,
+and the 15-route REST Adapter Foundation is closed. Phase 3 is active. The next
+authorized gate is Sprint 3.0 - Functional Runtime Composition.
 
 Agents may create runnable implementation only inside the explicitly
-authorized sprint/module. They must use `agents/phase2/README.md`, the frozen
+authorized sprint/module. They must use `agents/phase3/README.md`, the frozen
 architecture baseline, persistence contracts 39 and 40, and
-`docs/decisions/14_Decision_Log.md`. Phase 2 builds technical foundation only
-and must not implement business intelligence. The one-module-per-iteration
-rule remains mandatory.
+`docs/decisions/14_Decision_Log.md`. Phase 3 implements only the locked
+`DRC-AOA-001` sequence and the current sprint boundary. The one-bounded-
+deliverable-per-iteration rule remains mandatory.
 
 From Sprint 1 onward, do not create new documents unless they justify a technical decision required to implement code.
 
@@ -44,9 +44,11 @@ Golden file rule: if an agent wants to create, modify, move or delete a file out
 
 No sprint may last more than one week.
 
-## Authority Order
+## Semantic Reference Order
 
-When context conflicts, agents must use this order:
+Execution authorization follows `docs/project/README.md`: explicit founder
+authorization, Project Status, Decision Log, frozen contracts, then the active
+phase plan. Within the semantic reference set, use this order:
 
 1. `docs/decisions/14_Decision_Log.md` for accepted decisions and chronology.
 2. `docs/product/20_MVP_Decision_ROI_Platform_Blueprint.md` for MVP product boundary.
@@ -77,10 +79,11 @@ When context conflicts, agents must use this order:
 27. `docs/architecture/35_Coding_Principles.md` for coding boundaries, hexagonal layering and AI-agent implementation discipline.
 28. `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` for Phase 2 Platform Foundation scope.
 29. `docs/architecture/37_Implementation_Contract.md` for mandatory implementation rules and one-module agent execution.
-30. `agents/phase2/README.md` for Phase 2 sprint sequencing and prompt control.
-31. `docs/architecture/38_Sprint_0_Contract_Gate_Report.md` for the current GO gate and first-agent instruction.
+30. `agents/phase2/README.md` for historical Phase 2 sprint sequencing and prompt control.
+31. `docs/architecture/38_Sprint_0_Contract_Gate_Report.md` for the historical Phase 2 GO gate and first-agent instruction.
 32. `agents/phase1/README.md` and `agents/phase1/12_phase1_closure.md` for Phase 1 stage sequencing, closure and future implementation handoff.
 33. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
+34. `agents/phase3/README.md` for active Phase 3 sprint sequencing and current vertical-slice boundaries.
 
 Founder-mode or master-prompt guidance sets ambition and quality bar. It does not override current decisions when it uses older framing such as AI Cost Attribution as the primary wedge, dashboard-led language, generic Decision Intelligence without the operating-system and Decision ROI framing, or production-ready implementation during Phase 0.
 
@@ -136,8 +139,8 @@ Founder-mode or master-prompt guidance sets ambition and quality bar. It does no
 44. Use `docs/architecture/35_Coding_Principles.md` before creating backend, Python, frontend, database, API, auth, observability or CI code.
 45. Use `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` as the frozen authority for Phase 2 Platform Foundation. Phase 2 creates foundation only: no ROI calculation, no autonomous/AI/ROI-driven recommendation engine, no real AI calls, no live connectors and no business rules. Explicitly authorized application-layer contracts may create or link a deterministic Recommendation object without becoming the recommendation engine.
 46. Use `docs/architecture/37_Implementation_Contract.md` before any implementation task. No agent may generate more than one module per iteration.
-47. Use `agents/phase2/README.md` before splitting Phase 2 into sprints or giving module prompts to agents.
-48. Use `docs/architecture/38_Sprint_0_Contract_Gate_Report.md` as the historical Sprint 0 authorization record; use `agents/phase2/README.md` and the Decision Log for the current implementation gate.
+47. Use `agents/phase2/README.md` as the historical Phase 2 sprint record and `agents/phase3/README.md` for active Phase 3 sprint work.
+48. Use `docs/architecture/38_Sprint_0_Contract_Gate_Report.md` as the historical Sprint 0 authorization record; use `docs/project/PROJECT_STATUS.md`, D079 and `agents/phase3/README.md` for the current implementation gate.
 49. Use `docs/architecture/DATABASE_MODEL.md` as the conceptual database model.
 50. Use `docs/architecture/CONNECTOR_FRAMEWORK.md` as the connector expansion model.
 51. Use `docs/rfcs/0002-module-communication-architecture.md` for communication design rationale.
@@ -169,6 +172,7 @@ Do not introduce:
 - Phase 2 work that bypasses `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`
 - implementation work that bypasses `docs/architecture/37_Implementation_Contract.md`
 - Phase 2 sprint work that bypasses `agents/phase2/README.md`
+- Phase 3 work that bypasses D079 or `agents/phase3/README.md`
 - Sprint 1 work that bypasses `docs/architecture/38_Sprint_0_Contract_Gate_Report.md`
 - agent prompts that ask for more than one implementation module per iteration
 - new documents that do not justify an implementation-critical technical decision
@@ -202,8 +206,9 @@ For consistency between teams and agents, the following guidance applies before 
 - Coding principles live in `docs/architecture/35_Coding_Principles.md`. They are authoritative for future implementation layering, ports/adapters discipline and AI-agent coding rules.
 - Phase 2 Platform Foundation blueprint lives in `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md`. It is authoritative for creating technical foundation without business intelligence.
 - Implementation contract lives in `docs/architecture/37_Implementation_Contract.md`. It is mandatory for layer rules, dependency rules, packages, naming, API behavior, database behavior, events, logging, AI boundaries, security, testing, Git, agent execution and done definitions.
-- Phase 2 sprint plan lives in `agents/phase2/README.md`. It is mandatory for sprint sequencing and one-module-per-iteration prompts.
+- Phase 2 sprint plan lives in `agents/phase2/README.md` as a completed historical execution record.
+- Phase 3 sprint plan lives in `agents/phase3/README.md`. It is mandatory for active vertical-slice sequencing and one-bounded-deliverable prompts.
 - Sprint 0 contract gate lives in `docs/architecture/38_Sprint_0_Contract_Gate_Report.md` as the historical Phase 2 entry record. Current authorization lives in `docs/project/PROJECT_STATUS.md`.
-- Phase 2 sprint roles and ASI discipline live in `docs/architecture/37_Implementation_Contract.md` and `agents/phase2/README.md`.
+- Sprint roles and ASI discipline live in `docs/architecture/37_Implementation_Contract.md`; active sequencing lives in `agents/phase3/README.md`.
 
 Any further changes to this mandate or expansions must be recorded in `docs/decisions/14_Decision_Log.md`.

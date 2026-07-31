@@ -9,10 +9,12 @@ Current authorization lives in `docs/project/PROJECT_STATUS.md`.
 ## Current Gate
 
 ```text
-Sprint 2.9 - JWT/RBAC Foundation
+Phase 2 complete under D079.
+Current project gate: Sprint 3.0 - Functional Runtime Composition.
 ```
 
-No dedicated execution prompt has been created for this gate.
+This Phase 2 index is historical and does not authorize Sprint 3.0. Use
+`agents/phase3/README.md` and `docs/project/PROJECT_STATUS.md`.
 
 ## Completed Prompt Artifacts
 

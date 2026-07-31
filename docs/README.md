@@ -14,7 +14,7 @@ Read in this order:
 2. [Current Project Status](project/PROJECT_STATUS.md)
 3. [Phase and Sprint Map](project/PHASE_AND_SPRINT_MAP.md)
 4. [Decision Log](decisions/14_Decision_Log.md)
-5. [Phase 2 Sprint Plan](../agents/phase2/README.md)
+5. [Phase 3 Sprint Plan](../agents/phase3/README.md)
 6. Only the contracts required by the current task
 
 Do not load all documentation by default.
@@ -68,7 +68,7 @@ Primary contracts:
 
 ### Phase 2 - Platform Foundation
 
-Status: **Active**
+Status: **Complete under D079**
 
 Primary controls:
 
@@ -83,15 +83,16 @@ Primary controls:
 
 ### Phase 3 - MVP Business Value Loop
 
-Status: **Not authorized**
+Status: **Active**
 
-Primary future semantic inputs:
+Primary controls and semantic inputs:
 
+- D079 in `decisions/14_Decision_Log.md`;
+- `../agents/phase3/README.md`;
 - `product/20_MVP_Decision_ROI_Platform_Blueprint.md`;
 - `product/24_MVP_Vertical_Slice.md`;
 - `product/25_MVP_ROI_Slice.md`;
-- `architecture/34_MVP_Implementation_Blueprint.md`;
-- explicit future Phase 3 authorization.
+- `architecture/34_MVP_Implementation_Blueprint.md`.
 
 ## Canonical Product Contracts
 

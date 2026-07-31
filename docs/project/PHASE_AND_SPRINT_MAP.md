@@ -23,8 +23,8 @@ index, not a replacement for contracts or acceptance evidence.
 |---|---|---|---|
 | Phase 0 | Strategy, product definition and architecture readiness | COMPLETE | `docs/architecture/30_Phase_0_Closure_Readiness_Review.md` |
 | Phase 1 | Freeze the limited MVP contract and agentic delivery dossier | COMPLETE | `agents/phase1/12_phase1_closure.md` |
-| Phase 2 | Build executable platform foundation without product intelligence | ACTIVE | `agents/phase2/README.md` |
-| Phase 3 | Implement the first `DRC-AOA-001` business value loop | PENDING | Requires explicit authorization |
+| Phase 2 | Build executable platform foundation without product intelligence | COMPLETE | D079; `agents/phase2/README.md` |
+| Phase 3 | Implement the first `DRC-AOA-001` business value loop | ACTIVE | `agents/phase3/README.md` |
 
 ## Phase 0 - Strategy and Readiness
 
@@ -92,12 +92,17 @@ the Phase 3 business workflow.
 | Sprint 2.6 | Application Contracts | COMPLETE |
 | Sprint 2.7 | PostgreSQL Persistence Foundation | CERTIFIED |
 | Sprint 2.8 | REST Adapter Foundation | COMPLETE |
-| Sprint 2.9 | JWT/RBAC Foundation | NEXT |
-| Sprint 2.10 | React Frontend Foundation | PENDING |
-| Sprint 2.11 | Docker Local Foundation | PENDING |
-| Sprint 2.12 | Observability Foundation | PENDING |
-| Sprint 2.13 | CI and R&D Evidence Foundation | PENDING |
+| Sprint 2.9 | JWT/RBAC Foundation | DEFERRED by D079 |
+| Sprint 2.10 | React Frontend Foundation | DEFERRED by D079 |
+| Sprint 2.11 | Docker Local Foundation | DEFERRED by D079 |
+| Sprint 2.12 | Observability Foundation | DEFERRED by D079 |
+| Sprint 2.13 | CI and R&D Evidence Foundation | DEFERRED by D079 |
 | Python AI Provider Foundation | Technical provider boundary only | DEFERRED |
+
+Phase 2 is complete at the certified foundation boundary. Deferred Sprints 2.9
+through 2.13 were not executed and must never be reported as complete. D079
+resequences their capabilities after the first local Phase 3 business-value
+demonstration.
 
 ### Sprint 2.7 - PostgreSQL Persistence
 
@@ -162,7 +167,7 @@ REST closure authority:
 
 ## Phase 3 - First Business Value Loop
 
-Phase 3 is not authorized.
+Phase 3 is authorized by D079 and active.
 
 Its objective is the first complete `DRC-AOA-001` flow:
 
@@ -179,6 +184,34 @@ Evidence
 Phase 3 must not begin until the Phase 2 foundation gate is formally closed.
 Its semantic authority is the MVP blueprint and vertical-slice documentation,
 not the Phase 2 route-shell plan.
+
+### Controlled Sprint Sequence
+
+| Sprint | Objective | Status |
+|---|---|---|
+| 3.0 | Functional Runtime Composition | NEXT |
+| 3.1 | JSONL Evidence Import, Validation And Normalization | PENDING |
+| 3.2 | Deterministic Decision Creation | PENDING |
+| 3.3 | Deterministic Recommendation And ROI Policy | PENDING |
+| 3.3.1 | Explanation Provider Integration | PENDING |
+| 3.4 | Human Review, Ledger And Result Validation | PENDING |
+| 3.5 | End-to-End Local Business Value Demo | PENDING |
+| 3.6 | Basic Java CI | PENDING |
+| 3.7 | Minimum JWT And RBAC | PENDING |
+| 3.8 | Thin Decision Review Workspace | PENDING |
+| 3.9 | Pilot Readiness | PENDING |
+| 3.10 | Docker And Operational Hardening | PENDING |
+| 3.11 | Observability Expansion And MVP Closure | PENDING |
+
+Sprint 3.5 proves a local product flow with approved synthetic, manual or
+sanitized import evidence. It is not full MVP acceptance and does not authorize
+real customer data, external exposure or a pilot. Security, safe configuration
+and the later acceptance gates remain mandatory before Sprint 3.9 can pass.
+
+Active Phase 3 execution authority:
+
+- D079 in `docs/decisions/14_Decision_Log.md`;
+- `agents/phase3/README.md`.
 
 ## Gate Transition Rule
 
