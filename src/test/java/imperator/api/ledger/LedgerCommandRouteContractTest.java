@@ -26,16 +26,23 @@ import imperator.bootstrap.ImperatorApplication;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.json.JsonMapper;
 
-class LedgerReadRouteContractTest {
+class LedgerCommandRouteContractTest {
     private static final String DECISION_ID =
-            "733633bc-1e46-4f9f-9439-a42d90d6bbd1";
+            "38234039-dc9b-435b-9088-a9da2ca0be05";
+    private static final String RECOMMENDATION_ID =
+            "246a63d4-b7f5-4c13-bd38-da6b1f85a7a4";
     private static final String LEDGER_ENTRY_ID =
-            "fd2f53d7-0ac4-4631-8fd0-567354f43ee6";
-    private static final String LEDGER_ROUTE = "/api/v1/ledger";
+            "02868925-ab23-4281-a7a5-f11cd726beeb";
     private static final String DECISION_LEDGER_ROUTE =
             "/api/v1/decisions/" + DECISION_ID + "/ledger";
+    private static final Set<String> COMMAND_ROUTES = Set.of(
+            DECISION_LEDGER_ROUTE + "/approve",
+            DECISION_LEDGER_ROUTE + "/reject",
+            DECISION_LEDGER_ROUTE + "/defer",
+            DECISION_LEDGER_ROUTE + "/mark-implemented",
+            DECISION_LEDGER_ROUTE + "/validate-result");
     private static final Set<String> READ_ROUTES =
-            Set.of(LEDGER_ROUTE, DECISION_LEDGER_ROUTE);
+            Set.of("/api/v1/ledger", DECISION_LEDGER_ROUTE);
     private static final JsonMapper JSON = JsonMapper.shared();
 
     private static ConfigurableApplicationContext context;
@@ -69,7 +76,18 @@ class LedgerReadRouteContractTest {
     }
 
     @Test
-    void returnsNotImplementedForBothLedgerReadRoutes()
+    void returnsNotImplementedForEveryLedgerCommand()
+            throws IOException, InterruptedException {
+        for (String route : COMMAND_ROUTES) {
+            HttpResponse<String> response =
+                    send("POST", route, MediaType.APPLICATION_JSON_VALUE);
+
+            assertErrorEnvelope(response, 501, "NOT_IMPLEMENTED", "Not implemented");
+        }
+    }
+
+    @Test
+    void preservesBothLedgerReadRoutes()
             throws IOException, InterruptedException {
         for (String route : READ_ROUTES) {
             HttpResponse<String> response =
@@ -84,7 +102,7 @@ class LedgerReadRouteContractTest {
             throws IOException, InterruptedException {
         HttpResponse<String> response = send(
                 "GET",
-                LEDGER_ROUTE + "/" + LEDGER_ENTRY_ID,
+                "/api/v1/ledger/" + LEDGER_ENTRY_ID,
                 MediaType.APPLICATION_JSON_VALUE);
 
         assertErrorEnvelope(
@@ -95,13 +113,30 @@ class LedgerReadRouteContractTest {
     }
 
     @Test
-    void keepsTheUnversionedReadRoutesUnavailable()
+    void keepsRecommendationReviewAliasesUnavailable()
             throws IOException, InterruptedException {
-        for (String route : Set.of(
-                "/ledger",
-                "/decisions/" + DECISION_ID + "/ledger")) {
-            HttpResponse<String> response =
-                    send("GET", route, MediaType.APPLICATION_JSON_VALUE);
+        for (String action : Set.of("approve", "reject", "defer")) {
+            HttpResponse<String> response = send(
+                    "POST",
+                    "/api/v1/recommendations/" + RECOMMENDATION_ID + "/" + action,
+                    MediaType.APPLICATION_JSON_VALUE);
+
+            assertErrorEnvelope(
+                    response,
+                    404,
+                    "RESOURCE_NOT_FOUND",
+                    "Resource not found");
+        }
+    }
+
+    @Test
+    void keepsTheUnversionedCommandRoutesUnavailable()
+            throws IOException, InterruptedException {
+        for (String route : COMMAND_ROUTES) {
+            HttpResponse<String> response = send(
+                    "POST",
+                    route.substring("/api/v1".length()),
+                    MediaType.APPLICATION_JSON_VALUE);
 
             assertErrorEnvelope(
                     response,
@@ -114,8 +149,8 @@ class LedgerReadRouteContractTest {
     @Test
     void rejectsUnsupportedMethodsUsingTheExistingErrorEnvelope()
             throws IOException, InterruptedException {
-        for (String route : READ_ROUTES) {
-            for (String method : Set.of("POST", "PUT", "PATCH", "DELETE")) {
+        for (String route : COMMAND_ROUTES) {
+            for (String method : Set.of("GET", "PUT", "PATCH", "DELETE")) {
                 HttpResponse<String> response =
                         send(method, route, MediaType.APPLICATION_JSON_VALUE);
 
@@ -133,8 +168,8 @@ class LedgerReadRouteContractTest {
             throws IOException, InterruptedException {
         String suppliedCorrelationId = UUID.randomUUID().toString().toUpperCase();
         HttpResponse<String> response = send(
-                "GET",
-                DECISION_LEDGER_ROUTE,
+                "POST",
+                DECISION_LEDGER_ROUTE + "/approve",
                 MediaType.APPLICATION_JSON_VALUE,
                 suppliedCorrelationId);
 
@@ -148,13 +183,13 @@ class LedgerReadRouteContractTest {
     @Test
     void returnsTheJsonErrorEnvelopeForEveryRequiredAcceptHeader()
             throws IOException, InterruptedException {
-        for (String route : READ_ROUTES) {
+        for (String route : COMMAND_ROUTES) {
             for (String accept : Set.of(
                     MediaType.APPLICATION_JSON_VALUE,
                     MediaType.TEXT_HTML_VALUE,
                     MediaType.APPLICATION_XML_VALUE,
                     MediaType.ALL_VALUE)) {
-                HttpResponse<String> response = send("GET", route, accept);
+                HttpResponse<String> response = send("POST", route, accept);
 
                 assertErrorEnvelope(response, 501, "NOT_IMPLEMENTED", "Not implemented");
             }
