@@ -137,7 +137,8 @@ Current execution state:
 - Sprint 2.8.3 - Decision Collection and Detail Route Shells: complete.
 - Sprint 2.8.4 - Decision Context Route Shells: complete.
 - Sprint 2.8.5 - Recommendation Detail Route Shell: complete.
-- Next authorized gate: Sprint 2.8.6 - Ledger Route Shell.
+- Sprint 2.8.6 - Ledger Read Route Shells: complete.
+- Next authorized gate: Sprint 2.8.7 - Ledger Command Route Shells.
 
 Important implementation note:
 
@@ -594,7 +595,8 @@ Allowed modules, one per iteration:
 - `backend-java/api/decisions` - collection/detail completed in Sprint 2.8.3;
   context routes completed in Sprint 2.8.4
 - `backend-java/api/recommendations` - detail route completed in Sprint 2.8.5
-- `backend-java/api/ledger` - next authorized module
+- `backend-java/api/ledger` - read routes completed in Sprint 2.8.6;
+  command routes are the next authorized boundary
 - `backend-java/api/businessvalue`
 - `backend-java/api/pagination`
 
@@ -614,12 +616,13 @@ Forbidden:
 Example prompt:
 
 ```text
-Generate only the backend-java/api/ledger module with the Ledger routes
-explicitly authorized for Sprint 2.8.6.
+Extend only backend-java/api/ledger with the five Ledger command route shells
+authorized for Sprint 2.8.7: approve, reject, defer, mark-implemented and
+validate-result under /api/v1/decisions/{id}/ledger.
 Follow docs/product/API_SPECIFICATION.md and docs/architecture/34_MVP_Implementation_Blueprint.md through docs/architecture/38_Sprint_0_Contract_Gate_Report.md.
 Every mapped endpoint must return a controlled Not Implemented response.
-Do not expose Ledger routes outside the explicitly authorized subset and do
-not implement Ledger behavior.
+Preserve the accepted Ledger read routes. Do not expose the broader Ledger
+entry-detail route and do not implement Ledger behavior.
 ```
 
 ## Sprint 2.9 - JWT/RBAC Foundation

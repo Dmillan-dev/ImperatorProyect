@@ -12,8 +12,9 @@ Last verified: **2026-07-31**
 | Sprint 2.8.3 acceptance | PASS |
 | Sprint 2.8.4 acceptance | PASS |
 | Sprint 2.8.5 acceptance | PASS |
-| Last completed sprint | Sprint 2.8.5 - Recommendation Detail Route Shell |
-| Next authorized sprint | Sprint 2.8.6 - Ledger Route Shell |
+| Sprint 2.8.6 acceptance | PASS |
+| Last completed sprint | Sprint 2.8.6 - Ledger Read Route Shells |
+| Next authorized sprint | Sprint 2.8.7 - Ledger Command Route Shells |
 | Phase 3 authorization | Not authorized |
 
 ## Verified Foundation
@@ -30,7 +31,7 @@ Last verified: **2026-07-31**
 | Web runtime | PASS | Spring Boot executable composition root |
 | REST error contract | PASS | Four-field envelope for controlled and framework errors |
 | HTTP correlation | PASS | `X-Correlation-ID` validation, normalization and propagation |
-| Product REST routes | ACTIVE | Evidence, decision and recommendation detail shells return controlled `501` |
+| Product REST routes | ACTIVE | Evidence, decision, recommendation and Ledger read shells return controlled `501` |
 | Security runtime | NOT STARTED | Planned for Sprint 2.9 |
 | Frontend runtime | NOT STARTED | Planned for Sprint 2.10 |
 | Local container runtime | NOT STARTED | Planned for Sprint 2.11 |
@@ -49,9 +50,9 @@ Latest accepted result:
 
 - Java 21 gate: PASS;
 - Maven Enforcer: PASS;
-- production compilation: 96 files;
-- test compilation: 7 files;
-- tests: 33 passed, 0 failed;
+- production compilation: 97 files;
+- test compilation: 8 files;
+- tests: 40 passed, 0 failed;
 - executable JAR: created.
 
 Real HTTP contract verification:
@@ -64,6 +65,10 @@ Real HTTP contract verification:
 - `GET /api/v1/decisions/{id}/roi`: controlled `501`;
 - `GET /api/v1/recommendations/{id}`: controlled `501`;
 - post-MVP `GET /api/v1/recommendations`: controlled `404`;
+- `GET /api/v1/ledger`: controlled `501`;
+- `GET /api/v1/decisions/{id}/ledger`: controlled `501`;
+- broader `GET /api/v1/ledger/{entryId}`: controlled `404`;
+- deferred Ledger command routes: controlled `404`;
 - unversioned product routes: controlled `404`;
 - unsupported methods: controlled `405`;
 - four-field error envelope: PASS;
@@ -71,7 +76,7 @@ Real HTTP contract verification:
 
 Documentation integrity verification:
 
-- Markdown files checked: 144;
+- Markdown files checked: 146;
 - broken local links: 0;
 - current gate consistency: PASS;
 - exactly one `NEXT` sprint: PASS;
@@ -92,38 +97,43 @@ The PostgreSQL integration profile was certified previously against PostgreSQL
   validate the Java 21 Maven backend and contains permissive generation steps;
   replacement or hardening belongs to Sprint 2.13.
 
-These risks do not require widening Sprint 2.8.6. They must remain visible and
+These risks do not require widening Sprint 2.8.7. They must remain visible and
 must not be misreported as current backend CI coverage.
 
 ## Next Sprint Boundary
 
-Sprint 2.8.6 is limited to the Ledger HTTP route-shell boundary under
-`imperator.api.ledger`.
+Sprint 2.8.7 may add only these Ledger command route shells:
+
+```text
+POST /api/v1/decisions/{id}/ledger/approve
+POST /api/v1/decisions/{id}/ledger/reject
+POST /api/v1/decisions/{id}/ledger/defer
+POST /api/v1/decisions/{id}/ledger/mark-implemented
+POST /api/v1/decisions/{id}/ledger/validate-result
+```
 
 Required behavior:
 
-- expose only the Ledger routes explicitly confirmed for Sprint 2.8.6;
-- every mapped route returns controlled HTTP `501`;
-- preserve the D075 error envelope and `X-Correlation-ID`;
-- verify every mapped and intentionally unavailable route through real HTTP
-  contract tests;
-- keep broader or post-MVP Ledger routes unavailable.
+- every command route returns controlled HTTP `501`;
+- reuse the existing D075 error envelope and `X-Correlation-ID`;
+- preserve the two accepted Sprint 2.8.6 Ledger read routes;
+- keep `GET /api/v1/ledger/{entryId}` unavailable with HTTP `404`;
+- verify all positive and negative boundaries through real HTTP contract tests.
 
 Forbidden behavior:
 
 - request DTO design;
-- path-parameter validation;
+- request-body parsing or validation;
+- path-variable binding, parsing or validation;
+- idempotency behavior;
+- security or authorization behavior;
 - application-port invocation;
 - repository or PostgreSQL access;
 - transaction execution;
-- Ledger retrieval, mutation or append behavior;
-- review, approval, rejection, deferral, implementation or result-validation
-  behavior;
+- Ledger mutation, append or snapshot behavior;
+- review state transitions;
+- approval, rejection, deferral, implementation or result-validation behavior;
 - domain, application, port or schema changes.
-
-This synchronization does not choose between Ledger read routes and Ledger
-command routes. Their exact Sprint 2.8.6 subset requires explicit founder
-confirmation before implementation.
 
 ## Current Architectural Invariants
 
