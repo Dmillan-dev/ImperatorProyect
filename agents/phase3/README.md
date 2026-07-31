@@ -143,10 +143,39 @@ Certification result:
 
 ## Sprint 3.1 - JSONL Evidence Import, Validation And Normalization
 
-Sprint 3.1 is the sole next gate. No Sprint 3.1 implementation was created as
-part of the Sprint 3.0 certification. Before changing implementation, the
-agent must review the task-specific import contracts and freeze the bounded
-file, validation, normalization and failure-semantics scope for this sprint.
+Sprint 3.1 is the sole next gate. D080 freezes its runtime contract.
+
+Required flow:
+
+```text
+Raw NDJSON Line
+-> Transport DTO
+-> Transport Validation And Normalization
+-> ImportEvidenceCommand
+-> ImportEvidenceInputPort
+-> ImportEvidenceUseCase
+-> Evidence
+-> EvidenceRepository
+-> PostgreSQL
+```
+
+Required behavior:
+
+- consume only `application/x-ndjson` on the frozen evidence-import route;
+- process and transact each line independently;
+- persist valid normalized Evidence immediately;
+- return accepted and rejected counts plus safe per-line results;
+- treat stable Evidence UUIDs as equivalent idempotency identifiers;
+- return duplicates and other bounded line failures as per-line rejections;
+- reserve the existing HTTP error envelope for request-wide failures;
+- certify the complete route-to-PostgreSQL path against PostgreSQL 18.2.
+
+Sprint 3.1 may modify only the evidence inbound adapter, the minimum shared
+request-error mapping required by that adapter, the existing evidence import
+use case for duplicate detection, relevant tests and implementation-facing
+documentation. It must not create or modify a Domain entity, Port contract,
+PostgreSQL repository contract, migration, table, Decision, Recommendation,
+ROI, Review, Ledger, security, connector or provider behavior.
 
 ## Demonstration And Pilot Boundary
 

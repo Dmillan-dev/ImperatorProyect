@@ -38,10 +38,11 @@ Current Phase 3 foundation:
 - Spring Boot starts through `imperator.bootstrap.ImperatorApplication`.
 - Sprint 3.0 composes the existing repositories, transaction runner and five
   application input ports when PostgreSQL runtime configuration is enabled.
+- Sprint 3.1 implements partial per-line NDJSON evidence import through the
+  existing evidence input port and certified PostgreSQL adapter.
 - REST errors use the frozen four-field envelope and `X-Correlation-ID`.
-- Six route-shell controllers expose 15 frozen MVP routes as controlled `501`
-  responses.
-- No route invokes an application input port yet.
+- The Evidence import route is functional; the other 14 frozen MVP routes
+  remain controlled `501` shells.
 - No JPA.
 
 ## Functional Runtime Configuration

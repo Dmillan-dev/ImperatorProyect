@@ -16,8 +16,10 @@ Import normalized evidence as canonical proof for future decision cases.
 - `ImportEvidenceCommand`.
 - `ImportEvidenceResult`.
 
-Sprint 2.5.1 status:
+Current behavior:
 - One use case only.
+- Executes one evidence import per transaction.
+- Rejects an existing stable Evidence UUID with `DuplicateEvidenceException`.
 - Saves evidence through `EvidenceRepository`.
 - Returns import result.
 - Does not create decisions, recommendations or ledger entries.

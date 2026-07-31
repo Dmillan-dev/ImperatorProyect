@@ -1,6 +1,7 @@
 package imperator.application.importevidence;
 
 import imperator.application.exceptions.ValidationException;
+import imperator.application.exceptions.DuplicateEvidenceException;
 import imperator.domain.evidence.Evidence;
 import imperator.ports.in.ImportEvidenceInputPort;
 import imperator.ports.out.EvidenceRepository;
@@ -50,6 +51,9 @@ public final class ImportEvidenceUseCase implements ImportEvidenceInputPort {
         }
 
         return transactionRunner.execute(() -> {
+            if (evidenceRepository.existsById(evidence.id())) {
+                throw new DuplicateEvidenceException(evidence.id());
+            }
             evidenceRepository.save(evidence);
             return new ImportEvidenceResult(
                     evidence.id(),

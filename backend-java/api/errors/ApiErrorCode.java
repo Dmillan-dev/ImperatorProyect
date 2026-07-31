@@ -6,7 +6,11 @@ public enum ApiErrorCode {
     BAD_REQUEST(HttpStatus.BAD_REQUEST, "Bad request"),
     RESOURCE_NOT_FOUND(HttpStatus.NOT_FOUND, "Resource not found"),
     METHOD_NOT_ALLOWED(HttpStatus.METHOD_NOT_ALLOWED, "Method not allowed"),
+    NOT_ACCEPTABLE(HttpStatus.NOT_ACCEPTABLE, "Not acceptable"),
+    PAYLOAD_TOO_LARGE(HttpStatus.CONTENT_TOO_LARGE, "Payload too large"),
+    UNSUPPORTED_MEDIA_TYPE(HttpStatus.UNSUPPORTED_MEDIA_TYPE, "Unsupported media type"),
     INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "Internal server error"),
+    SERVICE_UNAVAILABLE(HttpStatus.SERVICE_UNAVAILABLE, "Service unavailable"),
     NOT_IMPLEMENTED(HttpStatus.NOT_IMPLEMENTED, "Not implemented");
 
     private final HttpStatus status;
@@ -30,7 +34,11 @@ public enum ApiErrorCode {
             case 400 -> BAD_REQUEST;
             case 404 -> RESOURCE_NOT_FOUND;
             case 405 -> METHOD_NOT_ALLOWED;
+            case 406 -> NOT_ACCEPTABLE;
+            case 413 -> PAYLOAD_TOO_LARGE;
+            case 415 -> UNSUPPORTED_MEDIA_TYPE;
             case 501 -> NOT_IMPLEMENTED;
+            case 503 -> SERVICE_UNAVAILABLE;
             default -> INTERNAL_SERVER_ERROR;
         };
     }

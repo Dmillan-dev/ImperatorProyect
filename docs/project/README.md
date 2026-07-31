@@ -79,7 +79,7 @@ Always load:
 2. `PROJECT_STATUS.md`;
 3. `PHASE_AND_SPRINT_MAP.md`;
 4. the relevant Decision Log entries;
-5. the current sprint section from `agents/phase2/README.md`.
+5. the current sprint section from the active phase plan.
 
 Then load only the contracts required by the task:
 
