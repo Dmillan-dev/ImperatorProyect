@@ -2,7 +2,7 @@
 
 Status: **Phase 3 First Business Value Loop active**
 
-Current gate: **Sprint 3.4 - Human Review, Ledger And Result Validation**
+Current gate: **Sprint 3.5 - End-to-End Local Business Value Demo**
 
 IMPERATOR is an Operating System for Operational Intelligence and an Enterprise
 Decision Intelligence Platform. The MVP proves one evidence-backed decision,
@@ -48,12 +48,15 @@ The Java backend currently contains:
   immutable conflict and concurrency protection;
 - completed provider-neutral explanation integration after deterministic
   Recommendation persistence, with bounded context and failure isolation;
+- completed Human Review, append-only Ledger and Result Validation
+  implementation with atomic Decision outcomes, idempotent replay and strict
+  linear sequencing;
 - controlled route shells for the remaining functional REST surface.
 
 The repository does not yet contain:
 
 - functional Decision, Recommendation and ROI route behavior;
-- Review, Ledger and Result Validation route behavior;
+- functional Review, Ledger and Result Validation REST route behavior;
 - JWT/RBAC runtime;
 - React application runtime;
 - live connectors;
@@ -129,6 +132,13 @@ Evidence
 
 Phase 2 is complete under D079. Phase 3 is active and may implement only the
 single currently authorized `DRC-AOA-001` business-value increment.
+
+Sprint 3.4 implementation is complete. D084 explicitly defers its PostgreSQL
+18.2 runtime certification because the certification environment was
+unavailable: the integration-profile attempt stopped before PostgreSQL at Java
+toolchain selection. No known implementation defect was identified by the
+checks that executed. Certification remains mandatory before Pilot Readiness,
+MVP closure or the first production release.
 
 ## Documentation Rules
 

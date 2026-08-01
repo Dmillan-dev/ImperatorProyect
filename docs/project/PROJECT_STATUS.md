@@ -24,9 +24,13 @@ Last verified: **2026-08-01**
 | Sprint 3.3 acceptance | CERTIFIED |
 | Sprint 3.3 closure | COMPLETE |
 | Sprint 3.3.1 closure | COMPLETE |
-| Last completed sprint | Sprint 3.3.1 - Explanation Provider Integration |
+| Sprint 3.4 implementation | PASS |
+| Sprint 3.4 PostgreSQL certification | DEFERRED under D084 - certification environment unavailable |
+| Sprint 3.4 closure | COMPLETE under the explicit D084 process exception |
+| Sprint 3.4.1 documentation synchronization | COMPLETE |
+| Last completed sprint | Sprint 3.4.1 - Documentation Synchronization |
 | Phase 2 closure | COMPLETE under D079; Sprints 2.9-2.13 deferred |
-| Next authorized sprint | Sprint 3.4 - Human Review, Ledger And Result Validation |
+| Next authorized sprint | Sprint 3.5 - End-to-End Local Business Value Demo |
 | Phase 3 authorization | Authorized by D079 |
 
 ## Verified Foundation
@@ -49,7 +53,8 @@ Last verified: **2026-08-01**
 | Deterministic Decision creation | CERTIFIED | Eligible Evidence creates one atomic, retry-safe and concurrency-safe Decision |
 | Deterministic Recommendation and ROI | CERTIFIED | DRC-AOA-001-v1 derives one atomic Recommendation with annualized savings, confidence and risk |
 | Explanation Provider integration | COMPLETE | Optional provider-neutral explanation executes after deterministic persistence and has no decision, ROI or persistence authority |
-| Human Review, Ledger and Result Validation | NEXT | Sole authorized Phase 3 implementation gate |
+| Human Review, Ledger and Result Validation | COMPLETE; RUNTIME CERTIFICATION DEFERRED | Atomic review and Ledger behavior, replay, linearity, result validation and rollback tests implemented; D084 requires PostgreSQL 18.2 certification before Pilot Readiness, MVP closure or production |
+| End-to-End Local Business Value Demo | NEXT | Sole authorized Phase 3 implementation gate |
 | Security runtime | DEFERRED | Resequenced after the local business-value demo by D079 |
 | Frontend runtime | DEFERRED | Thin Decision Review Workspace follows minimum security |
 | Local container runtime | DEFERRED | Operational hardening follows pilot readiness |
@@ -58,25 +63,40 @@ Last verified: **2026-08-01**
 
 ## Latest Verification
 
-The accepted Sprint 3.3.1 implementation was verified with:
+The Sprint 3.4 implementation was verified locally with Java 21 using:
 
 ```text
 mvnw.cmd -o clean verify
 ```
 
-Latest accepted result:
+Latest implementation result:
 
 - Java 21 gate: PASS;
 - Maven Enforcer: PASS;
-- production compilation: 107 files;
-- test compilation: 17 files;
-- default unit and HTTP contract tests: 73 passed, 0 failed;
-- successful provider explanation: PASS;
-- provider invocation after the deterministic transaction: PASS;
-- unavailable-provider isolation: PASS;
-- provider-exception isolation: PASS;
-- deterministic Recommendation fields unchanged: PASS;
+- production compilation: 109 files;
+- test compilation: 20 files;
+- default unit and HTTP contract tests: 88 passed, 0 failed;
+- atomic approve, reject and defer orchestration: PASS;
+- authoritative Ledger replay and immutable conflict behavior: PASS;
+- strict Ledger root, predecessor, no-fork and occurrence-time validation: PASS;
+- deterministic realized-recovery and variance policy: PASS;
+- rollback and PostgreSQL concurrency tests: implemented and compiled;
+- existing REST route-shell contracts: PASS;
 - executable JAR: created.
+
+The authorized Sprint 3.4 PostgreSQL command was attempted exactly as:
+
+```text
+mvnw.cmd -Ppostgresql-integration clean verify
+```
+
+That attempt stopped at Maven toolchain selection because the invoked process
+could find only Java 17. PostgreSQL, Flyway and Failsafe integration tests did
+not execute. Under D084, Sprint 3.4 runtime certification is explicitly
+**DEFERRED** because the certification environment was unavailable. No known
+implementation defect was identified by the checks that executed. This process
+exception permits the next bounded implementation gate but does not convert the
+missing runtime evidence into a certification pass.
 
 The latest real-database certification remains Sprint 3.3 and was verified
 with:
@@ -154,7 +174,7 @@ Real HTTP contract verification:
 
 Documentation integrity verification:
 
-- Markdown files checked: 152;
+- Markdown files checked: 156;
 - broken local links: 0;
 - current gate consistency: PASS;
 - exactly one `NEXT` sprint: PASS;
@@ -168,6 +188,12 @@ real-database certification.
 
 ## Known Non-Blocking Risks
 
+- Sprint 3.4 PostgreSQL 18.2 runtime certification is deferred under D084. The
+  implementation passed the Java 21 offline build, but the explicit
+  `postgresql-integration` attempt stopped before PostgreSQL because that
+  wrapper process could find only Java 17. The deferral does not equal runtime
+  certification and must be resolved before Pilot Readiness, MVP closure or
+  the first production release.
 - Default `clean verify` executes the Spring Boot and HTTP contract suite only.
   Real-database certification remains intentionally explicit through the
   `postgresql-integration` profile and external `IMPERATOR_IT_*` configuration.
@@ -175,23 +201,23 @@ real-database certification.
   validate the Java 21 Maven backend and contains permissive generation steps;
   replacement or hardening belongs to Sprint 3.6.
 
-These risks do not require widening Sprint 3.4. They must remain visible and
-must not be misreported as current backend CI coverage.
+These risks do not widen Sprint 3.5. They must remain visible and must not be
+misreported as current backend CI or a Sprint 3.4 runtime-certification pass.
 
 ## Next Sprint Boundary
 
-Sprint 3.4 - Human Review, Ledger And Result Validation is the sole next
-implementation gate. Its implementation boundary must be reviewed against the
-existing Application, Ledger, persistence and frozen MVP contracts before any
-code change. Sprint 3.4 must preserve deterministic Recommendation and
-Explanation boundaries and must not widen security, frontend, live-connector
-or observability scope.
+Sprint 3.5 - End-to-End Local Business Value Demo is the sole next
+implementation gate. It may compose the already implemented Evidence,
+Decision, Recommendation, Explanation, Review, Ledger and Result Validation
+capabilities into the bounded local `DRC-AOA-001` demonstration. It must not
+silently treat the deferred Sprint 3.4 PostgreSQL runtime gate as passed or
+widen security, frontend, live-connector, pilot or observability scope.
 
 Current execution authorities:
 
-- D079 through D082 in `docs/decisions/14_Decision_Log.md`;
+- D079 through D084 in `docs/decisions/14_Decision_Log.md`;
 - `agents/phase3/README.md`;
-- `docs/architecture/43_Deterministic_Recommendation_ROI_Contract.md`.
+- `docs/architecture/44_Review_Ledger_Result_Validation_Contract.md`.
 
 ## Current Architectural Invariants
 

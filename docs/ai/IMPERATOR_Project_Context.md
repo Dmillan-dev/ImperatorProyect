@@ -36,8 +36,13 @@ spend. The first case is `DRC-AOA-001`, AI Onboarding Assistant Recovery.
   atomic retry, immutable conflict and concurrency protection.
 - Provider-neutral Explanation integration: complete with bounded context,
   post-transaction invocation and failure isolation.
+- Human Review, Ledger and Result Validation implementation: complete with
+  atomic review outcomes, immutable replay and strict linear sequencing.
+- Sprint 3.4 PostgreSQL 18.2 runtime certification: deferred under D084 because
+  the certification environment was unavailable; it must pass before Pilot
+  Readiness, MVP closure or the first production release.
 - Remaining functional REST route shells: implemented and controlled.
-- Current gate: Sprint 3.4 - Human Review, Ledger And Result Validation.
+- Current gate: Sprint 3.5 - End-to-End Local Business Value Demo.
 - Sprints 2.9 through 2.13: deferred, not completed.
 
 The live state is maintained in:
@@ -92,7 +97,8 @@ the single authorized business value loop under D079.
   Application and PostgreSQL;
 - optional provider-neutral Recommendation explanation wired after
   deterministic persistence; no live vendor adapter or model call;
-- Review, Ledger and Result Validation business behavior not implemented yet;
+- Review, Ledger and Result Validation Application behavior implemented; its
+  REST command routes remain controlled shells;
 - no security runtime yet.
 
 The implemented Java source root is `backend-java`, with packages under

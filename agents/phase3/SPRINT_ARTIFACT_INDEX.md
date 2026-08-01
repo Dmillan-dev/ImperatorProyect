@@ -14,12 +14,14 @@ Sprint 3.1: CERTIFIED / COMPLETE
 Sprint 3.2: CERTIFIED / COMPLETE
 Sprint 3.3: CERTIFIED / COMPLETE
 Sprint 3.3.1: COMPLETE
-Sprint 3.4: NEXT
+Sprint 3.4: COMPLETE / RUNTIME CERTIFICATION DEFERRED
+Sprint 3.4.1: COMPLETE
+Sprint 3.5: NEXT
 ```
 
 Exactly one Phase 3 sprint is authorized as `NEXT`.
 
-## Certified Sprint Artifacts
+## Accepted Sprint Artifacts
 
 | Sprint | Integrated commit | Primary evidence | Status |
 |---|---|---|---|
@@ -28,6 +30,7 @@ Exactly one Phase 3 sprint is authorized as `NEXT`.
 | 3.2 | `8bbbc19` | D081 contract, atomic Decision creation, immutable retry policy and PostgreSQL concurrency certification | CERTIFIED / COMPLETE |
 | 3.3 | `087f94d` | D082 contract, deterministic Recommendation/ROI policy, atomic Recommendation creation and PostgreSQL concurrency certification | CERTIFIED / COMPLETE |
 | 3.3.1 | `838f156` | Post-transaction provider invocation, bounded explanation context and provider-failure isolation | COMPLETE |
+| 3.4 | Sprint 3.4 closure commit; hash intentionally not self-recorded | D083 contract, D084 process exception, atomic review and Ledger orchestration, strict Ledger sequence, deterministic result validation and certification tests | COMPLETE / RUNTIME CERTIFICATION DEFERRED |
 
 ### Sprint 3.0
 
@@ -145,17 +148,55 @@ Completion evidence:
 - no provider SDK, live model call, schema, migration, REST or Domain change;
 - status: **COMPLETE**.
 
+### Sprint 3.4
+
+Primary artifacts:
+
+- D083 in `docs/decisions/14_Decision_Log.md`;
+- D084 in `docs/decisions/14_Decision_Log.md`;
+- `docs/architecture/44_Review_Ledger_Result_Validation_Contract.md`;
+- `backend-java/application/reviewdecision/ReviewDecisionUseCase.java`;
+- `backend-java/application/appendledgerentry/AppendLedgerEntryUseCase.java`;
+- `backend-java/application/ledger/LedgerChain.java`;
+- `backend-java/domain/decision/DrcAoa001ResultValidationPolicy.java`;
+- `backend-java/ports/out/DecisionRepository.java`;
+- `backend-java/ports/out/LedgerRepository.java`;
+- `backend-java/adapters/out/postgresql/PostgresDecisionRepository.java`;
+- `backend-java/adapters/out/postgresql/PostgresLedgerRepository.java`;
+- `src/test/java/imperator/application/reviewdecision/ReviewLedgerGovernanceTest.java`;
+- `src/test/java/imperator/application/ledger/LedgerChainTest.java`;
+- `src/test/java/imperator/domain/decision/DrcAoa001ResultValidationPolicyTest.java`;
+- `src/test/java/imperator/adapters/out/postgresql/PostgresRepositoryIT.java`.
+
+Completion evidence:
+
+- Java 21 and Maven Enforcer: PASS in the verified offline build;
+- unit and HTTP contract tests: 88 passed;
+- atomic review and matching Ledger construction: PASS;
+- identical replay, immutable conflict and duplicate-business-action
+  protection: PASS;
+- strict linear chain and no-fork validation: PASS;
+- deterministic realized recovery and variance: PASS;
+- PostgreSQL rollback and concurrency certification tests: implemented and
+  compiled;
+- REST, Flyway V1, schema, dependencies and frozen contracts unchanged;
+- PostgreSQL 18.2 runtime certification: **DEFERRED** under D084 because the explicit
+  profile attempt stopped at Java toolchain selection before Flyway or
+  Failsafe;
+- no known implementation defect identified by the checks that executed;
+- process exception: certification environment unavailable; certification is
+  required before Pilot Readiness, MVP closure or the first production
+  release;
+- status: **COMPLETE / RUNTIME CERTIFICATION DEFERRED**.
+
 ## Next Artifact Boundary
 
-Sprint 3.4 has no accepted implementation artifact yet. Its prompt or plan may
-guide work only after it is checked against the current gate, frozen contracts
-and existing implementation.
-
-Sprint 3.4 may implement only the authorized Human Review, append-only Ledger
-and Result Validation boundary. Its exact file and behavior scope requires a
-pre-implementation review. It must preserve deterministic Recommendation and
-Explanation truth and must not introduce later security, frontend, connector or
-operational-hardening behavior.
+Sprint 3.5 may implement only the bounded local `DRC-AOA-001` business-value
+demonstration over the existing Evidence, Decision, Recommendation,
+Explanation, Review, Ledger and Result Validation capabilities. It must not
+silently treat the deferred Sprint 3.4 PostgreSQL runtime gate as passed or
+introduce security, frontend, live connectors, pilot behavior or operational
+hardening.
 
 ## Agent Rule
 

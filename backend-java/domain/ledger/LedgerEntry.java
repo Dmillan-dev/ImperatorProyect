@@ -98,6 +98,26 @@ public record LedgerEntry(
         return this.actorId.equals(Objects.requireNonNull(actorId, "Actor id is required"));
     }
 
+    public boolean hasSameImmutableState(LedgerEntry candidate) {
+        LedgerEntry other = Objects.requireNonNull(candidate, "Ledger entry is required");
+        return id.equals(other.id)
+                && decisionId.equals(other.decisionId)
+                && recommendationId.equals(other.recommendationId)
+                && actorId.equals(other.actorId)
+                && actorRole.equals(other.actorRole)
+                && occurredAt.equals(other.occurredAt)
+                && entryType.equals(other.entryType)
+                && changeSummary.equals(other.changeSummary)
+                && reason.equals(other.reason)
+                && evidenceSnapshotIds.equals(other.evidenceSnapshotIds)
+                && estimatedSaving.equals(other.estimatedSaving)
+                && realizedSaving.equals(other.realizedSaving)
+                && confidenceSnapshot.equals(other.confidenceSnapshot)
+                && riskSnapshot.equals(other.riskSnapshot)
+                && previousEntryId.equals(other.previousEntryId)
+                && metadata.equals(other.metadata);
+    }
+
     @Override
     public boolean equals(Object candidate) {
         return candidate instanceof LedgerEntry ledgerEntry && id.equals(ledgerEntry.id);

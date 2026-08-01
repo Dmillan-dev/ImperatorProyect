@@ -105,6 +105,10 @@ public final class PostgresDecisionRepository implements DecisionRepository {
             WHERE id = ?
             """;
 
+    private static final String SELECT_BY_ID_FOR_UPDATE_SQL = SELECT_BY_ID_SQL + """
+            FOR UPDATE
+            """;
+
     private static final String SELECT_EVIDENCE_LINKS_SQL = """
             SELECT
                 decision_id,
@@ -208,6 +212,25 @@ public final class PostgresDecisionRepository implements DecisionRepository {
         try (PreparedStatement statement = connection.prepareStatement(UPSERT_SQL)) {
             bindDecisionRecord(statement, record);
             statement.executeUpdate();
+        }
+    }
+
+    @Override
+    public Optional<Decision> findByIdForUpdate(DecisionId id) {
+        DecisionId decisionId = Objects.requireNonNull(id, "Decision id is required");
+
+        try (PostgresConnectionProvider.ConnectionLease connectionLease = connectionProvider.acquire()) {
+            Connection connection = connectionLease.connection();
+            if (connection.getAutoCommit()) {
+                throw new IllegalStateException("Decision row locking requires an active transaction");
+            }
+            Optional<PostgresDecisionRecord> record = findRecordByIdForUpdate(connection, decisionId);
+            if (record.isEmpty()) {
+                return Optional.empty();
+            }
+            return Optional.of(mapper.toDomain(record.get(), findEvidenceLinks(connection, decisionId)));
+        } catch (SQLException exception) {
+            throw new IllegalStateException("Could not lock decision " + decisionId.value(), exception);
         }
     }
 
@@ -321,6 +344,21 @@ public final class PostgresDecisionRepository implements DecisionRepository {
             statement.setTimestamp(parameterIndex, null);
         } else {
             statement.setTimestamp(parameterIndex, Timestamp.from(value));
+        }
+    }
+
+    private Optional<PostgresDecisionRecord> findRecordByIdForUpdate(
+            Connection connection,
+            DecisionId id
+    ) throws SQLException {
+        try (PreparedStatement statement = connection.prepareStatement(SELECT_BY_ID_FOR_UPDATE_SQL)) {
+            statement.setObject(1, id.value());
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (!resultSet.next()) {
+                    return Optional.empty();
+                }
+                return Optional.of(recordFrom(resultSet));
+            }
         }
     }
 

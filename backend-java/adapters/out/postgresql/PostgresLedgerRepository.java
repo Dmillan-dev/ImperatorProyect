@@ -42,6 +42,7 @@ public final class PostgresLedgerRepository implements LedgerRepository {
                 previous_entry_id,
                 metadata
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT (id) DO NOTHING
             """;
 
     private static final String INSERT_EVIDENCE_SNAPSHOT_SQL = """
@@ -123,19 +124,31 @@ public final class PostgresLedgerRepository implements LedgerRepository {
     }
 
     @Override
-    public void append(LedgerEntry entry) {
+    public LedgerEntry append(LedgerEntry entry) {
         LedgerEntry item = Objects.requireNonNull(entry, "Ledger entry is required");
         PostgresLedgerEntryRecord record = mapper.toRecord(item);
         List<PostgresLedgerEvidenceSnapshotRecord> evidenceSnapshotRecords = mapper.toEvidenceSnapshotRecords(item);
+        LedgerEntry[] persisted = new LedgerEntry[1];
 
         try {
             PostgresLocalTransactions.execute(connectionProvider, connection -> {
-                appendEntry(connection, record);
-                appendEvidenceSnapshots(connection, evidenceSnapshotRecords);
+                if (appendEntry(connection, record)) {
+                    appendEvidenceSnapshots(connection, evidenceSnapshotRecords);
+                }
+                PostgresLedgerEntryRecord authoritative = findRecordById(connection, item.id())
+                        .orElseThrow(() -> new SQLException(
+                                "Ledger entry was not found after append-or-resolve: " + item.id().value()
+                        ));
+                persisted[0] = mapper.toDomain(
+                        authoritative,
+                        findEvidenceSnapshots(connection, authoritative.id())
+                );
             });
         } catch (SQLException exception) {
             throw new IllegalStateException("Could not append ledger entry " + item.id().value(), exception);
         }
+
+        return Objects.requireNonNull(persisted[0], "Persisted ledger entry is required");
     }
 
     @Override
@@ -170,7 +183,7 @@ public final class PostgresLedgerRepository implements LedgerRepository {
         }
     }
 
-    private void appendEntry(Connection connection, PostgresLedgerEntryRecord record) throws SQLException {
+    private boolean appendEntry(Connection connection, PostgresLedgerEntryRecord record) throws SQLException {
         try (PreparedStatement statement = connection.prepareStatement(INSERT_SQL)) {
             statement.setObject(1, record.id());
             statement.setObject(2, record.decisionId());
@@ -189,7 +202,7 @@ public final class PostgresLedgerRepository implements LedgerRepository {
             statement.setString(15, record.risk());
             setNullableUuid(statement, 16, record.previousEntryId());
             statement.setString(17, PostgresFlatMetadataJson.toJson(record.metadata()));
-            statement.executeUpdate();
+            return statement.executeUpdate() == 1;
         }
     }
 

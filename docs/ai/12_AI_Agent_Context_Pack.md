@@ -31,8 +31,15 @@ financial outputs, immutable retry behavior and PostgreSQL concurrency
 protection. Sprint 3.3.1 provider-neutral Explanation integration is complete:
 the provider receives bounded deterministic context only after Recommendation
 persistence, and unavailability or failure cannot alter business truth. The
-next authorized gate is Sprint 3.4 - Human Review, Ledger And Result
-Validation.
+Sprint 3.4 Human Review, Ledger and Result Validation implementation is
+complete with atomic Decision outcomes, immutable replay, strict Ledger
+linearity and deterministic result validation. D084 explicitly defers its
+PostgreSQL 18.2 runtime certification because the certification environment was
+unavailable: the profile attempt stopped at Java toolchain selection before
+PostgreSQL. No known implementation defect was identified by the checks that
+executed. Certification remains mandatory before Pilot Readiness, MVP closure
+or the first production release. The next authorized gate is Sprint 3.5 -
+End-to-End Local Business Value Demo.
 
 Agents may create runnable implementation only inside the explicitly
 authorized sprint/module. They must use `agents/phase3/README.md`, the frozen

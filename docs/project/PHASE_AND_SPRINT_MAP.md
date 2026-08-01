@@ -194,8 +194,9 @@ not the Phase 2 route-shell plan.
 | 3.2 | Deterministic Decision Creation | CERTIFIED |
 | 3.3 | Deterministic Recommendation And ROI Policy | CERTIFIED |
 | 3.3.1 | Explanation Provider Integration | COMPLETE |
-| 3.4 | Human Review, Ledger And Result Validation | NEXT |
-| 3.5 | End-to-End Local Business Value Demo | PENDING |
+| 3.4 | Human Review, Ledger And Result Validation | COMPLETE; runtime certification DEFERRED under D084 |
+| 3.4.1 | Documentation Synchronization | COMPLETE |
+| 3.5 | End-to-End Local Business Value Demo | NEXT |
 | 3.6 | Basic Java CI | PENDING |
 | 3.7 | Minimum JWT And RBAC | PENDING |
 | 3.8 | Thin Decision Review Workspace | PENDING |
@@ -207,6 +208,15 @@ Sprint 3.5 proves a local product flow with approved synthetic, manual or
 sanitized import evidence. It is not full MVP acceptance and does not authorize
 real customer data, external exposure or a pilot. Security, safe configuration
 and the later acceptance gates remain mandatory before Sprint 3.9 can pass.
+
+Sprint 3.4 implementation passed its Java 21 offline verification with 88
+tests. Its explicit PostgreSQL 18.2 certification attempt stopped during Maven
+toolchain selection because the invoked process found only Java 17; Flyway and
+PostgreSQL integration tests did not execute. D084 explicitly defers that
+runtime certification because the certification environment was unavailable.
+No known implementation defect was identified by the checks that executed.
+The deferred gate remains mandatory before Pilot Readiness, MVP closure or the
+first production release.
 
 Active Phase 3 execution authority:
 

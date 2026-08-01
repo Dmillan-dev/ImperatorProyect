@@ -295,6 +295,11 @@ class GenerateRecommendationExplanationTest {
         }
 
         @Override
+        public synchronized Optional<Decision> findByIdForUpdate(DecisionId id) {
+            return findById(id);
+        }
+
+        @Override
         public synchronized boolean existsById(DecisionId id) {
             return decisions.containsKey(id);
         }

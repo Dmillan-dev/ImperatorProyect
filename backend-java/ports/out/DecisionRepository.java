@@ -12,5 +12,7 @@ public interface DecisionRepository {
 
     Optional<Decision> findById(DecisionId id);
 
+    Optional<Decision> findByIdForUpdate(DecisionId id);
+
     boolean existsById(DecisionId id);
 }

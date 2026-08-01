@@ -130,11 +130,15 @@ public final class PostgresRuntimeConfiguration {
     ReviewDecisionInputPort reviewDecisionInputPort(
             DecisionRepository decisionRepository,
             RecommendationRepository recommendationRepository,
+            EvidenceRepository evidenceRepository,
+            LedgerRepository ledgerRepository,
             TransactionRunner transactionRunner
     ) {
         return new ReviewDecisionUseCase(
                 decisionRepository,
                 recommendationRepository,
+                evidenceRepository,
+                ledgerRepository,
                 transactionRunner
         );
     }

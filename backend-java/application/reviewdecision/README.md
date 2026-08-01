@@ -8,7 +8,8 @@ Apply a human review action to a decision with an existing recommendation.
 
 - Future inbound ports or adapters that submit review actions.
 - Architecture Guardian to verify review orchestration stays outside REST.
-- Quality Agent to ensure ledger append remains a separate capability.
+- Quality Agent to verify the Decision transition and matching Ledger append
+  remain atomic.
 
 ## Contains
 
@@ -17,13 +18,20 @@ Apply a human review action to a decision with an existing recommendation.
 - `ReviewDecisionResult`.
 - `ReviewDecisionAction`.
 
-Sprint 2.5.4 status:
-- One review capability only.
-- Loads an existing decision and recommendation through ports.
-- Applies `start_review`, `approve`, `reject` or `defer`.
-- Saves the updated decision through `DecisionRepository`.
-- Returns whether a ledger entry is required next.
-- Does not append ledger entries.
+Sprint 3.4 status:
+- Accepts only `approve`, `reject` or `defer` as public Application actions.
+- Treats entry into `UNDER_REVIEW` as an internal Domain transition.
+- Locks and loads the authoritative Decision through
+  `DecisionRepository.findByIdForUpdate`.
+- Loads the persisted Recommendation and derives the review snapshot from
+  authoritative persisted objects.
+- Authorizes the Phase 1 role and assigned approver at the Application
+  boundary.
+- Persists the Decision outcome and appends its immutable Ledger entry in one
+  transaction.
+- Resolves identical operation replay and rejects conflicting or duplicate
+  governance commands.
+- Preserves one strictly linear Ledger history per Decision.
 
 ## Never Contains
 
@@ -31,7 +39,6 @@ Sprint 2.5.4 status:
 - Database adapters.
 - SQL.
 - JWT or RBAC implementation.
-- Ledger append orchestration.
 - Recommendation generation.
 - ROI calculation.
 - Framework annotations.

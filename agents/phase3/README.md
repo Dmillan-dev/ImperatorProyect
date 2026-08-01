@@ -2,7 +2,7 @@
 
 Status: **ACTIVE**
 
-Current gate: **Sprint 3.4 - Human Review, Ledger And Result Validation**
+Current gate: **Sprint 3.5 - End-to-End Local Business Value Demo**
 
 Authorization: **D079 - Phase 3 Vertical-Slice Acceleration**
 
@@ -86,8 +86,9 @@ Locked constraints:
 | 3.2 | Deterministic Decision Creation | CERTIFIED |
 | 3.3 | Deterministic Recommendation And ROI Policy | CERTIFIED |
 | 3.3.1 | Explanation Provider Integration | COMPLETE |
-| 3.4 | Human Review, Ledger And Result Validation | NEXT |
-| 3.5 | End-to-End Local Business Value Demo | PENDING |
+| 3.4 | Human Review, Ledger And Result Validation | COMPLETE; runtime certification DEFERRED under D084 |
+| 3.4.1 | Documentation Synchronization | COMPLETE |
+| 3.5 | End-to-End Local Business Value Demo | NEXT |
 | 3.6 | Basic Java CI | PENDING |
 | 3.7 | Minimum JWT And RBAC | PENDING |
 | 3.8 | Thin Decision Review Workspace | PENDING |
@@ -292,15 +293,45 @@ authorized adapter supplies the port.
 
 ## Sprint 3.4 - Human Review, Ledger And Result Validation
 
-Sprint 3.4 is the sole next gate. Before implementation, its exact boundary
-must be checked against the existing Review and Ledger application behavior,
-the append-only Ledger contract, result-validation requirements and the frozen
-MVP acceptance path.
+Sprint 3.4 implementation is complete under D083 and architecture contract 44.
+It preserves the certified deterministic Recommendation and completed
+Explanation Provider boundary.
 
-Sprint 3.4 must preserve the certified deterministic Recommendation and the
-completed Explanation Provider boundary. It does not authorize security,
-frontend, live connectors, additional Recommendation families, schema drift or
-later Phase 3 capabilities.
+Implemented boundary:
+
+```text
+Persisted Decision + Recommendation
+-> Authorized approve, reject or defer
+-> Atomic Decision transition + immutable Ledger append
+-> Authorized implementation marker
+-> Authorized result validation
+-> Deterministic realized recovery and variance
+```
+
+Implementation evidence:
+
+- `DecisionRepository.findByIdForUpdate` serializes governance per Decision;
+- `LedgerRepository.append` returns the authoritative immutable entry;
+- same-operation replay is idempotent and conflicting payloads are rejected;
+- `LedgerChain` rejects duplicate roots, missing predecessors, forks, cycles
+  and non-increasing occurrence times;
+- implementation and result validation remain Ledger facts while Decision
+  remains `APPROVED`;
+- default Java 21 verification: 88 tests passed;
+- REST route shells, Flyway V1, schema, dependencies and Explanation behavior
+  unchanged.
+
+PostgreSQL 18.2 certification is deferred under D084. The authorized
+`mvnw.cmd -Ppostgresql-integration clean verify` attempt stopped at Maven
+toolchain selection because the invoked process found only Java 17. Flyway and
+PostgreSQL integration tests did not execute. No known implementation defect
+was identified by the checks that executed. D084 records an explicit process
+exception caused by unavailable certification infrastructure; it is not
+evidence of certification. The deferred gate must pass before Pilot Readiness,
+MVP closure or the first production release.
+
+Sprint 3.4.1 synchronized active documentation with this verified state. It
+changed no Java, SQL, tests, frozen contracts or Decision Log entries.
 
 ## Demonstration And Pilot Boundary
 
