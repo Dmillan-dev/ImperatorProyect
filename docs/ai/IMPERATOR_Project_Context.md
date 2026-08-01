@@ -32,8 +32,10 @@ spend. The first case is `DRC-AOA-001`, AI Onboarding Assistant Recovery.
 - JSONL Evidence Import: certified and complete with independent per-line processing.
 - Deterministic Decision creation: certified and complete with atomic retry and
   concurrency protection.
+- Deterministic Recommendation and ROI policy: certified and complete with
+  atomic retry, immutable conflict and concurrency protection.
 - Remaining functional REST route shells: implemented and controlled.
-- Current gate: Sprint 3.3 - Deterministic Recommendation And ROI Policy.
+- Current gate: Sprint 3.3.1 - Explanation Provider Integration.
 - Sprints 2.9 through 2.13: deferred, not completed.
 
 The live state is maintained in:
@@ -84,8 +86,10 @@ the single authorized business value loop under D079.
 - six product REST controllers preserving 15 controlled routes;
 - functional JSONL Evidence import wired through Application and PostgreSQL;
 - deterministic Decision creation wired through Application and PostgreSQL;
-- Recommendation, ROI, Explanation, Review, Ledger and Result Validation
-  business behavior not implemented yet;
+- deterministic Recommendation and ROI policy wired through Domain,
+  Application and PostgreSQL;
+- Explanation, Review, Ledger and Result Validation business behavior not
+  implemented yet;
 - no security runtime yet.
 
 The implemented Java source root is `backend-java`, with packages under

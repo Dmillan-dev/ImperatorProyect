@@ -2,7 +2,7 @@
 
 Status: **Phase 3 First Business Value Loop active**
 
-Current gate: **Sprint 3.3 - Deterministic Recommendation And ROI Policy**
+Current gate: **Sprint 3.3.1 - Explanation Provider Integration**
 
 IMPERATOR is an Operating System for Operational Intelligence and an Enterprise
 Decision Intelligence Platform. The MVP proves one evidence-backed decision,
@@ -44,12 +44,14 @@ The Java backend currently contains:
 - certified JSONL Evidence import with independent per-line processing;
 - certified deterministic Decision creation with atomic retry and concurrency
   protection;
+- certified deterministic Recommendation and ROI policy with atomic retry,
+  immutable conflict and concurrency protection;
 - controlled route shells for the remaining functional REST surface.
 
 The repository does not yet contain:
 
 - functional Decision, Recommendation and ROI route behavior;
-- deterministic Recommendation and ROI policy;
+- Explanation Provider integration;
 - Review, Ledger and Result Validation route behavior;
 - JWT/RBAC runtime;
 - React application runtime;

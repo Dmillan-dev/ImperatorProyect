@@ -103,7 +103,8 @@ is found.
 ## Authorized Current Use
 
 Sprint 3.0 - Functional Runtime Composition, Sprint 3.1 - JSONL Evidence
-Import, Validation And Normalization, and Sprint 3.2 - Deterministic Decision
-Creation are certified and complete. Sprint 3.3 implements the deterministic
-Recommendation and ROI policy frozen by D082. Explanation Provider, Review,
-Ledger lifecycle and Result Validation behavior remain deferred.
+Import, Validation And Normalization, Sprint 3.2 - Deterministic Decision
+Creation, and Sprint 3.3 - Deterministic Recommendation And ROI Policy are
+certified and complete. Sprint 3.3.1 - Explanation Provider Integration is the
+sole next gate. Review, Ledger lifecycle and Result Validation behavior remain
+deferred.

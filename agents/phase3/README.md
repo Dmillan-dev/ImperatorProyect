@@ -2,7 +2,7 @@
 
 Status: **ACTIVE**
 
-Current gate: **Sprint 3.3 - Deterministic Recommendation And ROI Policy**
+Current gate: **Sprint 3.3.1 - Explanation Provider Integration**
 
 Authorization: **D079 - Phase 3 Vertical-Slice Acceleration**
 
@@ -84,8 +84,8 @@ Locked constraints:
 | 3.0 | Functional Runtime Composition | CERTIFIED |
 | 3.1 | JSONL Evidence Import, Validation And Normalization | CERTIFIED |
 | 3.2 | Deterministic Decision Creation | CERTIFIED |
-| 3.3 | Deterministic Recommendation And ROI Policy | NEXT |
-| 3.3.1 | Explanation Provider Integration | PENDING |
+| 3.3 | Deterministic Recommendation And ROI Policy | CERTIFIED |
+| 3.3.1 | Explanation Provider Integration | NEXT |
 | 3.4 | Human Review, Ledger And Result Validation | PENDING |
 | 3.5 | End-to-End Local Business Value Demo | PENDING |
 | 3.6 | Basic Java CI | PENDING |
@@ -220,11 +220,12 @@ Certification result:
 
 ## Sprint 3.3 - Deterministic Recommendation And ROI Policy
 
-Sprint 3.3 is the sole next gate. It may implement only the deterministic
-Decision-to-Recommendation transition for `DRC-AOA-001`, including its frozen
-estimated-savings, confidence and risk policy.
+Objective:
 
-Required functional boundary:
+Implement the frozen deterministic Decision-to-Recommendation transition for
+`DRC-AOA-001`, including annualized estimated savings, confidence and risk.
+
+Certified boundary:
 
 ```text
 Certified Decision
@@ -236,18 +237,48 @@ Certified Decision
 -> PostgreSQL
 ```
 
-Before implementation, the exact evidence-readiness rules, formula inputs,
-currency, rounding, confidence, risk and idempotency behavior must be reviewed
-against the frozen product contracts and current implementation. Any real
-contradiction must stop the sprint for founder approval.
+Certification result:
 
-Sprint 3.3 must not introduce AI-generated decisions or calculations. The
-Explanation Provider remains deferred to Sprint 3.3.1 and may later explain
-only the deterministic result.
+- Java 21 and Maven Enforcer: PASS;
+- default unit and HTTP contract tests: 70 passed;
+- PostgreSQL 18.2 integration tests: 22 passed;
+- Flyway migrate, validate and no-op second migrate: PASS;
+- exact `MODEL_CHANGE` action and deterministic reason: PASS;
+- monthly recovery `EUR 1620.00`: PASS;
+- annualized estimated savings `EUR 19440.00`: PASS;
+- confidence/risk `92 / LOW` and `90 / MEDIUM` branches: PASS;
+- incomplete mandatory Evidence creates no Recommendation: PASS;
+- atomic create-if-absent and Decision-row locking: PASS;
+- identical, conflicting and progressed replay behavior: PASS;
+- equivalent and conflicting concurrent creation: PASS;
+- Recommendation and Decision attachment atomicity: PASS;
+- Explanation Provider calls: none;
+- schema, migration, index and REST changes: none;
+- status: **CERTIFIED / COMPLETE**.
 
-It must not implement Explanation Provider, Review, Ledger, Result Validation,
-additional recommendation families or any later Phase 3 capability outside the
-bounded Recommendation and ROI policy authorized above.
+## Sprint 3.3.1 - Explanation Provider Integration
+
+Sprint 3.3.1 is the sole next gate. It may explain only the already persisted
+deterministic Recommendation through the existing `ExplanationProvider` port
+and a prepared, bounded context.
+
+Required functional boundary:
+
+```text
+Persisted deterministic Recommendation
+-> Prepared bounded context
+-> ExplanationProvider
+-> Natural-language explanation
+```
+
+The provider must not decide, calculate ROI, create Evidence, modify the
+Recommendation, change Decision state, invoke repositories as business
+authority or write Ledger history. Provider failure must preserve the complete
+deterministic result and must not cause Recommendation rollback.
+
+Sprint 3.3.1 must not implement Review, Ledger, Result Validation, additional
+Recommendation families, new REST routes, schema changes or later Phase 3
+capabilities.
 
 ## Demonstration And Pilot Boundary
 

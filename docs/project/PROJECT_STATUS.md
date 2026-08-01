@@ -21,9 +21,11 @@ Last verified: **2026-08-01**
 | Sprint 3.1 closure | COMPLETE |
 | Sprint 3.2 acceptance | CERTIFIED |
 | Sprint 3.2 closure | COMPLETE |
-| Last completed sprint | Sprint 3.2 - Deterministic Decision Creation |
+| Sprint 3.3 acceptance | CERTIFIED |
+| Sprint 3.3 closure | COMPLETE |
+| Last completed sprint | Sprint 3.3 - Deterministic Recommendation And ROI Policy |
 | Phase 2 closure | COMPLETE under D079; Sprints 2.9-2.13 deferred |
-| Next authorized sprint | Sprint 3.3 - Deterministic Recommendation And ROI Policy |
+| Next authorized sprint | Sprint 3.3.1 - Explanation Provider Integration |
 | Phase 3 authorization | Authorized by D079 |
 
 ## Verified Foundation
@@ -44,6 +46,8 @@ Last verified: **2026-08-01**
 | Functional runtime composition | CERTIFIED | Spring, existing use cases, repositories and transaction runner verified against PostgreSQL 18.2 |
 | Functional REST | IN PROGRESS | Evidence import is functional; remaining MVP route shells retain controlled responses |
 | Deterministic Decision creation | CERTIFIED | Eligible Evidence creates one atomic, retry-safe and concurrency-safe Decision |
+| Deterministic Recommendation and ROI | CERTIFIED | DRC-AOA-001-v1 derives one atomic Recommendation with annualized savings, confidence and risk |
+| Explanation Provider | NEXT | Prepared-context explanation only; no decision, ROI or persistence authority |
 | Security runtime | DEFERRED | Resequenced after the local business-value demo by D079 |
 | Frontend runtime | DEFERRED | Thin Decision Review Workspace follows minimum security |
 | Local container runtime | DEFERRED | Operational hardening follows pilot readiness |
@@ -52,7 +56,7 @@ Last verified: **2026-08-01**
 
 ## Latest Verification
 
-The latest accepted Sprint 3.2 implementation was verified with:
+The accepted Sprint 3.3 implementation was verified with:
 
 ```text
 mvnw.cmd -o clean verify
@@ -63,10 +67,10 @@ Latest accepted result:
 
 - Java 21 gate: PASS;
 - Maven Enforcer: PASS;
-- production compilation: 105 files;
-- test compilation: 14 files;
-- default unit and HTTP contract tests: 67 passed, 0 failed;
-- PostgreSQL integration tests: 18 passed, 0 failed;
+- production compilation: 107 files;
+- test compilation: 16 files;
+- default unit and HTTP contract tests: 70 passed, 0 failed;
+- PostgreSQL integration tests: 22 passed, 0 failed;
 - executable JAR: created.
 
 Real runtime certification:
@@ -83,6 +87,19 @@ Real runtime certification:
 - identical retry and immutable conflict behavior: PASS;
 - progressed Decision replay protection: PASS;
 - equivalent and conflicting concurrent creation: PASS;
+- canonical `DRC-AOA-001-v1` Evidence and assumption policy: PASS;
+- exact `MODEL_CHANGE` action and deterministic reason: PASS;
+- monthly recovery `EUR 1620.00`: PASS;
+- annualized `Recommendation.estimatedSavings` `EUR 19440.00`: PASS;
+- complete-pack confidence/risk `92 / LOW`: PASS;
+- missing-quality confidence/risk `90 / MEDIUM`: PASS;
+- incomplete mandatory Evidence persists no Recommendation: PASS;
+- atomic `RecommendationRepository.createIfAbsent`: PASS;
+- identical and progressed Recommendation replay protection: PASS;
+- conflicting immutable Recommendation replay: PASS;
+- equivalent and conflicting concurrent Recommendation creation: PASS;
+- Recommendation and Decision attachment rollback: PASS;
+- `ExplanationProvider` invocation during Recommendation creation: none;
 - repository behavior and use-case transaction boundaries: PASS;
 - PostgreSQL server shutdown after certification: PASS.
 
@@ -114,14 +131,14 @@ Real HTTP contract verification:
 
 Documentation integrity verification:
 
-- Markdown files checked: 154;
+- Markdown files checked: 152;
 - broken local links: 0;
 - current gate consistency: PASS;
 - exactly one `NEXT` sprint: PASS;
 - changed control documentation language: English;
 - frozen contracts 34-40 modified: no.
 
-The PostgreSQL integration profile was re-executed for Sprint 3.2 against an
+The PostgreSQL integration profile was re-executed for Sprint 3.3 against an
 isolated disposable PostgreSQL 18.2 runtime.
 
 ## Known Non-Blocking Risks
@@ -133,27 +150,26 @@ isolated disposable PostgreSQL 18.2 runtime.
   validate the Java 21 Maven backend and contains permissive generation steps;
   replacement or hardening belongs to Sprint 3.6.
 
-These risks do not require widening Sprint 3.3. They must remain visible and
+These risks do not require widening Sprint 3.3.1. They must remain visible and
 must not be misreported as current backend CI coverage.
 
 ## Next Sprint Boundary
 
-Sprint 3.3 - Deterministic Recommendation And ROI Policy is the sole next
-implementation gate. Its exact formula, evidence-readiness, confidence, risk,
-currency, rounding and immutable-input boundary must be reviewed against the
-frozen contracts and existing implementation before any change.
+Sprint 3.3.1 - Explanation Provider Integration is the sole next implementation
+gate. It may explain the already persisted deterministic Recommendation using
+prepared, bounded context through the existing `ExplanationProvider` port.
 
-Sprint 3.3 may transform the certified `DRC-AOA-001` Decision and its eligible
-Evidence into one deterministic Recommendation with estimated savings,
-confidence and risk. It does not authorize Explanation Provider or other AI
-behavior, Review, Ledger, Result Validation, security, frontend, live
-connectors or observability behavior.
+Sprint 3.3.1 must not create or alter Recommendation type, action, reason,
+estimated savings, confidence, risk, Evidence, Decision state or persistence
+truth. AI failure must not roll back or modify the certified deterministic
+Recommendation. Review, Ledger, Result Validation, security, frontend, live
+connectors and observability behavior remain outside this gate.
 
 Current execution authorities:
 
-- D079 through D081 in `docs/decisions/14_Decision_Log.md`;
+- D079 through D082 in `docs/decisions/14_Decision_Log.md`;
 - `agents/phase3/README.md`;
-- `docs/architecture/42_Deterministic_Decision_Creation_Contract.md`.
+- `docs/architecture/43_Deterministic_Recommendation_ROI_Contract.md`.
 
 ## Current Architectural Invariants
 

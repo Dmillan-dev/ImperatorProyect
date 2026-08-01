@@ -66,15 +66,15 @@ Active Phase 3 sprint execution is defined in:
 Phase 3 is named `First Business Value Loop` and is active under D079.
 
 The current authorized gate is maintained in
-`docs/project/PROJECT_STATUS.md`. At the time of this update it is Sprint 3.3 -
-Deterministic Recommendation And ROI Policy.
+`docs/project/PROJECT_STATUS.md`. At the time of this update it is Sprint 3.3.1:
+Explanation Provider Integration.
 
 Phase 3 agents may implement only the bounded `DRC-AOA-001` sequence in
 `agents/phase3/README.md`. Sprint 3.0 runtime composition and Sprint 3.1 JSONL
 Evidence Import are certified and complete. Sprint 3.2 deterministic Decision
-creation is also certified and complete. The current gate may implement only
-one bounded deterministic Recommendation and its estimated-savings,
-confidence and risk policy.
+creation and Sprint 3.3 deterministic Recommendation and ROI policy are also
+certified and complete. The current gate may explain only the persisted
+deterministic Recommendation through prepared, bounded context.
 
 The completed Phase 2 foundation contains:
 
@@ -86,7 +86,6 @@ The completed Phase 2 foundation contains:
 
 The following remain deferred until their ordered Phase 3 gates:
 
-- Explanation Provider behavior,
 - Review, Ledger and Result Validation behavior,
 - Java CI,
 - JWT/RBAC,

@@ -25,8 +25,11 @@ composition is certified against PostgreSQL 18.2 and complete. Sprint 3.1
 JSONL Evidence Import is certified and complete, and the functional import
 route persists normalized Evidence through the Application layer. Phase 3 is
 active. Sprint 3.2 deterministic Decision creation is certified and complete
-with atomic retry and concurrency protection. The next authorized gate is
-Sprint 3.3 - Deterministic Recommendation And ROI Policy.
+with atomic retry and concurrency protection. Sprint 3.3 deterministic
+Recommendation and ROI policy is certified and complete with deterministic
+financial outputs, immutable retry behavior and PostgreSQL concurrency
+protection. The next authorized gate is Sprint 3.3.1 - Explanation Provider
+Integration.
 
 Agents may create runnable implementation only inside the explicitly
 authorized sprint/module. They must use `agents/phase3/README.md`, the frozen

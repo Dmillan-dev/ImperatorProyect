@@ -12,7 +12,8 @@ does not authorize a sprint by itself. Current authorization lives in
 ```text
 Sprint 3.1: CERTIFIED / COMPLETE
 Sprint 3.2: CERTIFIED / COMPLETE
-Sprint 3.3: NEXT
+Sprint 3.3: CERTIFIED / COMPLETE
+Sprint 3.3.1: NEXT
 ```
 
 Exactly one Phase 3 sprint is authorized as `NEXT`.
@@ -24,6 +25,7 @@ Exactly one Phase 3 sprint is authorized as `NEXT`.
 | 3.0 | `fe44353` | Runtime composition, PostgreSQL repository certification and Phase 3 plan | CERTIFIED / COMPLETE |
 | 3.1 | `b8bd518` | D080, NDJSON evidence importer, HTTP contract tests, PostgreSQL HTTP integration test and certified fixture | CERTIFIED / COMPLETE |
 | 3.2 | `8bbbc19` | D081 contract, atomic Decision creation, immutable retry policy and PostgreSQL concurrency certification | CERTIFIED / COMPLETE |
+| 3.3 | `087f94d` | D082 contract, deterministic Recommendation/ROI policy, atomic Recommendation creation and PostgreSQL concurrency certification | CERTIFIED / COMPLETE |
 
 ### Sprint 3.0
 
@@ -87,15 +89,46 @@ Certification:
 - no Recommendation, ROI, Explanation, Review or Ledger behavior introduced;
 - Domain, REST, Flyway V1 and frozen contracts unchanged.
 
+### Sprint 3.3
+
+Primary artifacts:
+
+- D082 in `docs/decisions/14_Decision_Log.md`;
+- `docs/architecture/43_Deterministic_Recommendation_ROI_Contract.md`;
+- `backend-java/domain/decision/DrcAoa001RecommendationPolicy.java`;
+- `backend-java/application/generaterecommendation/GenerateRecommendationUseCase.java`;
+- `backend-java/application/exceptions/RecommendationCreationConflictException.java`;
+- `backend-java/application/exceptions/RecommendationNotReadyException.java`;
+- `backend-java/ports/out/RecommendationRepository.java`;
+- `backend-java/adapters/out/postgresql/PostgresRecommendationRepository.java`;
+- `src/test/java/imperator/domain/decision/DrcAoa001RecommendationPolicyTest.java`;
+- `src/test/java/imperator/adapters/out/postgresql/PostgresRepositoryIT.java`.
+
+Certification:
+
+- Java 21 and Maven Enforcer: PASS;
+- unit and HTTP contract tests: 70 passed;
+- PostgreSQL 18.2 integration tests: 22 passed;
+- exact policy action, reason and `MODEL_CHANGE` type: PASS;
+- monthly recovery `EUR 1620.00` and annualized savings `EUR 19440.00`: PASS;
+- confidence/risk `92 / LOW` and `90 / MEDIUM`: PASS;
+- missing mandatory Evidence persists no partial state: PASS;
+- atomic create-if-absent, immutable retry and progressed-state protection: PASS;
+- equivalent and conflicting concurrency: PASS;
+- Explanation Provider invocation: none;
+- Domain dependency isolation: PASS;
+- REST, Flyway V1, schema, migrations and frozen contracts unchanged.
+
 ## Next Artifact Boundary
 
-Sprint 3.3 has no accepted implementation artifact yet. Its prompt or plan may
-guide work only after it is checked against the current gate, frozen contracts
-and existing implementation.
+Sprint 3.3.1 has no accepted implementation artifact yet. Its prompt or plan
+may guide work only after it is checked against the current gate, frozen
+contracts and existing implementation.
 
-Sprint 3.3 may implement one deterministic Recommendation and its ROI policy
-only. Explanation Provider, Review, Ledger and Result Validation remain later
-gates.
+Sprint 3.3.1 may prepare bounded deterministic context and invoke the existing
+Explanation Provider boundary only. It must not decide, calculate ROI, mutate
+Recommendation or Decision truth, access persistence as business authority, or
+implement Review, Ledger or Result Validation behavior.
 
 ## Agent Rule
 
