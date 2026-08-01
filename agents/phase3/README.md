@@ -2,7 +2,7 @@
 
 Status: **ACTIVE**
 
-Current gate: **Sprint 3.3.1 - Explanation Provider Integration**
+Current gate: **Sprint 3.4 - Human Review, Ledger And Result Validation**
 
 Authorization: **D079 - Phase 3 Vertical-Slice Acceleration**
 
@@ -85,8 +85,8 @@ Locked constraints:
 | 3.1 | JSONL Evidence Import, Validation And Normalization | CERTIFIED |
 | 3.2 | Deterministic Decision Creation | CERTIFIED |
 | 3.3 | Deterministic Recommendation And ROI Policy | CERTIFIED |
-| 3.3.1 | Explanation Provider Integration | NEXT |
-| 3.4 | Human Review, Ledger And Result Validation | PENDING |
+| 3.3.1 | Explanation Provider Integration | COMPLETE |
+| 3.4 | Human Review, Ledger And Result Validation | NEXT |
 | 3.5 | End-to-End Local Business Value Demo | PENDING |
 | 3.6 | Basic Java CI | PENDING |
 | 3.7 | Minimum JWT And RBAC | PENDING |
@@ -258,9 +258,9 @@ Certification result:
 
 ## Sprint 3.3.1 - Explanation Provider Integration
 
-Sprint 3.3.1 is the sole next gate. It may explain only the already persisted
-deterministic Recommendation through the existing `ExplanationProvider` port
-and a prepared, bounded context.
+Sprint 3.3.1 is complete. It explains only the already persisted deterministic
+Recommendation through the existing `ExplanationProvider` port and a prepared,
+bounded context.
 
 Required functional boundary:
 
@@ -271,14 +271,36 @@ Persisted deterministic Recommendation
 -> Natural-language explanation
 ```
 
-The provider must not decide, calculate ROI, create Evidence, modify the
-Recommendation, change Decision state, invoke repositories as business
-authority or write Ledger history. Provider failure must preserve the complete
-deterministic result and must not cause Recommendation rollback.
+Completion result:
 
-Sprint 3.3.1 must not implement Review, Ledger, Result Validation, additional
-Recommendation families, new REST routes, schema changes or later Phase 3
-capabilities.
+- deterministic Recommendation persistence completes before provider
+  invocation: PASS;
+- prepared context contains Recommendation truth, Evidence ids, assumption ids
+  and policy version: PASS;
+- optional natural-language explanation result: PASS;
+- provider unavailability and exception isolation: PASS;
+- Recommendation type, action, reason, savings, confidence and risk unchanged:
+  PASS;
+- default Java 21 verification: 73 tests passed;
+- provider SDK, model, credential, schema, REST and Domain changes: none;
+- integrated commit: `838f156`;
+- status: **COMPLETE**.
+
+No live vendor adapter is claimed. The runtime remains provider-neutral and
+uses the controlled unavailable-provider behavior unless an explicitly
+authorized adapter supplies the port.
+
+## Sprint 3.4 - Human Review, Ledger And Result Validation
+
+Sprint 3.4 is the sole next gate. Before implementation, its exact boundary
+must be checked against the existing Review and Ledger application behavior,
+the append-only Ledger contract, result-validation requirements and the frozen
+MVP acceptance path.
+
+Sprint 3.4 must preserve the certified deterministic Recommendation and the
+completed Explanation Provider boundary. It does not authorize security,
+frontend, live connectors, additional Recommendation families, schema drift or
+later Phase 3 capabilities.
 
 ## Demonstration And Pilot Boundary
 

@@ -43,6 +43,9 @@ Current Phase 3 foundation:
 - Sprint 3.2 implements deterministic, idempotent Decision creation.
 - Sprint 3.3 derives the first `MODEL_CHANGE` Recommendation, annualized ROI,
   confidence and risk through the frozen `DRC-AOA-001-v1` Domain policy.
+- Sprint 3.3.1 invokes the replaceable `ExplanationProvider` only after
+  deterministic persistence and returns optional natural-language text without
+  changing business truth.
 - REST errors use the frozen four-field envelope and `X-Correlation-ID`.
 - The Evidence import route is functional; the other 14 frozen MVP routes
   remain controlled `501` shells.
@@ -108,6 +111,6 @@ is found.
 Sprint 3.0 - Functional Runtime Composition, Sprint 3.1 - JSONL Evidence
 Import, Validation And Normalization, Sprint 3.2 - Deterministic Decision
 Creation, and Sprint 3.3 - Deterministic Recommendation And ROI Policy are
-certified and complete. Sprint 3.3.1 - Explanation Provider Integration is the
-sole next gate. Review, Ledger lifecycle and Result Validation behavior remain
-deferred.
+certified and complete. Sprint 3.3.1 - Explanation Provider Integration is
+complete. Sprint 3.4 - Human Review, Ledger And Result Validation is the sole
+next gate.

@@ -13,7 +13,8 @@ does not authorize a sprint by itself. Current authorization lives in
 Sprint 3.1: CERTIFIED / COMPLETE
 Sprint 3.2: CERTIFIED / COMPLETE
 Sprint 3.3: CERTIFIED / COMPLETE
-Sprint 3.3.1: NEXT
+Sprint 3.3.1: COMPLETE
+Sprint 3.4: NEXT
 ```
 
 Exactly one Phase 3 sprint is authorized as `NEXT`.
@@ -26,6 +27,7 @@ Exactly one Phase 3 sprint is authorized as `NEXT`.
 | 3.1 | `b8bd518` | D080, NDJSON evidence importer, HTTP contract tests, PostgreSQL HTTP integration test and certified fixture | CERTIFIED / COMPLETE |
 | 3.2 | `8bbbc19` | D081 contract, atomic Decision creation, immutable retry policy and PostgreSQL concurrency certification | CERTIFIED / COMPLETE |
 | 3.3 | `087f94d` | D082 contract, deterministic Recommendation/ROI policy, atomic Recommendation creation and PostgreSQL concurrency certification | CERTIFIED / COMPLETE |
+| 3.3.1 | `838f156` | Post-transaction provider invocation, bounded explanation context and provider-failure isolation | COMPLETE |
 
 ### Sprint 3.0
 
@@ -119,16 +121,41 @@ Certification:
 - Domain dependency isolation: PASS;
 - REST, Flyway V1, schema, migrations and frozen contracts unchanged.
 
+### Sprint 3.3.1
+
+Primary artifacts:
+
+- `backend-java/application/generaterecommendation/GenerateRecommendationUseCase.java`;
+- `backend-java/application/generaterecommendation/GenerateRecommendationResult.java`;
+- `backend-java/ports/out/RecommendationExplanationRequest.java`;
+- `backend-java/bootstrap/PostgresRuntimeConfiguration.java`;
+- `src/test/java/imperator/application/generaterecommendation/GenerateRecommendationExplanationTest.java`;
+- `src/test/java/imperator/bootstrap/PostgresRuntimeConfigurationTest.java`.
+
+Completion evidence:
+
+- Java 21 and Maven Enforcer: PASS;
+- unit and HTTP contract tests: 73 passed;
+- provider invocation occurs after the deterministic transaction: PASS;
+- prepared context uses persisted Recommendation outputs: PASS;
+- Evidence ids, assumption ids and policy version remain visible: PASS;
+- unavailable and failing providers preserve deterministic state: PASS;
+- Recommendation type, action, reason, savings, confidence and risk unchanged:
+  PASS;
+- no provider SDK, live model call, schema, migration, REST or Domain change;
+- status: **COMPLETE**.
+
 ## Next Artifact Boundary
 
-Sprint 3.3.1 has no accepted implementation artifact yet. Its prompt or plan
-may guide work only after it is checked against the current gate, frozen
-contracts and existing implementation.
+Sprint 3.4 has no accepted implementation artifact yet. Its prompt or plan may
+guide work only after it is checked against the current gate, frozen contracts
+and existing implementation.
 
-Sprint 3.3.1 may prepare bounded deterministic context and invoke the existing
-Explanation Provider boundary only. It must not decide, calculate ROI, mutate
-Recommendation or Decision truth, access persistence as business authority, or
-implement Review, Ledger or Result Validation behavior.
+Sprint 3.4 may implement only the authorized Human Review, append-only Ledger
+and Result Validation boundary. Its exact file and behavior scope requires a
+pre-implementation review. It must preserve deterministic Recommendation and
+Explanation truth and must not introduce later security, frontend, connector or
+operational-hardening behavior.
 
 ## Agent Rule
 

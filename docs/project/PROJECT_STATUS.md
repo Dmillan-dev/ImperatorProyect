@@ -23,9 +23,10 @@ Last verified: **2026-08-01**
 | Sprint 3.2 closure | COMPLETE |
 | Sprint 3.3 acceptance | CERTIFIED |
 | Sprint 3.3 closure | COMPLETE |
-| Last completed sprint | Sprint 3.3 - Deterministic Recommendation And ROI Policy |
+| Sprint 3.3.1 closure | COMPLETE |
+| Last completed sprint | Sprint 3.3.1 - Explanation Provider Integration |
 | Phase 2 closure | COMPLETE under D079; Sprints 2.9-2.13 deferred |
-| Next authorized sprint | Sprint 3.3.1 - Explanation Provider Integration |
+| Next authorized sprint | Sprint 3.4 - Human Review, Ledger And Result Validation |
 | Phase 3 authorization | Authorized by D079 |
 
 ## Verified Foundation
@@ -47,7 +48,8 @@ Last verified: **2026-08-01**
 | Functional REST | IN PROGRESS | Evidence import is functional; remaining MVP route shells retain controlled responses |
 | Deterministic Decision creation | CERTIFIED | Eligible Evidence creates one atomic, retry-safe and concurrency-safe Decision |
 | Deterministic Recommendation and ROI | CERTIFIED | DRC-AOA-001-v1 derives one atomic Recommendation with annualized savings, confidence and risk |
-| Explanation Provider | NEXT | Prepared-context explanation only; no decision, ROI or persistence authority |
+| Explanation Provider integration | COMPLETE | Optional provider-neutral explanation executes after deterministic persistence and has no decision, ROI or persistence authority |
+| Human Review, Ledger and Result Validation | NEXT | Sole authorized Phase 3 implementation gate |
 | Security runtime | DEFERRED | Resequenced after the local business-value demo by D079 |
 | Frontend runtime | DEFERRED | Thin Decision Review Workspace follows minimum security |
 | Local container runtime | DEFERRED | Operational hardening follows pilot readiness |
@@ -56,14 +58,35 @@ Last verified: **2026-08-01**
 
 ## Latest Verification
 
-The accepted Sprint 3.3 implementation was verified with:
+The accepted Sprint 3.3.1 implementation was verified with:
+
+```text
+mvnw.cmd -o clean verify
+```
+
+Latest accepted result:
+
+- Java 21 gate: PASS;
+- Maven Enforcer: PASS;
+- production compilation: 107 files;
+- test compilation: 17 files;
+- default unit and HTTP contract tests: 73 passed, 0 failed;
+- successful provider explanation: PASS;
+- provider invocation after the deterministic transaction: PASS;
+- unavailable-provider isolation: PASS;
+- provider-exception isolation: PASS;
+- deterministic Recommendation fields unchanged: PASS;
+- executable JAR: created.
+
+The latest real-database certification remains Sprint 3.3 and was verified
+with:
 
 ```text
 mvnw.cmd -o clean verify
 mvnw.cmd -Ppostgresql-integration clean verify
 ```
 
-Latest accepted result:
+Sprint 3.3 database-certification result:
 
 - Java 21 gate: PASS;
 - Maven Enforcer: PASS;
@@ -139,7 +162,9 @@ Documentation integrity verification:
 - frozen contracts 34-40 modified: no.
 
 The PostgreSQL integration profile was re-executed for Sprint 3.3 against an
-isolated disposable PostgreSQL 18.2 runtime.
+isolated disposable PostgreSQL 18.2 runtime. Sprint 3.3.1 changed no SQL,
+repository or persistence behavior and therefore did not claim a new
+real-database certification.
 
 ## Known Non-Blocking Risks
 
@@ -150,20 +175,17 @@ isolated disposable PostgreSQL 18.2 runtime.
   validate the Java 21 Maven backend and contains permissive generation steps;
   replacement or hardening belongs to Sprint 3.6.
 
-These risks do not require widening Sprint 3.3.1. They must remain visible and
+These risks do not require widening Sprint 3.4. They must remain visible and
 must not be misreported as current backend CI coverage.
 
 ## Next Sprint Boundary
 
-Sprint 3.3.1 - Explanation Provider Integration is the sole next implementation
-gate. It may explain the already persisted deterministic Recommendation using
-prepared, bounded context through the existing `ExplanationProvider` port.
-
-Sprint 3.3.1 must not create or alter Recommendation type, action, reason,
-estimated savings, confidence, risk, Evidence, Decision state or persistence
-truth. AI failure must not roll back or modify the certified deterministic
-Recommendation. Review, Ledger, Result Validation, security, frontend, live
-connectors and observability behavior remain outside this gate.
+Sprint 3.4 - Human Review, Ledger And Result Validation is the sole next
+implementation gate. Its implementation boundary must be reviewed against the
+existing Application, Ledger, persistence and frozen MVP contracts before any
+code change. Sprint 3.4 must preserve deterministic Recommendation and
+Explanation boundaries and must not widen security, frontend, live-connector
+or observability scope.
 
 Current execution authorities:
 

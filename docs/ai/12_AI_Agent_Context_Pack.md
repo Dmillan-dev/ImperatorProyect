@@ -28,8 +28,11 @@ active. Sprint 3.2 deterministic Decision creation is certified and complete
 with atomic retry and concurrency protection. Sprint 3.3 deterministic
 Recommendation and ROI policy is certified and complete with deterministic
 financial outputs, immutable retry behavior and PostgreSQL concurrency
-protection. The next authorized gate is Sprint 3.3.1 - Explanation Provider
-Integration.
+protection. Sprint 3.3.1 provider-neutral Explanation integration is complete:
+the provider receives bounded deterministic context only after Recommendation
+persistence, and unavailability or failure cannot alter business truth. The
+next authorized gate is Sprint 3.4 - Human Review, Ledger And Result
+Validation.
 
 Agents may create runnable implementation only inside the explicitly
 authorized sprint/module. They must use `agents/phase3/README.md`, the frozen

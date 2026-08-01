@@ -193,8 +193,8 @@ not the Phase 2 route-shell plan.
 | 3.1 | JSONL Evidence Import, Validation And Normalization | CERTIFIED |
 | 3.2 | Deterministic Decision Creation | CERTIFIED |
 | 3.3 | Deterministic Recommendation And ROI Policy | CERTIFIED |
-| 3.3.1 | Explanation Provider Integration | NEXT |
-| 3.4 | Human Review, Ledger And Result Validation | PENDING |
+| 3.3.1 | Explanation Provider Integration | COMPLETE |
+| 3.4 | Human Review, Ledger And Result Validation | NEXT |
 | 3.5 | End-to-End Local Business Value Demo | PENDING |
 | 3.6 | Basic Java CI | PENDING |
 | 3.7 | Minimum JWT And RBAC | PENDING |

@@ -34,8 +34,10 @@ spend. The first case is `DRC-AOA-001`, AI Onboarding Assistant Recovery.
   concurrency protection.
 - Deterministic Recommendation and ROI policy: certified and complete with
   atomic retry, immutable conflict and concurrency protection.
+- Provider-neutral Explanation integration: complete with bounded context,
+  post-transaction invocation and failure isolation.
 - Remaining functional REST route shells: implemented and controlled.
-- Current gate: Sprint 3.3.1 - Explanation Provider Integration.
+- Current gate: Sprint 3.4 - Human Review, Ledger And Result Validation.
 - Sprints 2.9 through 2.13: deferred, not completed.
 
 The live state is maintained in:
@@ -88,8 +90,9 @@ the single authorized business value loop under D079.
 - deterministic Decision creation wired through Application and PostgreSQL;
 - deterministic Recommendation and ROI policy wired through Domain,
   Application and PostgreSQL;
-- Explanation, Review, Ledger and Result Validation business behavior not
-  implemented yet;
+- optional provider-neutral Recommendation explanation wired after
+  deterministic persistence; no live vendor adapter or model call;
+- Review, Ledger and Result Validation business behavior not implemented yet;
 - no security runtime yet.
 
 The implemented Java source root is `backend-java`, with packages under
