@@ -31,9 +31,13 @@ Last verified: **2026-08-01**
 | Sprint 3.5 acceptance | CERTIFIED |
 | Sprint 3.5 closure | COMPLETE |
 | Sprint 3.5.1 documentation synchronization | COMPLETE |
-| Last completed sprint | Sprint 3.5.1 - Project Control Documentation Synchronization |
+| Sprint 3.6 implementation | PASS |
+| Sprint 3.6 GitHub Actions certification | PASS |
+| Sprint 3.6 closure | CERTIFIED / COMPLETE |
+| Sprint 3.6.1 documentation synchronization | COMPLETE |
+| Last completed sprint | Sprint 3.6.1 - Documentation Synchronization |
 | Phase 2 closure | COMPLETE under D079; Sprints 2.9-2.13 deferred |
-| Next authorized sprint | Sprint 3.6 - Basic Java CI |
+| Next authorized control gate | D085 - MVP Delivery Roadmap Evolution |
 | Phase 3 authorization | Authorized by D079 |
 
 ## Verified Foundation
@@ -62,11 +66,24 @@ Last verified: **2026-08-01**
 | Frontend runtime | DEFERRED | Thin Decision Review Workspace follows minimum security |
 | Local container runtime | DEFERRED | Operational hardening follows pilot readiness |
 | Observability runtime | DEFERRED | Minimum expansion follows operational hardening |
-| Java backend CI | NEXT | Sole authorized Phase 3 implementation gate |
+| Java backend CI | CERTIFIED / COMPLETE | GitHub-hosted Ubuntu 24.04 run verified Java 21, Maven Wrapper, 89 tests and executable JAR packaging |
 
 ## Latest Verification
 
-Sprint 3.5 was verified locally with Java 21 using:
+Sprint 3.6 was certified on GitHub Actions for commit `c3bb8f6`:
+
+- workflow: `Java CI`;
+- run: `30708049322`;
+- runner: GitHub-hosted Ubuntu 24.04;
+- Maven Wrapper script version `3.3.4`: PASS;
+- downloaded Apache Maven `3.9.16`: PASS;
+- Eclipse Adoptium Java 21: PASS;
+- `clean verify`: PASS;
+- tests: 89 passed, 0 failed, 0 errors, 0 skipped;
+- executable JAR packaging: PASS;
+- `BUILD SUCCESS`: PASS.
+
+The same build was verified locally with Java 21 using:
 
 ```text
 mvnw.cmd -o clean verify
@@ -202,20 +219,19 @@ real-database certification.
 - Default `clean verify` executes the Spring Boot and HTTP contract suite only.
   Real-database certification remains intentionally explicit through the
   `postgresql-integration` profile and external `IMPERATOR_IT_*` configuration.
-- `.github/workflows/proto-ci.yml` is a legacy proto-only workflow. It does not
-  validate the Java 21 Maven backend and contains permissive generation steps;
-  replacement or hardening belongs to Sprint 3.6.
+- GitHub Java CI validates the default Maven gate but intentionally does not
+  replace the explicit PostgreSQL integration profile or the deferred Sprint
+  3.4 runtime certification.
 
-These risks do not widen Sprint 3.6. They must remain visible and must not be
-misreported as current backend CI or a Sprint 3.4 runtime-certification pass.
+These risks remain visible and must not be misreported as a Sprint 3.4
+runtime-certification pass.
 
-## Next Sprint Boundary
+## Next Control Gate
 
-Sprint 3.6 - Basic Java CI is the sole next implementation gate. It may create
-the minimum repository automation required to verify the Java 21 Maven backend
-from a clean checkout. It must not silently treat the deferred Sprint 3.4
-PostgreSQL runtime gate as passed or widen security, frontend, live-connector,
-pilot, Docker or observability scope.
+D085 - MVP Delivery Roadmap Evolution is the sole next control gate. It may
+freeze the remaining delivery order after Sprint 3.6, but it must not implement
+Java, REST, security, connectors, frontend, Docker, observability or pilot
+behavior. D079 remains authoritative until D085 is formally accepted.
 
 Current execution authorities:
 

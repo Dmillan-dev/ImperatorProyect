@@ -43,7 +43,11 @@ Demo is certified and complete: its deterministic 30-line NDJSON dataset drives
 the existing workflow through Result Validation into a non-persisted
 Application projection, with 89 Java 21 tests passing. This local certification
 does not replace the deferred Sprint 3.4 PostgreSQL gate. The next authorized
-gate is Sprint 3.6 - Basic Java CI.
+gate is D085 - MVP Delivery Roadmap Evolution. Sprint 3.6 Basic Java CI is
+certified and complete: GitHub Actions run `30708049322` verified Maven Wrapper
+`3.3.4`, Apache Maven `3.9.16`, Eclipse Adoptium Java 21, 89 passing tests and
+`BUILD SUCCESS` from commit `c3bb8f6`. D085 may freeze the remaining roadmap
+but authorizes no implementation behavior.
 
 Agents may create runnable implementation only inside the explicitly
 authorized sprint/module. They must use `agents/phase3/README.md`, the frozen

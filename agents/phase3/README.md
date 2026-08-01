@@ -2,7 +2,7 @@
 
 Status: **ACTIVE**
 
-Current gate: **Sprint 3.6 - Basic Java CI**
+Current gate: **D085 - MVP Delivery Roadmap Evolution**
 
 Authorization: **D079 - Phase 3 Vertical-Slice Acceleration**
 
@@ -12,7 +12,7 @@ Phase 3 turns the certified platform foundation into one demonstrable product
 flow. It implements only the locked `DRC-AOA-001` AI Onboarding Assistant
 Recovery case before broader platform hardening.
 
-This plan does not authorize every listed sprint at once. Only the sprint marked
+This plan does not authorize every listed gate at once. Only the gate marked
 `NEXT` in `docs/project/PROJECT_STATUS.md` and
 `docs/project/PHASE_AND_SPRINT_MAP.md` may execute.
 
@@ -79,7 +79,7 @@ Locked constraints:
 
 ## Controlled Sequence
 
-| Sprint | Objective | Status |
+| Gate | Objective | Status |
 |---|---|---|
 | 3.0 | Functional Runtime Composition | CERTIFIED |
 | 3.1 | JSONL Evidence Import, Validation And Normalization | CERTIFIED |
@@ -90,7 +90,9 @@ Locked constraints:
 | 3.4.1 | Documentation Synchronization | COMPLETE |
 | 3.5 | End-to-End Local Business Value Demo | CERTIFIED / COMPLETE |
 | 3.5.1 | Project Control Documentation Synchronization | COMPLETE |
-| 3.6 | Basic Java CI | NEXT |
+| 3.6 | Basic Java CI | CERTIFIED / COMPLETE |
+| 3.6.1 | Documentation Synchronization | COMPLETE |
+| D085 | MVP Delivery Roadmap Evolution | NEXT |
 | 3.7 | Minimum JWT And RBAC | PENDING |
 | 3.8 | Thin Decision Review Workspace | PENDING |
 | 3.9 | Pilot Readiness | PENDING |
@@ -370,6 +372,32 @@ Sprint 3.5.1 synchronized active project-control and AI-agent context
 documentation. It changed no Java, SQL, tests, dependencies, frozen contracts
 or Decision Log entries.
 
+## Sprint 3.6 - Basic Java CI
+
+Sprint 3.6 is certified and complete.
+
+Certification evidence:
+
+- integrated commit: `c3bb8f6`;
+- workflow: `.github/workflows/java-ci.yml`;
+- real GitHub Actions run: `30708049322`;
+- GitHub-hosted Ubuntu 24.04 job: PASS;
+- Maven Wrapper script `3.3.4`: PASS;
+- Apache Maven `3.9.16`: PASS;
+- Eclipse Adoptium Java 21: PASS;
+- `clean verify`: PASS;
+- tests: 89 passed, 0 failed, 0 errors, 0 skipped;
+- executable JAR and `BUILD SUCCESS`: PASS;
+- official GitHub actions use immutable commit pins;
+- obsolete permissive Proto-only CI removed;
+- Java, tests, dependencies, schema, Flyway, documentation, frozen contracts
+  and roadmap unchanged by the implementation;
+- status: **CERTIFIED / COMPLETE**.
+
+Sprint 3.6.1 synchronized active documentation with this certified state. It
+changed no Java, tests, SQL, Flyway, dependencies, frozen contracts or Decision
+Log entries.
+
 ## Demonstration And Pilot Boundary
 
 Sprint 3.5 proved the business-value loop locally with deterministic synthetic
@@ -378,7 +406,7 @@ pilot.
 
 Before Sprint 3.9 pilot readiness can pass:
 
-- Java CI must verify the backend;
+- certified Java CI must continue to verify the backend;
 - JWT/RBAC must protect the relevant routes and actions;
 - secrets and database credentials must be externalized;
 - the thin workspace must expose the review path safely;
@@ -387,7 +415,7 @@ Before Sprint 3.9 pilot readiness can pass:
 ## Execution Discipline
 
 - one bounded deliverable per iteration;
-- one `NEXT` sprint at a time;
+- one `NEXT` control gate at a time;
 - Domain Isolation Index must remain 100%;
 - Architectural Stability Index target is at least 95%;
 - Decision Stability target is 100%;

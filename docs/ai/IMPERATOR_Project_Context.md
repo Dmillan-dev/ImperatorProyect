@@ -44,8 +44,12 @@ spend. The first case is `DRC-AOA-001`, AI Onboarding Assistant Recovery.
 - End-to-End Local Business Value Demo: certified and complete with a
   deterministic 30-line NDJSON dataset, 89 passing Java 21 tests and a
   non-persisted Application projection sourced from validated Ledger facts.
+- Basic Java CI: certified and complete through GitHub Actions run
+  `30708049322`, with Maven Wrapper 3.3.4, Apache Maven 3.9.16, Eclipse Adoptium
+  Java 21, 89 passing tests and executable JAR packaging.
 - Remaining functional REST route shells: implemented and controlled.
-- Current gate: Sprint 3.6 - Basic Java CI.
+- Current gate: D085 - MVP Delivery Roadmap Evolution; no implementation is
+  authorized until that decision is accepted.
 - Sprints 2.9 through 2.13: deferred, not completed.
 
 The live state is maintained in:

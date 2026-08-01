@@ -113,7 +113,8 @@ is found.
 
 ## Authorized Current Use
 
-Sprints 3.0 through 3.5 are complete at their documented gates. Sprint 3.4
-PostgreSQL runtime certification remains deferred under D084. Sprint 3.6 -
-Basic Java CI is the sole next gate and may not widen backend business,
-security, persistence, REST or operational scope.
+Sprints 3.0 through 3.6 are complete at their documented gates. The Java 21
+Maven build is certified through GitHub Actions with 89 passing tests. Sprint
+3.4 PostgreSQL runtime certification remains deferred under D084. D085 - MVP
+Delivery Roadmap Evolution is the sole next control gate and authorizes no
+backend modification.

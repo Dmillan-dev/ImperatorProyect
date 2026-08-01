@@ -66,8 +66,8 @@ Active Phase 3 sprint execution is defined in:
 Phase 3 is named `First Business Value Loop` and is active under D079.
 
 The current authorized gate is maintained in
-`docs/project/PROJECT_STATUS.md`. At the time of this update it is Sprint 3.6:
-Basic Java CI.
+`docs/project/PROJECT_STATUS.md`. At the time of this update it is D085: MVP
+Delivery Roadmap Evolution.
 
 Phase 3 agents may implement only the bounded `DRC-AOA-001` sequence in
 `agents/phase3/README.md`. Sprint 3.0 runtime composition and Sprint 3.1 JSONL
@@ -77,8 +77,9 @@ certified and complete. Sprint 3.3.1 provider-neutral Explanation integration
 is complete with post-transaction invocation and failure isolation. Sprint 3.4
 Human Review, Ledger and Result Validation implementation is complete, with its
 PostgreSQL runtime certification deferred under D084. Sprint 3.5 has certified
-the deterministic local Business Value workflow. The current gate may implement
-only the minimum Java 21 backend CI boundary.
+the deterministic local Business Value workflow. Sprint 3.6 has certified the
+Java 21 Maven backend through a real GitHub Actions run. The current gate may
+only freeze the remaining roadmap and may not implement product behavior.
 
 The completed Phase 2 foundation contains:
 
@@ -88,9 +89,8 @@ The completed Phase 2 foundation contains:
 - persistence foundation,
 - Spring Boot web runtime.
 
-The remaining ordered Phase 3 sequence begins with:
+The remaining implementation sequence is pending D085 and includes:
 
-- Java CI,
 - JWT/RBAC,
 - the thin Decision Review Workspace,
 - Docker and operational hardening,

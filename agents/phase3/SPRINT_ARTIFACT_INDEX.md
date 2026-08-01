@@ -18,10 +18,12 @@ Sprint 3.4: COMPLETE / RUNTIME CERTIFICATION DEFERRED
 Sprint 3.4.1: COMPLETE
 Sprint 3.5: CERTIFIED / COMPLETE
 Sprint 3.5.1: COMPLETE
-Sprint 3.6: NEXT
+Sprint 3.6: CERTIFIED / COMPLETE
+Sprint 3.6.1: COMPLETE
+D085: NEXT
 ```
 
-Exactly one Phase 3 sprint is authorized as `NEXT`.
+Exactly one Phase 3 control gate is authorized as `NEXT`.
 
 ## Accepted Sprint Artifacts
 
@@ -35,6 +37,8 @@ Exactly one Phase 3 sprint is authorized as `NEXT`.
 | 3.4 | Sprint 3.4 closure commit; hash intentionally not self-recorded | D083 contract, D084 process exception, atomic review and Ledger orchestration, strict Ledger sequence, deterministic result validation and certification tests | COMPLETE / RUNTIME CERTIFICATION DEFERRED |
 | 3.5 | `f67257d` | Deterministic 30-line NDJSON workflow, non-persisted Business Value projection, operational guide and local certification harness | CERTIFIED / COMPLETE |
 | 3.5.1 | Current synchronization commit; hash intentionally not self-recorded | Active project-control and AI-context synchronization | COMPLETE |
+| 3.6 | `c3bb8f6` | Java 21 GitHub Actions workflow and real run `30708049322` | CERTIFIED / COMPLETE |
+| 3.6.1 | Current synchronization commit; hash intentionally not self-recorded | Active project-control and AI-context synchronization | COMPLETE |
 
 ### Sprint 3.0
 
@@ -218,19 +222,39 @@ Certification evidence:
 - no schema, Flyway, dependency, frozen-contract or Decision Log changes;
 - status: **CERTIFIED / COMPLETE**.
 
+### Sprint 3.6
+
+Primary artifacts:
+
+- `.github/workflows/java-ci.yml`;
+- executable Git mode for `mvnw`.
+
+Certification evidence:
+
+- integrated commit: `c3bb8f6`;
+- GitHub Actions run `30708049322`: success;
+- all eight job lifecycle steps: success;
+- Maven Wrapper `3.3.4`: PASS;
+- Apache Maven `3.9.16`: PASS;
+- Eclipse Adoptium Java 21: PASS;
+- 89 tests passed with no failures, errors or skips;
+- executable JAR packaging and `BUILD SUCCESS`: PASS;
+- no Java, test, dependency, schema, Flyway, documentation, contract or
+  roadmap changes;
+- status: **CERTIFIED / COMPLETE**.
+
 ## Next Artifact Boundary
 
-Sprint 3.6 may implement only the minimum Basic Java CI gate required to verify
-the Java 21 Maven backend from a clean checkout. It must not silently treat the
-deferred Sprint 3.4 PostgreSQL runtime gate as passed or introduce security,
-frontend, live connectors, pilot behavior, Docker or observability work.
+D085 may only freeze the remaining MVP delivery roadmap. It must not implement
+Java, REST, security, connectors, frontend, Docker, observability or pilot
+behavior. D079 remains authoritative until D085 is formally accepted.
 
 ## Agent Rule
 
 Before using any Phase 3 prompt:
 
-1. confirm there is exactly one `NEXT` sprint;
-2. confirm the prompt matches that sprint exactly;
+1. confirm there is exactly one `NEXT` control gate;
+2. confirm the prompt matches that gate exactly;
 3. read the relevant frozen contracts;
 4. inspect the current implementation;
 5. reject historical or later-sprint scope as current authorization;

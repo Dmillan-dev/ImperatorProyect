@@ -185,9 +185,9 @@ Phase 3 must not begin until the Phase 2 foundation gate is formally closed.
 Its semantic authority is the MVP blueprint and vertical-slice documentation,
 not the Phase 2 route-shell plan.
 
-### Controlled Sprint Sequence
+### Controlled Delivery Sequence
 
-| Sprint | Objective | Status |
+| Gate | Objective | Status |
 |---|---|---|
 | 3.0 | Functional Runtime Composition | CERTIFIED |
 | 3.1 | JSONL Evidence Import, Validation And Normalization | CERTIFIED |
@@ -198,7 +198,9 @@ not the Phase 2 route-shell plan.
 | 3.4.1 | Documentation Synchronization | COMPLETE |
 | 3.5 | End-to-End Local Business Value Demo | CERTIFIED / COMPLETE |
 | 3.5.1 | Project Control Documentation Synchronization | COMPLETE |
-| 3.6 | Basic Java CI | NEXT |
+| 3.6 | Basic Java CI | CERTIFIED / COMPLETE |
+| 3.6.1 | Documentation Synchronization | COMPLETE |
+| D085 | MVP Delivery Roadmap Evolution | NEXT |
 | 3.7 | Minimum JWT And RBAC | PENDING |
 | 3.8 | Thin Decision Review Workspace | PENDING |
 | 3.9 | Pilot Readiness | PENDING |
@@ -237,4 +239,4 @@ A sprint changes from `NEXT` to `COMPLETE` or `CERTIFIED` only when:
 5. the work is integrated cleanly;
 6. the founder accepts the closure or explicitly waives a gate.
 
-Only one sprint may be `NEXT` at a time.
+Only one delivery control gate may be `NEXT` at a time.

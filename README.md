@@ -2,7 +2,7 @@
 
 Status: **Phase 3 First Business Value Loop active**
 
-Current gate: **Sprint 3.6 - Basic Java CI**
+Current gate: **D085 - MVP Delivery Roadmap Evolution**
 
 IMPERATOR is an Operating System for Operational Intelligence and an Enterprise
 Decision Intelligence Platform. The MVP proves one evidence-backed decision,
@@ -54,6 +54,8 @@ The Java backend currently contains:
 - certified deterministic local Business Value workflow over 30 normalized
   Evidence records, with an Application-only projection derived from validated
   Ledger facts;
+- certified Java 21 GitHub Actions pipeline executing the complete Maven build,
+  89 tests and executable JAR packaging from a clean checkout;
 - controlled route shells for the remaining functional REST surface.
 
 The repository does not yet contain:
@@ -65,13 +67,12 @@ The repository does not yet contain:
 - live connectors;
 - a live vendor AI-provider adapter or real model calls;
 - Docker local runtime;
-- Java 21 backend CI;
 - production deployment.
 
 ## Repository Map
 
 ```text
-.github/        Repository automation; currently contains legacy Proto CI
+.github/        Certified Java 21 GitHub Actions automation
 .mvn/           Maven Wrapper configuration
 agents/          AI-agent roles, phase plans and sprint controls
 backend-java/    Java domain, application, ports and adapters
@@ -152,7 +153,7 @@ MVP closure or the first production release.
   explicit approval is granted.
 - Historical prompts and gate reports remain historical records.
 - The Decision Log is append-only for accepted choices.
-- Only one sprint and one implementation module may be authorized at a time.
+- Only one delivery control gate and one implementation module may be authorized at a time.
 - Current state must report verified work, never planned work as complete.
 
 ## Architecture Rules
