@@ -200,19 +200,25 @@ not the Phase 2 route-shell plan.
 | 3.5.1 | Project Control Documentation Synchronization | COMPLETE |
 | 3.6 | Basic Java CI | CERTIFIED / COMPLETE |
 | 3.6.1 | Documentation Synchronization | COMPLETE |
-| D085 | MVP Delivery Roadmap Evolution | NEXT |
-| 3.7 | Minimum JWT And RBAC | PENDING |
-| 3.8 | Thin Decision Review Workspace | PENDING |
-| 3.9 | Pilot Readiness | PENDING |
-| 3.10 | Docker And Operational Hardening | PENDING |
-| 3.11 | Observability Expansion And MVP Closure | PENDING |
+| D085 | MVP Delivery Roadmap Evolution | ACCEPTED / COMPLETE |
+| 3.7 | Functional REST API | NEXT |
+| 3.8 | JWT Authentication | PENDING |
+| 3.9 | RBAC Authorization | PENDING |
+| 4.0 | GitHub Integration | PENDING |
+| 4.1 | AWS Integration | PENDING |
+| 4.2 | Executive Dashboard | PENDING |
+| 4.3 | Docker Production Runtime | PENDING |
+| 4.4 | Observability | PENDING |
+| 4.5 | Pilot Readiness | PENDING |
+| 5.0 | MVP Release | PENDING |
 
 Sprint 3.5 proved the local product flow with a deterministic 30-line NDJSON
 dataset and an Application-only, non-persisted Business Value projection. Its
 Java 21 verification passed 89 tests. It is not full MVP acceptance and does
 not authorize real customer data, external exposure or a pilot. Security, safe
-configuration and the later acceptance gates remain mandatory before Sprint
-3.9 can pass.
+configuration and every later acceptance gate remain mandatory before Sprint
+4.5 can pass. Functional REST delivery is followed by separate JWT and RBAC
+gates.
 
 Sprint 3.4 implementation passed its Java 21 offline verification with 88
 tests. Its explicit PostgreSQL 18.2 certification attempt stopped during Maven
@@ -220,8 +226,8 @@ toolchain selection because the invoked process found only Java 17; Flyway and
 PostgreSQL integration tests did not execute. D084 explicitly defers that
 runtime certification because the certification environment was unavailable.
 No known implementation defect was identified by the checks that executed.
-The deferred gate remains mandatory before Pilot Readiness, MVP closure or the
-first production release.
+The deferred gate remains mandatory before Sprint 4.5 Pilot Readiness, Sprint
+5.0 MVP Release or the first production release.
 
 Active Phase 3 execution authority:
 

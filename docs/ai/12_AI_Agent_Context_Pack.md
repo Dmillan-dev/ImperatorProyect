@@ -42,12 +42,13 @@ or the first production release. Sprint 3.5 End-to-End Local Business Value
 Demo is certified and complete: its deterministic 30-line NDJSON dataset drives
 the existing workflow through Result Validation into a non-persisted
 Application projection, with 89 Java 21 tests passing. This local certification
-does not replace the deferred Sprint 3.4 PostgreSQL gate. The next authorized
-gate is D085 - MVP Delivery Roadmap Evolution. Sprint 3.6 Basic Java CI is
-certified and complete: GitHub Actions run `30708049322` verified Maven Wrapper
-`3.3.4`, Apache Maven `3.9.16`, Eclipse Adoptium Java 21, 89 passing tests and
-`BUILD SUCCESS` from commit `c3bb8f6`. D085 may freeze the remaining roadmap
-but authorizes no implementation behavior.
+does not replace the deferred Sprint 3.4 PostgreSQL gate. Sprint 3.6 Basic Java
+CI is certified and complete: GitHub Actions run `30708049322` verified Maven
+Wrapper `3.3.4`, Apache Maven `3.9.16`, Eclipse Adoptium Java 21, 89 passing
+tests and `BUILD SUCCESS` from commit `c3bb8f6`. D085 is accepted and freezes
+the post-CI delivery roadmap. Sprint 3.7 - Functional REST API is the sole next
+gate and may use only the frozen route topology and existing Application input
+ports.
 
 Agents may create runnable implementation only inside the explicitly
 authorized sprint/module. They must use `agents/phase3/README.md`, the frozen

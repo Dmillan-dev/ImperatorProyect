@@ -115,6 +115,6 @@ is found.
 
 Sprints 3.0 through 3.6 are complete at their documented gates. The Java 21
 Maven build is certified through GitHub Actions with 89 passing tests. Sprint
-3.4 PostgreSQL runtime certification remains deferred under D084. D085 - MVP
-Delivery Roadmap Evolution is the sole next control gate and authorizes no
-backend modification.
+3.4 PostgreSQL runtime certification remains deferred under D084. D085 is
+accepted. Sprint 3.7 - Functional REST API is the sole next gate and may wire
+only the frozen REST topology to existing Application input ports.

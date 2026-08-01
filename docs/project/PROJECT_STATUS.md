@@ -35,10 +35,11 @@ Last verified: **2026-08-01**
 | Sprint 3.6 GitHub Actions certification | PASS |
 | Sprint 3.6 closure | CERTIFIED / COMPLETE |
 | Sprint 3.6.1 documentation synchronization | COMPLETE |
-| Last completed sprint | Sprint 3.6.1 - Documentation Synchronization |
+| D085 roadmap decision | ACCEPTED / COMPLETE |
+| Last completed gate | D085 - MVP Delivery Roadmap Evolution |
 | Phase 2 closure | COMPLETE under D079; Sprints 2.9-2.13 deferred |
-| Next authorized control gate | D085 - MVP Delivery Roadmap Evolution |
-| Phase 3 authorization | Authorized by D079 |
+| Next authorized sprint | Sprint 3.7 - Functional REST API |
+| Phase 3 authorization | Authorized by D079 and evolved by D085 |
 
 ## Verified Foundation
 
@@ -228,14 +229,16 @@ runtime-certification pass.
 
 ## Next Control Gate
 
-D085 - MVP Delivery Roadmap Evolution is the sole next control gate. It may
-freeze the remaining delivery order after Sprint 3.6, but it must not implement
-Java, REST, security, connectors, frontend, Docker, observability or pilot
-behavior. D079 remains authoritative until D085 is formally accepted.
+Sprint 3.7 - Functional REST API is the sole next implementation gate. It may
+replace the existing `501` route-shell behavior only through the frozen REST
+topology and existing Application input ports. It must not add routes, JWT,
+RBAC, live connectors, frontend, Docker, observability or pilot behavior. Real
+customer data and external exposure remain prohibited until Sprints 3.8 and
+3.9 pass.
 
 Current execution authorities:
 
-- D079 through D084 in `docs/decisions/14_Decision_Log.md`;
+- D079 through D085 in `docs/decisions/14_Decision_Log.md`;
 - `agents/phase3/README.md`;
 - `docs/architecture/35_Coding_Principles.md`;
 - `docs/architecture/37_Implementation_Contract.md`.

@@ -2,9 +2,9 @@
 
 Status: **ACTIVE**
 
-Current gate: **D085 - MVP Delivery Roadmap Evolution**
+Current gate: **Sprint 3.7 - Functional REST API**
 
-Authorization: **D079 - Phase 3 Vertical-Slice Acceleration**
+Authorization: **D079 - Phase 3 Vertical-Slice Acceleration; D085 - MVP Delivery Roadmap Evolution**
 
 ## Purpose
 
@@ -92,16 +92,21 @@ Locked constraints:
 | 3.5.1 | Project Control Documentation Synchronization | COMPLETE |
 | 3.6 | Basic Java CI | CERTIFIED / COMPLETE |
 | 3.6.1 | Documentation Synchronization | COMPLETE |
-| D085 | MVP Delivery Roadmap Evolution | NEXT |
-| 3.7 | Minimum JWT And RBAC | PENDING |
-| 3.8 | Thin Decision Review Workspace | PENDING |
-| 3.9 | Pilot Readiness | PENDING |
-| 3.10 | Docker And Operational Hardening | PENDING |
-| 3.11 | Observability Expansion And MVP Closure | PENDING |
+| D085 | MVP Delivery Roadmap Evolution | ACCEPTED / COMPLETE |
+| 3.7 | Functional REST API | NEXT |
+| 3.8 | JWT Authentication | PENDING |
+| 3.9 | RBAC Authorization | PENDING |
+| 4.0 | GitHub Integration | PENDING |
+| 4.1 | AWS Integration | PENDING |
+| 4.2 | Executive Dashboard | PENDING |
+| 4.3 | Docker Production Runtime | PENDING |
+| 4.4 | Observability | PENDING |
+| 4.5 | Pilot Readiness | PENDING |
+| 5.0 | MVP Release | PENDING |
 
-The ordering after Sprint 3.5 preserves the capabilities originally planned as
-Phase 2 Sprints 2.9 through 2.13. Those historical sprint identifiers are
-deferred by D079 and must not be reported as complete.
+The ordering after Sprint 3.6 is frozen by D085 and supersedes only D079's
+unexecuted post-CI sequence. The historical Phase 2 Sprint identifiers 2.9
+through 2.13 remain deferred and must not be reported as complete.
 
 ## Sprint 3.0 - Functional Runtime Composition
 
@@ -404,12 +409,14 @@ Sprint 3.5 proved the business-value loop locally with deterministic synthetic
 Evidence. It does not authorize real customer data, external exposure or a
 pilot.
 
-Before Sprint 3.9 pilot readiness can pass:
+Before Sprint 4.5 Pilot Readiness can pass:
 
 - certified Java CI must continue to verify the backend;
-- JWT/RBAC must protect the relevant routes and actions;
+- JWT Authentication and RBAC Authorization must protect the relevant routes
+  and actions;
 - secrets and database credentials must be externalized;
-- the thin workspace must expose the review path safely;
+- the Sprint 4.2 surface must remain the thin, single-case Decision Review and
+  Business Value experience, not a broad Executive Workspace;
 - required acceptance, negative and audit tests must pass.
 
 ## Execution Discipline

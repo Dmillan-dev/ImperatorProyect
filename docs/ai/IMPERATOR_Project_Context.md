@@ -48,8 +48,9 @@ spend. The first case is `DRC-AOA-001`, AI Onboarding Assistant Recovery.
   `30708049322`, with Maven Wrapper 3.3.4, Apache Maven 3.9.16, Eclipse Adoptium
   Java 21, 89 passing tests and executable JAR packaging.
 - Remaining functional REST route shells: implemented and controlled.
-- Current gate: D085 - MVP Delivery Roadmap Evolution; no implementation is
-  authorized until that decision is accepted.
+- D085 - MVP Delivery Roadmap Evolution: accepted and complete.
+- Current gate: Sprint 3.7 - Functional REST API, limited to the frozen route
+  topology and existing Application input ports.
 - Sprints 2.9 through 2.13: deferred, not completed.
 
 The live state is maintained in:

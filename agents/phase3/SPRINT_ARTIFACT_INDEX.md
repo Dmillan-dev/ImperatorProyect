@@ -20,7 +20,8 @@ Sprint 3.5: CERTIFIED / COMPLETE
 Sprint 3.5.1: COMPLETE
 Sprint 3.6: CERTIFIED / COMPLETE
 Sprint 3.6.1: COMPLETE
-D085: NEXT
+D085: ACCEPTED / COMPLETE
+Sprint 3.7: NEXT
 ```
 
 Exactly one Phase 3 control gate is authorized as `NEXT`.
@@ -39,6 +40,7 @@ Exactly one Phase 3 control gate is authorized as `NEXT`.
 | 3.5.1 | Current synchronization commit; hash intentionally not self-recorded | Active project-control and AI-context synchronization | COMPLETE |
 | 3.6 | `c3bb8f6` | Java 21 GitHub Actions workflow and real run `30708049322` | CERTIFIED / COMPLETE |
 | 3.6.1 | Current synchronization commit; hash intentionally not self-recorded | Active project-control and AI-context synchronization | COMPLETE |
+| D085 | Current decision commit; hash intentionally not self-recorded | Frozen post-CI MVP delivery order and synchronized control documentation | ACCEPTED / COMPLETE |
 
 ### Sprint 3.0
 
@@ -245,9 +247,11 @@ Certification evidence:
 
 ## Next Artifact Boundary
 
-D085 may only freeze the remaining MVP delivery roadmap. It must not implement
-Java, REST, security, connectors, frontend, Docker, observability or pilot
-behavior. D079 remains authoritative until D085 is formally accepted.
+Sprint 3.7 may implement Functional REST behavior only through the frozen route
+topology and existing Application input ports. It must not add routes, JWT,
+RBAC, live connectors, frontend, Docker, observability or pilot behavior. Real
+customer data and external exposure remain prohibited until the security gates
+pass.
 
 ## Agent Rule
 
