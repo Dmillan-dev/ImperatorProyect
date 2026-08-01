@@ -4,7 +4,9 @@ import imperator.application.appendledgerentry.AppendLedgerEntryCommand;
 import imperator.application.appendledgerentry.AppendLedgerEntryResult;
 import imperator.application.appendledgerentry.AppendLedgerEntryUseCase;
 import imperator.application.createdecision.CreateDecisionCommand;
+import imperator.application.createdecision.CreateDecisionResult;
 import imperator.application.createdecision.CreateDecisionUseCase;
+import imperator.application.exceptions.DecisionCreationConflictException;
 import imperator.application.generaterecommendation.GenerateRecommendationCommand;
 import imperator.application.generaterecommendation.GenerateRecommendationUseCase;
 import imperator.application.importevidence.ImportEvidenceCommand;
@@ -63,6 +65,11 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Supplier;
 
@@ -572,22 +579,22 @@ final class PostgresRepositoryIT {
         importEvidence.importEvidence(new ImportEvidenceCommand(
                 evidenceId,
                 timestamp(0),
-                "billing-export",
-                "POSTGRESQL_IT",
-                "invoice-277",
-                "cloud-account",
-                "cost_anomaly",
-                Severity.HIGH,
-                "integration-suite",
-                "COST",
-                "A workload is oversized",
-                "The workload can reduce operating cost",
-                "case-vertical-flow",
+                "Jira",
+                "business_context",
+                "IMP-214",
+                "ai-onboarding-assistant",
+                "business_context_requested",
+                Severity.INFO,
+                "head-customer-success",
+                "business_context",
+                "AI operating cost requires a model review",
+                "Establishes the business need for DRC-AOA-001",
+                "DRC-AOA-001",
                 "INTERNAL",
                 "HIGH",
                 "ACCEPTED",
                 "not_stored",
-                Map.of("environment", "integration")
+                Map.of("evidence_ref", "E-JIRA-001")
         ));
 
         createDecision.createDecision(new CreateDecisionCommand(
@@ -667,6 +674,180 @@ final class PostgresRepositoryIT {
     }
 
     @Test
+    void deterministicDecisionCreationIsIdempotentAndCannotResetProgressedState() throws SQLException {
+        Evidence evidence = eligibleDecisionEvidence();
+        evidenceRepository.save(evidence);
+        DecisionId id = decisionId();
+        UserId ownerId = userId();
+        UserId approverId = userId();
+        CreateDecisionCommand command = decisionCreationCommand(
+                id,
+                evidence.id(),
+                "Evaluate AI model cost",
+                ownerId,
+                approverId
+        );
+        CreateDecisionUseCase useCase = new CreateDecisionUseCase(
+                evidenceRepository,
+                decisionRepository,
+                transactionRunner
+        );
+
+        CreateDecisionResult first = useCase.createDecision(command);
+        CreateDecisionResult retry = useCase.createDecision(command);
+        Decision progressed = decisionRepository.findById(id).orElseThrow();
+        progressed.defer(approverId, timestamp(2), "More usage evidence is required");
+        decisionRepository.save(progressed);
+
+        CreateDecisionResult progressedRetry = useCase.createDecision(command);
+        DecisionCreationConflictException conflict = assertThrows(
+                DecisionCreationConflictException.class,
+                () -> useCase.createDecision(decisionCreationCommand(
+                        id,
+                        evidence.id(),
+                        "Replace the entire AI platform",
+                        ownerId,
+                        approverId
+                ))
+        );
+        Decision stored = decisionRepository.findById(id).orElseThrow();
+
+        assertAll(
+                () -> assertEquals(first, retry),
+                () -> assertEquals(DecisionStatus.CREATED, first.status()),
+                () -> assertEquals(DecisionStatus.DEFERRED, progressedRetry.status()),
+                () -> assertEquals("DECISION_CREATION_CONFLICT", conflict.code()),
+                () -> assertEquals("Evaluate AI model cost", stored.title()),
+                () -> assertEquals(DecisionStatus.DEFERRED, stored.status()),
+                () -> assertEquals(Optional.of(timestamp(2)), stored.reviewedAt()),
+                () -> assertEquals(
+                        Optional.of("More usage evidence is required"),
+                        stored.reviewReason()
+                ),
+                () -> assertTrue(stored.recommendationId().isEmpty()),
+                () -> assertTrue(ledgerRepository.findByDecisionId(id).isEmpty()),
+                () -> assertEquals(1, countRows("SELECT COUNT(*) FROM decisions WHERE id = ?", id.value())),
+                () -> assertEquals(
+                        1,
+                        countRows(
+                                "SELECT COUNT(*) FROM decision_evidence WHERE decision_id = ?",
+                                id.value()
+                        )
+                ),
+                () -> assertEquals(
+                        0,
+                        countRows(
+                                "SELECT COUNT(*) FROM recommendations WHERE decision_id = ?",
+                                id.value()
+                        )
+                ),
+                () -> assertEquals(
+                        0,
+                        countRows(
+                                "SELECT COUNT(*) FROM ledger_entries WHERE decision_id = ?",
+                                id.value()
+                        )
+                )
+        );
+    }
+
+    @Test
+    void equivalentConcurrentCreationPersistsOneDecisionIdentity() throws Exception {
+        Evidence evidence = eligibleDecisionEvidence();
+        evidenceRepository.save(evidence);
+        DecisionId id = decisionId();
+        CreateDecisionCommand command = decisionCreationCommand(
+                id,
+                evidence.id(),
+                "Evaluate AI model cost",
+                userId(),
+                userId()
+        );
+        CreateDecisionUseCase useCase = new CreateDecisionUseCase(
+                evidenceRepository,
+                decisionRepository,
+                transactionRunner
+        );
+
+        List<CreateDecisionResult> results = runConcurrently(
+                () -> useCase.createDecision(command),
+                () -> useCase.createDecision(command)
+        );
+        Decision stored = decisionRepository.findById(id).orElseThrow();
+
+        assertAll(
+                () -> assertEquals(results.get(0), results.get(1)),
+                () -> assertEquals(DecisionStatus.CREATED, stored.status()),
+                () -> assertEquals(1, stored.evidenceIds().size()),
+                () -> assertEquals(1, countRows("SELECT COUNT(*) FROM decisions WHERE id = ?", id.value())),
+                () -> assertEquals(
+                        1,
+                        countRows(
+                                "SELECT COUNT(*) FROM decision_evidence WHERE decision_id = ?",
+                                id.value()
+                        )
+                )
+        );
+    }
+
+    @Test
+    void conflictingConcurrentCreationNeverOverwritesTheWinningTuple() throws Exception {
+        Evidence evidence = eligibleDecisionEvidence();
+        evidenceRepository.save(evidence);
+        DecisionId id = decisionId();
+        UserId ownerId = userId();
+        UserId approverId = userId();
+        CreateDecisionUseCase useCase = new CreateDecisionUseCase(
+                evidenceRepository,
+                decisionRepository,
+                transactionRunner
+        );
+        CreateDecisionCommand firstCommand = decisionCreationCommand(
+                id,
+                evidence.id(),
+                "Evaluate AI model cost",
+                ownerId,
+                approverId
+        );
+        CreateDecisionCommand competingCommand = decisionCreationCommand(
+                id,
+                evidence.id(),
+                "Replace the entire AI platform",
+                ownerId,
+                approverId
+        );
+
+        List<CreationAttempt> attempts = runConcurrently(
+                () -> attemptCreation(useCase, firstCommand),
+                () -> attemptCreation(useCase, competingCommand)
+        );
+        Decision stored = decisionRepository.findById(id).orElseThrow();
+        long successes = attempts.stream().filter(CreationAttempt::successful).count();
+        long conflicts = attempts.stream().filter(attempt -> !attempt.successful()).count();
+
+        assertAll(
+                () -> assertEquals(1, successes),
+                () -> assertEquals(1, conflicts),
+                () -> assertTrue(attempts.stream()
+                        .filter(attempt -> !attempt.successful())
+                        .allMatch(attempt -> "DECISION_CREATION_CONFLICT".equals(attempt.conflictCode()))),
+                () -> assertTrue(Set.of(
+                        "Evaluate AI model cost",
+                        "Replace the entire AI platform"
+                ).contains(stored.title())),
+                () -> assertEquals(DecisionStatus.CREATED, stored.status()),
+                () -> assertEquals(1, countRows("SELECT COUNT(*) FROM decisions WHERE id = ?", id.value())),
+                () -> assertEquals(
+                        1,
+                        countRows(
+                                "SELECT COUNT(*) FROM decision_evidence WHERE decision_id = ?",
+                                id.value()
+                        )
+                )
+        );
+    }
+
+    @Test
     void recommendationAndDecisionRollbackTogetherOnSecondRepositoryFailure() {
         Evidence evidence = evidence("case-cross-repository-rollback");
         evidenceRepository.save(evidence);
@@ -741,7 +922,7 @@ final class PostgresRepositoryIT {
 
     @Test
     void createDecisionUseCaseRollsBackWhenItsFinalWriteFails() {
-        Evidence evidence = evidence("case-create-decision-rollback");
+        Evidence evidence = eligibleDecisionEvidence();
         evidenceRepository.save(evidence);
         DecisionId newDecisionId = decisionId();
         CreateDecisionUseCase useCase = new CreateDecisionUseCase(
@@ -764,7 +945,10 @@ final class PostgresRepositoryIT {
         );
 
         assertAll(
-                () -> assertEquals("Injected failure after DecisionRepository.save", failure.getMessage()),
+                () -> assertEquals(
+                        "Injected failure after DecisionRepository.createIfAbsent",
+                        failure.getMessage()
+                ),
                 () -> assertFalse(decisionRepository.existsById(newDecisionId)),
                 () -> assertTrue(decisionRepository.findById(newDecisionId).isEmpty()),
                 () -> assertTrue(evidenceRepository.existsById(evidence.id()))
@@ -972,6 +1156,19 @@ final class PostgresRepositoryIT {
         }
     }
 
+    private int countRows(String sql, UUID id) throws SQLException {
+        try (
+                Connection connection = adminDataSource.getConnection();
+                PreparedStatement statement = connection.prepareStatement(sql)
+        ) {
+            statement.setObject(1, id);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                assertTrue(resultSet.next());
+                return resultSet.getInt(1);
+            }
+        }
+    }
+
     private void assertDatabaseViolation(
             String expectedSqlState,
             String expectedMessageFragment,
@@ -1085,6 +1282,107 @@ final class PostgresRepositoryIT {
                 Optional.of(Severity.MEDIUM),
                 Optional.empty(),
                 Map.of("source", "postgresql-it")
+        );
+    }
+
+    private CreateDecisionCommand decisionCreationCommand(
+            DecisionId id,
+            EvidenceId evidenceId,
+            String title,
+            UserId ownerId,
+            UserId approverId
+    ) {
+        return new CreateDecisionCommand(
+                id,
+                evidenceId,
+                title,
+                "Reduce recurring AI operating cost",
+                ownerId,
+                approverId,
+                timestamp(1)
+        );
+    }
+
+    private CreationAttempt attemptCreation(
+            CreateDecisionUseCase useCase,
+            CreateDecisionCommand command
+    ) {
+        try {
+            useCase.createDecision(command);
+            return new CreationAttempt(true, null);
+        } catch (DecisionCreationConflictException conflict) {
+            return new CreationAttempt(false, conflict.code());
+        }
+    }
+
+    private <T> List<T> runConcurrently(
+            Supplier<T> firstOperation,
+            Supplier<T> secondOperation
+    ) throws Exception {
+        ExecutorService executor = Executors.newFixedThreadPool(2);
+        CountDownLatch ready = new CountDownLatch(2);
+        CountDownLatch start = new CountDownLatch(1);
+        Future<T> first = executor.submit(
+                () -> executeAfterStart(ready, start, firstOperation)
+        );
+        Future<T> second = executor.submit(
+                () -> executeAfterStart(ready, start, secondOperation)
+        );
+
+        try {
+            assertTrue(ready.await(10, TimeUnit.SECONDS), "Concurrent tasks did not become ready");
+            start.countDown();
+            return List.of(
+                    first.get(15, TimeUnit.SECONDS),
+                    second.get(15, TimeUnit.SECONDS)
+            );
+        } finally {
+            start.countDown();
+            executor.shutdownNow();
+            assertTrue(
+                    executor.awaitTermination(10, TimeUnit.SECONDS),
+                    "Concurrent task executor did not terminate"
+            );
+        }
+    }
+
+    private <T> T executeAfterStart(
+            CountDownLatch ready,
+            CountDownLatch start,
+            Supplier<T> operation
+    ) {
+        ready.countDown();
+        try {
+            if (!start.await(10, TimeUnit.SECONDS)) {
+                throw new IllegalStateException("Timed out waiting for concurrent creation start");
+            }
+        } catch (InterruptedException exception) {
+            Thread.currentThread().interrupt();
+            throw new IllegalStateException("Concurrent creation was interrupted", exception);
+        }
+        return operation.get();
+    }
+
+    private Evidence eligibleDecisionEvidence() {
+        return new Evidence(
+                evidenceId(),
+                timestamp(0),
+                "Jira",
+                "business_context",
+                "IMP-214",
+                "ai-onboarding-assistant",
+                "business_context_requested",
+                Severity.INFO,
+                "head-customer-success",
+                "business_context",
+                "AI operating cost requires a model review",
+                "Establishes the business need for DRC-AOA-001",
+                "DRC-AOA-001",
+                "INTERNAL",
+                "HIGH",
+                "ACCEPTED",
+                "not_stored",
+                Map.of("evidence_ref", "E-JIRA-001")
         );
     }
 
@@ -1307,6 +1605,9 @@ final class PostgresRepositoryIT {
     ) {
     }
 
+    private record CreationAttempt(boolean successful, String conflictCode) {
+    }
+
     private static final class FailAfterSaveEvidenceRepository implements EvidenceRepository {
         private final EvidenceRepository delegate;
 
@@ -1342,6 +1643,14 @@ final class PostgresRepositoryIT {
         public void save(Decision decision) {
             delegate.save(decision);
             throw new IllegalStateException("Injected failure after DecisionRepository.save");
+        }
+
+        @Override
+        public Decision createIfAbsent(Decision decision) {
+            delegate.createIfAbsent(decision);
+            throw new IllegalStateException(
+                    "Injected failure after DecisionRepository.createIfAbsent"
+            );
         }
 
         @Override

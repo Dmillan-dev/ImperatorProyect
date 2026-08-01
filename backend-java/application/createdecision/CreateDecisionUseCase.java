@@ -1,6 +1,8 @@
 package imperator.application.createdecision;
 
 import imperator.application.exceptions.EvidenceNotFoundException;
+import imperator.application.exceptions.DecisionCreationConflictException;
+import imperator.application.exceptions.EvidenceTraceabilityViolationException;
 import imperator.application.exceptions.ValidationException;
 import imperator.domain.decision.Decision;
 import imperator.domain.evidence.Evidence;
@@ -12,6 +14,10 @@ import imperator.ports.out.TransactionRunner;
 import java.util.Objects;
 
 public final class CreateDecisionUseCase implements CreateDecisionInputPort {
+    private static final String MVP_CASE_ID = "DRC-AOA-001";
+    private static final String ORIGINATING_EVIDENCE_TYPE = "business_context";
+    private static final String ORIGINATING_EVENT_TYPE = "business_context_requested";
+
     private final EvidenceRepository evidenceRepository;
     private final DecisionRepository decisionRepository;
     private final TransactionRunner transactionRunner;
@@ -36,10 +42,11 @@ public final class CreateDecisionUseCase implements CreateDecisionInputPort {
     private CreateDecisionResult createDecisionInTransaction(CreateDecisionCommand command) {
         Evidence evidence = evidenceRepository.findById(command.originatingEvidenceId())
                 .orElseThrow(() -> new EvidenceNotFoundException(command.originatingEvidenceId()));
+        validateOriginatingEvidence(evidence, command);
 
-        Decision decision;
+        Decision candidate;
         try {
-            decision = Decision.create(
+            candidate = Decision.create(
                     command.decisionId(),
                     evidence.correlationKey(),
                     command.title(),
@@ -53,16 +60,63 @@ public final class CreateDecisionUseCase implements CreateDecisionInputPort {
             throw new ValidationException("DECISION_VALIDATION_FAILED", failureMessage(exception, "Decision validation failed"), exception);
         }
 
-        decisionRepository.save(decision);
+        Decision persisted = decisionRepository.createIfAbsent(candidate);
+        if (!hasSameImmutableCreationState(candidate, persisted)) {
+            throw new DecisionCreationConflictException(candidate.id());
+        }
 
         return new CreateDecisionResult(
-                decision.id(),
-                decision.caseId(),
-                decision.originatingEvidenceId(),
-                decision.status(),
+                persisted.id(),
+                persisted.caseId(),
+                persisted.originatingEvidenceId(),
+                persisted.status(),
                 evidence.canSupportApproval(),
                 evidence.requiresReview()
         );
+    }
+
+    private void validateOriginatingEvidence(Evidence evidence, CreateDecisionCommand command) {
+        String rejectionReason = originatingEvidenceRejectionReason(evidence);
+        if (rejectionReason != null) {
+            throw new EvidenceTraceabilityViolationException(
+                    evidence.id(),
+                    command.decisionId(),
+                    rejectionReason
+            );
+        }
+    }
+
+    private String originatingEvidenceRejectionReason(Evidence evidence) {
+        if (!MVP_CASE_ID.equals(evidence.correlationKey())) {
+            return "correlation key must be " + MVP_CASE_ID;
+        }
+        if (!ORIGINATING_EVIDENCE_TYPE.equals(evidence.evidenceType())) {
+            return "evidence type must be " + ORIGINATING_EVIDENCE_TYPE;
+        }
+        if (!ORIGINATING_EVENT_TYPE.equals(evidence.eventType())) {
+            return "event type must be " + ORIGINATING_EVENT_TYPE;
+        }
+        if (!"ACCEPTED".equals(evidence.reviewStatus())) {
+            return "review status must be ACCEPTED";
+        }
+        if ("RESTRICTED".equals(evidence.sensitivity())) {
+            return "RESTRICTED evidence cannot originate the Decision";
+        }
+        if (!"not_stored".equals(evidence.rawPayloadMode())) {
+            return "raw payload mode must be not_stored";
+        }
+        return null;
+    }
+
+    private boolean hasSameImmutableCreationState(Decision candidate, Decision persisted) {
+        return candidate.id().equals(persisted.id())
+                && candidate.caseId().equals(persisted.caseId())
+                && candidate.originatingEvidenceId().equals(persisted.originatingEvidenceId())
+                && candidate.title().equals(persisted.title())
+                && candidate.businessNeed().equals(persisted.businessNeed())
+                && candidate.ownerId().equals(persisted.ownerId())
+                && candidate.requiredApproverId().equals(persisted.requiredApproverId())
+                && candidate.createdAt().equals(persisted.createdAt());
     }
 
     private String failureMessage(RuntimeException exception, String fallback) {

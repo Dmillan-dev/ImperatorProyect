@@ -32,6 +32,8 @@ Repository ports are persistence boundaries, not business services.
 Allowed repository responsibilities:
 
 - `save` an aggregate already created or changed by domain/application code;
+- atomically create an aggregate only when an authorized use case requires an
+  explicit create-if-absent contract;
 - `find` an aggregate or exact relationship required by a use case;
 - answer `exists` checks when existence is the required answer;
 - `delete` only if the domain explicitly allows deletion.
@@ -52,6 +54,15 @@ Ledger exception:
 
 - `LedgerRepository` exposes `append`, not `save`, because the Decision Ledger
   is append-only.
+
+Sprint 3.2 authorization:
+
+- `DecisionRepository.createIfAbsent` expresses deterministic Decision
+  creation intent required by `CreateDecisionUseCase`;
+- the operation returns the authoritative persisted Decision and never
+  overwrites an existing Decision;
+- immutable tuple comparison remains Application behavior, not repository
+  business logic.
 
 Light CQRS rule:
 

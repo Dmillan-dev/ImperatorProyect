@@ -133,6 +133,17 @@ Sprint 2.7.4.4 status:
 - Shared flat metadata JSON conversion now lives in a package-private helper
   inside the PostgreSQL adapter to avoid duplicated persistence mapping logic.
 
+Sprint 3.2 Decision creation behavior:
+
+- `PostgresDecisionRepository.createIfAbsent` uses one atomic
+  `INSERT ... ON CONFLICT (id) DO NOTHING` operation;
+- the originating evidence relationship is inserted only when the Decision row
+  is new;
+- an existing row and its relationships are read without mutation;
+- the existing `save` upsert remains reserved for intentional aggregate state
+  changes;
+- no migration, table, constraint or speculative query was added.
+
 ## Never Contains
 
 - Domain changes.

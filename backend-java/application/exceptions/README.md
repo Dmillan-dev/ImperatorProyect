@@ -31,6 +31,7 @@ Concrete exceptions:
 - `InvalidDecisionTransitionException`
 - `RecommendationOwnershipViolationException`
 - `DuplicateEvidenceException`
+- `DecisionCreationConflictException`
 - `DecisionAlreadyClosedException`
 - `DecisionAlreadyHasRecommendationException`
 - `EvidenceTraceabilityViolationException`

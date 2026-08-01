@@ -20,6 +20,26 @@ import java.util.Optional;
 import java.util.UUID;
 
 public final class PostgresDecisionRepository implements DecisionRepository {
+    private static final String INSERT_IF_ABSENT_SQL = """
+            INSERT INTO decisions (
+                id,
+                case_id,
+                title,
+                business_need,
+                originating_evidence_id,
+                owner_id,
+                required_approver_id,
+                created_at,
+                status,
+                recommendation_id,
+                reviewed_by,
+                reviewed_at,
+                review_reason,
+                updated_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT (id) DO NOTHING
+            """;
+
     private static final String UPSERT_SQL = """
             INSERT INTO decisions (
                 id,
@@ -128,6 +148,30 @@ public final class PostgresDecisionRepository implements DecisionRepository {
     }
 
     @Override
+    public Decision createIfAbsent(Decision decision) {
+        Decision candidate = Objects.requireNonNull(decision, "Decision is required");
+        PostgresDecisionRecord record = mapper.toRecord(candidate);
+        List<PostgresDecisionEvidenceRecord> evidenceRecords = mapper.toEvidenceRecords(candidate);
+        Decision[] persisted = new Decision[1];
+
+        try {
+            PostgresLocalTransactions.execute(connectionProvider, connection -> {
+                if (insertDecisionIfAbsent(connection, record)) {
+                    insertEvidenceLinks(connection, evidenceRecords);
+                }
+                persisted[0] = findRequiredDecision(connection, candidate.id());
+            });
+        } catch (SQLException exception) {
+            throw new IllegalStateException(
+                    "Could not create decision if absent " + candidate.id().value(),
+                    exception
+            );
+        }
+
+        return Objects.requireNonNull(persisted[0], "Persisted decision is required");
+    }
+
+    @Override
     public Optional<Decision> findById(DecisionId id) {
         DecisionId decisionId = Objects.requireNonNull(id, "Decision id is required");
 
@@ -162,21 +206,18 @@ public final class PostgresDecisionRepository implements DecisionRepository {
 
     private void saveDecision(Connection connection, PostgresDecisionRecord record) throws SQLException {
         try (PreparedStatement statement = connection.prepareStatement(UPSERT_SQL)) {
-            statement.setObject(1, record.id());
-            statement.setString(2, record.caseId());
-            statement.setString(3, record.title());
-            statement.setString(4, record.businessNeed());
-            statement.setObject(5, record.originatingEvidenceId());
-            statement.setObject(6, record.ownerId());
-            statement.setObject(7, record.requiredApproverId());
-            statement.setTimestamp(8, Timestamp.from(record.createdAt()));
-            statement.setString(9, record.status());
-            setNullableUuid(statement, 10, record.recommendationId());
-            setNullableUuid(statement, 11, record.reviewedBy());
-            setNullableTimestamp(statement, 12, record.reviewedAt());
-            statement.setString(13, record.reviewReason());
-            statement.setTimestamp(14, Timestamp.from(record.updatedAt()));
+            bindDecisionRecord(statement, record);
             statement.executeUpdate();
+        }
+    }
+
+    private boolean insertDecisionIfAbsent(
+            Connection connection,
+            PostgresDecisionRecord record
+    ) throws SQLException {
+        try (PreparedStatement statement = connection.prepareStatement(INSERT_IF_ABSENT_SQL)) {
+            bindDecisionRecord(statement, record);
+            return statement.executeUpdate() == 1;
         }
     }
 
@@ -190,6 +231,13 @@ public final class PostgresDecisionRepository implements DecisionRepository {
             statement.executeUpdate();
         }
 
+        insertEvidenceLinks(connection, evidenceRecords);
+    }
+
+    private void insertEvidenceLinks(
+            Connection connection,
+            List<PostgresDecisionEvidenceRecord> evidenceRecords
+    ) throws SQLException {
         try (PreparedStatement statement = connection.prepareStatement(INSERT_EVIDENCE_LINK_SQL)) {
             for (PostgresDecisionEvidenceRecord evidenceRecord : evidenceRecords) {
                 statement.setObject(1, evidenceRecord.decisionId());
@@ -198,6 +246,14 @@ public final class PostgresDecisionRepository implements DecisionRepository {
             }
             statement.executeBatch();
         }
+    }
+
+    private Decision findRequiredDecision(Connection connection, DecisionId id) throws SQLException {
+        PostgresDecisionRecord record = findRecordById(connection, id)
+                .orElseThrow(() -> new SQLException(
+                        "Decision was not found after atomic create-if-absent: " + id.value()
+                ));
+        return mapper.toDomain(record, findEvidenceLinks(connection, id));
     }
 
     private Optional<PostgresDecisionRecord> findRecordById(Connection connection, DecisionId id) throws SQLException {
@@ -266,6 +322,26 @@ public final class PostgresDecisionRepository implements DecisionRepository {
         } else {
             statement.setTimestamp(parameterIndex, Timestamp.from(value));
         }
+    }
+
+    private void bindDecisionRecord(
+            PreparedStatement statement,
+            PostgresDecisionRecord record
+    ) throws SQLException {
+        statement.setObject(1, record.id());
+        statement.setString(2, record.caseId());
+        statement.setString(3, record.title());
+        statement.setString(4, record.businessNeed());
+        statement.setObject(5, record.originatingEvidenceId());
+        statement.setObject(6, record.ownerId());
+        statement.setObject(7, record.requiredApproverId());
+        statement.setTimestamp(8, Timestamp.from(record.createdAt()));
+        statement.setString(9, record.status());
+        setNullableUuid(statement, 10, record.recommendationId());
+        setNullableUuid(statement, 11, record.reviewedBy());
+        setNullableTimestamp(statement, 12, record.reviewedAt());
+        statement.setString(13, record.reviewReason());
+        statement.setTimestamp(14, Timestamp.from(record.updatedAt()));
     }
 
 }
