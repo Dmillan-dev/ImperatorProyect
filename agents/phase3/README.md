@@ -2,7 +2,7 @@
 
 Status: **ACTIVE**
 
-Current gate: **Sprint 3.2 - Deterministic Decision Creation**
+Current gate: **Sprint 3.3 - Deterministic Recommendation And ROI Policy**
 
 Authorization: **D079 - Phase 3 Vertical-Slice Acceleration**
 
@@ -83,8 +83,8 @@ Locked constraints:
 |---|---|---|
 | 3.0 | Functional Runtime Composition | CERTIFIED |
 | 3.1 | JSONL Evidence Import, Validation And Normalization | CERTIFIED |
-| 3.2 | Deterministic Decision Creation | NEXT |
-| 3.3 | Deterministic Recommendation And ROI Policy | PENDING |
+| 3.2 | Deterministic Decision Creation | CERTIFIED |
+| 3.3 | Deterministic Recommendation And ROI Policy | NEXT |
 | 3.3.1 | Explanation Provider Integration | PENDING |
 | 3.4 | Human Review, Ledger And Result Validation | PENDING |
 | 3.5 | End-to-End Local Business Value Demo | PENDING |
@@ -190,12 +190,64 @@ Certification result:
 
 ## Sprint 3.2 - Deterministic Decision Creation
 
-Sprint 3.2 is the sole next gate. It may implement only the deterministic
-Evidence-to-Decision transition for `DRC-AOA-001` after its exact boundary has
-been reviewed against the frozen contracts and current implementation.
+Sprint 3.2 is certified and complete under D081 and architecture contract 42.
 
-It must not implement Recommendation, ROI, Explanation Provider, Review,
-Ledger, Result Validation or any later Phase 3 capability.
+Certified flow:
+
+```text
+Eligible persisted Evidence
+-> CreateDecisionInputPort
+-> CreateDecisionUseCase
+-> Atomic DecisionRepository.createIfAbsent
+-> Decision in CREATED or authoritative persisted state
+-> PostgreSQL
+```
+
+Certification result:
+
+- Java 21 and Maven Enforcer: PASS;
+- default unit and HTTP contract tests: 67 passed;
+- PostgreSQL 18.2 integration tests: 18 passed;
+- Flyway migrate, validate and no-op second migrate: PASS;
+- initial `CREATED` state and eligible Evidence policy: PASS;
+- identical retry and immutable creation conflict: PASS;
+- progressed Decision replay protection: PASS;
+- equivalent and conflicting concurrent creation: PASS;
+- one persisted Decision identity and evidence link: PASS;
+- Domain, REST, Flyway V1 and frozen contracts unchanged;
+- integrated commit: `8bbbc19`;
+- status: **CERTIFIED / COMPLETE**.
+
+## Sprint 3.3 - Deterministic Recommendation And ROI Policy
+
+Sprint 3.3 is the sole next gate. It may implement only the deterministic
+Decision-to-Recommendation transition for `DRC-AOA-001`, including its frozen
+estimated-savings, confidence and risk policy.
+
+Required functional boundary:
+
+```text
+Certified Decision
+-> Eligible Evidence Set
+-> Deterministic ROI Policy
+-> One Recommendation
+-> Estimated Savings + Confidence + Risk
+-> Existing Repository Ports
+-> PostgreSQL
+```
+
+Before implementation, the exact evidence-readiness rules, formula inputs,
+currency, rounding, confidence, risk and idempotency behavior must be reviewed
+against the frozen product contracts and current implementation. Any real
+contradiction must stop the sprint for founder approval.
+
+Sprint 3.3 must not introduce AI-generated decisions or calculations. The
+Explanation Provider remains deferred to Sprint 3.3.1 and may later explain
+only the deterministic result.
+
+It must not implement Explanation Provider, Review, Ledger, Result Validation,
+additional recommendation families or any later Phase 3 capability outside the
+bounded Recommendation and ROI policy authorized above.
 
 ## Demonstration And Pilot Boundary
 

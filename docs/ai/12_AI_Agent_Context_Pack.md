@@ -24,8 +24,9 @@ and the 15-route REST Adapter Foundation is closed. Sprint 3.0 runtime
 composition is certified against PostgreSQL 18.2 and complete. Sprint 3.1
 JSONL Evidence Import is certified and complete, and the functional import
 route persists normalized Evidence through the Application layer. Phase 3 is
-active. The next authorized gate is Sprint 3.2 - Deterministic Decision
-Creation.
+active. Sprint 3.2 deterministic Decision creation is certified and complete
+with atomic retry and concurrency protection. The next authorized gate is
+Sprint 3.3 - Deterministic Recommendation And ROI Policy.
 
 Agents may create runnable implementation only inside the explicitly
 authorized sprint/module. They must use `agents/phase3/README.md`, the frozen

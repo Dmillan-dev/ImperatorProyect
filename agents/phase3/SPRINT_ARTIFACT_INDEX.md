@@ -11,7 +11,8 @@ does not authorize a sprint by itself. Current authorization lives in
 
 ```text
 Sprint 3.1: CERTIFIED / COMPLETE
-Sprint 3.2: NEXT
+Sprint 3.2: CERTIFIED / COMPLETE
+Sprint 3.3: NEXT
 ```
 
 Exactly one Phase 3 sprint is authorized as `NEXT`.
@@ -22,6 +23,7 @@ Exactly one Phase 3 sprint is authorized as `NEXT`.
 |---|---|---|---|
 | 3.0 | `fe44353` | Runtime composition, PostgreSQL repository certification and Phase 3 plan | CERTIFIED / COMPLETE |
 | 3.1 | `b8bd518` | D080, NDJSON evidence importer, HTTP contract tests, PostgreSQL HTTP integration test and certified fixture | CERTIFIED / COMPLETE |
+| 3.2 | `8bbbc19` | D081 contract, atomic Decision creation, immutable retry policy and PostgreSQL concurrency certification | CERTIFIED / COMPLETE |
 
 ### Sprint 3.0
 
@@ -60,14 +62,39 @@ Certification:
 - normalized Evidence persistence through the application role: PASS;
 - Domain, Ports, Flyway V1 and frozen contracts unchanged.
 
+### Sprint 3.2
+
+Primary artifacts:
+
+- D081 in `docs/decisions/14_Decision_Log.md`;
+- `docs/architecture/42_Deterministic_Decision_Creation_Contract.md`;
+- `backend-java/application/createdecision/CreateDecisionUseCase.java`;
+- `backend-java/application/exceptions/DecisionCreationConflictException.java`;
+- `backend-java/ports/out/DecisionRepository.java`;
+- `backend-java/adapters/out/postgresql/PostgresDecisionRepository.java`;
+- `src/test/java/imperator/application/createdecision/CreateDecisionUseCaseTest.java`;
+- `src/test/java/imperator/adapters/out/postgresql/PostgresRepositoryIT.java`.
+
+Certification:
+
+- Java 21 and Maven Enforcer: PASS;
+- unit and HTTP contract tests: 67 passed;
+- PostgreSQL 18.2 integration tests: 18 passed;
+- atomic create-if-absent and one persisted identity: PASS;
+- identical retry and immutable conflict behavior: PASS;
+- progressed Decision replay protection: PASS;
+- equivalent and conflicting concurrency: PASS;
+- no Recommendation, ROI, Explanation, Review or Ledger behavior introduced;
+- Domain, REST, Flyway V1 and frozen contracts unchanged.
+
 ## Next Artifact Boundary
 
-Sprint 3.2 has no accepted implementation artifact yet. Its prompt or plan may
+Sprint 3.3 has no accepted implementation artifact yet. Its prompt or plan may
 guide work only after it is checked against the current gate, frozen contracts
 and existing implementation.
 
-Sprint 3.2 may implement deterministic Decision creation only. Recommendation,
-ROI, Explanation Provider, Review, Ledger and Result Validation remain later
+Sprint 3.3 may implement one deterministic Recommendation and its ROI policy
+only. Explanation Provider, Review, Ledger and Result Validation remain later
 gates.
 
 ## Agent Rule

@@ -1,6 +1,6 @@
 # IMPERATOR Project Status
 
-Last verified: **2026-07-31**
+Last verified: **2026-08-01**
 
 ## Current Gate
 
@@ -19,9 +19,11 @@ Last verified: **2026-07-31**
 | Sprint 3.0 acceptance | CERTIFIED |
 | Sprint 3.1 acceptance | CERTIFIED |
 | Sprint 3.1 closure | COMPLETE |
-| Last completed sprint | Sprint 3.1 - JSONL Evidence Import, Validation And Normalization |
+| Sprint 3.2 acceptance | CERTIFIED |
+| Sprint 3.2 closure | COMPLETE |
+| Last completed sprint | Sprint 3.2 - Deterministic Decision Creation |
 | Phase 2 closure | COMPLETE under D079; Sprints 2.9-2.13 deferred |
-| Next authorized sprint | Sprint 3.2 - Deterministic Decision Creation |
+| Next authorized sprint | Sprint 3.3 - Deterministic Recommendation And ROI Policy |
 | Phase 3 authorization | Authorized by D079 |
 
 ## Verified Foundation
@@ -41,6 +43,7 @@ Last verified: **2026-07-31**
 | REST adapter foundation | COMPLETE | All 15 frozen MVP route shells certified by document 41 |
 | Functional runtime composition | CERTIFIED | Spring, existing use cases, repositories and transaction runner verified against PostgreSQL 18.2 |
 | Functional REST | IN PROGRESS | Evidence import is functional; remaining MVP route shells retain controlled responses |
+| Deterministic Decision creation | CERTIFIED | Eligible Evidence creates one atomic, retry-safe and concurrency-safe Decision |
 | Security runtime | DEFERRED | Resequenced after the local business-value demo by D079 |
 | Frontend runtime | DEFERRED | Thin Decision Review Workspace follows minimum security |
 | Local container runtime | DEFERRED | Operational hardening follows pilot readiness |
@@ -49,7 +52,7 @@ Last verified: **2026-07-31**
 
 ## Latest Verification
 
-The latest accepted Sprint 3.1 implementation was verified with:
+The latest accepted Sprint 3.2 implementation was verified with:
 
 ```text
 mvnw.cmd -o clean verify
@@ -60,10 +63,10 @@ Latest accepted result:
 
 - Java 21 gate: PASS;
 - Maven Enforcer: PASS;
-- production compilation: 104 files;
-- test compilation: 13 files;
-- default unit and HTTP contract tests: 61 passed, 0 failed;
-- PostgreSQL integration tests: 15 passed, 0 failed;
+- production compilation: 105 files;
+- test compilation: 14 files;
+- default unit and HTTP contract tests: 67 passed, 0 failed;
+- PostgreSQL integration tests: 18 passed, 0 failed;
 - executable JAR: created.
 
 Real runtime certification:
@@ -75,6 +78,11 @@ Real runtime certification:
 - Spring-to-application-to-repository composition: PASS;
 - evidence import through the restricted application database role: PASS;
 - per-line transaction and duplicate behavior: PASS;
+- eligible Evidence-to-Decision transition: PASS;
+- atomic `DecisionRepository.createIfAbsent`: PASS;
+- identical retry and immutable conflict behavior: PASS;
+- progressed Decision replay protection: PASS;
+- equivalent and conflicting concurrent creation: PASS;
 - repository behavior and use-case transaction boundaries: PASS;
 - PostgreSQL server shutdown after certification: PASS.
 
@@ -106,14 +114,14 @@ Real HTTP contract verification:
 
 Documentation integrity verification:
 
-- Markdown files checked: 153;
+- Markdown files checked: 154;
 - broken local links: 0;
 - current gate consistency: PASS;
 - exactly one `NEXT` sprint: PASS;
 - changed control documentation language: English;
 - frozen contracts 34-40 modified: no.
 
-The PostgreSQL integration profile was re-executed for Sprint 3.1 against an
+The PostgreSQL integration profile was re-executed for Sprint 3.2 against an
 isolated disposable PostgreSQL 18.2 runtime.
 
 ## Known Non-Blocking Risks
@@ -125,25 +133,27 @@ isolated disposable PostgreSQL 18.2 runtime.
   validate the Java 21 Maven backend and contains permissive generation steps;
   replacement or hardening belongs to Sprint 3.6.
 
-These risks do not require widening Sprint 3.2. They must remain visible and
+These risks do not require widening Sprint 3.3. They must remain visible and
 must not be misreported as current backend CI coverage.
 
 ## Next Sprint Boundary
 
-Sprint 3.2 - Deterministic Decision Creation is the sole next implementation
-gate. Its exact file and behavior boundary must be reviewed against the frozen
-contracts and existing implementation before any change.
+Sprint 3.3 - Deterministic Recommendation And ROI Policy is the sole next
+implementation gate. Its exact formula, evidence-readiness, confidence, risk,
+currency, rounding and immutable-input boundary must be reviewed against the
+frozen contracts and existing implementation before any change.
 
-Sprint 3.2 may connect certified persisted Evidence to deterministic Decision
-creation only. It does not authorize Recommendation, ROI, Explanation Provider,
-Review, Ledger, Result Validation, security, frontend, live connectors or
-observability behavior.
+Sprint 3.3 may transform the certified `DRC-AOA-001` Decision and its eligible
+Evidence into one deterministic Recommendation with estimated savings,
+confidence and risk. It does not authorize Explanation Provider or other AI
+behavior, Review, Ledger, Result Validation, security, frontend, live
+connectors or observability behavior.
 
 Current execution authorities:
 
-- D079 and D080 in `docs/decisions/14_Decision_Log.md`;
+- D079 through D081 in `docs/decisions/14_Decision_Log.md`;
 - `agents/phase3/README.md`;
-- `docs/architecture/41_REST_Adapter_Foundation_Closure.md`.
+- `docs/architecture/42_Deterministic_Decision_Creation_Contract.md`.
 
 ## Current Architectural Invariants
 

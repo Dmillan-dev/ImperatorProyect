@@ -30,8 +30,10 @@ spend. The first case is `DRC-AOA-001`, AI Onboarding Assistant Recovery.
 - Phase 3 First Business Value Loop: active.
 - Functional runtime composition: certified against PostgreSQL 18.2 and complete.
 - JSONL Evidence Import: certified and complete with independent per-line processing.
+- Deterministic Decision creation: certified and complete with atomic retry and
+  concurrency protection.
 - Remaining functional REST route shells: implemented and controlled.
-- Current gate: Sprint 3.2 - Deterministic Decision Creation.
+- Current gate: Sprint 3.3 - Deterministic Recommendation And ROI Policy.
 - Sprints 2.9 through 2.13: deferred, not completed.
 
 The live state is maintained in:
@@ -81,7 +83,8 @@ the single authorized business value loop under D079.
 - no JPA;
 - six product REST controllers preserving 15 controlled routes;
 - functional JSONL Evidence import wired through Application and PostgreSQL;
-- remaining Decision, Recommendation, ROI, Review, Ledger and Result Validation
+- deterministic Decision creation wired through Application and PostgreSQL;
+- Recommendation, ROI, Explanation, Review, Ledger and Result Validation
   business behavior not implemented yet;
 - no security runtime yet.
 

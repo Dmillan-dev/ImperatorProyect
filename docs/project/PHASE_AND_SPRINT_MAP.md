@@ -191,8 +191,8 @@ not the Phase 2 route-shell plan.
 |---|---|---|
 | 3.0 | Functional Runtime Composition | CERTIFIED |
 | 3.1 | JSONL Evidence Import, Validation And Normalization | CERTIFIED |
-| 3.2 | Deterministic Decision Creation | NEXT |
-| 3.3 | Deterministic Recommendation And ROI Policy | PENDING |
+| 3.2 | Deterministic Decision Creation | CERTIFIED |
+| 3.3 | Deterministic Recommendation And ROI Policy | NEXT |
 | 3.3.1 | Explanation Provider Integration | PENDING |
 | 3.4 | Human Review, Ledger And Result Validation | PENDING |
 | 3.5 | End-to-End Local Business Value Demo | PENDING |
