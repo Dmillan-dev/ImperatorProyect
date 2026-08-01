@@ -26,6 +26,9 @@ Sprint 2.6.1 status:
 - `AppendLedgerEntryInputPort`.
 - No implementations.
 
+Sprint 3.5 addition:
+- `ProjectBusinessValueInputPort` exposes the non-persisted, validated Business Value query boundary.
+
 ## Never Contains
 
 - REST controllers.

@@ -35,6 +35,10 @@ Current Phase 2B status:
 - Each use case is reserved as one future transaction boundary; transaction
   implementation details are deferred to the persistence adapter sprint.
 
+Sprint 3.5 addition:
+- `businessvalue/` projects the validated Evidence, Decision, Recommendation,
+  and Ledger state without creating or persisting a Business Value aggregate.
+
 ## Never Contains
 
 - Spring annotations.

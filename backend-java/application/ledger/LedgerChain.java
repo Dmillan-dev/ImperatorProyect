@@ -92,6 +92,11 @@ public final class LedgerChain {
         return entries.isEmpty() ? Optional.empty() : Optional.of(entries.getLast());
     }
 
+    /** Returns the validated chain from its root to its current head. */
+    public List<LedgerEntry> entries() {
+        return entries;
+    }
+
     public boolean contains(LedgerEntryId entryId) {
         LedgerEntryId id = Objects.requireNonNull(entryId, "Ledger entry id is required");
         return entries.stream().anyMatch(entry -> entry.id().equals(id));
