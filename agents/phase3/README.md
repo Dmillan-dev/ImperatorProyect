@@ -2,7 +2,7 @@
 
 Status: **ACTIVE**
 
-Current gate: **Sprint 3.5 - End-to-End Local Business Value Demo**
+Current gate: **Sprint 3.6 - Basic Java CI**
 
 Authorization: **D079 - Phase 3 Vertical-Slice Acceleration**
 
@@ -88,8 +88,9 @@ Locked constraints:
 | 3.3.1 | Explanation Provider Integration | COMPLETE |
 | 3.4 | Human Review, Ledger And Result Validation | COMPLETE; runtime certification DEFERRED under D084 |
 | 3.4.1 | Documentation Synchronization | COMPLETE |
-| 3.5 | End-to-End Local Business Value Demo | NEXT |
-| 3.6 | Basic Java CI | PENDING |
+| 3.5 | End-to-End Local Business Value Demo | CERTIFIED / COMPLETE |
+| 3.5.1 | Project Control Documentation Synchronization | COMPLETE |
+| 3.6 | Basic Java CI | NEXT |
 | 3.7 | Minimum JWT And RBAC | PENDING |
 | 3.8 | Thin Decision Review Workspace | PENDING |
 | 3.9 | Pilot Readiness | PENDING |
@@ -333,11 +334,47 @@ MVP closure or the first production release.
 Sprint 3.4.1 synchronized active documentation with this verified state. It
 changed no Java, SQL, tests, frozen contracts or Decision Log entries.
 
+## Sprint 3.5 - End-to-End Local Business Value Demo
+
+Sprint 3.5 is certified and complete. It composes the existing bounded
+`DRC-AOA-001` capabilities into one deterministic local workflow:
+
+```text
+NDJSON Evidence
+-> Decision
+-> Recommendation + deterministic Explanation
+-> Approval
+-> Implementation marker
+-> Result Validation
+-> non-persisted Business Value projection
+```
+
+Certification evidence:
+
+- deterministic dataset: 30 accepted Evidence records, 0 rejected;
+- Business Value remains an Application projection with no aggregate,
+  repository, table, cache or REST wiring;
+- realized savings originate only from the authoritative `result_validated`
+  Ledger fact;
+- policy version, assumptions, Evidence ids, Decision, Recommendation and
+  ordered Ledger history remain visible;
+- identical command replay creates no additional Ledger entries and produces
+  an equal projection;
+- Java 21 Maven verification: 89 tests passed;
+- REST route behavior, Flyway V1, schema, dependencies, frozen contracts and
+  Decision Log: unchanged;
+- integrated commit: `f67257d`;
+- status: **CERTIFIED / COMPLETE**.
+
+Sprint 3.5.1 synchronized active project-control and AI-agent context
+documentation. It changed no Java, SQL, tests, dependencies, frozen contracts
+or Decision Log entries.
+
 ## Demonstration And Pilot Boundary
 
-Sprint 3.5 proves the business-value loop locally with approved synthetic,
-manual or sanitized import evidence. It does not authorize real customer data,
-external exposure or a pilot.
+Sprint 3.5 proved the business-value loop locally with deterministic synthetic
+Evidence. It does not authorize real customer data, external exposure or a
+pilot.
 
 Before Sprint 3.9 pilot readiness can pass:
 
@@ -361,7 +398,7 @@ Before Sprint 3.9 pilot readiness can pass:
 
 ## Phase 3 Exit
 
-Phase 3 is not complete when Sprint 3.5 passes. Full closure requires the
-frozen MVP acceptance path, including deterministic value, AI explanation,
-human authority, append-only audit history, minimum security, the review
-workspace and minimum operational verification.
+Phase 3 remains active after Sprint 3.5. Full closure requires the frozen MVP
+acceptance path, including deterministic value, AI explanation, human
+authority, append-only audit history, minimum security, the review workspace
+and minimum operational verification.

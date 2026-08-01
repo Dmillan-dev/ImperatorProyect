@@ -46,6 +46,11 @@ Current Phase 3 foundation:
 - Sprint 3.3.1 invokes the replaceable `ExplanationProvider` only after
   deterministic persistence and returns optional natural-language text without
   changing business truth.
+- Sprint 3.4 implements atomic Human Review, append-only Ledger governance and
+  deterministic Result Validation; its PostgreSQL runtime certification remains
+  deferred under D084.
+- Sprint 3.5 certifies the deterministic local Evidence-to-Business-Value flow
+  and exposes Business Value only as a non-persisted Application projection.
 - REST errors use the frozen four-field envelope and `X-Correlation-ID`.
 - The Evidence import route is functional; the other 14 frozen MVP routes
   remain controlled `501` shells.
@@ -108,9 +113,7 @@ is found.
 
 ## Authorized Current Use
 
-Sprint 3.0 - Functional Runtime Composition, Sprint 3.1 - JSONL Evidence
-Import, Validation And Normalization, Sprint 3.2 - Deterministic Decision
-Creation, and Sprint 3.3 - Deterministic Recommendation And ROI Policy are
-certified and complete. Sprint 3.3.1 - Explanation Provider Integration is
-complete. Sprint 3.4 - Human Review, Ledger And Result Validation is the sole
-next gate.
+Sprints 3.0 through 3.5 are complete at their documented gates. Sprint 3.4
+PostgreSQL runtime certification remains deferred under D084. Sprint 3.6 -
+Basic Java CI is the sole next gate and may not widen backend business,
+security, persistence, REST or operational scope.

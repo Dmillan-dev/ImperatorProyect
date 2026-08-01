@@ -16,7 +16,9 @@ Sprint 3.3: CERTIFIED / COMPLETE
 Sprint 3.3.1: COMPLETE
 Sprint 3.4: COMPLETE / RUNTIME CERTIFICATION DEFERRED
 Sprint 3.4.1: COMPLETE
-Sprint 3.5: NEXT
+Sprint 3.5: CERTIFIED / COMPLETE
+Sprint 3.5.1: COMPLETE
+Sprint 3.6: NEXT
 ```
 
 Exactly one Phase 3 sprint is authorized as `NEXT`.
@@ -31,6 +33,8 @@ Exactly one Phase 3 sprint is authorized as `NEXT`.
 | 3.3 | `087f94d` | D082 contract, deterministic Recommendation/ROI policy, atomic Recommendation creation and PostgreSQL concurrency certification | CERTIFIED / COMPLETE |
 | 3.3.1 | `838f156` | Post-transaction provider invocation, bounded explanation context and provider-failure isolation | COMPLETE |
 | 3.4 | Sprint 3.4 closure commit; hash intentionally not self-recorded | D083 contract, D084 process exception, atomic review and Ledger orchestration, strict Ledger sequence, deterministic result validation and certification tests | COMPLETE / RUNTIME CERTIFICATION DEFERRED |
+| 3.5 | `f67257d` | Deterministic 30-line NDJSON workflow, non-persisted Business Value projection, operational guide and local certification harness | CERTIFIED / COMPLETE |
+| 3.5.1 | Current synchronization commit; hash intentionally not self-recorded | Active project-control and AI-context synchronization | COMPLETE |
 
 ### Sprint 3.0
 
@@ -189,14 +193,37 @@ Completion evidence:
   release;
 - status: **COMPLETE / RUNTIME CERTIFICATION DEFERRED**.
 
+### Sprint 3.5
+
+Primary artifacts:
+
+- `backend-java/application/businessvalue/BusinessValueProjection.java`;
+- `backend-java/application/businessvalue/ProjectBusinessValueUseCase.java`;
+- `backend-java/ports/in/ProjectBusinessValueInputPort.java`;
+- `src/test/resources/evidence/drc-aoa-001-business-value-demo.jsonl`;
+- `src/test/java/imperator/api/evidence/EndToEndBusinessValueDemoTest.java`;
+- `docs/demos/45_End_To_End_Business_Value_Demo.md`.
+
+Certification evidence:
+
+- Java 21 and Maven Enforcer: PASS;
+- default unit, HTTP contract and local demo tests: 89 passed;
+- deterministic import: 30 accepted, 0 rejected;
+- complete local Evidence-to-Business-Value workflow: PASS;
+- Explanation Provider isolation: PASS;
+- Business Value unavailable before Result Validation: PASS;
+- realized savings sourced only from `result_validated`: PASS;
+- identical governance replay and deterministic re-projection: PASS;
+- `GET /api/v1/business-value` remains controlled `501`;
+- no schema, Flyway, dependency, frozen-contract or Decision Log changes;
+- status: **CERTIFIED / COMPLETE**.
+
 ## Next Artifact Boundary
 
-Sprint 3.5 may implement only the bounded local `DRC-AOA-001` business-value
-demonstration over the existing Evidence, Decision, Recommendation,
-Explanation, Review, Ledger and Result Validation capabilities. It must not
-silently treat the deferred Sprint 3.4 PostgreSQL runtime gate as passed or
-introduce security, frontend, live connectors, pilot behavior or operational
-hardening.
+Sprint 3.6 may implement only the minimum Basic Java CI gate required to verify
+the Java 21 Maven backend from a clean checkout. It must not silently treat the
+deferred Sprint 3.4 PostgreSQL runtime gate as passed or introduce security,
+frontend, live connectors, pilot behavior, Docker or observability work.
 
 ## Agent Rule
 

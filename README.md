@@ -2,7 +2,7 @@
 
 Status: **Phase 3 First Business Value Loop active**
 
-Current gate: **Sprint 3.5 - End-to-End Local Business Value Demo**
+Current gate: **Sprint 3.6 - Basic Java CI**
 
 IMPERATOR is an Operating System for Operational Intelligence and an Enterprise
 Decision Intelligence Platform. The MVP proves one evidence-backed decision,
@@ -51,6 +51,9 @@ The Java backend currently contains:
 - completed Human Review, append-only Ledger and Result Validation
   implementation with atomic Decision outcomes, idempotent replay and strict
   linear sequencing;
+- certified deterministic local Business Value workflow over 30 normalized
+  Evidence records, with an Application-only projection derived from validated
+  Ledger facts;
 - controlled route shells for the remaining functional REST surface.
 
 The repository does not yet contain:
@@ -62,6 +65,7 @@ The repository does not yet contain:
 - live connectors;
 - a live vendor AI-provider adapter or real model calls;
 - Docker local runtime;
+- Java 21 backend CI;
 - production deployment.
 
 ## Repository Map

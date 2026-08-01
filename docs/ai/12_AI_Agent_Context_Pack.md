@@ -38,8 +38,12 @@ PostgreSQL 18.2 runtime certification because the certification environment was
 unavailable: the profile attempt stopped at Java toolchain selection before
 PostgreSQL. No known implementation defect was identified by the checks that
 executed. Certification remains mandatory before Pilot Readiness, MVP closure
-or the first production release. The next authorized gate is Sprint 3.5 -
-End-to-End Local Business Value Demo.
+or the first production release. Sprint 3.5 End-to-End Local Business Value
+Demo is certified and complete: its deterministic 30-line NDJSON dataset drives
+the existing workflow through Result Validation into a non-persisted
+Application projection, with 89 Java 21 tests passing. This local certification
+does not replace the deferred Sprint 3.4 PostgreSQL gate. The next authorized
+gate is Sprint 3.6 - Basic Java CI.
 
 Agents may create runnable implementation only inside the explicitly
 authorized sprint/module. They must use `agents/phase3/README.md`, the frozen

@@ -28,9 +28,12 @@ Last verified: **2026-08-01**
 | Sprint 3.4 PostgreSQL certification | DEFERRED under D084 - certification environment unavailable |
 | Sprint 3.4 closure | COMPLETE under the explicit D084 process exception |
 | Sprint 3.4.1 documentation synchronization | COMPLETE |
-| Last completed sprint | Sprint 3.4.1 - Documentation Synchronization |
+| Sprint 3.5 acceptance | CERTIFIED |
+| Sprint 3.5 closure | COMPLETE |
+| Sprint 3.5.1 documentation synchronization | COMPLETE |
+| Last completed sprint | Sprint 3.5.1 - Project Control Documentation Synchronization |
 | Phase 2 closure | COMPLETE under D079; Sprints 2.9-2.13 deferred |
-| Next authorized sprint | Sprint 3.5 - End-to-End Local Business Value Demo |
+| Next authorized sprint | Sprint 3.6 - Basic Java CI |
 | Phase 3 authorization | Authorized by D079 |
 
 ## Verified Foundation
@@ -39,7 +42,7 @@ Last verified: **2026-08-01**
 |---|---|---|
 | Java build | PASS | Java 21, Maven Wrapper 3.3.4, Maven 3.9.16 |
 | Domain | PASS | Framework-free domain model and value objects |
-| Application | PASS | Five deterministic application use cases |
+| Application | PASS | Deterministic use cases plus the non-persisted Business Value projection |
 | Ports | PASS | Inbound, outbound and explicit transaction ports |
 | PostgreSQL persistence | PASS | JDBC adapters and PostgreSQL 18.2 certification |
 | Database schema | PASS | Flyway V1 and frozen seven-table schema |
@@ -54,16 +57,16 @@ Last verified: **2026-08-01**
 | Deterministic Recommendation and ROI | CERTIFIED | DRC-AOA-001-v1 derives one atomic Recommendation with annualized savings, confidence and risk |
 | Explanation Provider integration | COMPLETE | Optional provider-neutral explanation executes after deterministic persistence and has no decision, ROI or persistence authority |
 | Human Review, Ledger and Result Validation | COMPLETE; RUNTIME CERTIFICATION DEFERRED | Atomic review and Ledger behavior, replay, linearity, result validation and rollback tests implemented; D084 requires PostgreSQL 18.2 certification before Pilot Readiness, MVP closure or production |
-| End-to-End Local Business Value Demo | NEXT | Sole authorized Phase 3 implementation gate |
+| End-to-End Local Business Value Demo | CERTIFIED / COMPLETE | Deterministic local `DRC-AOA-001` workflow and traceable projection verified with 30 Evidence records |
 | Security runtime | DEFERRED | Resequenced after the local business-value demo by D079 |
 | Frontend runtime | DEFERRED | Thin Decision Review Workspace follows minimum security |
 | Local container runtime | DEFERRED | Operational hardening follows pilot readiness |
 | Observability runtime | DEFERRED | Minimum expansion follows operational hardening |
-| Java backend CI | NOT STARTED | Required before minimum security and pilot readiness |
+| Java backend CI | NEXT | Sole authorized Phase 3 implementation gate |
 
 ## Latest Verification
 
-The Sprint 3.4 implementation was verified locally with Java 21 using:
+Sprint 3.5 was verified locally with Java 21 using:
 
 ```text
 mvnw.cmd -o clean verify
@@ -73,14 +76,16 @@ Latest implementation result:
 
 - Java 21 gate: PASS;
 - Maven Enforcer: PASS;
-- production compilation: 109 files;
-- test compilation: 20 files;
-- default unit and HTTP contract tests: 88 passed, 0 failed;
-- atomic approve, reject and defer orchestration: PASS;
-- authoritative Ledger replay and immutable conflict behavior: PASS;
-- strict Ledger root, predecessor, no-fork and occurrence-time validation: PASS;
-- deterministic realized-recovery and variance policy: PASS;
-- rollback and PostgreSQL concurrency tests: implemented and compiled;
+- production compilation: 112 files;
+- test compilation: 21 files;
+- default unit, HTTP contract and local demo tests: 89 passed, 0 failed;
+- deterministic NDJSON demonstration dataset: 30 accepted, 0 rejected;
+- Evidence-to-Decision-to-Recommendation workflow: PASS;
+- deterministic Explanation isolation: PASS;
+- Review-to-Ledger-to-Result Validation workflow: PASS;
+- non-persisted Business Value projection: PASS;
+- authoritative estimated and realized savings traceability: PASS;
+- identical governance replay and equal re-projection: PASS;
 - existing REST route-shell contracts: PASS;
 - executable JAR: created.
 
@@ -174,7 +179,7 @@ Real HTTP contract verification:
 
 Documentation integrity verification:
 
-- Markdown files checked: 156;
+- Markdown files checked: 155;
 - broken local links: 0;
 - current gate consistency: PASS;
 - exactly one `NEXT` sprint: PASS;
@@ -201,23 +206,23 @@ real-database certification.
   validate the Java 21 Maven backend and contains permissive generation steps;
   replacement or hardening belongs to Sprint 3.6.
 
-These risks do not widen Sprint 3.5. They must remain visible and must not be
+These risks do not widen Sprint 3.6. They must remain visible and must not be
 misreported as current backend CI or a Sprint 3.4 runtime-certification pass.
 
 ## Next Sprint Boundary
 
-Sprint 3.5 - End-to-End Local Business Value Demo is the sole next
-implementation gate. It may compose the already implemented Evidence,
-Decision, Recommendation, Explanation, Review, Ledger and Result Validation
-capabilities into the bounded local `DRC-AOA-001` demonstration. It must not
-silently treat the deferred Sprint 3.4 PostgreSQL runtime gate as passed or
-widen security, frontend, live-connector, pilot or observability scope.
+Sprint 3.6 - Basic Java CI is the sole next implementation gate. It may create
+the minimum repository automation required to verify the Java 21 Maven backend
+from a clean checkout. It must not silently treat the deferred Sprint 3.4
+PostgreSQL runtime gate as passed or widen security, frontend, live-connector,
+pilot, Docker or observability scope.
 
 Current execution authorities:
 
 - D079 through D084 in `docs/decisions/14_Decision_Log.md`;
 - `agents/phase3/README.md`;
-- `docs/architecture/44_Review_Ledger_Result_Validation_Contract.md`.
+- `docs/architecture/35_Coding_Principles.md`;
+- `docs/architecture/37_Implementation_Contract.md`.
 
 ## Current Architectural Invariants
 

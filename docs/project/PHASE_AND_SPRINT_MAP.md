@@ -196,18 +196,21 @@ not the Phase 2 route-shell plan.
 | 3.3.1 | Explanation Provider Integration | COMPLETE |
 | 3.4 | Human Review, Ledger And Result Validation | COMPLETE; runtime certification DEFERRED under D084 |
 | 3.4.1 | Documentation Synchronization | COMPLETE |
-| 3.5 | End-to-End Local Business Value Demo | NEXT |
-| 3.6 | Basic Java CI | PENDING |
+| 3.5 | End-to-End Local Business Value Demo | CERTIFIED / COMPLETE |
+| 3.5.1 | Project Control Documentation Synchronization | COMPLETE |
+| 3.6 | Basic Java CI | NEXT |
 | 3.7 | Minimum JWT And RBAC | PENDING |
 | 3.8 | Thin Decision Review Workspace | PENDING |
 | 3.9 | Pilot Readiness | PENDING |
 | 3.10 | Docker And Operational Hardening | PENDING |
 | 3.11 | Observability Expansion And MVP Closure | PENDING |
 
-Sprint 3.5 proves a local product flow with approved synthetic, manual or
-sanitized import evidence. It is not full MVP acceptance and does not authorize
-real customer data, external exposure or a pilot. Security, safe configuration
-and the later acceptance gates remain mandatory before Sprint 3.9 can pass.
+Sprint 3.5 proved the local product flow with a deterministic 30-line NDJSON
+dataset and an Application-only, non-persisted Business Value projection. Its
+Java 21 verification passed 89 tests. It is not full MVP acceptance and does
+not authorize real customer data, external exposure or a pilot. Security, safe
+configuration and the later acceptance gates remain mandatory before Sprint
+3.9 can pass.
 
 Sprint 3.4 implementation passed its Java 21 offline verification with 88
 tests. Its explicit PostgreSQL 18.2 certification attempt stopped during Maven

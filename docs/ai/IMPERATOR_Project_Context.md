@@ -41,8 +41,11 @@ spend. The first case is `DRC-AOA-001`, AI Onboarding Assistant Recovery.
 - Sprint 3.4 PostgreSQL 18.2 runtime certification: deferred under D084 because
   the certification environment was unavailable; it must pass before Pilot
   Readiness, MVP closure or the first production release.
+- End-to-End Local Business Value Demo: certified and complete with a
+  deterministic 30-line NDJSON dataset, 89 passing Java 21 tests and a
+  non-persisted Application projection sourced from validated Ledger facts.
 - Remaining functional REST route shells: implemented and controlled.
-- Current gate: Sprint 3.5 - End-to-End Local Business Value Demo.
+- Current gate: Sprint 3.6 - Basic Java CI.
 - Sprints 2.9 through 2.13: deferred, not completed.
 
 The live state is maintained in:
