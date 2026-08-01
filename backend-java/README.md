@@ -40,6 +40,9 @@ Current Phase 3 foundation:
   application input ports when PostgreSQL runtime configuration is enabled.
 - Sprint 3.1 implements partial per-line NDJSON evidence import through the
   existing evidence input port and certified PostgreSQL adapter.
+- Sprint 3.2 implements deterministic, idempotent Decision creation.
+- Sprint 3.3 derives the first `MODEL_CHANGE` Recommendation, annualized ROI,
+  confidence and risk through the frozen `DRC-AOA-001-v1` Domain policy.
 - REST errors use the frozen four-field envelope and `X-Correlation-ID`.
 - The Evidence import route is functional; the other 14 frozen MVP routes
   remain controlled `501` shells.
@@ -63,9 +66,8 @@ Application runtime credentials do not execute DDL. Flyway continues to run
 through the migration profile with its separate administrative principal before
 the application principal is used.
 
-Sprint 3.0 provides an unavailable `ExplanationProvider` fallback that returns
-no explanation and performs no external call. The real prepared-context
-provider belongs to Sprint 3.3.1.
+Deterministic Recommendation creation has no `ExplanationProvider` bean or
+invocation. The prepared-context provider remains deferred to Sprint 3.3.1.
 
 ## Persistence Certification
 
@@ -100,8 +102,8 @@ is found.
 
 ## Authorized Current Use
 
-Sprint 3.0 - Functional Runtime Composition is certified against PostgreSQL
-18.2 and complete. Sprint 3.1 - JSONL Evidence Import, Validation And
-Normalization is certified and complete. Sprint 3.2 - Deterministic Decision
-Creation is the sole current gate. Recommendation, ROI, Explanation Provider,
-Review, Ledger and Result Validation behavior remains unauthorized.
+Sprint 3.0 - Functional Runtime Composition, Sprint 3.1 - JSONL Evidence
+Import, Validation And Normalization, and Sprint 3.2 - Deterministic Decision
+Creation are certified and complete. Sprint 3.3 implements the deterministic
+Recommendation and ROI policy frozen by D082. Explanation Provider, Review,
+Ledger lifecycle and Result Validation behavior remain deferred.

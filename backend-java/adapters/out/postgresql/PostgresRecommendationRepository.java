@@ -4,6 +4,7 @@ import imperator.adapters.out.postgresql.mapper.PostgresRecommendationMapper;
 import imperator.adapters.out.postgresql.model.PostgresRecommendationEvidenceRecord;
 import imperator.adapters.out.postgresql.model.PostgresRecommendationRecord;
 import imperator.domain.decision.Recommendation;
+import imperator.domain.shared.DecisionId;
 import imperator.domain.shared.RecommendationId;
 import imperator.ports.out.RecommendationRepository;
 
@@ -36,6 +37,17 @@ public final class PostgresRecommendationRepository implements RecommendationRep
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """;
 
+    private static final String INSERT_IF_ABSENT_SQL = INSERT_SQL + """
+            ON CONFLICT DO NOTHING
+            """;
+
+    private static final String LOCK_DECISION_SQL = """
+            SELECT id
+            FROM decisions
+            WHERE id = ?
+            FOR UPDATE
+            """;
+
     private static final String INSERT_EVIDENCE_LINK_SQL = """
             INSERT INTO recommendation_evidence (
                 recommendation_id,
@@ -59,6 +71,24 @@ public final class PostgresRecommendationRepository implements RecommendationRep
                 created_at
             FROM recommendations
             WHERE id = ?
+            """;
+
+    private static final String SELECT_BY_DECISION_ID_SQL = """
+            SELECT
+                id,
+                decision_id,
+                type,
+                suggested_action,
+                reason,
+                estimated_saving_amount,
+                estimated_saving_currency,
+                confidence_percentage,
+                risk,
+                owner_id,
+                required_approver_id,
+                created_at
+            FROM recommendations
+            WHERE decision_id = ?
             """;
 
     private static final String SELECT_EVIDENCE_LINKS_SQL = """
@@ -104,6 +134,31 @@ public final class PostgresRecommendationRepository implements RecommendationRep
         } catch (SQLException exception) {
             throw new IllegalStateException("Could not persist recommendation " + item.id().value(), exception);
         }
+    }
+
+    @Override
+    public Recommendation createIfAbsent(Recommendation recommendation) {
+        Recommendation candidate = Objects.requireNonNull(recommendation, "Recommendation is required");
+        PostgresRecommendationRecord record = mapper.toRecord(candidate);
+        List<PostgresRecommendationEvidenceRecord> evidenceRecords = mapper.toEvidenceRecords(candidate);
+        Recommendation[] persisted = new Recommendation[1];
+
+        try {
+            PostgresLocalTransactions.execute(connectionProvider, connection -> {
+                lockOwningDecision(connection, candidate.decisionId());
+                if (insertRecommendationIfAbsent(connection, record)) {
+                    saveEvidenceLinks(connection, evidenceRecords);
+                }
+                persisted[0] = findAuthoritativeRecommendation(connection, candidate);
+            });
+        } catch (SQLException exception) {
+            throw new IllegalStateException(
+                    "Could not create recommendation if absent " + candidate.id().value(),
+                    exception
+            );
+        }
+
+        return Objects.requireNonNull(persisted[0], "Persisted recommendation is required");
     }
 
     @Override
@@ -157,6 +212,27 @@ public final class PostgresRecommendationRepository implements RecommendationRep
         }
     }
 
+    private boolean insertRecommendationIfAbsent(
+            Connection connection,
+            PostgresRecommendationRecord record
+    ) throws SQLException {
+        try (PreparedStatement statement = connection.prepareStatement(INSERT_IF_ABSENT_SQL)) {
+            bindRecommendationRecord(statement, record);
+            return statement.executeUpdate() == 1;
+        }
+    }
+
+    private void lockOwningDecision(Connection connection, DecisionId decisionId) throws SQLException {
+        try (PreparedStatement statement = connection.prepareStatement(LOCK_DECISION_SQL)) {
+            statement.setObject(1, decisionId.value());
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (!resultSet.next()) {
+                    throw new SQLException("Owning Decision was not found: " + decisionId.value());
+                }
+            }
+        }
+    }
+
     private void saveEvidenceLinks(
             Connection connection,
             List<PostgresRecommendationEvidenceRecord> evidenceRecords
@@ -184,6 +260,37 @@ public final class PostgresRecommendationRepository implements RecommendationRep
                 return Optional.of(recordFrom(resultSet));
             }
         }
+    }
+
+    private Optional<PostgresRecommendationRecord> findRecordByDecisionId(
+            Connection connection,
+            DecisionId decisionId
+    ) throws SQLException {
+        try (PreparedStatement statement = connection.prepareStatement(SELECT_BY_DECISION_ID_SQL)) {
+            statement.setObject(1, decisionId.value());
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (!resultSet.next()) {
+                    return Optional.empty();
+                }
+                return Optional.of(recordFrom(resultSet));
+            }
+        }
+    }
+
+    private Recommendation findAuthoritativeRecommendation(
+            Connection connection,
+            Recommendation candidate
+    ) throws SQLException {
+        Optional<PostgresRecommendationRecord> byId = findRecordById(connection, candidate.id());
+        Optional<PostgresRecommendationRecord> authoritative = byId.isPresent()
+                ? byId
+                : findRecordByDecisionId(connection, candidate.decisionId());
+        PostgresRecommendationRecord record = authoritative
+                .orElseThrow(() -> new SQLException(
+                        "Recommendation was not found after atomic create-if-absent: " + candidate.id().value()
+                ));
+        RecommendationId authoritativeId = new RecommendationId(record.id());
+        return mapper.toDomain(record, findEvidenceLinks(connection, authoritativeId));
     }
 
     private List<PostgresRecommendationEvidenceRecord> findEvidenceLinks(
@@ -220,6 +327,24 @@ public final class PostgresRecommendationRepository implements RecommendationRep
                 resultSet.getObject("required_approver_id", UUID.class),
                 resultSet.getTimestamp("created_at").toInstant()
         );
+    }
+
+    private void bindRecommendationRecord(
+            PreparedStatement statement,
+            PostgresRecommendationRecord record
+    ) throws SQLException {
+        statement.setObject(1, record.id());
+        statement.setObject(2, record.decisionId());
+        statement.setString(3, record.type());
+        statement.setString(4, record.suggestedAction());
+        statement.setString(5, record.reason());
+        statement.setBigDecimal(6, record.estimatedSavingAmount());
+        statement.setString(7, record.estimatedSavingCurrency());
+        statement.setInt(8, record.confidencePercentage());
+        statement.setString(9, record.risk());
+        statement.setObject(10, record.ownerId());
+        statement.setObject(11, record.requiredApproverId());
+        statement.setTimestamp(12, Timestamp.from(record.createdAt()));
     }
 
 }

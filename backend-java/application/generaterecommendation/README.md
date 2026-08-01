@@ -2,12 +2,14 @@
 
 ## Purpose
 
-Generate a traceable recommendation for an existing decision.
+Orchestrate deterministic Recommendation creation for the frozen
+`DRC-AOA-001-v1` policy.
 
 ## Who Uses This Folder
 
-- Future scheduler or system-triggered application flows.
-- Architecture Guardian to verify AI remains explanatory.
+- Future authorized initiating adapter or system-triggered flow.
+- Architecture Guardian to verify Application orchestrates but does not own
+  Recommendation policy.
 - Quality Agent to protect use-case purity.
 
 ## Contains
@@ -16,13 +18,19 @@ Generate a traceable recommendation for an existing decision.
 - `GenerateRecommendationCommand`.
 - `GenerateRecommendationResult`.
 
-Sprint 2.5.3 status:
-- One system-initiated use case only.
-- Reads an existing decision.
-- Verifies referenced evidence exists and belongs to the same case.
-- Calls `ExplanationProvider` through a port only.
-- Saves `Recommendation` through `RecommendationRepository`.
-- Links the recommendation back to the decision through `DecisionRepository`.
+Sprint 3.3 behavior:
+- The command supplies only stable Recommendation identity, Decision identity,
+  Evidence identities and generation timestamp.
+- The use case executes one explicit transaction.
+- It loads the authoritative Decision and all selected Evidence.
+- The Domain policy derives type, action, reason, annualized estimated savings,
+  confidence and risk.
+- `RecommendationRepository.createIfAbsent` resolves retries and concurrency.
+- Immutable tuple comparison remains Application behavior.
+- First creation attaches the Recommendation to a `CREATED` Decision.
+- Identical replay returns the stored Recommendation without modifying later
+  Decision state.
+- No `ExplanationProvider` is injected or invoked.
 
 ## Never Contains
 
@@ -33,5 +41,6 @@ Sprint 2.5.3 status:
 - SQL.
 - Human review actions.
 - Ledger append orchestration.
-- ROI calculation.
+- Caller-owned Recommendation or ROI outputs.
+- AI explanation or provider calls.
 

@@ -1,112 +1,111 @@
 package imperator.application.generaterecommendation;
 
-import imperator.application.exceptions.DecisionAlreadyHasRecommendationException;
 import imperator.application.exceptions.DecisionNotFoundException;
 import imperator.application.exceptions.EvidenceNotFoundException;
 import imperator.application.exceptions.EvidenceTraceabilityViolationException;
-import imperator.application.exceptions.InvalidDecisionTransitionException;
+import imperator.application.exceptions.RecommendationCreationConflictException;
+import imperator.application.exceptions.RecommendationNotReadyException;
 import imperator.application.exceptions.ValidationException;
 import imperator.domain.decision.Decision;
+import imperator.domain.decision.DrcAoa001RecommendationPolicy;
 import imperator.domain.decision.Recommendation;
 import imperator.domain.evidence.Evidence;
+import imperator.domain.shared.DecisionStatus;
 import imperator.domain.shared.EvidenceId;
 import imperator.ports.in.GenerateRecommendationInputPort;
 import imperator.ports.out.DecisionRepository;
 import imperator.ports.out.EvidenceRepository;
-import imperator.ports.out.ExplanationProvider;
-import imperator.ports.out.RecommendationExplanationRequest;
 import imperator.ports.out.RecommendationRepository;
 import imperator.ports.out.TransactionRunner;
 
 import java.util.LinkedHashSet;
 import java.util.Objects;
-import java.util.Optional;
 import java.util.Set;
 
 public final class GenerateRecommendationUseCase implements GenerateRecommendationInputPort {
     private final DecisionRepository decisionRepository;
     private final EvidenceRepository evidenceRepository;
     private final RecommendationRepository recommendationRepository;
-    private final ExplanationProvider explanationProvider;
     private final TransactionRunner transactionRunner;
+    private final DrcAoa001RecommendationPolicy policy;
 
     public GenerateRecommendationUseCase(
             DecisionRepository decisionRepository,
             EvidenceRepository evidenceRepository,
             RecommendationRepository recommendationRepository,
-            ExplanationProvider explanationProvider,
             TransactionRunner transactionRunner
+    ) {
+        this(
+                decisionRepository,
+                evidenceRepository,
+                recommendationRepository,
+                transactionRunner,
+                new DrcAoa001RecommendationPolicy()
+        );
+    }
+
+    GenerateRecommendationUseCase(
+            DecisionRepository decisionRepository,
+            EvidenceRepository evidenceRepository,
+            RecommendationRepository recommendationRepository,
+            TransactionRunner transactionRunner,
+            DrcAoa001RecommendationPolicy policy
     ) {
         this.decisionRepository = Objects.requireNonNull(decisionRepository, "Decision repository is required");
         this.evidenceRepository = Objects.requireNonNull(evidenceRepository, "Evidence repository is required");
         this.recommendationRepository = Objects.requireNonNull(recommendationRepository, "Recommendation repository is required");
-        this.explanationProvider = Objects.requireNonNull(explanationProvider, "Explanation provider is required");
         this.transactionRunner = Objects.requireNonNull(transactionRunner, "Transaction runner is required");
+        this.policy = Objects.requireNonNull(policy, "Recommendation policy is required");
     }
 
     @Override
     public GenerateRecommendationResult generateRecommendation(GenerateRecommendationCommand command) {
         validateCommand(command);
-
-        Decision decision = decisionRepository.findById(command.decisionId())
-                .orElseThrow(() -> new DecisionNotFoundException(command.decisionId()));
-
-        ensureDecisionCanReceiveRecommendation(decision);
-        Set<Evidence> evidence = loadTraceableEvidence(command, decision);
-
-        Optional<String> explanation = explanationProvider.generateExplanation(explanationRequest(command, decision, evidence.size()))
-                .map(explanationText -> explanationText.text());
-
-        Recommendation recommendation;
-        try {
-            recommendation = new Recommendation(
-                    command.recommendationId(),
-                    decision.id(),
-                    command.recommendationType(),
-                    command.suggestedAction(),
-                    command.deterministicReason(),
-                    command.evidenceIds(),
-                    command.estimatedSavings(),
-                    command.confidence(),
-                    command.risk(),
-                    decision.ownerId(),
-                    decision.requiredApproverId(),
-                    command.generatedAt()
-            );
-        } catch (IllegalArgumentException | NullPointerException exception) {
-            throw new ValidationException(
-                    "RECOMMENDATION_VALIDATION_FAILED",
-                    failureMessage(exception, "Recommendation validation failed"),
-                    exception
-            );
-        }
-
-        try {
-            decision.attachRecommendation(recommendation.id(), command.generatedAt());
-        } catch (IllegalArgumentException | IllegalStateException | NullPointerException exception) {
-            throw new InvalidDecisionTransitionException(
-                    decision.id(),
-                    failureMessage(exception, "Recommendation could not be attached to the decision"),
-                    exception
-            );
-        }
-
-        return transactionRunner.execute(() -> {
-            recommendationRepository.save(recommendation);
-            decisionRepository.save(decision);
-            return new GenerateRecommendationResult(
-                    recommendation.id(),
-                    decision.id(),
-                    evidence.size(),
-                    true,
-                    explanation
-            );
-        });
+        return transactionRunner.execute(() -> generateInTransaction(command));
     }
 
-    private void ensureDecisionCanReceiveRecommendation(Decision decision) {
-        if (decision.hasRecommendation()) {
-            throw new DecisionAlreadyHasRecommendationException(decision.id());
+    private GenerateRecommendationResult generateInTransaction(GenerateRecommendationCommand command) {
+        Decision initialDecision = findDecision(command);
+        Set<Evidence> evidence = loadTraceableEvidence(command, initialDecision);
+        Recommendation candidate = evaluatePolicy(command, initialDecision, evidence);
+
+        Recommendation persisted = recommendationRepository.createIfAbsent(candidate);
+        if (!hasSameImmutableCreationState(candidate, persisted)) {
+            throw new RecommendationCreationConflictException(initialDecision.id());
+        }
+
+        Decision authoritativeDecision = findDecision(command);
+        attachOnlyOnFirstCreation(authoritativeDecision, persisted, command);
+
+        return new GenerateRecommendationResult(
+                persisted.id(),
+                persisted.decisionId(),
+                persisted.evidenceIds().size(),
+                authoritativeDecision.recommendationId().filter(persisted.id()::equals).isPresent(),
+                persisted.estimatedSavings(),
+                persisted.confidence(),
+                persisted.risk()
+        );
+    }
+
+    private Decision findDecision(GenerateRecommendationCommand command) {
+        return decisionRepository.findById(command.decisionId())
+                .orElseThrow(() -> new DecisionNotFoundException(command.decisionId()));
+    }
+
+    private Recommendation evaluatePolicy(
+            GenerateRecommendationCommand command,
+            Decision decision,
+            Set<Evidence> evidence
+    ) {
+        try {
+            return policy.evaluate(command.recommendationId(), decision, evidence, command.generatedAt());
+        } catch (IllegalArgumentException | IllegalStateException | NullPointerException exception) {
+            throw new RecommendationNotReadyException(
+                    decision.id(),
+                    failureMessage(exception, "Deterministic Recommendation policy requirements were not met"),
+                    exception
+            );
         }
     }
 
@@ -115,14 +114,17 @@ public final class GenerateRecommendationUseCase implements GenerateRecommendati
             throw new EvidenceTraceabilityViolationException(
                     decision.originatingEvidenceId(),
                     decision.id(),
-                    "Recommendation must reference the decision's originating evidence"
+                    "Recommendation must reference the Decision originating Evidence"
             );
         }
 
         Set<Evidence> evidence = new LinkedHashSet<>();
         for (EvidenceId evidenceId : command.evidenceIds()) {
             if (evidenceId == null) {
-                throw new ValidationException("RECOMMENDATION_EVIDENCE_ID_REQUIRED", "Recommendation evidence id is required");
+                throw new ValidationException(
+                        "RECOMMENDATION_EVIDENCE_ID_REQUIRED",
+                        "Recommendation Evidence id is required"
+                );
             }
             Evidence item = evidenceRepository.findById(evidenceId)
                     .orElseThrow(() -> new EvidenceNotFoundException(evidenceId));
@@ -130,7 +132,7 @@ public final class GenerateRecommendationUseCase implements GenerateRecommendati
                 throw new EvidenceTraceabilityViolationException(
                         evidenceId,
                         decision.id(),
-                        "Recommendation evidence must belong to the decision case"
+                        "Recommendation Evidence must belong to the Decision case"
                 );
             }
             evidence.add(item);
@@ -138,23 +140,42 @@ public final class GenerateRecommendationUseCase implements GenerateRecommendati
         return Set.copyOf(evidence);
     }
 
-    private RecommendationExplanationRequest explanationRequest(
-            GenerateRecommendationCommand command,
+    private void attachOnlyOnFirstCreation(
             Decision decision,
-            int evidenceCount
+            Recommendation recommendation,
+            GenerateRecommendationCommand command
     ) {
-        return new RecommendationExplanationRequest(
-                decision.id(),
-                decision.caseId(),
-                decision.businessNeed(),
-                command.recommendationType(),
-                command.suggestedAction(),
-                command.deterministicReason(),
-                command.estimatedSavings(),
-                command.confidence(),
-                command.risk(),
-                evidenceCount
-        );
+        if (decision.hasRecommendation()) {
+            if (decision.recommendationId().filter(recommendation.id()::equals).isEmpty()) {
+                throw new RecommendationCreationConflictException(decision.id());
+            }
+            return;
+        }
+        if (!DecisionStatus.CREATED.equals(decision.status())) {
+            throw new RecommendationCreationConflictException(decision.id());
+        }
+
+        try {
+            decision.attachRecommendation(recommendation.id(), command.generatedAt());
+        } catch (IllegalArgumentException | IllegalStateException | NullPointerException exception) {
+            throw new RecommendationCreationConflictException(decision.id());
+        }
+        decisionRepository.save(decision);
+    }
+
+    private boolean hasSameImmutableCreationState(Recommendation candidate, Recommendation persisted) {
+        return candidate.id().equals(persisted.id())
+                && candidate.decisionId().equals(persisted.decisionId())
+                && candidate.type().equals(persisted.type())
+                && candidate.suggestedAction().equals(persisted.suggestedAction())
+                && candidate.reason().equals(persisted.reason())
+                && candidate.evidenceIds().equals(persisted.evidenceIds())
+                && candidate.estimatedSavings().equals(persisted.estimatedSavings())
+                && candidate.confidence().equals(persisted.confidence())
+                && candidate.risk().equals(persisted.risk())
+                && candidate.ownerId().equals(persisted.ownerId())
+                && candidate.requiredApproverId().equals(persisted.requiredApproverId())
+                && candidate.createdAt().equals(persisted.createdAt());
     }
 
     private String failureMessage(RuntimeException exception, String fallback) {
@@ -164,20 +185,24 @@ public final class GenerateRecommendationUseCase implements GenerateRecommendati
 
     private void validateCommand(GenerateRecommendationCommand command) {
         if (command == null) {
-            throw new ValidationException("GENERATE_RECOMMENDATION_COMMAND_REQUIRED", "Generate recommendation command is required");
+            throw new ValidationException(
+                    "GENERATE_RECOMMENDATION_COMMAND_REQUIRED",
+                    "Generate Recommendation command is required"
+            );
         }
         requireValue(command.recommendationId(), "RECOMMENDATION_ID_REQUIRED", "Recommendation id is required");
         requireValue(command.decisionId(), "DECISION_ID_REQUIRED", "Decision id is required");
-        requireValue(command.recommendationType(), "RECOMMENDATION_TYPE_REQUIRED", "Recommendation type is required");
-        requireText(command.suggestedAction(), "RECOMMENDATION_ACTION_REQUIRED", "Recommendation suggested action is required");
-        requireText(command.deterministicReason(), "RECOMMENDATION_REASON_REQUIRED", "Recommendation deterministic reason is required");
         if (command.evidenceIds() == null || command.evidenceIds().isEmpty()) {
-            throw new ValidationException("RECOMMENDATION_EVIDENCE_REQUIRED", "Recommendation must reference evidence");
+            throw new ValidationException(
+                    "RECOMMENDATION_EVIDENCE_REQUIRED",
+                    "Recommendation must reference Evidence"
+            );
         }
-        requireValue(command.estimatedSavings(), "RECOMMENDATION_ESTIMATED_SAVING_REQUIRED", "Recommendation estimated savings is required");
-        requireValue(command.confidence(), "RECOMMENDATION_CONFIDENCE_REQUIRED", "Recommendation confidence is required");
-        requireValue(command.risk(), "RECOMMENDATION_RISK_REQUIRED", "Recommendation risk is required");
-        requireValue(command.generatedAt(), "RECOMMENDATION_GENERATED_AT_REQUIRED", "Recommendation generation timestamp is required");
+        requireValue(
+                command.generatedAt(),
+                "RECOMMENDATION_GENERATED_AT_REQUIRED",
+                "Recommendation generation timestamp is required"
+        );
     }
 
     private <T> T requireValue(T value, String code, String message) {
@@ -185,12 +210,5 @@ public final class GenerateRecommendationUseCase implements GenerateRecommendati
             throw new ValidationException(code, message);
         }
         return value;
-    }
-
-    private String requireText(String value, String code, String message) {
-        if (value == null || value.isBlank()) {
-            throw new ValidationException(code, message);
-        }
-        return value.trim();
     }
 }

@@ -7,7 +7,9 @@ import imperator.application.createdecision.CreateDecisionCommand;
 import imperator.application.createdecision.CreateDecisionResult;
 import imperator.application.createdecision.CreateDecisionUseCase;
 import imperator.application.exceptions.DecisionCreationConflictException;
+import imperator.application.exceptions.RecommendationCreationConflictException;
 import imperator.application.generaterecommendation.GenerateRecommendationCommand;
+import imperator.application.generaterecommendation.GenerateRecommendationResult;
 import imperator.application.generaterecommendation.GenerateRecommendationUseCase;
 import imperator.application.importevidence.ImportEvidenceCommand;
 import imperator.application.importevidence.ImportEvidenceUseCase;
@@ -42,6 +44,7 @@ import imperator.ports.out.EvidenceRepository;
 import imperator.ports.out.LedgerRepository;
 import imperator.ports.out.RecommendationRepository;
 import imperator.ports.out.TransactionRunner;
+import imperator.support.DrcAoa001EvidenceFixture;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -70,7 +73,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Supplier;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
@@ -560,7 +562,6 @@ final class PostgresRepositoryIT {
                 decisionRepository,
                 evidenceRepository,
                 recommendationRepository,
-                request -> Optional.empty(),
                 transactionRunner
         );
         ReviewDecisionUseCase reviewDecision = new ReviewDecisionUseCase(
@@ -576,26 +577,16 @@ final class PostgresRepositoryIT {
                 transactionRunner
         );
 
-        importEvidence.importEvidence(new ImportEvidenceCommand(
+        Set<Evidence> policyEvidence = DrcAoa001EvidenceFixture.completePack(
                 evidenceId,
                 timestamp(0),
-                "Jira",
-                "business_context",
-                "IMP-214",
-                "ai-onboarding-assistant",
-                "business_context_requested",
-                Severity.INFO,
-                "head-customer-success",
-                "business_context",
-                "AI operating cost requires a model review",
-                "Establishes the business need for DRC-AOA-001",
-                "DRC-AOA-001",
-                "INTERNAL",
-                "HIGH",
-                "ACCEPTED",
-                "not_stored",
-                Map.of("evidence_ref", "E-JIRA-001")
-        ));
+                true
+        );
+        Evidence origin = DrcAoa001EvidenceFixture.origin(policyEvidence);
+        importEvidence.importEvidence(importEvidenceCommand(origin));
+        policyEvidence.stream()
+                .filter(item -> !item.id().equals(origin.id()))
+                .forEach(evidenceRepository::save);
 
         createDecision.createDecision(new CreateDecisionCommand(
                 decisionId,
@@ -610,13 +601,7 @@ final class PostgresRepositoryIT {
         generateRecommendation.generateRecommendation(new GenerateRecommendationCommand(
                 recommendationId,
                 decisionId,
-                RecommendationType.RIGHTSIZE_INSTANCE,
-                "Reduce the instance allocation",
-                "Canonical evidence shows sustained over-provisioning",
-                Set.of(evidenceId),
-                SAVING,
-                CONFIDENCE,
-                Severity.MEDIUM,
+                DrcAoa001EvidenceFixture.ids(policyEvidence),
                 timestamp(2)
         ));
 
@@ -848,41 +833,176 @@ final class PostgresRepositoryIT {
     }
 
     @Test
+    void deterministicRecommendationCreationIsIdempotentAndCannotResetProgressedState() throws SQLException {
+        RecommendationPolicyGraph graph = persistRecommendationPolicyGraph(true);
+        GenerateRecommendationUseCase useCase = generateRecommendationUseCase();
+        RecommendationId id = recommendationId();
+        GenerateRecommendationCommand command = recommendationCommand(graph, id, timestamp(2));
+
+        GenerateRecommendationResult first = useCase.generateRecommendation(command);
+        GenerateRecommendationResult retry = useCase.generateRecommendation(command);
+        Decision progressed = decisionRepository.findById(graph.decision().id()).orElseThrow();
+        progressed.markUnderReview(timestamp(3));
+        decisionRepository.save(progressed);
+        GenerateRecommendationResult progressedRetry = useCase.generateRecommendation(command);
+
+        RecommendationCreationConflictException conflict = assertThrows(
+                RecommendationCreationConflictException.class,
+                () -> useCase.generateRecommendation(recommendationCommand(graph, id, timestamp(4)))
+        );
+        Decision storedDecision = decisionRepository.findById(graph.decision().id()).orElseThrow();
+        Recommendation storedRecommendation = recommendationRepository.findById(id).orElseThrow();
+
+        assertAll(
+                () -> assertEquals(first, retry),
+                () -> assertEquals(first, progressedRetry),
+                () -> assertEquals("RECOMMENDATION_CREATION_CONFLICT", conflict.code()),
+                () -> assertEquals(DecisionStatus.UNDER_REVIEW, storedDecision.status()),
+                () -> assertEquals(Optional.of(id), storedDecision.recommendationId()),
+                () -> assertEquals(RecommendationType.MODEL_CHANGE, storedRecommendation.type()),
+                () -> assertEquals(new ROIAmount(Money.eur(new BigDecimal("19440.00"))), first.estimatedSavings()),
+                () -> assertEquals(new ROIConfidence(92), first.confidence()),
+                () -> assertEquals(Severity.LOW, first.risk()),
+                () -> assertEquals(DrcAoa001EvidenceFixture.ids(graph.evidence()), storedRecommendation.evidenceIds()),
+                () -> assertEquals(
+                        1,
+                        countRows(
+                                "SELECT COUNT(*) FROM recommendations WHERE decision_id = ?",
+                                graph.decision().id().value()
+                        )
+                ),
+                () -> assertEquals(
+                        graph.evidence().size(),
+                        countRows(
+                                "SELECT COUNT(*) FROM recommendation_evidence WHERE recommendation_id = ?",
+                                id.value()
+                        )
+                ),
+                () -> assertTrue(ledgerRepository.findByDecisionId(graph.decision().id()).isEmpty())
+        );
+    }
+
+    @Test
+    void incompleteRecommendationEvidencePersistsNoPartialState() throws SQLException {
+        RecommendationPolicyGraph graph = persistRecommendationPolicyGraph(true);
+        Evidence omitted = graph.evidence().stream()
+                .filter(item -> "E-GH-004".equals(item.metadata().get("evidence_ref")))
+                .findFirst()
+                .orElseThrow();
+        Set<EvidenceId> incompleteIds = graph.evidence().stream()
+                .filter(item -> !item.id().equals(omitted.id()))
+                .map(Evidence::id)
+                .collect(java.util.stream.Collectors.toUnmodifiableSet());
+        GenerateRecommendationCommand command = new GenerateRecommendationCommand(
+                recommendationId(),
+                graph.decision().id(),
+                incompleteIds,
+                timestamp(2)
+        );
+
+        assertThrows(
+                imperator.application.exceptions.RecommendationNotReadyException.class,
+                () -> generateRecommendationUseCase().generateRecommendation(command)
+        );
+
+        assertAll(
+                () -> assertTrue(
+                        decisionRepository.findById(graph.decision().id()).orElseThrow().recommendationId().isEmpty()
+                ),
+                () -> assertEquals(
+                        0,
+                        countRows(
+                                "SELECT COUNT(*) FROM recommendations WHERE decision_id = ?",
+                                graph.decision().id().value()
+                        )
+                )
+        );
+    }
+
+    @Test
+    void equivalentConcurrentRecommendationCreationPersistsOneIdentity() throws Exception {
+        RecommendationPolicyGraph graph = persistRecommendationPolicyGraph(true);
+        GenerateRecommendationUseCase useCase = generateRecommendationUseCase();
+        RecommendationId id = recommendationId();
+        GenerateRecommendationCommand command = recommendationCommand(graph, id, timestamp(2));
+
+        List<RecommendationAttempt> attempts = runConcurrently(
+                () -> attemptRecommendation(useCase, command),
+                () -> attemptRecommendation(useCase, command)
+        );
+
+        assertAll(
+                () -> assertTrue(attempts.stream().allMatch(RecommendationAttempt::successful)),
+                () -> assertTrue(attempts.stream().allMatch(attempt -> id.equals(attempt.recommendationId()))),
+                () -> assertEquals(
+                        Optional.of(id),
+                        decisionRepository.findById(graph.decision().id()).orElseThrow().recommendationId()
+                ),
+                () -> assertEquals(
+                        1,
+                        countRows(
+                                "SELECT COUNT(*) FROM recommendations WHERE decision_id = ?",
+                                graph.decision().id().value()
+                        )
+                )
+        );
+    }
+
+    @Test
+    void conflictingConcurrentRecommendationCreationPersistsOneImmutableWinner() throws Exception {
+        RecommendationPolicyGraph graph = persistRecommendationPolicyGraph(true);
+        GenerateRecommendationUseCase useCase = generateRecommendationUseCase();
+        RecommendationId firstId = recommendationId();
+        RecommendationId competingId = recommendationId();
+
+        List<RecommendationAttempt> attempts = runConcurrently(
+                () -> attemptRecommendation(useCase, recommendationCommand(graph, firstId, timestamp(2))),
+                () -> attemptRecommendation(useCase, recommendationCommand(graph, competingId, timestamp(2)))
+        );
+        RecommendationId storedId = decisionRepository.findById(graph.decision().id())
+                .orElseThrow()
+                .recommendationId()
+                .orElseThrow();
+
+        assertAll(
+                () -> assertEquals(1, attempts.stream().filter(RecommendationAttempt::successful).count()),
+                () -> assertEquals(1, attempts.stream().filter(attempt -> !attempt.successful()).count()),
+                () -> assertTrue(attempts.stream()
+                        .filter(attempt -> !attempt.successful())
+                        .allMatch(attempt -> "RECOMMENDATION_CREATION_CONFLICT".equals(attempt.conflictCode()))),
+                () -> assertTrue(Set.of(firstId, competingId).contains(storedId)),
+                () -> assertEquals(
+                        1,
+                        countRows(
+                                "SELECT COUNT(*) FROM recommendations WHERE decision_id = ?",
+                                graph.decision().id().value()
+                        )
+                )
+        );
+    }
+
+    @Test
     void recommendationAndDecisionRollbackTogetherOnSecondRepositoryFailure() {
-        Evidence evidence = evidence("case-cross-repository-rollback");
-        evidenceRepository.save(evidence);
+        EvidenceId originId = evidenceId();
+        Set<Evidence> policyEvidence = DrcAoa001EvidenceFixture.completePack(originId, timestamp(0), true);
+        policyEvidence.forEach(evidenceRepository::save);
+        Evidence evidence = DrcAoa001EvidenceFixture.origin(policyEvidence);
         Decision decision = decision(evidence);
         decisionRepository.save(decision);
 
         RecommendationId recommendationId = recommendationId();
-        TrackingTransactionRunner trackedTransactions = new TrackingTransactionRunner(transactionRunner);
-        AtomicBoolean explanationInvoked = new AtomicBoolean();
         DecisionRepository failAfterSave = new FailAfterSaveDecisionRepository(decisionRepository);
         GenerateRecommendationUseCase useCase = new GenerateRecommendationUseCase(
                 failAfterSave,
                 evidenceRepository,
                 recommendationRepository,
-                request -> {
-                    assertFalse(
-                            trackedTransactions.isExecuting(),
-                            "ExplanationProvider must run before the database transaction begins"
-                    );
-                    explanationInvoked.set(true);
-                    return Optional.empty();
-                },
-                trackedTransactions
+                transactionRunner
         );
 
         GenerateRecommendationCommand command = new GenerateRecommendationCommand(
                 recommendationId,
                 decision.id(),
-                RecommendationType.RIGHTSIZE_INSTANCE,
-                "Reduce allocation",
-                "Evidence supports the change",
-                Set.of(evidence.id()),
-                SAVING,
-                CONFIDENCE,
-                Severity.MEDIUM,
+                DrcAoa001EvidenceFixture.ids(policyEvidence),
                 timestamp(2)
         );
 
@@ -892,7 +1012,6 @@ final class PostgresRepositoryIT {
         );
         assertEquals("Injected failure after DecisionRepository.save", failure.getMessage());
         assertAll(
-                () -> assertTrue(explanationInvoked.get()),
                 () -> assertFalse(recommendationRepository.existsById(recommendationId)),
                 () -> assertTrue(
                         decisionRepository.findById(decision.id()).orElseThrow().recommendationId().isEmpty()
@@ -1230,6 +1349,52 @@ final class PostgresRepositoryIT {
         return new PersistedDecisionGraph(evidence, decision, recommendation);
     }
 
+    private RecommendationPolicyGraph persistRecommendationPolicyGraph(boolean includeQualityEvidence) {
+        Set<Evidence> evidence = DrcAoa001EvidenceFixture.completePack(
+                evidenceId(),
+                timestamp(0),
+                includeQualityEvidence
+        );
+        evidence.forEach(evidenceRepository::save);
+        Decision decision = decision(DrcAoa001EvidenceFixture.origin(evidence));
+        decisionRepository.save(decision);
+        return new RecommendationPolicyGraph(evidence, decision);
+    }
+
+    private GenerateRecommendationUseCase generateRecommendationUseCase() {
+        return new GenerateRecommendationUseCase(
+                decisionRepository,
+                evidenceRepository,
+                recommendationRepository,
+                transactionRunner
+        );
+    }
+
+    private GenerateRecommendationCommand recommendationCommand(
+            RecommendationPolicyGraph graph,
+            RecommendationId recommendationId,
+            Timestamp generatedAt
+    ) {
+        return new GenerateRecommendationCommand(
+                recommendationId,
+                graph.decision().id(),
+                DrcAoa001EvidenceFixture.ids(graph.evidence()),
+                generatedAt
+        );
+    }
+
+    private RecommendationAttempt attemptRecommendation(
+            GenerateRecommendationUseCase useCase,
+            GenerateRecommendationCommand command
+    ) {
+        try {
+            GenerateRecommendationResult result = useCase.generateRecommendation(command);
+            return new RecommendationAttempt(true, null, result.recommendationId());
+        } catch (RecommendationCreationConflictException conflict) {
+            return new RecommendationAttempt(false, conflict.code(), null);
+        }
+    }
+
     private PersistedDecisionGraph persistApprovedDecisionGraph(String correlationKey) {
         PersistedDecisionGraph graph = persistRecommendationGraph(correlationKey);
         graph.decision().markUnderReview(timestamp(3));
@@ -1258,6 +1423,29 @@ final class PostgresRepositoryIT {
                 "ACCEPTED",
                 "not_stored",
                 Map.of("environment", "integration")
+        );
+    }
+
+    private ImportEvidenceCommand importEvidenceCommand(Evidence evidence) {
+        return new ImportEvidenceCommand(
+                evidence.id(),
+                evidence.timestamp(),
+                evidence.source(),
+                evidence.sourceType(),
+                evidence.sourceObjectRef(),
+                evidence.entity(),
+                evidence.eventType(),
+                evidence.severity(),
+                evidence.actor(),
+                evidence.evidenceType(),
+                evidence.observedFact(),
+                evidence.businessMeaning(),
+                evidence.correlationKey(),
+                evidence.sensitivity(),
+                evidence.confidence(),
+                evidence.reviewStatus(),
+                evidence.rawPayloadMode(),
+                evidence.metadata()
         );
     }
 
@@ -1605,7 +1793,17 @@ final class PostgresRepositoryIT {
     ) {
     }
 
+    private record RecommendationPolicyGraph(Set<Evidence> evidence, Decision decision) {
+    }
+
     private record CreationAttempt(boolean successful, String conflictCode) {
+    }
+
+    private record RecommendationAttempt(
+            boolean successful,
+            String conflictCode,
+            RecommendationId recommendationId
+    ) {
     }
 
     private static final class FailAfterSaveEvidenceRepository implements EvidenceRepository {

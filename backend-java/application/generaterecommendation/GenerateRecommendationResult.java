@@ -2,14 +2,17 @@ package imperator.application.generaterecommendation;
 
 import imperator.domain.shared.DecisionId;
 import imperator.domain.shared.RecommendationId;
-
-import java.util.Optional;
+import imperator.domain.shared.ROIAmount;
+import imperator.domain.shared.ROIConfidence;
+import imperator.domain.shared.Severity;
 
 public record GenerateRecommendationResult(
         RecommendationId recommendationId,
         DecisionId decisionId,
         int evidenceCount,
         boolean linkedToDecision,
-        Optional<String> explanation
+        ROIAmount estimatedSavings,
+        ROIConfidence confidence,
+        Severity risk
 ) {
 }

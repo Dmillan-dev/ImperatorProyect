@@ -8,6 +8,8 @@ import java.util.Optional;
 public interface RecommendationRepository {
     void save(Recommendation recommendation);
 
+    Recommendation createIfAbsent(Recommendation recommendation);
+
     Optional<Recommendation> findById(RecommendationId id);
 
     boolean existsById(RecommendationId id);

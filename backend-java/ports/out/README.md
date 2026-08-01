@@ -64,6 +64,16 @@ Sprint 3.2 authorization:
 - immutable tuple comparison remains Application behavior, not repository
   business logic.
 
+Sprint 3.3 authorization:
+
+- `RecommendationRepository.createIfAbsent` expresses atomic Recommendation
+  creation intent required by `GenerateRecommendationUseCase`;
+- the operation returns the authoritative persisted Recommendation and never
+  overwrites an existing Recommendation;
+- immutable tuple comparison remains Application behavior;
+- the port exposes no public Recommendation-by-Decision query; ownership
+  conflict resolution remains private to the PostgreSQL adapter.
+
 Light CQRS rule:
 
 - write repositories must not grow read-model methods such as `findAllApproved`,

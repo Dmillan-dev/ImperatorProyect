@@ -32,8 +32,9 @@ Concrete exceptions:
 - `RecommendationOwnershipViolationException`
 - `DuplicateEvidenceException`
 - `DecisionCreationConflictException`
+- `RecommendationCreationConflictException`
+- `RecommendationNotReadyException`
 - `DecisionAlreadyClosedException`
-- `DecisionAlreadyHasRecommendationException`
 - `EvidenceTraceabilityViolationException`
 - `LedgerAppendRejectedException`
 

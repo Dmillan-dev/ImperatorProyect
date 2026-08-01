@@ -144,6 +144,17 @@ Sprint 3.2 Decision creation behavior:
   changes;
 - no migration, table, constraint or speculative query was added.
 
+Sprint 3.3 Recommendation creation behavior:
+
+- `PostgresRecommendationRepository.createIfAbsent` locks the owning Decision
+  row with `SELECT ... FOR UPDATE` inside the ambient application transaction;
+- it uses `INSERT ... ON CONFLICT DO NOTHING` and writes Evidence links only
+  for the winning insert;
+- identity and one-Recommendation-per-Decision conflicts are resolved through
+  private adapter reads before returning the authoritative Recommendation;
+- the adapter performs no policy calculation or immutable tuple comparison;
+- V1, constraints, indexes and migrations remain unchanged.
+
 ## Never Contains
 
 - Domain changes.
