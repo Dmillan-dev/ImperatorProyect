@@ -15,11 +15,17 @@ import imperator.domain.shared.EvidenceId;
 import imperator.ports.in.GenerateRecommendationInputPort;
 import imperator.ports.out.DecisionRepository;
 import imperator.ports.out.EvidenceRepository;
+import imperator.ports.out.ExplanationProvider;
+import imperator.ports.out.RecommendationExplanation;
+import imperator.ports.out.RecommendationExplanationRequest;
 import imperator.ports.out.RecommendationRepository;
 import imperator.ports.out.TransactionRunner;
 
+import java.util.Comparator;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 
 public final class GenerateRecommendationUseCase implements GenerateRecommendationInputPort {
@@ -28,6 +34,7 @@ public final class GenerateRecommendationUseCase implements GenerateRecommendati
     private final RecommendationRepository recommendationRepository;
     private final TransactionRunner transactionRunner;
     private final DrcAoa001RecommendationPolicy policy;
+    private final ExplanationProvider explanationProvider;
 
     public GenerateRecommendationUseCase(
             DecisionRepository decisionRepository,
@@ -40,7 +47,24 @@ public final class GenerateRecommendationUseCase implements GenerateRecommendati
                 evidenceRepository,
                 recommendationRepository,
                 transactionRunner,
-                new DrcAoa001RecommendationPolicy()
+                ignored -> Optional.empty()
+        );
+    }
+
+    public GenerateRecommendationUseCase(
+            DecisionRepository decisionRepository,
+            EvidenceRepository evidenceRepository,
+            RecommendationRepository recommendationRepository,
+            TransactionRunner transactionRunner,
+            ExplanationProvider explanationProvider
+    ) {
+        this(
+                decisionRepository,
+                evidenceRepository,
+                recommendationRepository,
+                transactionRunner,
+                new DrcAoa001RecommendationPolicy(),
+                explanationProvider
         );
     }
 
@@ -49,22 +73,26 @@ public final class GenerateRecommendationUseCase implements GenerateRecommendati
             EvidenceRepository evidenceRepository,
             RecommendationRepository recommendationRepository,
             TransactionRunner transactionRunner,
-            DrcAoa001RecommendationPolicy policy
+            DrcAoa001RecommendationPolicy policy,
+            ExplanationProvider explanationProvider
     ) {
         this.decisionRepository = Objects.requireNonNull(decisionRepository, "Decision repository is required");
         this.evidenceRepository = Objects.requireNonNull(evidenceRepository, "Evidence repository is required");
         this.recommendationRepository = Objects.requireNonNull(recommendationRepository, "Recommendation repository is required");
         this.transactionRunner = Objects.requireNonNull(transactionRunner, "Transaction runner is required");
         this.policy = Objects.requireNonNull(policy, "Recommendation policy is required");
+        this.explanationProvider = Objects.requireNonNull(explanationProvider, "Explanation provider is required");
     }
 
     @Override
     public GenerateRecommendationResult generateRecommendation(GenerateRecommendationCommand command) {
         validateCommand(command);
-        return transactionRunner.execute(() -> generateInTransaction(command));
+        GenerationOutcome outcome = transactionRunner.execute(() -> generateInTransaction(command));
+        Optional<String> explanation = generateExplanation(outcome.explanationRequest());
+        return outcome.resultWith(explanation);
     }
 
-    private GenerateRecommendationResult generateInTransaction(GenerateRecommendationCommand command) {
+    private GenerationOutcome generateInTransaction(GenerateRecommendationCommand command) {
         Decision initialDecision = findDecision(command);
         Set<Evidence> evidence = loadTraceableEvidence(command, initialDecision);
         Recommendation candidate = evaluatePolicy(command, initialDecision, evidence);
@@ -77,14 +105,59 @@ public final class GenerateRecommendationUseCase implements GenerateRecommendati
         Decision authoritativeDecision = findDecision(command);
         attachOnlyOnFirstCreation(authoritativeDecision, persisted, command);
 
-        return new GenerateRecommendationResult(
-                persisted.id(),
-                persisted.decisionId(),
-                persisted.evidenceIds().size(),
-                authoritativeDecision.recommendationId().filter(persisted.id()::equals).isPresent(),
-                persisted.estimatedSavings(),
-                persisted.confidence(),
-                persisted.risk()
+        return new GenerationOutcome(
+                persisted,
+                authoritativeDecision,
+                explanationRequest(persisted, authoritativeDecision, evidence)
+        );
+    }
+
+    private Optional<String> generateExplanation(RecommendationExplanationRequest request) {
+        try {
+            Optional<RecommendationExplanation> generated = explanationProvider.generateExplanation(request);
+            if (generated == null) {
+                return Optional.empty();
+            }
+            return generated.map(RecommendationExplanation::text);
+        } catch (RuntimeException ignored) {
+            return Optional.empty();
+        }
+    }
+
+    private RecommendationExplanationRequest explanationRequest(
+            Recommendation recommendation,
+            Decision decision,
+            Set<Evidence> evidence
+    ) {
+        List<EvidenceId> evidenceIds = evidence.stream()
+                .map(Evidence::id)
+                .sorted(Comparator.comparing(id -> id.value().toString()))
+                .toList();
+        List<String> assumptionIds = evidence.stream()
+                .map(item -> item.metadata().get("assumption_id"))
+                .filter(Objects::nonNull)
+                .sorted()
+                .toList();
+        String policyVersion = evidence.stream()
+                .map(item -> item.metadata().get("policy_version"))
+                .filter(Objects::nonNull)
+                .findFirst()
+                .orElse(DrcAoa001RecommendationPolicy.POLICY_VERSION);
+
+        return new RecommendationExplanationRequest(
+                recommendation.id(),
+                decision.id(),
+                decision.caseId(),
+                decision.businessNeed(),
+                recommendation.type(),
+                recommendation.suggestedAction(),
+                recommendation.reason(),
+                recommendation.estimatedSavings(),
+                recommendation.confidence(),
+                recommendation.risk(),
+                evidenceIds,
+                assumptionIds,
+                policyVersion
         );
     }
 
@@ -210,5 +283,24 @@ public final class GenerateRecommendationUseCase implements GenerateRecommendati
             throw new ValidationException(code, message);
         }
         return value;
+    }
+
+    private record GenerationOutcome(
+            Recommendation recommendation,
+            Decision decision,
+            RecommendationExplanationRequest explanationRequest
+    ) {
+        private GenerateRecommendationResult resultWith(Optional<String> explanation) {
+            return new GenerateRecommendationResult(
+                    recommendation.id(),
+                    recommendation.decisionId(),
+                    recommendation.evidenceIds().size(),
+                    decision.recommendationId().filter(recommendation.id()::equals).isPresent(),
+                    recommendation.estimatedSavings(),
+                    recommendation.confidence(),
+                    recommendation.risk(),
+                    explanation
+            );
+        }
     }
 }

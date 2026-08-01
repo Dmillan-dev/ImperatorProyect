@@ -17,6 +17,7 @@ import imperator.ports.in.ImportEvidenceInputPort;
 import imperator.ports.in.ReviewDecisionInputPort;
 import imperator.ports.out.DecisionRepository;
 import imperator.ports.out.EvidenceRepository;
+import imperator.ports.out.ExplanationProvider;
 import imperator.ports.out.LedgerRepository;
 import imperator.ports.out.RecommendationRepository;
 import imperator.ports.out.TransactionRunner;
@@ -67,6 +68,10 @@ class PostgresRuntimeConfigurationTest {
             assertInstanceOf(
                     PostgresTransactionRunner.class,
                     context.getBean(TransactionRunner.class)
+            );
+            assertInstanceOf(
+                    ExplanationProvider.class,
+                    context.getBean(ExplanationProvider.class)
             );
             assertInstanceOf(
                     ImportEvidenceUseCase.class,

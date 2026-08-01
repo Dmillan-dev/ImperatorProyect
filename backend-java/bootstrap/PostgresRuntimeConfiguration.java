@@ -19,15 +19,19 @@ import imperator.ports.in.ImportEvidenceInputPort;
 import imperator.ports.in.ReviewDecisionInputPort;
 import imperator.ports.out.DecisionRepository;
 import imperator.ports.out.EvidenceRepository;
+import imperator.ports.out.ExplanationProvider;
 import imperator.ports.out.LedgerRepository;
 import imperator.ports.out.RecommendationRepository;
 import imperator.ports.out.TransactionRunner;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
+import java.util.Optional;
+
 @Configuration(proxyBeanMethods = false)
 @ConditionalOnProperty(
         prefix = "imperator.postgresql",
@@ -79,6 +83,12 @@ public final class PostgresRuntimeConfiguration {
     }
 
     @Bean
+    @ConditionalOnMissingBean(ExplanationProvider.class)
+    ExplanationProvider unavailableExplanationProvider() {
+        return ignored -> Optional.empty();
+    }
+
+    @Bean
     ImportEvidenceInputPort importEvidenceInputPort(
             EvidenceRepository evidenceRepository,
             TransactionRunner transactionRunner
@@ -104,13 +114,15 @@ public final class PostgresRuntimeConfiguration {
             DecisionRepository decisionRepository,
             EvidenceRepository evidenceRepository,
             RecommendationRepository recommendationRepository,
-            TransactionRunner transactionRunner
+            TransactionRunner transactionRunner,
+            ExplanationProvider explanationProvider
     ) {
         return new GenerateRecommendationUseCase(
                 decisionRepository,
                 evidenceRepository,
                 recommendationRepository,
-                transactionRunner
+                transactionRunner,
+                explanationProvider
         );
     }
 

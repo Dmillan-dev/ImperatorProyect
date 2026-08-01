@@ -25,6 +25,14 @@ Sprint 2.5.3 status:
 - `ExplanationProvider`.
 - No `BusinessValueProjectionPort` until application code proves it is needed.
 
+Sprint 3.3.1 explanation boundary:
+- `RecommendationExplanationRequest` carries only prepared deterministic
+  context: identities, business need, frozen Recommendation outputs, Evidence
+  ids, assumption ids and policy version.
+- `ExplanationProvider` may return natural-language text only.
+- provider implementations are replaceable and cannot mutate Domain or
+  persistence state through this port.
+
 ## Repository Minimalism Rule
 
 Repository ports are persistence boundaries, not business services.

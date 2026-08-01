@@ -66,8 +66,11 @@ Application runtime credentials do not execute DDL. Flyway continues to run
 through the migration profile with its separate administrative principal before
 the application principal is used.
 
-Deterministic Recommendation creation has no `ExplanationProvider` bean or
-invocation. The prepared-context provider remains deferred to Sprint 3.3.1.
+Deterministic Recommendation persistence completes before the optional
+`ExplanationProvider` invocation. The runtime supplies an unavailable provider
+by default and allows a replaceable provider adapter to override it. Provider
+absence or failure cannot alter or roll back Recommendation or Decision state.
+No vendor SDK, model or credential contract is selected here.
 
 ## Persistence Certification
 
