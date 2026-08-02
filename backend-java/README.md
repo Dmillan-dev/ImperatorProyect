@@ -47,13 +47,15 @@ Current Phase 3 foundation:
   deterministic persistence and returns optional natural-language text without
   changing business truth.
 - Sprint 3.4 implements atomic Human Review, append-only Ledger governance and
-  deterministic Result Validation; its PostgreSQL runtime certification remains
-  deferred under D084.
+  deterministic Result Validation; its PostgreSQL 18.2 runtime certification
+  passed during Sprint 3.7 and discharged D084.
 - Sprint 3.5 certifies the deterministic local Evidence-to-Business-Value flow
   and exposes Business Value only as a non-persisted Application projection.
 - REST errors use the frozen four-field envelope and `X-Correlation-ID`.
-- The Evidence import route is functional; the other 14 frozen MVP routes
-  remain controlled `501` shells.
+- Sprint 3.7 implements all 15 D086 routes through REST DTOs, mappers and
+  Application input ports, including the read-only PostgreSQL query adapter.
+- Java 21 verification passes 98 default tests and 29 PostgreSQL integration
+  tests against PostgreSQL 18.2.
 - No JPA.
 
 ## Functional Runtime Configuration
@@ -113,8 +115,9 @@ is found.
 
 ## Authorized Current Use
 
-Sprints 3.0 through 3.6 are complete at their documented gates. The Java 21
-Maven build is certified through GitHub Actions with 89 passing tests. Sprint
-3.4 PostgreSQL runtime certification remains deferred under D084. D085 is
-accepted. Sprint 3.7 - Functional REST API is the sole next gate and may wire
-only the frozen REST topology to existing Application input ports.
+Sprints 3.0 through 3.7 are complete at their documented gates. The Java 21
+Maven build is certified through GitHub Actions, and the complete Functional
+REST runtime is certified against PostgreSQL 18.2. D084 is discharged; D085
+and D086 are accepted. Sprint 3.8 - JWT Authentication is the sole next gate.
+It must replace the temporary trusted actor source without changing D086 routes
+or introducing Sprint 3.9 RBAC policy.

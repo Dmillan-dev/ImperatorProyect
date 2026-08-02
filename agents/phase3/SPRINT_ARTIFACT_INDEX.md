@@ -14,14 +14,17 @@ Sprint 3.1: CERTIFIED / COMPLETE
 Sprint 3.2: CERTIFIED / COMPLETE
 Sprint 3.3: CERTIFIED / COMPLETE
 Sprint 3.3.1: COMPLETE
-Sprint 3.4: COMPLETE / RUNTIME CERTIFICATION DEFERRED
+Sprint 3.4: CERTIFIED / COMPLETE; D084 DISCHARGED
 Sprint 3.4.1: COMPLETE
 Sprint 3.5: CERTIFIED / COMPLETE
 Sprint 3.5.1: COMPLETE
 Sprint 3.6: CERTIFIED / COMPLETE
 Sprint 3.6.1: COMPLETE
 D085: ACCEPTED / COMPLETE
-Sprint 3.7: NEXT
+D086: ACCEPTED / COMPLETE
+Sprint 3.7: CERTIFIED / COMPLETE
+Sprint 3.7.1: COMPLETE
+Sprint 3.8: NEXT
 ```
 
 Exactly one Phase 3 control gate is authorized as `NEXT`.
@@ -35,12 +38,15 @@ Exactly one Phase 3 control gate is authorized as `NEXT`.
 | 3.2 | `8bbbc19` | D081 contract, atomic Decision creation, immutable retry policy and PostgreSQL concurrency certification | CERTIFIED / COMPLETE |
 | 3.3 | `087f94d` | D082 contract, deterministic Recommendation/ROI policy, atomic Recommendation creation and PostgreSQL concurrency certification | CERTIFIED / COMPLETE |
 | 3.3.1 | `838f156` | Post-transaction provider invocation, bounded explanation context and provider-failure isolation | COMPLETE |
-| 3.4 | Sprint 3.4 closure commit; hash intentionally not self-recorded | D083 contract, D084 process exception, atomic review and Ledger orchestration, strict Ledger sequence, deterministic result validation and certification tests | COMPLETE / RUNTIME CERTIFICATION DEFERRED |
+| 3.4 | Sprint 3.4 closure commit; hash intentionally not self-recorded | D083 contract, D084 historical process exception, atomic review and Ledger orchestration, strict Ledger sequence, deterministic result validation and PostgreSQL certification | CERTIFIED / COMPLETE; D084 DISCHARGED |
 | 3.5 | `f67257d` | Deterministic 30-line NDJSON workflow, non-persisted Business Value projection, operational guide and local certification harness | CERTIFIED / COMPLETE |
 | 3.5.1 | Current synchronization commit; hash intentionally not self-recorded | Active project-control and AI-context synchronization | COMPLETE |
 | 3.6 | `c3bb8f6` | Java 21 GitHub Actions workflow and real run `30708049322` | CERTIFIED / COMPLETE |
 | 3.6.1 | Current synchronization commit; hash intentionally not self-recorded | Active project-control and AI-context synchronization | COMPLETE |
 | D085 | Current decision commit; hash intentionally not self-recorded | Frozen post-CI MVP delivery order and synchronized control documentation | ACCEPTED / COMPLETE |
+| D086 | `d917006` | Frozen Functional REST Application contract, query boundaries, trusted actor transition and HTTP mapping | ACCEPTED / COMPLETE |
+| 3.7 | `9ba2138` | Functional D086 REST adapter, Application queries, PostgreSQL read model and real-database certification | CERTIFIED / COMPLETE |
+| 3.7.1 | Current synchronization commit; hash intentionally not self-recorded | Active project-control and AI-context synchronization | COMPLETE |
 
 ### Sprint 3.0
 
@@ -190,14 +196,12 @@ Completion evidence:
 - PostgreSQL rollback and concurrency certification tests: implemented and
   compiled;
 - REST, Flyway V1, schema, dependencies and frozen contracts unchanged;
-- PostgreSQL 18.2 runtime certification: **DEFERRED** under D084 because the explicit
-  profile attempt stopped at Java toolchain selection before Flyway or
-  Failsafe;
-- no known implementation defect identified by the checks that executed;
-- process exception: certification environment unavailable; certification is
-  required before Pilot Readiness, MVP closure or the first production
-  release;
-- status: **COMPLETE / RUNTIME CERTIFICATION DEFERRED**.
+- PostgreSQL 18.2 runtime certification: PASS through the complete Sprint 3.7
+  integration-profile execution on 2026-08-02;
+- atomicity, replay, rollback, concurrency, Ledger linearity and fork
+  prevention: PASS;
+- D084 deferred obligation: **DISCHARGED**;
+- status: **CERTIFIED / COMPLETE**.
 
 ### Sprint 3.5
 
@@ -245,13 +249,40 @@ Certification evidence:
   roadmap changes;
 - status: **CERTIFIED / COMPLETE**.
 
+### Sprint 3.7
+
+Primary artifacts:
+
+- D086 in `docs/decisions/14_Decision_Log.md`;
+- `docs/architecture/45_Functional_REST_Application_Contract.md`;
+- `backend-java/adapters/out/postgresql/PostgresMvpReadModelQueryAdapter.java`;
+- the query input ports and use cases under `backend-java/application/query`;
+- functional controllers and REST mappers under `backend-java/api`;
+- `src/test/java/imperator/api/FunctionalRestApiContractTest.java`;
+- `src/test/java/imperator/api/FunctionalRestPostgresIT.java`.
+
+Certification evidence:
+
+- implementation commit `9ba2138`;
+- Java 21, Maven Wrapper and Maven Enforcer: PASS;
+- 98 default tests and 29 PostgreSQL integration tests: PASS;
+- PostgreSQL 18.2: PASS;
+- Flyway V1 migrate, validate and second no-op migrate: PASS;
+- all 15 D086 routes through real Application and PostgreSQL composition: PASS;
+- governance atomicity, replay, rollback, concurrency and Ledger linearity:
+  PASS;
+- executable JAR and `BUILD SUCCESS`: PASS;
+- no Domain, write-repository, schema, migration, dependency, frozen-contract
+  or Decision Log modification during certification;
+- status: **CERTIFIED / COMPLETE**.
+
 ## Next Artifact Boundary
 
-Sprint 3.7 may implement Functional REST behavior only through the frozen route
-topology and existing Application input ports. It must not add routes, JWT,
-RBAC, live connectors, frontend, Docker, observability or pilot behavior. Real
-customer data and external exposure remain prohibited until the security gates
-pass.
+Sprint 3.8 may implement JWT Authentication only. It must replace the temporary
+trusted actor source with verified JWT identity while preserving the 15 D086
+routes, Application boundaries, error envelope and correlation contract. RBAC
+policy remains Sprint 3.9. Live connectors, frontend, Docker, observability,
+pilot behavior, real customer data and external exposure remain prohibited.
 
 ## Agent Rule
 

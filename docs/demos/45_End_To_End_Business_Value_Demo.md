@@ -28,7 +28,9 @@ The executable harness is `imperator.api.evidence.EndToEndBusinessValueDemoTest`
 - Maven Wrapper 3.9.16
 - The repository dependencies already available to Maven
 
-PostgreSQL is not required for this local harness. Sprint 3.4 PostgreSQL runtime certification remains deferred under D084 and is still mandatory before Pilot, MVP closure, or production readiness.
+PostgreSQL is not required for this local harness. The complete Sprint 3.7
+PostgreSQL 18.2 integration-profile run subsequently certified the Sprint 3.4
+governance runtime and discharged the D084 obligation.
 
 ## Run
 

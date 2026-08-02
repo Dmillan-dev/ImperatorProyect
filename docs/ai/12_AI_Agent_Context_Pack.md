@@ -33,22 +33,20 @@ the provider receives bounded deterministic context only after Recommendation
 persistence, and unavailability or failure cannot alter business truth. The
 Sprint 3.4 Human Review, Ledger and Result Validation implementation is
 complete with atomic Decision outcomes, immutable replay, strict Ledger
-linearity and deterministic result validation. D084 explicitly defers its
-PostgreSQL 18.2 runtime certification because the certification environment was
-unavailable: the profile attempt stopped at Java toolchain selection before
-PostgreSQL. No known implementation defect was identified by the checks that
-executed. Certification remains mandatory before Pilot Readiness, MVP closure
-or the first production release. Sprint 3.5 End-to-End Local Business Value
+linearity and deterministic result validation. Its PostgreSQL 18.2 runtime
+certification passed during Sprint 3.7, discharging the D084 obligation. Sprint
+3.5 End-to-End Local Business Value
 Demo is certified and complete: its deterministic 30-line NDJSON dataset drives
 the existing workflow through Result Validation into a non-persisted
-Application projection, with 89 Java 21 tests passing. This local certification
-does not replace the deferred Sprint 3.4 PostgreSQL gate. Sprint 3.6 Basic Java
+Application projection, with 89 Java 21 tests passing. Sprint 3.6 Basic Java
 CI is certified and complete: GitHub Actions run `30708049322` verified Maven
 Wrapper `3.3.4`, Apache Maven `3.9.16`, Eclipse Adoptium Java 21, 89 passing
-tests and `BUILD SUCCESS` from commit `c3bb8f6`. D085 is accepted and freezes
-the post-CI delivery roadmap. Sprint 3.7 - Functional REST API is the sole next
-gate and may use only the frozen route topology and existing Application input
-ports.
+tests and `BUILD SUCCESS` from commit `c3bb8f6`. D085 freezes the post-CI
+delivery roadmap and D086 freezes the Functional REST Application contract.
+Sprint 3.7 is certified and complete: Java 21, 98 default tests, PostgreSQL
+18.2, Flyway validation and 29 integration tests proved all 15 D086 routes
+through real Application and persistence composition. Sprint 3.8 - JWT
+Authentication is the sole next gate. RBAC remains Sprint 3.9.
 
 Agents may create runnable implementation only inside the explicitly
 authorized sprint/module. They must use `agents/phase3/README.md`, the frozen

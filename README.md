@@ -2,7 +2,7 @@
 
 Status: **Phase 3 First Business Value Loop active**
 
-Current gate: **Sprint 3.7 - Functional REST API**
+Current gate: **Sprint 3.8 - JWT Authentication**
 
 IMPERATOR is an Operating System for Operational Intelligence and an Enterprise
 Decision Intelligence Platform. The MVP proves one evidence-backed decision,
@@ -56,12 +56,13 @@ The Java backend currently contains:
   Ledger facts;
 - certified Java 21 GitHub Actions pipeline executing the complete Maven build,
   89 tests and executable JAR packaging from a clean checkout;
-- controlled route shells for the remaining functional REST surface.
+- certified Functional REST API with all 15 D086 routes mapped through DTOs,
+  REST mappers and Application input ports;
+- certified PostgreSQL 18.2 runtime behavior with 98 default tests and 29
+  integration tests passing.
 
 The repository does not yet contain:
 
-- functional Decision, Recommendation and ROI route behavior;
-- functional Review, Ledger and Result Validation REST route behavior;
 - JWT/RBAC runtime;
 - React application runtime;
 - live connectors;
@@ -138,12 +139,12 @@ Evidence
 Phase 2 is complete under D079. Phase 3 is active and may implement only the
 single currently authorized `DRC-AOA-001` business-value increment.
 
-Sprint 3.4 implementation is complete. D084 explicitly defers its PostgreSQL
-18.2 runtime certification because the certification environment was
-unavailable: the integration-profile attempt stopped before PostgreSQL at Java
-toolchain selection. No known implementation defect was identified by the
-checks that executed. Certification remains mandatory before Pilot Readiness,
-MVP closure or the first production release.
+Sprint 3.7 is certified and complete. Its Java 21 PostgreSQL integration-profile
+run passed Flyway migrate, validate and second no-op migrate, 98 default tests
+and 29 PostgreSQL integration tests against PostgreSQL 18.2. The run also
+completed the deferred Sprint 3.4 governance certification, so the D084
+obligation is discharged. Sprint 3.8 JWT Authentication is the sole next gate;
+the functional API remains local-only until JWT and Sprint 3.9 RBAC pass.
 
 ## Documentation Rules
 

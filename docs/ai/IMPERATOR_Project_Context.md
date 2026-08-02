@@ -38,19 +38,19 @@ spend. The first case is `DRC-AOA-001`, AI Onboarding Assistant Recovery.
   post-transaction invocation and failure isolation.
 - Human Review, Ledger and Result Validation implementation: complete with
   atomic review outcomes, immutable replay and strict linear sequencing.
-- Sprint 3.4 PostgreSQL 18.2 runtime certification: deferred under D084 because
-  the certification environment was unavailable; it must pass before Pilot
-  Readiness, MVP closure or the first production release.
+- Sprint 3.4 PostgreSQL 18.2 runtime certification: passed during the complete
+  Sprint 3.7 integration-profile run; D084 obligation discharged.
 - End-to-End Local Business Value Demo: certified and complete with a
   deterministic 30-line NDJSON dataset, 89 passing Java 21 tests and a
   non-persisted Application projection sourced from validated Ledger facts.
 - Basic Java CI: certified and complete through GitHub Actions run
   `30708049322`, with Maven Wrapper 3.3.4, Apache Maven 3.9.16, Eclipse Adoptium
   Java 21, 89 passing tests and executable JAR packaging.
-- Remaining functional REST route shells: implemented and controlled.
+- Functional REST API: certified and complete under D086 with all 15 routes
+  proven through real Application and PostgreSQL 18.2 composition.
 - D085 - MVP Delivery Roadmap Evolution: accepted and complete.
-- Current gate: Sprint 3.7 - Functional REST API, limited to the frozen route
-  topology and existing Application input ports.
+- D086 - Functional REST Application Contract: accepted and complete.
+- Current gate: Sprint 3.8 - JWT Authentication. RBAC remains Sprint 3.9.
 - Sprints 2.9 through 2.13: deferred, not completed.
 
 The live state is maintained in:

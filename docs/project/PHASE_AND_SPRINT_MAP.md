@@ -194,15 +194,17 @@ not the Phase 2 route-shell plan.
 | 3.2 | Deterministic Decision Creation | CERTIFIED |
 | 3.3 | Deterministic Recommendation And ROI Policy | CERTIFIED |
 | 3.3.1 | Explanation Provider Integration | COMPLETE |
-| 3.4 | Human Review, Ledger And Result Validation | COMPLETE; runtime certification DEFERRED under D084 |
+| 3.4 | Human Review, Ledger And Result Validation | CERTIFIED / COMPLETE; D084 obligation discharged |
 | 3.4.1 | Documentation Synchronization | COMPLETE |
 | 3.5 | End-to-End Local Business Value Demo | CERTIFIED / COMPLETE |
 | 3.5.1 | Project Control Documentation Synchronization | COMPLETE |
 | 3.6 | Basic Java CI | CERTIFIED / COMPLETE |
 | 3.6.1 | Documentation Synchronization | COMPLETE |
 | D085 | MVP Delivery Roadmap Evolution | ACCEPTED / COMPLETE |
-| 3.7 | Functional REST API | NEXT |
-| 3.8 | JWT Authentication | PENDING |
+| D086 | Functional REST Application Contract | ACCEPTED / COMPLETE |
+| 3.7 | Functional REST API | CERTIFIED / COMPLETE |
+| 3.7.1 | Documentation Synchronization | COMPLETE |
+| 3.8 | JWT Authentication | NEXT |
 | 3.9 | RBAC Authorization | PENDING |
 | 4.0 | GitHub Integration | PENDING |
 | 4.1 | AWS Integration | PENDING |
@@ -220,14 +222,14 @@ configuration and every later acceptance gate remain mandatory before Sprint
 4.5 can pass. Functional REST delivery is followed by separate JWT and RBAC
 gates.
 
-Sprint 3.4 implementation passed its Java 21 offline verification with 88
-tests. Its explicit PostgreSQL 18.2 certification attempt stopped during Maven
-toolchain selection because the invoked process found only Java 17; Flyway and
-PostgreSQL integration tests did not execute. D084 explicitly defers that
-runtime certification because the certification environment was unavailable.
-No known implementation defect was identified by the checks that executed.
-The deferred gate remains mandatory before Sprint 4.5 Pilot Readiness, Sprint
-5.0 MVP Release or the first production release.
+Sprint 3.7 certification executed the full PostgreSQL integration profile on
+2026-08-02 with Java 21 and PostgreSQL 18.2. Flyway migrate, validate and the
+second no-op migrate passed; 98 default tests and 29 PostgreSQL integration
+tests passed. The run covered the Sprint 3.4 governance, atomicity, replay,
+rollback, concurrency, Ledger linearity and fork-prevention suite, so the D084
+deferred obligation is discharged. It also certified all 15 D086 REST routes
+through real Application and PostgreSQL composition. D084 remains historical
+and no longer blocks Pilot Readiness or MVP closure.
 
 Active Phase 3 execution authority:
 

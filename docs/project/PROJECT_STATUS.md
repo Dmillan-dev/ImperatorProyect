@@ -1,6 +1,6 @@
 # IMPERATOR Project Status
 
-Last verified: **2026-08-01**
+Last verified: **2026-08-02**
 
 ## Current Gate
 
@@ -25,8 +25,8 @@ Last verified: **2026-08-01**
 | Sprint 3.3 closure | COMPLETE |
 | Sprint 3.3.1 closure | COMPLETE |
 | Sprint 3.4 implementation | PASS |
-| Sprint 3.4 PostgreSQL certification | DEFERRED under D084 - certification environment unavailable |
-| Sprint 3.4 closure | COMPLETE under the explicit D084 process exception |
+| Sprint 3.4 PostgreSQL certification | PASS - D084 obligation discharged on 2026-08-02 |
+| Sprint 3.4 closure | CERTIFIED / COMPLETE |
 | Sprint 3.4.1 documentation synchronization | COMPLETE |
 | Sprint 3.5 acceptance | CERTIFIED |
 | Sprint 3.5 closure | COMPLETE |
@@ -36,9 +36,14 @@ Last verified: **2026-08-01**
 | Sprint 3.6 closure | CERTIFIED / COMPLETE |
 | Sprint 3.6.1 documentation synchronization | COMPLETE |
 | D085 roadmap decision | ACCEPTED / COMPLETE |
-| Last completed gate | D085 - MVP Delivery Roadmap Evolution |
+| D086 Functional REST contract | ACCEPTED / COMPLETE |
+| Sprint 3.7 implementation | PASS |
+| Sprint 3.7 PostgreSQL certification | PASS |
+| Sprint 3.7 closure | CERTIFIED / COMPLETE |
+| Sprint 3.7.1 documentation synchronization | COMPLETE |
+| Last completed gate | Sprint 3.7.1 - Documentation Synchronization |
 | Phase 2 closure | COMPLETE under D079; Sprints 2.9-2.13 deferred |
-| Next authorized sprint | Sprint 3.7 - Functional REST API |
+| Next authorized sprint | Sprint 3.8 - JWT Authentication |
 | Phase 3 authorization | Authorized by D079 and evolved by D085 |
 
 ## Verified Foundation
@@ -57,13 +62,13 @@ Last verified: **2026-08-01**
 | HTTP correlation | PASS | `X-Correlation-ID` validation, normalization and propagation |
 | REST adapter foundation | COMPLETE | All 15 frozen MVP route shells certified by document 41 |
 | Functional runtime composition | CERTIFIED | Spring, existing use cases, repositories and transaction runner verified against PostgreSQL 18.2 |
-| Functional REST | IN PROGRESS | Evidence import is functional; remaining MVP route shells retain controlled responses |
+| Functional REST | CERTIFIED / COMPLETE | All 15 D086 routes are wired through REST DTOs and mappers to Application input ports and certified against PostgreSQL 18.2 |
 | Deterministic Decision creation | CERTIFIED | Eligible Evidence creates one atomic, retry-safe and concurrency-safe Decision |
 | Deterministic Recommendation and ROI | CERTIFIED | DRC-AOA-001-v1 derives one atomic Recommendation with annualized savings, confidence and risk |
 | Explanation Provider integration | COMPLETE | Optional provider-neutral explanation executes after deterministic persistence and has no decision, ROI or persistence authority |
-| Human Review, Ledger and Result Validation | COMPLETE; RUNTIME CERTIFICATION DEFERRED | Atomic review and Ledger behavior, replay, linearity, result validation and rollback tests implemented; D084 requires PostgreSQL 18.2 certification before Pilot Readiness, MVP closure or production |
+| Human Review, Ledger and Result Validation | CERTIFIED / COMPLETE | Atomic review and Ledger behavior, replay, linearity, result validation, rollback and concurrency passed against PostgreSQL 18.2; D084 is discharged |
 | End-to-End Local Business Value Demo | CERTIFIED / COMPLETE | Deterministic local `DRC-AOA-001` workflow and traceable projection verified with 30 Evidence records |
-| Security runtime | DEFERRED | Resequenced after the local business-value demo by D079 |
+| Security runtime | NEXT | Sprint 3.8 owns JWT Authentication; RBAC remains Sprint 3.9 |
 | Frontend runtime | DEFERRED | Thin Decision Review Workspace follows minimum security |
 | Local container runtime | DEFERRED | Operational hardening follows pilot readiness |
 | Observability runtime | DEFERRED | Minimum expansion follows operational hardening |
@@ -71,174 +76,76 @@ Last verified: **2026-08-01**
 
 ## Latest Verification
 
-Sprint 3.6 was certified on GitHub Actions for commit `c3bb8f6`:
-
-- workflow: `Java CI`;
-- run: `30708049322`;
-- runner: GitHub-hosted Ubuntu 24.04;
-- Maven Wrapper script version `3.3.4`: PASS;
-- downloaded Apache Maven `3.9.16`: PASS;
-- Eclipse Adoptium Java 21: PASS;
-- `clean verify`: PASS;
-- tests: 89 passed, 0 failed, 0 errors, 0 skipped;
-- executable JAR packaging: PASS;
-- `BUILD SUCCESS`: PASS.
-
-The same build was verified locally with Java 21 using:
-
-```text
-mvnw.cmd -o clean verify
-```
-
-Latest implementation result:
-
-- Java 21 gate: PASS;
-- Maven Enforcer: PASS;
-- production compilation: 112 files;
-- test compilation: 21 files;
-- default unit, HTTP contract and local demo tests: 89 passed, 0 failed;
-- deterministic NDJSON demonstration dataset: 30 accepted, 0 rejected;
-- Evidence-to-Decision-to-Recommendation workflow: PASS;
-- deterministic Explanation isolation: PASS;
-- Review-to-Ledger-to-Result Validation workflow: PASS;
-- non-persisted Business Value projection: PASS;
-- authoritative estimated and realized savings traceability: PASS;
-- identical governance replay and equal re-projection: PASS;
-- existing REST route-shell contracts: PASS;
-- executable JAR: created.
-
-The authorized Sprint 3.4 PostgreSQL command was attempted exactly as:
+Sprint 3.7 was certified on 2026-08-02 from committed implementation
+`9ba2138` with:
 
 ```text
 mvnw.cmd -Ppostgresql-integration clean verify
 ```
 
-That attempt stopped at Maven toolchain selection because the invoked process
-could find only Java 17. PostgreSQL, Flyway and Failsafe integration tests did
-not execute. Under D084, Sprint 3.4 runtime certification is explicitly
-**DEFERRED** because the certification environment was unavailable. No known
-implementation defect was identified by the checks that executed. This process
-exception permits the next bounded implementation gate but does not convert the
-missing runtime evidence into a certification pass.
+Certification evidence:
 
-The latest real-database certification remains Sprint 3.3 and was verified
-with:
-
-```text
-mvnw.cmd -o clean verify
-mvnw.cmd -Ppostgresql-integration clean verify
-```
-
-Sprint 3.3 database-certification result:
-
-- Java 21 gate: PASS;
-- Maven Enforcer: PASS;
-- production compilation: 107 files;
-- test compilation: 16 files;
-- default unit and HTTP contract tests: 70 passed, 0 failed;
-- PostgreSQL integration tests: 22 passed, 0 failed;
-- executable JAR: created.
-
-Real runtime certification:
-
-- PostgreSQL version: 18.2;
+- portable Eclipse Adoptium Java `21.0.12`: PASS;
+- Maven Wrapper `3.3.4` and Apache Maven `3.9.16`: PASS;
+- production compilation: 160 files;
+- test compilation: 24 files;
+- default unit, HTTP contract and local demo tests: 98 passed, 0 failed;
+- PostgreSQL version `18.2`: PASS;
 - Flyway V1 migrate: PASS;
 - Flyway validate: PASS;
 - second Flyway migrate: schema up to date, no pending migration;
-- Spring-to-application-to-repository composition: PASS;
-- evidence import through the restricted application database role: PASS;
-- per-line transaction and duplicate behavior: PASS;
-- eligible Evidence-to-Decision transition: PASS;
-- atomic `DecisionRepository.createIfAbsent`: PASS;
-- identical retry and immutable conflict behavior: PASS;
-- progressed Decision replay protection: PASS;
-- equivalent and conflicting concurrent creation: PASS;
-- canonical `DRC-AOA-001-v1` Evidence and assumption policy: PASS;
-- exact `MODEL_CHANGE` action and deterministic reason: PASS;
-- monthly recovery `EUR 1620.00`: PASS;
-- annualized `Recommendation.estimatedSavings` `EUR 19440.00`: PASS;
-- complete-pack confidence/risk `92 / LOW`: PASS;
-- missing-quality confidence/risk `90 / MEDIUM`: PASS;
-- incomplete mandatory Evidence persists no Recommendation: PASS;
-- atomic `RecommendationRepository.createIfAbsent`: PASS;
-- identical and progressed Recommendation replay protection: PASS;
-- conflicting immutable Recommendation replay: PASS;
-- equivalent and conflicting concurrent Recommendation creation: PASS;
-- Recommendation and Decision attachment rollback: PASS;
-- `ExplanationProvider` invocation during Recommendation creation: none;
-- repository behavior and use-case transaction boundaries: PASS;
-- PostgreSQL server shutdown after certification: PASS.
+- PostgreSQL integration tests: 29 passed, 0 failed;
+- repository, transaction, replay, rollback, concurrency, Ledger linearity
+  and fork-prevention behavior: PASS;
+- all 15 D086 REST routes through real Application and PostgreSQL composition:
+  PASS;
+- functional reads, pagination, deterministic ordering, trusted local actor
+  mapping and governance commands: PASS;
+- executable Spring Boot JAR: created;
+- `BUILD SUCCESS`: PASS.
 
-Real HTTP contract verification:
+Sprint 3.7.1 documentation verification:
 
-- `POST /api/v1/evidence/import`: functional `application/x-ndjson` import;
-- independent accepted and rejected line results: PASS;
-- duplicate UUID response as per-line `REJECTED / DUPLICATE`: PASS;
-- normalized Evidence persistence with no raw-event or batch storage: PASS;
-- request-wide four-field error envelope: PASS;
-- `GET /api/v1/decisions`: controlled `501`;
-- `GET /api/v1/decisions/{id}`: controlled `501`;
-- `GET /api/v1/decisions/{id}/timeline`: controlled `501`;
-- `GET /api/v1/decisions/{id}/evidence`: controlled `501`;
-- `GET /api/v1/decisions/{id}/roi`: controlled `501`;
-- `GET /api/v1/recommendations/{id}`: controlled `501`;
-- post-MVP `GET /api/v1/recommendations`: controlled `404`;
-- `GET /api/v1/ledger`: controlled `501`;
-- `GET /api/v1/decisions/{id}/ledger`: controlled `501`;
-- five canonical Ledger command routes: controlled `501`;
-- broader `GET /api/v1/ledger/{entryId}`: controlled `404`;
-- post-MVP recommendation review aliases: controlled `404`;
-- `GET /api/v1/business-value`: controlled `501`;
-- undefined Business Value detail routes: controlled `404`;
-- unversioned product routes: controlled `404`;
-- unsupported methods: controlled `405`;
-- four-field error envelope: PASS;
-- normalized `X-Correlation-ID` response header and body field: PASS.
-
-Documentation integrity verification:
-
-- Markdown files checked: 155;
+- active control and AI-context documents synchronized: PASS;
+- Markdown files checked: 158;
 - broken local links: 0;
-- current gate consistency: PASS;
-- exactly one `NEXT` sprint: PASS;
-- changed control documentation language: English;
-- frozen contracts 34-40 modified: no.
+- stale active Sprint 3.7 or D084 status statements: 0;
+- unique `NEXT` sprint: 3.8;
+- Java, SQL, Flyway, tests, dependencies, frozen contracts and Decision Log
+  modified: no.
 
-The PostgreSQL integration profile was re-executed for Sprint 3.3 against an
-isolated disposable PostgreSQL 18.2 runtime. Sprint 3.3.1 changed no SQL,
-repository or persistence behavior and therefore did not claim a new
-real-database certification.
+This full integration-profile run includes the Sprint 3.4 governance and
+Ledger certification suite. The D084 deferred obligation is therefore
+**DISCHARGED**; D084 remains an immutable historical record of the earlier
+environmental exception, not an active certification debt.
+
+Sprint 3.6 CI remains certified independently through GitHub Actions run
+`30708049322` for commit `c3bb8f6`, which verified Java 21, Maven Wrapper,
+the default build, 89 tests and executable JAR packaging on Ubuntu 24.04.
 
 ## Known Non-Blocking Risks
 
-- Sprint 3.4 PostgreSQL 18.2 runtime certification is deferred under D084. The
-  implementation passed the Java 21 offline build, but the explicit
-  `postgresql-integration` attempt stopped before PostgreSQL because that
-  wrapper process could find only Java 17. The deferral does not equal runtime
-  certification and must be resolved before Pilot Readiness, MVP closure or
-  the first production release.
 - Default `clean verify` executes the Spring Boot and HTTP contract suite only.
   Real-database certification remains intentionally explicit through the
   `postgresql-integration` profile and external `IMPERATOR_IT_*` configuration.
-- GitHub Java CI validates the default Maven gate but intentionally does not
-  replace the explicit PostgreSQL integration profile or the deferred Sprint
-  3.4 runtime certification.
-
-These risks remain visible and must not be misreported as a Sprint 3.4
-runtime-certification pass.
+- Sprint 3.7 trusted actor headers are local-only, disabled by default and
+  prohibited for external or real-customer exposure. Sprint 3.8 must replace
+  them with verified JWT identity before the API is exposed.
+- RBAC remains a separate Sprint 3.9 gate; JWT authentication alone must not be
+  reported as complete authorization.
 
 ## Next Control Gate
 
-Sprint 3.7 - Functional REST API is the sole next implementation gate. It may
-replace the existing `501` route-shell behavior only through the frozen REST
-topology and existing Application input ports. It must not add routes, JWT,
-RBAC, live connectors, frontend, Docker, observability or pilot behavior. Real
-customer data and external exposure remain prohibited until Sprints 3.8 and
-3.9 pass.
+Sprint 3.8 - JWT Authentication is the sole next implementation gate. It must
+replace the temporary trusted actor source with verified JWT identity while
+preserving D086 routes, DTOs, Application boundaries and the REST error and
+correlation contracts. RBAC policy remains exclusively Sprint 3.9. Real
+customer data and external exposure remain prohibited until both security
+gates pass.
 
 Current execution authorities:
 
-- D079 through D085 in `docs/decisions/14_Decision_Log.md`;
+- D079 through D086 in `docs/decisions/14_Decision_Log.md`;
 - `agents/phase3/README.md`;
 - `docs/architecture/35_Coding_Principles.md`;
 - `docs/architecture/37_Implementation_Contract.md`.

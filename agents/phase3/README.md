@@ -2,7 +2,7 @@
 
 Status: **ACTIVE**
 
-Current gate: **Sprint 3.7 - Functional REST API**
+Current gate: **Sprint 3.8 - JWT Authentication**
 
 Authorization: **D079 - Phase 3 Vertical-Slice Acceleration; D085 - MVP Delivery Roadmap Evolution**
 
@@ -86,15 +86,17 @@ Locked constraints:
 | 3.2 | Deterministic Decision Creation | CERTIFIED |
 | 3.3 | Deterministic Recommendation And ROI Policy | CERTIFIED |
 | 3.3.1 | Explanation Provider Integration | COMPLETE |
-| 3.4 | Human Review, Ledger And Result Validation | COMPLETE; runtime certification DEFERRED under D084 |
+| 3.4 | Human Review, Ledger And Result Validation | CERTIFIED / COMPLETE; D084 obligation discharged |
 | 3.4.1 | Documentation Synchronization | COMPLETE |
 | 3.5 | End-to-End Local Business Value Demo | CERTIFIED / COMPLETE |
 | 3.5.1 | Project Control Documentation Synchronization | COMPLETE |
 | 3.6 | Basic Java CI | CERTIFIED / COMPLETE |
 | 3.6.1 | Documentation Synchronization | COMPLETE |
 | D085 | MVP Delivery Roadmap Evolution | ACCEPTED / COMPLETE |
-| 3.7 | Functional REST API | NEXT |
-| 3.8 | JWT Authentication | PENDING |
+| D086 | Functional REST Application Contract | ACCEPTED / COMPLETE |
+| 3.7 | Functional REST API | CERTIFIED / COMPLETE |
+| 3.7.1 | Documentation Synchronization | COMPLETE |
+| 3.8 | JWT Authentication | NEXT |
 | 3.9 | RBAC Authorization | PENDING |
 | 4.0 | GitHub Integration | PENDING |
 | 4.1 | AWS Integration | PENDING |
@@ -329,14 +331,12 @@ Implementation evidence:
 - REST route shells, Flyway V1, schema, dependencies and Explanation behavior
   unchanged.
 
-PostgreSQL 18.2 certification is deferred under D084. The authorized
-`mvnw.cmd -Ppostgresql-integration clean verify` attempt stopped at Maven
-toolchain selection because the invoked process found only Java 17. Flyway and
-PostgreSQL integration tests did not execute. No known implementation defect
-was identified by the checks that executed. D084 records an explicit process
-exception caused by unavailable certification infrastructure; it is not
-evidence of certification. The deferred gate must pass before Pilot Readiness,
-MVP closure or the first production release.
+The complete PostgreSQL 18.2 integration profile passed on 2026-08-02 with
+Java 21 as part of Sprint 3.7 certification. It executed the Sprint 3.4
+governance, atomicity, replay, rollback, concurrency, Ledger linearity and
+fork-prevention suite. The D084 deferred obligation is therefore discharged;
+D084 remains the immutable historical record of the earlier unavailable
+environment.
 
 Sprint 3.4.1 synchronized active documentation with this verified state. It
 changed no Java, SQL, tests, frozen contracts or Decision Log entries.
@@ -402,6 +402,34 @@ Certification evidence:
 Sprint 3.6.1 synchronized active documentation with this certified state. It
 changed no Java, tests, SQL, Flyway, dependencies, frozen contracts or Decision
 Log entries.
+
+## Sprint 3.7 - Functional REST API
+
+Sprint 3.7 is certified and complete under D086.
+
+Certification evidence:
+
+- integrated implementation commit: `9ba2138`;
+- exactly 15 D086 routes mapped to REST DTOs, REST mappers and Application
+  input ports;
+- eight route-aligned query input ports and use cases plus one read-only
+  `MvpReadModelQueryPort` PostgreSQL adapter;
+- no controller-to-repository shortcut and no business policy in REST;
+- temporary trusted actor context remains local-only and disabled by default;
+- Java 21 and Maven Enforcer: PASS;
+- 98 default unit, HTTP contract and local demo tests: PASS;
+- PostgreSQL 18.2 and 29 integration tests: PASS;
+- Flyway migrate, validate and second no-op migrate: PASS;
+- functional read projections, pagination, ordering, governance commands,
+  replay and transaction behavior through PostgreSQL: PASS;
+- executable JAR and `BUILD SUCCESS`: PASS;
+- Domain, write repositories, V1, Flyway migrations, dependencies, frozen
+  contracts and Decision Log unchanged by implementation and certification;
+- status: **CERTIFIED / COMPLETE**.
+
+Sprint 3.7.1 synchronized active control and AI-context documentation with this
+certified state and marked Sprint 3.8 as the sole next gate. It changed no Java,
+SQL, Flyway, tests, dependencies, frozen contracts or Decision Log entries.
 
 ## Demonstration And Pilot Boundary
 
