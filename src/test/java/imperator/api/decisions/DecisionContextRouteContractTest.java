@@ -66,21 +66,21 @@ class DecisionContextRouteContractTest {
     }
 
     @Test
-    void returnsNotImplementedForTheDecisionTimeline()
+    void returnsServiceUnavailableWhenTheTimelinePortIsAbsent()
             throws IOException, InterruptedException {
-        assertNotImplemented(BASE_ROUTE + "/timeline");
+        assertUnavailable(BASE_ROUTE + "/timeline");
     }
 
     @Test
-    void returnsNotImplementedForTheDecisionEvidence()
+    void returnsServiceUnavailableWhenTheEvidencePortIsAbsent()
             throws IOException, InterruptedException {
-        assertNotImplemented(BASE_ROUTE + "/evidence");
+        assertUnavailable(BASE_ROUTE + "/evidence");
     }
 
     @Test
-    void returnsNotImplementedForTheDecisionRoi()
+    void returnsServiceUnavailableWhenTheRoiPortIsAbsent()
             throws IOException, InterruptedException {
-        assertNotImplemented(BASE_ROUTE + "/roi");
+        assertUnavailable(BASE_ROUTE + "/roi");
     }
 
     @Test
@@ -145,17 +145,21 @@ class DecisionContextRouteContractTest {
                     MediaType.ALL_VALUE)) {
                 HttpResponse<String> response = send("GET", route, accept);
 
-                assertErrorEnvelope(response, 501, "NOT_IMPLEMENTED", "Not implemented");
+                if (Set.of(MediaType.TEXT_HTML_VALUE, MediaType.APPLICATION_XML_VALUE).contains(accept)) {
+                    assertErrorEnvelope(response, 406, "NOT_ACCEPTABLE", "Not acceptable");
+                } else {
+                    assertErrorEnvelope(response, 503, "SERVICE_UNAVAILABLE", "Service unavailable");
+                }
             }
         }
     }
 
-    private static void assertNotImplemented(String route)
+    private static void assertUnavailable(String route)
             throws IOException, InterruptedException {
         HttpResponse<String> response =
                 send("GET", route, MediaType.APPLICATION_JSON_VALUE);
 
-        assertErrorEnvelope(response, 501, "NOT_IMPLEMENTED", "Not implemented");
+        assertErrorEnvelope(response, 503, "SERVICE_UNAVAILABLE", "Service unavailable");
     }
 
     private static HttpResponse<String> send(

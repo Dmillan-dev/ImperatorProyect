@@ -69,13 +69,13 @@ class LedgerReadRouteContractTest {
     }
 
     @Test
-    void returnsNotImplementedForBothLedgerReadRoutes()
+    void returnsServiceUnavailableWhenLedgerReadPortsAreAbsent()
             throws IOException, InterruptedException {
         for (String route : READ_ROUTES) {
             HttpResponse<String> response =
                     send("GET", route, MediaType.APPLICATION_JSON_VALUE);
 
-            assertErrorEnvelope(response, 501, "NOT_IMPLEMENTED", "Not implemented");
+            assertErrorEnvelope(response, 503, "SERVICE_UNAVAILABLE", "Service unavailable");
         }
     }
 
@@ -156,7 +156,11 @@ class LedgerReadRouteContractTest {
                     MediaType.ALL_VALUE)) {
                 HttpResponse<String> response = send("GET", route, accept);
 
-                assertErrorEnvelope(response, 501, "NOT_IMPLEMENTED", "Not implemented");
+                if (Set.of(MediaType.TEXT_HTML_VALUE, MediaType.APPLICATION_XML_VALUE).contains(accept)) {
+                    assertErrorEnvelope(response, 406, "NOT_ACCEPTABLE", "Not acceptable");
+                } else {
+                    assertErrorEnvelope(response, 503, "SERVICE_UNAVAILABLE", "Service unavailable");
+                }
             }
         }
     }

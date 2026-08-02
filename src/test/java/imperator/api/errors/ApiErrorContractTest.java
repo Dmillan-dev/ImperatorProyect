@@ -1,5 +1,11 @@
 package imperator.api.errors;
 
+import imperator.application.exceptions.AuthorizationException;
+import imperator.application.exceptions.BusinessRuleViolationException;
+import imperator.application.exceptions.ConflictException;
+import imperator.application.exceptions.DecisionNotFoundException;
+import imperator.application.exceptions.ValidationException;
+import imperator.domain.shared.DecisionId;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -164,6 +170,23 @@ class ApiErrorContractTest {
         assertFalse(response.body().contains(IllegalStateException.class.getName()));
     }
 
+    @Test
+    void mapsEveryFrozenApplicationExceptionFamilyWithoutLosingItsCode()
+            throws IOException, InterruptedException {
+        assertEnvelope(send(request("GET", BASE_PATH + "/authorization")), 403,
+                "GOVERNANCE_ACTION_FORBIDDEN", "Forbidden");
+        assertEnvelope(send(request("GET", BASE_PATH + "/not-found")), 404,
+                "DECISION_NOT_FOUND", "Decision not found: 10000000-0000-4000-8000-000000000001");
+        assertEnvelope(send(request("GET", BASE_PATH + "/conflict")), 409,
+                "LEDGER_OPERATION_CONFLICT", "Conflict");
+        assertEnvelope(send(request("GET", BASE_PATH + "/business-rule")), 409,
+                "BUSINESS_VALUE_NOT_READY", "Business Value is not ready");
+        assertEnvelope(send(request("GET", BASE_PATH + "/validation")), 422,
+                "FIELD_INVALID", "Field is invalid");
+        assertEnvelope(send(request("GET", BASE_PATH + "/invalid-metadata")), 500,
+                "INTERNAL_SERVER_ERROR", "Internal server error");
+    }
+
     private static HttpRequest.Builder request(String method, String path) {
         HttpRequest.Builder builder = HttpRequest.newBuilder()
                 .uri(URI.create("http://127.0.0.1:" + port + path))
@@ -213,6 +236,20 @@ class ApiErrorContractTest {
         assertEquals(correlationId(response), body.get("correlationId").asString());
     }
 
+    private static void assertEnvelope(
+            HttpResponse<String> response,
+            int expectedStatus,
+            String expectedCode,
+            String expectedMessage
+    ) throws IOException {
+        assertEquals(expectedStatus, response.statusCode());
+        JsonNode body = JSON.readTree(response.body());
+        assertEquals(expectedCode, body.get("code").asString());
+        assertEquals(expectedMessage, body.get("message").asString());
+        assertTrue(body.get("details").isObject());
+        assertEquals(correlationId(response), body.get("correlationId").asString());
+    }
+
     private static String correlationId(HttpResponse<String> response) {
         return response.headers()
                 .firstValue(CorrelationIdFilter.HEADER_NAME)
@@ -244,6 +281,42 @@ class ApiErrorContractTest {
         @GetMapping("/failure")
         void failure() {
             throw new IllegalStateException("restricted-internal-detail");
+        }
+
+        @GetMapping("/authorization")
+        void authorization() {
+            throw new AuthorizationException("GOVERNANCE_ACTION_FORBIDDEN", "Forbidden");
+        }
+
+        @GetMapping("/not-found")
+        void notFound() {
+            throw new DecisionNotFoundException(
+                    new DecisionId(UUID.fromString("10000000-0000-4000-8000-000000000001"))
+            );
+        }
+
+        @GetMapping("/conflict")
+        void conflict() {
+            throw new ConflictException("LEDGER_OPERATION_CONFLICT", "Conflict");
+        }
+
+        @GetMapping("/business-rule")
+        void businessRule() {
+            throw new BusinessRuleViolationException(
+                    "BUSINESS_VALUE_NOT_READY", "Business Value is not ready"
+            );
+        }
+
+        @GetMapping("/validation")
+        void validation() {
+            throw new ValidationException("FIELD_INVALID", "Field is invalid");
+        }
+
+        @GetMapping("/invalid-metadata")
+        void invalidMetadata() {
+            throw new BusinessRuleViolationException(
+                    "BUSINESS_VALUE_METADATA_INVALID", "restricted-internal-detail"
+            );
         }
     }
 

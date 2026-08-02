@@ -65,12 +65,12 @@ class RecommendationRouteContractTest {
     }
 
     @Test
-    void returnsNotImplementedForTheRecommendationDetail()
+    void returnsServiceUnavailableWhenTheRecommendationPortIsAbsent()
             throws IOException, InterruptedException {
         HttpResponse<String> response =
                 send("GET", DETAIL_ROUTE, MediaType.APPLICATION_JSON_VALUE);
 
-        assertErrorEnvelope(response, 501, "NOT_IMPLEMENTED", "Not implemented");
+        assertErrorEnvelope(response, 503, "SERVICE_UNAVAILABLE", "Service unavailable");
     }
 
     @Test
@@ -143,7 +143,11 @@ class RecommendationRouteContractTest {
                 MediaType.ALL_VALUE)) {
             HttpResponse<String> response = send("GET", DETAIL_ROUTE, accept);
 
-            assertErrorEnvelope(response, 501, "NOT_IMPLEMENTED", "Not implemented");
+            if (Set.of(MediaType.TEXT_HTML_VALUE, MediaType.APPLICATION_XML_VALUE).contains(accept)) {
+                assertErrorEnvelope(response, 406, "NOT_ACCEPTABLE", "Not acceptable");
+            } else {
+                assertErrorEnvelope(response, 503, "SERVICE_UNAVAILABLE", "Service unavailable");
+            }
         }
     }
 

@@ -76,13 +76,13 @@ class LedgerCommandRouteContractTest {
     }
 
     @Test
-    void returnsNotImplementedForEveryLedgerCommand()
+    void requiresTheTemporaryActorContextForEveryLedgerCommand()
             throws IOException, InterruptedException {
         for (String route : COMMAND_ROUTES) {
             HttpResponse<String> response =
                     send("POST", route, MediaType.APPLICATION_JSON_VALUE);
 
-            assertErrorEnvelope(response, 501, "NOT_IMPLEMENTED", "Not implemented");
+            assertErrorEnvelope(response, 401, "AUTHENTICATION_REQUIRED", "Authentication required");
         }
     }
 
@@ -93,7 +93,7 @@ class LedgerCommandRouteContractTest {
             HttpResponse<String> response =
                     send("GET", route, MediaType.APPLICATION_JSON_VALUE);
 
-            assertErrorEnvelope(response, 501, "NOT_IMPLEMENTED", "Not implemented");
+            assertErrorEnvelope(response, 503, "SERVICE_UNAVAILABLE", "Service unavailable");
         }
     }
 
@@ -191,7 +191,13 @@ class LedgerCommandRouteContractTest {
                     MediaType.ALL_VALUE)) {
                 HttpResponse<String> response = send("POST", route, accept);
 
-                assertErrorEnvelope(response, 501, "NOT_IMPLEMENTED", "Not implemented");
+                if (Set.of(MediaType.TEXT_HTML_VALUE, MediaType.APPLICATION_XML_VALUE).contains(accept)) {
+                    assertErrorEnvelope(response, 406, "NOT_ACCEPTABLE", "Not acceptable");
+                } else {
+                    assertErrorEnvelope(
+                            response, 401, "AUTHENTICATION_REQUIRED", "Authentication required"
+                    );
+                }
             }
         }
     }
@@ -213,8 +219,13 @@ class LedgerCommandRouteContractTest {
         HttpRequest.Builder request = HttpRequest.newBuilder()
                 .uri(URI.create("http://127.0.0.1:" + port + path))
                 .timeout(Duration.ofSeconds(5))
-                .header("Accept", accept)
-                .method(method, HttpRequest.BodyPublishers.noBody());
+                .header("Accept", accept);
+        if ("POST".equals(method)) {
+            request.header("Content-Type", MediaType.APPLICATION_JSON_VALUE)
+                    .POST(HttpRequest.BodyPublishers.ofString("{}"));
+        } else {
+            request.method(method, HttpRequest.BodyPublishers.noBody());
+        }
         if (correlationId != null) {
             request.header(CorrelationIdFilter.HEADER_NAME, correlationId);
         }

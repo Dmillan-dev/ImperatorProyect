@@ -3,6 +3,7 @@ package imperator.bootstrap;
 import imperator.adapters.out.postgresql.PostgresDecisionRepository;
 import imperator.adapters.out.postgresql.PostgresEvidenceRepository;
 import imperator.adapters.out.postgresql.PostgresLedgerRepository;
+import imperator.adapters.out.postgresql.PostgresMvpReadModelQueryAdapter;
 import imperator.adapters.out.postgresql.PostgresRecommendationRepository;
 import imperator.adapters.out.postgresql.PostgresTransactionRunner;
 import imperator.application.appendledgerentry.AppendLedgerEntryUseCase;
@@ -10,15 +11,34 @@ import imperator.application.createdecision.CreateDecisionUseCase;
 import imperator.application.generaterecommendation.GenerateRecommendationUseCase;
 import imperator.application.importevidence.ImportEvidenceUseCase;
 import imperator.application.reviewdecision.ReviewDecisionUseCase;
+import imperator.application.businessvalue.ProjectBusinessValueUseCase;
+import imperator.application.query.GetDecisionEvidenceUseCase;
+import imperator.application.query.GetDecisionLedgerUseCase;
+import imperator.application.query.GetDecisionRoiUseCase;
+import imperator.application.query.GetDecisionTimelineUseCase;
+import imperator.application.query.GetDecisionUseCase;
+import imperator.application.query.GetRecommendationUseCase;
+import imperator.application.query.ListDecisionsUseCase;
+import imperator.application.query.ListLedgerEntriesUseCase;
 import imperator.ports.in.AppendLedgerEntryInputPort;
 import imperator.ports.in.CreateDecisionInputPort;
 import imperator.ports.in.GenerateRecommendationInputPort;
 import imperator.ports.in.ImportEvidenceInputPort;
+import imperator.ports.in.GetDecisionEvidenceInputPort;
+import imperator.ports.in.GetDecisionInputPort;
+import imperator.ports.in.GetDecisionLedgerInputPort;
+import imperator.ports.in.GetDecisionRoiInputPort;
+import imperator.ports.in.GetDecisionTimelineInputPort;
+import imperator.ports.in.GetRecommendationInputPort;
+import imperator.ports.in.ListDecisionsInputPort;
+import imperator.ports.in.ListLedgerEntriesInputPort;
+import imperator.ports.in.ProjectBusinessValueInputPort;
 import imperator.ports.in.ReviewDecisionInputPort;
 import imperator.ports.out.DecisionRepository;
 import imperator.ports.out.EvidenceRepository;
 import imperator.ports.out.ExplanationProvider;
 import imperator.ports.out.LedgerRepository;
+import imperator.ports.out.MvpReadModelQueryPort;
 import imperator.ports.out.RecommendationRepository;
 import imperator.ports.out.TransactionRunner;
 import org.junit.jupiter.api.Test;
@@ -92,6 +112,37 @@ class PostgresRuntimeConfigurationTest {
             assertInstanceOf(
                     AppendLedgerEntryUseCase.class,
                     context.getBean(AppendLedgerEntryInputPort.class)
+            );
+            assertInstanceOf(
+                    PostgresMvpReadModelQueryAdapter.class,
+                    context.getBean(MvpReadModelQueryPort.class)
+            );
+            assertInstanceOf(ListDecisionsUseCase.class, context.getBean(ListDecisionsInputPort.class));
+            assertInstanceOf(GetDecisionUseCase.class, context.getBean(GetDecisionInputPort.class));
+            assertInstanceOf(
+                    GetDecisionTimelineUseCase.class,
+                    context.getBean(GetDecisionTimelineInputPort.class)
+            );
+            assertInstanceOf(
+                    GetDecisionEvidenceUseCase.class,
+                    context.getBean(GetDecisionEvidenceInputPort.class)
+            );
+            assertInstanceOf(GetDecisionRoiUseCase.class, context.getBean(GetDecisionRoiInputPort.class));
+            assertInstanceOf(
+                    GetRecommendationUseCase.class,
+                    context.getBean(GetRecommendationInputPort.class)
+            );
+            assertInstanceOf(
+                    GetDecisionLedgerUseCase.class,
+                    context.getBean(GetDecisionLedgerInputPort.class)
+            );
+            assertInstanceOf(
+                    ListLedgerEntriesUseCase.class,
+                    context.getBean(ListLedgerEntriesInputPort.class)
+            );
+            assertInstanceOf(
+                    ProjectBusinessValueUseCase.class,
+                    context.getBean(ProjectBusinessValueInputPort.class)
             );
         }
     }

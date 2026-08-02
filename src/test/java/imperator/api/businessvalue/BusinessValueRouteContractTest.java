@@ -63,12 +63,17 @@ class BusinessValueRouteContractTest {
     }
 
     @Test
-    void returnsNotImplementedForTheBusinessValueRoute()
+    void requiresTheFrozenDecisionSelector()
             throws IOException, InterruptedException {
         HttpResponse<String> response =
                 send("GET", ROUTE, MediaType.APPLICATION_JSON_VALUE);
 
-        assertErrorEnvelope(response, 501, "NOT_IMPLEMENTED", "Not implemented");
+        assertErrorEnvelope(response, 400, "BAD_REQUEST", "Bad request");
+
+        HttpResponse<String> unavailable = send(
+                "GET", ROUTE + "?decisionId=" + BUSINESS_VALUE_ID, MediaType.APPLICATION_JSON_VALUE
+        );
+        assertErrorEnvelope(unavailable, 503, "SERVICE_UNAVAILABLE", "Service unavailable");
     }
 
     @Test
@@ -141,7 +146,11 @@ class BusinessValueRouteContractTest {
                 MediaType.ALL_VALUE)) {
             HttpResponse<String> response = send("GET", ROUTE, accept);
 
-            assertErrorEnvelope(response, 501, "NOT_IMPLEMENTED", "Not implemented");
+            if (Set.of(MediaType.TEXT_HTML_VALUE, MediaType.APPLICATION_XML_VALUE).contains(accept)) {
+                assertErrorEnvelope(response, 406, "NOT_ACCEPTABLE", "Not acceptable");
+            } else {
+                assertErrorEnvelope(response, 400, "BAD_REQUEST", "Bad request");
+            }
         }
     }
 
