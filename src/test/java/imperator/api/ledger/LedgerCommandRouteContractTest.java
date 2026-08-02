@@ -25,6 +25,7 @@ import imperator.api.errors.CorrelationIdFilter;
 import imperator.bootstrap.ImperatorApplication;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.json.JsonMapper;
+import testsupport.security.JwtTestFixture;
 
 class LedgerCommandRouteContractTest {
     private static final String DECISION_ID =
@@ -44,6 +45,7 @@ class LedgerCommandRouteContractTest {
     private static final Set<String> READ_ROUTES =
             Set.of("/api/v1/ledger", DECISION_LEDGER_ROUTE);
     private static final JsonMapper JSON = JsonMapper.shared();
+    private static final JwtTestFixture JWT = new JwtTestFixture();
 
     private static ConfigurableApplicationContext context;
     private static HttpClient client;
@@ -51,13 +53,13 @@ class LedgerCommandRouteContractTest {
 
     @BeforeAll
     static void startRuntime() {
-        SpringApplication application = new SpringApplication(ImperatorApplication.class);
-        context = application.run(
+        SpringApplication application = JWT.application();
+        context = application.run(JWT.arguments(
                 "--server.address=127.0.0.1",
                 "--server.port=0",
                 "--spring.main.banner-mode=off",
                 "--debug=false",
-                "--logging.level.root=OFF");
+                "--logging.level.root=OFF"));
 
         ServletWebServerApplicationContext webContext =
                 (ServletWebServerApplicationContext) context;
@@ -73,14 +75,15 @@ class LedgerCommandRouteContractTest {
         if (context != null) {
             context.close();
         }
+        JWT.close();
     }
 
     @Test
-    void requiresTheTemporaryActorContextForEveryLedgerCommand()
+    void requiresJwtAuthenticationForEveryLedgerCommand()
             throws IOException, InterruptedException {
         for (String route : COMMAND_ROUTES) {
             HttpResponse<String> response =
-                    send("POST", route, MediaType.APPLICATION_JSON_VALUE);
+                    sendUnauthenticated("POST", route, MediaType.APPLICATION_JSON_VALUE, null);
 
             assertErrorEnvelope(response, 401, "AUTHENTICATION_REQUIRED", "Authentication required");
         }
@@ -189,15 +192,10 @@ class LedgerCommandRouteContractTest {
                     MediaType.TEXT_HTML_VALUE,
                     MediaType.APPLICATION_XML_VALUE,
                     MediaType.ALL_VALUE)) {
-                HttpResponse<String> response = send("POST", route, accept);
-
-                if (Set.of(MediaType.TEXT_HTML_VALUE, MediaType.APPLICATION_XML_VALUE).contains(accept)) {
-                    assertErrorEnvelope(response, 406, "NOT_ACCEPTABLE", "Not acceptable");
-                } else {
-                    assertErrorEnvelope(
-                            response, 401, "AUTHENTICATION_REQUIRED", "Authentication required"
-                    );
-                }
+                HttpResponse<String> response = sendUnauthenticated("POST", route, accept, null);
+                assertErrorEnvelope(
+                        response, 401, "AUTHENTICATION_REQUIRED", "Authentication required"
+                );
             }
         }
     }
@@ -216,10 +214,32 @@ class LedgerCommandRouteContractTest {
             String accept,
             String correlationId
     ) throws IOException, InterruptedException {
+        return send(method, path, accept, correlationId, true);
+    }
+
+    private static HttpResponse<String> sendUnauthenticated(
+            String method,
+            String path,
+            String accept,
+            String correlationId
+    ) throws IOException, InterruptedException {
+        return send(method, path, accept, correlationId, false);
+    }
+
+    private static HttpResponse<String> send(
+            String method,
+            String path,
+            String accept,
+            String correlationId,
+            boolean authenticated
+    ) throws IOException, InterruptedException {
         HttpRequest.Builder request = HttpRequest.newBuilder()
                 .uri(URI.create("http://127.0.0.1:" + port + path))
                 .timeout(Duration.ofSeconds(5))
                 .header("Accept", accept);
+        if (authenticated) {
+            request.header("Authorization", JWT.authorizationHeader());
+        }
         if ("POST".equals(method)) {
             request.header("Content-Type", MediaType.APPLICATION_JSON_VALUE)
                     .POST(HttpRequest.BodyPublishers.ofString("{}"));

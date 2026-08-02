@@ -17,6 +17,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.http.MediaType;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.json.JsonMapper;
+import testsupport.security.JwtTestFixture;
 
 import java.io.IOException;
 import java.net.URI;
@@ -39,6 +40,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class EvidenceImportRouteContractTest {
     private static final String ROUTE = "/api/v1/evidence/import";
     private static final JsonMapper JSON = JsonMapper.shared();
+    private static final JwtTestFixture JWT = new JwtTestFixture();
 
     private static ConfigurableApplicationContext context;
     private static HttpClient client;
@@ -47,7 +49,7 @@ class EvidenceImportRouteContractTest {
 
     @BeforeAll
     static void startRuntime() {
-        SpringApplication application = new SpringApplication(ImperatorApplication.class);
+        SpringApplication application = JWT.application();
         repository = new InMemoryEvidenceRepository();
         TransactionRunner transactionRunner = new TransactionRunner() {
             @Override
@@ -70,12 +72,12 @@ class EvidenceImportRouteContractTest {
                     inputPort
             );
         });
-        context = application.run(
+        context = application.run(JWT.arguments(
                 "--server.address=127.0.0.1",
                 "--server.port=0",
                 "--spring.main.banner-mode=off",
                 "--debug=false",
-                "--logging.level.root=OFF");
+                "--logging.level.root=OFF"));
 
         ServletWebServerApplicationContext webContext =
                 (ServletWebServerApplicationContext) context;
@@ -91,6 +93,7 @@ class EvidenceImportRouteContractTest {
         if (context != null) {
             context.close();
         }
+        JWT.close();
     }
 
     @BeforeEach
@@ -325,7 +328,8 @@ class EvidenceImportRouteContractTest {
         HttpRequest.Builder request = HttpRequest.newBuilder()
                 .uri(URI.create("http://127.0.0.1:" + port + path))
                 .timeout(Duration.ofSeconds(10))
-                .header("Accept", accept);
+                .header("Accept", accept)
+                .header("Authorization", JWT.authorizationHeader());
         if (contentType != null) {
             request.header("Content-Type", contentType);
         }

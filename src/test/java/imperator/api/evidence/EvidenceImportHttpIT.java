@@ -9,6 +9,7 @@ import org.springframework.boot.web.server.servlet.context.ServletWebServerAppli
 import org.springframework.context.ConfigurableApplicationContext;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.json.JsonMapper;
+import testsupport.security.JwtTestFixture;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -40,6 +41,7 @@ class EvidenceImportHttpIT {
             UUID.fromString("00000000-0000-4000-8000-000000000103")
     );
     private static final JsonMapper JSON = JsonMapper.shared();
+    private static final JwtTestFixture JWT = new JwtTestFixture();
 
     private static ConfigurableApplicationContext context;
     private static HttpClient client;
@@ -66,8 +68,8 @@ class EvidenceImportHttpIT {
         deleteFixtureEvidence();
         provisionApplicationRole();
 
-        SpringApplication application = new SpringApplication(ImperatorApplication.class);
-        context = application.run(
+        SpringApplication application = JWT.application();
+        context = application.run(JWT.arguments(
                 "--server.address=127.0.0.1",
                 "--server.port=0",
                 "--spring.main.banner-mode=off",
@@ -77,7 +79,7 @@ class EvidenceImportHttpIT {
                 "--imperator.postgresql.url=" + dbUrl,
                 "--imperator.postgresql.username=" + appUser,
                 "--imperator.postgresql.password=" + appPassword
-        );
+        ));
 
         ServletWebServerApplicationContext webContext =
                 (ServletWebServerApplicationContext) context;
@@ -93,6 +95,7 @@ class EvidenceImportHttpIT {
         if (context != null) {
             context.close();
         }
+        JWT.close();
         if (dbUrl != null) {
             try {
                 deleteFixtureEvidence();
@@ -139,6 +142,7 @@ class EvidenceImportHttpIT {
                 .timeout(Duration.ofSeconds(10))
                 .header("Content-Type", EvidenceController.NDJSON_MEDIA_TYPE)
                 .header("Accept", "application/json")
+                .header("Authorization", JWT.authorizationHeader())
                 .POST(HttpRequest.BodyPublishers.ofString(fixture))
                 .build();
         return client.send(request, HttpResponse.BodyHandlers.ofString());

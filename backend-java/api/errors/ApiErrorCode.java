@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 public enum ApiErrorCode {
     BAD_REQUEST(HttpStatus.BAD_REQUEST, "Bad request"),
     AUTHENTICATION_REQUIRED(HttpStatus.UNAUTHORIZED, "Authentication required"),
-    ACTOR_CONTEXT_INVALID(HttpStatus.UNAUTHORIZED, "Actor context is invalid"),
+    INVALID_TOKEN(HttpStatus.UNAUTHORIZED, "Invalid authentication token"),
     RESOURCE_NOT_FOUND(HttpStatus.NOT_FOUND, "Resource not found"),
     METHOD_NOT_ALLOWED(HttpStatus.METHOD_NOT_ALLOWED, "Method not allowed"),
     NOT_ACCEPTABLE(HttpStatus.NOT_ACCEPTABLE, "Not acceptable"),

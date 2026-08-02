@@ -25,6 +25,7 @@ import imperator.api.errors.CorrelationIdFilter;
 import imperator.bootstrap.ImperatorApplication;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.json.JsonMapper;
+import testsupport.security.JwtTestFixture;
 
 class RecommendationRouteContractTest {
     private static final String RECOMMENDATION_ID =
@@ -33,6 +34,7 @@ class RecommendationRouteContractTest {
     private static final String DETAIL_ROUTE =
             COLLECTION_ROUTE + "/" + RECOMMENDATION_ID;
     private static final JsonMapper JSON = JsonMapper.shared();
+    private static final JwtTestFixture JWT = new JwtTestFixture();
 
     private static ConfigurableApplicationContext context;
     private static HttpClient client;
@@ -40,13 +42,13 @@ class RecommendationRouteContractTest {
 
     @BeforeAll
     static void startRuntime() {
-        SpringApplication application = new SpringApplication(ImperatorApplication.class);
-        context = application.run(
+        SpringApplication application = JWT.application();
+        context = application.run(JWT.arguments(
                 "--server.address=127.0.0.1",
                 "--server.port=0",
                 "--spring.main.banner-mode=off",
                 "--debug=false",
-                "--logging.level.root=OFF");
+                "--logging.level.root=OFF"));
 
         ServletWebServerApplicationContext webContext =
                 (ServletWebServerApplicationContext) context;
@@ -62,6 +64,7 @@ class RecommendationRouteContractTest {
         if (context != null) {
             context.close();
         }
+        JWT.close();
     }
 
     @Test
@@ -169,6 +172,7 @@ class RecommendationRouteContractTest {
                 .uri(URI.create("http://127.0.0.1:" + port + path))
                 .timeout(Duration.ofSeconds(5))
                 .header("Accept", accept)
+                .header("Authorization", JWT.authorizationHeader())
                 .method(method, HttpRequest.BodyPublishers.noBody());
         if (correlationId != null) {
             request.header(CorrelationIdFilter.HEADER_NAME, correlationId);

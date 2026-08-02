@@ -48,6 +48,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.http.MediaType;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.json.JsonMapper;
+import testsupport.security.JwtTestFixture;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -75,6 +76,7 @@ class FunctionalRestApiContractTest {
     private static final UUID REPLAY_UUID = UUID.fromString("60000000-0000-4000-8000-000000000099");
     private static final Instant NOW = Instant.parse("2026-07-01T12:00:00Z");
     private static final JsonMapper JSON = JsonMapper.shared();
+    private static final JwtTestFixture JWT = new JwtTestFixture();
 
     private static ConfigurableApplicationContext context;
     private static HttpClient client;
@@ -82,16 +84,15 @@ class FunctionalRestApiContractTest {
 
     @BeforeAll
     static void startRuntime() {
-        SpringApplication application = new SpringApplication(ImperatorApplication.class);
+        SpringApplication application = JWT.application();
         application.addInitializers(applicationContext -> registerPorts(applicationContext.getBeanFactory()));
-        context = application.run(
+        context = application.run(JWT.arguments(
                 "--server.address=127.0.0.1",
                 "--server.port=0",
                 "--spring.main.banner-mode=off",
                 "--debug=false",
-                "--logging.level.root=OFF",
-                "--imperator.security.trusted-actor.enabled=true"
-        );
+                "--logging.level.root=OFF"
+        ));
         port = ((ServletWebServerApplicationContext) context).getWebServer().getPort();
         client = HttpClient.newHttpClient();
     }
@@ -104,6 +105,7 @@ class FunctionalRestApiContractTest {
         if (context != null) {
             context.close();
         }
+        JWT.close();
     }
 
     @Test
@@ -145,6 +147,7 @@ class FunctionalRestApiContractTest {
         HttpRequest request = HttpRequest.newBuilder(uri("/api/v1/evidence/import"))
                 .header("Accept", MediaType.APPLICATION_JSON_VALUE)
                 .header("Content-Type", "application/x-ndjson")
+                .header("Authorization", JWT.authorizationHeader(ACTOR_UUID, "ADMIN"))
                 .POST(HttpRequest.BodyPublishers.ofString(line))
                 .build();
 
@@ -154,7 +157,7 @@ class FunctionalRestApiContractTest {
     }
 
     @Test
-    void allFiveLedgerCommandsUseTrustedActorAndReturn201()
+    void allFiveLedgerCommandsUseJwtActorAndReturn201()
             throws IOException, InterruptedException {
         String base = "/api/v1/decisions/" + DECISION_UUID + "/ledger/";
         Map<String, String> requests = Map.of(
@@ -188,7 +191,7 @@ class FunctionalRestApiContractTest {
     }
 
     @Test
-    void enforcesPaginationActorAndIdempotencyTransportContracts()
+    void enforcesPaginationJwtActorAndIdempotencyTransportContracts()
             throws IOException, InterruptedException {
         HttpResponse<String> pagination = get("/api/v1/decisions?size=0");
         assertEquals(400, pagination.statusCode());
@@ -200,19 +203,17 @@ class FunctionalRestApiContractTest {
         assertEquals(200, replay.statusCode());
         assertEquals(true, JSON.readTree(replay.body()).get("replayed").asBoolean());
 
-        HttpRequest invalidActor = commandRequest(reviewBody())
+        HttpRequest spoofedActor = commandRequest(reviewBody())
                 .header("Idempotency-Key", UUID.randomUUID().toString())
-                .header("X-Imperator-Actor-ID", ACTOR_UUID.toString())
-                .header("X-Imperator-Actor-Role", "admin")
+                .header("X-Imperator-Actor-ID", UUID.randomUUID().toString())
+                .header("X-Imperator-Actor-Role", "AUDITOR")
                 .build();
-        HttpResponse<String> actorResponse = client.send(invalidActor, HttpResponse.BodyHandlers.ofString());
-        assertEquals(401, actorResponse.statusCode());
-        assertEquals("ACTOR_CONTEXT_INVALID", JSON.readTree(actorResponse.body()).get("code").asString());
+        HttpResponse<String> actorResponse = client.send(spoofedActor, HttpResponse.BodyHandlers.ofString());
+        assertEquals(201, actorResponse.statusCode());
+        assertEquals(ACTOR_UUID.toString(), JSON.readTree(actorResponse.body()).get("reviewerId").asString());
+        assertEquals("ADMIN", JSON.readTree(actorResponse.body()).get("reviewerRole").asString());
 
-        HttpRequest missingIdempotency = commandRequest(reviewBody())
-                .header("X-Imperator-Actor-ID", ACTOR_UUID.toString())
-                .header("X-Imperator-Actor-Role", "ADMIN")
-                .build();
+        HttpRequest missingIdempotency = commandRequest(reviewBody()).build();
         HttpResponse<String> idempotency = client.send(
                 missingIdempotency, HttpResponse.BodyHandlers.ofString()
         );
@@ -345,7 +346,10 @@ class FunctionalRestApiContractTest {
 
     private static HttpResponse<String> get(String path) throws IOException, InterruptedException {
         return client.send(
-                HttpRequest.newBuilder(uri(path)).header("Accept", MediaType.APPLICATION_JSON_VALUE).GET().build(),
+                HttpRequest.newBuilder(uri(path))
+                        .header("Accept", MediaType.APPLICATION_JSON_VALUE)
+                        .header("Authorization", JWT.authorizationHeader(ACTOR_UUID, "ADMIN"))
+                        .GET().build(),
                 HttpResponse.BodyHandlers.ofString()
         );
     }
@@ -356,8 +360,7 @@ class FunctionalRestApiContractTest {
                 .header("Accept", MediaType.APPLICATION_JSON_VALUE)
                 .header("Content-Type", MediaType.APPLICATION_JSON_VALUE)
                 .header("Idempotency-Key", idempotencyKey)
-                .header("X-Imperator-Actor-ID", ACTOR_UUID.toString())
-                .header("X-Imperator-Actor-Role", "ADMIN")
+                .header("Authorization", JWT.authorizationHeader(ACTOR_UUID, "ADMIN"))
                 .POST(HttpRequest.BodyPublishers.ofString(body))
                 .build();
         return client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -369,6 +372,7 @@ class FunctionalRestApiContractTest {
                 ))
                 .header("Accept", MediaType.APPLICATION_JSON_VALUE)
                 .header("Content-Type", MediaType.APPLICATION_JSON_VALUE)
+                .header("Authorization", JWT.authorizationHeader(ACTOR_UUID, "ADMIN"))
                 .POST(HttpRequest.BodyPublishers.ofString(body));
     }
 

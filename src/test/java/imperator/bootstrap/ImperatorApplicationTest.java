@@ -15,20 +15,22 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
+import testsupport.security.JwtTestFixture;
 
 class ImperatorApplicationTest {
 
     @Test
     void startsExecutableWebRuntimeWithoutExternalInfrastructure()
             throws IOException, InterruptedException {
-        SpringApplication application = new SpringApplication(ImperatorApplication.class);
+        try (JwtTestFixture jwt = new JwtTestFixture()) {
+            SpringApplication application = jwt.application();
 
-        try (ConfigurableApplicationContext context = application.run(
-                "--server.address=127.0.0.1",
-                "--server.port=0",
-                "--spring.main.banner-mode=off",
-                "--debug=false",
-                "--logging.level.root=OFF")) {
+            try (ConfigurableApplicationContext context = application.run(jwt.arguments(
+                    "--server.address=127.0.0.1",
+                    "--server.port=0",
+                    "--spring.main.banner-mode=off",
+                    "--debug=false",
+                    "--logging.level.root=OFF"))) {
             assertTrue(context instanceof ServletWebServerApplicationContext);
 
             ServletWebServerApplicationContext webContext =
@@ -44,10 +46,11 @@ class ImperatorApplicationTest {
                     .GET()
                     .build();
 
-            try (HttpClient client = HttpClient.newHttpClient()) {
-                HttpResponse<Void> response =
-                        client.send(request, HttpResponse.BodyHandlers.discarding());
-                assertEquals(404, response.statusCode());
+                try (HttpClient client = HttpClient.newHttpClient()) {
+                    HttpResponse<Void> response =
+                            client.send(request, HttpResponse.BodyHandlers.discarding());
+                    assertEquals(404, response.statusCode());
+                }
             }
         }
     }

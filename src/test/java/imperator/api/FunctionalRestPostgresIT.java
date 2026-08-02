@@ -23,6 +23,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.http.MediaType;
+import testsupport.security.JwtTestFixture;
 
 import javax.sql.DataSource;
 import java.io.IOException;
@@ -31,6 +32,8 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.Instant;
@@ -56,6 +59,7 @@ final class FunctionalRestPostgresIT {
     private HttpClient client;
     private int port;
     private EvidenceId traceEvidenceId;
+    private final JwtTestFixture jwt = new JwtTestFixture();
 
     @BeforeAll
     void startCertifiedRuntimeAndSeedPolicyPack() throws SQLException {
@@ -65,21 +69,20 @@ final class FunctionalRestPostgresIT {
         adminDataSource = new PostgresDataSource(url, adminUser, adminPassword);
         cleanTables();
 
-        SpringApplication application = new SpringApplication(ImperatorApplication.class);
+        SpringApplication application = jwt.application();
         application.setDefaultProperties(Map.of(
                 "imperator.postgresql.enabled", "true",
                 "imperator.postgresql.url", url,
                 "imperator.postgresql.username", adminUser,
-                "imperator.postgresql.password", adminPassword,
-                "imperator.security.trusted-actor.enabled", "true"
+                "imperator.postgresql.password", adminPassword
         ));
-        context = application.run(
+        context = application.run(jwt.arguments(
                 "--server.address=127.0.0.1",
                 "--server.port=0",
                 "--spring.main.banner-mode=off",
                 "--debug=false",
                 "--logging.level.root=OFF"
-        );
+        ));
         port = ((ServletWebServerApplicationContext) context).getWebServer().getPort();
         client = HttpClient.newHttpClient();
         seedDecision(APPROVE_DECISION, APPROVE_RECOMMENDATION);
@@ -95,6 +98,7 @@ final class FunctionalRestPostgresIT {
         if (context != null) {
             context.close();
         }
+        jwt.close();
         if (adminDataSource != null) {
             cleanTables();
         }
@@ -109,11 +113,13 @@ final class FunctionalRestPostgresIT {
 
         String approvalId = ledgerUuid(1).toString();
         assertCreated(postReview(APPROVE_DECISION, "approve", approvalId, "ADMIN", ""));
-        assertCreated(postReview(REJECT_DECISION, "reject", ledgerUuid(2).toString(), "ADMIN", ""));
+        String rejectionId = ledgerUuid(2).toString();
+        assertCreated(postReview(REJECT_DECISION, "reject", rejectionId, "ADMIN", ""));
+        String deferralId = ledgerUuid(3).toString();
         assertCreated(postReview(
                 DEFER_DECISION,
                 "defer",
-                ledgerUuid(3).toString(),
+                deferralId,
                 "ADMIN",
                 "\"requiredEvidence\":\"quality report\""
         ));
@@ -127,6 +133,7 @@ final class FunctionalRestPostgresIT {
                         {"occurredAt":"2026-07-30T10:03:00Z","reason":"Deployed","evidenceIds":["%s"],"expectedPreviousEntryId":"%s","period":"2026-07"}
                         """.formatted(traceEvidenceId.value(), approvalId).trim()
         ));
+
         String validationId = ledgerUuid(5).toString();
         assertCreated(post(
                 path(APPROVE_DECISION, "validate-result"),
@@ -136,6 +143,12 @@ final class FunctionalRestPostgresIT {
                         {"occurredAt":"2026-07-30T10:04:00Z","reason":"Validated","evidenceIds":["%s"],"expectedPreviousEntryId":"%s","period":"2026-07","annualizedBaselineCost":{"amount":"28080.00","currency":"EUR"},"annualizedPostActionCost":{"amount":"8640.00","currency":"EUR"},"actualTransitionCost":{"amount":"0.00","currency":"EUR"}}
                         """.formatted(traceEvidenceId.value(), implementationId).trim()
         ));
+
+        assertLedgerActor(approvalId, "ADMIN");
+        assertLedgerActor(rejectionId, "ADMIN");
+        assertLedgerActor(deferralId, "ADMIN");
+        assertLedgerActor(implementationId, "PLATFORM_ENGINEER");
+        assertLedgerActor(validationId, "FINANCE");
 
         for (String route : Set.of(
                 "/api/v1/decisions",
@@ -210,8 +223,7 @@ final class FunctionalRestPostgresIT {
                 .header("Accept", MediaType.APPLICATION_JSON_VALUE)
                 .header("Content-Type", MediaType.APPLICATION_JSON_VALUE)
                 .header("Idempotency-Key", idempotencyKey)
-                .header("X-Imperator-Actor-ID", APPROVER.value().toString())
-                .header("X-Imperator-Actor-Role", role)
+                .header("Authorization", jwt.authorizationHeader(APPROVER.value(), role))
                 .POST(HttpRequest.BodyPublishers.ofString(body))
                 .build();
         return client.send(request, HttpResponse.BodyHandlers.ofString());
@@ -219,13 +231,33 @@ final class FunctionalRestPostgresIT {
 
     private HttpResponse<String> get(String path) throws IOException, InterruptedException {
         return client.send(
-                HttpRequest.newBuilder(uri(path)).header("Accept", MediaType.APPLICATION_JSON_VALUE).GET().build(),
+                HttpRequest.newBuilder(uri(path))
+                        .header("Accept", MediaType.APPLICATION_JSON_VALUE)
+                        .header("Authorization", jwt.authorizationHeader(APPROVER.value(), "ADMIN"))
+                        .GET().build(),
                 HttpResponse.BodyHandlers.ofString()
         );
     }
 
     private void assertCreated(HttpResponse<String> response) {
         assertEquals(201, response.statusCode(), response.body());
+    }
+
+    private void assertLedgerActor(String entryId, String expectedRole) throws SQLException {
+        try (
+                Connection connection = adminDataSource.getConnection();
+                PreparedStatement statement = connection.prepareStatement(
+                        "SELECT actor_id::text, actor_role FROM ledger_entries WHERE id = ?::uuid"
+                )
+        ) {
+            statement.setString(1, entryId);
+            try (ResultSet result = statement.executeQuery()) {
+                assertTrue(result.next());
+                assertEquals(APPROVER.value().toString(), result.getString(1));
+                assertEquals(expectedRole, result.getString(2));
+                assertTrue(!result.next());
+            }
+        }
     }
 
     private String path(DecisionId decisionId, String action) {

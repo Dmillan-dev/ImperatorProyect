@@ -25,12 +25,14 @@ import imperator.api.errors.CorrelationIdFilter;
 import imperator.bootstrap.ImperatorApplication;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.json.JsonMapper;
+import testsupport.security.JwtTestFixture;
 
 class BusinessValueRouteContractTest {
     private static final String BUSINESS_VALUE_ID =
             "3ef41daa-7334-486c-8fd9-1811bc716505";
     private static final String ROUTE = "/api/v1/business-value";
     private static final JsonMapper JSON = JsonMapper.shared();
+    private static final JwtTestFixture JWT = new JwtTestFixture();
 
     private static ConfigurableApplicationContext context;
     private static HttpClient client;
@@ -38,13 +40,13 @@ class BusinessValueRouteContractTest {
 
     @BeforeAll
     static void startRuntime() {
-        SpringApplication application = new SpringApplication(ImperatorApplication.class);
-        context = application.run(
+        SpringApplication application = JWT.application();
+        context = application.run(JWT.arguments(
                 "--server.address=127.0.0.1",
                 "--server.port=0",
                 "--spring.main.banner-mode=off",
                 "--debug=false",
-                "--logging.level.root=OFF");
+                "--logging.level.root=OFF"));
 
         ServletWebServerApplicationContext webContext =
                 (ServletWebServerApplicationContext) context;
@@ -60,6 +62,7 @@ class BusinessValueRouteContractTest {
         if (context != null) {
             context.close();
         }
+        JWT.close();
     }
 
     @Test
@@ -172,6 +175,7 @@ class BusinessValueRouteContractTest {
                 .uri(URI.create("http://127.0.0.1:" + port + path))
                 .timeout(Duration.ofSeconds(5))
                 .header("Accept", accept)
+                .header("Authorization", JWT.authorizationHeader())
                 .method(method, HttpRequest.BodyPublishers.noBody());
         if (correlationId != null) {
             request.header(CorrelationIdFilter.HEADER_NAME, correlationId);

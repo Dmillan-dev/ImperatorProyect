@@ -38,11 +38,13 @@ import org.springframework.web.bind.annotation.RestController;
 import imperator.bootstrap.ImperatorApplication;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.json.JsonMapper;
+import testsupport.security.JwtTestFixture;
 
 class ApiErrorContractTest {
     private static final String TEST_PROFILE = "api-error-contract-test";
     private static final String BASE_PATH = "/api/v1/_error-contract";
     private static final JsonMapper JSON = JsonMapper.shared();
+    private static final JwtTestFixture JWT = new JwtTestFixture();
 
     private static ConfigurableApplicationContext context;
     private static HttpClient client;
@@ -50,14 +52,14 @@ class ApiErrorContractTest {
 
     @BeforeAll
     static void startRuntime() {
-        SpringApplication application = new SpringApplication(ImperatorApplication.class);
-        context = application.run(
+        SpringApplication application = JWT.application();
+        context = application.run(JWT.arguments(
                 "--server.address=127.0.0.1",
                 "--server.port=0",
                 "--spring.main.banner-mode=off",
                 "--spring.profiles.active=" + TEST_PROFILE,
                 "--debug=false",
-                "--logging.level.root=OFF");
+                "--logging.level.root=OFF"));
 
         ServletWebServerApplicationContext webContext =
                 (ServletWebServerApplicationContext) context;
@@ -73,6 +75,7 @@ class ApiErrorContractTest {
         if (context != null) {
             context.close();
         }
+        JWT.close();
     }
 
     @Test
@@ -191,7 +194,8 @@ class ApiErrorContractTest {
         HttpRequest.Builder builder = HttpRequest.newBuilder()
                 .uri(URI.create("http://127.0.0.1:" + port + path))
                 .timeout(Duration.ofSeconds(5))
-                .header("Accept", MediaType.APPLICATION_JSON_VALUE);
+                .header("Accept", MediaType.APPLICATION_JSON_VALUE)
+                .header("Authorization", JWT.authorizationHeader());
 
         return switch (method) {
             case "GET" -> builder.GET();

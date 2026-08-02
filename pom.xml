@@ -52,6 +52,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webmvc</artifactId>
         </dependency>
+        <!-- JWT authentication perimeter; IMPERATOR remains a Resource Server only. -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
+        </dependency>
         <!-- Current pgJDBC release; runtime-only connectivity for existing JDBC adapters. -->
         <dependency>
             <groupId>org.postgresql</groupId>

@@ -40,7 +40,7 @@ public final class CorrelationIdFilter extends OncePerRequestFilter {
         return false;
     }
 
-    static String currentCorrelationId(HttpServletRequest request) {
+    public static String currentCorrelationId(HttpServletRequest request) {
         Object existing = request.getAttribute(REQUEST_ATTRIBUTE);
         if (existing instanceof String correlationId) {
             return correlationId;

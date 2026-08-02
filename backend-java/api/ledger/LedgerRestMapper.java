@@ -1,6 +1,7 @@
 package imperator.api.ledger;
 
 import imperator.api.errors.ApiContractException;
+import imperator.api.security.JwtActorContextResolver;
 import imperator.application.appendledgerentry.AppendLedgerEntryCommand;
 import imperator.application.appendledgerentry.AppendLedgerEntryResult;
 import imperator.application.query.GetDecisionLedgerQuery;
@@ -79,7 +80,7 @@ final class LedgerRestMapper {
     static ReviewDecisionCommand reviewCommand(
             String decisionId,
             HttpServletRequest request,
-            TrustedActorContextResolver.ActorContext actor,
+            JwtActorContextResolver.AuthenticatedActor actor,
             ReviewDecisionAction action,
             LedgerApiModels.ReviewRequest body
     ) {
@@ -94,7 +95,7 @@ final class LedgerRestMapper {
     static ReviewDecisionCommand deferCommand(
             String decisionId,
             HttpServletRequest request,
-            TrustedActorContextResolver.ActorContext actor,
+            JwtActorContextResolver.AuthenticatedActor actor,
             LedgerApiModels.DeferRequest body
     ) {
         require(body, "Deferral request is required");
@@ -116,7 +117,7 @@ final class LedgerRestMapper {
     static AppendLedgerEntryCommand markImplementedCommand(
             String decisionId,
             HttpServletRequest request,
-            TrustedActorContextResolver.ActorContext actor,
+            JwtActorContextResolver.AuthenticatedActor actor,
             LedgerApiModels.MarkImplementedRequest body
     ) {
         require(body, "Implementation request is required");
@@ -132,7 +133,7 @@ final class LedgerRestMapper {
     static AppendLedgerEntryCommand validateResultCommand(
             String decisionId,
             HttpServletRequest request,
-            TrustedActorContextResolver.ActorContext actor,
+            JwtActorContextResolver.AuthenticatedActor actor,
             LedgerApiModels.ValidateResultRequest body
     ) {
         require(body, "Result validation request is required");

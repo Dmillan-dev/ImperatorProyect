@@ -1,5 +1,6 @@
 package imperator.api.ledger;
 
+import imperator.api.security.JwtActorContextResolver;
 import imperator.application.query.SortDirection;
 import imperator.application.reviewdecision.ReviewDecisionAction;
 import imperator.ports.in.AppendLedgerEntryInputPort;
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,14 +29,14 @@ public final class LedgerController {
     private final ObjectProvider<GetDecisionLedgerInputPort> decisionLedgerPort;
     private final ObjectProvider<ReviewDecisionInputPort> reviewPort;
     private final ObjectProvider<AppendLedgerEntryInputPort> appendPort;
-    private final TrustedActorContextResolver actorResolver;
+    private final JwtActorContextResolver actorResolver;
 
     public LedgerController(
             ObjectProvider<ListLedgerEntriesInputPort> listPort,
             ObjectProvider<GetDecisionLedgerInputPort> decisionLedgerPort,
             ObjectProvider<ReviewDecisionInputPort> reviewPort,
             ObjectProvider<AppendLedgerEntryInputPort> appendPort,
-            TrustedActorContextResolver actorResolver
+            JwtActorContextResolver actorResolver
     ) {
         this.listPort = listPort;
         this.decisionLedgerPort = decisionLedgerPort;
@@ -76,10 +78,11 @@ public final class LedgerController {
     ResponseEntity<LedgerApiModels.ReviewResultResponse> approveDecision(
             @PathVariable("id") String id,
             @RequestBody LedgerApiModels.ReviewRequest body,
+            Authentication authentication,
             HttpServletRequest request
     ) {
         var command = LedgerRestMapper.reviewCommand(
-                id, request, actorResolver.resolve(request), ReviewDecisionAction.APPROVE, body
+                id, request, actorResolver.resolve(authentication), ReviewDecisionAction.APPROVE, body
         );
         var result = required(reviewPort).reviewDecision(command);
         return commandResponse(result.replayed(), LedgerRestMapper.response(result));
@@ -93,10 +96,11 @@ public final class LedgerController {
     ResponseEntity<LedgerApiModels.ReviewResultResponse> rejectDecision(
             @PathVariable("id") String id,
             @RequestBody LedgerApiModels.ReviewRequest body,
+            Authentication authentication,
             HttpServletRequest request
     ) {
         var command = LedgerRestMapper.reviewCommand(
-                id, request, actorResolver.resolve(request), ReviewDecisionAction.REJECT, body
+                id, request, actorResolver.resolve(authentication), ReviewDecisionAction.REJECT, body
         );
         var result = required(reviewPort).reviewDecision(command);
         return commandResponse(result.replayed(), LedgerRestMapper.response(result));
@@ -110,10 +114,11 @@ public final class LedgerController {
     ResponseEntity<LedgerApiModels.ReviewResultResponse> deferDecision(
             @PathVariable("id") String id,
             @RequestBody LedgerApiModels.DeferRequest body,
+            Authentication authentication,
             HttpServletRequest request
     ) {
         var command = LedgerRestMapper.deferCommand(
-                id, request, actorResolver.resolve(request), body
+                id, request, actorResolver.resolve(authentication), body
         );
         var result = required(reviewPort).reviewDecision(command);
         return commandResponse(result.replayed(), LedgerRestMapper.response(result));
@@ -127,10 +132,11 @@ public final class LedgerController {
     ResponseEntity<LedgerApiModels.AppendResultResponse> markDecisionImplemented(
             @PathVariable("id") String id,
             @RequestBody LedgerApiModels.MarkImplementedRequest body,
+            Authentication authentication,
             HttpServletRequest request
     ) {
         var command = LedgerRestMapper.markImplementedCommand(
-                id, request, actorResolver.resolve(request), body
+                id, request, actorResolver.resolve(authentication), body
         );
         var result = required(appendPort).appendLedgerEntry(command);
         return commandResponse(result.replayed(), LedgerRestMapper.response(result));
@@ -144,10 +150,11 @@ public final class LedgerController {
     ResponseEntity<LedgerApiModels.AppendResultResponse> validateDecisionResult(
             @PathVariable("id") String id,
             @RequestBody LedgerApiModels.ValidateResultRequest body,
+            Authentication authentication,
             HttpServletRequest request
     ) {
         var command = LedgerRestMapper.validateResultCommand(
-                id, request, actorResolver.resolve(request), body
+                id, request, actorResolver.resolve(authentication), body
         );
         var result = required(appendPort).appendLedgerEntry(command);
         return commandResponse(result.replayed(), LedgerRestMapper.response(result));
