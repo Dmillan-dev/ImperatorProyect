@@ -202,10 +202,12 @@ not the Phase 2 route-shell plan.
 | 3.6.1 | Documentation Synchronization | COMPLETE |
 | D085 | MVP Delivery Roadmap Evolution | ACCEPTED / COMPLETE |
 | D086 | Functional REST Application Contract | ACCEPTED / COMPLETE |
+| D087 | JWT Authentication Contract | ACCEPTED / COMPLETE |
 | 3.7 | Functional REST API | CERTIFIED / COMPLETE |
 | 3.7.1 | Documentation Synchronization | COMPLETE |
-| 3.8 | JWT Authentication | NEXT |
-| 3.9 | RBAC Authorization | PENDING |
+| 3.8 | JWT Authentication | CERTIFIED / COMPLETE |
+| 3.8.1 | Documentation Synchronization | COMPLETE |
+| 3.9 | RBAC Authorization | NEXT |
 | 4.0 | GitHub Integration | PENDING |
 | 4.1 | AWS Integration | PENDING |
 | 4.2 | Executive Dashboard | PENDING |
@@ -230,6 +232,14 @@ rollback, concurrency, Ledger linearity and fork-prevention suite, so the D084
 deferred obligation is discharged. It also certified all 15 D086 REST routes
 through real Application and PostgreSQL composition. D084 remains historical
 and no longer blocks Pilot Readiness or MVP closure.
+
+Sprint 3.8 certification executed the full PostgreSQL integration profile on
+2026-08-02 with Java 21 and PostgreSQL 18.2. Flyway migrate, validate and the
+second no-op migrate passed; 105 default tests and 29 PostgreSQL integration
+tests passed. The D087 Resource Server perimeter now protects all 15 D086
+routes, validates RS256 JWTs through JWKS, and supplies governance actor identity
+from validated claims. Authentication is complete; authorization remains the
+separate Sprint 3.9 gate.
 
 Active Phase 3 execution authority:
 

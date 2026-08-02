@@ -21,6 +21,8 @@ Primary Java domain and application runtime for IMPERATOR.
 - Spring Boot web runtime and executable composition root.
 - Conditional PostgreSQL runtime composition under `imperator.bootstrap`.
 - REST error and HTTP correlation infrastructure under `imperator.api.errors`.
+- Spring Security OAuth2 Resource Server authentication under
+  `imperator.api.security`.
 
 Current Phase 3 foundation:
 - Pure Java domain foundation exists.
@@ -54,7 +56,10 @@ Current Phase 3 foundation:
 - REST errors use the frozen four-field envelope and `X-Correlation-ID`.
 - Sprint 3.7 implements all 15 D086 routes through REST DTOs, mappers and
   Application input ports, including the read-only PostgreSQL query adapter.
-- Java 21 verification passes 98 default tests and 29 PostgreSQL integration
+- Sprint 3.8 protects every `/api/v1/**` request through the D087 RS256/JWKS
+  Resource Server perimeter and derives governance actor identity from the
+  validated JWT subject and active role.
+- Java 21 verification passes 105 default tests and 29 PostgreSQL integration
   tests against PostgreSQL 18.2.
 - No JPA.
 
@@ -75,6 +80,16 @@ verified by the `postgresql-integration` profile.
 Application runtime credentials do not execute DDL. Flyway continues to run
 through the migration profile with its separate administrative principal before
 the application principal is used.
+
+JWT authentication uses external Spring Resource Server configuration:
+
+- `SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI`
+- `SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK_SET_URI`
+- `SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_AUDIENCES=imperator-api`
+- `SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWS_ALGORITHMS=RS256`
+
+Missing or invalid authentication configuration fails closed. IMPERATOR does
+not issue tokens, persist users or provide login. RBAC remains Sprint 3.9.
 
 Deterministic Recommendation persistence completes before the optional
 `ExplanationProvider` invocation. The runtime supplies an unavailable provider
@@ -115,9 +130,9 @@ is found.
 
 ## Authorized Current Use
 
-Sprints 3.0 through 3.7 are complete at their documented gates. The Java 21
+Sprints 3.0 through 3.8 are complete at their documented gates. The Java 21
 Maven build is certified through GitHub Actions, and the complete Functional
 REST runtime is certified against PostgreSQL 18.2. D084 is discharged; D085
-and D086 are accepted. Sprint 3.8 - JWT Authentication is the sole next gate.
-It must replace the temporary trusted actor source without changing D086 routes
-or introducing Sprint 3.9 RBAC policy.
+through D087 are accepted. Sprint 3.9 - RBAC Authorization is the sole next
+gate. It must add authorization without changing D086 routes, D087 identity
+semantics or existing business authority.

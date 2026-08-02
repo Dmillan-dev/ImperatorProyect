@@ -66,8 +66,8 @@ Active Phase 3 sprint execution is defined in:
 Phase 3 is named `First Business Value Loop` and is active under D079.
 
 The current authorized gate is maintained in
-`docs/project/PROJECT_STATUS.md`. At the time of this update it is Sprint 3.8:
-JWT Authentication.
+`docs/project/PROJECT_STATUS.md`. At the time of this update it is Sprint 3.9:
+RBAC Authorization.
 
 Phase 3 agents may implement only the bounded `DRC-AOA-001` sequence in
 `agents/phase3/README.md`. Sprint 3.0 runtime composition and Sprint 3.1 JSONL
@@ -81,8 +81,9 @@ the deterministic local Business Value workflow. Sprint 3.6 has certified the
 Java 21 Maven backend through a real GitHub Actions run. D085 freezes the
 remaining delivery roadmap, D086 freezes the Functional REST contract and
 Sprint 3.7 has certified all 15 routes through real PostgreSQL composition.
-The current gate may implement only JWT Authentication; RBAC remains Sprint
-3.9.
+D087 freezes the JWT contract, and Sprint 3.8 has certified the RS256/JWKS
+Resource Server perimeter and JWT-derived actor identity against PostgreSQL
+18.2. The current gate may implement only RBAC Authorization.
 
 The completed Phase 2 foundation contains:
 

@@ -45,8 +45,11 @@ tests and `BUILD SUCCESS` from commit `c3bb8f6`. D085 freezes the post-CI
 delivery roadmap and D086 freezes the Functional REST Application contract.
 Sprint 3.7 is certified and complete: Java 21, 98 default tests, PostgreSQL
 18.2, Flyway validation and 29 integration tests proved all 15 D086 routes
-through real Application and persistence composition. Sprint 3.8 - JWT
-Authentication is the sole next gate. RBAC remains Sprint 3.9.
+through real Application and persistence composition. D087 freezes the JWT
+Authentication contract. Sprint 3.8 is certified and complete: Java 21 passed
+105 default tests, PostgreSQL 18.2 and Flyway passed the full runtime gate, and
+29 integration tests proved the stateless RS256/JWKS perimeter plus JWT-derived
+governance identity. Sprint 3.9 - RBAC Authorization is the sole next gate.
 
 Agents may create runnable implementation only inside the explicitly
 authorized sprint/module. They must use `agents/phase3/README.md`, the frozen

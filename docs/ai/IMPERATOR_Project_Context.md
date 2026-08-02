@@ -50,7 +50,12 @@ spend. The first case is `DRC-AOA-001`, AI Onboarding Assistant Recovery.
   proven through real Application and PostgreSQL 18.2 composition.
 - D085 - MVP Delivery Roadmap Evolution: accepted and complete.
 - D086 - Functional REST Application Contract: accepted and complete.
-- Current gate: Sprint 3.8 - JWT Authentication. RBAC remains Sprint 3.9.
+- D087 - JWT Authentication Contract: accepted and complete.
+- JWT Authentication: certified and complete with all 15 D086 routes protected
+  by a stateless RS256/JWKS Resource Server and governance identity derived from
+  validated JWT claims. Java 21 passed 105 default tests and PostgreSQL 18.2
+  passed 29 integration tests.
+- Current gate: Sprint 3.9 - RBAC Authorization.
 - Sprints 2.9 through 2.13: deferred, not completed.
 
 The live state is maintained in:
@@ -97,6 +102,7 @@ the single authorized business value loop under D079.
 - pure JDBC PostgreSQL adapters;
 - Flyway migrations;
 - Spring Boot web runtime;
+- Spring Security OAuth2 Resource Server with RS256/JWKS authentication;
 - no JPA;
 - six product REST controllers preserving 15 controlled routes;
 - functional JSONL Evidence import wired through Application and PostgreSQL;
@@ -105,9 +111,10 @@ the single authorized business value loop under D079.
   Application and PostgreSQL;
 - optional provider-neutral Recommendation explanation wired after
   deterministic persistence; no live vendor adapter or model call;
-- Review, Ledger and Result Validation Application behavior implemented; its
-  REST command routes remain controlled shells;
-- no security runtime yet.
+- functional Review, Ledger and Result Validation REST commands wired through
+  Application and PostgreSQL;
+- JWT authentication complete; route, method and evidence-access RBAC remains
+  Sprint 3.9.
 
 The implemented Java source root is `backend-java`, with packages under
 `imperator.*`. REST packages live under `imperator.api.*`. Public product REST

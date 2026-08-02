@@ -41,16 +41,21 @@ foundation context.
 ## Current Security Sequence
 
 ```text
-Sprint 3.8.0 - JWT Authentication Contract Freeze
--> Sprint 3.8 - JWT Authentication
--> Sprint 3.8 PostgreSQL Certification
--> Sprint 3.8.1 - Documentation Synchronization
--> Sprint 3.9 - RBAC Authorization
+Sprint 3.8.0 - JWT Authentication Contract Freeze: COMPLETE
+-> Sprint 3.8 - JWT Authentication: CERTIFIED / COMPLETE
+-> Sprint 3.8 PostgreSQL Certification: PASS
+-> Sprint 3.8.1 - Documentation Synchronization: COMPLETE
+-> Sprint 3.9 - RBAC Authorization: NEXT
 ```
 
 Sprint 3.8 answers only who the caller is. Sprint 3.9 answers what that caller
 may do. Existing Application governance authority remains active in both
 stages and is never replaced by generic authentication.
+
+Sprint 3.8 certification passed Java 21, 105 default tests, PostgreSQL 18.2,
+Flyway migrate/validate/no-op migrate and 29 integration tests. All 15 D086
+routes now require D087 JWT authentication, and governance actor identity is
+derived only from validated claims. Sprint 3.9 is the sole current gate.
 
 ## Sprint 3.8 Guardrails
 

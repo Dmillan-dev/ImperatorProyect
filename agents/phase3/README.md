@@ -2,7 +2,7 @@
 
 Status: **ACTIVE**
 
-Current gate: **Sprint 3.8 - JWT Authentication**
+Current gate: **Sprint 3.9 - RBAC Authorization**
 
 Authorization: **D079 - Phase 3 Vertical-Slice Acceleration; D085 - MVP Delivery Roadmap Evolution**
 
@@ -94,10 +94,12 @@ Locked constraints:
 | 3.6.1 | Documentation Synchronization | COMPLETE |
 | D085 | MVP Delivery Roadmap Evolution | ACCEPTED / COMPLETE |
 | D086 | Functional REST Application Contract | ACCEPTED / COMPLETE |
+| D087 | JWT Authentication Contract | ACCEPTED / COMPLETE |
 | 3.7 | Functional REST API | CERTIFIED / COMPLETE |
 | 3.7.1 | Documentation Synchronization | COMPLETE |
-| 3.8 | JWT Authentication | NEXT |
-| 3.9 | RBAC Authorization | PENDING |
+| 3.8 | JWT Authentication | CERTIFIED / COMPLETE |
+| 3.8.1 | Documentation Synchronization | COMPLETE |
+| 3.9 | RBAC Authorization | NEXT |
 | 4.0 | GitHub Integration | PENDING |
 | 4.1 | AWS Integration | PENDING |
 | 4.2 | Executive Dashboard | PENDING |
@@ -415,7 +417,8 @@ Certification evidence:
 - eight route-aligned query input ports and use cases plus one read-only
   `MvpReadModelQueryPort` PostgreSQL adapter;
 - no controller-to-repository shortcut and no business policy in REST;
-- temporary trusted actor context remains local-only and disabled by default;
+- the temporary trusted actor context was superseded and removed by Sprint
+  3.8 under D087;
 - Java 21 and Maven Enforcer: PASS;
 - 98 default unit, HTTP contract and local demo tests: PASS;
 - PostgreSQL 18.2 and 29 integration tests: PASS;
@@ -428,8 +431,37 @@ Certification evidence:
 - status: **CERTIFIED / COMPLETE**.
 
 Sprint 3.7.1 synchronized active control and AI-context documentation with this
-certified state and marked Sprint 3.8 as the sole next gate. It changed no Java,
+certified state and handed control to Sprint 3.8. It changed no Java,
 SQL, Flyway, tests, dependencies, frozen contracts or Decision Log entries.
+
+## Sprint 3.8 - JWT Authentication
+
+Sprint 3.8 is certified and complete under D087.
+
+Certification evidence:
+
+- integrated implementation commit: `90e5644`;
+- Spring Security OAuth2 Resource Server with RS256 and framework-managed JWKS;
+- exact issuer, audience, signature, `exp`, optional `nbf`, mandatory `kid`,
+  canonical UUID subject and active MVP-role validation;
+- all 15 D086 routes require one Bearer JWT;
+- missing and invalid credentials preserve the four-field error and correlation
+  contracts for every `Accept` value;
+- stateless runtime with no login, session, token issuance or Authorization
+  Server behavior;
+- temporary trusted actor resolver and property removed; its headers are inert;
+- governance actor UUID and role originate from validated JWT claims;
+- Java 21, 105 default tests and executable JAR: PASS;
+- PostgreSQL 18.2, Flyway migrate/validate/no-op migrate and 29 integration
+  tests: PASS;
+- no Domain, Application business behavior, Ports, schema, Flyway migration,
+  route, frozen-contract or Decision Log change;
+- status: **CERTIFIED / COMPLETE**.
+
+Sprint 3.8.1 synchronized active control, agent and AI-context documentation
+with this certified state and marked Sprint 3.9 as the sole next gate. It
+changed no Java, SQL, Flyway, tests, dependencies, frozen contracts or Decision
+Log entries.
 
 ## Demonstration And Pilot Boundary
 
@@ -440,8 +472,8 @@ pilot.
 Before Sprint 4.5 Pilot Readiness can pass:
 
 - certified Java CI must continue to verify the backend;
-- JWT Authentication and RBAC Authorization must protect the relevant routes
-  and actions;
+- certified JWT Authentication and Sprint 3.9 RBAC Authorization must protect
+  the relevant routes and actions;
 - secrets and database credentials must be externalized;
 - the Sprint 4.2 surface must remain the thin, single-case Decision Review and
   Business Value experience, not a broad Executive Workspace;

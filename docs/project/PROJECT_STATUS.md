@@ -41,9 +41,14 @@ Last verified: **2026-08-02**
 | Sprint 3.7 PostgreSQL certification | PASS |
 | Sprint 3.7 closure | CERTIFIED / COMPLETE |
 | Sprint 3.7.1 documentation synchronization | COMPLETE |
-| Last completed gate | Sprint 3.7.1 - Documentation Synchronization |
+| D087 JWT Authentication contract | ACCEPTED / COMPLETE |
+| Sprint 3.8 implementation | PASS |
+| Sprint 3.8 PostgreSQL certification | PASS |
+| Sprint 3.8 closure | CERTIFIED / COMPLETE |
+| Sprint 3.8.1 documentation synchronization | COMPLETE |
+| Last completed gate | Sprint 3.8.1 - Documentation Synchronization |
 | Phase 2 closure | COMPLETE under D079; Sprints 2.9-2.13 deferred |
-| Next authorized sprint | Sprint 3.8 - JWT Authentication |
+| Next authorized sprint | Sprint 3.9 - RBAC Authorization |
 | Phase 3 authorization | Authorized by D079 and evolved by D085 |
 
 ## Verified Foundation
@@ -68,7 +73,8 @@ Last verified: **2026-08-02**
 | Explanation Provider integration | COMPLETE | Optional provider-neutral explanation executes after deterministic persistence and has no decision, ROI or persistence authority |
 | Human Review, Ledger and Result Validation | CERTIFIED / COMPLETE | Atomic review and Ledger behavior, replay, linearity, result validation, rollback and concurrency passed against PostgreSQL 18.2; D084 is discharged |
 | End-to-End Local Business Value Demo | CERTIFIED / COMPLETE | Deterministic local `DRC-AOA-001` workflow and traceable projection verified with 30 Evidence records |
-| Security runtime | NEXT | Sprint 3.8 owns JWT Authentication; RBAC remains Sprint 3.9 |
+| JWT Authentication | CERTIFIED / COMPLETE | D087 Resource Server perimeter, RS256/JWKS validation and JWT-derived actor identity passed PostgreSQL 18.2 certification |
+| RBAC Authorization | NEXT | Sprint 3.9 owns route, method and data-access authorization policy |
 | Frontend runtime | DEFERRED | Thin Decision Review Workspace follows minimum security |
 | Local container runtime | DEFERRED | Operational hardening follows pilot readiness |
 | Observability runtime | DEFERRED | Minimum expansion follows operational hardening |
@@ -76,8 +82,8 @@ Last verified: **2026-08-02**
 
 ## Latest Verification
 
-Sprint 3.7 was certified on 2026-08-02 from committed implementation
-`9ba2138` with:
+Sprint 3.8 was certified on 2026-08-02 from committed implementation
+`90e5644` with:
 
 ```text
 mvnw.cmd -Ppostgresql-integration clean verify
@@ -87,30 +93,30 @@ Certification evidence:
 
 - portable Eclipse Adoptium Java `21.0.12`: PASS;
 - Maven Wrapper `3.3.4` and Apache Maven `3.9.16`: PASS;
-- production compilation: 160 files;
-- test compilation: 24 files;
-- default unit, HTTP contract and local demo tests: 98 passed, 0 failed;
+- production compilation: 164 files;
+- test compilation: 27 files;
+- default unit, HTTP contract, JWT and local demo tests: 105 passed, 0 failed;
 - PostgreSQL version `18.2`: PASS;
 - Flyway V1 migrate: PASS;
 - Flyway validate: PASS;
 - second Flyway migrate: schema up to date, no pending migration;
 - PostgreSQL integration tests: 29 passed, 0 failed;
-- repository, transaction, replay, rollback, concurrency, Ledger linearity
-  and fork-prevention behavior: PASS;
-- all 15 D086 REST routes through real Application and PostgreSQL composition:
-  PASS;
-- functional reads, pagination, deterministic ordering, trusted local actor
-  mapping and governance commands: PASS;
+- all 15 D086 routes protected by the D087 JWT perimeter: PASS;
+- RS256 signature, HTTPS JWKS configuration, issuer, audience, time, `kid`,
+  canonical UUID subject and active-role validation: PASS;
+- exact authentication error envelope, correlation and statelessness: PASS;
+- temporary trusted actor production mechanism removed: PASS;
+- governance actor UUID and role persisted from signed JWT claims: PASS;
 - executable Spring Boot JAR: created;
 - `BUILD SUCCESS`: PASS.
 
-Sprint 3.7.1 documentation verification:
+Sprint 3.8.1 documentation verification:
 
 - active control and AI-context documents synchronized: PASS;
-- Markdown files checked: 158;
+- Markdown files checked: 159;
 - broken local links: 0;
-- stale active Sprint 3.7 or D084 status statements: 0;
-- unique `NEXT` sprint: 3.8;
+- stale active Sprint 3.8 status statements: 0;
+- unique `NEXT` sprint: 3.9;
 - Java, SQL, Flyway, tests, dependencies, frozen contracts and Decision Log
   modified: no.
 
@@ -128,25 +134,24 @@ the default build, 89 tests and executable JAR packaging on Ubuntu 24.04.
 - Default `clean verify` executes the Spring Boot and HTTP contract suite only.
   Real-database certification remains intentionally explicit through the
   `postgresql-integration` profile and external `IMPERATOR_IT_*` configuration.
-- Sprint 3.7 trusted actor headers are local-only, disabled by default and
-  prohibited for external or real-customer exposure. Sprint 3.8 must replace
-  them with verified JWT identity before the API is exposed.
-- RBAC remains a separate Sprint 3.9 gate; JWT authentication alone must not be
-  reported as complete authorization.
+- JWT runtime requires externally supplied issuer and HTTPS JWKS configuration;
+  no identity provider or production key material belongs in this repository.
+- RBAC remains the sole Sprint 3.9 gate. Certified authentication identifies
+  callers but does not authorize route, method or evidence access.
 
 ## Next Control Gate
 
-Sprint 3.8 - JWT Authentication is the sole next implementation gate. It must
-replace the temporary trusted actor source with verified JWT identity while
-preserving D086 routes, DTOs, Application boundaries and the REST error and
-correlation contracts. RBAC policy remains exclusively Sprint 3.9. Real
-customer data and external exposure remain prohibited until both security
-gates pass.
+Sprint 3.9 - RBAC Authorization is the sole next implementation gate. It owns
+route, method and evidence-access authorization on top of the certified D087
+identity perimeter. It must preserve D086 routes, DTOs, Application boundaries
+and the REST error and correlation contracts. Real customer data and external
+exposure remain prohibited until RBAC and later readiness gates pass.
 
 Current execution authorities:
 
-- D079 through D086 in `docs/decisions/14_Decision_Log.md`;
+- D079 through D087 in `docs/decisions/14_Decision_Log.md`;
 - `agents/phase3/README.md`;
+- `docs/architecture/46_JWT_Authentication_Contract.md`;
 - `docs/architecture/35_Coding_Principles.md`;
 - `docs/architecture/37_Implementation_Contract.md`.
 

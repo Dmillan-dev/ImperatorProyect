@@ -2,7 +2,7 @@
 
 Status: **Phase 3 First Business Value Loop active**
 
-Current gate: **Sprint 3.8 - JWT Authentication**
+Current gate: **Sprint 3.9 - RBAC Authorization**
 
 IMPERATOR is an Operating System for Operational Intelligence and an Enterprise
 Decision Intelligence Platform. The MVP proves one evidence-backed decision,
@@ -58,12 +58,14 @@ The Java backend currently contains:
   89 tests and executable JAR packaging from a clean checkout;
 - certified Functional REST API with all 15 D086 routes mapped through DTOs,
   REST mappers and Application input ports;
-- certified PostgreSQL 18.2 runtime behavior with 98 default tests and 29
+- certified D087 JWT Resource Server perimeter with RS256/JWKS validation,
+  stateless authentication and JWT-derived governance actor identity;
+- certified PostgreSQL 18.2 runtime behavior with 105 default tests and 29
   integration tests passing.
 
 The repository does not yet contain:
 
-- JWT/RBAC runtime;
+- RBAC authorization runtime;
 - React application runtime;
 - live connectors;
 - a live vendor AI-provider adapter or real model calls;
@@ -139,12 +141,13 @@ Evidence
 Phase 2 is complete under D079. Phase 3 is active and may implement only the
 single currently authorized `DRC-AOA-001` business-value increment.
 
-Sprint 3.7 is certified and complete. Its Java 21 PostgreSQL integration-profile
-run passed Flyway migrate, validate and second no-op migrate, 98 default tests
-and 29 PostgreSQL integration tests against PostgreSQL 18.2. The run also
-completed the deferred Sprint 3.4 governance certification, so the D084
-obligation is discharged. Sprint 3.8 JWT Authentication is the sole next gate;
-the functional API remains local-only until JWT and Sprint 3.9 RBAC pass.
+Sprint 3.8 is certified and complete. Its Java 21 PostgreSQL integration-profile
+run passed Flyway migrate, validate and second no-op migrate, 105 default tests
+and 29 PostgreSQL integration tests against PostgreSQL 18.2. All 15 D086 routes
+now require D087 JWT authentication, and governance actor identity originates
+from validated claims. Sprint 3.9 RBAC Authorization is the sole next gate; the
+functional API remains local-only until authorization and later readiness gates
+pass.
 
 ## Documentation Rules
 

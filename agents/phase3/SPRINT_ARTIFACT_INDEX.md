@@ -24,7 +24,10 @@ D085: ACCEPTED / COMPLETE
 D086: ACCEPTED / COMPLETE
 Sprint 3.7: CERTIFIED / COMPLETE
 Sprint 3.7.1: COMPLETE
-Sprint 3.8: NEXT
+D087: ACCEPTED / COMPLETE
+Sprint 3.8: CERTIFIED / COMPLETE
+Sprint 3.8.1: COMPLETE
+Sprint 3.9: NEXT
 ```
 
 Exactly one Phase 3 control gate is authorized as `NEXT`.
@@ -47,6 +50,9 @@ Exactly one Phase 3 control gate is authorized as `NEXT`.
 | D086 | `d917006` | Frozen Functional REST Application contract, query boundaries, trusted actor transition and HTTP mapping | ACCEPTED / COMPLETE |
 | 3.7 | `9ba2138` | Functional D086 REST adapter, Application queries, PostgreSQL read model and real-database certification | CERTIFIED / COMPLETE |
 | 3.7.1 | Current synchronization commit; hash intentionally not self-recorded | Active project-control and AI-context synchronization | COMPLETE |
+| D087 | `0f91778` | Frozen JWT Resource Server, claim, key, actor-translation and authentication-error contract | ACCEPTED / COMPLETE |
+| 3.8 | `90e5644` | D087 Resource Server implementation, JWT actor translation and PostgreSQL runtime certification | CERTIFIED / COMPLETE |
+| 3.8.1 | Current synchronization commit; hash intentionally not self-recorded | Active project-control, agent and AI-context synchronization | COMPLETE |
 
 ### Sprint 3.0
 
@@ -276,12 +282,34 @@ Certification evidence:
   or Decision Log modification during certification;
 - status: **CERTIFIED / COMPLETE**.
 
+### Sprint 3.8
+
+Primary artifacts:
+
+- D087 in `docs/decisions/14_Decision_Log.md`;
+- `docs/architecture/46_JWT_Authentication_Contract.md`;
+- `backend-java/api/security`;
+- `src/test/java/imperator/api/security/JwtAuthenticationContractTest.java`;
+- JWT-enabled Functional REST and PostgreSQL integration tests.
+
+Certification evidence:
+
+- implementation commit `90e5644`;
+- Java 21, 105 default tests and executable JAR: PASS;
+- PostgreSQL 18.2 and 29 integration tests: PASS;
+- Flyway V1 migrate, validate and second no-op migrate: PASS;
+- all 15 D086 routes authenticated through the D087 perimeter: PASS;
+- JWT-derived governance actor UUID and role persistence: PASS;
+- trusted actor production mechanism absent: PASS;
+- no Domain, Application business behavior, Ports, schema, migration, route,
+  frozen-contract or Decision Log modification;
+- status: **CERTIFIED / COMPLETE**.
+
 ## Next Artifact Boundary
 
-Sprint 3.8 may implement JWT Authentication only. It must replace the temporary
-trusted actor source with verified JWT identity while preserving the 15 D086
-routes, Application boundaries, error envelope and correlation contract. RBAC
-policy remains Sprint 3.9. Live connectors, frontend, Docker, observability,
+Sprint 3.9 may implement RBAC Authorization only. It must preserve D086 routes,
+D087 identity semantics, Application business authority, the error envelope
+and correlation contract. Live connectors, frontend, Docker, observability,
 pilot behavior, real customer data and external exposure remain prohibited.
 
 ## Agent Rule
