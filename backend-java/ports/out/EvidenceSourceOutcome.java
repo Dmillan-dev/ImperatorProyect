@@ -1,0 +1,17 @@
+package imperator.ports.out;
+
+public enum EvidenceSourceOutcome {
+    COMPLETE,
+    PARTIAL,
+    DISABLED,
+    MISCONFIGURED,
+    UNAUTHORIZED,
+    FORBIDDEN,
+    RATE_LIMITED,
+    REPOSITORY_UNAVAILABLE,
+    API_VERSION_UNSUPPORTED,
+    DEGRADED,
+    INCOMPLETE,
+    NO_MATCH,
+    AMBIGUOUS_CORRELATION
+}

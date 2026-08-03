@@ -22,6 +22,7 @@ import imperator.application.query.GetRecommendationUseCase;
 import imperator.application.query.ListDecisionsUseCase;
 import imperator.application.query.ListLedgerEntriesUseCase;
 import imperator.application.reviewdecision.ReviewDecisionUseCase;
+import imperator.application.synchronizeevidence.SynchronizeEvidenceUseCase;
 import imperator.ports.in.AppendLedgerEntryInputPort;
 import imperator.ports.in.CreateDecisionInputPort;
 import imperator.ports.in.GenerateRecommendationInputPort;
@@ -36,8 +37,10 @@ import imperator.ports.in.ListDecisionsInputPort;
 import imperator.ports.in.ListLedgerEntriesInputPort;
 import imperator.ports.in.ProjectBusinessValueInputPort;
 import imperator.ports.in.ReviewDecisionInputPort;
+import imperator.ports.in.SynchronizeEvidenceInputPort;
 import imperator.ports.out.DecisionRepository;
 import imperator.ports.out.EvidenceRepository;
+import imperator.ports.out.EvidenceSourcePort;
 import imperator.ports.out.ExplanationProvider;
 import imperator.ports.out.LedgerRepository;
 import imperator.ports.out.MvpReadModelQueryPort;
@@ -131,6 +134,19 @@ public final class PostgresRuntimeConfiguration {
             TransactionRunner transactionRunner
     ) {
         return new ImportEvidenceUseCase(evidenceRepository, transactionRunner);
+    }
+
+    @Bean
+    SynchronizeEvidenceInputPort synchronizeEvidenceInputPort(
+            EvidenceSourcePort evidenceSource,
+            ImportEvidenceInputPort evidenceImporter,
+            EvidenceRepository evidenceRepository
+    ) {
+        return new SynchronizeEvidenceUseCase(
+                evidenceSource,
+                evidenceImporter,
+                evidenceRepository
+        );
     }
 
     @Bean

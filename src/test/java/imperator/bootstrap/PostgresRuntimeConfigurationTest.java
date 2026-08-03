@@ -6,11 +6,13 @@ import imperator.adapters.out.postgresql.PostgresLedgerRepository;
 import imperator.adapters.out.postgresql.PostgresMvpReadModelQueryAdapter;
 import imperator.adapters.out.postgresql.PostgresRecommendationRepository;
 import imperator.adapters.out.postgresql.PostgresTransactionRunner;
+import imperator.adapters.out.github.GitHubRestAdapter;
 import imperator.application.appendledgerentry.AppendLedgerEntryUseCase;
 import imperator.application.createdecision.CreateDecisionUseCase;
 import imperator.application.generaterecommendation.GenerateRecommendationUseCase;
 import imperator.application.importevidence.ImportEvidenceUseCase;
 import imperator.application.reviewdecision.ReviewDecisionUseCase;
+import imperator.application.synchronizeevidence.SynchronizeEvidenceUseCase;
 import imperator.application.businessvalue.ProjectBusinessValueUseCase;
 import imperator.application.query.GetDecisionEvidenceUseCase;
 import imperator.application.query.GetDecisionLedgerUseCase;
@@ -34,8 +36,10 @@ import imperator.ports.in.ListDecisionsInputPort;
 import imperator.ports.in.ListLedgerEntriesInputPort;
 import imperator.ports.in.ProjectBusinessValueInputPort;
 import imperator.ports.in.ReviewDecisionInputPort;
+import imperator.ports.in.SynchronizeEvidenceInputPort;
 import imperator.ports.out.DecisionRepository;
 import imperator.ports.out.EvidenceRepository;
+import imperator.ports.out.EvidenceSourcePort;
 import imperator.ports.out.ExplanationProvider;
 import imperator.ports.out.LedgerRepository;
 import imperator.ports.out.MvpReadModelQueryPort;
@@ -96,6 +100,14 @@ class PostgresRuntimeConfigurationTest {
             assertInstanceOf(
                     ImportEvidenceUseCase.class,
                     context.getBean(ImportEvidenceInputPort.class)
+            );
+            assertInstanceOf(
+                    GitHubRestAdapter.class,
+                    context.getBean(EvidenceSourcePort.class)
+            );
+            assertInstanceOf(
+                    SynchronizeEvidenceUseCase.class,
+                    context.getBean(SynchronizeEvidenceInputPort.class)
             );
             assertInstanceOf(
                     CreateDecisionUseCase.class,
