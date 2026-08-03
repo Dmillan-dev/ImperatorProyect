@@ -27,7 +27,10 @@ Sprint 3.7.1: COMPLETE
 D087: ACCEPTED / COMPLETE
 Sprint 3.8: CERTIFIED / COMPLETE
 Sprint 3.8.1: COMPLETE
-Sprint 3.9: NEXT
+D088: ACCEPTED / COMPLETE
+Sprint 3.9: CERTIFIED / COMPLETE
+Sprint 3.9.1: COMPLETE
+Sprint 4.0: NEXT
 ```
 
 Exactly one Phase 3 control gate is authorized as `NEXT`.
@@ -53,6 +56,9 @@ Exactly one Phase 3 control gate is authorized as `NEXT`.
 | D087 | `0f91778` | Frozen JWT Resource Server, claim, key, actor-translation and authentication-error contract | ACCEPTED / COMPLETE |
 | 3.8 | `90e5644` | D087 Resource Server implementation, JWT actor translation and PostgreSQL runtime certification | CERTIFIED / COMPLETE |
 | 3.8.1 | Current synchronization commit; hash intentionally not self-recorded | Active project-control, agent and AI-context synchronization | COMPLETE |
+| D088 | `b8e66e8` | Frozen route authorization, governance preservation, read visibility, Evidence redaction and access-denied contract | ACCEPTED / COMPLETE |
+| 3.9 | `66d0e31` | D088 route/method enforcement, Evidence authorization policy and PostgreSQL 18.x runtime certification | CERTIFIED / COMPLETE |
+| 3.9.1 | Current synchronization commit; hash intentionally not self-recorded | Active project-control, agent, security and AI-context synchronization | COMPLETE |
 
 ### Sprint 3.0
 
@@ -305,12 +311,41 @@ Certification evidence:
   frozen-contract or Decision Log modification;
 - status: **CERTIFIED / COMPLETE**.
 
+### Sprint 3.9
+
+Primary artifacts:
+
+- D088 in `docs/decisions/14_Decision_Log.md`;
+- `docs/architecture/47_RBAC_Authorization_Contract.md`;
+- `backend-java/api/security/JwtResourceServerConfiguration.java`;
+- `backend-java/api/security/JwtAccessDeniedHandler.java`;
+- `backend-java/api/decisions/DecisionEvidenceAuthorizationPolicy.java`;
+- `src/test/java/imperator/api/security/RbacAuthorizationContractTest.java`;
+- `src/test/java/imperator/api/decisions/RbacEvidenceVisibilityContractTest.java`.
+
+Certification evidence:
+
+- implementation and certification commit `66d0e31`;
+- Java 21, 111 default tests and executable JAR: PASS;
+- PostgreSQL 18.4 and 29 integration tests: PASS under the PostgreSQL 18.x
+  (18.2+) gate;
+- Flyway V1 migrate, validate and second no-op migrate: PASS;
+- complete 15-route/four-role matrix: PASS;
+- route denial non-mutation and exact `403` envelope: PASS;
+- D083 governance and JWT-derived actor identity preservation: PASS;
+- role/type-based Confidential Evidence handling and fail-closed Restricted
+  Evidence redaction: PASS;
+- no Domain, Application business behavior, Ports, schema, migration,
+  dependency, route, frozen-contract or Decision Log modification;
+- status: **CERTIFIED / COMPLETE**.
+
 ## Next Artifact Boundary
 
-Sprint 3.9 may implement RBAC Authorization only. It must preserve D086 routes,
-D087 identity semantics, Application business authority, the error envelope
-and correlation contract. Live connectors, frontend, Docker, observability,
-pilot behavior, real customer data and external exposure remain prohibited.
+Sprint 4.0 may implement GitHub Integration only. It must preserve D086 routes,
+D087 identity semantics, D088 authorization and Evidence visibility, existing
+Application business authority, the error envelope and correlation contract.
+AWS or other live connectors, frontend, Docker, observability, pilot behavior,
+real customer data and external exposure remain prohibited.
 
 ## Agent Rule
 

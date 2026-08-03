@@ -2,7 +2,7 @@
 
 Status: **Phase 3 First Business Value Loop active**
 
-Current gate: **Sprint 3.9 - RBAC Authorization**
+Current gate: **Sprint 4.0 - GitHub Integration**
 
 IMPERATOR is an Operating System for Operational Intelligence and an Enterprise
 Decision Intelligence Platform. The MVP proves one evidence-backed decision,
@@ -60,12 +60,13 @@ The Java backend currently contains:
   REST mappers and Application input ports;
 - certified D087 JWT Resource Server perimeter with RS256/JWKS validation,
   stateless authentication and JWT-derived governance actor identity;
-- certified PostgreSQL 18.2 runtime behavior with 105 default tests and 29
-  integration tests passing.
+- certified D088 RBAC route/method enforcement and Evidence redaction for all
+  four MVP roles without weakening Application governance authority;
+- certified PostgreSQL 18.x runtime behavior, most recently PostgreSQL 18.4,
+  with 111 default tests and 29 integration tests passing.
 
 The repository does not yet contain:
 
-- RBAC authorization runtime;
 - React application runtime;
 - live connectors;
 - a live vendor AI-provider adapter or real model calls;
@@ -141,13 +142,13 @@ Evidence
 Phase 2 is complete under D079. Phase 3 is active and may implement only the
 single currently authorized `DRC-AOA-001` business-value increment.
 
-Sprint 3.8 is certified and complete. Its Java 21 PostgreSQL integration-profile
-run passed Flyway migrate, validate and second no-op migrate, 105 default tests
-and 29 PostgreSQL integration tests against PostgreSQL 18.2. All 15 D086 routes
-now require D087 JWT authentication, and governance actor identity originates
-from validated claims. Sprint 3.9 RBAC Authorization is the sole next gate; the
-functional API remains local-only until authorization and later readiness gates
-pass.
+Sprint 3.9 is certified and complete under D088. Its Java 21 PostgreSQL
+integration-profile run passed Flyway migrate, validate and second no-op
+migrate, 111 default tests and 29 PostgreSQL integration tests against
+PostgreSQL 18.4. The exact 15-route/four-role authorization matrix, governance
+separation and Evidence redaction policy are enforced. Sprint 4.0 GitHub
+Integration is the sole next gate; the API remains non-pilot and local-only
+until the later readiness gates pass.
 
 ## Documentation Rules
 

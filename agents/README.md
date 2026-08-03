@@ -66,8 +66,8 @@ Active Phase 3 sprint execution is defined in:
 Phase 3 is named `First Business Value Loop` and is active under D079.
 
 The current authorized gate is maintained in
-`docs/project/PROJECT_STATUS.md`. At the time of this update it is Sprint 3.9:
-RBAC Authorization.
+`docs/project/PROJECT_STATUS.md`. At the time of this update it is Sprint 4.0:
+GitHub Integration.
 
 Phase 3 agents may implement only the bounded `DRC-AOA-001` sequence in
 `agents/phase3/README.md`. Sprint 3.0 runtime composition and Sprint 3.1 JSONL
@@ -83,7 +83,10 @@ remaining delivery roadmap, D086 freezes the Functional REST contract and
 Sprint 3.7 has certified all 15 routes through real PostgreSQL composition.
 D087 freezes the JWT contract, and Sprint 3.8 has certified the RS256/JWKS
 Resource Server perimeter and JWT-derived actor identity against PostgreSQL
-18.2. The current gate may implement only RBAC Authorization.
+18.2. D088 freezes the RBAC contract, and Sprint 3.9 has certified the exact
+15-route/four-role matrix, governance separation and Evidence redaction against
+PostgreSQL 18.4. The current gate may implement only GitHub Integration within
+the existing connector and Evidence contracts.
 
 The completed Phase 2 foundation contains:
 

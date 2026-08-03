@@ -49,7 +49,11 @@ through real Application and persistence composition. D087 freezes the JWT
 Authentication contract. Sprint 3.8 is certified and complete: Java 21 passed
 105 default tests, PostgreSQL 18.2 and Flyway passed the full runtime gate, and
 29 integration tests proved the stateless RS256/JWKS perimeter plus JWT-derived
-governance identity. Sprint 3.9 - RBAC Authorization is the sole next gate.
+governance identity. D088 freezes RBAC authorization. Sprint 3.9 is certified
+and complete: Java 21 passed 111 default tests, PostgreSQL 18.4 and Flyway
+passed the full runtime gate, and 29 integration tests proved the complete
+15-route/four-role matrix, preserved governance authority and Evidence
+redaction. Sprint 4.0 - GitHub Integration is the sole next gate.
 
 Agents may create runnable implementation only inside the explicitly
 authorized sprint/module. They must use `agents/phase3/README.md`, the frozen

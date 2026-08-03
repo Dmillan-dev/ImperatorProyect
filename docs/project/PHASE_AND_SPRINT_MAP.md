@@ -207,8 +207,10 @@ not the Phase 2 route-shell plan.
 | 3.7.1 | Documentation Synchronization | COMPLETE |
 | 3.8 | JWT Authentication | CERTIFIED / COMPLETE |
 | 3.8.1 | Documentation Synchronization | COMPLETE |
-| 3.9 | RBAC Authorization | NEXT |
-| 4.0 | GitHub Integration | PENDING |
+| D088 | RBAC Authorization Contract | ACCEPTED / COMPLETE |
+| 3.9 | RBAC Authorization | CERTIFIED / COMPLETE |
+| 3.9.1 | Documentation Synchronization | COMPLETE |
+| 4.0 | GitHub Integration | NEXT |
 | 4.1 | AWS Integration | PENDING |
 | 4.2 | Executive Dashboard | PENDING |
 | 4.3 | Docker Production Runtime | PENDING |
@@ -241,9 +243,18 @@ routes, validates RS256 JWTs through JWKS, and supplies governance actor identit
 from validated claims. Authentication is complete; authorization remains the
 separate Sprint 3.9 gate.
 
+Sprint 3.9 certification executed the full PostgreSQL integration profile on
+2026-08-03 with Java 21 and PostgreSQL 18.4. Flyway migrate, validate and the
+second no-op migrate passed; 111 default tests and 29 PostgreSQL integration
+tests passed. D088 is enforced across the complete 15-route/four-role matrix,
+with D083 governance preserved and Evidence filtered before serialization.
+The certification gate requires PostgreSQL major version 18 and minor version
+2 or later. Authorization is complete; GitHub Integration is the separate
+Sprint 4.0 gate.
+
 Active Phase 3 execution authority:
 
-- D079 in `docs/decisions/14_Decision_Log.md`;
+- D079 through D088 in `docs/decisions/14_Decision_Log.md`;
 - `agents/phase3/README.md`.
 
 ## Gate Transition Rule

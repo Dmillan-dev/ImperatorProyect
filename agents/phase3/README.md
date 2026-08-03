@@ -2,7 +2,7 @@
 
 Status: **ACTIVE**
 
-Current gate: **Sprint 3.9 - RBAC Authorization**
+Current gate: **Sprint 4.0 - GitHub Integration**
 
 Authorization: **D079 - Phase 3 Vertical-Slice Acceleration; D085 - MVP Delivery Roadmap Evolution**
 
@@ -99,8 +99,10 @@ Locked constraints:
 | 3.7.1 | Documentation Synchronization | COMPLETE |
 | 3.8 | JWT Authentication | CERTIFIED / COMPLETE |
 | 3.8.1 | Documentation Synchronization | COMPLETE |
-| 3.9 | RBAC Authorization | NEXT |
-| 4.0 | GitHub Integration | PENDING |
+| D088 | RBAC Authorization Contract | ACCEPTED / COMPLETE |
+| 3.9 | RBAC Authorization | CERTIFIED / COMPLETE |
+| 3.9.1 | Documentation Synchronization | COMPLETE |
+| 4.0 | GitHub Integration | NEXT |
 | 4.1 | AWS Integration | PENDING |
 | 4.2 | Executive Dashboard | PENDING |
 | 4.3 | Docker Production Runtime | PENDING |
@@ -463,6 +465,36 @@ with this certified state and marked Sprint 3.9 as the sole next gate. It
 changed no Java, SQL, Flyway, tests, dependencies, frozen contracts or Decision
 Log entries.
 
+## Sprint 3.9 - RBAC Authorization
+
+Sprint 3.9 is certified and complete under D088.
+
+Certification evidence:
+
+- integrated contract-freeze commit: `b8e66e8`;
+- integrated implementation and certification commit: `66d0e31`;
+- exactly one validated role from D087, with no hierarchy or inheritance;
+- all 15 D086 routes enforced for `ADMIN`, `PLATFORM_ENGINEER`, `FINANCE` and
+  `AUDITOR` according to the frozen matrix;
+- D083 required-approver and governance rules remain downstream authority;
+- denied commands return the exact route-level `403` contract and produce no
+  Decision transition or Ledger entry;
+- unknown routes and unsupported methods preserve D086 `404` and `405`;
+- Public and Internal Evidence remain visible, Confidential Evidence follows
+  the role/type matrix, and Restricted Evidence is always redacted;
+- raw payloads and persistence metadata remain unavailable;
+- Java 21, 111 default tests and executable JAR: PASS;
+- PostgreSQL 18.4, Flyway migrate/validate/no-op migrate and 29 integration
+  tests: PASS under the PostgreSQL 18.x (18.2+) certification gate;
+- no Domain, Application business behavior, Ports, schema, Flyway migration,
+  dependency, route, frozen-contract or Decision Log change;
+- status: **CERTIFIED / COMPLETE**.
+
+Sprint 3.9.1 synchronized active control, agent, security and AI-context
+documentation with this certified state and marked Sprint 4.0 as the sole next
+gate. It changed no Java, SQL, Flyway, tests, dependencies, frozen contracts or
+Decision Log entries.
+
 ## Demonstration And Pilot Boundary
 
 Sprint 3.5 proved the business-value loop locally with deterministic synthetic
@@ -472,8 +504,8 @@ pilot.
 Before Sprint 4.5 Pilot Readiness can pass:
 
 - certified Java CI must continue to verify the backend;
-- certified JWT Authentication and Sprint 3.9 RBAC Authorization must protect
-  the relevant routes and actions;
+- certified JWT Authentication and RBAC Authorization must continue to protect
+  the relevant routes, data and actions;
 - secrets and database credentials must be externalized;
 - the Sprint 4.2 surface must remain the thin, single-case Decision Review and
   Business Value experience, not a broad Executive Workspace;

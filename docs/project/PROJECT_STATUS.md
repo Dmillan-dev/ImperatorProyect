@@ -1,6 +1,6 @@
 # IMPERATOR Project Status
 
-Last verified: **2026-08-02**
+Last verified: **2026-08-03**
 
 ## Current Gate
 
@@ -46,9 +46,14 @@ Last verified: **2026-08-02**
 | Sprint 3.8 PostgreSQL certification | PASS |
 | Sprint 3.8 closure | CERTIFIED / COMPLETE |
 | Sprint 3.8.1 documentation synchronization | COMPLETE |
-| Last completed gate | Sprint 3.8.1 - Documentation Synchronization |
+| D088 RBAC Authorization contract | ACCEPTED / COMPLETE |
+| Sprint 3.9 implementation | PASS |
+| Sprint 3.9 PostgreSQL certification | PASS - PostgreSQL 18.4 under the 18.x (18.2+) gate |
+| Sprint 3.9 closure | CERTIFIED / COMPLETE |
+| Sprint 3.9.1 documentation synchronization | COMPLETE |
+| Last completed gate | Sprint 3.9.1 - Documentation Synchronization |
 | Phase 2 closure | COMPLETE under D079; Sprints 2.9-2.13 deferred |
-| Next authorized sprint | Sprint 3.9 - RBAC Authorization |
+| Next authorized sprint | Sprint 4.0 - GitHub Integration |
 | Phase 3 authorization | Authorized by D079 and evolved by D085 |
 
 ## Verified Foundation
@@ -59,7 +64,7 @@ Last verified: **2026-08-02**
 | Domain | PASS | Framework-free domain model and value objects |
 | Application | PASS | Deterministic use cases plus the non-persisted Business Value projection |
 | Ports | PASS | Inbound, outbound and explicit transaction ports |
-| PostgreSQL persistence | PASS | JDBC adapters and PostgreSQL 18.2 certification |
+| PostgreSQL persistence | PASS | JDBC adapters and PostgreSQL 18.x certification, most recently 18.4 |
 | Database schema | PASS | Flyway V1 and frozen seven-table schema |
 | Transactions | PASS | Repository and use-case atomicity certification |
 | Web runtime | PASS | Spring Boot executable composition root |
@@ -74,7 +79,8 @@ Last verified: **2026-08-02**
 | Human Review, Ledger and Result Validation | CERTIFIED / COMPLETE | Atomic review and Ledger behavior, replay, linearity, result validation, rollback and concurrency passed against PostgreSQL 18.2; D084 is discharged |
 | End-to-End Local Business Value Demo | CERTIFIED / COMPLETE | Deterministic local `DRC-AOA-001` workflow and traceable projection verified with 30 Evidence records |
 | JWT Authentication | CERTIFIED / COMPLETE | D087 Resource Server perimeter, RS256/JWKS validation and JWT-derived actor identity passed PostgreSQL 18.2 certification |
-| RBAC Authorization | NEXT | Sprint 3.9 owns route, method and data-access authorization policy |
+| RBAC Authorization | CERTIFIED / COMPLETE | D088 15-route/four-role enforcement, governance preservation and Evidence redaction passed PostgreSQL 18.4 certification |
+| GitHub Integration | NEXT | Sprint 4.0 owns the first live connector increment within the frozen connector and Evidence contracts |
 | Frontend runtime | DEFERRED | Thin Decision Review Workspace follows minimum security |
 | Local container runtime | DEFERRED | Operational hardening follows pilot readiness |
 | Observability runtime | DEFERRED | Minimum expansion follows operational hardening |
@@ -82,8 +88,8 @@ Last verified: **2026-08-02**
 
 ## Latest Verification
 
-Sprint 3.8 was certified on 2026-08-02 from committed implementation
-`90e5644` with:
+Sprint 3.9 was certified on 2026-08-03 from committed implementation and
+certification state `66d0e31` with:
 
 ```text
 mvnw.cmd -Ppostgresql-integration clean verify
@@ -93,30 +99,33 @@ Certification evidence:
 
 - portable Eclipse Adoptium Java `21.0.12`: PASS;
 - Maven Wrapper `3.3.4` and Apache Maven `3.9.16`: PASS;
-- production compilation: 164 files;
-- test compilation: 27 files;
-- default unit, HTTP contract, JWT and local demo tests: 105 passed, 0 failed;
-- PostgreSQL version `18.2`: PASS;
+- production compilation: 167 files;
+- test compilation: 29 files;
+- default unit, HTTP contract, JWT, RBAC and local demo tests: 111 passed,
+  0 failed;
+- PostgreSQL version `18.4`: PASS under the PostgreSQL 18.x gate requiring
+  major version 18 and minor version 2 or later;
 - Flyway V1 migrate: PASS;
 - Flyway validate: PASS;
 - second Flyway migrate: schema up to date, no pending migration;
 - PostgreSQL integration tests: 29 passed, 0 failed;
-- all 15 D086 routes protected by the D087 JWT perimeter: PASS;
-- RS256 signature, HTTPS JWKS configuration, issuer, audience, time, `kid`,
-  canonical UUID subject and active-role validation: PASS;
-- exact authentication error envelope, correlation and statelessness: PASS;
-- temporary trusted actor production mechanism removed: PASS;
-- governance actor UUID and role persisted from signed JWT claims: PASS;
+- complete D088 matrix across 15 D086 routes and four roles: PASS;
+- exact route-level `403`, no denied-command mutation and preserved D086
+  `404`/`405` behavior: PASS;
+- D083 governance authority and JWT-derived actor identity: PASS;
+- Public/Internal visibility, role/type-based Confidential handling and
+  fail-closed Restricted Evidence redaction: PASS;
+- raw payload and persistence metadata exposure: absent;
 - executable Spring Boot JAR: created;
 - `BUILD SUCCESS`: PASS.
 
-Sprint 3.8.1 documentation verification:
+Sprint 3.9.1 documentation verification:
 
 - active control and AI-context documents synchronized: PASS;
-- Markdown files checked: 159;
+- Markdown files checked: 163;
 - broken local links: 0;
-- stale active Sprint 3.8 status statements: 0;
-- unique `NEXT` sprint: 3.9;
+- stale active Sprint 3.9 status statements: 0;
+- unique `NEXT` sprint: 4.0;
 - Java, SQL, Flyway, tests, dependencies, frozen contracts and Decision Log
   modified: no.
 
@@ -136,22 +145,29 @@ the default build, 89 tests and executable JAR packaging on Ubuntu 24.04.
   `postgresql-integration` profile and external `IMPERATOR_IT_*` configuration.
 - JWT runtime requires externally supplied issuer and HTTPS JWKS configuration;
   no identity provider or production key material belongs in this repository.
-- RBAC remains the sole Sprint 3.9 gate. Certified authentication identifies
-  callers but does not authorize route, method or evidence access.
+- D088 is deliberately limited to one validated role, the current single-case
+  MVP and no tenant/organization entitlement model. It is not authorization
+  for real-customer exposure or a pilot.
+- Sprint 4.0 must keep GitHub access least-privilege and read-only and must not
+  broaden Evidence visibility or introduce another connector family.
 
 ## Next Control Gate
 
-Sprint 3.9 - RBAC Authorization is the sole next implementation gate. It owns
-route, method and evidence-access authorization on top of the certified D087
-identity perimeter. It must preserve D086 routes, DTOs, Application boundaries
-and the REST error and correlation contracts. Real customer data and external
-exposure remain prohibited until RBAC and later readiness gates pass.
+Sprint 4.0 - GitHub Integration is the sole next implementation gate. It owns
+only the GitHub evidence-source increment required by `DRC-AOA-001`. It must
+preserve D086 routes, D087 identity, D088 authorization and Evidence redaction,
+Application boundaries, connector normalization and the REST error and
+correlation contracts. AWS or other connectors, real customer data, pilot
+behavior and external exposure remain prohibited.
 
 Current execution authorities:
 
-- D079 through D087 in `docs/decisions/14_Decision_Log.md`;
+- D079 through D088 in `docs/decisions/14_Decision_Log.md`;
 - `agents/phase3/README.md`;
 - `docs/architecture/46_JWT_Authentication_Contract.md`;
+- `docs/architecture/47_RBAC_Authorization_Contract.md`;
+- `docs/architecture/28_Per_Connector_MVP_Contracts.md`;
+- `docs/architecture/CONNECTOR_FRAMEWORK.md`;
 - `docs/architecture/35_Coding_Principles.md`;
 - `docs/architecture/37_Implementation_Contract.md`.
 
