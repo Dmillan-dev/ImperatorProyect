@@ -173,10 +173,20 @@ class FunctionalRestApiContractTest {
                         {"occurredAt":"2026-07-01T12:00:00Z","reason":"Validated","evidenceIds":["%s"],"expectedPreviousEntryId":"%s","period":"2026-07","annualizedBaselineCost":{"amount":"28080.00","currency":"EUR"},"annualizedPostActionCost":{"amount":"8640.00","currency":"EUR"},"actualTransitionCost":{"amount":"0.00","currency":"EUR"}}
                         """.formatted(EVIDENCE_UUID, LEDGER_UUID).trim()
         );
+        Map<String, String> roles = Map.of(
+                "approve", "ADMIN",
+                "reject", "ADMIN",
+                "defer", "ADMIN",
+                "mark-implemented", "PLATFORM_ENGINEER",
+                "validate-result", "FINANCE"
+        );
         int suffix = 10;
         for (Map.Entry<String, String> request : requests.entrySet()) {
             String idempotencyKey = new UUID(0x6000000000004000L, 0x8000000000000000L + suffix++).toString();
-            HttpResponse<String> response = post(base + request.getKey(), request.getValue(), idempotencyKey);
+            HttpResponse<String> response = post(
+                    base + request.getKey(), request.getValue(), idempotencyKey,
+                    roles.get(request.getKey())
+            );
             assertEquals(201, response.statusCode(), request.getKey() + ": " + response.body());
             assertNotEquals(501, response.statusCode());
             assertEquals(false, JSON.readTree(response.body()).get("replayed").asBoolean());
@@ -356,11 +366,20 @@ class FunctionalRestApiContractTest {
 
     private static HttpResponse<String> post(String path, String body, String idempotencyKey)
             throws IOException, InterruptedException {
+        return post(path, body, idempotencyKey, "ADMIN");
+    }
+
+    private static HttpResponse<String> post(
+            String path,
+            String body,
+            String idempotencyKey,
+            String role
+    ) throws IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder(uri(path))
                 .header("Accept", MediaType.APPLICATION_JSON_VALUE)
                 .header("Content-Type", MediaType.APPLICATION_JSON_VALUE)
                 .header("Idempotency-Key", idempotencyKey)
-                .header("Authorization", JWT.authorizationHeader(ACTOR_UUID, "ADMIN"))
+                .header("Authorization", JWT.authorizationHeader(ACTOR_UUID, role))
                 .POST(HttpRequest.BodyPublishers.ofString(body))
                 .build();
         return client.send(request, HttpResponse.BodyHandlers.ofString());

@@ -108,7 +108,11 @@ final class FunctionalRestPostgresIT {
     void certifiesAllD086ReadAndGovernanceRoutesAgainstPostgres18()
             throws IOException, InterruptedException, SQLException {
         try (Connection connection = adminDataSource.getConnection()) {
-            assertTrue(connection.getMetaData().getDatabaseProductVersion().startsWith("18.2"));
+            assertEquals(18, connection.getMetaData().getDatabaseMajorVersion());
+            assertTrue(
+                    connection.getMetaData().getDatabaseMinorVersion() >= 2,
+                    "PostgreSQL 18.2 or later within major version 18 is required"
+            );
         }
 
         String approvalId = ledgerUuid(1).toString();

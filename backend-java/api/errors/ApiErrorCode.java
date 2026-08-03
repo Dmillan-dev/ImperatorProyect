@@ -6,6 +6,7 @@ public enum ApiErrorCode {
     BAD_REQUEST(HttpStatus.BAD_REQUEST, "Bad request"),
     AUTHENTICATION_REQUIRED(HttpStatus.UNAUTHORIZED, "Authentication required"),
     INVALID_TOKEN(HttpStatus.UNAUTHORIZED, "Invalid authentication token"),
+    ACCESS_DENIED(HttpStatus.FORBIDDEN, "Access denied"),
     RESOURCE_NOT_FOUND(HttpStatus.NOT_FOUND, "Resource not found"),
     METHOD_NOT_ALLOWED(HttpStatus.METHOD_NOT_ALLOWED, "Method not allowed"),
     NOT_ACCEPTABLE(HttpStatus.NOT_ACCEPTABLE, "Not acceptable"),
@@ -35,6 +36,7 @@ public enum ApiErrorCode {
         return switch (status) {
             case 400 -> BAD_REQUEST;
             case 401 -> AUTHENTICATION_REQUIRED;
+            case 403 -> ACCESS_DENIED;
             case 404 -> RESOURCE_NOT_FOUND;
             case 405 -> METHOD_NOT_ALLOWED;
             case 406 -> NOT_ACCEPTABLE;

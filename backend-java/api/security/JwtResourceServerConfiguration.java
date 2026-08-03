@@ -6,7 +6,9 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplicat
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -28,6 +30,24 @@ import java.util.List;
 @Configuration(proxyBeanMethods = false)
 @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
 public class JwtResourceServerConfiguration {
+    private static final String ADMIN = "ADMIN";
+    private static final String PLATFORM_ENGINEER = "PLATFORM_ENGINEER";
+    private static final String FINANCE = "FINANCE";
+    private static final String AUDITOR = "AUDITOR";
+    private static final String[] MVP_ROLES = {
+            ADMIN, PLATFORM_ENGINEER, FINANCE, AUDITOR
+    };
+    private static final String[] READ_ROUTES = {
+            "/api/v1/decisions",
+            "/api/v1/decisions/*",
+            "/api/v1/decisions/*/timeline",
+            "/api/v1/decisions/*/evidence",
+            "/api/v1/decisions/*/roi",
+            "/api/v1/recommendations/*",
+            "/api/v1/decisions/*/ledger",
+            "/api/v1/business-value",
+            "/api/v1/ledger"
+    };
     private static final String REQUIRED_AUDIENCE = "imperator-api";
     private static final String REQUIRED_ALGORITHM = "RS256";
 
@@ -35,11 +55,34 @@ public class JwtResourceServerConfiguration {
     SecurityFilterChain apiSecurityFilterChain(
             HttpSecurity http,
             JwtDecoder jwtDecoder,
-            JwtAuthenticationEntryPoint authenticationEntryPoint
+            JwtAuthenticationEntryPoint authenticationEntryPoint,
+            JwtAccessDeniedHandler accessDeniedHandler
     ) throws Exception {
         return http
                 .securityMatcher("/api/v1/**")
-                .authorizeHttpRequests(authorize -> authorize.anyRequest().authenticated())
+                .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers(HttpMethod.POST, "/api/v1/evidence/import")
+                        .hasAuthority(ADMIN)
+                        .requestMatchers(
+                                HttpMethod.POST,
+                                "/api/v1/decisions/*/ledger/approve",
+                                "/api/v1/decisions/*/ledger/reject"
+                        ).hasAuthority(ADMIN)
+                        .requestMatchers(HttpMethod.POST, "/api/v1/decisions/*/ledger/defer")
+                        .hasAnyAuthority(ADMIN, PLATFORM_ENGINEER, FINANCE)
+                        .requestMatchers(
+                                HttpMethod.POST,
+                                "/api/v1/decisions/*/ledger/mark-implemented"
+                        ).hasAuthority(PLATFORM_ENGINEER)
+                        .requestMatchers(
+                                HttpMethod.POST,
+                                "/api/v1/decisions/*/ledger/validate-result"
+                        ).hasAuthority(FINANCE)
+                        .requestMatchers(HttpMethod.GET, READ_ROUTES)
+                        .hasAnyAuthority(MVP_ROLES)
+                        // MVC owns the frozen 404/405 contract; the RBAC route-inventory test
+                        // prevents this fallback from admitting an uncontracted API handler.
+                        .anyRequest().authenticated())
                 .oauth2ResourceServer(resourceServer -> resourceServer
                         .bearerTokenResolver(new StrictBearerTokenResolver())
                         .authenticationEntryPoint(authenticationEntryPoint)
@@ -47,7 +90,8 @@ public class JwtResourceServerConfiguration {
                                 .decoder(jwtDecoder)
                                 .jwtAuthenticationConverter(authenticationConverter())))
                 .exceptionHandling(exceptions -> exceptions
-                        .authenticationEntryPoint(authenticationEntryPoint))
+                        .authenticationEntryPoint(authenticationEntryPoint)
+                        .accessDeniedHandler(accessDeniedHandler))
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .securityContext(context -> context.requireExplicitSave(true))
@@ -100,7 +144,11 @@ public class JwtResourceServerConfiguration {
     }
 
     private Converter<Jwt, ? extends AbstractAuthenticationToken> authenticationConverter() {
-        return jwt -> new JwtAuthenticationToken(jwt, List.of(), jwt.getSubject());
+        return jwt -> new JwtAuthenticationToken(
+                jwt,
+                List.of(new SimpleGrantedAuthority(jwt.getClaimAsString("imperator_role"))),
+                jwt.getSubject()
+        );
     }
 
     private String requireText(String value, String message) {

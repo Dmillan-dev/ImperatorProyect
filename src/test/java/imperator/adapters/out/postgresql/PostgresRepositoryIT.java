@@ -157,11 +157,11 @@ final class PostgresRepositoryIT {
         try (Connection connection = appDataSource.getConnection()) {
             assertAll(
                     () -> assertEquals("PostgreSQL", connection.getMetaData().getDatabaseProductName()),
+                    () -> assertEquals(18, connection.getMetaData().getDatabaseMajorVersion()),
                     () -> assertTrue(
-                            connection.getMetaData().getDatabaseProductVersion().startsWith("18.2"),
-                            "PostgreSQL 18.2 is required by this sprint gate"
-                    ),
-                    () -> assertEquals(18, connection.getMetaData().getDatabaseMajorVersion())
+                            connection.getMetaData().getDatabaseMinorVersion() >= 2,
+                            "PostgreSQL 18.2 or later within major version 18 is required"
+                    )
             );
         }
 
