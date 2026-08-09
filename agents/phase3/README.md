@@ -2,7 +2,7 @@
 
 Status: **ACTIVE**
 
-Current gate: **Sprint 4.0 - GitHub Integration**
+Current gate: **Sprint 4.1 - AWS Integration**
 
 Authorization: **D079 - Phase 3 Vertical-Slice Acceleration; D085 - MVP Delivery Roadmap Evolution**
 
@@ -70,7 +70,8 @@ Locked constraints:
 - one case: `DRC-AOA-001`;
 - one recommendation family: AI model downgrade/change with fallback;
 - JSONL first, one Enterprise Evidence Event per line;
-- manual, static or imported evidence before live connectors;
+- one certified GitHub evidence connector; additional connectors only at their
+  explicitly authorized gate;
 - PostgreSQL remains the source of truth;
 - AI explains deterministic output and never decides, calculates ROI or mutates;
 - estimated value never becomes realized value before result validation;
@@ -102,8 +103,10 @@ Locked constraints:
 | D088 | RBAC Authorization Contract | ACCEPTED / COMPLETE |
 | 3.9 | RBAC Authorization | CERTIFIED / COMPLETE |
 | 3.9.1 | Documentation Synchronization | COMPLETE |
-| 4.0 | GitHub Integration | NEXT |
-| 4.1 | AWS Integration | PENDING |
+| D089 | GitHub Integration Contract | ACCEPTED / COMPLETE |
+| 4.0 | GitHub Integration | CERTIFIED / COMPLETE |
+| 4.0.1 | Documentation Synchronization | COMPLETE |
+| 4.1 | AWS Integration | NEXT |
 | 4.2 | Executive Dashboard | PENDING |
 | 4.3 | Docker Production Runtime | PENDING |
 | 4.4 | Observability | PENDING |
@@ -492,6 +495,39 @@ Certification evidence:
 
 Sprint 3.9.1 synchronized active control, agent, security and AI-context
 documentation with this certified state and marked Sprint 4.0 as the sole next
+gate. It changed no Java, SQL, Flyway, tests, dependencies, frozen contracts or
+Decision Log entries.
+
+## Sprint 4.0 - GitHub Integration
+
+Sprint 4.0 is certified and complete under D089.
+
+Certification evidence:
+
+- integrated contract-freeze commit: `5cfddd4`;
+- integrated implementation and certification commit: `674b0ba`;
+- one disabled-by-default, read-only GitHub REST adapter for one organization
+  and one repository;
+- exact `IMP-214` correlation and deterministic `E-GH-001`, `E-GH-002` and
+  `E-GH-003` Evidence mapping;
+- provider-neutral synchronization orchestration through the existing Evidence
+  import boundary;
+- stable replay, source-identity conflict protection, serial pagination,
+  bounded retries, rate limits, timeouts and safe failure outcomes;
+- token and raw provider text excluded from Evidence, persistence and results;
+- no GitHub route, scheduler, UI, Decision, Recommendation, ROI, Ledger or
+  Business Value authority;
+- Java 21, 128 default tests and executable JAR: PASS;
+- PostgreSQL 18.4, Flyway migrate/validate/no-op migrate and 30 integration
+  tests: PASS under the PostgreSQL 18.x (18.2+) certification gate;
+- Domain Isolation Index, Architectural Stability Index and Decision Stability:
+  100%;
+- no Domain, REST, schema, Flyway migration, dependency, frozen-contract or
+  Decision Log change during implementation;
+- status: **CERTIFIED / COMPLETE**.
+
+Sprint 4.0.1 synchronized active control, agent, security and AI-context
+documentation with this certified state and marked Sprint 4.1 as the sole next
 gate. It changed no Java, SQL, Flyway, tests, dependencies, frozen contracts or
 Decision Log entries.
 

@@ -25,6 +25,9 @@ Primary Java domain and application runtime for IMPERATOR.
   `imperator.api.security`.
 - D088 route/method authorization and Evidence response filtering under
   `imperator.api.security` and `imperator.api.decisions`.
+- D089 provider-neutral synchronization orchestration and the read-only GitHub
+  REST outbound adapter under `imperator.application.synchronizeevidence` and
+  `imperator.adapters.out.github`.
 
 Current Phase 3 foundation:
 - Pure Java domain foundation exists.
@@ -64,7 +67,10 @@ Current Phase 3 foundation:
 - Sprint 3.9 enforces the complete D088 15-route/four-role matrix, preserves
   D083 Application governance and redacts Confidential or Restricted Evidence
   before serialization according to role and evidence type.
-- Java 21 verification passes 111 default tests and 29 PostgreSQL integration
+- Sprint 4.0 synchronizes the bounded GitHub source into deterministic
+  `E-GH-001`, `E-GH-002` and `E-GH-003` Evidence without adding a route,
+  scheduler, schema object or business authority.
+- Java 21 verification passes 128 default tests and 30 PostgreSQL integration
   tests against PostgreSQL 18.4 under the PostgreSQL 18.x (18.2+) gate.
 - No JPA.
 
@@ -97,6 +103,18 @@ Missing or invalid authentication configuration fails closed. IMPERATOR does
 not issue tokens, persist users or provide login. D088 authorization consumes
 the single validated role and adds no role hierarchy, identity persistence or
 business-approval shortcut.
+
+GitHub synchronization uses external Spring configuration:
+
+- `IMPERATOR_GITHUB_ENABLED=true`
+- `IMPERATOR_GITHUB_TOKEN`
+- `IMPERATOR_GITHUB_ORGANIZATION`
+- `IMPERATOR_GITHUB_REPOSITORY`
+
+The connector is disabled by default. When enabled, missing or invalid values
+fail closed before any network request. The token is used only by the outbound
+adapter and is never persisted, logged or returned. Production access is fixed
+to the versioned GitHub.com REST API and remains read-only.
 
 Deterministic Recommendation persistence completes before the optional
 `ExplanationProvider` invocation. The runtime supplies an unavailable provider
@@ -137,9 +155,10 @@ is found.
 
 ## Authorized Current Use
 
-Sprints 3.0 through 3.9 are complete at their documented gates. The Java 21
+Sprints 3.0 through 4.0 are complete at their documented gates. The Java 21
 Maven build is certified through GitHub Actions, and the complete Functional
 REST security runtime is certified against PostgreSQL 18.4. D084 is discharged;
-D085 through D088 are accepted. Sprint 4.0 - GitHub Integration is the sole
-next gate. Any connector work must preserve D086 routes, D087 identity, D088
-authorization, Evidence redaction and existing business authority.
+D085 through D089 are accepted. Sprint 4.1 - AWS Integration is the sole next
+gate and has not started. Any connector work must preserve D086 routes, D087
+identity, D088 authorization, Evidence redaction and existing business
+authority.

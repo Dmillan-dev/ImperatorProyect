@@ -1,6 +1,6 @@
 # IMPERATOR Project Status
 
-Last verified: **2026-08-03**
+Last verified: **2026-08-09**
 
 ## Current Gate
 
@@ -51,9 +51,14 @@ Last verified: **2026-08-03**
 | Sprint 3.9 PostgreSQL certification | PASS - PostgreSQL 18.4 under the 18.x (18.2+) gate |
 | Sprint 3.9 closure | CERTIFIED / COMPLETE |
 | Sprint 3.9.1 documentation synchronization | COMPLETE |
-| Last completed gate | Sprint 3.9.1 - Documentation Synchronization |
+| D089 GitHub Integration contract | ACCEPTED / COMPLETE / FROZEN |
+| Sprint 4.0 implementation | PASS |
+| Sprint 4.0 PostgreSQL certification | PASS - PostgreSQL 18.4 under the 18.x (18.2+) gate |
+| Sprint 4.0 closure | CERTIFIED / COMPLETE |
+| Sprint 4.0.1 documentation synchronization | COMPLETE |
+| Last completed gate | Sprint 4.0.1 - Documentation Synchronization |
 | Phase 2 closure | COMPLETE under D079; Sprints 2.9-2.13 deferred |
-| Next authorized sprint | Sprint 4.0 - GitHub Integration |
+| Next authorized sprint | Sprint 4.1 - AWS Integration |
 | Phase 3 authorization | Authorized by D079 and evolved by D085 |
 
 ## Verified Foundation
@@ -80,7 +85,8 @@ Last verified: **2026-08-03**
 | End-to-End Local Business Value Demo | CERTIFIED / COMPLETE | Deterministic local `DRC-AOA-001` workflow and traceable projection verified with 30 Evidence records |
 | JWT Authentication | CERTIFIED / COMPLETE | D087 Resource Server perimeter, RS256/JWKS validation and JWT-derived actor identity passed PostgreSQL 18.2 certification |
 | RBAC Authorization | CERTIFIED / COMPLETE | D088 15-route/four-role enforcement, governance preservation and Evidence redaction passed PostgreSQL 18.4 certification |
-| GitHub Integration | NEXT | Sprint 4.0 owns the first live connector increment within the frozen connector and Evidence contracts |
+| GitHub Integration | CERTIFIED / COMPLETE | D089 one-repository, read-only GitHub REST synchronization produces deterministic supporting Evidence and passed PostgreSQL 18.4 certification |
+| AWS Integration | NEXT | Sprint 4.1 is authorized as the next isolated connector gate; implementation has not started |
 | Frontend runtime | DEFERRED | Thin Decision Review Workspace follows minimum security |
 | Local container runtime | DEFERRED | Operational hardening follows pilot readiness |
 | Observability runtime | DEFERRED | Minimum expansion follows operational hardening |
@@ -88,8 +94,8 @@ Last verified: **2026-08-03**
 
 ## Latest Verification
 
-Sprint 3.9 was certified on 2026-08-03 from committed implementation and
-certification state `66d0e31` with:
+Sprint 4.0 was certified on 2026-08-04 from committed implementation and
+certification state `674b0ba` with:
 
 ```text
 mvnw.cmd -Ppostgresql-integration clean verify
@@ -99,33 +105,39 @@ Certification evidence:
 
 - portable Eclipse Adoptium Java `21.0.12`: PASS;
 - Maven Wrapper `3.3.4` and Apache Maven `3.9.16`: PASS;
-- production compilation: 167 files;
-- test compilation: 29 files;
-- default unit, HTTP contract, JWT, RBAC and local demo tests: 111 passed,
+- production compilation: 194 files;
+- test compilation: 34 files;
+- default unit, HTTP contract, security, GitHub and local demo tests: 128 passed,
   0 failed;
 - PostgreSQL version `18.4`: PASS under the PostgreSQL 18.x gate requiring
   major version 18 and minor version 2 or later;
 - Flyway V1 migrate: PASS;
 - Flyway validate: PASS;
 - second Flyway migrate: schema up to date, no pending migration;
-- PostgreSQL integration tests: 29 passed, 0 failed;
-- complete D088 matrix across 15 D086 routes and four roles: PASS;
-- exact route-level `403`, no denied-command mutation and preserved D086
-  `404`/`405` behavior: PASS;
-- D083 governance authority and JWT-derived actor identity: PASS;
-- Public/Internal visibility, role/type-based Confidential handling and
-  fail-closed Restricted Evidence redaction: PASS;
-- raw payload and persistence metadata exposure: absent;
+- PostgreSQL integration tests: 30 passed, 0 failed;
+- exact GET-only GitHub endpoint inventory and mandatory request headers: PASS;
+- one organization, one repository and discovered default-branch scope: PASS;
+- exact `IMP-214` correlation and ambiguity rejection: PASS;
+- deterministic `E-GH-001`, `E-GH-002` and `E-GH-003` mapping and UUIDv5
+  source identity: PASS;
+- disabled/invalid configuration, serial pagination, bounded retry, rate limit,
+  timeout and response-size behavior: PASS;
+- stable replay and conflicting-source non-overwrite behavior: PASS;
+- protocol-faithful local HTTP stub through existing import orchestration into
+  certified PostgreSQL persistence: PASS;
+- token, raw PR/review text and provider payload exposure: absent;
+- D086 routes, D087 identity, D088 authorization and business authority:
+  unchanged;
 - executable Spring Boot JAR: created;
 - `BUILD SUCCESS`: PASS.
 
-Sprint 3.9.1 documentation verification:
+Sprint 4.0.1 documentation verification:
 
 - active control and AI-context documents synchronized: PASS;
-- Markdown files checked: 163;
+- Markdown files checked: 166;
 - broken local links: 0;
-- stale active Sprint 3.9 status statements: 0;
-- unique `NEXT` sprint: 4.0;
+- stale active Sprint 4.0 status statements: 0;
+- unique `NEXT` sprint: 4.1;
 - Java, SQL, Flyway, tests, dependencies, frozen contracts and Decision Log
   modified: no.
 
@@ -148,24 +160,32 @@ the default build, 89 tests and executable JAR packaging on Ubuntu 24.04.
 - D088 is deliberately limited to one validated role, the current single-case
   MVP and no tenant/organization entitlement model. It is not authorization
   for real-customer exposure or a pilot.
-- Sprint 4.0 must keep GitHub access least-privilege and read-only and must not
-  broaden Evidence visibility or introduce another connector family.
+- D089 is deliberately limited to one fine-grained token, one organization,
+  one repository, on-demand polling and GitHub Evidence only. It adds no public
+  trigger, durable cursor or production credential lifecycle.
+- No live GitHub smoke test is part of this certified automated gate. D089
+  requires a separately authorized non-customer sandbox check before Pilot
+  Readiness.
+- Sprint 4.1 must keep AWS access least-privilege and read-only and must not
+  modify the certified GitHub adapter or broaden Evidence visibility.
 
 ## Next Control Gate
 
-Sprint 4.0 - GitHub Integration is the sole next implementation gate. It owns
-only the GitHub evidence-source increment required by `DRC-AOA-001`. It must
-preserve D086 routes, D087 identity, D088 authorization and Evidence redaction,
-Application boundaries, connector normalization and the REST error and
-correlation contracts. AWS or other connectors, real customer data, pilot
-behavior and external exposure remain prohibited.
+Sprint 4.1 - AWS Integration is the sole next implementation gate. No AWS
+implementation has started. It may add only the separately authorized AWS
+evidence-source increment required by `DRC-AOA-001` and must preserve D086
+routes, D087 identity, D088 authorization, D089 GitHub behavior, Evidence
+redaction, Application boundaries and connector normalization. Additional
+connectors, real customer data, pilot behavior and external exposure remain
+prohibited.
 
 Current execution authorities:
 
-- D079 through D088 in `docs/decisions/14_Decision_Log.md`;
+- D079 through D089 in `docs/decisions/14_Decision_Log.md`;
 - `agents/phase3/README.md`;
 - `docs/architecture/46_JWT_Authentication_Contract.md`;
 - `docs/architecture/47_RBAC_Authorization_Contract.md`;
+- `docs/architecture/48_GitHub_Integration_Contract.md`;
 - `docs/architecture/28_Per_Connector_MVP_Contracts.md`;
 - `docs/architecture/CONNECTOR_FRAMEWORK.md`;
 - `docs/architecture/35_Coding_Principles.md`;
@@ -179,6 +199,8 @@ Current execution authorities:
 - The public REST base path is `/api/v1`.
 - HTTP correlation is not domain evidence correlation.
 - Ledger history is append-only.
+- Connectors normalize supporting Evidence and have no Decision, ROI, approval
+  or Ledger authority.
 - Phase 2 is closed; Phase 3 business behavior remains limited to
   `DRC-AOA-001` and the currently authorized sprint.
 - One module is implemented per agent iteration.

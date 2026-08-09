@@ -2,7 +2,7 @@
 
 Status: **Phase 3 First Business Value Loop active**
 
-Current gate: **Sprint 4.0 - GitHub Integration**
+Current gate: **Sprint 4.1 - AWS Integration**
 
 IMPERATOR is an Operating System for Operational Intelligence and an Enterprise
 Decision Intelligence Platform. The MVP proves one evidence-backed decision,
@@ -62,13 +62,16 @@ The Java backend currently contains:
   stateless authentication and JWT-derived governance actor identity;
 - certified D088 RBAC route/method enforcement and Evidence redaction for all
   four MVP roles without weakening Application governance authority;
+- certified D089 GitHub REST evidence synchronization for one organization,
+  one repository and `DRC-AOA-001`, with read-only access, deterministic
+  Evidence identity and no Decision, ROI or Ledger authority;
 - certified PostgreSQL 18.x runtime behavior, most recently PostgreSQL 18.4,
-  with 111 default tests and 29 integration tests passing.
+  with 128 default tests and 30 integration tests passing.
 
 The repository does not yet contain:
 
 - React application runtime;
-- live connectors;
+- AWS or additional live connectors;
 - a live vendor AI-provider adapter or real model calls;
 - Docker local runtime;
 - production deployment.
@@ -142,13 +145,13 @@ Evidence
 Phase 2 is complete under D079. Phase 3 is active and may implement only the
 single currently authorized `DRC-AOA-001` business-value increment.
 
-Sprint 3.9 is certified and complete under D088. Its Java 21 PostgreSQL
-integration-profile run passed Flyway migrate, validate and second no-op
-migrate, 111 default tests and 29 PostgreSQL integration tests against
-PostgreSQL 18.4. The exact 15-route/four-role authorization matrix, governance
-separation and Evidence redaction policy are enforced. Sprint 4.0 GitHub
-Integration is the sole next gate; the API remains non-pilot and local-only
-until the later readiness gates pass.
+Sprint 4.0 GitHub Integration is certified and complete under D089. Its Java 21
+PostgreSQL integration-profile run passed Flyway migrate, validate and second
+no-op migrate, 128 default tests and 30 integration tests against PostgreSQL
+18.4. GitHub contributes only normalized `E-GH-001`, `E-GH-002` and `E-GH-003`
+Evidence through a bounded read-only adapter. Sprint 4.1 AWS Integration is the
+sole next gate; no AWS work has started, and the API remains non-pilot and
+local-only until the later readiness gates pass.
 
 ## Documentation Rules
 

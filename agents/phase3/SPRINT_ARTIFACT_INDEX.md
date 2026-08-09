@@ -30,7 +30,10 @@ Sprint 3.8.1: COMPLETE
 D088: ACCEPTED / COMPLETE
 Sprint 3.9: CERTIFIED / COMPLETE
 Sprint 3.9.1: COMPLETE
-Sprint 4.0: NEXT
+D089: ACCEPTED / COMPLETE
+Sprint 4.0: CERTIFIED / COMPLETE
+Sprint 4.0.1: COMPLETE
+Sprint 4.1: NEXT
 ```
 
 Exactly one Phase 3 control gate is authorized as `NEXT`.
@@ -59,6 +62,9 @@ Exactly one Phase 3 control gate is authorized as `NEXT`.
 | D088 | `b8e66e8` | Frozen route authorization, governance preservation, read visibility, Evidence redaction and access-denied contract | ACCEPTED / COMPLETE |
 | 3.9 | `66d0e31` | D088 route/method enforcement, Evidence authorization policy and PostgreSQL 18.x runtime certification | CERTIFIED / COMPLETE |
 | 3.9.1 | Current synchronization commit; hash intentionally not self-recorded | Active project-control, agent, security and AI-context synchronization | COMPLETE |
+| D089 | `5cfddd4` | Frozen one-repository GitHub REST synchronization, security, Evidence mapping and failure contract | ACCEPTED / COMPLETE |
+| 4.0 | `674b0ba` | Read-only GitHub adapter, provider-neutral synchronization use case, offline contract suite and PostgreSQL certification | CERTIFIED / COMPLETE |
+| 4.0.1 | Current synchronization commit; hash intentionally not self-recorded | Active project-control, agent, security and AI-context synchronization | COMPLETE |
 
 ### Sprint 3.0
 
@@ -339,13 +345,54 @@ Certification evidence:
   dependency, route, frozen-contract or Decision Log modification;
 - status: **CERTIFIED / COMPLETE**.
 
+### Sprint 4.0
+
+Primary artifacts:
+
+- D089 in `docs/decisions/14_Decision_Log.md`;
+- `docs/architecture/48_GitHub_Integration_Contract.md`;
+- `backend-java/application/synchronizeevidence`;
+- `backend-java/ports/in/SynchronizeEvidenceInputPort.java`;
+- provider-neutral Evidence source types under `backend-java/ports/out`;
+- `backend-java/adapters/out/github`;
+- `backend-java/bootstrap/GitHubRuntimeConfiguration.java`;
+- `backend-java/bootstrap/GitHubRuntimeProperties.java`;
+- `src/test/java/imperator/adapters/out/github/GitHubRestAdapterTest.java`;
+- `src/test/java/imperator/adapters/out/github/GitHubEvidenceSyncIT.java`;
+- `src/test/java/imperator/application/synchronizeevidence/SynchronizeEvidenceUseCaseTest.java`.
+
+Certification evidence:
+
+- contract-freeze commit `5cfddd4` and implementation commit `674b0ba`;
+- Java 21, 128 default tests and executable JAR: PASS;
+- PostgreSQL 18.4 and 30 integration tests: PASS under the PostgreSQL 18.x
+  (18.2+) gate;
+- Flyway V1 migrate, validate and second no-op migrate: PASS;
+- exact GET-only GitHub REST surface and mandatory headers: PASS;
+- single organization, repository, default branch and explicit window: PASS;
+- exact `IMP-214` correlation, ambiguity rejection and Evidence completeness:
+  PASS;
+- deterministic UUIDv5 identity for `E-GH-001`, `E-GH-002` and `E-GH-003`:
+  PASS;
+- disabled and invalid configuration produce zero provider calls: PASS;
+- stable replay, identity conflict, pagination, retry, rate-limit, timeout and
+  response-bound behavior: PASS;
+- local protocol-faithful HTTP stub to existing Evidence import and certified
+  PostgreSQL persistence: PASS;
+- token, raw title, body and review text leakage: absent;
+- no public route, scheduler, schema, migration, dependency or business
+  authority added;
+- ASI, DII and Decision Stability: 100%;
+- status: **CERTIFIED / COMPLETE**.
+
 ## Next Artifact Boundary
 
-Sprint 4.0 may implement GitHub Integration only. It must preserve D086 routes,
-D087 identity semantics, D088 authorization and Evidence visibility, existing
+Sprint 4.1 is the sole next gate and may implement AWS Integration only after
+its explicit sprint instruction. It must preserve D086 routes, D087 identity,
+D088 authorization and Evidence visibility, D089 GitHub behavior, existing
 Application business authority, the error envelope and correlation contract.
-AWS or other live connectors, frontend, Docker, observability, pilot behavior,
-real customer data and external exposure remain prohibited.
+Additional connectors, frontend, Docker, observability, pilot behavior, real
+customer data and external exposure remain prohibited.
 
 ## Agent Rule
 

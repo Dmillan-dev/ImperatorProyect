@@ -25,7 +25,7 @@ current execution authority.
 - `docs/project/README.md`
 - `docs/project/PROJECT_STATUS.md`
 - `docs/project/PHASE_AND_SPRINT_MAP.md`
-- D085 through D088 in `docs/decisions/14_Decision_Log.md`
+- D085 through D089 in `docs/decisions/14_Decision_Log.md`
 - `agents/phase3/README.md`
 - `docs/architecture/26_Security_Data_Governance_Threat_Model.md`
 - `docs/product/28_Identity_Access_Approval_Model.md`
@@ -34,6 +34,7 @@ current execution authority.
 - `docs/architecture/45_Functional_REST_Application_Contract.md`
 - `docs/architecture/46_JWT_Authentication_Contract.md`
 - `docs/architecture/47_RBAC_Authorization_Contract.md`
+- `docs/architecture/48_GitHub_Integration_Contract.md`
 
 Load connector contracts only during an authorized connector or
 connector-security task. Use `agents/phase2/README.md` only as historical
@@ -50,25 +51,30 @@ Sprint 3.8.0 - JWT Authentication Contract Freeze: COMPLETE
 -> Sprint 3.9 - RBAC Authorization: CERTIFIED / COMPLETE
 -> Sprint 3.9 PostgreSQL Certification: PASS
 -> Sprint 3.9.1 - Documentation Synchronization: COMPLETE
--> Sprint 4.0 - GitHub Integration: NEXT
+-> Sprint 4.0 - GitHub Integration Contract Freeze: COMPLETE
+-> Sprint 4.0 - GitHub Integration: CERTIFIED / COMPLETE
+-> Sprint 4.0 PostgreSQL Certification: PASS
+-> Sprint 4.0.1 - Documentation Synchronization: COMPLETE
+-> Sprint 4.1 - AWS Integration: NEXT
 ```
 
 Sprint 3.8 answers only who the caller is. Sprint 3.9 answers what that caller
 may do. Existing Application governance authority remains active in both
 stages and is never replaced by generic authentication.
 
-Sprint 3.9 certification passed Java 21, 111 default tests, PostgreSQL 18.4,
-Flyway migrate/validate/no-op migrate and 29 integration tests. D088 now
-enforces the complete 15-route/four-role matrix, preserves D083 governance,
-returns deterministic route-level `403` responses and filters Evidence before
-serialization. Sprint 4.0 is the sole current gate and must preserve this
-security boundary while introducing only the authorized GitHub integration.
+Sprint 4.0 certification passed Java 21, 128 default tests, PostgreSQL 18.4,
+Flyway migrate/validate/no-op migrate and 30 integration tests. D089 confines
+GitHub to one read-only fine-grained token, one organization, one repository
+and sanitized canonical Evidence. Provider text remains untrusted, the token
+never enters persistence or responses, and D088 visibility remains unchanged.
+Sprint 4.1 is the sole current gate and may introduce only the separately
+authorized AWS integration while preserving these security boundaries.
 
-For Sprint 4.0, also load
-`docs/architecture/28_Per_Connector_MVP_Contracts.md` and
-`docs/architecture/CONNECTOR_FRAMEWORK.md`. GitHub access remains
-least-privilege and read-only, provider text remains untrusted input, and the
-connector cannot broaden D088 visibility or business authority.
+For connector work, also load
+`docs/architecture/28_Per_Connector_MVP_Contracts.md`,
+`docs/architecture/CONNECTOR_FRAMEWORK.md` and the active connector contract.
+The certified GitHub adapter remains least-privilege and read-only and cannot
+be broadened while implementing a later connector.
 
 ## Certified Security Guardrails
 
