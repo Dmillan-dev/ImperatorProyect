@@ -2,36 +2,59 @@
 
 ## Purpose
 
-Future operational web interface for reviewing decisions, evidence, ledger
-history and business value.
+Operational web interface for the single DRC-AOA-001 Decision Review Workspace
+defined by D091.
 
 ## Who Uses This Folder
 
-- Implementation Agent during the React frontend foundation sprint.
-- Product Guardian to validate workspace focus.
-- Quality Agent to review UI structure once authorized.
+- Authorized reviewers evaluating evidence, recommendations and business value.
+- Implementation Agent for frontend-only delivery.
+- Architecture, Security, Quality and Product Guardians during certification.
 
 ## Contains
 
-- Future React and TypeScript application shell.
-- Future routing, layout and workspace screens.
-- Future UI components and API client when explicitly authorized.
+- Next.js 16, React 19 and strict TypeScript application code.
+- Decision Review Workspace routes, components and presentation logic.
+- Relative `/api/v1/**` client calls and runtime response validation.
+- Unit, component, coverage and Playwright E2E tests.
 
-Current status:
-- Documentation boundary only.
-- No React application.
-- No TypeScript source files.
-- No package manifest.
-- No routes, screens, components or API client.
+## Local Development
+
+Requirements: Node.js 24 LTS and npm 11.
+
+```powershell
+npm ci
+$env:IMPERATOR_API_ORIGIN = "http://127.0.0.1:8080"
+npm run dev
+```
+
+The browser only calls relative `/api/v1/**` paths. `IMPERATOR_API_ORIGIN` is a
+server-side rewrite target and must never use a public client environment name.
+
+## Quality Gates
+
+```powershell
+npm run format:check
+npm run lint
+npm run typecheck
+npm run test:coverage
+npm run build
+npm run test:e2e
+```
+
+## Security Boundary
+
+- JWTs exist in memory only and are cleared on reload, logout, expiry or `401`.
+- No token, credential or secret may be logged or stored in browser persistence.
+- The frontend presents D088 permissions; backend authorization remains
+  authoritative.
+- ROI and Business Value are rendered from certified backend responses and are
+  never recalculated here.
 
 ## Never Contains
 
-- Backend business logic.
+- Backend business or authorization logic.
 - Java or Python source code.
-- Database migrations.
-- Infrastructure manifests.
-- Secrets, tokens or credentials.
-
-## Authorized Next Use
-
-A later sprint may create the frontend foundation after API shells exist.
+- Database migrations or infrastructure manifests.
+- Secrets, persisted tokens or provider credentials.
+- Additional product cases outside DRC-AOA-001 without a new frozen contract.
