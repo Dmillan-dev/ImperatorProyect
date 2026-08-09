@@ -66,7 +66,16 @@ spend. The first case is `DRC-AOA-001`, AI Onboarding Assistant Recovery.
   deterministic `E-GH-001`, `E-GH-002` and `E-GH-003` Evidence and has no
   Decision, Recommendation, ROI, Ledger or Business Value authority. Java 21
   passed 128 default tests and PostgreSQL 18.4 passed 30 integration tests.
-- Current gate: Sprint 4.1 - AWS Integration; implementation has not started.
+- D090 - AWS Integration Contract: accepted, complete and frozen with the
+  authorized final-microsecond PostgreSQL precision correction.
+- AWS Integration: certified and complete with one disabled-by-default,
+  read-only AWS SDK adapter for one verified account, one Region and the exact
+  `onboarding-assistant-prod` scope. It produces only deterministic
+  `E-AWS-001` through `E-AWS-004` Evidence and has no Decision,
+  Recommendation, ROI, Ledger, Business Value or cloud-mutation authority.
+  Java 21 passed 139 default tests and PostgreSQL 18.4 passed 31 integration
+  tests.
+- Current gate: Sprint 4.2 - Executive Dashboard.
 - Sprints 2.9 through 2.13: deferred, not completed.
 
 The live state is maintained in:
@@ -100,7 +109,8 @@ the single authorized business value loop under D079.
 - AI explains prepared deterministic context; it does not decide or mutate.
 - React calls REST APIs, not providers.
 - Connectors normalize evidence; they do not calculate ROI or recommend.
-- GitHub is the only certified live connector; D089 remains frozen.
+- GitHub and AWS are the only certified live connectors; D089 and D090 remain
+  frozen.
 - Ledger history is append-only.
 - Estimated value is not realized Business Value.
 - Human authority controls approve, reject, defer and result validation.

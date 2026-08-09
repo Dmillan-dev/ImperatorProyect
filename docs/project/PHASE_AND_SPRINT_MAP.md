@@ -213,8 +213,10 @@ not the Phase 2 route-shell plan.
 | D089 | GitHub Integration Contract | ACCEPTED / COMPLETE |
 | 4.0 | GitHub Integration | CERTIFIED / COMPLETE |
 | 4.0.1 | Documentation Synchronization | COMPLETE |
-| 4.1 | AWS Integration | NEXT |
-| 4.2 | Executive Dashboard | PENDING |
+| D090 | AWS Integration Contract | ACCEPTED / COMPLETE |
+| 4.1 | AWS Integration | CERTIFIED / COMPLETE |
+| 4.1.1 | Documentation Synchronization | COMPLETE |
+| 4.2 | Executive Dashboard | NEXT |
 | 4.3 | Docker Production Runtime | PENDING |
 | 4.4 | Observability | PENDING |
 | 4.5 | Pilot Readiness | PENDING |
@@ -260,12 +262,22 @@ tests passed. D089 is implemented by one read-only GitHub REST adapter and one
 provider-neutral synchronization use case. The run proved deterministic
 `E-GH-001` through `E-GH-003` mapping, replay, conflict protection, bounded
 failure behavior and persistence without route, schema, dependency or business
-authority drift. GitHub Integration is complete; AWS Integration is the
-separate Sprint 4.1 gate and has not started.
+authority drift. GitHub Integration is complete and remains unchanged.
+
+Sprint 4.1 certification executed the full PostgreSQL integration profile on
+2026-08-09 with Java 21 and PostgreSQL 18.4. Flyway migrate, validate and the
+second no-op migrate passed; 139 default tests and 31 PostgreSQL integration
+tests passed. D090 is implemented by one read-only AWS SDK adapter for one
+expected account, one Region and the exact `onboarding-assistant-prod` scope.
+The run proved STS identity verification, deterministic `E-AWS-001` through
+`E-AWS-004` mapping, final-microsecond period anchoring, replay, conflict
+protection and bounded failure behavior without route, schema, Domain,
+Application, Port, GitHub or business-authority drift. AWS Integration is
+complete; Executive Dashboard is the separate Sprint 4.2 gate.
 
 Active Phase 3 execution authority:
 
-- D079 through D089 in `docs/decisions/14_Decision_Log.md`;
+- D079 through D090 in `docs/decisions/14_Decision_Log.md`;
 - `agents/phase3/README.md`.
 
 ## Gate Transition Rule

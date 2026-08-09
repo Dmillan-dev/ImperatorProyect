@@ -11,8 +11,8 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties(GitHubRuntimeProperties.class)
 public final class GitHubRuntimeConfiguration {
 
-    @Bean
-    EvidenceSourcePort evidenceSourcePort(GitHubRuntimeProperties properties) {
+    @Bean("githubEvidenceSourcePort")
+    EvidenceSourcePort githubEvidenceSourcePort(GitHubRuntimeProperties properties) {
         return new GitHubRestAdapter(new GitHubConnectorSettings(
                 properties.enabled(),
                 properties.token(),

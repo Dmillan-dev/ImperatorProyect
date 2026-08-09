@@ -33,7 +33,10 @@ Sprint 3.9.1: COMPLETE
 D089: ACCEPTED / COMPLETE
 Sprint 4.0: CERTIFIED / COMPLETE
 Sprint 4.0.1: COMPLETE
-Sprint 4.1: NEXT
+D090: ACCEPTED / COMPLETE
+Sprint 4.1: CERTIFIED / COMPLETE
+Sprint 4.1.1: COMPLETE
+Sprint 4.2: NEXT
 ```
 
 Exactly one Phase 3 control gate is authorized as `NEXT`.
@@ -65,6 +68,9 @@ Exactly one Phase 3 control gate is authorized as `NEXT`.
 | D089 | `5cfddd4` | Frozen one-repository GitHub REST synchronization, security, Evidence mapping and failure contract | ACCEPTED / COMPLETE |
 | 4.0 | `674b0ba` | Read-only GitHub adapter, provider-neutral synchronization use case, offline contract suite and PostgreSQL certification | CERTIFIED / COMPLETE |
 | 4.0.1 | Current synchronization commit; hash intentionally not self-recorded | Active project-control, agent, security and AI-context synchronization | COMPLETE |
+| D090 | Current certification commit; hash intentionally not self-recorded | Frozen one-account AWS SDK synchronization, security, Evidence mapping and failure contract | ACCEPTED / COMPLETE |
+| 4.1 | Current certification commit; hash intentionally not self-recorded | Read-only AWS adapter, offline protocol suite, deterministic Evidence mapping and PostgreSQL certification | CERTIFIED / COMPLETE |
+| 4.1.1 | Current synchronization commit; hash intentionally not self-recorded | Active project-control, agent, security and AI-context synchronization | COMPLETE |
 
 ### Sprint 3.0
 
@@ -385,14 +391,51 @@ Certification evidence:
 - ASI, DII and Decision Stability: 100%;
 - status: **CERTIFIED / COMPLETE**.
 
+### Sprint 4.1
+
+Primary artifacts:
+
+- D090 in `docs/decisions/14_Decision_Log.md`;
+- `docs/architecture/49_AWS_Integration_Contract.md`;
+- `backend-java/adapters/out/aws`;
+- `backend-java/bootstrap/AwsRuntimeConfiguration.java`;
+- `backend-java/bootstrap/AwsRuntimeProperties.java`;
+- `src/test/java/imperator/adapters/out/aws/AwsSdkEvidenceSourceAdapterTest.java`;
+- `src/test/java/imperator/adapters/out/aws/AwsEvidenceSyncIT.java`;
+- `src/test/java/imperator/adapters/out/aws/AwsContractStubServer.java`.
+
+Certification evidence:
+
+- Java 21, 139 default tests and executable JAR: PASS;
+- PostgreSQL 18.4 and 31 integration tests: PASS under the PostgreSQL 18.x
+  (18.2+) gate;
+- Flyway V1 migrate, validate and second no-op migrate: PASS;
+- exact AWS SDK `2.49.6` read-only API and URL Connection Client surface: PASS;
+- exact account verification, Region, resource scope and finalized-month
+  selection: PASS;
+- deterministic UUIDv5 identity for `E-AWS-001` through `E-AWS-004`: PASS;
+- authorized final-microsecond D090 precision correction and stable PostgreSQL
+  replay: PASS;
+- disabled and invalid configuration produce zero provider calls: PASS;
+- source-identity conflict, pagination, retry, throttling, timeout,
+  access-denied and unsupported-service behavior: PASS;
+- protocol-faithful local AWS stub to existing Evidence import and certified
+  PostgreSQL persistence: PASS;
+- real credentials, raw provider payload and secret leakage: absent;
+- no public route, scheduler, schema, migration or business authority added;
+- D089 GitHub behavior unchanged;
+- ASI and DII: 100%; Decision Stability: PASS;
+- status: **CERTIFIED / COMPLETE**.
+
 ## Next Artifact Boundary
 
-Sprint 4.1 is the sole next gate and may implement AWS Integration only after
-its explicit sprint instruction. It must preserve D086 routes, D087 identity,
-D088 authorization and Evidence visibility, D089 GitHub behavior, existing
-Application business authority, the error envelope and correlation contract.
-Additional connectors, frontend, Docker, observability, pilot behavior, real
-customer data and external exposure remain prohibited.
+Sprint 4.2 is the sole next gate and may implement only the thin, single-case
+Executive Dashboard after its explicit sprint instruction. It must preserve
+D086 routes, D087 identity, D088 authorization and Evidence visibility, D089
+and D090 connector behavior, existing Application business authority, the
+error envelope, correlation contract and append-only Ledger. Additional
+connectors, Docker, observability, pilot behavior, real customer data and
+external exposure remain prohibited.
 
 ## Agent Rule
 

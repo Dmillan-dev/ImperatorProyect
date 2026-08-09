@@ -7,6 +7,7 @@ import imperator.adapters.out.postgresql.PostgresMvpReadModelQueryAdapter;
 import imperator.adapters.out.postgresql.PostgresRecommendationRepository;
 import imperator.adapters.out.postgresql.PostgresTransactionRunner;
 import imperator.adapters.out.github.GitHubRestAdapter;
+import imperator.adapters.out.aws.AwsSdkEvidenceSourceAdapter;
 import imperator.application.appendledgerentry.AppendLedgerEntryUseCase;
 import imperator.application.createdecision.CreateDecisionUseCase;
 import imperator.application.generaterecommendation.GenerateRecommendationUseCase;
@@ -103,11 +104,25 @@ class PostgresRuntimeConfigurationTest {
             );
             assertInstanceOf(
                     GitHubRestAdapter.class,
-                    context.getBean(EvidenceSourcePort.class)
+                    context.getBean("githubEvidenceSourcePort", EvidenceSourcePort.class)
+            );
+            assertInstanceOf(
+                    AwsSdkEvidenceSourceAdapter.class,
+                    context.getBean("awsEvidenceSourcePort", EvidenceSourcePort.class)
             );
             assertInstanceOf(
                     SynchronizeEvidenceUseCase.class,
-                    context.getBean(SynchronizeEvidenceInputPort.class)
+                    context.getBean(
+                            "githubSynchronizeEvidenceInputPort",
+                            SynchronizeEvidenceInputPort.class
+                    )
+            );
+            assertInstanceOf(
+                    SynchronizeEvidenceUseCase.class,
+                    context.getBean(
+                            "awsSynchronizeEvidenceInputPort",
+                            SynchronizeEvidenceInputPort.class
+                    )
             );
             assertInstanceOf(
                     CreateDecisionUseCase.class,

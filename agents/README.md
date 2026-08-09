@@ -66,8 +66,8 @@ Active Phase 3 sprint execution is defined in:
 Phase 3 is named `First Business Value Loop` and is active under D079.
 
 The current authorized gate is maintained in
-`docs/project/PROJECT_STATUS.md`. At the time of this update it is Sprint 4.1:
-AWS Integration.
+`docs/project/PROJECT_STATUS.md`. At the time of this update it is Sprint 4.2:
+Executive Dashboard.
 
 Phase 3 agents may implement only the bounded `DRC-AOA-001` sequence in
 `agents/phase3/README.md`. Sprint 3.0 runtime composition and Sprint 3.1 JSONL
@@ -87,8 +87,10 @@ Resource Server perimeter and JWT-derived actor identity against PostgreSQL
 15-route/four-role matrix, governance separation and Evidence redaction against
 PostgreSQL 18.4. D089 freezes the GitHub contract, and Sprint 4.0 has certified
 the read-only GitHub-to-Evidence synchronization with 128 default tests and 30
-integration tests. The current gate may implement only AWS Integration within
-the existing connector and Evidence contracts.
+integration tests. D090 freezes the AWS contract, and Sprint 4.1 has certified
+the read-only AWS-to-Evidence synchronization with 139 default tests and 31
+integration tests. The current gate may implement only the thin, single-case
+Decision Review and Business Value dashboard over the existing secured API.
 
 The completed Phase 2 foundation contains:
 

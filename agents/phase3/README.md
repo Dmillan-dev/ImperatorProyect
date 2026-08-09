@@ -2,7 +2,7 @@
 
 Status: **ACTIVE**
 
-Current gate: **Sprint 4.1 - AWS Integration**
+Current gate: **Sprint 4.2 - Executive Dashboard**
 
 Authorization: **D079 - Phase 3 Vertical-Slice Acceleration; D085 - MVP Delivery Roadmap Evolution**
 
@@ -44,7 +44,9 @@ Phase 3 behavior must follow:
 - `docs/product/25_MVP_ROI_Slice.md`;
 - `docs/product/27_MVP_Acceptance_Test_Plan.md`;
 - `docs/product/API_SPECIFICATION.md`;
-- `docs/product/DECISION_LEDGER_V2.md`.
+- `docs/product/DECISION_LEDGER_V2.md`;
+- `docs/architecture/48_GitHub_Integration_Contract.md`;
+- `docs/architecture/49_AWS_Integration_Contract.md`.
 
 Persistence remains governed by contracts 39 and 40 and by
 `database/migrations/V1__initial_schema.sql`.
@@ -70,8 +72,8 @@ Locked constraints:
 - one case: `DRC-AOA-001`;
 - one recommendation family: AI model downgrade/change with fallback;
 - JSONL first, one Enterprise Evidence Event per line;
-- one certified GitHub evidence connector; additional connectors only at their
-  explicitly authorized gate;
+- two certified read-only Evidence connectors: GitHub and AWS; additional
+  connectors only at their explicitly authorized gate;
 - PostgreSQL remains the source of truth;
 - AI explains deterministic output and never decides, calculates ROI or mutates;
 - estimated value never becomes realized value before result validation;
@@ -106,8 +108,10 @@ Locked constraints:
 | D089 | GitHub Integration Contract | ACCEPTED / COMPLETE |
 | 4.0 | GitHub Integration | CERTIFIED / COMPLETE |
 | 4.0.1 | Documentation Synchronization | COMPLETE |
-| 4.1 | AWS Integration | NEXT |
-| 4.2 | Executive Dashboard | PENDING |
+| D090 | AWS Integration Contract | ACCEPTED / COMPLETE |
+| 4.1 | AWS Integration | CERTIFIED / COMPLETE |
+| 4.1.1 | Documentation Synchronization | COMPLETE |
+| 4.2 | Executive Dashboard | NEXT |
 | 4.3 | Docker Production Runtime | PENDING |
 | 4.4 | Observability | PENDING |
 | 4.5 | Pilot Readiness | PENDING |
@@ -528,6 +532,37 @@ Certification evidence:
 
 Sprint 4.0.1 synchronized active control, agent, security and AI-context
 documentation with this certified state and marked Sprint 4.1 as the sole next
+gate. It changed no Java, SQL, Flyway, tests, dependencies, frozen contracts or
+Decision Log entries.
+
+## Sprint 4.1 - AWS Integration
+
+Sprint 4.1 is certified and complete under D090.
+
+Certification evidence:
+
+- one disabled-by-default, read-only AWS SDK adapter for one expected account,
+  one Region and the exact `onboarding-assistant-prod` scope;
+- AWS SDK `DefaultCredentialsProvider` with no IMPERATOR credential setting,
+  persistence or logging, plus exact STS account verification;
+- exact `IMP-214` correlation and deterministic `E-AWS-001` through
+  `E-AWS-004` Evidence mapping;
+- latest fully closed UTC month selection with the authorized final
+  PostgreSQL-representable microsecond anchor;
+- stable replay, source-identity conflict protection, serial pagination,
+  bounded retries, throttling, timeouts and fail-closed provider outcomes;
+- no AWS route, scheduler, UI, cloud mutation, Decision, Recommendation, ROI,
+  Ledger or Business Value authority;
+- Java 21, 139 default tests and executable JAR: PASS;
+- PostgreSQL 18.4, Flyway migrate/validate/no-op migrate and 31 integration
+  tests: PASS under the PostgreSQL 18.x (18.2+) certification gate;
+- Domain Isolation Index and Architectural Stability Index: 100%;
+- Decision Stability: PASS with the authorized D090 precision correction;
+- no Domain, Application, Port, REST, schema or Flyway migration change;
+- status: **CERTIFIED / COMPLETE**.
+
+Sprint 4.1.1 synchronized active control, agent, security and AI-context
+documentation with this certified state and marked Sprint 4.2 as the sole next
 gate. It changed no Java, SQL, Flyway, tests, dependencies, frozen contracts or
 Decision Log entries.
 

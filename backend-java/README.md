@@ -28,6 +28,8 @@ Primary Java domain and application runtime for IMPERATOR.
 - D089 provider-neutral synchronization orchestration and the read-only GitHub
   REST outbound adapter under `imperator.application.synchronizeevidence` and
   `imperator.adapters.out.github`.
+- D090 read-only AWS SDK outbound adapter under `imperator.adapters.out.aws`,
+  with independently named GitHub and AWS runtime compositions.
 
 Current Phase 3 foundation:
 - Pure Java domain foundation exists.
@@ -70,7 +72,10 @@ Current Phase 3 foundation:
 - Sprint 4.0 synchronizes the bounded GitHub source into deterministic
   `E-GH-001`, `E-GH-002` and `E-GH-003` Evidence without adding a route,
   scheduler, schema object or business authority.
-- Java 21 verification passes 128 default tests and 30 PostgreSQL integration
+- Sprint 4.1 synchronizes one bounded AWS account and Region into deterministic
+  `E-AWS-001` through `E-AWS-004` Evidence through STS, Cost Explorer, Resource
+  Groups Tagging API and CloudWatch read operations only.
+- Java 21 verification passes 139 default tests and 31 PostgreSQL integration
   tests against PostgreSQL 18.4 under the PostgreSQL 18.x (18.2+) gate.
 - No JPA.
 
@@ -116,6 +121,18 @@ fail closed before any network request. The token is used only by the outbound
 adapter and is never persisted, logged or returned. Production access is fixed
 to the versioned GitHub.com REST API and remains read-only.
 
+AWS synchronization uses external Spring configuration:
+
+- `IMPERATOR_AWS_ENABLED=true`
+- `IMPERATOR_AWS_EXPECTED_ACCOUNT_ID`
+- `IMPERATOR_AWS_REGION`
+
+The connector is disabled by default and fails closed before provider calls
+when its account or Region configuration is invalid. Credentials are resolved
+only through the AWS SDK `DefaultCredentialsProvider`; IMPERATOR does not
+accept, persist or log AWS secret settings. STS verifies the exact configured
+account before the read-only cost, resource-tag and metric calls proceed.
+
 Deterministic Recommendation persistence completes before the optional
 `ExplanationProvider` invocation. The runtime supplies an unavailable provider
 by default and allows a replaceable provider adapter to override it. Provider
@@ -155,10 +172,10 @@ is found.
 
 ## Authorized Current Use
 
-Sprints 3.0 through 4.0 are complete at their documented gates. The Java 21
+Sprints 3.0 through 4.1 are complete at their documented gates. The Java 21
 Maven build is certified through GitHub Actions, and the complete Functional
 REST security runtime is certified against PostgreSQL 18.4. D084 is discharged;
-D085 through D089 are accepted. Sprint 4.1 - AWS Integration is the sole next
-gate and has not started. Any connector work must preserve D086 routes, D087
-identity, D088 authorization, Evidence redaction and existing business
-authority.
+D085 through D090 are accepted. Sprint 4.2 - Executive Dashboard is the sole
+next gate. It must consume the existing secured API and preserve D086 routes,
+D087 identity, D088 authorization, connector isolation, Evidence redaction and
+existing business authority.

@@ -25,7 +25,7 @@ current execution authority.
 - `docs/project/README.md`
 - `docs/project/PROJECT_STATUS.md`
 - `docs/project/PHASE_AND_SPRINT_MAP.md`
-- D085 through D089 in `docs/decisions/14_Decision_Log.md`
+- D085 through D090 in `docs/decisions/14_Decision_Log.md`
 - `agents/phase3/README.md`
 - `docs/architecture/26_Security_Data_Governance_Threat_Model.md`
 - `docs/product/28_Identity_Access_Approval_Model.md`
@@ -35,6 +35,7 @@ current execution authority.
 - `docs/architecture/46_JWT_Authentication_Contract.md`
 - `docs/architecture/47_RBAC_Authorization_Contract.md`
 - `docs/architecture/48_GitHub_Integration_Contract.md`
+- `docs/architecture/49_AWS_Integration_Contract.md`
 
 Load connector contracts only during an authorized connector or
 connector-security task. Use `agents/phase2/README.md` only as historical
@@ -55,7 +56,11 @@ Sprint 3.8.0 - JWT Authentication Contract Freeze: COMPLETE
 -> Sprint 4.0 - GitHub Integration: CERTIFIED / COMPLETE
 -> Sprint 4.0 PostgreSQL Certification: PASS
 -> Sprint 4.0.1 - Documentation Synchronization: COMPLETE
--> Sprint 4.1 - AWS Integration: NEXT
+-> Sprint 4.1.0 - AWS Integration Contract Freeze: COMPLETE
+-> Sprint 4.1 - AWS Integration: CERTIFIED / COMPLETE
+-> Sprint 4.1 PostgreSQL Certification: PASS
+-> Sprint 4.1.1 - Documentation Synchronization: COMPLETE
+-> Sprint 4.2 - Executive Dashboard: NEXT
 ```
 
 Sprint 3.8 answers only who the caller is. Sprint 3.9 answers what that caller
@@ -67,14 +72,22 @@ Flyway migrate/validate/no-op migrate and 30 integration tests. D089 confines
 GitHub to one read-only fine-grained token, one organization, one repository
 and sanitized canonical Evidence. Provider text remains untrusted, the token
 never enters persistence or responses, and D088 visibility remains unchanged.
-Sprint 4.1 is the sole current gate and may introduce only the separately
-authorized AWS integration while preserving these security boundaries.
+Sprint 4.1 certification passed Java 21, 139 default tests, PostgreSQL 18.4,
+Flyway migrate/validate/no-op migrate and 31 integration tests. D090 confines
+AWS to SDK default credentials, one verified account, one Region, one tagged
+workload and the exact read-only STS, cost, resource-tag and metric surface.
+Credentials and raw provider payloads never enter configuration, Evidence,
+persistence or logs, and D088 visibility remains unchanged. Sprint 4.2 is the
+sole current gate and must preserve these security boundaries while exposing
+only the already authorized Decision Review and Business Value experience.
 
 For connector work, also load
 `docs/architecture/28_Per_Connector_MVP_Contracts.md`,
 `docs/architecture/CONNECTOR_FRAMEWORK.md` and the active connector contract.
 The certified GitHub adapter remains least-privilege and read-only and cannot
-be broadened while implementing a later connector.
+be broadened by later work. The certified AWS adapter remains read-only and
+cannot gain IAM mutation, cross-account, secret-storage or public-trigger
+authority.
 
 ## Certified Security Guardrails
 
