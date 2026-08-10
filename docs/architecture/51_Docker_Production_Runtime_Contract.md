@@ -10,6 +10,16 @@ Owning gate: **Sprint 4.3.0 - Docker Production Runtime Contract Freeze**
 
 Implementation gate after acceptance: **Sprint 4.3 - Docker Production Runtime Implementation**
 
+Authorized contract fix (2026-08-10): Docker bridge networks configured with
+`internal: true` have no connection to host interfaces, so a frontend attached
+only to `application-internal` cannot satisfy the separately frozen loopback
+publication requirement. Add the frontend-only, non-internal
+`frontend-ingress` bridge. It exists solely for
+`127.0.0.1:${IMPERATOR_HTTP_PORT:-3000} -> frontend:3000`; the frontend still
+uses `application-internal` for backend transport, and the existing
+`provider-egress` remains backend-only. This correction changes no product,
+API, identity, provider or deployment behavior.
+
 ## 1. Purpose
 
 This document freezes the implementation-grade contract for packaging the
@@ -265,15 +275,22 @@ These are safety ceilings, not performance guarantees.
 
 ## 10. Network And Exposure Contract
 
-Exactly three user-defined bridge networks are authorized:
+Exactly four user-defined bridge networks are authorized:
 
 | Network | Members | Egress | Purpose |
 |---|---|---|---|
 | `application-internal` | frontend, backend | No | Frontend-to-backend transport |
 | `data-internal` | backend, postgres, database jobs | No | Database isolation |
 | `provider-egress` | backend only | Yes | HTTPS JWKS and optional providers |
+| `frontend-ingress` | frontend only | Yes | Loopback host publication |
 
 The first two use `internal: true`. `provider-egress` publishes no port.
+`frontend-ingress` is a standard bridge because Docker cannot publish a port
+from a container attached only to internal networks. It binds only the frozen
+frontend loopback port, carries no frontend-to-backend traffic and exposes no
+other service. The frontend receives no runtime secret or provider credential;
+its application behavior continues to address only the backend over
+`application-internal`.
 
 Host exposure is exactly:
 

@@ -33,3 +33,6 @@ __pycache__/
 .venv/
 venv/
 
+# Docker Production Runtime local material
+infra/docker/secrets/*
+!infra/docker/secrets/README.md

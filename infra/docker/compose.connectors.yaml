@@ -1,0 +1,20 @@
+services:
+  backend:
+    environment:
+      AWS_PROFILE: ${IMPERATOR_AWS_PROFILE:-default}
+      AWS_SHARED_CREDENTIALS_FILE: /run/secrets/aws-credentials
+      IMPERATOR_AWS_ENABLED: "true"
+      IMPERATOR_AWS_EXPECTED_ACCOUNT_ID: ${IMPERATOR_AWS_EXPECTED_ACCOUNT_ID:?Set the frozen AWS account ID}
+      IMPERATOR_AWS_REGION: ${IMPERATOR_AWS_REGION:?Set the frozen AWS Region}
+      IMPERATOR_GITHUB_ENABLED: "true"
+      IMPERATOR_GITHUB_ORGANIZATION: ${IMPERATOR_GITHUB_ORGANIZATION:?Set the frozen GitHub organization}
+      IMPERATOR_GITHUB_REPOSITORY: ${IMPERATOR_GITHUB_REPOSITORY:?Set the frozen GitHub repository}
+    secrets:
+      - github-token
+      - aws-credentials
+
+secrets:
+  github-token:
+    file: ./secrets/github-token
+  aws-credentials:
+    file: ./secrets/aws-credentials

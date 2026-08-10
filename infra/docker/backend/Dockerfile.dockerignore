@@ -1,0 +1,11 @@
+**
+!.mvn/
+!.mvn/**
+!mvnw
+!pom.xml
+!backend-java/
+!backend-java/**
+!infra/
+!infra/docker/
+!infra/docker/backend/
+!infra/docker/backend/entrypoint.sh

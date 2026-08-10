@@ -2,8 +2,8 @@
 
 ## Purpose
 
-Reserved local infrastructure and future operational foundation for running
-IMPERATOR.
+Owns the local infrastructure and operational foundation for running
+IMPERATOR without allowing infrastructure to drive the domain.
 
 ## Who Uses This Folder
 
@@ -13,14 +13,12 @@ IMPERATOR.
 
 ## Contains
 
-- Future Docker Compose assets.
+- The D092 Docker Production Runtime under `docker/`.
 - Future observability configuration.
 - Future local infrastructure files explicitly authorized by sprint scope.
 
 Current status:
-- Documentation boundary only.
-- No Dockerfiles.
-- No docker-compose file.
+- Docker Production Runtime implemented under the Sprint 4.3 boundary.
 - No Kubernetes manifests.
 - No Terraform modules.
 - No runtime secrets.
@@ -33,7 +31,8 @@ Current status:
 - Production secrets.
 - Kubernetes or Terraform during MVP Phase 2 unless explicitly reauthorized.
 
-## Authorized Next Use
+## Runtime Boundary
 
-A later sprint may add Docker Compose only when the platform foundation has
-code modules to run.
+`docker/` may package only the certified backend, frontend and PostgreSQL
+runtime. Observability remains a separate Sprint 4.4 gate. Kubernetes,
+Terraform, cloud deployment and production secrets remain unauthorized.

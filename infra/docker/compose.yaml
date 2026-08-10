@@ -1,0 +1,311 @@
+name: imperator
+
+services:
+  postgres:
+    image: postgres:18.4-bookworm@sha256:882236b897e39051d2368c5ccc6cda944904723506b2dfc97f2a8f5bc9afa382
+    platform: linux/amd64
+    environment:
+      POSTGRES_DB: imperator
+      POSTGRES_INITDB_ARGS: --auth-host=scram-sha-256
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres-owner-password
+      POSTGRES_USER: imperator_owner
+    secrets:
+      - postgres-owner-password
+    volumes:
+      - postgres-data:/var/lib/postgresql
+    networks:
+      - data-internal
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready --host=127.0.0.1 --username=imperator_owner --dbname=imperator
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
+    restart: unless-stopped
+    stop_grace_period: 30s
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+      - /var/run/postgresql:size=16m,uid=999,gid=999,mode=0775
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - DAC_OVERRIDE
+      - FOWNER
+      - SETGID
+      - SETUID
+    security_opt:
+      - no-new-privileges:true
+    cpus: 1.0
+    mem_limit: 1024m
+    pids_limit: 200
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+
+  flyway-migrate:
+    image: flyway/flyway:13.0.0@sha256:db6195c21e90872063ff257ec38edcb8d3c77259b25a7a8fee67189511079511
+    platform: linux/amd64
+    entrypoint:
+      - /bin/sh
+      - /opt/imperator/entrypoint.sh
+    command:
+      - migrate
+    environment:
+      FLYWAY_CLEAN_DISABLED: "true"
+      FLYWAY_LOCATIONS: filesystem:/flyway/sql
+      FLYWAY_URL: jdbc:postgresql://postgres:5432/imperator
+      FLYWAY_USER: imperator_owner
+      FLYWAY_VALIDATE_MIGRATION_NAMING: "true"
+    secrets:
+      - postgres-owner-password
+    volumes:
+      - type: bind
+        source: ../../database/migrations
+        target: /flyway/sql
+        read_only: true
+      - type: bind
+        source: ./flyway/entrypoint.sh
+        target: /opt/imperator/entrypoint.sh
+        read_only: true
+    networks:
+      - data-internal
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: "no"
+    read_only: true
+    tmpfs:
+      - /tmp:size=32m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    cpus: 0.5
+    mem_limit: 512m
+    pids_limit: 100
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+
+  flyway-validate:
+    image: flyway/flyway:13.0.0@sha256:db6195c21e90872063ff257ec38edcb8d3c77259b25a7a8fee67189511079511
+    platform: linux/amd64
+    entrypoint:
+      - /bin/sh
+      - /opt/imperator/entrypoint.sh
+    command:
+      - validate
+    environment:
+      FLYWAY_CLEAN_DISABLED: "true"
+      FLYWAY_LOCATIONS: filesystem:/flyway/sql
+      FLYWAY_URL: jdbc:postgresql://postgres:5432/imperator
+      FLYWAY_USER: imperator_owner
+      FLYWAY_VALIDATE_MIGRATION_NAMING: "true"
+    secrets:
+      - postgres-owner-password
+    volumes:
+      - type: bind
+        source: ../../database/migrations
+        target: /flyway/sql
+        read_only: true
+      - type: bind
+        source: ./flyway/entrypoint.sh
+        target: /opt/imperator/entrypoint.sh
+        read_only: true
+    networks:
+      - data-internal
+    depends_on:
+      flyway-migrate:
+        condition: service_completed_successfully
+    restart: "no"
+    read_only: true
+    tmpfs:
+      - /tmp:size=32m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    cpus: 0.5
+    mem_limit: 512m
+    pids_limit: 100
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+
+  postgres-permissions:
+    image: postgres:18.4-bookworm@sha256:882236b897e39051d2368c5ccc6cda944904723506b2dfc97f2a8f5bc9afa382
+    platform: linux/amd64
+    user: "999:999"
+    entrypoint:
+      - /bin/sh
+      - /opt/imperator/provision-app-role.sh
+    secrets:
+      - postgres-owner-password
+      - postgres-app-password
+    volumes:
+      - type: bind
+        source: ./postgresql/provision-app-role.sh
+        target: /opt/imperator/provision-app-role.sh
+        read_only: true
+    networks:
+      - data-internal
+    depends_on:
+      flyway-validate:
+        condition: service_completed_successfully
+    restart: "no"
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    cpus: 0.5
+    mem_limit: 512m
+    pids_limit: 100
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+
+  backend:
+    image: imperator/backend:${IMPERATOR_IMAGE_TAG:?Set IMPERATOR_IMAGE_TAG to the current Git SHA}
+    platform: linux/amd64
+    build:
+      context: ../..
+      dockerfile: infra/docker/backend/Dockerfile
+      args:
+        VCS_REF: ${IMPERATOR_IMAGE_TAG:?Set IMPERATOR_IMAGE_TAG to the current Git SHA}
+    environment:
+      IMPERATOR_AWS_ENABLED: "false"
+      IMPERATOR_GITHUB_ENABLED: "false"
+      IMPERATOR_POSTGRESQL_ENABLED: "true"
+      IMPERATOR_POSTGRESQL_URL: jdbc:postgresql://postgres:5432/imperator
+      IMPERATOR_POSTGRESQL_USERNAME: imperator_app
+      JAVA_TOOL_OPTIONS: -XX:MaxRAMPercentage=75.0 -Djava.io.tmpdir=/tmp
+      SERVER_PORT: "8080"
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_AUDIENCES: imperator-api
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI: ${IMPERATOR_JWT_ISSUER_URI:?Set an HTTPS D087 issuer URI}
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK_SET_URI: ${IMPERATOR_JWT_JWK_SET_URI:?Set an HTTPS D087 JWKS URI}
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWS_ALGORITHMS: RS256
+    secrets:
+      - postgres-app-password
+    networks:
+      - application-internal
+      - data-internal
+      - provider-egress
+    depends_on:
+      postgres-permissions:
+        condition: service_completed_successfully
+    expose:
+      - "8080"
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - bash -ec 'exec 3<>/dev/tcp/127.0.0.1/8080'
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+    restart: unless-stopped
+    stop_grace_period: 30s
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    cpus: 1.0
+    mem_limit: 1024m
+    pids_limit: 160
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+
+  frontend:
+    image: imperator/frontend:${IMPERATOR_IMAGE_TAG:?Set IMPERATOR_IMAGE_TAG to the current Git SHA}
+    platform: linux/amd64
+    build:
+      context: ../..
+      dockerfile: infra/docker/frontend/Dockerfile
+      args:
+        VCS_REF: ${IMPERATOR_IMAGE_TAG:?Set IMPERATOR_IMAGE_TAG to the current Git SHA}
+    environment:
+      HOSTNAME: 0.0.0.0
+      IMPERATOR_API_ORIGIN: http://backend:8080
+      IMPERATOR_RUNTIME_PROFILE: docker-compose
+      NEXT_TELEMETRY_DISABLED: "1"
+      NODE_ENV: production
+      PORT: "3000"
+    networks:
+      - application-internal
+      - frontend-ingress
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - 127.0.0.1:${IMPERATOR_HTTP_PORT:-3000}:3000
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - >-
+          fetch('http://127.0.0.1:3000/').then(response => {
+            if (!response.ok) process.exit(1)
+          }).catch(() => process.exit(1))
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+    restart: unless-stopped
+    stop_grace_period: 30s
+    read_only: true
+    tmpfs:
+      - /tmp:size=32m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    cpus: 0.5
+    mem_limit: 512m
+    pids_limit: 100
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+
+networks:
+  application-internal:
+    internal: true
+  data-internal:
+    internal: true
+  provider-egress: {}
+  frontend-ingress:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.host_binding_ipv4: 127.0.0.1
+
+volumes:
+  postgres-data:
+
+secrets:
+  postgres-owner-password:
+    file: ./secrets/postgres-owner-password
+  postgres-app-password:
+    file: ./secrets/postgres-app-password
