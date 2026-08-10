@@ -22,6 +22,16 @@ FROM node:24.18.0-bookworm-slim@sha256:6f7b03f7c2c8e2e784dcf9295400527b9b1270fd3
 
 ARG VCS_REF
 
+RUN set -eu; \
+    npm pack tar@7.5.19 --pack-destination /tmp --ignore-scripts --loglevel=error >/tmp/npm-pack-name; \
+    rm -rf /usr/local/lib/node_modules/npm/node_modules/tar; \
+    mkdir -p /usr/local/lib/node_modules/npm/node_modules/tar; \
+    tar -xzf /tmp/tar-7.5.19.tgz \
+        -C /usr/local/lib/node_modules/npm/node_modules/tar \
+        --strip-components=1; \
+    rm -f /tmp/tar-7.5.19.tgz /tmp/npm-pack-name; \
+    node -e "const p=require('/usr/local/lib/node_modules/npm/node_modules/tar/package.json'); if (p.version !== '7.5.19') throw new Error('unexpected tar version '+p.version)"
+
 LABEL org.opencontainers.image.title="IMPERATOR Decision Review Workspace" \
       org.opencontainers.image.description="IMPERATOR certified Next.js runtime" \
       org.opencontainers.image.source="https://github.com/imperator/imperator" \
