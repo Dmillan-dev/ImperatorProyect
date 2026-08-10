@@ -25,7 +25,7 @@ current execution authority.
 - `docs/project/README.md`
 - `docs/project/PROJECT_STATUS.md`
 - `docs/project/PHASE_AND_SPRINT_MAP.md`
-- D085 through D090 in `docs/decisions/14_Decision_Log.md`
+- D085 through D091 in `docs/decisions/14_Decision_Log.md`
 - `agents/phase3/README.md`
 - `docs/architecture/26_Security_Data_Governance_Threat_Model.md`
 - `docs/product/28_Identity_Access_Approval_Model.md`
@@ -36,6 +36,7 @@ current execution authority.
 - `docs/architecture/47_RBAC_Authorization_Contract.md`
 - `docs/architecture/48_GitHub_Integration_Contract.md`
 - `docs/architecture/49_AWS_Integration_Contract.md`
+- `docs/architecture/50_Executive_Dashboard_Contract.md`
 
 Load connector contracts only during an authorized connector or
 connector-security task. Use `agents/phase2/README.md` only as historical
@@ -60,7 +61,11 @@ Sprint 3.8.0 - JWT Authentication Contract Freeze: COMPLETE
 -> Sprint 4.1 - AWS Integration: CERTIFIED / COMPLETE
 -> Sprint 4.1 PostgreSQL Certification: PASS
 -> Sprint 4.1.1 - Documentation Synchronization: COMPLETE
--> Sprint 4.2 - Executive Dashboard: NEXT
+-> Sprint 4.2.0 - Decision Review Workspace Contract Freeze: COMPLETE
+-> Sprint 4.2 - Decision Review Workspace: CERTIFIED / COMPLETE
+-> Sprint 4.2 Backend/PostgreSQL Regression: PASS
+-> Sprint 4.2.1 - Documentation Synchronization: COMPLETE
+-> Sprint 4.3 - Docker Production Runtime: NEXT
 ```
 
 Sprint 3.8 answers only who the caller is. Sprint 3.9 answers what that caller
@@ -77,9 +82,13 @@ Flyway migrate/validate/no-op migrate and 31 integration tests. D090 confines
 AWS to SDK default credentials, one verified account, one Region, one tagged
 workload and the exact read-only STS, cost, resource-tag and metric surface.
 Credentials and raw provider payloads never enter configuration, Evidence,
-persistence or logs, and D088 visibility remains unchanged. Sprint 4.2 is the
-sole current gate and must preserve these security boundaries while exposing
-only the already authorized Decision Review and Business Value experience.
+persistence or logs, and D088 visibility remains unchanged. Sprint 4.2
+certified the D091 Decision Review Workspace with a volatile in-memory token,
+same-origin API transport, strict response validation, bounded responses,
+Evidence redaction and role-aware presentation. It added no login, identity
+provider, browser persistence or frontend authorization authority. Sprint 4.3
+is the sole current gate and must preserve all these boundaries while packaging
+only the already certified runtime.
 
 For connector work, also load
 `docs/architecture/28_Per_Connector_MVP_Contracts.md`,

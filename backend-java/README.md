@@ -172,10 +172,13 @@ is found.
 
 ## Authorized Current Use
 
-Sprints 3.0 through 4.1 are complete at their documented gates. The Java 21
+Sprints 3.0 through 4.2 are complete at their documented gates. The Java 21
 Maven build is certified through GitHub Actions, and the complete Functional
 REST security runtime is certified against PostgreSQL 18.4. D084 is discharged;
-D085 through D090 are accepted. Sprint 4.2 - Executive Dashboard is the sole
-next gate. It must consume the existing secured API and preserve D086 routes,
-D087 identity, D088 authorization, connector isolation, Evidence redaction and
-existing business authority.
+D085 through D091 are accepted. Sprint 4.2 consumed the existing secured API
+without changing this module and its final regression passed 139 default tests
+and 31 PostgreSQL 18.4 integration tests. Sprint 4.3 - Docker Production Runtime
+is the sole next gate. It may package the certified executable JAR but must not
+change D086 routes, D087 identity, D088 authorization, connector isolation,
+Evidence redaction or existing business authority without an explicit contract
+fix.

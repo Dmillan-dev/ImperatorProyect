@@ -61,8 +61,13 @@ D090 freezes the AWS integration contract. Sprint 4.1 is certified and
 complete: Java 21 passed 139 default tests, PostgreSQL 18.4 and Flyway passed
 the full runtime gate, and 31 integration tests proved the read-only
 AWS-to-Evidence flow, exact account and resource scope, deterministic replay
-and credential isolation. Sprint 4.2 - Executive Dashboard is the sole next
-gate.
+and credential isolation. D091 freezes the single-case Decision Review
+Workspace contract. Sprint 4.2 is certified and complete: Node.js 24.19.0,
+npm 11.17.0, format, lint, strict TypeScript, 35 frontend tests, contractual
+coverage, production build, dependency audit and Playwright acceptance passed;
+the unchanged Java backend also passed 139 default tests and 31 PostgreSQL 18.4
+integration tests. Sprint 4.2.1 documentation synchronization is complete.
+Sprint 4.3 - Docker Production Runtime is the sole next gate.
 
 Agents may create runnable implementation only inside the explicitly
 authorized sprint/module. They must use `agents/phase3/README.md`, the frozen

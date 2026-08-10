@@ -216,8 +216,10 @@ not the Phase 2 route-shell plan.
 | D090 | AWS Integration Contract | ACCEPTED / COMPLETE |
 | 4.1 | AWS Integration | CERTIFIED / COMPLETE |
 | 4.1.1 | Documentation Synchronization | COMPLETE |
-| 4.2 | Executive Dashboard | NEXT |
-| 4.3 | Docker Production Runtime | PENDING |
+| D091 | Decision Review Workspace Contract | ACCEPTED / COMPLETE |
+| 4.2 | Executive Dashboard / Decision Review Workspace | CERTIFIED / COMPLETE |
+| 4.2.1 | Documentation Synchronization | COMPLETE |
+| 4.3 | Docker Production Runtime | NEXT |
 | 4.4 | Observability | PENDING |
 | 4.5 | Pilot Readiness | PENDING |
 | 5.0 | MVP Release | PENDING |
@@ -273,11 +275,24 @@ The run proved STS identity verification, deterministic `E-AWS-001` through
 `E-AWS-004` mapping, final-microsecond period anchoring, replay, conflict
 protection and bounded failure behavior without route, schema, Domain,
 Application, Port, GitHub or business-authority drift. AWS Integration is
-complete; Executive Dashboard is the separate Sprint 4.2 gate.
+complete.
+
+Sprint 4.2 certification completed on 2026-08-09 under D091. Node.js 24.19.0,
+npm 11.17.0, format, lint, strict TypeScript, 35 unit/component tests,
+contractual coverage, dependency audit and the Next.js production build
+passed. Playwright verified the single `DRC-AOA-001` Decision Review Workspace
+at 1440x900, 1024x768 and 390x844, including all four role presentations,
+Confidential Evidence redaction, Business Value not-ready behavior, isolated
+partial failures, timeout handling and volatile-session clearing on `401`.
+The unchanged backend passed 139 default tests and 31 PostgreSQL 18.4
+integration tests with Flyway migrate, validate and no-op migrate. No Java,
+SQL, Flyway, route, schema, connector, security contract, Domain, Application,
+Port or prior decision changed. Sprint 4.2 is complete; Docker Production
+Runtime is the separate Sprint 4.3 gate.
 
 Active Phase 3 execution authority:
 
-- D079 through D090 in `docs/decisions/14_Decision_Log.md`;
+- D079 through D091 in `docs/decisions/14_Decision_Log.md`;
 - `agents/phase3/README.md`.
 
 ## Gate Transition Rule

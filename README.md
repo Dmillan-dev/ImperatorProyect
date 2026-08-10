@@ -2,7 +2,7 @@
 
 Status: **Phase 3 First Business Value Loop active**
 
-Current gate: **Sprint 4.2 - Executive Dashboard**
+Current gate: **Sprint 4.3 - Docker Production Runtime**
 
 IMPERATOR is an Operating System for Operational Intelligence and an Enterprise
 Decision Intelligence Platform. The MVP proves one evidence-backed decision,
@@ -72,9 +72,23 @@ The Java backend currently contains:
 - certified PostgreSQL 18.x runtime behavior, most recently PostgreSQL 18.4,
   with 139 default tests and 31 integration tests passing.
 
+The frontend currently contains:
+
+- the certified D091 single-case `DRC-AOA-001` Decision Review Workspace;
+- Node.js 24 LTS, npm 11, Next.js 16.2, React 19.2, strict TypeScript and
+  Tailwind CSS 4.3 with an exact npm lockfile;
+- volatile in-memory JWT handling, same-origin `/api/v1/**` transport and
+  strict runtime response validation;
+- role-aware presentation for ADMIN, PLATFORM_ENGINEER, FINANCE and AUDITOR
+  without replacing backend authorization or Application governance;
+- Decision, Recommendation, ROI, Evidence, Timeline, Ledger and Business Value
+  views with isolated loading, empty, redacted, not-ready and failure states;
+- five existing governance command forms with confirmation and idempotency;
+- 35 passing unit/component tests, certified coverage, a production build and
+  Playwright acceptance across desktop, compact and mobile viewports.
+
 The repository does not yet contain:
 
-- React application runtime;
 - additional live connectors beyond GitHub and AWS;
 - a live vendor AI-provider adapter or real model calls;
 - Docker local runtime;
@@ -91,7 +105,7 @@ backend-python/  Reserved Python provider boundary
 database/        Versioned database migrations
 demos/           Non-production static product demonstrations
 docs/            Product, architecture, decisions and project control
-frontend/        Reserved React frontend boundary
+frontend/        Certified Decision Review Workspace frontend
 infra/           Reserved runtime infrastructure
 proto/           Internal contract artifacts
 samples/         Approved validation samples
@@ -149,12 +163,13 @@ Evidence
 Phase 2 is complete under D079. Phase 3 is active and may implement only the
 single currently authorized `DRC-AOA-001` business-value increment.
 
-Sprint 4.1 AWS Integration is certified and complete under D090. Its Java 21
-PostgreSQL integration-profile run passed Flyway migrate, validate and second
-no-op migrate, 139 default tests and 31 integration tests against PostgreSQL
-18.4. AWS contributes only normalized `E-AWS-001` through `E-AWS-004` Evidence
-through a bounded read-only adapter; GitHub behavior remains unchanged. Sprint
-4.2 Executive Dashboard is the sole next gate, and the API remains non-pilot
+Sprint 4.2 is certified and complete under D091. The implemented product
+surface is the thin, single-case Decision Review Workspace, not a broad
+Executive Dashboard. Frontend format, lint, strict type checking, 35 tests,
+coverage, production build, dependency audit and Playwright acceptance passed;
+the unchanged backend also passed 139 default tests and 31 PostgreSQL 18.4
+integration tests with Flyway migrate, validate and no-op migrate. Sprint 4.3
+Docker Production Runtime is the sole next gate. The system remains non-pilot
 and local-only until the later readiness gates pass.
 
 ## Documentation Rules

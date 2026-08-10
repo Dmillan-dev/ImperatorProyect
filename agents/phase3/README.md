@@ -2,9 +2,9 @@
 
 Status: **ACTIVE**
 
-Current gate: **Sprint 4.2 - Executive Dashboard**
+Current gate: **Sprint 4.3 - Docker Production Runtime**
 
-Authorization: **D079 - Phase 3 Vertical-Slice Acceleration; D085 - MVP Delivery Roadmap Evolution**
+Authorization: **D079 - Phase 3 Vertical-Slice Acceleration; D085 - MVP Delivery Roadmap Evolution; D091 - Decision Review Workspace Contract**
 
 ## Purpose
 
@@ -46,7 +46,8 @@ Phase 3 behavior must follow:
 - `docs/product/API_SPECIFICATION.md`;
 - `docs/product/DECISION_LEDGER_V2.md`;
 - `docs/architecture/48_GitHub_Integration_Contract.md`;
-- `docs/architecture/49_AWS_Integration_Contract.md`.
+- `docs/architecture/49_AWS_Integration_Contract.md`;
+- `docs/architecture/50_Executive_Dashboard_Contract.md`.
 
 Persistence remains governed by contracts 39 and 40 and by
 `database/migrations/V1__initial_schema.sql`.
@@ -111,8 +112,10 @@ Locked constraints:
 | D090 | AWS Integration Contract | ACCEPTED / COMPLETE |
 | 4.1 | AWS Integration | CERTIFIED / COMPLETE |
 | 4.1.1 | Documentation Synchronization | COMPLETE |
-| 4.2 | Executive Dashboard | NEXT |
-| 4.3 | Docker Production Runtime | PENDING |
+| D091 | Decision Review Workspace Contract | ACCEPTED / COMPLETE |
+| 4.2 | Executive Dashboard / Decision Review Workspace | CERTIFIED / COMPLETE |
+| 4.2.1 | Documentation Synchronization | COMPLETE |
+| 4.3 | Docker Production Runtime | NEXT |
 | 4.4 | Observability | PENDING |
 | 4.5 | Pilot Readiness | PENDING |
 | 5.0 | MVP Release | PENDING |
@@ -566,6 +569,39 @@ documentation with this certified state and marked Sprint 4.2 as the sole next
 gate. It changed no Java, SQL, Flyway, tests, dependencies, frozen contracts or
 Decision Log entries.
 
+## Sprint 4.2 - Decision Review Workspace
+
+Sprint 4.2 is certified and complete under D091. `Executive Dashboard` remains
+the D085 roadmap label; the implemented MVP surface is the single-case
+`DRC-AOA-001` Decision Review Workspace.
+
+Certification evidence:
+
+- contract-freeze commit `220c93b` and implementation commit `abf10a9`;
+- Node.js 24.19.0, npm 11.17.0 and exact lockfile: PASS;
+- format, lint with zero warnings and strict TypeScript: PASS;
+- 35 frontend unit/component tests: PASS;
+- D091 coverage thresholds: PASS with 95.51% statements, 78.49% branches,
+  95.45% functions and 97.84% lines;
+- Next.js 16.2.12 production build and npm audit with zero vulnerabilities:
+  PASS;
+- Playwright Chromium acceptance across desktop, compact and mobile: PASS;
+- all four role presentations, Evidence redaction, not-ready Business Value,
+  partial failures, timeout and `401` session clearing: PASS;
+- same-origin API transport, volatile token handling, strict response schemas,
+  correlation, idempotency and response bounds: PASS;
+- Java 21, 139 default tests and executable JAR: PASS;
+- PostgreSQL 18.4, Flyway migrate/validate/no-op migrate and 31 integration
+  tests: PASS;
+- no Java, SQL, Flyway, route, schema, Domain, Application, Port, connector,
+  security-contract or prior-decision change;
+- status: **CERTIFIED / COMPLETE**.
+
+Sprint 4.2.1 synchronized active project-control, agent, security, frontend and
+AI-context documentation and marked Sprint 4.3 as the sole next gate. It
+changed no runtime code, tests, dependencies, migrations, frozen contracts or
+Decision Log entries.
+
 ## Demonstration And Pilot Boundary
 
 Sprint 3.5 proved the business-value loop locally with deterministic synthetic
@@ -578,7 +614,7 @@ Before Sprint 4.5 Pilot Readiness can pass:
 - certified JWT Authentication and RBAC Authorization must continue to protect
   the relevant routes, data and actions;
 - secrets and database credentials must be externalized;
-- the Sprint 4.2 surface must remain the thin, single-case Decision Review and
+- the certified Sprint 4.2 surface must remain the thin, single-case Decision Review and
   Business Value experience, not a broad Executive Workspace;
 - required acceptance, negative and audit tests must pass.
 

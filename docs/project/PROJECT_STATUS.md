@@ -1,6 +1,6 @@
 # IMPERATOR Project Status
 
-Last verified: **2026-08-09**
+Last verified: **2026-08-10**
 
 ## Current Gate
 
@@ -61,9 +61,15 @@ Last verified: **2026-08-09**
 | Sprint 4.1 PostgreSQL certification | PASS - PostgreSQL 18.4 under the 18.x (18.2+) gate |
 | Sprint 4.1 closure | CERTIFIED / COMPLETE |
 | Sprint 4.1.1 documentation synchronization | COMPLETE |
-| Last completed gate | Sprint 4.1.1 - Documentation Synchronization |
+| D091 Decision Review Workspace contract | ACCEPTED / COMPLETE / FROZEN |
+| Sprint 4.2 implementation | PASS |
+| Sprint 4.2 frontend certification | PASS - format, lint, types, tests, coverage, build, audit and Playwright |
+| Sprint 4.2 backend regression | PASS - 139 default tests and 31 PostgreSQL 18.4 integration tests |
+| Sprint 4.2 closure | CERTIFIED / COMPLETE |
+| Sprint 4.2.1 documentation synchronization | COMPLETE |
+| Last completed gate | Sprint 4.2.1 - Documentation Synchronization |
 | Phase 2 closure | COMPLETE under D079; Sprints 2.9-2.13 deferred |
-| Next authorized sprint | Sprint 4.2 - Executive Dashboard |
+| Next authorized sprint | Sprint 4.3 - Docker Production Runtime |
 | Phase 3 authorization | Authorized by D079 and evolved by D085 |
 
 ## Verified Foundation
@@ -92,66 +98,72 @@ Last verified: **2026-08-09**
 | RBAC Authorization | CERTIFIED / COMPLETE | D088 15-route/four-role enforcement, governance preservation and Evidence redaction passed PostgreSQL 18.4 certification |
 | GitHub Integration | CERTIFIED / COMPLETE | D089 one-repository, read-only GitHub REST synchronization produces deterministic supporting Evidence and passed PostgreSQL 18.4 certification |
 | AWS Integration | CERTIFIED / COMPLETE | D090 one-account, one-Region, read-only AWS SDK synchronization produces deterministic `E-AWS-001` through `E-AWS-004` Evidence and passed PostgreSQL 18.4 certification |
-| Frontend runtime | NEXT | Sprint 4.2 may implement only the thin Decision Review and Business Value dashboard over the existing secured API |
-| Local container runtime | DEFERRED | Operational hardening follows pilot readiness |
-| Observability runtime | DEFERRED | Minimum expansion follows operational hardening |
+| Frontend runtime | CERTIFIED / COMPLETE | D091 single-case Decision Review Workspace passed all frontend gates and unchanged backend/PostgreSQL regression |
+| Local container runtime | NEXT | Sprint 4.3 is the sole next gate; no implementation is authorized beyond its explicit contract and instruction |
+| Observability runtime | PENDING | Separate Sprint 4.4 gate after container runtime |
 | Java backend CI | CERTIFIED / COMPLETE | GitHub-hosted Ubuntu 24.04 run verified Java 21, Maven Wrapper, 89 tests and executable JAR packaging |
 
 ## Latest Verification
 
-Sprint 4.1 was certified on 2026-08-09 from the current implementation and
-D090 contract state based on repository baseline `adae3af` with:
+Sprint 4.2 was certified on 2026-08-09 from frozen D091 contract commit
+`220c93b` and implementation commit `abf10a9` with:
 
 ```text
+frontend> npm run format:check
+frontend> npm run lint
+frontend> npm run typecheck
+frontend> npm run test:coverage
+frontend> npm run build
+frontend> npm run test:e2e
+frontend> npm audit --audit-level=moderate
+mvnw.cmd clean verify
 mvnw.cmd -Ppostgresql-integration clean verify
 ```
 
 Certification evidence:
 
-- portable Eclipse Adoptium Java `21.0.12`: PASS;
-- Maven Wrapper `3.3.4` and Apache Maven `3.9.16`: PASS;
-- production compilation: 210 files;
-- test compilation: 39 files;
-- default unit, HTTP contract, security, connector and local demo tests: 139 passed,
-  0 failed;
-- PostgreSQL version `18.4`: PASS under the PostgreSQL 18.x gate requiring
-  major version 18 and minor version 2 or later;
-- Flyway V1 migrate: PASS;
-- Flyway validate: PASS;
-- second Flyway migrate: schema up to date, no pending migration;
-- PostgreSQL integration tests: 31 passed, 0 failed;
-- exact AWS read-only operation inventory through STS, Cost Explorer, Resource
-  Groups Tagging API and CloudWatch: PASS;
-- one expected account, one Region and exact `onboarding-assistant-prod`
-  resource scope: PASS;
-- exact `IMP-214` correlation, finalized-month selection and ambiguity
-  rejection: PASS;
-- deterministic `E-AWS-001` through `E-AWS-004` mapping, final-microsecond UTC
-  observation anchor and UUIDv5 source identity: PASS;
-- disabled/invalid configuration, serial pagination, bounded retry, throttling,
-  timeout, access-denied and unsupported-service behavior: PASS;
-- stable replay and conflicting-source non-overwrite behavior: PASS;
-- protocol-faithful local HTTP stub through existing import orchestration into
-  certified PostgreSQL persistence: PASS;
-- real AWS credentials, credential logging, raw provider payload and secret
-  persistence: absent;
-- D086 routes, D087 identity, D088 authorization, D089 GitHub behavior and
-  business authority: unchanged;
-- D090 authorized precision fix preserves the last PostgreSQL-representable
-  microsecond of the selected month (`23:59:59.999999Z`): PASS;
-- executable Spring Boot JAR: created;
+- Node.js `24.19.0` and npm `11.17.0`: PASS;
+- exact npm lockfile and Node 24 LTS engine boundary: PASS;
+- Prettier format check, ESLint with zero warnings and strict TypeScript:
+  PASS;
+- frontend unit and component tests: 35 passed, 0 failed;
+- coverage: 95.51% statements, 78.49% branches, 95.45% functions and 97.84%
+  lines; all D091 thresholds passed;
+- Next.js `16.2.12` production build: PASS;
+- npm dependency audit at moderate severity: 0 vulnerabilities;
+- Playwright Chromium acceptance: 9 passed, 0 failed and 6 intentional
+  viewport-independent skips;
+- certified viewports: 1440x900, 1024x768 and 390x844 with no horizontal
+  overflow or interactive control outside the viewport;
+- exact ADMIN, PLATFORM_ENGINEER, FINANCE and AUDITOR action presentation:
+  PASS; backend authority remains unchanged;
+- Confidential Evidence redaction, Business Value not-ready separation,
+  isolated `403`, `404`, malformed response, empty-state and timeout behavior,
+  and volatile-session clearing on `401`: PASS;
+- relative same-origin `/api/v1/**` transport, server-only API origin, strict
+  response schemas, 1 MiB response limit, 10-second timeout, correlation and
+  idempotency behavior: PASS;
+- tokens persisted, logged or exposed in URLs: absent;
+- Java 21 default tests: 139 passed, 0 failed;
+- PostgreSQL `18.4`, Flyway V1 migrate/validate/no-op migrate and 31 integration
+  tests: PASS;
+- Java, Java tests, Maven, SQL, Flyway, REST routes, Domain, Application,
+  Ports, connectors, D001-D091 and frozen contracts changed by Sprint 4.2:
+  no;
+- frontend production build and backend executable JAR: created;
 - `BUILD SUCCESS`: PASS.
 
-Sprint 4.1.1 documentation verification:
+Sprint 4.2.1 documentation verification:
 
-- active control and AI-context documents synchronized: PASS;
-- Markdown files checked: 167;
+- active project-control, agent, security, frontend and AI-context documents
+  synchronized: PASS;
+- Markdown files checked: 168;
 - broken local links: 0;
-- stale active Sprint 4.1 status statements: 0;
-- unique `NEXT` sprint: 4.2;
-- Java, SQL, Flyway, tests, dependencies, frozen contracts and Decision Log
-  modified by Sprint 4.1.1: no; existing certified Sprint 4.1 working-tree
-  changes preserved.
+- stale active statements naming Sprint 4.2 as the current or next gate: 0;
+- unique `NEXT` sprint: 4.3 - Docker Production Runtime;
+- modified files: 12 Markdown documents only;
+- Java, Java tests, SQL, Flyway, dependencies, runtime configuration, D091,
+  previous decisions and frozen contracts modified by Sprint 4.2.1: no.
 
 This full integration-profile run includes the Sprint 3.4 governance and
 Ledger certification suite. The D084 deferred obligation is therefore
@@ -185,23 +197,30 @@ the default build, 89 tests and executable JAR packaging on Ubuntu 24.04.
 - No live AWS smoke test is part of the certified automated gate. A separately
   authorized non-customer sandbox check remains required before Pilot
   Readiness.
+- D091 deliberately implements a volatile bearer-token bootstrap, not a login,
+  authorization server, SSO provider or production browser session lifecycle.
+- Frontend role visibility is presentation only. D087 authentication, D088
+  authorization and D083 Application governance remain authoritative.
+- The Decision Review Workspace is certified against protocol-faithful browser
+  fixtures and unchanged backend regression. Production packaging, runtime
+  orchestration and external exposure remain outside Sprint 4.2.
 
 ## Next Control Gate
 
-Sprint 4.2 - Executive Dashboard is the sole next implementation gate. It may
-add only the thin, single-case Decision Review and Business Value experience
-defined by the existing screen and API contracts. It must consume the secured
-D086 API and preserve D087 identity, D088 authorization, Evidence redaction,
-D089 and D090 connector behavior, Application business authority and the
-append-only Ledger. New routes, schema changes, connector expansion, real
-customer data, pilot behavior and external exposure remain prohibited unless
-the Sprint 4.2 contract explicitly authorizes them.
+Sprint 4.3 - Docker Production Runtime is the sole next implementation gate.
+It must package and compose only the already certified runtime boundaries and
+must not invent product behavior, routes, schema, connectors, authentication,
+authorization or observability scope. Exact files, images, services,
+configuration, health behavior and certification criteria require the explicit
+Sprint 4.3 contract and founder instruction before implementation. Real
+customer data, pilot behavior and external exposure remain prohibited.
 
 Current execution authorities:
 
-- D079 through D090 in `docs/decisions/14_Decision_Log.md`;
+- D079 through D091 in `docs/decisions/14_Decision_Log.md`;
 - `agents/phase3/README.md`;
 - `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`;
+- `docs/architecture/50_Executive_Dashboard_Contract.md`;
 - `docs/architecture/46_JWT_Authentication_Contract.md`;
 - `docs/architecture/47_RBAC_Authorization_Contract.md`;
 - `docs/architecture/48_GitHub_Integration_Contract.md`;

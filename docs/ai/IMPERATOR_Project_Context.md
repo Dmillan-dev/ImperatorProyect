@@ -75,7 +75,14 @@ spend. The first case is `DRC-AOA-001`, AI Onboarding Assistant Recovery.
   Recommendation, ROI, Ledger, Business Value or cloud-mutation authority.
   Java 21 passed 139 default tests and PostgreSQL 18.4 passed 31 integration
   tests.
-- Current gate: Sprint 4.2 - Executive Dashboard.
+- D091 - Decision Review Workspace Contract: accepted, complete and frozen.
+- Decision Review Workspace: certified and complete as the thin, single-case
+  `DRC-AOA-001` product surface. Node.js 24.19.0, npm 11.17.0, format, lint,
+  strict TypeScript, 35 unit/component tests, contractual coverage, production
+  build, dependency audit and Playwright acceptance passed. The unchanged Java
+  backend passed 139 default tests and 31 PostgreSQL 18.4 integration tests.
+- Sprint 4.2.1 documentation synchronization: complete.
+- Current gate: Sprint 4.3 - Docker Production Runtime.
 - Sprints 2.9 through 2.13: deferred, not completed.
 
 The live state is maintained in:
@@ -108,6 +115,8 @@ the single authorized business value loop under D079.
 - Python may later implement the explanation-provider boundary.
 - AI explains prepared deterministic context; it does not decide or mutate.
 - React calls REST APIs, not providers.
+- React presents role-aware controls but never replaces D087 authentication,
+  D088 authorization or D083 Application governance.
 - Connectors normalize evidence; they do not calculate ROI or recommend.
 - GitHub and AWS are the only certified live connectors; D089 and D090 remain
   frozen.
@@ -142,6 +151,16 @@ the single authorized business value loop under D079.
 The implemented Java source root is `backend-java`, with packages under
 `imperator.*`. REST packages live under `imperator.api.*`. Public product REST
 routes use `/api/v1`.
+
+## Current Frontend Stack
+
+- Node.js 24 LTS and npm 11;
+- Next.js 16.2 and React 19.2;
+- strict TypeScript 5 and Tailwind CSS 4.3;
+- Lucide icons, Zod runtime schemas, Vitest and Playwright Chromium;
+- exact npm lockfile and same-origin `/api/v1/**` rewrite;
+- volatile in-memory bearer token with no browser persistence;
+- one D091 Decision Review Workspace and no broader Executive Workspace.
 
 ## MVP Evidence Domains
 

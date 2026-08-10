@@ -36,7 +36,10 @@ Sprint 4.0.1: COMPLETE
 D090: ACCEPTED / COMPLETE
 Sprint 4.1: CERTIFIED / COMPLETE
 Sprint 4.1.1: COMPLETE
-Sprint 4.2: NEXT
+D091: ACCEPTED / COMPLETE
+Sprint 4.2: CERTIFIED / COMPLETE
+Sprint 4.2.1: COMPLETE
+Sprint 4.3: NEXT
 ```
 
 Exactly one Phase 3 control gate is authorized as `NEXT`.
@@ -71,6 +74,9 @@ Exactly one Phase 3 control gate is authorized as `NEXT`.
 | D090 | Current certification commit; hash intentionally not self-recorded | Frozen one-account AWS SDK synchronization, security, Evidence mapping and failure contract | ACCEPTED / COMPLETE |
 | 4.1 | Current certification commit; hash intentionally not self-recorded | Read-only AWS adapter, offline protocol suite, deterministic Evidence mapping and PostgreSQL certification | CERTIFIED / COMPLETE |
 | 4.1.1 | Current synchronization commit; hash intentionally not self-recorded | Active project-control, agent, security and AI-context synchronization | COMPLETE |
+| D091 | `220c93b` | Frozen single-case Decision Review Workspace, frontend stack, transport, security, interaction and acceptance contract | ACCEPTED / COMPLETE |
+| 4.2 | `abf10a9` | Decision Review Workspace, strict API boundary, role-aware actions, frontend quality gates and unchanged backend/PostgreSQL certification | CERTIFIED / COMPLETE |
+| 4.2.1 | Current synchronization commit; hash intentionally not self-recorded | Active project-control, agent, security, frontend and AI-context synchronization | COMPLETE |
 
 ### Sprint 3.0
 
@@ -427,15 +433,48 @@ Certification evidence:
 - ASI and DII: 100%; Decision Stability: PASS;
 - status: **CERTIFIED / COMPLETE**.
 
+### Sprint 4.2
+
+Primary artifacts:
+
+- D091 in `docs/decisions/14_Decision_Log.md`;
+- `docs/architecture/50_Executive_Dashboard_Contract.md`;
+- `frontend/app`;
+- `frontend/features/decision-review`;
+- `frontend/services/api` and `frontend/services/auth`;
+- `frontend/components/ui` and `frontend/styles`;
+- `frontend/tests` and `frontend/e2e`;
+- exact `frontend/package-lock.json`.
+
+Certification evidence:
+
+- contract-freeze commit `220c93b` and implementation commit `abf10a9`;
+- Node.js 24.19.0 and npm 11.17.0: PASS;
+- format, lint, strict TypeScript and Next.js production build: PASS;
+- 35 unit/component tests and all D091 coverage thresholds: PASS;
+- npm audit at moderate severity: 0 vulnerabilities;
+- 9 Playwright scenarios passed across 1440x900, 1024x768 and 390x844;
+  6 viewport-independent cases were intentionally skipped outside desktop;
+- no horizontal overflow or interactive controls outside the viewport;
+- exact four-role action presentation, Confidential Evidence redaction,
+  not-ready Business Value and isolated failure behavior: PASS;
+- volatile token session, same-origin API rewrite, strict schemas, response
+  bounds, correlation and idempotency: PASS;
+- Java 21 backend regression: 139 default tests passed;
+- PostgreSQL 18.4, Flyway migrate/validate/no-op migrate and 31 integration
+  tests: PASS;
+- Java, SQL, Flyway, routes, schema, Domain, Application, Ports, connectors,
+  security configuration, D001-D091 and frozen contracts unchanged;
+- status: **CERTIFIED / COMPLETE**.
+
 ## Next Artifact Boundary
 
-Sprint 4.2 is the sole next gate and may implement only the thin, single-case
-Executive Dashboard after its explicit sprint instruction. It must preserve
-D086 routes, D087 identity, D088 authorization and Evidence visibility, D089
-and D090 connector behavior, existing Application business authority, the
-error envelope, correlation contract and append-only Ledger. Additional
-connectors, Docker, observability, pilot behavior, real customer data and
-external exposure remain prohibited.
+Sprint 4.3 is the sole next gate. It may address only Docker Production Runtime
+after its explicit contract and sprint instruction. It must package the
+already certified backend, frontend and PostgreSQL boundaries without adding
+product behavior, routes, schema, connectors, identity semantics or
+observability scope. Pilot behavior, real customer data and external exposure
+remain prohibited.
 
 ## Agent Rule
 
