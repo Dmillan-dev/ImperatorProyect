@@ -1,409 +1,267 @@
-# DRC-AOA-001 Pilot E2E Readiness Checklist
+# 46 - DRC-AOA-001 Pilot E2E Readiness Checklist
 
-## Purpose
+Status: **PREPARATION ONLY / NOT EXECUTABLE / NO-GO**
 
-This preparation artifact defines the evidence required to run the canonical
-`DRC-AOA-001` pilot through the real Docker runtime. It does not authorize a
-new sprint, route, adapter, identity provider deployment, schema change, seed,
-fixture loader or product capability.
+This artifact prepares the future runtime proof. It authorizes no endpoint,
+code, migration, test, IdP, Docker change or sprint transition.
 
-The checklist remains subordinate to D083, D086, D087, D088, D091 and D092.
-It must not be reported as executed while Sprint 4.3 is blocked.
-
-## Current Status
+## 1. Current Boundary
 
 ```text
-Sprint 4.3                 BLOCKED_EXTERNAL / TEMPORARY NO-GO
-Docker implementation     PASS
-Frontend image fix        PASS
-D092 vulnerability gate   FAIL: official PostgreSQL/gosu upstream image
-External D087 IdP          NOT PROVISIONED
-Runtime E2E composition   NOT EXPOSED
+Sprint 4.3                  BLOCKED_EXTERNAL / TEMPORARY NO-GO
+Docker implementation      PASS
+Frontend image correction  PASS
+D092 vulnerability gate    FAIL: official PostgreSQL/gosu upstream image
+External D087 IdP           NOT PROVISIONED
+D093 contract               FROZEN / NOT IMPLEMENTED
+Runtime pilot E2E           NOT EXECUTABLE
 ```
 
-Sprint 4.3.1, Sprint 4.4 and Sprint 4.5 remain unauthorized until every D092
-certification condition passes.
+Sprint 4.3.1, Sprint 4.4 and Sprint 4.5 remain unauthorized.
 
-## Authority Set
+## 2. Authority Set
 
 | Concern | Authority |
 |---|---|
-| JWT contract | `docs/architecture/46_JWT_Authentication_Contract.md` |
-| RBAC matrix | `docs/architecture/47_RBAC_Authorization_Contract.md` |
-| REST inventory | `docs/architecture/45_Functional_REST_Application_Contract.md` |
-| Workspace | `docs/architecture/50_Executive_Dashboard_Contract.md` |
-| Docker runtime | `docs/architecture/51_Docker_Production_Runtime_Contract.md` |
-| Canonical local demo | `docs/demos/45_End_To_End_Business_Value_Demo.md` |
-| Canonical dataset | `src/test/resources/evidence/drc-aoa-001-business-value-demo.jsonl` |
+| Decision and Recommendation policies | D081 and D082 |
+| Review, Ledger and result validation | D083 |
+| REST R01-R15 | D086 |
+| JWT and actor identity | D087 |
+| RBAC and Evidence visibility | D088 |
+| Workspace | D091 |
+| Docker certification | D092 |
+| R16 case composition | D093 |
+| Canonical local outcome | `45_End_To_End_Business_Value_Demo.md` |
+| Canonical data | `src/test/resources/evidence/drc-aoa-001-business-value-demo.jsonl` |
 
-## Pilot Identity Provider Compatibility
+D093 resolves the earlier composition ambiguity. It freezes R16 as
+`POST /api/v1/decisions`, `ADMIN` only, after R01. It remains unimplemented and
+requires a separately authorized implementation gate.
 
-### Frozen token shape
+## 3. Domain Interpretation
 
-The external IdP must issue an access token containing exactly:
+The pilot proves this chain:
 
-| Item | Required value |
-|---|---|
-| Signature | `RS256` |
-| JOSE key identifier | One mandatory `kid` |
-| `iss` | Exact configured HTTPS issuer |
-| `aud` | Contains exact `imperator-api` |
-| `sub` | Canonical lower-case UUID |
-| `exp` | Present and valid |
-| `nbf` | Valid when present |
-| `imperator_role` | One exact string, not an array |
+```text
+30 normalized Evidence facts
+  -> case correlation DRC-AOA-001
+  -> one Decision
+  -> one deterministic Recommendation and ROI
+  -> human approval
+  -> external implementation fact
+  -> result validation
+  -> non-persisted Business Value projection
+  -> immutable ordered Ledger trace
+```
 
-Allowed role values remain exactly `ADMIN`, `PLATFORM_ENGINEER`, `FINANCE` and
-`AUDITOR`. No hierarchy, groups, scopes or provider role arrays confer product
-authority.
+`Case` is not a new aggregate or table. It is the canonical `caseId` and
+correlation context carried by Evidence and Decision. The E2E must not invent a
+Case entity, workflow service or generic case-management API.
 
-### Provider assessment
+## 4. Canonical Data And Identities
 
-| Candidate | Result | Reason |
+The NDJSON file contains exactly 30 accepted Evidence items:
+
+| Stage | Conceptual references | Use |
 |---|---|---|
-| Auth0 | `NO-GO` under frozen D087 | Auth0 custom-API access tokens do not accept a private non-namespaced custom claim such as literal `imperator_role`. A namespaced claim would require a D087 and runtime Contract Fix. |
-| Okta custom authorization server | Compatible with additional mapping | It supports custom access-token claims, but the default subject is not the D087 UUID shape and production custom authorization servers may require a commercial capability. |
-| External Keycloak | Selected for pilot preparation | OIDC protocol mappers can emit a named, single-valued String claim, an Audience mapper can emit `imperator-api`, and the realm publishes HTTPS issuer and JWKS endpoints. |
+| Predecision | `E-JIRA-001` through `E-JIRA-004` | Business origin/context |
+| Predecision | `E-GH-001` through `E-GH-004` | Code and deployment |
+| Predecision | `E-AWS-001` through `E-AWS-004` | Cost and attribution |
+| Predecision | `E-AI-001` through `E-AI-005` | AI usage and quality |
+| Predecision | `E-USAGE-001` through `E-USAGE-003` | Usage and value |
+| Predecision | `E-OWNER-001` through `E-OWNER-003` | Ownership and approval |
+| Predecision | `A-ROI-001` through `A-ROI-004` plus policy provenance | ROI and policy |
+| Postdecision | Evidence 29 | `implementation_marked` only |
+| Postdecision | Evidence 30 | `result_validated` only |
 
-Official compatibility references:
+R16 receives exactly the first 28 imported Evidence UUIDs. `E-JIRA-001` is the
+originating Evidence. Evidence 29 and 30 must not influence Recommendation or
+estimated ROI.
 
-- Auth0 custom claim restrictions:
-  `https://auth0.com/docs/secure/tokens/json-web-tokens/create-custom-claims`
-- Keycloak protocol mapper settings:
-  `https://www.keycloak.org/admin-api/protocol-mappers`
-- Keycloak OIDC and JWKS endpoints:
-  `https://www.keycloak.org/docs/latest/server_admin/`
+Runtime Decision, Recommendation, Ledger and actor UUIDs are generated or
+obtained for the live operation and then reused exactly for retries. Fixed UUIDs
+in the local demo are test fixtures, not an IdP or runtime identity contract.
 
-### Selected Keycloak preparation profile
+## 5. Exact Runtime Sequence
 
-Keycloak is the selected pilot IdP. It remains external to IMPERATOR and is
-not deployed by this artifact. The future pilot configuration must prove:
-
-- [ ] One HTTPS realm issuer is reachable by the backend.
-- [ ] The realm JWKS endpoint is HTTPS and exposes the active RSA key.
-- [ ] Access-token signing is `RS256` and the JOSE header contains `kid`.
-- [ ] An Audience mapper adds exact `imperator-api` to the access token.
-- [ ] A user-attribute protocol mapper emits exact `imperator_role`.
-- [ ] The mapper JSON type is `String` and `Multivalued` is disabled.
-- [ ] The claim is included in the access token, not only the ID token.
-- [ ] Each pilot user has exactly one allowed `imperator_role` value.
-- [ ] Each emitted `sub` is a canonical lower-case UUID.
-- [ ] Issuer and JWKS values remain external configuration.
-- [ ] Tokens, private keys, credentials and tenant values remain uncommitted.
-
-The runtime settings remain:
-
-```text
-IMPERATOR_JWT_ISSUER_URI=<external HTTPS realm issuer>
-IMPERATOR_JWT_JWK_SET_URI=<external HTTPS realm JWKS URI>
-SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_AUDIENCES=imperator-api
-SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWS_ALGORITHMS=RS256
-```
-
-No value above authorizes storing a working URL, token or key in Git.
-
-## Runtime Composition Gap
-
-The current API cannot create the complete value loop from an empty database:
-
-| Capability | Application capability | REST entry point | Current pilot usability |
+| Step | Actor | Interface | Expected business result |
 |---|---|---|---|
-| Import Evidence | `ImportEvidenceInputPort` | `POST /api/v1/evidence/import` | Available |
-| Create Decision | `CreateDecisionInputPort` | None by D086 | Blocked |
-| Generate Recommendation | `GenerateRecommendationInputPort` | None by D086 | Blocked |
-| Read Decision context | Query input ports | D086 GET routes | Available only after state exists |
-| Human review | `ReviewDecisionInputPort` | D086 Ledger commands | Available only after Recommendation exists |
-| Mark implementation | `AppendLedgerEntryInputPort` | D086 command | Available only after approval |
-| Validate result | `AppendLedgerEntryInputPort` | D086 command | Available only after implementation |
-| Project Business Value | Query input port | `GET /api/v1/business-value` | Available only after validated state exists |
+| 1 | `ADMIN` | R01 Evidence import | 30 accepted, 0 rejected |
+| 2 | `ADMIN` | Future implemented R16 | One Decision and one Recommendation |
+| 3 | Any read role | R02-R08 | Complete review context is readable |
+| 4 | Assigned `ADMIN` | R09 approve | One immutable `approved` entry |
+| 5 | `PLATFORM_ENGINEER` | R12 mark implemented | One immutable `implementation_marked` entry using Evidence 29 |
+| 6 | `FINANCE` | R13 validate result | One immutable `result_validated` entry using Evidence 30 |
+| 7 | Any read role | R14 | Realized Business Value available |
+| 8 | Any read role | R08/R15 | Ordered trace reconstructable |
+| 9 | Operator | Docker recreation | Same graph and projection recovered |
 
-`POST /api/v1/evidence/import` persists Evidence only. It does not create a
-Decision or generate a Recommendation. D086 deliberately keeps those two
-capabilities internal, and D092 forbids SQL insertion and startup seed data.
+Composition itself appends no Ledger entry. Decision creation and
+Recommendation generation are pre-governance timeline facts. The Ledger begins
+with the first human governance outcome.
 
-Therefore the full pilot E2E remains `NO-GO` until a future, separately
-authorized contract defines one deterministic application entry point that
-composes the existing internal capabilities. This checklist does not choose a
-route, scheduler, CLI, bootstrap mechanism or event handler.
+## 6. Canonical Assertions
 
-## Future Composition Contract Freeze Preparation
-
-### Status and boundary
-
-```text
-STATUS: DRAFT PREPARATION / NOT AUTHORIZED / NOT A DECISION
-```
-
-This section prepares the questions and inherited constraints for a future
-`DRC-AOA-001` composition Contract Freeze. It does not create that contract,
-assign a decision number, authorize implementation or modify D081, D082, D083,
-D086, D087, D088, D091 or D092.
-
-The future contract is necessary because the currently frozen boundaries have
-one objective execution gap:
-
-- D092 requires a valid external D087 token to load the workspace after
-  certified data import through existing APIs;
-- R01 in D086 imports Evidence only;
-- D086 deliberately keeps Decision creation and Recommendation generation
-  outside REST and forbids adding either as an Evidence-import side effect;
-- the workspace can read and govern an existing case, but cannot originate it;
-  and
-- D092 forbids SQL seed data, startup fixtures and new product capabilities.
-
-Consequently, a clean runtime cannot reach a workspace-loadable
-`DRC-AOA-001` using only the currently exposed APIs. Fixing the PostgreSQL
-image vulnerability will not, by itself, close this separate composition gap.
-No D092 change is authorized here.
-
-### Inherited facts that must not be redesigned
-
-| Concern | Already frozen behavior |
+| Assertion | Exact expected value |
 |---|---|
-| Evidence intake | R01 imports the canonical 30 normalized Evidence records and remains side-effect-free with respect to Decision and Recommendation. |
-| Case correlation | Every canonical input retains correlation key `DRC-AOA-001`. |
-| Decision origin | D081 requires one persisted, eligible `business_context_requested` Evidence to originate the Decision. |
-| Decision identity | The initiating Application boundary supplies a stable UUID v4 and retries reuse it. |
-| Decision case ID | D081 derives `caseId` from the originating Evidence correlation key. |
-| Decision creation | `CreateDecisionInputPort` and its deterministic idempotency rules remain authoritative. |
-| Recommendation and ROI | D082 selects persisted accepted Evidence and produces exactly one deterministic `MODEL_CHANGE` Recommendation under `DRC-AOA-001-v1`. |
-| Recommendation identity | The initiating Application boundary supplies a stable UUID v4 and retries reuse it. |
-| AI authority | AI never creates the business truth, selects the action, calculates ROI or controls the workflow. |
-| Governance | D083 and D088 continue to govern approval, rejection, deferral, implementation marking and result validation. |
-| Business Value | It remains a non-persisted projection available only after the authoritative result-validation state. |
-| Ledger | Governance facts remain immutable, ordered and append-only. |
-| Workspace | D091 consumes existing read and governance contracts; it must not orchestrate case creation in the browser. |
+| Case | `DRC-AOA-001` |
+| Recommendation type | `MODEL_CHANGE` |
+| Policy | `DRC-AOA-001-v1` |
+| Current monthly cost | EUR 2,340.00 |
+| Projected monthly cost | EUR 720.00 |
+| Estimated monthly recovery | EUR 1,620.00 |
+| Estimated annualized savings | EUR 19,440.00 |
+| Confidence | 92% |
+| Risk | `LOW` |
+| Annualized baseline cost | EUR 28,080.00 |
+| Annualized post-action cost | EUR 9,000.00 |
+| Actual transition cost | EUR 120.00 |
+| Realized annualized savings | EUR 18,960.00 |
+| Variance | EUR -480.00 |
+| Ledger order | `approved`, `implementation_marked`, `result_validated` |
 
-### Questions the future contract must freeze
+Business Value remains unavailable before the final validation entry and is
+derived from authoritative Decision, Recommendation and Ledger state rather
+than persisted as an independent entity.
 
-The future Contract Freeze must provide exactly one unambiguous answer for
-each question below before any adapter or endpoint is implemented:
+## 7. Permissions Matrix
 
-1. Which authenticated business actor may initiate composition, and which
-   frozen role or roles may perform it?
-2. Does the operation act on exactly the already imported canonical 30-record
-   Evidence set, and how is that complete set selected without trusting a
-   transport payload as business truth?
-3. Which eligible `business_context_requested` Evidence is the authoritative
-   origin of `DRC-AOA-001`?
-4. How are stable Decision and Recommendation UUIDs created and preserved
-   across retries, process restarts and equivalent concurrent requests?
-5. Which fields required by D081 supply title, business need, owner, required
-   approver and stable creation time, and which persisted Evidence corroborates
-   them?
-6. What single operation initiates the commercial case-composition cycle?
-7. Is one new Application orchestration capability required, or can an
-   existing authorized Application boundary compose the flow without changing
-   its responsibility?
-8. Which part remains Evidence import, and which part is explicit business
-   case creation?
-9. Does the composition invoke D081 and D082 as one atomic unit, or is it a
-   deterministic, resumable two-step operation with an explicit recovery
-   state?
-10. What happens when Decision creation succeeds but Recommendation generation
-    fails or is temporarily not ready?
-11. What exact result is returned for first execution, equivalent replay,
-    conflicting replay and concurrent execution?
-12. How are duplicate Decisions and duplicate Recommendations prevented
-    without weakening the existing D081 and D082 idempotency contracts?
-13. Which inbound adapter may invoke the operation for the pilot: REST, an
-    authenticated administrative CLI or another explicitly authorized
-    boundary?
-14. If REST is selected, what route, method, request, response, errors and D088
-    authorization are frozen? No route is implied by this preparation.
-15. How does the completed graph become immediately readable through the
-    existing D086 queries and D091 Decision Review Workspace without adding
-    browser-owned business behavior?
-16. Is the D092 certification clause corrected or scoped separately from the
-    later full pilot E2E, and which exact evidence belongs to each gate?
+| Capability | ADMIN | PLATFORM_ENGINEER | FINANCE | AUDITOR |
+|---|---:|---:|---:|---:|
+| Import Evidence R01 | Allow | Deny | Deny | Deny |
+| Compose R16 after implementation | Allow | Deny | Deny | Deny |
+| Read R02-R08/R14-R15 | Allow | Allow | Allow | Allow |
+| Approve/reject | Allow when assigned | Deny | Deny | Deny |
+| Defer | Allow | Allow | Allow | Deny |
+| Mark implementation | Deny | Allow | Deny | Deny |
+| Validate result | Deny | Deny | Allow | Deny |
 
-### Recommended composition shape, not frozen
+Every denied command must return the frozen error without changing Decision,
+Recommendation, Evidence, Ledger or Business Value state.
 
-The smallest coherent candidate is one explicit, operator-initiated
-Application composition operation after successful Evidence import:
+## 8. Positive Scenarios
 
-```text
-Authenticated operator
-        |
-        v
-Explicit case-composition Application boundary
-        |
-        +--> load and validate persisted canonical Evidence
-        |
-        +--> invoke the existing deterministic Decision capability (D081)
-        |
-        +--> invoke the existing deterministic Recommendation/ROI capability (D082)
-        |
-        v
-Existing D086 read model and D091 workspace
-```
+| ID | Scenario | Required assertion |
+|---|---|---|
+| P01 | Valid Keycloak token for each role | D087 accepts and D088 applies exact role |
+| P02 | First R01 import | 30 accepted and stored once |
+| P03 | Equivalent R01 replay | No duplicate Evidence |
+| P04 | First R16 composition | `201`, one Decision and Recommendation |
+| P05 | Equivalent R16 replay | `200`, `replayed=true`, same identities |
+| P06 | Resume after T1-only state | T2 completes, `resumed=true`, no duplicate Decision |
+| P07 | Assigned Admin approval | Decision approved and one Ledger append |
+| P08 | Platform implementation mark | Evidence 29 linked and ordered |
+| P09 | Finance result validation | Evidence 30 linked and ordered |
+| P10 | Business Value read | Exact canonical values |
+| P11 | Workspace load | Same authoritative case visible through D091 |
+| P12 | Docker down/up without volume deletion | Equal graph, Ledger and projection |
 
-This shape is preferred because it preserves the separation between ingestion
-and business creation, keeps orchestration in Application and reuses already
-certified capabilities. The exact port, use-case, command, result, adapter,
-route and transaction mechanism remain deliberately unfrozen.
+## 9. Negative And Recovery Scenarios
 
-### Composition invariants to preserve
+| ID | Condition | Expected result | Write invariant |
+|---|---|---|---|
+| N01 | Missing/invalid JWT | `401` | No write |
+| N02 | Valid role without route permission | `403` | No write |
+| N03 | R16 approver differs from JWT `sub` | D093 validation failure | No write |
+| N04 | Missing/ineligible origin Evidence | `404` or frozen `409` | No Decision |
+| N05 | Missing, stale, Restricted or invalid supporting Evidence | `409 RECOMMENDATION_NOT_READY` | At most one recoverable `CREATED` Decision |
+| N06 | Evidence 29/30 included in R16 | Validation failure | No Recommendation |
+| N07 | Same ID/case with conflicting immutable tuple | `409` | No overwrite |
+| N08 | Concurrent equivalent R16 requests | One authoritative graph | No duplicate |
+| N09 | Explanation Provider unavailable | Composition succeeds without explanation | Deterministic result unchanged |
+| N10 | Approval by non-assigned Admin | Frozen business-rule failure | No Ledger append |
+| N11 | Implementation before approval | Frozen transition failure | No Ledger append |
+| N12 | Result validation before implementation | Frozen transition failure | No Ledger append |
+| N13 | Ledger operation replay | `replayed=true` | No second entry |
+| N14 | Stale expected predecessor | Conflict | Linear Ledger preserved |
+| N15 | Database failure inside one transaction | That transaction rolls back | Prior committed step remains authoritative |
+| N16 | Restart after T1 only | Same request resumes T2 | No compensation delete |
 
-- Importing or re-importing Evidence never creates a Decision implicitly.
-- One logical composition identity produces at most one Decision and one
-  Recommendation.
-- Equivalent replay returns the same authoritative identities and does not
-  reset later Decision, Ledger or Business Value state.
-- A conflicting immutable tuple fails closed and overwrites nothing.
-- Concurrent equivalent attempts converge on the same authoritative graph.
-- Every selected Evidence item is loaded from persistence and satisfies D082;
-  caller-supplied Evidence content is never treated as truth.
-- The Decision retains one traceable originating Evidence and the
-  Recommendation retains the complete supporting Evidence set.
-- The Recommendation and ROI remain deterministic and independent of an AI
-  provider.
-- Owner and required approver identities remain explicit UUIDs and must be
-  compatible with the human-governance rules in D083 and D088.
-- The workspace only reads and governs the resulting graph; it does not create
-  Domain objects or calculate business value.
-- No direct SQL, fixture, startup seed or manual database correction may
-  substitute for the authorized composition operation.
+## 10. Future Test Inventory
 
-### Patterns explicitly rejected for the future contract
+No test is created by this document. The following tests become authorized
+only with their owning implementation or certification gate.
 
-- Decision or Recommendation creation as an Evidence-import side effect;
-- controller or frontend chaining of multiple Application use cases;
-- state mutation hidden behind a GET route;
-- connector-owned Decision, Recommendation or ROI business logic;
-- direct repository calls from REST, CLI or UI adapters;
-- SQL seed data, manual inserts or persistence-record construction outside the
-  PostgreSQL adapter;
-- browser-generated business identity without an authorized stable operation
-  identity contract;
-- AI-generated recommendation type, deterministic reason, confidence, risk or
-  monetary value;
-- scheduler, event bus, Kafka or background workflow introduced only to bridge
-  the pilot gap; and
-- a second case, Recommendation family, ranking policy or multi-tenant scope.
+| Test layer | Minimum future coverage |
+|---|---|
+| Unit | R16 input validation, exact mapping, 28/2 Evidence split, replay classification and explanation independence |
+| Application | Two-step orchestration, T1/T2 recovery, no Ledger side effect and use of ports only |
+| Repository | `findByCaseId`, unique case constraint, concurrent create resolution and no overwrite |
+| API contract | Exact R16 request/response, `201/200/401/403/404/409/422`, safe four-field errors and correlation |
+| Authorization | Real D087 tokens for all roles, Admin-subject equality and denied-call no-write proof |
+| Ledger | Strict sequence, append-only behavior, replay, predecessor conflict and evidence links |
+| Persistence | Flyway migrate/validate/no-op, rollback, restart recovery, counts and referential integrity |
+| Frontend | Existing D091 workspace loads composed state; no new composition behavior in browser |
+| Runtime E2E | R01 -> R16 -> R09 -> R12 -> R13 -> R14 -> Docker recreation |
+| Security | No token, secret, raw payload, SQL detail or confidential Evidence leak |
 
-### Contract Freeze acceptance gate
+Existing suites remain regression prerequisites. D093 implementation must add
+focused tests; it must not replace JWT, RBAC, connector, repository, REST,
+frontend or PostgreSQL certification suites.
 
-The future contract is ready for authorization only when:
+## 11. E2E Preconditions
 
-- every question above has one answer and no adapter is forced to interpret
-  missing business behavior;
-- D081 and D082 remain authoritative unless an objective contradiction is
-  proved and separately approved;
-- actor, authorization, identity, idempotency, concurrency, failure recovery
-  and transaction semantics are explicit;
-- the chosen inbound boundary and its allowed files are frozen before code;
-- D086, D088, D091 and D092 impacts are listed exactly;
-- no endpoint, migration, dependency, scheduler or provider is added by
-  implication; and
-- Architecture, Security, Quality, Product and Context guardians all return
-  `PASS`.
+- [ ] Official PostgreSQL image reports zero fixable Critical vulnerabilities.
+- [ ] Final image digests are pinned and recorded.
+- [ ] D093 implementation is explicitly authorized, implemented and certified.
+- [ ] Flyway migrate, validate and no-op migrate pass on the final runtime.
+- [ ] PostgreSQL grants, health and persistent volume pass.
+- [ ] External Keycloak passes the D087 conformance matrix.
+- [ ] Four real pilot identities exist with one exact role each.
+- [ ] Canonical NDJSON hash is recorded and starts from an empty business set.
+- [ ] No SQL seed, direct table write or startup fixture is used.
+- [ ] Correlation IDs, operation IDs, Git SHA and start time are recorded.
 
-## E2E Preconditions
+## 12. Execution Checklist
 
-- [ ] Sprint 4.3 D092 vulnerability gate passes for all runtime images.
-- [ ] The exact final image digests are recorded.
-- [ ] PostgreSQL, Flyway, grants and health checks pass unchanged.
-- [ ] An external D087-compatible IdP passes live issuer/JWKS validation.
-- [ ] Four test identities exist, each with one exact MVP role.
-- [ ] The missing Decision/Recommendation composition entry point has a
-      separately frozen and certified contract.
-- [ ] The canonical 30-record NDJSON file is unchanged.
-- [ ] No SQL seed, direct table write or manual database correction is used.
-- [ ] The test starts from an empty IMPERATOR business dataset.
-- [ ] Correlation IDs, operation IDs, image digests and start time are recorded.
+### Authentication
 
-## Canonical E2E Checklist
+- [ ] Validate issuer, JWKS, RS256, `kid`, audience, UUID `sub` and one role.
+- [ ] Prove invalid token variants return `401` without leaking token data.
+- [ ] Prove D088 positive and negative permissions with real tokens.
 
-### A. Authentication and authorization
+### Evidence And Composition
 
-- [ ] Obtain four short-lived RS256 access tokens externally.
-- [ ] Verify exact issuer, audience, UUID subject, expiry, `kid` and one role.
-- [ ] Verify a missing token returns `401`.
-- [ ] Verify invalid issuer, audience, signature, expiry and role return `401`.
-- [ ] Verify each valid role can read the routes granted by D088.
-- [ ] Verify `AUDITOR` cannot invoke any POST route.
-- [ ] Verify forbidden role/action combinations return `403` without writes.
-- [ ] Keep every token out of console output, reports and persistent files.
+- [ ] Import 30 Evidence records through R01 as Admin.
+- [ ] Re-import and prove idempotency.
+- [ ] Compose through R16 using 28 predecision UUIDs.
+- [ ] Verify one Decision, one Recommendation and exact ROI.
+- [ ] Replay R16 and prove stable identities and no duplicates.
 
-### B. Evidence intake
+### Governance And Value
 
-- [ ] As `ADMIN`, import the canonical NDJSON through R01.
-- [ ] Assert 30 accepted records and zero rejected records.
-- [ ] Confirm raw payloads remain `not_stored`.
-- [ ] Confirm all records retain correlation key `DRC-AOA-001`.
-- [ ] Re-import the same dataset and verify no duplicate persisted Evidence.
+- [ ] Approve as the assigned Admin.
+- [ ] Mark implementation as Platform Engineer using Evidence 29.
+- [ ] Validate result as Finance using Evidence 30.
+- [ ] Prove exact Ledger order and immutable replay behavior.
+- [ ] Read exact Business Value and complete traceability.
+- [ ] Read the same case as Auditor without command authority.
 
-### C. Decision and Recommendation
+### Persistence
 
-- [ ] Invoke only the future authorized composition entry point.
-- [ ] Confirm exactly one `DRC-AOA-001` Decision exists.
-- [ ] Confirm the originating Evidence is traceable from the Decision.
-- [ ] Confirm exactly one `MODEL_CHANGE` Recommendation exists.
-- [ ] Confirm policy version `DRC-AOA-001-v1`.
-- [ ] Confirm current monthly cost is EUR 2,340.00.
-- [ ] Confirm projected monthly cost is EUR 720.00.
-- [ ] Confirm estimated monthly recovery is EUR 1,620.00.
-- [ ] Confirm estimated annualized savings is EUR 19,440.00.
-- [ ] Confirm confidence is 92% and risk is `LOW`.
-- [ ] Repeat the composition request and verify no duplicate graph objects.
+- [ ] Record object IDs, row counts, Ledger chain and Business Value.
+- [ ] Run normal Compose down without deleting volumes.
+- [ ] Recreate the exact certified runtime.
+- [ ] Re-run Flyway validation and permission provisioning.
+- [ ] Retrieve equal Evidence, Decision, Recommendation, Ledger and projection.
+- [ ] Prove no duplicate or missing object after recreation.
 
-### D. Human governance
+### Evidence Package
 
-- [ ] Open the Decision Review Workspace with a valid token.
-- [ ] Confirm Business Value is unavailable before result validation.
-- [ ] As the assigned `ADMIN`, approve the Decision.
-- [ ] Confirm one immutable `approved` Ledger entry.
-- [ ] As `PLATFORM_ENGINEER`, mark implementation.
-- [ ] Confirm one immutable `implementation_marked` Ledger entry.
-- [ ] As `FINANCE`, validate the result.
-- [ ] Confirm one immutable `result_validated` Ledger entry.
-- [ ] Replay each operation ID and verify no additional Ledger entry.
+- [ ] Record Git SHA, final image digests and clean Trivy reports.
+- [ ] Record safe route outcomes and correlation IDs.
+- [ ] Record deterministic financial assertions and object counts.
+- [ ] Record negative JWT/RBAC outcomes without token text.
+- [ ] Record pre/post-recreation equality.
+- [ ] Record all guardian results.
 
-### E. Realized Business Value and traceability
+## 13. Completion Rule
 
-- [ ] Confirm annualized baseline cost is EUR 28,080.00.
-- [ ] Confirm annualized post-action cost is EUR 9,000.00.
-- [ ] Confirm actual transition cost is EUR 120.00.
-- [ ] Confirm realized annualized savings is EUR 18,960.00.
-- [ ] Confirm variance from estimate is EUR -480.00.
-- [ ] Confirm the ordered Ledger chain has no missing predecessor.
-- [ ] Trace Business Value to validation, implementation, approval,
-      Recommendation, Decision and all 30 Evidence identifiers.
-- [ ] Confirm no raw payload, secret or persistence record leaks through REST.
+This checklist passes only through authorized runtime interfaces. Local use-case
+tests, repository calls, SQL inserts, startup fixtures or manually assembled
+tokens cannot substitute for the pilot E2E.
 
-### F. Docker persistence
-
-- [ ] Record Decision, Recommendation, Evidence and Ledger identifiers.
-- [ ] Record Business Value output before shutdown.
-- [ ] Run normal `docker compose down` without `--volumes`.
-- [ ] Recreate the same certified runtime against `postgres-data`.
-- [ ] Confirm Flyway validate and permission provisioning pass.
-- [ ] Retrieve the same Decision and 30 Evidence records.
-- [ ] Retrieve the same Recommendation and ordered Ledger chain.
-- [ ] Retrieve an equal Business Value projection.
-- [ ] Confirm no duplicates appeared after recreation.
-
-### G. Evidence package
-
-- [ ] Record Git SHA and clean/authorized working-tree state.
-- [ ] Record Docker, Compose, Java, Node, PostgreSQL and Flyway versions.
-- [ ] Record every final image digest and clean Trivy report.
-- [ ] Record issuer and JWKS reachability without recording their secret data.
-- [ ] Record route status, object IDs, counts and deterministic financial values.
-- [ ] Record negative JWT/RBAC tests without storing tokens.
-- [ ] Record pre/post-recreation equality and Ledger ordering.
-- [ ] Record Architecture, Security, Quality and Product Guardian results.
-
-## Completion Rule
-
-This checklist passes only when every item is evidenced through authorized
-runtime interfaces. A local Application test, direct repository call, SQL
-insert, startup fixture or manually assembled token cannot substitute for the
-pilot E2E.
-
-Until the PostgreSQL image, external IdP and runtime-composition blockers are
-resolved, the checklist status is:
+Until the image gate, D093 implementation and external IdP are all complete:
 
 ```text
 STATUS: NOT EXECUTABLE / NO-GO

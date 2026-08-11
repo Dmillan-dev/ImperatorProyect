@@ -94,6 +94,17 @@ Primary controls and semantic inputs:
 - `product/25_MVP_ROI_Slice.md`;
 - `architecture/34_MVP_Implementation_Blueprint.md`.
 
+### Sprint 4.3 Blocked-Gate Preparation
+
+The following artifacts are non-authoritative preparation while Sprint 4.3
+remains blocked. They do not change the current gate or authorize Sprint 4.4,
+Sprint 4.5, runtime work or a new decision:
+
+- `architecture/53_Keycloak_Pilot_Identity_Integration_Preparation.md`;
+- `demos/46_DRC_AOA_001_Pilot_E2E_Readiness_Checklist.md`;
+- `architecture/54_Observability_Preparation.md`; and
+- `product/30_Pilot_Readiness_Preparation_Checklist.md`.
+
 ## Canonical Product Contracts
 
 | Concern | Document |
