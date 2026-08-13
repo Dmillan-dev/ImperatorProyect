@@ -251,7 +251,7 @@ def draw_flow(c: canvas.Canvas, labels: list[str], y: float) -> None:
         x += box_w + gap
 
 
-def create_pdf(commercial_screen: Image.Image) -> None:
+def create_legacy_pdf(commercial_screen: Image.Image) -> None:
     register_pdf_fonts()
     c = canvas.Canvas(str(PDF_PATH), pagesize=(PAGE_W, PAGE_H))
     c.setTitle("IMPERATOR - Descubrimiento y Decisi\u00f3n ROI")
@@ -444,6 +444,438 @@ def create_pdf(commercial_screen: Image.Image) -> None:
     c.save()
 
 
+DASHBOARD_OUTPUTS = [
+    OUTPUT / "IMPERATOR_Comercial_01_Executive_Workspace.png",
+    OUTPUT / "IMPERATOR_Comercial_02_Decision_Detail.png",
+    OUTPUT / "IMPERATOR_Comercial_03_Decision_Ledger.png",
+    OUTPUT / "IMPERATOR_Comercial_04_Business_Value.png",
+    OUTPUT / "IMPERATOR_Comercial_05_Discovery.png",
+]
+
+
+def dashboard_card(
+    draw: ImageDraw.ImageDraw,
+    box: tuple[int, int, int, int],
+    *,
+    fill: str = PANEL,
+    outline: str = LINE,
+    radius: int = 18,
+    accent: bool = False,
+) -> None:
+    draw.rounded_rectangle(box, radius=radius, fill=fill, outline=outline, width=2)
+    if accent:
+        x1, y1, x2, _ = box
+        draw.rounded_rectangle((x1 + 2, y1 + 2, x2 - 2, y1 + 8), radius=4, fill=TEAL)
+
+
+def dashboard_label(draw: ImageDraw.ImageDraw, xy: tuple[int, int], value: str, color: str = MUTED) -> None:
+    draw.text(xy, value.upper(), font=fonts(13, True), fill=color)
+
+
+def dashboard_nav(draw: ImageDraw.ImageDraw, active: str) -> None:
+    labels = [
+        ("Executive Workspace", 153),
+        ("Decisions", 102),
+        ("Decision Ledger", 132),
+        ("Business Value", 124),
+        ("Integrations", 112),
+    ]
+    draw.rounded_rectangle((28, 22, 1052, 86), radius=32, fill="#0D1513", outline=LINE, width=2)
+    x = 42
+    for label, width in labels:
+        if label == active:
+            draw.rounded_rectangle((x, 32, x + width, 76), radius=14, fill=ACCENT_DARK, outline=TEAL, width=2)
+            color = WHITE
+        else:
+            color = MUTED
+        bbox = draw.textbbox((0, 0), label, font=fonts(13, True))
+        draw.text((x + (width - (bbox[2] - bbox[0])) / 2, 45), label, font=fonts(13, True), fill=color)
+        x += width + 10
+    draw.rounded_rectangle((930, 34, 1038, 74), radius=13, fill=ACCENT_DARK, outline=LINE, width=1)
+    draw.text((947, 46), "SYNTHETIC", font=fonts(12, True), fill=GREEN)
+
+
+def dashboard_base(active: str, eyebrow: str, title: str, subtitle: str) -> tuple[Image.Image, ImageDraw.ImageDraw]:
+    image = Image.new("RGB", (PAGE_W, PAGE_H), PAPER)
+    draw = ImageDraw.Draw(image)
+    dashboard_nav(draw, active)
+    dashboard_label(draw, (32, 111), eyebrow)
+    title_y = 145
+    title_end = draw_lines(draw, title, (32, title_y), fonts(47, True), WHITE, 1000, 5)
+    draw_lines(draw, subtitle, (32, title_end + 8), fonts(18), MUTED, 990, 7)
+    return image, draw
+
+
+def metric_card(
+    draw: ImageDraw.ImageDraw,
+    box: tuple[int, int, int, int],
+    label: str,
+    value: str,
+    *,
+    value_color: str = WHITE,
+) -> None:
+    dashboard_card(draw, box, fill="#101917", radius=16)
+    x1, y1, _, _ = box
+    dashboard_label(draw, (x1 + 18, y1 + 18), label)
+    draw.text((x1 + 18, y1 + 59), value, font=fonts(25, True), fill=value_color)
+
+
+def draw_kv_rows(
+    draw: ImageDraw.ImageDraw,
+    box: tuple[int, int, int, int],
+    rows: list[tuple[str, str]],
+    *,
+    title: str | None = None,
+) -> None:
+    dashboard_card(draw, box, fill="#101917", radius=16)
+    x1, y1, x2, _ = box
+    y = y1 + 22
+    if title:
+        dashboard_label(draw, (x1 + 18, y), title)
+        y += 38
+    row_height = 52
+    for index, (label, value) in enumerate(rows):
+        dashboard_label(draw, (x1 + 18, y + 7), label)
+        value_box = draw.textbbox((0, 0), value, font=fonts(17, True))
+        draw.text((x2 - 18 - (value_box[2] - value_box[0]), y + 4), value, font=fonts(17, True), fill=WHITE)
+        if index < len(rows) - 1:
+            draw.line((x1 + 18, y + 39, x2 - 18, y + 39), fill=LINE, width=1)
+        y += row_height
+
+
+def executive_workspace_surface() -> Image.Image:
+    image, draw = dashboard_base(
+        "Executive Workspace",
+        "IMPERATOR / DECISION ENGINE",
+        "Executive Decision Workspace",
+        "Una sola decisi\u00f3n. Su evidencia, impacto, autoridad humana y estado econ\u00f3mico.",
+    )
+    dashboard_card(draw, (32, 260, 630, 665), fill="#14211D", accent=True)
+    dashboard_label(draw, (62, 298), "Executive summary")
+    draw.text((62, 350), "Estimated annual recovery", font=fonts(23, True), fill=MUTED)
+    draw.text((62, 407), "EUR 19.440", font=fonts(78, True), fill=WHITE)
+    draw.rounded_rectangle((62, 505, 230, 544), radius=12, fill=ACCENT_DARK, outline=TEAL, width=1)
+    draw.text((80, 516), "92% confidence", font=fonts(15, True), fill=GREEN)
+    mini = [
+        ("CURRENT", "EUR 2.340/mo"),
+        ("PROJECTED", "EUR 720/mo"),
+        ("RISK", "LOW"),
+    ]
+    x = 62
+    for label, value in mini:
+        dashboard_card(draw, (x, 570, x + 166, 640), fill="#0F1816", radius=12)
+        dashboard_label(draw, (x + 12, 584), label)
+        draw.text((x + 12, 611), value, font=fonts(15, True), fill=WHITE)
+        x += 178
+
+    dashboard_card(draw, (650, 260, 1048, 665), fill="#101917", outline=TEAL)
+    dashboard_label(draw, (678, 294), "Decision to review today")
+    draw_lines(draw, "Recover AI onboarding assistant spend", (678, 345), fonts(31, True), WHITE, 340, 5)
+    facts = [
+        ("ANNUAL RECOVERY", "EUR 19.440"),
+        ("RISK", "LOW"),
+        ("CONFIDENCE", "92%"),
+        ("STATUS", "APPROVED"),
+    ]
+    for idx, (label, value) in enumerate(facts):
+        col = idx % 2
+        row = idx // 2
+        x1 = 678 + col * 174
+        y1 = 455 + row * 82
+        dashboard_card(draw, (x1, y1, x1 + 160, y1 + 70), fill="#0B1311", radius=12)
+        dashboard_label(draw, (x1 + 12, y1 + 12), label)
+        draw.text((x1 + 12, y1 + 37), value, font=fonts(17, True), fill=GREEN if label != "STATUS" else AMBER)
+    draw.rounded_rectangle((678, 615, 1020, 649), radius=11, fill=GREEN)
+    cta = "Review decision"
+    cta_box = draw.textbbox((0, 0), cta, font=fonts(16, True))
+    draw.text((849 - (cta_box[2] - cta_box[0]) / 2, 624), cta, font=fonts(16, True), fill="#062018")
+
+    metrics = [
+        ("EVIDENCE", "30 records", GREEN),
+        ("SOURCES", "GitHub + AWS", BLUE),
+        ("POLICY", "DRC-AOA-001-v1", GREEN),
+        ("REALIZED VALUE", "Not yet realized", AMBER),
+    ]
+    x = 32
+    for label, value, color in metrics:
+        metric_card(draw, (x, 688, x + 246, 808), label, value, value_color=color)
+        x += 257
+
+    dashboard_card(draw, (32, 832, 1048, 1270), fill="#101917")
+    dashboard_label(draw, (54, 856), "Why this decision matters")
+    points = [
+        "AI consumption is attributable to one operational case.",
+        "The recommendation is deterministic and preserves a high-cost fallback.",
+        "A human reviewer remains the only approval authority.",
+        "Realized value stays unavailable until Finance validates the outcome.",
+    ]
+    y = 905
+    for point in points:
+        draw.ellipse((58, y + 8, 68, y + 18), fill=TEAL)
+        draw.text((84, y), point, font=fonts(19), fill=WHITE)
+        y += 62
+    dashboard_card(draw, (724, 1058, 1016, 1238), fill="#0C201A", outline=TEAL)
+    dashboard_label(draw, (750, 1083), "Confidence")
+    draw.text((750, 1122), "92%", font=fonts(45, True), fill=GREEN)
+    draw_lines(draw, "Evidence complete. Risk LOW.", (750, 1180), fonts(16), MUTED, 235, 4)
+    return image
+
+
+def decision_detail_surface() -> Image.Image:
+    image, draw = dashboard_base(
+        "Decisions",
+        "IMPERATOR / DECISION DETAIL",
+        "AI Onboarding Assistant",
+        "Toda la evidencia antes de actuar. IMPERATOR recomienda; la empresa decide.",
+    )
+    dashboard_card(draw, (32, 240, 1048, 378), fill="#101917")
+    dashboard_label(draw, (54, 264), "Decision list")
+    draw.rounded_rectangle((54, 304, 1026, 354), radius=12, fill=ACCENT_DARK, outline=TEAL, width=2)
+    draw.text((72, 319), "DRC-AOA-001 / AI model change", font=fonts(17, True), fill=WHITE)
+    impact = "+EUR 19.440 estimated"
+    impact_box = draw.textbbox((0, 0), impact, font=fonts(17, True))
+    draw.text((1008 - (impact_box[2] - impact_box[0]), 319), impact, font=fonts(17, True), fill=GREEN)
+
+    dashboard_card(draw, (32, 400, 640, 650), fill="#101917", outline=TEAL)
+    dashboard_label(draw, (58, 428), "Evidence review")
+    draw.text((58, 475), "Can we trust this recommendation?", font=fonts(28, True), fill=WHITE)
+    evidence_facts = [("BASED ON", "30 Evidence"), ("POLICY", "Deterministic"), ("CONFIDENCE", "92%"), ("RISK", "LOW")]
+    for idx, (label, value) in enumerate(evidence_facts):
+        x1 = 58 + (idx % 2) * 278
+        y1 = 530 + (idx // 2) * 74
+        dashboard_card(draw, (x1, y1, x1 + 262, y1 + 62), fill="#0B1311", radius=11)
+        dashboard_label(draw, (x1 + 12, y1 + 10), label)
+        draw.text((x1 + 12, y1 + 34), value, font=fonts(17, True), fill=GREEN)
+    draw_kv_rows(
+        draw,
+        (660, 400, 1048, 650),
+        [
+            ("Current monthly", "EUR 2.340"),
+            ("Projected monthly", "EUR 720"),
+            ("Monthly recovery", "EUR 1.620"),
+            ("Annual recovery", "EUR 19.440"),
+        ],
+        title="Financial impact",
+    )
+
+    cards = [
+        ("EVIDENCE SOURCES", [("GitHub", "Read-only"), ("AWS", "Read-only")]),
+        ("RECOMMENDATION", [("Type", "MODEL_CHANGE"), ("Fallback", "Preserved")]),
+        ("OWNERSHIP", [("Approver", "Human"), ("Audit role", "Read-only")]),
+    ]
+    x = 32
+    for title, rows in cards:
+        draw_kv_rows(draw, (x, 675, x + 327, 875), rows, title=title)
+        x += 344
+
+    dashboard_card(draw, (32, 900, 1048, 1088), fill="#101917")
+    dashboard_label(draw, (54, 925), "Decision")
+    draw.text((54, 966), "Recover AI onboarding assistant spend", font=fonts(25, True), fill=WHITE)
+    state = [
+        ("CASE", "DRC-AOA-001"),
+        ("STATUS", "APPROVED"),
+        ("POLICY", "DRC-AOA-001-v1"),
+        ("VALUE", "ESTIMATED"),
+    ]
+    x = 54
+    for label, value in state:
+        dashboard_card(draw, (x, 1015, x + 228, 1068), fill="#0B1311", radius=10)
+        dashboard_label(draw, (x + 10, 1025), label)
+        value_box = draw.textbbox((0, 0), value, font=fonts(14, True))
+        draw.text((x + 218 - (value_box[2] - value_box[0]), 1026), value, font=fonts(14, True), fill=GREEN if value != "ESTIMATED" else AMBER)
+        x += 242
+
+    dashboard_card(draw, (32, 1112, 1048, 1286), fill=ACCENT_DARK, outline=TEAL)
+    dashboard_label(draw, (54, 1138), "Human authority")
+    draw.text((54, 1175), "Review the evidence before approving the recommendation.", font=fonts(23, True), fill=WHITE)
+    draw.text((54, 1216), "La IA puede explicar. No decide, no aprueba y no calcula el ROI.", font=fonts(17), fill=MUTED)
+    draw.rounded_rectangle((790, 1170, 1020, 1234), radius=14, fill=GREEN)
+    draw.text((826, 1191), "Review decision", font=fonts(17, True), fill="#062018")
+    return image
+
+
+def decision_ledger_surface() -> Image.Image:
+    image, draw = dashboard_base(
+        "Decision Ledger",
+        "IMPERATOR / IMMUTABLE RECORD",
+        "Decision Ledger",
+        "La historia auditable de la decisi\u00f3n: qu\u00e9 ocurri\u00f3, qui\u00e9n actu\u00f3, cu\u00e1ndo y por qu\u00e9.",
+    )
+    dashboard_card(draw, (32, 252, 1048, 520), fill="#101917")
+    dashboard_label(draw, (54, 278), "Current ledger")
+    dashboard_label(draw, (54, 326), "DATE")
+    dashboard_label(draw, (180, 326), "FACT")
+    dashboard_label(draw, (515, 326), "ACTOR")
+    dashboard_label(draw, (690, 326), "STATE")
+    dashboard_label(draw, (865, 326), "VALUE")
+    draw.rounded_rectangle((52, 356, 1028, 426), radius=12, fill="#17231F", outline=LINE, width=1)
+    draw.text((68, 380), "2 AUG", font=fonts(16, True), fill=MUTED)
+    draw.text((180, 380), "Decision approved", font=fonts(18, True), fill=WHITE)
+    draw.text((515, 380), "ADMIN", font=fonts(16, True), fill=MUTED)
+    draw.text((690, 380), "APPROVED", font=fonts(16, True), fill=GREEN)
+    draw.text((865, 380), "ESTIMATED", font=fonts(16, True), fill=AMBER)
+    draw.text((54, 458), "No implementation or result-validation fact is claimed in the current commercial view.", font=fonts(16), fill=MUTED)
+
+    dashboard_card(draw, (32, 546, 1048, 785), fill="#101917")
+    dashboard_label(draw, (54, 572), "Decision lifecycle")
+    lifecycle = [
+        ("01", "Evidence", "COMPLETE", GREEN),
+        ("02", "Recommendation", "COMPLETE", GREEN),
+        ("03", "Approval", "RECORDED", GREEN),
+        ("04", "Implementation", "PENDING", MUTED),
+        ("05", "Result", "PENDING", MUTED),
+    ]
+    x = 54
+    for number, label, status, color in lifecycle:
+        dashboard_card(draw, (x, 620, x + 182, 750), fill="#0B1311", outline=TEAL if status != "PENDING" else LINE, radius=13)
+        draw.text((x + 16, 638), number, font=fonts(14, True), fill=color)
+        draw_lines(draw, label, (x + 16, 674), fonts(17, True), WHITE, 150, 3)
+        draw.text((x + 16, 720), status, font=fonts(12, True), fill=color)
+        x += 194
+
+    dashboard_card(draw, (32, 812, 1048, 1065), fill="#101917")
+    dashboard_label(draw, (54, 838), "Ledger guarantees")
+    guarantees = [
+        ("APPEND ONLY", "No update or delete"),
+        ("ORDERED", "Timestamp ascending"),
+        ("TRACEABLE", "Decision to Evidence"),
+        ("HUMAN", "Actor and reason"),
+    ]
+    x = 54
+    for label, value in guarantees:
+        dashboard_card(draw, (x, 888, x + 226, 1028), fill="#0B1311", radius=12)
+        dashboard_label(draw, (x + 16, 910), label, GREEN)
+        draw_lines(draw, value, (x + 16, 954), fonts(18, True), WHITE, 190, 4)
+        x += 242
+
+    dashboard_card(draw, (32, 1092, 1048, 1284), fill="#0C201A", outline=TEAL)
+    dashboard_label(draw, (54, 1118), "The business rule")
+    draw.text((54, 1163), "Si una entrada es incorrecta, se a\u00f1ade otra.", font=fonts(26, True), fill=WHITE)
+    draw.text((54, 1210), "La historia anterior nunca se sobrescribe.", font=fonts(19), fill=MUTED)
+    return image
+
+
+def business_value_surface() -> Image.Image:
+    image, draw = dashboard_base(
+        "Business Value",
+        "IMPERATOR / BUSINESS VALUE",
+        "What value could this Decision recover?",
+        "La estimaci\u00f3n se mantiene separada del valor realizado hasta que Finance valida el resultado.",
+    )
+    dashboard_card(draw, (32, 270, 650, 635), fill="#14211D", accent=True)
+    dashboard_label(draw, (62, 302), "Estimated annual recovery")
+    draw.text((62, 370), "EUR 19.440", font=fonts(80, True), fill=WHITE)
+    draw.rounded_rectangle((62, 497, 268, 538), radius=12, fill=ACCENT_DARK, outline=TEAL, width=1)
+    draw.text((82, 508), "Deterministic ROI", font=fonts(15, True), fill=GREEN)
+    draw.text((62, 574), "Canonical scenario / not a customer result", font=fonts(16), fill=MUTED)
+
+    draw_kv_rows(
+        draw,
+        (672, 270, 1048, 635),
+        [
+            ("Current annual cost", "EUR 28.080"),
+            ("Projected annual cost", "EUR 8.640"),
+            ("Estimated recovery", "EUR 19.440"),
+            ("Realized value", "Unavailable"),
+        ],
+        title="ROI of this decision",
+    )
+
+    dashboard_card(draw, (32, 662, 1048, 862), fill="#101917")
+    dashboard_label(draw, (54, 690), "Value states")
+    states = [
+        ("01", "ESTIMATED", "Recommendation + ROI", GREEN),
+        ("02", "IMPLEMENTED", "Ledger fact required", MUTED),
+        ("03", "VALIDATED", "Finance evidence required", MUTED),
+        ("04", "REALIZED", "Only after validation", MUTED),
+    ]
+    x = 54
+    for number, state, condition, color in states:
+        dashboard_card(draw, (x, 735, x + 226, 832), fill="#0B1311", outline=TEAL if state == "ESTIMATED" else LINE, radius=12)
+        draw.text((x + 14, 750), number, font=fonts(13, True), fill=color)
+        draw.text((x + 14, 776), state, font=fonts(16, True), fill=color)
+        draw.text((x + 14, 805), condition, font=fonts(12), fill=MUTED)
+        x += 242
+
+    dashboard_card(draw, (32, 890, 1048, 1110), fill="#101917")
+    dashboard_label(draw, (54, 918), "Why the separation matters")
+    bullets = [
+        "Forecasts remain forecasts until evidence proves the outcome.",
+        "Approval does not automatically become realized business value.",
+        "The Ledger preserves the exact path from estimate to validation.",
+    ]
+    y = 965
+    for bullet in bullets:
+        draw.ellipse((58, y + 8, 68, y + 18), fill=TEAL)
+        draw.text((84, y), bullet, font=fonts(18), fill=WHITE)
+        y += 52
+
+    dashboard_card(draw, (32, 1138, 1048, 1288), fill=ACCENT_DARK, outline=TEAL)
+    dashboard_label(draw, (54, 1162), "Current commercial claim")
+    draw.text((54, 1202), "EUR 19.440 estimated / realized value not yet available", font=fonts(25, True), fill=WHITE)
+    draw.text((54, 1247), "Nunca se presenta como ahorro de un cliente.", font=fonts(16), fill=MUTED)
+    return image
+
+
+def discovery_surface() -> Image.Image:
+    image, draw = dashboard_base(
+        "Executive Workspace",
+        "IMPERATOR / DISCOVERY",
+        "\u00bfC\u00f3mo reconstru\u00eds hoy una decisi\u00f3n operativa?",
+        "Busco conversaciones de 15-20 minutos para contrastar el problema, no para vender una plataforma.",
+    )
+    prompts = [
+        ("01", "DECISION", "\u00bfPod\u00e9is explicar meses despu\u00e9s por qu\u00e9 se tom\u00f3?"),
+        ("02", "OWNERSHIP", "\u00bfQui\u00e9n aprueba cuando existe impacto econ\u00f3mico?"),
+        ("03", "EVIDENCE", "\u00bfQu\u00e9 sistemas contienen la prueba y cu\u00e1nto cuesta reunirla?"),
+        ("04", "OUTCOME", "\u00bfComprob\u00e1is despu\u00e9s si el ahorro esperado se realiz\u00f3?"),
+    ]
+    y = 285
+    for number, label, question in prompts:
+        dashboard_card(draw, (32, y, 1048, y + 150), fill="#101917")
+        draw.rounded_rectangle((54, y + 36, 114, y + 96), radius=14, fill=ACCENT_DARK, outline=TEAL, width=2)
+        draw.text((72, y + 54), number, font=fonts(18, True), fill=GREEN)
+        dashboard_label(draw, (142, y + 32), label, GREEN)
+        draw_lines(draw, question, (142, y + 65), fonts(22, True), WHITE, 850, 5)
+        y += 168
+
+    dashboard_card(draw, (32, 973, 1048, 1135), fill="#0C201A", outline=TEAL)
+    dashboard_label(draw, (54, 1000), "What I need")
+    draw.text((54, 1042), "Un caso real contado sin credenciales ni datos confidenciales.", font=fonts(25, True), fill=WHITE)
+    draw.text((54, 1085), "Las conclusiones se utilizar\u00e1n de forma anonimizada para el TFG.", font=fonts(17), fill=MUTED)
+
+    draw.rounded_rectangle((32, 1165, 1048, 1288), radius=18, fill=GREEN)
+    draw.text((58, 1192), "\u00bfMe dedicar\u00edas 20 minutos para entender c\u00f3mo lo hac\u00e9is hoy?", font=fonts(26, True), fill="#062018")
+    draw.text((58, 1243), "Mensaje directo o comentario en LinkedIn.", font=fonts(17, True), fill="#123F33")
+    return image
+
+
+def create_commercial_surfaces() -> list[Image.Image]:
+    surfaces = [
+        executive_workspace_surface(),
+        decision_detail_surface(),
+        decision_ledger_surface(),
+        business_value_surface(),
+        discovery_surface(),
+    ]
+    for surface, path in zip(surfaces, DASHBOARD_OUTPUTS, strict=True):
+        surface.save(path, quality=95)
+    surfaces[0].save(COMMERCIAL_SCREENSHOT_PATH, quality=95)
+    return surfaces
+
+
+def create_pdf(surfaces: list[Image.Image]) -> None:
+    register_pdf_fonts()
+    c = canvas.Canvas(str(PDF_PATH), pagesize=(PAGE_W, PAGE_H))
+    c.setTitle("IMPERATOR - Executive Decision Discovery")
+    for index, surface in enumerate(surfaces, start=1):
+        page_path = TMP / f"dashboard_pdf_page_{index}.png"
+        surface.save(page_path)
+        c.drawImage(str(page_path), 0, 0, width=PAGE_W, height=PAGE_H)
+        c.showPage()
+    c.save()
+
+
 def video_base() -> Image.Image:
     return Image.new("RGB", (VIDEO_W, VIDEO_H), PAPER)
 
@@ -590,9 +1022,10 @@ def create_video(commercial_screen: Image.Image) -> None:
 def main() -> None:
     ensure_directories()
     clean_screen = clean_workspace_screenshot()
-    commercial_screen = commercial_workspace_screenshot(clean_screen)
-    create_pdf(commercial_screen)
-    create_video(commercial_screen)
+    commercial_workspace_screenshot(clean_screen)
+    surfaces = create_commercial_surfaces()
+    create_pdf(surfaces)
+    create_video(surfaces[1])
     print(PDF_PATH)
     print(SCREENSHOT_PATH)
     print(COMMERCIAL_SCREENSHOT_PATH)

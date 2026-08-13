@@ -1,50 +1,39 @@
-# Publicación de LinkedIn - Validación de IMPERATOR
+# Publicación de LinkedIn - Texto listo
 
-Estoy realizando mi TFG del Grado Superior de Desarrollo de Aplicaciones
-Multiplataforma y estoy desarrollando **IMPERATOR**.
+¿Podríais reconstruir hoy por qué se tomó una decisión técnica hace seis
+meses, quién la aprobó y qué resultado económico produjo?
 
-La idea parte de una pregunta sencilla:
+Estoy realizando mi TFG de Desarrollo de Aplicaciones Multiplataforma y he
+creado **IMPERATOR**, un proyecto que explora cómo convertir evidencia de
+sistemas como GitHub y AWS en decisiones operativas explicables, revisables y
+auditables.
 
-> Cuando una decisión técnica empieza a generar coste, riesgo o problemas
-> meses después, ¿puede la empresa reconstruir fácilmente por qué se tomó,
-> quién la aprobó y qué resultado produjo?
-
-IMPERATOR plantea un flujo que relaciona:
+El flujo que quiero validar es sencillo:
 
 ```text
-Evidencia operativa
--> Decisión
--> Recomendación
--> Impacto económico
--> Aprobación humana
--> Resultado
--> Trazabilidad auditable
+Evidence -> Decision -> Recommendation -> Human Review -> Ledger -> Business Value
 ```
 
-En esta fase no busco vender una plataforma ni conectar sistemas reales.
-Quiero validar si el problema existe y entender cómo lo resuelven actualmente
-las empresas.
+IMPERATOR no pretende que una IA tome decisiones. La recomendación y el ROI
+son deterministas; la autoridad sigue siendo humana y el resultado económico
+solo se considera realizado cuando existe evidencia posterior que lo valida.
 
-Busco conversar durante **15-20 minutos** con profesionales de:
+Ahora busco **10-15 profesionales** con experiencia en CTO/Engineering,
+Platform, DevOps, Cloud, FinOps, Finance, Security o Compliance para mantener
+una conversación de **15-20 minutos**.
 
-- CTO / VP Engineering
-- Platform Engineering, DevOps o Cloud
-- FinOps o Finance
-- Security o Compliance
+No necesito acceso a sistemas, credenciales ni información confidencial. No
+estoy vendiendo una plataforma: quiero entender cómo resolvéis hoy este
+problema y qué tendría que demostrar una herramienta para resultar útil.
 
-No necesito acceso a AWS, GitHub ni a información confidencial. Las preguntas
-se centran en procesos, responsabilidades y experiencias, y las conclusiones
-se utilizarán de forma anonimizada para mi TFG.
+Si te interesa participar, puedes responder a esta publicación o escribirme
+por mensaje directo. Las conclusiones se utilizarán de forma anonimizada para
+mi TFG.
 
-Si trabajas en alguno de estos ámbitos y te apetece compartir tu experiencia,
-puedes escribirme por mensaje directo o dejar un comentario.
+#TFG #DAM #PlatformEngineering #DevOps #FinOps #CloudComputing
 
-Gracias por ayudarme a contrastar IMPERATOR con problemas reales.
+## Primer comentario recomendado
 
-#TFG #DAM #PlatformEngineering #DevOps #FinOps #CloudComputing #SoftwareArchitecture
-
-## Nota de publicación
-
-Adjuntar primero el vídeo de 72 segundos. Usar el PDF como documento en una
-segunda publicación o enviarlo después de que exista interés. No publicar
-capturas con tokens, datos de clientes o afirmaciones de ahorro real.
+El carrusel utiliza exclusivamente un caso sintético: `DRC-AOA-001`. Los
+`19.440 EUR/año` representan una estimación determinista del escenario de
+prueba, no ahorro producido para un cliente.

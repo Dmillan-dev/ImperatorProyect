@@ -8,7 +8,10 @@ Status: **SYNTHETIC COMMERCIAL PREPARATION / NO CUSTOMER VALIDATION**
 - `IMPERATOR_Discovery_Deck_ES.pdf`: five-page visual discovery document.
 - `IMPERATOR_Workspace_Captura_Limpia.png`: clean certified D091 workspace screenshot using synthetic test fixtures.
 - `IMPERATOR_Workspace_Captura_Comercial.png`: commercial presentation frame using the visual language of the historical executive dashboard demo.
+- `IMPERATOR_Comercial_01_Executive_Workspace.png` through `05_Discovery.png`: publication-ready product surfaces used as the PDF pages.
 - `LinkedIn_Publicacion_ES.md`: discovery post and publishing note.
+- `Guia_Publicacion_LinkedIn_ES.md`: profile, publication sequence, interview CTA and response workflow.
+- `Guia_Explicacion_IMPERATOR_ES.md`: 30-second, 90-second and 15-minute explanation scripts.
 
 ## Use
 
