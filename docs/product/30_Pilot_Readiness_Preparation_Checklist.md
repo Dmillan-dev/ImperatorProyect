@@ -198,3 +198,18 @@ SPRINT 4.3: BLOCKED_EXTERNAL
 SPRINT 4.4: NOT OPEN
 SPRINT 4.5: NOT OPEN
 ```
+
+## 11. Prepared Commercial Operating Package
+
+The non-executable pilot package is indexed in `docs/pilot/README.md` and now
+covers:
+
+- the controlled single-customer environment and all 30 Evidence owners;
+- external Keycloak, GitHub and AWS access preparation;
+- rehearsal and future customer-pilot runbooks;
+- retention, deletion, backup/restore, incidents, DNS/TLS and secrets;
+- customer security questionnaire and DPA/NDA requirements; and
+- technical, commercial and WP11 acceptance evidence.
+
+These artifacts reduce Pilot Readiness uncertainty but do not change any
+status in Section 2.

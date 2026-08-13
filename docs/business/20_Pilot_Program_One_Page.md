@@ -1,129 +1,107 @@
-# IMPERATOR Pilot Program
+# IMPERATOR Pilot Charter
 
-> Internal commercial draft. Do not present as generally available until Pilot
-> Readiness is certified.
+Status: **INTERNAL COMMERCIAL PREPARATION / NOT OFFERABLE / NOT SIGNED**
 
-## Pilot Objective
+This one-page charter becomes customer-facing only after Sprint 4.5 Pilot
+Readiness is certified and commercial/legal review is complete.
 
-Demonstrate that IMPERATOR can turn approved operational evidence into one
-explainable business Decision, one deterministic Recommendation, one governed
-action and measurable economic value.
+## Objective And Business Question
 
-```text
-Operational events
--> Evidence
--> Decision
--> Recommendation
--> Human action
--> Validated outcome
--> Verifiable Business Value
-```
+Demonstrate that IMPERATOR can turn approved operational facts into one
+explainable Decision, one deterministic Recommendation, one governed action
+and measurable economic value.
 
-The pilot succeeds when the customer understands the Decision, its evidence,
-its economic impact and the required action in less than 15 minutes.
+> Is one shipped AI/cloud Decision costing more than the value it creates, and
+> can leadership approve a traceable action that credibly recovers value?
 
-## One Pilot, One Case
+The customer should understand the answer, Evidence, economic impact and
+required action in less than 15 minutes.
+
+## Scope
 
 | Item | Pilot boundary |
 |---|---|
 | Decision ROI Case | `DRC-AOA-001` - AI Onboarding Assistant Recovery |
-| Business question | Is the current AI operating model costing more than the value it creates? |
-| Recommendation family | One deterministic model downgrade/change Recommendation |
-| Business owner | Customer business owner for the selected AI workflow |
-| Technical owner | Platform Engineering |
-| Economic reviewer | Finance or FinOps |
-| Approver | CTO or VP Engineering |
+| Organization | Exactly one controlled customer organization |
+| GitHub | One organization, repository and default branch |
+| AWS | One commercial-partition account and one Region |
+| Recommendation | One deterministic model downgrade/change |
+| Workspace | One Decision Review Workspace |
+| Duration | Proposed 30 calendar days plus an agreed measurement extension if the outcome period is incomplete |
+| Delivery mode | Dedicated, non-public pilot environment; no shared multi-tenant service |
 
-IMPERATOR does not attempt to demonstrate multiple cases, recommendation
-ranking, autonomous execution or a general analytics platform during this
-pilot.
+The first authorized rehearsal uses the synthetic canonical 30-Evidence pack.
+Substitution with real customer facts and values requires separate pilot
+authorization because D082 and D093 currently freeze the canonical policy.
 
-## What The Customer Sees
+## Participants
 
-```text
-What happened?
--> Why does it matter?
--> What does IMPERATOR recommend?
--> How much value could be recovered?
--> Who must approve the action?
--> What happened after approval?
--> What value was actually realized?
-```
+| Participant | Accountability |
+|---|---|
+| Customer Executive Sponsor | Owns commercial outcome and final pilot decision |
+| Customer Business Owner | Confirms business need and value boundary |
+| Customer Platform Engineer | Validates GitHub/AWS lineage and implements any approved action outside IMPERATOR |
+| Customer Finance/FinOps | Accepts baseline, assumptions and realized-value calculation |
+| Customer Security/Privacy Contact | Approves access, data handling and incident path |
+| IMPERATOR Pilot Lead | Coordinates scope, evidence, reviews and acceptance |
+| IMPERATOR Security/Operations Owner | Controls environment, access, backup, incidents and deletion evidence |
 
-The Decision Review Workspace connects the answer to its Evidence, ROI,
-Recommendation, human review and immutable Ledger history. Business Value is
-reported as estimated until the customer validates the actual outcome.
+## Deliverables And Success Criteria
 
-## Required Pilot Inputs
+| Criterion | Acceptance evidence |
+|---|---|
+| Traceability | Evidence -> Decision -> Recommendation -> Ledger -> Business Value is reconstructable |
+| Explainability | Reason, confidence, risk, policy and assumptions are understandable |
+| Governance | Approval, implementation and validation are attributable and ordered |
+| Value | Finance accepts estimated ROI and later validated realized value |
+| Persistence | The complete case survives certified runtime recreation without duplication |
+| Security | Read-only provider access, real JWT/RBAC and no Restricted data or secret leakage |
+| Commercial comprehension | Executive Sponsor understands the value in under 15 minutes |
 
-- One customer-approved AI/cloud operating Decision.
-- Approved read-only evidence or exports from the systems needed by the case.
-- Cost baseline and post-action measurement period.
-- A named business owner, technical owner, financial reviewer and approver.
-- Customer confirmation of quality, risk and acceptable implementation limits.
-- No raw prompts, raw conversations, credentials, secrets or unnecessary PII.
+Outputs are one review session, one immutable governance history, one
+Business Value result and one signed `GO`, `ITERATE` or `NO-GO` report.
 
-The canonical `DRC-AOA-001` dataset is a demonstration template. Customer
-outcomes must use customer-approved evidence and assumptions; template values
-are never presented as guaranteed savings.
+## Data And Security Boundary
 
-## Five Success Criteria
+- No raw prompts, completions, customer conversations, credentials, secrets or
+  unnecessary personal data.
+- GitHub and AWS permissions are read-only and limited to the agreed boundary.
+- Keycloak is external; IMPERATOR stores no passwords, tokens or IdP sessions.
+- No customer data enters Git, screenshots, public issue trackers or R&D logs.
+- Processing purpose, retention, deletion, hosting location, subprocessors,
+  incident notification and international transfers must be agreed in writing.
+- A dedicated environment is destroyed after the agreed retention period;
+  append-only Ledger semantics do not override contractual deletion duties.
 
-| Criterion | Pilot objective | Evidence of success |
+## Support And Stop Conditions
+
+Pilot support is limited to agreed business hours and named contacts. It is not
+a 24/7 availability SLA. The proposed response objectives are:
+
+| Severity | Meaning | Response objective |
 |---|---|---|
-| Traceability | Reconstruct Evidence -> Decision -> Recommendation -> Ledger | Every conclusion links back to approved operational evidence |
-| Explainability | Produce one deterministic and auditable Recommendation | The reviewer understands the reason, confidence, risk and assumptions |
-| Action | Complete the governed human workflow | Approval, implementation and result validation are attributable and ordered |
-| Value | Show estimated ROI and then validated realized value | Finance/FinOps accepts the inputs, calculation and outcome |
-| Persistence | Preserve the complete case across runtime recreation | Decision, Evidence, Recommendation, Ledger and Business Value are recovered without duplication |
+| `P0` | Suspected disclosure, unauthorized access or Ledger/data-integrity risk | Stop processing immediately; acknowledge within 4 business hours |
+| `P1` | Pilot flow unavailable with no safe workaround | Acknowledge within 1 business day |
+| `P2` | Non-blocking defect or documentation issue | Triage within 2 business days |
 
-## Primary Commercial Validation
+The pilot stops on a fixable Critical image vulnerability, invalid identity
+trust, write-capable connector permission, Restricted data, unverifiable ROI,
+broken Ledger lineage or any use outside the signed scope.
 
-The pilot must answer one question:
+## Exclusions
 
-> Can the customer identify an operational Decision whose cost or value can be
-> measured credibly in euros and improved through an approval-ready action?
+No autonomous decision/execution, guaranteed savings, financial advice,
+multi-tenancy, public production exposure, broad connector coverage, ranking,
+portfolio analytics, production SLA or feature expansion is included.
 
-Positive commercial evidence means:
-
-- the CTO or VP Engineering considers the Recommendation reviewable;
-- Platform Engineering accepts the technical Evidence chain;
-- Finance or FinOps accepts the economic assumptions;
-- the customer can identify an owner and a feasible action; and
-- the customer asks to evaluate another Decision after the first case.
-
-## Pilot Sequence
-
-1. Select one eligible customer Decision and confirm owners.
-2. Collect only approved Evidence and establish the economic baseline.
-3. Reconstruct `DRC-AOA-001` and present its deterministic Recommendation.
-4. Review ROI, risk, assumptions and Evidence with the customer.
-5. Record the authorized human Decision in the Ledger.
-6. If the customer acts, record implementation and the agreed validation period.
-7. Validate the outcome and present realized Business Value.
-8. Confirm traceability, persistence and the next commercial Decision.
-
-## Pilot Boundaries
-
-The pilot does not promise:
-
-- autonomous business decisions or automated execution;
-- universal ROI, guaranteed savings or financial advice;
-- broad connector coverage, multi-tenancy or platform-scale deployment;
-- access to raw customer prompts, conversations or credentials;
-- AI authority over Recommendation, approval or Business Value; or
-- production availability before security and Pilot Readiness gates pass.
-
-IMPERATOR is sold here as a governed Decision ROI workflow, not as another AI
-platform, generic dashboard or observability product.
-
-## Pilot Exit
+## Exit
 
 | Outcome | Meaning |
 |---|---|
-| `GO` | All five success criteria pass and the customer wants to review another measurable Decision |
-| `ITERATE` | The problem is valuable but Evidence, ownership or measurement needs a bounded correction |
-| `NO-GO` | The customer cannot identify a measurable Decision or does not trust the evidence-to-value chain |
+| `GO` | Every mandatory criterion passes and the customer requests another measurable Decision |
+| `ITERATE` | Value is credible but one bounded Evidence, ownership or measurement issue must be corrected |
+| `NO-GO` | The customer cannot identify measurable value or cannot trust the evidence-to-value chain |
 
-The commercial pilot is complete only when value is understood, governed and
-traceable. Feature count is not a success metric.
+The signed order form or pilot agreement must name the parties, dates,
+environment, contacts, data terms, support window and commercial terms. This
+charter is not a substitute for legal review.
