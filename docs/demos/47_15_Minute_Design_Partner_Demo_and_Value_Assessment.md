@@ -92,7 +92,9 @@ editing canonical values in place.
 ## 5. Fifteen-Minute Script
 
 The presenter uses a timer. Architecture is supporting proof, not the opening
-story.
+story. This standalone script is not the opening of a first prospect call.
+Follow `../business/21_Design_Partner_Discovery_Playbook.md` first and show the
+compressed L1 path only after a concrete relevant problem has been identified.
 
 | Time | Show or say | Buyer question being tested | Required proof |
 |---|---|---|---|
@@ -133,12 +135,14 @@ story.
 ### During The Meeting
 
 1. State that L1 is a deterministic product proof, not a live customer result.
-2. Follow the exact 15-minute sequence.
-3. Use one Decision only.
-4. Trace every financial number to Evidence, policy or Ledger validation.
-5. Show the human authority boundary before discussing AI.
-6. Record buyer language and answers, not personal data or confidential facts.
-7. Stop if asked to connect a live system, upload customer data or issue a
+2. Confirm discovery already produced a concrete relevant Decision; otherwise
+   stop the demo and return to discovery.
+3. Follow the exact 15-minute sequence or its approved compressed path.
+4. Use one Decision only.
+5. Trace every financial number to Evidence, policy or Ledger validation.
+6. Show the human authority boundary before discussing AI.
+7. Record buyer language and answers, not personal data or confidential facts.
+8. Stop if asked to connect a live system, upload customer data or issue a
    production credential.
 
 ### After The Meeting

@@ -103,6 +103,7 @@ remains blocked. They do not change the current gate or authorize Sprint 4.4,
 Sprint 4.5, runtime work or a new decision:
 
 - `architecture/53_Keycloak_Pilot_Identity_Integration_Preparation.md`;
+- `business/21_Design_Partner_Discovery_Playbook.md`;
 - `demos/46_DRC_AOA_001_Pilot_E2E_Readiness_Checklist.md`;
 - `demos/47_15_Minute_Design_Partner_Demo_and_Value_Assessment.md`;
 - `architecture/54_Observability_Preparation.md`;

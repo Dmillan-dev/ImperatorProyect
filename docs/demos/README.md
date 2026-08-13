@@ -44,6 +44,10 @@ steps and historical visual concepts.
 Never describe L1 as L2 or L3. Passing technical tests proves behavior; only a
 customer validation can prove willingness to act or pay.
 
+The first prospect meeting is discovery-first. Use
+`../business/21_Design_Partner_Discovery_Playbook.md`; show L1 only after the
+buyer identifies a concrete relevant Decision.
+
 ## Artifact Map
 
 | Document | Role |
