@@ -1,5 +1,13 @@
 IMPERATOR — Executive Decision Workspace demo
 
+STATUS: HISTORICAL NON-FUNCTIONAL PROTOTYPE. DO NOT USE AS THE CURRENT
+COMMERCIAL OR CERTIFIED MVP DEMONSTRATION.
+
+This prototype contains unvalidated portfolio, aggregate-value, historical
+outcome and connector concepts outside D091. Use
+`../../docs/demos/47_15_Minute_Design_Partner_Demo_and_Value_Assessment.md`
+for the current evidence-backed narrative.
+
 Open `index.html` in a browser to view a sales-focused executive decision workspace.
 
 Phase 0 note:
@@ -18,5 +26,5 @@ What's included:
 
 Next steps:
 - Use the demo to test whether buyers understand the recommended decision in under 30 seconds
-- Replace sample values with customer-specific pilot assumptions
+- Never replace sample values with customer data or present them as validated outcomes
 - Keep the demo focused on answers, not charts

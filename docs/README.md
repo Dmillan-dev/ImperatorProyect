@@ -32,6 +32,7 @@ Do not load all documentation by default.
 | `rfcs/` | Proposed substantial changes | Proposal |
 | `research/` | Hypothesis and experiment formats | Template |
 | `rnd/` | R&D activity and evidence control | Evidence model and template |
+| `demos/` | Certified demonstrations, demo readiness and buyer-validation scripts | Evidence-backed operational guide |
 | `pilot/` | Commercial-pilot preparation, runbooks and acceptance evidence | Non-authoritative preparation until Pilot Readiness |
 
 Agent execution plans live under `../agents/`, not inside `docs/`.
@@ -103,6 +104,7 @@ Sprint 4.5, runtime work or a new decision:
 
 - `architecture/53_Keycloak_Pilot_Identity_Integration_Preparation.md`;
 - `demos/46_DRC_AOA_001_Pilot_E2E_Readiness_Checklist.md`;
+- `demos/47_15_Minute_Design_Partner_Demo_and_Value_Assessment.md`;
 - `architecture/54_Observability_Preparation.md`;
 - `product/30_Pilot_Readiness_Preparation_Checklist.md`; and
 - `pilot/README.md` and its controlled commercial operating package.

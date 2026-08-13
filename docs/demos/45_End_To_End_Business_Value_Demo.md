@@ -1,5 +1,7 @@
 # End-to-End Local Business Value Demo
 
+Status: **CERTIFIED LOCAL APPLICATION HARNESS / NOT A PILOT RUNTIME E2E**
+
 ## Purpose
 
 This operational guide executes the Sprint 3.5 local vertical slice for the frozen `DRC-AOA-001` AI Onboarding Assistant case. It demonstrates an auditable outcome from normalized NDJSON Evidence through a validated Business Value projection.
@@ -121,8 +123,14 @@ The harness passes only when:
 7. Realized savings originate exclusively from the validation Ledger fact.
 8. Identical review and Ledger command replays create no additional entries.
 9. Re-projecting identical authoritative state returns an equal projection.
-10. The existing `GET /api/v1/business-value` route remains outside this workflow and continues to return `501 Not Implemented`.
+10. This harness stays inside Application boundaries and does not claim to
+    exercise REST, PostgreSQL, JWT, Docker or the browser workspace. The
+    separately certified `GET /api/v1/business-value` route is outside this
+    harness.
 
 ## Explicit exclusions
 
-This demo does not add functional REST wiring, a Business Value aggregate, a Business Value repository, database objects, migrations, external AI vendors, JWT, RBAC, frontend behavior, cloud connectors, Docker, observability, or CI/CD.
+This harness does not exercise functional REST, PostgreSQL, JWT, RBAC, the
+frontend, external connectors, Docker or observability. Those capabilities
+have their own certification boundaries. It does not add a Business Value
+aggregate or repository, database objects, migrations or external AI vendors.
