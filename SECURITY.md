@@ -5,32 +5,31 @@ project does not currently provide a production support SLA.
 
 ## Supported Version
 
-Security fixes are evaluated against the current `main` branch. Historical
-commits, generated artifacts and static demonstration files are not supported
-release channels.
+Security fixes are evaluated against the latest commit on `main`. Historical
+commits, generated artifacts, local environments, downstream forks and static
+demonstration files are not supported release channels.
 
-## Reporting a Vulnerability
+## Reporting A Vulnerability
 
 Do not disclose a suspected vulnerability in a public issue, pull request,
 discussion or social-media post.
 
-1. Use GitHub private vulnerability reporting for this repository when it is
-   available.
-2. Otherwise, contact the repository owner through
-   [the GitHub profile](https://github.com/Dmillan-dev) and request a private
-   reporting channel without including exploit details.
-3. Include the affected component and commit, reproduction conditions, impact
-   and any suggested mitigation in the private report.
+1. Use GitHub Private Vulnerability Reporting when it is available for this
+   repository.
+2. If that channel is unavailable, email
+   `dmillan.evidence262@slmails.com` without including secrets or personal data.
+3. Include the affected component and commit, reproduction conditions,
+   expected and observed impact, and any suggested mitigation.
 
-Never include real credentials, personal data or customer data in a report.
-Test only against systems and data you are authorized to use.
+Test only systems and data you own or are authorized to use. Do not degrade
+services, access third-party data or perform denial-of-service testing.
 
 ## Response Process
 
-The maintainer will acknowledge the report when possible, validate scope and
-severity, record remediation evidence and disclose only after an appropriate
-fix or mitigation exists. Response times are best-effort while the project is
-pre-pilot.
+The maintainer will acknowledge and assess reports on a best-effort basis,
+record remediation evidence, and coordinate disclosure after an appropriate
+fix or mitigation exists. No response-time commitment applies while the
+project remains pre-pilot.
 
 ## Current Security Boundary
 
@@ -50,6 +49,8 @@ Implemented controls include:
 The Docker runtime is **not certified** while its D092 vulnerability and
 external pilot gates remain open. There is no production deployment, public
 endpoint, connected external IdP, tenant isolation contract or security SLA.
+Passing source, dependency and application-image checks does not override this
+release boundary.
 
 See the canonical
 [Security, Data Governance and Threat Model](docs/architecture/26_Security_Data_Governance_Threat_Model.md)
@@ -58,7 +59,7 @@ and the evidence-backed
 
 ## Secrets
 
-Never commit passwords, tokens, private keys, cloud credentials, real JWTs or
-Docker secret values. Use ignored local secret files or environment-specific
-secret management. Revoke and rotate any secret that is accidentally exposed,
-then report the incident privately.
+Never commit passwords, tokens, private keys, cloud credentials, real JWTs,
+customer data or Docker secret values. Use ignored local secret files or an
+environment-specific secret manager. Revoke and rotate any secret that is
+accidentally exposed, then report the incident privately.

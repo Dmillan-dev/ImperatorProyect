@@ -20,8 +20,8 @@ FROM eclipse-temurin:21-jre-jammy@sha256:3097cbbebb7d490494a98aed2301f284b38f79e
 ARG VCS_REF
 
 LABEL org.opencontainers.image.title="IMPERATOR Backend" \
-      org.opencontainers.image.description="IMPERATOR certified Java runtime" \
-      org.opencontainers.image.source="https://github.com/imperator/imperator" \
+      org.opencontainers.image.description="IMPERATOR pre-pilot Java runtime" \
+      org.opencontainers.image.source="https://github.com/Dmillan-dev/ImperatorProyect" \
       org.opencontainers.image.revision="${VCS_REF}" \
       org.opencontainers.image.version="0.1.0"
 

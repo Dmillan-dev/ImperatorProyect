@@ -194,9 +194,11 @@ See [Security Policy](SECURITY.md) and the canonical
 | PostgreSQL integration gate | **IMPLEMENTED**; 31 real-database tests plus Flyway migrate/validate/idempotency |
 | Frontend lint/typecheck/tests/build | **IMPLEMENTED locally**; 41 tests and production build pass |
 | Frontend dependency audit | **IMPLEMENTED as a manual certification command**; latest local check found 0 vulnerabilities |
-| Container vulnerability gate | **IMPLEMENTED manually**; currently blocks release on one upstream fixable Critical |
+| Automated source/dependency scan | **PARTIALLY IMPLEMENTED**; the fail-closed Trivy workflow is configured and passes locally, with its first hosted run pending |
+| Application container vulnerability gate | **PARTIALLY IMPLEMENTED**; backend and frontend images pass locally and the first hosted workflow run is pending |
+| Infrastructure container vulnerability gate | **IMPLEMENTED manually**; currently blocks release on one upstream fixable Critical in the official PostgreSQL image |
 | Frontend CI workflow | **PLANNED** |
-| Automated SAST and Java SCA | **PLANNED** |
+| Automated SAST | **PLANNED**; Java and npm SCA are covered by the Trivy workflow |
 | Deployment pipeline | **FUTURE**; no cloud deployment exists |
 
 The current CI is intentionally smaller than the target pipeline. The
@@ -430,5 +432,6 @@ Please do not report vulnerabilities through a public issue. Follow
 
 ## License
 
-Copyright (c) 2026 IMPERATOR project owner. This repository currently uses a
-proprietary, all-rights-reserved license. See [LICENSE](LICENSE).
+Copyright (c) 2026 Daniel Millan Perez. This repository is publicly available
+for portfolio review under a proprietary, all-rights-reserved license. See
+[LICENSE](LICENSE).

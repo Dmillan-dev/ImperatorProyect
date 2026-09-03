@@ -13,7 +13,24 @@ Thumbs.db
 *.pem
 *.key
 *.p12
+*.pfx
 *.jks
+*.keystore
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+credentials
+credentials.*
+.aws/
+.kube/config
+
+# Future infrastructure state and local variable files
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
 
 # Logs and local runtime output
 *.log
@@ -36,3 +53,6 @@ venv/
 # Docker Production Runtime local material
 infra/docker/secrets/*
 !infra/docker/secrets/README.md
+
+# Private commercial discovery material
+output/commercial/discovery-candidates/

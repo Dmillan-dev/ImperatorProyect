@@ -1,0 +1,92 @@
+name: Security
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "23 5 * * 1"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: security-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  source-security:
+    name: Source, dependency and configuration scan
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Scan repository with Trivy
+        uses: aquasecurity/trivy-action@a9c7b0f06e461e9d4b4d1711f154ee024b8d7ab8 # v0.36.0
+        with:
+          scan-type: fs
+          scan-ref: .
+          scanners: vuln,secret,misconfig
+          severity: HIGH,CRITICAL
+          ignore-unfixed: true
+          exit-code: "1"
+          format: table
+          hide-progress: true
+          skip-dirs: frontend/node_modules,frontend/.next,target
+          skip-files: infra/docker/backend/Dockerfile.dockerignore,infra/docker/frontend/Dockerfile.dockerignore
+
+  application-images:
+    name: Application image scan
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Build backend image
+        run: >-
+          docker build
+          --file infra/docker/backend/Dockerfile
+          --build-arg VCS_REF=${{ github.sha }}
+          --tag imperator/backend:${{ github.sha }}
+          .
+
+      - name: Scan backend image
+        uses: aquasecurity/trivy-action@a9c7b0f06e461e9d4b4d1711f154ee024b8d7ab8 # v0.36.0
+        with:
+          image-ref: imperator/backend:${{ github.sha }}
+          scanners: vuln,secret
+          severity: HIGH,CRITICAL
+          ignore-unfixed: true
+          exit-code: "1"
+          format: table
+          hide-progress: true
+
+      - name: Build frontend image
+        run: >-
+          docker build
+          --file infra/docker/frontend/Dockerfile
+          --build-arg VCS_REF=${{ github.sha }}
+          --tag imperator/frontend:${{ github.sha }}
+          .
+
+      - name: Scan frontend image
+        uses: aquasecurity/trivy-action@a9c7b0f06e461e9d4b4d1711f154ee024b8d7ab8 # v0.36.0
+        with:
+          image-ref: imperator/frontend:${{ github.sha }}
+          scanners: vuln,secret
+          severity: HIGH,CRITICAL
+          ignore-unfixed: true
+          exit-code: "1"
+          format: table
+          hide-progress: true
