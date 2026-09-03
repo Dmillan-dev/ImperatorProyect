@@ -1,9 +1,13 @@
 # IMPERATOR
 
-**Enterprise Decision Intelligence Platform**
+### Enterprise Decision Intelligence Platform
 
-> A security-oriented system for turning operational evidence into traceable,
-> explainable and economically measurable decisions.
+> A security-first platform that turns operational evidence into explainable,
+> measurable and auditable business decisions.
+
+**Java 21 · Spring Boot 4.1 · PostgreSQL 18 · Next.js 16 · TypeScript · JWT/RBAC · Hexagonal Architecture · Docker · DevSecOps**
+
+Portfolio focus: **Software Architecture · Cloud Security · DevSecOps · Auditability**
 
 [![Java CI](https://github.com/Dmillan-dev/ImperatorProyect/actions/workflows/java-ci.yml/badge.svg)](https://github.com/Dmillan-dev/ImperatorProyect/actions/workflows/java-ci.yml)
 ![Java 21](https://img.shields.io/badge/Java-21-1f6feb)
@@ -18,11 +22,6 @@
 [Synthetic demo](output/commercial/linkedin-discovery-kit/README.md) |
 [Recruiter summary](docs/portfolio/recruiter-summary.md)
 
-![IMPERATOR Decision Review Workspace using synthetic data](output/commercial/linkedin-discovery-kit/IMPERATOR_Workspace_Captura_Limpia.png)
-
-> The screenshot uses synthetic test fixtures. It is not customer data and does
-> not claim realized customer savings.
-
 ## 30-Second Overview
 
 IMPERATOR reconstructs why an operational decision was made, which evidence
@@ -34,6 +33,19 @@ Decision Review Workspace.
 The project demonstrates secure software design rather than autonomous AI:
 recommendations and ROI are deterministic, human authority remains explicit,
 and the append-only Decision Ledger preserves accountability.
+
+| At a glance | Repository evidence |
+|---|---|
+| Business flow | Evidence → Decision → Recommendation → Human Review → Ledger → Business Value |
+| Architecture | Java modular monolith with framework-free Domain/Application and hexagonal ports/adapters |
+| Security | RS256 JWT, explicit four-role RBAC, Evidence redaction, read-only cloud integrations and append-only audit history |
+| Verification | 139 backend tests, 31 PostgreSQL integration tests, 41 frontend tests and Playwright browser acceptance |
+| Current boundary | Pre-pilot; Docker runtime is implemented but Sprint 4.3 remains blocked and uncertified |
+
+![IMPERATOR Decision Review Workspace using synthetic data](output/commercial/linkedin-discovery-kit/IMPERATOR_Workspace_Captura_Limpia.png)
+
+> The screenshot uses synthetic test fixtures. It is not customer data and does
+> not claim realized customer savings.
 
 ## Verified Delivery Status
 
