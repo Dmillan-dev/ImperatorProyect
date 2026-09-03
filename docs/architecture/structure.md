@@ -18,6 +18,7 @@ demos/
 docs/
 frontend/
 infra/
+output/
 proto/
 samples/
 scripts/
@@ -30,9 +31,9 @@ target/
 
 ### `.github/`
 
-Contains repository automation metadata. The existing `proto-ci.yml` workflow
-is a legacy proto-generation check and does not constitute the Phase 2.13 Java
-backend CI foundation.
+Contains the implemented Java CI workflow, review ownership and pull-request
+template. Frontend CI, SAST, dependency scanning, release automation and
+deployment workflows are not implemented.
 
 ### `.mvn/`
 
@@ -112,6 +113,9 @@ docs/
   rfcs/          proposed changes
   research/      research templates
   rnd/           R&D evidence model and templates
+  demos/         demo readiness and value-validation guides
+  pilot/         controlled commercial-pilot preparation
+  portfolio/     recruiter-facing technical evidence
 ```
 
 The canonical documentation entry point is `docs/README.md`.
@@ -124,14 +128,20 @@ runtime or as evidence that an MVP feature is implemented.
 
 ### `frontend/`
 
-Reserved for the React and TypeScript product surface. Phase 2.10 is not yet
-authorized.
+Contains the implemented Next.js, React and TypeScript Decision Review
+Workspace, its unit/component tests and Playwright acceptance test. It is not
+evidence of a public or production deployment.
 
 ### `infra/`
 
-Reserved for local and deployment infrastructure. It must not contain
-Kubernetes, Terraform or production deployment material before explicit
-authorization.
+Contains the D092 production-like local Docker Compose runtime, hardened
+application Dockerfiles and ignored file-backed secret boundary. Sprint 4.3
+remains uncertified; no cloud deployment, Kubernetes or Terraform exists.
+
+### `output/`
+
+Contains generated commercial and PDF artifacts. These are presentation
+outputs, not runtime source, canonical contracts or customer evidence.
 
 ### `proto/`
 
@@ -145,8 +155,8 @@ Case. Samples must not be represented as production customer data.
 
 ### `scripts/`
 
-Contains repository automation. Scripts must not bypass build, migration,
-security or sprint gates.
+Contains the local Docker runtime verifier and commercial artifact generators.
+Scripts must not bypass build, migration, security or sprint gates.
 
 ### `services/`
 

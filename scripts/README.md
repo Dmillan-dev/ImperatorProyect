@@ -12,15 +12,19 @@ Auxiliary repository automation when a verified need exists.
 
 ## Contains
 
-- Future local helper scripts.
-- Future validation or evidence capture scripts tied to implemented modules.
-- Future CI helper scripts when explicitly authorized.
+- `verify-docker-runtime.ps1`, the local D092 runtime verification helper.
+- `commercial/capture_linkedin_workspace.mjs`, which captures the synthetic
+  commercial workspace.
+- `commercial/generate_discovery_interview_guide.py`, which generates the
+  interview guide artifact.
+- `commercial/generate_linkedin_discovery_kit.py`, which generates the
+  commercial discovery kit.
+- Future validation or evidence helpers only when explicitly authorized.
 
 Current status:
-- Documentation boundary only.
-- No executable scripts.
-- No setup automation.
-- No CI helper scripts.
+- Executable local verification and commercial artifact helpers exist.
+- There is no general environment setup automation.
+- There are no CI helper scripts.
 
 ## Never Contains
 
@@ -30,7 +34,6 @@ Current status:
 - Destructive commands without explicit founder approval.
 - Scripts that bypass tests, security or architecture gates.
 
-## Authorized Next Use
-
-A later sprint may add scripts only when they support a concrete implemented
-module or verification workflow.
+Generated caches such as `__pycache__/` are ignored and are not source or
+evidence. New scripts must support a concrete implemented module, verification
+workflow or approved portfolio artifact.

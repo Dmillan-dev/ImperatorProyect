@@ -1,0 +1,65 @@
+name: Bug report
+description: Report a reproducible defect using synthetic or non-sensitive data.
+title: "bug: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not report security vulnerabilities or include credentials, tokens,
+        customer data or personal data here. Follow SECURITY.md for private
+        vulnerability reporting.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What happened, and what behavior did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Provide the smallest reproducible sequence and sanitized inputs.
+      placeholder: |
+        1. Run ...
+        2. Call ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: input
+    id: commit
+    attributes:
+      label: Commit
+      description: Full commit SHA where the behavior was observed.
+    validations:
+      required: true
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - Java Domain or Application
+        - REST API or security
+        - PostgreSQL or Flyway
+        - GitHub or AWS connector
+        - Next.js frontend
+        - Docker runtime
+        - Documentation or tooling
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification evidence
+      description: Include relevant command output with all sensitive values removed.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety confirmation
+      options:
+        - label: I removed secrets, real tokens, customer data and personal data.
+          required: true
+        - label: This is not a security vulnerability report.
+          required: true

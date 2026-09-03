@@ -12,9 +12,15 @@ GitHub configuration for repository automation.
 
 ## Contains
 
-- Future or existing workflow definitions.
-- Repository automation metadata.
-- Legacy `proto-ci.yml`; this is not the Phase 2.13 Java backend CI foundation.
+- `workflows/java-ci.yml`, the implemented Java 21 and Maven verification
+  workflow.
+- `CODEOWNERS`, defining review ownership for the repository and high-impact
+  architecture and security boundaries.
+- `PULL_REQUEST_TEMPLATE.md`, enforcing scoped, evidence-backed changes.
+- `ISSUE_TEMPLATE/bug_report.yml`, collecting reproducible, sanitized defect
+  reports and routing security reports away from public issues.
+- Future repository automation metadata only when a delivery gate authorizes
+  it.
 
 ## Never Contains
 
@@ -23,4 +29,10 @@ GitHub configuration for repository automation.
 - Secrets or credentials.
 - Manual sprint evidence.
 - Product or architecture decisions.
+
+## Current Automation Boundary
+
+Java CI is implemented. Frontend CI, automated SAST, Java dependency scanning,
+release automation and deployment workflows are not implemented and must not
+be inferred from this directory.
 

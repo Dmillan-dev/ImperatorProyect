@@ -1,0 +1,13 @@
+# Default ownership for architecture, security and implementation review.
+* @Dmillan-dev
+
+# High-impact boundaries require explicit owner review.
+/backend-java/domain/ @Dmillan-dev
+/backend-java/application/ @Dmillan-dev
+/backend-java/ports/ @Dmillan-dev
+/backend-java/api/security/ @Dmillan-dev
+/database/migrations/ @Dmillan-dev
+/infra/ @Dmillan-dev
+/.github/workflows/ @Dmillan-dev
+/docs/architecture/ @Dmillan-dev
+/docs/decisions/ @Dmillan-dev
