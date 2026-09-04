@@ -2,8 +2,13 @@ name: imperator
 
 services:
   postgres:
-    image: postgres:18.4-bookworm@sha256:882236b897e39051d2368c5ccc6cda944904723506b2dfc97f2a8f5bc9afa382
+    image: imperator/postgres:${IMPERATOR_IMAGE_TAG:?Set IMPERATOR_IMAGE_TAG to the current Git SHA}
     platform: linux/amd64
+    build:
+      context: ./postgresql
+      dockerfile: Dockerfile
+      args:
+        VCS_REF: ${IMPERATOR_IMAGE_TAG:?Set IMPERATOR_IMAGE_TAG to the current Git SHA}
     environment:
       POSTGRES_DB: imperator
       POSTGRES_INITDB_ARGS: --auth-host=scram-sha-256
@@ -143,8 +148,13 @@ services:
         max-file: "3"
 
   postgres-permissions:
-    image: postgres:18.4-bookworm@sha256:882236b897e39051d2368c5ccc6cda944904723506b2dfc97f2a8f5bc9afa382
+    image: imperator/postgres:${IMPERATOR_IMAGE_TAG:?Set IMPERATOR_IMAGE_TAG to the current Git SHA}
     platform: linux/amd64
+    build:
+      context: ./postgresql
+      dockerfile: Dockerfile
+      args:
+        VCS_REF: ${IMPERATOR_IMAGE_TAG:?Set IMPERATOR_IMAGE_TAG to the current Git SHA}
     user: "999:999"
     entrypoint:
       - /bin/sh

@@ -40,7 +40,7 @@ jobs:
           format: table
           hide-progress: true
           skip-dirs: frontend/node_modules,frontend/.next,target
-          skip-files: infra/docker/backend/Dockerfile.dockerignore,infra/docker/frontend/Dockerfile.dockerignore
+          skip-files: infra/docker/backend/Dockerfile.dockerignore,infra/docker/frontend/Dockerfile.dockerignore,infra/docker/postgresql/Dockerfile.dockerignore
 
   application-images:
     name: Application image scan
@@ -90,3 +90,42 @@ jobs:
           exit-code: "1"
           format: table
           hide-progress: true
+
+  postgresql-runtime-image:
+    name: PostgreSQL D094 supply-chain gate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install Trivy
+        uses: aquasecurity/setup-trivy@3fb12ec12f41e471780db15c232d5dd185dcb514 # v0.2.6
+        with:
+          version: v0.74.0
+          cache: true
+
+      - name: Build and certify PostgreSQL runtime image
+        shell: pwsh
+        run: |
+          ./scripts/verify-postgres-runtime-image.ps1 `
+            -EvidenceDirectory build/d094/first `
+            -RequireCleanWorktree
+          $runtimeDigest = (Get-Content -Raw build/d094/first/provenance.json |
+            ConvertFrom-Json).runtimeManifestDigest
+          ./scripts/verify-postgres-runtime-image.ps1 `
+            -EvidenceDirectory build/d094/rebuild `
+            -ExpectedRuntimeDigest $runtimeDigest `
+            -RequireCleanWorktree
+
+      - name: Preserve D094 evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: d094-postgresql-supply-chain-${{ github.sha }}
+          path: build/d094
+          if-no-files-found: error
+          retention-days: 30
