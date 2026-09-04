@@ -1,4 +1,4 @@
-FROM eclipse-temurin:21-jdk-jammy@sha256:55fb9bf738f5d9b4a6c01b39337e3070d3e27370dd3c478fd1d5d3cd2233c6d8 AS build
+FROM eclipse-temurin:25-jdk-jammy@sha256:89565961a318534f01c971c7b1d030e60713c66995b887c94010cef938dbc53e AS build
 
 WORKDIR /workspace
 
@@ -15,7 +15,7 @@ RUN sed -i 's/\r$//' mvnw \
     && ./mvnw --batch-mode --no-transfer-progress -DskipTests package \
     && test -f target/imperator-backend-0.1.0.jar
 
-FROM eclipse-temurin:21-jre-jammy@sha256:3097cbbebb7d490494a98aed2301f284b38f79eba158eef098c6fc8c8af11c23 AS runtime
+FROM eclipse-temurin:25-jre-jammy@sha256:10c251954d0bfe1a59ba93505f8c628d755919412400aa98685764c9353605d6 AS runtime
 
 ARG VCS_REF
 
