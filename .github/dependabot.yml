@@ -29,15 +29,6 @@ updates:
     open-pull-requests-limit: 5
 
   - package-ecosystem: docker
-    directory: "/infra/docker"
-    schedule:
-      interval: weekly
-      day: monday
-      time: "07:45"
-      timezone: Europe/Madrid
-    open-pull-requests-limit: 3
-
-  - package-ecosystem: docker
     directory: "/infra/docker/backend"
     schedule:
       interval: weekly
