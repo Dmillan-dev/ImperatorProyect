@@ -121,6 +121,67 @@ jobs:
             "trivy=$(trivy --version | Select-Object -First 1)"
           ) | Set-Content -Encoding utf8 build/d094/ci-environment.txt
 
+      - name: Enable containerd image store
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          daemon_config=/etc/docker/daemon.json
+          temporary_config=$(mktemp)
+
+          if sudo test -f "$daemon_config"; then
+            sudo cat "$daemon_config" |
+              jq '.features = (.features // {}) | .features["containerd-snapshotter"] = true' \
+              > "$temporary_config"
+          else
+            jq -n '{"features":{"containerd-snapshotter":true}}' \
+              > "$temporary_config"
+          fi
+
+          sudo install -m 0644 "$temporary_config" "$daemon_config"
+          rm -f "$temporary_config"
+          sudo systemctl restart docker
+
+          for attempt in {1..30}; do
+            if docker info >/dev/null 2>&1; then
+              break
+            fi
+            if [[ "$attempt" == "30" ]]; then
+              echo "Docker did not become ready after enabling the containerd image store." >&2
+              exit 1
+            fi
+            sleep 1
+          done
+
+          driver_status=$(docker info --format '{{json .DriverStatus}}')
+          echo "$driver_status"
+          grep -q 'io.containerd.snapshotter.v1' <<< "$driver_status"
+          printf 'dockerDriverStatus=%s\n' "$driver_status" \
+            >> build/d094/ci-environment.txt
+
+      - name: Configure attestation-capable Buildx builder
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          docker buildx create `
+            --name imperator-d094 `
+            --driver docker-container `
+            --use
+          if ($LASTEXITCODE -ne 0) {
+            throw "Failed to create the D094 Buildx builder."
+          }
+          docker buildx inspect --bootstrap
+          if ($LASTEXITCODE -ne 0) {
+            throw "Failed to bootstrap the D094 Buildx builder."
+          }
+          $builderInfo = @(docker buildx inspect)
+          if ($LASTEXITCODE -ne 0 -or
+              -not ($builderInfo -match '^Driver:\s+docker-container\s*$')) {
+            throw "D094 requires the docker-container Buildx driver."
+          }
+          "buildxDriver=docker-container" |
+            Add-Content -Encoding utf8 build/d094/ci-environment.txt
+
       - name: Build and certify PostgreSQL runtime image
         shell: pwsh
         run: |
