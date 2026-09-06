@@ -121,6 +121,29 @@ jobs:
             "trivy=$(trivy --version | Select-Object -First 1)"
           ) | Set-Content -Encoding utf8 build/d094/ci-environment.txt
 
+      - name: Configure attestation-capable Buildx builder
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          docker buildx create `
+            --name imperator-d094 `
+            --driver docker-container `
+            --use
+          if ($LASTEXITCODE -ne 0) {
+            throw "Failed to create the D094 Buildx builder."
+          }
+          docker buildx inspect --bootstrap
+          if ($LASTEXITCODE -ne 0) {
+            throw "Failed to bootstrap the D094 Buildx builder."
+          }
+          $builderInfo = @(docker buildx inspect)
+          if ($LASTEXITCODE -ne 0 -or
+              -not ($builderInfo -match '^Driver:\s+docker-container\s*$')) {
+            throw "D094 requires the docker-container Buildx driver."
+          }
+          "buildxDriver=docker-container" |
+            Add-Content -Encoding utf8 build/d094/ci-environment.txt
+
       - name: Build and certify PostgreSQL runtime image
         shell: pwsh
         run: |
