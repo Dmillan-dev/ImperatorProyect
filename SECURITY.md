@@ -44,13 +44,18 @@ Implemented controls include:
 - append-only Ledger behavior and database integrity constraints;
 - non-root application containers, read-only filesystems, dropped Linux
   capabilities and file-backed local secrets;
-- SHA-pinned GitHub Actions and Docker image inputs.
+- SHA-pinned GitHub Actions and Docker image inputs;
+- fail-closed hosted Trivy checks for dependencies, secrets, configuration and
+  application images; and
+- the D094 PostgreSQL supply-chain gate with pinned inputs, reproducible builds,
+  SBOM, provenance and zero fixable High/Critical or secret findings.
 
-The Docker runtime is **not certified** while its D092 vulnerability and
-external pilot gates remain open. There is no production deployment, public
-endpoint, connected external IdP, tenant isolation contract or security SLA.
-Passing source, dependency and application-image checks does not override this
-release boundary.
+The D094 PostgreSQL image-remediation gate is **PASS**. The complete Docker
+runtime is still **not certified** while D093/R16, external JWT/RBAC, the
+`DRC-AOA-001` end-to-end flow and persistence-after-recreation gates remain
+open. There is no production deployment, public endpoint, connected external
+IdP, tenant isolation contract or security SLA. Passing CI security checks does
+not override this release boundary.
 
 See the canonical
 [Security, Data Governance and Threat Model](docs/architecture/26_Security_Data_Governance_Threat_Model.md)
