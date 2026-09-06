@@ -108,22 +108,42 @@ jobs:
           version: v0.74.0
           cache: true
 
+      - name: Prepare D094 diagnostic evidence
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path build/d094 | Out-Null
+          @(
+            "sourceRevision=${{ github.sha }}"
+            "runnerOS=${{ runner.os }}"
+            "runnerArchitecture=${{ runner.arch }}"
+            "docker=$(docker --version)"
+            "buildx=$(docker buildx version)"
+            "trivy=$(trivy --version | Select-Object -First 1)"
+          ) | Set-Content -Encoding utf8 build/d094/ci-environment.txt
+
       - name: Build and certify PostgreSQL runtime image
         shell: pwsh
         run: |
-          ./scripts/verify-postgres-runtime-image.ps1 `
-            -EvidenceDirectory build/d094/first `
-            -RequireCleanWorktree
-          $runtimeDigest = (Get-Content -Raw build/d094/first/provenance.json |
-            ConvertFrom-Json).runtimeManifestDigest
-          ./scripts/verify-postgres-runtime-image.ps1 `
-            -EvidenceDirectory build/d094/rebuild `
-            -ExpectedRuntimeDigest $runtimeDigest `
-            -RequireCleanWorktree
+          $ErrorActionPreference = "Stop"
+          try {
+            ./scripts/verify-postgres-runtime-image.ps1 `
+              -EvidenceDirectory build/d094/first `
+              -RequireCleanWorktree
+            $runtimeDigest = (Get-Content -Raw build/d094/first/provenance.json |
+              ConvertFrom-Json).runtimeManifestDigest
+            ./scripts/verify-postgres-runtime-image.ps1 `
+              -EvidenceDirectory build/d094/rebuild `
+              -ExpectedRuntimeDigest $runtimeDigest `
+              -RequireCleanWorktree
+          } catch {
+            ($_ | Format-List * -Force | Out-String) |
+              Set-Content -Encoding utf8 build/d094/ci-failure.txt
+            throw
+          }
 
       - name: Preserve D094 evidence
         if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: d094-postgresql-supply-chain-${{ github.sha }}
           path: build/d094
