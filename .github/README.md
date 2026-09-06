@@ -15,7 +15,8 @@ GitHub configuration for repository automation.
 - `workflows/java-ci.yml`, the implemented Java 21 and Maven verification
   workflow.
 - `workflows/security.yml`, the fail-closed Trivy dependency, secret,
-  configuration and application-image security workflow.
+  configuration and application-image workflow plus the reproducible D094
+  PostgreSQL supply-chain gate.
 - `dependabot.yml`, the weekly Maven, npm, GitHub Actions and Docker update
   policy.
 - `CODEOWNERS`, defining review ownership for the repository and high-impact
@@ -36,10 +37,12 @@ GitHub configuration for repository automation.
 
 ## Current Automation Boundary
 
-Java CI is implemented. Automated dependency/configuration and
-application-image scanning are configured and pass locally; their first hosted
-workflow run remains pending. Full frontend CI, SAST, release automation and
-deployment workflows are not implemented and must not be inferred from this
-directory. Infrastructure-image certification remains governed separately by
-D092.
+Java CI is implemented. Hosted dependency, secret, configuration and
+application-image scanning is implemented and passing. The hosted D094 gate
+also verifies pinned PostgreSQL build inputs, two-build reproducibility, SBOM,
+provenance, image behavior and zero fixable High/Critical or secret findings.
+This does not certify the complete D092 runtime: D093/R16, external JWT/RBAC,
+end-to-end and persistence-after-recreation gates remain separate. Full
+frontend CI, SAST, release automation and deployment workflows are not
+implemented and must not be inferred from this directory.
 

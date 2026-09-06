@@ -40,7 +40,7 @@ and the append-only Decision Ledger preserves accountability.
 | Architecture | Java modular monolith with framework-free Domain/Application and hexagonal ports/adapters |
 | Security | RS256 JWT, explicit four-role RBAC, Evidence redaction, read-only cloud integrations and append-only audit history |
 | Verification | 139 backend tests, 31 PostgreSQL integration tests, 41 frontend tests and Playwright browser acceptance |
-| Current boundary | Pre-pilot; Docker runtime is implemented but Sprint 4.3 remains blocked and uncertified |
+| Current boundary | Pre-pilot; Docker runtime is implemented and its D094 image gate passes, but Sprint 4.3 remains uncertified |
 
 ![IMPERATOR Decision Review Workspace using synthetic data](output/commercial/linkedin-discovery-kit/IMPERATOR_Workspace_Captura_Limpia.png)
 
@@ -68,15 +68,16 @@ Status labels in this repository have strict meanings:
 | GitHub evidence connector | **[IMPLEMENTED]** | Read-only REST adapter for one organization/repository; live sandbox smoke test remains pending |
 | AWS evidence connector | **[IMPLEMENTED]** | Read-only STS, Cost Explorer, tagging and CloudWatch adapter; live sandbox smoke test remains pending |
 | Decision Review Workspace | **[IMPLEMENTED]** | Next.js/React single-case workspace with strict response validation |
-| Docker production-like runtime | **[PARTIALLY IMPLEMENTED]** | Hardened Compose and images exist; PostgreSQL 18.6 still exposes fixable Critical `CVE-2025-68121` through `gosu`, and external pilot gates remain open |
+| Docker production-like runtime | **[PARTIALLY IMPLEMENTED]** | Hardened Compose and images exist; the reproducible PostgreSQL 18.6 D094 image passes its hosted SBOM, provenance, secret and vulnerability gate, while the remaining runtime gates stay open |
 | External OIDC identity provider | **[PLANNED]** | Keycloak pilot integration is designed but not provisioned or connected |
-| D093 case-composition route | **[PLANNED]** | Contract frozen; implementation is not authorized while Sprint 4.3 is blocked |
+| D093 case-composition route | **[PLANNED]** | Contract frozen; implementation still requires separate authorization |
 | Application metrics, traces and dashboards | **[PLANNED]** | Sprint 4.4 preparation only |
 | Python/FastAPI explanation service | **[FUTURE]** | Directory boundary only; no Python source or provider calls |
 | Kubernetes, Terraform, Kafka and Redis | **[FUTURE]** | Explicitly excluded from the MVP |
 
 Current formal state: **Phase 3, pre-pilot; Sprint 4.3 is
-`BLOCKED_EXTERNAL / TEMPORARY NO-GO`**. See the
+`NO-GO / UNCERTIFIED`** pending D093/R16, external JWT/RBAC, the
+`DRC-AOA-001` E2E and persistence-after-recreation evidence. See the
 [pilot status](docs/pilot/README.md) and
 [D092 runtime contract](docs/architecture/51_Docker_Production_Runtime_Contract.md).
 
@@ -194,9 +195,9 @@ See [Security Policy](SECURITY.md) and the canonical
 | PostgreSQL integration gate | **IMPLEMENTED**; 31 real-database tests plus Flyway migrate/validate/idempotency |
 | Frontend lint/typecheck/tests/build | **IMPLEMENTED locally**; 41 tests and production build pass |
 | Frontend dependency audit | **IMPLEMENTED as a manual certification command**; latest local check found 0 vulnerabilities |
-| Automated source/dependency scan | **PARTIALLY IMPLEMENTED**; the fail-closed Trivy workflow is configured and passes locally, with its first hosted run pending |
-| Application container vulnerability gate | **PARTIALLY IMPLEMENTED**; backend and frontend images pass locally and the first hosted workflow run is pending |
-| Infrastructure container vulnerability gate | **IMPLEMENTED manually**; currently blocks release on one upstream fixable Critical in the official PostgreSQL image |
+| Automated source/dependency scan | **IMPLEMENTED**; the fail-closed hosted Trivy workflow scans dependencies, secrets and configuration and is passing |
+| Application container vulnerability gate | **IMPLEMENTED**; hosted backend and frontend image scans fail on fixable High/Critical findings and are passing |
+| PostgreSQL supply-chain gate | **IMPLEMENTED / D094 PASS**; two reproducible builds, pinned inputs, SBOM, provenance and hosted Trivy scanning verify zero fixable High/Critical findings and zero secrets |
 | Frontend CI workflow | **PLANNED** |
 | Automated SAST | **PLANNED**; Java and npm SCA are covered by the Trivy workflow |
 | Deployment pipeline | **FUTURE**; no cloud deployment exists |
@@ -392,8 +393,8 @@ as realized value until validation evidence exists.
 | Stage | Scope |
 |---|---|
 | **Completed** | Core Domain, Application use cases, PostgreSQL, REST, JWT/RBAC, GitHub/AWS evidence adapters, Decision Review Workspace |
-| **In progress / blocked** | Docker runtime certification; PostgreSQL 18.6 was rechecked on 2026-09-03 and still contains one fixable Critical vulnerability |
-| **Planned** | External Keycloak pilot IdP, D093 composition, runtime E2E, observability and pilot readiness |
+| **In progress** | Docker runtime certification; D094 image remediation passes, while D093/R16, external JWT/RBAC, runtime E2E and persistence-after-recreation evidence remain pending |
+| **Planned** | External Keycloak pilot IdP, D093 composition, observability and pilot readiness |
 | **Future** | Python explanation service, more connectors, multi-tenancy, cloud deployment, Terraform, Kubernetes, Kafka and Redis only when justified |
 
 ## Post-MVP DevSecOps Path
@@ -415,7 +416,7 @@ flowchart LR
 
 | Stage | Status | Bounded outcome |
 |---|---|---|
-| Close Sprint 4.3 | **[PARTIALLY IMPLEMENTED]** | Clean image scan, D093/R16, external JWT/RBAC, E2E and persistence certification |
+| Close Sprint 4.3 | **[PARTIALLY IMPLEMENTED]** | D093/R16, external JWT/RBAC, E2E and persistence-after-recreation certification; the D094 image gate already passes |
 | CI hardening | **[PLANNED]** | Add frontend gates, one SAST tool, one Java SCA tool, Docker build, Trivy, SBOM and immutable artifacts; fail on an explicitly owned severity policy |
 | AWS deployment contract | **[FUTURE]** | Freeze workload, data, IAM, network, TLS, backup, recovery, logging, cost and threat-model requirements before provisioning |
 | Terraform AWS foundation | **[FUTURE]** | Provision only the contracted VPC, private networking, IAM, security groups, ECR, ECS/Fargate, RDS, Secrets Manager, CloudWatch and CloudTrail resources |
