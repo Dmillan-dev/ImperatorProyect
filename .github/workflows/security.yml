@@ -121,6 +121,44 @@ jobs:
             "trivy=$(trivy --version | Select-Object -First 1)"
           ) | Set-Content -Encoding utf8 build/d094/ci-environment.txt
 
+      - name: Enable containerd image store
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          daemon_config=/etc/docker/daemon.json
+          temporary_config=$(mktemp)
+
+          if sudo test -f "$daemon_config"; then
+            sudo cat "$daemon_config" |
+              jq '.features = (.features // {}) | .features["containerd-snapshotter"] = true' \
+              > "$temporary_config"
+          else
+            jq -n '{"features":{"containerd-snapshotter":true}}' \
+              > "$temporary_config"
+          fi
+
+          sudo install -m 0644 "$temporary_config" "$daemon_config"
+          rm -f "$temporary_config"
+          sudo systemctl restart docker
+
+          for attempt in {1..30}; do
+            if docker info >/dev/null 2>&1; then
+              break
+            fi
+            if [[ "$attempt" == "30" ]]; then
+              echo "Docker did not become ready after enabling the containerd image store." >&2
+              exit 1
+            fi
+            sleep 1
+          done
+
+          driver_status=$(docker info --format '{{json .DriverStatus}}')
+          echo "$driver_status"
+          grep -q 'io.containerd.snapshotter.v1' <<< "$driver_status"
+          printf 'dockerDriverStatus=%s\n' "$driver_status" \
+            >> build/d094/ci-environment.txt
+
       - name: Configure attestation-capable Buildx builder
         shell: pwsh
         run: |
