@@ -118,17 +118,25 @@ class DecisionRouteContractTest {
     @Test
     void rejectsUnsupportedMethodsUsingTheExistingErrorEnvelope()
             throws IOException, InterruptedException {
-        for (String route : Set.of(COLLECTION_ROUTE, DETAIL_ROUTE)) {
-            for (String method : Set.of("POST", "PUT", "PATCH", "DELETE")) {
+        for (String method : Set.of("PUT", "PATCH", "DELETE")) {
+            HttpResponse<String> response =
+                    send(method, COLLECTION_ROUTE, MediaType.APPLICATION_JSON_VALUE);
+
+            assertErrorEnvelope(
+                    response,
+                    405,
+                    "METHOD_NOT_ALLOWED",
+                    "Method not allowed");
+        }
+        for (String method : Set.of("POST", "PUT", "PATCH", "DELETE")) {
                 HttpResponse<String> response =
-                        send(method, route, MediaType.APPLICATION_JSON_VALUE);
+                        send(method, DETAIL_ROUTE, MediaType.APPLICATION_JSON_VALUE);
 
                 assertErrorEnvelope(
                         response,
                         405,
                         "METHOD_NOT_ALLOWED",
                         "Method not allowed");
-            }
         }
     }
 

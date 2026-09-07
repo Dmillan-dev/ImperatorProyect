@@ -295,6 +295,13 @@ class GenerateRecommendationExplanationTest {
         }
 
         @Override
+        public synchronized Optional<Decision> findByCaseId(String caseId) {
+            return decisions.values().stream()
+                    .filter(decision -> decision.caseId().equals(caseId))
+                    .findFirst();
+        }
+
+        @Override
         public synchronized Optional<Decision> findByIdForUpdate(DecisionId id) {
             return findById(id);
         }

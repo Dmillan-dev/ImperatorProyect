@@ -294,6 +294,7 @@ public final class GenerateRecommendationUseCase implements GenerateRecommendati
             return new GenerateRecommendationResult(
                     recommendation.id(),
                     recommendation.decisionId(),
+                    recommendation.type(),
                     recommendation.evidenceIds().size(),
                     decision.recommendationId().filter(recommendation.id()::equals).isPresent(),
                     recommendation.estimatedSavings(),

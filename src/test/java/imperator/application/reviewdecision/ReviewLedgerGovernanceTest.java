@@ -434,6 +434,13 @@ final class ReviewLedgerGovernanceTest {
         }
 
         @Override
+        public Optional<Decision> findByCaseId(String caseId) {
+            return decisions.values().stream()
+                    .filter(decision -> decision.caseId().equals(caseId))
+                    .findFirst();
+        }
+
+        @Override
         public Optional<Decision> findByIdForUpdate(DecisionId id) {
             return findById(id);
         }
