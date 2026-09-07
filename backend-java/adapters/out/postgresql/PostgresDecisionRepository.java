@@ -37,7 +37,7 @@ public final class PostgresDecisionRepository implements DecisionRepository {
                 review_reason,
                 updated_at
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            ON CONFLICT (id) DO NOTHING
+            ON CONFLICT DO NOTHING
             """;
 
     private static final String UPSERT_SQL = """
@@ -109,6 +109,26 @@ public final class PostgresDecisionRepository implements DecisionRepository {
             FOR UPDATE
             """;
 
+    private static final String SELECT_BY_CASE_ID_SQL = """
+            SELECT
+                id,
+                case_id,
+                title,
+                business_need,
+                originating_evidence_id,
+                owner_id,
+                required_approver_id,
+                created_at,
+                status,
+                recommendation_id,
+                reviewed_by,
+                reviewed_at,
+                review_reason,
+                updated_at
+            FROM decisions
+            WHERE case_id = ?
+            """;
+
     private static final String SELECT_EVIDENCE_LINKS_SQL = """
             SELECT
                 decision_id,
@@ -163,7 +183,7 @@ public final class PostgresDecisionRepository implements DecisionRepository {
                 if (insertDecisionIfAbsent(connection, record)) {
                     insertEvidenceLinks(connection, evidenceRecords);
                 }
-                persisted[0] = findRequiredDecision(connection, candidate.id());
+                persisted[0] = findRequiredDecision(connection, candidate.id(), candidate.caseId());
             });
         } catch (SQLException exception) {
             throw new IllegalStateException(
@@ -188,6 +208,24 @@ public final class PostgresDecisionRepository implements DecisionRepository {
             return Optional.of(mapper.toDomain(record.get(), findEvidenceLinks(connection, decisionId)));
         } catch (SQLException exception) {
             throw new IllegalStateException("Could not find decision " + decisionId.value(), exception);
+        }
+    }
+
+    @Override
+    public Optional<Decision> findByCaseId(String caseId) {
+        String normalizedCaseId = requireText(caseId, "Decision case id is required");
+
+        try (PostgresConnectionProvider.ConnectionLease connectionLease = connectionProvider.acquire()) {
+            Connection connection = connectionLease.connection();
+            Optional<PostgresDecisionRecord> record = findRecordByCaseId(connection, normalizedCaseId);
+            if (record.isEmpty()) {
+                return Optional.empty();
+            }
+            PostgresDecisionRecord persisted = record.orElseThrow();
+            DecisionId decisionId = new DecisionId(persisted.id());
+            return Optional.of(mapper.toDomain(persisted, findEvidenceLinks(connection, decisionId)));
+        } catch (SQLException exception) {
+            throw new IllegalStateException("Could not find decision case " + normalizedCaseId, exception);
         }
     }
 
@@ -271,17 +309,41 @@ public final class PostgresDecisionRepository implements DecisionRepository {
         }
     }
 
-    private Decision findRequiredDecision(Connection connection, DecisionId id) throws SQLException {
-        PostgresDecisionRecord record = findRecordById(connection, id)
+    private Decision findRequiredDecision(
+            Connection connection,
+            DecisionId id,
+            String caseId
+    ) throws SQLException {
+        Optional<PostgresDecisionRecord> existing = findRecordById(connection, id);
+        if (existing.isEmpty()) {
+            existing = findRecordByCaseId(connection, caseId);
+        }
+        PostgresDecisionRecord record = existing
                 .orElseThrow(() -> new SQLException(
                         "Decision was not found after atomic create-if-absent: " + id.value()
                 ));
-        return mapper.toDomain(record, findEvidenceLinks(connection, id));
+        DecisionId authoritativeId = new DecisionId(record.id());
+        return mapper.toDomain(record, findEvidenceLinks(connection, authoritativeId));
     }
 
     private Optional<PostgresDecisionRecord> findRecordById(Connection connection, DecisionId id) throws SQLException {
         try (PreparedStatement statement = connection.prepareStatement(SELECT_BY_ID_SQL)) {
             statement.setObject(1, id.value());
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (!resultSet.next()) {
+                    return Optional.empty();
+                }
+                return Optional.of(recordFrom(resultSet));
+            }
+        }
+    }
+
+    private Optional<PostgresDecisionRecord> findRecordByCaseId(
+            Connection connection,
+            String caseId
+    ) throws SQLException {
+        try (PreparedStatement statement = connection.prepareStatement(SELECT_BY_CASE_ID_SQL)) {
+            statement.setString(1, caseId);
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (!resultSet.next()) {
                     return Optional.empty();
@@ -380,6 +442,13 @@ public final class PostgresDecisionRepository implements DecisionRepository {
         setNullableTimestamp(statement, 12, record.reviewedAt());
         statement.setString(13, record.reviewReason());
         statement.setTimestamp(14, Timestamp.from(record.updatedAt()));
+    }
+
+    private String requireText(String value, String message) {
+        if (value == null || value.isBlank()) {
+            throw new IllegalArgumentException(message);
+        }
+        return value.trim();
     }
 
 }

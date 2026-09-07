@@ -184,6 +184,23 @@ class CreateDecisionUseCaseTest {
                 "ACCEPTED",
                 "RESTRICTED"
         ));
+        Evidence wrongReference = evidence(
+                EVIDENCE_ID,
+                "DRC-AOA-001",
+                "business_context",
+                "business_context_requested",
+                "ACCEPTED",
+                "INTERNAL"
+        );
+        assertIneligible(new Evidence(
+                wrongReference.id(), wrongReference.timestamp(), wrongReference.source(),
+                wrongReference.sourceType(), wrongReference.sourceObjectRef(), wrongReference.entity(),
+                wrongReference.eventType(), wrongReference.severity(), wrongReference.actor(),
+                wrongReference.evidenceType(), wrongReference.observedFact(), wrongReference.businessMeaning(),
+                wrongReference.correlationKey(), wrongReference.sensitivity(), wrongReference.confidence(),
+                wrongReference.reviewStatus(), wrongReference.rawPayloadMode(),
+                Map.of("evidence_ref", "E-JIRA-002")
+        ));
     }
 
     private static void assertIneligible(Evidence ineligible) {
@@ -330,6 +347,13 @@ class CreateDecisionUseCaseTest {
         @Override
         public synchronized Optional<Decision> findById(DecisionId id) {
             return Optional.ofNullable(decisions.get(id));
+        }
+
+        @Override
+        public synchronized Optional<Decision> findByCaseId(String caseId) {
+            return decisions.values().stream()
+                    .filter(decision -> decision.caseId().equals(caseId))
+                    .findFirst();
         }
 
         @Override

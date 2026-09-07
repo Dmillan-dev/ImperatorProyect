@@ -17,6 +17,7 @@ public final class CreateDecisionUseCase implements CreateDecisionInputPort {
     private static final String MVP_CASE_ID = "DRC-AOA-001";
     private static final String ORIGINATING_EVIDENCE_TYPE = "business_context";
     private static final String ORIGINATING_EVENT_TYPE = "business_context_requested";
+    private static final String ORIGINATING_EVIDENCE_REFERENCE = "E-JIRA-001";
 
     private final EvidenceRepository evidenceRepository;
     private final DecisionRepository decisionRepository;
@@ -95,6 +96,9 @@ public final class CreateDecisionUseCase implements CreateDecisionInputPort {
         }
         if (!ORIGINATING_EVENT_TYPE.equals(evidence.eventType())) {
             return "event type must be " + ORIGINATING_EVENT_TYPE;
+        }
+        if (!ORIGINATING_EVIDENCE_REFERENCE.equals(evidence.metadata().get("evidence_ref"))) {
+            return "evidence reference must be " + ORIGINATING_EVIDENCE_REFERENCE;
         }
         if (!"ACCEPTED".equals(evidence.reviewStatus())) {
             return "review status must be ACCEPTED";

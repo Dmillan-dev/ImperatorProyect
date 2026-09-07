@@ -63,6 +63,8 @@ public class JwtResourceServerConfiguration {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers(HttpMethod.POST, "/api/v1/evidence/import")
                         .hasAuthority(ADMIN)
+                        .requestMatchers(HttpMethod.POST, "/api/v1/decisions")
+                        .hasAuthority(ADMIN)
                         .requestMatchers(
                                 HttpMethod.POST,
                                 "/api/v1/decisions/*/ledger/approve",

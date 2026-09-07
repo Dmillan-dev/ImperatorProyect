@@ -3,7 +3,6 @@ package imperator.api;
 import imperator.adapters.out.postgresql.PostgresDataSource;
 import imperator.bootstrap.ImperatorApplication;
 import imperator.domain.decision.Decision;
-import imperator.domain.decision.DrcAoa001RecommendationPolicy;
 import imperator.domain.decision.Recommendation;
 import imperator.domain.evidence.Evidence;
 import imperator.domain.shared.DecisionId;
@@ -24,6 +23,8 @@ import org.springframework.boot.web.server.servlet.context.ServletWebServerAppli
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.http.MediaType;
 import testsupport.security.JwtTestFixture;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.json.JsonMapper;
 
 import javax.sql.DataSource;
 import java.io.IOException;
@@ -53,6 +54,7 @@ final class FunctionalRestPostgresIT {
     private static final DecisionId REJECT_DECISION = decisionId(2);
     private static final DecisionId DEFER_DECISION = decisionId(3);
     private static final RecommendationId APPROVE_RECOMMENDATION = recommendationId(1);
+    private static final JsonMapper JSON = JsonMapper.shared();
 
     private DataSource adminDataSource;
     private ConfigurableApplicationContext context;
@@ -85,9 +87,9 @@ final class FunctionalRestPostgresIT {
         ));
         port = ((ServletWebServerApplicationContext) context).getWebServer().getPort();
         client = HttpClient.newHttpClient();
-        seedDecision(APPROVE_DECISION, APPROVE_RECOMMENDATION);
-        seedDecision(REJECT_DECISION, recommendationId(2));
-        seedDecision(DEFER_DECISION, recommendationId(3));
+        seedDecision(APPROVE_DECISION, APPROVE_RECOMMENDATION, evidenceId(101), "REST-APPROVE-001");
+        seedDecision(REJECT_DECISION, recommendationId(2), evidenceId(102), "REST-REJECT-001");
+        seedDecision(DEFER_DECISION, recommendationId(3), evidenceId(103), "REST-DEFER-001");
     }
 
     @AfterAll
@@ -171,41 +173,152 @@ final class FunctionalRestPostgresIT {
         }
     }
 
-    private void seedDecision(DecisionId decisionId, RecommendationId recommendationId) {
+    @Test
+    void composesAndReplaysDrcAoa001ThroughR16AgainstPostgres18()
+            throws IOException, InterruptedException, SQLException {
+        EvidenceId originId = evidenceId(201);
+        Set<Evidence> evidence = DrcAoa001EvidenceFixture.completePack(
+                originId,
+                new Timestamp(CREATED_AT.minusSeconds(60)),
+                true
+        );
+        EvidenceRepository repository = context.getBean(EvidenceRepository.class);
+        evidence.forEach(repository::save);
+        DecisionId decisionId = decisionId(16);
+        RecommendationId recommendationId = recommendationId(16);
+        String body = compositionBody(decisionId, recommendationId, originId, evidence);
+
+        HttpResponse<String> created = postComposition(body);
+        HttpResponse<String> replay = postComposition(body);
+
+        assertEquals(201, created.statusCode(), created.body());
+        assertEquals(200, replay.statusCode(), replay.body());
+        JsonNode createdBody = JSON.readTree(created.body());
+        JsonNode replayBody = JSON.readTree(replay.body());
+        assertEquals("DRC-AOA-001", createdBody.get("caseId").asString());
+        assertEquals("MODEL_CHANGE", createdBody.get("recommendationType").asString());
+        assertEquals("19440.00", createdBody.get("estimatedAnnualizedSavings").get("amount").asString());
+        assertEquals(92, createdBody.get("confidence").asInt());
+        assertEquals("LOW", createdBody.get("risk").asString());
+        assertEquals(28, createdBody.get("evidenceCount").asInt());
+        assertEquals(false, createdBody.get("replayed").asBoolean());
+        assertEquals(true, replayBody.get("replayed").asBoolean());
+        assertEquals(1, count("SELECT COUNT(*) FROM decisions WHERE case_id = 'DRC-AOA-001'"));
+        assertEquals(1, count("SELECT COUNT(*) FROM recommendations WHERE decision_id = '"
+                + decisionId.value() + "'::uuid"));
+        assertEquals(0, count("SELECT COUNT(*) FROM ledger_entries WHERE decision_id = '"
+                + decisionId.value() + "'::uuid"));
+        assertEquals(200, get("/api/v1/decisions/" + decisionId.value()).statusCode());
+        assertEquals(200, get("/api/v1/decisions/" + decisionId.value() + "/roi").statusCode());
+        assertEquals(
+                409,
+                get("/api/v1/business-value?decisionId=" + decisionId.value()).statusCode()
+        );
+    }
+
+    private void seedDecision(
+            DecisionId decisionId,
+            RecommendationId recommendationId,
+            EvidenceId evidenceId,
+            String caseId
+    ) {
         EvidenceRepository evidenceRepository = context.getBean(EvidenceRepository.class);
         DecisionRepository decisionRepository = context.getBean(DecisionRepository.class);
         RecommendationRepository recommendationRepository = context.getBean(RecommendationRepository.class);
-        EvidenceId originId = evidenceId(1);
         Set<Evidence> evidence = DrcAoa001EvidenceFixture.completePack(
-                originId, new Timestamp(CREATED_AT.minusSeconds(60)), true
-        );
-        evidence.forEach(item -> {
-            if (!evidenceRepository.existsById(item.id())) {
-                evidenceRepository.save(item);
-            }
-        });
-        traceEvidenceId = DrcAoa001EvidenceFixture.origin(evidence).id();
+                        evidenceId,
+                        new Timestamp(CREATED_AT.minusSeconds(60)),
+                        true
+                ).stream()
+                .map(item -> evidenceForCase(item, caseId))
+                .collect(java.util.stream.Collectors.toUnmodifiableSet());
+        evidence.forEach(evidenceRepository::save);
+        Evidence origin = DrcAoa001EvidenceFixture.origin(evidence);
+        if (APPROVE_DECISION.equals(decisionId)) {
+            traceEvidenceId = origin.id();
+        }
 
         Decision decision = Decision.create(
                 decisionId,
-                DrcAoa001RecommendationPolicy.CASE_ID,
+                caseId,
                 "Reduce AI onboarding cost",
                 "Recover avoidable AI spend",
-                originId,
+                origin.id(),
                 userId(80),
                 APPROVER,
                 new Timestamp(CREATED_AT)
         );
         decisionRepository.save(decision);
-        Recommendation recommendation = new DrcAoa001RecommendationPolicy().evaluate(
+        Recommendation recommendation = new Recommendation(
                 recommendationId,
-                decision,
-                evidence,
+                decision.id(),
+                imperator.domain.shared.RecommendationType.MODEL_CHANGE,
+                "Use the lower-cost model for the measured workload",
+                "The accepted Evidence supports deterministic cost recovery",
+                DrcAoa001EvidenceFixture.ids(evidence),
+                new imperator.domain.shared.ROIAmount(
+                        imperator.domain.shared.Money.eur(new java.math.BigDecimal("19440.00"))
+                ),
+                new imperator.domain.shared.ROIConfidence(92),
+                imperator.domain.shared.Severity.LOW,
+                decision.ownerId(),
+                decision.requiredApproverId(),
                 new Timestamp(CREATED_AT.plusSeconds(60))
         );
         recommendationRepository.save(recommendation);
         decision.attachRecommendation(recommendation.id(), recommendation.createdAt());
         decisionRepository.save(decision);
+    }
+
+    private Evidence evidenceForCase(Evidence evidence, String caseId) {
+        return new Evidence(
+                evidence.id(),
+                evidence.timestamp(),
+                evidence.source(),
+                evidence.sourceType(),
+                evidence.sourceObjectRef(),
+                evidence.entity(),
+                evidence.eventType(),
+                evidence.severity(),
+                evidence.actor(),
+                evidence.evidenceType(),
+                evidence.observedFact(),
+                evidence.businessMeaning(),
+                caseId,
+                evidence.sensitivity(),
+                evidence.confidence(),
+                evidence.reviewStatus(),
+                evidence.rawPayloadMode(),
+                evidence.metadata()
+        );
+    }
+
+    private String compositionBody(
+            DecisionId decisionId,
+            RecommendationId recommendationId,
+            EvidenceId originId,
+            Set<Evidence> evidence
+    ) {
+        String evidenceIds = evidence.stream()
+                .map(item -> "\"" + item.id().value() + "\"")
+                .sorted()
+                .collect(java.util.stream.Collectors.joining(","));
+        return """
+                {"caseId":"DRC-AOA-001","decisionId":"%s","recommendationId":"%s","originatingEvidenceId":"%s","evidenceIds":[%s],"title":"Optimize AI onboarding assistant cost","businessNeed":"Reduce recurring AI expenditure without losing exception-handling quality","ownerId":"%s","requiredApproverId":"%s","decisionCreatedAt":"2026-07-30T10:00:00Z","recommendationGeneratedAt":"2026-07-30T10:01:00Z"}
+                """.formatted(
+                        decisionId.value(), recommendationId.value(), originId.value(), evidenceIds,
+                        userId(80).value(), APPROVER.value()
+                ).trim();
+    }
+
+    private HttpResponse<String> postComposition(String body) throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder(uri("/api/v1/decisions"))
+                .header("Accept", MediaType.APPLICATION_JSON_VALUE)
+                .header("Content-Type", MediaType.APPLICATION_JSON_VALUE)
+                .header("Authorization", jwt.authorizationHeader(APPROVER.value(), "ADMIN"))
+                .POST(HttpRequest.BodyPublishers.ofString(body))
+                .build();
+        return client.send(request, HttpResponse.BodyHandlers.ofString());
     }
 
     private HttpResponse<String> postReview(
@@ -284,6 +397,17 @@ final class FunctionalRestPostgresIT {
                         decisions,
                         evidence
                     """);
+        }
+    }
+
+    private int count(String sql) throws SQLException {
+        try (
+                Connection connection = adminDataSource.getConnection();
+                Statement statement = connection.createStatement();
+                ResultSet resultSet = statement.executeQuery(sql)
+        ) {
+            assertTrue(resultSet.next());
+            return resultSet.getInt(1);
         }
     }
 

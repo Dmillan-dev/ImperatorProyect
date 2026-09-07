@@ -51,6 +51,40 @@ public final class DecisionApiModels {
     public record MoneyResponse(String amount, String currency) {
     }
 
+    public record ComposeDrcAoa001Request(
+            String caseId,
+            String decisionId,
+            String recommendationId,
+            String originatingEvidenceId,
+            List<String> evidenceIds,
+            String title,
+            String businessNeed,
+            String ownerId,
+            String requiredApproverId,
+            String decisionCreatedAt,
+            String recommendationGeneratedAt
+    ) {
+        public ComposeDrcAoa001Request {
+            evidenceIds = evidenceIds == null ? null : List.copyOf(evidenceIds);
+        }
+    }
+
+    public record ComposeDrcAoa001Response(
+            String caseId,
+            String decisionId,
+            String decisionStatus,
+            String recommendationId,
+            String recommendationType,
+            MoneyResponse estimatedAnnualizedSavings,
+            int confidence,
+            String risk,
+            int evidenceCount,
+            String workspacePath,
+            boolean replayed,
+            boolean resumed
+    ) {
+    }
+
     public record RoiResponse(
             String decisionId, String recommendationId, MoneyResponse currentMonthlyCost,
             MoneyResponse projectedMonthlyCost, MoneyResponse transitionCost,

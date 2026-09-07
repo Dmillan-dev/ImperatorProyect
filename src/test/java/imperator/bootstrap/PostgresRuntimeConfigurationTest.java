@@ -9,6 +9,7 @@ import imperator.adapters.out.postgresql.PostgresTransactionRunner;
 import imperator.adapters.out.github.GitHubRestAdapter;
 import imperator.adapters.out.aws.AwsSdkEvidenceSourceAdapter;
 import imperator.application.appendledgerentry.AppendLedgerEntryUseCase;
+import imperator.application.composecase.ComposeDrcAoa001UseCase;
 import imperator.application.createdecision.CreateDecisionUseCase;
 import imperator.application.generaterecommendation.GenerateRecommendationUseCase;
 import imperator.application.importevidence.ImportEvidenceUseCase;
@@ -24,6 +25,7 @@ import imperator.application.query.GetRecommendationUseCase;
 import imperator.application.query.ListDecisionsUseCase;
 import imperator.application.query.ListLedgerEntriesUseCase;
 import imperator.ports.in.AppendLedgerEntryInputPort;
+import imperator.ports.in.ComposeDrcAoa001InputPort;
 import imperator.ports.in.CreateDecisionInputPort;
 import imperator.ports.in.GenerateRecommendationInputPort;
 import imperator.ports.in.ImportEvidenceInputPort;
@@ -131,6 +133,10 @@ class PostgresRuntimeConfigurationTest {
             assertInstanceOf(
                     GenerateRecommendationUseCase.class,
                     context.getBean(GenerateRecommendationInputPort.class)
+            );
+            assertInstanceOf(
+                    ComposeDrcAoa001UseCase.class,
+                    context.getBean(ComposeDrcAoa001InputPort.class)
             );
             assertInstanceOf(
                     ReviewDecisionUseCase.class,

@@ -9,6 +9,7 @@ import imperator.adapters.out.postgresql.PostgresMvpReadModelQueryAdapter;
 import imperator.adapters.out.postgresql.PostgresRecommendationRepository;
 import imperator.adapters.out.postgresql.PostgresTransactionRunner;
 import imperator.application.appendledgerentry.AppendLedgerEntryUseCase;
+import imperator.application.composecase.ComposeDrcAoa001UseCase;
 import imperator.application.createdecision.CreateDecisionUseCase;
 import imperator.application.generaterecommendation.GenerateRecommendationUseCase;
 import imperator.application.importevidence.ImportEvidenceUseCase;
@@ -24,6 +25,7 @@ import imperator.application.query.ListLedgerEntriesUseCase;
 import imperator.application.reviewdecision.ReviewDecisionUseCase;
 import imperator.application.synchronizeevidence.SynchronizeEvidenceUseCase;
 import imperator.ports.in.AppendLedgerEntryInputPort;
+import imperator.ports.in.ComposeDrcAoa001InputPort;
 import imperator.ports.in.CreateDecisionInputPort;
 import imperator.ports.in.GenerateRecommendationInputPort;
 import imperator.ports.in.GetDecisionEvidenceInputPort;
@@ -190,6 +192,19 @@ public final class PostgresRuntimeConfiguration {
                 recommendationRepository,
                 transactionRunner,
                 explanationProvider
+        );
+    }
+
+    @Bean
+    ComposeDrcAoa001InputPort composeDrcAoa001InputPort(
+            CreateDecisionInputPort decisionCreator,
+            GenerateRecommendationInputPort recommendationGenerator,
+            DecisionRepository decisionRepository
+    ) {
+        return new ComposeDrcAoa001UseCase(
+                decisionCreator,
+                recommendationGenerator,
+                decisionRepository
         );
     }
 

@@ -2,11 +2,19 @@ package imperator.api.security;
 
 import imperator.api.errors.CorrelationIdFilter;
 import imperator.application.appendledgerentry.AppendLedgerEntryResult;
+import imperator.application.composecase.ComposeDrcAoa001Result;
 import imperator.application.importevidence.ImportEvidenceResult;
 import imperator.application.reviewdecision.ReviewDecisionResult;
 import imperator.bootstrap.ImperatorApplication;
 import imperator.domain.shared.DecisionStatus;
+import imperator.domain.shared.Currency;
+import imperator.domain.shared.Money;
 import imperator.domain.shared.RecommendationId;
+import imperator.domain.shared.RecommendationType;
+import imperator.domain.shared.ROIAmount;
+import imperator.domain.shared.ROIConfidence;
+import imperator.domain.shared.Severity;
+import imperator.ports.in.ComposeDrcAoa001InputPort;
 import imperator.ports.in.AppendLedgerEntryInputPort;
 import imperator.ports.in.ImportEvidenceInputPort;
 import imperator.ports.in.ReviewDecisionInputPort;
@@ -23,6 +31,7 @@ import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.json.JsonMapper;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -50,6 +59,7 @@ class RbacAuthorizationContractTest {
     );
     private static final Set<String> FROZEN_MAPPINGS = Set.of(
             "POST /api/v1/evidence/import",
+            "POST /api/v1/decisions",
             "GET /api/v1/decisions",
             "GET /api/v1/decisions/{id}",
             "GET /api/v1/decisions/{id}/timeline",
@@ -74,6 +84,8 @@ class RbacAuthorizationContractTest {
     private static final List<RoutePolicy> ROUTES = List.of(
             new RoutePolicy("POST", "/api/v1/evidence/import", Set.of(ADMIN), evidenceBody(),
                     "application/x-ndjson"),
+            new RoutePolicy("POST", "/api/v1/decisions", Set.of(ADMIN), compositionBody(),
+                    MediaType.APPLICATION_JSON_VALUE),
             read("/api/v1/decisions"),
             read("/api/v1/decisions/" + DECISION_ID),
             read("/api/v1/decisions/" + DECISION_ID + "/timeline"),
@@ -92,6 +104,7 @@ class RbacAuthorizationContractTest {
     private static final JsonMapper JSON = JsonMapper.shared();
     private static final JwtTestFixture JWT = new JwtTestFixture();
     private static final AtomicInteger IMPORT_CALLS = new AtomicInteger();
+    private static final AtomicInteger COMPOSITION_CALLS = new AtomicInteger();
     private static final AtomicInteger REVIEW_CALLS = new AtomicInteger();
     private static final AtomicInteger APPEND_CALLS = new AtomicInteger();
 
@@ -108,6 +121,15 @@ class RbacAuthorizationContractTest {
                 IMPORT_CALLS.incrementAndGet();
                 return new ImportEvidenceResult(
                         command.evidenceId(), command.correlationKey(), true, false
+                );
+            });
+            beans.registerSingleton("rbacComposition", (ComposeDrcAoa001InputPort) command -> {
+                COMPOSITION_CALLS.incrementAndGet();
+                return new ComposeDrcAoa001Result(
+                        command.caseId(), command.decisionId(), DecisionStatus.CREATED,
+                        command.recommendationId(), RecommendationType.MODEL_CHANGE,
+                        new ROIAmount(new Money(new BigDecimal("19440.00"), Currency.EUR)),
+                        new ROIConfidence(92), Severity.LOW, 28, false, false
                 );
             });
             beans.registerSingleton("rbacReview", (ReviewDecisionInputPort) command -> {
@@ -151,13 +173,14 @@ class RbacAuthorizationContractTest {
     }
 
     @Test
-    void enforcesTheCompleteFifteenRouteByFourRoleMatrix()
+    void enforcesTheCompleteSixteenRouteByFourRoleMatrix()
             throws IOException, InterruptedException {
         IMPORT_CALLS.set(0);
+        COMPOSITION_CALLS.set(0);
         REVIEW_CALLS.set(0);
         APPEND_CALLS.set(0);
 
-        assertEquals(15, ROUTES.size());
+        assertEquals(16, ROUTES.size());
         for (RoutePolicy route : ROUTES) {
             for (String role : ALL_ROLES) {
                 HttpResponse<String> response = send(route, role);
@@ -179,6 +202,7 @@ class RbacAuthorizationContractTest {
         }
 
         assertEquals(1, IMPORT_CALLS.get());
+        assertEquals(1, COMPOSITION_CALLS.get());
         assertEquals(5, REVIEW_CALLS.get());
         assertEquals(2, APPEND_CALLS.get());
     }
@@ -312,6 +336,15 @@ class RbacAuthorizationContractTest {
         return """
                 {"id":"30000000-0000-4000-8000-000000000003","schema_version":"1","timestamp":"2026-06-30T23:59:59Z","source":"AWS","source_type":"cloud_cost","source_object_ref":"cost-export/2026-06","entity":"onboarding-assistant","event_type":"cloud_cost_observed","severity":"info","actor":"aws-cost-export","evidence_type":"cloud_cost","case_hint":"DRC-AOA-001","observed_fact":"AWS monthly cost is EUR410","business_meaning":"Provides infrastructure cost input","correlation_key":"DRC-AOA-001","sensitivity":"INTERNAL","confidence":"high","freshness":"fresh","review_status":"accepted","metadata":{"evidence_ref":"E-AWS-001","currency":"EUR","monthly_cost":"410.00"},"raw_payload":{"mode":"not_stored"}}
                 """.trim();
+    }
+
+    private static String compositionBody() {
+        String evidenceIds = java.util.stream.IntStream.rangeClosed(1, 28)
+                .mapToObj(index -> "\"20000000-0000-4000-8000-%012d\"".formatted(index))
+                .collect(Collectors.joining(","));
+        return """
+                {"caseId":"DRC-AOA-001","decisionId":"10000000-0000-4000-8000-000000000001","recommendationId":"50000000-0000-4000-8000-000000000001","originatingEvidenceId":"20000000-0000-4000-8000-000000000001","evidenceIds":[%s],"title":"Optimize AI onboarding assistant cost","businessNeed":"Reduce recurring AI expenditure without losing exception-handling quality","ownerId":"30000000-0000-4000-8000-000000000001","requiredApproverId":"%s","decisionCreatedAt":"2026-07-01T09:00:00Z","recommendationGeneratedAt":"2026-07-01T09:01:00Z"}
+                """.formatted(evidenceIds, JwtTestFixture.DEFAULT_ACTOR_ID).trim();
     }
 
     private static String reviewBody() {

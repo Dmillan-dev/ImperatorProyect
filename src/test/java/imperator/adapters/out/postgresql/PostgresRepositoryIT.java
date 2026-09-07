@@ -3,6 +3,9 @@ package imperator.adapters.out.postgresql;
 import imperator.application.appendledgerentry.AppendLedgerEntryCommand;
 import imperator.application.appendledgerentry.AppendLedgerEntryResult;
 import imperator.application.appendledgerentry.AppendLedgerEntryUseCase;
+import imperator.application.composecase.ComposeDrcAoa001UseCase;
+import imperator.application.composecase.ComposeDrcAoa001Command;
+import imperator.application.composecase.ComposeDrcAoa001Result;
 import imperator.application.createdecision.CreateDecisionCommand;
 import imperator.application.createdecision.CreateDecisionResult;
 import imperator.application.createdecision.CreateDecisionUseCase;
@@ -37,6 +40,7 @@ import imperator.domain.shared.Severity;
 import imperator.domain.shared.Timestamp;
 import imperator.domain.shared.UserId;
 import imperator.ports.in.AppendLedgerEntryInputPort;
+import imperator.ports.in.ComposeDrcAoa001InputPort;
 import imperator.ports.in.CreateDecisionInputPort;
 import imperator.ports.in.GenerateRecommendationInputPort;
 import imperator.ports.in.ImportEvidenceInputPort;
@@ -153,7 +157,7 @@ final class PostgresRepositoryIT {
     }
 
     @Test
-    void connectsToPostgres18AndFindsSuccessfulFlywayV1() throws SQLException {
+    void connectsToPostgres18AndFindsSuccessfulFlywayMigrations() throws SQLException {
         try (Connection connection = appDataSource.getConnection()) {
             assertAll(
                     () -> assertEquals("PostgreSQL", connection.getMetaData().getDatabaseProductName()),
@@ -170,13 +174,13 @@ final class PostgresRepositoryIT {
                 PreparedStatement statement = connection.prepareStatement("""
                         SELECT COUNT(*)
                         FROM flyway_schema_history
-                        WHERE version = '1'
+                        WHERE version IN ('1', '2')
                           AND success
                         """);
                 ResultSet resultSet = statement.executeQuery()
         ) {
             assertTrue(resultSet.next());
-            assertEquals(1, resultSet.getInt(1));
+            assertEquals(2, resultSet.getInt(1));
         }
     }
 
@@ -206,6 +210,8 @@ final class PostgresRepositoryIT {
                             instanceof CreateDecisionUseCase),
                     () -> assertTrue(context.getBean(GenerateRecommendationInputPort.class)
                             instanceof GenerateRecommendationUseCase),
+                    () -> assertTrue(context.getBean(ComposeDrcAoa001InputPort.class)
+                            instanceof ComposeDrcAoa001UseCase),
                     () -> assertTrue(context.getBean(ReviewDecisionInputPort.class)
                             instanceof ReviewDecisionUseCase),
                     () -> assertTrue(context.getBean(AppendLedgerEntryInputPort.class)
@@ -981,6 +987,99 @@ final class PostgresRepositoryIT {
     }
 
     @Test
+    void concurrentDifferentDecisionIdsConvergeOnOneAuthoritativeCase() throws Exception {
+        Evidence evidence = eligibleDecisionEvidence();
+        evidenceRepository.save(evidence);
+        UserId ownerId = userId();
+        UserId approverId = userId();
+        DecisionId firstId = decisionId();
+        DecisionId competingId = decisionId();
+        CreateDecisionUseCase useCase = new CreateDecisionUseCase(
+                evidenceRepository,
+                decisionRepository,
+                transactionRunner
+        );
+        CreateDecisionCommand first = decisionCreationCommand(
+                firstId,
+                evidence.id(),
+                "Evaluate AI model cost",
+                ownerId,
+                approverId
+        );
+        CreateDecisionCommand competing = decisionCreationCommand(
+                competingId,
+                evidence.id(),
+                "Evaluate AI model cost",
+                ownerId,
+                approverId
+        );
+
+        List<CreationAttempt> attempts = runConcurrently(
+                () -> attemptCreation(useCase, first),
+                () -> attemptCreation(useCase, competing)
+        );
+        Decision authoritative = decisionRepository.findByCaseId("DRC-AOA-001").orElseThrow();
+
+        assertAll(
+                () -> assertEquals(1, attempts.stream().filter(CreationAttempt::successful).count()),
+                () -> assertEquals(1, attempts.stream().filter(attempt -> !attempt.successful()).count()),
+                () -> assertTrue(attempts.stream()
+                        .filter(attempt -> !attempt.successful())
+                        .allMatch(attempt -> "DECISION_CREATION_CONFLICT".equals(attempt.conflictCode()))),
+                () -> assertTrue(Set.of(firstId, competingId).contains(authoritative.id())),
+                () -> assertEquals(
+                        1,
+                        countRows("SELECT COUNT(*) FROM decisions WHERE case_id = ?", "DRC-AOA-001")
+                ),
+                () -> assertEquals(1, countRows("SELECT COUNT(*) FROM decision_evidence"))
+        );
+    }
+
+    @Test
+    void concurrentConflictingCompositionsConvergeOnOneDecisionAndRecommendation() throws Exception {
+        EvidenceId originId = evidenceId();
+        Set<Evidence> evidence = DrcAoa001EvidenceFixture.completePack(originId, timestamp(0), true);
+        evidence.forEach(evidenceRepository::save);
+        UserId ownerId = userId();
+        UserId approverId = userId();
+        ComposeDrcAoa001UseCase useCase = new ComposeDrcAoa001UseCase(
+                new CreateDecisionUseCase(evidenceRepository, decisionRepository, transactionRunner),
+                new GenerateRecommendationUseCase(
+                        decisionRepository,
+                        evidenceRepository,
+                        recommendationRepository,
+                        transactionRunner
+                ),
+                decisionRepository
+        );
+        ComposeDrcAoa001Command first = compositionCommand(
+                decisionId(), recommendationId(), originId, evidence, ownerId, approverId
+        );
+        ComposeDrcAoa001Command competing = compositionCommand(
+                decisionId(), recommendationId(), originId, evidence, ownerId, approverId
+        );
+
+        List<CompositionAttempt> attempts = runConcurrently(
+                () -> attemptComposition(useCase, first),
+                () -> attemptComposition(useCase, competing)
+        );
+
+        assertAll(
+                () -> assertEquals(1, attempts.stream().filter(CompositionAttempt::successful).count()),
+                () -> assertEquals(1, attempts.stream().filter(attempt -> !attempt.successful()).count()),
+                () -> assertTrue(attempts.stream()
+                        .filter(attempt -> !attempt.successful())
+                        .allMatch(attempt -> "DECISION_CREATION_CONFLICT".equals(attempt.conflictCode()))),
+                () -> assertEquals(
+                        1,
+                        countRows("SELECT COUNT(*) FROM decisions WHERE case_id = ?", "DRC-AOA-001")
+                ),
+                () -> assertEquals(1, countRows("SELECT COUNT(*) FROM recommendations")),
+                () -> assertEquals(0, countRows("SELECT COUNT(*) FROM ledger_entries"))
+        );
+    }
+
+    @Test
     void conflictingConcurrentCreationNeverOverwritesTheWinningTuple() throws Exception {
         Evidence evidence = eligibleDecisionEvidence();
         evidenceRepository.save(evidence);
@@ -1528,16 +1627,27 @@ final class PostgresRepositoryIT {
         }
     }
 
-    private int countRows(String sql, UUID id) throws SQLException {
+    private int countRows(String sql, Object parameter) throws SQLException {
         try (
                 Connection connection = adminDataSource.getConnection();
                 PreparedStatement statement = connection.prepareStatement(sql)
         ) {
-            statement.setObject(1, id);
+            statement.setObject(1, parameter);
             try (ResultSet resultSet = statement.executeQuery()) {
                 assertTrue(resultSet.next());
                 return resultSet.getInt(1);
             }
+        }
+    }
+
+    private int countRows(String sql) throws SQLException {
+        try (
+                Connection connection = adminDataSource.getConnection();
+                PreparedStatement statement = connection.prepareStatement(sql);
+                ResultSet resultSet = statement.executeQuery()
+        ) {
+            assertTrue(resultSet.next());
+            return resultSet.getInt(1);
         }
     }
 
@@ -1844,6 +1954,42 @@ final class PostgresRepositoryIT {
         }
     }
 
+    private ComposeDrcAoa001Command compositionCommand(
+            DecisionId decisionId,
+            RecommendationId recommendationId,
+            EvidenceId originId,
+            Set<Evidence> evidence,
+            UserId ownerId,
+            UserId approverId
+    ) {
+        return new ComposeDrcAoa001Command(
+                ComposeDrcAoa001UseCase.CASE_ID,
+                decisionId,
+                recommendationId,
+                originId,
+                DrcAoa001EvidenceFixture.ids(evidence),
+                ComposeDrcAoa001UseCase.TITLE,
+                ComposeDrcAoa001UseCase.BUSINESS_NEED,
+                ownerId,
+                approverId,
+                approverId,
+                timestamp(1),
+                timestamp(2)
+        );
+    }
+
+    private CompositionAttempt attemptComposition(
+            ComposeDrcAoa001UseCase useCase,
+            ComposeDrcAoa001Command command
+    ) {
+        try {
+            ComposeDrcAoa001Result result = useCase.compose(command);
+            return new CompositionAttempt(true, null, result.decisionId(), result.recommendationId());
+        } catch (ConflictException conflict) {
+            return new CompositionAttempt(false, conflict.code(), null, null);
+        }
+    }
+
     private <T> List<T> runConcurrently(
             Supplier<T> firstOperation,
             Supplier<T> secondOperation
@@ -2140,6 +2286,14 @@ final class PostgresRepositoryIT {
     private record CreationAttempt(boolean successful, String conflictCode) {
     }
 
+    private record CompositionAttempt(
+            boolean successful,
+            String conflictCode,
+            DecisionId decisionId,
+            RecommendationId recommendationId
+    ) {
+    }
+
     private record RecommendationAttempt(
             boolean successful,
             String conflictCode,
@@ -2198,6 +2352,11 @@ final class PostgresRepositoryIT {
         @Override
         public Optional<Decision> findById(DecisionId id) {
             return delegate.findById(id);
+        }
+
+        @Override
+        public Optional<Decision> findByCaseId(String caseId) {
+            return delegate.findByCaseId(caseId);
         }
 
         @Override
