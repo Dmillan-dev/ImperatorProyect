@@ -179,6 +179,6 @@ D085 through D096 are accepted. D093 adds the bounded R16 composition entry
 point without changing Domain policy; Sprint 4.3 certification passed 151
 default tests and 34 PostgreSQL 18.6 integration tests and packaged this module
 as a non-root, read-only image. D096 freezes the observability boundary;
-Sprint 4.4 implementation is the sole next gate and requires separate
-authorization. It must not change D086 routes, D087 identity, D088
+Sprint 4.4 implementation is the sole authorized current gate. It must not
+change D086 routes, D087 identity, D088
 authorization, connector isolation, Evidence redaction or business authority.

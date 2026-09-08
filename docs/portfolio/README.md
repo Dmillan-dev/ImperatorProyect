@@ -30,7 +30,7 @@ architecture and product contracts.
 | Engineering decisions | [Decision Log](../decisions/14_Decision_Log.md) |
 | Data model | [Database Model](../architecture/DATABASE_MODEL.md) and [Persistence Schema Contract](../architecture/40_Persistence_Schema_Contract.md) |
 | Deployment boundary | [Docker Production Runtime Contract](../architecture/51_Docker_Production_Runtime_Contract.md) |
-| Observability | [Observability Preparation](../architecture/54_Observability_Preparation.md) |
+| Observability | [Minimum Observability Runtime Contract](../architecture/56_Observability_Runtime_Contract.md) |
 | Roadmap and current gate | [Phase and Sprint Map](../project/PHASE_AND_SPRINT_MAP.md) and [Pilot Readiness](../product/30_Pilot_Readiness_Preparation_Checklist.md) |
 
 This map intentionally reuses maintained documents instead of creating a

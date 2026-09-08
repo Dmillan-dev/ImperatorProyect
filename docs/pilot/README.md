@@ -71,7 +71,7 @@ customer value, customer data compliance or general product readiness.
 Sprint 4.3: CERTIFIED / COMPLETE
 Sprint 4.3.1: COMPLETE
 D096 Observability Contract: FROZEN / ACCEPTED
-Sprint 4.4 Implementation: NEXT / AUTHORIZATION REQUIRED
+Sprint 4.4 Implementation: AUTHORIZED / CURRENT
 External Pilot Identity Conformance: DEFERRED / REQUIRED BEFORE 4.5
 Sprint 4.5: NOT OPEN
 Customer data: FORBIDDEN

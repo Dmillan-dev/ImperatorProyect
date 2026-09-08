@@ -34,7 +34,7 @@ It links to canonical contracts and implementation instead of replacing them.
 | Docker runtime | **[IMPLEMENTED]** | D092-D095 hardened Compose, reproducible PostgreSQL 18.6 image and persistence/recreation certification pass |
 | External IdP | **[PLANNED]** | Keycloak preparation exists; no issuer is deployed or connected |
 | D093/R16 composition | **[IMPLEMENTED]** | `ADMIN`-only API composition, resumable D081/D082 steps and case uniqueness are certified |
-| Observability | **[PLANNED]** | Correlation and container health exist; metrics, tracing and dashboards do not |
+| Observability | **[PLANNED]** | D096 is frozen and implementation authorized; metrics, probes, safe JSON logs, alerts and dashboard are not yet present |
 | Python/FastAPI | **[FUTURE]** | Documentation boundary only |
 | Cloud deployment | **[FUTURE]** | No AWS-hosted runtime, Terraform or Kubernetes exists |
 
@@ -134,12 +134,14 @@ flowchart LR
     Images --> Trivy[Trivy vulnerability scan]
     Trivy -->|fixable Critical found| Block[Release blocked]
     Frontend -. PLANNED .-> FrontendCI[Frontend GitHub Actions]
-    JavaCI -. PLANNED .-> SAST[SAST + Java SCA]
+    Commit --> SAST[CodeQL default setup<br/>IMPLEMENTED]
+    JavaCI -. PLANNED .-> JavaSCA[Dedicated Java dependency review]
     Trivy -. FUTURE .-> Deploy[Cloud deployment]
 ```
 
-Solid lines are automated in the current Java workflow. Dotted lines are local,
-manual, planned or future and are explicitly labelled.
+Solid lines are automated in the Java workflow or GitHub-managed CodeQL default
+setup. Dotted lines are local, manual, planned or future and are explicitly
+labelled.
 
 ## E. Evidence and Data Flow
 
@@ -170,6 +172,7 @@ lineage while excluding raw payload persistence.
 | No tracked runtime secrets | `.gitignore`, file-backed Docker secrets and tracked-secret scan |
 | Least privilege CI | GitHub Actions `contents: read` only |
 | Pinned CI actions | Actions referenced by immutable commit SHA |
+| Static analysis | GitHub-managed CodeQL default setup for Java/Kotlin and JavaScript/TypeScript |
 | Reproducible toolchain | Maven Wrapper checksum, Maven 3.9.16 and Java 21 enforcement |
 | Strong API authentication | RS256 only, mandatory `kid`, exact audience/issuer and expiry validation |
 | Explicit authorization | No role hierarchy; route/method matrix for four roles |
@@ -185,11 +188,11 @@ lineage while excluding raw payload persistence.
 |---|---|---|
 | High pilot prerequisite | No operational external issuer/JWKS is connected | Pass the D095-deferred Keycloak HTTPS conformance gate before Sprint 4.5 |
 | Medium | Frontend quality gates are not yet in GitHub Actions | Add one focused frontend CI workflow in a separately authorized delivery iteration |
-| Medium | No automated Java SCA or SAST | Select one SCA and one SAST control only after defining ownership, baseline and false-positive handling |
+| Medium | No dedicated Java dependency review | Add one bounded SCA control only after defining ownership, baseline and false-positive handling |
 | Medium | Token paste is the current frontend bootstrap | Replace with separately contracted Authorization Code + PKCE login before real users |
 | Medium | No tenant entitlement model | Keep runtime single-organization and prohibit customer exposure until a tenant contract exists |
-| Medium | Structured application logs, metrics and traces are absent | Implement only under the future Observability gate |
-| Low portfolio issue | Historical control documents and some folder READMEs lag current physical state | Keep canonical history immutable; correct active navigation documents when authorized |
+| Medium | D096 observability runtime is absent | Implement and certify only the authorized safe logs, metrics, probes, alerts and dashboard; distributed tracing remains excluded |
+| Low local tooling | `mvnw.cmd` fails on the inspected Windows host before Maven starts | Keep hosted Linux wrapper verification authoritative and resolve the Windows launcher only through separate maintenance authority |
 
 No hard-coded GitHub token, AWS access key, private key or runtime password was
 found in tracked source during this review. The latest executed `npm audit`
@@ -223,6 +226,7 @@ so this document makes no equivalent zero-vulnerability claim for Java.
 | Frontend unit/component suite | 41 passed |
 | Frontend lint/typecheck/build | Passed |
 | Frontend npm audit | 0 vulnerabilities |
+| CodeQL default setup | Java/Kotlin and JavaScript/TypeScript passing |
 | Sprint 4.3 container certification | **CERTIFIED / COMPLETE under D092-D095** |
 
 Canonical execution evidence is maintained in

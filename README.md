@@ -72,13 +72,13 @@ Status labels in this repository have strict meanings:
 | Docker production-like runtime | **[IMPLEMENTED]** | D092-D095 certified hardened Compose, SHA-tagged images, PostgreSQL 18.6 supply-chain evidence and persistence after recreation |
 | External OIDC identity provider | **[PLANNED]** | Keycloak pilot integration is designed but not provisioned or connected |
 | D093 case-composition route | **[IMPLEMENTED]** | `ADMIN`-only R16 composes the canonical Decision and Recommendation through existing Application boundaries |
-| Application observability | **[PLANNED]** | D096 contract frozen; implementation not authorized |
+| Application observability | **[PLANNED]** | D096 contract frozen; Sprint 4.4 implementation authorized but not yet present |
 | Python/FastAPI explanation service | **[FUTURE]** | Directory boundary only; no Python source or provider calls |
 | Kubernetes, Terraform, Kafka and Redis | **[FUTURE]** | Explicitly excluded from the MVP |
 
 Current formal state: **Phase 3, pre-pilot; Sprint 4.3 and its documentation
-synchronization are complete, and D096 freezes the sole next gate, Sprint 4.4
-Observability; implementation is not yet authorized.** D095 defers operational
+synchronization are complete, and Sprint 4.4 Observability implementation is
+the authorized current gate under D096.** D095 defers operational
 Keycloak HTTPS conformance without weakening
 D087/D088; it remains mandatory before Sprint 4.5, real customer data or MVP
 Release. See the [pilot status](docs/pilot/README.md) and
@@ -182,8 +182,8 @@ Known boundaries are equally important:
 - external Keycloak issuer/JWKS conformance remains mandatory before Sprint 4.5;
 - D094 replaces the vulnerable upstream `gosu` binary through a pinned,
   reproducible and independently scanned PostgreSQL 18.6 image;
-- application SAST, Java SCA and production incident response are not yet
-  automated.
+- dedicated Java dependency review, frontend CI and production incident
+  response are not yet automated; GitHub-managed CodeQL SAST is enabled.
 
 See [Security Policy](SECURITY.md) and the canonical
 [Threat Model](docs/architecture/26_Security_Data_Governance_Threat_Model.md).
@@ -202,8 +202,9 @@ See [Security Policy](SECURITY.md) and the canonical
 | Automated source/dependency scan | **IMPLEMENTED**; the fail-closed hosted Trivy workflow scans dependencies, secrets and configuration and is passing |
 | Application container vulnerability gate | **IMPLEMENTED**; hosted backend and frontend image scans fail on fixable High/Critical findings and are passing |
 | PostgreSQL supply-chain gate | **IMPLEMENTED / D094 PASS**; two reproducible builds, pinned inputs, SBOM, provenance and hosted Trivy scanning verify zero fixable High/Critical findings and zero secrets |
+| CodeQL SAST | **IMPLEMENTED IN GITHUB**; default setup for Java/Kotlin and JavaScript/TypeScript is enabled and passing |
 | Frontend CI workflow | **PLANNED** |
-| Automated SAST | **PLANNED**; Java and npm SCA are covered by the Trivy workflow |
+| Dependency scanning | **PARTIALLY IMPLEMENTED**; Trivy scans repository dependencies, while dedicated Java dependency review remains planned |
 | Deployment pipeline | **FUTURE**; no cloud deployment exists |
 
 The current CI is intentionally smaller than the target pipeline. The
@@ -399,7 +400,7 @@ as realized value until validation evidence exists.
 | Stage | Scope |
 |---|---|
 | **Completed** | Core Domain, Application use cases, PostgreSQL, REST, JWT/RBAC, GitHub/AWS evidence adapters, D093 composition, Decision Review Workspace and Docker Production Runtime |
-| **Next** | Sprint 4.4 Observability implementation and certification under frozen D096 |
+| **Current** | Sprint 4.4 Observability implementation and certification under frozen D096 |
 | **Planned** | External Keycloak pilot conformance and Sprint 4.5 Pilot Readiness |
 | **Future** | Python explanation service, more connectors, multi-tenancy, cloud deployment, Terraform, Kubernetes, Kafka and Redis only when justified |
 
@@ -423,7 +424,7 @@ flowchart LR
 | Stage | Status | Bounded outcome |
 |---|---|---|
 | Docker Production Runtime | **[IMPLEMENTED]** | D092-D095 certification, D093/R16, D094 supply-chain evidence, local JWT/RBAC E2E and persistence after recreation pass |
-| CI hardening | **[PARTIALLY IMPLEMENTED]** | Java CI, Docker builds, Trivy gates and D094 SBOM/provenance are active; frontend CI, dedicated SAST and Java SCA remain planned |
+| CI hardening | **[PARTIALLY IMPLEMENTED]** | Java CI, CodeQL, Docker builds, Trivy gates and D094 SBOM/provenance are active; frontend CI and dedicated Java dependency review remain planned |
 | AWS deployment contract | **[FUTURE]** | Freeze workload, data, IAM, network, TLS, backup, recovery, logging, cost and threat-model requirements before provisioning |
 | Terraform AWS foundation | **[FUTURE]** | Provision only the contracted VPC, private networking, IAM, security groups, ECR, ECS/Fargate, RDS, Secrets Manager, CloudWatch and CloudTrail resources |
 | Kubernetes variant | **[FUTURE / CONDITIONAL]** | Consider EKS, Helm, NetworkPolicy and GitOps only if scaling or platform requirements justify their operational cost |

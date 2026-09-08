@@ -49,5 +49,5 @@ Repository-configured CodeQL default setup is enabled and passing; no
 repository-managed CodeQL workflow is stored in this directory. Operational
 external Keycloak conformance remains a mandatory pre-Sprint-4.5 gate. Full
 frontend CI, release automation and deployment workflows are not implemented
-and must not be inferred from this directory. D096 authorizes no workflow
-change before Sprint 4.4 implementation receives separate approval.
+and must not be inferred from this directory. Sprint 4.4 implementation is now
+authorized, but no D096 workflow change has been made yet.

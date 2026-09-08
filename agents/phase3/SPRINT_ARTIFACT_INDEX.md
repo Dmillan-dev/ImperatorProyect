@@ -46,11 +46,10 @@ D095: ACCEPTED / COMPLETE
 Sprint 4.3: CERTIFIED / COMPLETE
 Sprint 4.3.1: COMPLETE
 D096: ACCEPTED / COMPLETE / FROZEN
-Sprint 4.4: NEXT - IMPLEMENTATION AUTHORIZATION PENDING
+Sprint 4.4: AUTHORIZED / CURRENT
 ```
 
-Exactly one Phase 3 control gate is marked `NEXT`; implementation still
-requires explicit founder authorization.
+Exactly one Phase 3 delivery gate is current and authorized.
 
 ## Accepted Sprint Artifacts
 
@@ -509,8 +508,8 @@ Certification evidence:
 
 ## Next Artifact Boundary
 
-Sprint 4.4 is the sole next gate. D096 is frozen and accepted; implementation
-still requires separate explicit authorization. It may address only the exact
+Sprint 4.4 is the sole current gate. D096 is frozen and accepted, and
+implementation was explicitly authorized on 2026-09-08. It may address only the exact
 Observability boundary in Document 56 and must preserve business Ledger,
 Business Value, connector, JWT/RBAC and base Docker behavior. External
 identity, pilot behavior, real customer data and public exposure remain
