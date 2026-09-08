@@ -79,10 +79,11 @@ Last verified: **2026-09-08**
 | Sprint 4.3.1 documentation synchronization | COMPLETE |
 | External Pilot Identity Conformance | DEFERRED by D095; mandatory before Sprint 4.5 |
 | Sprint 4.4 contract gate | COMPLETE - D096 frozen; no runtime change |
-| Sprint 4.4 implementation | NEXT / EXPLICIT AUTHORIZATION REQUIRED |
+| Sprint 4.4 implementation | AUTHORIZED / READY |
+| Sprint 4.4 structural preflight | PASS WITH LOCAL ENVIRONMENT LIMITATIONS |
 | Last completed gate | Sprint 4.4 - Contract Gate |
 | Phase 2 closure | COMPLETE under D079; Sprints 2.9-2.13 deferred |
-| Next control gate | Sprint 4.4 - Observability implementation authorization |
+| Current control gate | Sprint 4.4 - Observability implementation |
 | Phase 3 authorization | Authorized by D079 and evolved by D085 |
 
 ## Verified Foundation
@@ -114,7 +115,7 @@ Last verified: **2026-09-08**
 | Frontend runtime | CERTIFIED / COMPLETE | D091 single-case Decision Review Workspace passed all frontend gates and unchanged backend/PostgreSQL regression |
 | DRC-AOA-001 runtime composition | CERTIFIED / COMPLETE | D093 R16 composes one idempotent Decision/Recommendation graph through existing D081/D082 boundaries |
 | Local container runtime | CERTIFIED / COMPLETE | D092-D095 hardened Compose, PostgreSQL 18.6 supply chain, local E2E and persistence/recreation gates pass |
-| Observability runtime | CONTRACT FROZEN / IMPLEMENTATION NEXT | D096 fixes safe logs, bounded metrics, correlation, probes, alerts, retention, internal exposure and certification |
+| Observability runtime | AUTHORIZED / NOT YET IMPLEMENTED | D096 fixes safe logs, bounded metrics, correlation, probes, alerts, retention, internal exposure and certification |
 | Java backend CI | CERTIFIED / COMPLETE | GitHub-hosted Java 21 build and Security workflows pass with 151 default tests |
 
 ## Latest Verification
@@ -171,7 +172,7 @@ Sprint 4.3.1 documentation verification:
   synchronized: PASS;
 - broken local links: 0;
 - stale active statements naming Sprint 4.3 as current, blocked or next: 0;
-- unique `NEXT` sprint: 4.4 - Observability;
+- next delivery gate identified as Sprint 4.4 Observability: PASS;
 - Java, Java tests, SQL, Flyway, dependencies, runtime configuration, D092-D095,
   previous decisions and frozen contracts modified by Sprint 4.3.1: no.
 
@@ -184,8 +185,28 @@ Sprint 3.6 CI remains certified independently through GitHub Actions run
 `30708049322` for commit `c3bb8f6`, which verified Java 21, Maven Wrapper,
 the default build, 89 tests and executable JAR packaging on Ubuntu 24.04.
 
+Sprint 4.4 authorization preflight on 2026-09-08:
+
+- repository `main` synchronized with `origin/main` at `54938a3`: PASS;
+- changed implementation files before authorization: none;
+- Domain, Application and Ports framework/provider import isolation: PASS;
+- Java 21 and pinned Maven 3.9.16 default verification: 151 passed;
+- frontend Prettier, ESLint, strict TypeScript, 41 tests and production build:
+  PASS;
+- base Compose interpolation and schema using synthetic `.env.example`: PASS;
+- Docker runtime execution: unavailable because Docker Engine was not running;
+- PostgreSQL integration and container regressions: retained from Sprint 4.3
+  certification and must be rerun before Sprint 4.4 certification; and
+- Windows `mvnw.cmd`: local launcher failure observed; the pinned Maven
+  distribution and hosted Linux wrapper remain operational. No wrapper change
+  is authorized by D096.
+
 ## Known Non-Blocking Risks
 
+- The inspected Windows host cannot currently start Maven through `mvnw.cmd`
+  because its wrapper PowerShell launcher fails before Maven execution. The
+  exact cached Maven 3.9.16 distribution passes, and hosted Linux `./mvnw`
+  remains green. D096 does not authorize wrapper maintenance.
 - Default `clean verify` executes the Spring Boot and HTTP contract suite only.
   Real-database certification remains intentionally explicit through the
   `postgresql-integration` profile and external `IMPERATOR_IT_*` configuration.
@@ -217,13 +238,13 @@ the default build, 89 tests and executable JAR packaging on Ubuntu 24.04.
 
 ## Next Control Gate
 
-Sprint 4.4 - Observability is the sole next gate. D096 has frozen its minimum
-safe-log, bounded-metric, correlation, probe, alert, retention, exposure and
-certification contract. Implementation is not authorized until a separate
-explicit gate. It may not change business Ledger semantics, calculate Business
-Value, expand routes or connectors, introduce public exposure, provision the
-external IdP or authorize real customer data. External Pilot Identity
-Conformance remains a separate mandatory gate before Sprint 4.5.
+Sprint 4.4 - Observability is the current authorized gate. D096 has frozen its
+minimum safe-log, bounded-metric, correlation, probe, alert, retention,
+exposure and certification contract. The separate implementation authorization
+was granted on 2026-09-08. It may not change business Ledger semantics,
+calculate Business Value, expand routes or connectors, introduce public
+exposure, provision the external IdP or authorize real customer data. External
+Pilot Identity Conformance remains a separate mandatory gate before Sprint 4.5.
 
 Current execution authorities:
 

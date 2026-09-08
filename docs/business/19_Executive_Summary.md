@@ -59,7 +59,14 @@ This creates a direct ROI story through:
 
 ## Current phase
 
-This document was originally created during Phase 0. The current live repository status is now Phase 2 Platform Foundation: Java domain, application use cases, inbound/outbound ports and application contracts exist, while framework runtime, PostgreSQL migrations, REST controllers, JWT runtime, React app code, live connectors and real AI integrations remain unimplemented. Use the root `README.md` and `docs/decisions/14_Decision_Log.md` for current execution state.
+This document was originally created during Phase 0. The live repository is now
+in Phase 3: the Java domain, application and ports, Spring Boot REST runtime,
+PostgreSQL and Flyway persistence, JWT/RBAC controls, read-only GitHub and AWS
+adapters, Next.js workspace and hardened local Docker runtime are implemented.
+Sprint 4.3 is certified and Sprint 4.4 implementation is authorized under D096;
+observability, operational external identity conformance, pilot infrastructure
+and real customer data are not yet present. Use the root `README.md` and
+`docs/project/PROJECT_STATUS.md` for the current execution state.
 
 ## Current canonical interpretation
 
@@ -72,7 +79,9 @@ The founder-mode ambition remains valid: act like a CTO building an enterprise-g
 - Product surface: Decision Review Workspace first; Workspace -> Decision -> Ledger after repeated decisions exist.
 - First screen contract: `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`.
 - MVP integrations: Jira, GitHub, AWS and OpenAI + Anthropic Claude.
-- Architecture status: Phase 2 foundation may build controlled implementation modules only; production services and Phase 3 business behavior still require explicit authorization.
+- Architecture status: the Phase 3 local MVP runtime is certified through Sprint
+  4.3. Sprint 4.4 is the authorized current gate, bounded by D096; external pilot
+  identity and infrastructure remain deferred to their later gates.
 
 ## Bottom line
 

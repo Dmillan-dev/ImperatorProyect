@@ -31,9 +31,10 @@ target/
 
 ### `.github/`
 
-Contains the implemented Java CI workflow, review ownership and pull-request
-template. Frontend CI, SAST, dependency scanning, release automation and
-deployment workflows are not implemented.
+Contains the implemented Java CI and fail-closed Security workflows, review
+ownership and pull-request template. GitHub-managed CodeQL default setup is
+enabled separately from repository workflow files. Frontend CI, release
+automation and deployment workflows are not implemented.
 
 ### `.mvn/`
 
@@ -136,8 +137,9 @@ evidence of a public or production deployment.
 
 Contains the D092-D095 certified production-like local Docker Compose runtime,
 hardened application Dockerfiles and ignored file-backed secret boundary.
-D096 freezes a future optional observability profile but authorizes no runtime
-change. No cloud deployment, Kubernetes or Terraform exists.
+D096 freezes an optional observability profile whose Sprint 4.4 implementation
+is now authorized but not yet present. No cloud deployment, Kubernetes or
+Terraform exists.
 
 ### `output/`
 

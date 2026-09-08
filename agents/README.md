@@ -67,8 +67,7 @@ Phase 3 is named `First Business Value Loop` and is active under D079.
 
 The current authorized gate is maintained in
 `docs/project/PROJECT_STATUS.md`. At the time of this update D096 is frozen and
-the sole next gate is Sprint 4.4 Observability implementation, pending
-separate explicit authorization.
+Sprint 4.4 Observability implementation is the sole authorized current gate.
 
 Phase 3 agents may implement only the bounded `DRC-AOA-001` sequence in
 `agents/phase3/README.md`. Sprint 3.0 runtime composition and Sprint 3.1 JSONL
@@ -98,8 +97,8 @@ Docker runtime, D093 composition, PostgreSQL supply-chain remediation and
 identity-evidence boundary. Sprint 4.3 is certified with 151 default tests, 34
 PostgreSQL integration tests, hardened SHA-tagged images, local JWT/RBAC E2E
 and persistence after recreation. D096 freezes the minimum observability
-contract. Sprint 4.4 implementation is the sole next gate, remains
-unauthorized, and may address only Document 56. External Keycloak HTTPS
+contract. Sprint 4.4 implementation is the sole authorized current gate and
+may address only Document 56. External Keycloak HTTPS
 conformance remains mandatory before Sprint 4.5.
 
 The completed Phase 2 foundation contains:

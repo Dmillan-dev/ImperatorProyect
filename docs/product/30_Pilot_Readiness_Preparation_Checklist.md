@@ -41,7 +41,7 @@ Sprint 4.3 CERTIFIED under D095
 | Flyway/persistence | `CERTIFIED` | PostgreSQL 18.6, V1/V2 migrate/validate/no-op and persisted graph recreation pass |
 | Backup/restore | `NOT IMPLEMENTED` | D092 excludes it; volume persistence is not backup |
 | Security | `PARTIAL FOR PILOT` | Local runtime and JWT/RBAC pass; external IdP and pilot operations remain pending |
-| Observability | `CONTRACT FROZEN / IMPLEMENTATION NEXT` | D096 is accepted; runtime changes still require separate authorization |
+| Observability | `AUTHORIZED / NOT IMPLEMENTED` | D096 is frozen and bounded Sprint 4.4 implementation is current |
 | Runtime E2E | `CERTIFIED LOCAL` | R01-R16, governance, Business Value and recreation pass under D095 |
 | Documentation | `SYNCHRONIZED` | Sprint 4.3.1 records the certified local runtime and deferred pilot identity gate |
 
@@ -94,8 +94,9 @@ credible, auditable value loop whose financial meaning the customer accepts.
 
 ## 6. Architecture Health Review
 
-Review basis: current repository at the Sprint 4.4 Contract Gate, frozen
-D081-D096 contracts and certified implementation through Sprint 4.3.
+Review basis: current repository at the authorized Sprint 4.4 pre-implementation
+boundary, frozen D081-D096 contracts and certified implementation through
+Sprint 4.3.
 
 ### Green
 
@@ -192,7 +193,7 @@ ARCHITECTURE HEALTH: SOUND WITH EXPLICIT DELIVERY GAPS
 SPRINT 4.3: CERTIFIED
 SPRINT 4.3.1: COMPLETE
 D096 CONTRACT: FROZEN / ACCEPTED
-SPRINT 4.4 IMPLEMENTATION: NEXT / AUTHORIZATION REQUIRED
+SPRINT 4.4 IMPLEMENTATION: AUTHORIZED / CURRENT
 EXTERNAL PILOT IDENTITY: MANDATORY BEFORE SPRINT 4.5
 SPRINT 4.5: NOT OPEN
 ```

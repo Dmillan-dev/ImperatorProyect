@@ -2,7 +2,7 @@
 
 Status: **ACTIVE**
 
-Current gate: **Sprint 4.4 - Observability implementation authorization**
+Current gate: **Sprint 4.4 - Observability implementation**
 
 Authorization: **D079 - Phase 3 Vertical-Slice Acceleration; D085 - MVP Delivery Roadmap Evolution; D095 - D092 Runtime Certification Scope Correction; D096 - Minimum Observability Runtime Contract**
 
@@ -127,7 +127,7 @@ Locked constraints:
 | 4.3 | Docker Production Runtime | CERTIFIED / COMPLETE |
 | 4.3.1 | Documentation Synchronization | COMPLETE |
 | D096 | Minimum Observability Runtime Contract | ACCEPTED / COMPLETE / FROZEN |
-| 4.4 | Observability | NEXT - IMPLEMENTATION AUTHORIZATION PENDING |
+| 4.4 | Observability | AUTHORIZED / CURRENT |
 | 4.5 | Pilot Readiness | PENDING |
 | 5.0 | MVP Release | PENDING |
 
@@ -649,8 +649,8 @@ bounded Micrometer/Prometheus metrics, MDC correlation, exact liveness and
 readiness probes, an optional isolated Prometheus/Grafana profile, local
 retention, alert rules and fail-closed certification evidence.
 
-The contract gate is complete. Implementation remains `NEXT` and requires a
-separate explicit authorization. OpenTelemetry, log aggregation, external
+The contract gate is complete and implementation was explicitly authorized on
+2026-09-08. OpenTelemetry, log aggregation, external
 notifications, public exposure, customer data and changes to Domain,
 Application, API, persistence, Ledger or Business Value remain outside scope.
 

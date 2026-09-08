@@ -76,8 +76,8 @@ Trivy checks, while operational external identity remains explicitly deferred.
   independently certified supply-chain process instead of weakening a gate.
 
 It does **not** prove production Kubernetes, Terraform, multi-tenancy, an AWS
-deployment, operational external Keycloak conformance, a live AI service, full
-SAST automation or customer adoption.
+deployment, operational external Keycloak conformance, a live AI service, a
+production security operations programme or customer adoption.
 
 ## Possible Interview Questions
 
