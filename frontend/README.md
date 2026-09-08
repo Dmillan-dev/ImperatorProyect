@@ -30,8 +30,8 @@ Sprint 4.2 is **CERTIFIED / COMPLETE** under D091.
   integration tests.
 
 Sprint 4.3 certified this frontend as a non-root, read-only, SHA-tagged image in
-the loopback-only D092-D095 runtime. Sprint 4.4 may add only explicitly frozen
-observability behavior; it does not authorize new frontend product cases.
+the loopback-only D092-D095 runtime. D096 freezes Sprint 4.4 observability and
+explicitly forbids frontend changes; implementation remains unauthorized.
 
 ## Local Development
 

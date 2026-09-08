@@ -225,7 +225,8 @@ not the Phase 2 route-shell plan.
 | D095 | D092 Runtime Certification Scope Correction | ACCEPTED / COMPLETE |
 | 4.3 | Docker Production Runtime | CERTIFIED / COMPLETE |
 | 4.3.1 | Documentation Synchronization | COMPLETE |
-| 4.4 | Observability | NEXT |
+| D096 | Minimum Observability Runtime Contract | ACCEPTED / COMPLETE / FROZEN |
+| 4.4 | Observability | NEXT - IMPLEMENTATION AUTHORIZATION PENDING |
 | 4.5 | Pilot Readiness | PENDING |
 | 5.0 | MVP Release | PENDING |
 
@@ -304,11 +305,12 @@ the API-composed `DRC-AOA-001` E2E and persistence after normal Compose
 recreation passed. D095 defers only operational external Keycloak HTTPS
 conformance to a mandatory Pilot Identity Conformance Gate before Sprint 4.5;
 D087/D088 and fail-closed behavior remain unchanged. Sprint 4.3.1 synchronized
-the active documentation. Observability is the separate Sprint 4.4 gate.
+the active documentation. D096 now freezes the bounded Observability contract;
+Sprint 4.4 implementation remains the separate next gate and is not authorized.
 
 Active Phase 3 execution authority:
 
-- D079 through D095 in `docs/decisions/14_Decision_Log.md`;
+- D079 through D096 in `docs/decisions/14_Decision_Log.md`;
 - `agents/phase3/README.md`.
 
 ## Gate Transition Rule

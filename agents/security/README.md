@@ -67,7 +67,8 @@ Sprint 3.8.0 - JWT Authentication Contract Freeze: COMPLETE
 -> Sprint 4.2.1 - Documentation Synchronization: COMPLETE
 -> Sprint 4.3 - Docker Production Runtime: CERTIFIED / COMPLETE
 -> Sprint 4.3.1 - Documentation Synchronization: COMPLETE
--> Sprint 4.4 - Observability: NEXT
+-> D096 - Minimum Observability Runtime Contract: ACCEPTED / FROZEN
+-> Sprint 4.4 - Observability implementation: NEXT / AUTHORIZATION REQUIRED
 ```
 
 Sprint 3.8 answers only who the caller is. Sprint 3.9 answers what that caller
@@ -92,8 +93,8 @@ provider, browser persistence or frontend authorization authority. Sprint 4.3
 certified D092-D095 runtime packaging, D093/R16, the D094 PostgreSQL supply
 chain, local JWT/RBAC E2E and persistence after recreation. Operational
 external Keycloak HTTPS conformance remains mandatory before Sprint 4.5.
-Sprint 4.4 is the sole current gate and must add only explicitly frozen
-observability behavior without changing any security authority.
+D096 is frozen. Sprint 4.4 implementation is the sole next gate, requires
+separate authorization and must preserve every existing security authority.
 
 For connector work, also load
 `docs/architecture/28_Per_Connector_MVP_Contracts.md`,

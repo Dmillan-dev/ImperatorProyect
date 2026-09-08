@@ -175,9 +175,10 @@ is found.
 Sprints 3.0 through 4.3 are complete at their documented gates. The Java 21
 Maven build is certified through GitHub Actions, and the complete Functional
 REST security runtime is certified against PostgreSQL 18.4. D084 is discharged;
-D085 through D095 are accepted. D093 adds the bounded R16 composition entry
+D085 through D096 are accepted. D093 adds the bounded R16 composition entry
 point without changing Domain policy; Sprint 4.3 certification passed 151
 default tests and 34 PostgreSQL 18.6 integration tests and packaged this module
-as a non-root, read-only image. Sprint 4.4 - Observability is the sole next
-gate. It must not change D086 routes, D087 identity, D088 authorization,
-connector isolation, Evidence redaction or existing business authority.
+as a non-root, read-only image. D096 freezes the observability boundary;
+Sprint 4.4 implementation is the sole next gate and requires separate
+authorization. It must not change D086 routes, D087 identity, D088
+authorization, connector isolation, Evidence redaction or business authority.

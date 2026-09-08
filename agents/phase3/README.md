@@ -2,9 +2,9 @@
 
 Status: **ACTIVE**
 
-Current gate: **Sprint 4.4 - Observability**
+Current gate: **Sprint 4.4 - Observability implementation authorization**
 
-Authorization: **D079 - Phase 3 Vertical-Slice Acceleration; D085 - MVP Delivery Roadmap Evolution; D095 - D092 Runtime Certification Scope Correction**
+Authorization: **D079 - Phase 3 Vertical-Slice Acceleration; D085 - MVP Delivery Roadmap Evolution; D095 - D092 Runtime Certification Scope Correction; D096 - Minimum Observability Runtime Contract**
 
 ## Purpose
 
@@ -12,9 +12,9 @@ Phase 3 turns the certified platform foundation into one demonstrable product
 flow. It implements only the locked `DRC-AOA-001` AI Onboarding Assistant
 Recovery case before broader platform hardening.
 
-This plan does not authorize every listed gate at once. Only the gate marked
-`NEXT` in `docs/project/PROJECT_STATUS.md` and
-`docs/project/PHASE_AND_SPRINT_MAP.md` may execute.
+This plan does not authorize every listed gate at once. `NEXT` identifies the
+only gate eligible for separate founder authorization; it does not authorize
+implementation by itself.
 
 ## Mandatory Reading Order
 
@@ -50,8 +50,9 @@ Phase 3 behavior must follow:
 - `docs/architecture/50_Executive_Dashboard_Contract.md`;
 - `docs/architecture/51_Docker_Production_Runtime_Contract.md`;
 - `docs/architecture/52_DRC_AOA_001_Case_Composition_Contract.md`;
-- `docs/architecture/54_Observability_Preparation.md`; and
-- `docs/architecture/55_PostgreSQL_Runtime_Supply_Chain_Remediation_Contract.md`.
+- `docs/architecture/54_Observability_Preparation.md` as historical input;
+- `docs/architecture/55_PostgreSQL_Runtime_Supply_Chain_Remediation_Contract.md`; and
+- `docs/architecture/56_Observability_Runtime_Contract.md`.
 
 Persistence remains governed by contracts 39 and 40 and by
 `database/migrations/V1__initial_schema.sql`.
@@ -125,7 +126,8 @@ Locked constraints:
 | D095 | D092 Runtime Certification Scope Correction | ACCEPTED / COMPLETE |
 | 4.3 | Docker Production Runtime | CERTIFIED / COMPLETE |
 | 4.3.1 | Documentation Synchronization | COMPLETE |
-| 4.4 | Observability | NEXT |
+| D096 | Minimum Observability Runtime Contract | ACCEPTED / COMPLETE / FROZEN |
+| 4.4 | Observability | NEXT - IMPLEMENTATION AUTHORIZATION PENDING |
 | 4.5 | Pilot Readiness | PENDING |
 | 5.0 | MVP Release | PENDING |
 
@@ -639,6 +641,18 @@ Sprint 4.3.1 synchronized active project-control, agent, runtime, security,
 pilot, portfolio and AI-context documentation and marked Sprint 4.4 as the sole
 next gate. It changed no code, tests, SQL, Flyway, dependencies, runtime
 configuration, frozen contract or prior decision.
+
+## Sprint 4.4 - Observability
+
+D096 freezes the minimum operational contract: built-in ECS structured logs,
+bounded Micrometer/Prometheus metrics, MDC correlation, exact liveness and
+readiness probes, an optional isolated Prometheus/Grafana profile, local
+retention, alert rules and fail-closed certification evidence.
+
+The contract gate is complete. Implementation remains `NEXT` and requires a
+separate explicit authorization. OpenTelemetry, log aggregation, external
+notifications, public exposure, customer data and changes to Domain,
+Application, API, persistence, Ledger or Business Value remain outside scope.
 
 ## Demonstration And Pilot Boundary
 

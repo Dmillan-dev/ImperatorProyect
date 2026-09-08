@@ -34,5 +34,6 @@ Current status:
 ## Runtime Boundary
 
 `docker/` may package only the certified backend, frontend and PostgreSQL
-runtime. Observability remains a separate Sprint 4.4 gate. Kubernetes,
-Terraform, cloud deployment and production secrets remain unauthorized.
+runtime. D096 freezes a future optional observability profile, but Sprint 4.4
+implementation remains unauthorized. Kubernetes, Terraform, cloud deployment
+and production secrets remain unauthorized.

@@ -89,12 +89,14 @@ spend. The first case is `DRC-AOA-001`, AI Onboarding Assistant Recovery.
   with PostgreSQL 18.6, pinned build inputs, SBOM, provenance and zero fixable
   High/Critical or secret findings.
 - D095 - D092 Runtime Certification Scope Correction: accepted and complete.
+- D096 - Minimum Observability Runtime Contract: accepted, complete and frozen;
+  implementation is not authorized.
 - Sprint 4.3 Docker Production Runtime: certified and complete. Java 21 passed
   151 default tests, PostgreSQL 18.6 and Flyway passed 34 integration tests,
   final SHA-tagged images passed security/hardening gates, and local JWT/RBAC,
   `DRC-AOA-001` E2E and persistence-after-recreation evidence passed.
 - Sprint 4.3.1 documentation synchronization: complete.
-- Current gate: Sprint 4.4 - Observability.
+- Current gate: Sprint 4.4 - Observability implementation authorization.
 - External Keycloak HTTPS conformance: deferred by D095 and mandatory before
   Sprint 4.5, real customer data or MVP Release.
 - Sprints 2.9 through 2.13: deferred, not completed.
@@ -164,6 +166,9 @@ the single authorized business value loop under D079.
   remains in Application and Restricted Evidence remains fail-closed redacted.
 - hardened D092-D095 Docker Compose runtime certified with PostgreSQL 18.6,
   non-root custom images, read-only filesystems and loopback-only publication.
+- D096 observability contract frozen; Actuator, Micrometer, structured
+  application JSON logs, Prometheus, Grafana and alert rules remain absent
+  until a separately authorized Sprint 4.4 implementation.
 
 The implemented Java source root is `backend-java`, with packages under
 `imperator.*`. REST packages live under `imperator.api.*`. Public product REST

@@ -134,9 +134,10 @@ evidence of a public or production deployment.
 
 ### `infra/`
 
-Contains the D092 production-like local Docker Compose runtime, hardened
-application Dockerfiles and ignored file-backed secret boundary. Sprint 4.3
-remains uncertified; no cloud deployment, Kubernetes or Terraform exists.
+Contains the D092-D095 certified production-like local Docker Compose runtime,
+hardened application Dockerfiles and ignored file-backed secret boundary.
+D096 freezes a future optional observability profile but authorizes no runtime
+change. No cloud deployment, Kubernetes or Terraform exists.
 
 ### `output/`
 

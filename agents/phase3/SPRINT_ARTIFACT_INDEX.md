@@ -45,10 +45,12 @@ D094: ACCEPTED / COMPLETE / PASS
 D095: ACCEPTED / COMPLETE
 Sprint 4.3: CERTIFIED / COMPLETE
 Sprint 4.3.1: COMPLETE
-Sprint 4.4: NEXT
+D096: ACCEPTED / COMPLETE / FROZEN
+Sprint 4.4: NEXT - IMPLEMENTATION AUTHORIZATION PENDING
 ```
 
-Exactly one Phase 3 control gate is authorized as `NEXT`.
+Exactly one Phase 3 control gate is marked `NEXT`; implementation still
+requires explicit founder authorization.
 
 ## Accepted Sprint Artifacts
 
@@ -89,6 +91,7 @@ Exactly one Phase 3 control gate is authorized as `NEXT`.
 | D095 | `31f6e51` | Runtime certification scope correction and mandatory pre-pilot external identity deferral | ACCEPTED / COMPLETE |
 | 4.3 | `1613b5d` | Hardened Docker runtime, D093/R16, D094 images, local JWT/RBAC E2E and persistence/recreation | CERTIFIED / COMPLETE |
 | 4.3.1 | Current synchronization commit; hash intentionally not self-recorded | Active project-control, agent, runtime, security, pilot, portfolio and AI-context synchronization | COMPLETE |
+| D096 | Current contract commit; hash intentionally not self-recorded | Frozen safe logging, metrics, correlation, probes, alerts, retention, exposure and certification contract | ACCEPTED / COMPLETE / FROZEN |
 
 ### Sprint 3.0
 
@@ -506,10 +509,12 @@ Certification evidence:
 
 ## Next Artifact Boundary
 
-Sprint 4.4 is the sole next gate. It may address only Observability after its
-contract is explicitly frozen and accepted. It must preserve business Ledger,
-Business Value, connector, JWT/RBAC and Docker boundaries. External identity,
-pilot behavior, real customer data and public exposure remain prohibited.
+Sprint 4.4 is the sole next gate. D096 is frozen and accepted; implementation
+still requires separate explicit authorization. It may address only the exact
+Observability boundary in Document 56 and must preserve business Ledger,
+Business Value, connector, JWT/RBAC and base Docker behavior. External
+identity, pilot behavior, real customer data and public exposure remain
+prohibited.
 
 ## Agent Rule
 
