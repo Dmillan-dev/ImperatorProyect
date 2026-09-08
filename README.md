@@ -72,13 +72,14 @@ Status labels in this repository have strict meanings:
 | Docker production-like runtime | **[IMPLEMENTED]** | D092-D095 certified hardened Compose, SHA-tagged images, PostgreSQL 18.6 supply-chain evidence and persistence after recreation |
 | External OIDC identity provider | **[PLANNED]** | Keycloak pilot integration is designed but not provisioned or connected |
 | D093 case-composition route | **[IMPLEMENTED]** | `ADMIN`-only R16 composes the canonical Decision and Recommendation through existing Application boundaries |
-| Application metrics, traces and dashboards | **[PLANNED]** | Sprint 4.4 preparation only |
+| Application observability | **[PLANNED]** | D096 contract frozen; implementation not authorized |
 | Python/FastAPI explanation service | **[FUTURE]** | Directory boundary only; no Python source or provider calls |
 | Kubernetes, Terraform, Kafka and Redis | **[FUTURE]** | Explicitly excluded from the MVP |
 
 Current formal state: **Phase 3, pre-pilot; Sprint 4.3 and its documentation
-synchronization are complete, and Sprint 4.4 Observability is the sole next
-gate.** D095 defers operational Keycloak HTTPS conformance without weakening
+synchronization are complete, and D096 freezes the sole next gate, Sprint 4.4
+Observability; implementation is not yet authorized.** D095 defers operational
+Keycloak HTTPS conformance without weakening
 D087/D088; it remains mandatory before Sprint 4.5, real customer data or MVP
 Release. See the [pilot status](docs/pilot/README.md) and
 [D095](docs/decisions/14_Decision_Log.md).
@@ -241,7 +242,7 @@ model exists.
 | Integrations | GitHub REST, AWS SDK, JSONL Evidence import | Additional connectors after MVP |
 | Frontend | Next.js 16, React 19, TypeScript 5, Tailwind CSS 4 | Production login/session UX |
 | Runtime | Docker Compose, hardened multi-stage images | Cloud deployment after pilot |
-| Observability | Correlation IDs, safe errors, container health checks/log rotation | Structured application logs, OpenTelemetry, metrics and dashboards |
+| Observability | Correlation IDs, safe errors, container health checks/log rotation | D096-contracted ECS logs, Actuator probes, bounded metrics, alerts and one operator dashboard |
 | AI | Provider-neutral Java `ExplanationProvider` port | Python/FastAPI and real providers are future work |
 
 ## REST API
@@ -297,9 +298,9 @@ These concerns have different maturity levels:
 - **Operational diagnostics are partially implemented:** HTTP correlation IDs,
   typed non-sensitive errors, container health checks and bounded Docker log
   rotation exist.
-- **Observability is planned:** structured application logs, metrics,
-  OpenTelemetry traces, alert rules and Grafana dashboards are preparation
-  work only and are not part of the current runtime.
+- **Observability is contracted but not implemented:** D096 freezes structured
+  ECS application logs, bounded metrics, exact probes, local alerts and one
+  Grafana operator dashboard. OpenTelemetry is explicitly outside Sprint 4.4.
 
 There is no public TLS endpoint or encryption-at-rest claim. The current
 runtime is local and loopback-bound; pilot TLS, external identity, backup and
@@ -398,7 +399,7 @@ as realized value until validation evidence exists.
 | Stage | Scope |
 |---|---|
 | **Completed** | Core Domain, Application use cases, PostgreSQL, REST, JWT/RBAC, GitHub/AWS evidence adapters, D093 composition, Decision Review Workspace and Docker Production Runtime |
-| **Next** | Sprint 4.4 Observability contract, implementation and certification |
+| **Next** | Sprint 4.4 Observability implementation and certification under frozen D096 |
 | **Planned** | External Keycloak pilot conformance and Sprint 4.5 Pilot Readiness |
 | **Future** | Python explanation service, more connectors, multi-tenancy, cloud deployment, Terraform, Kubernetes, Kafka and Redis only when justified |
 

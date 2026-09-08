@@ -72,14 +72,17 @@ Last verified: **2026-09-08**
 | D093/R16 implementation | PASS |
 | D094 PostgreSQL supply-chain remediation | ACCEPTED / COMPLETE / PASS |
 | D095 runtime certification scope correction | ACCEPTED / COMPLETE |
+| D096 minimum observability runtime contract | ACCEPTED / COMPLETE / FROZEN |
 | Sprint 4.3 implementation | PASS |
 | Sprint 4.3 local runtime certification | PASS - Docker, security, local JWT/RBAC E2E and persistence/recreation |
 | Sprint 4.3 closure | CERTIFIED / COMPLETE under D095 |
 | Sprint 4.3.1 documentation synchronization | COMPLETE |
 | External Pilot Identity Conformance | DEFERRED by D095; mandatory before Sprint 4.5 |
-| Last completed gate | Sprint 4.3.1 - Documentation Synchronization |
+| Sprint 4.4 contract gate | COMPLETE - D096 frozen; no runtime change |
+| Sprint 4.4 implementation | NEXT / EXPLICIT AUTHORIZATION REQUIRED |
+| Last completed gate | Sprint 4.4 - Contract Gate |
 | Phase 2 closure | COMPLETE under D079; Sprints 2.9-2.13 deferred |
-| Next authorized sprint | Sprint 4.4 - Observability |
+| Next control gate | Sprint 4.4 - Observability implementation authorization |
 | Phase 3 authorization | Authorized by D079 and evolved by D085 |
 
 ## Verified Foundation
@@ -111,7 +114,7 @@ Last verified: **2026-09-08**
 | Frontend runtime | CERTIFIED / COMPLETE | D091 single-case Decision Review Workspace passed all frontend gates and unchanged backend/PostgreSQL regression |
 | DRC-AOA-001 runtime composition | CERTIFIED / COMPLETE | D093 R16 composes one idempotent Decision/Recommendation graph through existing D081/D082 boundaries |
 | Local container runtime | CERTIFIED / COMPLETE | D092-D095 hardened Compose, PostgreSQL 18.6 supply chain, local E2E and persistence/recreation gates pass |
-| Observability runtime | NEXT | Sprint 4.4 must freeze its contract before implementation |
+| Observability runtime | CONTRACT FROZEN / IMPLEMENTATION NEXT | D096 fixes safe logs, bounded metrics, correlation, probes, alerts, retention, internal exposure and certification |
 | Java backend CI | CERTIFIED / COMPLETE | GitHub-hosted Java 21 build and Security workflows pass with 151 default tests |
 
 ## Latest Verification
@@ -214,16 +217,17 @@ the default build, 89 tests and executable JAR packaging on Ubuntu 24.04.
 
 ## Next Control Gate
 
-Sprint 4.4 - Observability is the sole next gate. It must first freeze the
-minimum metrics, health, safe-log, trace, retention and evidence contract for
-the certified D092-D095 runtime. It may not change business Ledger semantics,
-calculate Business Value, expand routes or connectors, introduce public
-exposure, provision the external IdP or authorize real customer data. External
-Pilot Identity Conformance remains a separate mandatory gate before Sprint 4.5.
+Sprint 4.4 - Observability is the sole next gate. D096 has frozen its minimum
+safe-log, bounded-metric, correlation, probe, alert, retention, exposure and
+certification contract. Implementation is not authorized until a separate
+explicit gate. It may not change business Ledger semantics, calculate Business
+Value, expand routes or connectors, introduce public exposure, provision the
+external IdP or authorize real customer data. External Pilot Identity
+Conformance remains a separate mandatory gate before Sprint 4.5.
 
 Current execution authorities:
 
-- D079 through D095 in `docs/decisions/14_Decision_Log.md`;
+- D079 through D096 in `docs/decisions/14_Decision_Log.md`;
 - `agents/phase3/README.md`;
 - `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`;
 - `docs/architecture/50_Executive_Dashboard_Contract.md`;
@@ -235,6 +239,7 @@ Current execution authorities:
 - `docs/architecture/52_DRC_AOA_001_Case_Composition_Contract.md`;
 - `docs/architecture/54_Observability_Preparation.md`;
 - `docs/architecture/55_PostgreSQL_Runtime_Supply_Chain_Remediation_Contract.md`;
+- `docs/architecture/56_Observability_Runtime_Contract.md`;
 - `docs/architecture/28_Per_Connector_MVP_Contracts.md`;
 - `docs/architecture/CONNECTOR_FRAMEWORK.md`;
 - `docs/architecture/35_Coding_Principles.md`;

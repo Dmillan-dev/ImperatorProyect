@@ -172,7 +172,7 @@ promise a legal conclusion through this technical runbook.
 | Are backups available? | Design only | Implement and restore-test before data |
 | Is deletion supported? | Whole dedicated environment destruction | Procedure/test pending |
 | Is vulnerability scanning performed? | Hosted and local Trivy gates | D094 PostgreSQL and final application images pass |
-| Is observability operational? | Prepared only | Sprint 4.4 pending |
+| Is observability operational? | D096 contract frozen; runtime absent | Sprint 4.4 implementation pending authorization |
 | Has an independent penetration test passed? | No | Decide if customer requires one |
 | Is ISO 27001/SOC 2 certified? | No | Never imply certification |
 | Where is data hosted? | Not selected | Must be fixed contractually |

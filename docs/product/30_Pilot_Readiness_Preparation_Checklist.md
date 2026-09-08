@@ -13,7 +13,7 @@ Readiness. The blocking chain is:
 ```text
 Sprint 4.3 CERTIFIED under D095
   -> Sprint 4.3.1 documentation synchronization COMPLETE
-  -> Sprint 4.4 observability
+  -> Sprint 4.4 observability implementation and certification under D096
   -> external Keycloak D087/D088 conformance
   -> controlled live-connector and operational readiness evidence
   -> Sprint 4.5 Pilot Readiness
@@ -41,7 +41,7 @@ Sprint 4.3 CERTIFIED under D095
 | Flyway/persistence | `CERTIFIED` | PostgreSQL 18.6, V1/V2 migrate/validate/no-op and persisted graph recreation pass |
 | Backup/restore | `NOT IMPLEMENTED` | D092 excludes it; volume persistence is not backup |
 | Security | `PARTIAL FOR PILOT` | Local runtime and JWT/RBAC pass; external IdP and pilot operations remain pending |
-| Observability | `NEXT` | Preparation exists; Sprint 4.4 is the next authorized gate |
+| Observability | `CONTRACT FROZEN / IMPLEMENTATION NEXT` | D096 is accepted; runtime changes still require separate authorization |
 | Runtime E2E | `CERTIFIED LOCAL` | R01-R16, governance, Business Value and recreation pass under D095 |
 | Documentation | `SYNCHRONIZED` | Sprint 4.3.1 records the certified local runtime and deferred pilot identity gate |
 
@@ -94,8 +94,8 @@ credible, auditable value loop whose financial meaning the customer accepts.
 
 ## 6. Architecture Health Review
 
-Review basis: current repository at Sprint 4.3.1, frozen D081-D094 contracts,
-D095 and certified implementation through Sprint 4.3.
+Review basis: current repository at the Sprint 4.4 Contract Gate, frozen
+D081-D096 contracts and certified implementation through Sprint 4.3.
 
 ### Green
 
@@ -120,8 +120,8 @@ D095 and certified implementation through Sprint 4.3.
 1. D091 provides controlled token paste, not commercial login or SSO.
 2. No operational external HTTPS issuer/JWKS has passed the mandatory Pilot
    Identity Conformance Gate.
-3. No application observability dependencies or endpoints exist yet; this is
-   deferred to Sprint 4.4.
+3. D096 freezes application observability, but its dependencies, endpoints and
+   optional runtime profile do not exist until Sprint 4.4 implementation.
 4. Docker volume persistence is not backup/restore. D092 explicitly excludes
    backup, which must be resolved before real customer data if the pilot terms
    require recoverability beyond container recreation.
@@ -155,7 +155,7 @@ architecture redesign.
 | Frontend | 41 tests and 9 Playwright acceptance tests certified | Load the runtime-composed case with an operational external token |
 | Connectors | GitHub/AWS offline protocol tests certified | Controlled live read-only smoke evidence |
 | Docker | D092-D095 runtime, clean images and complete data recreation certified | Preserve exact certified inputs and evidence |
-| Observability | None at runtime | Sprint 4.4 contract, implementation and certification |
+| Observability | D096 contract only; none at runtime | Sprint 4.4 implementation and certification |
 
 ## 8. Evidence Required For Pilot Authorization
 
@@ -191,7 +191,8 @@ PILOT READINESS: NO-GO
 ARCHITECTURE HEALTH: SOUND WITH EXPLICIT DELIVERY GAPS
 SPRINT 4.3: CERTIFIED
 SPRINT 4.3.1: COMPLETE
-SPRINT 4.4: NEXT
+D096 CONTRACT: FROZEN / ACCEPTED
+SPRINT 4.4 IMPLEMENTATION: NEXT / AUTHORIZATION REQUIRED
 EXTERNAL PILOT IDENTITY: MANDATORY BEFORE SPRINT 4.5
 SPRINT 4.5: NOT OPEN
 ```

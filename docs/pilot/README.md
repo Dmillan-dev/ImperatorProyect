@@ -70,7 +70,8 @@ customer value, customer data compliance or general product readiness.
 ```text
 Sprint 4.3: CERTIFIED / COMPLETE
 Sprint 4.3.1: COMPLETE
-Sprint 4.4: NEXT
+D096 Observability Contract: FROZEN / ACCEPTED
+Sprint 4.4 Implementation: NEXT / AUTHORIZATION REQUIRED
 External Pilot Identity Conformance: DEFERRED / REQUIRED BEFORE 4.5
 Sprint 4.5: NOT OPEN
 Customer data: FORBIDDEN

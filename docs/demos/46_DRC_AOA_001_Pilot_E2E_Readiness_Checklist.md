@@ -18,9 +18,10 @@ Local runtime E2E          PASS
 External Pilot Identity    NOT PROVISIONED / REQUIRED BEFORE SPRINT 4.5
 ```
 
-Sprint 4.3.1 is complete. Sprint 4.4 is the sole next gate. Sprint 4.5 remains
-unauthorized until its preceding gates, including external Pilot Identity
-Conformance, pass.
+Sprint 4.3.1 is complete and D096 freezes the observability contract. Sprint
+4.4 implementation is the sole next gate and requires separate authorization.
+Sprint 4.5 remains unauthorized until its preceding gates, including external
+Pilot Identity Conformance, pass.
 
 ## 2. Authority Set
 

@@ -104,10 +104,12 @@ Primary controls and semantic inputs:
 
 ### Pre-Pilot Preparation
 
-Sprint 4.3 and its documentation synchronization are complete. The following
-artifacts remain non-authoritative preparation: they do not implement Sprint
-4.4, pass the deferred Pilot Identity Conformance Gate, authorize Sprint 4.5,
-permit customer data or create a new decision:
+Sprint 4.3 and its documentation synchronization are complete. D096 freezes
+the Sprint 4.4 observability contract in
+`architecture/56_Observability_Runtime_Contract.md`, but authorizes no
+implementation. The following artifacts remain non-authoritative preparation:
+they do not implement Sprint 4.4, pass the deferred Pilot Identity Conformance
+Gate, authorize Sprint 4.5, permit customer data or create a new decision:
 
 - `architecture/53_Keycloak_Pilot_Identity_Integration_Preparation.md`;
 - `business/21_Design_Partner_Discovery_Playbook.md`;
@@ -146,6 +148,7 @@ permit customer data or create a new decision:
 | Implementation mechanics | `architecture/37_Implementation_Contract.md` |
 | Transaction boundary | `architecture/39_Persistence_Transaction_Contract.md` |
 | Physical schema contract | `architecture/40_Persistence_Schema_Contract.md` |
+| Minimum observability runtime | `architecture/56_Observability_Runtime_Contract.md` |
 
 ## Conflict Resolution
 

@@ -1,6 +1,10 @@
 # 54 - Observability Preparation
 
-Status: **PREPARATION ONLY / SPRINT 4.4 NEXT / NON-AUTHORITATIVE**
+Status: **SUPERSEDED AS AUTHORITY BY D096 / HISTORICAL PREPARATION**
+
+This document is preserved as the design input inspected by the Sprint 4.4
+Contract Gate. The authoritative frozen contract is
+`56_Observability_Runtime_Contract.md`. D096 authorizes no implementation.
 
 This document prepares an implementation-grade observability boundary. It
 does not authorize Sprint 4.4, dependencies, endpoints, agents, collectors,
@@ -247,6 +251,7 @@ Until those answers are frozen, no dependency or runtime service is authorized.
 
 ```text
 PREPARATION: COMPLETE
-SPRINT 4.4: NEXT
+SPRINT 4.4 CONTRACT: FROZEN BY D096
+SPRINT 4.4 IMPLEMENTATION: NOT AUTHORIZED
 RUNTIME CHANGE: NONE
 ```
