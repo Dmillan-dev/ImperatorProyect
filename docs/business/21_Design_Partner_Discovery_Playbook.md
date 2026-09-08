@@ -374,8 +374,10 @@ Next action:
 ## 14. Current Technical Boundary
 
 ```text
-Sprint 4.3: BLOCKED_EXTERNAL
-Sprint 4.4: NOT OPEN
+Sprint 4.3: CERTIFIED / COMPLETE
+Sprint 4.3.1: COMPLETE
+Sprint 4.4: NEXT
+External Pilot Identity Conformance: DEFERRED / REQUIRED BEFORE 4.5
 Sprint 4.5: NOT OPEN
 Discovery: ALLOWED
 L1 synthetic demo: ALLOWED

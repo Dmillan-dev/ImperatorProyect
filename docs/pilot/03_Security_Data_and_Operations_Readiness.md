@@ -158,8 +158,8 @@ promise a legal conclusion through this technical runbook.
 |---|---|---|
 | Is the service multi-tenant? | No; dedicated single-customer environment | Do not claim tenant isolation |
 | Is the application publicly exposed? | No; loopback-only D092 runtime | Remote access needs new contract |
-| How are users authenticated? | External Keycloak OIDC/JWT RS256 | Live conformance pending |
-| How is authorization enforced? | Exact D088 RBAC plus Domain checks | Real-token proof pending |
+| How are users authenticated? | D087 OIDC/JWT RS256; external Keycloak selected | Operational external conformance pending under D095 |
+| How is authorization enforced? | Exact D088 RBAC plus Domain checks | Local real-token proof passed; external pilot proof pending |
 | Are customer passwords stored? | No | External IdP terms required |
 | Are provider credentials stored? | No; external secret/SDK boundaries | Provisioning and revocation pending |
 | Are provider permissions read-only? | Contractually yes under D089/D090 | Customer policy review pending |
@@ -168,10 +168,10 @@ promise a legal conclusion through this technical runbook.
 | Is Restricted data processed? | Forbidden | Pre-import inspection required |
 | Are raw prompts/source code stored? | No | Customer source mapping review |
 | Is AI authoritative? | No; explanation only and optional | None |
-| Is the Ledger mutable? | Append-only application contract | Runtime E2E pending |
+| Is the Ledger mutable? | Append-only application contract | Local runtime E2E passed; pilot evidence pending |
 | Are backups available? | Design only | Implement and restore-test before data |
 | Is deletion supported? | Whole dedicated environment destruction | Procedure/test pending |
-| Is vulnerability scanning performed? | Trivy gate required | PostgreSQL upstream blocker active |
+| Is vulnerability scanning performed? | Hosted and local Trivy gates | D094 PostgreSQL and final application images pass |
 | Is observability operational? | Prepared only | Sprint 4.4 pending |
 | Has an independent penetration test passed? | No | Decide if customer requires one |
 | Is ISO 27001/SOC 2 certified? | No | Never imply certification |
@@ -222,8 +222,8 @@ contracts or personal contact data.
 
 `GO` requires:
 
-- D092 vulnerability gate clean;
-- D093, Sprint 4.4 and Sprint 4.5 certified as required;
+- Sprint 4.3/D092-D095 and D093 remain certified;
+- Sprint 4.4 and Sprint 4.5 certified as required;
 - real Keycloak, RBAC and read-only connector evidence;
 - host encryption and no public exposure;
 - successful backup and isolated restore;

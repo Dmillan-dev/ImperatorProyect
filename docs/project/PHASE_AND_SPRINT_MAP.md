@@ -219,8 +219,13 @@ not the Phase 2 route-shell plan.
 | D091 | Decision Review Workspace Contract | ACCEPTED / COMPLETE |
 | 4.2 | Executive Dashboard / Decision Review Workspace | CERTIFIED / COMPLETE |
 | 4.2.1 | Documentation Synchronization | COMPLETE |
-| 4.3 | Docker Production Runtime | NEXT |
-| 4.4 | Observability | PENDING |
+| D092 | Docker Production Runtime Contract | ACCEPTED / COMPLETE |
+| D093 | DRC-AOA-001 Case Composition Contract | ACCEPTED / COMPLETE |
+| D094 | PostgreSQL Runtime Supply Chain Remediation | ACCEPTED / COMPLETE / PASS |
+| D095 | D092 Runtime Certification Scope Correction | ACCEPTED / COMPLETE |
+| 4.3 | Docker Production Runtime | CERTIFIED / COMPLETE |
+| 4.3.1 | Documentation Synchronization | COMPLETE |
+| 4.4 | Observability | NEXT |
 | 4.5 | Pilot Readiness | PENDING |
 | 5.0 | MVP Release | PENDING |
 
@@ -290,9 +295,20 @@ SQL, Flyway, route, schema, connector, security contract, Domain, Application,
 Port or prior decision changed. Sprint 4.2 is complete; Docker Production
 Runtime is the separate Sprint 4.3 gate.
 
+Sprint 4.3 certification completed on 2026-09-08 under D092-D095. Java 21
+passed 151 default tests; PostgreSQL 18.6, Flyway V1/V2 and 34 integration
+tests passed. The final SHA-tagged backend, frontend and PostgreSQL images
+passed the hosted security workflow and local Trivy policy with zero fixable
+High/Critical findings and zero secrets. D093/R16, local JWT/RBAC conformance,
+the API-composed `DRC-AOA-001` E2E and persistence after normal Compose
+recreation passed. D095 defers only operational external Keycloak HTTPS
+conformance to a mandatory Pilot Identity Conformance Gate before Sprint 4.5;
+D087/D088 and fail-closed behavior remain unchanged. Sprint 4.3.1 synchronized
+the active documentation. Observability is the separate Sprint 4.4 gate.
+
 Active Phase 3 execution authority:
 
-- D079 through D091 in `docs/decisions/14_Decision_Log.md`;
+- D079 through D095 in `docs/decisions/14_Decision_Log.md`;
 - `agents/phase3/README.md`.
 
 ## Gate Transition Rule

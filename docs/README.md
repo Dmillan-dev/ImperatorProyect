@@ -102,11 +102,12 @@ Primary controls and semantic inputs:
 - `product/25_MVP_ROI_Slice.md`;
 - `architecture/34_MVP_Implementation_Blueprint.md`.
 
-### Sprint 4.3 Blocked-Gate Preparation
+### Pre-Pilot Preparation
 
-The following artifacts are non-authoritative preparation while Sprint 4.3
-remains blocked. They do not change the current gate or authorize Sprint 4.4,
-Sprint 4.5, runtime work or a new decision:
+Sprint 4.3 and its documentation synchronization are complete. The following
+artifacts remain non-authoritative preparation: they do not implement Sprint
+4.4, pass the deferred Pilot Identity Conformance Gate, authorize Sprint 4.5,
+permit customer data or create a new decision:
 
 - `architecture/53_Keycloak_Pilot_Identity_Integration_Preparation.md`;
 - `business/21_Design_Partner_Discovery_Playbook.md`;

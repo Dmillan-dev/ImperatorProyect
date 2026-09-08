@@ -22,15 +22,16 @@ defined by D091.
 
 Sprint 4.2 is **CERTIFIED / COMPLETE** under D091.
 
-- 35 unit/component tests pass.
+- 41 unit/component tests pass.
 - Contractual coverage thresholds pass.
 - Format, lint, strict TypeScript, production build and dependency audit pass.
 - Playwright acceptance passes at 1440x900, 1024x768 and 390x844.
-- The unchanged backend passes 139 default tests and 31 PostgreSQL 18.4
+- The backend passes 151 default tests and 34 PostgreSQL 18.6
   integration tests.
 
-Sprint 4.3 may package this runtime but does not authorize new frontend
-features, routes or product cases.
+Sprint 4.3 certified this frontend as a non-root, read-only, SHA-tagged image in
+the loopback-only D092-D095 runtime. Sprint 4.4 may add only explicitly frozen
+observability behavior; it does not authorize new frontend product cases.
 
 ## Local Development
 

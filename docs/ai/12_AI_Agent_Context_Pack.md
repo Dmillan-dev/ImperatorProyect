@@ -67,7 +67,14 @@ npm 11.17.0, format, lint, strict TypeScript, 35 frontend tests, contractual
 coverage, production build, dependency audit and Playwright acceptance passed;
 the unchanged Java backend also passed 139 default tests and 31 PostgreSQL 18.4
 integration tests. Sprint 4.2.1 documentation synchronization is complete.
-Sprint 4.3 - Docker Production Runtime is the sole next gate.
+D092 froze the Docker Production Runtime, D093 authorized and now implements
+the single R16 case-composition route, D094 certified the reproducible
+PostgreSQL 18.6 supply-chain remediation, and D095 corrected the local runtime
+certification boundary. Sprint 4.3 is certified: 151 default tests, 34
+PostgreSQL integration tests, final-image security gates, local JWT/RBAC E2E
+and persistence after recreation pass. Sprint 4.3.1 documentation
+synchronization is complete. Sprint 4.4 - Observability is the sole next gate;
+external Keycloak HTTPS conformance remains mandatory before Sprint 4.5.
 
 Agents may create runnable implementation only inside the explicitly
 authorized sprint/module. They must use `agents/phase3/README.md`, the frozen
@@ -110,30 +117,34 @@ phase plan. Within the semantic reference set, use this order:
     connector behavior and its non-authority boundaries.
 12. `docs/architecture/49_AWS_Integration_Contract.md` for the frozen second
     connector behavior, account boundary and credential isolation.
-13. `docs/architecture/26_Security_Data_Governance_Threat_Model.md` for evidence sensitivity, AI boundaries and security threat model.
-14. `docs/product/28_Identity_Access_Approval_Model.md` for roles, permissions and approval authority.
-15. `docs/product/27_MVP_Acceptance_Test_Plan.md` for pre-code acceptance gates.
-16. `docs/product/29_Decision_Review_Workspace_Screen_Contract.md` for first MVP screen behavior.
-17. `docs/architecture/27_Quality_Attributes.md` for MVP non-functional quality expectations.
-18. `docs/architecture/28_Per_Connector_MVP_Contracts.md` for Jira, GitHub, AWS and OpenAI + Anthropic Claude connector contracts.
-19. `docs/architecture/29_Event_Evidence_Vocabulary.md` for event names, evidence types, lifecycle states and blockers.
-20. `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
-21. `agents/README.md` for agent work partition and handoff rules.
-22. This file for agent behavior and response consistency.
-23. `docs/rnd/30_RD_Activity_Evidence_Dossier.md` for development evidence, hours, objects, experiments and tests.
-24. `docs/architecture/30_Phase_0_Closure_Readiness_Review.md` for final Phase 0 readiness gates and go/no-go control.
-25. `docs/architecture/31_MVP_Implementation_Standard.md` for future MVP implementation standards.
-26. `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` for exact Phase 1 objective, minimal data model, connector limit, AI explanation boundary, scaffolding authorization and exit criteria.
-27. `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md` for Canonical Evidence Model, PostgreSQL, Explanation Provider, JWT/RBAC and Decision Graph.
-28. `docs/architecture/34_MVP_Implementation_Blueprint.md` for the final six-week implementation contract.
-29. `docs/architecture/35_Coding_Principles.md` for coding boundaries, hexagonal layering and AI-agent implementation discipline.
-30. `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` for Phase 2 Platform Foundation scope.
-31. `docs/architecture/37_Implementation_Contract.md` for mandatory implementation rules and one-module agent execution.
-32. `agents/phase2/README.md` for historical Phase 2 sprint sequencing and prompt control.
-33. `docs/architecture/38_Sprint_0_Contract_Gate_Report.md` for the historical Phase 2 GO gate and first-agent instruction.
-34. `agents/phase1/README.md` and `agents/phase1/12_phase1_closure.md` for Phase 1 stage sequencing, closure and future implementation handoff.
-35. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
-36. `agents/phase3/README.md` for active Phase 3 sprint sequencing and current vertical-slice boundaries.
+13. `docs/architecture/50_Executive_Dashboard_Contract.md` for the certified
+    single-case Decision Review Workspace.
+14. `docs/architecture/51_Docker_Production_Runtime_Contract.md` together with
+    D093-D095 for the certified local runtime and deferred pilot identity gate.
+15. `docs/architecture/26_Security_Data_Governance_Threat_Model.md` for evidence sensitivity, AI boundaries and security threat model.
+16. `docs/product/28_Identity_Access_Approval_Model.md` for roles, permissions and approval authority.
+17. `docs/product/27_MVP_Acceptance_Test_Plan.md` for pre-code acceptance gates.
+18. `docs/product/29_Decision_Review_Workspace_Screen_Contract.md` for first MVP screen behavior.
+19. `docs/architecture/27_Quality_Attributes.md` for MVP non-functional quality expectations.
+20. `docs/architecture/28_Per_Connector_MVP_Contracts.md` for Jira, GitHub, AWS and OpenAI + Anthropic Claude connector contracts.
+21. `docs/architecture/29_Event_Evidence_Vocabulary.md` for event names, evidence types, lifecycle states and blockers.
+22. `docs/rfcs/0002-module-communication-architecture.md` for module communication rationale.
+23. `agents/README.md` for agent work partition and handoff rules.
+24. This file for agent behavior and response consistency.
+25. `docs/rnd/30_RD_Activity_Evidence_Dossier.md` for development evidence, hours, objects, experiments and tests.
+26. `docs/architecture/30_Phase_0_Closure_Readiness_Review.md` for final Phase 0 readiness gates and go/no-go control.
+27. `docs/architecture/31_MVP_Implementation_Standard.md` for future MVP implementation standards.
+28. `docs/architecture/32_Phase_1_MVP_Scope_and_Exit_Criteria.md` for exact Phase 1 objective, minimal data model, connector limit, AI explanation boundary, scaffolding authorization and exit criteria.
+29. `docs/architecture/33_Phase_1_Foundational_Implementation_Decisions.md` for Canonical Evidence Model, PostgreSQL, Explanation Provider, JWT/RBAC and Decision Graph.
+30. `docs/architecture/34_MVP_Implementation_Blueprint.md` for the final six-week implementation contract.
+31. `docs/architecture/35_Coding_Principles.md` for coding boundaries, hexagonal layering and AI-agent implementation discipline.
+32. `docs/architecture/36_Phase_2_Platform_Foundation_Blueprint.md` for Phase 2 Platform Foundation scope.
+33. `docs/architecture/37_Implementation_Contract.md` for mandatory implementation rules and one-module agent execution.
+34. `agents/phase2/README.md` for historical Phase 2 sprint sequencing and prompt control.
+35. `docs/architecture/38_Sprint_0_Contract_Gate_Report.md` for the historical Phase 2 GO gate and first-agent instruction.
+36. `agents/phase1/README.md` and `agents/phase1/12_phase1_closure.md` for Phase 1 stage sequencing, closure and future implementation handoff.
+37. `docs/product/13_Glossary_and_Canonical_Language.md` for terms and wording.
+38. `agents/phase3/README.md` for active Phase 3 sprint sequencing and current vertical-slice boundaries.
 
 Founder-mode or master-prompt guidance sets ambition and quality bar. It does not override current decisions when it uses older framing such as AI Cost Attribution as the primary wedge, dashboard-led language, generic Decision Intelligence without the operating-system and Decision ROI framing, or production-ready implementation during Phase 0.
 

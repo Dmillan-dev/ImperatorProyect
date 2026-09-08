@@ -65,7 +65,9 @@ Sprint 3.8.0 - JWT Authentication Contract Freeze: COMPLETE
 -> Sprint 4.2 - Decision Review Workspace: CERTIFIED / COMPLETE
 -> Sprint 4.2 Backend/PostgreSQL Regression: PASS
 -> Sprint 4.2.1 - Documentation Synchronization: COMPLETE
--> Sprint 4.3 - Docker Production Runtime: NEXT
+-> Sprint 4.3 - Docker Production Runtime: CERTIFIED / COMPLETE
+-> Sprint 4.3.1 - Documentation Synchronization: COMPLETE
+-> Sprint 4.4 - Observability: NEXT
 ```
 
 Sprint 3.8 answers only who the caller is. Sprint 3.9 answers what that caller
@@ -87,8 +89,11 @@ certified the D091 Decision Review Workspace with a volatile in-memory token,
 same-origin API transport, strict response validation, bounded responses,
 Evidence redaction and role-aware presentation. It added no login, identity
 provider, browser persistence or frontend authorization authority. Sprint 4.3
-is the sole current gate and must preserve all these boundaries while packaging
-only the already certified runtime.
+certified D092-D095 runtime packaging, D093/R16, the D094 PostgreSQL supply
+chain, local JWT/RBAC E2E and persistence after recreation. Operational
+external Keycloak HTTPS conformance remains mandatory before Sprint 4.5.
+Sprint 4.4 is the sole current gate and must add only explicitly frozen
+observability behavior without changing any security authority.
 
 For connector work, also load
 `docs/architecture/28_Per_Connector_MVP_Contracts.md`,

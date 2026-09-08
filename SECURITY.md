@@ -50,12 +50,13 @@ Implemented controls include:
 - the D094 PostgreSQL supply-chain gate with pinned inputs, reproducible builds,
   SBOM, provenance and zero fixable High/Critical or secret findings.
 
-The D094 PostgreSQL image-remediation gate is **PASS**. The complete Docker
-runtime is still **not certified** while D093/R16, external JWT/RBAC, the
-`DRC-AOA-001` end-to-end flow and persistence-after-recreation gates remain
-open. There is no production deployment, public endpoint, connected external
-IdP, tenant isolation contract or security SLA. Passing CI security checks does
-not override this release boundary.
+The D094 PostgreSQL image-remediation gate and the complete D092-D095 local
+Docker runtime are **PASS / CERTIFIED**. D093/R16, local JWT/RBAC, the
+`DRC-AOA-001` end-to-end flow and persistence after recreation pass. There is
+still no production deployment, public endpoint, connected operational IdP,
+tenant isolation contract or security SLA. D095 requires external Keycloak
+HTTPS conformance before Sprint 4.5, customer data or MVP Release. Passing CI
+and local runtime checks does not override that pilot boundary.
 
 See the canonical
 [Security, Data Governance and Threat Model](docs/architecture/26_Security_Data_Governance_Threat_Model.md)

@@ -3,13 +3,14 @@
 Status: **PREPARATION ONLY / DO NOT EXECUTE**
 
 This runbook describes the future controlled operation. It does not authorize
-runtime changes, customer data, D093 implementation, Sprint 4.4 or Sprint 4.5.
+runtime changes, customer data, external identity deployment, Sprint 4.4 or
+Sprint 4.5.
 
 ## 1. Execution Modes
 
 | Mode | Purpose | Data | Authorization |
 |---|---|---|---|
-| Rehearsal | Prove the exact technical/commercial story and supply the E2E/persistence evidence needed by D092 | Canonical synthetic 30-Evidence pack | Only after the D092 image-vulnerability subgate, D093 implementation and external IdP gates |
+| Rehearsal | Prove the exact technical/commercial story through the certified local runtime | Canonical synthetic 30-Evidence pack | Completed under D092-D095; rerun only after an authorized relevant change |
 | Customer pilot | Validate actual customer value | Approved customer normalized facts | Separate pilot, data and policy authorization required |
 
 Never turn a rehearsal into a customer pilot by replacing values in-place.
@@ -33,24 +34,25 @@ Never turn a rehearsal into a customer pilot by replacing values in-place.
 
 ### 3.1 Certification Rehearsal
 
-- [ ] D092 image reports contain zero fixable Critical vulnerabilities.
-- [ ] D093 implementation is authorized and its default/PostgreSQL gates pass.
-- [ ] The external Keycloak issuer/JWKS and D087 role probes are ready.
-- [ ] Only the approved canonical synthetic dataset will be used.
-- [ ] No customer data, public exposure or production provider access is used.
+- [x] D094 image reports contain zero fixable High/Critical vulnerabilities.
+- [x] D093 implementation and its default/PostgreSQL gates pass.
+- [x] Ephemeral local Keycloak proves the D087/D088 protocol and role matrix.
+- [x] Only the approved canonical synthetic dataset is used.
+- [x] No customer data, public exposure or production provider access is used.
 
-This rehearsal supplies the E2E and persistence evidence required to complete
-D092. It therefore does not wait for Sprint 4.3, Sprint 4.4 or Sprint 4.5 to be
-certified.
+This rehearsal supplied the local E2E and persistence evidence used to certify
+Sprint 4.3 under D095. It does not satisfy the operational external Keycloak
+gate or authorize Sprint 4.4, Sprint 4.5 or a customer pilot.
 
 ### 3.2 Customer Pilot
 
 - [ ] Signed Charter, NDA and applicable DPA/order form exist.
 - [ ] Controller/processor roles and hosting location are confirmed.
 - [ ] One organization, one case and named participants are fixed.
-- [ ] Sprint 4.3, Sprint 4.3.1, Sprint 4.4 and Sprint 4.5 are complete.
-- [ ] D093 implementation and certification are complete.
-- [ ] Trivy reports zero fixable Critical vulnerabilities for final images.
+- [x] Sprint 4.3 and Sprint 4.3.1 are complete.
+- [ ] Sprint 4.4, external Pilot Identity Conformance and Sprint 4.5 are complete.
+- [x] D093 implementation and certification are complete.
+- [x] Trivy reports zero fixable High/Critical vulnerabilities for final images.
 - [ ] Dedicated host, host encryption and patch ownership are verified.
 - [ ] Backup restore and full-environment deletion have been rehearsed.
 - [ ] Incident and support contacts completed a tabletop review.

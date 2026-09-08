@@ -2,9 +2,9 @@
 
 Status: **ACTIVE**
 
-Current gate: **Sprint 4.3 - Docker Production Runtime**
+Current gate: **Sprint 4.4 - Observability**
 
-Authorization: **D079 - Phase 3 Vertical-Slice Acceleration; D085 - MVP Delivery Roadmap Evolution; D091 - Decision Review Workspace Contract**
+Authorization: **D079 - Phase 3 Vertical-Slice Acceleration; D085 - MVP Delivery Roadmap Evolution; D095 - D092 Runtime Certification Scope Correction**
 
 ## Purpose
 
@@ -47,7 +47,11 @@ Phase 3 behavior must follow:
 - `docs/product/DECISION_LEDGER_V2.md`;
 - `docs/architecture/48_GitHub_Integration_Contract.md`;
 - `docs/architecture/49_AWS_Integration_Contract.md`;
-- `docs/architecture/50_Executive_Dashboard_Contract.md`.
+- `docs/architecture/50_Executive_Dashboard_Contract.md`;
+- `docs/architecture/51_Docker_Production_Runtime_Contract.md`;
+- `docs/architecture/52_DRC_AOA_001_Case_Composition_Contract.md`;
+- `docs/architecture/54_Observability_Preparation.md`; and
+- `docs/architecture/55_PostgreSQL_Runtime_Supply_Chain_Remediation_Contract.md`.
 
 Persistence remains governed by contracts 39 and 40 and by
 `database/migrations/V1__initial_schema.sql`.
@@ -115,8 +119,13 @@ Locked constraints:
 | D091 | Decision Review Workspace Contract | ACCEPTED / COMPLETE |
 | 4.2 | Executive Dashboard / Decision Review Workspace | CERTIFIED / COMPLETE |
 | 4.2.1 | Documentation Synchronization | COMPLETE |
-| 4.3 | Docker Production Runtime | NEXT |
-| 4.4 | Observability | PENDING |
+| D092 | Docker Production Runtime Contract | ACCEPTED / COMPLETE |
+| D093 | DRC-AOA-001 Case Composition Contract | ACCEPTED / COMPLETE |
+| D094 | PostgreSQL Runtime Supply Chain Remediation | ACCEPTED / COMPLETE / PASS |
+| D095 | D092 Runtime Certification Scope Correction | ACCEPTED / COMPLETE |
+| 4.3 | Docker Production Runtime | CERTIFIED / COMPLETE |
+| 4.3.1 | Documentation Synchronization | COMPLETE |
+| 4.4 | Observability | NEXT |
 | 4.5 | Pilot Readiness | PENDING |
 | 5.0 | MVP Release | PENDING |
 
@@ -602,6 +611,35 @@ AI-context documentation and marked Sprint 4.3 as the sole next gate. It
 changed no runtime code, tests, dependencies, migrations, frozen contracts or
 Decision Log entries.
 
+## Sprint 4.3 - Docker Production Runtime
+
+Sprint 4.3 is certified and complete under D092-D095.
+
+Certification evidence:
+
+- implementation merge `1613b5daeb19ae29e0b96797cb6aca24972d1af0` and D095
+  control commit `31f6e51027d2ae3e1fa3de1fb5ee3a16d2f2cf3f`;
+- Java 21 and 151 default tests: PASS;
+- PostgreSQL 18.6, Flyway V1/V2 migrate/validate/no-op and 34 integration
+  tests: PASS;
+- D093 `ADMIN`-only R16 composition, resumability, idempotency and case-level
+  uniqueness: PASS;
+- hosted Java CI, Security and D094 reproducible supply-chain gates: PASS;
+- final SHA-tagged images report zero fixable High/Critical findings and zero
+  secrets;
+- non-root users, read-only filesystems, dropped capabilities, internal
+  backend/database networks and loopback-only frontend publication: PASS;
+- local Keycloak RS256/JWKS conformance, D088 positive/negative authorization,
+  API-composed `DRC-AOA-001` E2E and persistence after recreation: PASS;
+- operational external Keycloak HTTPS conformance: deferred by D095 and
+  mandatory before Sprint 4.5, customer data or MVP Release;
+- status: **CERTIFIED / COMPLETE**.
+
+Sprint 4.3.1 synchronized active project-control, agent, runtime, security,
+pilot, portfolio and AI-context documentation and marked Sprint 4.4 as the sole
+next gate. It changed no code, tests, SQL, Flyway, dependencies, runtime
+configuration, frozen contract or prior decision.
+
 ## Demonstration And Pilot Boundary
 
 Sprint 3.5 proved the business-value loop locally with deterministic synthetic
@@ -614,6 +652,7 @@ Before Sprint 4.5 Pilot Readiness can pass:
 - certified JWT Authentication and RBAC Authorization must continue to protect
   the relevant routes, data and actions;
 - secrets and database credentials must be externalized;
+- the deferred external Keycloak HTTPS conformance gate must pass;
 - the certified Sprint 4.2 surface must remain the thin, single-case Decision Review and
   Business Value experience, not a broad Executive Workspace;
 - required acceptance, negative and audit tests must pass.

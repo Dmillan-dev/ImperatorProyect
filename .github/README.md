@@ -41,8 +41,9 @@ Java CI is implemented. Hosted dependency, secret, configuration and
 application-image scanning is implemented and passing. The hosted D094 gate
 also verifies pinned PostgreSQL build inputs, two-build reproducibility, SBOM,
 provenance, image behavior and zero fixable High/Critical or secret findings.
-This does not certify the complete D092 runtime: D093/R16, external JWT/RBAC,
-end-to-end and persistence-after-recreation gates remain separate. Full
-frontend CI, SAST, release automation and deployment workflows are not
-implemented and must not be inferred from this directory.
+Together with the separately executed D093/R16, local JWT/RBAC, end-to-end and
+persistence/recreation evidence, this supports the certified D092-D095 local
+runtime. Operational external Keycloak conformance remains a mandatory
+pre-Sprint-4.5 gate. Full frontend CI, SAST, release automation and deployment
+workflows are not implemented and must not be inferred from this directory.
 

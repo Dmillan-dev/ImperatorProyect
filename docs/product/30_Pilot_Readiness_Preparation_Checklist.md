@@ -11,15 +11,11 @@ IMPERATOR has a strong certified local product core, but cannot yet claim Pilot
 Readiness. The blocking chain is:
 
 ```text
-Official PostgreSQL image with zero fixable Critical vulnerabilities
-  -> final image digest and D092 image gate
-  -> explicit D093 implementation authorization and certification
-  -> Flyway, PostgreSQL and persistent-data certification
-  -> external Keycloak D087/D088 conformance
-  -> full DRC-AOA-001 runtime E2E
-  -> Sprint 4.3 CERTIFIED
-  -> Sprint 4.3.1 documentation synchronization
+Sprint 4.3 CERTIFIED under D095
+  -> Sprint 4.3.1 documentation synchronization COMPLETE
   -> Sprint 4.4 observability
+  -> external Keycloak D087/D088 conformance
+  -> controlled live-connector and operational readiness evidence
   -> Sprint 4.5 Pilot Readiness
 ```
 
@@ -30,24 +26,24 @@ Official PostgreSQL image with zero fixable Critical vulnerabilities
 | IdP | `BLOCKED` | Keycloak selected for preparation; external HTTPS deployment absent |
 | Tenant | `NOT APPLICABLE TO MVP` | One controlled organization; no Tenant model or claim is authorized |
 | Users | `PREPARED` | Four identities defined; not provisioned |
-| Roles | `PARTIAL` | D088 certified; real external tokens not yet proven |
+| Roles | `LOCAL PASS / EXTERNAL PENDING` | D088 and local real-token conformance pass; operational external tokens remain unproven |
 | DRC-AOA-001 data | `READY` | Canonical 30-line NDJSON exists and local demo is certified |
 | Evidence import | `CERTIFIED` | R01 and PostgreSQL behavior certified |
 | GitHub/AWS Evidence | `CERTIFIED OFFLINE` | Adapters certified; live pilot sandbox checks remain separate |
-| Decision | `PARTIAL` | D081 certified; runtime R16 composition not implemented |
-| Recommendation/ROI | `PARTIAL` | D082 certified; runtime R16 entry not implemented |
+| Decision | `CERTIFIED LOCAL RUNTIME` | D081 plus D093/R16 composition pass through the local API runtime |
+| Recommendation/ROI | `CERTIFIED LOCAL RUNTIME` | D082 plus D093/R16 deterministic generation and replay pass |
 | Approval | `CERTIFIED` | D083/D088 backend behavior certified |
 | Implementation/result | `CERTIFIED` | Ledger commands and policy certified |
 | Ledger | `CERTIFIED` | Ordered append-only governance chain certified |
-| Business Value | `CERTIFIED LOCAL` | Projection certified; runtime E2E pending |
+| Business Value | `CERTIFIED LOCAL RUNTIME` | Exact projection and complete DRC-AOA-001 runtime E2E pass |
 | Workspace | `CERTIFIED CONTROLLED DEMO` | D091 complete; no commercial login |
-| Docker runtime | `BLOCKED_EXTERNAL` | Upstream PostgreSQL/gosu Critical CVE fails D092 |
-| Flyway/persistence | `PASS BEFORE FINAL IMAGE` | Must rerun after final digest and D093 migration |
+| Docker runtime | `CERTIFIED` | D092-D095 image, hardening, runtime and recreation gates pass |
+| Flyway/persistence | `CERTIFIED` | PostgreSQL 18.6, V1/V2 migrate/validate/no-op and persisted graph recreation pass |
 | Backup/restore | `NOT IMPLEMENTED` | D092 excludes it; volume persistence is not backup |
-| Security | `PARTIAL` | JWT/RBAC certified; external IdP and image gate pending |
-| Observability | `PREPARED ONLY` | Design ready; Sprint 4.4 not open |
-| Runtime E2E | `BLOCKED` | Requires image gate, D093 implementation and Keycloak |
-| Documentation | `PARTIAL` | Preparation artifacts exist; official sync waits for gate completion |
+| Security | `PARTIAL FOR PILOT` | Local runtime and JWT/RBAC pass; external IdP and pilot operations remain pending |
+| Observability | `NEXT` | Preparation exists; Sprint 4.4 is the next authorized gate |
+| Runtime E2E | `CERTIFIED LOCAL` | R01-R16, governance, Business Value and recreation pass under D095 |
+| Documentation | `SYNCHRONIZED` | Sprint 4.3.1 records the certified local runtime and deferred pilot identity gate |
 
 ## 3. Pilot Commercial Definition
 
@@ -98,8 +94,8 @@ credible, auditable value loop whose financial meaning the customer accepts.
 
 ## 6. Architecture Health Review
 
-Review basis: current repository at the time this preparation was created,
-frozen D081-D093 contracts and certified implementation through Sprint 4.2.
+Review basis: current repository at Sprint 4.3.1, frozen D081-D094 contracts,
+D095 and certified implementation through Sprint 4.3.
 
 ### Green
 
@@ -113,53 +109,52 @@ frozen D081-D093 contracts and certified implementation through Sprint 4.2.
   authority.
 - Frontend remains a strict API consumer and does not calculate or authorize.
 - Correlation ID propagation already exists across HTTP and connector work.
+- D093/R16 composes one idempotent case graph through the existing D081/D082
+  boundaries without introducing a workflow engine.
+- D094 certifies the PostgreSQL 18.6 derived image supply chain, and D095 keeps
+  operational external identity mandatory without coupling it to local runtime
+  certification.
 
 ### Amber
 
-1. D093 is frozen but not implemented. R16, `findByCaseId`, the unique case
-   constraint and its tests are absent by design.
-2. Project-control documents still identify Sprint 4.3 as `NEXT` and do not
-   capture this temporary external blocker or D093 preparation. This must wait
-   for an authorized synchronization gate; changing it here would misreport
-   certification.
-3. D091 provides controlled token paste, not commercial login or SSO.
-4. No external HTTPS issuer/JWKS has passed D087 in the runtime.
-5. No application observability dependencies or endpoints exist yet; this is
+1. D091 provides controlled token paste, not commercial login or SSO.
+2. No operational external HTTPS issuer/JWKS has passed the mandatory Pilot
+   Identity Conformance Gate.
+3. No application observability dependencies or endpoints exist yet; this is
    deferred to Sprint 4.4.
-6. Docker volume persistence is not backup/restore. D092 explicitly excludes
+4. Docker volume persistence is not backup/restore. D092 explicitly excludes
    backup, which must be resolved before real customer data if the pilot terms
    require recoverability beyond container recreation.
-7. GitHub/AWS adapters are certified offline. Live read-only sandbox checks
+5. GitHub/AWS adapters are certified offline. Live read-only sandbox checks
    remain pre-pilot evidence, not a reason to expand connector scope.
-8. The canonical pack includes Jira/manual and AI-usage facts not produced by
+6. The canonical pack includes Jira/manual and AI-usage facts not produced by
    the two live connectors. The pilot runbook must identify the legitimate
    source and accountable owner for each imported fact.
-9. Multi-tenancy is intentionally absent. The pilot must remain one controlled
+7. Multi-tenancy is intentionally absent. The pilot must remain one controlled
    organization and must not be represented as tenant isolation.
 
 ### Red
 
-1. The currently pinned official PostgreSQL image contains one fixable
-   Critical vulnerability in upstream `gosu`/Go stdlib according to the D092
-   Trivy gate. Sprint 4.3 cannot be certified until an official clean image is
-   selected and scanned.
+No Red finding remains in the certified local Sprint 4.3 runtime. Pilot
+Readiness remains `NO-GO` until its later external identity, observability,
+data-protection and operational gates pass.
 
-No objective contradiction currently requires changing the Domain, D087,
-D088, D091, D092 or D093. The outstanding work is delivery and external
-conformance, not an architecture redesign.
+No objective contradiction currently requires changing the Domain or D087-D095.
+The outstanding work is pilot preparation and external conformance, not an
+architecture redesign.
 
 ## 7. Test Readiness
 
 | Suite | Existing evidence | Required before pilot |
 |---|---|---|
-| Domain/Application unit | Certified deterministic policies and governance | Add focused D093 composition tests |
-| REST contracts | R01-R15 certified | Add exact R16 contract tests |
+| Domain/Application unit | 151 default tests, including deterministic policies, governance and D093 composition | Preserve as regression evidence |
+| REST contracts | D086 R01-R15 plus D093 R16 certified | Preserve exact contract and negative-path coverage |
 | JWT/RBAC | Controlled RS256 and role matrix certified | Repeat with real Keycloak tokens |
-| PostgreSQL | Repositories, Flyway and 31 integration tests certified | Add case uniqueness/recovery tests and rerun on final image |
-| Ledger | Sequence, replay and concurrency certified | Execute through real runtime with real roles |
-| Frontend | 35 tests and 9 Playwright acceptance tests certified | Load the runtime-composed case with a real token |
+| PostgreSQL | PostgreSQL 18.6, Flyway V1/V2 and 34 integration tests certified | Repeat relevant evidence in the pilot environment |
+| Ledger | Sequence, replay, concurrency and local API E2E certified | Execute through operational external identities |
+| Frontend | 41 tests and 9 Playwright acceptance tests certified | Load the runtime-composed case with an operational external token |
 | Connectors | GitHub/AWS offline protocol tests certified | Controlled live read-only smoke evidence |
-| Docker | Runtime implemented | Clean image gate and complete data recreation proof |
+| Docker | D092-D095 runtime, clean images and complete data recreation certified | Preserve exact certified inputs and evidence |
 | Observability | None at runtime | Sprint 4.4 contract, implementation and certification |
 
 ## 8. Evidence Required For Pilot Authorization
@@ -182,7 +177,7 @@ The pilot remains `NO-GO` if any of these occurs:
 - one fixable Critical image vulnerability;
 - invalid or unavailable external JWT trust configuration;
 - bypass, mock token or manually assembled production token;
-- missing D093 implementation or duplicate case graph;
+- D093/R16 regression or duplicate case graph;
 - direct SQL/fixture used to fabricate the commercial case;
 - broken Ledger sequence or untraceable Business Value;
 - missing data recovery commitment for real customer data;
@@ -194,8 +189,10 @@ The pilot remains `NO-GO` if any of these occurs:
 ```text
 PILOT READINESS: NO-GO
 ARCHITECTURE HEALTH: SOUND WITH EXPLICIT DELIVERY GAPS
-SPRINT 4.3: BLOCKED_EXTERNAL
-SPRINT 4.4: NOT OPEN
+SPRINT 4.3: CERTIFIED
+SPRINT 4.3.1: COMPLETE
+SPRINT 4.4: NEXT
+EXTERNAL PILOT IDENTITY: MANDATORY BEFORE SPRINT 4.5
 SPRINT 4.5: NOT OPEN
 ```
 

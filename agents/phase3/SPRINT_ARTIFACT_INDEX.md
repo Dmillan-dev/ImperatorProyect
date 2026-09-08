@@ -39,7 +39,13 @@ Sprint 4.1.1: COMPLETE
 D091: ACCEPTED / COMPLETE
 Sprint 4.2: CERTIFIED / COMPLETE
 Sprint 4.2.1: COMPLETE
-Sprint 4.3: NEXT
+D092: ACCEPTED / COMPLETE
+D093: ACCEPTED / COMPLETE
+D094: ACCEPTED / COMPLETE / PASS
+D095: ACCEPTED / COMPLETE
+Sprint 4.3: CERTIFIED / COMPLETE
+Sprint 4.3.1: COMPLETE
+Sprint 4.4: NEXT
 ```
 
 Exactly one Phase 3 control gate is authorized as `NEXT`.
@@ -77,6 +83,12 @@ Exactly one Phase 3 control gate is authorized as `NEXT`.
 | D091 | `220c93b` | Frozen single-case Decision Review Workspace, frontend stack, transport, security, interaction and acceptance contract | ACCEPTED / COMPLETE |
 | 4.2 | `abf10a9` | Decision Review Workspace, strict API boundary, role-aware actions, frontend quality gates and unchanged backend/PostgreSQL certification | CERTIFIED / COMPLETE |
 | 4.2.1 | Current synchronization commit; hash intentionally not self-recorded | Active project-control, agent, security, frontend and AI-context synchronization | COMPLETE |
+| D092 | Docker runtime contract commit; hash preserved in Git history | Frozen Compose topology, image, secret, network, hardening and persistence contract | ACCEPTED / COMPLETE |
+| D093 | Contract and implementation history preserved in Git | R16 case composition, resumable D081/D082 orchestration and case-level uniqueness | ACCEPTED / COMPLETE |
+| D094 | Contract and hosted Security evidence preserved in Git | Reproducible PostgreSQL 18.6/gosu remediation, SBOM, provenance and clean Trivy gate | ACCEPTED / COMPLETE / PASS |
+| D095 | `31f6e51` | Runtime certification scope correction and mandatory pre-pilot external identity deferral | ACCEPTED / COMPLETE |
+| 4.3 | `1613b5d` | Hardened Docker runtime, D093/R16, D094 images, local JWT/RBAC E2E and persistence/recreation | CERTIFIED / COMPLETE |
+| 4.3.1 | Current synchronization commit; hash intentionally not self-recorded | Active project-control, agent, runtime, security, pilot, portfolio and AI-context synchronization | COMPLETE |
 
 ### Sprint 3.0
 
@@ -467,14 +479,37 @@ Certification evidence:
   security configuration, D001-D091 and frozen contracts unchanged;
 - status: **CERTIFIED / COMPLETE**.
 
+### Sprint 4.3
+
+Primary artifacts:
+
+- D092-D095 in `docs/decisions/14_Decision_Log.md`;
+- `docs/architecture/51_Docker_Production_Runtime_Contract.md`;
+- `docs/architecture/52_DRC_AOA_001_Case_Composition_Contract.md`;
+- `docs/architecture/55_PostgreSQL_Runtime_Supply_Chain_Remediation_Contract.md`;
+- `infra/docker` and `scripts/verify-docker-runtime.ps1`;
+- `scripts/verify-postgres-runtime-image.ps1` and `.github/workflows/security.yml`;
+- D093 Application, REST, PostgreSQL and Flyway V2 implementation plus focused
+  tests.
+
+Certification evidence:
+
+- Java 21 default suite: 151 passed;
+- PostgreSQL 18.6 integration suite: 34 passed;
+- hosted Java CI, Security and D094 supply-chain jobs: PASS;
+- final SHA-tagged images: zero fixable High/Critical findings and zero secrets;
+- Flyway, database grants, runtime health, hardening and loopback exposure:
+  PASS;
+- local JWT/RBAC, API-composed E2E and persistence after recreation: PASS;
+- D095 defers external pilot Keycloak conformance without changing D087/D088;
+- status: **CERTIFIED / COMPLETE**.
+
 ## Next Artifact Boundary
 
-Sprint 4.3 is the sole next gate. It may address only Docker Production Runtime
-after its explicit contract and sprint instruction. It must package the
-already certified backend, frontend and PostgreSQL boundaries without adding
-product behavior, routes, schema, connectors, identity semantics or
-observability scope. Pilot behavior, real customer data and external exposure
-remain prohibited.
+Sprint 4.4 is the sole next gate. It may address only Observability after its
+contract is explicitly frozen and accepted. It must preserve business Ledger,
+Business Value, connector, JWT/RBAC and Docker boundaries. External identity,
+pilot behavior, real customer data and public exposure remain prohibited.
 
 ## Agent Rule
 

@@ -39,8 +39,8 @@ and the append-only Decision Ledger preserves accountability.
 | Business flow | Evidence → Decision → Recommendation → Human Review → Ledger → Business Value |
 | Architecture | Java modular monolith with framework-free Domain/Application and hexagonal ports/adapters |
 | Security | RS256 JWT, explicit four-role RBAC, Evidence redaction, read-only cloud integrations and append-only audit history |
-| Verification | 139 backend tests, 31 PostgreSQL integration tests, 41 frontend tests and Playwright browser acceptance |
-| Current boundary | Pre-pilot; Docker runtime is implemented and its D094 image gate passes, but Sprint 4.3 remains uncertified |
+| Verification | 151 backend tests, 34 PostgreSQL integration tests, 41 frontend tests and Playwright browser acceptance |
+| Current boundary | Pre-pilot; Sprint 4.3 Docker Production Runtime is certified, while external pilot identity remains deferred before Sprint 4.5 |
 
 ![IMPERATOR Decision Review Workspace using synthetic data](output/commercial/linkedin-discovery-kit/IMPERATOR_Workspace_Captura_Limpia.png)
 
@@ -68,18 +68,19 @@ Status labels in this repository have strict meanings:
 | GitHub evidence connector | **[IMPLEMENTED]** | Read-only REST adapter for one organization/repository; live sandbox smoke test remains pending |
 | AWS evidence connector | **[IMPLEMENTED]** | Read-only STS, Cost Explorer, tagging and CloudWatch adapter; live sandbox smoke test remains pending |
 | Decision Review Workspace | **[IMPLEMENTED]** | Next.js/React single-case workspace with strict response validation |
-| Docker production-like runtime | **[PARTIALLY IMPLEMENTED]** | Hardened Compose and images exist; the reproducible PostgreSQL 18.6 D094 image passes its hosted SBOM, provenance, secret and vulnerability gate, while the remaining runtime gates stay open |
+| Docker production-like runtime | **[IMPLEMENTED]** | D092-D095 certified hardened Compose, SHA-tagged images, PostgreSQL 18.6 supply-chain evidence and persistence after recreation |
 | External OIDC identity provider | **[PLANNED]** | Keycloak pilot integration is designed but not provisioned or connected |
-| D093 case-composition route | **[PLANNED]** | Contract frozen; implementation still requires separate authorization |
+| D093 case-composition route | **[IMPLEMENTED]** | `ADMIN`-only R16 composes the canonical Decision and Recommendation through existing Application boundaries |
 | Application metrics, traces and dashboards | **[PLANNED]** | Sprint 4.4 preparation only |
 | Python/FastAPI explanation service | **[FUTURE]** | Directory boundary only; no Python source or provider calls |
 | Kubernetes, Terraform, Kafka and Redis | **[FUTURE]** | Explicitly excluded from the MVP |
 
-Current formal state: **Phase 3, pre-pilot; Sprint 4.3 is
-`NO-GO / UNCERTIFIED`** pending D093/R16, external JWT/RBAC, the
-`DRC-AOA-001` E2E and persistence-after-recreation evidence. See the
-[pilot status](docs/pilot/README.md) and
-[D092 runtime contract](docs/architecture/51_Docker_Production_Runtime_Contract.md).
+Current formal state: **Phase 3, pre-pilot; Sprint 4.3 and its documentation
+synchronization are complete, and Sprint 4.4 Observability is the sole next
+gate.** D095 defers operational Keycloak HTTPS conformance without weakening
+D087/D088; it remains mandatory before Sprint 4.5, real customer data or MVP
+Release. See the [pilot status](docs/pilot/README.md) and
+[D095](docs/decisions/14_Decision_Log.md).
 
 ## Why IMPERATOR?
 
@@ -152,8 +153,8 @@ flowchart LR
 ```
 
 The implemented local proof uses 30 synthetic Evidence records. Live connector
-evidence is implemented, but the future D093 composition route needed for a
-clean commercial runtime is still only a frozen contract.
+evidence and the D093/R16 case-composition route are implemented; operational
+external-IdP and live-provider conformance remain pre-pilot obligations.
 
 ## Security Architecture
 
@@ -176,8 +177,9 @@ Known boundaries are equally important:
 - no external IdP is currently connected;
 - the token-paste frontend bootstrap is pre-pilot, not production login;
 - there is no tenant entitlement model;
-- container certification is blocked while the official PostgreSQL 18.6 image
-  contains fixable Critical `CVE-2025-68121` through `gosu`;
+- external Keycloak issuer/JWKS conformance remains mandatory before Sprint 4.5;
+- D094 replaces the vulnerable upstream `gosu` binary through a pinned,
+  reproducible and independently scanned PostgreSQL 18.6 image;
 - application SAST, Java SCA and production incident response are not yet
   automated.
 
@@ -191,8 +193,8 @@ See [Security Policy](SECURITY.md) and the canonical
 | GitHub Actions Java build | **IMPLEMENTED**; minimal `contents: read` permission and actions pinned by commit SHA |
 | Maven runtime enforcement | **IMPLEMENTED**; exact Maven 3.9.16 and Java 21 boundary |
 | Compiler warnings as errors | **IMPLEMENTED** |
-| Backend unit/API/security tests | **IMPLEMENTED**; 139 default tests |
-| PostgreSQL integration gate | **IMPLEMENTED**; 31 real-database tests plus Flyway migrate/validate/idempotency |
+| Backend unit/API/security tests | **IMPLEMENTED**; 151 default tests |
+| PostgreSQL integration gate | **IMPLEMENTED**; 34 real-database tests plus Flyway migrate/validate/idempotency |
 | Frontend lint/typecheck/tests/build | **IMPLEMENTED locally**; 41 tests and production build pass |
 | Frontend dependency audit | **IMPLEMENTED as a manual certification command**; latest local check found 0 vulnerabilities |
 | Automated source/dependency scan | **IMPLEMENTED**; the fail-closed hosted Trivy workflow scans dependencies, secrets and configuration and is passing |
@@ -366,9 +368,10 @@ $env:IMPERATOR_API_ORIGIN = "http://127.0.0.1:8080"
 npm run build
 ```
 
-The Docker runtime has additional external issuer and secret preconditions.
-Follow [infra/docker/README.md](infra/docker/README.md); do not interpret the
-presence of Docker assets as Sprint 4.3 certification.
+The certified Docker runtime has external issuer and local secret
+preconditions. Follow [infra/docker/README.md](infra/docker/README.md). D095
+separates its completed local certification from the operational external-IdP
+conformance required before Sprint 4.5.
 
 ## Example Use Case
 
@@ -392,15 +395,15 @@ as realized value until validation evidence exists.
 
 | Stage | Scope |
 |---|---|
-| **Completed** | Core Domain, Application use cases, PostgreSQL, REST, JWT/RBAC, GitHub/AWS evidence adapters, Decision Review Workspace |
-| **In progress** | Docker runtime certification; D094 image remediation passes, while D093/R16, external JWT/RBAC, runtime E2E and persistence-after-recreation evidence remain pending |
-| **Planned** | External Keycloak pilot IdP, D093 composition, observability and pilot readiness |
+| **Completed** | Core Domain, Application use cases, PostgreSQL, REST, JWT/RBAC, GitHub/AWS evidence adapters, D093 composition, Decision Review Workspace and Docker Production Runtime |
+| **Next** | Sprint 4.4 Observability contract, implementation and certification |
+| **Planned** | External Keycloak pilot conformance and Sprint 4.5 Pilot Readiness |
 | **Future** | Python explanation service, more connectors, multi-tenancy, cloud deployment, Terraform, Kubernetes, Kafka and Redis only when justified |
 
 ## Post-MVP DevSecOps Path
 
-This is a delivery sequence, not an implementation claim. Sprint 4.3, its
-documentation synchronization, Observability and Pilot Readiness retain
+This is a delivery sequence, not an implementation claim. Sprint 4.4
+Observability, external Pilot Identity Conformance and Pilot Readiness retain
 precedence over this path.
 
 ```mermaid
@@ -416,7 +419,7 @@ flowchart LR
 
 | Stage | Status | Bounded outcome |
 |---|---|---|
-| Close Sprint 4.3 | **[PARTIALLY IMPLEMENTED]** | D093/R16, external JWT/RBAC, E2E and persistence-after-recreation certification; the D094 image gate already passes |
+| Docker Production Runtime | **[IMPLEMENTED]** | D092-D095 certification, D093/R16, D094 supply-chain evidence, local JWT/RBAC E2E and persistence after recreation pass |
 | CI hardening | **[PLANNED]** | Add frontend gates, one SAST tool, one Java SCA tool, Docker build, Trivy, SBOM and immutable artifacts; fail on an explicitly owned severity policy |
 | AWS deployment contract | **[FUTURE]** | Freeze workload, data, IAM, network, TLS, backup, recovery, logging, cost and threat-model requirements before provisioning |
 | Terraform AWS foundation | **[FUTURE]** | Provision only the contracted VPC, private networking, IAM, security groups, ECR, ECS/Fargate, RDS, Secrets Manager, CloudWatch and CloudTrail resources |

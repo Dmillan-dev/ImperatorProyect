@@ -2,10 +2,11 @@
 
 Status: **PREPARATION ONLY / NON-AUTHORITATIVE / NOT IMPLEMENTED**
 
-Owning future gate: **Pilot identity conformance, after the D092 image gate**
+Owning future gate: **Pilot Identity Conformance, mandatory before Sprint 4.5**
 
 This document creates no decision, contract, sprint authorization or runtime
-capability. D087, D088, D091 and D092 remain unchanged and authoritative.
+capability. D087, D088, D091 and D092 remain unchanged; D095 governs the
+certification sequencing between the local runtime and operational pilot IdP.
 
 ## 1. Purpose
 
@@ -36,7 +37,7 @@ issuance to IMPERATOR.
 | Actor mapping from `sub` and `imperator_role` | Certified | D087 |
 | Four-role route and Evidence authorization | Certified | D088 |
 | Browser token handling | Volatile in-memory paste only | D091 |
-| External HTTPS issuer/JWKS | Not provisioned | D092 prerequisite |
+| External HTTPS issuer/JWKS | Not provisioned | D095-deferred pre-Sprint-4.5 gate |
 | Login or IdP inside IMPERATOR | Explicitly absent | D087, D091, D092 |
 
 No Java change is currently justified. The missing element is an external
@@ -217,13 +218,12 @@ JWKS reachability, role name and pass/fail. It records no token or claim dump.
 
 ## 12. Preconditions And Decision Boundary
 
-The preparation is complete, but live integration is `NO-GO` until:
+The preparation is complete. Sprint 4.3 local runtime certification and D093
+implementation now pass, but operational pilot identity remains `NO-GO` until:
 
-1. the D092 image vulnerability gate clears;
-2. an external Keycloak deployment owner, URL and certificate exist;
-3. the token-acquisition procedure is approved;
-4. D093 is separately implemented and certified; and
-5. the live conformance matrix can run without modifying D087 or D088.
+1. an external Keycloak deployment owner, URL and certificate exist;
+2. the token-acquisition procedure is approved; and
+3. the live conformance matrix can run without modifying D087 or D088.
 
 Any need to change the exact claim name, UUID subject, audience, algorithm or
 role model is an objective contract conflict and requires explicit approval.

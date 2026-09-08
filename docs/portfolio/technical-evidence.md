@@ -24,16 +24,16 @@ It links to canonical contracts and implementation instead of replacing them.
 | Human governance | **[IMPLEMENTED]** | Review and Ledger use cases plus Application-level authority checks |
 | Append-only Ledger | **[IMPLEMENTED]** | Domain invariant, append-only repository contract and PostgreSQL constraints |
 | Business Value | **[IMPLEMENTED]** | Read projection derived from result-validated Ledger facts; not a mutable entity |
-| PostgreSQL | **[IMPLEMENTED]** | JDBC repositories, mappers, transaction runner and Flyway V1 |
-| REST API | **[IMPLEMENTED]** | Six controllers implementing 15 frozen route/method pairs |
+| PostgreSQL | **[IMPLEMENTED]** | JDBC repositories, mappers, transaction runner and Flyway V1/V2 |
+| REST API | **[IMPLEMENTED]** | Six controllers implementing the 15 D086 route/method pairs plus D093 R16 |
 | JWT authentication | **[IMPLEMENTED]** | RS256 Resource Server with exact issuer, JWKS, audience, time, `kid`, subject and role validation |
 | RBAC authorization | **[IMPLEMENTED]** | Four roles, explicit route matrix and evidence redaction |
 | GitHub integration | **[IMPLEMENTED]** | Read-only bounded REST adapter with timeout, retry, rate-limit and same-origin redirect controls |
 | AWS integration | **[IMPLEMENTED]** | Read-only AWS SDK adapter bounded to one account, Region and workload |
 | Frontend | **[IMPLEMENTED]** | Next.js/React workspace with same-origin API transport and strict Zod validation |
-| Docker runtime | **[PARTIALLY IMPLEMENTED]** | Hardened Dockerfiles and Compose exist; D092 certification remains blocked |
+| Docker runtime | **[IMPLEMENTED]** | D092-D095 hardened Compose, reproducible PostgreSQL 18.6 image and persistence/recreation certification pass |
 | External IdP | **[PLANNED]** | Keycloak preparation exists; no issuer is deployed or connected |
-| D093/R16 composition | **[PLANNED]** | Contract exists; implementation remains unauthorized |
+| D093/R16 composition | **[IMPLEMENTED]** | `ADMIN`-only API composition, resumable D081/D082 steps and case uniqueness are certified |
 | Observability | **[PLANNED]** | Correlation and container health exist; metrics, tracing and dashboards do not |
 | Python/FastAPI | **[FUTURE]** | Documentation boundary only |
 | Cloud deployment | **[FUTURE]** | No AWS-hosted runtime, Terraform or Kubernetes exists |
@@ -183,8 +183,7 @@ lineage while excluding raw payload persistence.
 
 | Severity | Finding | Treatment |
 |---|---|---|
-| High release blocker | Official PostgreSQL 18.6 image still includes fixable Critical `CVE-2025-68121` in Go 1.24.6 embedded in `gosu 1.19` as rechecked on 2026-09-03 | D092 fails closed; wait for a corrected official image and rescan before updating the digest |
-| High pilot prerequisite | No real external issuer/JWKS is connected | Provision external Keycloak under the prepared D087-compatible profile before pilot E2E |
+| High pilot prerequisite | No operational external issuer/JWKS is connected | Pass the D095-deferred Keycloak HTTPS conformance gate before Sprint 4.5 |
 | Medium | Frontend quality gates are not yet in GitHub Actions | Add one focused frontend CI workflow in a separately authorized delivery iteration |
 | Medium | No automated Java SCA or SAST | Select one SCA and one SAST control only after defining ownership, baseline and false-positive handling |
 | Medium | Token paste is the current frontend bootstrap | Replace with separately contracted Authorization Code + PKCE login before real users |
@@ -218,18 +217,18 @@ so this document makes no equivalent zero-vulnerability claim for Java.
 |---|---|
 | Java runtime | Java 21.0.12 |
 | Maven runtime | Maven 3.9.16 |
-| Backend default suite | 139 passed |
-| PostgreSQL suite | 31 passed |
+| Backend default suite | 151 passed |
+| PostgreSQL suite | 34 passed |
 | Flyway | migrate, validate and repeated migrate passed |
 | Frontend unit/component suite | 41 passed |
 | Frontend lint/typecheck/build | Passed |
 | Frontend npm audit | 0 vulnerabilities |
-| Sprint 4.3 container certification | **Blocked; not certified** |
+| Sprint 4.3 container certification | **CERTIFIED / COMPLETE under D092-D095** |
 
 Canonical execution evidence is maintained in
-[`docs/project/PROJECT_STATUS.md`](../project/PROJECT_STATUS.md). The later D093
-blocker state is recorded in
-[`docs/architecture/52_DRC_AOA_001_Case_Composition_Contract.md`](../architecture/52_DRC_AOA_001_Case_Composition_Contract.md).
+[`docs/project/PROJECT_STATUS.md`](../project/PROJECT_STATUS.md). D095 records
+the separation between certified local runtime evidence and the mandatory
+pre-pilot external identity gate.
 
 ## Canonical References
 

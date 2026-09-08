@@ -26,12 +26,12 @@ governance, an ordered immutable Ledger and validated Business Value.
 The certified D091 Decision Review Workspace presents the authoritative case,
 role-aware actions, Evidence, ROI, Recommendation, Ledger and Business Value.
 
-**Commercial runtime rehearsal: NO-GO today.**
+**Local runtime rehearsal: PASS.**
 
-An empty production-like runtime still cannot execute the complete story. The
-official PostgreSQL image fails the D092 Critical-vulnerability gate, external
-Keycloak is not provisioned and D093/R16 composition is frozen but not
-implemented.
+The D092-D095 production-like local runtime executes the complete synthetic
+story through REST, D093/R16, JWT/RBAC, PostgreSQL, Docker recreation and the
+workspace. This does not claim operational external Keycloak conformance or a
+customer pilot.
 
 **Customer value validation: NOT YET PROVEN.**
 
@@ -44,17 +44,17 @@ Partner pilot with customer-approved facts.
 | Capability | Evidence available | Demo claim allowed | Current limit |
 |---|---|---|---|
 | Canonical Evidence import | 30/30 accepted by certified harness | IMPERATOR normalizes the complete case pack | Local harness, synthetic facts |
-| Decision creation | D081 capability certified | One Evidence-backed Decision can be created deterministically | No authorized runtime inbound route yet |
+| Decision creation | D081 and D093/R16 certified | One Evidence-backed Decision can be created deterministically through REST | One canonical case only |
 | Recommendation and ROI | D082 capability certified | The canonical policy yields EUR 19,440 estimated annual recovery, 92% confidence and LOW risk | Values are canonical, not customer forecasts |
 | Human review | D083 and D088 certified | Authorized humans approve, reject or defer; AI does not decide | Real external identities not yet proven |
-| Ledger | Append-only governance chain certified | Approval, implementation and result validation are attributable and ordered | Runtime persistence rehearsal pending |
+| Ledger | Append-only governance chain and local runtime E2E certified | Approval, implementation and result validation are attributable and ordered | No customer result is claimed |
 | Business Value | Projection certified | Validated result produces EUR 18,960 realized annualized savings in the canonical case | Not a persisted aggregate or customer result |
 | GitHub Evidence | D089 integration certified | One read-only repository can produce supporting Evidence | No live customer repository authorized |
 | AWS Evidence | D090 integration certified | One read-only account/Region can produce four bounded Evidence facts | No live customer account authorized |
 | Review workspace | D091 frontend certified | A reviewer can inspect and govern one case | Requires pre-existing composed Decision |
-| Docker runtime | Implementation largely passes | Production-like packaging exists | D092 remains blocked by upstream image CVE |
+| Docker runtime | D092-D095 certified locally | Reproducible production-like packaging and persistence/recreation pass | No public exposure or operational IdP |
 | External identity | D087/D088 behavior certified with controlled keys | IMPERATOR validates a strict JWT/RBAC contract | Real Keycloak issuer/JWKS not provisioned |
-| Runtime composition | D093 frozen | Exact future R16 behavior is specified | Not implemented or executable |
+| Runtime composition | D093/R16 implemented and certified | Exact idempotent case composition is executable | Limited to DRC-AOA-001 |
 
 ## 4. Three Demonstration Modes
 
@@ -70,17 +70,18 @@ Use only:
 Do not present provider synchronization, JWT, PostgreSQL persistence or live
 browser governance as part of this execution.
 
-### L2 - Certification Rehearsal: Pending
+### L2 - Certification Rehearsal: Certified Locally
 
-This is the future synthetic E2E:
+This is the certified synthetic E2E:
 
 ```text
 R01 -> R16 -> workspace -> approve -> implementation_marked
     -> result_validated -> Business Value -> Docker recreation
 ```
 
-It becomes executable only after the D092 image subgate, D093 implementation
-and external Keycloak conformance pass.
+It passed locally under D095 with an ephemeral Keycloak outside the IMPERATOR
+Compose project. Operational external Keycloak HTTPS conformance remains a
+separate mandatory gate before Sprint 4.5.
 
 ### L3 - Design Partner Pilot: Future
 
@@ -169,7 +170,7 @@ compressed L1 path only after a concrete relevant problem has been identified.
 ### Forbidden Today
 
 - "IMPERATOR recovered EUR 18,960 for a customer."
-- "The Docker runtime is certified."
+- "The runtime is production-ready or publicly deployed."
 - "Keycloak is integrated."
 - "A customer can connect and generate the full case today."
 - "Jira, OpenAI or Claude connectors are implemented."
@@ -267,18 +268,9 @@ controlled commercial system, not Git.
 
 ## 12. Gates Before Advancing The Demo
 
-L2 may begin only when:
+L2 is certified locally under D095. Re-run it when an authorized change affects
+the runtime, security perimeter, persistence or canonical flow.
 
-- D092 reports zero fixable Critical vulnerabilities for the candidate final
-  images;
-- D093/R16 is implemented and passes its authorized gates;
-- external Keycloak is available for D087/D088 conformance; and
-- the candidate runtime is ready for Flyway, PostgreSQL and persistence checks.
-
-L2 then supplies the synthetic E2E, Docker recreation and real-JWT evidence
-needed to finish D092 and certify Sprint 4.3. It does not wait for Sprint 4.3
-to be certified before it runs.
-
-L3 waits for Sprint 4.3 certification and synchronization, Sprint 4.4, Sprint
-4.5 and the complete pilot package under `../pilot/README.md`. No result in
-this document changes those gates.
+L3 waits for Sprint 4.4, operational external Keycloak D087/D088 conformance,
+Sprint 4.5 and the complete pilot package under `../pilot/README.md`. No result
+in this document changes those gates.

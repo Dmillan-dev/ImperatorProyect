@@ -1,23 +1,26 @@
 # 46 - DRC-AOA-001 Pilot E2E Readiness Checklist
 
-Status: **PREPARATION ONLY / NOT EXECUTABLE / NO-GO**
+Status: **LOCAL CERTIFICATION REHEARSAL PASS / PILOT CONFORMANCE PENDING**
 
-This artifact prepares the future runtime proof. It authorizes no endpoint,
-code, migration, test, IdP, Docker change or sprint transition.
+This artifact records the certified local rehearsal and prepares the future
+pilot proof. It authorizes no endpoint, code, migration, test, IdP, Docker
+change or sprint transition.
 
 ## 1. Current Boundary
 
 ```text
-Sprint 4.3                  BLOCKED_EXTERNAL / TEMPORARY NO-GO
-Docker implementation      PASS
-Frontend image correction  PASS
-D092 vulnerability gate    FAIL: official PostgreSQL/gosu upstream image
-External D087 IdP           NOT PROVISIONED
-D093 contract               FROZEN / NOT IMPLEMENTED
-Runtime pilot E2E           NOT EXECUTABLE
+Sprint 4.3                  CERTIFIED under D095
+Docker runtime             PASS
+D094 supply-chain gate     PASS
+D093/R16 implementation    PASS
+Local D087/D088 conformance PASS
+Local runtime E2E          PASS
+External Pilot Identity    NOT PROVISIONED / REQUIRED BEFORE SPRINT 4.5
 ```
 
-Sprint 4.3.1, Sprint 4.4 and Sprint 4.5 remain unauthorized.
+Sprint 4.3.1 is complete. Sprint 4.4 is the sole next gate. Sprint 4.5 remains
+unauthorized until its preceding gates, including external Pilot Identity
+Conformance, pass.
 
 ## 2. Authority Set
 
@@ -35,8 +38,8 @@ Sprint 4.3.1, Sprint 4.4 and Sprint 4.5 remain unauthorized.
 | Canonical data | `src/test/resources/evidence/drc-aoa-001-business-value-demo.jsonl` |
 
 D093 resolves the earlier composition ambiguity. It freezes R16 as
-`POST /api/v1/decisions`, `ADMIN` only, after R01. It remains unimplemented and
-requires a separately authorized implementation gate.
+`POST /api/v1/decisions`, `ADMIN` only, after R01. Its implementation and local
+runtime certification are complete without changing D081 or D082.
 
 ## 3. Domain Interpretation
 
@@ -87,7 +90,7 @@ in the local demo are test fixtures, not an IdP or runtime identity contract.
 | Step | Actor | Interface | Expected business result |
 |---|---|---|---|
 | 1 | `ADMIN` | R01 Evidence import | 30 accepted, 0 rejected |
-| 2 | `ADMIN` | Future implemented R16 | One Decision and one Recommendation |
+| 2 | `ADMIN` | R16 | One Decision and one Recommendation |
 | 3 | Any read role | R02-R08 | Complete review context is readable |
 | 4 | Assigned `ADMIN` | R09 approve | One immutable `approved` entry |
 | 5 | `PLATFORM_ENGINEER` | R12 mark implemented | One immutable `implementation_marked` entry using Evidence 29 |
@@ -129,7 +132,7 @@ than persisted as an independent entity.
 | Capability | ADMIN | PLATFORM_ENGINEER | FINANCE | AUDITOR |
 |---|---:|---:|---:|---:|
 | Import Evidence R01 | Allow | Deny | Deny | Deny |
-| Compose R16 after implementation | Allow | Deny | Deny | Deny |
+| Compose R16 | Allow | Deny | Deny | Deny |
 | Read R02-R08/R14-R15 | Allow | Allow | Allow | Allow |
 | Approve/reject | Allow when assigned | Deny | Deny | Deny |
 | Defer | Allow | Allow | Allow | Deny |
@@ -177,12 +180,12 @@ Recommendation, Evidence, Ledger or Business Value state.
 | N15 | Database failure inside one transaction | That transaction rolls back | Prior committed step remains authoritative |
 | N16 | Restart after T1 only | Same request resumes T2 | No compensation delete |
 
-## 10. Future Test Inventory
+## 10. Test Inventory
 
-No test is created by this document. The following tests become authorized
-only with their owning implementation or certification gate.
+No test is created by this document. The following inventory records the
+coverage required by the owning implementation and certification gates.
 
-| Test layer | Minimum future coverage |
+| Test layer | Required coverage |
 |---|---|
 | Unit | R16 input validation, exact mapping, 28/2 Evidence split, replay classification and explanation independence |
 | Application | Two-step orchestration, T1/T2 recovery, no Ledger side effect and use of ports only |
@@ -195,24 +198,24 @@ only with their owning implementation or certification gate.
 | Runtime E2E | R01 -> R16 -> R09 -> R12 -> R13 -> R14 -> Docker recreation |
 | Security | No token, secret, raw payload, SQL detail or confidential Evidence leak |
 
-Existing suites remain regression prerequisites. D093 implementation must add
-focused tests; it must not replace JWT, RBAC, connector, repository, REST,
-frontend or PostgreSQL certification suites.
+Existing suites remain regression prerequisites. The focused D093 tests augment
+rather than replace JWT, RBAC, connector, repository, REST, frontend or
+PostgreSQL certification suites.
 
 ## 11. E2E Preconditions
 
-- [ ] Official PostgreSQL image reports zero fixable Critical vulnerabilities.
-- [ ] Final image digests are pinned and recorded.
-- [ ] D093 implementation is explicitly authorized, implemented and certified.
-- [ ] Flyway migrate, validate and no-op migrate pass on the final runtime.
-- [ ] PostgreSQL grants, health and persistent volume pass.
+- [x] Final PostgreSQL image reports zero fixable High/Critical vulnerabilities.
+- [x] Final image inputs and SHA-tagged outputs are pinned and recorded.
+- [x] D093 implementation is authorized, implemented and locally certified.
+- [x] Flyway migrate, validate and no-op migrate pass on the final runtime.
+- [x] PostgreSQL grants, health and persistent volume pass.
 - [ ] External Keycloak passes the D087 conformance matrix.
 - [ ] Four real pilot identities exist with one exact role each.
 - [ ] Canonical NDJSON hash is recorded and starts from an empty business set.
 - [ ] No SQL seed, direct table write or startup fixture is used.
 - [ ] Correlation IDs, operation IDs, Git SHA and start time are recorded.
 
-## 12. Execution Checklist
+## 12. Future Pilot Execution Checklist
 
 ### Authentication
 
@@ -257,12 +260,15 @@ frontend or PostgreSQL certification suites.
 
 ## 13. Completion Rule
 
-This checklist passes only through authorized runtime interfaces. Local use-case
-tests, repository calls, SQL inserts, startup fixtures or manually assembled
-tokens cannot substitute for the pilot E2E.
+This checklist passes only through authorized runtime interfaces. Repository
+calls, SQL inserts, startup fixtures or manually assembled tokens cannot
+substitute for either the certified local rehearsal or the future pilot E2E.
 
-Until the image gate, D093 implementation and external IdP are all complete:
+The local runtime rehearsal is certified under D095. Operational external
+identity and customer-pilot execution remain pending:
 
 ```text
-STATUS: NOT EXECUTABLE / NO-GO
+LOCAL RUNTIME REHEARSAL: PASS
+PILOT IDENTITY CONFORMANCE: PENDING
+PILOT EXECUTION: NO-GO
 ```

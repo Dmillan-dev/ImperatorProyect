@@ -38,10 +38,10 @@ steps and historical visual concepts.
 | Level | What it proves | Current state |
 |---|---|---|
 | L1 - Local product proof | Deterministic Evidence-to-Business-Value behavior inside Application boundaries | Available and certified |
-| L2 - Runtime certification rehearsal | Same canonical case through REST, external JWT, PostgreSQL, Docker and the workspace | Blocked by D092 image gate, external IdP and D093 implementation |
+| L2 - Runtime certification rehearsal | Same canonical case through REST, local real-token JWT/RBAC conformance, PostgreSQL, Docker and the workspace | Certified under D092-D095; operational external identity remains a pre-Sprint-4.5 gate |
 | L3 - Design Partner pilot | Value and trust with approved customer facts | Not authorized before Pilot Readiness |
 
-Never describe L1 as L2 or L3. Passing technical tests proves behavior; only a
+Never describe L1 or L2 as L3. Passing technical tests proves behavior; only a
 customer validation can prove willingness to act or pay.
 
 The first prospect meeting is discovery-first. Use

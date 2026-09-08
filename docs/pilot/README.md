@@ -59,7 +59,7 @@ blocked.
 
 | Milestone | Data | Current authority |
 |---|---|---|
-| Commercial rehearsal | Canonical synthetic 30-Evidence dataset and fixed D082 values | Prepared; execution waits for the D092 image-vulnerability subgate, D093 implementation and a real external IdP. Its E2E and persistence evidence is then used to close Sprint 4.3 |
+| Commercial rehearsal | Canonical synthetic 30-Evidence dataset and fixed D082 values | Completed locally for Sprint 4.3 with D093/R16, local JWT/RBAC and persistence/recreation; operational external IdP conformance remains separate under D095 |
 | Customer pilot | Customer-approved normalized facts and customer-specific values | Not authorized; requires explicit pilot/data/policy approval |
 
 Passing the rehearsal proves runtime and workflow integrity. It does not prove
@@ -68,8 +68,10 @@ customer value, customer data compliance or general product readiness.
 ## Current Gate
 
 ```text
-Sprint 4.3: BLOCKED_EXTERNAL
-Sprint 4.4: NOT OPEN
+Sprint 4.3: CERTIFIED / COMPLETE
+Sprint 4.3.1: COMPLETE
+Sprint 4.4: NEXT
+External Pilot Identity Conformance: DEFERRED / REQUIRED BEFORE 4.5
 Sprint 4.5: NOT OPEN
 Customer data: FORBIDDEN
 Public exposure: FORBIDDEN

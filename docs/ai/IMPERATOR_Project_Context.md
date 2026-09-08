@@ -82,7 +82,21 @@ spend. The first case is `DRC-AOA-001`, AI Onboarding Assistant Recovery.
   build, dependency audit and Playwright acceptance passed. The unchanged Java
   backend passed 139 default tests and 31 PostgreSQL 18.4 integration tests.
 - Sprint 4.2.1 documentation synchronization: complete.
-- Current gate: Sprint 4.3 - Docker Production Runtime.
+- D092 - Docker Production Runtime Contract: accepted and complete.
+- D093 - DRC-AOA-001 Case Composition Contract: accepted, implemented and
+  certified through R16, case-level uniqueness and resumable D081/D082 steps.
+- D094 - PostgreSQL Runtime Supply Chain Remediation: accepted and certified
+  with PostgreSQL 18.6, pinned build inputs, SBOM, provenance and zero fixable
+  High/Critical or secret findings.
+- D095 - D092 Runtime Certification Scope Correction: accepted and complete.
+- Sprint 4.3 Docker Production Runtime: certified and complete. Java 21 passed
+  151 default tests, PostgreSQL 18.6 and Flyway passed 34 integration tests,
+  final SHA-tagged images passed security/hardening gates, and local JWT/RBAC,
+  `DRC-AOA-001` E2E and persistence-after-recreation evidence passed.
+- Sprint 4.3.1 documentation synchronization: complete.
+- Current gate: Sprint 4.4 - Observability.
+- External Keycloak HTTPS conformance: deferred by D095 and mandatory before
+  Sprint 4.5, real customer data or MVP Release.
 - Sprints 2.9 through 2.13: deferred, not completed.
 
 The live state is maintained in:
@@ -138,6 +152,7 @@ the single authorized business value loop under D079.
 - no JPA;
 - six product REST controllers preserving 15 controlled routes;
 - functional JSONL Evidence import wired through Application and PostgreSQL;
+- `ADMIN`-only R16 case composition wired through Application and PostgreSQL;
 - deterministic Decision creation wired through Application and PostgreSQL;
 - deterministic Recommendation and ROI policy wired through Domain,
   Application and PostgreSQL;
@@ -147,6 +162,8 @@ the single authorized business value loop under D079.
   Application and PostgreSQL;
 - JWT authentication and RBAC authorization complete; D083 business authority
   remains in Application and Restricted Evidence remains fail-closed redacted.
+- hardened D092-D095 Docker Compose runtime certified with PostgreSQL 18.6,
+  non-root custom images, read-only filesystems and loopback-only publication.
 
 The implemented Java source root is `backend-java`, with packages under
 `imperator.*`. REST packages live under `imperator.api.*`. Public product REST

@@ -1,6 +1,6 @@
 # IMPERATOR Project Status
 
-Last verified: **2026-08-10**
+Last verified: **2026-09-08**
 
 ## Current Gate
 
@@ -67,9 +67,19 @@ Last verified: **2026-08-10**
 | Sprint 4.2 backend regression | PASS - 139 default tests and 31 PostgreSQL 18.4 integration tests |
 | Sprint 4.2 closure | CERTIFIED / COMPLETE |
 | Sprint 4.2.1 documentation synchronization | COMPLETE |
-| Last completed gate | Sprint 4.2.1 - Documentation Synchronization |
+| D092 Docker Production Runtime contract | ACCEPTED / COMPLETE / FROZEN |
+| D093 DRC-AOA-001 Case Composition contract | ACCEPTED / COMPLETE / FROZEN |
+| D093/R16 implementation | PASS |
+| D094 PostgreSQL supply-chain remediation | ACCEPTED / COMPLETE / PASS |
+| D095 runtime certification scope correction | ACCEPTED / COMPLETE |
+| Sprint 4.3 implementation | PASS |
+| Sprint 4.3 local runtime certification | PASS - Docker, security, local JWT/RBAC E2E and persistence/recreation |
+| Sprint 4.3 closure | CERTIFIED / COMPLETE under D095 |
+| Sprint 4.3.1 documentation synchronization | COMPLETE |
+| External Pilot Identity Conformance | DEFERRED by D095; mandatory before Sprint 4.5 |
+| Last completed gate | Sprint 4.3.1 - Documentation Synchronization |
 | Phase 2 closure | COMPLETE under D079; Sprints 2.9-2.13 deferred |
-| Next authorized sprint | Sprint 4.3 - Docker Production Runtime |
+| Next authorized sprint | Sprint 4.4 - Observability |
 | Phase 3 authorization | Authorized by D079 and evolved by D085 |
 
 ## Verified Foundation
@@ -80,8 +90,8 @@ Last verified: **2026-08-10**
 | Domain | PASS | Framework-free domain model and value objects |
 | Application | PASS | Deterministic use cases plus the non-persisted Business Value projection |
 | Ports | PASS | Inbound, outbound and explicit transaction ports |
-| PostgreSQL persistence | PASS | JDBC adapters and PostgreSQL 18.x certification, most recently 18.4 |
-| Database schema | PASS | Flyway V1 and frozen seven-table schema |
+| PostgreSQL persistence | PASS | JDBC adapters and PostgreSQL 18.x certification, most recently 18.6 |
+| Database schema | PASS | Flyway V1/V2, frozen seven-table model and unique Decision case constraint |
 | Transactions | PASS | Repository and use-case atomicity certification |
 | Web runtime | PASS | Spring Boot executable composition root |
 | REST error contract | PASS | Four-field envelope for controlled and framework errors |
@@ -99,71 +109,68 @@ Last verified: **2026-08-10**
 | GitHub Integration | CERTIFIED / COMPLETE | D089 one-repository, read-only GitHub REST synchronization produces deterministic supporting Evidence and passed PostgreSQL 18.4 certification |
 | AWS Integration | CERTIFIED / COMPLETE | D090 one-account, one-Region, read-only AWS SDK synchronization produces deterministic `E-AWS-001` through `E-AWS-004` Evidence and passed PostgreSQL 18.4 certification |
 | Frontend runtime | CERTIFIED / COMPLETE | D091 single-case Decision Review Workspace passed all frontend gates and unchanged backend/PostgreSQL regression |
-| Local container runtime | NEXT | Sprint 4.3 is the sole next gate; no implementation is authorized beyond its explicit contract and instruction |
-| Observability runtime | PENDING | Separate Sprint 4.4 gate after container runtime |
-| Java backend CI | CERTIFIED / COMPLETE | GitHub-hosted Ubuntu 24.04 run verified Java 21, Maven Wrapper, 89 tests and executable JAR packaging |
+| DRC-AOA-001 runtime composition | CERTIFIED / COMPLETE | D093 R16 composes one idempotent Decision/Recommendation graph through existing D081/D082 boundaries |
+| Local container runtime | CERTIFIED / COMPLETE | D092-D095 hardened Compose, PostgreSQL 18.6 supply chain, local E2E and persistence/recreation gates pass |
+| Observability runtime | NEXT | Sprint 4.4 must freeze its contract before implementation |
+| Java backend CI | CERTIFIED / COMPLETE | GitHub-hosted Java 21 build and Security workflows pass with 151 default tests |
 
 ## Latest Verification
 
-Sprint 4.2 was certified on 2026-08-09 from frozen D091 contract commit
-`220c93b` and implementation commit `abf10a9` with:
+Sprint 4.3 was certified on 2026-09-08 from implementation merge
+`1613b5daeb19ae29e0b96797cb6aca24972d1af0` and D095 control commit
+`31f6e51027d2ae3e1fa3de1fb5ee3a16d2f2cf3f` with:
 
 ```text
-frontend> npm run format:check
-frontend> npm run lint
-frontend> npm run typecheck
-frontend> npm run test:coverage
-frontend> npm run build
-frontend> npm run test:e2e
-frontend> npm audit --audit-level=moderate
 mvnw.cmd clean verify
 mvnw.cmd -Ppostgresql-integration clean verify
+docker compose build/up/down
+scripts/verify-docker-runtime.ps1
+scripts/verify-postgres-runtime-image.ps1
+trivy image --scanners vuln,secret --severity HIGH,CRITICAL --ignore-unfixed
 ```
 
 Certification evidence:
 
-- Node.js `24.19.0` and npm `11.17.0`: PASS;
-- exact npm lockfile and Node 24 LTS engine boundary: PASS;
-- Prettier format check, ESLint with zero warnings and strict TypeScript:
-  PASS;
-- frontend unit and component tests: 35 passed, 0 failed;
-- coverage: 95.51% statements, 78.49% branches, 95.45% functions and 97.84%
-  lines; all D091 thresholds passed;
-- Next.js `16.2.12` production build: PASS;
-- npm dependency audit at moderate severity: 0 vulnerabilities;
-- Playwright Chromium acceptance: 9 passed, 0 failed and 6 intentional
-  viewport-independent skips;
-- certified viewports: 1440x900, 1024x768 and 390x844 with no horizontal
-  overflow or interactive control outside the viewport;
-- exact ADMIN, PLATFORM_ENGINEER, FINANCE and AUDITOR action presentation:
-  PASS; backend authority remains unchanged;
-- Confidential Evidence redaction, Business Value not-ready separation,
-  isolated `403`, `404`, malformed response, empty-state and timeout behavior,
-  and volatile-session clearing on `401`: PASS;
-- relative same-origin `/api/v1/**` transport, server-only API origin, strict
-  response schemas, 1 MiB response limit, 10-second timeout, correlation and
-  idempotency behavior: PASS;
-- tokens persisted, logged or exposed in URLs: absent;
-- Java 21 default tests: 139 passed, 0 failed;
-- PostgreSQL `18.4`, Flyway V1 migrate/validate/no-op migrate and 31 integration
-  tests: PASS;
-- Java, Java tests, Maven, SQL, Flyway, REST routes, Domain, Application,
-  Ports, connectors, D001-D091 and frozen contracts changed by Sprint 4.2:
-  no;
-- frontend production build and backend executable JAR: created;
+- Java 21 default tests: 151 passed, 0 failed;
+- PostgreSQL 18.6, Flyway V1/V2 migrate/validate/no-op migrate and 34
+  integration tests: PASS;
+- frontend format, lint, strict TypeScript, 41 tests, production build, npm
+  audit and Playwright acceptance: PASS;
+- D093 R16 authorization, two-step resumability, replay, conflict handling and
+  unique `case_id` migration: PASS;
+- hosted Java CI and Security workflows on the merged implementation: PASS;
+- D094 two-build reproducibility, pinned inputs, SBOM, provenance and final
+  PostgreSQL runtime identity: PASS;
+- SHA-tagged backend, frontend and PostgreSQL images: zero fixable
+  High/Critical findings and zero secrets;
+- PostgreSQL 18.6, Flyway migrate/validate, least-privilege provisioning,
+  non-root users, read-only filesystems and dropped capabilities: PASS;
+- only the frontend is published, on loopback; backend and PostgreSQL remain
+  internal, and unauthenticated API access returns safe `401`;
+- local protocol conformance with an ephemeral Keycloak outside the IMPERATOR
+  Compose project proved RS256, `kid`, issuer, audience, UUID subject, one exact
+  role, four-role D088 outcomes and fail-closed negative cases;
+- API-only `DRC-AOA-001` rehearsal proved 30-Evidence import/replay, R16
+  composition/replay, approval, implementation, result validation, ordered
+  Ledger and Business Value;
+- normal Compose recreation preserved Flyway history and the complete imported
+  case without duplicates;
+- external Keycloak HTTPS conformance is not claimed; D095 defers it as a
+  mandatory gate before Sprint 4.5, customer data or MVP Release;
+- runtime credentials, JWTs, private keys and generated evidence committed:
+  none;
 - `BUILD SUCCESS`: PASS.
 
-Sprint 4.2.1 documentation verification:
+Sprint 4.3.1 documentation verification:
 
-- active project-control, agent, security, frontend and AI-context documents
+- active project-control, agent, runtime, security, pilot, portfolio and
+  AI-context documents
   synchronized: PASS;
-- Markdown files checked: 168;
 - broken local links: 0;
-- stale active statements naming Sprint 4.2 as the current or next gate: 0;
-- unique `NEXT` sprint: 4.3 - Docker Production Runtime;
-- modified files: 12 Markdown documents only;
-- Java, Java tests, SQL, Flyway, dependencies, runtime configuration, D091,
-  previous decisions and frozen contracts modified by Sprint 4.2.1: no.
+- stale active statements naming Sprint 4.3 as current, blocked or next: 0;
+- unique `NEXT` sprint: 4.4 - Observability;
+- Java, Java tests, SQL, Flyway, dependencies, runtime configuration, D092-D095,
+  previous decisions and frozen contracts modified by Sprint 4.3.1: no.
 
 This full integration-profile run includes the Sprint 3.4 governance and
 Ledger certification suite. The D084 deferred obligation is therefore
@@ -201,23 +208,22 @@ the default build, 89 tests and executable JAR packaging on Ubuntu 24.04.
   authorization server, SSO provider or production browser session lifecycle.
 - Frontend role visibility is presentation only. D087 authentication, D088
   authorization and D083 Application governance remain authoritative.
-- The Decision Review Workspace is certified against protocol-faithful browser
-  fixtures and unchanged backend regression. Production packaging, runtime
-  orchestration and external exposure remain outside Sprint 4.2.
+- The Decision Review Workspace and local Docker packaging are certified.
+  Operational external identity, customer data and non-loopback exposure remain
+  prohibited until their later gates pass.
 
 ## Next Control Gate
 
-Sprint 4.3 - Docker Production Runtime is the sole next implementation gate.
-It must package and compose only the already certified runtime boundaries and
-must not invent product behavior, routes, schema, connectors, authentication,
-authorization or observability scope. Exact files, images, services,
-configuration, health behavior and certification criteria require the explicit
-Sprint 4.3 contract and founder instruction before implementation. Real
-customer data, pilot behavior and external exposure remain prohibited.
+Sprint 4.4 - Observability is the sole next gate. It must first freeze the
+minimum metrics, health, safe-log, trace, retention and evidence contract for
+the certified D092-D095 runtime. It may not change business Ledger semantics,
+calculate Business Value, expand routes or connectors, introduce public
+exposure, provision the external IdP or authorize real customer data. External
+Pilot Identity Conformance remains a separate mandatory gate before Sprint 4.5.
 
 Current execution authorities:
 
-- D079 through D091 in `docs/decisions/14_Decision_Log.md`;
+- D079 through D095 in `docs/decisions/14_Decision_Log.md`;
 - `agents/phase3/README.md`;
 - `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`;
 - `docs/architecture/50_Executive_Dashboard_Contract.md`;
@@ -225,6 +231,10 @@ Current execution authorities:
 - `docs/architecture/47_RBAC_Authorization_Contract.md`;
 - `docs/architecture/48_GitHub_Integration_Contract.md`;
 - `docs/architecture/49_AWS_Integration_Contract.md`;
+- `docs/architecture/51_Docker_Production_Runtime_Contract.md`;
+- `docs/architecture/52_DRC_AOA_001_Case_Composition_Contract.md`;
+- `docs/architecture/54_Observability_Preparation.md`;
+- `docs/architecture/55_PostgreSQL_Runtime_Supply_Chain_Remediation_Contract.md`;
 - `docs/architecture/28_Per_Connector_MVP_Contracts.md`;
 - `docs/architecture/CONNECTOR_FRAMEWORK.md`;
 - `docs/architecture/35_Coding_Principles.md`;

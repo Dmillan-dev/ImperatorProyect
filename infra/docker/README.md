@@ -5,6 +5,14 @@
 Runs the certified IMPERATOR MVP as a loopback-only, production-like local
 Docker Compose deployment under D092.
 
+## Certification Status
+
+Sprint 4.3 is **CERTIFIED / COMPLETE** under D092-D095. PostgreSQL 18.6 supply
+chain, SHA-tagged images, hardening, Flyway, least-privilege grants, local
+JWT/RBAC E2E and persistence after recreation pass. D095 defers operational
+external Keycloak HTTPS conformance to a mandatory gate before Sprint 4.5; the
+runtime remains fail-closed and stores no IdP credentials.
+
 ## Preconditions
 
 - Docker Engine or Docker Desktop in Linux-container mode.

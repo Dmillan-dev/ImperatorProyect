@@ -1,6 +1,6 @@
 # 54 - Observability Preparation
 
-Status: **PREPARATION ONLY / SPRINT 4.4 NOT OPEN / NON-AUTHORITATIVE**
+Status: **PREPARATION ONLY / SPRINT 4.4 NEXT / NON-AUTHORITATIVE**
 
 This document prepares an implementation-grade observability boundary. It
 does not authorize Sprint 4.4, dependencies, endpoints, agents, collectors,
@@ -29,8 +29,8 @@ The preparation answers:
 | Safe four-field API error envelope | Implemented and tested |
 | Connector synchronization correlation ID | Present in Application contracts |
 | Append-only governance Ledger | Implemented and certified |
-| Docker service/process health checks | Present under D092 runtime work |
-| Docker `json-file` container log boundary | Present under D092 |
+| Docker service/process health checks | Certified under D092-D095 |
+| Docker `json-file` container log boundary | Certified under D092-D095 |
 | Actuator/Micrometer | Absent |
 | Prometheus/Grafana | Absent |
 | OpenTelemetry traces | Absent |
@@ -247,6 +247,6 @@ Until those answers are frozen, no dependency or runtime service is authorized.
 
 ```text
 PREPARATION: COMPLETE
-SPRINT 4.4: NOT OPEN
+SPRINT 4.4: NEXT
 RUNTIME CHANGE: NONE
 ```
