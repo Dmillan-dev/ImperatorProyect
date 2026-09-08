@@ -29,8 +29,9 @@ framework-independent Domain and Application layers, minimal ports, adapter-
 owned JDBC persistence, deterministic policy before AI, RS256 JWT validation,
 explicit RBAC, sensitive evidence redaction, read-only cloud connectors,
 database integration testing and hardened containers. I also keep fail-closed
-delivery gates: the Docker runtime is implemented but not called certified
-while an upstream PostgreSQL image vulnerability remains unresolved.
+delivery gates: the certified local runtime uses pinned images, reproducible
+PostgreSQL supply-chain remediation, SBOM/provenance evidence and blocking
+Trivy checks, while operational external identity remains explicitly deferred.
 
 ## CV Bullet Points
 
@@ -38,12 +39,14 @@ while an upstream PostgreSQL image vulnerability remains unresolved.
   Hexagonal Architecture, Domain boundaries and explicit inbound/outbound ports.
 - Built a deterministic Evidence-to-Decision workflow with auditable human
   governance, append-only Ledger history and estimated-versus-realized value.
-- Secured 15 REST route/method contracts with RS256 JWT validation, four-role
-  RBAC, server-side authorization and sensitivity-based evidence redaction.
+- Secured 15 D086 route/method contracts plus the D093 R16 composition route
+  with RS256 JWT validation, four-role RBAC, server-side authorization and
+  sensitivity-based evidence redaction.
 - Implemented bounded read-only GitHub REST and AWS SDK evidence adapters with
   timeout, retry, rate-limit, account and Region controls.
-- Established PostgreSQL/Flyway integration gates, 170 backend tests, 41
-  frontend tests, pinned CI actions and hardened Docker Compose packaging.
+- Established PostgreSQL/Flyway integration gates, 151 default tests, 34
+  PostgreSQL integration tests, 41 frontend tests, pinned CI actions and a
+  certified hardened Docker Compose runtime.
 
 ## Demonstrated Skills
 
@@ -69,10 +72,12 @@ while an upstream PostgreSQL image vulnerability remains unresolved.
 - I use real database tests and constraints instead of relying only on mocks.
 - I can explain trade-offs and defer infrastructure that does not yet add MVP
   value.
-- I will report a blocked release honestly instead of weakening a security gate.
+- I can remediate an upstream image finding through a pinned, reproducible and
+  independently certified supply-chain process instead of weakening a gate.
 
 It does **not** prove production Kubernetes, Terraform, multi-tenancy, an AWS
-deployment, a live AI service, full SAST/SCA automation or customer adoption.
+deployment, operational external Keycloak conformance, a live AI service, full
+SAST automation or customer adoption.
 
 ## Possible Interview Questions
 
@@ -85,7 +90,8 @@ deployment, a live AI service, full SAST/SCA automation or customer adoption.
 7. How do GitHub and AWS data become provider-neutral Evidence?
 8. What happens if a connector times out or returns partial data?
 9. Why is the AI provider optional and outside deterministic persistence?
-10. Why did the Docker certification fail even though the application tests pass?
+10. How did D094 remediate the upstream PostgreSQL image finding without
+    weakening the vulnerability policy?
 11. Which controls are still required before connecting a real customer?
 12. What would justify introducing Kubernetes, Kafka or multi-tenancy later?
 
@@ -119,9 +125,10 @@ SDK surface. No AWS deployment is claimed.
 ### DevSecOps
 
 Build tools and actions are pinned, compiler warnings fail the build and real
-PostgreSQL behavior has a separate integration gate. Trivy blocks Sprint 4.3
-because the official PostgreSQL image still embeds a vulnerable Go runtime;
-the gate has not been bypassed.
+PostgreSQL behavior has a separate integration gate. Trivy blocks fixable
+High/Critical findings. D094 replaced one vulnerable upstream `gosu` binary
+through pinned inputs and certified the final PostgreSQL image with two-build
+reproducibility, SBOM, provenance and functional evidence.
 
 ## GitHub Profile Project Block
 
@@ -145,4 +152,3 @@ Enterprise Decision Intelligence Platform
 Do not add Python, FastAPI, Kubernetes, Terraform, Kafka, Redis, production AWS
 deployment, customer savings or production-ready claims to the profile until
 repository evidence changes their status.
-

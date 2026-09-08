@@ -90,7 +90,7 @@ No puedes decir:
 
 - que IMPERATOR ha ahorrado dinero a un cliente;
 - que el valor realizado actual es `18.960 EUR`;
-- que el runtime Docker está completamente certificado;
+- que el runtime local certificado equivale a un despliegue de producción;
 - que existe un piloto conectado a datos reales;
 - que Jira, OpenAI o Claude están integrados en el MVP actual;
 - que IMPERATOR está listo para producción.

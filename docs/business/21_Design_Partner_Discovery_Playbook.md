@@ -10,9 +10,9 @@ This playbook answers one question:
 > that company commit to testing a bounded solution?
 
 The immediate goal is one qualified Design Partner, not an immediate software
-sale and not a large contact count. Discovery may begin while Sprint 4.3 is
-`BLOCKED_EXTERNAL`; customer connection, data ingestion and pilot execution
-remain forbidden.
+sale and not a large contact count. Sprint 4.3 is certified, so discovery may
+continue; customer connection, data ingestion and pilot execution remain
+forbidden until their later gates are authorized and certified.
 
 ## 2. What Is Being Validated
 

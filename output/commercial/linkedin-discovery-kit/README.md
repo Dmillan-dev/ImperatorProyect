@@ -30,9 +30,8 @@ unlikely to uncover those details at this stage.
 ## Never Claim
 
 - customer savings;
-- certified Docker runtime;
-- live Keycloak integration;
-- production readiness;
+- production deployment or production readiness;
+- operational external Keycloak integration;
 - customer connectivity; or
 - implemented Jira/OpenAI/Claude connectors.
 

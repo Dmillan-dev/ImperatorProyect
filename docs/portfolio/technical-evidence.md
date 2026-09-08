@@ -125,10 +125,10 @@ are separate checks.
 flowchart LR
     Commit[Commit / PR] --> JavaCI[Java CI<br/>IMPLEMENTED]
     JavaCI --> Compile[Java 21 + Maven enforce]
-    Compile --> BackendTests[139 default tests]
+    Compile --> BackendTests[151 default tests]
     BackendTests --> Jar[Executable JAR]
     Commit -. local gate .-> Frontend[Lint + types + 41 tests + build]
-    Commit -. explicit DB gate .-> PGTests[31 PostgreSQL integration tests]
+    Commit -. explicit DB gate .-> PGTests[34 PostgreSQL integration tests]
     PGTests --> Flyway[Flyway migrate + validate + idempotency]
     Jar -. manual D092 gate .-> Images[Docker image build]
     Images --> Trivy[Trivy vulnerability scan]

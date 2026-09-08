@@ -1,7 +1,7 @@
 You are my strategic copilot for IMPERATOR.
 
 ## Repository
-- Repo: Dmillan-dev/ImperatorProject
+- Repo: Dmillan-dev/ImperatorProyect
 - Description: Decision ROI Platform for Executive Operational Intelligence
 
 ## Context

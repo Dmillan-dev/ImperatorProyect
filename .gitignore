@@ -56,3 +56,6 @@ infra/docker/secrets/*
 
 # Private commercial discovery material
 output/commercial/discovery-candidates/
+
+# Local/generated PDF exports; public portfolio artifacts are curated separately
+output/pdf/

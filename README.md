@@ -10,6 +10,7 @@
 Portfolio focus: **Software Architecture · Cloud Security · DevSecOps · Auditability**
 
 [![Java CI](https://github.com/Dmillan-dev/ImperatorProyect/actions/workflows/java-ci.yml/badge.svg)](https://github.com/Dmillan-dev/ImperatorProyect/actions/workflows/java-ci.yml)
+[![Security](https://github.com/Dmillan-dev/ImperatorProyect/actions/workflows/security.yml/badge.svg)](https://github.com/Dmillan-dev/ImperatorProyect/actions/workflows/security.yml)
 ![Java 21](https://img.shields.io/badge/Java-21-1f6feb)
 ![Spring Boot 4.1](https://img.shields.io/badge/Spring_Boot-4.1-2e7d32)
 ![PostgreSQL 18](https://img.shields.io/badge/PostgreSQL-18-336791)
@@ -63,7 +64,7 @@ Status labels in this repository have strict meanings:
 | Hexagonal Java domain and application | **[IMPLEMENTED]** | Framework-free Domain/Application, inbound/outbound ports and adapter isolation |
 | Evidence-to-value business loop | **[IMPLEMENTED]** | Deterministic local `DRC-AOA-001` flow with synthetic data |
 | PostgreSQL persistence and Flyway | **[IMPLEMENTED]** | JDBC adapters, constraints, transactions and real PostgreSQL integration tests |
-| REST API | **[IMPLEMENTED]** | 15 `/api/v1` route/method contracts with typed errors and correlation IDs |
+| REST API | **[IMPLEMENTED]** | 15 D086 route/method contracts plus D093 R16, with typed errors and correlation IDs |
 | JWT and RBAC | **[IMPLEMENTED]** | RS256/JWKS Resource Server, four exact roles and evidence redaction |
 | GitHub evidence connector | **[IMPLEMENTED]** | Read-only REST adapter for one organization/repository; live sandbox smoke test remains pending |
 | AWS evidence connector | **[IMPLEMENTED]** | Read-only STS, Cost Explorer, tagging and CloudWatch adapter; live sandbox smoke test remains pending |
@@ -245,11 +246,12 @@ model exists.
 
 ## REST API
 
-The implemented surface contains 15 authenticated route/method pairs under
-`/api/v1`:
+The implemented surface contains the 15 D086 route/method pairs plus the D093
+R16 composition route under `/api/v1`:
 
 ```text
 POST /evidence/import
+POST /decisions
 GET  /decisions
 GET  /decisions/{id}
 GET  /decisions/{id}/timeline
@@ -275,9 +277,9 @@ implemented. The conceptual API and transport rules live in
 
 Verified at the current implementation boundary:
 
-- 139 backend default tests covering Domain, Application, connectors, REST,
+- 151 backend default tests covering Domain, Application, connectors, REST,
   JWT and RBAC;
-- 31 PostgreSQL integration tests covering repositories, transactions, Flyway,
+- 34 PostgreSQL integration tests covering repositories, transactions, Flyway,
   REST composition and connector persistence;
 - 41 frontend unit/component tests;
 - strict TypeScript, ESLint with zero warnings and production Next.js build;
@@ -420,7 +422,7 @@ flowchart LR
 | Stage | Status | Bounded outcome |
 |---|---|---|
 | Docker Production Runtime | **[IMPLEMENTED]** | D092-D095 certification, D093/R16, D094 supply-chain evidence, local JWT/RBAC E2E and persistence after recreation pass |
-| CI hardening | **[PLANNED]** | Add frontend gates, one SAST tool, one Java SCA tool, Docker build, Trivy, SBOM and immutable artifacts; fail on an explicitly owned severity policy |
+| CI hardening | **[PARTIALLY IMPLEMENTED]** | Java CI, Docker builds, Trivy gates and D094 SBOM/provenance are active; frontend CI, dedicated SAST and Java SCA remain planned |
 | AWS deployment contract | **[FUTURE]** | Freeze workload, data, IAM, network, TLS, backup, recovery, logging, cost and threat-model requirements before provisioning |
 | Terraform AWS foundation | **[FUTURE]** | Provision only the contracted VPC, private networking, IAM, security groups, ECR, ECS/Fargate, RDS, Secrets Manager, CloudWatch and CloudTrail resources |
 | Kubernetes variant | **[FUTURE / CONDITIONAL]** | Consider EKS, Helm, NetworkPolicy and GitOps only if scaling or platform requirements justify their operational cost |
@@ -433,6 +435,17 @@ Terraform directory alone is not treated as cloud-engineering evidence.
 
 Please do not report vulnerabilities through a public issue. Follow
 [SECURITY.md](SECURITY.md) for private reporting and handling expectations.
+
+## Public Repository Boundary
+
+This portfolio repository contains source code, architecture records and
+synthetic fixtures only. Real credentials, JWTs, private keys, customer data,
+database dumps, local `.env` files and generated runtime evidence are excluded
+from Git. `infra/docker/.env.example` contains non-routable placeholders; local
+Docker secret values remain under the ignored `infra/docker/secrets/` path.
+
+The committed commercial screenshots and deck use synthetic data and are
+curated separately from ignored local PDF exports and private discovery notes.
 
 ## License
 

@@ -280,7 +280,7 @@ def cover_story() -> list:
             CALLOUT,
         ),
         Spacer(1, 17 * mm),
-        p("Versión de campo - España - Agosto 2026", BODY_SMALL),
+        p("Versión de campo - España - Septiembre 2026", BODY_SMALL),
         p("Uso: discovery permitido. Conexión e ingesta de datos de cliente no autorizadas.", BODY_SMALL),
     ]
 
@@ -540,7 +540,7 @@ def build_story() -> list:
         "[ ] Aprobación humana y ejecución externa aceptadas.",
         "[ ] Resultado medible sin prometer ahorro.",
         "[ ] Workshop con responsable y fecha.",
-        "[ ] No exige saltarse Sprint 4.3 ni Pilot Readiness.",
+        "[ ] No exige saltarse Sprint 4.4, Pilot Identity Conformance ni Pilot Readiness.",
     ]
     story.append(panel([[p(checks[i], BODY), p(checks[i + 1], BODY)] for i in range(0, len(checks), 2)], widths=[CONTENT_W / 2] * 2, padding=8))
     story.append(Spacer(1, 7 * mm))

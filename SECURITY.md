@@ -69,3 +69,11 @@ Never commit passwords, tokens, private keys, cloud credentials, real JWTs,
 customer data or Docker secret values. Use ignored local secret files or an
 environment-specific secret manager. Revoke and rotate any secret that is
 accidentally exposed, then report the incident privately.
+
+## Public Repository Data Boundary
+
+Committed examples and demonstrations use synthetic identifiers and values.
+`infra/docker/.env.example` contains placeholders only. Local `.env` files,
+Docker secret values, generated runtime evidence, database dumps, logs and
+private commercial discovery records are excluded by `.gitignore` and must not
+be attached to issues, pull requests or workflow artifacts.
