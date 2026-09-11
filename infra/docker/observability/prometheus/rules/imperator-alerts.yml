@@ -1,0 +1,136 @@
+groups:
+  - name: imperator-runtime
+    rules:
+      - alert: ImperatorBackendUnavailable
+        expr: up{job="imperator-backend"} == 0
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: IMPERATOR backend metrics endpoint is unavailable
+          runbook_url: docs/runbooks/observability-runtime.md#backend-unavailable
+
+      - alert: ImperatorHttp5xxRateHigh
+        expr: >-
+          (
+            sum(rate(http_server_requests_seconds_count{status=~"5.."}[5m]))
+            /
+            sum(rate(http_server_requests_seconds_count[5m]))
+          ) > 0.05
+          and
+          sum(increase(http_server_requests_seconds_count[5m])) >= 20
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: IMPERATOR HTTP 5xx ratio is above five percent
+          runbook_url: docs/runbooks/observability-runtime.md#http-5xx-rate
+
+      - alert: ImperatorReadLatencyHigh
+        expr: >-
+          histogram_quantile(0.95,
+            sum by (le) (
+              rate(http_server_requests_seconds_bucket{
+                method="GET",
+                uri=~"/api/v1/decisions|/api/v1/decisions/\\{id\\}|/api/v1/decisions/\\{id\\}/timeline|/api/v1/decisions/\\{id\\}/evidence|/api/v1/decisions/\\{id\\}/roi|/api/v1/recommendations/\\{id\\}|/api/v1/decisions/\\{id\\}/ledger|/api/v1/business-value|/api/v1/ledger"
+              }[10m])
+            )
+          ) > 2
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: IMPERATOR read-route p95 latency is above two seconds
+          runbook_url: docs/runbooks/observability-runtime.md#read-latency
+
+      - alert: ImperatorCommandLatencyHigh
+        expr: >-
+          histogram_quantile(0.95,
+            sum by (le) (
+              rate(http_server_requests_seconds_bucket{
+                method="POST",
+                uri=~"/api/v1/evidence/import|/api/v1/decisions|/api/v1/decisions/\\{id\\}/ledger/approve|/api/v1/decisions/\\{id\\}/ledger/reject|/api/v1/decisions/\\{id\\}/ledger/defer|/api/v1/decisions/\\{id\\}/ledger/mark-implemented|/api/v1/decisions/\\{id\\}/ledger/validate-result"
+              }[10m])
+            )
+          ) > 3
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: IMPERATOR command-route p95 latency is above three seconds
+          runbook_url: docs/runbooks/observability-runtime.md#command-latency
+
+      - alert: ImperatorAuthenticationFailureBurst
+        expr: sum(increase(imperator_security_authentication_failure_total[5m])) >= 10
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: IMPERATOR authentication failures are elevated
+          runbook_url: docs/runbooks/observability-runtime.md#authentication-failures
+
+      - alert: ImperatorAuthorizationDenialBurst
+        expr: sum(increase(imperator_security_authorization_denial_total[5m])) >= 10
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: IMPERATOR authorization denials are elevated
+          runbook_url: docs/runbooks/observability-runtime.md#authorization-denials
+
+      - alert: ImperatorLedgerCommandFailure
+        expr: >-
+          sum(increase(imperator_ledger_command_seconds_count{
+            outcome=~"conflict|not_ready|error"
+          }[5m])) >= 1
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: An IMPERATOR Ledger command failed
+          runbook_url: docs/runbooks/observability-runtime.md#ledger-command-failure
+
+      - alert: ImperatorConnectorSyncFailure
+        expr: >-
+          sum(increase(imperator_connector_sync_seconds_count{
+            outcome!~"complete|disabled"
+          }[15m])) >= 1
+        for: 15m
+        labels:
+          severity: warning
+        annotations:
+          summary: An IMPERATOR connector synchronization failed
+          runbook_url: docs/runbooks/observability-runtime.md#connector-sync-failure
+
+      - alert: ImperatorCompositionConflictBurst
+        expr: >-
+          sum(increase(imperator_decision_composition_seconds_count{
+            outcome=~"conflict|not_ready"
+          }[10m])) >= 3
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: IMPERATOR composition conflicts are elevated
+          runbook_url: docs/runbooks/observability-runtime.md#composition-conflicts
+
+      - alert: ImperatorDatabaseOperationFailure
+        expr: sum(increase(imperator_database_operation_failure_total[5m])) >= 1
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: An IMPERATOR database operation failed
+          runbook_url: docs/runbooks/observability-runtime.md#database-operation-failure
+
+      - alert: ImperatorJvmHeapHigh
+        expr: >-
+          sum(jvm_memory_used_bytes{area="heap"})
+          /
+          sum(jvm_memory_max_bytes{area="heap"}) > 0.85
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: IMPERATOR JVM heap usage is above 85 percent
+          runbook_url: docs/runbooks/observability-runtime.md#jvm-heap-high

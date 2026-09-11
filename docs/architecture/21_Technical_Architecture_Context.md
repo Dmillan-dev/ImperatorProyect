@@ -8,9 +8,10 @@ This document translates the product strategy into a modern, controlled architec
 
 ## Current Status
 
-Phase 1 documentation is complete. Phase 2 Platform Foundation and the Implementation Contract are defined but implementation has not started.
-
-This architecture is a target context, not a command to build services yet.
+Phase 2 Platform Foundation is complete. Phase 3 has implemented and certified
+the bounded MVP through Sprint 4.3; Sprint 4.4 observability is implemented but
+not certified. This document remains architectural context, while live gate
+status is controlled by `docs/project/PROJECT_STATUS.md`.
 
 ## Authority and Interpretation
 
@@ -396,24 +397,19 @@ These are not Phase 2 Platform Foundation or Phase 3 MVP Implementation requirem
 
 ### 11) Minimal Observability
 
-The MVP should include observability only where it helps debugging, trust and auditability.
+D096 implements the bounded MVP observability boundary with Spring Boot
+Actuator, Micrometer, internal Prometheus and one loopback-only Grafana operator
+dashboard. It provides one-line ECS logs, correlation through MDC, process and
+PostgreSQL-aware probes, normalized HTTP metrics, bounded operation/security
+metrics and 11 local alert rules.
 
-Minimum future expectations:
-- structured logs,
-- request/correlation ID,
-- health endpoint,
-- connector/intake status,
-- basic metrics for requests, errors and latency,
-- ledger action audit events,
-- evidence import or normalization failures.
-
-Preferred future-compatible tools:
-- Spring Boot Actuator,
-- Micrometer,
-- OpenTelemetry when useful,
-- local Prometheus/Grafana foundation during Phase 2 if explicitly authorized.
-
-Do not make a full production observability stack a prerequisite for proving one Decision ROI Case.
+Telemetry is operational evidence only. It contains no customer identifiers,
+Evidence, credentials, request bodies, economic values or business controls,
+and it cannot change a product transaction or Ledger fact. Prometheus and
+Grafana are optional; their failure does not affect product readiness.
+OpenTelemetry, log aggregation, Alertmanager and external notification remain
+outside the Sprint 4.4 boundary. See the operational runbook at
+`docs/runbooks/observability-runtime.md`.
 
 ## Communication Model
 
