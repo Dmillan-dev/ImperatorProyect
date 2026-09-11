@@ -1,0 +1,49 @@
+rule_files:
+  - ../rules/imperator-alerts.yml
+
+evaluation_interval: 1m
+
+tests:
+  - name: backend critical alert fires after its window and recovers
+    interval: 1m
+    input_series:
+      - series: up{job="imperator-backend", instance="backend:9090"}
+        values: 1 0 0 0 1 1
+    alert_rule_test:
+      - eval_time: 1m
+        alertname: ImperatorBackendUnavailable
+        exp_alerts: []
+      - eval_time: 3m
+        alertname: ImperatorBackendUnavailable
+        exp_alerts:
+          - exp_labels:
+              instance: backend:9090
+              job: imperator-backend
+              severity: critical
+            exp_annotations:
+              summary: IMPERATOR backend metrics endpoint is unavailable
+              runbook_url: docs/runbooks/observability-runtime.md#backend-unavailable
+      - eval_time: 4m
+        alertname: ImperatorBackendUnavailable
+        exp_alerts: []
+
+  - name: authentication warning fires after its window and recovers
+    interval: 1m
+    input_series:
+      - series: imperator_security_authentication_failure_total{reason="invalid_token"}
+        values: 0 10 20 30 40 50 60 70 80 80 80 80 80 80 80 80
+    alert_rule_test:
+      - eval_time: 1m
+        alertname: ImperatorAuthenticationFailureBurst
+        exp_alerts: []
+      - eval_time: 6m
+        alertname: ImperatorAuthenticationFailureBurst
+        exp_alerts:
+          - exp_labels:
+              severity: warning
+            exp_annotations:
+              summary: IMPERATOR authentication failures are elevated
+              runbook_url: docs/runbooks/observability-runtime.md#authentication-failures
+      - eval_time: 14m
+        alertname: ImperatorAuthenticationFailureBurst
+        exp_alerts: []

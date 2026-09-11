@@ -90,13 +90,16 @@ spend. The first case is `DRC-AOA-001`, AI Onboarding Assistant Recovery.
   High/Critical or secret findings.
 - D095 - D092 Runtime Certification Scope Correction: accepted and complete.
 - D096 - Minimum Observability Runtime Contract: accepted, complete and frozen;
-  bounded implementation was separately authorized on 2026-09-08.
+  bounded implementation was separately authorized on 2026-09-08 and now
+  passes local technical verification.
 - Sprint 4.3 Docker Production Runtime: certified and complete. Java 21 passed
   151 default tests, PostgreSQL 18.6 and Flyway passed 34 integration tests,
   final SHA-tagged images passed security/hardening gates, and local JWT/RBAC,
   `DRC-AOA-001` E2E and persistence-after-recreation evidence passed.
 - Sprint 4.3.1 documentation synchronization: complete.
-- Current gate: Sprint 4.4 - Observability implementation.
+- Sprint 4.4 Observability: implemented locally; certification is blocked by
+  upstream image findings, sanitized screenshot evidence and hosted gates.
+- Current gate: Sprint 4.4 - Observability certification blockers.
 - External Keycloak HTTPS conformance: deferred by D095 and mandatory before
   Sprint 4.5, real customer data or MVP Release.
 - Sprints 2.9 through 2.13: deferred, not completed.
@@ -166,9 +169,9 @@ the single authorized business value loop under D079.
   remains in Application and Restricted Evidence remains fail-closed redacted.
 - hardened D092-D095 Docker Compose runtime certified with PostgreSQL 18.6,
   non-root custom images, read-only filesystems and loopback-only publication.
-- D096 observability contract frozen and implementation authorized; Actuator,
-  Micrometer, structured application JSON logs, Prometheus, Grafana and alert
-  rules remain absent until implementation is completed and certified.
+- D096 observability is implemented with Actuator, Micrometer, one-line ECS
+  logs, internal Prometheus, loopback-only Grafana and tested alert rules. It is
+  not certified while upstream image, screenshot and hosted gates remain open.
 
 The implemented Java source root is `backend-java`, with packages under
 `imperator.*`. REST packages live under `imperator.api.*`. Public product REST
@@ -177,7 +180,7 @@ routes use `/api/v1`.
 ## Current Frontend Stack
 
 - Node.js 24 LTS and npm 11;
-- Next.js 16.2 and React 19.2;
+- Next.js 16.3.4 and React 19.3.0;
 - strict TypeScript 5 and Tailwind CSS 4.3;
 - Lucide icons, Zod runtime schemas, Vitest and Playwright Chromium;
 - exact npm lockfile and same-origin `/api/v1/**` rewrite;

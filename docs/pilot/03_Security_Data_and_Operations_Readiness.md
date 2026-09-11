@@ -171,8 +171,8 @@ promise a legal conclusion through this technical runbook.
 | Is the Ledger mutable? | Append-only application contract | Local runtime E2E passed; pilot evidence pending |
 | Are backups available? | Design only | Implement and restore-test before data |
 | Is deletion supported? | Whole dedicated environment destruction | Procedure/test pending |
-| Is vulnerability scanning performed? | Hosted and local Trivy gates | D094 PostgreSQL and final application images pass |
-| Is observability operational? | D096 contract frozen; runtime absent | Sprint 4.4 implementation authorized and current |
+| Is vulnerability scanning performed? | Hosted and local Trivy gates | Current source, npm graph and maintained runtime images pass locally; D096 upstream monitoring images and hosted post-change evidence remain open |
+| Is observability operational? | D096 local profile and technical verifier pass | Supply-chain, screenshot and hosted post-change certification remain open |
 | Has an independent penetration test passed? | No | Decide if customer requires one |
 | Is ISO 27001/SOC 2 certified? | No | Never imply certification |
 | Where is data hosted? | Not selected | Must be fixed contractually |

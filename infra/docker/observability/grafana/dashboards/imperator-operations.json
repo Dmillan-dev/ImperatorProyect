@@ -1,0 +1,208 @@
+{
+  "annotations": {
+    "list": []
+  },
+  "editable": false,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {"h": 1, "w": 24, "x": 0, "y": 0},
+      "id": 1,
+      "panels": [],
+      "title": "Runtime availability and HTTP service",
+      "type": "row"
+    },
+    {
+      "datasource": {"type": "prometheus", "uid": "imperator-prometheus"},
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {"options": {"0": {"color": "red", "text": "DOWN"}, "1": {"color": "green", "text": "UP"}}, "type": "value"}
+          ],
+          "thresholds": {"mode": "absolute", "steps": [{"color": "red", "value": null}, {"color": "green", "value": 1}]}
+        },
+        "overrides": []
+      },
+      "gridPos": {"h": 8, "w": 6, "x": 0, "y": 1},
+      "id": 2,
+      "options": {"colorMode": "value", "graphMode": "area", "justifyMode": "auto", "reduceOptions": {"calcs": ["lastNotNull"], "fields": "", "values": false}, "textMode": "auto"},
+      "targets": [{"expr": "up{job=\"imperator-backend\"}", "legendFormat": "backend", "refId": "A"}],
+      "title": "Backend availability",
+      "type": "stat"
+    },
+    {
+      "datasource": {"type": "prometheus", "uid": "imperator-prometheus"},
+      "fieldConfig": {"defaults": {"unit": "reqps"}, "overrides": []},
+      "gridPos": {"h": 8, "w": 6, "x": 6, "y": 1},
+      "id": 3,
+      "targets": [{"expr": "sum(rate(http_server_requests_seconds_count[5m]))", "legendFormat": "requests", "refId": "A"}],
+      "title": "Request rate",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {"type": "prometheus", "uid": "imperator-prometheus"},
+      "fieldConfig": {"defaults": {"max": 100, "min": 0, "unit": "percent"}, "overrides": []},
+      "gridPos": {"h": 8, "w": 6, "x": 12, "y": 1},
+      "id": 4,
+      "targets": [{"expr": "100 * sum(rate(http_server_requests_seconds_count{status=~\"5..\"}[5m])) / clamp_min(sum(rate(http_server_requests_seconds_count[5m])), 0.001)", "legendFormat": "5xx", "refId": "A"}],
+      "title": "5xx ratio",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {"type": "prometheus", "uid": "imperator-prometheus"},
+      "fieldConfig": {"defaults": {"unit": "s"}, "overrides": []},
+      "gridPos": {"h": 8, "w": 6, "x": 18, "y": 1},
+      "id": 5,
+      "targets": [{"expr": "histogram_quantile(0.95, sum by (le) (rate(http_server_requests_seconds_bucket[5m])))", "legendFormat": "p95", "refId": "A"}],
+      "title": "Request latency p95",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {"h": 1, "w": 24, "x": 0, "y": 9},
+      "id": 6,
+      "panels": [],
+      "title": "JVM, process and database state",
+      "type": "row"
+    },
+    {
+      "datasource": {"type": "prometheus", "uid": "imperator-prometheus"},
+      "fieldConfig": {"defaults": {"max": 100, "min": 0, "unit": "percent"}, "overrides": []},
+      "gridPos": {"h": 8, "w": 8, "x": 0, "y": 10},
+      "id": 7,
+      "targets": [{"expr": "100 * sum(jvm_memory_used_bytes{area=\"heap\"}) / sum(jvm_memory_max_bytes{area=\"heap\"})", "legendFormat": "heap", "refId": "A"}],
+      "title": "JVM heap usage",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {"type": "prometheus", "uid": "imperator-prometheus"},
+      "fieldConfig": {"defaults": {"max": 100, "min": 0, "unit": "percentunit"}, "overrides": []},
+      "gridPos": {"h": 8, "w": 8, "x": 8, "y": 10},
+      "id": 8,
+      "targets": [{"expr": "process_cpu_usage", "legendFormat": "process", "refId": "A"}],
+      "title": "Process CPU",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {"type": "prometheus", "uid": "imperator-prometheus"},
+      "fieldConfig": {"defaults": {"unit": "short"}, "overrides": []},
+      "gridPos": {"h": 8, "w": 8, "x": 16, "y": 10},
+      "id": 9,
+      "targets": [{"expr": "sum by (operation) (increase(imperator_database_operation_failure_total[15m]))", "legendFormat": "{{operation}}", "refId": "A"}],
+      "title": "Database operation failures",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {"h": 1, "w": 24, "x": 0, "y": 18},
+      "id": 10,
+      "panels": [],
+      "title": "Evidence, connector and composition outcomes",
+      "type": "row"
+    },
+    {
+      "datasource": {"type": "prometheus", "uid": "imperator-prometheus"},
+      "fieldConfig": {"defaults": {"unit": "ops"}, "overrides": []},
+      "gridPos": {"h": 8, "w": 8, "x": 0, "y": 19},
+      "id": 11,
+      "targets": [{"expr": "sum by (outcome) (rate(imperator_evidence_import_lines_total[5m]))", "legendFormat": "{{outcome}}", "refId": "A"}],
+      "title": "Evidence import lines",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {"type": "prometheus", "uid": "imperator-prometheus"},
+      "fieldConfig": {"defaults": {"unit": "ops"}, "overrides": []},
+      "gridPos": {"h": 8, "w": 8, "x": 8, "y": 19},
+      "id": 12,
+      "targets": [{"expr": "sum by (source, outcome) (rate(imperator_connector_sync_seconds_count[15m]))", "legendFormat": "{{source}} {{outcome}}", "refId": "A"}],
+      "title": "Connector synchronization",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {"type": "prometheus", "uid": "imperator-prometheus"},
+      "fieldConfig": {"defaults": {"unit": "ops"}, "overrides": []},
+      "gridPos": {"h": 8, "w": 8, "x": 16, "y": 19},
+      "id": 13,
+      "targets": [{"expr": "sum by (outcome) (rate(imperator_decision_composition_seconds_count[10m]))", "legendFormat": "{{outcome}}", "refId": "A"}],
+      "title": "Decision composition",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {"h": 1, "w": 24, "x": 0, "y": 27},
+      "id": 14,
+      "panels": [],
+      "title": "Governance and Business Value outcomes",
+      "type": "row"
+    },
+    {
+      "datasource": {"type": "prometheus", "uid": "imperator-prometheus"},
+      "fieldConfig": {"defaults": {"unit": "ops"}, "overrides": []},
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 28},
+      "id": 15,
+      "targets": [{"expr": "sum by (command, outcome) (rate(imperator_ledger_command_seconds_count[10m]))", "legendFormat": "{{command}} {{outcome}}", "refId": "A"}],
+      "title": "Ledger commands",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {"type": "prometheus", "uid": "imperator-prometheus"},
+      "fieldConfig": {"defaults": {"unit": "ops"}, "overrides": []},
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 28},
+      "id": 16,
+      "targets": [{"expr": "sum by (outcome) (rate(imperator_business_value_projection_seconds_count[10m]))", "legendFormat": "{{outcome}}", "refId": "A"}],
+      "title": "Business Value readiness",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {"h": 1, "w": 24, "x": 0, "y": 36},
+      "id": 17,
+      "panels": [],
+      "title": "Security and active alerts",
+      "type": "row"
+    },
+    {
+      "datasource": {"type": "prometheus", "uid": "imperator-prometheus"},
+      "fieldConfig": {"defaults": {"unit": "short"}, "overrides": []},
+      "gridPos": {"h": 8, "w": 8, "x": 0, "y": 37},
+      "id": 18,
+      "targets": [{"expr": "sum by (reason) (increase(imperator_security_authentication_failure_total[5m]))", "legendFormat": "{{reason}}", "refId": "A"}],
+      "title": "Authentication failures",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {"type": "prometheus", "uid": "imperator-prometheus"},
+      "fieldConfig": {"defaults": {"unit": "short"}, "overrides": []},
+      "gridPos": {"h": 8, "w": 8, "x": 8, "y": 37},
+      "id": 19,
+      "targets": [{"expr": "sum by (role, route_id) (increase(imperator_security_authorization_denial_total[5m]))", "legendFormat": "{{role}} {{route_id}}", "refId": "A"}],
+      "title": "Authorization denials",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {"type": "prometheus", "uid": "imperator-prometheus"},
+      "fieldConfig": {"defaults": {"color": {"mode": "thresholds"}, "mappings": [], "thresholds": {"mode": "absolute", "steps": [{"color": "green", "value": null}, {"color": "red", "value": 1}]}}, "overrides": []},
+      "gridPos": {"h": 8, "w": 8, "x": 16, "y": 37},
+      "id": 20,
+      "options": {"colorMode": "value", "graphMode": "area", "justifyMode": "auto", "reduceOptions": {"calcs": ["lastNotNull"], "fields": "", "values": false}, "textMode": "auto"},
+      "targets": [{"expr": "count(ALERTS{alertstate=\"firing\"}) OR on() vector(0)", "legendFormat": "firing", "refId": "A"}],
+      "title": "Active alerts",
+      "type": "stat"
+    }
+  ],
+  "refresh": "15s",
+  "schemaVersion": 41,
+  "tags": ["imperator", "operations"],
+  "templating": {"list": []},
+  "time": {"from": "now-1h", "to": "now"},
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "IMPERATOR Operations",
+  "uid": "imperator-operations",
+  "version": 1,
+  "weekStart": ""
+}

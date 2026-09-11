@@ -226,7 +226,7 @@ not the Phase 2 route-shell plan.
 | 4.3 | Docker Production Runtime | CERTIFIED / COMPLETE |
 | 4.3.1 | Documentation Synchronization | COMPLETE |
 | D096 | Minimum Observability Runtime Contract | ACCEPTED / COMPLETE / FROZEN |
-| 4.4 | Observability | AUTHORIZED / CURRENT |
+| 4.4 | Observability | IMPLEMENTED / CERTIFICATION BLOCKED |
 | 4.5 | Pilot Readiness | PENDING |
 | 5.0 | MVP Release | PENDING |
 
@@ -305,8 +305,21 @@ the API-composed `DRC-AOA-001` E2E and persistence after normal Compose
 recreation passed. D095 defers only operational external Keycloak HTTPS
 conformance to a mandatory Pilot Identity Conformance Gate before Sprint 4.5;
 D087/D088 and fail-closed behavior remain unchanged. Sprint 4.3.1 synchronized
-the active documentation. D096 freezes the bounded Observability contract;
-Sprint 4.4 implementation is now the authorized current gate.
+the active documentation. D096 freezes the bounded Observability contract and
+authorized the now-present Sprint 4.4 implementation.
+
+Sprint 4.4 implementation on 2026-09-09 added the bounded D096 ECS logging,
+MDC correlation, Actuator probes, Micrometer metrics, optional Prometheus and
+Grafana profile, 11 tested alerts, one provisioned operator dashboard and a
+sanitized local verifier. Focused tests and the technical runtime gate pass,
+including PostgreSQL readiness loss/recovery and monitoring-outage isolation.
+Certification remains blocked: the current official Prometheus and Grafana
+images have fixable High/Critical Trivy findings, the sanitized dashboard
+screenshot is not captured, and hosted post-change CI, CodeQL and complete Git
+history secret scanning have not run. The current source tree, npm graph and
+maintained runtime images pass their local security gates.
+Sprint 4.4 therefore remains the current gate and does not authorize Sprint
+4.5.
 
 Active Phase 3 execution authority:
 

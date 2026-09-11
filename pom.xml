@@ -19,21 +19,21 @@
 
         <maven.version>3.9.16</maven.version>
         <java.version>21</java.version>
-        <junit.version>5.14.3</junit.version>
+        <junit.version>5.14.4</junit.version>
         <postgresql.version>42.7.13</postgresql.version>
         <spring-boot.version>4.1.1</spring-boot.version>
         <tomcat.version>11.0.25</tomcat.version>
-        <aws.sdk.version>2.49.6</aws.sdk.version>
+        <aws.sdk.version>2.54.14</aws.sdk.version>
 
         <maven.clean.plugin.version>3.5.0</maven.clean.plugin.version>
-        <maven.compiler.plugin.version>3.15.0</maven.compiler.plugin.version>
+        <maven.compiler.plugin.version>3.16.0</maven.compiler.plugin.version>
         <maven.enforcer.plugin.version>3.6.3</maven.enforcer.plugin.version>
         <maven.failsafe.plugin.version>3.5.5</maven.failsafe.plugin.version>
         <maven.jar.plugin.version>3.5.1</maven.jar.plugin.version>
         <maven.resources.plugin.version>3.5.0</maven.resources.plugin.version>
         <maven.surefire.plugin.version>3.6.0</maven.surefire.plugin.version>
         <maven.toolchains.plugin.version>3.3.0</maven.toolchains.plugin.version>
-        <flyway-maven-plugin.version>13.0.0</flyway-maven-plugin.version>
+        <flyway-maven-plugin.version>13.5.0</flyway-maven-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -86,6 +86,16 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
+        </dependency>
+        <!-- D096: managed operational endpoints, health probes and runtime metrics. -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!-- D096: managed Prometheus exposition; no external telemetry backend. -->
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
         </dependency>
         <!-- Current pgJDBC release; runtime-only connectivity for existing JDBC adapters. -->
         <dependency>

@@ -2,7 +2,7 @@
 
 Status: **ACTIVE**
 
-Current gate: **Sprint 4.4 - Observability implementation**
+Current gate: **Sprint 4.4 - Observability certification closure**
 
 Authorization: **D079 - Phase 3 Vertical-Slice Acceleration; D085 - MVP Delivery Roadmap Evolution; D095 - D092 Runtime Certification Scope Correction; D096 - Minimum Observability Runtime Contract**
 
@@ -127,7 +127,7 @@ Locked constraints:
 | 4.3 | Docker Production Runtime | CERTIFIED / COMPLETE |
 | 4.3.1 | Documentation Synchronization | COMPLETE |
 | D096 | Minimum Observability Runtime Contract | ACCEPTED / COMPLETE / FROZEN |
-| 4.4 | Observability | AUTHORIZED / CURRENT |
+| 4.4 | Observability | IMPLEMENTED / CERTIFICATION BLOCKED |
 | 4.5 | Pilot Readiness | PENDING |
 | 5.0 | MVP Release | PENDING |
 
@@ -650,9 +650,20 @@ readiness probes, an optional isolated Prometheus/Grafana profile, local
 retention, alert rules and fail-closed certification evidence.
 
 The contract gate is complete and implementation was explicitly authorized on
-2026-09-08. OpenTelemetry, log aggregation, external
-notifications, public exposure, customer data and changes to Domain,
-Application, API, persistence, Ledger or Business Value remain outside scope.
+2026-09-08. The bounded runtime is now present and passes local technical
+verification: 161 default tests, 34 PostgreSQL integration tests, frontend
+quality gates, probes, bounded metrics, safe ECS logs, 11 alert rules and one
+provisioned dashboard. The current source tree, npm graph and maintained
+backend, frontend, PostgreSQL-only Flyway and PostgreSQL images also pass local
+security gates.
+
+Certification remains blocked by fixable High/Critical findings in the current
+official Prometheus and Grafana images, the missing sanitized dashboard
+screenshot, and hosted post-change Java CI, Security, CodeQL and complete Git
+history secret-scan evidence. No waiver or ignore list is allowed. OpenTelemetry,
+log aggregation, external notifications, public exposure, customer data and
+changes to Domain, Application, API, persistence, Ledger or Business Value
+remain outside scope. Sprint 4.5 is not authorized.
 
 ## Demonstration And Pilot Boundary
 

@@ -46,10 +46,10 @@ D095: ACCEPTED / COMPLETE
 Sprint 4.3: CERTIFIED / COMPLETE
 Sprint 4.3.1: COMPLETE
 D096: ACCEPTED / COMPLETE / FROZEN
-Sprint 4.4: AUTHORIZED / CURRENT
+Sprint 4.4: IMPLEMENTED / CERTIFICATION BLOCKED
 ```
 
-Exactly one Phase 3 delivery gate is current and authorized.
+Sprint 4.4 certification closure is the sole current control gate.
 
 ## Accepted Sprint Artifacts
 
@@ -91,6 +91,7 @@ Exactly one Phase 3 delivery gate is current and authorized.
 | 4.3 | `1613b5d` | Hardened Docker runtime, D093/R16, D094 images, local JWT/RBAC E2E and persistence/recreation | CERTIFIED / COMPLETE |
 | 4.3.1 | Current synchronization commit; hash intentionally not self-recorded | Active project-control, agent, runtime, security, pilot, portfolio and AI-context synchronization | COMPLETE |
 | D096 | Current contract commit; hash intentionally not self-recorded | Frozen safe logging, metrics, correlation, probes, alerts, retention, exposure and certification contract | ACCEPTED / COMPLETE / FROZEN |
+| 4.4 | Pending integration commit | Bounded D096 runtime, focused tests, local verifier and security remediation | IMPLEMENTED / CERTIFICATION BLOCKED |
 
 ### Sprint 3.0
 
@@ -506,14 +507,38 @@ Certification evidence:
 - D095 defers external pilot Keycloak conformance without changing D087/D088;
 - status: **CERTIFIED / COMPLETE**.
 
+### Sprint 4.4
+
+Primary artifacts:
+
+- `backend-java/api/observability` and D096 runtime configuration;
+- `infra/docker/observability`, the optional Compose profile and the
+  PostgreSQL-only Flyway image;
+- `scripts/verify-observability-runtime.ps1` and `docs/runbooks`;
+- `.github/workflows/security.yml`; and
+- `docs/project/SECURITY_AUDIT_2026-09-09.md`.
+
+Current evidence:
+
+- Java 21 default suite: 161 passed locally;
+- PostgreSQL 18.6/Flyway 13.5.0 integration suite: 34 passed;
+- frontend format, lint, types, 41 tests, build and npm audit: PASS;
+- maintained backend, frontend, migration and database images: zero fixable
+  High/Critical findings and zero secrets locally;
+- D096 technical verifier: `PASS_WITH_SCREENSHOT_PENDING`;
+- upstream Prometheus/Grafana supply-chain gate and hosted post-change gates:
+  BLOCKED/PENDING; and
+- status: **IMPLEMENTED / CERTIFICATION BLOCKED**.
+
 ## Next Artifact Boundary
 
-Sprint 4.4 is the sole current gate. D096 is frozen and accepted, and
-implementation was explicitly authorized on 2026-09-08. It may address only the exact
-Observability boundary in Document 56 and must preserve business Ledger,
+Sprint 4.4 certification closure is the sole current control gate. D096 is
+frozen and accepted, and the bounded implementation is present. Closure may
+address only the exact Observability boundary in Document 56 and must preserve business Ledger,
 Business Value, connector, JWT/RBAC and base Docker behavior. External
 identity, pilot behavior, real customer data and public exposure remain
-prohibited.
+prohibited. Use `SPRINT_4.4.1_D096_CERTIFICATION_CLOSURE_PROMPT.md`; Sprint 4.5
+is not authorized.
 
 ## Agent Rule
 

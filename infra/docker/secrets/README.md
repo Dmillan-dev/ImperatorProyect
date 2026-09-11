@@ -10,6 +10,10 @@ runtime.
 - `postgres-owner-password`
 - `postgres-app-password`
 
+The optional `observability` profile additionally requires:
+
+- `grafana-admin-password`
+
 The optional connector overlay additionally requires:
 
 - `github-token`

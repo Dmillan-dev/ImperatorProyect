@@ -54,8 +54,13 @@ services:
         max-file: "3"
 
   flyway-migrate:
-    image: flyway/flyway:13.0.0@sha256:db6195c21e90872063ff257ec38edcb8d3c77259b25a7a8fee67189511079511
+    image: imperator/flyway:${IMPERATOR_IMAGE_TAG:?Set IMPERATOR_IMAGE_TAG to the current Git SHA}
     platform: linux/amd64
+    build:
+      context: ./flyway
+      dockerfile: Dockerfile
+      args:
+        VCS_REF: ${IMPERATOR_IMAGE_TAG:?Set IMPERATOR_IMAGE_TAG to the current Git SHA}
     entrypoint:
       - /bin/sh
       - /opt/imperator/entrypoint.sh
@@ -101,8 +106,13 @@ services:
         max-file: "3"
 
   flyway-validate:
-    image: flyway/flyway:13.0.0@sha256:db6195c21e90872063ff257ec38edcb8d3c77259b25a7a8fee67189511079511
+    image: imperator/flyway:${IMPERATOR_IMAGE_TAG:?Set IMPERATOR_IMAGE_TAG to the current Git SHA}
     platform: linux/amd64
+    build:
+      context: ./flyway
+      dockerfile: Dockerfile
+      args:
+        VCS_REF: ${IMPERATOR_IMAGE_TAG:?Set IMPERATOR_IMAGE_TAG to the current Git SHA}
     entrypoint:
       - /bin/sh
       - /opt/imperator/entrypoint.sh
@@ -203,8 +213,8 @@ services:
       IMPERATOR_POSTGRESQL_ENABLED: "true"
       IMPERATOR_POSTGRESQL_URL: jdbc:postgresql://postgres:5432/imperator
       IMPERATOR_POSTGRESQL_USERNAME: imperator_app
-      JAVA_TOOL_OPTIONS: -XX:MaxRAMPercentage=75.0 -Djava.io.tmpdir=/tmp
       SERVER_PORT: "8080"
+      SPRING_MAIN_BANNER_MODE: "off"
       SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_AUDIENCES: imperator-api
       SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI: ${IMPERATOR_JWT_ISSUER_URI:?Set an HTTPS D087 issuer URI}
       SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK_SET_URI: ${IMPERATOR_JWT_JWK_SET_URI:?Set an HTTPS D087 JWKS URI}
@@ -220,10 +230,14 @@ services:
         condition: service_completed_successfully
     expose:
       - "8080"
+      - "9090"
     healthcheck:
       test:
         - CMD-SHELL
-        - bash -ec 'exec 3<>/dev/tcp/127.0.0.1/8080'
+        - >-
+          bash -ec 'exec 3<>/dev/tcp/127.0.0.1/8080;
+          printf "GET /readyz HTTP/1.1\r\nHost: localhost\r\nConnection: close\r\n\r\n" >&3;
+          head -n 1 <&3 | grep -q " 200 "'
       interval: 10s
       timeout: 5s
       retries: 12
@@ -300,10 +314,140 @@ services:
         max-size: 10m
         max-file: "3"
 
+  prometheus:
+    profiles:
+      - observability
+    image: prom/prometheus:v3.13.3-distroless@sha256:2e9a8ad75536755572d703e645fcc39c8104d9f0215d49d613db35194b0d8bc2
+    platform: linux/amd64
+    user: "65532:65532"
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --storage.tsdb.retention.time=7d
+      - --storage.tsdb.retention.size=256MB
+      - --log.level=info
+    volumes:
+      - type: bind
+        source: ./observability/prometheus/prometheus.yml
+        target: /etc/prometheus/prometheus.yml
+        read_only: true
+      - type: bind
+        source: ./observability/prometheus/rules
+        target: /etc/prometheus/rules
+        read_only: true
+      - type: bind
+        source: ./observability/prometheus/tests
+        target: /etc/prometheus/tests
+        read_only: true
+      - prometheus-data:/prometheus
+    networks:
+      - application-internal
+      - observability-internal
+    depends_on:
+      backend:
+        condition: service_healthy
+    expose:
+      - "9090"
+    healthcheck:
+      test:
+        - CMD
+        - /bin/promtool
+        - check
+        - ready
+        - --url=http://127.0.0.1:9090
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+    restart: unless-stopped
+    stop_grace_period: 30s
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,uid=65532,gid=65532,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    cpus: 0.5
+    mem_limit: 512m
+    pids_limit: 100
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+
+  grafana:
+    profiles:
+      - observability
+    image: grafana/grafana:13.2.1@sha256:f772d434e8fab0049deb2b1b30abd43342bcfca1537614aa8d36080232cf4283
+    platform: linux/amd64
+    user: "472:0"
+    environment:
+      GF_ANALYTICS_CHECK_FOR_UPDATES: "false"
+      GF_ANALYTICS_CHECK_FOR_PLUGIN_UPDATES: "false"
+      GF_ANALYTICS_REPORTING_ENABLED: "false"
+      GF_AUTH_ANONYMOUS_ENABLED: "false"
+      GF_NEWS_NEWS_FEED_ENABLED: "false"
+      GF_PLUGINS_PREINSTALL_DISABLED: "true"
+      GF_SECURITY_ADMIN_PASSWORD__FILE: /run/secrets/grafana-admin-password
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SERVER_DOMAIN: localhost
+      GF_USERS_ALLOW_ORG_CREATE: "false"
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    secrets:
+      - grafana-admin-password
+    volumes:
+      - type: bind
+        source: ./observability/grafana/provisioning
+        target: /etc/grafana/provisioning
+        read_only: true
+      - type: bind
+        source: ./observability/grafana/dashboards
+        target: /etc/grafana/dashboards
+        read_only: true
+    networks:
+      - observability-internal
+      - frontend-ingress
+    depends_on:
+      prometheus:
+        condition: service_healthy
+    ports:
+      - 127.0.0.1:${IMPERATOR_GRAFANA_PORT:-3001}:3000
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - wget --quiet --spider http://127.0.0.1:3000/api/health
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+    restart: unless-stopped
+    stop_grace_period: 30s
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,uid=472,gid=0,mode=1777
+      - /var/lib/grafana:size=64m,uid=472,gid=0,mode=0750
+      - /var/log/grafana:size=16m,uid=472,gid=0,mode=0750
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    cpus: 0.5
+    mem_limit: 512m
+    pids_limit: 100
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+
 networks:
   application-internal:
     internal: true
   data-internal:
+    internal: true
+  observability-internal:
     internal: true
   provider-egress: {}
   frontend-ingress:
@@ -313,9 +457,12 @@ networks:
 
 volumes:
   postgres-data:
+  prometheus-data:
 
 secrets:
   postgres-owner-password:
     file: ./secrets/postgres-owner-password
   postgres-app-password:
     file: ./secrets/postgres-app-password
+  grafana-admin-password:
+    file: ./secrets/grafana-admin-password

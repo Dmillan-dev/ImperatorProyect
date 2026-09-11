@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ImperatorApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ImperatorApplication.class, args);
+        SpringApplication application = new SpringApplication(ImperatorApplication.class);
+        application.setDefaultProperties(ObservabilityRuntimeConfiguration.runtimeDefaults());
+        application.run(args);
     }
 }

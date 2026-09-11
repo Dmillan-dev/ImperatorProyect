@@ -2,8 +2,10 @@ package imperator.api.security;
 
 import imperator.api.errors.ApiErrorCode;
 import imperator.api.errors.CorrelationIdFilter;
+import imperator.api.observability.ImperatorTelemetry;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
@@ -13,6 +15,12 @@ import java.io.IOException;
 
 @Component
 public final class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {
+    private final ObjectProvider<ImperatorTelemetry> telemetryProvider;
+
+    public JwtAuthenticationEntryPoint(ObjectProvider<ImperatorTelemetry> telemetryProvider) {
+        this.telemetryProvider = telemetryProvider;
+    }
+
     @Override
     public void commence(
             HttpServletRequest request,
@@ -28,5 +36,13 @@ public final class JwtAuthenticationEntryPoint implements AuthenticationEntryPoi
                 : ApiErrorCode.AUTHENTICATION_REQUIRED;
         String correlationId = CorrelationIdFilter.currentCorrelationId(request);
         SecurityErrorResponseWriter.write(response, errorCode, correlationId, true);
+        ImperatorTelemetry telemetry = telemetryProvider.getIfAvailable();
+        if (telemetry != null) {
+            telemetry.authenticationFailure(
+                    ApiErrorCode.INVALID_TOKEN.equals(errorCode)
+                            ? "invalid_token"
+                            : "missing_token"
+            );
+        }
     }
 }

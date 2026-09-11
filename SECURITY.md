@@ -46,7 +46,8 @@ Implemented controls include:
   capabilities and file-backed local secrets;
 - SHA-pinned GitHub Actions and Docker image inputs;
 - fail-closed hosted Trivy checks for dependencies, secrets, configuration and
-  application images;
+  maintained runtime images;
+- a checksum-pinned, redacting Gitleaks job for complete Git-history scanning;
 - GitHub-managed CodeQL default analysis for Java/Kotlin and
   JavaScript/TypeScript; and
 - the D094 PostgreSQL supply-chain gate with pinned inputs, reproducible builds,
@@ -59,8 +60,15 @@ still no production deployment, public endpoint, connected operational IdP,
 tenant isolation contract or security SLA. D095 requires external Keycloak
 HTTPS conformance before Sprint 4.5, customer data or MVP Release. Passing CI
 and local runtime checks does not override that pilot boundary. D096 is frozen
-and Sprint 4.4 observability implementation is authorized, but no observability
-runtime claim applies until its certification gate passes.
+and its bounded Sprint 4.4 implementation is present, but certification remains
+blocked by upstream Prometheus/Grafana findings, sanitized dashboard evidence
+and hosted post-change gates.
+
+The 2026-09-09 local audit found zero Trivy secrets in the current source tree,
+zero npm vulnerabilities, and zero fixable High/Critical findings or secrets in
+the maintained backend, frontend, PostgreSQL-only Flyway and PostgreSQL images.
+The complete-history Gitleaks result is not claimed until the new hosted job
+runs. See the [security audit](docs/project/SECURITY_AUDIT_2026-09-09.md).
 
 See the canonical
 [Security, Data Governance and Threat Model](docs/architecture/26_Security_Data_Governance_Threat_Model.md)

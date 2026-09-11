@@ -40,7 +40,7 @@ and the append-only Decision Ledger preserves accountability.
 | Business flow | Evidence → Decision → Recommendation → Human Review → Ledger → Business Value |
 | Architecture | Java modular monolith with framework-free Domain/Application and hexagonal ports/adapters |
 | Security | RS256 JWT, explicit four-role RBAC, Evidence redaction, read-only cloud integrations and append-only audit history |
-| Verification | 151 backend tests, 34 PostgreSQL integration tests, 41 frontend tests and Playwright browser acceptance |
+| Verification | 161 backend tests, 34 PostgreSQL integration tests, 41 frontend tests and Playwright browser acceptance |
 | Current boundary | Pre-pilot; Sprint 4.3 Docker Production Runtime is certified, while external pilot identity remains deferred before Sprint 4.5 |
 
 ![IMPERATOR Decision Review Workspace using synthetic data](output/commercial/linkedin-discovery-kit/IMPERATOR_Workspace_Captura_Limpia.png)
@@ -72,14 +72,18 @@ Status labels in this repository have strict meanings:
 | Docker production-like runtime | **[IMPLEMENTED]** | D092-D095 certified hardened Compose, SHA-tagged images, PostgreSQL 18.6 supply-chain evidence and persistence after recreation |
 | External OIDC identity provider | **[PLANNED]** | Keycloak pilot integration is designed but not provisioned or connected |
 | D093 case-composition route | **[IMPLEMENTED]** | `ADMIN`-only R16 composes the canonical Decision and Recommendation through existing Application boundaries |
-| Application observability | **[PLANNED]** | D096 contract frozen; Sprint 4.4 implementation authorized but not yet present |
+| Application observability | **[IMPLEMENTED / CERTIFICATION BLOCKED]** | Safe ECS logs, bounded metrics, probes, alerts and one local dashboard are present; upstream image scan and screenshot evidence remain open |
 | Python/FastAPI explanation service | **[FUTURE]** | Directory boundary only; no Python source or provider calls |
 | Kubernetes, Terraform, Kafka and Redis | **[FUTURE]** | Explicitly excluded from the MVP |
 
 Current formal state: **Phase 3, pre-pilot; Sprint 4.3 and its documentation
-synchronization are complete, and Sprint 4.4 Observability implementation is
-the authorized current gate under D096.** D095 defers operational
-Keycloak HTTPS conformance without weakening
+synchronization are complete, and Sprint 4.4 Observability is implemented but
+not certified under D096.** The local technical runtime gate passes with the
+dashboard screenshot pending; current official Prometheus and Grafana images
+do not satisfy the zero-fixable-High/Critical supply-chain gate. The current
+source tree, frontend dependency graph and maintained application, migration
+and database images pass their local security gates; hosted post-change gates
+remain pending. D095 defers operational Keycloak HTTPS conformance without weakening
 D087/D088; it remains mandatory before Sprint 4.5, real customer data or MVP
 Release. See the [pilot status](docs/pilot/README.md) and
 [D095](docs/decisions/14_Decision_Log.md).
@@ -195,12 +199,12 @@ See [Security Policy](SECURITY.md) and the canonical
 | GitHub Actions Java build | **IMPLEMENTED**; minimal `contents: read` permission and actions pinned by commit SHA |
 | Maven runtime enforcement | **IMPLEMENTED**; exact Maven 3.9.16 and Java 21 boundary |
 | Compiler warnings as errors | **IMPLEMENTED** |
-| Backend unit/API/security tests | **IMPLEMENTED**; 151 default tests |
+| Backend unit/API/security tests | **IMPLEMENTED**; 161 default tests |
 | PostgreSQL integration gate | **IMPLEMENTED**; 34 real-database tests plus Flyway migrate/validate/idempotency |
 | Frontend lint/typecheck/tests/build | **IMPLEMENTED locally**; 41 tests and production build pass |
 | Frontend dependency audit | **IMPLEMENTED as a manual certification command**; latest local check found 0 vulnerabilities |
-| Automated source/dependency scan | **IMPLEMENTED**; the fail-closed hosted Trivy workflow scans dependencies, secrets and configuration and is passing |
-| Application container vulnerability gate | **IMPLEMENTED**; hosted backend and frontend image scans fail on fixable High/Critical findings and are passing |
+| Automated source/dependency scan | **IMPLEMENTED**; Trivy scans dependencies, secrets and configuration, and a checksum-pinned Gitleaks job scans full Git history; current local Trivy is clean and hosted post-change evidence is pending |
+| Application container vulnerability gate | **IMPLEMENTED**; backend, frontend and PostgreSQL-only Flyway images fail on fixable High/Critical findings; all three pass locally and hosted post-change evidence is pending |
 | PostgreSQL supply-chain gate | **IMPLEMENTED / D094 PASS**; two reproducible builds, pinned inputs, SBOM, provenance and hosted Trivy scanning verify zero fixable High/Critical findings and zero secrets |
 | CodeQL SAST | **IMPLEMENTED IN GITHUB**; default setup for Java/Kotlin and JavaScript/TypeScript is enabled and passing |
 | Frontend CI workflow | **PLANNED** |
@@ -243,7 +247,7 @@ model exists.
 | Integrations | GitHub REST, AWS SDK, JSONL Evidence import | Additional connectors after MVP |
 | Frontend | Next.js 16, React 19, TypeScript 5, Tailwind CSS 4 | Production login/session UX |
 | Runtime | Docker Compose, hardened multi-stage images | Cloud deployment after pilot |
-| Observability | Correlation IDs, safe errors, container health checks/log rotation | D096-contracted ECS logs, Actuator probes, bounded metrics, alerts and one operator dashboard |
+| Observability | D096-contracted ECS logs, correlation IDs, Actuator probes, bounded metrics, alerts and one operator dashboard | Distributed tracing and external notifications remain outside the MVP |
 | AI | Provider-neutral Java `ExplanationProvider` port | Python/FastAPI and real providers are future work |
 
 ## REST API
@@ -279,7 +283,7 @@ implemented. The conceptual API and transport rules live in
 
 Verified at the current implementation boundary:
 
-- 151 backend default tests covering Domain, Application, connectors, REST,
+- 161 backend default tests covering Domain, Application, connectors, REST,
   JWT and RBAC;
 - 34 PostgreSQL integration tests covering repositories, transactions, Flyway,
   REST composition and connector persistence;
@@ -296,12 +300,14 @@ These concerns have different maturity levels:
 - **Auditability is implemented:** immutable Ledger facts retain Decision,
   actor, timestamp, reason and Evidence relationships; PostgreSQL constraints
   protect ordering and referential integrity.
-- **Operational diagnostics are partially implemented:** HTTP correlation IDs,
-  typed non-sensitive errors, container health checks and bounded Docker log
-  rotation exist.
-- **Observability is contracted but not implemented:** D096 freezes structured
-  ECS application logs, bounded metrics, exact probes, local alerts and one
-  Grafana operator dashboard. OpenTelemetry is explicitly outside Sprint 4.4.
+- **Operational diagnostics are implemented:** HTTP correlation IDs propagate
+  through MDC and safe one-line ECS events; Actuator exposes only the contracted
+  probes and Prometheus endpoint; custom metrics use bounded labels.
+- **The local operator profile is implemented:** Prometheus scrapes internally,
+  evaluates 11 tested rules with bounded retention, and Grafana provisions one
+  loopback-only `IMPERATOR Operations` dashboard. OpenTelemetry remains outside
+  Sprint 4.4. Certification is blocked by the image supply-chain gate and the
+  missing sanitized dashboard screenshot.
 
 There is no public TLS endpoint or encryption-at-rest claim. The current
 runtime is local and loopback-bound; pilot TLS, external identity, backup and
@@ -400,7 +406,7 @@ as realized value until validation evidence exists.
 | Stage | Scope |
 |---|---|
 | **Completed** | Core Domain, Application use cases, PostgreSQL, REST, JWT/RBAC, GitHub/AWS evidence adapters, D093 composition, Decision Review Workspace and Docker Production Runtime |
-| **Current** | Sprint 4.4 Observability implementation and certification under frozen D096 |
+| **Current** | Resolve Sprint 4.4 upstream image findings, capture sanitized dashboard evidence and complete hosted certification |
 | **Planned** | External Keycloak pilot conformance and Sprint 4.5 Pilot Readiness |
 | **Future** | Python explanation service, more connectors, multi-tenancy, cloud deployment, Terraform, Kubernetes, Kafka and Redis only when justified |
 

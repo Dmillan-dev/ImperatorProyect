@@ -41,7 +41,7 @@ Sprint 4.3 CERTIFIED under D095
 | Flyway/persistence | `CERTIFIED` | PostgreSQL 18.6, V1/V2 migrate/validate/no-op and persisted graph recreation pass |
 | Backup/restore | `NOT IMPLEMENTED` | D092 excludes it; volume persistence is not backup |
 | Security | `PARTIAL FOR PILOT` | Local runtime and JWT/RBAC pass; external IdP and pilot operations remain pending |
-| Observability | `AUTHORIZED / NOT IMPLEMENTED` | D096 is frozen and bounded Sprint 4.4 implementation is current |
+| Observability | `IMPLEMENTED / NOT CERTIFIED` | D096 technical runtime passes; image supply chain, screenshot and hosted certification remain open |
 | Runtime E2E | `CERTIFIED LOCAL` | R01-R16, governance, Business Value and recreation pass under D095 |
 | Documentation | `SYNCHRONIZED` | Sprint 4.3.1 records the certified local runtime and deferred pilot identity gate |
 
@@ -94,9 +94,8 @@ credible, auditable value loop whose financial meaning the customer accepts.
 
 ## 6. Architecture Health Review
 
-Review basis: current repository at the authorized Sprint 4.4 pre-implementation
-boundary, frozen D081-D096 contracts and certified implementation through
-Sprint 4.3.
+Review basis: current repository with Sprint 4.4 implemented but not certified,
+frozen D081-D096 contracts and certified implementation through Sprint 4.3.
 
 ### Green
 
@@ -121,8 +120,8 @@ Sprint 4.3.
 1. D091 provides controlled token paste, not commercial login or SSO.
 2. No operational external HTTPS issuer/JWKS has passed the mandatory Pilot
    Identity Conformance Gate.
-3. D096 freezes application observability, but its dependencies, endpoints and
-   optional runtime profile do not exist until Sprint 4.4 implementation.
+3. D096 application observability is implemented locally, but its image
+   supply-chain, screenshot and hosted certification gates remain open.
 4. Docker volume persistence is not backup/restore. D092 explicitly excludes
    backup, which must be resolved before real customer data if the pilot terms
    require recoverability beyond container recreation.
@@ -148,7 +147,7 @@ architecture redesign.
 
 | Suite | Existing evidence | Required before pilot |
 |---|---|---|
-| Domain/Application unit | 151 default tests, including deterministic policies, governance and D093 composition | Preserve as regression evidence |
+| Domain/Application unit | 161 default tests, including deterministic policies, governance, D093 composition and D096 behavior | Preserve as regression evidence |
 | REST contracts | D086 R01-R15 plus D093 R16 certified | Preserve exact contract and negative-path coverage |
 | JWT/RBAC | Controlled RS256 and role matrix certified | Repeat with real Keycloak tokens |
 | PostgreSQL | PostgreSQL 18.6, Flyway V1/V2 and 34 integration tests certified | Repeat relevant evidence in the pilot environment |
@@ -156,7 +155,7 @@ architecture redesign.
 | Frontend | 41 tests and 9 Playwright acceptance tests certified | Load the runtime-composed case with an operational external token |
 | Connectors | GitHub/AWS offline protocol tests certified | Controlled live read-only smoke evidence |
 | Docker | D092-D095 runtime, clean images and complete data recreation certified | Preserve exact certified inputs and evidence |
-| Observability | D096 contract only; none at runtime | Sprint 4.4 implementation and certification |
+| Observability | D096 runtime implemented; certification blocked | Resolve image findings, capture screenshot and complete hosted gates |
 
 ## 8. Evidence Required For Pilot Authorization
 
@@ -183,7 +182,7 @@ The pilot remains `NO-GO` if any of these occurs:
 - broken Ledger sequence or untraceable Business Value;
 - missing data recovery commitment for real customer data;
 - secrets/tokens/raw payloads in logs or evidence; or
-- Sprint 4.4/4.5 started before their authorized gates.
+- Sprint 4.5 started before its authorized gate.
 
 ## 10. Current Decision
 
@@ -193,7 +192,7 @@ ARCHITECTURE HEALTH: SOUND WITH EXPLICIT DELIVERY GAPS
 SPRINT 4.3: CERTIFIED
 SPRINT 4.3.1: COMPLETE
 D096 CONTRACT: FROZEN / ACCEPTED
-SPRINT 4.4 IMPLEMENTATION: AUTHORIZED / CURRENT
+SPRINT 4.4 IMPLEMENTATION: IMPLEMENTED / CERTIFICATION BLOCKED
 EXTERNAL PILOT IDENTITY: MANDATORY BEFORE SPRINT 4.5
 SPRINT 4.5: NOT OPEN
 ```

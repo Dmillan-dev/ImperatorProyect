@@ -34,7 +34,7 @@ It links to canonical contracts and implementation instead of replacing them.
 | Docker runtime | **[IMPLEMENTED]** | D092-D095 hardened Compose, reproducible PostgreSQL 18.6 image and persistence/recreation certification pass |
 | External IdP | **[PLANNED]** | Keycloak preparation exists; no issuer is deployed or connected |
 | D093/R16 composition | **[IMPLEMENTED]** | `ADMIN`-only API composition, resumable D081/D082 steps and case uniqueness are certified |
-| Observability | **[PLANNED]** | D096 is frozen and implementation authorized; metrics, probes, safe JSON logs, alerts and dashboard are not yet present |
+| Observability | **[IMPLEMENTED / NOT CERTIFIED]** | D096 safe ECS logs, bounded metrics, probes, 11 rules and one operator dashboard pass locally; image and screenshot gates remain open |
 | Python/FastAPI | **[FUTURE]** | Documentation boundary only |
 | Cloud deployment | **[FUTURE]** | No AWS-hosted runtime, Terraform or Kubernetes exists |
 
@@ -125,7 +125,7 @@ are separate checks.
 flowchart LR
     Commit[Commit / PR] --> JavaCI[Java CI<br/>IMPLEMENTED]
     JavaCI --> Compile[Java 21 + Maven enforce]
-    Compile --> BackendTests[151 default tests]
+    Compile --> BackendTests[161 default tests]
     BackendTests --> Jar[Executable JAR]
     Commit -. local gate .-> Frontend[Lint + types + 41 tests + build]
     Commit -. explicit DB gate .-> PGTests[34 PostgreSQL integration tests]
@@ -191,8 +191,7 @@ lineage while excluding raw payload persistence.
 | Medium | No dedicated Java dependency review | Add one bounded SCA control only after defining ownership, baseline and false-positive handling |
 | Medium | Token paste is the current frontend bootstrap | Replace with separately contracted Authorization Code + PKCE login before real users |
 | Medium | No tenant entitlement model | Keep runtime single-organization and prohibit customer exposure until a tenant contract exists |
-| Medium | D096 observability runtime is absent | Implement and certify only the authorized safe logs, metrics, probes, alerts and dashboard; distributed tracing remains excluded |
-| Low local tooling | `mvnw.cmd` fails on the inspected Windows host before Maven starts | Keep hosted Linux wrapper verification authoritative and resolve the Windows launcher only through separate maintenance authority |
+| Medium | D096 observability certification is blocked | Resolve upstream image findings, capture sanitized dashboard evidence and complete hosted gates; distributed tracing remains excluded |
 
 No hard-coded GitHub token, AWS access key, private key or runtime password was
 found in tracked source during this review. The latest executed `npm audit`
@@ -220,7 +219,7 @@ so this document makes no equivalent zero-vulnerability claim for Java.
 |---|---|
 | Java runtime | Java 21.0.12 |
 | Maven runtime | Maven 3.9.16 |
-| Backend default suite | 151 passed |
+| Backend default suite | 161 passed locally; hosted post-change run pending |
 | PostgreSQL suite | 34 passed |
 | Flyway | migrate, validate and repeated migrate passed |
 | Frontend unit/component suite | 41 passed |
@@ -228,6 +227,7 @@ so this document makes no equivalent zero-vulnerability claim for Java.
 | Frontend npm audit | 0 vulnerabilities |
 | CodeQL default setup | Java/Kotlin and JavaScript/TypeScript passing |
 | Sprint 4.3 container certification | **CERTIFIED / COMPLETE under D092-D095** |
+| Current maintained images | Backend, frontend, PostgreSQL-only Flyway and PostgreSQL: zero fixable High/Critical findings and zero secrets locally |
 
 Canonical execution evidence is maintained in
 [`docs/project/PROJECT_STATUS.md`](../project/PROJECT_STATUS.md). D095 records

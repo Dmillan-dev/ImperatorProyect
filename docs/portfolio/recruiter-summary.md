@@ -44,7 +44,7 @@ Trivy checks, while operational external identity remains explicitly deferred.
   sensitivity-based evidence redaction.
 - Implemented bounded read-only GitHub REST and AWS SDK evidence adapters with
   timeout, retry, rate-limit, account and Region controls.
-- Established PostgreSQL/Flyway integration gates, 151 default tests, 34
+- Established PostgreSQL/Flyway integration gates, 161 default tests, 34
   PostgreSQL integration tests, 41 frontend tests, pinned CI actions and a
   certified hardened Docker Compose runtime.
 

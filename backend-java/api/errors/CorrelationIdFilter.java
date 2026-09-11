@@ -11,6 +11,7 @@ import java.util.UUID;
 
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
+import org.slf4j.MDC;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.WebRequest;
@@ -20,6 +21,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public final class CorrelationIdFilter extends OncePerRequestFilter {
     public static final String HEADER_NAME = "X-Correlation-ID";
+    public static final String MDC_KEY = "correlation_id";
     static final String REQUEST_ATTRIBUTE =
             CorrelationIdFilter.class.getName() + ".correlationId";
 
@@ -32,7 +34,12 @@ public final class CorrelationIdFilter extends OncePerRequestFilter {
         String correlationId = currentCorrelationId(request);
         request.setAttribute(REQUEST_ATTRIBUTE, correlationId);
         response.setHeader(HEADER_NAME, correlationId);
-        filterChain.doFilter(request, response);
+        MDC.put(MDC_KEY, correlationId);
+        try {
+            filterChain.doFilter(request, response);
+        } finally {
+            MDC.remove(MDC_KEY);
+        }
     }
 
     @Override

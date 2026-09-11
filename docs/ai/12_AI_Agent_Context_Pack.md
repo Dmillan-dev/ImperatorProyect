@@ -74,7 +74,7 @@ certification boundary. Sprint 4.3 is certified: 151 default tests, 34
 PostgreSQL integration tests, final-image security gates, local JWT/RBAC E2E
 and persistence after recreation pass. Sprint 4.3.1 documentation
 synchronization is complete. D096 freezes the Observability contract. Sprint
-4.4 implementation is the sole authorized current gate;
+4.4 is implemented locally and certification closure is the current gate;
 external Keycloak HTTPS conformance remains mandatory before Sprint 4.5.
 
 Agents may create runnable implementation only inside the explicitly

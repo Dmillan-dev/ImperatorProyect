@@ -34,6 +34,7 @@ Do not load all documentation by default.
 | `rnd/` | R&D activity and evidence control | Evidence model and template |
 | `demos/` | Certified demonstrations, demo readiness and buyer-validation scripts | Evidence-backed operational guide |
 | `pilot/` | Commercial-pilot preparation, runbooks and acceptance evidence | Non-authoritative preparation until Pilot Readiness |
+| `runbooks/` | Bounded local operational response procedures | Evidence-backed operational guide |
 | `portfolio/` | Recruiter-facing technical evidence and concise project positioning | Non-authoritative evidence view |
 
 Agent execution plans live under `../agents/`, not inside `docs/`.
@@ -106,9 +107,10 @@ Primary controls and semantic inputs:
 
 Sprint 4.3 and its documentation synchronization are complete. D096 freezes
 the Sprint 4.4 observability contract in
-`architecture/56_Observability_Runtime_Contract.md`. A separate authorization
-now permits its bounded implementation. The following artifacts remain
-non-authoritative preparation: they do not implement or certify Sprint 4.4,
+`architecture/56_Observability_Runtime_Contract.md`. Its bounded implementation
+is present, but certification remains blocked by monitoring-image findings,
+sanitized dashboard evidence and hosted post-change gates. The following
+artifacts remain non-authoritative preparation: they do not certify Sprint 4.4,
 pass the deferred Pilot Identity Conformance Gate, authorize Sprint 4.5,
 permit customer data or create a new decision:
 
@@ -119,6 +121,10 @@ permit customer data or create a new decision:
 - `architecture/54_Observability_Preparation.md`;
 - `product/30_Pilot_Readiness_Preparation_Checklist.md`; and
 - `pilot/README.md` and its controlled commercial operating package.
+
+Current security and maintenance evidence is recorded in
+`project/SECURITY_AUDIT_2026-09-09.md`. The proposed, not-yet-authorized closure
+prompt is `../agents/phase3/SPRINT_4.4.1_D096_CERTIFICATION_CLOSURE_PROMPT.md`.
 
 ## Canonical Product Contracts
 
@@ -150,6 +156,7 @@ permit customer data or create a new decision:
 | Transaction boundary | `architecture/39_Persistence_Transaction_Contract.md` |
 | Physical schema contract | `architecture/40_Persistence_Schema_Contract.md` |
 | Minimum observability runtime | `architecture/56_Observability_Runtime_Contract.md` |
+| Observability operations | `runbooks/observability-runtime.md` |
 
 ## Conflict Resolution
 

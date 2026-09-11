@@ -1,6 +1,6 @@
 # IMPERATOR Project Status
 
-Last verified: **2026-09-08**
+Last verified: **2026-09-09**
 
 ## Current Gate
 
@@ -79,11 +79,13 @@ Last verified: **2026-09-08**
 | Sprint 4.3.1 documentation synchronization | COMPLETE |
 | External Pilot Identity Conformance | DEFERRED by D095; mandatory before Sprint 4.5 |
 | Sprint 4.4 contract gate | COMPLETE - D096 frozen; no runtime change |
-| Sprint 4.4 implementation | AUTHORIZED / READY |
+| Sprint 4.4 implementation | IMPLEMENTED / LOCAL TECHNICAL VERIFICATION PASS |
+| Sprint 4.4 runtime verifier | PASS WITH SANITIZED DASHBOARD SCREENSHOT PENDING |
+| Sprint 4.4 supply-chain gate | BLOCKED - official pinned Prometheus/Grafana images have fixable High/Critical findings |
 | Sprint 4.4 structural preflight | PASS WITH LOCAL ENVIRONMENT LIMITATIONS |
-| Last completed gate | Sprint 4.4 - Contract Gate |
+| Last completed technical gate | Sprint 4.4 - Local implementation verification |
 | Phase 2 closure | COMPLETE under D079; Sprints 2.9-2.13 deferred |
-| Current control gate | Sprint 4.4 - Observability implementation |
+| Current control gate | Sprint 4.4 - Observability certification blockers |
 | Phase 3 authorization | Authorized by D079 and evolved by D085 |
 
 ## Verified Foundation
@@ -115,8 +117,8 @@ Last verified: **2026-09-08**
 | Frontend runtime | CERTIFIED / COMPLETE | D091 single-case Decision Review Workspace passed all frontend gates and unchanged backend/PostgreSQL regression |
 | DRC-AOA-001 runtime composition | CERTIFIED / COMPLETE | D093 R16 composes one idempotent Decision/Recommendation graph through existing D081/D082 boundaries |
 | Local container runtime | CERTIFIED / COMPLETE | D092-D095 hardened Compose, PostgreSQL 18.6 supply chain, local E2E and persistence/recreation gates pass |
-| Observability runtime | AUTHORIZED / NOT YET IMPLEMENTED | D096 fixes safe logs, bounded metrics, correlation, probes, alerts, retention, internal exposure and certification |
-| Java backend CI | CERTIFIED / COMPLETE | GitHub-hosted Java 21 build and Security workflows pass with 151 default tests |
+| Observability runtime | IMPLEMENTED / NOT CERTIFIED | Safe ECS logs, bounded metrics, correlation, probes, alerts, retention and internal exposure pass locally; image and screenshot gates remain open |
+| Java backend CI | CERTIFIED BASELINE / CURRENT HOSTED RUN PENDING | The hosted Sprint 4.3 baseline passed 151 tests; the current 161-test suite passes locally |
 
 ## Latest Verification
 
@@ -201,12 +203,63 @@ Sprint 4.4 authorization preflight on 2026-09-08:
   distribution and hosted Linux wrapper remain operational. No wrapper change
   is authorized by D096.
 
+Sprint 4.4 implementation verification on 2026-09-09:
+
+- two BOM-managed observability dependencies only: PASS;
+- ten focused correlation, route, metric, endpoint and security tests: PASS;
+- complete default Java suite: 161 tests passed, zero failures;
+- PostgreSQL 18.6 integration: Flyway V1/V2 migrate/validate/no-op and 34 tests
+  passed against an isolated `imperator_it_*` database;
+- frontend format, lint, strict TypeScript, 41 tests and production build: PASS;
+- D092-D095 base Compose runtime regression: PASS with its six-service
+  inventory and loopback-only frontend unchanged;
+- optional Compose profile build/startup and exact service/port inventory:
+  PASS;
+- one-line ECS JSON, allow-listed fields, sentinel redaction and correlation:
+  PASS;
+- liveness `200`, PostgreSQL-loss readiness `503`, recovery `200`: PASS;
+- custom runtime series bounded to at most 256 and Prometheus target up: PASS;
+- 11 Prometheus rules valid; warning and critical pending/firing/recovery
+  transitions pass synthetic `promtool` tests;
+- exactly one `IMPERATOR Operations` dashboard with five rows and 20 panels:
+  PASS by provisioning API;
+- stopping Prometheus and Grafana leaves backend readiness, frontend and
+  fail-closed product routes available: PASS; and
+- local evidence manifest: `PASS_WITH_SCREENSHOT_PENDING`.
+
+Security and maintenance remediation on 2026-09-09:
+
+- frontend updated to Next.js 16.3.4, React 19.3.0, Vitest 4.1.11,
+  Playwright 1.63.0 and Sharp 0.35.4; `npm audit`: zero vulnerabilities;
+- AWS SDK 2.54.14, JUnit 5.14.4, Maven Compiler Plugin 3.16.0 and Flyway
+  13.5.0: current supported compatible updates applied;
+- repository Trivy scan: zero High/Critical vulnerabilities, zero secrets and
+  zero High/Critical misconfigurations;
+- backend, frontend, PostgreSQL-only Flyway and reproducible PostgreSQL images:
+  zero fixable High/Critical findings and zero secrets locally;
+- complete Java suite: 161 tests PASS; PostgreSQL 18.6/Flyway 13.5.0 and 34
+  integration tests PASS; frontend format/lint/types/41 tests/build PASS; and
+- 13 exact obsolete project and audit image tags were removed after runtime
+  recreation; project volumes and global Docker cache were not pruned.
+
+## Active Sprint 4.4 Certification Blockers
+
+- Pinned Prometheus 3.13.3 distroless has four fixable High occurrences across
+  two unique gRPC CVEs. The checked 3.14.0 candidate is not cleaner.
+- Pinned Grafana 13.2.1 has 176 fixable High/Critical occurrences across 82
+  unique findings. The checked distroless candidate is not clean. All monitoring
+  image scans found zero secrets; D096 permits no ignore list or waiver.
+- The in-app browser surface exposed no available browser, so the mandatory
+  sanitized dashboard screenshot has not been captured.
+- Hosted post-change Java CI, Security, CodeQL and complete-history Gitleaks
+  evidence remain to be recorded; the D096 image job is intentionally
+  fail-closed.
+
+These are blocking certification facts, not implementation exceptions. Sprint
+4.4 remains open and Sprint 4.5 remains unauthorized.
+
 ## Known Non-Blocking Risks
 
-- The inspected Windows host cannot currently start Maven through `mvnw.cmd`
-  because its wrapper PowerShell launcher fails before Maven execution. The
-  exact cached Maven 3.9.16 distribution passes, and hosted Linux `./mvnw`
-  remains green. D096 does not authorize wrapper maintenance.
 - Default `clean verify` executes the Spring Boot and HTTP contract suite only.
   Real-database certification remains intentionally explicit through the
   `postgresql-integration` profile and external `IMPERATOR_IT_*` configuration.
@@ -238,10 +291,10 @@ Sprint 4.4 authorization preflight on 2026-09-08:
 
 ## Next Control Gate
 
-Sprint 4.4 - Observability is the current authorized gate. D096 has frozen its
-minimum safe-log, bounded-metric, correlation, probe, alert, retention,
-exposure and certification contract. The separate implementation authorization
-was granted on 2026-09-08. It may not change business Ledger semantics,
+Sprint 4.4 - Observability certification closure is the current control gate.
+D096 has frozen its minimum safe-log, bounded-metric, correlation, probe,
+alert, retention, exposure and certification contract, and the bounded
+implementation is present. Closure may not change business Ledger semantics,
 calculate Business Value, expand routes or connectors, introduce public
 exposure, provision the external IdP or authorize real customer data. External
 Pilot Identity Conformance remains a separate mandatory gate before Sprint 4.5.
