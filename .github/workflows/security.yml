@@ -251,6 +251,12 @@ jobs:
               image = $entry.Value
               imageId = docker image inspect --format '{{.Id}}' $entry.Value
               fixableHighCriticalCount = $vulnerabilities.Count
+              uniqueVulnerabilityIdCount = @(
+                $vulnerabilities.VulnerabilityID | Sort-Object -Unique
+              ).Count
+              vulnerabilityIds = @(
+                $vulnerabilities.VulnerabilityID | Sort-Object -Unique
+              )
               secretCount = $secrets.Count
               findings = @(
                 $vulnerabilities |
@@ -263,14 +269,45 @@ jobs:
 
           $reports | ConvertTo-Json -Depth 6 |
             Set-Content -Encoding utf8 build/d096/image-scan-summary.json
+
+          foreach ($scan in $reports.GetEnumerator()) {
+            $vulnerabilityIds = if ($scan.Value.vulnerabilityIds.Count -eq 0) {
+              "none"
+            } else {
+              $scan.Value.vulnerabilityIds -join ","
+            }
+            Write-Output (
+              "D096 scan {0}: fixableHighCritical={1}; uniqueIds={2}; " +
+              "secrets={3}; vulnerabilityIds=[{4}]" -f
+                $scan.Key,
+                $scan.Value.fixableHighCriticalCount,
+                $scan.Value.uniqueVulnerabilityIdCount,
+                $scan.Value.secretCount,
+                $vulnerabilityIds
+            )
+          }
+
           $failed = @(
-            $reports.Values |
+            $reports.GetEnumerator() |
               Where-Object {
-                $_.fixableHighCriticalCount -ne 0 -or $_.secretCount -ne 0
+                $_.Value.fixableHighCriticalCount -ne 0 -or
+                  $_.Value.secretCount -ne 0
               }
           )
           if ($failed.Count -ne 0) {
-            throw "D096 requires zero fixable High/Critical findings and zero secrets."
+            $failureDetails = (
+              $failed |
+                ForEach-Object {
+                  "{0}: vulnerabilities={1}, secrets={2}" -f
+                    $_.Key,
+                    $_.Value.fixableHighCriticalCount,
+                    $_.Value.secretCount
+                }
+            ) -join "; "
+            throw (
+              "D096 requires zero fixable High/Critical findings and zero " +
+              "secrets. Blocked images: $failureDetails"
+            )
           }
 
       - name: Record scan database metadata
