@@ -226,7 +226,9 @@ not the Phase 2 route-shell plan.
 | 4.3 | Docker Production Runtime | CERTIFIED / COMPLETE |
 | 4.3.1 | Documentation Synchronization | COMPLETE |
 | D096 | Minimum Observability Runtime Contract | ACCEPTED / COMPLETE / FROZEN |
-| 4.4 | Observability | AUTHORIZED / CURRENT |
+| D097 | MVP Observability Scope Correction | ACCEPTED / COMPLETE / FROZEN; IMPLEMENTATION AUTHORIZED |
+| D098 | Runtime Supply Chain Refresh | ACCEPTED / FROZEN; IMPLEMENTED; LOCAL PASS; HOSTED PENDING |
+| 4.4 | MVP Application Observability | AUTHORIZED UNDER D097 / BLOCKED BY D098 |
 | 4.5 | Pilot Readiness | PENDING |
 | 5.0 | MVP Release | PENDING |
 
@@ -305,12 +307,17 @@ the API-composed `DRC-AOA-001` E2E and persistence after normal Compose
 recreation passed. D095 defers only operational external Keycloak HTTPS
 conformance to a mandatory Pilot Identity Conformance Gate before Sprint 4.5;
 D087/D088 and fail-closed behavior remain unchanged. Sprint 4.3.1 synchronized
-the active documentation. D096 freezes the bounded Observability contract;
-Sprint 4.4 implementation is now the authorized current gate.
+the active documentation. D096 freezes the broad bounded Observability
+contract. D097 retains its application-native logs, metrics, correlation and
+probes while deferring Prometheus/Grafana runtime services, dashboards and
+alerts beyond MVP. D098 is the current blocking security-maintenance gate: its
+maintained frontend and PostgreSQL images pass locally, and hosted
+certification must now pass before Sprint 4.4 implementation resumes under
+D097.
 
 Active Phase 3 execution authority:
 
-- D079 through D096 in `docs/decisions/14_Decision_Log.md`;
+- D079 through D098 in `docs/decisions/14_Decision_Log.md`;
 - `agents/phase3/README.md`.
 
 ## Gate Transition Rule

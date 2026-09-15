@@ -46,7 +46,9 @@ D095: ACCEPTED / COMPLETE
 Sprint 4.3: CERTIFIED / COMPLETE
 Sprint 4.3.1: COMPLETE
 D096: ACCEPTED / COMPLETE / FROZEN
-Sprint 4.4: AUTHORIZED / CURRENT
+D097: ACCEPTED / COMPLETE / FROZEN; IMPLEMENTATION AUTHORIZED
+D098: ACCEPTED / FROZEN; IMPLEMENTED; LOCAL PASS; HOSTED PENDING
+Sprint 4.4: AUTHORIZED UNDER D097 / BLOCKED BY D098
 ```
 
 Exactly one Phase 3 delivery gate is current and authorized.
@@ -91,6 +93,8 @@ Exactly one Phase 3 delivery gate is current and authorized.
 | 4.3 | `1613b5d` | Hardened Docker runtime, D093/R16, D094 images, local JWT/RBAC E2E and persistence/recreation | CERTIFIED / COMPLETE |
 | 4.3.1 | Current synchronization commit; hash intentionally not self-recorded | Active project-control, agent, runtime, security, pilot, portfolio and AI-context synchronization | COMPLETE |
 | D096 | Current contract commit; hash intentionally not self-recorded | Frozen safe logging, metrics, correlation, probes, alerts, retention, exposure and certification contract | ACCEPTED / COMPLETE / FROZEN |
+| D097 | Current decision commit; hash intentionally not self-recorded | MVP application-observability correction that defers the external monitoring stack without waiving security findings | ACCEPTED / COMPLETE / FROZEN; IMPLEMENTATION AUTHORIZED |
+| D098 | Current decision commit; hash intentionally not self-recorded | Pinned final-image `libpcre2` security refresh, runtime assertions and Dependabot version-update controls | ACCEPTED / FROZEN; IMPLEMENTED; LOCAL PASS; HOSTED PENDING |
 
 ### Sprint 3.0
 
@@ -508,12 +512,13 @@ Certification evidence:
 
 ## Next Artifact Boundary
 
-Sprint 4.4 is the sole current gate. D096 is frozen and accepted, and
-implementation was explicitly authorized on 2026-09-08. It may address only the exact
-Observability boundary in Document 56 and must preserve business Ledger,
-Business Value, connector, JWT/RBAC and base Docker behavior. External
-identity, pilot behavior, real customer data and public exposure remain
-prohibited.
+D098 is the sole current blocking gate. Its maintained frontend and PostgreSQL
+images pass locally without weakening any scanner; hosted certification
+remains pending. After it passes, Sprint 4.4 may resume under D097's reduced
+application-native scope in Document 57. Prometheus/Grafana remain deferred
+without a vulnerability waiver. Business Ledger, Business Value, connectors,
+JWT/RBAC, external identity, pilot behavior, customer data and public exposure
+remain unchanged or prohibited as applicable.
 
 ## Agent Rule
 

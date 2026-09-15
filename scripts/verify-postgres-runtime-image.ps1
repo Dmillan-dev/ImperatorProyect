@@ -85,12 +85,21 @@ $contextPath = Join-Path $repositoryRoot "infra/docker/postgresql"
 $lock = Get-Content -Raw -LiteralPath $lockPath | ConvertFrom-Json
 $dockerfile = Get-Content -Raw -LiteralPath $dockerfilePath
 
+if ($lock.schemaVersion -ne 2) {
+    throw "D098 requires supply-chain lock schema version 2."
+}
+
 $requiredFragments = @(
     "# syntax=$($lock.dockerfileFrontend.image)@$($lock.dockerfileFrontend.digest)",
     "FROM $($lock.builder.image)@$($lock.builder.digest)",
     "FROM $($lock.postgresql.image)@$($lock.postgresql.digest)",
     $lock.gosu.commit,
     $lock.gosu.sourceSha256,
+    $lock.runtimePatches.pcre2.sourceUrl,
+    $lock.runtimePatches.pcre2.sourceSha256,
+    $lock.runtimePatches.pcre2.version,
+    "rm -f",
+    "/var/cache/ldconfig/aux-cache",
     "CGO_ENABLED=0 GOOS=$($lock.build.goos) GOARCH=$($lock.build.goarch)",
     "-trimpath",
     "-buildvcs=false",
@@ -247,7 +256,7 @@ if ($labels.'org.opencontainers.image.revision' -ne $revision -or
     $labels.'org.opencontainers.image.base.digest' -ne
         $lock.postgresql.digest -or
     $labels.'org.opencontainers.image.version' -ne
-        "18.6-gosu1.19-go1.26.6") {
+        $lock.acceptance.runtimeVersionLabel) {
     throw "The final OCI labels do not match the D094 inputs."
 }
 
@@ -278,6 +287,18 @@ $postgresVersion = (Get-CheckedOutput -Command $docker -Arguments @(
 )) -join "`n"
 if ($postgresVersion -notmatch "postgres \(PostgreSQL\) 18\.6") {
     throw "Unexpected PostgreSQL runtime identity: $postgresVersion"
+}
+
+$pcre2Version = (Get-CheckedOutput -Command $docker -Arguments @(
+    "run", "--rm",
+    "--entrypoint", "dpkg-query",
+    $ImageTag,
+    '--showformat=${Version}',
+    "--show",
+    $lock.runtimePatches.pcre2.package
+)) -join "`n"
+if ($pcre2Version.Trim() -ne $lock.runtimePatches.pcre2.version) {
+    throw "Unexpected libpcre2 runtime version: $pcre2Version"
 }
 
 Invoke-Checked -Command $trivy -Arguments @(
@@ -317,10 +338,15 @@ $secrets = @(
 if ($vulnerabilities.Count -gt 0 -or $secrets.Count -gt 0) {
     throw "The final image has forbidden vulnerability or secret findings."
 }
-if ((Get-Content -Raw -LiteralPath $scanJsonPath).Contains(
+foreach ($forbiddenCve in @(
         $lock.acceptance.forbiddenCve
+        $lock.runtimePatches.pcre2.fixedCves
     )) {
-    throw "$($lock.acceptance.forbiddenCve) remains in the final scan."
+    if ((Get-Content -Raw -LiteralPath $scanJsonPath).Contains(
+            $forbiddenCve
+        )) {
+        throw "$forbiddenCve remains in the final scan."
+    }
 }
 
 Invoke-Checked -Command $trivy -Arguments @(
@@ -348,8 +374,8 @@ $buildxVersion = (Get-CheckedOutput -Command $docker -Arguments @(
 )) -join "`n"
 
 $provenance = [ordered]@{
-    schemaVersion = 1
-    decision = "D094"
+    schemaVersion = 2
+    decision = "D094/D098"
     sourceRevision = $revision
     dirtyWorktree = $dirtyWorktree
     reproducibilityVerified = -not [string]::IsNullOrWhiteSpace($ExpectedRuntimeDigest)
@@ -362,6 +388,7 @@ $provenance = [ordered]@{
     runtimeManifestDigest = $runtimeManifestDigest
     postgresqlVersion = $postgresVersion.Trim()
     gosuVersion = $gosuVersion.Trim()
+    pcre2Version = $pcre2Version.Trim()
     dockerVersion = $dockerVersion.Trim()
     buildxVersion = $buildxVersion.Trim()
     trivyVersion = $trivyVersion.Trim()

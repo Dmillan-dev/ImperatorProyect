@@ -69,19 +69,22 @@ Status labels in this repository have strict meanings:
 | GitHub evidence connector | **[IMPLEMENTED]** | Read-only REST adapter for one organization/repository; live sandbox smoke test remains pending |
 | AWS evidence connector | **[IMPLEMENTED]** | Read-only STS, Cost Explorer, tagging and CloudWatch adapter; live sandbox smoke test remains pending |
 | Decision Review Workspace | **[IMPLEMENTED]** | Next.js/React single-case workspace with strict response validation |
-| Docker production-like runtime | **[IMPLEMENTED]** | D092-D095 certified hardened Compose, SHA-tagged images, PostgreSQL 18.6 supply-chain evidence and persistence after recreation |
+| Docker production-like runtime | **[IMPLEMENTED / D098 LOCAL PASS]** | Hardened Compose and maintained images pass current local runtime and supply-chain gates; hosted D098 evidence is pending |
 | External OIDC identity provider | **[PLANNED]** | Keycloak pilot integration is designed but not provisioned or connected |
 | D093 case-composition route | **[IMPLEMENTED]** | `ADMIN`-only R16 composes the canonical Decision and Recommendation through existing Application boundaries |
-| Application observability | **[PLANNED]** | D096 contract frozen; Sprint 4.4 implementation authorized but not yet present |
+| Application observability | **[PLANNED / BLOCKED]** | D097 authorizes the minimum application-native D096 subset; hosted D098 image certification must pass first and external monitoring services remain deferred beyond MVP |
 | Python/FastAPI explanation service | **[FUTURE]** | Directory boundary only; no Python source or provider calls |
 | Kubernetes, Terraform, Kafka and Redis | **[FUTURE]** | Explicitly excluded from the MVP |
 
 Current formal state: **Phase 3, pre-pilot; Sprint 4.3 and its documentation
-synchronization are complete, and Sprint 4.4 Observability implementation is
-the authorized current gate under D096.** D095 defers operational
+synchronization are complete, D097 authorizes reduced MVP observability, and
+D098 passes locally while hosted security certification remains the current blocking gate.** D095 defers operational
 Keycloak HTTPS conformance without weakening
 D087/D088; it remains mandatory before Sprint 4.5, real customer data or MVP
-Release. See the [pilot status](docs/pilot/README.md) and
+Release. See the
+[D097 scope correction](docs/architecture/57_MVP_Observability_Scope_Correction.md),
+[D098 supply-chain refresh](docs/architecture/58_Runtime_Supply_Chain_Refresh.md),
+the [pilot status](docs/pilot/README.md) and
 [D095](docs/decisions/14_Decision_Log.md).
 
 ## Why IMPERATOR?
@@ -200,8 +203,8 @@ See [Security Policy](SECURITY.md) and the canonical
 | Frontend lint/typecheck/tests/build | **IMPLEMENTED locally**; 41 tests and production build pass |
 | Frontend dependency audit | **IMPLEMENTED as a manual certification command**; latest local check found 0 vulnerabilities |
 | Automated source/dependency scan | **IMPLEMENTED**; the fail-closed hosted Trivy workflow scans dependencies, secrets and configuration and is passing |
-| Application container vulnerability gate | **IMPLEMENTED**; hosted backend and frontend image scans fail on fixable High/Critical findings and are passing |
-| PostgreSQL supply-chain gate | **IMPLEMENTED / D094 PASS**; two reproducible builds, pinned inputs, SBOM, provenance and hosted Trivy scanning verify zero fixable High/Critical findings and zero secrets |
+| Application container vulnerability gate | **IMPLEMENTED / D098 LOCAL PASS / HOSTED PENDING**; local backend and frontend images report zero fixable High/Critical findings and zero secrets |
+| PostgreSQL supply-chain gate | **IMPLEMENTED / D098 LOCAL PASS / HOSTED PENDING**; two local builds share the same runtime manifest and D094 runtime, SBOM and provenance checks pass |
 | CodeQL SAST | **IMPLEMENTED IN GITHUB**; default setup for Java/Kotlin and JavaScript/TypeScript is enabled and passing |
 | Frontend CI workflow | **PLANNED** |
 | Dependency scanning | **PARTIALLY IMPLEMENTED**; Trivy scans repository dependencies, while dedicated Java dependency review remains planned |
@@ -243,7 +246,7 @@ model exists.
 | Integrations | GitHub REST, AWS SDK, JSONL Evidence import | Additional connectors after MVP |
 | Frontend | Next.js 16, React 19, TypeScript 5, Tailwind CSS 4 | Production login/session UX |
 | Runtime | Docker Compose, hardened multi-stage images | Cloud deployment after pilot |
-| Observability | Correlation IDs, safe errors, container health checks/log rotation | D096-contracted ECS logs, Actuator probes, bounded metrics, alerts and one operator dashboard |
+| Observability | Correlation IDs, safe errors, container health checks/log rotation | D097-authorized ECS logs, Actuator probes and bounded application metrics; external monitoring stack deferred |
 | AI | Provider-neutral Java `ExplanationProvider` port | Python/FastAPI and real providers are future work |
 
 ## REST API
@@ -299,9 +302,10 @@ These concerns have different maturity levels:
 - **Operational diagnostics are partially implemented:** HTTP correlation IDs,
   typed non-sensitive errors, container health checks and bounded Docker log
   rotation exist.
-- **Observability is contracted but not implemented:** D096 freezes structured
-  ECS application logs, bounded metrics, exact probes, local alerts and one
-  Grafana operator dashboard. OpenTelemetry is explicitly outside Sprint 4.4.
+- **Observability is contracted but not implemented:** D097 retains structured
+  ECS application logs, bounded metrics and exact probes from D096 while
+  deferring Prometheus/Grafana services, alerts and dashboards beyond MVP.
+  OpenTelemetry is explicitly outside Sprint 4.4.
 
 There is no public TLS endpoint or encryption-at-rest claim. The current
 runtime is local and loopback-bound; pilot TLS, external identity, backup and
@@ -400,15 +404,16 @@ as realized value until validation evidence exists.
 | Stage | Scope |
 |---|---|
 | **Completed** | Core Domain, Application use cases, PostgreSQL, REST, JWT/RBAC, GitHub/AWS evidence adapters, D093 composition, Decision Review Workspace and Docker Production Runtime |
-| **Current** | Sprint 4.4 Observability implementation and certification under frozen D096 |
+| **Current** | D098 hosted Security and CodeQL certification after local PASS |
+| **Next** | Sprint 4.4 MVP application observability implementation and certification under D097 |
 | **Planned** | External Keycloak pilot conformance and Sprint 4.5 Pilot Readiness |
 | **Future** | Python explanation service, more connectors, multi-tenancy, cloud deployment, Terraform, Kubernetes, Kafka and Redis only when justified |
 
 ## Post-MVP DevSecOps Path
 
-This is a delivery sequence, not an implementation claim. Sprint 4.4
-Observability, external Pilot Identity Conformance and Pilot Readiness retain
-precedence over this path.
+This is a delivery sequence, not an implementation claim. Sprint 4.4 MVP
+application observability, external Pilot Identity Conformance and Pilot
+Readiness retain precedence over this path.
 
 ```mermaid
 flowchart LR

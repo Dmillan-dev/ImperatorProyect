@@ -137,8 +137,10 @@ evidence of a public or production deployment.
 
 Contains the D092-D095 certified production-like local Docker Compose runtime,
 hardened application Dockerfiles and ignored file-backed secret boundary.
-D096 freezes an optional observability profile whose Sprint 4.4 implementation
-is now authorized but not yet present. No cloud deployment, Kubernetes or
+D096 originally froze an optional observability profile. D097 defers that
+external stack and authorizes application-native Sprint 4.4 observability.
+D098 passes maintained frontend and PostgreSQL final-image certification
+locally; hosted certification is the current blocker. No cloud deployment, Kubernetes or
 Terraform exists.
 
 ### `output/`
