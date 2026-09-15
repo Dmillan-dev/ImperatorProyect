@@ -1,11 +1,13 @@
-FROM node:24.18.0-bookworm-slim@sha256:6f7b03f7c2c8e2e784dcf9295400527b9b1270fd37b7e9a7285cf83b6951452d AS dependencies
+# syntax=docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+
+FROM node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df AS dependencies
 
 WORKDIR /app
 
 COPY frontend/package.json frontend/package-lock.json ./
 RUN npm ci
 
-FROM node:24.18.0-bookworm-slim@sha256:6f7b03f7c2c8e2e784dcf9295400527b9b1270fd37b7e9a7285cf83b6951452d AS build
+FROM node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df AS build
 
 ENV IMPERATOR_API_ORIGIN=http://backend:8080 \
     IMPERATOR_RUNTIME_PROFILE=docker-compose \
@@ -18,11 +20,17 @@ COPY frontend/ ./
 
 RUN npm run build
 
-FROM node:24.18.0-bookworm-slim@sha256:6f7b03f7c2c8e2e784dcf9295400527b9b1270fd37b7e9a7285cf83b6951452d AS runtime
+FROM node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df AS runtime
 
 ARG VCS_REF
 
+ADD --checksum=sha256:81c5502941118a24d47af69a17b8b0b9548d75cc6d72b3eb3fe01047b46fa10e \
+    https://security.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-8-0_10.42-1+deb12u1_amd64.deb \
+    /tmp/libpcre2-8-0.deb
+
 RUN set -eu; \
+    dpkg --install /tmp/libpcre2-8-0.deb; \
+    rm -f /tmp/libpcre2-8-0.deb /var/log/dpkg.log; \
     rm -rf \
         /opt/yarn-v1.22.22 \
         /usr/local/lib/node_modules/corepack \

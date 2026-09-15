@@ -53,14 +53,19 @@ Implemented controls include:
   SBOM, provenance and zero fixable High/Critical or secret findings.
 
 The D094 PostgreSQL image-remediation gate and the complete D092-D095 local
-Docker runtime are **PASS / CERTIFIED**. D093/R16, local JWT/RBAC, the
+Docker runtime are historical **PASS / CERTIFIED** evidence. D098 pins the
+exact fixed Debian `libpcre2-8-0` package and now passes local scans,
+reproducibility, provenance, hardening and runtime checks. The fail-closed
+hosted Security and CodeQL gates remain pending and must pass before D097
+resumes. D093/R16, local JWT/RBAC, the
 `DRC-AOA-001` end-to-end flow and persistence after recreation pass. There is
 still no production deployment, public endpoint, connected operational IdP,
 tenant isolation contract or security SLA. D095 requires external Keycloak
 HTTPS conformance before Sprint 4.5, customer data or MVP Release. Passing CI
 and local runtime checks does not override that pilot boundary. D096 is frozen
-and Sprint 4.4 observability implementation is authorized, but no observability
-runtime claim applies until its certification gate passes.
+and D097 authorizes its application-native observability subset while deferring
+Prometheus/Grafana services without a vulnerability waiver. No observability
+runtime claim applies until D098 and then the D097 certification gate pass.
 
 See the canonical
 [Security, Data Governance and Threat Model](docs/architecture/26_Security_Data_Governance_Threat_Model.md)

@@ -28,11 +28,15 @@ FROM postgres:18.6-bookworm@sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36
 
 ARG VCS_REF
 
+ADD --checksum=sha256:81c5502941118a24d47af69a17b8b0b9548d75cc6d72b3eb3fe01047b46fa10e \
+    https://security.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-8-0_10.42-1+deb12u1_amd64.deb \
+    /tmp/libpcre2-8-0.deb
+
 LABEL org.opencontainers.image.title="IMPERATOR PostgreSQL Runtime" \
-      org.opencontainers.image.description="PostgreSQL 18.6 with reproducibly rebuilt gosu 1.19" \
+      org.opencontainers.image.description="PostgreSQL 18.6 with rebuilt gosu and a pinned Debian security patch" \
       org.opencontainers.image.source="https://github.com/Dmillan-dev/ImperatorProyect" \
       org.opencontainers.image.revision="${VCS_REF}" \
-      org.opencontainers.image.version="18.6-gosu1.19-go1.26.6" \
+      org.opencontainers.image.version="18.6-gosu1.19-go1.26.6-pcre2deb12u1" \
       org.opencontainers.image.base.name="postgres:18.6-bookworm" \
       org.opencontainers.image.base.digest="sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af" \
       org.opencontainers.image.licenses="PostgreSQL AND Apache-2.0"
@@ -40,7 +44,12 @@ LABEL org.opencontainers.image.title="IMPERATOR PostgreSQL Runtime" \
 COPY --from=gosu-build /out/gosu /usr/local/bin/gosu
 COPY --from=gosu-build /build/gosu/LICENSE /usr/local/share/licenses/gosu/LICENSE
 
-RUN chmod 0755 /usr/local/bin/gosu \
+RUN dpkg --install /tmp/libpcre2-8-0.deb \
+    && rm -f \
+        /tmp/libpcre2-8-0.deb \
+        /var/cache/ldconfig/aux-cache \
+        /var/log/dpkg.log \
+    && chmod 0755 /usr/local/bin/gosu \
     && chmod 0444 /usr/local/share/licenses/gosu/LICENSE \
     && gosu --version \
     && gosu nobody true \

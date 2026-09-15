@@ -56,7 +56,7 @@ Git records only artifact IDs and sanitized summaries for confidential items.
 | `PE-012` | Persistence | Before/after runtime-recreation equality |
 | `PE-013` | Backup/restore | Backup checksum and isolated restore verification |
 | `PE-014` | Deletion | Revocation and environment/backup destruction evidence |
-| `PE-015` | Observability | Health, safe logs, metrics and alert evidence after Sprint 4.4 |
+| `PE-015` | Observability | Health, safe logs, correlation and bounded metric evidence after Sprint 4.4 |
 
 No item includes tokens, passwords, private keys, raw payloads, SQL data dumps,
 customer conversations or personal contact details.
@@ -135,4 +135,3 @@ system. This repository keeps only the sanitized artifact references.
 The package is complete only when every claimed result links to retained
 evidence and every retained customer artifact follows the signed data terms.
 Missing evidence is reported as `NOT RUN` or `UNVERIFIED`, never inferred.
-

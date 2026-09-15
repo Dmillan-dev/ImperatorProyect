@@ -2,9 +2,9 @@
 
 Status: **ACTIVE**
 
-Current gate: **Sprint 4.4 - Observability implementation**
+Current gate: **D098 - Runtime Supply Chain Refresh**
 
-Authorization: **D079 - Phase 3 Vertical-Slice Acceleration; D085 - MVP Delivery Roadmap Evolution; D095 - D092 Runtime Certification Scope Correction; D096 - Minimum Observability Runtime Contract**
+Authorization: **D079 - Phase 3 Vertical-Slice Acceleration; D085 - MVP Delivery Roadmap Evolution; D095 - D092 Runtime Certification Scope Correction; D096 - Minimum Observability Runtime Contract; D097 - MVP Observability Scope Correction; D098 - Runtime Supply Chain Refresh**
 
 ## Purpose
 
@@ -52,7 +52,9 @@ Phase 3 behavior must follow:
 - `docs/architecture/52_DRC_AOA_001_Case_Composition_Contract.md`;
 - `docs/architecture/54_Observability_Preparation.md` as historical input;
 - `docs/architecture/55_PostgreSQL_Runtime_Supply_Chain_Remediation_Contract.md`; and
-- `docs/architecture/56_Observability_Runtime_Contract.md`.
+- `docs/architecture/56_Observability_Runtime_Contract.md`;
+- `docs/architecture/57_MVP_Observability_Scope_Correction.md`; and
+- `docs/architecture/58_Runtime_Supply_Chain_Refresh.md`.
 
 Persistence remains governed by contracts 39 and 40 and by
 `database/migrations/V1__initial_schema.sql`.
@@ -127,7 +129,9 @@ Locked constraints:
 | 4.3 | Docker Production Runtime | CERTIFIED / COMPLETE |
 | 4.3.1 | Documentation Synchronization | COMPLETE |
 | D096 | Minimum Observability Runtime Contract | ACCEPTED / COMPLETE / FROZEN |
-| 4.4 | Observability | AUTHORIZED / CURRENT |
+| D097 | MVP Observability Scope Correction | ACCEPTED / COMPLETE / FROZEN; IMPLEMENTATION AUTHORIZED |
+| D098 | Runtime Supply Chain Refresh | ACCEPTED / FROZEN; IMPLEMENTED; LOCAL PASS; HOSTED PENDING |
+| 4.4 | MVP Application Observability | AUTHORIZED UNDER D097 / BLOCKED BY D098 |
 | 4.5 | Pilot Readiness | PENDING |
 | 5.0 | MVP Release | PENDING |
 
@@ -638,21 +642,45 @@ Certification evidence:
 - status: **CERTIFIED / COMPLETE**.
 
 Sprint 4.3.1 synchronized active project-control, agent, runtime, security,
-pilot, portfolio and AI-context documentation and marked Sprint 4.4 as the sole
-next gate. It changed no code, tests, SQL, Flyway, dependencies, runtime
-configuration, frozen contract or prior decision.
+pilot, portfolio and AI-context documentation and opened the Sprint 4.4
+contract sequence. It changed no code, tests, SQL, Flyway, dependencies,
+runtime configuration, frozen contract or prior decision.
+
+## D098 - Runtime Supply Chain Refresh
+
+D098 is the current blocking security-maintenance gate. It pins Debian
+`libpcre2-8-0` `10.42-1+deb12u1` by URL and SHA-256 in the maintained frontend
+and PostgreSQL final images, verifies the installed package version, extends
+the PostgreSQL lock/provenance contract and keeps Trivy fail-closed at zero
+fixable High/Critical findings and zero secrets. Local image,
+two-build-reproducibility and hardened Compose certification passed on
+2026-09-15; equivalent hosted Security and CodeQL evidence remains pending.
+
+Pull requests `#34` through `#42` are not substitutes for D098. Major version
+updates remain deferred to separately authorized maintenance; minor and patch
+updates may be regrouped and evaluated after D098 is green. D098 authorizes no
+product, schema, identity, connector or observability feature.
 
 ## Sprint 4.4 - Observability
 
-D096 freezes the minimum operational contract: built-in ECS structured logs,
-bounded Micrometer/Prometheus metrics, MDC correlation, exact liveness and
-readiness probes, an optional isolated Prometheus/Grafana profile, local
-retention, alert rules and fail-closed certification evidence.
+D096 freezes the original operational contract. D097 narrowly corrects the MVP
+scope after the proposed Prometheus and Grafana images could not pass the
+repository's fail-closed supply-chain policy. Sprint 4.4 retains built-in ECS
+structured logs, bounded Micrometer metrics, MDC correlation, exact liveness
+and PostgreSQL-aware readiness, and internal unpublished Actuator endpoints.
 
-The contract gate is complete and implementation was explicitly authorized on
-2026-09-08. OpenTelemetry, log aggregation, external
-notifications, public exposure, customer data and changes to Domain,
-Application, API, persistence, Ledger or Business Value remain outside scope.
+D097 defers Prometheus/Grafana runtime services, their Compose profile,
+dashboard, alerts and associated certification evidence beyond MVP. Their
+findings are not ignored or waived; the external images must be absent from the
+active MVP runtime. Implementation under Document 57 is authorized but blocked
+until hosted D098 passes. OpenTelemetry, log aggregation, external notifications, public
+exposure, customer data and changes to Domain, Application, API, persistence,
+Ledger or Business Value remain outside scope.
+
+Current execution prompt:
+`agents/phase3/SPRINT_4.4_D097_MVP_OBSERVABILITY_IMPLEMENTATION_PROMPT.md`.
+Run it only after hosted D098 application-image and D094 supply-chain jobs are
+green.
 
 ## Demonstration And Pilot Boundary
 

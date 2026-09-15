@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "target": {
     "os": "linux",
     "architecture": "amd64"
@@ -24,6 +24,19 @@
     "sourceSha256": "33d7537d588ea49458b9509bcf4554bdf5ceacc66da71e5caa1058ea3b689c3b",
     "license": "Apache-2.0"
   },
+  "runtimePatches": {
+    "pcre2": {
+      "package": "libpcre2-8-0",
+      "version": "10.42-1+deb12u1",
+      "architecture": "amd64",
+      "sourceUrl": "https://security.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-8-0_10.42-1+deb12u1_amd64.deb",
+      "sourceSha256": "81c5502941118a24d47af69a17b8b0b9548d75cc6d72b3eb3fe01047b46fa10e",
+      "fixedCves": [
+        "CVE-2026-86145",
+        "CVE-2026-89161"
+      ]
+    }
+  },
   "build": {
     "cgoEnabled": false,
     "goos": "linux",
@@ -35,6 +48,7 @@
   },
   "acceptance": {
     "forbiddenCve": "CVE-2025-68121",
+    "runtimeVersionLabel": "18.6-gosu1.19-go1.26.6-pcre2deb12u1",
     "maximumFixableSeverity": "MEDIUM",
     "secretFindings": 0,
     "postgresUid": 999,

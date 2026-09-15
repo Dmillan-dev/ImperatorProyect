@@ -105,9 +105,15 @@ Primary controls and semantic inputs:
 ### Pre-Pilot Preparation
 
 Sprint 4.3 and its documentation synchronization are complete. D096 freezes
-the Sprint 4.4 observability contract in
-`architecture/56_Observability_Runtime_Contract.md`. A separate authorization
-now permits its bounded implementation. The following artifacts remain
+the original Sprint 4.4 observability contract in
+`architecture/56_Observability_Runtime_Contract.md`. D097 in
+`architecture/57_MVP_Observability_Scope_Correction.md` authorizes only its
+application-native MVP subset and defers the external monitoring stack. The
+current blocking gate is D098 in
+`architecture/58_Runtime_Supply_Chain_Refresh.md`; maintained image
+certification passes locally and must now pass hosted checks before D097
+implementation resumes. The
+following artifacts remain
 non-authoritative preparation: they do not implement or certify Sprint 4.4,
 pass the deferred Pilot Identity Conformance Gate, authorize Sprint 4.5,
 permit customer data or create a new decision:
@@ -150,6 +156,8 @@ permit customer data or create a new decision:
 | Transaction boundary | `architecture/39_Persistence_Transaction_Contract.md` |
 | Physical schema contract | `architecture/40_Persistence_Schema_Contract.md` |
 | Minimum observability runtime | `architecture/56_Observability_Runtime_Contract.md` |
+| MVP observability scope correction | `architecture/57_MVP_Observability_Scope_Correction.md` |
+| Runtime supply-chain refresh | `architecture/58_Runtime_Supply_Chain_Refresh.md` |
 
 ## Conflict Resolution
 

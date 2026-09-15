@@ -377,7 +377,9 @@ Next action:
 Sprint 4.3: CERTIFIED / COMPLETE
 Sprint 4.3.1: COMPLETE
 D096 Observability Contract: FROZEN / ACCEPTED
-Sprint 4.4 Implementation: AUTHORIZED / CURRENT
+D097 MVP Scope Correction: FROZEN / ACCEPTED
+D098 Runtime Supply Chain Refresh: LOCAL PASS / HOSTED PENDING / CURRENT
+Sprint 4.4 MVP Application Observability: AUTHORIZED / BLOCKED BY D098
 External Pilot Identity Conformance: DEFERRED / REQUIRED BEFORE 4.5
 Sprint 4.5: NOT OPEN
 Discovery: ALLOWED

@@ -37,17 +37,18 @@ GitHub configuration for repository automation.
 
 ## Current Automation Boundary
 
-Java CI is implemented. Hosted dependency, secret, configuration and
-application-image scanning is implemented and passing. The hosted D094 gate
-also verifies pinned PostgreSQL build inputs, two-build reproducibility, SBOM,
+Java CI is implemented. Hosted dependency, secret and configuration scanning
+is implemented. D098's pinned `libpcre2` refresh passes local application-image
+and D094 PostgreSQL certification, including two-build reproducibility, SBOM,
 provenance, image behavior and zero fixable High/Critical or secret findings.
-Together with the separately executed D093/R16, local JWT/RBAC, end-to-end and
-persistence/recreation evidence, this supports the certified D092-D095 local
-runtime.
+The equivalent hosted jobs remain fail-closed and pending; no finding is
+waived and the historical D092-D095 runtime evidence remains valid.
 
 Repository-configured CodeQL default setup is enabled and passing; no
 repository-managed CodeQL workflow is stored in this directory. Operational
 external Keycloak conformance remains a mandatory pre-Sprint-4.5 gate. Full
 frontend CI, release automation and deployment workflows are not implemented
-and must not be inferred from this directory. Sprint 4.4 implementation is now
-authorized, but no D096 workflow change has been made yet.
+and must not be inferred from this directory. Sprint 4.4 application-native
+observability is authorized by D097 but blocked until hosted D098 passes.
+Prometheus/Grafana image gates are outside the MVP because those services are
+deferred, not because their findings are waived.

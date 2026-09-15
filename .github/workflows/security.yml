@@ -80,6 +80,17 @@ jobs:
           --tag imperator/frontend:${{ github.sha }}
           .
 
+      - name: Verify frontend runtime security patch
+        shell: bash
+        run: |
+          set -euo pipefail
+          actual_version=$(docker run --rm \
+            --entrypoint dpkg-query \
+            imperator/frontend:${{ github.sha }} \
+            '--showformat=${Version}' \
+            --show libpcre2-8-0)
+          test "$actual_version" = "10.42-1+deb12u1"
+
       - name: Scan frontend image
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
         with:

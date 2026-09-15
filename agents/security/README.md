@@ -68,7 +68,9 @@ Sprint 3.8.0 - JWT Authentication Contract Freeze: COMPLETE
 -> Sprint 4.3 - Docker Production Runtime: CERTIFIED / COMPLETE
 -> Sprint 4.3.1 - Documentation Synchronization: COMPLETE
 -> D096 - Minimum Observability Runtime Contract: ACCEPTED / FROZEN
--> Sprint 4.4 - Observability implementation: AUTHORIZED / CURRENT
+-> D097 - MVP Observability Scope Correction: ACCEPTED / FROZEN
+-> D098 - Runtime Supply Chain Refresh: LOCAL PASS / HOSTED PENDING / CURRENT
+-> Sprint 4.4 - MVP application observability: AUTHORIZED / BLOCKED BY D098
 ```
 
 Sprint 3.8 answers only who the caller is. Sprint 3.9 answers what that caller
@@ -93,8 +95,10 @@ provider, browser persistence or frontend authorization authority. Sprint 4.3
 certified D092-D095 runtime packaging, D093/R16, the D094 PostgreSQL supply
 chain, local JWT/RBAC E2E and persistence after recreation. Operational
 external Keycloak HTTPS conformance remains mandatory before Sprint 4.5.
-D096 is frozen. Sprint 4.4 implementation is the sole authorized current gate
-and must preserve every existing security authority.
+D096 is frozen and D097 defers its external monitoring stack without waiving
+any image finding. D098 is the current blocking gate: maintained final-image
+scans pass locally and require equivalent hosted evidence before Sprint 4.4 application-native
+implementation resumes. Every existing security authority remains binding.
 
 For connector work, also load
 `docs/architecture/28_Per_Connector_MVP_Contracts.md`,

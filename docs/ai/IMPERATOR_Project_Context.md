@@ -90,13 +90,18 @@ spend. The first case is `DRC-AOA-001`, AI Onboarding Assistant Recovery.
   High/Critical or secret findings.
 - D095 - D092 Runtime Certification Scope Correction: accepted and complete.
 - D096 - Minimum Observability Runtime Contract: accepted, complete and frozen;
-  bounded implementation was separately authorized on 2026-09-08.
+  its external monitoring clauses are narrowly superseded by D097.
+- D097 - MVP Observability Scope Correction: accepted, complete and frozen;
+  application-native Sprint 4.4 implementation is authorized.
+- D098 - Runtime Supply Chain Refresh: accepted, frozen and implemented; local
+  certification passes and hosted certification is pending.
 - Sprint 4.3 Docker Production Runtime: certified and complete. Java 21 passed
   151 default tests, PostgreSQL 18.6 and Flyway passed 34 integration tests,
   final SHA-tagged images passed security/hardening gates, and local JWT/RBAC,
   `DRC-AOA-001` E2E and persistence-after-recreation evidence passed.
 - Sprint 4.3.1 documentation synchronization: complete.
-- Current gate: Sprint 4.4 - Observability implementation.
+- Current gate: D098 - require hosted maintained-image security evidence after
+  local PASS before Sprint 4.4 resumes under D097.
 - External Keycloak HTTPS conformance: deferred by D095 and mandatory before
   Sprint 4.5, real customer data or MVP Release.
 - Sprints 2.9 through 2.13: deferred, not completed.
@@ -166,9 +171,11 @@ the single authorized business value loop under D079.
   remains in Application and Restricted Evidence remains fail-closed redacted.
 - hardened D092-D095 Docker Compose runtime certified with PostgreSQL 18.6,
   non-root custom images, read-only filesystems and loopback-only publication.
-- D096 observability contract frozen and implementation authorized; Actuator,
-  Micrometer, structured application JSON logs, Prometheus, Grafana and alert
-  rules remain absent until implementation is completed and certified.
+- D096 observability contract frozen and narrowed by D097; hosted D098 image
+  certification is the current blocker after local PASS. Actuator,
+  Micrometer, structured application JSON logs and exact probes remain absent
+  until implementation is completed and certified. Prometheus/Grafana runtime
+  services, dashboards and alerts are deferred beyond MVP.
 
 The implemented Java source root is `backend-java`, with packages under
 `imperator.*`. REST packages live under `imperator.api.*`. Public product REST

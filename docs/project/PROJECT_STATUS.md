@@ -1,6 +1,6 @@
 # IMPERATOR Project Status
 
-Last verified: **2026-09-08**
+Last verified: **2026-09-15**
 
 ## Current Gate
 
@@ -73,17 +73,19 @@ Last verified: **2026-09-08**
 | D094 PostgreSQL supply-chain remediation | ACCEPTED / COMPLETE / PASS |
 | D095 runtime certification scope correction | ACCEPTED / COMPLETE |
 | D096 minimum observability runtime contract | ACCEPTED / COMPLETE / FROZEN |
+| D097 MVP observability scope correction | ACCEPTED / COMPLETE / FROZEN; IMPLEMENTATION AUTHORIZED |
+| D098 runtime supply-chain refresh | ACCEPTED / FROZEN; IMPLEMENTED; LOCAL PASS; HOSTED PENDING |
 | Sprint 4.3 implementation | PASS |
 | Sprint 4.3 local runtime certification | PASS - Docker, security, local JWT/RBAC E2E and persistence/recreation |
 | Sprint 4.3 closure | CERTIFIED / COMPLETE under D095 |
 | Sprint 4.3.1 documentation synchronization | COMPLETE |
 | External Pilot Identity Conformance | DEFERRED by D095; mandatory before Sprint 4.5 |
-| Sprint 4.4 contract gate | COMPLETE - D096 frozen; no runtime change |
-| Sprint 4.4 implementation | AUTHORIZED / READY |
-| Sprint 4.4 structural preflight | PASS WITH LOCAL ENVIRONMENT LIMITATIONS |
-| Last completed gate | Sprint 4.4 - Contract Gate |
+| Sprint 4.4 contract gate | COMPLETE - D096 frozen and narrowly corrected by D097; no runtime change |
+| Sprint 4.4 implementation | AUTHORIZED UNDER D097 / BLOCKED UNTIL HOSTED D098 PASSES |
+| Sprint 4.4 structural preflight | D098 LOCAL PASS / HOSTED SECURITY PENDING |
+| Last completed gate | D097 - MVP Observability Scope Correction |
 | Phase 2 closure | COMPLETE under D079; Sprints 2.9-2.13 deferred |
-| Current control gate | Sprint 4.4 - Observability implementation |
+| Current control gate | D098 - Runtime Supply Chain Refresh |
 | Phase 3 authorization | Authorized by D079 and evolved by D085 |
 
 ## Verified Foundation
@@ -114,8 +116,8 @@ Last verified: **2026-09-08**
 | AWS Integration | CERTIFIED / COMPLETE | D090 one-account, one-Region, read-only AWS SDK synchronization produces deterministic `E-AWS-001` through `E-AWS-004` Evidence and passed PostgreSQL 18.4 certification |
 | Frontend runtime | CERTIFIED / COMPLETE | D091 single-case Decision Review Workspace passed all frontend gates and unchanged backend/PostgreSQL regression |
 | DRC-AOA-001 runtime composition | CERTIFIED / COMPLETE | D093 R16 composes one idempotent Decision/Recommendation graph through existing D081/D082 boundaries |
-| Local container runtime | CERTIFIED / COMPLETE | D092-D095 hardened Compose, PostgreSQL 18.6 supply chain, local E2E and persistence/recreation gates pass |
-| Observability runtime | AUTHORIZED / NOT YET IMPLEMENTED | D096 fixes safe logs, bounded metrics, correlation, probes, alerts, retention, internal exposure and certification |
+| Local container runtime | D098 LOCAL PASS / HOSTED PENDING | Backend, frontend and reproducible PostgreSQL 18.6 images pass current High/Critical, secret, hardening and runtime checks; hosted Security evidence remains pending |
+| Observability runtime | AUTHORIZED / BLOCKED BY D098 | D097 retains safe logs, bounded metrics, correlation and probes; Prometheus/Grafana runtime services, dashboards and alerts are deferred beyond MVP |
 | Java backend CI | CERTIFIED / COMPLETE | GitHub-hosted Java 21 build and Security workflows pass with 151 default tests |
 
 ## Latest Verification
@@ -201,6 +203,57 @@ Sprint 4.4 authorization preflight on 2026-09-08:
   distribution and hosted Linux wrapper remain operational. No wrapper change
   is authorized by D096.
 
+D097 scope correction on 2026-09-11:
+
+- the proposed application-native D096 implementation remains eligible for
+  Sprint 4.4 after rework: AUTHORIZED;
+- Prometheus and Grafana services, images, Compose assets, dashboards and alert
+  rules: DEFERRED BEYOND MVP;
+- reported findings in those optional images: not ignored, waived or
+  suppressed; the images must be absent from the active MVP runtime;
+- Actuator, bounded metrics, safe ECS JSON logs, correlation and exact probes:
+  retained;
+- maintained application/runtime image, source, dependency, CodeQL and secret
+  gates: remain blocking; and
+- Sprint 4.4 certification, external Pilot Identity Conformance, Sprint 4.5 and
+  MVP Release: not claimed by this documentation-only decision.
+
+D098 runtime supply-chain refresh on 2026-09-14:
+
+- hosted `Application image scan` and `PostgreSQL D094 supply-chain gate`:
+  FAIL against the updated vulnerability database;
+- common remaining runtime package: `libpcre2-8-0` `10.42-1` with fixable
+  `CVE-2026-86145` and `CVE-2026-89161`;
+- exact Debian security package `10.42-1+deb12u1`, URL and SHA-256: pinned in
+  both final-image builds;
+- final-image package-version assertions and PostgreSQL lock/provenance:
+  updated under D098;
+- vulnerability ignores, waivers, severity reductions or non-blocking scans:
+  none;
+- local source/configuration syntax checks: PASS;
+- Docker Desktop `4.91.0`, Engine `29.8.0` and Buildx `0.37.0`: available;
+- frontend Node `24.19.0` and final-image `libpcre2-8-0`
+  `10.42-1+deb12u1` assertions: PASS;
+- backend, frontend and PostgreSQL Trivy scans: zero fixable High/Critical
+  findings and zero secrets;
+- PostgreSQL two-build runtime-manifest reproducibility:
+  `sha256:2b7cdecf1ebf5ba2eb7aacb828baf6bc18804d5932602509ce2a15cdaecd05b7`;
+- D094 SBOM/provenance, PostgreSQL `18.6`, gosu `1.19`, Flyway,
+  least-privilege, non-root/read-only and Compose runtime checks: PASS;
+- obsolete D096 Prometheus/Grafana and pre-D098 application image tags:
+  removed locally without deleting persistent volumes;
+- local D098 certification: PASS; hosted Security and CodeQL evidence:
+  PENDING; and
+- Sprint 4.4 D097 implementation: BLOCKED until hosted D098 image gates pass.
+
+## Active Blocking Risk
+
+The previously certified D092-D095 runtime remains valid historical evidence.
+D098 now restores its maintained images locally under the repository's current
+fixable High/Critical policy, but the hosted Security workflow has not yet
+certified that correction. No Dependabot pull request from `#34` through `#42`
+should be merged as a substitute for this focused correction.
+
 ## Known Non-Blocking Risks
 
 - The inspected Windows host cannot currently start Maven through `mvnw.cmd`
@@ -238,18 +291,19 @@ Sprint 4.4 authorization preflight on 2026-09-08:
 
 ## Next Control Gate
 
-Sprint 4.4 - Observability is the current authorized gate. D096 has frozen its
-minimum safe-log, bounded-metric, correlation, probe, alert, retention,
-exposure and certification contract. The separate implementation authorization
-was granted on 2026-09-08. It may not change business Ledger semantics,
-calculate Business Value, expand routes or connectors, introduce public
-exposure, provision the external IdP or authorize real customer data. External
-Pilot Identity Conformance remains a separate mandatory gate before Sprint 4.5.
+D098 - Runtime Supply Chain Refresh is the current blocking gate. Its local
+image, reproducibility and runtime checks pass; the matching hosted Security
+and CodeQL checks must now pass without exception. Only after D098 is green may Sprint 4.4 resume under
+D097 with safe ECS logs, bounded metrics, correlation, liveness/readiness and
+internal unpublished Actuator endpoints. Prometheus/Grafana remain deferred;
+business semantics, routes, connectors, public exposure, external identity and
+customer data remain outside both gates.
 
 Current execution authorities:
 
-- D079 through D096 in `docs/decisions/14_Decision_Log.md`;
+- D079 through D098 in `docs/decisions/14_Decision_Log.md`;
 - `agents/phase3/README.md`;
+- `agents/phase3/SPRINT_4.4_D097_MVP_OBSERVABILITY_IMPLEMENTATION_PROMPT.md`;
 - `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`;
 - `docs/architecture/50_Executive_Dashboard_Contract.md`;
 - `docs/architecture/46_JWT_Authentication_Contract.md`;
@@ -261,6 +315,8 @@ Current execution authorities:
 - `docs/architecture/54_Observability_Preparation.md`;
 - `docs/architecture/55_PostgreSQL_Runtime_Supply_Chain_Remediation_Contract.md`;
 - `docs/architecture/56_Observability_Runtime_Contract.md`;
+- `docs/architecture/57_MVP_Observability_Scope_Correction.md`;
+- `docs/architecture/58_Runtime_Supply_Chain_Refresh.md`;
 - `docs/architecture/28_Per_Connector_MVP_Contracts.md`;
 - `docs/architecture/CONNECTOR_FRAMEWORK.md`;
 - `docs/architecture/35_Coding_Principles.md`;
