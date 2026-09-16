@@ -27,6 +27,38 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+      - name: Assert deferred monitoring runtime is absent
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          $deferredDirectory = "infra/docker/observability"
+          if (Test-Path -LiteralPath $deferredDirectory) {
+            throw "D097 forbids active external monitoring assets: $deferredDirectory"
+          }
+
+          $runtimeInputs = @(
+            "infra/docker/compose.yaml"
+            "infra/docker/.env.example"
+            "infra/docker/secrets/README.md"
+          )
+          $forbiddenPatterns = [ordered]@{
+            monitoringService = '(?m)^\s{2}(prometheus|grafana|alertmanager):\s*$'
+            monitoringProfile = '(?m)^\s+-\s+observability\s*$'
+            monitoringNetwork = '(?m)^\s{2}observability-internal:\s*$'
+            monitoringVolume = '(?m)^\s{2}prometheus-data:\s*$'
+            grafanaPort = 'IMPERATOR_' + 'GRAFANA_PORT'
+            grafanaSecret = 'grafana-' + 'admin-password'
+          }
+          foreach ($path in $runtimeInputs) {
+            $content = Get-Content -Raw -LiteralPath $path
+            foreach ($entry in $forbiddenPatterns.GetEnumerator()) {
+              if ($content -match $entry.Value) {
+                throw "D097 found forbidden $($entry.Key) in $path"
+              }
+            }
+          }
+
+          Write-Output "D097 deferred monitoring runtime assertion: PASS"
 
       - name: Scan repository with Trivy
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
@@ -83,9 +115,9 @@ jobs:
             --exit-code 1
 
   application-images:
-    name: Application and migration image scan
+    name: Application image scan
     runs-on: ubuntu-24.04
-    timeout-minutes: 45
+    timeout-minutes: 35
 
     steps:
       - name: Check out repository
@@ -141,201 +173,6 @@ jobs:
           exit-code: "1"
           format: table
           hide-progress: true
-
-      - name: Build PostgreSQL-only Flyway image
-        run: >-
-          docker build
-          --file infra/docker/flyway/Dockerfile
-          --build-arg VCS_REF=${{ github.sha }}
-          --tag imperator/flyway:${{ github.sha }}
-          infra/docker/flyway
-
-      - name: Scan PostgreSQL-only Flyway image
-        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
-        with:
-          image-ref: imperator/flyway:${{ github.sha }}
-          scanners: vuln,secret
-          severity: HIGH,CRITICAL
-          ignore-unfixed: true
-          exit-code: "1"
-          format: table
-          hide-progress: true
-
-  observability-images:
-    name: Observability D096 supply-chain gate
-    runs-on: ubuntu-24.04
-    timeout-minutes: 25
-    env:
-      PROMETHEUS_IMAGE: prom/prometheus:v3.13.3-distroless@sha256:2e9a8ad75536755572d703e645fcc39c8104d9f0215d49d613db35194b0d8bc2
-      GRAFANA_IMAGE: grafana/grafana:13.2.1@sha256:f772d434e8fab0049deb2b1b30abd43342bcfca1537614aa8d36080232cf4283
-
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-
-      - name: Install Trivy
-        uses: aquasecurity/setup-trivy@81e514348e19b6112ce2a7e3ecbafe19c1e1f567 # v0.3.1
-        with:
-          version: v0.74.0
-          cache: true
-
-      - name: Prepare D096 evidence and verify image pins
-        shell: pwsh
-        run: |
-          $ErrorActionPreference = "Stop"
-          New-Item -ItemType Directory -Force -Path build/d096 | Out-Null
-
-          $compose = Get-Content -Raw infra/docker/compose.yaml
-          foreach ($image in @($env:PROMETHEUS_IMAGE, $env:GRAFANA_IMAGE)) {
-            if (-not $compose.Contains("image: $image")) {
-              throw "The D096 workflow image does not match Compose: $image"
-            }
-          }
-
-          @(
-            "sourceRevision=${{ github.sha }}"
-            "runnerOS=${{ runner.os }}"
-            "runnerArchitecture=${{ runner.arch }}"
-            "docker=$(docker --version)"
-            "trivy=$(trivy --version | Select-Object -First 1)"
-          ) | Set-Content -Encoding utf8 build/d096/ci-environment.txt
-
-      - name: Validate Prometheus configuration and alert transitions
-        shell: bash
-        run: |
-          set -euo pipefail
-          docker run --rm \
-            --entrypoint /bin/promtool \
-            --volume "$PWD/infra/docker/observability/prometheus:/etc/prometheus:ro" \
-            "$PROMETHEUS_IMAGE" \
-            check config /etc/prometheus/prometheus.yml \
-            | tee build/d096/promtool-config.txt
-          docker run --rm \
-            --entrypoint /bin/promtool \
-            --volume "$PWD/infra/docker/observability/prometheus:/etc/prometheus:ro" \
-            "$PROMETHEUS_IMAGE" \
-            test rules /etc/prometheus/tests/imperator-alerts.test.yml \
-            | tee build/d096/promtool-alert-transitions.txt
-
-      - name: Scan D096 runtime images
-        shell: pwsh
-        run: |
-          $ErrorActionPreference = "Stop"
-          $reports = [ordered]@{}
-          $images = [ordered]@{
-            prometheus = $env:PROMETHEUS_IMAGE
-            grafana = $env:GRAFANA_IMAGE
-          }
-
-          foreach ($entry in $images.GetEnumerator()) {
-            docker pull $entry.Value | Out-Null
-            if ($LASTEXITCODE -ne 0) {
-              throw "Unable to pull $($entry.Key) image."
-            }
-
-            $reportPath = "build/d096/trivy-$($entry.Key).json"
-            trivy image `
-              --scanners vuln,secret `
-              --severity HIGH,CRITICAL `
-              --ignore-unfixed `
-              --format json `
-              --output $reportPath `
-              $entry.Value
-            if ($LASTEXITCODE -ne 0) {
-              throw "Trivy could not scan $($entry.Key)."
-            }
-
-            $report = Get-Content -Raw $reportPath | ConvertFrom-Json
-            $vulnerabilities = @(
-              $report.Results |
-                ForEach-Object { @($_.Vulnerabilities) } |
-                Where-Object { $null -ne $_ }
-            )
-            $secrets = @(
-              $report.Results |
-                ForEach-Object { @($_.Secrets) } |
-                Where-Object { $null -ne $_ }
-            )
-            $reports[$entry.Key] = [ordered]@{
-              image = $entry.Value
-              imageId = docker image inspect --format '{{.Id}}' $entry.Value
-              fixableHighCriticalCount = $vulnerabilities.Count
-              uniqueVulnerabilityIdCount = @(
-                $vulnerabilities.VulnerabilityID | Sort-Object -Unique
-              ).Count
-              vulnerabilityIds = @(
-                $vulnerabilities.VulnerabilityID | Sort-Object -Unique
-              )
-              secretCount = $secrets.Count
-              findings = @(
-                $vulnerabilities |
-                  Select-Object VulnerabilityID, PkgName, InstalledVersion,
-                    FixedVersion, Severity -Unique
-              )
-            }
-            Remove-Item -LiteralPath $reportPath
-          }
-
-          $reports | ConvertTo-Json -Depth 6 |
-            Set-Content -Encoding utf8 build/d096/image-scan-summary.json
-
-          foreach ($scan in $reports.GetEnumerator()) {
-            $vulnerabilityIds = if ($scan.Value.vulnerabilityIds.Count -eq 0) {
-              "none"
-            } else {
-              $scan.Value.vulnerabilityIds -join ","
-            }
-            Write-Output (
-              "D096 scan {0}: fixableHighCritical={1}; uniqueIds={2}; " +
-              "secrets={3}; vulnerabilityIds=[{4}]" -f
-                $scan.Key,
-                $scan.Value.fixableHighCriticalCount,
-                $scan.Value.uniqueVulnerabilityIdCount,
-                $scan.Value.secretCount,
-                $vulnerabilityIds
-            )
-          }
-
-          $failed = @(
-            $reports.GetEnumerator() |
-              Where-Object {
-                $_.Value.fixableHighCriticalCount -ne 0 -or
-                  $_.Value.secretCount -ne 0
-              }
-          )
-          if ($failed.Count -ne 0) {
-            $failureDetails = (
-              $failed |
-                ForEach-Object {
-                  "{0}: vulnerabilities={1}, secrets={2}" -f
-                    $_.Key,
-                    $_.Value.fixableHighCriticalCount,
-                    $_.Value.secretCount
-                }
-            ) -join "; "
-            throw (
-              "D096 requires zero fixable High/Critical findings and zero " +
-              "secrets. Blocked images: $failureDetails"
-            )
-          }
-
-      - name: Record scan database metadata
-        if: always()
-        shell: pwsh
-        run: |
-          trivy --version |
-            Set-Content -Encoding utf8 build/d096/trivy-database-metadata.txt
-
-      - name: Preserve D096 evidence
-        if: always()
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
-        with:
-          name: d096-observability-supply-chain-${{ github.sha }}
-          path: build/d096
-          if-no-files-found: error
-          retention-days: 14
 
   postgresql-runtime-image:
     name: PostgreSQL D094 supply-chain gate

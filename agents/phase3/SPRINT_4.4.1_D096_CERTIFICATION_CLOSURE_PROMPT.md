@@ -1,6 +1,10 @@
 # Sprint 4.4.1 - D096 Certification Closure Prompt
 
-Status: **PROPOSED / NOT AUTHORIZED**
+Status: **SUPERSEDED BY D097 / DO NOT EXECUTE**
+
+This proposed closure path is preserved as historical evidence only. D097
+defers the external Prometheus/Grafana stack beyond MVP and replaces this
+prompt with the application-native Sprint 4.4 certification boundary.
 
 ## Purpose
 

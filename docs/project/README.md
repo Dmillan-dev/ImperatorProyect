@@ -23,7 +23,7 @@ For a compact project description, use
 Current execution evidence:
 
 - [Security And Maintenance Audit - 2026-09-09](SECURITY_AUDIT_2026-09-09.md)
-- [Proposed D096 Certification Closure Prompt](../../agents/phase3/SPRINT_4.4.1_D096_CERTIFICATION_CLOSURE_PROMPT.md)
+- [Superseded D096 Certification Closure Prompt](../../agents/phase3/SPRINT_4.4.1_D096_CERTIFICATION_CLOSURE_PROMPT.md)
 
 ## Document Classes
 

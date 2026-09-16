@@ -1,15 +1,22 @@
 package imperator.api.observability;
 
+import imperator.application.importevidence.ImportEvidenceResult;
+import imperator.domain.shared.EvidenceId;
 import io.micrometer.core.instrument.Counter;
+import io.micrometer.core.instrument.Meter;
+import io.micrometer.core.instrument.config.MeterFilter;
+import io.micrometer.core.instrument.config.MeterFilterReply;
 import io.micrometer.core.instrument.simple.SimpleMeterRegistry;
 import org.junit.jupiter.api.Test;
 
 import java.sql.SQLException;
 import java.util.Set;
+import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ImperatorTelemetryContractTest {
@@ -88,6 +95,28 @@ class ImperatorTelemetryContractTest {
         assertEquals("github", connector.getId().getTag("source"));
         assertEquals("error", connector.getId().getTag("outcome"));
         assertTrue(registry.find("imperator.security.authorization.denial").meters().isEmpty());
+    }
+
+    @Test
+    void metricFailureCannotChangeAnApplicationPortResult() {
+        SimpleMeterRegistry registry = new SimpleMeterRegistry();
+        registry.config().meterFilter(new MeterFilter() {
+            @Override
+            public MeterFilterReply accept(Meter.Id id) {
+                throw new IllegalStateException("sentinel-meter-failure");
+            }
+        });
+        ImperatorTelemetry telemetry = new ImperatorTelemetry(registry);
+        ImportEvidenceResult expected = new ImportEvidenceResult(
+                new EvidenceId(UUID.randomUUID()), "fixture", true, false
+        );
+
+        var observedPort = ImperatorInputPortTelemetry.evidenceImport(
+                ignored -> expected,
+                telemetry
+        );
+
+        assertSame(expected, observedPort.importEvidence(null));
     }
 
     private SimpleMeterRegistry registry() {

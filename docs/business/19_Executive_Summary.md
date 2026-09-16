@@ -63,9 +63,9 @@ This document was originally created during Phase 0. The live repository is now
 in Phase 3: the Java domain, application and ports, Spring Boot REST runtime,
 PostgreSQL and Flyway persistence, JWT/RBAC controls, read-only GitHub and AWS
 adapters, Next.js workspace and hardened local Docker runtime are implemented.
-Sprint 4.3 is certified and Sprint 4.4 application observability is authorized
-under D097 but blocked by hosted D098 certification after local PASS; its runtime,
-operational external identity conformance, pilot
+Sprint 4.3 and D098 are certified. Sprint 4.4 application observability passes
+locally under D097 and awaits hosted Java CI, Security and CodeQL; operational
+external identity conformance, pilot
 infrastructure and real customer data are not yet present. Use the root
 `README.md` and
 `docs/project/PROJECT_STATUS.md` for the current execution state.
@@ -82,9 +82,8 @@ The founder-mode ambition remains valid: act like a CTO building an enterprise-g
 - First screen contract: `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`.
 - MVP integrations: Jira, GitHub, AWS and OpenAI + Anthropic Claude.
 - Architecture status: the Phase 3 local MVP runtime is certified through Sprint
-  4.3. D098 image security passes locally and hosted evidence is the current
-  blocking gate; once green, Sprint 4.4
-  resumes under D096/D097 application-native observability. External pilot identity and
+  4.3 and D098. D097 application-native observability passes locally; hosted
+  Java CI, Security and CodeQL are the current blocking gate. External pilot identity and
   infrastructure remain deferred to their later gates.
 
 ## Bottom line

@@ -40,8 +40,8 @@ and the append-only Decision Ledger preserves accountability.
 | Business flow | Evidence → Decision → Recommendation → Human Review → Ledger → Business Value |
 | Architecture | Java modular monolith with framework-free Domain/Application and hexagonal ports/adapters |
 | Security | RS256 JWT, explicit four-role RBAC, Evidence redaction, read-only cloud integrations and append-only audit history |
-| Verification | 151 backend tests, 34 PostgreSQL integration tests, 41 frontend tests and Playwright browser acceptance |
-| Current boundary | Pre-pilot; Sprint 4.3 Docker Production Runtime is certified, while external pilot identity remains deferred before Sprint 4.5 |
+| Verification | 162 backend tests, 34 PostgreSQL integration tests, 41 frontend tests and Playwright browser acceptance |
+| Current boundary | Pre-pilot; D097 application-native observability passes locally, while hosted certification and external pilot identity remain pending |
 
 ![IMPERATOR Decision Review Workspace using synthetic data](output/commercial/linkedin-discovery-kit/IMPERATOR_Workspace_Captura_Limpia.png)
 
@@ -69,16 +69,16 @@ Status labels in this repository have strict meanings:
 | GitHub evidence connector | **[IMPLEMENTED]** | Read-only REST adapter for one organization/repository; live sandbox smoke test remains pending |
 | AWS evidence connector | **[IMPLEMENTED]** | Read-only STS, Cost Explorer, tagging and CloudWatch adapter; live sandbox smoke test remains pending |
 | Decision Review Workspace | **[IMPLEMENTED]** | Next.js/React single-case workspace with strict response validation |
-| Docker production-like runtime | **[IMPLEMENTED / D098 LOCAL PASS]** | Hardened Compose and maintained images pass current local runtime and supply-chain gates; hosted D098 evidence is pending |
+| Docker production-like runtime | **[IMPLEMENTED / D098 CERTIFIED]** | Hardened Compose and maintained images pass local and hosted runtime and supply-chain gates |
 | External OIDC identity provider | **[PLANNED]** | Keycloak pilot integration is designed but not provisioned or connected |
 | D093 case-composition route | **[IMPLEMENTED]** | `ADMIN`-only R16 composes the canonical Decision and Recommendation through existing Application boundaries |
-| Application observability | **[PLANNED / BLOCKED]** | D097 authorizes the minimum application-native D096 subset; hosted D098 image certification must pass first and external monitoring services remain deferred beyond MVP |
+| Application observability | **[IMPLEMENTED / D097 LOCAL PASS]** | ECS JSON logs, bounded correlation and metrics, exact probes and internal Actuator pass locally; hosted D097 gates remain pending and external monitoring stays deferred |
 | Python/FastAPI explanation service | **[FUTURE]** | Directory boundary only; no Python source or provider calls |
 | Kubernetes, Terraform, Kafka and Redis | **[FUTURE]** | Explicitly excluded from the MVP |
 
-Current formal state: **Phase 3, pre-pilot; Sprint 4.3 and its documentation
-synchronization are complete, D097 authorizes reduced MVP observability, and
-D098 passes locally while hosted security certification remains the current blocking gate.** D095 defers operational
+Current formal state: **Phase 3, pre-pilot; D098 is complete and the reduced
+D097 MVP observability implementation passes locally. Hosted Java CI, Security
+and CodeQL are the current Sprint 4.4 certification gate.** D095 defers operational
 Keycloak HTTPS conformance without weakening
 D087/D088; it remains mandatory before Sprint 4.5, real customer data or MVP
 Release. See the
@@ -198,13 +198,13 @@ See [Security Policy](SECURITY.md) and the canonical
 | GitHub Actions Java build | **IMPLEMENTED**; minimal `contents: read` permission and actions pinned by commit SHA |
 | Maven runtime enforcement | **IMPLEMENTED**; exact Maven 3.9.16 and Java 21 boundary |
 | Compiler warnings as errors | **IMPLEMENTED** |
-| Backend unit/API/security tests | **IMPLEMENTED**; 151 default tests |
+| Backend unit/API/security tests | **IMPLEMENTED**; 162 default tests |
 | PostgreSQL integration gate | **IMPLEMENTED**; 34 real-database tests plus Flyway migrate/validate/idempotency |
 | Frontend lint/typecheck/tests/build | **IMPLEMENTED locally**; 41 tests and production build pass |
 | Frontend dependency audit | **IMPLEMENTED as a manual certification command**; latest local check found 0 vulnerabilities |
 | Automated source/dependency scan | **IMPLEMENTED**; the fail-closed hosted Trivy workflow scans dependencies, secrets and configuration and is passing |
-| Application container vulnerability gate | **IMPLEMENTED / D098 LOCAL PASS / HOSTED PENDING**; local backend and frontend images report zero fixable High/Critical findings and zero secrets |
-| PostgreSQL supply-chain gate | **IMPLEMENTED / D098 LOCAL PASS / HOSTED PENDING**; two local builds share the same runtime manifest and D094 runtime, SBOM and provenance checks pass |
+| Application container vulnerability gate | **IMPLEMENTED / D098 CERTIFIED**; local and hosted backend/frontend images report zero fixable High/Critical findings and zero secrets |
+| PostgreSQL supply-chain gate | **IMPLEMENTED / D098 CERTIFIED**; reproducible D094 runtime, SBOM, provenance and hosted checks pass |
 | CodeQL SAST | **IMPLEMENTED IN GITHUB**; default setup for Java/Kotlin and JavaScript/TypeScript is enabled and passing |
 | Frontend CI workflow | **PLANNED** |
 | Dependency scanning | **PARTIALLY IMPLEMENTED**; Trivy scans repository dependencies, while dedicated Java dependency review remains planned |
@@ -282,8 +282,8 @@ implemented. The conceptual API and transport rules live in
 
 Verified at the current implementation boundary:
 
-- 151 backend default tests covering Domain, Application, connectors, REST,
-  JWT and RBAC;
+- 162 backend default tests covering Domain, Application, connectors, REST,
+  JWT/RBAC and D097 observability isolation;
 - 34 PostgreSQL integration tests covering repositories, transactions, Flyway,
   REST composition and connector persistence;
 - 41 frontend unit/component tests;
@@ -299,13 +299,12 @@ These concerns have different maturity levels:
 - **Auditability is implemented:** immutable Ledger facts retain Decision,
   actor, timestamp, reason and Evidence relationships; PostgreSQL constraints
   protect ordering and referential integrity.
-- **Operational diagnostics are partially implemented:** HTTP correlation IDs,
-  typed non-sensitive errors, container health checks and bounded Docker log
-  rotation exist.
-- **Observability is contracted but not implemented:** D097 retains structured
-  ECS application logs, bounded metrics and exact probes from D096 while
-  deferring Prometheus/Grafana services, alerts and dashboards beyond MVP.
-  OpenTelemetry is explicitly outside Sprint 4.4.
+- **Operational diagnostics are implemented locally:** HTTP correlation IDs,
+  typed non-sensitive errors, one-line ECS JSON, exact health probes, bounded
+  metrics, container health checks and Docker log rotation pass D097.
+- **External monitoring is deferred:** Prometheus/Grafana services, alerts and
+  dashboards are absent from the MVP runtime. OpenTelemetry is also outside
+  Sprint 4.4.
 
 There is no public TLS endpoint or encryption-at-rest claim. The current
 runtime is local and loopback-bound; pilot TLS, external identity, backup and
@@ -403,17 +402,17 @@ as realized value until validation evidence exists.
 
 | Stage | Scope |
 |---|---|
-| **Completed** | Core Domain, Application use cases, PostgreSQL, REST, JWT/RBAC, GitHub/AWS evidence adapters, D093 composition, Decision Review Workspace and Docker Production Runtime |
-| **Current** | D098 hosted Security and CodeQL certification after local PASS |
-| **Next** | Sprint 4.4 MVP application observability implementation and certification under D097 |
-| **Planned** | External Keycloak pilot conformance and Sprint 4.5 Pilot Readiness |
+| **Completed** | Core Domain, Application use cases, PostgreSQL, REST, JWT/RBAC, GitHub/AWS evidence adapters, D093 composition, Decision Review Workspace, Docker Production Runtime and D098 supply-chain refresh |
+| **Current** | Sprint 4.4 D097 hosted Java CI, Security and CodeQL certification after local PASS |
+| **Next** | External Keycloak HTTPS pilot conformance required by D095 |
+| **Planned** | Sprint 4.5 Pilot Readiness and MVP release acceptance |
 | **Future** | Python explanation service, more connectors, multi-tenancy, cloud deployment, Terraform, Kubernetes, Kafka and Redis only when justified |
 
 ## Post-MVP DevSecOps Path
 
-This is a delivery sequence, not an implementation claim. Sprint 4.4 MVP
-application observability, external Pilot Identity Conformance and Pilot
-Readiness retain precedence over this path.
+This is a delivery sequence, not a release claim. Hosted D097 certification,
+external Pilot Identity Conformance and Pilot Readiness retain precedence over
+this path.
 
 ```mermaid
 flowchart LR

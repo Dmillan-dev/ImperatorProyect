@@ -1,129 +1,106 @@
 # IMPERATOR Observability Runtime Runbook
 
-Status: **SPRINT 4.4 IMPLEMENTED / CERTIFICATION BLOCKED**
+Status: **D097 IMPLEMENTED / LOCAL PASS / HOSTED PENDING**
 
-This runbook covers the local D096 Prometheus alerts. Use only correlation IDs,
-normalized route IDs, bounded outcomes and aggregate metrics during diagnosis.
-Never paste JWTs, credentials, request bodies, Evidence, customer identifiers,
-provider values or raw database content into incident records.
+This runbook covers the application-native observability retained for the MVP.
+There is no Prometheus, Grafana, Alertmanager, collector, dashboard or alerting
+service in the active runtime.
+
+Use only correlation IDs, normalized route IDs, bounded outcomes and aggregate
+metrics during diagnosis. Never copy JWTs, credentials, request bodies,
+Evidence, customer identifiers, provider values, financial values or raw
+database content into logs, evidence or incident records.
 
 ## Runtime Access
 
-Start the optional profile from the repository root:
+Start the base runtime from the repository root with an immutable image tag:
+
+```powershell
+$env:IMPERATOR_IMAGE_TAG = git rev-parse HEAD
+docker compose --env-file infra/docker/.env `
+  -f infra/docker/compose.yaml up --detach --wait --build
+```
+
+Only the frontend is published, on loopback. Backend application port `8080`
+and management port `9090` are available only inside Compose networks and are
+not proxied by the frontend.
+
+The allowed operational endpoints are:
+
+| Endpoint | Port | Meaning |
+|---|---:|---|
+| `/livez` | 8080 | Process liveness only |
+| `/readyz` | 8080 | PostgreSQL-aware readiness |
+| `/actuator/health/liveness` | 9090 | Internal process liveness |
+| `/actuator/health/readiness` | 9090 | Internal PostgreSQL-aware readiness |
+| `/actuator/prometheus` | 9090 | Internal bounded metric exposition |
+
+All other Actuator endpoints are disabled. Health responses never expose
+details or components.
+
+## Standard Triage
+
+1. Record UTC detection time and a non-sensitive incident identifier.
+2. Check container health, then `/livez` and `/readyz`.
+3. Correlate safe ECS JSON events using one canonical `X-Correlation-ID`.
+4. Inspect only normalized HTTP, security, database and operation metrics.
+5. Restore the failed dependency or capacity without changing product data.
+6. Confirm readiness recovery and record the bounded corrective action.
+
+Telemetry is diagnostic and non-authoritative. It must never retry a command,
+change an HTTP result, mutate a transaction, append a Ledger entry or alter a
+Business Value projection.
+
+## Readiness Failure
+
+If `/livez` returns `200` while `/readyz` returns `503`, inspect PostgreSQL
+container health and connectivity. This is the expected state when the process
+is alive but cannot serve database-backed traffic. Do not delete or recreate
+the persistent volume during triage.
+
+After PostgreSQL recovers, confirm both `/readyz` and the internal readiness
+endpoint return `200`. Readiness transition logs contain only bounded state and
+event fields.
+
+## HTTP And Security Signals
+
+Use normalized route templates, methods, status groups and outcomes. Raw paths,
+query strings, subjects and request bodies are prohibited metric labels.
+
+Authentication counters distinguish only bounded reasons such as missing or
+invalid tokens. Authorization counters use the allow-listed role and route ID.
+Never record bearer material, JWT claims, email addresses or key data. Repeated
+unexplained failures remain a security incident and must not be resolved by
+weakening D087 or D088.
+
+## Database And Connector Signals
+
+Database metrics use bounded operation and outcome values. Connector metrics
+identify only the allow-listed source (`github` or `aws`) and outcome. Provider
+account, repository, resource, payload and credential values are prohibited.
+
+Product state must be reviewed through authorized APIs. Observability cannot
+repair Decisions, Recommendations, Evidence or Ledger history.
+
+## Verification And Evidence
+
+Run the complete controlled runtime check from the repository root:
+
+```powershell
+.\scripts\verify-observability-runtime.ps1 `
+  -ImageTag (git rev-parse --short HEAD)
+```
+
+The verifier proves endpoint allow-listing, host non-publication, ECS JSON,
+sentinel redaction, correlation, required metrics, bounded series, telemetry
+failure isolation and readiness loss/recovery. Sanitized local evidence is
+written only below ignored `build/d097`.
+
+Stop the runtime without deleting persistent data:
 
 ```powershell
 docker compose --env-file infra/docker/.env `
-  -f infra/docker/compose.yaml `
-  --profile observability up --detach --wait --build
+  -f infra/docker/compose.yaml down
 ```
 
-Grafana is loopback-only at `http://127.0.0.1:3001` by default. Prometheus and
-backend management port `9090` are internal. Stop the profile without deleting
-product or metric data:
-
-```powershell
-docker compose --env-file infra/docker/.env `
-  -f infra/docker/compose.yaml `
-  --profile observability down
-```
-
-Do not add `--volumes` during normal operation. Prometheus retention is bounded
-to seven days or 256 MiB, whichever occurs first. Its data and alert state are
-diagnostic only; PostgreSQL and the append-only Ledger remain authoritative.
-
-## Common Triage
-
-1. Record UTC detection time, alert name, severity and a non-sensitive incident
-   identifier.
-2. Check `/livez` and `/readyz` through the internal backend network, then the
-   Prometheus target and Grafana dashboard.
-3. Correlate only bounded route, outcome and correlation fields. Confirm no
-   sensitive values are copied into notes.
-4. Restore the affected dependency or capacity. Never retry a command or alter
-   product data solely because an alert fired.
-5. Confirm the alert recovers after its configured window and record the safe
-   corrective action.
-
-## Backend Unavailable
-
-For `ImperatorBackendUnavailable`, check backend container health and whether
-`/actuator/prometheus` is reachable from the Prometheus container. Confirm the
-application `/livez` and `/readyz` states before restarting anything. A scrape
-network/configuration failure can leave the product healthy; treat it separately
-from an actual backend outage.
-
-## HTTP 5xx Rate
-
-For `ImperatorHttp5xxRateHigh`, compare request count and 5xx ratio by normalized
-`method`, `uri`, `status` and `outcome`. Use correlation IDs from the affected
-window to inspect safe application events. Check readiness and database-failure
-counters. Do not inspect or export request bodies.
-
-## Read Latency
-
-For `ImperatorReadLatencyHigh`, identify the contracted GET route template with
-elevated p95 latency. Compare request rate, JVM state, readiness and database
-failure counters. Confirm recovery using aggregate latency only; do not add
-object identifiers or raw paths as labels.
-
-## Command Latency
-
-For `ImperatorCommandLatencyHigh`, identify the contracted POST route template
-with elevated p95 latency. Check database readiness and the matching bounded
-operation outcome. Do not replay, approve or retry a command as an observability
-action; follow the existing product workflow.
-
-## Authentication Failures
-
-For `ImperatorAuthenticationFailureBurst`, compare only `missing_token` and
-`invalid_token` counts. Check issuer/JWKS availability and clock/configuration
-outside logs. Never capture tokens, JWT claims, subjects, emails or key material.
-Escalate repeated unexplained failures as a security incident.
-
-## Authorization Denials
-
-For `ImperatorAuthorizationDenialBurst`, compare the bounded role and R01-R16
-route IDs. Verify D088 role assignment at the external identity boundary. Do
-not weaken authorization or add subject identifiers to telemetry.
-
-## Ledger Command Failure
-
-For `ImperatorLedgerCommandFailure`, check bounded command and outcome values,
-database readiness and safe correlation events. Preserve D083 transaction and
-append-only rules. Product state must be reviewed through the authorized API;
-telemetry cannot repair or append Ledger entries.
-
-## Connector Sync Failure
-
-For `ImperatorConnectorSyncFailure`, identify only the bounded `github` or `aws`
-source and outcome. Verify connector enablement, read-only credentials and
-provider availability outside telemetry. Never record repository, account,
-resource, credential or Evidence values in the incident.
-
-## Composition Conflicts
-
-For `ImperatorCompositionConflictBurst`, compare `conflict` and `not_ready`
-outcomes and database health. Review the case through existing authorized
-product routes. Do not change idempotency, uniqueness or transaction behavior
-to clear the alert.
-
-## Database Operation Failure
-
-For `ImperatorDatabaseOperationFailure`, check `/readyz`, PostgreSQL container
-health and the bounded operation label. Restore database availability using the
-existing D092-D095 runtime procedure. Liveness should remain healthy while
-readiness fails; do not delete or recreate volumes during triage.
-
-## JVM Heap High
-
-For `ImperatorJvmHeapHigh`, compare heap used/max, process CPU, request rate and
-latency over the full alert window. Capture aggregate metrics and safe event
-counts before a controlled backend restart. Escalate repeat growth for heap
-analysis outside customer-bearing environments.
-
-## Recovery And Evidence
-
-Run `scripts/verify-observability-runtime.ps1` for controlled local validation.
-Sanitized evidence belongs only in ignored `build/d096` locally and is retained
-for 14 days in CI. The optional profile is healthy only when monitoring starts,
-but monitoring failure must never change product readiness or product data.
+Do not add `--volumes` during normal operation or incident response.

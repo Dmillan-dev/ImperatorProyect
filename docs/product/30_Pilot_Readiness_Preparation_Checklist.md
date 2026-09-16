@@ -13,8 +13,8 @@ Readiness. The blocking chain is:
 ```text
 Sprint 4.3 CERTIFIED under D095
   -> Sprint 4.3.1 documentation synchronization COMPLETE
-  -> D098 hosted image certification after local PASS
-  -> Sprint 4.4 MVP application observability and certification under D097
+  -> D098 image certification COMPLETE / HOSTED PASS
+  -> Sprint 4.4 D097 hosted certification after local PASS
   -> external Keycloak D087/D088 conformance
   -> controlled live-connector and operational readiness evidence
   -> Sprint 4.5 Pilot Readiness
@@ -38,11 +38,11 @@ Sprint 4.3 CERTIFIED under D095
 | Ledger | `CERTIFIED` | Ordered append-only governance chain certified |
 | Business Value | `CERTIFIED LOCAL RUNTIME` | Exact projection and complete DRC-AOA-001 runtime E2E pass |
 | Workspace | `CERTIFIED CONTROLLED DEMO` | D091 complete; no commercial login |
-| Docker runtime | `D098 LOCAL PASS / HOSTED PENDING` | Maintained images and hardened Compose pass locally; hosted image gates remain pending |
+| Docker runtime | `D098 COMPLETE / HOSTED PASS` | Maintained images and hardened Compose pass locally and hosted |
 | Flyway/persistence | `CERTIFIED` | PostgreSQL 18.6, V1/V2 migrate/validate/no-op and persisted graph recreation pass |
 | Backup/restore | `NOT IMPLEMENTED` | D092 excludes it; volume persistence is not backup |
 | Security | `PARTIAL FOR PILOT` | Local runtime and JWT/RBAC pass; external IdP and pilot operations remain pending |
-| Observability | `AUTHORIZED / BLOCKED` | D097 retains the application-native D096 subset; hosted D098 image certification must pass first |
+| Observability | `D097 LOCAL PASS / HOSTED PENDING` | ECS logs, correlation, metrics, probes and internal Actuator pass locally; external monitoring remains deferred |
 | Runtime E2E | `CERTIFIED LOCAL` | R01-R16, governance, Business Value and recreation pass under D095 |
 | Documentation | `SYNCHRONIZED` | Sprint 4.3.1 records the certified local runtime and deferred pilot identity gate |
 
@@ -95,7 +95,7 @@ credible, auditable value loop whose financial meaning the customer accepts.
 
 ## 6. Architecture Health Review
 
-Review basis: current repository at the D098 security-maintenance boundary,
+Review basis: current repository at the D097 observability-certification boundary,
 frozen D081-D098 contracts and certified implementation through
 Sprint 4.3.
 
@@ -122,9 +122,9 @@ Sprint 4.3.
 1. D091 provides controlled token paste, not commercial login or SSO.
 2. No operational external HTTPS issuer/JWKS has passed the mandatory Pilot
    Identity Conformance Gate.
-3. D097 authorizes application-native observability, but its dependencies,
-   endpoints, logs and metrics do not exist until Sprint 4.4 implementation.
-   Prometheus/Grafana services, dashboards and alerts are deferred beyond MVP.
+3. D097 application-native observability passes locally with dependencies,
+   endpoints, logs, metrics and failure-isolation evidence. Hosted certification
+   is pending. Prometheus/Grafana services, dashboards and alerts are deferred.
 4. Docker volume persistence is not backup/restore. D092 explicitly excludes
    backup, which must be resolved before real customer data if the pilot terms
    require recoverability beyond container recreation.
@@ -150,7 +150,7 @@ architecture redesign.
 
 | Suite | Existing evidence | Required before pilot |
 |---|---|---|
-| Domain/Application unit | 151 default tests, including deterministic policies, governance and D093 composition | Preserve as regression evidence |
+| Domain/Application unit | 162 default tests, including deterministic policies, governance, D093 composition and D097 isolation | Preserve as regression evidence |
 | REST contracts | D086 R01-R15 plus D093 R16 certified | Preserve exact contract and negative-path coverage |
 | JWT/RBAC | Controlled RS256 and role matrix certified | Repeat with real Keycloak tokens |
 | PostgreSQL | PostgreSQL 18.6, Flyway V1/V2 and 34 integration tests certified | Repeat relevant evidence in the pilot environment |
@@ -158,7 +158,7 @@ architecture redesign.
 | Frontend | 41 tests and 9 Playwright acceptance tests certified | Load the runtime-composed case with an operational external token |
 | Connectors | GitHub/AWS offline protocol tests certified | Controlled live read-only smoke evidence |
 | Docker | D092-D095 runtime, clean images and complete data recreation certified | Preserve exact certified inputs and evidence |
-| Observability | D096/D097 contracts only; none at runtime | Sprint 4.4 application-native implementation and certification |
+| Observability | D097 application-native runtime passes locally | Reproduce with hosted Java CI, Security and CodeQL |
 
 ## 8. Evidence Required For Pilot Authorization
 
@@ -196,8 +196,8 @@ SPRINT 4.3: CERTIFIED
 SPRINT 4.3.1: COMPLETE
 D096 CONTRACT: FROZEN / ACCEPTED
 D097 SCOPE CORRECTION: FROZEN / ACCEPTED
-D098 RUNTIME SUPPLY CHAIN REFRESH: LOCAL PASS / HOSTED PENDING / CURRENT
-SPRINT 4.4 MVP OBSERVABILITY: AUTHORIZED / BLOCKED BY D098
+D098 RUNTIME SUPPLY CHAIN REFRESH: COMPLETE / HOSTED PASS
+SPRINT 4.4 MVP OBSERVABILITY: LOCAL PASS / HOSTED PENDING / CURRENT
 EXTERNAL PILOT IDENTITY: MANDATORY BEFORE SPRINT 4.5
 SPRINT 4.5: NOT OPEN
 ```

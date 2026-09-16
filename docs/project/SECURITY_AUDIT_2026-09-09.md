@@ -1,6 +1,10 @@
 # Security And Maintenance Audit - 2026-09-09
 
-Status: **LOCAL PASS / HOSTED HISTORY AND D096 UPSTREAM GATES PENDING**
+Status: **HISTORICAL D096 ATTEMPT / SUPERSEDED BY D097**
+
+This document preserves the evidence observed during the abandoned D096
+external-monitoring attempt. Its dependency, image and runtime inventory is a
+dated snapshot, not the current D097 implementation state.
 
 ## Scope
 

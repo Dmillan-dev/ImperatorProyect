@@ -2,7 +2,7 @@
 
 Status: **ACTIVE**
 
-Current gate: **D098 - Runtime Supply Chain Refresh**
+Current gate: **Sprint 4.4 D097 hosted certification after local PASS**
 
 Authorization: **D079 - Phase 3 Vertical-Slice Acceleration; D085 - MVP Delivery Roadmap Evolution; D095 - D092 Runtime Certification Scope Correction; D096 - Minimum Observability Runtime Contract; D097 - MVP Observability Scope Correction; D098 - Runtime Supply Chain Refresh**
 
@@ -130,8 +130,8 @@ Locked constraints:
 | 4.3.1 | Documentation Synchronization | COMPLETE |
 | D096 | Minimum Observability Runtime Contract | ACCEPTED / COMPLETE / FROZEN |
 | D097 | MVP Observability Scope Correction | ACCEPTED / COMPLETE / FROZEN; IMPLEMENTATION AUTHORIZED |
-| D098 | Runtime Supply Chain Refresh | ACCEPTED / FROZEN; IMPLEMENTED; LOCAL PASS; HOSTED PENDING |
-| 4.4 | MVP Application Observability | AUTHORIZED UNDER D097 / BLOCKED BY D098 |
+| D098 | Runtime Supply Chain Refresh | ACCEPTED / FROZEN; COMPLETE / HOSTED PASS |
+| 4.4 | MVP Application Observability | IMPLEMENTED / LOCAL PASS / HOSTED PENDING |
 | 4.5 | Pilot Readiness | PENDING |
 | 5.0 | MVP Release | PENDING |
 
@@ -648,13 +648,13 @@ runtime configuration, frozen contract or prior decision.
 
 ## D098 - Runtime Supply Chain Refresh
 
-D098 is the current blocking security-maintenance gate. It pins Debian
+D098 is the completed security-maintenance gate. It pins Debian
 `libpcre2-8-0` `10.42-1+deb12u1` by URL and SHA-256 in the maintained frontend
 and PostgreSQL final images, verifies the installed package version, extends
 the PostgreSQL lock/provenance contract and keeps Trivy fail-closed at zero
 fixable High/Critical findings and zero secrets. Local image,
 two-build-reproducibility and hardened Compose certification passed on
-2026-09-15; equivalent hosted Security and CodeQL evidence remains pending.
+2026-09-15; the equivalent hosted Security and CodeQL evidence also passed.
 
 Pull requests `#34` through `#42` are not substitutes for D098. Major version
 updates remain deferred to separately authorized maintenance; minor and patch
@@ -672,15 +672,15 @@ and PostgreSQL-aware readiness, and internal unpublished Actuator endpoints.
 D097 defers Prometheus/Grafana runtime services, their Compose profile,
 dashboard, alerts and associated certification evidence beyond MVP. Their
 findings are not ignored or waived; the external images must be absent from the
-active MVP runtime. Implementation under Document 57 is authorized but blocked
-until hosted D098 passes. OpenTelemetry, log aggregation, external notifications, public
+active MVP runtime. Implementation under Document 57 passes locally and awaits
+hosted Java CI, Security and CodeQL. OpenTelemetry, log aggregation, external notifications, public
 exposure, customer data and changes to Domain, Application, API, persistence,
 Ledger or Business Value remain outside scope.
 
 Current execution prompt:
 `agents/phase3/SPRINT_4.4_D097_MVP_OBSERVABILITY_IMPLEMENTATION_PROMPT.md`.
-Run it only after hosted D098 application-image and D094 supply-chain jobs are
-green.
+Its implementation has been executed locally after hosted D098 application-image
+and D094 supply-chain jobs passed; use it as the D097 certification record.
 
 ## Demonstration And Pilot Boundary
 

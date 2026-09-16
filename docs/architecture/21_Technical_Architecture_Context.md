@@ -397,16 +397,16 @@ These are not Phase 2 Platform Foundation or Phase 3 MVP Implementation requirem
 
 ### 11) Minimal Observability
 
-D096 implements the bounded MVP observability boundary with Spring Boot
-Actuator, Micrometer, internal Prometheus and one loopback-only Grafana operator
-dashboard. It provides one-line ECS logs, correlation through MDC, process and
-PostgreSQL-aware probes, normalized HTTP metrics, bounded operation/security
-metrics and 11 local alert rules.
+D097 implements the bounded MVP observability boundary with Spring Boot
+Actuator and Micrometer inside the application. It provides one-line ECS logs,
+correlation through MDC, process and PostgreSQL-aware probes, normalized HTTP
+metrics and bounded operation/security metrics on internal management port
+`9090`.
 
 Telemetry is operational evidence only. It contains no customer identifiers,
 Evidence, credentials, request bodies, economic values or business controls,
 and it cannot change a product transaction or Ledger fact. Prometheus and
-Grafana are optional; their failure does not affect product readiness.
+Grafana runtime services are deferred beyond MVP and absent from Compose.
 OpenTelemetry, log aggregation, Alertmanager and external notification remain
 outside the Sprint 4.4 boundary. See the operational runbook at
 `docs/runbooks/observability-runtime.md`.
