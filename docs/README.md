@@ -108,13 +108,12 @@ Sprint 4.3 and its documentation synchronization are complete. D096 freezes
 the original Sprint 4.4 observability contract in
 `architecture/56_Observability_Runtime_Contract.md`. D097 in
 `architecture/57_MVP_Observability_Scope_Correction.md` authorizes only its
-application-native MVP subset and defers the external monitoring stack. The
-current blocking gate is D098 in
-`architecture/58_Runtime_Supply_Chain_Refresh.md`; maintained image
-certification passes locally and must now pass hosted checks before D097
-implementation resumes. The
+application-native MVP subset and defers the external monitoring stack. D098 in
+`architecture/58_Runtime_Supply_Chain_Refresh.md` passes locally and hosted.
+The D097 implementation now passes locally; hosted Java CI, Security and
+CodeQL are the current Sprint 4.4 certification gate. The
 following artifacts remain
-non-authoritative preparation: they do not implement or certify Sprint 4.4,
+non-authoritative preparation: they do not certify Sprint 4.4,
 pass the deferred Pilot Identity Conformance Gate, authorize Sprint 4.5,
 permit customer data or create a new decision:
 

@@ -74,9 +74,9 @@ certification boundary. Sprint 4.3 is certified: 151 default tests, 34
 PostgreSQL integration tests, final-image security gates, local JWT/RBAC E2E
 and persistence after recreation pass. Sprint 4.3.1 documentation
 synchronization is complete. D096 freezes the original Observability contract
-and D097 authorizes only its application-native MVP subset. D098 is the sole
-current blocking gate: maintained-image certification passes locally and must
-pass hosted checks before Sprint 4.4 implementation resumes;
+and D097 implements only its application-native MVP subset. D098 passes locally
+and hosted. D097 passes locally; hosted Java CI, Security and CodeQL are the
+current Sprint 4.4 certification gate;
 external Keycloak HTTPS conformance remains mandatory before Sprint 4.5.
 
 Agents may create runnable implementation only inside the explicitly

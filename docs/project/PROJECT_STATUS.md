@@ -73,19 +73,19 @@ Last verified: **2026-09-15**
 | D094 PostgreSQL supply-chain remediation | ACCEPTED / COMPLETE / PASS |
 | D095 runtime certification scope correction | ACCEPTED / COMPLETE |
 | D096 minimum observability runtime contract | ACCEPTED / COMPLETE / FROZEN |
-| D097 MVP observability scope correction | ACCEPTED / COMPLETE / FROZEN; IMPLEMENTATION AUTHORIZED |
-| D098 runtime supply-chain refresh | ACCEPTED / FROZEN; IMPLEMENTED; LOCAL PASS; HOSTED PENDING |
+| D097 MVP observability scope correction | ACCEPTED / COMPLETE / FROZEN; IMPLEMENTED / LOCAL PASS |
+| D098 runtime supply-chain refresh | ACCEPTED / FROZEN; COMPLETE / HOSTED PASS |
 | Sprint 4.3 implementation | PASS |
 | Sprint 4.3 local runtime certification | PASS - Docker, security, local JWT/RBAC E2E and persistence/recreation |
 | Sprint 4.3 closure | CERTIFIED / COMPLETE under D095 |
 | Sprint 4.3.1 documentation synchronization | COMPLETE |
 | External Pilot Identity Conformance | DEFERRED by D095; mandatory before Sprint 4.5 |
 | Sprint 4.4 contract gate | COMPLETE - D096 frozen and narrowly corrected by D097; no runtime change |
-| Sprint 4.4 implementation | AUTHORIZED UNDER D097 / BLOCKED UNTIL HOSTED D098 PASSES |
-| Sprint 4.4 structural preflight | D098 LOCAL PASS / HOSTED SECURITY PENDING |
-| Last completed gate | D097 - MVP Observability Scope Correction |
+| Sprint 4.4 implementation | IMPLEMENTED / D097 LOCAL PASS / HOSTED PENDING |
+| Sprint 4.4 structural preflight | D098 COMPLETE / HOSTED PASS |
+| Last completed gate | D098 - Runtime Supply Chain Refresh |
 | Phase 2 closure | COMPLETE under D079; Sprints 2.9-2.13 deferred |
-| Current control gate | D098 - Runtime Supply Chain Refresh |
+| Current control gate | Sprint 4.4 D097 hosted Java CI, Security and CodeQL certification |
 | Phase 3 authorization | Authorized by D079 and evolved by D085 |
 
 ## Verified Foundation
@@ -116,9 +116,9 @@ Last verified: **2026-09-15**
 | AWS Integration | CERTIFIED / COMPLETE | D090 one-account, one-Region, read-only AWS SDK synchronization produces deterministic `E-AWS-001` through `E-AWS-004` Evidence and passed PostgreSQL 18.4 certification |
 | Frontend runtime | CERTIFIED / COMPLETE | D091 single-case Decision Review Workspace passed all frontend gates and unchanged backend/PostgreSQL regression |
 | DRC-AOA-001 runtime composition | CERTIFIED / COMPLETE | D093 R16 composes one idempotent Decision/Recommendation graph through existing D081/D082 boundaries |
-| Local container runtime | D098 LOCAL PASS / HOSTED PENDING | Backend, frontend and reproducible PostgreSQL 18.6 images pass current High/Critical, secret, hardening and runtime checks; hosted Security evidence remains pending |
-| Observability runtime | AUTHORIZED / BLOCKED BY D098 | D097 retains safe logs, bounded metrics, correlation and probes; Prometheus/Grafana runtime services, dashboards and alerts are deferred beyond MVP |
-| Java backend CI | CERTIFIED / COMPLETE | GitHub-hosted Java 21 build and Security workflows pass with 151 default tests |
+| Local container runtime | D098 COMPLETE / HOSTED PASS | Backend, frontend and reproducible PostgreSQL 18.6 images pass current High/Critical, secret, hardening and runtime checks locally and hosted |
+| Observability runtime | D097 IMPLEMENTED / LOCAL PASS / HOSTED PENDING | Safe ECS logs, bounded metrics, MDC correlation, probes and internal Actuator pass; Prometheus/Grafana runtime services, dashboards and alerts are absent |
+| Java backend CI | CERTIFIED BASELINE / D097 HOSTED PENDING | Previous GitHub-hosted Java 21 gate is green; the local D097 suite passes 162 tests and requires hosted confirmation |
 
 ## Latest Verification
 
@@ -242,17 +242,42 @@ D098 runtime supply-chain refresh on 2026-09-14:
   least-privilege, non-root/read-only and Compose runtime checks: PASS;
 - obsolete D096 Prometheus/Grafana and pre-D098 application image tags:
   removed locally without deleting persistent volumes;
-- local D098 certification: PASS; hosted Security and CodeQL evidence:
-  PENDING; and
-- Sprint 4.4 D097 implementation: BLOCKED until hosted D098 image gates pass.
+- local D098 certification: PASS; hosted Security and CodeQL evidence: PASS;
+  and
+- Sprint 4.4 D097 implementation: UNBLOCKED.
+
+D097 MVP observability implementation on 2026-09-15:
+
+- Java 21 with Maven 3.9.16: 162 default tests passed;
+- PostgreSQL 18.6, Flyway V1/V2 migrate/validate/no-op and 34 integration
+  tests: PASS;
+- frontend format, lint, strict TypeScript, 41 tests, Linux container build and
+  npm audit with zero vulnerabilities: PASS;
+- D097 runtime verification: ECS JSON, sentinel redaction, canonical
+  correlation, bounded metrics, exact endpoints and telemetry failure
+  isolation: PASS;
+- PostgreSQL loss/recovery: liveness `200`, readiness `503`, recovered
+  readiness `200`;
+- management port `9090`: internal, unpublished and unproxied;
+- D092-D095 Compose hardening and normal recreation persistence: PASS;
+- repository Trivy: zero High/Critical fixable vulnerabilities, secrets and
+  Dockerfile misconfigurations;
+- final backend, frontend and PostgreSQL images: zero High/Critical fixable
+  vulnerabilities and zero secrets;
+- D094 two-build runtime digest:
+  `sha256:1507efd63a6027eb5d604d1806e500b8e8ba25ca5ee11567e3bbf72a302bdeb1`;
+- full-history Gitleaks 8.30.1: 126 commits scanned, no leaks;
+- active Prometheus/Grafana runtime services, assets, profiles, networks,
+  volumes, secrets, dashboards and alerts: absent; and
+- hosted post-change Java CI, Security and CodeQL: PENDING.
 
 ## Active Blocking Risk
 
-The previously certified D092-D095 runtime remains valid historical evidence.
-D098 now restores its maintained images locally under the repository's current
-fixable High/Critical policy, but the hosted Security workflow has not yet
-certified that correction. No Dependabot pull request from `#34` through `#42`
-should be merged as a substitute for this focused correction.
+The previously certified D092-D095 runtime remains valid historical evidence,
+and D098 is complete locally and hosted. The only current implementation risk
+is the unexecuted hosted D097 change set: Java CI, Security and CodeQL must pass
+after commit/push without bypass. No Dependabot pull request from `#34` through
+`#42` should be merged as a substitute for focused maintenance.
 
 ## Known Non-Blocking Risks
 
@@ -291,13 +316,13 @@ should be merged as a substitute for this focused correction.
 
 ## Next Control Gate
 
-D098 - Runtime Supply Chain Refresh is the current blocking gate. Its local
-image, reproducibility and runtime checks pass; the matching hosted Security
-and CodeQL checks must now pass without exception. Only after D098 is green may Sprint 4.4 resume under
-D097 with safe ECS logs, bounded metrics, correlation, liveness/readiness and
-internal unpublished Actuator endpoints. Prometheus/Grafana remain deferred;
-business semantics, routes, connectors, public exposure, external identity and
-customer data remain outside both gates.
+Sprint 4.4 D097 hosted certification is the current blocking gate. Commit and
+push only this reviewed implementation, then require Java CI, Security, CodeQL,
+application-image scan, D094 and full-history secret scanning to pass without
+exception. Prometheus/Grafana remain deferred; business semantics, routes,
+connectors, public exposure, external identity and customer data remain outside
+this gate. After Sprint 4.4 is merged and certified, execute the D095 external
+Keycloak HTTPS conformance gate before opening Sprint 4.5 Pilot Readiness.
 
 Current execution authorities:
 

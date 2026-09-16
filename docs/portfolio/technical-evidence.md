@@ -31,10 +31,10 @@ It links to canonical contracts and implementation instead of replacing them.
 | GitHub integration | **[IMPLEMENTED]** | Read-only bounded REST adapter with timeout, retry, rate-limit and same-origin redirect controls |
 | AWS integration | **[IMPLEMENTED]** | Read-only AWS SDK adapter bounded to one account, Region and workload |
 | Frontend | **[IMPLEMENTED]** | Next.js/React workspace with same-origin API transport and strict Zod validation |
-| Docker runtime | **[IMPLEMENTED / D098 LOCAL PASS]** | Maintained backend, frontend and reproducible PostgreSQL images pass local supply-chain and hardened runtime checks; hosted certification is pending |
+| Docker runtime | **[IMPLEMENTED / D098 CERTIFIED]** | Maintained backend, frontend and reproducible PostgreSQL images pass local and hosted supply-chain and hardened runtime checks |
 | External IdP | **[PLANNED]** | Keycloak preparation exists; no issuer is deployed or connected |
 | D093/R16 composition | **[IMPLEMENTED]** | `ADMIN`-only API composition, resumable D081/D082 steps and case uniqueness are certified |
-| Observability | **[PLANNED / BLOCKED]** | D097 authorizes the application-native D096 subset after hosted D098 image certification; external monitoring is deferred |
+| Observability | **[IMPLEMENTED / D097 LOCAL PASS]** | ECS JSON, bounded correlation/metrics, probes and internal Actuator pass locally; hosted D097 certification is pending and external monitoring is deferred |
 | Python/FastAPI | **[FUTURE]** | Documentation boundary only |
 | Cloud deployment | **[FUTURE]** | No AWS-hosted runtime, Terraform or Kubernetes exists |
 
@@ -125,7 +125,7 @@ are separate checks.
 flowchart LR
     Commit[Commit / PR] --> JavaCI[Java CI<br/>IMPLEMENTED]
     JavaCI --> Compile[Java 21 + Maven enforce]
-    Compile --> BackendTests[151 default tests]
+    Compile --> BackendTests[162 default tests]
     BackendTests --> Jar[Executable JAR]
     Commit -. local gate .-> Frontend[Lint + types + 41 tests + build]
     Commit -. explicit DB gate .-> PGTests[34 PostgreSQL integration tests]
@@ -191,8 +191,8 @@ lineage while excluding raw payload persistence.
 | Medium | No dedicated Java dependency review | Add one bounded SCA control only after defining ownership, baseline and false-positive handling |
 | Medium | Token paste is the current frontend bootstrap | Replace with separately contracted Authorization Code + PKCE login before real users |
 | Medium | No tenant entitlement model | Keep runtime single-organization and prohibit customer exposure until a tenant contract exists |
-| Blocking | D098 hosted maintained-image certification is pending | Local image and runtime checks pass; require the equivalent hosted gates before D097 implementation resumes |
-| Medium | D097 application observability runtime is absent | After hosted D098 PASS, implement and certify only the authorized safe logs, metrics and probes; external monitoring and distributed tracing remain excluded |
+| Blocking | D097 hosted certification is pending | Require Java CI, Security and CodeQL to reproduce the complete local PASS without bypass |
+| Medium | Operational external identity is absent | Pass D095 Keycloak HTTPS conformance before Sprint 4.5 or customer exposure |
 | Low local tooling | `mvnw.cmd` fails on the inspected Windows host before Maven starts | Keep hosted Linux wrapper verification authoritative and resolve the Windows launcher only through separate maintenance authority |
 
 No hard-coded GitHub token, AWS access key, private key or runtime password was
@@ -221,7 +221,7 @@ so this document makes no equivalent zero-vulnerability claim for Java.
 |---|---|
 | Java runtime | Java 21.0.12 |
 | Maven runtime | Maven 3.9.16 |
-| Backend default suite | 151 passed |
+| Backend default suite | 162 passed |
 | PostgreSQL suite | 34 passed |
 | Flyway | migrate, validate and repeated migrate passed |
 | Frontend unit/component suite | 41 passed |

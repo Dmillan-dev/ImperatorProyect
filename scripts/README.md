@@ -13,6 +13,8 @@ Auxiliary repository automation when a verified need exists.
 ## Contains
 
 - `verify-docker-runtime.ps1`, the local D092 runtime verification helper.
+- `verify-observability-runtime.ps1`, the bounded D097 application-native
+  telemetry, probe, exposure and deferred-stack verifier.
 - `commercial/capture_linkedin_workspace.mjs`, which captures the synthetic
   commercial workspace.
 - `commercial/generate_discovery_interview_guide.py`, which generates the
@@ -23,6 +25,8 @@ Auxiliary repository automation when a verified need exists.
 
 Current status:
 - Executable local verification and commercial artifact helpers exist.
+- D097 evidence is written only below ignored `build/d097`; no dashboard or
+  external monitoring service is part of this gate.
 - There is no general environment setup automation.
 - There are no CI helper scripts.
 

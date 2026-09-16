@@ -8,6 +8,8 @@ import imperator.adapters.out.postgresql.PostgresLedgerRepository;
 import imperator.adapters.out.postgresql.PostgresMvpReadModelQueryAdapter;
 import imperator.adapters.out.postgresql.PostgresRecommendationRepository;
 import imperator.adapters.out.postgresql.PostgresTransactionRunner;
+import imperator.api.observability.ImperatorInputPortTelemetry;
+import imperator.api.observability.ImperatorTelemetry;
 import imperator.application.appendledgerentry.AppendLedgerEntryUseCase;
 import imperator.application.composecase.ComposeDrcAoa001UseCase;
 import imperator.application.createdecision.CreateDecisionUseCase;
@@ -54,9 +56,11 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.ObjectProvider;
 
 import javax.sql.DataSource;
 import java.util.Optional;
+import java.util.function.Supplier;
 
 @Configuration(proxyBeanMethods = false)
 @ConditionalOnProperty(
@@ -134,35 +138,52 @@ public final class PostgresRuntimeConfiguration {
     @Bean
     ImportEvidenceInputPort importEvidenceInputPort(
             EvidenceRepository evidenceRepository,
-            TransactionRunner transactionRunner
+            TransactionRunner transactionRunner,
+            ObjectProvider<ImperatorTelemetry> telemetryProvider
     ) {
-        return new ImportEvidenceUseCase(evidenceRepository, transactionRunner);
+        ImportEvidenceInputPort delegate = new ImportEvidenceUseCase(
+                evidenceRepository, transactionRunner
+        );
+        ImperatorTelemetry telemetry = telemetryProvider.getIfAvailable();
+        return telemetry == null
+                ? delegate
+                : ImperatorInputPortTelemetry.evidenceImport(delegate, telemetry);
     }
 
     @Bean("githubSynchronizeEvidenceInputPort")
     SynchronizeEvidenceInputPort githubSynchronizeEvidenceInputPort(
             @Qualifier("githubEvidenceSourcePort") EvidenceSourcePort evidenceSource,
             ImportEvidenceInputPort evidenceImporter,
-            EvidenceRepository evidenceRepository
+            EvidenceRepository evidenceRepository,
+            ObjectProvider<ImperatorTelemetry> telemetryProvider
     ) {
-        return new SynchronizeEvidenceUseCase(
+        SynchronizeEvidenceInputPort delegate = new SynchronizeEvidenceUseCase(
                 evidenceSource,
                 evidenceImporter,
                 evidenceRepository
         );
+        ImperatorTelemetry telemetry = telemetryProvider.getIfAvailable();
+        return telemetry == null
+                ? delegate
+                : ImperatorInputPortTelemetry.connectorSync(delegate, telemetry, "github");
     }
 
     @Bean("awsSynchronizeEvidenceInputPort")
     SynchronizeEvidenceInputPort awsSynchronizeEvidenceInputPort(
             @Qualifier("awsEvidenceSourcePort") EvidenceSourcePort evidenceSource,
             ImportEvidenceInputPort evidenceImporter,
-            EvidenceRepository evidenceRepository
+            EvidenceRepository evidenceRepository,
+            ObjectProvider<ImperatorTelemetry> telemetryProvider
     ) {
-        return new SynchronizeEvidenceUseCase(
+        SynchronizeEvidenceInputPort delegate = new SynchronizeEvidenceUseCase(
                 evidenceSource,
                 evidenceImporter,
                 evidenceRepository
         );
+        ImperatorTelemetry telemetry = telemetryProvider.getIfAvailable();
+        return telemetry == null
+                ? delegate
+                : ImperatorInputPortTelemetry.connectorSync(delegate, telemetry, "aws");
     }
 
     @Bean
@@ -199,13 +220,18 @@ public final class PostgresRuntimeConfiguration {
     ComposeDrcAoa001InputPort composeDrcAoa001InputPort(
             CreateDecisionInputPort decisionCreator,
             GenerateRecommendationInputPort recommendationGenerator,
-            DecisionRepository decisionRepository
+            DecisionRepository decisionRepository,
+            ObjectProvider<ImperatorTelemetry> telemetryProvider
     ) {
-        return new ComposeDrcAoa001UseCase(
+        ComposeDrcAoa001InputPort delegate = new ComposeDrcAoa001UseCase(
                 decisionCreator,
                 recommendationGenerator,
                 decisionRepository
         );
+        ImperatorTelemetry telemetry = telemetryProvider.getIfAvailable();
+        return telemetry == null
+                ? delegate
+                : ImperatorInputPortTelemetry.decisionComposition(delegate, telemetry);
     }
 
     @Bean
@@ -214,15 +240,20 @@ public final class PostgresRuntimeConfiguration {
             RecommendationRepository recommendationRepository,
             EvidenceRepository evidenceRepository,
             LedgerRepository ledgerRepository,
-            TransactionRunner transactionRunner
+            TransactionRunner transactionRunner,
+            ObjectProvider<ImperatorTelemetry> telemetryProvider
     ) {
-        return new ReviewDecisionUseCase(
+        ReviewDecisionInputPort delegate = new ReviewDecisionUseCase(
                 decisionRepository,
                 recommendationRepository,
                 evidenceRepository,
                 ledgerRepository,
                 transactionRunner
         );
+        ImperatorTelemetry telemetry = telemetryProvider.getIfAvailable();
+        return telemetry == null
+                ? delegate
+                : ImperatorInputPortTelemetry.reviewDecision(delegate, telemetry);
     }
 
     @Bean
@@ -231,55 +262,116 @@ public final class PostgresRuntimeConfiguration {
             RecommendationRepository recommendationRepository,
             EvidenceRepository evidenceRepository,
             LedgerRepository ledgerRepository,
-            TransactionRunner transactionRunner
+            TransactionRunner transactionRunner,
+            ObjectProvider<ImperatorTelemetry> telemetryProvider
     ) {
-        return new AppendLedgerEntryUseCase(
+        AppendLedgerEntryInputPort delegate = new AppendLedgerEntryUseCase(
                 decisionRepository,
                 recommendationRepository,
                 evidenceRepository,
                 ledgerRepository,
                 transactionRunner
         );
+        ImperatorTelemetry telemetry = telemetryProvider.getIfAvailable();
+        return telemetry == null
+                ? delegate
+                : ImperatorInputPortTelemetry.appendLedgerEntry(delegate, telemetry);
     }
 
     @Bean
-    ListDecisionsInputPort listDecisionsInputPort(MvpReadModelQueryPort readModel) {
-        return new ListDecisionsUseCase(readModel);
+    ListDecisionsInputPort listDecisionsInputPort(
+            MvpReadModelQueryPort readModel,
+            ObjectProvider<ImperatorTelemetry> telemetryProvider
+    ) {
+        ListDecisionsInputPort delegate = new ListDecisionsUseCase(readModel);
+        ImperatorTelemetry telemetry = telemetryProvider.getIfAvailable();
+        return telemetry == null ? delegate : query -> observeDatabase(
+                telemetry, "list_decisions", () -> delegate.listDecisions(query)
+        );
     }
 
     @Bean
-    GetDecisionInputPort getDecisionInputPort(MvpReadModelQueryPort readModel) {
-        return new GetDecisionUseCase(readModel);
+    GetDecisionInputPort getDecisionInputPort(
+            MvpReadModelQueryPort readModel,
+            ObjectProvider<ImperatorTelemetry> telemetryProvider
+    ) {
+        GetDecisionInputPort delegate = new GetDecisionUseCase(readModel);
+        ImperatorTelemetry telemetry = telemetryProvider.getIfAvailable();
+        return telemetry == null ? delegate : query -> observeDatabase(
+                telemetry, "get_decision", () -> delegate.getDecision(query)
+        );
     }
 
     @Bean
-    GetDecisionTimelineInputPort getDecisionTimelineInputPort(MvpReadModelQueryPort readModel) {
-        return new GetDecisionTimelineUseCase(readModel);
+    GetDecisionTimelineInputPort getDecisionTimelineInputPort(
+            MvpReadModelQueryPort readModel,
+            ObjectProvider<ImperatorTelemetry> telemetryProvider
+    ) {
+        GetDecisionTimelineInputPort delegate = new GetDecisionTimelineUseCase(readModel);
+        ImperatorTelemetry telemetry = telemetryProvider.getIfAvailable();
+        return telemetry == null ? delegate : query -> observeDatabase(
+                telemetry, "get_decision_timeline", () -> delegate.getDecisionTimeline(query)
+        );
     }
 
     @Bean
-    GetDecisionEvidenceInputPort getDecisionEvidenceInputPort(MvpReadModelQueryPort readModel) {
-        return new GetDecisionEvidenceUseCase(readModel);
+    GetDecisionEvidenceInputPort getDecisionEvidenceInputPort(
+            MvpReadModelQueryPort readModel,
+            ObjectProvider<ImperatorTelemetry> telemetryProvider
+    ) {
+        GetDecisionEvidenceInputPort delegate = new GetDecisionEvidenceUseCase(readModel);
+        ImperatorTelemetry telemetry = telemetryProvider.getIfAvailable();
+        return telemetry == null ? delegate : query -> observeDatabase(
+                telemetry, "get_decision_evidence", () -> delegate.getDecisionEvidence(query)
+        );
     }
 
     @Bean
-    GetDecisionRoiInputPort getDecisionRoiInputPort(MvpReadModelQueryPort readModel) {
-        return new GetDecisionRoiUseCase(readModel);
+    GetDecisionRoiInputPort getDecisionRoiInputPort(
+            MvpReadModelQueryPort readModel,
+            ObjectProvider<ImperatorTelemetry> telemetryProvider
+    ) {
+        GetDecisionRoiInputPort delegate = new GetDecisionRoiUseCase(readModel);
+        ImperatorTelemetry telemetry = telemetryProvider.getIfAvailable();
+        return telemetry == null ? delegate : query -> observeDatabase(
+                telemetry, "get_decision_roi", () -> delegate.getDecisionRoi(query)
+        );
     }
 
     @Bean
-    GetRecommendationInputPort getRecommendationInputPort(MvpReadModelQueryPort readModel) {
-        return new GetRecommendationUseCase(readModel);
+    GetRecommendationInputPort getRecommendationInputPort(
+            MvpReadModelQueryPort readModel,
+            ObjectProvider<ImperatorTelemetry> telemetryProvider
+    ) {
+        GetRecommendationInputPort delegate = new GetRecommendationUseCase(readModel);
+        ImperatorTelemetry telemetry = telemetryProvider.getIfAvailable();
+        return telemetry == null ? delegate : query -> observeDatabase(
+                telemetry, "get_recommendation", () -> delegate.getRecommendation(query)
+        );
     }
 
     @Bean
-    GetDecisionLedgerInputPort getDecisionLedgerInputPort(MvpReadModelQueryPort readModel) {
-        return new GetDecisionLedgerUseCase(readModel);
+    GetDecisionLedgerInputPort getDecisionLedgerInputPort(
+            MvpReadModelQueryPort readModel,
+            ObjectProvider<ImperatorTelemetry> telemetryProvider
+    ) {
+        GetDecisionLedgerInputPort delegate = new GetDecisionLedgerUseCase(readModel);
+        ImperatorTelemetry telemetry = telemetryProvider.getIfAvailable();
+        return telemetry == null ? delegate : query -> observeDatabase(
+                telemetry, "get_decision_ledger", () -> delegate.getDecisionLedger(query)
+        );
     }
 
     @Bean
-    ListLedgerEntriesInputPort listLedgerEntriesInputPort(MvpReadModelQueryPort readModel) {
-        return new ListLedgerEntriesUseCase(readModel);
+    ListLedgerEntriesInputPort listLedgerEntriesInputPort(
+            MvpReadModelQueryPort readModel,
+            ObjectProvider<ImperatorTelemetry> telemetryProvider
+    ) {
+        ListLedgerEntriesInputPort delegate = new ListLedgerEntriesUseCase(readModel);
+        ImperatorTelemetry telemetry = telemetryProvider.getIfAvailable();
+        return telemetry == null ? delegate : query -> observeDatabase(
+                telemetry, "list_ledger_entries", () -> delegate.listLedgerEntries(query)
+        );
     }
 
     @Bean
@@ -288,14 +380,32 @@ public final class PostgresRuntimeConfiguration {
             RecommendationRepository recommendationRepository,
             EvidenceRepository evidenceRepository,
             LedgerRepository ledgerRepository,
-            TransactionRunner transactionRunner
+            TransactionRunner transactionRunner,
+            ObjectProvider<ImperatorTelemetry> telemetryProvider
     ) {
-        return new ProjectBusinessValueUseCase(
+        ProjectBusinessValueInputPort delegate = new ProjectBusinessValueUseCase(
                 decisionRepository,
                 recommendationRepository,
                 evidenceRepository,
                 ledgerRepository,
                 transactionRunner
         );
+        ImperatorTelemetry telemetry = telemetryProvider.getIfAvailable();
+        return telemetry == null
+                ? delegate
+                : ImperatorInputPortTelemetry.businessValue(delegate, telemetry);
+    }
+
+    private <T> T observeDatabase(
+            ImperatorTelemetry telemetry,
+            String operation,
+            Supplier<T> authoritativeOperation
+    ) {
+        try {
+            return authoritativeOperation.get();
+        } catch (RuntimeException | Error failure) {
+            telemetry.databaseFailure(operation, failure);
+            throw failure;
+        }
     }
 }

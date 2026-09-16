@@ -63,6 +63,22 @@ docker compose --env-file infra/docker/.env `
 
 This overlay does not invoke synchronization and adds no route or scheduler.
 
+## Application-Native Observability
+
+D097 keeps observability inside the backend. The application exposes `/livez`
+and `/readyz` on its internal application port, plus health and bounded
+Prometheus-format metrics on internal management port `9090`. Neither backend
+port is published or proxied to the host. No Prometheus, Grafana, alerting,
+monitoring profile, monitoring volume or monitoring secret is part of the MVP
+runtime.
+
+Run the reduced local gate from the repository root after starting the normal
+Compose runtime:
+
+```powershell
+./scripts/verify-observability-runtime.ps1
+```
+
 ## Contains
 
 - Backend and frontend multi-stage Dockerfiles.
@@ -75,5 +91,6 @@ This overlay does not invoke synchronization and adds no route or scheduler.
 - Product or business logic.
 - Real secrets or JWTs.
 - Public ports for backend or PostgreSQL.
-- An IdP, reverse proxy, observability stack or provider emulator.
+- An IdP, reverse proxy, provider emulator or external monitoring stack.
+- A public management endpoint, log aggregation platform or Alertmanager.
 - Destructive database reset automation.

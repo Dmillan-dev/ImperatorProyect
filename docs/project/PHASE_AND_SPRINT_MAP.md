@@ -226,9 +226,9 @@ not the Phase 2 route-shell plan.
 | 4.3 | Docker Production Runtime | CERTIFIED / COMPLETE |
 | 4.3.1 | Documentation Synchronization | COMPLETE |
 | D096 | Minimum Observability Runtime Contract | ACCEPTED / COMPLETE / FROZEN |
-| D097 | MVP Observability Scope Correction | ACCEPTED / COMPLETE / FROZEN; IMPLEMENTATION AUTHORIZED |
-| D098 | Runtime Supply Chain Refresh | ACCEPTED / FROZEN; IMPLEMENTED; LOCAL PASS; HOSTED PENDING |
-| 4.4 | MVP Application Observability | AUTHORIZED UNDER D097 / BLOCKED BY D098 |
+| D097 | MVP Observability Scope Correction | ACCEPTED / COMPLETE / FROZEN; IMPLEMENTED / LOCAL PASS |
+| D098 | Runtime Supply Chain Refresh | ACCEPTED / FROZEN; COMPLETE / HOSTED PASS |
+| 4.4 | MVP Application Observability | IMPLEMENTED / LOCAL PASS / HOSTED PENDING |
 | 4.5 | Pilot Readiness | PENDING |
 | 5.0 | MVP Release | PENDING |
 
@@ -310,10 +310,10 @@ D087/D088 and fail-closed behavior remain unchanged. Sprint 4.3.1 synchronized
 the active documentation. D096 freezes the broad bounded Observability
 contract. D097 retains its application-native logs, metrics, correlation and
 probes while deferring Prometheus/Grafana runtime services, dashboards and
-alerts beyond MVP. D098 is the current blocking security-maintenance gate: its
-maintained frontend and PostgreSQL images pass locally, and hosted
-certification must now pass before Sprint 4.4 implementation resumes under
-D097.
+alerts beyond MVP. D098 passes locally and hosted. Sprint 4.4 now implements
+the D097 subset with 162 Java tests, 34 PostgreSQL integration tests, 41
+frontend tests, clean source/final-image/history scans and the complete local
+runtime verifier. Hosted D097 Java CI, Security and CodeQL are pending.
 
 Active Phase 3 execution authority:
 
