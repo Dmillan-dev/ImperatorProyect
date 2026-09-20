@@ -1,13 +1,13 @@
 # syntax=docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
 
-FROM node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df AS dependencies
+FROM node:24.20.0-bookworm-slim@sha256:ba849c60be29959425b8734d57b8b4b7d56f98edd9504c9af091d5281095a71e AS dependencies
 
 WORKDIR /app
 
 COPY frontend/package.json frontend/package-lock.json ./
 RUN npm ci
 
-FROM node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df AS build
+FROM node:24.20.0-bookworm-slim@sha256:ba849c60be29959425b8734d57b8b4b7d56f98edd9504c9af091d5281095a71e AS build
 
 ARG IMPERATOR_API_ORIGIN=http://backend:8080
 ARG IMPERATOR_RUNTIME_PROFILE=docker-compose
@@ -23,7 +23,7 @@ COPY frontend/ ./
 
 RUN npm run build
 
-FROM node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df AS runtime
+FROM node:24.20.0-bookworm-slim@sha256:ba849c60be29959425b8734d57b8b4b7d56f98edd9504c9af091d5281095a71e AS runtime
 
 ARG VCS_REF
 ARG IMPERATOR_API_ORIGIN=http://backend:8080
