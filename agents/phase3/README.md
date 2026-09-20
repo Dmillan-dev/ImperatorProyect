@@ -2,7 +2,7 @@
 
 Status: **ACTIVE**
 
-Current gate: **D099/D100 hosted certification, then D095 external identity conformance**
+Current gate: **D101 Stage A - D095 external Keycloak HTTPS conformance**
 
 Authorization: **D079 - Phase 3 Vertical-Slice Acceleration; D085 - MVP Delivery Roadmap Evolution; D095 - D092 Runtime Certification Scope Correction; D096 - Minimum Observability Runtime Contract; D097 - MVP Observability Scope Correction; D098 - Runtime Supply Chain Refresh; D099 - Auditable Amazon Bedrock Explanation; D100 - AWS SAA Portfolio Deployment Contract**
 
@@ -132,10 +132,12 @@ Locked constraints:
 | D097 | MVP Observability Scope Correction | ACCEPTED / COMPLETE / HOSTED PASS |
 | D098 | Runtime Supply Chain Refresh | ACCEPTED / FROZEN; COMPLETE / HOSTED PASS |
 | 4.4 | MVP Application Observability | CERTIFIED / COMPLETE / HOSTED PASS |
-| D099 | Auditable Amazon Bedrock Explanation | ACCEPTED; IMPLEMENTED / LOCAL PASS / HOSTED PENDING |
-| D100 | AWS SAA Portfolio Deployment | ACCEPTED; IMPLEMENTED OFFLINE / AWS APPLY NOT AUTHORIZED |
-| 4.4.2 | TFG Bedrock And AWS Deployment Preparation | IMPLEMENTED / LOCAL PASS / HOSTED PENDING |
-| 4.5 | Pilot Readiness | PENDING |
+| D099 | Auditable Amazon Bedrock Explanation | ACCEPTED; IMPLEMENTATION COMPLETE / HOSTED REPOSITORY PASS |
+| D100 | AWS SAA Portfolio Deployment | ACCEPTED; IMPLEMENTATION COMPLETE / HOSTED REPOSITORY PASS / AWS APPLY NOT AUTHORIZED |
+| 4.4.2 | TFG Bedrock And AWS Deployment Preparation | COMPLETE / HOSTED REPOSITORY PASS |
+| D101 Stage A | D095 External Keycloak HTTPS Conformance | AUTHORIZED / CURRENT |
+| D101 Stages B-C | Costed AWS Plan And Authorized Deployment | BLOCKED / NOT AUTHORIZED |
+| 4.5 | Pilot Readiness | NOT OPEN |
 | 5.0 | MVP Release | PENDING |
 
 The ordering after Sprint 3.6 is frozen by D085 and supersedes only D079's
@@ -675,15 +677,28 @@ and PostgreSQL-aware readiness, and internal unpublished Actuator endpoints.
 D097 defers Prometheus/Grafana runtime services, their Compose profile,
 dashboard, alerts and associated certification evidence beyond MVP. Their
 findings are not ignored or waived; the external images must be absent from the
-active MVP runtime. Implementation under Document 57 passes locally and awaits
-hosted Java CI, Security and CodeQL. OpenTelemetry, log aggregation, external notifications, public
-exposure, customer data and changes to Domain, Application, API, persistence,
-Ledger or Business Value remain outside scope.
+active MVP runtime. Implementation under Document 57 passes locally and hosted
+on merge `4fd18fa`. OpenTelemetry, log aggregation, external notifications,
+public exposure, customer data and changes to Domain, Application, API,
+persistence, Ledger or Business Value remain outside scope.
 
 Current execution prompt:
 `agents/phase3/SPRINT_4.4_D097_MVP_OBSERVABILITY_IMPLEMENTATION_PROMPT.md`.
 Its implementation has been executed locally after hosted D098 application-image
 and D094 supply-chain jobs passed; use it as the D097 certification record.
+
+## Sprint 4.4.2 - Bedrock And AWS Preparation
+
+D099/D100 repository implementation is COMPLETE / HOSTED PASS on merge
+`22a9917`. Java CI, CodeQL, source/dependency/configuration, full-history secret,
+application and migration image, PostgreSQL D094 and AWS IaC checks passed. No
+AWS authentication, `terraform plan`, `terraform apply`, image publication,
+real Bedrock invocation, cloud resource or deployment was executed.
+
+D101 Stage A is the sole current gate and authorizes only the external Keycloak
+HTTPS conformance required by D095. D101 Stages B and C remain blocked. The
+current prompt is
+`agents/phase3/SPRINT_4.5_D101_PILOT_IDENTITY_AND_AWS_CERTIFICATION_PROMPT.md`.
 
 ## Demonstration And Pilot Boundary
 

@@ -49,7 +49,7 @@ repository-managed CodeQL workflow is stored in this directory. Operational
 external Keycloak conformance remains a mandatory pre-Sprint-4.5 gate. Sprint
 4.4 application-native observability is COMPLETE / HOSTED PASS under D097 on
 merge `4fd18fa`. D099/D100 add bounded Bedrock explanation and AWS pilot
-workflows, but they remain LOCAL/OFFLINE PASS and require hosted certification;
-they do not prove a live AWS deployment.
+workflows; their repository implementation is COMPLETE / HOSTED PASS on merge
+`22a9917`. That evidence does not prove a live AWS deployment.
 Prometheus/Grafana image gates are outside the MVP because those services are
 deferred, not because their findings are waived.

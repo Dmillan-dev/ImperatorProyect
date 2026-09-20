@@ -101,11 +101,11 @@ spend. The first case is `DRC-AOA-001`, AI Onboarding Assistant Recovery.
   final SHA-tagged images passed security/hardening gates, and local JWT/RBAC,
   `DRC-AOA-001` E2E and persistence-after-recreation evidence passed.
 - Sprint 4.3.1 documentation synchronization: complete.
-- Current gate: D099/D100 hosted certification after complete local/offline
-  validation of the bounded Bedrock explanation and AWS pilot preparation.
-- External Keycloak HTTPS conformance: deferred by D095 and mandatory after
-  that certification and before live pilot deployment, real customer data or
-  MVP Release.
+- D099/D100 repository implementation: COMPLETE / HOSTED PASS on merge
+  `22a9917`; this is not live AWS evidence.
+- Current gate: D101 Stage A external Keycloak HTTPS conformance required by
+  D095.
+- D101 Stages B and C: BLOCKED; no AWS plan/apply, publication or deployment.
 - Sprints 2.9 through 2.13: deferred, not completed.
 
 The live state is maintained in:

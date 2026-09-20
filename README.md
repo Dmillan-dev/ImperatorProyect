@@ -41,7 +41,7 @@ and the append-only Decision Ledger preserves accountability.
 | Architecture | Java modular monolith with framework-free Domain/Application and hexagonal ports/adapters |
 | Security | RS256 JWT, explicit four-role RBAC, Evidence redaction, read-only cloud integrations and append-only audit history |
 | Verification | 162 backend tests, 34 PostgreSQL integration tests, 41 frontend tests and Playwright browser acceptance |
-| Current boundary | Pre-pilot; D097/Sprint 4.4 is HOSTED PASS, while D099/D100 hosted certification, external identity and live AWS evidence remain pending |
+| Current boundary | Pre-pilot; D099/D100 repository implementation is HOSTED PASS on `22a9917`; D101 Stage A external identity is current and all live AWS evidence remains pending |
 
 ![IMPERATOR Decision Review Workspace using synthetic data](output/commercial/linkedin-discovery-kit/IMPERATOR_Workspace_Captura_Limpia.png)
 
@@ -78,9 +78,9 @@ Status labels in this repository have strict meanings:
 | AWS pilot infrastructure | **[IMPLEMENTED OFFLINE / LIVE PENDING]** | Terraform and controlled OIDC workflows prepare ECS/Fargate, RDS and immutable image publication; no live apply is certified |
 | Kubernetes, Kafka and Redis | **[FUTURE]** | Explicitly excluded from the MVP |
 
-Current formal state: **Phase 3, pre-pilot; D098 and D097/Sprint 4.4 are
-complete and hosted-pass. D099/D100 pass locally/offline and await hosted
-certification.** D095 defers operational Keycloak HTTPS conformance without
+Current formal state: **Phase 3, pre-pilot; D099/D100 repository implementation
+is COMPLETE / HOSTED PASS on merge `22a9917`. D101 Stage A is the current
+D095 external Keycloak HTTPS gate.** D095 defers operational conformance without
 weakening D087/D088; it remains mandatory before a live pilot, real customer
 data or MVP Release. See the
 [D097 scope correction](docs/architecture/57_MVP_Observability_Scope_Correction.md),
@@ -412,16 +412,16 @@ as realized value until validation evidence exists.
 | Stage | Scope |
 |---|---|
 | **Completed baseline** | Core Domain, Application use cases, PostgreSQL, REST, JWT/RBAC, GitHub/AWS evidence adapters, D093 composition, Decision Review Workspace, Docker runtime and Sprint 4.4 observability |
-| **Current TFG increment** | D099 auditable Bedrock explanation and D100 AWS pilot automation; implemented and locally verified, hosted/live evidence pending |
-| **Next gate** | Merge D099/D100 with hosted checks, then execute external Keycloak HTTPS conformance required by D095 |
-| **Planned** | Approved AWS sandbox deployment, Sprint 4.5 Pilot Readiness and MVP release acceptance |
+| **Completed TFG increment** | D099 auditable Bedrock explanation and D100 AWS pilot automation; repository implementation and hosted checks pass on `22a9917`, with live evidence still pending |
+| **Current gate** | D101 Stage A external Keycloak HTTPS conformance required by D095 |
+| **Planned** | Separately authorized costed AWS plan, publication/deployment, Sprint 4.5 Pilot Readiness and MVP release acceptance |
 | **Excluded** | RAG, autonomous agents, multi-tenancy, Kubernetes, Kafka and Redis until demonstrated product need |
 
 ## Post-MVP DevSecOps Path
 
-This is a delivery sequence, not a release claim. Hosted D097 certification,
-external Pilot Identity Conformance and Pilot Readiness retain precedence over
-this path.
+This is a delivery sequence, not a release claim. Hosted D097 and D099/D100
+repository certification are complete; external Pilot Identity Conformance and
+Pilot Readiness retain precedence over every live AWS step.
 
 ```mermaid
 flowchart LR

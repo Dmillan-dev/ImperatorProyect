@@ -229,10 +229,12 @@ not the Phase 2 route-shell plan.
 | D097 | MVP Observability Scope Correction | ACCEPTED / COMPLETE / HOSTED PASS |
 | D098 | Runtime Supply Chain Refresh | ACCEPTED / FROZEN; COMPLETE / HOSTED PASS |
 | 4.4 | MVP Application Observability | CERTIFIED / COMPLETE / HOSTED PASS |
-| D099 | Auditable Amazon Bedrock Explanation | ACCEPTED; IMPLEMENTED / LOCAL PASS / HOSTED PENDING |
-| D100 | AWS SAA Portfolio Deployment | ACCEPTED; IMPLEMENTED OFFLINE / AWS APPLY NOT AUTHORIZED |
-| 4.4.2 | TFG Bedrock And AWS Deployment Preparation | IMPLEMENTED / LOCAL PASS / HOSTED PENDING |
-| 4.5 | Pilot Readiness | PENDING |
+| D099 | Auditable Amazon Bedrock Explanation | ACCEPTED; IMPLEMENTATION COMPLETE / HOSTED REPOSITORY PASS |
+| D100 | AWS SAA Portfolio Deployment | ACCEPTED; IMPLEMENTATION COMPLETE / HOSTED REPOSITORY PASS / AWS APPLY NOT AUTHORIZED |
+| 4.4.2 | TFG Bedrock And AWS Deployment Preparation | COMPLETE / HOSTED REPOSITORY PASS |
+| D101 Stage A | D095 External Keycloak HTTPS Conformance | AUTHORIZED / CURRENT |
+| D101 Stages B-C | Costed AWS Plan And Authorized Deployment | BLOCKED / NOT AUTHORIZED |
+| 4.5 | Pilot Readiness | NOT OPEN |
 | 5.0 | MVP Release | PENDING |
 
 Sprint 3.5 proved the local product flow with a deterministic 30-line NDJSON
@@ -316,8 +318,10 @@ probes while deferring Prometheus/Grafana runtime services, dashboards and
 alerts beyond MVP. D098 and Sprint 4.4 pass locally and hosted; merge `4fd18fa`
 is the certified observability baseline. D099 and D100 add the audited Bedrock
 explanation and offline AWS pilot preparation with 171 default Java tests, 41
-frontend tests and passing Terraform validation/mock plans. Hosted D099/D100,
-the PostgreSQL V3 extension, D095 and every live AWS check remain pending.
+frontend tests and passing Terraform validation/mock plans. Their repository
+implementation is COMPLETE / HOSTED PASS on merge `22a9917`. D101 Stage A now
+authorizes only D095 external Keycloak HTTPS conformance. The PostgreSQL V3
+runtime evidence and every live AWS action remain pending and unauthorized.
 
 Active Phase 3 execution authority:
 

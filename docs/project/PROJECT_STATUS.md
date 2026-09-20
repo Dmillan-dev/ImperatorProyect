@@ -1,6 +1,6 @@
 # IMPERATOR Project Status
 
-Last verified: **2026-09-19**
+Last verified: **2026-09-20**
 
 ## Current Gate
 
@@ -75,19 +75,20 @@ Last verified: **2026-09-19**
 | D096 minimum observability runtime contract | ACCEPTED / COMPLETE / FROZEN |
 | D097 MVP observability scope correction | ACCEPTED / COMPLETE / HOSTED PASS |
 | D098 runtime supply-chain refresh | ACCEPTED / FROZEN; COMPLETE / HOSTED PASS |
-| D099 auditable Amazon Bedrock explanation | ACCEPTED; IMPLEMENTED / LOCAL PASS / HOSTED PENDING |
-| D100 AWS SAA portfolio deployment | ACCEPTED; IMPLEMENTED OFFLINE / AWS APPLY NOT AUTHORIZED |
+| D099 auditable Amazon Bedrock explanation | ACCEPTED; IMPLEMENTATION COMPLETE / HOSTED REPOSITORY PASS on `22a9917` |
+| D100 AWS SAA portfolio deployment | ACCEPTED; IMPLEMENTATION COMPLETE / HOSTED REPOSITORY PASS / AWS APPLY NOT AUTHORIZED |
 | Sprint 4.3 implementation | PASS |
 | Sprint 4.3 local runtime certification | PASS - Docker, security, local JWT/RBAC E2E and persistence/recreation |
 | Sprint 4.3 closure | CERTIFIED / COMPLETE under D095 |
 | Sprint 4.3.1 documentation synchronization | COMPLETE |
-| External Pilot Identity Conformance | DEFERRED by D095; mandatory before Sprint 4.5 |
+| Sprint 4.4.2 Bedrock and AWS preparation | COMPLETE / HOSTED REPOSITORY PASS on `22a9917` |
+| External Pilot Identity Conformance | CURRENT under D095; D101 Stage A authorized |
 | Sprint 4.4 contract gate | COMPLETE - D096 frozen and narrowly corrected by D097; no runtime change |
 | Sprint 4.4 implementation | CERTIFIED / COMPLETE / HOSTED PASS |
 | Sprint 4.4 structural preflight | D098 COMPLETE / HOSTED PASS |
-| Last completed gate | Sprint 4.4 - MVP Application Observability |
+| Last completed gate | Sprint 4.4.2 - D099/D100 repository implementation |
 | Phase 2 closure | COMPLETE under D079; Sprints 2.9-2.13 deferred |
-| Current control gate | D099/D100 hosted certification, then D095 external Keycloak HTTPS conformance |
+| Current control gate | D101 Stage A - D095 external Keycloak HTTPS conformance |
 | Phase 3 authorization | Authorized by D079 and evolved by D085 |
 
 ## Verified Foundation
@@ -99,7 +100,7 @@ Last verified: **2026-09-19**
 | Application | PASS | Deterministic use cases plus the non-persisted Business Value projection |
 | Ports | PASS | Inbound, outbound and explicit transaction ports |
 | PostgreSQL persistence | PASS | JDBC adapters and PostgreSQL 18.x certification, most recently 18.6 |
-| Database schema | D099 LOCAL PASS | Flyway V1-V3; the original seven business tables remain authoritative and three separate explanation-audit tables are added |
+| Database schema | D099 IMPLEMENTED / HOSTED REPOSITORY PASS | Flyway V1-V3; the original seven business tables remain authoritative and three separate explanation-audit tables are added; real PostgreSQL V3 certification remains explicit pre-live evidence |
 | Transactions | PASS | Repository and use-case atomicity certification |
 | Web runtime | PASS | Spring Boot executable composition root |
 | REST error contract | PASS | Four-field envelope for controlled and framework errors |
@@ -109,7 +110,7 @@ Last verified: **2026-09-19**
 | Functional REST | CERTIFIED / COMPLETE | All 15 D086 routes are wired through REST DTOs and mappers to Application input ports and certified against PostgreSQL 18.2 |
 | Deterministic Decision creation | CERTIFIED | Eligible Evidence creates one atomic, retry-safe and concurrency-safe Decision |
 | Deterministic Recommendation and ROI | CERTIFIED | DRC-AOA-001-v1 derives one atomic Recommendation with annualized savings, confidence and risk |
-| Explanation Provider integration | D099 LOCAL PASS | Optional audited Bedrock explanation executes after deterministic persistence, has no decision/ROI authority and remains disabled by default |
+| Explanation Provider integration | D099 IMPLEMENTED / HOSTED REPOSITORY PASS | Optional audited Bedrock explanation executes after deterministic persistence, has no decision/ROI authority and remains disabled by default |
 | Human Review, Ledger and Result Validation | CERTIFIED / COMPLETE | Atomic review and Ledger behavior, replay, linearity, result validation, rollback and concurrency passed against PostgreSQL 18.2; D084 is discharged |
 | End-to-End Local Business Value Demo | CERTIFIED / COMPLETE | Deterministic local `DRC-AOA-001` workflow and traceable projection verified with 30 Evidence records |
 | JWT Authentication | CERTIFIED / COMPLETE | D087 Resource Server perimeter, RS256/JWKS validation and JWT-derived actor identity passed PostgreSQL 18.2 certification |
@@ -120,8 +121,8 @@ Last verified: **2026-09-19**
 | DRC-AOA-001 runtime composition | CERTIFIED / COMPLETE | D093 R16 composes one idempotent Decision/Recommendation graph through existing D081/D082 boundaries |
 | Local container runtime | D098 COMPLETE / HOSTED PASS | Backend, frontend and reproducible PostgreSQL 18.6 images pass current High/Critical, secret, hardening and runtime checks locally and hosted |
 | Observability runtime | D097 CERTIFIED / HOSTED PASS | Safe ECS logs, bounded metrics, MDC correlation, probes and internal Actuator pass; Prometheus/Grafana runtime services, dashboards and alerts are absent |
-| Java backend CI | CERTIFIED BASELINE / D099 HOSTED PENDING | Sprint 4.4 hosted gate is green; the local D099 suite passes 174 tests and requires hosted confirmation |
-| AWS deployment preparation | D100 IMPLEMENTED OFFLINE | Locked Terraform bootstrap/pilot roots and OIDC workflows pass validation and mock plans; no AWS resource or live deployment is claimed |
+| Java backend CI | D099 HOSTED PASS | Java 21 verification for merge `22a9917` passed together with CodeQL and the required security gates |
+| AWS deployment preparation | D100 IMPLEMENTATION COMPLETE / HOSTED REPOSITORY PASS | Locked Terraform bootstrap/pilot roots and OIDC workflows pass hosted offline validation; no AWS authentication, plan/apply, image publication, resource or live deployment is claimed |
 
 ## Latest Verification
 
@@ -274,12 +275,26 @@ D097 MVP observability implementation on 2026-09-15:
   volumes, secrets, dashboards and alerts: absent; and
 - hosted post-change Java CI, Security and CodeQL: PASS on merge `4fd18fa`.
 
+D099/D100 repository closure on merge `22a9917`:
+
+- Java 21 Maven verification: PASS;
+- CodeQL for Actions, Java/Kotlin, JavaScript/TypeScript and Python: PASS;
+- source, dependency and configuration scan: PASS;
+- full Git history secret scan: PASS;
+- application image scan, including the hardened migration image: PASS;
+- PostgreSQL D094 supply-chain gate: PASS;
+- AWS Terraform format, validation and offline tests: PASS; and
+- live AWS authentication, plan/apply, image publication, Bedrock invocation
+  and deployment: NOT EXECUTED / NOT AUTHORIZED.
+
 ## Active Blocking Risk
 
-The D092-D098 runtime remains certified historical evidence. The current risks
-are the unexecuted D099 PostgreSQL integration extension and hosted D099/D100
-checks, followed by D095 external identity conformance. No AWS plan/apply,
-image publication or real Bedrock invocation has been executed.
+The D092-D098 runtime remains certified historical evidence. D099/D100
+repository implementation and hosted checks pass on merge `22a9917`. The
+current blocking risk is D095 external Keycloak HTTPS conformance. Real
+PostgreSQL V3, AWS account/Region/cost, immutable publication, live runtime and
+Bedrock evidence remain explicit later evidence. No AWS plan/apply, image
+publication or real Bedrock invocation has been executed.
 
 ## Known Non-Blocking Risks
 
@@ -318,19 +333,20 @@ image publication or real Bedrock invocation has been executed.
 
 ## Next Control Gate
 
-D099/D100 hosted certification is the current code gate. Commit and push only
-the reviewed Bedrock explanation and offline AWS deployment preparation, then
-require Java CI, Security, CodeQL, application/migration image scans, D094, AWS
-IaC validation and full-history secret scanning to pass without exception.
-After merge, execute D095 external Keycloak HTTPS conformance. A live AWS plan
-still requires a current cost estimate and explicit approval before Sprint 4.5
-Pilot Readiness can use the sandbox as evidence.
+D099/D100 repository certification is COMPLETE / HOSTED PASS on merge
+`22a9917`. D101 Stage A is the sole current gate and may execute only the D095
+external Keycloak HTTPS conformance matrix with redacted evidence. Stage B and
+Stage C remain blocked: no AWS authentication, `terraform plan`, `terraform
+apply`, image publication, Bedrock invocation, resource creation or deployment
+is authorized. Those steps require later, separate cost and execution approval.
 
 Current execution authorities:
 
 - D079 through D100 in `docs/decisions/14_Decision_Log.md`;
 - `agents/phase3/README.md`;
 - `agents/phase3/SPRINT_4.4_D097_MVP_OBSERVABILITY_IMPLEMENTATION_PROMPT.md`;
+- `agents/phase3/SPRINT_4.5_D101_PILOT_IDENTITY_AND_AWS_CERTIFICATION_PROMPT.md`
+  for Stage A only;
 - `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`;
 - `docs/architecture/50_Executive_Dashboard_Contract.md`;
 - `docs/architecture/46_JWT_Authentication_Contract.md`;

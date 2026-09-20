@@ -194,6 +194,6 @@ point without changing Domain policy; Sprint 4.3 certification passed 151
 default tests and 34 PostgreSQL 18.6 integration tests and packaged this module
 as a non-root, read-only image. D096 freezes the observability boundary and
 D097/Sprint 4.4 is COMPLETE / HOSTED PASS. D099 authorizes only the bounded,
-optional explanation path currently awaiting hosted certification. It must not
-change D086 routes, D087 identity, D088 authorization, connector isolation,
-Evidence redaction or business authority.
+optional explanation path, whose repository implementation is HOSTED PASS on
+merge `22a9917`. It must not change D086 routes, D087 identity, D088
+authorization, connector isolation, Evidence redaction or business authority.

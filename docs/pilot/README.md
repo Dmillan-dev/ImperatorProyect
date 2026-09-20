@@ -74,8 +74,9 @@ D096 Observability Contract: FROZEN / ACCEPTED
 D097 MVP Scope Correction: FROZEN / ACCEPTED
 D098 Runtime Supply Chain Refresh: COMPLETE / HOSTED PASS
 Sprint 4.4 MVP Application Observability: COMPLETE / HOSTED PASS
-D099/D100 Bedrock and AWS Pilot Preparation: LOCAL/OFFLINE PASS / HOSTED PENDING / CURRENT
-External Pilot Identity Conformance: DEFERRED / REQUIRED BEFORE LIVE PILOT
+D099/D100 Bedrock and AWS Pilot Preparation: COMPLETE / HOSTED REPOSITORY PASS
+External Pilot Identity Conformance: D101 STAGE A AUTHORIZED / CURRENT
+D101 Stages B-C: BLOCKED / NOT AUTHORIZED
 Sprint 4.5: NOT OPEN
 Customer data: FORBIDDEN
 Public exposure: FORBIDDEN

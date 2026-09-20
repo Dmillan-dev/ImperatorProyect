@@ -1,10 +1,17 @@
 # Sprint 4.5 D101 - Pilot Identity And AWS Certification Prompt
 
-Status: **PREPARED / NOT CURRENTLY AUTHORIZED**
+Status: **STAGE A AUTHORIZED / STAGES B AND C BLOCKED**
 
-Use this prompt only after the D099/D100 pull request is merged with every
-required hosted check green. It never grants permission to create AWS resources
-by itself.
+Authorization basis: D099/D100 repository implementation merge `22a9917`, with
+all required hosted Java CI, CodeQL, source/dependency/configuration,
+full-history secret, application/migration image, PostgreSQL D094 and AWS IaC
+checks passing.
+
+Only Stage A is currently executable. Stop after producing its redacted
+identity-conformance evidence. Do not start Stage B or Stage C, authenticate to
+AWS, run `terraform plan` or `terraform apply`, publish images, invoke Bedrock,
+create cloud resources or deploy the pilot. A later explicit authorization is
+required even if Stage A passes.
 
 ## Objective
 
@@ -28,6 +35,8 @@ Bedrock resources or a mutable container tag.
 
 ## Stage A - D095 External Identity
 
+Authorization: **CURRENT / AUTHORIZED**
+
 Against the frozen external Keycloak HTTPS issuer/JWKS:
 
 - verify certificate trust, exact issuer, audience `imperator-api`, RS256 and
@@ -39,8 +48,16 @@ Against the frozen external Keycloak HTTPS issuer/JWKS:
 - record only redacted metadata and results, never tokens or private keys.
 
 Stop on any failure. Do not work around D095 in ALB, Spring or the frontend.
+After the complete positive and negative matrix passes, stop and present the
+redacted Stage A report. Stage A completion does not authorize Stage B.
 
 ## Stage B - Costed AWS Plan
+
+Authorization: **BLOCKED / NOT AUTHORIZED**
+
+The following section is retained as future scope only. Do not execute any of
+its preparation, AWS authentication, pricing, publication or Terraform steps
+under the current authorization.
 
 - prepare the account, Region and resource inventory without changing AWS;
 - attach a current AWS Pricing Calculator export and identify bootstrap state,
@@ -66,6 +83,8 @@ approval.
 
 ## Stage C - Authorized Deployment Only
 
+Authorization: **BLOCKED / NOT AUTHORIZED**
+
 After current explicit approval:
 
 1. run the protected deploy workflow with the reviewed digests;
@@ -81,6 +100,10 @@ After current explicit approval:
 11. destroy the pilot and inspect every residual billable asset.
 
 ## Required Report
+
+For the currently authorized Stage A, report the identity evidence and mark all
+Stage B/C fields explicitly as `NOT EXECUTED / NOT AUTHORIZED`; never fabricate
+live AWS, Bedrock, cost or deployment evidence.
 
 Separate the report into:
 
