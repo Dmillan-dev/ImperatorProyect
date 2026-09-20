@@ -35,7 +35,8 @@ Contains the implemented Java CI and fail-closed Security workflows, review
 ownership and pull-request template. GitHub-managed CodeQL default setup is
 enabled separately from repository workflow files. D100 also prepares
 fail-closed AWS IaC, immutable image publication and manually approved pilot
-deployment workflows; their hosted and live execution evidence is pending.
+deployment workflows. Repository AWS IaC checks pass on merge `22a9917`; live
+publication and deployment evidence remains pending and unauthorized.
 
 ### `.mvn/`
 
@@ -141,8 +142,9 @@ hardened application Dockerfiles and ignored file-backed secret boundary.
 D096 originally froze an optional observability profile. D097 defers that
 external stack and authorizes application-native Sprint 4.4 observability.
 D098 passes maintained frontend and PostgreSQL final-image certification
-locally; hosted certification is the current blocker. No cloud deployment, Kubernetes or
-Terraform exists.
+locally and hosted. D099/D100 repository checks pass on merge `22a9917`; D101
+Stage A identity conformance is the current blocker. Terraform preparation
+exists, but no cloud deployment or Kubernetes runtime exists.
 
 ### `output/`
 

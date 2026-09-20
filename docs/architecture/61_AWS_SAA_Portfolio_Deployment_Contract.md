@@ -2,6 +2,10 @@
 
 Status: **D100 ACCEPTED / IMPLEMENTED OFFLINE / AWS APPLY NOT AUTHORIZED**
 
+Repository implementation evidence: **HOSTED REPOSITORY PASS on merge
+`22a9917`**. This satisfies the source, image and offline IaC gate only; it does
+not satisfy the live acceptance evidence below or authorize an AWS action.
+
 ## Decision Scope
 
 D100 turns the existing IMPERATOR runtime into a reproducible AWS pilot design

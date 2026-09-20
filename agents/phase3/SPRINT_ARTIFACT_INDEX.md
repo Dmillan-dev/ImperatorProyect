@@ -49,9 +49,11 @@ D096: ACCEPTED / COMPLETE / FROZEN
 D097: ACCEPTED / COMPLETE / HOSTED PASS
 D098: ACCEPTED / FROZEN; COMPLETE / HOSTED PASS
 Sprint 4.4: CERTIFIED / COMPLETE / HOSTED PASS
-D099: ACCEPTED; IMPLEMENTED / LOCAL PASS / HOSTED PENDING
-D100: ACCEPTED; IMPLEMENTED OFFLINE / AWS APPLY NOT AUTHORIZED
-Sprint 4.4.2: IMPLEMENTED / LOCAL PASS / HOSTED PENDING / CURRENT
+D099: ACCEPTED; IMPLEMENTATION COMPLETE / HOSTED REPOSITORY PASS
+D100: ACCEPTED; IMPLEMENTATION COMPLETE / HOSTED REPOSITORY PASS / AWS APPLY NOT AUTHORIZED
+Sprint 4.4.2: COMPLETE / HOSTED REPOSITORY PASS
+D101 Stage A: AUTHORIZED / CURRENT
+D101 Stages B-C: BLOCKED / NOT AUTHORIZED
 ```
 
 Exactly one Phase 3 delivery gate is current and authorized.
@@ -99,9 +101,9 @@ Exactly one Phase 3 delivery gate is current and authorized.
 | D097 | `4fd18fa` | MVP application-observability correction that defers the external monitoring stack without waiving security findings | ACCEPTED / COMPLETE / HOSTED PASS |
 | D098 | Current decision commit; hash intentionally not self-recorded | Pinned final-image `libpcre2` security refresh, runtime assertions and Dependabot version-update controls | ACCEPTED / FROZEN; COMPLETE / HOSTED PASS |
 | 4.4 | `4fd18fa` | ECS JSON, MDC correlation, bounded metrics, probes, internal Actuator and deferred-stack absence | CERTIFIED / COMPLETE / HOSTED PASS |
-| D099 | Working tree; commit and hosted evidence pending | Audited Bedrock explanation adapter, strict output validation, V3 audit persistence and explicit workspace state | ACCEPTED; IMPLEMENTED / LOCAL PASS / HOSTED PENDING |
-| D100 | Working tree; no AWS apply | Validated Terraform bootstrap/pilot roots, immutable image delivery and protected OIDC deployment contract | ACCEPTED; IMPLEMENTED OFFLINE / AWS APPLY NOT AUTHORIZED |
-| 4.4.2 | Working tree; commit and hosted evidence pending | One bounded TFG increment covering D099 application integration and D100 deployment preparation | IMPLEMENTED / LOCAL PASS / HOSTED PENDING |
+| D099 | `22a9917` | Audited Bedrock explanation adapter, strict output validation, V3 audit persistence, explicit workspace state and hosted repository checks | ACCEPTED; IMPLEMENTATION COMPLETE / HOSTED REPOSITORY PASS |
+| D100 | `22a9917`; no AWS apply | Validated Terraform bootstrap/pilot roots, immutable image delivery contract, protected OIDC workflows and hosted AWS IaC checks | ACCEPTED; IMPLEMENTATION COMPLETE / HOSTED REPOSITORY PASS / AWS APPLY NOT AUTHORIZED |
+| 4.4.2 | `22a9917` | One bounded TFG increment covering D099 application integration and D100 deployment preparation | COMPLETE / HOSTED REPOSITORY PASS |
 
 ### Sprint 3.0
 
@@ -520,10 +522,10 @@ Certification evidence:
 ## Next Artifact Boundary
 
 Sprint 4.4 is certified on merge `4fd18fa`; Prometheus/Grafana remain deferred
-without a vulnerability waiver. D099 and D100 are the current working-tree
-increment and require hosted Java CI, Security, CodeQL, image and AWS IaC gates.
-D095 external identity, cost approval and explicit AWS apply authorization
-still precede any public pilot or live-provider claim.
+without a vulnerability waiver. D099/D100 repository implementation and hosted
+checks are COMPLETE / PASS on merge `22a9917`. D101 Stage A is current and
+authorizes only D095 external Keycloak HTTPS conformance. Cost approval, AWS
+planning/publication and explicit apply authorization remain blocked.
 
 ## Agent Rule
 

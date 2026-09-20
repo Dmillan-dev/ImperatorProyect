@@ -71,8 +71,9 @@ Sprint 3.8.0 - JWT Authentication Contract Freeze: COMPLETE
 -> D097 - MVP Observability Scope Correction: ACCEPTED / FROZEN
 -> D098 - Runtime Supply Chain Refresh: COMPLETE / HOSTED PASS
 -> Sprint 4.4 - MVP application observability: COMPLETE / HOSTED PASS
--> D099/D100 - Bedrock explanations and AWS pilot preparation: LOCAL/OFFLINE PASS / HOSTED PENDING / CURRENT
--> External Pilot Identity Conformance - Keycloak HTTPS under D095: NEXT
+-> D099/D100 - Bedrock explanations and AWS pilot preparation: COMPLETE / HOSTED REPOSITORY PASS
+-> D101 Stage A - Keycloak HTTPS under D095: AUTHORIZED / CURRENT
+-> D101 Stages B-C - AWS plan/publication/deployment: BLOCKED / NOT AUTHORIZED
 ```
 
 Sprint 3.8 answers only who the caller is. Sprint 3.9 answers what that caller
@@ -100,9 +101,9 @@ external Keycloak HTTPS conformance remains mandatory before Sprint 4.5.
 D096 is frozen and D097 defers its external monitoring stack without waiving
 any image finding. D098 and the application-native D097 runtime pass local and
 hosted source, history, image, regression and telemetry gates on merge
-`4fd18fa`. D099/D100 hosted certification is now blocking; external Keycloak
-HTTPS conformance under D095 follows. Every existing security authority remains
-binding.
+`4fd18fa`. D099/D100 repository security certification passes on merge
+`22a9917`. External Keycloak HTTPS conformance under D095 is now blocking.
+Every existing security authority remains binding.
 
 For connector work, also load
 `docs/architecture/28_Per_Connector_MVP_Contracts.md`,

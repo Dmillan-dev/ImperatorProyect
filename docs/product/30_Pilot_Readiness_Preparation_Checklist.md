@@ -15,8 +15,8 @@ Sprint 4.3 CERTIFIED under D095
   -> Sprint 4.3.1 documentation synchronization COMPLETE
   -> D098 image certification COMPLETE / HOSTED PASS
   -> Sprint 4.4 D097 COMPLETE / HOSTED PASS
-  -> D099/D100 hosted certification after local/offline PASS
-  -> external Keycloak D087/D088 conformance
+  -> D099/D100 repository implementation COMPLETE / HOSTED PASS
+  -> D101 Stage A external Keycloak D087/D088 conformance CURRENT
   -> controlled live-connector and operational readiness evidence
   -> Sprint 4.5 Pilot Readiness
 ```
@@ -98,7 +98,7 @@ credible, auditable value loop whose financial meaning the customer accepts.
 
 Review basis: current repository after D097 observability certification, frozen
 D081-D098 contracts and certified implementation through Sprint 4.4, with
-D099/D100 locally/offline validated and awaiting hosted certification.
+D099/D100 repository implementation COMPLETE / HOSTED PASS on merge `22a9917`.
 
 ### Green
 
@@ -159,7 +159,7 @@ architecture redesign.
 | Frontend | 41 tests and 9 Playwright acceptance tests certified | Load the runtime-composed case with an operational external token |
 | Connectors | GitHub/AWS offline protocol tests certified | Controlled live read-only smoke evidence |
 | Docker | D092-D095 runtime, clean images and complete data recreation certified | Preserve exact certified inputs and evidence |
-| Observability | D097 application-native runtime is COMPLETE / HOSTED PASS | Preserve the certified behavior while validating D099/D100 |
+| Observability | D097 application-native runtime is COMPLETE / HOSTED PASS | Preserve the certified behavior during D101 Stage A identity conformance |
 
 ## 8. Evidence Required For Pilot Authorization
 
@@ -199,8 +199,9 @@ D096 CONTRACT: FROZEN / ACCEPTED
 D097 SCOPE CORRECTION: FROZEN / ACCEPTED
 D098 RUNTIME SUPPLY CHAIN REFRESH: COMPLETE / HOSTED PASS
 SPRINT 4.4 MVP OBSERVABILITY: COMPLETE / HOSTED PASS
-D099/D100 BEDROCK AND AWS PILOT PREPARATION: LOCAL/OFFLINE PASS / HOSTED PENDING / CURRENT
-EXTERNAL PILOT IDENTITY: MANDATORY BEFORE LIVE PILOT
+D099/D100 BEDROCK AND AWS PILOT PREPARATION: COMPLETE / HOSTED REPOSITORY PASS
+EXTERNAL PILOT IDENTITY: D101 STAGE A AUTHORIZED / CURRENT
+D101 STAGES B-C: BLOCKED / NOT AUTHORIZED
 SPRINT 4.5: NOT OPEN
 ```
 

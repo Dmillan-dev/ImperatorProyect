@@ -85,7 +85,12 @@ provider address changes before every plan.
 
 ## 5. Publish And Plan
 
-After D099 is merged and every hosted gate is green:
+The D099/D100 repository precondition is satisfied by merge `22a9917`. The
+steps below remain blocked until D101 Stage A passes and a separate Stage B
+authorization is recorded. Do not authenticate to AWS, publish images or run
+Terraform under the current Stage A authority.
+
+After those later approvals:
 
 1. Run **AWS Pilot Image Publish** from `main` with the full commit SHA and the
    exact confirmation string.

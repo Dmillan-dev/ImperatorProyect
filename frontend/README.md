@@ -32,8 +32,8 @@ Sprint 4.2 is **CERTIFIED / COMPLETE** under D091.
 Sprint 4.3 certified this frontend as a non-root, read-only, SHA-tagged image in
 the loopback-only D092-D095 runtime. Sprint 4.4/D097 is COMPLETE / HOSTED PASS
 and did not expand the frontend. D099 separately authorizes the bounded,
-read-only explanation presentation now implemented locally; hosted
-certification remains pending.
+read-only explanation presentation whose repository implementation is HOSTED
+PASS on merge `22a9917`.
 
 ## Local Development
 

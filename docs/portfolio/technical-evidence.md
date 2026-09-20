@@ -35,7 +35,7 @@ It links to canonical contracts and implementation instead of replacing them.
 | External IdP | **[PLANNED]** | Keycloak preparation exists; no issuer is deployed or connected |
 | D093/R16 composition | **[IMPLEMENTED]** | `ADMIN`-only API composition, resumable D081/D082 steps and case uniqueness are certified |
 | Observability | **[IMPLEMENTED / HOSTED PASS]** | ECS JSON, bounded correlation/metrics, probes and internal Actuator are certified on merge `4fd18fa`; external monitoring is deferred |
-| Bedrock explanations | **[IMPLEMENTED OFFLINE / HOSTED PENDING]** | Optional, evidence-grounded explanation path is auditable and fail-safe; it never owns the recommendation or approval decision |
+| Bedrock explanations | **[IMPLEMENTED / HOSTED REPOSITORY PASS]** | Optional, evidence-grounded explanation path is auditable and fail-safe; it never owns the recommendation or approval decision; live Bedrock remains unexecuted |
 | Python/FastAPI | **[FUTURE]** | Documentation boundary only |
 | Cloud deployment | **[IMPLEMENTED OFFLINE / LIVE PENDING]** | Terraform, immutable image publication and controlled ECS/RDS pilot workflows exist; no live AWS apply or runtime is certified |
 
@@ -192,8 +192,8 @@ lineage while excluding raw payload persistence.
 | Medium | No dedicated Java dependency review | Add one bounded SCA control only after defining ownership, baseline and false-positive handling |
 | Medium | Token paste is the current frontend bootstrap | Replace with separately contracted Authorization Code + PKCE login before real users |
 | Medium | No tenant entitlement model | Keep runtime single-organization and prohibit customer exposure until a tenant contract exists |
-| Blocking | D099/D100 hosted certification is pending | Require Java CI, Security, CodeQL and IaC checks to reproduce local/offline PASS without bypass |
-| Medium | Operational external identity is absent | Pass D095 Keycloak HTTPS conformance before Sprint 4.5 or customer exposure |
+| Complete | D099/D100 repository certification | Required Java CI, Security, CodeQL, image and IaC checks pass on merge `22a9917` |
+| Blocking | Operational external identity is absent | Execute authorized D101 Stage A and pass D095 Keycloak HTTPS conformance before Sprint 4.5 or customer exposure |
 | Low local tooling | `mvnw.cmd` fails on the inspected Windows host before Maven starts | Keep hosted Linux wrapper verification authoritative and resolve the Windows launcher only through separate maintenance authority |
 
 No hard-coded GitHub token, AWS access key, private key or runtime password was

@@ -67,9 +67,9 @@ Phase 3 is named `First Business Value Loop` and is active under D079.
 
 The current authorized gate is maintained in
 `docs/project/PROJECT_STATUS.md`. D096 is frozen, D097 narrows its MVP scope,
-and D098, D097 and Sprint 4.4 are COMPLETE / HOSTED PASS. D099/D100 are the
-current LOCAL/OFFLINE PASS implementation awaiting hosted certification; D095
-external Keycloak HTTPS conformance follows before live pilot deployment.
+and D098, D097 and Sprint 4.4 are COMPLETE / HOSTED PASS. D099/D100 repository
+implementation is COMPLETE / HOSTED PASS on merge `22a9917`; D101 Stage A for
+D095 external Keycloak HTTPS conformance is current before any live pilot step.
 
 Phase 3 agents may implement only the bounded `DRC-AOA-001` sequence in
 `agents/phase3/README.md`. Sprint 3.0 runtime composition and Sprint 3.1 JSONL
@@ -102,8 +102,9 @@ and persistence after recreation. D096 freezes the original observability
 contract, while D097 implements only its application-native MVP subset and
 defers external monitoring services. D098 and Sprint 4.4 pass locally and
 hosted under Documents 56-58. D099/D100 prepare auditable Bedrock explanations
-and an AWS pilot offline; hosted certification remains pending. External
-Keycloak HTTPS conformance remains mandatory before live pilot deployment.
+and an AWS pilot offline and pass hosted repository checks on merge `22a9917`.
+External Keycloak HTTPS conformance remains mandatory before live deployment;
+AWS planning, publication and apply remain separately blocked.
 
 The completed Phase 2 foundation contains:
 

@@ -63,10 +63,10 @@ HTTPS conformance before Sprint 4.5, customer data or MVP Release. Passing CI
 and local runtime checks does not override that pilot boundary. D096 is frozen
 and D097 implements its application-native observability subset while deferring
 Prometheus/Grafana services without a vulnerability waiver. D097 and Sprint 4.4
-are COMPLETE / HOSTED PASS on merge `4fd18fa`. D099/D100 are implemented and
-validated locally/offline, but their hosted security certification is pending.
-After that certification, external Keycloak HTTPS conformance under D095 is the
-mandatory gate before a live pilot or MVP Release.
+are COMPLETE / HOSTED PASS on merge `4fd18fa`. D099/D100 repository
+implementation and required security checks are COMPLETE / HOSTED PASS on merge
+`22a9917`. External Keycloak HTTPS conformance under D095 is the current
+mandatory gate. AWS planning, publication, apply and deployment remain blocked.
 
 See the canonical
 [Security, Data Governance and Threat Model](docs/architecture/26_Security_Data_Governance_Threat_Model.md)

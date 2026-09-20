@@ -20,9 +20,9 @@ External Pilot Identity    NOT PROVISIONED / REQUIRED BEFORE SPRINT 4.5
 
 Sprint 4.3.1, D098 and Sprint 4.4 are complete; D096 freezes the original
 observability contract and D097 implements only its application-native MVP
-subset. D099/D100 pass locally/offline and await hosted certification. A live
-pilot remains unauthorized until that certification and external Pilot
-Identity Conformance pass.
+subset. D099/D100 repository implementation is COMPLETE / HOSTED PASS on merge
+`22a9917`. A live pilot remains unauthorized until external Pilot Identity
+Conformance passes and later AWS stages receive separate authorization.
 
 ## 2. Authority Set
 

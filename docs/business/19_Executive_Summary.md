@@ -65,9 +65,9 @@ PostgreSQL and Flyway persistence, JWT/RBAC controls, read-only GitHub and AWS
 adapters, Next.js workspace and hardened local Docker runtime are implemented.
 Sprint 4.3, D098 and Sprint 4.4 application observability are certified.
 D099/D100 add auditable Bedrock explanations and AWS pilot infrastructure with
-local/offline validation, while hosted certification, operational external
-identity conformance, live pilot infrastructure and real customer data are not
-yet present. Use the root
+COMPLETE / HOSTED REPOSITORY PASS on merge `22a9917`, while operational
+external identity conformance, live pilot infrastructure and real customer data
+are not yet present. Use the root
 `README.md` and
 `docs/project/PROJECT_STATUS.md` for the current execution state.
 
@@ -83,9 +83,9 @@ The founder-mode ambition remains valid: act like a CTO building an enterprise-g
 - First screen contract: `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`.
 - MVP integrations: Jira, GitHub, AWS and OpenAI + Anthropic Claude.
 - Architecture status: the Phase 3 runtime and D097 observability are certified
-  through Sprint 4.4. D099/D100 pass locally/offline and await hosted
-  certification. External pilot identity and live AWS infrastructure remain
-  deferred to their explicit later gates.
+  through Sprint 4.4. D099/D100 repository implementation is COMPLETE / HOSTED
+  PASS on `22a9917`. External pilot identity is current under D101 Stage A;
+  every live AWS step remains blocked behind explicit later gates.
 
 ## Bottom line
 

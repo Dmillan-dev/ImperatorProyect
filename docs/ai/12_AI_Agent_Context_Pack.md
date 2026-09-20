@@ -76,9 +76,9 @@ and persistence after recreation pass. Sprint 4.3.1 documentation
 synchronization is complete. D096 freezes the original Observability contract
 and D097 implements only its application-native MVP subset. D098, D097 and
 Sprint 4.4 pass locally and hosted on merge `4fd18fa`. D099/D100 implement
-auditable Bedrock explanations and AWS pilot preparation with LOCAL/OFFLINE
-PASS; hosted certification is current. External Keycloak HTTPS conformance
-remains mandatory before a live pilot or MVP Release.
+auditable Bedrock explanations and AWS pilot preparation with COMPLETE / HOSTED
+REPOSITORY PASS on merge `22a9917`. D101 Stage A external Keycloak HTTPS
+conformance is current and mandatory before a live pilot or MVP Release.
 
 Agents may create runnable implementation only inside the explicitly
 authorized sprint/module. They must use `agents/phase3/README.md`, the frozen
