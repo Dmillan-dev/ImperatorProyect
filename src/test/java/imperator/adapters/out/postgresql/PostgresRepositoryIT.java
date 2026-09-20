@@ -47,7 +47,10 @@ import imperator.ports.in.ImportEvidenceInputPort;
 import imperator.ports.in.ReviewDecisionInputPort;
 import imperator.ports.out.DecisionRepository;
 import imperator.ports.out.EvidenceRepository;
+import imperator.ports.out.ExplanationStatus;
 import imperator.ports.out.LedgerRepository;
+import imperator.ports.out.RecommendationExplanationRecord;
+import imperator.ports.out.RecommendationExplanationRepository;
 import imperator.ports.out.RecommendationRepository;
 import imperator.ports.out.TransactionRunner;
 import imperator.support.DrcAoa001EvidenceFixture;
@@ -101,6 +104,7 @@ final class PostgresRepositoryIT {
     private EvidenceRepository evidenceRepository;
     private DecisionRepository decisionRepository;
     private RecommendationRepository recommendationRepository;
+    private RecommendationExplanationRepository explanationRepository;
     private LedgerRepository ledgerRepository;
     private TransactionRunner transactionRunner;
 
@@ -129,6 +133,7 @@ final class PostgresRepositoryIT {
         evidenceRepository = new PostgresEvidenceRepository(connectionProvider);
         decisionRepository = new PostgresDecisionRepository(connectionProvider);
         recommendationRepository = new PostgresRecommendationRepository(connectionProvider);
+        explanationRepository = new PostgresRecommendationExplanationRepository(connectionProvider);
         ledgerRepository = new PostgresLedgerRepository(connectionProvider);
         transactionRunner = new PostgresTransactionRunner(connectionProvider);
     }
@@ -137,6 +142,9 @@ final class PostgresRepositoryIT {
     void cleanApplicationTables() throws SQLException {
         executeAdmin("""
                 TRUNCATE TABLE
+                    recommendation_explanation_assumptions,
+                    recommendation_explanation_evidence,
+                    recommendation_explanations,
                     ledger_evidence_snapshots,
                     ledger_entries,
                     recommendation_evidence,
@@ -174,14 +182,51 @@ final class PostgresRepositoryIT {
                 PreparedStatement statement = connection.prepareStatement("""
                         SELECT COUNT(*)
                         FROM flyway_schema_history
-                        WHERE version IN ('1', '2')
+                        WHERE version IN ('1', '2', '3')
                           AND success
                         """);
                 ResultSet resultSet = statement.executeQuery()
         ) {
             assertTrue(resultSet.next());
-            assertEquals(2, resultSet.getInt(1));
+            assertEquals(3, resultSet.getInt(1));
         }
+    }
+
+    @Test
+    void persistsTheAuditableExplanationAttemptSeparatelyFromTheRecommendation() {
+        PersistedDecisionGraph graph = persistApprovedDecisionGraph("case-explanation-round-trip");
+        RecommendationExplanationRecord expected = new RecommendationExplanationRecord(
+                UUID.randomUUID(),
+                graph.recommendation().id(),
+                ExplanationStatus.GENERATED,
+                Optional.of("The deterministic Recommendation is supported by accepted Evidence."),
+                "amazon-bedrock",
+                "eu.amazon.nova-micro-v1:0",
+                "imperator-explanation-v1",
+                timestamp(8),
+                timestamp(9),
+                Optional.of(420),
+                Optional.of(96),
+                Optional.of(780L),
+                Optional.empty(),
+                List.of(graph.evidence().id()),
+                List.of("A-ROI-001")
+        );
+
+        explanationRepository.save(expected);
+        RecommendationExplanationRecord actual = explanationRepository
+                .findLatestByRecommendationId(graph.recommendation().id())
+                .orElseThrow();
+
+        assertEquals(expected, actual);
+        assertPermissionDenied(
+                "UPDATE recommendation_explanations SET status = status WHERE id = ?",
+                expected.explanationId()
+        );
+        assertPermissionDenied(
+                "DELETE FROM recommendation_explanations WHERE id = ?",
+                expected.explanationId()
+        );
     }
 
     @Test
@@ -1586,6 +1631,13 @@ final class PostgresRepositoryIT {
         executeAdmin(
                 "GRANT SELECT, INSERT ON TABLE recommendation_evidence TO " + quoteIdentifier(appRole)
         );
+        executeAdmin("""
+                GRANT SELECT, INSERT
+                ON TABLE recommendation_explanations,
+                             recommendation_explanation_evidence,
+                             recommendation_explanation_assumptions
+                TO %s
+                """.formatted(quoteIdentifier(appRole)));
         executeAdmin("""
                 GRANT SELECT, INSERT
                 ON TABLE ledger_entries, ledger_evidence_snapshots

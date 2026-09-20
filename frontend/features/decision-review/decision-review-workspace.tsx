@@ -378,9 +378,54 @@ function RecommendationSection({
               value={formatTimestamp(recommendation.data.createdAt)}
             />
           </dl>
+          {recommendation.data.explanation ? (
+            <ExplanationPanel explanation={recommendation.data.explanation} />
+          ) : null}
         </div>
       ) : null}
     </SectionShell>
+  );
+}
+
+function ExplanationPanel({
+  explanation,
+}: {
+  explanation: NonNullable<
+    import("@/services/api/schemas").Recommendation["explanation"]
+  >;
+}) {
+  const generated = explanation.status === "GENERATED" && explanation.text;
+  return (
+    <aside className="ai-explanation" aria-labelledby="ai-explanation-title">
+      <header>
+        <div>
+          <p className="section-eyebrow">AI-GENERATED, NON-AUTHORITATIVE</p>
+          <h3 id="ai-explanation-title">Recommendation explanation</h3>
+        </div>
+        <StatusPill value={explanation.status} />
+      </header>
+      {generated ? (
+        <p className="ai-explanation-text">{explanation.text}</p>
+      ) : (
+        <p className="ai-explanation-unavailable">
+          Explanation unavailable
+          {explanation.failureCode ? ` (${explanation.failureCode})` : ""}.
+        </p>
+      )}
+      <dl className="ai-explanation-trace">
+        <Fact label="Model" value={explanation.modelId} />
+        <Fact label="Prompt" value={explanation.promptVersion} />
+        <Fact label="Evidence" value={explanation.evidenceIds.join(", ")} />
+        <Fact
+          label="Assumptions"
+          value={explanation.assumptionIds.join(", ")}
+        />
+        <Fact
+          label="Completed"
+          value={formatTimestamp(explanation.completedAt)}
+        />
+      </dl>
+    </aside>
   );
 }
 

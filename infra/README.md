@@ -14,15 +14,16 @@ IMPERATOR without allowing infrastructure to drive the domain.
 ## Contains
 
 - The D092 Docker Production Runtime under `docker/`.
+- The D100 AWS deployment preparation and validated Terraform under `aws/`.
 - Future observability configuration.
 - Future local infrastructure files explicitly authorized by sprint scope.
 
 Current status:
 - Docker Production Runtime implemented under the Sprint 4.3 boundary.
-- D098 final-image `libpcre2` security refresh implemented and locally passed;
-  hosted certification pending.
+- D098 final-image `libpcre2` security refresh certified.
 - No Kubernetes manifests.
-- No Terraform modules.
+- Terraform bootstrap and pilot roots pass offline validation and mock plans;
+  AWS apply remains blocked by D095 and explicit cost authorization.
 - No runtime secrets.
 
 ## Never Contains
@@ -31,14 +32,12 @@ Current status:
 - Business rules.
 - Domain objects.
 - Production secrets.
-- Kubernetes or Terraform during MVP Phase 2 unless explicitly reauthorized.
+- Kubernetes during MVP scope unless explicitly reauthorized.
 
 ## Runtime Boundary
 
-`docker/` may package only the certified backend, frontend and PostgreSQL
-runtime. D098 has restored local fail-closed image certification; its hosted
-jobs must pass before D097 may add application-native health, metrics and
-logging. The D096
-Prometheus/Grafana profile is deferred beyond MVP.
-Kubernetes, Terraform, cloud deployment and production secrets remain
-unauthorized.
+`docker/` packages the certified backend, frontend and PostgreSQL runtime and
+supports both Compose file secrets and ECS environment-secret injection. The
+D096 Prometheus/Grafana profile remains deferred beyond MVP. `aws/` may contain
+only the D100 pilot boundary; Kubernetes, production secrets and unapproved AWS
+apply operations remain unauthorized.

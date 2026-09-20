@@ -226,9 +226,12 @@ not the Phase 2 route-shell plan.
 | 4.3 | Docker Production Runtime | CERTIFIED / COMPLETE |
 | 4.3.1 | Documentation Synchronization | COMPLETE |
 | D096 | Minimum Observability Runtime Contract | ACCEPTED / COMPLETE / FROZEN |
-| D097 | MVP Observability Scope Correction | ACCEPTED / COMPLETE / FROZEN; IMPLEMENTED / LOCAL PASS |
+| D097 | MVP Observability Scope Correction | ACCEPTED / COMPLETE / HOSTED PASS |
 | D098 | Runtime Supply Chain Refresh | ACCEPTED / FROZEN; COMPLETE / HOSTED PASS |
-| 4.4 | MVP Application Observability | IMPLEMENTED / LOCAL PASS / HOSTED PENDING |
+| 4.4 | MVP Application Observability | CERTIFIED / COMPLETE / HOSTED PASS |
+| D099 | Auditable Amazon Bedrock Explanation | ACCEPTED; IMPLEMENTED / LOCAL PASS / HOSTED PENDING |
+| D100 | AWS SAA Portfolio Deployment | ACCEPTED; IMPLEMENTED OFFLINE / AWS APPLY NOT AUTHORIZED |
+| 4.4.2 | TFG Bedrock And AWS Deployment Preparation | IMPLEMENTED / LOCAL PASS / HOSTED PENDING |
 | 4.5 | Pilot Readiness | PENDING |
 | 5.0 | MVP Release | PENDING |
 
@@ -310,14 +313,15 @@ D087/D088 and fail-closed behavior remain unchanged. Sprint 4.3.1 synchronized
 the active documentation. D096 freezes the broad bounded Observability
 contract. D097 retains its application-native logs, metrics, correlation and
 probes while deferring Prometheus/Grafana runtime services, dashboards and
-alerts beyond MVP. D098 passes locally and hosted. Sprint 4.4 now implements
-the D097 subset with 162 Java tests, 34 PostgreSQL integration tests, 41
-frontend tests, clean source/final-image/history scans and the complete local
-runtime verifier. Hosted D097 Java CI, Security and CodeQL are pending.
+alerts beyond MVP. D098 and Sprint 4.4 pass locally and hosted; merge `4fd18fa`
+is the certified observability baseline. D099 and D100 add the audited Bedrock
+explanation and offline AWS pilot preparation with 171 default Java tests, 41
+frontend tests and passing Terraform validation/mock plans. Hosted D099/D100,
+the PostgreSQL V3 extension, D095 and every live AWS check remain pending.
 
 Active Phase 3 execution authority:
 
-- D079 through D098 in `docs/decisions/14_Decision_Log.md`;
+- D079 through D100 in `docs/decisions/14_Decision_Log.md`;
 - `agents/phase3/README.md`.
 
 ## Gate Transition Rule

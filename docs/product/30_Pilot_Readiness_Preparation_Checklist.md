@@ -14,7 +14,8 @@ Readiness. The blocking chain is:
 Sprint 4.3 CERTIFIED under D095
   -> Sprint 4.3.1 documentation synchronization COMPLETE
   -> D098 image certification COMPLETE / HOSTED PASS
-  -> Sprint 4.4 D097 hosted certification after local PASS
+  -> Sprint 4.4 D097 COMPLETE / HOSTED PASS
+  -> D099/D100 hosted certification after local/offline PASS
   -> external Keycloak D087/D088 conformance
   -> controlled live-connector and operational readiness evidence
   -> Sprint 4.5 Pilot Readiness
@@ -42,7 +43,7 @@ Sprint 4.3 CERTIFIED under D095
 | Flyway/persistence | `CERTIFIED` | PostgreSQL 18.6, V1/V2 migrate/validate/no-op and persisted graph recreation pass |
 | Backup/restore | `NOT IMPLEMENTED` | D092 excludes it; volume persistence is not backup |
 | Security | `PARTIAL FOR PILOT` | Local runtime and JWT/RBAC pass; external IdP and pilot operations remain pending |
-| Observability | `D097 LOCAL PASS / HOSTED PENDING` | ECS logs, correlation, metrics, probes and internal Actuator pass locally; external monitoring remains deferred |
+| Observability | `D097 COMPLETE / HOSTED PASS` | ECS logs, correlation, metrics, probes and internal Actuator are certified; external monitoring remains deferred |
 | Runtime E2E | `CERTIFIED LOCAL` | R01-R16, governance, Business Value and recreation pass under D095 |
 | Documentation | `SYNCHRONIZED` | Sprint 4.3.1 records the certified local runtime and deferred pilot identity gate |
 
@@ -95,9 +96,9 @@ credible, auditable value loop whose financial meaning the customer accepts.
 
 ## 6. Architecture Health Review
 
-Review basis: current repository at the D097 observability-certification boundary,
-frozen D081-D098 contracts and certified implementation through
-Sprint 4.3.
+Review basis: current repository after D097 observability certification, frozen
+D081-D098 contracts and certified implementation through Sprint 4.4, with
+D099/D100 locally/offline validated and awaiting hosted certification.
 
 ### Green
 
@@ -122,9 +123,9 @@ Sprint 4.3.
 1. D091 provides controlled token paste, not commercial login or SSO.
 2. No operational external HTTPS issuer/JWKS has passed the mandatory Pilot
    Identity Conformance Gate.
-3. D097 application-native observability passes locally with dependencies,
-   endpoints, logs, metrics and failure-isolation evidence. Hosted certification
-   is pending. Prometheus/Grafana services, dashboards and alerts are deferred.
+3. D097 application-native observability passes locally and hosted with
+   dependencies, endpoints, logs, metrics and failure-isolation evidence.
+   Prometheus/Grafana services, dashboards and alerts are deferred.
 4. Docker volume persistence is not backup/restore. D092 explicitly excludes
    backup, which must be resolved before real customer data if the pilot terms
    require recoverability beyond container recreation.
@@ -158,7 +159,7 @@ architecture redesign.
 | Frontend | 41 tests and 9 Playwright acceptance tests certified | Load the runtime-composed case with an operational external token |
 | Connectors | GitHub/AWS offline protocol tests certified | Controlled live read-only smoke evidence |
 | Docker | D092-D095 runtime, clean images and complete data recreation certified | Preserve exact certified inputs and evidence |
-| Observability | D097 application-native runtime passes locally | Reproduce with hosted Java CI, Security and CodeQL |
+| Observability | D097 application-native runtime is COMPLETE / HOSTED PASS | Preserve the certified behavior while validating D099/D100 |
 
 ## 8. Evidence Required For Pilot Authorization
 
@@ -197,8 +198,9 @@ SPRINT 4.3.1: COMPLETE
 D096 CONTRACT: FROZEN / ACCEPTED
 D097 SCOPE CORRECTION: FROZEN / ACCEPTED
 D098 RUNTIME SUPPLY CHAIN REFRESH: COMPLETE / HOSTED PASS
-SPRINT 4.4 MVP OBSERVABILITY: LOCAL PASS / HOSTED PENDING / CURRENT
-EXTERNAL PILOT IDENTITY: MANDATORY BEFORE SPRINT 4.5
+SPRINT 4.4 MVP OBSERVABILITY: COMPLETE / HOSTED PASS
+D099/D100 BEDROCK AND AWS PILOT PREPARATION: LOCAL/OFFLINE PASS / HOSTED PENDING / CURRENT
+EXTERNAL PILOT IDENTITY: MANDATORY BEFORE LIVE PILOT
 SPRINT 4.5: NOT OPEN
 ```
 

@@ -1,0 +1,248 @@
+name: AWS Pilot Plan or Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Run an infrastructure plan or perform the approved deployment
+        required: true
+        default: plan
+        type: choice
+        options:
+          - plan
+          - deploy
+      source_sha:
+        description: Full accepted main commit SHA matching the image manifest
+        required: true
+        type: string
+      backend_digest:
+        description: Backend sha256 digest from the publish artifact
+        required: true
+        type: string
+      frontend_digest:
+        description: Frontend sha256 digest from the publish artifact
+        required: true
+        type: string
+      migration_digest:
+        description: Migration sha256 digest from the publish artifact
+        required: true
+        type: string
+      database_admin_digest:
+        description: Database administration sha256 digest from the publish artifact
+        required: true
+        type: string
+      confirmation:
+        description: For deploy mode, type DEPLOY_IMPERATOR_PILOT
+        required: false
+        type: string
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: aws-pilot-deployment
+  cancel-in-progress: false
+
+jobs:
+  terraform:
+    name: ${{ inputs.mode == 'deploy' && 'Deploy AWS pilot' || 'Plan AWS pilot' }}
+    if: github.ref == 'refs/heads/main' && (inputs.mode == 'plan' || inputs.confirmation == 'DEPLOY_IMPERATOR_PILOT')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    environment: pilot
+    env:
+      TERRAFORM_VERSION: 1.16.3
+      TERRAFORM_LINUX_AMD64_SHA256: 093b6ae9a2228af5029c41606bc96eb583553528aad1bfe7e0b4d62fc91e25d8
+      TF_IN_AUTOMATION: "true"
+      TF_INPUT: "false"
+      TF_VAR_activate_services: "false"
+      TF_VAR_allowed_https_egress_cidrs: ${{ vars.ALLOWED_HTTPS_EGRESS_CIDRS_JSON }}
+      TF_VAR_application_database_secret_arn: ${{ vars.APPLICATION_DATABASE_SECRET_ARN }}
+      TF_VAR_aws_region: ${{ vars.AWS_REGION }}
+      TF_VAR_backend_image_uri: ${{ format('{0}.dkr.ecr.{1}.amazonaws.com/imperator/pilot/backend@{2}', vars.AWS_ACCOUNT_ID, vars.AWS_REGION, inputs.backend_digest) }}
+      TF_VAR_bedrock_enabled: "true"
+      TF_VAR_bedrock_invoke_resource_arns: ${{ vars.BEDROCK_INVOKE_RESOURCE_ARNS_JSON }}
+      TF_VAR_bedrock_model_id: ${{ vars.BEDROCK_MODEL_ID }}
+      TF_VAR_budget_alert_email: ${{ vars.BUDGET_ALERT_EMAIL }}
+      TF_VAR_certificate_arn: ${{ vars.ACM_CERTIFICATE_ARN }}
+      TF_VAR_database_admin_image_uri: ${{ format('{0}.dkr.ecr.{1}.amazonaws.com/imperator/pilot/database-admin@{2}', vars.AWS_ACCOUNT_ID, vars.AWS_REGION, inputs.database_admin_digest) }}
+      TF_VAR_domain_name: ${{ vars.IMPERATOR_DOMAIN_NAME }}
+      TF_VAR_environment: pilot
+      TF_VAR_expected_account_id: ${{ vars.AWS_ACCOUNT_ID }}
+      TF_VAR_frontend_image_uri: ${{ format('{0}.dkr.ecr.{1}.amazonaws.com/imperator/pilot/frontend@{2}', vars.AWS_ACCOUNT_ID, vars.AWS_REGION, inputs.frontend_digest) }}
+      TF_VAR_jwt_issuer_uri: ${{ vars.JWT_ISSUER_URI }}
+      TF_VAR_jwt_jwk_set_uri: ${{ vars.JWT_JWK_SET_URI }}
+      TF_VAR_migration_image_uri: ${{ format('{0}.dkr.ecr.{1}.amazonaws.com/imperator/pilot/migration@{2}', vars.AWS_ACCOUNT_ID, vars.AWS_REGION, inputs.migration_digest) }}
+      TF_VAR_monthly_budget_usd: ${{ vars.MONTHLY_BUDGET_USD }}
+      TF_VAR_route53_zone_id: ${{ vars.ROUTE53_ZONE_ID }}
+
+    steps:
+      - name: Check out main
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ inputs.source_sha }}
+
+      - name: Validate immutable digest inputs
+        shell: bash
+        env:
+          BACKEND_DIGEST: ${{ inputs.backend_digest }}
+          FRONTEND_DIGEST: ${{ inputs.frontend_digest }}
+          MIGRATION_DIGEST: ${{ inputs.migration_digest }}
+          DATABASE_ADMIN_DIGEST: ${{ inputs.database_admin_digest }}
+          SOURCE_SHA: ${{ inputs.source_sha }}
+        run: |
+          set -euo pipefail
+          [[ "$SOURCE_SHA" =~ ^[0-9a-f]{40}$ ]]
+          test "$(git rev-parse HEAD)" = "$SOURCE_SHA"
+          git merge-base --is-ancestor "$SOURCE_SHA" origin/main
+          for digest in "$BACKEND_DIGEST" "$FRONTEND_DIGEST" "$MIGRATION_DIGEST" "$DATABASE_ADMIN_DIGEST"; do
+            [[ "$digest" =~ ^sha256:[0-9a-f]{64}$ ]]
+          done
+
+      - name: Configure short-lived AWS credentials
+        uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
+        with:
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+          allowed-account-ids: ${{ vars.AWS_ACCOUNT_ID }}
+          mask-aws-account-id: true
+          role-session-name: imperator-pilot-${{ inputs.mode }}
+
+      - name: Verify image digests exist in approved repositories
+        shell: bash
+        env:
+          BACKEND_DIGEST: ${{ inputs.backend_digest }}
+          FRONTEND_DIGEST: ${{ inputs.frontend_digest }}
+          MIGRATION_DIGEST: ${{ inputs.migration_digest }}
+          DATABASE_ADMIN_DIGEST: ${{ inputs.database_admin_digest }}
+          SOURCE_SHA: ${{ inputs.source_sha }}
+        run: |
+          set -euo pipefail
+          verify_image() {
+            local repository=$1
+            local expected_digest=$2
+            local published_digest
+            published_digest=$(aws ecr describe-images \
+              --repository-name "$repository" \
+              --image-ids imageTag="$SOURCE_SHA" \
+              --query 'imageDetails[0].imageDigest' \
+              --output text)
+            test "$published_digest" = "$expected_digest"
+          }
+
+          verify_image imperator/pilot/backend "$BACKEND_DIGEST"
+          verify_image imperator/pilot/frontend "$FRONTEND_DIGEST"
+          verify_image imperator/pilot/migration "$MIGRATION_DIGEST"
+          verify_image imperator/pilot/database-admin "$DATABASE_ADMIN_DIGEST"
+
+      - name: Install checksum-pinned Terraform
+        shell: bash
+        run: |
+          set -euo pipefail
+          archive="${RUNNER_TEMP}/terraform.zip"
+          install_dir="${RUNNER_TEMP}/terraform"
+          curl --fail --location --silent --show-error \
+            --output "$archive" \
+            "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip"
+          printf '%s  %s\n' "$TERRAFORM_LINUX_AMD64_SHA256" "$archive" \
+            | sha256sum --check --strict
+          mkdir -p "$install_dir"
+          unzip -q "$archive" -d "$install_dir"
+          printf '%s\n' "$install_dir" >> "$GITHUB_PATH"
+
+      - name: Initialize remote state
+        shell: bash
+        working-directory: infra/aws/terraform/pilot
+        run: |
+          set -euo pipefail
+          terraform init \
+            -input=false \
+            -lockfile=readonly \
+            -backend-config="bucket=${{ vars.TERRAFORM_STATE_BUCKET }}" \
+            -backend-config="key=imperator/pilot/terraform.tfstate" \
+            -backend-config="region=${{ vars.AWS_REGION }}"
+
+      - name: Plan inactive services
+        shell: bash
+        working-directory: infra/aws/terraform/pilot
+        run: terraform plan -no-color -out=pilot.tfplan
+
+      - name: Apply inactive infrastructure
+        if: inputs.mode == 'deploy'
+        shell: bash
+        working-directory: infra/aws/terraform/pilot
+        run: terraform apply -auto-approve pilot.tfplan
+
+      - name: Run migration and least-privilege provisioning
+        if: inputs.mode == 'deploy'
+        shell: bash
+        working-directory: infra/aws/terraform/pilot
+        run: |
+          set -euo pipefail
+          cluster=$(terraform output -raw cluster_name)
+          subnets=$(terraform output -json private_subnet_ids)
+          security_group=$(terraform output -raw database_job_security_group_id)
+          network=$(jq -cn \
+            --argjson subnets "$subnets" \
+            --arg securityGroup "$security_group" \
+            '{awsvpcConfiguration:{subnets:$subnets,securityGroups:[$securityGroup],assignPublicIp:"DISABLED"}}')
+
+          run_database_task() {
+            local task_definition=$1
+            local task_arn
+            local exit_code
+            task_arn=$(aws ecs run-task \
+              --cluster "$cluster" \
+              --task-definition "$task_definition" \
+              --launch-type FARGATE \
+              --network-configuration "$network" \
+              --query 'tasks[0].taskArn' \
+              --output text)
+            test "$task_arn" != "None"
+            aws ecs wait tasks-stopped --cluster "$cluster" --tasks "$task_arn"
+            exit_code=$(aws ecs describe-tasks \
+              --cluster "$cluster" \
+              --tasks "$task_arn" \
+              --query 'tasks[0].containers[0].exitCode' \
+              --output text)
+            test "$exit_code" = "0"
+          }
+
+          run_database_task "$(terraform output -raw migration_task_definition_arn)"
+          run_database_task "$(terraform output -raw database_permissions_task_definition_arn)"
+
+      - name: Activate services after database gates
+        if: inputs.mode == 'deploy'
+        shell: bash
+        working-directory: infra/aws/terraform/pilot
+        env:
+          TF_VAR_activate_services: "true"
+        run: |
+          set -euo pipefail
+          terraform plan -no-color -out=activate.tfplan
+          terraform apply -auto-approve activate.tfplan
+          aws ecs wait services-stable \
+            --cluster "$(terraform output -raw cluster_name)" \
+            --services \
+              "$(terraform output -raw backend_service_name)" \
+              "$(terraform output -raw frontend_service_name)"
+
+      - name: Verify public HTTPS and runtime probes
+        if: inputs.mode == 'deploy'
+        shell: bash
+        env:
+          APPLICATION_URL: ${{ format('https://{0}', vars.IMPERATOR_DOMAIN_NAME) }}
+        run: |
+          set -euo pipefail
+          headers="${RUNNER_TEMP}/imperator-headers.txt"
+          curl --fail --silent --show-error --location \
+            --dump-header "$headers" \
+            --output /dev/null \
+            "$APPLICATION_URL/"
+          grep -i '^content-security-policy:' "$headers"
+          grep -i '^x-content-type-options: *nosniff' "$headers"
+          curl --fail --silent --show-error "$APPLICATION_URL/livez" >/dev/null
+          curl --fail --silent --show-error "$APPLICATION_URL/readyz" >/dev/null

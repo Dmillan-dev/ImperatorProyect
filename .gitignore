@@ -31,6 +31,9 @@ credentials.*
 *.tfstate.*
 *.tfvars
 !*.tfvars.example
+*.tfplan
+.terraform.tfstate.lock.info
+crash.log
 
 # Logs and local runtime output
 *.log

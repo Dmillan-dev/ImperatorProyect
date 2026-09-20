@@ -62,9 +62,11 @@ tenant isolation contract or security SLA. D095 requires external Keycloak
 HTTPS conformance before Sprint 4.5, customer data or MVP Release. Passing CI
 and local runtime checks does not override that pilot boundary. D096 is frozen
 and D097 implements its application-native observability subset while deferring
-Prometheus/Grafana services without a vulnerability waiver. D097 passes locally;
-hosted Java CI, Security and CodeQL remain mandatory before Sprint 4.4 is
-certified.
+Prometheus/Grafana services without a vulnerability waiver. D097 and Sprint 4.4
+are COMPLETE / HOSTED PASS on merge `4fd18fa`. D099/D100 are implemented and
+validated locally/offline, but their hosted security certification is pending.
+After that certification, external Keycloak HTTPS conformance under D095 is the
+mandatory gate before a live pilot or MVP Release.
 
 See the canonical
 [Security, Data Governance and Threat Model](docs/architecture/26_Security_Data_Governance_Threat_Model.md)

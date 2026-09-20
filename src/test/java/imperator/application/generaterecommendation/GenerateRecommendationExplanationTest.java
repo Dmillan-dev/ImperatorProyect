@@ -17,8 +17,11 @@ import imperator.domain.shared.UserId;
 import imperator.ports.out.DecisionRepository;
 import imperator.ports.out.EvidenceRepository;
 import imperator.ports.out.ExplanationProvider;
+import imperator.ports.out.ExplanationStatus;
 import imperator.ports.out.RecommendationExplanation;
+import imperator.ports.out.RecommendationExplanationRecord;
 import imperator.ports.out.RecommendationExplanationRequest;
+import imperator.ports.out.RecommendationExplanationRepository;
 import imperator.ports.out.RecommendationRepository;
 import imperator.ports.out.TransactionRunner;
 import imperator.support.DrcAoa001EvidenceFixture;
@@ -27,6 +30,8 @@ import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.LinkedHashMap;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
@@ -81,6 +86,10 @@ class GenerateRecommendationExplanationTest {
                 ),
                 () -> assertEquals(DrcAoa001RecommendationPolicy.POLICY_VERSION, request.policyVersion()),
                 () -> assertEquals(1, context.provider().calls()),
+                () -> assertEquals(
+                        ExplanationStatus.GENERATED,
+                        context.explanations().latest().status()
+                ),
                 () -> assertFalse(context.provider().invokedWhileTransactionActive()),
                 () -> assertEquals(1, context.transactions().executions()),
                 () -> assertFalse(context.transactions().active())
@@ -99,6 +108,10 @@ class GenerateRecommendationExplanationTest {
                 () -> assertTrue(result.explanation().isEmpty()),
                 () -> assertTrue(context.decisions().findById(DECISION_ID).orElseThrow().hasRecommendation()),
                 () -> assertEquals(1, context.provider().calls()),
+                () -> assertEquals(
+                        ExplanationStatus.UNAVAILABLE,
+                        context.explanations().latest().status()
+                ),
                 () -> assertEquals(1, context.transactions().executions())
         );
         assertDeterministicFieldsRemainFrozen(stored, result);
@@ -119,9 +132,92 @@ class GenerateRecommendationExplanationTest {
                 () -> assertEquals(Optional.of(RECOMMENDATION_ID),
                         context.decisions().findById(DECISION_ID).orElseThrow().recommendationId()),
                 () -> assertEquals(1, context.provider().calls()),
+                () -> assertEquals(
+                        ExplanationStatus.FAILED,
+                        context.explanations().latest().status()
+                ),
                 () -> assertEquals(1, context.transactions().executions())
         );
         assertDeterministicFieldsRemainFrozen(stored, result);
+    }
+
+    @Test
+    void reusesTheAuditedAttemptWithoutCallingTheProviderOnReplay() {
+        TestContext context = context(request -> Optional.of(new RecommendationExplanation(EXPLANATION)));
+
+        GenerateRecommendationResult first = context.useCase().generateRecommendation(command(context.evidence()));
+        GenerateRecommendationResult replay = context.useCase().generateRecommendation(command(context.evidence()));
+
+        assertAll(
+                () -> assertEquals(first, replay),
+                () -> assertEquals(1, context.provider().calls()),
+                () -> assertEquals(1, context.explanations().records().size()),
+                () -> assertEquals(Optional.of(EXPLANATION), replay.explanation())
+        );
+    }
+
+    @Test
+    void reusesTheExactGenerationWhenAnotherProviderAttemptIsNewer() {
+        TestContext context = context(request -> Optional.of(new RecommendationExplanation(EXPLANATION)));
+        GenerateRecommendationResult first = context.useCase().generateRecommendation(command(context.evidence()));
+        RecommendationExplanationRecord original = context.explanations().latest();
+        context.explanations().save(new RecommendationExplanationRecord(
+                UUID.randomUUID(),
+                RECOMMENDATION_ID,
+                ExplanationStatus.UNAVAILABLE,
+                Optional.empty(),
+                "other-provider",
+                "other-model",
+                "other-prompt",
+                timestamp("2027-01-01T00:00:00Z"),
+                timestamp("2027-01-01T00:00:01Z"),
+                Optional.empty(),
+                Optional.empty(),
+                Optional.empty(),
+                Optional.of("EXPLANATION_PROVIDER_UNAVAILABLE"),
+                original.evidenceIds(),
+                original.assumptionIds()
+        ));
+
+        GenerateRecommendationResult replay = context.useCase().generateRecommendation(command(context.evidence()));
+
+        assertAll(
+                () -> assertEquals(first, replay),
+                () -> assertEquals(1, context.provider().calls()),
+                () -> assertEquals(2, context.explanations().records().size())
+        );
+    }
+
+    @Test
+    void doesNotExposeGeneratedTextWhenAuditPersistenceFails() {
+        TestContext context = context(request -> Optional.of(new RecommendationExplanation(EXPLANATION)));
+        RecommendationExplanationRepository failingAudit = new RecommendationExplanationRepository() {
+            @Override
+            public void save(RecommendationExplanationRecord explanation) {
+                throw new IllegalStateException("Simulated audit outage");
+            }
+
+            @Override
+            public Optional<RecommendationExplanationRecord> findLatestByRecommendationId(RecommendationId id) {
+                return Optional.empty();
+            }
+        };
+        GenerateRecommendationUseCase useCase = new GenerateRecommendationUseCase(
+                context.decisions(),
+                new InMemoryEvidenceRepository(context.evidence()),
+                context.recommendations(),
+                context.transactions(),
+                context.provider(),
+                failingAudit
+        );
+
+        GenerateRecommendationResult result = useCase.generateRecommendation(command(context.evidence()));
+
+        assertAll(
+                () -> assertTrue(result.explanation().isEmpty()),
+                () -> assertTrue(context.recommendations().existsById(RECOMMENDATION_ID)),
+                () -> assertEquals(1, context.provider().calls())
+        );
     }
 
     private static TestContext context(ExplanationProvider delegate) {
@@ -148,12 +244,14 @@ class GenerateRecommendationExplanationTest {
         InMemoryRecommendationRepository recommendationRepository = new InMemoryRecommendationRepository();
         CountingTransactionRunner transactions = new CountingTransactionRunner();
         CapturingExplanationProvider provider = new CapturingExplanationProvider(delegate, transactions);
+        InMemoryExplanationRepository explanationRepository = new InMemoryExplanationRepository();
         GenerateRecommendationUseCase useCase = new GenerateRecommendationUseCase(
                 decisionRepository,
                 evidenceRepository,
                 recommendationRepository,
                 transactions,
-                provider
+                provider,
+                explanationRepository
         );
         return new TestContext(
                 useCase,
@@ -161,7 +259,8 @@ class GenerateRecommendationExplanationTest {
                 decisionRepository,
                 recommendationRepository,
                 transactions,
-                provider
+                provider,
+                explanationRepository
         );
     }
 
@@ -216,7 +315,8 @@ class GenerateRecommendationExplanationTest {
             InMemoryDecisionRepository decisions,
             InMemoryRecommendationRepository recommendations,
             CountingTransactionRunner transactions,
-            CapturingExplanationProvider provider
+            CapturingExplanationProvider provider,
+            InMemoryExplanationRepository explanations
     ) {
     }
 
@@ -257,8 +357,52 @@ class GenerateRecommendationExplanationTest {
         }
     }
 
+    private static final class InMemoryExplanationRepository implements RecommendationExplanationRepository {
+        private final List<RecommendationExplanationRecord> records = new ArrayList<>();
+
+        @Override
+        public void save(RecommendationExplanationRecord explanation) {
+            records.add(explanation);
+        }
+
+        @Override
+        public Optional<RecommendationExplanationRecord> findLatestByRecommendationId(RecommendationId id) {
+            return records.stream()
+                    .filter(item -> item.recommendationId().equals(id))
+                    .reduce((first, second) -> second);
+        }
+
+        @Override
+        public Optional<RecommendationExplanationRecord> findByGeneration(
+                RecommendationId id,
+                String provider,
+                String modelId,
+                String promptVersion
+        ) {
+            return records.stream()
+                    .filter(item -> item.recommendationId().equals(id))
+                    .filter(item -> item.matches(provider, modelId, promptVersion))
+                    .findFirst();
+        }
+
+        private RecommendationExplanationRecord latest() {
+            return records.getLast();
+        }
+
+        private List<RecommendationExplanationRecord> records() {
+            return List.copyOf(records);
+        }
+    }
+
     private static final class InMemoryEvidenceRepository implements EvidenceRepository {
         private final Map<EvidenceId, Evidence> evidence = new LinkedHashMap<>();
+
+        private InMemoryEvidenceRepository() {
+        }
+
+        private InMemoryEvidenceRepository(Set<Evidence> items) {
+            items.forEach(this::save);
+        }
 
         @Override
         public void save(Evidence item) {

@@ -110,12 +110,12 @@ the original Sprint 4.4 observability contract in
 `architecture/57_MVP_Observability_Scope_Correction.md` authorizes only its
 application-native MVP subset and defers the external monitoring stack. D098 in
 `architecture/58_Runtime_Supply_Chain_Refresh.md` passes locally and hosted.
-The D097 implementation now passes locally; hosted Java CI, Security and
-CodeQL are the current Sprint 4.4 certification gate. The
-following artifacts remain
-non-authoritative preparation: they do not certify Sprint 4.4,
-pass the deferred Pilot Identity Conformance Gate, authorize Sprint 4.5,
-permit customer data or create a new decision:
+D097 and Sprint 4.4 are COMPLETE / HOSTED PASS on merge `4fd18fa`. D099/D100
+now implement bounded Bedrock explanations and AWS pilot preparation with
+LOCAL/OFFLINE PASS; hosted certification remains pending. The following
+artifacts remain non-authoritative preparation: they do not prove a live AWS
+deployment, pass the deferred Pilot Identity Conformance Gate, authorize a
+customer pilot, permit customer data or create a new decision:
 
 - `architecture/53_Keycloak_Pilot_Identity_Integration_Preparation.md`;
 - `business/21_Design_Partner_Discovery_Playbook.md`;

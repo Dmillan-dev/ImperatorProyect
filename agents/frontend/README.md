@@ -41,8 +41,10 @@ Current status: **Sprint 4.2 CERTIFIED / COMPLETE under D091**.
 - no ROI, Recommendation, approval or Business Value calculation in React.
 
 Sprint 4.3 certified the packaged frontend inside the local Docker runtime.
-Sprint 4.4 passes locally under D097 and awaits hosted certification. D098 is
-complete. Neither gate authorizes frontend product expansion.
+Sprint 4.4 and D097 are COMPLETE / HOSTED PASS. D098 is complete. D099
+authorizes only the bounded, read-only explanation presentation now implemented
+locally; its hosted certification remains pending. No broader frontend product
+expansion is authorized.
 
 ## Forbidden
 

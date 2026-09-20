@@ -14,6 +14,7 @@ import imperator.domain.shared.EvidenceId;
 import imperator.domain.shared.Money;
 import imperator.domain.shared.ROIAmount;
 import imperator.ports.out.MvpReadModelQueryPort;
+import imperator.ports.out.RecommendationExplanationRecord;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -61,11 +62,24 @@ final class QuerySupport {
         );
     }
 
-    static RecommendationView recommendation(Recommendation item) {
+    static RecommendationView recommendation(
+            Recommendation item,
+            Optional<RecommendationExplanationRecord> explanation
+    ) {
         return new RecommendationView(
                 item.id(), item.decisionId(), item.type(), item.suggestedAction(), item.reason(),
                 item.estimatedSavings(), item.confidence(), item.risk(), item.ownerId(),
-                item.requiredApproverId(), item.createdAt(), sortedIds(item.evidenceIds())
+                item.requiredApproverId(), item.createdAt(), sortedIds(item.evidenceIds()),
+                explanation.map(QuerySupport::explanation)
+        );
+    }
+
+    private static RecommendationExplanationView explanation(RecommendationExplanationRecord item) {
+        return new RecommendationExplanationView(
+                item.explanationId(), item.status(), item.text(), item.provider(), item.modelId(),
+                item.promptVersion(), item.requestedAt(), item.completedAt(), item.inputTokens(),
+                item.outputTokens(), item.latencyMillis(), item.failureCode(), item.evidenceIds(),
+                item.assumptionIds()
         );
     }
 

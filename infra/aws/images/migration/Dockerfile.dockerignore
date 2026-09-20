@@ -1,0 +1,8 @@
+**
+!database/
+!database/migrations/
+!database/migrations/**
+!infra/
+!infra/docker/
+!infra/docker/flyway/
+!infra/docker/flyway/entrypoint.sh

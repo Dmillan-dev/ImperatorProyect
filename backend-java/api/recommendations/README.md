@@ -14,7 +14,12 @@ Own the HTTP entry-point shell for reading one recommendation.
 
 - `RecommendationController`.
 - The `GET /api/v1/recommendations/{id}` route mapping.
+- The explicit nullable latest explanation projection added by D099.
 - Delegation to the shared not-implemented error contract.
+
+D099 explanation state is read from its audit repository. This route never
+invokes an AI provider, and failure to read auxiliary explanation state cannot
+hide the deterministic Recommendation.
 
 ## Never Contains
 

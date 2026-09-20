@@ -134,10 +134,24 @@ accept, persist or log AWS secret settings. STS verifies the exact configured
 account before the read-only cost, resource-tag and metric calls proceed.
 
 Deterministic Recommendation persistence completes before the optional
-`ExplanationProvider` invocation. The runtime supplies an unavailable provider
-by default and allows a replaceable provider adapter to override it. Provider
-absence or failure cannot alter or roll back Recommendation or Decision state.
-No vendor SDK, model or credential contract is selected here.
+`ExplanationProvider` invocation. D099 supplies an optional Amazon Bedrock
+Converse adapter and persists each attempt separately from Recommendation and
+Ledger history. Provider absence, invalid output, timeout or audit failure
+cannot alter or roll back Recommendation or Decision state. Recommendation
+reads return the latest persisted attempt and never invoke the model.
+
+Bedrock explanation generation is disabled by default:
+
+- `IMPERATOR_BEDROCK_ENABLED=true`
+- `IMPERATOR_BEDROCK_REGION`
+- `IMPERATOR_BEDROCK_MODEL_ID`
+- `IMPERATOR_BEDROCK_MAX_OUTPUT_TOKENS` (default `700`)
+- `IMPERATOR_BEDROCK_TEMPERATURE` (default `0.0`, maximum `0.3`)
+
+Credentials are resolved only through the AWS SDK default credentials provider
+chain. Raw prompts, raw completions, secrets and Restricted Evidence are not
+persisted or logged. See
+[`docs/runbooks/bedrock-explanations.md`](../docs/runbooks/bedrock-explanations.md).
 
 ## Persistence Certification
 
@@ -172,13 +186,14 @@ is found.
 
 ## Authorized Current Use
 
-Sprints 3.0 through 4.3 are complete at their documented gates. The Java 21
+Sprints 3.0 through 4.4 are complete at their documented gates. The Java 21
 Maven build is certified through GitHub Actions, and the complete Functional
 REST security runtime is certified against PostgreSQL 18.4. D084 is discharged;
 D085 through D096 are accepted. D093 adds the bounded R16 composition entry
 point without changing Domain policy; Sprint 4.3 certification passed 151
 default tests and 34 PostgreSQL 18.6 integration tests and packaged this module
-as a non-root, read-only image. D096 freezes the observability boundary;
-Sprint 4.4 implementation is the sole authorized current gate. It must not
-change D086 routes, D087 identity, D088
-authorization, connector isolation, Evidence redaction or business authority.
+as a non-root, read-only image. D096 freezes the observability boundary and
+D097/Sprint 4.4 is COMPLETE / HOSTED PASS. D099 authorizes only the bounded,
+optional explanation path currently awaiting hosted certification. It must not
+change D086 routes, D087 identity, D088 authorization, connector isolation,
+Evidence redaction or business authority.

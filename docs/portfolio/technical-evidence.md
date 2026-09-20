@@ -34,9 +34,10 @@ It links to canonical contracts and implementation instead of replacing them.
 | Docker runtime | **[IMPLEMENTED / D098 CERTIFIED]** | Maintained backend, frontend and reproducible PostgreSQL images pass local and hosted supply-chain and hardened runtime checks |
 | External IdP | **[PLANNED]** | Keycloak preparation exists; no issuer is deployed or connected |
 | D093/R16 composition | **[IMPLEMENTED]** | `ADMIN`-only API composition, resumable D081/D082 steps and case uniqueness are certified |
-| Observability | **[IMPLEMENTED / D097 LOCAL PASS]** | ECS JSON, bounded correlation/metrics, probes and internal Actuator pass locally; hosted D097 certification is pending and external monitoring is deferred |
+| Observability | **[IMPLEMENTED / HOSTED PASS]** | ECS JSON, bounded correlation/metrics, probes and internal Actuator are certified on merge `4fd18fa`; external monitoring is deferred |
+| Bedrock explanations | **[IMPLEMENTED OFFLINE / HOSTED PENDING]** | Optional, evidence-grounded explanation path is auditable and fail-safe; it never owns the recommendation or approval decision |
 | Python/FastAPI | **[FUTURE]** | Documentation boundary only |
-| Cloud deployment | **[FUTURE]** | No AWS-hosted runtime, Terraform or Kubernetes exists |
+| Cloud deployment | **[IMPLEMENTED OFFLINE / LIVE PENDING]** | Terraform, immutable image publication and controlled ECS/RDS pilot workflows exist; no live AWS apply or runtime is certified |
 
 ## Reviewer Code Walkthrough
 
@@ -191,7 +192,7 @@ lineage while excluding raw payload persistence.
 | Medium | No dedicated Java dependency review | Add one bounded SCA control only after defining ownership, baseline and false-positive handling |
 | Medium | Token paste is the current frontend bootstrap | Replace with separately contracted Authorization Code + PKCE login before real users |
 | Medium | No tenant entitlement model | Keep runtime single-organization and prohibit customer exposure until a tenant contract exists |
-| Blocking | D097 hosted certification is pending | Require Java CI, Security and CodeQL to reproduce the complete local PASS without bypass |
+| Blocking | D099/D100 hosted certification is pending | Require Java CI, Security, CodeQL and IaC checks to reproduce local/offline PASS without bypass |
 | Medium | Operational external identity is absent | Pass D095 Keycloak HTTPS conformance before Sprint 4.5 or customer exposure |
 | Low local tooling | `mvnw.cmd` fails on the inspected Windows host before Maven starts | Keep hosted Linux wrapper verification authoritative and resolve the Windows launcher only through separate maintenance authority |
 

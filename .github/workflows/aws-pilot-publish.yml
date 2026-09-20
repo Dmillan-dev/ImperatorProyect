@@ -1,0 +1,127 @@
+name: AWS Pilot Image Publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_sha:
+        description: Full commit SHA from main to publish
+        required: true
+        type: string
+      confirmation:
+        description: Type PUBLISH_IMPERATOR_PILOT
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    name: Build and publish immutable pilot images
+    if: github.ref == 'refs/heads/main' && inputs.confirmation == 'PUBLISH_IMPERATOR_PILOT'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+
+    steps:
+      - name: Check out requested revision
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+          ref: ${{ inputs.source_sha }}
+
+      - name: Verify immutable main revision
+        shell: bash
+        env:
+          SOURCE_SHA: ${{ inputs.source_sha }}
+        run: |
+          set -euo pipefail
+          [[ "$SOURCE_SHA" =~ ^[0-9a-f]{40}$ ]]
+          test "$(git rev-parse HEAD)" = "$SOURCE_SHA"
+          git merge-base --is-ancestor "$SOURCE_SHA" origin/main
+
+      - name: Configure short-lived AWS credentials
+        uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
+        with:
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: ${{ vars.AWS_BUILD_ROLE_ARN }}
+          allowed-account-ids: ${{ vars.AWS_ACCOUNT_ID }}
+          mask-aws-account-id: true
+          role-session-name: imperator-image-publish
+
+      - name: Authenticate Docker to ECR
+        shell: bash
+        env:
+          AWS_ACCOUNT_ID: ${{ vars.AWS_ACCOUNT_ID }}
+          AWS_REGION: ${{ vars.AWS_REGION }}
+        run: |
+          set -euo pipefail
+          registry="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com"
+          aws ecr get-login-password --region "$AWS_REGION" \
+            | docker login --username AWS --password-stdin "$registry"
+
+      - name: Build application and database job images
+        shell: bash
+        env:
+          AWS_ACCOUNT_ID: ${{ vars.AWS_ACCOUNT_ID }}
+          AWS_REGION: ${{ vars.AWS_REGION }}
+          DOMAIN_NAME: ${{ vars.IMPERATOR_DOMAIN_NAME }}
+          SOURCE_SHA: ${{ inputs.source_sha }}
+        run: |
+          set -euo pipefail
+          registry="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com"
+          prefix="${registry}/imperator/pilot"
+
+          docker build \
+            --file infra/docker/backend/Dockerfile \
+            --build-arg "VCS_REF=${SOURCE_SHA}" \
+            --tag "${prefix}/backend:${SOURCE_SHA}" .
+          docker build \
+            --file infra/docker/frontend/Dockerfile \
+            --build-arg "VCS_REF=${SOURCE_SHA}" \
+            --build-arg "IMPERATOR_API_ORIGIN=https://${DOMAIN_NAME}" \
+            --build-arg "IMPERATOR_RUNTIME_PROFILE=aws-pilot" \
+            --tag "${prefix}/frontend:${SOURCE_SHA}" .
+          docker build \
+            --file infra/aws/images/migration/Dockerfile \
+            --build-arg "VCS_REF=${SOURCE_SHA}" \
+            --tag "${prefix}/migration:${SOURCE_SHA}" .
+          docker build \
+            --file infra/docker/postgresql/Dockerfile \
+            --build-arg "VCS_REF=${SOURCE_SHA}" \
+            --tag "${prefix}/database-admin:${SOURCE_SHA}" \
+            infra/docker/postgresql
+
+      - name: Publish immutable images and record digests
+        shell: bash
+        env:
+          AWS_ACCOUNT_ID: ${{ vars.AWS_ACCOUNT_ID }}
+          AWS_REGION: ${{ vars.AWS_REGION }}
+          SOURCE_SHA: ${{ inputs.source_sha }}
+        run: |
+          set -euo pipefail
+          registry="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com"
+          prefix="${registry}/imperator/pilot"
+          mkdir -p build/aws-pilot
+
+          for image in backend frontend migration database-admin; do
+            docker push "${prefix}/${image}:${SOURCE_SHA}"
+          done
+
+          jq -n \
+            --arg sourceRevision "$SOURCE_SHA" \
+            --arg backend "${prefix}/backend@$(aws ecr describe-images --repository-name imperator/pilot/backend --image-ids imageTag="$SOURCE_SHA" --query 'imageDetails[0].imageDigest' --output text)" \
+            --arg frontend "${prefix}/frontend@$(aws ecr describe-images --repository-name imperator/pilot/frontend --image-ids imageTag="$SOURCE_SHA" --query 'imageDetails[0].imageDigest' --output text)" \
+            --arg migration "${prefix}/migration@$(aws ecr describe-images --repository-name imperator/pilot/migration --image-ids imageTag="$SOURCE_SHA" --query 'imageDetails[0].imageDigest' --output text)" \
+            --arg databaseAdmin "${prefix}/database-admin@$(aws ecr describe-images --repository-name imperator/pilot/database-admin --image-ids imageTag="$SOURCE_SHA" --query 'imageDetails[0].imageDigest' --output text)" \
+            '{sourceRevision:$sourceRevision,backend:$backend,frontend:$frontend,migration:$migration,databaseAdmin:$databaseAdmin}' \
+            > build/aws-pilot/image-manifest.json
+
+      - name: Preserve immutable image manifest
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: aws-pilot-images-${{ inputs.source_sha }}
+          path: build/aws-pilot/image-manifest.json
+          if-no-files-found: error
+          retention-days: 30

@@ -43,6 +43,7 @@ LABEL org.opencontainers.image.title="IMPERATOR PostgreSQL Runtime" \
 
 COPY --from=gosu-build /out/gosu /usr/local/bin/gosu
 COPY --from=gosu-build /build/gosu/LICENSE /usr/local/share/licenses/gosu/LICENSE
+COPY --chown=999:999 provision-app-role.sh /opt/imperator/provision-app-role.sh
 
 RUN dpkg --install /tmp/libpcre2-8-0.deb \
     && rm -f \
@@ -50,6 +51,7 @@ RUN dpkg --install /tmp/libpcre2-8-0.deb \
         /var/cache/ldconfig/aux-cache \
         /var/log/dpkg.log \
     && chmod 0755 /usr/local/bin/gosu \
+    && chmod 0555 /opt/imperator/provision-app-role.sh \
     && chmod 0444 /usr/local/share/licenses/gosu/LICENSE \
     && gosu --version \
     && gosu nobody true \

@@ -92,7 +92,8 @@ spend. The first case is `DRC-AOA-001`, AI Onboarding Assistant Recovery.
 - D096 - Minimum Observability Runtime Contract: accepted, complete and frozen;
   its external monitoring clauses are narrowly superseded by D097.
 - D097 - MVP Observability Scope Correction: accepted, complete and frozen;
-  application-native Sprint 4.4 implementation passes locally.
+  application-native Sprint 4.4 implementation is COMPLETE / HOSTED PASS on
+  merge `4fd18fa`.
 - D098 - Runtime Supply Chain Refresh: accepted, frozen and complete; local and
   hosted certification pass.
 - Sprint 4.3 Docker Production Runtime: certified and complete. Java 21 passed
@@ -100,10 +101,11 @@ spend. The first case is `DRC-AOA-001`, AI Onboarding Assistant Recovery.
   final SHA-tagged images passed security/hardening gates, and local JWT/RBAC,
   `DRC-AOA-001` E2E and persistence-after-recreation evidence passed.
 - Sprint 4.3.1 documentation synchronization: complete.
-- Current gate: Sprint 4.4 D097 hosted Java CI, Security and CodeQL
-  certification after complete local PASS.
-- External Keycloak HTTPS conformance: deferred by D095 and mandatory before
-  Sprint 4.5, real customer data or MVP Release.
+- Current gate: D099/D100 hosted certification after complete local/offline
+  validation of the bounded Bedrock explanation and AWS pilot preparation.
+- External Keycloak HTTPS conformance: deferred by D095 and mandatory after
+  that certification and before live pilot deployment, real customer data or
+  MVP Release.
 - Sprints 2.9 through 2.13: deferred, not completed.
 
 The live state is maintained in:
@@ -173,8 +175,8 @@ the single authorized business value loop under D079.
   non-root custom images, read-only filesystems and loopback-only publication.
 - D096 observability contract frozen and narrowed by D097; D098 is complete.
   Actuator, Micrometer, structured application JSON logs and exact probes pass
-  locally, while hosted D097 certification remains pending. Prometheus/Grafana
-  runtime services, dashboards and alerts are deferred beyond MVP.
+  locally and hosted on merge `4fd18fa`. Prometheus/Grafana runtime services,
+  dashboards and alerts are deferred beyond MVP.
 
 The implemented Java source root is `backend-java`, with packages under
 `imperator.*`. REST packages live under `imperator.api.*`. Public product REST

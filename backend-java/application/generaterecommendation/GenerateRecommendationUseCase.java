@@ -12,21 +12,29 @@ import imperator.domain.decision.Recommendation;
 import imperator.domain.evidence.Evidence;
 import imperator.domain.shared.DecisionStatus;
 import imperator.domain.shared.EvidenceId;
+import imperator.domain.shared.Timestamp;
 import imperator.ports.in.GenerateRecommendationInputPort;
 import imperator.ports.out.DecisionRepository;
 import imperator.ports.out.EvidenceRepository;
+import imperator.ports.out.ExplanationStatus;
 import imperator.ports.out.ExplanationProvider;
 import imperator.ports.out.RecommendationExplanation;
+import imperator.ports.out.RecommendationExplanationEvidence;
+import imperator.ports.out.RecommendationExplanationRecord;
 import imperator.ports.out.RecommendationExplanationRequest;
+import imperator.ports.out.RecommendationExplanationRepository;
 import imperator.ports.out.RecommendationRepository;
 import imperator.ports.out.TransactionRunner;
 
+import java.time.Clock;
 import java.util.Comparator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
+import java.util.UUID;
+import java.util.function.Supplier;
 
 public final class GenerateRecommendationUseCase implements GenerateRecommendationInputPort {
     private final DecisionRepository decisionRepository;
@@ -35,6 +43,9 @@ public final class GenerateRecommendationUseCase implements GenerateRecommendati
     private final TransactionRunner transactionRunner;
     private final DrcAoa001RecommendationPolicy policy;
     private final ExplanationProvider explanationProvider;
+    private final RecommendationExplanationRepository explanationRepository;
+    private final Clock clock;
+    private final Supplier<UUID> explanationIds;
 
     public GenerateRecommendationUseCase(
             DecisionRepository decisionRepository,
@@ -47,7 +58,8 @@ public final class GenerateRecommendationUseCase implements GenerateRecommendati
                 evidenceRepository,
                 recommendationRepository,
                 transactionRunner,
-                ignored -> Optional.empty()
+                ignored -> Optional.empty(),
+                unavailableExplanationRepository()
         );
     }
 
@@ -63,8 +75,29 @@ public final class GenerateRecommendationUseCase implements GenerateRecommendati
                 evidenceRepository,
                 recommendationRepository,
                 transactionRunner,
+                explanationProvider,
+                unavailableExplanationRepository()
+        );
+    }
+
+    public GenerateRecommendationUseCase(
+            DecisionRepository decisionRepository,
+            EvidenceRepository evidenceRepository,
+            RecommendationRepository recommendationRepository,
+            TransactionRunner transactionRunner,
+            ExplanationProvider explanationProvider,
+            RecommendationExplanationRepository explanationRepository
+    ) {
+        this(
+                decisionRepository,
+                evidenceRepository,
+                recommendationRepository,
+                transactionRunner,
                 new DrcAoa001RecommendationPolicy(),
-                explanationProvider
+                explanationProvider,
+                explanationRepository,
+                Clock.systemUTC(),
+                UUID::randomUUID
         );
     }
 
@@ -74,7 +107,10 @@ public final class GenerateRecommendationUseCase implements GenerateRecommendati
             RecommendationRepository recommendationRepository,
             TransactionRunner transactionRunner,
             DrcAoa001RecommendationPolicy policy,
-            ExplanationProvider explanationProvider
+            ExplanationProvider explanationProvider,
+            RecommendationExplanationRepository explanationRepository,
+            Clock clock,
+            Supplier<UUID> explanationIds
     ) {
         this.decisionRepository = Objects.requireNonNull(decisionRepository, "Decision repository is required");
         this.evidenceRepository = Objects.requireNonNull(evidenceRepository, "Evidence repository is required");
@@ -82,6 +118,11 @@ public final class GenerateRecommendationUseCase implements GenerateRecommendati
         this.transactionRunner = Objects.requireNonNull(transactionRunner, "Transaction runner is required");
         this.policy = Objects.requireNonNull(policy, "Recommendation policy is required");
         this.explanationProvider = Objects.requireNonNull(explanationProvider, "Explanation provider is required");
+        this.explanationRepository = Objects.requireNonNull(
+                explanationRepository, "Explanation repository is required"
+        );
+        this.clock = Objects.requireNonNull(clock, "Explanation clock is required");
+        this.explanationIds = Objects.requireNonNull(explanationIds, "Explanation id supplier is required");
     }
 
     @Override
@@ -113,14 +154,189 @@ public final class GenerateRecommendationUseCase implements GenerateRecommendati
     }
 
     private Optional<String> generateExplanation(RecommendationExplanationRequest request) {
+        Optional<RecommendationExplanationRecord> previous = explanationByGeneration(
+                request.recommendationId(),
+                explanationProvider.providerName(),
+                explanationProvider.modelId(),
+                explanationProvider.promptVersion()
+        );
+        if (previous.isPresent()) {
+            return previous.orElseThrow().text();
+        }
+
+        Timestamp requestedAt = new Timestamp(clock.instant());
+        if (request.evidenceContext().stream()
+                .anyMatch(item -> "RESTRICTED".equals(item.sensitivity()))) {
+            persistExplanation(record(
+                    request,
+                    ExplanationStatus.REJECTED,
+                    Optional.empty(),
+                    explanationProvider.providerName(),
+                    explanationProvider.modelId(),
+                    explanationProvider.promptVersion(),
+                    requestedAt,
+                    Optional.empty(),
+                    Optional.empty(),
+                    Optional.empty(),
+                    Optional.of("EXPLANATION_CONTEXT_RESTRICTED")
+            ));
+            return Optional.empty();
+        }
         try {
             Optional<RecommendationExplanation> generated = explanationProvider.generateExplanation(request);
             if (generated == null) {
+                persistExplanation(record(
+                        request,
+                        ExplanationStatus.UNAVAILABLE,
+                        Optional.empty(),
+                        explanationProvider.providerName(),
+                        explanationProvider.modelId(),
+                        explanationProvider.promptVersion(),
+                        requestedAt,
+                        Optional.empty(),
+                        Optional.empty(),
+                        Optional.empty(),
+                        Optional.of("EXPLANATION_PROVIDER_UNAVAILABLE")
+                ));
                 return Optional.empty();
             }
-            return generated.map(RecommendationExplanation::text);
+            if (generated.isEmpty()) {
+                persistExplanation(record(
+                        request,
+                        ExplanationStatus.UNAVAILABLE,
+                        Optional.empty(),
+                        explanationProvider.providerName(),
+                        explanationProvider.modelId(),
+                        explanationProvider.promptVersion(),
+                        requestedAt,
+                        Optional.empty(),
+                        Optional.empty(),
+                        Optional.empty(),
+                        Optional.of("EXPLANATION_PROVIDER_UNAVAILABLE")
+                ));
+                return Optional.empty();
+            }
+            RecommendationExplanation explanation = generated.orElseThrow();
+            if (!explanation.provider().equals(explanationProvider.providerName())
+                    || !explanation.modelId().equals(explanationProvider.modelId())
+                    || !explanation.promptVersion().equals(explanationProvider.promptVersion())) {
+                throw new IllegalArgumentException("Explanation provider metadata does not match its configuration");
+            }
+            RecommendationExplanationRecord generatedRecord = record(
+                    request,
+                    ExplanationStatus.GENERATED,
+                    Optional.of(explanation.text()),
+                    explanation.provider(),
+                    explanation.modelId(),
+                    explanation.promptVersion(),
+                    requestedAt,
+                    Optional.of(explanation.inputTokens()),
+                    Optional.of(explanation.outputTokens()),
+                    Optional.of(explanation.latencyMillis()),
+                    Optional.empty()
+            );
+            if (!persistExplanation(generatedRecord)) {
+                return Optional.empty();
+            }
+            return explanationByGeneration(
+                    request.recommendationId(),
+                    explanation.provider(),
+                    explanation.modelId(),
+                    explanation.promptVersion()
+            ).flatMap(RecommendationExplanationRecord::text);
+        } catch (IllegalArgumentException exception) {
+            persistExplanation(record(
+                    request,
+                    ExplanationStatus.REJECTED,
+                    Optional.empty(),
+                    explanationProvider.providerName(),
+                    explanationProvider.modelId(),
+                    explanationProvider.promptVersion(),
+                    requestedAt,
+                    Optional.empty(),
+                    Optional.empty(),
+                    Optional.empty(),
+                    Optional.of("EXPLANATION_OUTPUT_REJECTED")
+            ));
+            return Optional.empty();
+        } catch (RuntimeException exception) {
+            persistExplanation(record(
+                    request,
+                    ExplanationStatus.FAILED,
+                    Optional.empty(),
+                    explanationProvider.providerName(),
+                    explanationProvider.modelId(),
+                    explanationProvider.promptVersion(),
+                    requestedAt,
+                    Optional.empty(),
+                    Optional.empty(),
+                    Optional.empty(),
+                    Optional.of("EXPLANATION_PROVIDER_FAILED")
+            ));
+            return Optional.empty();
+        }
+    }
+
+    private Optional<RecommendationExplanationRecord> explanationByGeneration(
+            imperator.domain.shared.RecommendationId recommendationId,
+            String provider,
+            String modelId,
+            String promptVersion
+    ) {
+        try {
+            Optional<RecommendationExplanationRecord> result =
+                    explanationRepository.findByGeneration(
+                            recommendationId, provider, modelId, promptVersion
+                    );
+            return result == null ? Optional.empty() : result;
         } catch (RuntimeException ignored) {
             return Optional.empty();
+        }
+    }
+
+    private RecommendationExplanationRecord record(
+            RecommendationExplanationRequest request,
+            ExplanationStatus status,
+            Optional<String> text,
+            String provider,
+            String modelId,
+            String promptVersion,
+            Timestamp requestedAt,
+            Optional<Integer> inputTokens,
+            Optional<Integer> outputTokens,
+            Optional<Long> latencyMillis,
+            Optional<String> failureCode
+    ) {
+        java.time.Instant completedInstant = clock.instant();
+        if (completedInstant.isBefore(requestedAt.value())) {
+            completedInstant = requestedAt.value();
+        }
+        return new RecommendationExplanationRecord(
+                explanationIds.get(),
+                request.recommendationId(),
+                status,
+                text,
+                provider,
+                modelId,
+                promptVersion,
+                requestedAt,
+                new Timestamp(completedInstant),
+                inputTokens,
+                outputTokens,
+                latencyMillis,
+                failureCode,
+                request.evidenceIds(),
+                request.assumptionIds()
+        );
+    }
+
+    private boolean persistExplanation(RecommendationExplanationRecord explanation) {
+        try {
+            explanationRepository.save(explanation);
+            return true;
+        } catch (RuntimeException ignored) {
+            // Explanation audit failure cannot alter committed business state.
+            return false;
         }
     }
 
@@ -136,6 +352,7 @@ public final class GenerateRecommendationUseCase implements GenerateRecommendati
         List<String> assumptionIds = evidence.stream()
                 .map(item -> item.metadata().get("assumption_id"))
                 .filter(Objects::nonNull)
+                .distinct()
                 .sorted()
                 .toList();
         String policyVersion = evidence.stream()
@@ -157,7 +374,29 @@ public final class GenerateRecommendationUseCase implements GenerateRecommendati
                 recommendation.risk(),
                 evidenceIds,
                 assumptionIds,
-                policyVersion
+                policyVersion,
+                evidence.stream()
+                        .map(this::explanationEvidence)
+                        .sorted(Comparator.comparing(RecommendationExplanationEvidence::reference))
+                        .toList()
+        );
+    }
+
+    private RecommendationExplanationEvidence explanationEvidence(Evidence evidence) {
+        String reference = Optional.ofNullable(evidence.metadata().get("evidence_ref"))
+                .orElseGet(() -> Optional.ofNullable(evidence.metadata().get("assumption_id"))
+                        .orElseGet(() -> Optional.ofNullable(evidence.metadata().get("policy_version"))
+                                .orElse(evidence.id().value().toString())));
+        boolean protectedContent = Set.of("CONFIDENTIAL", "RESTRICTED").contains(evidence.sensitivity());
+        return new RecommendationExplanationEvidence(
+                evidence.id(),
+                reference,
+                protectedContent ? "Protected Evidence content withheld from the model" : evidence.observedFact(),
+                protectedContent
+                        ? "Available only to an authorized human reviewer"
+                        : evidence.businessMeaning(),
+                evidence.sensitivity(),
+                evidence.confidence()
         );
     }
 
@@ -283,6 +522,22 @@ public final class GenerateRecommendationUseCase implements GenerateRecommendati
             throw new ValidationException(code, message);
         }
         return value;
+    }
+
+    private static RecommendationExplanationRepository unavailableExplanationRepository() {
+        return new RecommendationExplanationRepository() {
+            @Override
+            public void save(RecommendationExplanationRecord explanation) {
+                // Persistence is optional for non-runtime unit compositions.
+            }
+
+            @Override
+            public Optional<RecommendationExplanationRecord> findLatestByRecommendationId(
+                    imperator.domain.shared.RecommendationId recommendationId
+            ) {
+                return Optional.empty();
+            }
+        };
     }
 
     private record GenerationOutcome(

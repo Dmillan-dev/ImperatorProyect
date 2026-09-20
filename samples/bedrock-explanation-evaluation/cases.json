@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0",
+  "dataClassification": "SYNTHETIC",
+  "cases": [
+    {
+      "caseId": "TFG-BEDROCK-001",
+      "scenario": "Nominal model change",
+      "recommendation": "Move the bounded workload to the approved lower-cost model",
+      "deterministicReason": "Accepted cost and quality Evidence satisfies DRC-AOA-001-v1",
+      "annualizedSavings": "19440.00 EUR",
+      "confidence": 92,
+      "risk": "LOW",
+      "evidenceReferences": ["E-AWS-001", "E-AI-001"],
+      "assumptionIds": ["A-ROI-001", "A-ROI-002", "A-ROI-003", "A-ROI-004"],
+      "requiredLimitations": ["Human approval remains required", "Savings are estimates"]
+    },
+    {
+      "caseId": "TFG-BEDROCK-002",
+      "scenario": "Boundary confidence",
+      "recommendation": "Use the approved lower-cost model only for the measured workload",
+      "deterministicReason": "The deterministic policy passes at its accepted quality boundary",
+      "annualizedSavings": "7200.00 EUR",
+      "confidence": 70,
+      "risk": "MEDIUM",
+      "evidenceReferences": ["E-AWS-BOUNDARY-001", "E-QUALITY-BOUNDARY-001"],
+      "assumptionIds": ["A-ROI-BOUNDARY-001"],
+      "requiredLimitations": ["Quality must be monitored", "Human approval remains required"]
+    },
+    {
+      "caseId": "TFG-BEDROCK-003",
+      "scenario": "Confidential content withheld",
+      "recommendation": "Retain the deterministic recommendation pending human review",
+      "deterministicReason": "Authorized normalized Evidence supports the policy result",
+      "annualizedSavings": "3600.00 EUR",
+      "confidence": 78,
+      "risk": "MEDIUM",
+      "evidenceReferences": ["E-PUBLIC-001", "E-CONFIDENTIAL-WITHHELD-001"],
+      "assumptionIds": ["A-ROI-REDACTED-001"],
+      "requiredLimitations": [
+        "Confidential content was not supplied to the model",
+        "Human approval remains required"
+      ]
+    }
+  ]
+}
