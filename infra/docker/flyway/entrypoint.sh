@@ -15,12 +15,14 @@ case "$1" in
         ;;
 esac
 
-if [ ! -r /run/secrets/postgres-owner-password ]; then
-    printf '%s\n' "Required database owner secret is unavailable" >&2
-    exit 78
+if [ -z "${FLYWAY_PASSWORD:-}" ]; then
+    password_file=${FLYWAY_PASSWORD_FILE:-/run/secrets/postgres-owner-password}
+    if [ ! -r "$password_file" ]; then
+        printf '%s\n' "Required database owner secret is unavailable" >&2
+        exit 78
+    fi
+    FLYWAY_PASSWORD=$(cat "$password_file")
 fi
-
-FLYWAY_PASSWORD=$(cat /run/secrets/postgres-owner-password)
 if [ -z "$FLYWAY_PASSWORD" ]; then
     printf '%s\n' "Required database owner secret is empty" >&2
     exit 78

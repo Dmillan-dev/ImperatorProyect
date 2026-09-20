@@ -111,6 +111,22 @@ export const recommendation: Recommendation = {
   requiredApproverId: ids.approver,
   createdAt: "2026-08-01T11:00:00Z",
   evidenceIds: [ids.evidence],
+  explanation: {
+    explanationId: "70000000-0000-4000-8000-000000000001",
+    status: "GENERATED",
+    text: "The accepted cost Evidence supports the deterministic model change.\n\nRationale: The policy threshold is satisfied.\n\nEvidence: E-AWS-001\nAssumptions: A-ROI-001\nLimitations: Human approval remains required.",
+    provider: "amazon-bedrock",
+    modelId: "eu.amazon.nova-micro-v1:0",
+    promptVersion: "imperator-explanation-v1",
+    requestedAt: "2026-08-01T11:00:01Z",
+    completedAt: "2026-08-01T11:00:02Z",
+    inputTokens: 420,
+    outputTokens: 96,
+    latencyMillis: 780,
+    failureCode: null,
+    evidenceIds: [ids.evidence],
+    assumptionIds: ["A-ROI-001"],
+  },
 };
 
 export const ledger: LedgerEntry = {

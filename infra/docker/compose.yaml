@@ -199,6 +199,7 @@ services:
         VCS_REF: ${IMPERATOR_IMAGE_TAG:?Set IMPERATOR_IMAGE_TAG to the current Git SHA}
     environment:
       IMPERATOR_AWS_ENABLED: "false"
+      IMPERATOR_BEDROCK_ENABLED: "false"
       IMPERATOR_GITHUB_ENABLED: "false"
       IMPERATOR_POSTGRESQL_ENABLED: "true"
       IMPERATOR_POSTGRESQL_URL: jdbc:postgresql://postgres:5432/imperator

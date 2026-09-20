@@ -41,14 +41,15 @@ Java CI is implemented. Hosted dependency, secret and configuration scanning
 is implemented. D098's pinned `libpcre2` refresh passes local application-image
 and D094 PostgreSQL certification, including two-build reproducibility, SBOM,
 provenance, image behavior and zero fixable High/Critical or secret findings.
-The equivalent hosted jobs remain fail-closed and pending; no finding is
-waived and the historical D092-D095 runtime evidence remains valid.
+The equivalent hosted jobs remain fail-closed and pass; no finding is waived
+and the historical D092-D095 runtime evidence remains valid.
 
 Repository-configured CodeQL default setup is enabled and passing; no
 repository-managed CodeQL workflow is stored in this directory. Operational
-external Keycloak conformance remains a mandatory pre-Sprint-4.5 gate. Full
-frontend CI, release automation and deployment workflows are not implemented
-and must not be inferred from this directory. Sprint 4.4 application-native
-observability is authorized by D097 but blocked until hosted D098 passes.
+external Keycloak conformance remains a mandatory pre-Sprint-4.5 gate. Sprint
+4.4 application-native observability is COMPLETE / HOSTED PASS under D097 on
+merge `4fd18fa`. D099/D100 add bounded Bedrock explanation and AWS pilot
+workflows, but they remain LOCAL/OFFLINE PASS and require hosted certification;
+they do not prove a live AWS deployment.
 Prometheus/Grafana image gates are outside the MVP because those services are
 deferred, not because their findings are waived.

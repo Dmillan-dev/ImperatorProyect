@@ -33,8 +33,9 @@ target/
 
 Contains the implemented Java CI and fail-closed Security workflows, review
 ownership and pull-request template. GitHub-managed CodeQL default setup is
-enabled separately from repository workflow files. Frontend CI, release
-automation and deployment workflows are not implemented.
+enabled separately from repository workflow files. D100 also prepares
+fail-closed AWS IaC, immutable image publication and manually approved pilot
+deployment workflows; their hosted and live execution evidence is pending.
 
 ### `.mvn/`
 

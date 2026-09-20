@@ -2,9 +2,9 @@
 
 Status: **ACTIVE**
 
-Current gate: **Sprint 4.4 D097 hosted certification after local PASS**
+Current gate: **D099/D100 hosted certification, then D095 external identity conformance**
 
-Authorization: **D079 - Phase 3 Vertical-Slice Acceleration; D085 - MVP Delivery Roadmap Evolution; D095 - D092 Runtime Certification Scope Correction; D096 - Minimum Observability Runtime Contract; D097 - MVP Observability Scope Correction; D098 - Runtime Supply Chain Refresh**
+Authorization: **D079 - Phase 3 Vertical-Slice Acceleration; D085 - MVP Delivery Roadmap Evolution; D095 - D092 Runtime Certification Scope Correction; D096 - Minimum Observability Runtime Contract; D097 - MVP Observability Scope Correction; D098 - Runtime Supply Chain Refresh; D099 - Auditable Amazon Bedrock Explanation; D100 - AWS SAA Portfolio Deployment Contract**
 
 ## Purpose
 
@@ -129,9 +129,12 @@ Locked constraints:
 | 4.3 | Docker Production Runtime | CERTIFIED / COMPLETE |
 | 4.3.1 | Documentation Synchronization | COMPLETE |
 | D096 | Minimum Observability Runtime Contract | ACCEPTED / COMPLETE / FROZEN |
-| D097 | MVP Observability Scope Correction | ACCEPTED / COMPLETE / FROZEN; IMPLEMENTATION AUTHORIZED |
+| D097 | MVP Observability Scope Correction | ACCEPTED / COMPLETE / HOSTED PASS |
 | D098 | Runtime Supply Chain Refresh | ACCEPTED / FROZEN; COMPLETE / HOSTED PASS |
-| 4.4 | MVP Application Observability | IMPLEMENTED / LOCAL PASS / HOSTED PENDING |
+| 4.4 | MVP Application Observability | CERTIFIED / COMPLETE / HOSTED PASS |
+| D099 | Auditable Amazon Bedrock Explanation | ACCEPTED; IMPLEMENTED / LOCAL PASS / HOSTED PENDING |
+| D100 | AWS SAA Portfolio Deployment | ACCEPTED; IMPLEMENTED OFFLINE / AWS APPLY NOT AUTHORIZED |
+| 4.4.2 | TFG Bedrock And AWS Deployment Preparation | IMPLEMENTED / LOCAL PASS / HOSTED PENDING |
 | 4.5 | Pilot Readiness | PENDING |
 | 5.0 | MVP Release | PENDING |
 

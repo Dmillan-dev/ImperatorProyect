@@ -46,9 +46,12 @@ D095: ACCEPTED / COMPLETE
 Sprint 4.3: CERTIFIED / COMPLETE
 Sprint 4.3.1: COMPLETE
 D096: ACCEPTED / COMPLETE / FROZEN
-D097: ACCEPTED / COMPLETE / FROZEN; IMPLEMENTED / LOCAL PASS
+D097: ACCEPTED / COMPLETE / HOSTED PASS
 D098: ACCEPTED / FROZEN; COMPLETE / HOSTED PASS
-Sprint 4.4: LOCAL PASS / HOSTED PENDING / CURRENT
+Sprint 4.4: CERTIFIED / COMPLETE / HOSTED PASS
+D099: ACCEPTED; IMPLEMENTED / LOCAL PASS / HOSTED PENDING
+D100: ACCEPTED; IMPLEMENTED OFFLINE / AWS APPLY NOT AUTHORIZED
+Sprint 4.4.2: IMPLEMENTED / LOCAL PASS / HOSTED PENDING / CURRENT
 ```
 
 Exactly one Phase 3 delivery gate is current and authorized.
@@ -93,9 +96,12 @@ Exactly one Phase 3 delivery gate is current and authorized.
 | 4.3 | `1613b5d` | Hardened Docker runtime, D093/R16, D094 images, local JWT/RBAC E2E and persistence/recreation | CERTIFIED / COMPLETE |
 | 4.3.1 | Current synchronization commit; hash intentionally not self-recorded | Active project-control, agent, runtime, security, pilot, portfolio and AI-context synchronization | COMPLETE |
 | D096 | Current contract commit; hash intentionally not self-recorded | Frozen safe logging, metrics, correlation, probes, alerts, retention, exposure and certification contract | ACCEPTED / COMPLETE / FROZEN |
-| D097 | Current decision commit; hash intentionally not self-recorded | MVP application-observability correction that defers the external monitoring stack without waiving security findings | ACCEPTED / COMPLETE / FROZEN; IMPLEMENTED / LOCAL PASS |
+| D097 | `4fd18fa` | MVP application-observability correction that defers the external monitoring stack without waiving security findings | ACCEPTED / COMPLETE / HOSTED PASS |
 | D098 | Current decision commit; hash intentionally not self-recorded | Pinned final-image `libpcre2` security refresh, runtime assertions and Dependabot version-update controls | ACCEPTED / FROZEN; COMPLETE / HOSTED PASS |
-| 4.4 | Working tree; commit and hosted evidence pending | ECS JSON, MDC correlation, bounded metrics, probes, internal Actuator and deferred-stack absence | IMPLEMENTED / LOCAL PASS / HOSTED PENDING |
+| 4.4 | `4fd18fa` | ECS JSON, MDC correlation, bounded metrics, probes, internal Actuator and deferred-stack absence | CERTIFIED / COMPLETE / HOSTED PASS |
+| D099 | Working tree; commit and hosted evidence pending | Audited Bedrock explanation adapter, strict output validation, V3 audit persistence and explicit workspace state | ACCEPTED; IMPLEMENTED / LOCAL PASS / HOSTED PENDING |
+| D100 | Working tree; no AWS apply | Validated Terraform bootstrap/pilot roots, immutable image delivery and protected OIDC deployment contract | ACCEPTED; IMPLEMENTED OFFLINE / AWS APPLY NOT AUTHORIZED |
+| 4.4.2 | Working tree; commit and hosted evidence pending | One bounded TFG increment covering D099 application integration and D100 deployment preparation | IMPLEMENTED / LOCAL PASS / HOSTED PENDING |
 
 ### Sprint 3.0
 
@@ -513,12 +519,11 @@ Certification evidence:
 
 ## Next Artifact Boundary
 
-D098 is complete with local and hosted supply-chain evidence. Sprint 4.4 passes
-locally under D097's reduced application-native scope in Document 57; hosted
-Java CI, Security and CodeQL are the current blocking gate. Prometheus/Grafana remain deferred
-without a vulnerability waiver. Business Ledger, Business Value, connectors,
-JWT/RBAC, external identity, pilot behavior, customer data and public exposure
-remain unchanged or prohibited as applicable.
+Sprint 4.4 is certified on merge `4fd18fa`; Prometheus/Grafana remain deferred
+without a vulnerability waiver. D099 and D100 are the current working-tree
+increment and require hosted Java CI, Security, CodeQL, image and AWS IaC gates.
+D095 external identity, cost approval and explicit AWS apply authorization
+still precede any public pilot or live-provider claim.
 
 ## Agent Rule
 

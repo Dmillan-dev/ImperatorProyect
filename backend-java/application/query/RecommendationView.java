@@ -11,6 +11,7 @@ import imperator.domain.shared.Timestamp;
 import imperator.domain.shared.UserId;
 
 import java.util.List;
+import java.util.Optional;
 
 public record RecommendationView(
         RecommendationId recommendationId,
@@ -24,9 +25,32 @@ public record RecommendationView(
         UserId ownerId,
         UserId requiredApproverId,
         Timestamp createdAt,
-        List<EvidenceId> evidenceIds
+        List<EvidenceId> evidenceIds,
+        Optional<RecommendationExplanationView> explanation
 ) {
+    public RecommendationView(
+            RecommendationId recommendationId,
+            DecisionId decisionId,
+            RecommendationType type,
+            String suggestedAction,
+            String deterministicReason,
+            ROIAmount estimatedSavings,
+            ROIConfidence confidence,
+            Severity risk,
+            UserId ownerId,
+            UserId requiredApproverId,
+            Timestamp createdAt,
+            List<EvidenceId> evidenceIds
+    ) {
+        this(
+                recommendationId, decisionId, type, suggestedAction, deterministicReason,
+                estimatedSavings, confidence, risk, ownerId, requiredApproverId, createdAt,
+                evidenceIds, Optional.empty()
+        );
+    }
+
     public RecommendationView {
         evidenceIds = List.copyOf(evidenceIds);
+        explanation = Optional.ofNullable(explanation).orElseGet(Optional::empty);
     }
 }

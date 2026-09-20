@@ -16,16 +16,24 @@ read_secret() {
     printf '%s' "$secret_value"
 }
 
-IMPERATOR_POSTGRESQL_PASSWORD=$(
-    read_secret /run/secrets/postgres-app-password postgres-app-password
-)
-export IMPERATOR_POSTGRESQL_PASSWORD
+if [ -z "${IMPERATOR_POSTGRESQL_PASSWORD:-}" ]; then
+    IMPERATOR_POSTGRESQL_PASSWORD=$(
+        read_secret \
+            "${IMPERATOR_POSTGRESQL_PASSWORD_FILE:-/run/secrets/postgres-app-password}" \
+            postgres-app-password
+    )
+    export IMPERATOR_POSTGRESQL_PASSWORD
+fi
 
 if [ "${IMPERATOR_GITHUB_ENABLED:-false}" = "true" ]; then
-    IMPERATOR_GITHUB_TOKEN=$(
-        read_secret /run/secrets/github-token github-token
-    )
-    export IMPERATOR_GITHUB_TOKEN
+    if [ -z "${IMPERATOR_GITHUB_TOKEN:-}" ]; then
+        IMPERATOR_GITHUB_TOKEN=$(
+            read_secret \
+                "${IMPERATOR_GITHUB_TOKEN_FILE:-/run/secrets/github-token}" \
+                github-token
+        )
+        export IMPERATOR_GITHUB_TOKEN
+    fi
 fi
 
 exec java -jar /opt/imperator/imperator-backend.jar

@@ -18,12 +18,11 @@ Local runtime E2E          PASS
 External Pilot Identity    NOT PROVISIONED / REQUIRED BEFORE SPRINT 4.5
 ```
 
-Sprint 4.3.1 and D098 are complete; D096 freezes the original observability
-contract and D097 implements only its application-native MVP subset. The D097
-runtime passes locally; hosted Java CI, Security and CodeQL remain the blocking
-gate for Sprint 4.4 certification.
-Sprint 4.5 remains unauthorized until its preceding gates, including external
-Pilot Identity Conformance, pass.
+Sprint 4.3.1, D098 and Sprint 4.4 are complete; D096 freezes the original
+observability contract and D097 implements only its application-native MVP
+subset. D099/D100 pass locally/offline and await hosted certification. A live
+pilot remains unauthorized until that certification and external Pilot
+Identity Conformance pass.
 
 ## 2. Authority Set
 

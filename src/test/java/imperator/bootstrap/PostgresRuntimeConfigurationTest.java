@@ -5,9 +5,11 @@ import imperator.adapters.out.postgresql.PostgresEvidenceRepository;
 import imperator.adapters.out.postgresql.PostgresLedgerRepository;
 import imperator.adapters.out.postgresql.PostgresMvpReadModelQueryAdapter;
 import imperator.adapters.out.postgresql.PostgresRecommendationRepository;
+import imperator.adapters.out.postgresql.PostgresRecommendationExplanationRepository;
 import imperator.adapters.out.postgresql.PostgresTransactionRunner;
 import imperator.adapters.out.github.GitHubRestAdapter;
 import imperator.adapters.out.aws.AwsSdkEvidenceSourceAdapter;
+import imperator.adapters.out.bedrock.BedrockExplanationProvider;
 import imperator.application.appendledgerentry.AppendLedgerEntryUseCase;
 import imperator.application.composecase.ComposeDrcAoa001UseCase;
 import imperator.application.createdecision.CreateDecisionUseCase;
@@ -47,6 +49,7 @@ import imperator.ports.out.ExplanationProvider;
 import imperator.ports.out.LedgerRepository;
 import imperator.ports.out.MvpReadModelQueryPort;
 import imperator.ports.out.RecommendationRepository;
+import imperator.ports.out.RecommendationExplanationRepository;
 import imperator.ports.out.TransactionRunner;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.SpringApplication;
@@ -87,6 +90,10 @@ class PostgresRuntimeConfigurationTest {
             assertInstanceOf(
                     PostgresRecommendationRepository.class,
                     context.getBean(RecommendationRepository.class)
+            );
+            assertInstanceOf(
+                    PostgresRecommendationExplanationRepository.class,
+                    context.getBean(RecommendationExplanationRepository.class)
             );
             assertInstanceOf(
                     PostgresLedgerRepository.class,
@@ -176,6 +183,33 @@ class PostgresRuntimeConfigurationTest {
             assertInstanceOf(
                     ProjectBusinessValueUseCase.class,
                     context.getBean(ProjectBusinessValueInputPort.class)
+            );
+        }
+    }
+
+    @Test
+    void replacesTheUnavailableProviderWhenBedrockIsExplicitlyEnabled() {
+        SpringApplication application = new SpringApplication(ImperatorApplication.class);
+        application.setWebApplicationType(WebApplicationType.NONE);
+        application.setLogStartupInfo(false);
+        application.setDefaultProperties(Map.of(
+                "imperator.postgresql.enabled", "true",
+                "imperator.postgresql.url", "jdbc:postgresql://127.0.0.1:1/imperator",
+                "imperator.postgresql.username", "imperator_app",
+                "imperator.postgresql.password", "not-used",
+                "imperator.bedrock.enabled", "true",
+                "imperator.bedrock.region", "eu-west-1",
+                "imperator.bedrock.model-id", "eu.amazon.nova-micro-v1:0"
+        ));
+
+        try (ConfigurableApplicationContext context = application.run(
+                "--spring.main.banner-mode=off",
+                "--debug=false",
+                "--logging.level.root=OFF"
+        )) {
+            assertInstanceOf(
+                    BedrockExplanationProvider.class,
+                    context.getBean(ExplanationProvider.class)
             );
         }
     }

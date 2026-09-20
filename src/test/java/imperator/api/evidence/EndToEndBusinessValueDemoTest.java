@@ -33,6 +33,8 @@ import imperator.ports.out.DecisionRepository;
 import imperator.ports.out.EvidenceRepository;
 import imperator.ports.out.LedgerRepository;
 import imperator.ports.out.RecommendationExplanation;
+import imperator.ports.out.RecommendationExplanationRecord;
+import imperator.ports.out.RecommendationExplanationRepository;
 import imperator.ports.out.RecommendationRepository;
 import imperator.ports.out.TransactionRunner;
 import org.junit.jupiter.api.Test;
@@ -103,12 +105,15 @@ final class EndToEndBusinessValueDemoTest {
                 )
         );
 
+        RecommendationExplanationRepository explanationRepository =
+                new InMemoryRecommendationExplanationRepository();
         GenerateRecommendationUseCase recommendationUseCase = new GenerateRecommendationUseCase(
                 decisionRepository,
                 evidenceRepository,
                 recommendationRepository,
                 transactionRunner,
-                ignored -> Optional.of(new RecommendationExplanation(EXPLANATION))
+                ignored -> Optional.of(new RecommendationExplanation(EXPLANATION)),
+                explanationRepository
         );
         GenerateRecommendationResult recommendationResult = recommendationUseCase.generateRecommendation(
                 new GenerateRecommendationCommand(
@@ -379,6 +384,24 @@ final class EndToEndBusinessValueDemoTest {
         @Override
         public boolean existsById(RecommendationId id) {
             return recommendations.containsKey(id);
+        }
+    }
+
+    private static final class InMemoryRecommendationExplanationRepository
+            implements RecommendationExplanationRepository {
+        private RecommendationExplanationRecord explanation;
+
+        @Override
+        public void save(RecommendationExplanationRecord item) {
+            explanation = item;
+        }
+
+        @Override
+        public Optional<RecommendationExplanationRecord> findLatestByRecommendationId(
+                RecommendationId recommendationId
+        ) {
+            return Optional.ofNullable(explanation)
+                    .filter(item -> item.recommendationId().equals(recommendationId));
         }
     }
 

@@ -9,8 +9,11 @@ RUN npm ci
 
 FROM node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df AS build
 
-ENV IMPERATOR_API_ORIGIN=http://backend:8080 \
-    IMPERATOR_RUNTIME_PROFILE=docker-compose \
+ARG IMPERATOR_API_ORIGIN=http://backend:8080
+ARG IMPERATOR_RUNTIME_PROFILE=docker-compose
+
+ENV IMPERATOR_API_ORIGIN=${IMPERATOR_API_ORIGIN} \
+    IMPERATOR_RUNTIME_PROFILE=${IMPERATOR_RUNTIME_PROFILE} \
     NEXT_TELEMETRY_DISABLED=1
 
 WORKDIR /app
@@ -23,6 +26,8 @@ RUN npm run build
 FROM node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df AS runtime
 
 ARG VCS_REF
+ARG IMPERATOR_API_ORIGIN=http://backend:8080
+ARG IMPERATOR_RUNTIME_PROFILE=docker-compose
 
 ADD --checksum=sha256:81c5502941118a24d47af69a17b8b0b9548d75cc6d72b3eb3fe01047b46fa10e \
     https://security.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-8-0_10.42-1+deb12u1_amd64.deb \
@@ -50,8 +55,8 @@ LABEL org.opencontainers.image.title="IMPERATOR Decision Review Workspace" \
       org.opencontainers.image.version="0.1.0"
 
 ENV HOSTNAME=0.0.0.0 \
-    IMPERATOR_API_ORIGIN=http://backend:8080 \
-    IMPERATOR_RUNTIME_PROFILE=docker-compose \
+    IMPERATOR_API_ORIGIN=${IMPERATOR_API_ORIGIN} \
+    IMPERATOR_RUNTIME_PROFILE=${IMPERATOR_RUNTIME_PROFILE} \
     NEXT_TELEMETRY_DISABLED=1 \
     NODE_ENV=production \
     PORT=3000

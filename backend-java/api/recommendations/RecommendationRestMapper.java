@@ -36,7 +36,23 @@ final class RecommendationRestMapper {
                         item.estimatedSavings().value().currency().code()
                 ), item.confidence().percentage(), item.risk().value(), item.ownerId().value().toString(),
                 item.requiredApproverId().value().toString(), item.createdAt().value().toString(),
-                item.evidenceIds().stream().map(id -> id.value().toString()).toList()
+                item.evidenceIds().stream().map(id -> id.value().toString()).toList(),
+                item.explanation().map(explanation -> new RecommendationResponse.ExplanationResponse(
+                        explanation.explanationId().toString(),
+                        explanation.status().name(),
+                        explanation.text().orElse(null),
+                        explanation.provider(),
+                        explanation.modelId(),
+                        explanation.promptVersion(),
+                        explanation.requestedAt().value().toString(),
+                        explanation.completedAt().value().toString(),
+                        explanation.inputTokens().orElse(null),
+                        explanation.outputTokens().orElse(null),
+                        explanation.latencyMillis().orElse(null),
+                        explanation.failureCode().orElse(null),
+                        explanation.evidenceIds().stream().map(id -> id.value().toString()).toList(),
+                        explanation.assumptionIds()
+                )).orElse(null)
         );
     }
 

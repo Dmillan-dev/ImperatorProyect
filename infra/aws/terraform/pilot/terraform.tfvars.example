@@ -1,0 +1,35 @@
+aws_region          = "eu-west-1"
+expected_account_id = "000000000000"
+environment         = "pilot"
+
+# Freeze the current CIDRs needed for the approved Keycloak host and AWS API
+# endpoints. Re-resolve/review before each plan; broad internet egress is denied.
+allowed_https_egress_cidrs = ["203.0.113.10/32"]
+
+domain_name      = "imperator.example.com"
+route53_zone_id  = "Z0000000000000000000"
+certificate_arn  = "arn:aws:acm:eu-west-1:000000000000:certificate/00000000-0000-0000-0000-000000000000"
+
+backend_image_uri        = "000000000000.dkr.ecr.eu-west-1.amazonaws.com/imperator/pilot/backend@sha256:0000000000000000000000000000000000000000000000000000000000000000"
+frontend_image_uri       = "000000000000.dkr.ecr.eu-west-1.amazonaws.com/imperator/pilot/frontend@sha256:0000000000000000000000000000000000000000000000000000000000000000"
+migration_image_uri      = "000000000000.dkr.ecr.eu-west-1.amazonaws.com/imperator/pilot/migration@sha256:0000000000000000000000000000000000000000000000000000000000000000"
+database_admin_image_uri = "000000000000.dkr.ecr.eu-west-1.amazonaws.com/imperator/pilot/database-admin@sha256:0000000000000000000000000000000000000000000000000000000000000000"
+
+application_database_secret_arn = "arn:aws:secretsmanager:eu-west-1:000000000000:secret:imperator/pilot/database-app-ReplaceMe"
+
+jwt_issuer_uri  = "https://identity.example.com/realms/imperator"
+jwt_jwk_set_uri = "https://identity.example.com/realms/imperator/protocol/openid-connect/certs"
+
+bedrock_enabled  = true
+bedrock_model_id = "replace-with-approved-model-or-inference-profile-id"
+bedrock_invoke_resource_arns = [
+  "arn:aws:bedrock:eu-west-1:000000000000:application-inference-profile/replace-me",
+]
+
+aws_evidence_enabled = true
+monthly_budget_usd   = 130
+budget_alert_email   = "operator@example.com"
+
+# Keep false for the first apply. Set true only after both one-shot database
+# tasks succeed in order: migration, then database permissions.
+activate_services = false

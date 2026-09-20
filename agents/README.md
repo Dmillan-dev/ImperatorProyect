@@ -67,8 +67,9 @@ Phase 3 is named `First Business Value Loop` and is active under D079.
 
 The current authorized gate is maintained in
 `docs/project/PROJECT_STATUS.md`. D096 is frozen, D097 narrows its MVP scope,
-D098 is complete, and the D097 implementation passes locally. Hosted Java CI,
-Security and CodeQL are the current Sprint 4.4 certification gate.
+and D098, D097 and Sprint 4.4 are COMPLETE / HOSTED PASS. D099/D100 are the
+current LOCAL/OFFLINE PASS implementation awaiting hosted certification; D095
+external Keycloak HTTPS conformance follows before live pilot deployment.
 
 Phase 3 agents may implement only the bounded `DRC-AOA-001` sequence in
 `agents/phase3/README.md`. Sprint 3.0 runtime composition and Sprint 3.1 JSONL
@@ -99,10 +100,10 @@ identity-evidence boundary. Sprint 4.3 is certified with 151 default tests, 34
 PostgreSQL integration tests, hardened SHA-tagged images, local JWT/RBAC E2E
 and persistence after recreation. D096 freezes the original observability
 contract, while D097 implements only its application-native MVP subset and
-defers external monitoring services. D098 passes locally and hosted. Sprint
-4.4 now awaits hosted D097 certification under Documents 56-58.
-External Keycloak
-HTTPS conformance remains mandatory before Sprint 4.5.
+defers external monitoring services. D098 and Sprint 4.4 pass locally and
+hosted under Documents 56-58. D099/D100 prepare auditable Bedrock explanations
+and an AWS pilot offline; hosted certification remains pending. External
+Keycloak HTTPS conformance remains mandatory before live pilot deployment.
 
 The completed Phase 2 foundation contains:
 

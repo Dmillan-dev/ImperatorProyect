@@ -124,6 +124,25 @@ export const recommendationSchema = z
     requiredApproverId: canonicalUuidSchema,
     createdAt: timestampSchema,
     evidenceIds: z.array(canonicalUuidSchema),
+    explanation: z
+      .object({
+        explanationId: canonicalUuidSchema,
+        status: z.enum(["GENERATED", "UNAVAILABLE", "FAILED", "REJECTED"]),
+        text: z.string().nullable(),
+        provider: z.string(),
+        modelId: z.string(),
+        promptVersion: z.string(),
+        requestedAt: timestampSchema,
+        completedAt: timestampSchema,
+        inputTokens: z.number().int().nonnegative().nullable(),
+        outputTokens: z.number().int().nonnegative().nullable(),
+        latencyMillis: z.number().int().nonnegative().nullable(),
+        failureCode: z.string().nullable(),
+        evidenceIds: z.array(canonicalUuidSchema),
+        assumptionIds: z.array(z.string()),
+      })
+      .strict()
+      .nullable(),
   })
   .strict();
 

@@ -7,6 +7,7 @@ import imperator.adapters.out.postgresql.PostgresEvidenceRepository;
 import imperator.adapters.out.postgresql.PostgresLedgerRepository;
 import imperator.adapters.out.postgresql.PostgresMvpReadModelQueryAdapter;
 import imperator.adapters.out.postgresql.PostgresRecommendationRepository;
+import imperator.adapters.out.postgresql.PostgresRecommendationExplanationRepository;
 import imperator.adapters.out.postgresql.PostgresTransactionRunner;
 import imperator.api.observability.ImperatorInputPortTelemetry;
 import imperator.api.observability.ImperatorTelemetry;
@@ -49,6 +50,7 @@ import imperator.ports.out.ExplanationProvider;
 import imperator.ports.out.LedgerRepository;
 import imperator.ports.out.MvpReadModelQueryPort;
 import imperator.ports.out.RecommendationRepository;
+import imperator.ports.out.RecommendationExplanationRepository;
 import imperator.ports.out.TransactionRunner;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -100,6 +102,13 @@ public final class PostgresRuntimeConfiguration {
             PostgresConnectionProvider connectionProvider
     ) {
         return new PostgresRecommendationRepository(connectionProvider);
+    }
+
+    @Bean
+    RecommendationExplanationRepository recommendationExplanationRepository(
+            PostgresConnectionProvider connectionProvider
+    ) {
+        return new PostgresRecommendationExplanationRepository(connectionProvider);
     }
 
     @Bean
@@ -205,14 +214,16 @@ public final class PostgresRuntimeConfiguration {
             EvidenceRepository evidenceRepository,
             RecommendationRepository recommendationRepository,
             TransactionRunner transactionRunner,
-            ExplanationProvider explanationProvider
+            ExplanationProvider explanationProvider,
+            RecommendationExplanationRepository explanationRepository
     ) {
         return new GenerateRecommendationUseCase(
                 decisionRepository,
                 evidenceRepository,
                 recommendationRepository,
                 transactionRunner,
-                explanationProvider
+                explanationProvider,
+                explanationRepository
         );
     }
 
@@ -341,9 +352,10 @@ public final class PostgresRuntimeConfiguration {
     @Bean
     GetRecommendationInputPort getRecommendationInputPort(
             MvpReadModelQueryPort readModel,
+            RecommendationExplanationRepository explanationRepository,
             ObjectProvider<ImperatorTelemetry> telemetryProvider
     ) {
-        GetRecommendationInputPort delegate = new GetRecommendationUseCase(readModel);
+        GetRecommendationInputPort delegate = new GetRecommendationUseCase(readModel, explanationRepository);
         ImperatorTelemetry telemetry = telemetryProvider.getIfAvailable();
         return telemetry == null ? delegate : query -> observeDatabase(
                 telemetry, "get_recommendation", () -> delegate.getRecommendation(query)

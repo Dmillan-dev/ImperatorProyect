@@ -72,7 +72,7 @@ jobs:
           format: table
           hide-progress: true
           skip-dirs: frontend/node_modules,frontend/.next,target
-          skip-files: infra/docker/backend/Dockerfile.dockerignore,infra/docker/frontend/Dockerfile.dockerignore,infra/docker/postgresql/Dockerfile.dockerignore
+          skip-files: infra/docker/backend/Dockerfile.dockerignore,infra/docker/frontend/Dockerfile.dockerignore,infra/docker/postgresql/Dockerfile.dockerignore,infra/aws/images/migration/Dockerfile.dockerignore
 
   history-secrets:
     name: Full Git history secret scan
@@ -167,6 +167,25 @@ jobs:
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
         with:
           image-ref: imperator/frontend:${{ github.sha }}
+          scanners: vuln,secret
+          severity: HIGH,CRITICAL
+          ignore-unfixed: true
+          exit-code: "1"
+          format: table
+          hide-progress: true
+
+      - name: Build database migration image
+        run: >-
+          docker build
+          --file infra/aws/images/migration/Dockerfile
+          --build-arg VCS_REF=${{ github.sha }}
+          --tag imperator/migration:${{ github.sha }}
+          .
+
+      - name: Scan database migration image
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          image-ref: imperator/migration:${{ github.sha }}
           scanners: vuln,secret
           severity: HIGH,CRITICAL
           ignore-unfixed: true

@@ -12,6 +12,9 @@ import imperator.domain.shared.RecommendationId;
 import imperator.domain.shared.Timestamp;
 import imperator.domain.shared.UserId;
 import imperator.ports.out.MvpReadModelQueryPort;
+import imperator.ports.out.ExplanationStatus;
+import imperator.ports.out.RecommendationExplanationRecord;
+import imperator.ports.out.RecommendationExplanationRepository;
 import imperator.support.DrcAoa001EvidenceFixture;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -25,6 +28,7 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class MvpQueryUseCasesTest {
     private Decision decision;
@@ -95,6 +99,75 @@ class MvpQueryUseCasesTest {
         assertEquals(decision.id(), detail.decisionId());
         assertEquals(recommendation.reason(), view.deterministicReason());
         assertEquals(recommendation.evidenceIds().size(), view.evidenceIds().size());
+    }
+
+    @Test
+    void exposesTheLatestAuditedExplanationWithoutInvokingAProvider() {
+        RecommendationExplanationRecord explanation = explanationRecord();
+        RecommendationView view = new GetRecommendationUseCase(
+                readModel,
+                fixedExplanationRepository(Optional.of(explanation))
+        ).getRecommendation(new GetRecommendationQuery(recommendation.id()));
+
+        assertEquals(explanation.explanationId(), view.explanation().orElseThrow().explanationId());
+        assertEquals(explanation.text(), view.explanation().orElseThrow().text());
+    }
+
+    @Test
+    void keepsTheDeterministicProjectionAvailableWhenExplanationAuditReadFails() {
+        RecommendationExplanationRepository failingRepository = new RecommendationExplanationRepository() {
+            @Override
+            public void save(RecommendationExplanationRecord explanation) {
+                throw new UnsupportedOperationException();
+            }
+
+            @Override
+            public Optional<RecommendationExplanationRecord> findLatestByRecommendationId(RecommendationId id) {
+                throw new IllegalStateException("Simulated explanation audit outage");
+            }
+        };
+
+        RecommendationView view = new GetRecommendationUseCase(readModel, failingRepository)
+                .getRecommendation(new GetRecommendationQuery(recommendation.id()));
+
+        assertEquals(recommendation.reason(), view.deterministicReason());
+        assertTrue(view.explanation().isEmpty());
+    }
+
+    private RecommendationExplanationRecord explanationRecord() {
+        return new RecommendationExplanationRecord(
+                UUID.fromString("70000000-0000-4000-8000-000000000007"),
+                recommendation.id(),
+                ExplanationStatus.GENERATED,
+                Optional.of("AI-generated explanation"),
+                "amazon-bedrock",
+                "eu.amazon.nova-micro-v1:0",
+                "imperator-explanation-v1",
+                new Timestamp(Instant.parse("2026-07-01T00:02:00Z")),
+                new Timestamp(Instant.parse("2026-07-01T00:02:01Z")),
+                Optional.of(100),
+                Optional.of(25),
+                Optional.of(500L),
+                Optional.empty(),
+                recommendation.evidenceIds().stream().toList(),
+                List.of("A-ROI-001")
+        );
+    }
+
+    private RecommendationExplanationRepository fixedExplanationRepository(
+            Optional<RecommendationExplanationRecord> explanation
+    ) {
+        return new RecommendationExplanationRepository() {
+            @Override
+            public void save(RecommendationExplanationRecord item) {
+                throw new UnsupportedOperationException();
+            }
+
+            @Override
+            public Optional<RecommendationExplanationRecord> findLatestByRecommendationId(RecommendationId id) {
+                return explanation.filter(item -> item.recommendationId().equals(id));
+            }
+        };
     }
 
     private final class FixedReadModel implements MvpReadModelQueryPort {

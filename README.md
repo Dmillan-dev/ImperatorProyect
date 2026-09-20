@@ -5,7 +5,7 @@
 > A security-first platform that turns operational evidence into explainable,
 > measurable and auditable business decisions.
 
-**Java 21 · Spring Boot 4.1 · PostgreSQL 18 · Next.js 16 · TypeScript · JWT/RBAC · Hexagonal Architecture · Docker · DevSecOps**
+**Java 21 · Spring Boot 4.1 · PostgreSQL 18 · Next.js 16 · Amazon Bedrock · JWT/RBAC · Hexagonal Architecture · Docker · DevSecOps**
 
 Portfolio focus: **Software Architecture · Cloud Security · DevSecOps · Auditability**
 
@@ -37,11 +37,11 @@ and the append-only Decision Ledger preserves accountability.
 
 | At a glance | Repository evidence |
 |---|---|
-| Business flow | Evidence → Decision → Recommendation → Human Review → Ledger → Business Value |
+| Business flow | Evidence → Decision → deterministic Recommendation → optional AI explanation → Human Review → Ledger → Business Value |
 | Architecture | Java modular monolith with framework-free Domain/Application and hexagonal ports/adapters |
 | Security | RS256 JWT, explicit four-role RBAC, Evidence redaction, read-only cloud integrations and append-only audit history |
 | Verification | 162 backend tests, 34 PostgreSQL integration tests, 41 frontend tests and Playwright browser acceptance |
-| Current boundary | Pre-pilot; D097 application-native observability passes locally, while hosted certification and external pilot identity remain pending |
+| Current boundary | Pre-pilot; D097/Sprint 4.4 is HOSTED PASS, while D099/D100 hosted certification, external identity and live AWS evidence remain pending |
 
 ![IMPERATOR Decision Review Workspace using synthetic data](output/commercial/linkedin-discovery-kit/IMPERATOR_Workspace_Captura_Limpia.png)
 
@@ -72,16 +72,17 @@ Status labels in this repository have strict meanings:
 | Docker production-like runtime | **[IMPLEMENTED / D098 CERTIFIED]** | Hardened Compose and maintained images pass local and hosted runtime and supply-chain gates |
 | External OIDC identity provider | **[PLANNED]** | Keycloak pilot integration is designed but not provisioned or connected |
 | D093 case-composition route | **[IMPLEMENTED]** | `ADMIN`-only R16 composes the canonical Decision and Recommendation through existing Application boundaries |
-| Application observability | **[IMPLEMENTED / D097 LOCAL PASS]** | ECS JSON logs, bounded correlation and metrics, exact probes and internal Actuator pass locally; hosted D097 gates remain pending and external monitoring stays deferred |
+| Application observability | **[IMPLEMENTED / HOSTED PASS]** | ECS JSON logs, bounded correlation and metrics, exact probes and internal Actuator are certified on merge `4fd18fa`; external monitoring stays deferred |
+| Bedrock explanations | **[IMPLEMENTED OFFLINE / LIVE SMOKE PENDING]** | Optional Converse adapter, strict output validation, separate PostgreSQL audit attempts and explicit UI state; disabled by default |
 | Python/FastAPI explanation service | **[FUTURE]** | Directory boundary only; no Python source or provider calls |
-| Kubernetes, Terraform, Kafka and Redis | **[FUTURE]** | Explicitly excluded from the MVP |
+| AWS pilot infrastructure | **[IMPLEMENTED OFFLINE / LIVE PENDING]** | Terraform and controlled OIDC workflows prepare ECS/Fargate, RDS and immutable image publication; no live apply is certified |
+| Kubernetes, Kafka and Redis | **[FUTURE]** | Explicitly excluded from the MVP |
 
-Current formal state: **Phase 3, pre-pilot; D098 is complete and the reduced
-D097 MVP observability implementation passes locally. Hosted Java CI, Security
-and CodeQL are the current Sprint 4.4 certification gate.** D095 defers operational
-Keycloak HTTPS conformance without weakening
-D087/D088; it remains mandatory before Sprint 4.5, real customer data or MVP
-Release. See the
+Current formal state: **Phase 3, pre-pilot; D098 and D097/Sprint 4.4 are
+complete and hosted-pass. D099/D100 pass locally/offline and await hosted
+certification.** D095 defers operational Keycloak HTTPS conformance without
+weakening D087/D088; it remains mandatory before a live pilot, real customer
+data or MVP Release. See the
 [D097 scope correction](docs/architecture/57_MVP_Observability_Scope_Correction.md),
 [D098 supply-chain refresh](docs/architecture/58_Runtime_Supply_Chain_Refresh.md),
 the [pilot status](docs/pilot/README.md) and
@@ -117,6 +118,11 @@ decision authority.
   same domain evidence model.
 - **Human governance:** the company approves, rejects, defers, marks
   implementation and validates results.
+- **Bounded AI explanation:** Bedrock can explain a frozen Recommendation using
+  supplied authorized context, but cannot calculate ROI, approve or write the
+  Ledger. See the [D099 contract](docs/architecture/59_Bedrock_Auditable_Explanation_Contract.md),
+  [runbook](docs/runbooks/bedrock-explanations.md) and
+  [TFG evaluation rubric](docs/ai/60_Bedrock_Explanation_Evaluation.md).
 
 ## Architecture
 
@@ -198,8 +204,8 @@ See [Security Policy](SECURITY.md) and the canonical
 | GitHub Actions Java build | **IMPLEMENTED**; minimal `contents: read` permission and actions pinned by commit SHA |
 | Maven runtime enforcement | **IMPLEMENTED**; exact Maven 3.9.16 and Java 21 boundary |
 | Compiler warnings as errors | **IMPLEMENTED** |
-| Backend unit/API/security tests | **IMPLEMENTED**; 162 default tests |
-| PostgreSQL integration gate | **IMPLEMENTED**; 34 real-database tests plus Flyway migrate/validate/idempotency |
+| Backend unit/API/security tests | **IMPLEMENTED**; 171 default tests pass locally |
+| PostgreSQL integration gate | **IMPLEMENTED**; 37 real-database test methods are defined; the D099 migration extension still requires a Docker-backed rerun |
 | Frontend lint/typecheck/tests/build | **IMPLEMENTED locally**; 41 tests and production build pass |
 | Frontend dependency audit | **IMPLEMENTED as a manual certification command**; latest local check found 0 vulnerabilities |
 | Automated source/dependency scan | **IMPLEMENTED**; the fail-closed hosted Trivy workflow scans dependencies, secrets and configuration and is passing |
@@ -208,17 +214,18 @@ See [Security Policy](SECURITY.md) and the canonical
 | CodeQL SAST | **IMPLEMENTED IN GITHUB**; default setup for Java/Kotlin and JavaScript/TypeScript is enabled and passing |
 | Frontend CI workflow | **PLANNED** |
 | Dependency scanning | **PARTIALLY IMPLEMENTED**; Trivy scans repository dependencies, while dedicated Java dependency review remains planned |
-| Deployment pipeline | **FUTURE**; no cloud deployment exists |
+| Deployment pipeline | **IMPLEMENTED OFFLINE / LIVE PENDING**; OIDC image publication plus reviewed Terraform plan/deploy workflows exist, but no AWS resource has been created |
 
 The current CI is intentionally smaller than the target pipeline. The
 repository does not claim that planned security automation already runs.
 
 ## Cloud Engineering Scope
 
-**Implemented integration, not deployment:** IMPERATOR uses the AWS SDK through
-a bounded read-only Evidence adapter. It verifies the expected account with
-STS and reads the minimum contracted Cost Explorer, Resource Groups Tagging API
-and CloudWatch data for one account, one Region and one tagged workload.
+**Implemented integration and deployment preparation, not a live deployment:**
+IMPERATOR uses the AWS SDK through a bounded read-only Evidence adapter and an
+optional audited Bedrock explanation adapter. D100 adds validated Terraform and
+manual OIDC workflows for a bounded AWS pilot; no live AWS verification or
+resource creation is claimed.
 
 | AWS API | MVP purpose | Security and cost boundary |
 |---|---|---|
@@ -226,10 +233,12 @@ and CloudWatch data for one account, one Region and one tagged workload.
 | Cost Explorer | Collect the bounded monthly cost fact | One contracted time window; no billing mutation |
 | Resource Groups Tagging API | Resolve resources belonging to the workload | Exact account, Region and correlation tags |
 | CloudWatch | Collect the contracted utilization signal | Bounded query surface, timeout and response limits |
+| Bedrock Runtime | Explain one frozen deterministic Recommendation | Exact model/profile IAM resources, bounded context/output, separate audit and no decision authority |
 
-The repository contains no AWS deployment, IAM provisioning, Terraform,
-Kubernetes or multi-account control plane. GitHub is likewise a read-only
-evidence source, not a deployment platform for the application.
+The repository now contains offline-validated Terraform for ECR, OIDC, VPC,
+ALB/ACM, ECS/Fargate, RDS, Secrets Manager references, CloudWatch, CloudTrail
+and cost controls. It creates nothing until D095, cost review and explicit apply
+approval pass. Kubernetes and a multi-account control plane remain excluded.
 
 The single-account, single-Region scope is deliberate: it keeps permissions,
 API usage and cost attribution reviewable before any multi-account scaling
@@ -245,9 +254,9 @@ model exists.
 | API and security | REST, OAuth2 Resource Server, JWT RS256, RBAC, Zod client validation | External Keycloak pilot configuration |
 | Integrations | GitHub REST, AWS SDK, JSONL Evidence import | Additional connectors after MVP |
 | Frontend | Next.js 16, React 19, TypeScript 5, Tailwind CSS 4 | Production login/session UX |
-| Runtime | Docker Compose, hardened multi-stage images | Cloud deployment after pilot |
-| Observability | Correlation IDs, safe errors, container health checks/log rotation | D097-authorized ECS logs, Actuator probes and bounded application metrics; external monitoring stack deferred |
-| AI | Provider-neutral Java `ExplanationProvider` port | Python/FastAPI and real providers are future work |
+| Runtime | Docker Compose, hardened multi-stage images, validated AWS pilot Terraform | Live AWS pilot after D095 and cost approval |
+| Observability | Correlation IDs, ECS JSON logs, Actuator probes, metrics, CloudWatch/CloudTrail design | External Prometheus/Grafana remains deferred |
+| AI | Provider-neutral Java port plus audited Bedrock Converse adapter | Live synthetic Bedrock evaluation after AWS authorization; Python/RAG/agents remain excluded |
 
 ## REST API
 
@@ -402,11 +411,11 @@ as realized value until validation evidence exists.
 
 | Stage | Scope |
 |---|---|
-| **Completed** | Core Domain, Application use cases, PostgreSQL, REST, JWT/RBAC, GitHub/AWS evidence adapters, D093 composition, Decision Review Workspace, Docker Production Runtime and D098 supply-chain refresh |
-| **Current** | Sprint 4.4 D097 hosted Java CI, Security and CodeQL certification after local PASS |
-| **Next** | External Keycloak HTTPS pilot conformance required by D095 |
-| **Planned** | Sprint 4.5 Pilot Readiness and MVP release acceptance |
-| **Future** | Python explanation service, more connectors, multi-tenancy, cloud deployment, Terraform, Kubernetes, Kafka and Redis only when justified |
+| **Completed baseline** | Core Domain, Application use cases, PostgreSQL, REST, JWT/RBAC, GitHub/AWS evidence adapters, D093 composition, Decision Review Workspace, Docker runtime and Sprint 4.4 observability |
+| **Current TFG increment** | D099 auditable Bedrock explanation and D100 AWS pilot automation; implemented and locally verified, hosted/live evidence pending |
+| **Next gate** | Merge D099/D100 with hosted checks, then execute external Keycloak HTTPS conformance required by D095 |
+| **Planned** | Approved AWS sandbox deployment, Sprint 4.5 Pilot Readiness and MVP release acceptance |
+| **Excluded** | RAG, autonomous agents, multi-tenancy, Kubernetes, Kafka and Redis until demonstrated product need |
 
 ## Post-MVP DevSecOps Path
 
@@ -429,13 +438,13 @@ flowchart LR
 |---|---|---|
 | Docker Production Runtime | **[IMPLEMENTED]** | D092-D095 certification, D093/R16, D094 supply-chain evidence, local JWT/RBAC E2E and persistence after recreation pass |
 | CI hardening | **[PARTIALLY IMPLEMENTED]** | Java CI, CodeQL, Docker builds, Trivy gates and D094 SBOM/provenance are active; frontend CI and dedicated Java dependency review remain planned |
-| AWS deployment contract | **[FUTURE]** | Freeze workload, data, IAM, network, TLS, backup, recovery, logging, cost and threat-model requirements before provisioning |
-| Terraform AWS foundation | **[FUTURE]** | Provision only the contracted VPC, private networking, IAM, security groups, ECR, ECS/Fargate, RDS, Secrets Manager, CloudWatch and CloudTrail resources |
+| AWS deployment contract | **[IMPLEMENTED OFFLINE]** | D100 freezes workload, data, IAM, network, TLS, backup, recovery, logging, cost, rollback and teardown requirements |
+| Terraform AWS foundation | **[IMPLEMENTED OFFLINE / APPLY BLOCKED]** | Version-locked bootstrap and pilot roots pass provider validation and mocked plans; D095 and cost approval precede apply |
 | Kubernetes variant | **[FUTURE / CONDITIONAL]** | Consider EKS, Helm, NetworkPolicy and GitOps only if scaling or platform requirements justify their operational cost |
 
-Terraform and AWS deployment belong to one future delivery capability:
-infrastructure is designed, reviewed, provisioned and validated together. A
-Terraform directory alone is not treated as cloud-engineering evidence.
+Terraform files alone are not treated as cloud-engineering evidence. The live
+claim requires reviewed plan/apply output, OIDC/ECR provenance, D095 results,
+runtime tests, Bedrock/AWS Evidence smoke tests, rollback and teardown evidence.
 
 ## Security Disclosure
 

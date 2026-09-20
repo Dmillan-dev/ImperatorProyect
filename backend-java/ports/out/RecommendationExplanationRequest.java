@@ -10,6 +10,7 @@ import imperator.domain.shared.Severity;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 public record RecommendationExplanationRequest(
         RecommendationId recommendationId,
@@ -24,7 +25,8 @@ public record RecommendationExplanationRequest(
         Severity risk,
         List<EvidenceId> evidenceIds,
         List<String> assumptionIds,
-        String policyVersion
+        String policyVersion,
+        List<RecommendationExplanationEvidence> evidenceContext
 ) {
     public RecommendationExplanationRequest {
         Objects.requireNonNull(recommendationId, "Explanation recommendation id is required");
@@ -40,12 +42,16 @@ public record RecommendationExplanationRequest(
         evidenceIds = requireEvidenceIds(evidenceIds);
         assumptionIds = requireAssumptionIds(assumptionIds);
         policyVersion = requireText(policyVersion, "Explanation policy version");
+        evidenceContext = requireEvidenceContext(evidenceContext, evidenceIds);
     }
 
     private static List<EvidenceId> requireEvidenceIds(List<EvidenceId> evidenceIds) {
         Objects.requireNonNull(evidenceIds, "Explanation Evidence ids are required");
         if (evidenceIds.isEmpty() || evidenceIds.stream().anyMatch(Objects::isNull)) {
             throw new IllegalArgumentException("Explanation Evidence ids must contain non-null values");
+        }
+        if (Set.copyOf(evidenceIds).size() != evidenceIds.size()) {
+            throw new IllegalArgumentException("Explanation Evidence ids must be unique");
         }
         return List.copyOf(evidenceIds);
     }
@@ -58,7 +64,27 @@ public record RecommendationExplanationRequest(
         if (normalized.isEmpty()) {
             throw new IllegalArgumentException("Explanation assumption ids must not be empty");
         }
+        if (Set.copyOf(normalized).size() != normalized.size()) {
+            throw new IllegalArgumentException("Explanation assumption ids must be unique");
+        }
         return List.copyOf(normalized);
+    }
+
+    private static List<RecommendationExplanationEvidence> requireEvidenceContext(
+            List<RecommendationExplanationEvidence> evidenceContext,
+            List<EvidenceId> evidenceIds
+    ) {
+        Objects.requireNonNull(evidenceContext, "Explanation Evidence context is required");
+        if (evidenceContext.isEmpty() || evidenceContext.stream().anyMatch(Objects::isNull)) {
+            throw new IllegalArgumentException("Explanation Evidence context must contain non-null values");
+        }
+        List<RecommendationExplanationEvidence> copy = List.copyOf(evidenceContext);
+        if (!copy.stream().map(RecommendationExplanationEvidence::evidenceId).collect(
+                java.util.stream.Collectors.toUnmodifiableSet()
+        ).equals(Set.copyOf(evidenceIds))) {
+            throw new IllegalArgumentException("Explanation Evidence context must match Evidence ids");
+        }
+        return copy;
     }
 
     private static String requireText(String value, String fieldName) {

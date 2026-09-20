@@ -36,6 +36,10 @@ describe("Decision Review Workspace", () => {
     expect(
       screen.getByText("Monthly spend was EUR 2,340.00"),
     ).toBeInTheDocument();
+    expect(screen.getByText("Recommendation explanation")).toBeInTheDocument();
+    expect(
+      screen.getByText(/The accepted cost Evidence supports/),
+    ).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Approve" })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Reject" })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Defer" })).toBeInTheDocument();

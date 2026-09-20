@@ -1,6 +1,6 @@
 # IMPERATOR Observability Runtime Runbook
 
-Status: **D097 IMPLEMENTED / LOCAL PASS / HOSTED PENDING**
+Status: **D097 COMPLETE / HOSTED PASS** on merge `4fd18fa`
 
 This runbook covers the application-native observability retained for the MVP.
 There is no Prometheus, Grafana, Alertmanager, collector, dashboard or alerting

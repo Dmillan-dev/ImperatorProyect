@@ -74,10 +74,11 @@ certification boundary. Sprint 4.3 is certified: 151 default tests, 34
 PostgreSQL integration tests, final-image security gates, local JWT/RBAC E2E
 and persistence after recreation pass. Sprint 4.3.1 documentation
 synchronization is complete. D096 freezes the original Observability contract
-and D097 implements only its application-native MVP subset. D098 passes locally
-and hosted. D097 passes locally; hosted Java CI, Security and CodeQL are the
-current Sprint 4.4 certification gate;
-external Keycloak HTTPS conformance remains mandatory before Sprint 4.5.
+and D097 implements only its application-native MVP subset. D098, D097 and
+Sprint 4.4 pass locally and hosted on merge `4fd18fa`. D099/D100 implement
+auditable Bedrock explanations and AWS pilot preparation with LOCAL/OFFLINE
+PASS; hosted certification is current. External Keycloak HTTPS conformance
+remains mandatory before a live pilot or MVP Release.
 
 Agents may create runnable implementation only inside the explicitly
 authorized sprint/module. They must use `agents/phase3/README.md`, the frozen
