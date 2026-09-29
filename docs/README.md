@@ -35,6 +35,7 @@ Do not load all documentation by default.
 | `demos/` | Certified demonstrations, demo readiness and buyer-validation scripts | Evidence-backed operational guide |
 | `pilot/` | Commercial-pilot preparation, runbooks and acceptance evidence | Non-authoritative preparation until Pilot Readiness |
 | `portfolio/` | Recruiter-facing technical evidence and concise project positioning | Non-authoritative evidence view |
+| `tfg/` | DAM final-project scope, competency traceability and academic evidence | Academic evidence view; never an execution authority |
 
 Agent execution plans live under `../agents/`, not inside `docs/`.
 
@@ -42,6 +43,7 @@ For a short, evidence-backed view of the repository, use the
 [Portfolio Evidence entry point](portfolio/README.md). It summarizes current
 implementation without replacing canonical contracts or project status.
 The stable recruiter link is [Recruiter Summary](recruiter-summary.md).
+The DAM final-project package starts at [TFG Academic Evidence](tfg/README.md).
 
 ## Lifecycle Map
 
