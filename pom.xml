@@ -20,6 +20,7 @@
         <maven.version>3.9.16</maven.version>
         <java.version>21</java.version>
         <junit.version>5.14.3</junit.version>
+        <jackson-bom.version>3.1.6</jackson-bom.version>
         <postgresql.version>42.7.13</postgresql.version>
         <spring-boot.version>4.1.1</spring-boot.version>
         <tomcat.version>11.0.25</tomcat.version>
@@ -38,6 +39,14 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- Security override until the Spring Boot BOM manages Jackson 3.1.6+. -->
+            <dependency>
+                <groupId>tools.jackson</groupId>
+                <artifactId>jackson-bom</artifactId>
+                <version>${jackson-bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
