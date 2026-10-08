@@ -1,14 +1,21 @@
 # Sprint 4.5 D101 - Pilot Identity And AWS Certification Prompt
 
-Status: **STAGE A AUTHORIZED / STAGES B AND C BLOCKED**
+Status: **OPERATOR-DEFERRED / BLOCKED_EXTERNAL; STAGES B AND C NOT AUTHORIZED**
+
+Scheduling synchronized on 2026-10-01 under the founder-authorized TFG-A
+start. This existing procedure is an external D095 dependency, not a new
+TFG sprint. Earlier Stage A authorization is deferred; no conformance result
+or waiver is claimed.
 
 Authorization basis: D099/D100 repository implementation merge `22a9917`, with
 all required hosted Java CI, CodeQL, source/dependency/configuration,
 full-history secret, application/migration image, PostgreSQL D094 and AWS IaC
 checks passing.
 
-Only Stage A is currently executable. Stop after producing its redacted
-identity-conformance evidence. Do not start Stage B or Stage C, authenticate to
+Stage A is operator-deferred while the external IdP is unavailable. Current
+work is TFG-A bounded maintenance and isolated local evidence. When the operator
+explicitly resumes this dependency, stop after its redacted conformance
+evidence. Do not start Stage B or Stage C, authenticate to
 AWS, run `terraform plan` or `terraform apply`, publish images, invoke Bedrock,
 create cloud resources or deploy the pilot. A later explicit authorization is
 required even if Stage A passes.
@@ -35,7 +42,7 @@ Bedrock resources or a mutable container tag.
 
 ## Stage A - D095 External Identity
 
-Authorization: **CURRENT / AUTHORIZED**
+Scheduling: **OPERATOR-DEFERRED / BLOCKED_EXTERNAL**
 
 Against the frozen external Keycloak HTTPS issuer/JWKS:
 

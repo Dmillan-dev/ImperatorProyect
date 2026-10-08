@@ -21,9 +21,12 @@ Auxiliary repository automation when a verified need exists.
   interview guide artifact.
 - `commercial/generate_linkedin_discovery_kit.py`, which generates the
   commercial discovery kit.
+- [tfg/capture-docker-demo.mjs](tfg/README.md), the founder-authorized real
+  local API/UI rehearsal and sanitized recording helper.
 - Future validation or evidence helpers only when explicitly authorized.
 
 Current status:
+
 - Executable local verification and commercial artifact helpers exist.
 - D097 evidence is written only below ignored `build/d097`; no dashboard or
   external monitoring service is part of this gate.

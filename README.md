@@ -1,469 +1,332 @@
 # IMPERATOR
 
-### Enterprise Decision Intelligence Platform
+## Security CI correction candidate — 2026-10-08
 
-> A security-first platform that turns operational evidence into explainable,
-> measurable and auditable business decisions.
+PR #60/#61 published documentation while the tested security patches remained local.
+The replacement candidate integrates those patches, Next 16.3.8 and the narrowly
+scoped migration-image remediation. Local Compose now uses that same patched
+migration image instead of its separate Flyway 13.0 image. Java, Spring, Node,
+PostgreSQL and the pinned backend/frontend/PostgreSQL bases are unchanged.
 
-**Java 21 · Spring Boot 4.1 · PostgreSQL 18 · Next.js 16 · Amazon Bedrock · JWT/RBAC · Hexagonal Architecture · Docker · DevSecOps**
+Local regression: 174 unit + 35 integration + 41 frontend tests PASS;
+Playwright 9 PASS / 6 intentional skips; lint, types, format and build PASS.
+Production npm audit: 0. Full audit retains the five R-23 development-tooling
+entries. Backend/frontend/migration image scans: 0 fixable High/Critical and
+0 secrets. Exact-commit PostgreSQL certification, runtime and hosted CI are
+recorded separately in the correction review, never inferred from historical evidence.
 
-Portfolio focus: **Software Architecture · Cloud Security · DevSecOps · Auditability**
+**This is a review candidate, not a release or renewed R-20 acceptance.**
+R-20 remains bound to its previously approved digests and expires exclusively
+2026-10-09 00:00 Europe/Madrid (2026-10-08 22:00 UTC), without automatic renewal.
+New image digests require their own applicability decision. R-23 remains OPEN /
+NO FIX AVAILABLE. A-S3 closure and A-S4 defense are pending; AWS remains blocked.
+
+See [correction scope, unpublished-item inventory and gates](docs/tfg/CI_SECURITY_CORRECTION_2026_10_08.md).
+The dated sections below describe their original evidence; their former upgrade
+restrictions and Docker availability statements are historical, not current certification.
+
+## A-S3 / A-S4 Preparation — 2026-10-07
+
+A-S3 local source/diff review and PR preparation continue; accepted release SHA and hosted CI remain pending.
+A-S4 now has a [developed memory draft](docs/tfg/08_LOCAL_MVP_MEMORY.md),
+[twelve-minute script](docs/tfg/09_DEFENSE_SCRIPT_12_MIN.md) and
+[local rehearsal procedure](docs/tfg/A_S4_LOCAL_DEFENSE.md). These are prepared materials, not an executed oral defense.
+The [release/academic gate](docs/tfg/10_LOCAL_MVP_RELEASE_GATE.md) separates TFG-A document closure, defense and product release.
+Current Docker is unavailable because the daemon is stopped; prior exact-image evidence remains dated.
+No implementation/dependency/image change, expiry extension, accepted SHA, hosted PASS or COMPLETE is inferred.
+See the [review record](docs/tfg/evidence/2026-10-07-a-s3-a-s4/README.md).
+
+## Current Owner Decision And Sprint — 2026-10-06
+
+**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](docs/tfg/evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](docs/tfg/A_S3_EVIDENCE_VERSIONING.md).
+
+### DAM TFG MVP for operational decision traceability
+
+> Transform operational evidence into explainable, measurable and auditable
+> business decisions.
+
+**Java 21 Â· Spring Boot 4.1 Â· Next.js 16 Â· PostgreSQL 18 Â· JWT/RBAC Â· Docker Â· AWS preparation Â· DevSecOps**
 
 [![Java CI](https://github.com/Dmillan-dev/ImperatorProyect/actions/workflows/java-ci.yml/badge.svg)](https://github.com/Dmillan-dev/ImperatorProyect/actions/workflows/java-ci.yml)
 [![Security](https://github.com/Dmillan-dev/ImperatorProyect/actions/workflows/security.yml/badge.svg)](https://github.com/Dmillan-dev/ImperatorProyect/actions/workflows/security.yml)
-![Java 21](https://img.shields.io/badge/Java-21-1f6feb)
-![Spring Boot 4.1](https://img.shields.io/badge/Spring_Boot-4.1-2e7d32)
-![PostgreSQL 18](https://img.shields.io/badge/PostgreSQL-18-336791)
-![Next.js 16](https://img.shields.io/badge/Next.js-16-111111)
-![Status](https://img.shields.io/badge/status-pre--pilot-c58b00)
+![Lifecycle](https://img.shields.io/badge/lifecycle-pre--pilot-c58b00)
+![AWS](https://img.shields.io/badge/AWS-offline_evidence_only-555555)
 
+[TFG scope and evidence](docs/tfg/README.md) |
+[Project status](docs/project/PROJECT_STATUS.md) |
+[Project structure and work order](docs/project/PROJECT_STRUCTURE.md) |
 [Technical evidence](docs/portfolio/technical-evidence.md) |
 [Security](SECURITY.md) |
-[Architecture decisions](docs/decisions/14_Decision_Log.md) |
-[Synthetic demo](output/commercial/linkedin-discovery-kit/README.md) |
-[Recruiter summary](docs/portfolio/recruiter-summary.md)
+[Architecture decisions](docs/decisions/14_Decision_Log.md)
 
-## 30-Second Overview
+## What The MVP Does
 
-IMPERATOR reconstructs why an operational decision was made, which evidence
-supported it, who approved it and whether the expected economic result was
-later realized. The current MVP proves one bounded case, `DRC-AOA-001`, through
-a Java/Spring modular monolith, PostgreSQL, a secured REST API and a Next.js
-Decision Review Workspace.
+IMPERATOR reconstructs which Evidence supported an operational decision, how
+its Recommendation and ROI were calculated, who approved it, and whether its
+expected value was subsequently validated. The implemented product is a Java
+modular monolith, PostgreSQL persistence and a Next.js Decision Review
+Workspace for exactly one synthetic case: `DRC-AOA-001`, AI Onboarding
+Assistant Recovery.
 
-The project demonstrates secure software design rather than autonomous AI:
-recommendations and ROI are deterministic, human authority remains explicit,
-and the append-only Decision Ledger preserves accountability.
+```text
+Evidence â†’ Decision â†’ deterministic Recommendation and ROI
+â†’ optional AI explanation â†’ Human Review â†’ append-only Ledger
+â†’ Result Validation â†’ Business Value
+```
 
-| At a glance | Repository evidence |
-|---|---|
-| Business flow | Evidence → Decision → deterministic Recommendation → optional AI explanation → Human Review → Ledger → Business Value |
-| Architecture | Java modular monolith with framework-free Domain/Application and hexagonal ports/adapters |
-| Security | RS256 JWT, explicit four-role RBAC, Evidence redaction, read-only cloud integrations and append-only audit history |
-| Verification | 162 backend tests, 34 PostgreSQL integration tests, 41 frontend tests and Playwright browser acceptance |
-| Current boundary | Pre-pilot; D099/D100 repository implementation is HOSTED PASS on `22a9917`; D101 Stage A external identity is current and all live AWS evidence remains pending |
+**Bedrock explains; it never decides.** Business rules, amounts, confidence,
+risk and authority belong to the application. The model cannot approve a
+Decision, modify its Recommendation, write the Ledger or execute a change.
 
-![IMPERATOR Decision Review Workspace using synthetic data](output/commercial/linkedin-discovery-kit/IMPERATOR_Workspace_Captura_Limpia.png)
+The reference case has 30 synthetic Evidence records. Its fixed policy
+estimates EUR 1,620 monthly recovery and EUR 19,440 annualized recovery. These
+are synthetic business values, not measured AWS deployment costs or customer
+savings. Business Value requires human implementation and result-validation
+facts before it is projected.
 
-> The screenshot uses synthetic test fixtures. It is not customer data and does
-> not claim realized customer savings.
+![Synthetic Decision Review Workspace](output/commercial/linkedin-discovery-kit/IMPERATOR_Workspace_Captura_Limpia.png)
 
-## Verified Delivery Status
+The screenshot is illustrative synthetic material. Final TFG captures must be
+bound to the accepted implementation SHA and execution evidence.
 
-Status labels in this repository have strict meanings:
+## Current Delivery And Evidence Status
 
-| Label | Meaning |
-|---|---|
-| **[IMPLEMENTED]** | Code exists and its focused tests pass |
-| **[PARTIALLY IMPLEMENTED]** | A bounded implementation exists, but its complete runtime or external gate is not certified |
-| **[PLANNED]** | A contract or preparation artifact exists; implementation does not |
-| **[FUTURE]** | Direction only; no current implementation claim |
+**2026-10-06: R-17/R-19 CLOSED; authorized R-21/R-22 patches applied and verified. A-S2 technical and formal GO; A-S3 evidence/versioning ACTIVE. TFG-A IN PROGRESS.**
 
-| Capability | Status | Evidence |
-|---|---|---|
-| Hexagonal Java domain and application | **[IMPLEMENTED]** | Framework-free Domain/Application, inbound/outbound ports and adapter isolation |
-| Evidence-to-value business loop | **[IMPLEMENTED]** | Deterministic local `DRC-AOA-001` flow with synthetic data |
-| PostgreSQL persistence and Flyway | **[IMPLEMENTED]** | JDBC adapters, constraints, transactions and real PostgreSQL integration tests |
-| REST API | **[IMPLEMENTED]** | 15 D086 route/method contracts plus D093 R16, with typed errors and correlation IDs |
-| JWT and RBAC | **[IMPLEMENTED]** | RS256/JWKS Resource Server, four exact roles and evidence redaction |
-| GitHub evidence connector | **[IMPLEMENTED]** | Read-only REST adapter for one organization/repository; live sandbox smoke test remains pending |
-| AWS evidence connector | **[IMPLEMENTED]** | Read-only STS, Cost Explorer, tagging and CloudWatch adapter; live sandbox smoke test remains pending |
-| Decision Review Workspace | **[IMPLEMENTED]** | Next.js/React single-case workspace with strict response validation |
-| Docker production-like runtime | **[IMPLEMENTED / D098 CERTIFIED]** | Hardened Compose and maintained images pass local and hosted runtime and supply-chain gates |
-| External OIDC identity provider | **[PLANNED]** | Keycloak pilot integration is designed but not provisioned or connected |
-| D093 case-composition route | **[IMPLEMENTED]** | `ADMIN`-only R16 composes the canonical Decision and Recommendation through existing Application boundaries |
-| Application observability | **[IMPLEMENTED / HOSTED PASS]** | ECS JSON logs, bounded correlation and metrics, exact probes and internal Actuator are certified on merge `4fd18fa`; external monitoring stays deferred |
-| Bedrock explanations | **[IMPLEMENTED OFFLINE / LIVE SMOKE PENDING]** | Optional Converse adapter, strict output validation, separate PostgreSQL audit attempts and explicit UI state; disabled by default |
-| Python/FastAPI explanation service | **[FUTURE]** | Directory boundary only; no Python source or provider calls |
-| AWS pilot infrastructure | **[IMPLEMENTED OFFLINE / LIVE PENDING]** | Terraform and controlled OIDC workflows prepare ECS/Fargate, RDS and immutable image publication; no live apply is certified |
-| Kubernetes, Kafka and Redis | **[FUTURE]** | Explicitly excluded from the MVP |
+Only source-map-js1.2.1→1.2.2, sharp0.35.4→0.35.5 and its mandatory native subtree, and checksum-pinned Bookworm PCRE2/Perl security patches were applied. Six files and28 lock entries; other dependencies, base digests, Java/Spring/Node/PostgreSQL versions, business logic and architecture are unchanged from the task-start local worktree. Braces3.0.3 is unchanged; PR #57–59 were not merged.
 
-Current formal state: **Phase 3, pre-pilot; D099/D100 repository implementation
-is COMPLETE / HOSTED PASS on merge `22a9917`. D101 Stage A is the current
-D095 external Keycloak HTTPS gate.** D095 defers operational conformance without
-weakening D087/D088; it remains mandatory before a live pilot, real customer
-data or MVP Release. See the
-[D097 scope correction](docs/architecture/57_MVP_Observability_Scope_Correction.md),
-[D098 supply-chain refresh](docs/architecture/58_Runtime_Supply_Chain_Refresh.md),
-the [pilot status](docs/pilot/README.md) and
-[D095](docs/decisions/14_Decision_Log.md).
+| Current local control                                                      | Result                                                                   |
+| -------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| Backend / PostgreSQL integration / frontend                                | 174 / 35 / 41 PASS                                                       |
+| Format, lint, types, coverage, build                                       | PASS                                                                     |
+| Playwright                                                                 | 9 PASS / 6 intentional skips                                             |
+| Exact-image Docker/API/UI/RBAC, Flyway/V3, persistence, readiness/recovery | PASS                                                                     |
+| D094 lock/verifier and scoped cleanup                                      | PASS; original volumes preserved                                         |
+| Detected secrets, all severities                                           | 0; source/history and all canonical images                               |
+| Fixable High/Critical: backend / frontend / PostgreSQL                     | 0 / 0 / 0; A-S2 technical GO                                             |
+| Production npm audit                                                       | 0                                                                        |
+| Full npm audit                                                             | FAIL:5 High affected-package aggregates from one unfixed braces advisory |
+| Full Trivy images                                                          | Frontend48High/1Critical; PostgreSQL63High/3Critical; backend0           |
 
-## Why IMPERATOR?
+The [current review](docs/tfg/R21_R22_SECURITY_REVIEW.md), [dated evidence](docs/tfg/evidence/2026-10-06-r21-r22/README.md) and [gate](docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md) bind tests, raw scans, source/DB hashes, OCI manifests/config/layers, five captures,27.16-second captioned technical fallback and owned-resource cleanup. Baseline `b602bbe1dde92a902c17272d59cd9f0c10b9efe5` identifies a dirty local worktree, not an accepted release SHA or hosted-CI pass. Local loopback/synthetic fixture is not external IdP/AWS certification or a narrated twelve-minute defense.
 
-Operational decisions are usually fragmented across tickets, pull requests,
-cloud billing, monitoring and human approvals. Months later, teams can often
-see what changed but cannot reliably answer:
+D101 remains OPERATOR-DEFERRED / BLOCKED_EXTERNAL, mandatory before pilot/non-loopback exposure or MVP Release. A-S3 evidence/versioning is authorized; A-S4 remains later and TFG-B/C/D/AWS stay blocked/unauthorized. No further dependency update is authorized.
 
-- which evidence was available at decision time;
-- who had authority to approve the action;
-- which assumptions produced the ROI estimate;
-- whether implementation actually occurred; or
-- whether the expected value was realized.
+## R-20 Approval And Current Security Gate
 
-IMPERATOR models that chain as a single auditable decision lifecycle. It does
-not execute infrastructure changes and it does not allow an LLM to become the
-decision authority.
+The [current explicit R-20 approval](docs/tfg/evidence/2026-10-06-a-s2-acceptance/r20-current-acceptance.json) binds the inspected 23-CVE/115-row OS residual to the exact current images, runtime inputs, scanner databases and reviewed evidence. The historical October 2 approval and original proposal bytes remain unchanged; current approval is a new explicit decision, not an inherited acceptance.
 
-## Key Capabilities
+**A-S2 formal GO applies only to local synthetic TFG-A until 2026-10-09 00:00 Europe/Madrid (UTC+02:00), exclusively.** No fixable vulnerability or secret is waived. The independent [R-23 disposition](docs/tfg/evidence/2026-10-06-a-s2-acceptance/r23-approved-open-disposition.json) is approved while the risk remains OPEN / NO FIX AVAILABLE. Full scanner/audit failures remain visible; no absolute-zero or universal non-exploitability claim.
 
-- **Decision traceability:** Evidence, Recommendation, human action, Ledger and
-  outcome remain connected.
-- **Deterministic recommendation policy:** the same eligible evidence produces
-  the same recommendation and ROI result.
-- **Estimated versus realized value:** projected savings never become Business
-  Value until implementation and financial result validation are recorded.
-- **Append-only accountability:** corrections are new Ledger entries, not
-  mutations of history.
-- **Provider-neutral evidence:** GitHub, AWS and JSONL import normalize into the
-  same domain evidence model.
-- **Human governance:** the company approves, rejects, defers, marks
-  implementation and validates results.
-- **Bounded AI explanation:** Bedrock can explain a frozen Recommendation using
-  supplied authorized context, but cannot calculate ROI, approve or write the
-  Ledger. See the [D099 contract](docs/architecture/59_Bedrock_Auditable_Explanation_Contract.md),
-  [runbook](docs/runbooks/bedrock-explanations.md) and
-  [TFG evaluation rubric](docs/ai/60_Bedrock_Explanation_Evaluation.md).
+[A-S3](docs/tfg/A_S3_EVIDENCE_VERSIONING.md) now prepares source version, evidence, traceability and PR/CI linkage. No code/dependency change, AWS action or PR #57–59 merge is authorized. A-S2 closure alone does not complete TFG-A or the narrated defense.
 
-## Architecture
+| Evidence label    | Meaning                                                    |
+| ----------------- | ---------------------------------------------------------- |
+| IMPLEMENTED       | Source or configuration exists                             |
+| VALIDATED OFFLINE | Identified checks passed without live AWS deployment       |
+| VALIDATED IN AWS  | Behavior executed against identified AWS resources         |
+| OPERATIONAL       | Deployed pilot completed its acceptance window             |
+| NOT IMPLEMENTED   | The specified capability or executed environment is absent |
+
+`OPERATOR-DEFERRED` is scheduling; `BLOCKED_EXTERNAL` describes a dependency.
+Neither discharges an acceptance gate. Source implementation and execution
+evidence are reported separately throughout the TFG package.
+
+## Local Architecture
 
 ```mermaid
 flowchart LR
-    Reviewer[Reviewer] --> Workspace[Next.js Decision Review Workspace]
-    Workspace -->|same-origin /api/v1| REST[Spring REST adapter]
-    IdP[External OIDC issuer<br/>PLANNED for pilot] -. RS256 JWT / JWKS .-> REST
-    REST --> Input[Inbound ports]
-    Input --> App[Application use cases]
-    App --> Domain[Framework-free domain]
-    App --> Output[Outbound ports]
-    Output --> PG[(PostgreSQL)]
-    Output --> GitHub[GitHub REST adapter]
-    Output --> AWS[AWS SDK adapter]
-    GitHub --> GH[(GitHub)]
-    AWS --> Cloud[(AWS)]
+    Reviewer[Human reviewer] --> Web[Next.js workspace]
+    Web -->|same-origin API proxy| API[Spring Boot REST and JWT/RBAC]
+    API --> App[Application and ports]
+    App --> Domain[Deterministic Domain policies]
+    App --> JDBC[PostgreSQL adapters]
+    JDBC --> DB[(PostgreSQL)]
+    App --> Connectors[Read-only GitHub/AWS adapters]
+    App -. after deterministic commit .-> Explain[ExplanationProvider]
+    Explain --> Bedrock[Optional Bedrock adapter]
 ```
 
-Dependency direction is inward: API, persistence and provider adapters depend
-on Application/Domain contracts; the Domain imports no Spring, JDBC, JPA,
-REST, AWS or GitHub types.
+Domain, Application and Ports remain independent of Spring, JDBC, HTTP and AWS
+SDKs. The backend uses explicit JDBC transactions. Business Value is a read
+projection of persisted governance facts; it is not a second financial engine.
 
-Detailed diagrams and evidence are in
-[Technical Evidence](docs/portfolio/technical-evidence.md).
+Compose runs frontend, backend and PostgreSQL plus one-shot migration,
+validation and permission tasks. Only the frontend publishes a loopback port.
+The management endpoint on port 9090 is internal. The browser holds a supplied
+short-lived bearer token in memory; a commercial login/session system is outside
+this MVP. `backend-python/` and `services/` are placeholders, not runtime services.
 
-## Decision Lifecycle
+## AWS Target: The Same Product
 
-```mermaid
-flowchart LR
-    Event[Operational event] --> Evidence[Normalized Evidence]
-    Evidence --> Decision[Decision]
-    Decision --> Recommendation[Recommendation + ROI]
-    Recommendation --> Review[Human review]
-    Review --> Ledger[Append-only Ledger]
-    Ledger --> Implementation[Implementation marked]
-    Implementation --> Validation[Result validation]
-    Validation --> Value[Realized Business Value]
-```
-
-The implemented local proof uses 30 synthetic Evidence records. Live connector
-evidence and the D093/R16 case-composition route are implemented; operational
-external-IdP and live-provider conformance remain pre-pilot obligations.
-
-## Security Architecture
-
-Implemented controls include:
-
-- Spring Security OAuth2 Resource Server; RS256 only;
-- exact issuer, audience, expiry, `kid`, subject and role validation;
-- one role per token: `ADMIN`, `PLATFORM_ENGINEER`, `FINANCE` or `AUDITOR`;
-- explicit route/method authorization and server-side governance checks;
-- Confidential evidence redaction and fail-closed Restricted evidence;
-- volatile browser token handling with no local/session storage;
-- read-only GitHub and AWS connector permissions;
-- no raw provider payload persistence;
-- file-backed Docker secrets excluded from Git;
-- digest-pinned third-party images, non-root application containers,
-  read-only filesystems, capability dropping and loopback-only exposure.
-
-Known boundaries are equally important:
-
-- no external IdP is currently connected;
-- the token-paste frontend bootstrap is pre-pilot, not production login;
-- there is no tenant entitlement model;
-- external Keycloak issuer/JWKS conformance remains mandatory before Sprint 4.5;
-- D094 replaces the vulnerable upstream `gosu` binary through a pinned,
-  reproducible and independently scanned PostgreSQL 18.6 image;
-- dedicated Java dependency review, frontend CI and production incident
-  response are not yet automated; GitHub-managed CodeQL SAST is enabled.
-
-See [Security Policy](SECURITY.md) and the canonical
-[Threat Model](docs/architecture/26_Security_Data_Governance_Threat_Model.md).
-
-## DevSecOps Evidence
-
-| Control | Current state |
-|---|---|
-| GitHub Actions Java build | **IMPLEMENTED**; minimal `contents: read` permission and actions pinned by commit SHA |
-| Maven runtime enforcement | **IMPLEMENTED**; exact Maven 3.9.16 and Java 21 boundary |
-| Compiler warnings as errors | **IMPLEMENTED** |
-| Backend unit/API/security tests | **IMPLEMENTED**; 171 default tests pass locally |
-| PostgreSQL integration gate | **IMPLEMENTED**; 37 real-database test methods are defined; the D099 migration extension still requires a Docker-backed rerun |
-| Frontend lint/typecheck/tests/build | **IMPLEMENTED locally**; 41 tests and production build pass |
-| Frontend dependency audit | **IMPLEMENTED as a manual certification command**; latest local check found 0 vulnerabilities |
-| Automated source/dependency scan | **IMPLEMENTED**; the fail-closed hosted Trivy workflow scans dependencies, secrets and configuration and is passing |
-| Application container vulnerability gate | **IMPLEMENTED / D098 CERTIFIED**; local and hosted backend/frontend images report zero fixable High/Critical findings and zero secrets |
-| PostgreSQL supply-chain gate | **IMPLEMENTED / D098 CERTIFIED**; reproducible D094 runtime, SBOM, provenance and hosted checks pass |
-| CodeQL SAST | **IMPLEMENTED IN GITHUB**; default setup for Java/Kotlin and JavaScript/TypeScript is enabled and passing |
-| Frontend CI workflow | **PLANNED** |
-| Dependency scanning | **PARTIALLY IMPLEMENTED**; Trivy scans repository dependencies, while dedicated Java dependency review remains planned |
-| Deployment pipeline | **IMPLEMENTED OFFLINE / LIVE PENDING**; OIDC image publication plus reviewed Terraform plan/deploy workflows exist, but no AWS resource has been created |
-
-The current CI is intentionally smaller than the target pipeline. The
-repository does not claim that planned security automation already runs.
-
-## Cloud Engineering Scope
-
-**Implemented integration and deployment preparation, not a live deployment:**
-IMPERATOR uses the AWS SDK through a bounded read-only Evidence adapter and an
-optional audited Bedrock explanation adapter. D100 adds validated Terraform and
-manual OIDC workflows for a bounded AWS pilot; no live AWS verification or
-resource creation is claimed.
-
-| AWS API | MVP purpose | Security and cost boundary |
-|---|---|---|
-| STS | Confirm the caller belongs to the configured account | Read-only identity check; account mismatch fails closed |
-| Cost Explorer | Collect the bounded monthly cost fact | One contracted time window; no billing mutation |
-| Resource Groups Tagging API | Resolve resources belonging to the workload | Exact account, Region and correlation tags |
-| CloudWatch | Collect the contracted utilization signal | Bounded query surface, timeout and response limits |
-| Bedrock Runtime | Explain one frozen deterministic Recommendation | Exact model/profile IAM resources, bounded context/output, separate audit and no decision authority |
-
-The repository now contains offline-validated Terraform for ECR, OIDC, VPC,
-ALB/ACM, ECS/Fargate, RDS, Secrets Manager references, CloudWatch, CloudTrail
-and cost controls. It creates nothing until D095, cost review and explicit apply
-approval pass. Kubernetes and a multi-account control plane remain excluded.
-
-The single-account, single-Region scope is deliberate: it keeps permissions,
-API usage and cost attribution reviewable before any multi-account scaling
-model exists.
-
-## Technology Stack
-
-| Area | Implemented | Planned or future |
-|---|---|---|
-| Backend | Java 21, Spring Boot 4.1, Maven 3.9.16 | None required for current MVP |
-| Architecture | Hexagonal Architecture, DDD boundaries, modular monolith, light CQRS reads | Broader read models after MVP evidence |
-| Data | PostgreSQL 18.x, JDBC, Flyway 13 | Multi-tenant persistence after product validation |
-| API and security | REST, OAuth2 Resource Server, JWT RS256, RBAC, Zod client validation | External Keycloak pilot configuration |
-| Integrations | GitHub REST, AWS SDK, JSONL Evidence import | Additional connectors after MVP |
-| Frontend | Next.js 16, React 19, TypeScript 5, Tailwind CSS 4 | Production login/session UX |
-| Runtime | Docker Compose, hardened multi-stage images, validated AWS pilot Terraform | Live AWS pilot after D095 and cost approval |
-| Observability | Correlation IDs, ECS JSON logs, Actuator probes, metrics, CloudWatch/CloudTrail design | External Prometheus/Grafana remains deferred |
-| AI | Provider-neutral Java port plus audited Bedrock Converse adapter | Live synthetic Bedrock evaluation after AWS authorization; Python/RAG/agents remain excluded |
-
-## REST API
-
-The implemented surface contains the 15 D086 route/method pairs plus the D093
-R16 composition route under `/api/v1`:
+The accepted [D100 target](docs/architecture/61_AWS_SAA_Portfolio_Deployment_Contract.md)
+reuses the application and container build definitions:
 
 ```text
-POST /evidence/import
-POST /decisions
-GET  /decisions
-GET  /decisions/{id}
-GET  /decisions/{id}/timeline
-GET  /decisions/{id}/evidence
-GET  /decisions/{id}/roi
-GET  /recommendations/{id}
-GET  /decisions/{id}/ledger
-POST /decisions/{id}/ledger/approve
-POST /decisions/{id}/ledger/reject
-POST /decisions/{id}/ledger/defer
-POST /decisions/{id}/ledger/mark-implemented
-POST /decisions/{id}/ledger/validate-result
-GET  /business-value
-GET  /ledger
+Route 53 + ACM â†’ public HTTPS ALB
+â†’ private frontend/backend ECS/Fargate â†’ private Single-AZ RDS PostgreSQL
+
+GitHub OIDC â†’ immutable ECR images â†’ controlled Terraform delivery
+Secrets Manager â†’ ECS secret injection
+CloudWatch + SNS â†’ operational evidence
+CloudTrail â†’ encrypted S3 audit storage
+Backend â†’ optional Bedrock explanation
 ```
 
-No public connector trigger, GraphQL API or autonomous execution endpoint is
-implemented. The conceptual API and transport rules live in
-[API Specification](docs/product/API_SPECIFICATION.md) and
-[D086](docs/architecture/45_Functional_REST_Application_Contract.md).
+The target has two-AZ subnets/ALB, one NAT gateway, one task per application
+service and Single-AZ RDS. This demonstrates security and availability
+trade-offs; it is not full high availability. The `bootstrap` Terraform root
+owns protected state, ECR and GitHub roles; `pilot` owns the runtime and uses
+S3 locking. Task services start inactive until database tasks pass.
 
-## Testing
+AWS resources, publication, plan/apply, Bedrock calls, costs, rollback and
+teardown remain unexecuted. ACM/DNS and the application secret also require
+reviewed external inputs. See [local vs AWS](docs/tfg/06_LOCAL_VS_AWS.md) and
+the [deployment runbook](docs/runbooks/aws-pilot-deployment.md).
 
-Verified at the current implementation boundary:
+## Security And DevSecOps
 
-- 162 backend default tests covering Domain, Application, connectors, REST,
-  JWT/RBAC and D097 observability isolation;
-- 34 PostgreSQL integration tests covering repositories, transactions, Flyway,
-  REST composition and connector persistence;
-- 41 frontend unit/component tests;
-- strict TypeScript, ESLint with zero warnings and production Next.js build;
-- certified Playwright coverage across desktop, compact and mobile viewports;
-- negative cases for invalid JWTs, forbidden roles, redaction, duplicate import,
-  transaction rollback, concurrency and append-only Ledger sequencing.
+- D087: RS256/JWKS validation, exact audience, issuer, time, UUID subject,
+  mandatory `kid` and one exact role.
+- D088: explicit grants for `ADMIN`, `PLATFORM_ENGINEER`, `FINANCE` and
+  `AUDITOR`; server-side actor authority and domain invariants still apply.
+- Confidential Evidence is redacted; Restricted handling fails closed.
+- The database application role cannot update/delete Ledger history.
+- Container hardening, pinned inputs, Trivy and Gitleaks are implemented;
+  D094 includes PostgreSQL SBOM/provenance and reproducibility evidence.
+- Java CI, Security and offline AWS IaC workflows are versioned. CodeQL is
+  recorded as GitHub-managed analysis; current account settings require
+  external inspection before making a new hosted-configuration claim.
+- GitHub OIDC and ECS task roles avoid static AWS keys. Database secret values,
+  bearer tokens, private keys and customer data do not belong in Git.
 
-## Observability And Auditability
+The AWS deploy role still needs least-privilege review. Publication protection,
+accepted-SHA checks, exact-image scanning and approval of the plan actually
+applied are TFG-B findings, not capabilities certified by this README.
+D087, D088 and D095 remain unchanged.
 
-These concerns have different maturity levels:
+## Observability And Responsible AI
 
-- **Auditability is implemented:** immutable Ledger facts retain Decision,
-  actor, timestamp, reason and Evidence relationships; PostgreSQL constraints
-  protect ordering and referential integrity.
-- **Operational diagnostics are implemented locally:** HTTP correlation IDs,
-  typed non-sensitive errors, one-line ECS JSON, exact health probes, bounded
-  metrics, container health checks and Docker log rotation pass D097.
-- **External monitoring is deferred:** Prometheus/Grafana services, alerts and
-  dashboards are absent from the MVP runtime. OpenTelemetry is also outside
-  Sprint 4.4.
+Local diagnostics include bounded Micrometer metrics, correlation IDs,
+Actuator probes and JSON logs in Elastic Common Schema format. `ecs` log
+format does not imply execution on Amazon ECS. `/livez` checks application
+liveness; `/readyz` also checks database readiness.
 
-There is no public TLS endpoint or encryption-at-rest claim. The current
-runtime is local and loopback-bound; pilot TLS, external identity, backup and
-secret-management controls must be certified before customer data is allowed.
+There is no automatic business-metric-to-CloudWatch exporter in the inspected
+source. Prometheus/Grafana services remain deferred under D097. Existing safe
+logs and internal metrics provide the bounded MVP evidence.
 
-## Repository Structure
+Bedrock Converse receives prepared context after Recommendation persistence.
+Strict output validation limits fields, references and size. Explanation
+attempts are stored separately with provider/model/prompt metadata, tokens,
+latency and status. Reads do not invoke the provider. Failure cannot roll back
+the deterministic business state. JSON/reference validity does not establish
+narrative fidelity: synthetic human evaluation remains required.
 
-```text
-.github/         Java CI and repository governance
-backend-java/    Domain, Application, ports, adapters, API and bootstrap
-backend-python/  Reserved future AI explanation boundary; no Python code
-database/        Flyway migrations
-docs/            Contracts, decisions, evidence and project control
-frontend/        Certified Decision Review Workspace
-infra/docker/    Implemented production-like Compose runtime
-proto/           Contract artifacts only; no generated runtime
-samples/         Synthetic validation material
-scripts/         Docker verification and commercial artifact generation
-```
+See [D099](docs/architecture/59_Bedrock_Auditable_Explanation_Contract.md),
+the [Bedrock runbook](docs/runbooks/bedrock-explanations.md) and
+the [evaluation rubric](docs/ai/60_Bedrock_Explanation_Evaluation.md).
 
-See [Repository Structure](docs/architecture/structure.md) for ownership and
-mutation rules.
+## TFG Scope And Risk Control
 
-## Engineering Decisions
+The [risk register](docs/tfg/00_TFG_MASTER_PLAN.md#6-risks-and-scope-control)
+assigns reductions, tracks and exit evidence. A risk is closed by verification,
+not by documenting a mitigation.
 
-- **Hexagonal architecture:** protects business rules from HTTP, persistence
-  and provider SDKs.
-- **Modular monolith:** preserves clear boundaries without premature
-  distributed-system overhead.
-- **PostgreSQL from the first executable slice:** the Decision Ledger requires
-  durable constraints and transactional behavior.
-- **JDBC adapters instead of domain persistence annotations:** PostgreSQL adapts
-  to the Domain, never the reverse.
-- **Deterministic policy before AI explanation:** deleting every AI provider
-  must not break recommendation or ROI behavior.
-- **Append-only Ledger:** history represents facts, not mutable CRUD state.
-- **Digest pinning and fail-closed release gates:** reproducibility and security
-  take precedence over declaring an early PASS.
+- Reuse one modular monolith, one workspace, one case and four roles.
+- Keep synthetic business ROI separate from AWS deployment cost.
+- Resolve the ECR mismatch before publication: bootstrap declares
+  `imperator-pilot/*`, while workflows reference `imperator/pilot/*`.
+- Review IAM, approved-plan binding, provider egress and runtime sizing before
+  external execution.
+- Use a current regional Pricing Calculator estimate, short demo windows,
+  rollback and verified teardown; Budgets alerts are not a spending cap.
+- Keep a local demo and sanitized recording as defense fallback.
 
-The full, append-only decision history is in the
-[Decision Log](docs/decisions/14_Decision_Log.md).
+The MVP excludes new cases, real customer data, multi-tenancy, commercial
+login, extra microservices, Python AI service, RAG/Knowledge Bases, agents,
+queues, cache, EKS/Kubernetes, Multi-AZ RDS, autoscaling and services added only
+for certification coverage. No such feature is required to finish this TFG.
+
+## Roadmap
+
+| Track                    | Bounded outcome                                                                                                            | Current status                                     |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
+| TFG-A                    | Scope, five-certification matrix, traceability, risk register, local evidence and defense rehearsal                        | IN PROGRESS                                        |
+| TFG-B                    | Delivery findings, IAM/security review and current pricing; live plan only after external gates and separate authorization | NOT AUTHORIZED                                     |
+| External D101 dependency | D095 Keycloak HTTPS conformance before pilot                                                                               | OPERATOR-DEFERRED / BLOCKED_EXTERNAL; not a sprint |
+| TFG-C                    | Authorized publication and AWS deployment of the synthetic MVP                                                             | NOT AUTHORIZED                                     |
+| TFG-D                    | Runtime/AI validation, measured cost, rollback, teardown and recreation                                                    | NOT AUTHORIZED                                     |
+
+Applied knowledge maps to DAM, Cloud Practitioner, Solutions Architect
+Associate, Developer Associate, AI Practitioner and GitHub Foundations in the
+[competency matrix](docs/tfg/02_COMPETENCY_MATRIX.md). The project demonstrates
+selected competencies; it neither covers every exam objective nor grants a
+professional credential.
 
 ## Local Verification
 
-Backend prerequisites: Java 21 and the Maven Wrapper included in this
-repository.
+Use Java 21 and the pinned Maven 3.9.16 wrapper:
 
 ```powershell
 .\mvnw.cmd clean verify
-```
-
-Real PostgreSQL integration requires the six `IMPERATOR_IT_*` variables
-documented in [backend-java/README.md](backend-java/README.md):
-
-```powershell
 .\mvnw.cmd -Ppostgresql-integration clean verify
 ```
 
-Frontend prerequisites: Node.js 24 LTS and npm 11.
+The integration profile requires an empty isolated database and the six
+`IMPERATOR_IT_*` variables documented in [backend-java/README.md](backend-java/README.md).
+It runs Flyway migrate/validate/no-op and database integration tests. Earlier
+Windows wrapper failures do not authorize changing the wrapper; any direct
+cached-Maven invocation must be recorded as such.
+
+With Node.js 24 LTS and npm 11:
 
 ```powershell
 cd frontend
 npm ci
+npm run format:check
 npm run lint
 npm run typecheck
-npm test
+npm run test:coverage
 $env:IMPERATOR_API_ORIGIN = "http://127.0.0.1:8080"
 npm run build
+npm run test:e2e
 ```
 
-The certified Docker runtime has external issuer and local secret
-preconditions. Follow [infra/docker/README.md](infra/docker/README.md). D095
-separates its completed local certification from the operational external-IdP
-conformance required before Sprint 4.5.
+Browser acceptance uses intercepted synthetic API fixtures. It verifies UI
+behavior and is separate from the real backend/database runtime rehearsal.
+Docker prerequisites and verification are in [infra/docker/README.md](infra/docker/README.md).
+Offline IaC commands are in [infra/aws/terraform/README.md](infra/aws/terraform/README.md).
 
-## Example Use Case
+## Repository Map
 
-The synthetic MVP case evaluates recurring AI onboarding-assistant cost:
+| Path                               | Purpose                                                  |
+| ---------------------------------- | -------------------------------------------------------- |
+| `backend-java/`                    | Domain, Application, ports, adapters, API and bootstrap  |
+| `src/test/java/`                   | Backend unit, contract and PostgreSQL integration suites |
+| `frontend/`                        | Single-case Next.js Decision Review Workspace            |
+| `database/`                        | Flyway migrations                                        |
+| `infra/docker/`                    | Local runtime and hardened images                        |
+| `infra/aws/`                       | Offline Terraform, migration image and AWS preparation   |
+| `.github/`                         | CI/security/IaC and manual AWS delivery workflows        |
+| `docs/tfg/`                        | Academic scope, traceability, risks and evidence         |
+| `docs/project/`, `docs/decisions/` | Current control and immutable accepted decisions         |
+| `samples/`, `scripts/`             | Synthetic fixtures and verification tools                |
 
-```text
-30 normalized Evidence records
--> deterministic Decision DRC-AOA-001
--> lower-cost model Recommendation
--> explicit ROI assumptions and confidence
--> authorized human review
--> append-only approval and implementation history
--> independent financial result validation
--> realized Business Value projection
-```
+Follow the [current structure and verification order](docs/project/PROJECT_STRUCTURE.md)
+to work from one case, its acceptance tests and its evidence. Keep existing
+packages and historical decisions in place; remove only verified generated
+residue after capture.
 
-The reference estimate is synthetic. IMPERATOR never presents estimated value
-as realized value until validation evidence exists.
+Local `output/tfg/` material is an auxiliary draft; it does not replace
+versioned TFG or project-control authority.
 
-## Roadmap
+## Security Disclosure And License
 
-| Stage | Scope |
-|---|---|
-| **Completed baseline** | Core Domain, Application use cases, PostgreSQL, REST, JWT/RBAC, GitHub/AWS evidence adapters, D093 composition, Decision Review Workspace, Docker runtime and Sprint 4.4 observability |
-| **Completed TFG increment** | D099 auditable Bedrock explanation and D100 AWS pilot automation; repository implementation and hosted checks pass on `22a9917`, with live evidence still pending |
-| **Current gate** | D101 Stage A external Keycloak HTTPS conformance required by D095 |
-| **Planned** | Separately authorized costed AWS plan, publication/deployment, Sprint 4.5 Pilot Readiness and MVP release acceptance |
-| **Excluded** | RAG, autonomous agents, multi-tenancy, Kubernetes, Kafka and Redis until demonstrated product need |
+Report vulnerabilities privately following [SECURITY.md](SECURITY.md).
+Credentials, JWTs, private keys, customer data, database dumps, local `.env`
+files and raw generated runtime evidence are excluded from Git. Publish only
+reviewed sanitized evidence.
 
-## Post-MVP DevSecOps Path
-
-This is a delivery sequence, not a release claim. Hosted D097 and D099/D100
-repository certification are complete; external Pilot Identity Conformance and
-Pilot Readiness retain precedence over every live AWS step.
-
-```mermaid
-flowchart LR
-    MVP[Certify local MVP runtime] --> CI[CI hardening]
-    CI --> Security[SAST + SCA + container scan]
-    Security --> Artifact[Versioned images + SBOM + provenance]
-    Artifact --> IaC[Terraform AWS foundation]
-    IaC --> ECS[ECR + ECS/Fargate + RDS]
-    ECS --> Operations[CloudWatch + CloudTrail + backup/restore]
-    Operations -. only with measured need .-> EKS[EKS / Kubernetes]
-```
-
-| Stage | Status | Bounded outcome |
-|---|---|---|
-| Docker Production Runtime | **[IMPLEMENTED]** | D092-D095 certification, D093/R16, D094 supply-chain evidence, local JWT/RBAC E2E and persistence after recreation pass |
-| CI hardening | **[PARTIALLY IMPLEMENTED]** | Java CI, CodeQL, Docker builds, Trivy gates and D094 SBOM/provenance are active; frontend CI and dedicated Java dependency review remain planned |
-| AWS deployment contract | **[IMPLEMENTED OFFLINE]** | D100 freezes workload, data, IAM, network, TLS, backup, recovery, logging, cost, rollback and teardown requirements |
-| Terraform AWS foundation | **[IMPLEMENTED OFFLINE / APPLY BLOCKED]** | Version-locked bootstrap and pilot roots pass provider validation and mocked plans; D095 and cost approval precede apply |
-| Kubernetes variant | **[FUTURE / CONDITIONAL]** | Consider EKS, Helm, NetworkPolicy and GitOps only if scaling or platform requirements justify their operational cost |
-
-Terraform files alone are not treated as cloud-engineering evidence. The live
-claim requires reviewed plan/apply output, OIDC/ECR provenance, D095 results,
-runtime tests, Bedrock/AWS Evidence smoke tests, rollback and teardown evidence.
-
-## Security Disclosure
-
-Please do not report vulnerabilities through a public issue. Follow
-[SECURITY.md](SECURITY.md) for private reporting and handling expectations.
-
-## Public Repository Boundary
-
-This portfolio repository contains source code, architecture records and
-synthetic fixtures only. Real credentials, JWTs, private keys, customer data,
-database dumps, local `.env` files and generated runtime evidence are excluded
-from Git. `infra/docker/.env.example` contains non-routable placeholders; local
-Docker secret values remain under the ignored `infra/docker/secrets/` path.
-
-The committed commercial screenshots and deck use synthetic data and are
-curated separately from ignored local PDF exports and private discovery notes.
-
-## License
-
-Copyright (c) 2026 Daniel Millan Perez. This repository is publicly available
-for portfolio review under a proprietary, all-rights-reserved license. See
-[LICENSE](LICENSE).
+Copyright (c) 2026 Daniel Millan Perez. Public portfolio review is governed by
+the proprietary, all-rights-reserved [LICENSE](LICENSE).

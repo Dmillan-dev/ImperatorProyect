@@ -1,6 +1,10 @@
 # TFG Demo And Defense Guide
 
-Document status: **TFG-A FINAL REVIEW CANDIDATE / FINAL REHEARSAL PENDING**
+## Current Owner Decision And Sprint — 2026-10-06
+
+**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](A_S3_EVIDENCE_VERSIONING.md).
+
+Document status: **TFG-A IN PROGRESS / CURRENT TECHNICAL REHEARSAL CAPTURED; R-19/R-21/R-22 CORRECTED FINDINGS CLOSED; A-S2 TECHNICAL AND FORMAL GO; A-S3 ACTIVE**
 
 ## Defense Objective
 
@@ -71,6 +75,42 @@ unavailable.
 
 ## Final Rehearsal Checklist
 
+Current unit, integration and fixture-browser checks must be read from the
+[Evidence Register](04_EVIDENCE_REGISTER.md). Playwright intercepts API calls
+with synthetic fixtures; it does not prove the live backend/database flow.
+Native PostgreSQL V3 verification does not replace final Docker packaging,
+image scans, API-composed rehearsal or persistence after recreation.
+
+The [current local pack](evidence/2026-10-06-r21-r22/README.md) includes the executed
+isolated Docker workflow, five screenshots and a short readable WebM. This is
+the technical fallback capture, not a twelve-minute narrated oral rehearsal.
+Approval was performed through the UI; implementation/result validation used
+authenticated API commands to link the two post-action Evidence records,
+followed by unmocked UI reads. The current picker lists already linked records;
+do not claim that this capture selected the two previously unlinked records in
+the UI. No UI expansion is needed for the MVP defense.
+
+The current 2026-10-06 rehearsal repeats functional acceptance after authorized R-21/R-22 remediation:
+five captures and a 27.16-second silent captioned fallback, plus persistence/readiness
+on the same canonical images scanned. R-19/R-21/R-22 corrected findings are CLOSED;
+A-S2 has technical and formal GO through the explicit current R20/R23 owner decisions.
+The earlier R-19 28.20-second capture remains historical, not the current image binding. Bind the final
+release pack to its accepted SHA. The present worktree pack retains its actual
+input fingerprint. Owned scratch resources and secrets are cleaned only after
+capture/persistence checks; normal project databases are preserved.
+
+- [x] Canonical case startup/import/composition was rehearsed in isolated Docker.
+- [x] Negative RBAC case denied the auditor without appending a fact.
+- [x] Three ordered actors and synthetic realized value were verified.
+- [x] Five readable screenshots and an offline WebM were captured and reviewed.
+- [x] Container replacement preserved the complete case and V3 permissions.
+- [x] Current fixable-only image vulnerability gate passes: authorized R-22 findings CLOSED; all-severity secrets zero.
+- [x] R-19 original brace-expansion copies are authorized, patched and independently CLOSED; authorized R-21 source-map-js/sharp findings CLOSED; braces tracked separately R-23 OPEN.
+- [x] Current R-20 binding is explicitly approved in the 2026-10-06 decision; historical approvals remain preserved without automatic transfer.
+- [ ] Before any future runtime, verify expiry, image identity and early-invalidation conditions again.
+- [ ] Accepted release SHA and human review bind the final evidence pack.
+- [ ] Complete the twelve-minute oral rehearsal using the sequence above.
+
 - [ ] Memory terminology matches the evidence vocabulary.
 - [ ] Demo identifiers and values match the accepted release.
 - [ ] Local reset and startup were rehearsed.
@@ -81,3 +121,10 @@ unavailable.
 - [ ] Live Bedrock output is shown only if explicitly authorized and captured.
 - [ ] Questions on trade-offs, security, cost and limitations have concise answers.
 - [ ] The fallback recording opens without external services.
+
+## A-S4 Material Prepared — 2026-10-07
+
+Use the [developed memory](08_LOCAL_MVP_MEMORY.md), [timed spoken script](09_DEFENSE_SCRIPT_12_MIN.md) and
+[preflight/run procedure](A_S4_LOCAL_DEFENSE.md). The 720-second agenda is planning, not a timed human rehearsal.
+The current technical recording is27.16seconds with no audio; it is not the narrated defense.
+A-S3 accepted SHA/CI and current Docker availability remain pending. Keep final rehearsal boxes unchecked.

@@ -161,7 +161,7 @@ jobs:
             imperator/frontend:${{ github.sha }} \
             '--showformat=${Version}' \
             --show libpcre2-8-0)
-          test "$actual_version" = "10.42-1+deb12u1"
+          test "$actual_version" = "10.42-1+deb12u2"
 
       - name: Scan frontend image
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0

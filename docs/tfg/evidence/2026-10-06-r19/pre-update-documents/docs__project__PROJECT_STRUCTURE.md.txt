@@ -1,0 +1,80 @@
+# Current MVP Project Structure
+
+This guide describes the implemented repository. The Phase 0 structure in
+Document 24 remains historical planning, not the current runtime inventory.
+It does not authorize another product, service or deployment.
+
+## Reading Order
+
+1. [Main README](../../README.md): product, scope and current limitations.
+2. [Project Status](PROJECT_STATUS.md): authorized work and delivery gates.
+3. [TFG Master Plan](../tfg/00_TFG_MASTER_PLAN.md): risks, exclusions and exit evidence.
+4. [Traceability Matrix](../tfg/03_TRACEABILITY_MATRIX.md) and
+   [Evidence Register](../tfg/04_EVIDENCE_REGISTER.md): claims and verification.
+5. The relevant runtime README or frozen contract before changing its behavior.
+
+## Work In These Locations
+
+| Location                                                                  | Current responsibility                                     | Boundary                                                                                                   |
+| ------------------------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `backend-java/domain/`                                                    | Deterministic business rules and immutable values          | No Spring, JDBC, HTTP or provider SDKs                                                                     |
+| `backend-java/application/`, `backend-java/ports/`                        | Use cases, transactions and inbound/outbound contracts     | Business authority stays here                                                                              |
+| `backend-java/adapters/`, `backend-java/api/`, `backend-java/bootstrap/`  | Persistence/providers, secured REST and application wiring | Adapters implement existing ports                                                                          |
+| `src/test/java/`                                                          | Backend unit, contract and PostgreSQL integration tests    | Test cleanup follows all Flyway tables; no production reset                                                |
+| `src/test/resources/evidence/`                                            | Versioned synthetic JSONL fixtures                         | The 30-record business-value pack supplies 28 recommendation records and two implementation/result records |
+| `frontend/`                                                               | Single-case Next.js workspace and its tests                | API client, presentation and volatile session; no duplicate business policy                                |
+| `database/migrations/`                                                    | Flyway V1-V3 schema history                                | Forward-only migrations; append-only Ledger and explanation permissions                                    |
+| `infra/docker/`                                                           | Local images, Compose and runtime verification inputs      | Linux shell files use LF; only frontend publishes a loopback port                                          |
+| `infra/aws/`                                                              | Terraform and AWS delivery preparation                     | Live execution needs separate authorization and D101                                                       |
+| `.github/`                                                                | CI, security, dependencies and delivery workflows          | A source workflow is not evidence of cloud deployment                                                      |
+| `docs/tfg/`                                                               | Academic package and sanitized evidence indexes            | Keep source implementation, local acceptance and AWS evidence distinct                                     |
+| `docs/project/`, `docs/decisions/`, `docs/product/`, `docs/architecture/` | Current control, accepted history and semantic contracts   | Preserve accepted decisions and frozen contracts                                                           |
+| `scripts/`                                                                | Supported verification and artifact helpers                | No business rules, embedded secrets or general destructive cleanup                                         |
+
+The root `pom.xml` explicitly compiles production source from `backend-java/`;
+Maven tests use `src/test/java/` and `src/test/resources/`. This is one Java
+application. Do not move packages to a conventional directory layout merely
+for aesthetics, or create a second backend under `services/`.
+
+## Supporting And Deferred Material
+
+`backend-python/`, `services/` and `proto/` retain documented boundaries or
+contracts, but are not runtime components of this MVP. `demos/` contains
+illustrative static screens; the live workspace is `frontend/`. `samples/`,
+research and commercial output have their own purposes. They are outside the
+critical TFG reading path, not automatically disposable.
+
+Keep the repository layout stable. Focus is achieved through these entry points
+and the scope exclusions, without deleting historical authority or relocating
+working modules. Existing untracked `output/tfg/` remains auxiliary material.
+
+## Generated Material And Cleanup
+
+| Material                                                                                          | Treatment                                                                                     |
+| ------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `frontend/node_modules/`, `.next/`, coverage and browser reports                                  | Reproducible local outputs; ignore them and regenerate when needed                            |
+| `frontend/next-env.d.ts`                                                                          | Next-generated references; retain the versioned baseline and exclude from manual formatting   |
+| `frontend/AGENTS.md`, `frontend/CLAUDE.md`                                                        | Next-managed local metadata; ignored, distinct from the project operating map in `agents/`    |
+| `target/`                                                                                         | Maven build output; final sanitized report copies live with the evidence run                  |
+| `build/tfg-a/<run>/`                                                                              | Local reports, screenshots and recording for an identified run                                |
+| Failed-run PostgreSQL data directories and obsolete one-off generators                            | Remove only after confirming they are stopped, unreferenced scratch data inside the workspace |
+| Current evidence, historical certifications, Docker volumes, credentials and existing user output | Preserve unless their specific deletion is authorized and justified                           |
+
+Raw credentials, JWTs, fixture private keys and local `.env` files are never
+versioned. Capture hashes and sanitized results before cleanup. Delete only
+the isolated rehearsal's named containers/volume after its persistence check;
+never use global `docker system prune` or reset the normal `imperator` volume.
+
+## Verification Order
+
+1. PostgreSQL integration profile: unit tests, V1-V3 migration, validation,
+   second migrate no-op and all integration classes.
+2. Frontend format, lint, TypeScript, coverage, production build and browser suite.
+3. Separate Docker rehearsal project: hardened services, real API composition,
+   negative RBAC, human governance, value projection and persistence after recreation.
+4. Current image vulnerability policy; passing runtime tests do not bypass it.
+5. Sanitized screenshots/recording, artifact hashes, cleanup and documentation checks.
+
+Use the [Docker runtime guide](../../infra/docker/README.md) and the
+[defense guide](../tfg/07_DEMO_AND_DEFENSE.md). A local HTTPS/JWKS test fixture
+does not satisfy external Keycloak conformance under D095.

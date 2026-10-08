@@ -1,0 +1,14 @@
+{
+  "retrievedAtUtc": "2026-10-06T18:51:19.190024+00:00",
+  "url": "https://security-tracker.debian.org/tracker/data/json",
+  "sha256": "6b514559e05efd4e5f88ab11f78cc46e885897e7a360d0637b76ec1f9fc97761",
+  "bytes": 81700640,
+  "headers": {
+    "Content-Type": "application/json",
+    "Last-Modified": "Tue, 06 Oct 2026 18:06:42 GMT",
+    "Date": "Tue, 06 Oct 2026 18:51:22 GMT"
+  },
+  "distinctCves": 23,
+  "sourcePackages": 11,
+  "selection": "Actual residual source-package map from original matrix; rechecked against exact current dpkg inventory during inspection. Different packages sharing a CVE are not substituted."
+}

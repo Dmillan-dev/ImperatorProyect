@@ -1,0 +1,54 @@
+{
+  "ownedResourcesRemaining": 0,
+  "deletedPaths": [
+    {
+      "bytes": 50912273.0,
+      "reason": "Stopped integration cluster; sanitized reports retained",
+      "path": "build/tfg-a/r21-r22-2026-10-06/backend/postgres-data"
+    },
+    {
+      "bytes": 4896.0,
+      "reason": "Ephemeral JWKS keys, passwords and truststore after owned runtime teardown",
+      "path": "build/tfg-a/r21-r22-2026-10-06/docker/private"
+    },
+    {
+      "bytes": 678,
+      "reason": "Ignored Next-generated metadata from this verification run",
+      "path": "frontend/AGENTS.md"
+    },
+    {
+      "bytes": 11,
+      "reason": "Ignored Next-generated metadata from this verification run",
+      "path": "frontend/CLAUDE.md"
+    }
+  ],
+  "normalDatabaseReset": false,
+  "removedAnonymousVolumes": [
+    "e5461b087471e6a1542c691b9db370f9226cc8e12b00aef90ccb9d218f2ccf19"
+  ],
+  "preserved": [
+    "output/tfg/",
+    "old evidence packs",
+    "canonical images",
+    "sanitized reports",
+    "tool and dependency caches"
+  ],
+  "normalVolumesPreserved": [
+    "25b252e5eedc6927c9996f9875c45a81f283d01576a2b3e8b2c5440e25bf17b6",
+    "30310d9c766c0a7ba7d54865038f1089110c13d64ea762e945efee3301717d9b",
+    "5806de03956f1bd6793233a0ab54559457ba2a3cf94e36714819b5c08706c371",
+    "595a4dc14ea2777f9cd517d49ec4c5181057108b95d3831c849070bc469e12bb",
+    "59a8f1a16b732f849ee043ae91907f8acadd88c6624dc5fc445aa5b7fb39b20a",
+    "79c411f77e43bd4b67cb834965ba3d8a69c7d055a6f476f1160c9151f321367e",
+    "b727219bbededc8d71ac73fa5a6d0f3513238cb0485e13105c01fa3100373b85",
+    "ff8593932ab037c115cdd2ef87b7092082d4a3499e7dcb4f20a085d4a48d0a5c",
+    "imperator_postgres-data",
+    "imperator_prometheus-data"
+  ],
+  "executedAtUtc": "2026-10-06T17:40:24.0640873Z",
+  "globalPrune": false,
+  "result": "PASS",
+  "anonymousOwnership": "Recorded exact mounts of owned postgres-permissions container, absent from pre-task inventory",
+  "removedProject": "imperator-r21-r22-20261006",
+  "removedNamedVolume": "imperator-r21-r22-20261006_postgres-data"
+}

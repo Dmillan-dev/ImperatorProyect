@@ -1,0 +1,1540 @@
+{
+  "baselineRevision": "b602bbe1dde92a902c17272d59cd9f0c10b9efe5",
+  "sourceTreeDigest": "5939e4576beb47a79298bf4d5de7891d853ac1f85353fa0352e9dc492b573a43",
+  "imageTag": "tfg-a-5939e4576beb47a7",
+  "files": [
+    {
+      "path": ".mvn/wrapper/maven-wrapper.properties",
+      "sha256": "51b221ede4e074d19bb44d6d485bb7b298e77874572a09697aba0a9e234e0745"
+    },
+    {
+      "path": "backend-java/README.md",
+      "sha256": "8c016ec44654486ec1b028b4ea339972a858b61cc95c5f09fc0650645827af6c"
+    },
+    {
+      "path": "backend-java/adapters/README.md",
+      "sha256": "f71c43ad15a1f810ac937d023adeb3c1cfbd1d5da6482520ea16750b1216a334"
+    },
+    {
+      "path": "backend-java/adapters/out/README.md",
+      "sha256": "7b9ca2fdf8d0a0e4cb7cbfc8c4884b0deb9c66905149e007ce20b0539916a25d"
+    },
+    {
+      "path": "backend-java/adapters/out/aws/AwsBillingPeriod.java",
+      "sha256": "1f10cf2ab93182413676f7e73ed7e77e1a5c6ffea2924b55a71b399d13deb40a"
+    },
+    {
+      "path": "backend-java/adapters/out/aws/AwsConnectorSettings.java",
+      "sha256": "836c4e8038c76dea12cd3e92cd08570c0c74a8aae7efc31beb61c438518c317d"
+    },
+    {
+      "path": "backend-java/adapters/out/aws/AwsCostObservation.java",
+      "sha256": "3e9a0f7abc8d88701cb78807ba84a7ed367b5299cb28a6be8addec97bc0951f1"
+    },
+    {
+      "path": "backend-java/adapters/out/aws/AwsEvidenceMapper.java",
+      "sha256": "562a1198c98c0ced7ae82663ecd17e46cc30ae932b7333f4cb9071ccafacfd97"
+    },
+    {
+      "path": "backend-java/adapters/out/aws/AwsRequestFailure.java",
+      "sha256": "e48a486a8a7b3f2dc983093800a007ca3c6b6c4e38072d5180615893b0cc4b2e"
+    },
+    {
+      "path": "backend-java/adapters/out/aws/AwsResourceSnapshot.java",
+      "sha256": "01d9c82e048d7ab9a8bc05e0b0cc1d734896aa82fed885123feffc349c0b25fa"
+    },
+    {
+      "path": "backend-java/adapters/out/aws/AwsRunMetrics.java",
+      "sha256": "550f7dfafe9fbd39dc74157f6a9ada34d8d8497d6aa169c2e884ece1a3bacc24"
+    },
+    {
+      "path": "backend-java/adapters/out/aws/AwsScopedResource.java",
+      "sha256": "eb2134c214447998676ff0619426b6ae937247c78527cc8cbb8bb6455352f453"
+    },
+    {
+      "path": "backend-java/adapters/out/aws/AwsSdkCallMetrics.java",
+      "sha256": "14f48f21eda25c43c1a0d099688a701528d5798cee79bebdd3cb6af264f53228"
+    },
+    {
+      "path": "backend-java/adapters/out/aws/AwsSdkClientFactory.java",
+      "sha256": "0e376f6f041e156cc60b0ac919804f607d4673c53be225477fff62f8724bc42b"
+    },
+    {
+      "path": "backend-java/adapters/out/aws/AwsSdkClients.java",
+      "sha256": "a22777d5869455370f27ed1deee78d2893ed140e1aa314b9c7fb82ab4392cb55"
+    },
+    {
+      "path": "backend-java/adapters/out/aws/AwsSdkEvidenceSourceAdapter.java",
+      "sha256": "8a8e6f9ffe1269b02a34f493a78ad4f35f3e945befecd14189fdd1a992d888d6"
+    },
+    {
+      "path": "backend-java/adapters/out/aws/AwsUtilizationObservation.java",
+      "sha256": "1a9b7b8f3973280f04fd41f930c42416a433bb972e68e551c1957cd59385a640"
+    },
+    {
+      "path": "backend-java/adapters/out/aws/UuidV5.java",
+      "sha256": "e669f0d30ebb92faaac05fc223b31ebe0098f8056713385a7d5a342548f04806"
+    },
+    {
+      "path": "backend-java/adapters/out/bedrock/AwsBedrockConverseGateway.java",
+      "sha256": "269c402df6cba0f8936d08a5eac72c583206b785e5f16e7aaebdc3d9f5023854"
+    },
+    {
+      "path": "backend-java/adapters/out/bedrock/BedrockConverseGateway.java",
+      "sha256": "df53dae1fd0409fa96777c006faf456350f98aeef9c6f7c0e669196c13138644"
+    },
+    {
+      "path": "backend-java/adapters/out/bedrock/BedrockConverseResult.java",
+      "sha256": "3c816b0048f986cca02a0ec22336cc1430415796e735bed10104fc07e0d2fe2c"
+    },
+    {
+      "path": "backend-java/adapters/out/bedrock/BedrockExplanationProvider.java",
+      "sha256": "21ad547397cc999161b9df2e49f5e16696e2ad32214fc8b6ef4cd5aaccc1a6b5"
+    },
+    {
+      "path": "backend-java/adapters/out/bedrock/BedrockExplanationSettings.java",
+      "sha256": "6e5cb21f41d591896d9c0e8ed4194ef058cb42face28ad1d935d961a2e6ea651"
+    },
+    {
+      "path": "backend-java/adapters/out/github/GitHubConnectorSettings.java",
+      "sha256": "f50ef3decaf9b79eb7e1dd400c6d787a2e38f143d8e47345e15b0ba2b04a2a73"
+    },
+    {
+      "path": "backend-java/adapters/out/github/GitHubDelay.java",
+      "sha256": "9d74b491824c940fc52210821286a55e966d369e0ebf7e435e5b1fe1192dfd64"
+    },
+    {
+      "path": "backend-java/adapters/out/github/GitHubDeployment.java",
+      "sha256": "d5b24502edb3bf7550f3e3396f4eec5ed0a9773f9b3b72c3e4b85ba8cdbb4f53"
+    },
+    {
+      "path": "backend-java/adapters/out/github/GitHubDeploymentStatus.java",
+      "sha256": "99fd96bf984a3a99b34360a9846a933196db6461c535437d45f4b45b373c9e84"
+    },
+    {
+      "path": "backend-java/adapters/out/github/GitHubEvidenceMapper.java",
+      "sha256": "73a3c13ab94941ff349eff7608eaf55a1f9fa8158c881f0a0f7170abe12b5832"
+    },
+    {
+      "path": "backend-java/adapters/out/github/GitHubHttpClient.java",
+      "sha256": "1286f7caaa17e300b70addd10057ebf16f242da93315b1ffc48d45562ae8b836"
+    },
+    {
+      "path": "backend-java/adapters/out/github/GitHubHttpResponse.java",
+      "sha256": "1141df9694546d8bd3d0858c74bd81ffff32e6079014523f57a9381f40e4a188"
+    },
+    {
+      "path": "backend-java/adapters/out/github/GitHubPullRequest.java",
+      "sha256": "53fbd4ab4d10dc3d00919261b3914c5421cd964ca9bb630453b6a3888ca1282c"
+    },
+    {
+      "path": "backend-java/adapters/out/github/GitHubRateLimit.java",
+      "sha256": "bcc748dc6fe048a5b363e88dd91050a71fbf8856fe6c97fafe48912eaa840fb2"
+    },
+    {
+      "path": "backend-java/adapters/out/github/GitHubRepository.java",
+      "sha256": "59af3c2fa5641b76598f284406ae431753c170588cf68d14e9e58273f6740b4e"
+    },
+    {
+      "path": "backend-java/adapters/out/github/GitHubRequestFailure.java",
+      "sha256": "5d86dc045bb2eb84f8108857514a4b32cedda60e4e5efe811902665220f375dc"
+    },
+    {
+      "path": "backend-java/adapters/out/github/GitHubRestAdapter.java",
+      "sha256": "3951a1fe60974f25a860fc6eae914549783ab34679f51dd02a9fc5a479e358ca"
+    },
+    {
+      "path": "backend-java/adapters/out/github/GitHubReview.java",
+      "sha256": "60913ba93e1d6c3a7067cee2aa12cdb66a7d5f51dcc3a18333e652415d81cc84"
+    },
+    {
+      "path": "backend-java/adapters/out/github/GitHubRunMetrics.java",
+      "sha256": "22b2c26717664e854efb1af62c6a739c5b6ad85341619838ec89316ccb23f27b"
+    },
+    {
+      "path": "backend-java/adapters/out/github/README.md",
+      "sha256": "aa2cad29a03b56309bc79dcb18411ca0ffd59b00cff56fa8c4a7868974bbe3ba"
+    },
+    {
+      "path": "backend-java/adapters/out/github/UuidV5.java",
+      "sha256": "e0f40539eb9a1ac78cea20d3ea3a02831229a0569febbd981879a0355fcab3a9"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/PostgresConnectionProvider.java",
+      "sha256": "05adabeb890632fa3e5024cf21a1f320f1ad9f058fbb1c9839315cb6f06d38c9"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/PostgresDataSource.java",
+      "sha256": "1ad3476156b8a3a838e425bdf38c0699c3ef02505d285308eaa59eaa08c7304b"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/PostgresDecisionRepository.java",
+      "sha256": "f8038d61989473f3e7706a8155f740904d4d5fb7e1fda619f432f4b07168438c"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/PostgresEvidenceRepository.java",
+      "sha256": "c8db3f173129ba4457da242119d4e9dfb19543cb03c801de9dde36e70015943c"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/PostgresFlatMetadataJson.java",
+      "sha256": "2b3686d759ee14bdc6b0da19bd5ecde3f2a825cdd834d4880f0601f1cca04dbf"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/PostgresLedgerRepository.java",
+      "sha256": "431f2c1a6cdfb454c8958832fc4e687fd4dd9c8720bb88911080059de6be1b0c"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/PostgresLocalTransactions.java",
+      "sha256": "4628e2ab1027aaab87162e6ac1b1961ac63ff934350d4db0a5b30e40a44135f9"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/PostgresMvpReadModelQueryAdapter.java",
+      "sha256": "f61c977c573ac8fb0dabf21c94fdab1ab48ab7c4a7484c12e400043b447cd6f2"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/PostgresRecommendationExplanationRepository.java",
+      "sha256": "b83fd5eac6981dc6dfbf448a0b3cb46cb4343298dd0493a90225421d20a120a4"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/PostgresRecommendationRepository.java",
+      "sha256": "48f02f585fac35ed50251e92d9d13b52f0ea77af31825a92ae5fa92e66de474e"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/PostgresTransactionRunner.java",
+      "sha256": "7ffbc5b5596666b880221c2691fc95b9bdb92a03ae9870c31487da71a35683b2"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/README.md",
+      "sha256": "524c748cf471dce9fa105a3ec46fb5160a4b9da1618e8d730a47ec99ad89a47f"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/mapper/PostgresDecisionMapper.java",
+      "sha256": "a3292fe4d5e283aa2a5e0234e6a041e94b874c9d80a2096ec63130ede75060ee"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/mapper/PostgresEvidenceMapper.java",
+      "sha256": "87cde366aa41a761d492bd2091161d1229d39b8e74821245fdee8e38c27cbead"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/mapper/PostgresLedgerEntryMapper.java",
+      "sha256": "864561a6ba6e6c0f2fe7c6f8f605fb4af6e4028d0b2854657aa79abd27fc4cd8"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/mapper/PostgresRecommendationMapper.java",
+      "sha256": "01c639a754ed56d2723b7fc18ac32e072dd2452f1b866286f8e552d2ddd1a03d"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/mapper/README.md",
+      "sha256": "3beb012b0883cebab2eb9c641f26f85c3c68299caf256a2e161ff2e41f022023"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/model/PostgresDecisionEvidenceRecord.java",
+      "sha256": "ea5cc3a9837a5376f89703e6f17b08129732fba5fab13c95010ee0338be50494"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/model/PostgresDecisionRecord.java",
+      "sha256": "c44cae89793397860a1fb1b4f747d91d789e6194bcf9da2e0ec8d484a7edc5fe"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/model/PostgresEvidenceRecord.java",
+      "sha256": "9d3a5bf08e074bd301997f8ce1fdbc1b72950da1b02c61d28634d12f58e92d70"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/model/PostgresLedgerEntryRecord.java",
+      "sha256": "32d63f3e68df025b782be0230ffab75eb5ec2ac1a5f76a50fbf76c53ce3cd828"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/model/PostgresLedgerEvidenceSnapshotRecord.java",
+      "sha256": "ea25f35a785bb4140896ccd48cb88925e2e2c0c1b74da7b82a4d7f56bd3aa68b"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/model/PostgresRecommendationEvidenceRecord.java",
+      "sha256": "8b234b17bbac421038291d7dece5d874a2455db5a1d97f6385a13b065b8d99b9"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/model/PostgresRecommendationRecord.java",
+      "sha256": "189b332aa36306c8f50af0f200de0e462d04a036c1ffab348bc9a7534f993c7c"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/model/README.md",
+      "sha256": "e01944b18b0803da85971645ffc2beb8eb01c7a2edb8159d3a2418d64d2151b6"
+    },
+    {
+      "path": "backend-java/api/businessvalue/BusinessValueController.java",
+      "sha256": "f371d3f48dcfa22cbe906cffa98cf0bfd6c800adad6d14c85ff747b6e78f698f"
+    },
+    {
+      "path": "backend-java/api/businessvalue/BusinessValueResponse.java",
+      "sha256": "7e98a59fdbb2914fa93f04db887d9a17e68fd95d877bdc142f33ebb04216a43a"
+    },
+    {
+      "path": "backend-java/api/businessvalue/BusinessValueRestMapper.java",
+      "sha256": "6659934bddef4281b1f5b91c929459716d4842ca6e79a3cd85b73ce47c9b2900"
+    },
+    {
+      "path": "backend-java/api/businessvalue/README.md",
+      "sha256": "7067394df956406cc285b6372422d0249921850ae21d01982553e2c3cdb2b6ce"
+    },
+    {
+      "path": "backend-java/api/decisions/DecisionApiModels.java",
+      "sha256": "474bf70094313e7713e27e5450030404fa9ef83eb029053e94665e93fed447a5"
+    },
+    {
+      "path": "backend-java/api/decisions/DecisionContextController.java",
+      "sha256": "62f0a91c9c3f1b3c726613f8850ff4f253456beda5dfbd14585705939ccfbece"
+    },
+    {
+      "path": "backend-java/api/decisions/DecisionController.java",
+      "sha256": "3b728110ac7a4a2c6fa770a35409d0b900a2e61fc1fe830beb39e4e8530a0a66"
+    },
+    {
+      "path": "backend-java/api/decisions/DecisionEvidenceAuthorizationPolicy.java",
+      "sha256": "87722eb9882c7eb282927e4fd8c6c60a03cf79f072abd715273c1c58a0f0971b"
+    },
+    {
+      "path": "backend-java/api/decisions/DecisionRestMapper.java",
+      "sha256": "b5f14abb8df4aa609a3ededf3e8d05d8527d450ee758863f9a57b6b82e21fae2"
+    },
+    {
+      "path": "backend-java/api/decisions/README.md",
+      "sha256": "ba194a79226e4559b144ef6ad81dd856f958bba0804e873c027d8c2a1daf50f8"
+    },
+    {
+      "path": "backend-java/api/errors/ApiContractException.java",
+      "sha256": "ee25d7aea57a5e9e53d5b82c3b38ee5eb45c828fd242478931cc87e47b078b4d"
+    },
+    {
+      "path": "backend-java/api/errors/ApiErrorAttributes.java",
+      "sha256": "9d6f3347705dffd6ea6e062f3575b4f3aec2d6136bff913345553306194f5737"
+    },
+    {
+      "path": "backend-java/api/errors/ApiErrorCode.java",
+      "sha256": "5e3f665452d9d2e5def772cfeefaff093f5ff3afe6519681022fd122da16a84d"
+    },
+    {
+      "path": "backend-java/api/errors/ApiErrorResponse.java",
+      "sha256": "66b998e78729dfe13c375ad5fba3f27c3d21d599b23f5b04e194ba7ce56cc7b1"
+    },
+    {
+      "path": "backend-java/api/errors/ApiExceptionHandler.java",
+      "sha256": "e5318f2fc855ee3f97d2a4426aef5d00e8007ffa7c0d8218bd279f431898f56b"
+    },
+    {
+      "path": "backend-java/api/errors/CorrelationIdFilter.java",
+      "sha256": "600cc9f2e35d028590ce86f10d84093ac39880fbd488ea3965c09047b3109801"
+    },
+    {
+      "path": "backend-java/api/errors/NotImplementedApiException.java",
+      "sha256": "7dd9be75a1bf445aa08a3fdabbe1c3b5f5a7102bbf0c32929e603de12204df16"
+    },
+    {
+      "path": "backend-java/api/evidence/EvidenceController.java",
+      "sha256": "c01a5df1d60b6deeb5125fa4775350fe149ee1fceade4648205e9035e66184cc"
+    },
+    {
+      "path": "backend-java/api/evidence/EvidenceImportItemResponse.java",
+      "sha256": "b4352f4c3a8e746ed28dee508be2b5b17da3b1d77b899a2f2dbd9837279a1f68"
+    },
+    {
+      "path": "backend-java/api/evidence/EvidenceImportLine.java",
+      "sha256": "544fdb186e80140ceca1e351bf27cc541cd2eadc8ff4846ab48875b7345fcbed"
+    },
+    {
+      "path": "backend-java/api/evidence/EvidenceImportResponse.java",
+      "sha256": "ba89180dd150fdda7eb01f66187d77f96580117a2aaf7b8a04cf67e1c7dae8fc"
+    },
+    {
+      "path": "backend-java/api/evidence/EvidenceNdjsonImporter.java",
+      "sha256": "d693e283175d33240650c10da8077fa391749150391ad1972e5d6552aca25a0b"
+    },
+    {
+      "path": "backend-java/api/evidence/README.md",
+      "sha256": "ec2dce3fb2d0fd6edcde010ac1f5075ed8de8e9654cd33b8d13f3e84502914d0"
+    },
+    {
+      "path": "backend-java/api/ledger/LedgerApiModels.java",
+      "sha256": "5d053a9a54747d35fbc42b7dc70f55db971219352e9b8ee59cc6d145ab2b4371"
+    },
+    {
+      "path": "backend-java/api/ledger/LedgerController.java",
+      "sha256": "cf58660a1f110c43e3385af89ea11a15152ad9166767dd5289d9d6053426bfe1"
+    },
+    {
+      "path": "backend-java/api/ledger/LedgerRestMapper.java",
+      "sha256": "51e0b947a056a6d57406b8c81787296904b6f57eb207966cc58a2502de519c90"
+    },
+    {
+      "path": "backend-java/api/ledger/README.md",
+      "sha256": "9de0f5c8b6335fa8d5d4e72e743a78ab921f349d2270522269e71b3953c1f350"
+    },
+    {
+      "path": "backend-java/api/observability/ImperatorHttpRequestFilter.java",
+      "sha256": "1d6b25b988a1b5bc7074068ca833e6d73d8d98631cecab548d55959e4b5ac94c"
+    },
+    {
+      "path": "backend-java/api/observability/ImperatorInputPortTelemetry.java",
+      "sha256": "9addcb9432a377661acf44f594009b1cb1886c016ad0040750e83868e0519946"
+    },
+    {
+      "path": "backend-java/api/observability/ImperatorMeterContractFilter.java",
+      "sha256": "c7aacfc9c690bfb7fb3779efcdfafe0bb6a52b60a4871eae593d5897b4669f16"
+    },
+    {
+      "path": "backend-java/api/observability/ImperatorRouteCatalog.java",
+      "sha256": "c150e05d7a2b83ccbae9619e5b4d9e2c9b693e1367f749c3e4aeb681b73ad974"
+    },
+    {
+      "path": "backend-java/api/observability/ImperatorServerRequestObservationConvention.java",
+      "sha256": "658042058e16903ad7022ee3395821908650bb1531bb1e756da9df3d1d9a8761"
+    },
+    {
+      "path": "backend-java/api/observability/ImperatorTelemetry.java",
+      "sha256": "23565daf6087acf5771e5d6eac7ae5c809075b6b243189546e9b7a8f1bfa5181"
+    },
+    {
+      "path": "backend-java/api/observability/PostgresReadinessHealthIndicator.java",
+      "sha256": "6dded08719fbb17258962fe8022a94d91d1b5dfa5127d2775ea6dc4b42cd0f2d"
+    },
+    {
+      "path": "backend-java/api/recommendations/README.md",
+      "sha256": "b123eb9d752e6c2683a565e34579a288e7895cab0befdec7b639ed2ebe384fd5"
+    },
+    {
+      "path": "backend-java/api/recommendations/RecommendationController.java",
+      "sha256": "3f1300df3ddd11cf270877e30f87de22f9ff0cb49f0b7d627a9006d5f95fb3dd"
+    },
+    {
+      "path": "backend-java/api/recommendations/RecommendationResponse.java",
+      "sha256": "7b1f1ddf8a69864af1821c3627cc8e8604e1b857bf59af96cd700bbb635bf15a"
+    },
+    {
+      "path": "backend-java/api/recommendations/RecommendationRestMapper.java",
+      "sha256": "d4c5e753e0b17c7ed2cadabf45b422dfb0f81a930604c2dd9c8cdfc9aed1603a"
+    },
+    {
+      "path": "backend-java/api/security/JwtAccessDeniedHandler.java",
+      "sha256": "a1195247f30c274c1b69687ccd749861d2ede89739f25b8574b193fac2bc4812"
+    },
+    {
+      "path": "backend-java/api/security/JwtActorContextResolver.java",
+      "sha256": "5180a60fabedb11334f79dfe6feba7335b7204079241273e513d5d5674de0714"
+    },
+    {
+      "path": "backend-java/api/security/JwtAuthenticationEntryPoint.java",
+      "sha256": "ccae982da3fbcfd3d5b0f58039288a06f90542a8265fd49c9b43b394d6603540"
+    },
+    {
+      "path": "backend-java/api/security/JwtContractValidator.java",
+      "sha256": "729c2f1dd8d730b950f562807b4f8456c4d2dfafe896256e97ba5a6913ccc7f3"
+    },
+    {
+      "path": "backend-java/api/security/JwtResourceServerConfiguration.java",
+      "sha256": "f9b38d5163855dca16c7daadd99239e68ce4424cf72662b00bfd2743bd2c7800"
+    },
+    {
+      "path": "backend-java/api/security/SecurityErrorResponseWriter.java",
+      "sha256": "9cf1b24247fbf9c9a0e88d3acd7bee321dab025a198e0d0c7c0531f9c9cf2a1d"
+    },
+    {
+      "path": "backend-java/api/security/StrictBearerTokenResolver.java",
+      "sha256": "c9831c5db28e1cdb09b4362f5dec3faf965c64d1e8f055538a736b128c6af025"
+    },
+    {
+      "path": "backend-java/application/APPLICATION_DATA_BOUNDARY_POLICY.md",
+      "sha256": "429339f3ac9a0f5dd32780f264d4b2296be507dbf55a0a34b4780347140f0b3b"
+    },
+    {
+      "path": "backend-java/application/README.md",
+      "sha256": "6f9052dae6c6123e73ec42ae26743ffdca90496fb90ca0477659c7b28bfa2a2c"
+    },
+    {
+      "path": "backend-java/application/appendledgerentry/AppendLedgerEntryCommand.java",
+      "sha256": "ff5ce19e31459458cc0489e07bc07eec90df5fa254d17cc47e2e9f776a447e0a"
+    },
+    {
+      "path": "backend-java/application/appendledgerentry/AppendLedgerEntryResult.java",
+      "sha256": "a52000f9ebe2a833e7953f3676fc51d848cb34eb87cfcb2a601de95a8356d95c"
+    },
+    {
+      "path": "backend-java/application/appendledgerentry/AppendLedgerEntryUseCase.java",
+      "sha256": "2bf89ed3a87fcc2625b82733cff2ae67edff2074754f11b9370ad092e481896d"
+    },
+    {
+      "path": "backend-java/application/appendledgerentry/README.md",
+      "sha256": "57462838c968878db9b21bd3215a2fdce9f6cf3751727ea099f45005660b4753"
+    },
+    {
+      "path": "backend-java/application/businessvalue/BusinessValueProjection.java",
+      "sha256": "60f911fa0bf99e3e171a0b07bcf368359498d229c198446d56ca161d75c1ca97"
+    },
+    {
+      "path": "backend-java/application/businessvalue/ProjectBusinessValueUseCase.java",
+      "sha256": "4aaafdf3051b750efe7fc128839ba8eaee45bcc120c4d503843c1ee80a77f026"
+    },
+    {
+      "path": "backend-java/application/businessvalue/README.md",
+      "sha256": "f241c06b772613bfa53c7c2156dd760a10594e0573f9b5912295104750f63272"
+    },
+    {
+      "path": "backend-java/application/composecase/ComposeDrcAoa001Command.java",
+      "sha256": "8327c5f2f208a2e7f1af1c603c47bbb222398f7666342b18f6a6b893faf683ae"
+    },
+    {
+      "path": "backend-java/application/composecase/ComposeDrcAoa001Result.java",
+      "sha256": "427b6f45f452ac55c1f771951d9b5855ae9cf03816ff21b63513d63f7ef6e7f7"
+    },
+    {
+      "path": "backend-java/application/composecase/ComposeDrcAoa001UseCase.java",
+      "sha256": "cd50fea32bdf3635e3e634687399230387f49c03c5053e841515096f47c878ba"
+    },
+    {
+      "path": "backend-java/application/createdecision/CreateDecisionCommand.java",
+      "sha256": "d6c58bc00bf71dbc687417f6e5e36cda9e50f7db202d752af560c24f3dac0956"
+    },
+    {
+      "path": "backend-java/application/createdecision/CreateDecisionResult.java",
+      "sha256": "7aa73655b064de25506926953e7730d6821659ae8e73fb1fe895f12d3d4988de"
+    },
+    {
+      "path": "backend-java/application/createdecision/CreateDecisionUseCase.java",
+      "sha256": "ecc6ddf6d18a75e3507e15ef07099ca05f76b117e8dd0ca193938e19998ac6cd"
+    },
+    {
+      "path": "backend-java/application/createdecision/README.md",
+      "sha256": "db7bba8bebf8190835939aca7aafad9d7f8fb82746848df8a0677e6db192ef50"
+    },
+    {
+      "path": "backend-java/application/exceptions/ApplicationException.java",
+      "sha256": "dff5f65113d43dfc49c758d66f9fc927a3828bb68dc4be67bac8a09a0e3d8985"
+    },
+    {
+      "path": "backend-java/application/exceptions/AuthorizationException.java",
+      "sha256": "2965a3464c20ba03fd9fb979c0b090fddc1d3d20f7d451fc065d2b19b6d853a5"
+    },
+    {
+      "path": "backend-java/application/exceptions/BusinessRuleViolationException.java",
+      "sha256": "036db05a7b05f72db2653d801769833ba62be7f3a8e615a0fb9971242536cb3f"
+    },
+    {
+      "path": "backend-java/application/exceptions/ConflictException.java",
+      "sha256": "7bc9becb55a989b78aa8411ae13d84eb06cb26808435e3133daf5023e975e21b"
+    },
+    {
+      "path": "backend-java/application/exceptions/DecisionAlreadyClosedException.java",
+      "sha256": "7563d9fc3666d9af400880a62c78ae3a1080bc62178ce451e30bc7ad3560fa1f"
+    },
+    {
+      "path": "backend-java/application/exceptions/DecisionCreationConflictException.java",
+      "sha256": "b18f3f7502885a31ab2bb73a474436b22cc673ac9ffabdc6f267cffb41df24cc"
+    },
+    {
+      "path": "backend-java/application/exceptions/DecisionNotFoundException.java",
+      "sha256": "d9b7a34d71c95a6f0316a847192549b82db7e0c8a2ca24c39d3829bc02992d5b"
+    },
+    {
+      "path": "backend-java/application/exceptions/DuplicateEvidenceException.java",
+      "sha256": "d2dcb51f9f92dd9bf4e57e3e914b773a1dd212e8843802d68a63d61b1b28f974"
+    },
+    {
+      "path": "backend-java/application/exceptions/EvidenceNotFoundException.java",
+      "sha256": "a604a5a0bbcdb5d572a5e590ef0800a5b63cdd9565ae52710a030b971dd3675a"
+    },
+    {
+      "path": "backend-java/application/exceptions/EvidenceTraceabilityViolationException.java",
+      "sha256": "b81dc3f994e6240f6e3610e9d69489c6a7adbbedc0f4145c1c1b01cf893a872d"
+    },
+    {
+      "path": "backend-java/application/exceptions/InvalidDecisionTransitionException.java",
+      "sha256": "0ded5b0669e2041a116b2e4bbbdcd9ce2e096885c5fd1d22661c6c9b8e080771"
+    },
+    {
+      "path": "backend-java/application/exceptions/LedgerAppendRejectedException.java",
+      "sha256": "da8138cc2890c0300bb9317eb6c883e4617c9cb72b75222f0d2a2d603a98addc"
+    },
+    {
+      "path": "backend-java/application/exceptions/LedgerEntryNotFoundException.java",
+      "sha256": "02cd775696ff9019d892645d971c1b458e97b07a00b7afa5756d6e62cb9e1c81"
+    },
+    {
+      "path": "backend-java/application/exceptions/NotFoundException.java",
+      "sha256": "411ca703867af3ad3a16437aada6fb1b472162a501668f8109bf5d5334526e86"
+    },
+    {
+      "path": "backend-java/application/exceptions/README.md",
+      "sha256": "84df13576f6bc351ea881dffebadd628510fdead29a52c67e833f2cd3b3543de"
+    },
+    {
+      "path": "backend-java/application/exceptions/RecommendationCreationConflictException.java",
+      "sha256": "0e682ebde2dcd6d75ba0ca54dcd4c1767ca1029d564b6ae8f2cda1ddae6e7810"
+    },
+    {
+      "path": "backend-java/application/exceptions/RecommendationNotFoundException.java",
+      "sha256": "502b3376a7a2bc756e108500fe9669aa4033c5f10d02b360eedcab0912cb3c33"
+    },
+    {
+      "path": "backend-java/application/exceptions/RecommendationNotReadyException.java",
+      "sha256": "c13de009348934fc8f8f47eed6bc0bcbfef42d679341dcd65593531ae3bf5ad8"
+    },
+    {
+      "path": "backend-java/application/exceptions/RecommendationOwnershipViolationException.java",
+      "sha256": "3d176adb0e7bae44c6e2ced827575694f58a9735b7f269ef24623a83df3dbcce"
+    },
+    {
+      "path": "backend-java/application/exceptions/ValidationException.java",
+      "sha256": "a83a813ac0fc010110225e96f48c41ab32e0204293d64d1a0f3151e2b7a5f734"
+    },
+    {
+      "path": "backend-java/application/generaterecommendation/GenerateRecommendationCommand.java",
+      "sha256": "d5bb41880d91323053ff5f74382fc4862342be56a12c303dc172909788031392"
+    },
+    {
+      "path": "backend-java/application/generaterecommendation/GenerateRecommendationResult.java",
+      "sha256": "ba17121f0b30f715df540c7c244a9d04cb3bfc106894e9f353e114d5177dc4ad"
+    },
+    {
+      "path": "backend-java/application/generaterecommendation/GenerateRecommendationUseCase.java",
+      "sha256": "88075d7d834c5124ffca04c2a112fa3d0fa8b670b0b9ae2e4593f21621c2389b"
+    },
+    {
+      "path": "backend-java/application/generaterecommendation/README.md",
+      "sha256": "e3ade44120d0a1cdf71de819eff5e222c8d4b3afac912cb17727bd417d163543"
+    },
+    {
+      "path": "backend-java/application/importevidence/ImportEvidenceCommand.java",
+      "sha256": "8a74778642c949f4d0b9b735554936b8f627e4367dfdcbaceac80e15d380edd8"
+    },
+    {
+      "path": "backend-java/application/importevidence/ImportEvidenceResult.java",
+      "sha256": "731c83c12ead7d95702e6c3f7b2664b20400ebaa46f1a57014cbb6dc7e986722"
+    },
+    {
+      "path": "backend-java/application/importevidence/ImportEvidenceUseCase.java",
+      "sha256": "296c874a852bc34229e02041662bbd3e1d27c4594159ea0b1223e0e388b882b6"
+    },
+    {
+      "path": "backend-java/application/importevidence/README.md",
+      "sha256": "93fa6d70c939302f4e6f831c955c14a82790a5cdb391649d6fffe7069e8ef036"
+    },
+    {
+      "path": "backend-java/application/ledger/LedgerChain.java",
+      "sha256": "b9b1b7a171a39e30b54d2d90980ea26810d4383151f4291ed5493ebce5c59918"
+    },
+    {
+      "path": "backend-java/application/query/DecisionDetail.java",
+      "sha256": "73690c4913e664145a0be364014bd9054ae7fe677a47345bdf533670a9aba660"
+    },
+    {
+      "path": "backend-java/application/query/DecisionRoiView.java",
+      "sha256": "6f304e5047844846358f382a14cb92473015ffc4c608b0e2e33e11f898deb136"
+    },
+    {
+      "path": "backend-java/application/query/DecisionSummary.java",
+      "sha256": "ac1d54e9032bf512a5019512b9f6114b460a6fa29ba50cd483b757340ebeb9af"
+    },
+    {
+      "path": "backend-java/application/query/DecisionTimelineItem.java",
+      "sha256": "750f7444c4fee4043ad6b2fa9301d511faec541807885481ca522b2b9264d3e9"
+    },
+    {
+      "path": "backend-java/application/query/EvidenceSummary.java",
+      "sha256": "a2f13ed7003f328ec6b707cf4f062afd16f610e8da1155d0070dcd2a2e1e8656"
+    },
+    {
+      "path": "backend-java/application/query/GetDecisionEvidenceQuery.java",
+      "sha256": "91e90ec2bc6297ed039a1504950cce1fe80f65548a9d7fdf5491de5ce21ffc16"
+    },
+    {
+      "path": "backend-java/application/query/GetDecisionEvidenceUseCase.java",
+      "sha256": "c1b0053bbbf4bbf229b700dca3291391aab78cc49b8065a83916321e281b9fce"
+    },
+    {
+      "path": "backend-java/application/query/GetDecisionLedgerQuery.java",
+      "sha256": "3ccc1c3d3077c0a7adf10a4f1e2d344a7cd89a3d77a4288e84f510c4b012a222"
+    },
+    {
+      "path": "backend-java/application/query/GetDecisionLedgerUseCase.java",
+      "sha256": "ca16e1e2ba5495d999362cd99b0351ec05f182cfd1a96bed3506225abd9ba59a"
+    },
+    {
+      "path": "backend-java/application/query/GetDecisionQuery.java",
+      "sha256": "0847d5f0de01162c7dfba7df357d1a40ed2739119738f93391c86562247e7db6"
+    },
+    {
+      "path": "backend-java/application/query/GetDecisionRoiQuery.java",
+      "sha256": "7c5e3a4b1174e1cd03c18edd067fb7235d5f6e70a579916de7e2b2970b885427"
+    },
+    {
+      "path": "backend-java/application/query/GetDecisionRoiUseCase.java",
+      "sha256": "d4a7f9e75a365dcabb8c4b993746cd4c383eeea87f70bb4c91b088742c17ed5f"
+    },
+    {
+      "path": "backend-java/application/query/GetDecisionTimelineQuery.java",
+      "sha256": "82688279fee875dd3df602f39c6dfca4daae399e341e279450bd6f77ffc601dd"
+    },
+    {
+      "path": "backend-java/application/query/GetDecisionTimelineUseCase.java",
+      "sha256": "2f8f1f5d228383fc4f0d4c66668ea3bed715cbd99114f5d7d1fb51807b2cdf27"
+    },
+    {
+      "path": "backend-java/application/query/GetDecisionUseCase.java",
+      "sha256": "752d772f6f45327c173d551d666bc5df8b8b7c973c1579bb82e483d0e9676bc1"
+    },
+    {
+      "path": "backend-java/application/query/GetRecommendationQuery.java",
+      "sha256": "a41d3b3d61b1a3014e85f136eb0c908f4b6c4df4f2b31c0bc85eb7069dbd5612"
+    },
+    {
+      "path": "backend-java/application/query/GetRecommendationUseCase.java",
+      "sha256": "8b16159954c6350045943d143c09c5d1ce9344eb80864f899db6c644c480882b"
+    },
+    {
+      "path": "backend-java/application/query/LedgerEntryView.java",
+      "sha256": "dd60782fb8bbae672a72bcc41e95c5dee60ddd90c3e4c9bac246017cac42b9ce"
+    },
+    {
+      "path": "backend-java/application/query/ListDecisionsQuery.java",
+      "sha256": "e1d80e54238454f54fa59c55bda80ad1cd1a31afff3abdcbec093b6959561861"
+    },
+    {
+      "path": "backend-java/application/query/ListDecisionsUseCase.java",
+      "sha256": "2c0896053f6e2c568853dc805431f0ac868c00386ecac44439b18fef428ae917"
+    },
+    {
+      "path": "backend-java/application/query/ListLedgerEntriesQuery.java",
+      "sha256": "3118d1f7d734af1a7b819ac1edcd9e6ce08675048b5a53ce582b70004ad5e5de"
+    },
+    {
+      "path": "backend-java/application/query/ListLedgerEntriesUseCase.java",
+      "sha256": "2fb67e0951669a0e626f1e4a145aeeaa8270475ceabc3d53c92df26aeb3ce1d2"
+    },
+    {
+      "path": "backend-java/application/query/MvpDecisionReadSnapshot.java",
+      "sha256": "9c3295bc410eca268c52a10dc783a47c571e1274ee11f00d87b24ccf377457ce"
+    },
+    {
+      "path": "backend-java/application/query/PageRequest.java",
+      "sha256": "d3ed5fcd30d8a8798e6bc263425af41d69428b5deab0656f16468f796df08aa5"
+    },
+    {
+      "path": "backend-java/application/query/PageResult.java",
+      "sha256": "488855ec792f1c003ccbacda1435053d1fa08d245f878e89d6cc72744e63e11d"
+    },
+    {
+      "path": "backend-java/application/query/QuerySupport.java",
+      "sha256": "201fa8973891f2e9d7bab05719ae8bf3f32608aa00cd3e46cb9f30f0f89ece92"
+    },
+    {
+      "path": "backend-java/application/query/README.md",
+      "sha256": "6c769ca3cef10a9edd001ca85a36baee72a4e3fe0ba3dd0a1dfc4dab4ff62b38"
+    },
+    {
+      "path": "backend-java/application/query/RecommendationExplanationView.java",
+      "sha256": "3b9c57bb51b0d4ff9b110873caf32aca2614a2154983e34ae0e62057c0416ad3"
+    },
+    {
+      "path": "backend-java/application/query/RecommendationView.java",
+      "sha256": "d27fd96e45c53668840e0392377e892735bc6946273530fb95ab3afbfe114385"
+    },
+    {
+      "path": "backend-java/application/query/SortDirection.java",
+      "sha256": "68ff3b47b7b07220b9d8422eb2d39a677f3e1736490af6b9dce0c568266b1a5a"
+    },
+    {
+      "path": "backend-java/application/reviewdecision/README.md",
+      "sha256": "1c18e0251df38569fc052cbcf919a1eaa1e14f0844fa61f538eae9b051a9d65c"
+    },
+    {
+      "path": "backend-java/application/reviewdecision/ReviewDecisionAction.java",
+      "sha256": "026e2299a2298759e544cf13355f49d509c9d1218294904335d6a27bcba36edc"
+    },
+    {
+      "path": "backend-java/application/reviewdecision/ReviewDecisionCommand.java",
+      "sha256": "99cfe9d8f5304297d8ab7348a1bc684593b21467f2f5f2f87e0b9546d2596419"
+    },
+    {
+      "path": "backend-java/application/reviewdecision/ReviewDecisionResult.java",
+      "sha256": "2fdc985d82198ac9be0cf97f8fecd60bbe5ab56add2be8759d67254dd13254e2"
+    },
+    {
+      "path": "backend-java/application/reviewdecision/ReviewDecisionUseCase.java",
+      "sha256": "fe150b7410736962301e5bd6afc66f61fe37b6cfa5254357c7d88a8b6d41c263"
+    },
+    {
+      "path": "backend-java/application/synchronizeevidence/README.md",
+      "sha256": "63c5db936679308f51efc9a079a905b284b51b9c0c1988825ed7b81ce633389c"
+    },
+    {
+      "path": "backend-java/application/synchronizeevidence/SynchronizationStatus.java",
+      "sha256": "ec16f59cd2cdb51d15109326f7e5ba4b435b2161610eb39aa8dc5726ec3605fe"
+    },
+    {
+      "path": "backend-java/application/synchronizeevidence/SynchronizeEvidenceCommand.java",
+      "sha256": "ee1dbc1a9ae7ec6a1667a795fb63767a965def7665f94504dc2f75a8d9966965"
+    },
+    {
+      "path": "backend-java/application/synchronizeevidence/SynchronizeEvidenceResult.java",
+      "sha256": "b7a5d18b75b03deda31850f9ab302490a9ee914c50309050e828b38d02116d4a"
+    },
+    {
+      "path": "backend-java/application/synchronizeevidence/SynchronizeEvidenceUseCase.java",
+      "sha256": "d3d917de2d7f2f796b568c206af030e989ddf18bce7c02a1dc9cf002baaa5361"
+    },
+    {
+      "path": "backend-java/bootstrap/AwsRuntimeConfiguration.java",
+      "sha256": "878dee0e17b400754a8350d3a9e70b90d686c0cb880a00a5da64ab9348f59fe2"
+    },
+    {
+      "path": "backend-java/bootstrap/AwsRuntimeProperties.java",
+      "sha256": "780380d66c1143b6e27ea753b603a51ba4dbd8a76c2efa5d565e8c3848f8e428"
+    },
+    {
+      "path": "backend-java/bootstrap/BedrockRuntimeConfiguration.java",
+      "sha256": "daedb124d63f33c20aed8c757e288dff544776d61184597511caa6a220d2f0cf"
+    },
+    {
+      "path": "backend-java/bootstrap/BedrockRuntimeProperties.java",
+      "sha256": "1c661161728d9c39599c9e48d4b80e67fc2ab9a92c7e41e86651824ee4c82b69"
+    },
+    {
+      "path": "backend-java/bootstrap/GitHubRuntimeConfiguration.java",
+      "sha256": "94ba38f72570034b675dc4c04ad9773f30ad25565051384474acf12684c24915"
+    },
+    {
+      "path": "backend-java/bootstrap/GitHubRuntimeProperties.java",
+      "sha256": "3f087e39f8b3699a124e0a0d6f9d7f8c5a37d208ac1d40cd71fec42c865fafe6"
+    },
+    {
+      "path": "backend-java/bootstrap/ImperatorApplication.java",
+      "sha256": "1443516fe5955cedd6e25e2c5f9bd4107b0804dd0382770a728e0ca6fc40360f"
+    },
+    {
+      "path": "backend-java/bootstrap/ObservabilityRuntimeConfiguration.java",
+      "sha256": "dc1010d6743f59a7087443a85e5711622fe5c5468ad53a192d3db03b73d54577"
+    },
+    {
+      "path": "backend-java/bootstrap/PostgresRuntimeConfiguration.java",
+      "sha256": "fadc2fa786debff527cf5a58758e85bcfa9925e88105757ac842deb6083c9437"
+    },
+    {
+      "path": "backend-java/bootstrap/PostgresRuntimeProperties.java",
+      "sha256": "f8f0ebb1fe649afd094ea2e6d3390d05f5aa5b24ec57b74377b55e25666123fc"
+    },
+    {
+      "path": "backend-java/domain/README.md",
+      "sha256": "e20f83cf77ebf54640c8f86784aa35323e92d9cc9ceed655405b10de5ebb8792"
+    },
+    {
+      "path": "backend-java/domain/businessvalue/README.md",
+      "sha256": "7cc9c1479d4815e216cc3edc051900a9af8e0d4d3db3e1d6538d8f4d38e938fb"
+    },
+    {
+      "path": "backend-java/domain/decision/Decision.java",
+      "sha256": "c67561899d1379c5844053cb1601281c99dc2069b3a60d06151382ef0cfe1b2b"
+    },
+    {
+      "path": "backend-java/domain/decision/DrcAoa001RecommendationPolicy.java",
+      "sha256": "010ce4f04b8455f496b0e5bb0405c840362c7794d0a417389fcfaf4a59aa0a7f"
+    },
+    {
+      "path": "backend-java/domain/decision/DrcAoa001ResultValidationPolicy.java",
+      "sha256": "3580d249f516876f8e1835353d2a66631672907b51dd0b71cd89363c5ad74a00"
+    },
+    {
+      "path": "backend-java/domain/decision/README.md",
+      "sha256": "066f88df67cf0de6af00657b05bd45049442ffccea477bf145f1b87913176f94"
+    },
+    {
+      "path": "backend-java/domain/decision/Recommendation.java",
+      "sha256": "1d5ab39113764e5c1cc441bb3b7b4f39fb5f76f80ebce633969c7c827a0554b8"
+    },
+    {
+      "path": "backend-java/domain/evidence/Evidence.java",
+      "sha256": "be6d911f6ddf5b1c7d726209e112ec72b426340bbf8a342f26181017f1861c52"
+    },
+    {
+      "path": "backend-java/domain/evidence/README.md",
+      "sha256": "13cd2c8ac2614dc5a29a1723e2407edadad1d626a990d8923fb9ad6fe1922e8c"
+    },
+    {
+      "path": "backend-java/domain/ledger/LedgerEntry.java",
+      "sha256": "e14e64e553e3bc1c2c09ebe1408bf0d59617b52248372764528cf4ce07a53f5b"
+    },
+    {
+      "path": "backend-java/domain/ledger/LedgerEntryType.java",
+      "sha256": "fcdce9b19f761b31dea4b5887c1b7d6da58ff43dc89cc34689849ab148c2810c"
+    },
+    {
+      "path": "backend-java/domain/ledger/README.md",
+      "sha256": "ad980ef3108a67052fc956bffb284eb4b0df5d1ee6e5bb7b3463828d874deff5"
+    },
+    {
+      "path": "backend-java/domain/shared/Currency.java",
+      "sha256": "839d99e5e5cc0d56e0507623247d34fca1ce1bdfce1f8f0362c5e0a46f5d4bc0"
+    },
+    {
+      "path": "backend-java/domain/shared/DecisionId.java",
+      "sha256": "3c8159fd5276ffe2cf2a488b325b4870a20128ba5afac9efb221c667ffb2725e"
+    },
+    {
+      "path": "backend-java/domain/shared/DecisionStatus.java",
+      "sha256": "25fd9397d50ce58fb341fcafcddc871880ffc42806d293403f87c9d7a8d631b3"
+    },
+    {
+      "path": "backend-java/domain/shared/Duration.java",
+      "sha256": "0f72f1d3df641060cd2646d08faad8f97758e37532eb06ca4d73b38d9279a0a4"
+    },
+    {
+      "path": "backend-java/domain/shared/EvidenceId.java",
+      "sha256": "d4811eb79b57ee44f0ed936eecaeb2ca7de0414ae4506d13e229bc1a3f9194d2"
+    },
+    {
+      "path": "backend-java/domain/shared/LedgerEntryId.java",
+      "sha256": "f7f074002ed66558b1a55e64f57a3b4d804c907f3b3957b6d41ab4342d72ace4"
+    },
+    {
+      "path": "backend-java/domain/shared/Money.java",
+      "sha256": "5178b2db1f6ed6f5d78f2379090ecebc9953b0c6e5af3411cb299e7f06bb14fc"
+    },
+    {
+      "path": "backend-java/domain/shared/README.md",
+      "sha256": "d8b27083ad9c51767a03e5e287221626b41be85475875d930b8a8bb6f2307f8e"
+    },
+    {
+      "path": "backend-java/domain/shared/ROIAmount.java",
+      "sha256": "d301e041341ea3010e2bd83a2cd9e4af34a46fe319e1fd2368acc0bfc06319fc"
+    },
+    {
+      "path": "backend-java/domain/shared/ROIConfidence.java",
+      "sha256": "4413ba824bf5705a861bafc663938eabe5cac65ed877afbf9cf237f56d5440cd"
+    },
+    {
+      "path": "backend-java/domain/shared/RecommendationId.java",
+      "sha256": "54cad4fbe342ad6f5e98b7ba733dc665bf71d7d486557aed57dcf2f43b5d50c5"
+    },
+    {
+      "path": "backend-java/domain/shared/RecommendationType.java",
+      "sha256": "2b1ceccabd78e32f55ae29a8b9229121422f0ffa2612e672d5e9077ac3651b74"
+    },
+    {
+      "path": "backend-java/domain/shared/Severity.java",
+      "sha256": "770c74a7f288cc6a6face2eb77bedddb465f07de21f81417c57e5c2df764518f"
+    },
+    {
+      "path": "backend-java/domain/shared/Timestamp.java",
+      "sha256": "c5b356cf4d2c5a7c57b9f4ad1acc4f844311ebbbb1a2823a78883a2f55893b3c"
+    },
+    {
+      "path": "backend-java/domain/shared/UserId.java",
+      "sha256": "8edd6e9cc771aff1803c728e8ebf24194cc05d97beadeb42fe7d66a78c1d04d8"
+    },
+    {
+      "path": "backend-java/ports/README.md",
+      "sha256": "75f44ef6f8c04fb8b5655c0e7be00a5f0c1a2f4c4377312c0071df650633199d"
+    },
+    {
+      "path": "backend-java/ports/in/AppendLedgerEntryInputPort.java",
+      "sha256": "de1df782ccc91dbd65c17efc09b09831ecd0abc37e7de10ca2ca818d178a7281"
+    },
+    {
+      "path": "backend-java/ports/in/ComposeDrcAoa001InputPort.java",
+      "sha256": "85a6f64a8ef907e9a5382bae6d255290e4184451d6e5c6c3ec01b27443f4eb41"
+    },
+    {
+      "path": "backend-java/ports/in/CreateDecisionInputPort.java",
+      "sha256": "e6f2fd65265479dbdd6c68f2fdf343565b3ddeef0d45fd5ff69f947b3dcdd361"
+    },
+    {
+      "path": "backend-java/ports/in/GenerateRecommendationInputPort.java",
+      "sha256": "3d0a808f4b84be3f4f1f374662db7c038c312cb293bc85244f541bcdcc3b7b27"
+    },
+    {
+      "path": "backend-java/ports/in/GetDecisionEvidenceInputPort.java",
+      "sha256": "e397ee964ebe14861bdad70a7496bf6314fe1603681904cf29a9904c69f7f3d4"
+    },
+    {
+      "path": "backend-java/ports/in/GetDecisionInputPort.java",
+      "sha256": "68192c049f2d721a7980be0fb6c5d7be5b234420de0bb2ae5844f95b862708d0"
+    },
+    {
+      "path": "backend-java/ports/in/GetDecisionLedgerInputPort.java",
+      "sha256": "4b6f00bd4fd79a7956f87767fb76aabd66ffcd2f70dde24a46cd7a23f2d7bc8b"
+    },
+    {
+      "path": "backend-java/ports/in/GetDecisionRoiInputPort.java",
+      "sha256": "ba40ceabd0c2ea256d2c759bfe365399648b014fa9c963035616ef501ae28e22"
+    },
+    {
+      "path": "backend-java/ports/in/GetDecisionTimelineInputPort.java",
+      "sha256": "ac25884d41dc06088877c51984dbd85c98c83d6594db25ee05ff99fc8a5efe89"
+    },
+    {
+      "path": "backend-java/ports/in/GetRecommendationInputPort.java",
+      "sha256": "2a6a4b47bbbbc453bb01452cfab322f22a9ecb7a059a8216d82f8fb8cee71232"
+    },
+    {
+      "path": "backend-java/ports/in/ImportEvidenceInputPort.java",
+      "sha256": "5c6fbc7ab051bcf04e5853a23c911414b0f33229887ad1b240db0e98fcf9560f"
+    },
+    {
+      "path": "backend-java/ports/in/ListDecisionsInputPort.java",
+      "sha256": "4f6cadd352be2ebf1e4605b004207ae77a9776f9c0de6224d4258fd6c4274483"
+    },
+    {
+      "path": "backend-java/ports/in/ListLedgerEntriesInputPort.java",
+      "sha256": "e08412259d3778c040ec4e60e761020fbeef192e3ba37988761ba5bdb4d8c14f"
+    },
+    {
+      "path": "backend-java/ports/in/ProjectBusinessValueInputPort.java",
+      "sha256": "88d763fade75484f6015dcbc41c2ead28f442880c26f1ab4efe7f6d1af9bc33d"
+    },
+    {
+      "path": "backend-java/ports/in/README.md",
+      "sha256": "8a38415fb923d29b38e8b820d1e74d9bf8811109b229f9bf5f9a6260044441ed"
+    },
+    {
+      "path": "backend-java/ports/in/ReviewDecisionInputPort.java",
+      "sha256": "93124886dc63af51c9641a597f97660cebf3b4f51f7270f7e6ec7033b91a9312"
+    },
+    {
+      "path": "backend-java/ports/in/SynchronizeEvidenceInputPort.java",
+      "sha256": "64d91de2eb1855dd2e43590cce46f1b72c1ff13c036acbc4bf5b70d5f8bd802f"
+    },
+    {
+      "path": "backend-java/ports/out/DecisionRepository.java",
+      "sha256": "0a497f69109c803c25792ae316fe81950af0e918706ec5a0f0db4032f340c402"
+    },
+    {
+      "path": "backend-java/ports/out/EvidenceCandidate.java",
+      "sha256": "ea723fc8d48aaebca2e0251ecc18392da60bf2cbba61fdaa68ad49508666b7c3"
+    },
+    {
+      "path": "backend-java/ports/out/EvidenceRepository.java",
+      "sha256": "c5540dd14f719581eda7e6bbfd0c6eee8ce00816a27992fa23824944b49ae2ed"
+    },
+    {
+      "path": "backend-java/ports/out/EvidenceSourceCapture.java",
+      "sha256": "27bc54dc780c73765713ee6e7ae132d3d02491e2e093d100c0c34eca281c299b"
+    },
+    {
+      "path": "backend-java/ports/out/EvidenceSourceOutcome.java",
+      "sha256": "1ad3561038021a35620234eaadccd713ae26ce8954b3c74fe7fbf2bcf792df9c"
+    },
+    {
+      "path": "backend-java/ports/out/EvidenceSourcePort.java",
+      "sha256": "6980a56daef8a2f414de2bd5d1f7efd88838ba2c83cc244cb6e22e37f55e6868"
+    },
+    {
+      "path": "backend-java/ports/out/EvidenceSourceRequest.java",
+      "sha256": "af063cb5760fe1afc69cd2a7bc5338376491c4e7a940f0d4fcc58b4120b6f7ea"
+    },
+    {
+      "path": "backend-java/ports/out/ExplanationProvider.java",
+      "sha256": "83ee9402c47f3659b9061d0279908d94982487fd0227a5343c75fb85baee956e"
+    },
+    {
+      "path": "backend-java/ports/out/ExplanationStatus.java",
+      "sha256": "a435769d932a2ffadcaf115b9dab07f13841e564b1ed64e5d87f824799a36441"
+    },
+    {
+      "path": "backend-java/ports/out/LedgerRepository.java",
+      "sha256": "e9a13982fc9d54cb5f2bdc24c2b99e023295cf353c57b8dc138064f3ef7514f0"
+    },
+    {
+      "path": "backend-java/ports/out/MvpReadModelQueryPort.java",
+      "sha256": "252e4083aff01885133f53cedeab50502114ed8e947600c9d299bb1ae5639e9b"
+    },
+    {
+      "path": "backend-java/ports/out/README.md",
+      "sha256": "0eaea7a7ce4a5a2fd9e10e7da2f305b6e1e9a5f40964a94b744323e5c42b2f04"
+    },
+    {
+      "path": "backend-java/ports/out/RecommendationExplanation.java",
+      "sha256": "295a1de4730f3c408ca4ffbbee7cc779119994f7622b3a721d4bfede0d2ce67a"
+    },
+    {
+      "path": "backend-java/ports/out/RecommendationExplanationEvidence.java",
+      "sha256": "f52aab856d76a320d4bb58d04d21bb7434a9a1473aa8b1703f5d9dd5147455ab"
+    },
+    {
+      "path": "backend-java/ports/out/RecommendationExplanationRecord.java",
+      "sha256": "6fb92d20786e8d09a14068e55da3903a07250e3782b10f370a8bcfb41b12fa85"
+    },
+    {
+      "path": "backend-java/ports/out/RecommendationExplanationRepository.java",
+      "sha256": "3d66eaa1c7f708888a4d51769edba8d71ade174e1d3df91b69917606315f9d7e"
+    },
+    {
+      "path": "backend-java/ports/out/RecommendationExplanationRequest.java",
+      "sha256": "37a31ce01a051983742af6e63363a83bcfa16d1bd3e065ae9311a4ff62b009ac"
+    },
+    {
+      "path": "backend-java/ports/out/RecommendationRepository.java",
+      "sha256": "cc8c79124184b08b65eda1ad47dfa6ef9e786e786cb32489cf764aadd79d70b1"
+    },
+    {
+      "path": "backend-java/ports/out/TransactionRunner.java",
+      "sha256": "99951dfa35b3b99b46a2b4c011627fe1e4899dbbbfa14ea239f9ff2bfd0582c1"
+    },
+    {
+      "path": "database/README.md",
+      "sha256": "501d89b4b52c10ef68ab006de1aa45a2c318d6643e3976c11f97e866c416dbb8"
+    },
+    {
+      "path": "database/migrations/V1__initial_schema.sql",
+      "sha256": "a8270bea7e5ed2ae7143bfe7b1d66b8fdf04a8ce22d13020f6f3c0c1dd772775"
+    },
+    {
+      "path": "database/migrations/V2__unique_decision_case_id.sql",
+      "sha256": "be2108c5e054d8121c20b0feca79c5857bbd847bdea4a2d7f9b727fa3940991b"
+    },
+    {
+      "path": "database/migrations/V3__recommendation_explanation_attempts.sql",
+      "sha256": "fc9efd776021e2488aee55c046d99886b362d56ba2764bb262e10abe15c78ea3"
+    },
+    {
+      "path": "frontend/.dockerignore",
+      "sha256": "2297ff9aa3ef856adabeab6d1a2af9c3790f8e7cbd0693667fab6a7c062b2a51"
+    },
+    {
+      "path": "frontend/.gitignore",
+      "sha256": "cf1a69ff7de53a4c85ea304eab440353d0c72e4edd23c5bf100803be64c4f916"
+    },
+    {
+      "path": "frontend/.nvmrc",
+      "sha256": "7e8a2fa94951112b894a3dbe3d05efef5e9263741fa49125f0a70f40fedab4cc"
+    },
+    {
+      "path": "frontend/.prettierignore",
+      "sha256": "2ede4ebe44fa547ecd590586cdd75ed766b236fa5a2560bfbe51e0654906aa13"
+    },
+    {
+      "path": "frontend/.prettierrc.json",
+      "sha256": "a7f32bc0edb30c1deac26000ce9e421e0ffb9a07ef800fac23ff6eb4b14a6768"
+    },
+    {
+      "path": "frontend/README.md",
+      "sha256": "bcde39432a6848191fd0dc3d1fc02d86695bb0de7659b50aa853d0cd516ec45b"
+    },
+    {
+      "path": "frontend/app/decisions/[decisionId]/page.tsx",
+      "sha256": "6d70d50e6cec3534be8aaecad9a4a621437156adc4c4297152113577308d1af8"
+    },
+    {
+      "path": "frontend/app/global-error.tsx",
+      "sha256": "b7ef526b9a5324811aea308d3f1b178c36a720fb9a7c31cfa35ef374bfa9a1aa"
+    },
+    {
+      "path": "frontend/app/layout.tsx",
+      "sha256": "0b7f7303f1d25d4f95c5d4e7e3a64abb6244a20a883ac2d4cf0745535d88003f"
+    },
+    {
+      "path": "frontend/app/not-found.tsx",
+      "sha256": "60fc04a56d03e4d9d4c89637f7564e39cd59446c02d971f8bf3345279b72691d"
+    },
+    {
+      "path": "frontend/app/page.tsx",
+      "sha256": "e04667986f35dc4380e8e4027ad583163ca4acff95391803b410ffcd3a395dab"
+    },
+    {
+      "path": "frontend/components/ui/primitives.tsx",
+      "sha256": "d186f31a5d8b468d296a7ccaecc866eb7c3b6f2106df0eee4717d6f3e9e50a02"
+    },
+    {
+      "path": "frontend/e2e/decision-review.spec.ts",
+      "sha256": "ff2124191d0fe2bfe17ce5794fd6050be67bc44cca7876d4e79a6b051a8d953c"
+    },
+    {
+      "path": "frontend/eslint.config.mjs",
+      "sha256": "46d115c18ed68621adb9ce61537f0f2ae88cc37d6708f85f3be81d451ecf5505"
+    },
+    {
+      "path": "frontend/features/decision-review/action-dialog.tsx",
+      "sha256": "20d7e9737c2cc02cef6eaf876bbd4953e8ca2e2e08262635c968961fd74215c6"
+    },
+    {
+      "path": "frontend/features/decision-review/case-bootstrap.tsx",
+      "sha256": "712f7526256f06ef9280167899691071175c54e6fb89cbb36e9eb1f8f87f799a"
+    },
+    {
+      "path": "frontend/features/decision-review/decision-review-workspace.tsx",
+      "sha256": "8d415fe777fbed8eb785b8250f246d0cedaa88d5a184c451144ebfad01124e19"
+    },
+    {
+      "path": "frontend/features/decision-review/presenters.ts",
+      "sha256": "8ec95652b4df05fa25ffa12579ac2ab6ee2754a4a847cfb5f8200398aa782e9c"
+    },
+    {
+      "path": "frontend/features/decision-review/use-workspace.ts",
+      "sha256": "9dab35a48c555c60ecec4e3307b4b61f783c485c38dee61f824c2c95b28f78c4"
+    },
+    {
+      "path": "frontend/next-env.d.ts",
+      "sha256": "7ad303e40d4fddf44f156129e397511953a71481c5cfd86b1862649aaaf240cc"
+    },
+    {
+      "path": "frontend/next.config.ts",
+      "sha256": "2cefc23040e68582b02f0e0eb9c12e06d9edfbcdb4cace3abd230842e4d9ea33"
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "sha256": "aca6270c2ef985f35f227e1fc2415904633653316b4f289e214336f72a8a827e"
+    },
+    {
+      "path": "frontend/package.json",
+      "sha256": "fa5a51aa35e99b19ec3c9c5b7f26d234045be9de5b181992aebca77d5fc70483"
+    },
+    {
+      "path": "frontend/playwright.config.ts",
+      "sha256": "c983b9fe457e72a72f7b785dc15703f24b60d7240090f0857c39bf3b3c7799f7"
+    },
+    {
+      "path": "frontend/postcss.config.mjs",
+      "sha256": "dfac7ac2d86d326a0e5adb024e7943c181393ed17a5fcb8f0315b24c7da6ddde"
+    },
+    {
+      "path": "frontend/services/api/client.ts",
+      "sha256": "4b45e4bca7ae0967144e4d35d7e656e53fc1d1b4b3a7431b7f323b84e7ddfd33"
+    },
+    {
+      "path": "frontend/services/api/schemas.ts",
+      "sha256": "88a46dfa0206ac48d137532e388c9b5b04a401d78ecdbba473b215bc187f5061"
+    },
+    {
+      "path": "frontend/services/api/workspace.ts",
+      "sha256": "8b8ce09255d5afe9a8f11b18cd44d228f6ea5eeb31c1de5efbe07bc2038a95e0"
+    },
+    {
+      "path": "frontend/services/auth/session.tsx",
+      "sha256": "2ca938d8731268fb9159e4d9b64564ed8141e2d4abada2aaf10b051aec5eaafb"
+    },
+    {
+      "path": "frontend/styles/globals.css",
+      "sha256": "7fb2cbf0781d80936dad443a8fd6dd73616c50b7fc15df534b323a88feecb934"
+    },
+    {
+      "path": "frontend/tests/action-dialog.test.tsx",
+      "sha256": "1cb99b3497a2f82cf25790e2855645511b03939a268ab825d60fb52f30b8d5dc"
+    },
+    {
+      "path": "frontend/tests/actions.test.ts",
+      "sha256": "2158ef5297be45f7821a8f9075a833d345afbc9500a39cee17960873bd19b642"
+    },
+    {
+      "path": "frontend/tests/api-client.test.ts",
+      "sha256": "dfa42743bd4c8f1ef3e67e78d61d4353e90c6e1381bcd11e23b1935556b566e2"
+    },
+    {
+      "path": "frontend/tests/case-bootstrap.test.tsx",
+      "sha256": "ef5bfc72227fd52bea516b779f8c983bf79b444f4768df6bf4d5c94fb26a105d"
+    },
+    {
+      "path": "frontend/tests/fixtures.ts",
+      "sha256": "03ace231111347473564498af1df0702af18ac6508d36c5b564b5820ce38fb06"
+    },
+    {
+      "path": "frontend/tests/next-config.test.ts",
+      "sha256": "2cd36db3c6a8b29b343a801cbc0b96ebbd7d5eada59a64bea7cb4156ed69f130"
+    },
+    {
+      "path": "frontend/tests/presenters.test.ts",
+      "sha256": "f79171742e54125791c8755931ed44215b7795ebd3cc8fbde150d427cc89f919"
+    },
+    {
+      "path": "frontend/tests/schemas.test.ts",
+      "sha256": "22a9fb7e080cb86a37a821f68c3dbb853de9575c841cd3f148aee16a4ea5b26e"
+    },
+    {
+      "path": "frontend/tests/session.test.tsx",
+      "sha256": "972aacb69b58f3a501858d02b670cee7107d25989ee8ee1201585a766c845ae9"
+    },
+    {
+      "path": "frontend/tests/setup.ts",
+      "sha256": "6c58f8899d4f24bdde7ac5264839479036e93cd82a42b3e40ab8f66aeed85e39"
+    },
+    {
+      "path": "frontend/tests/use-workspace.test.tsx",
+      "sha256": "8d302c6863f5bdefd7468eb9210df01b8018bd784849866b1c515cdd05092fdf"
+    },
+    {
+      "path": "frontend/tests/workspace.test.tsx",
+      "sha256": "a72a48c00d0c569dd08306554020691df18059a4b15333500d5b84e24b35d157"
+    },
+    {
+      "path": "frontend/tsconfig.json",
+      "sha256": "ff63c969012ab4d2b6b95f8af16f1acdc72d7b9f5403d95ac2bd20d03588d7c7"
+    },
+    {
+      "path": "frontend/vitest.config.ts",
+      "sha256": "aa97d436a7d2b2cd73e3d54fc36953413939d7fb1c4cbfae74711bc7d30604e0"
+    },
+    {
+      "path": "infra/docker/.env.example",
+      "sha256": "72376608aac147cb09e62108f73badf8724d1b74e8bbaca32b6e55f4db935d0a"
+    },
+    {
+      "path": "infra/docker/README.md",
+      "sha256": "e69429e67d005f496dc50b5180c1bd396643d07db98e01b0b36fe31b223e48b9"
+    },
+    {
+      "path": "infra/docker/backend/Dockerfile",
+      "sha256": "66433fc8708b0ff06098d9e10cdb522c0ca2030cedb77f524b31c5188a3a6a20"
+    },
+    {
+      "path": "infra/docker/backend/Dockerfile.dockerignore",
+      "sha256": "42c01595240522618ad53b6b1242bd43ad2304663a770e5397f91e7c25055218"
+    },
+    {
+      "path": "infra/docker/backend/entrypoint.sh",
+      "sha256": "61bef432aa365539a424bcd6352707adcd3dd50f8ca163e976f797facde6f52d"
+    },
+    {
+      "path": "infra/docker/compose.connectors.yaml",
+      "sha256": "49cc1a0c5afa2f507a529689824cc171dfca347745bb373965d6b9d98f75dc52"
+    },
+    {
+      "path": "infra/docker/compose.yaml",
+      "sha256": "dc32dac0787b32f0f93e813bcece8502c8e2e29385ba4e845e1e509abc126959"
+    },
+    {
+      "path": "infra/docker/flyway/entrypoint.sh",
+      "sha256": "ffc281717e0eec64e03b49f68d294e6d51ea4c3295fe3605dfb69af587f8fb39"
+    },
+    {
+      "path": "infra/docker/frontend/Dockerfile",
+      "sha256": "fed89d6037e57b39b70797bc29d78873e1ba0cde37f3537f532a2d82c20f6bcb"
+    },
+    {
+      "path": "infra/docker/frontend/Dockerfile.dockerignore",
+      "sha256": "dc7ffd30d42a9cfc6692711f6b5d5cf80b2685a0da03fb37bf63c29053c18a56"
+    },
+    {
+      "path": "infra/docker/postgresql/Dockerfile",
+      "sha256": "eb0f7dcd1677d187d40faf7e540f927913a9e555774e19d4a8fb2bb6e610f951"
+    },
+    {
+      "path": "infra/docker/postgresql/Dockerfile.dockerignore",
+      "sha256": "40e7324f556d2e1e22e3badafcc6c1c29e2b20d0fed7876687281d0c2374b8ec"
+    },
+    {
+      "path": "infra/docker/postgresql/README.md",
+      "sha256": "3a63d2dde76a7d1db9bf2e30381cb07d92fb57007efe76017cf20738f3451183"
+    },
+    {
+      "path": "infra/docker/postgresql/provision-app-role.sh",
+      "sha256": "ee57a4f3d2b7fbdb441ceb3e931625f234e5e769c4f1fb9fe7a5fddba651aed3"
+    },
+    {
+      "path": "infra/docker/postgresql/supply-chain-lock.json",
+      "sha256": "a10e0676aa1931c15b2ff374c041046d59792e22486b230ba2cd0b5898275352"
+    },
+    {
+      "path": "infra/docker/secrets/README.md",
+      "sha256": "a7a00150fe0ed44877b8075d5ebbd99802ad4a4c4c5eb6d4dd088244f6a15787"
+    },
+    {
+      "path": "mvnw",
+      "sha256": "b1ef6ce14df54e6f8552734080184b18f78b0a0c61ed80c08d7d78b254e44941"
+    },
+    {
+      "path": "mvnw.cmd",
+      "sha256": "46eedb8419bd14fe70d5bb2916d7b6f51806e51b39d5b76a42610384ca929c1c"
+    },
+    {
+      "path": "pom.xml",
+      "sha256": "6e6360a3751e52d7fdae3fee9663574ee5ecaf455512b4791122c5683b23beed"
+    },
+    {
+      "path": "src/test/java/imperator/adapters/out/aws/AwsContractStubServer.java",
+      "sha256": "b9ad3fd5335944fa9a6622e609bf1570f6d508bf29b92b4cc95c1455af93c120"
+    },
+    {
+      "path": "src/test/java/imperator/adapters/out/aws/AwsEvidenceSyncIT.java",
+      "sha256": "fcc6d363ab62cc77ee9731589654d1ad78d617bd25935d0387db7f414d7e15ee"
+    },
+    {
+      "path": "src/test/java/imperator/adapters/out/aws/AwsSdkEvidenceSourceAdapterTest.java",
+      "sha256": "f9dcd3ea0d7a3637ef26a9b11123bad6708b31109d8b569ce81f36ba8865b715"
+    },
+    {
+      "path": "src/test/java/imperator/adapters/out/aws/AwsTestClients.java",
+      "sha256": "664ffb0236fa16c072d38b4b4d294debf831d62b38eb3fd675177d94d4dfc437"
+    },
+    {
+      "path": "src/test/java/imperator/adapters/out/bedrock/BedrockExplanationProviderTest.java",
+      "sha256": "ad3d23a09a045002e22c897e8e6c34342cdb2cecdba1508b183042006faf7486"
+    },
+    {
+      "path": "src/test/java/imperator/adapters/out/github/GitHubContractStubServer.java",
+      "sha256": "88b88be6d0756b89c0719abe39f5918899d18afa6a6addb43066ba7c7eae9627"
+    },
+    {
+      "path": "src/test/java/imperator/adapters/out/github/GitHubEvidenceSyncIT.java",
+      "sha256": "05695ae2f36a15f1c95163675859853773d7539d7e2bc71fc5d58a152c80ab57"
+    },
+    {
+      "path": "src/test/java/imperator/adapters/out/github/GitHubRestAdapterTest.java",
+      "sha256": "ff84d740413fd12a00eb9b8d3363da1044cf63205ebd4eab6c57ce34e08725b8"
+    },
+    {
+      "path": "src/test/java/imperator/adapters/out/postgresql/PostgresRepositoryIT.java",
+      "sha256": "1bcd65cb901dcf20156437267af541c984241910723904d584f60200b9ad94bd"
+    },
+    {
+      "path": "src/test/java/imperator/api/FunctionalRestApiContractTest.java",
+      "sha256": "115344197810f75a6661bb968fcc7f3e85e35f2ae775a4d6be04dbf65d858679"
+    },
+    {
+      "path": "src/test/java/imperator/api/FunctionalRestPostgresIT.java",
+      "sha256": "83dd0b30bb65491a1c09293a3db7ab21c3cc8622105ea6dd442de64d899db564"
+    },
+    {
+      "path": "src/test/java/imperator/api/businessvalue/BusinessValueRouteContractTest.java",
+      "sha256": "cd8a83105a9e6630f32a5c8bddd7153a91422c3f6d68fd6a672e15684288e3ee"
+    },
+    {
+      "path": "src/test/java/imperator/api/decisions/DecisionCompositionRouteContractTest.java",
+      "sha256": "27d323e3657645554a617dae5aed6227c1d95ac882c81b4ee6b04e1397860d46"
+    },
+    {
+      "path": "src/test/java/imperator/api/decisions/DecisionContextRouteContractTest.java",
+      "sha256": "b0dc9c75f67d69e53b439dd554e239f41120af0093fb7163bb4a8897891f8821"
+    },
+    {
+      "path": "src/test/java/imperator/api/decisions/DecisionRouteContractTest.java",
+      "sha256": "8e66eba2c10e1ba2af32af39f237f9b35c702931d18fbd3e6f0b1771f65b576e"
+    },
+    {
+      "path": "src/test/java/imperator/api/decisions/RbacEvidenceVisibilityContractTest.java",
+      "sha256": "8941cfacba3903509f1f49b3c81cb72df34f1cc71fc91e3ae59162cc3faf1bc7"
+    },
+    {
+      "path": "src/test/java/imperator/api/errors/ApiErrorContractTest.java",
+      "sha256": "7c46763869e4e64a0d4cef2020a6478d650857725a9b62e512c9418177224e87"
+    },
+    {
+      "path": "src/test/java/imperator/api/evidence/EndToEndBusinessValueDemoTest.java",
+      "sha256": "dd43c681f99ca63d01d0d9d3689e128a221e707893ec76ff29a8ed6718a8e978"
+    },
+    {
+      "path": "src/test/java/imperator/api/evidence/EvidenceImportHttpIT.java",
+      "sha256": "500ff9579a94259e6f26f41ed6d1182dcb0f0a5cf581c8976de46bcefa63fb40"
+    },
+    {
+      "path": "src/test/java/imperator/api/evidence/EvidenceImportRouteContractTest.java",
+      "sha256": "ce7fa7c472e3b67fd69d8e3f9d5c57479129a3879878fe9ae4020fea21c70aea"
+    },
+    {
+      "path": "src/test/java/imperator/api/ledger/LedgerCommandRouteContractTest.java",
+      "sha256": "481301301bad531368287c0642e330520826ae617230a2033313c980dc3dadef"
+    },
+    {
+      "path": "src/test/java/imperator/api/ledger/LedgerReadRouteContractTest.java",
+      "sha256": "f2db45e4fc87cf1a5d28e4d267f2b53c428ac33ed635ab802c9df94c19d10991"
+    },
+    {
+      "path": "src/test/java/imperator/api/observability/CorrelationMdcContractTest.java",
+      "sha256": "c4917ad442e2a36e8deb88ec65729f86dd5d940eeafde24265fc9b31dcb33066"
+    },
+    {
+      "path": "src/test/java/imperator/api/observability/ImperatorRouteCatalogContractTest.java",
+      "sha256": "3e7f15f6b04b27459fb5706577f2279f014c438d3330938fa3172317c21f7cc5"
+    },
+    {
+      "path": "src/test/java/imperator/api/observability/ImperatorTelemetryContractTest.java",
+      "sha256": "a30e42a890cced7927d1d75d4db4a4f8ffc77357112948d27ac2100bc947c79b"
+    },
+    {
+      "path": "src/test/java/imperator/api/observability/ObservabilityEndpointContractTest.java",
+      "sha256": "dc84b8b04756148cd4e19302cbd9b6a13b82fa50801a7918cac2e1766e069dbe"
+    },
+    {
+      "path": "src/test/java/imperator/api/recommendations/RecommendationRestMapperTest.java",
+      "sha256": "d84559c830d1a66199400cddb2a22b7d9e03e4fbe2ec651e1dc172f86795c27d"
+    },
+    {
+      "path": "src/test/java/imperator/api/recommendations/RecommendationRouteContractTest.java",
+      "sha256": "db64794db2d0304369790dc1b705b80835e759665940fdb82e7c65e4885876bc"
+    },
+    {
+      "path": "src/test/java/imperator/api/security/JwtAuthenticationContractTest.java",
+      "sha256": "f9c4e1b9b486688db74bfbb53798bef6ac0560cc7fc00a42f020c8d946b343c2"
+    },
+    {
+      "path": "src/test/java/imperator/api/security/RbacAuthorizationContractTest.java",
+      "sha256": "42b11ca4838d96477522345a579d3f2fa5bba0b2de43fe0a7688baf31785f625"
+    },
+    {
+      "path": "src/test/java/imperator/application/composecase/ComposeDrcAoa001UseCaseTest.java",
+      "sha256": "7b81657bb77a572d7968b90d9f0342af3a512b6619179c0d9873ff0347b48001"
+    },
+    {
+      "path": "src/test/java/imperator/application/createdecision/CreateDecisionUseCaseTest.java",
+      "sha256": "e2d7c7a67580683833e40dcad104fd8dbf3b903370beb436b991d0cec4c06aab"
+    },
+    {
+      "path": "src/test/java/imperator/application/generaterecommendation/GenerateRecommendationExplanationTest.java",
+      "sha256": "5f6fb582d3c22eca370fb7206e9680c3f46eea9989e1fa22479d8d06a1cc6c97"
+    },
+    {
+      "path": "src/test/java/imperator/application/importevidence/ImportEvidenceUseCaseTest.java",
+      "sha256": "814661c7aea6dea971b081c24820159de569aa6937c468745f00eaed58aef829"
+    },
+    {
+      "path": "src/test/java/imperator/application/ledger/LedgerChainTest.java",
+      "sha256": "c64a589a973dc6298782f2161182ad5d03771def56f43b0a7b9cb2523f188b3f"
+    },
+    {
+      "path": "src/test/java/imperator/application/query/MvpQueryUseCasesTest.java",
+      "sha256": "5c27a85fa05df639b868fa021a44b5628c993bbab627aab03e7b05afaa66c279"
+    },
+    {
+      "path": "src/test/java/imperator/application/query/README.md",
+      "sha256": "dec8925cd4b0346a172a7c3622dc38dfee26f3ee208096903afc102b01ad3c08"
+    },
+    {
+      "path": "src/test/java/imperator/application/reviewdecision/ReviewLedgerGovernanceTest.java",
+      "sha256": "ff9a362477587d2c3a0f76429adbe2882bb90d839b9c4b094c6ac26fe9b602e6"
+    },
+    {
+      "path": "src/test/java/imperator/application/synchronizeevidence/SynchronizeEvidenceUseCaseTest.java",
+      "sha256": "64b9378d9e51427fdcaf1022f3688f8454ddd791f6ca4ad76d0d0e344be4b161"
+    },
+    {
+      "path": "src/test/java/imperator/bootstrap/AwsRuntimePropertiesTest.java",
+      "sha256": "5eb033727b19171d87457365df55a302610292f30e89ae43bf75b08043972df6"
+    },
+    {
+      "path": "src/test/java/imperator/bootstrap/GitHubRuntimePropertiesTest.java",
+      "sha256": "ed5d6274beffac32c82b26f9b4366a909cda2027288ac600dbac1351a8e3c97e"
+    },
+    {
+      "path": "src/test/java/imperator/bootstrap/ImperatorApplicationTest.java",
+      "sha256": "d0c3459df6fd3e22f1745fc9b7adbd9f247ec468dd189a6ef95d97423188fae1"
+    },
+    {
+      "path": "src/test/java/imperator/bootstrap/PostgresRuntimeConfigurationTest.java",
+      "sha256": "a91b69ac79d7286792d920e803bd0133b2443bbdcad95a8b3363a23d5cb47314"
+    },
+    {
+      "path": "src/test/java/imperator/domain/decision/DrcAoa001RecommendationPolicyTest.java",
+      "sha256": "ac4f9f0dcda920d3f8a0b91483e6db6fd3d5ea0a8056e1f03ee97cc5be4a38d5"
+    },
+    {
+      "path": "src/test/java/imperator/domain/decision/DrcAoa001ResultValidationPolicyTest.java",
+      "sha256": "53b85f5c1a1c5221f2ab5013579d41e715110de2beedaed099edf8a64dda5839"
+    },
+    {
+      "path": "src/test/java/imperator/support/DrcAoa001EvidenceFixture.java",
+      "sha256": "b43140c6fc2c6f996ea8596e98853a3110d67e5b3043d5ba51a8b997440c9842"
+    },
+    {
+      "path": "src/test/java/testsupport/security/JwtTestFixture.java",
+      "sha256": "71fc882eb7a8ba5e33b470c615aaf28ccaede076b6dc8274f1c6099a8bb52341"
+    },
+    {
+      "path": "src/test/java/testsupport/security/JwtTestSecurityConfiguration.java",
+      "sha256": "8555aef10df91bd48d1c5e93483a2d3807f6a3aec8a2b8f37f24882557924453"
+    }
+  ],
+  "schemaVersion": 2
+}

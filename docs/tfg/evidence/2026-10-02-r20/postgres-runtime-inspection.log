@@ -1,0 +1,209 @@
+ARCHITECTURE
+amd64
+PACKAGES
+adduser|3.134|adduser|3.134
+apt|2.6.1|apt|2.6.1
+base-files|12.4+deb12u15|base-files|12.4+deb12u15
+base-passwd|3.6.1|base-passwd|3.6.1
+bash|5.2.15-2+b13|bash|5.2.15-2
+bsdutils|1:2.38.1-5+deb12u3|util-linux|2.38.1-5+deb12u3
+coreutils|9.1-1|coreutils|9.1-1
+dash|0.5.12-2|dash|0.5.12-2
+debconf|1.5.82|debconf|1.5.82
+debian-archive-keyring|2023.3+deb12u2|debian-archive-keyring|2023.3+deb12u2
+debianutils|5.7-0.5~deb12u1|debianutils|5.7-0.5~deb12u1
+diffutils|1:3.8-4|diffutils|1:3.8-4
+dirmngr|2.2.40-1.1+deb12u2|gnupg2|2.2.40-1.1+deb12u2
+dpkg|1.21.23|dpkg|1.21.23
+e2fsprogs|1.47.0-2+b2|e2fsprogs|1.47.0-2
+findutils|4.9.0-4|findutils|4.9.0-4
+gcc-12-base:amd64|12.2.0-14+deb12u1|gcc-12|12.2.0-14+deb12u1
+gnupg|2.2.40-1.1+deb12u2|gnupg2|2.2.40-1.1+deb12u2
+gnupg-l10n|2.2.40-1.1+deb12u2|gnupg2|2.2.40-1.1+deb12u2
+gnupg-utils|2.2.40-1.1+deb12u2|gnupg2|2.2.40-1.1+deb12u2
+gpg|2.2.40-1.1+deb12u2|gnupg2|2.2.40-1.1+deb12u2
+gpg-agent|2.2.40-1.1+deb12u2|gnupg2|2.2.40-1.1+deb12u2
+gpg-wks-client|2.2.40-1.1+deb12u2|gnupg2|2.2.40-1.1+deb12u2
+gpg-wks-server|2.2.40-1.1+deb12u2|gnupg2|2.2.40-1.1+deb12u2
+gpgconf|2.2.40-1.1+deb12u2|gnupg2|2.2.40-1.1+deb12u2
+gpgsm|2.2.40-1.1+deb12u2|gnupg2|2.2.40-1.1+deb12u2
+gpgv|2.2.40-1.1+deb12u2|gnupg2|2.2.40-1.1+deb12u2
+grep|3.8-5|grep|3.8-5
+gzip|1.12-1|gzip|1.12-1
+hostname|3.23+nmu1|hostname|3.23+nmu1
+init-system-helpers|1.65.2+deb12u1|init-system-helpers|1.65.2+deb12u1
+less|590-2.1~deb12u2|less|590-2.1~deb12u2
+libacl1:amd64|2.3.1-3|acl|2.3.1-3
+libapt-pkg6.0:amd64|2.6.1|apt|2.6.1
+libassuan0:amd64|2.5.5-5|libassuan|2.5.5-5
+libattr1:amd64|1:2.5.1-4|attr|1:2.5.1-4
+libaudit-common|1:3.0.9-1|audit|1:3.0.9-1
+libaudit1:amd64|1:3.0.9-1|audit|1:3.0.9-1
+libblkid1:amd64|2.38.1-5+deb12u3|util-linux|2.38.1-5+deb12u3
+libbsd0:amd64|0.11.7-2|libbsd|0.11.7-2
+libbz2-1.0:amd64|1.0.8-5+b1|bzip2|1.0.8-5
+libc-bin|2.36-9+deb12u14|glibc|2.36-9+deb12u14
+libc-l10n|2.36-9+deb12u14|glibc|2.36-9+deb12u14
+libc6:amd64|2.36-9+deb12u14|glibc|2.36-9+deb12u14
+libcap-ng0:amd64|0.8.3-1+b3|libcap-ng|0.8.3-1
+libcap2:amd64|1:2.66-4+deb12u3+b1|libcap2|1:2.66-4+deb12u3
+libcom-err2:amd64|1.47.0-2+b2|e2fsprogs|1.47.0-2
+libcrypt1:amd64|1:4.4.33-2|libxcrypt|1:4.4.33-2
+libdb5.3:amd64|5.3.28+dfsg2-1|db5.3|5.3.28+dfsg2-1
+libdebconfclient0:amd64|0.270|cdebconf|0.270
+libedit2:amd64|3.1-20221030-2|libedit|3.1-20221030-2
+libext2fs2:amd64|1.47.0-2+b2|e2fsprogs|1.47.0-2
+libffi8:amd64|3.4.4-1|libffi|3.4.4-1
+libgcc-s1:amd64|12.2.0-14+deb12u1|gcc-12|12.2.0-14+deb12u1
+libgcrypt20:amd64|1.10.1-3+deb12u1|libgcrypt20|1.10.1-3+deb12u1
+libgdbm-compat4:amd64|1.23-3|gdbm|1.23-3
+libgdbm6:amd64|1.23-3|gdbm|1.23-3
+libgmp10:amd64|2:6.2.1+dfsg1-1.1|gmp|2:6.2.1+dfsg1-1.1
+libgnutls30:amd64|3.7.9-2+deb12u7|gnutls28|3.7.9-2+deb12u7
+libgpg-error0:amd64|1.46-1|libgpg-error|1.46-1
+libgssapi-krb5-2:amd64|1.20.1-2+deb12u5|krb5|1.20.1-2+deb12u5
+libhogweed6:amd64|3.8.1-2|nettle|3.8.1-2
+libicu72:amd64|72.1-3+deb12u1|icu|72.1-3+deb12u1
+libidn2-0:amd64|2.3.3-1+b1|libidn2|2.3.3-1
+libjson-perl|4.10000-1|libjson-perl|4.10000-1
+libk5crypto3:amd64|1.20.1-2+deb12u5|krb5|1.20.1-2+deb12u5
+libkeyutils1:amd64|1.6.3-2|keyutils|1.6.3-2
+libkrb5-3:amd64|1.20.1-2+deb12u5|krb5|1.20.1-2+deb12u5
+libkrb5support0:amd64|1.20.1-2+deb12u5|krb5|1.20.1-2+deb12u5
+libksba8:amd64|1.6.3-2|libksba|1.6.3-2
+libldap-2.5-0:amd64|2.5.13+dfsg-5|openldap|2.5.13+dfsg-5
+libllvm19:amd64|1:19.1.7-3~deb12u1|llvm-toolchain-19|1:19.1.7-3~deb12u1
+liblz4-1:amd64|1.9.4-1|lz4|1.9.4-1
+liblzma5:amd64|5.4.1-1+deb12u1|xz-utils|5.4.1-1+deb12u1
+libmd0:amd64|1.0.4-2|libmd|1.0.4-2
+libmount1:amd64|2.38.1-5+deb12u3|util-linux|2.38.1-5+deb12u3
+libncursesw6:amd64|6.4-4|ncurses|6.4-4
+libnettle8:amd64|3.8.1-2|nettle|3.8.1-2
+libnpth0:amd64|1.6-3|npth|1.6-3
+libnss-wrapper:amd64|1.1.12-1|nss-wrapper|1.1.12-1
+libnuma1:amd64|2.0.16-1|numactl|2.0.16-1
+libp11-kit0:amd64|0.24.1-2|p11-kit|0.24.1-2
+libpam-modules:amd64|1.5.2-6+deb12u2|pam|1.5.2-6+deb12u2
+libpam-modules-bin|1.5.2-6+deb12u2|pam|1.5.2-6+deb12u2
+libpam-runtime|1.5.2-6+deb12u2|pam|1.5.2-6+deb12u2
+libpam0g:amd64|1.5.2-6+deb12u2|pam|1.5.2-6+deb12u2
+libpcre2-8-0:amd64|10.42-1+deb12u1|pcre2|10.42-1+deb12u1
+libperl5.36:amd64|5.36.0-7+deb12u3|perl|5.36.0-7+deb12u3
+libpq5:amd64|18.6-1.pgdg12+2|postgresql-18|18.6-1.pgdg12+2
+libreadline8:amd64|8.2-1.3|readline|8.2-1.3
+libsasl2-2:amd64|2.1.28+dfsg-10|cyrus-sasl2|2.1.28+dfsg-10
+libsasl2-modules-db:amd64|2.1.28+dfsg-10|cyrus-sasl2|2.1.28+dfsg-10
+libseccomp2:amd64|2.5.4-1+deb12u1|libseccomp|2.5.4-1+deb12u1
+libselinux1:amd64|3.4-1+b6|libselinux|3.4-1
+libsemanage-common|3.4-1|libsemanage|3.4-1
+libsemanage2:amd64|3.4-1+b5|libsemanage|3.4-1
+libsepol2:amd64|3.4-2.1|libsepol|3.4-2.1
+libsmartcols1:amd64|2.38.1-5+deb12u3|util-linux|2.38.1-5+deb12u3
+libsqlite3-0:amd64|3.40.1-2+deb12u2|sqlite3|3.40.1-2+deb12u2
+libss2:amd64|1.47.0-2+b2|e2fsprogs|1.47.0-2
+libssl3:amd64|3.0.20-1~deb12u2|openssl|3.0.20-1~deb12u2
+libstdc++6:amd64|12.2.0-14+deb12u1|gcc-12|12.2.0-14+deb12u1
+libsystemd0:amd64|252.39-1~deb12u2|systemd|252.39-1~deb12u2
+libtasn1-6:amd64|4.19.0-2+deb12u1|libtasn1-6|4.19.0-2+deb12u1
+libtinfo6:amd64|6.4-4|ncurses|6.4-4
+libudev1:amd64|252.39-1~deb12u2|systemd|252.39-1~deb12u2
+libunistring2:amd64|1.0-2|libunistring|1.0-2
+liburing2:amd64|2.3-3|liburing|2.3-3
+libuuid1:amd64|2.38.1-5+deb12u3|util-linux|2.38.1-5+deb12u3
+libxml2:amd64|2.9.14+dfsg-1.3~deb12u6|libxml2|2.9.14+dfsg-1.3~deb12u6
+libxslt1.1:amd64|1.1.35-1+deb12u4|libxslt|1.1.35-1+deb12u4
+libxxhash0:amd64|0.8.1-1|xxhash|0.8.1-1
+libz3-4:amd64|4.8.12-3.1|z3|4.8.12-3.1
+libzstd1:amd64|1.5.4+dfsg2-5|libzstd|1.5.4+dfsg2-5
+locales|2.36-9+deb12u14|glibc|2.36-9+deb12u14
+login|1:4.13+dfsg1-1+deb12u2|shadow|1:4.13+dfsg1-1+deb12u2
+logsave|1.47.0-2+b2|e2fsprogs|1.47.0-2
+mawk|1.3.4.20200120-3.1|mawk|1.3.4.20200120-3.1
+mount|2.38.1-5+deb12u3|util-linux|2.38.1-5+deb12u3
+ncurses-base|6.4-4|ncurses|6.4-4
+ncurses-bin|6.4-4|ncurses|6.4-4
+netbase|6.4|netbase|6.4
+openssl|3.0.20-1~deb12u2|openssl|3.0.20-1~deb12u2
+passwd|1:4.13+dfsg1-1+deb12u2|shadow|1:4.13+dfsg1-1+deb12u2
+perl|5.36.0-7+deb12u3|perl|5.36.0-7+deb12u3
+perl-base|5.36.0-7+deb12u3|perl|5.36.0-7+deb12u3
+perl-modules-5.36|5.36.0-7+deb12u3|perl|5.36.0-7+deb12u3
+pinentry-curses|1.2.1-1|pinentry|1.2.1-1
+postgresql-18|18.6-1.pgdg12+2|postgresql-18|18.6-1.pgdg12+2
+postgresql-18-jit|18.6-1.pgdg12+2|postgresql-18|18.6-1.pgdg12+2
+postgresql-client-18|18.6-1.pgdg12+2|postgresql-18|18.6-1.pgdg12+2
+postgresql-client-common|293.pgdg12+1|postgresql-common|293.pgdg12+1
+postgresql-common|293.pgdg12+1|postgresql-common|293.pgdg12+1
+readline-common|8.2-1.3|readline|8.2-1.3
+sed|4.9-1+deb12u1|sed|4.9-1+deb12u1
+sensible-utils|0.0.17+nmu1|sensible-utils|0.0.17+nmu1
+ssl-cert|1.1.2|ssl-cert|1.1.2
+sysvinit-utils|3.06-4|sysvinit|3.06-4
+tar|1.34+dfsg-1.2+deb12u1|tar|1.34+dfsg-1.2+deb12u1
+tzdata|2026b-0+deb12u1|tzdata|2026b-0+deb12u1
+ucf|3.0043+nmu1+deb12u1|ucf|3.0043+nmu1+deb12u1
+usr-is-merged|37~deb12u1|usrmerge|37~deb12u1
+util-linux|2.38.1-5+deb12u3|util-linux|2.38.1-5+deb12u3
+util-linux-extra|2.38.1-5+deb12u3|util-linux|2.38.1-5+deb12u3
+xz-utils|5.4.1-1+deb12u1|xz-utils|5.4.1-1+deb12u1
+zlib1g:amd64|1:1.2.13.dfsg-1|zlib|1:1.2.13.dfsg-1
+zstd|1.5.4+dfsg2-5|libzstd|1.5.4+dfsg2-5
+NODE_OR_POSTGRES_LINKS
+postgres (PostgreSQL) 18.6 (Debian 18.6-1.pgdg12+2)
+	linux-vdso.so.1 (0x00007ec156fca000)
+	libzstd.so.1 => /lib/x86_64-linux-gnu/libzstd.so.1 (0x00007ec1564d7000)
+	liblz4.so.1 => /lib/x86_64-linux-gnu/liblz4.so.1 (0x00007ec1564b1000)
+	libxml2.so.2 => /lib/x86_64-linux-gnu/libxml2.so.2 (0x00007ec156305000)
+	libpam.so.0 => /lib/x86_64-linux-gnu/libpam.so.0 (0x00007ec1562f3000)
+	libssl.so.3 => /lib/x86_64-linux-gnu/libssl.so.3 (0x00007ec15624a000)
+	libcrypto.so.3 => /lib/x86_64-linux-gnu/libcrypto.so.3 (0x00007ec155dc0000)
+	libgssapi_krb5.so.2 => /lib/x86_64-linux-gnu/libgssapi_krb5.so.2 (0x00007ec155d6d000)
+	libz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007ec155d4e000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007ec155c6e000)
+	libnuma.so.1 => /lib/x86_64-linux-gnu/libnuma.so.1 (0x00007ec155c61000)
+	libldap-2.5.so.0 => /lib/x86_64-linux-gnu/libldap-2.5.so.0 (0x00007ec155c02000)
+	libicui18n.so.72 => /lib/x86_64-linux-gnu/libicui18n.so.72 (0x00007ec1558d6000)
+	libicuuc.so.72 => /lib/x86_64-linux-gnu/libicuuc.so.72 (0x00007ec1556d8000)
+	liburing.so.2 => /lib/x86_64-linux-gnu/liburing.so.2 (0x00007ec1556d1000)
+	libsystemd.so.0 => /lib/x86_64-linux-gnu/libsystemd.so.0 (0x00007ec155601000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007ec15541f000)
+	liblzma.so.5 => /lib/x86_64-linux-gnu/liblzma.so.5 (0x00007ec1553f0000)
+	libaudit.so.1 => /lib/x86_64-linux-gnu/libaudit.so.1 (0x00007ec1553bd000)
+	libkrb5.so.3 => /lib/x86_64-linux-gnu/libkrb5.so.3 (0x00007ec1552e3000)
+	libk5crypto.so.3 => /lib/x86_64-linux-gnu/libk5crypto.so.3 (0x00007ec1552b6000)
+	libcom_err.so.2 => /lib/x86_64-linux-gnu/libcom_err.so.2 (0x00007ec1552b0000)
+	libkrb5support.so.0 => /lib/x86_64-linux-gnu/libkrb5support.so.0 (0x00007ec1552a2000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007ec156fcc000)
+	liblber-2.5.so.0 => /lib/x86_64-linux-gnu/liblber-2.5.so.0 (0x00007ec155290000)
+	libsasl2.so.2 => /lib/x86_64-linux-gnu/libsasl2.so.2 (0x00007ec155273000)
+	libgnutls.so.30 => /lib/x86_64-linux-gnu/libgnutls.so.30 (0x00007ec155054000)
+	libstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007ec154e3a000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007ec154e1a000)
+	libicudata.so.72 => /lib/x86_64-linux-gnu/libicudata.so.72 (0x00007ec153046000)
+	libcap.so.2 => /lib/x86_64-linux-gnu/libcap.so.2 (0x00007ec15303a000)
+	libgcrypt.so.20 => /lib/x86_64-linux-gnu/libgcrypt.so.20 (0x00007ec152ef3000)
+	libcap-ng.so.0 => /lib/x86_64-linux-gnu/libcap-ng.so.0 (0x00007ec152eeb000)
+	libkeyutils.so.1 => /lib/x86_64-linux-gnu/libkeyutils.so.1 (0x00007ec152ee4000)
+	libresolv.so.2 => /lib/x86_64-linux-gnu/libresolv.so.2 (0x00007ec152ed3000)
+	libp11-kit.so.0 => /lib/x86_64-linux-gnu/libp11-kit.so.0 (0x00007ec152d9d000)
+	libidn2.so.0 => /lib/x86_64-linux-gnu/libidn2.so.0 (0x00007ec152d6c000)
+	libunistring.so.2 => /lib/x86_64-linux-gnu/libunistring.so.2 (0x00007ec152bb6000)
+	libtasn1.so.6 => /lib/x86_64-linux-gnu/libtasn1.so.6 (0x00007ec152ba1000)
+	libnettle.so.8 => /lib/x86_64-linux-gnu/libnettle.so.8 (0x00007ec152b53000)
+	libhogweed.so.6 => /lib/x86_64-linux-gnu/libhogweed.so.6 (0x00007ec152b0a000)
+	libgmp.so.10 => /lib/x86_64-linux-gnu/libgmp.so.10 (0x00007ec152a87000)
+	libgpg-error.so.0 => /lib/x86_64-linux-gnu/libgpg-error.so.0 (0x00007ec152a5f000)
+	libffi.so.8 => /lib/x86_64-linux-gnu/libffi.so.8 (0x00007ec152a53000)
+PERL_BUILD
+arch=x86_64-linux-gnu-thread-multi ptrsize=8 ivsize=8
+PERL_MODULES
+Archive::Tar=PRESENT
+IO::Compress=ABSENT
+Storable=PRESENT
+RELEVANT_FILES
+/usr/share/pam-configs/mkhomedir
+/usr/sbin/mkhomedir_helper
+/usr/lib/x86_64-linux-gnu/security/pam_mkhomedir.so
+/usr/lib/x86_64-linux-gnu/libsqlite3.so.0.8.6
+MINIZIP_SYMBOLS
+nm absent; symbol absence not claimed

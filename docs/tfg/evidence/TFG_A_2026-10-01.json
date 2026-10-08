@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 1,
+  "evidenceId": "TFG-A-2026-10-01",
+  "sourceRevision": "b602bbe1dde92a902c17272d59cd9f0c10b9efe5",
+  "sourceState": "Tracked implementation unchanged; documentation worktree diff pending acceptance",
+  "generatedAtUtc": "2026-10-01T12:02:55.625252+00:00",
+  "environmentClass": "EXECUTED OFFLINE",
+  "meaning": "No live AWS, external IdP, GitHub-hosted check or final Docker certification",
+  "environment": {
+    "os": "Windows",
+    "java": "Oracle JDK 21.0.12",
+    "maven": "3.9.16 direct cached launcher; wrapper not used",
+    "postgresql": "18.6 native isolated loopback cluster; temporary credentials; JDBC database setup; stopped after run",
+    "node": "24.19.0",
+    "npm": "11.17.0",
+    "next": "16.3.5 from unchanged lockfile",
+    "vitest": "4.1.11",
+    "playwright": "1.63.0",
+    "browser": "Installed Chrome 154.0.8037.93; bundled Chromium unavailable"
+  },
+  "reviewer": "PENDING human review",
+  "redactions": "Only sanitized summaries and selected log lines are versioned; ephemeral passwords/JWTs removed from local preserved backend reports",
+  "acceptance": "TFG-A IN PROGRESS; local integration and formatting not green; final runtime rehearsal/recording pending",
+  "checks": [
+    {
+      "evidenceIds": ["E-CORE-01", "E-CORE-03", "E-SEC-01", "E-DATA-02"],
+      "requirementIds": ["TFG-NFR-04", "TFG-NFR-07"],
+      "command": "mvn.cmd --batch-mode --no-transfer-progress -Ppostgresql-integration clean verify",
+      "executedAtUtc": "2026-10-01T11:59:48.509924+00:00",
+      "exitCode": 1,
+      "result": "FAIL: integration setup errors",
+      "tests": {
+        "unit": {
+          "total": 174,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "integration": {
+          "total": 34,
+          "passed": 31,
+          "failures": 0,
+          "errors": 3,
+          "skipped": 0
+        }
+      },
+      "migrations": "V1-V3 migrated; all three validated; second migrate no-op at version 3",
+      "errorClasses": [
+        "AwsEvidenceSyncIT",
+        "GitHubEvidenceSyncIT",
+        "FunctionalRestPostgresIT"
+      ],
+      "cause": "Existing TRUNCATE table lists omit recommendation_explanations; PostgreSQL rejects truncating referenced recommendations",
+      "riskIds": ["R-06", "R-07"],
+      "artifacts": [
+        {
+          "localPath": "build/tfg-a/2026-10-01-final/backend-integration.log",
+          "sha256": "136ac21807cebac80e776d3fa662a241441523dc497c2a190b42dd2852b0056c",
+          "retention": "Local ignored artifact; not included as raw evidence in Git"
+        },
+        {
+          "localPath": "build/tfg-a/2026-10-01-final/backend-result.json",
+          "sha256": "6b54908ca494621135e8534c752e942909c4e25bb326b62c6dffb38ebdd759f6",
+          "retention": "Local ignored artifact; not included as raw evidence in Git"
+        }
+      ],
+      "limitations": "34 is the executed Failsafe total; FunctionalRestPostgresIT fails class setup, so it is not the full intended test-method count. Native DB, not Docker or AWS. V3 explanation persistence and append-only permission test passed within PostgresRepositoryIT; full connector/REST acceptance remains blocked by cleanup errors."
+    },
+    {
+      "check": "format",
+      "command": "npm.cmd run format:check",
+      "exitCode": 1,
+      "executedAtUtc": "2026-10-01T11:58:24.385647+00:00",
+      "evidenceIds": ["E-LOCAL-01"],
+      "requirementIds": ["TFG-RF-07", "TFG-NFR-07"],
+      "result": "FAIL: formatting findings",
+      "artifacts": [
+        {
+          "localPath": "build/tfg-a/2026-10-01-locked/format.log",
+          "sha256": "655a0d0ec7f839c0b1e731884968fae99a58acc7ec1dbe56c8cd5c081bb03d21",
+          "retention": "Local ignored artifact; not included as raw evidence in Git"
+        }
+      ],
+      "riskIds": ["R-16"],
+      "findingFiles": [
+        "features/decision-review/decision-review-workspace.tsx",
+        "next-env.d.ts",
+        "package-lock.json",
+        "package.json",
+        "README.md",
+        "services/api/schemas.ts",
+        "styles/globals.css",
+        "tests/fixtures.ts",
+        "tests/workspace.test.tsx"
+      ]
+    },
+    {
+      "check": "lint",
+      "command": "npm.cmd run lint",
+      "exitCode": 0,
+      "executedAtUtc": "2026-10-01T11:58:30.919050+00:00",
+      "evidenceIds": ["E-LOCAL-01"],
+      "requirementIds": ["TFG-RF-07", "TFG-NFR-07"],
+      "result": "PASS",
+      "artifacts": [
+        {
+          "localPath": "build/tfg-a/2026-10-01-locked/lint.log",
+          "sha256": "91f5b65e4bbb03a02c7e51c171dfef0251f9b3339e79119827d981362e87dd62",
+          "retention": "Local ignored artifact; not included as raw evidence in Git"
+        }
+      ]
+    },
+    {
+      "check": "typecheck",
+      "command": "npm.cmd run typecheck",
+      "exitCode": 0,
+      "executedAtUtc": "2026-10-01T11:58:34.035869+00:00",
+      "evidenceIds": ["E-LOCAL-01"],
+      "requirementIds": ["TFG-RF-07", "TFG-NFR-07"],
+      "result": "PASS",
+      "artifacts": [
+        {
+          "localPath": "build/tfg-a/2026-10-01-locked/typecheck.log",
+          "sha256": "1bd54d7d2d4ffe8afa8d6e291dfce8f1653f1ff331f842e2c2b3d40acab7156a",
+          "retention": "Local ignored artifact; not included as raw evidence in Git"
+        }
+      ]
+    },
+    {
+      "check": "coverage",
+      "command": "npm.cmd run test:coverage",
+      "exitCode": 0,
+      "executedAtUtc": "2026-10-01T11:58:43.503834+00:00",
+      "evidenceIds": ["E-LOCAL-01"],
+      "requirementIds": ["TFG-RF-07", "TFG-NFR-07"],
+      "result": "PASS",
+      "artifacts": [
+        {
+          "localPath": "build/tfg-a/2026-10-01-locked/coverage.log",
+          "sha256": "2f571717e7a73af6ba8e540c55986e8ad9b2369be037ddfac08634e9a1b3f04f",
+          "retention": "Local ignored artifact; not included as raw evidence in Git"
+        }
+      ],
+      "tests": {
+        "total": 41,
+        "files": 10,
+        "failures": 0
+      },
+      "coveragePercent": {
+        "statements": 95.54,
+        "branches": 77.74,
+        "functions": 95.49,
+        "lines": 97.85
+      }
+    },
+    {
+      "check": "build",
+      "command": "npm.cmd run build",
+      "exitCode": 0,
+      "executedAtUtc": "2026-10-01T11:59:06.289025+00:00",
+      "evidenceIds": ["E-LOCAL-01"],
+      "requirementIds": ["TFG-RF-07", "TFG-NFR-07"],
+      "result": "PASS",
+      "artifacts": [
+        {
+          "localPath": "build/tfg-a/2026-10-01-locked/build.log",
+          "sha256": "684ce987aa4a6f0c26755a2475b38fb41b0738773928a36cce890041cbefe0eb",
+          "retention": "Local ignored artifact; not included as raw evidence in Git"
+        }
+      ],
+      "precondition": "IMPERATOR_API_ORIGIN=http://127.0.0.1:8080; NEXT_TELEMETRY_DISABLED=1; origin not contacted as live AWS"
+    },
+    {
+      "check": "browser-chrome",
+      "command": "npm.cmd run test:e2e -- --config=../build/tfg-a/playwright.chrome.config.ts",
+      "exitCode": 0,
+      "executedAtUtc": "2026-10-01T11:59:32.467421+00:00",
+      "evidenceIds": ["E-LOCAL-01"],
+      "requirementIds": ["TFG-RF-07", "TFG-NFR-07"],
+      "result": "PASS",
+      "artifacts": [
+        {
+          "localPath": "build/tfg-a/2026-10-01-locked/browser-chrome.log",
+          "sha256": "a93a29e99a643567084468ab08a7ee04d314d9e905c91569df2d0404405c6f8d",
+          "retention": "Local ignored artifact; not included as raw evidence in Git"
+        },
+        {
+          "localPath": "build/tfg-a/playwright.chrome.config.ts",
+          "sha256": "f00876748251f717cc1a636870ae07db158e2aecc30fda1fdbc18a239021e19d",
+          "retention": "Local ignored artifact; not included as raw evidence in Git"
+        },
+        {
+          "localPath": "build/tfg-a/2026-10-01/playwright.json",
+          "sha256": "2e09e451666a5f2fd1410501e6baabedbb1094590c136e2e0f2455b68e4c49d5",
+          "retention": "Local ignored artifact; not included as raw evidence in Git"
+        }
+      ],
+      "tests": {
+        "passed": 9,
+        "skipped": 6,
+        "failed": 0
+      },
+      "limitations": "Existing synthetic API interception; installed Chrome via temporary local config; no backend/database or production-server browser acceptance"
+    },
+    {
+      "check": "format-restored-baseline",
+      "evidenceIds": ["E-LOCAL-01"],
+      "requirementIds": ["TFG-RF-07", "TFG-NFR-07"],
+      "command": "npm run format:check after restoring Next-generated source artifacts",
+      "executedAtUtc": "2026-10-01T12:05:18.062859+00:00",
+      "exitCode": 1,
+      "result": "FAIL: eight tracked formatting findings",
+      "findingFiles": [
+        "features/decision-review/decision-review-workspace.tsx",
+        "package-lock.json",
+        "package.json",
+        "README.md",
+        "services/api/schemas.ts",
+        "styles/globals.css",
+        "tests/fixtures.ts",
+        "tests/workspace.test.tsx"
+      ],
+      "artifacts": [
+        {
+          "localPath": "build/tfg-a/2026-10-01-locked/format-restored.log",
+          "sha256": "7bf3ecf0c51fa6e0b85dbe0b7593f853264913099a490399cb7d6a238ba097f7",
+          "retention": "Local ignored artifact"
+        }
+      ],
+      "limitations": "Supersedes nine-file formatting count; that run also included generated next-env.d.ts content. No tracked source formatted.",
+      "riskIds": ["R-16"]
+    }
+  ],
+  "supersededAttempts": [
+    "First sandbox/frontend run hit cache/telemetry permissions and stale Next 16.3.4; it is not lockfile acceptance",
+    "Bundled Chromium missing; earlier browser launch errors are environment errors, not assertion failures",
+    "First direct build omitted IMPERATOR_API_ORIGIN; corrected in indexed run",
+    "Offline npm cache lacked zod 4.6.5; npm ci restored unchanged lockfile, without package-source edits",
+    "Windows Application Control blocked psql; no policy change; database created with existing PostgreSQL JDBC driver",
+    "Offline Maven cache lacked bedrockruntime 2.49.6; indexed run downloads dependencies, with no Bedrock call",
+    "Initial nine-file formatting count included generated next-env.d.ts; restored-baseline check finds eight tracked files"
+  ],
+  "pending": [
+    "Source-maintenance decision for three V3 test cleanup statements and eight frontend formatting findings",
+    "Final isolated Docker/API composition and persistence rehearsal",
+    "Final screenshots and sanitized fallback recording",
+    "Current security/image/IaC release capture",
+    "Human review and accepted final release SHA",
+    "D101 external identity conformance and all separately authorized AWS activities"
+  ],
+  "documentationValidation": {
+    "executedAtUtc": "2026-10-01T12:09:41.440837+00:00",
+    "result": "PASS",
+    "markdownFiles": 18,
+    "localLinksChecked": 58,
+    "brokenLinks": 0,
+    "diffCheck": "PASS",
+    "implementationAndFrozenContractsChanged": false,
+    "artifactHashes": "PASS: all indexed local artifacts match SHA-256",
+    "scope": "18 modified Markdown files plus new sanitized JSON evidence index; pre-existing output/tfg left untouched",
+    "formatting": "Prettier check PASS for root README, all TFG Markdown and evidence JSON; other control-plane edits preserve existing layout"
+  }
+}

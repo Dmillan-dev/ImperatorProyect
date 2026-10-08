@@ -1,0 +1,57 @@
+# TFG-A Security Closure Gate — 2026-10-06
+
+**A-S1 R-19 CLOSED. A-S2 NO-GO. TFG-A IN PROGRESS.** Functional regression passes;
+the current local version is not certified as security-complete.
+
+The [current review](R19_SECURITY_REVIEW.md), [dated evidence](evidence/2026-10-06-r19/README.md)
+and [gate index](evidence/TFG_A_SECURITY_CLOSURE_GATE_2026-10-06.json) supersede
+the October 2 gate for current status. Earlier artifact packs retain their
+original bytes, timestamps and registration states.
+
+## Controls On The Actual Local Version
+
+| Control                                           | Result        | Evidence / boundary                                                                                             |
+| ------------------------------------------------- | ------------- | --------------------------------------------------------------------------------------------------------------- |
+| Independent R-19 authorization                    | PASS          | Explicit owner instruction on 2026-10-06; two lock entries only                                                 |
+| R-19 original brace-expansion findings            | PASS / CLOSED | Corrected 1.1.21 and 5.0.12 installed; current audit/Trivy no brace-expansion findings                          |
+| Backend / PostgreSQL integration / frontend tests | PASS          | 174 / 35 / 41; zero failures; all 35 integration cases execute                                                  |
+| Frontend format/lint/types/build                  | PASS          | Repeated on final LF lockfile                                                                                   |
+| Playwright / real Docker / RBAC                   | PASS          | 9 browser passes, 6 intentional skips; real API/UI capture has no interception                                  |
+| V3 / persistence / readiness recovery             | PASS          | Three explanation tables and Ledger append-only; replacement preserves case; DB down ready503 then recovery200  |
+| Exact-image regression and scan binding           | PASS          | OCI index, amd64 manifest, config and layers independently verified; no rebuild during regression               |
+| Detected secrets                                  | PASS / 0      | Source/history Gitleaks and all canonical image/source Trivy scans                                              |
+| Full npm audit                                    | FAIL / R-21   | 8 High package aggregates, 3 underlying advisories; unrelated to patched R-19                                   |
+| Source zero-fixable gate                          | FAIL / R-21   | source-map-js 1.2.1→1.2.2 required; sharp advisory also present in npm                                          |
+| Canonical image zero-fixable gate                 | FAIL / R-22   | Backend0; frontend8; PostgreSQL29; PCRE2 and Perl now have provider fixes                                       |
+| R-20 current version acceptance                   | NOT MET       | Historical approved record preserved; current lock/image/scanner binding changed and early invalidation applies |
+| Scoped teardown / captured fallback               | PASS          | Owned volumes/keys removed; normal volumes preserved; five captures and 28.20-second silent captioned recording |
+| Security Closure Gate / TFG-A COMPLETE            | NO-GO         | R-21/R-22 unresolved and current residual-risk binding not accepted                                             |
+
+## Preserved Approval Boundary
+
+The [October 2 R-20 B acceptance](evidence/2026-10-02-r20-acceptance/acceptance.json)
+was only for its hash-bound local/synthetic record. It excludes AWS, production,
+real data and public/pilot/customer exposure. Exclusive expiry stays
+**2026-10-09T00:00:00+02:00 Europe/Madrid** = **2026-10-08T22:00:00Z**.
+No automatic renewal. Zero fixable High/Critical and zero detected secrets
+remain mandatory. That preserved historical accepted=true is **not** applied
+to the current version. Current binding is **REVIEW REQUIRED / accepted=false**.
+
+## Reviewable Next Changes
+
+The isolated R-21 proposal resolves source-map-js and sharp only, with the
+necessary sharp native subtree. Candidate npm has 5 High package aggregates,
+all the one unfixed braces development chain; candidate Trivy zero fixable.
+No eslint downgrade, blanket npm update or Java/Spring upgrade is proposed.
+
+The R-22 proposal uses five checksum-verified Debian Bookworm security packages
+and a four-file Docker/lock/verifier diff. Review-only image derivatives reach zero
+fixable High/Critical and zero secrets; their full scans still report
+49 frontend and 66 PostgreSQL residual rows. They are **not** canonical release
+images and have no full runtime-regression or risk-acceptance claim.
+
+Independent authorization is needed for these changes because the current
+authorization is the isolated R-19 patch plus A-S2 verification. Prepare/apply
+the bounded patches, run canonical regression, decide the independent braces
+residual and re-review/re-attest R-20 explicitly before re-running A-S2.
+No waiver of a corrected vendor finding, acceptance transfer or TFG-B opening.

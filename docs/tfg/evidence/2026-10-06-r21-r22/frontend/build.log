@@ -1,0 +1,37 @@
+
+> imperator-decision-review-workspace@0.1.0 prebuild
+> next telemetry disable
+
+Next.js' telemetry collection is already disabled.
+
+Status: Disabled
+
+You have opted-out of Next.js' anonymous telemetry program.
+No data will be collected from your machine.
+
+Learn more: https://nextjs.org/telemetry
+
+> imperator-decision-review-workspace@0.1.0 build
+> next build
+
+▲ Next.js 16.3.6 (Turbopack)
+✓ Running next.config.ts took 6.5s
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 6.9s
+  Running TypeScript ...
+  Finished TypeScript in 3.2s ...
+  Collecting page data using 5 workers ...
+  Generating static pages using 5 workers (0/3) ...
+✓ Generating static pages using 5 workers (3/3) in 663ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+└ ƒ /decisions/[decisionId]
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

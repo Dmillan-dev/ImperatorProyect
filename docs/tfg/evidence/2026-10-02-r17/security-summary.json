@@ -1,0 +1,99 @@
+[
+  {
+    "check": "source",
+    "exitCode": 0,
+    "executedAtUtc": "2026-10-02T10:15:45.848545+00:00",
+    "findings": [],
+    "secrets": [],
+    "misconfigurations": [],
+    "policy": "Trivy 0.74.0; fixable HIGH/CRITICAL; no new suppression"
+  },
+  {
+    "check": "backend",
+    "exitCode": 0,
+    "executedAtUtc": "2026-10-02T10:15:56.019947+00:00",
+    "findings": [],
+    "secrets": [],
+    "misconfigurations": [],
+    "policy": "Trivy 0.74.0; fixable HIGH/CRITICAL; no new suppression"
+  },
+  {
+    "check": "frontend",
+    "exitCode": 0,
+    "executedAtUtc": "2026-10-02T10:16:01.079923+00:00",
+    "findings": [],
+    "secrets": [],
+    "misconfigurations": [],
+    "policy": "Trivy 0.74.0; fixable HIGH/CRITICAL; no new suppression"
+  },
+  {
+    "check": "postgres",
+    "exitCode": 0,
+    "executedAtUtc": "2026-10-02T10:16:08.710825+00:00",
+    "findings": [],
+    "secrets": [],
+    "misconfigurations": [],
+    "policy": "Trivy 0.74.0; fixable HIGH/CRITICAL; no new suppression"
+  },
+  {
+    "check": "history-secrets",
+    "exitCode": 0,
+    "findings": 0,
+    "version": "8.30.1",
+    "executedAtUtc": "2026-10-02T10:16:14.426177+00:00",
+    "redacted": true
+  },
+  {
+    "check": "source-secrets",
+    "exitCode": 1,
+    "findings": 20,
+    "version": "8.30.1",
+    "executedAtUtc": "2026-10-02T10:16:15.263101+00:00",
+    "redacted": true
+  },
+  {
+    "check": "source-with-dev",
+    "exitCode": 1,
+    "findings": [
+      {
+        "id": "CVE-2026-102276",
+        "package": "brace-expansion",
+        "installed": "1.1.18",
+        "fixed": "5.0.10, 3.0.7, 2.1.5, 1.1.19",
+        "severity": "HIGH"
+      },
+      {
+        "id": "CVE-2026-102278",
+        "package": "brace-expansion",
+        "installed": "1.1.18",
+        "fixed": "5.0.11, 3.0.8, 2.1.6, 1.1.20",
+        "severity": "HIGH"
+      },
+      {
+        "id": "CVE-2026-102276",
+        "package": "brace-expansion",
+        "installed": "5.0.9",
+        "fixed": "5.0.10, 3.0.7, 2.1.5, 1.1.19",
+        "severity": "HIGH"
+      },
+      {
+        "id": "CVE-2026-102278",
+        "package": "brace-expansion",
+        "installed": "5.0.9",
+        "fixed": "5.0.11, 3.0.8, 2.1.6, 1.1.20",
+        "severity": "HIGH"
+      }
+    ],
+    "executedAtUtc": "2026-10-02T10:26:18.140074+00:00",
+    "policy": "Trivy 0.74.0; same fixable HIGH/CRITICAL, include-dev-deps enabled to reconcile full npm audit"
+  },
+  {
+    "check": "source-secrets-final",
+    "exitCode": 0,
+    "findings": 0,
+    "version": "8.30.1",
+    "redacted": true,
+    "executedAtUtc": "2026-10-02T10:42:42.642781+00:00",
+    "disposition": "Supersedes 20 verified file-hash false positives after typed metadata normalization; no rule/threshold change"
+  }
+]

@@ -1,6 +1,10 @@
 # TFG Evidence Register
 
-Document status: **TFG-A FINAL REVIEW CANDIDATE / FINAL CAPTURE PENDING**
+## Current Owner Decision And Sprint — 2026-10-06
+
+**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](A_S3_EVIDENCE_VERSIONING.md).
+
+Document status: **TFG-A IN PROGRESS / R-19/R-21/R-22 CORRECTED FINDINGS CLOSED; A-S2 TECHNICAL AND FORMAL GO; A-S3 ACTIVE; CURRENT R-20 BINDING APPROVED; FUTURE EXECUTION PREFLIGHT REQUIRED**
 
 ## Execution Classification
 
@@ -11,32 +15,160 @@ Document status: **TFG-A FINAL REVIEW CANDIDATE / FINAL CAPTURE PENDING**
 | `EXTERNAL GATE REQUIRED` | The evidence needs an unavailable IdP or separately authorized live AWS activity.      |
 | `EXECUTED EXTERNALLY`    | The evidence ran against identified external resources; no current row has this class. |
 
-## Baseline Evidence
+## Historical Baseline Evidence
 
-| Evidence ID | Claim                                                  | Current evidence                            | Capability status   | Execution class          | Final action                       |
-| ----------- | ------------------------------------------------------ | ------------------------------------------- | ------------------- | ------------------------ | ---------------------------------- |
-| `E-CORE-01` | Evidence import is validated and idempotent            | Java/API/PostgreSQL suites                  | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Export final report by SHA         |
-| `E-CORE-02` | DRC-AOA-001 composition is deterministic and resumable | D093 tests and certified local runtime      | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Capture final composition result   |
-| `E-CORE-03` | Recommendation/ROI values are deterministic            | Domain policy tests                         | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Include exact expected-value table |
-| `E-CORE-04` | Business Value follows validated Ledger facts          | Query and E2E tests                         | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Capture final projection           |
-| `E-GOV-01`  | Human role and actor authority are enforced            | D083/D088 tests                             | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Include negative authority cases   |
-| `E-GOV-02`  | Ledger is append-only and ordered                      | Domain/PostgreSQL tests                     | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Capture final entry sequence       |
-| `E-UI-01`   | Workspace presents the complete case by role           | Frontend and Playwright evidence            | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Refresh final screenshots          |
-| `E-AI-01`   | Bedrock explanation path is bounded and fail-safe      | D099 adapter and offline tests              | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Live smoke remains pending         |
-| `E-ARCH-01` | Business layers remain provider-independent            | Source/import inspection                    | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Add dependency diagram             |
-| `E-SEC-01`  | JWT/RBAC fail closed locally                           | D087/D088 contract tests                    | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | External IdP is separate `E-ID-01` |
-| `E-SEC-02`  | Sensitive Evidence and secrets are protected           | Redaction tests, Trivy and Gitleaks         | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Export final scan summaries        |
-| `E-DATA-01` | PostgreSQL migrations and persistence pass             | D094/Flyway/integration evidence            | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Bind final versions and SHA        |
-| `E-OPS-01`  | Logs, correlation, metrics and probes are bounded      | D097 tests and hosted gate                  | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Capture final local transitions    |
-| `E-SC-01`   | Runtime images meet the project policy                 | Application image and D094 hosted gates     | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Preserve final digests/SBOM        |
-| `E-SC-02`   | CI and security controls pass                          | GitHub checks on `4dbf4fb` and `22a9917`    | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Link final release checks          |
-| `E-AWS-01`  | AWS architecture is reproducible offline               | Terraform source, tests and hosted IaC gate | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Preserve final test output         |
-| `E-AWS-02`  | Pilot cost is current and approved                     | No current Calculator export                | `NOT IMPLEMENTED`   | `PLANNED OFFLINE`        | Execute only in authorized TFG-B   |
-| `E-AWS-03`  | Application runs on AWS                                | No resource has been deployed               | `NOT IMPLEMENTED`   | `EXTERNAL GATE REQUIRED` | Execute only in authorized TFG-C   |
-| `E-AWS-04`  | Rollback and teardown remove the pilot safely          | Runbook only                                | `NOT IMPLEMENTED`   | `EXTERNAL GATE REQUIRED` | Execute only in TFG-D              |
-| `E-ID-01`   | External Keycloak satisfies D095                       | No external IdP is available                | `BLOCKED_EXTERNAL`  | `EXTERNAL GATE REQUIRED` | Mandatory before Pilot Readiness   |
+| Evidence ID | Claim                                                        | Baseline evidence                                            | Capability status   | Execution class          | Final action                       |
+| ----------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------- | ------------------------ | ---------------------------------- |
+| `E-CORE-01` | Evidence import is validated and idempotent                  | Java/API/PostgreSQL suites                                   | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Export final report by SHA         |
+| `E-CORE-02` | DRC-AOA-001 composition is deterministic and resumable       | D093 tests and certified local runtime                       | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Capture final composition result   |
+| `E-CORE-03` | Recommendation/ROI values are deterministic                  | Domain policy tests                                          | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Include exact expected-value table |
+| `E-CORE-04` | Business Value follows validated Ledger facts                | Query and E2E tests                                          | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Capture final projection           |
+| `E-GOV-01`  | Human role and actor authority are enforced                  | D083/D088 tests                                              | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Include negative authority cases   |
+| `E-GOV-02`  | Ledger is append-only and ordered                            | Domain/PostgreSQL tests                                      | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Capture final entry sequence       |
+| `E-UI-01`   | Workspace presents the complete case by role                 | Frontend and Playwright evidence                             | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Refresh final screenshots          |
+| `E-AI-01`   | Bedrock explanation path is bounded and fail-safe            | D099 adapter and offline tests                               | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Live smoke remains pending         |
+| `E-ARCH-01` | Business layers remain provider-independent                  | Source/import inspection                                     | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Add dependency diagram             |
+| `E-SEC-01`  | JWT/RBAC fail closed locally                                 | D087/D088 contract tests                                     | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | External IdP is separate `E-ID-01` |
+| `E-SEC-02`  | Sensitive Evidence and secrets are protected                 | Redaction tests, Trivy and Gitleaks                          | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Export final scan summaries        |
+| `E-DATA-01` | PostgreSQL V1/V2 runtime and persistence passed historically | D094/Flyway/integration evidence; current V3 result separate | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Bind final versions and SHA        |
+| `E-OPS-01`  | Logs, correlation, metrics and probes are bounded            | D097 tests and hosted gate                                   | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Capture final local transitions    |
+| `E-SC-01`   | Historical runtime images met the project policy             | Application image and D094 hosted gates                      | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Preserve final digests/SBOM        |
+| `E-SC-02`   | CI and security controls pass                                | GitHub checks on `4dbf4fb` and `22a9917`                     | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Link final release checks          |
+| `E-AWS-01`  | AWS architecture is reproducible offline                     | Terraform source, tests and hosted IaC gate                  | `VALIDATED OFFLINE` | `EXECUTED OFFLINE`       | Preserve final test output         |
+| `E-AWS-02`  | Pilot cost is current and approved                           | No current Calculator export                                 | `NOT IMPLEMENTED`   | `PLANNED OFFLINE`        | Execute only in authorized TFG-B   |
+| `E-AWS-03`  | Application runs on AWS                                      | No resource has been deployed                                | `NOT IMPLEMENTED`   | `EXTERNAL GATE REQUIRED` | Execute only in authorized TFG-C   |
+| `E-AWS-04`  | Rollback and teardown remove the pilot safely                | Runbook only                                                 | `NOT IMPLEMENTED`   | `EXTERNAL GATE REQUIRED` | Execute only in TFG-D              |
+| `E-ID-01`   | External Keycloak satisfies D095                             | No external IdP is available                                 | `BLOCKED_EXTERNAL`  | `EXTERNAL GATE REQUIRED` | Mandatory before Pilot Readiness   |
 
-## Latest Non-Canonical Audit Observation
+## Discrepancy Dispositions
+
+Reviewed against implementation SHA `b602bbe1dde92a902c17272d59cd9f0c10b9efe5`
+on `2026-10-01`. The founder authorized starting TFG-A and updating the main
+README. The later instruction explicitly authorized the bounded maintenance
+described below. Source discrepancies were first reported, then corrected within
+that scope; frozen contracts remain unchanged.
+
+| Item               | FACT                                                                                                                                                                                     | INFERENCE / RECOMMENDATION                                                  | Disposition                                                                                                                     |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| TFG-A completion   | Earlier documents said FINAL REVIEW CANDIDATE / IN PROGRESS                                                                                                                              | No final closure or current complete evidence can be inferred               | Current package states IN PROGRESS; close only after local exit evidence                                                        |
+| D101 scheduling    | TFG documents said deferred while active control said CURRENT                                                                                                                            | Scheduling can be aligned without weakening D095                            | Founder-directed OPERATOR-DEFERRED / BLOCKED_EXTERNAL synchronized in control/agent/pilot entry points; no new sprint or waiver |
+| Bedrock/AWS source | Adapter, V3, Terraform and workflows exist                                                                                                                                               | Concept-only wording understates implementation; live wording overstates it | README distinguishes IMPLEMENTED / recorded VALIDATED OFFLINE from unexecuted AWS                                               |
+| PostgreSQL V3      | Initial control preserved V3 runtime debt; current local native/Docker evidence now passes                                                                                               | Earlier V1/V2 proof cannot certify V3                                       | `E-DATA-01` remains historical V1/V2; `E-DATA-02` now has 35 passing integration tests and Docker persistence/privilege proof   |
+| Test counts        | README contained 162/171 default and 34/37 integration claims; preflight records 174                                                                                                     | Counts cannot be combined across revisions or defined test methods          | Remove unqualified current totals; retain historical observations and index current commands/results                            |
+| Hosted pass        | D099/D100 checks are recorded on `22a9917`                                                                                                                                               | Repository acceptance is not live pilot acceptance                          | Use HOSTED REPOSITORY PASS; VALIDATED IN AWS/OPERATIONAL remain unclaimed                                                       |
+| ECR names          | [Bootstrap](../../infra/aws/terraform/bootstrap/main.tf) declares `imperator-pilot/*`; [publish](../../.github/workflows/aws-pilot-publish.yml) and deploy reference `imperator/pilot/*` | Publication is likely to fail or lack permission for the workflow path      | OPEN R-03; fix and verify only in TFG-B, before publication                                                                     |
+| IAM and delivery   | Deploy policy is broad; publication lacks pilot environment; deploy re-plans                                                                                                             | Offline root tests do not prove least privilege or approved-plan binding    | OPEN R-04/R-05; bounded TFG-B review; no runtime authority added                                                                |
+| Observability      | Micrometer metrics are internal; no automatic business CloudWatch exporter inspected                                                                                                     | Internal metrics and CloudWatch are not equivalent                          | Document limitation; keep external Prometheus/Grafana deferred                                                                  |
+| Cost               | D100 has a USD 90-130 engineering envelope, no current Calculator export                                                                                                                 | It cannot be treated as a verified regional estimate or real spend          | `E-AWS-02` pending; no new numerical quote introduced                                                                           |
+| Auxiliary output   | `output/tfg/` was already untracked                                                                                                                                                      | Its planning claims are not current-control authority                       | Preserve it untouched; versioned `docs/tfg/` remains the academic entry point                                                   |
+
+Source changes for ECR/IAM/delivery are explicitly outside TFG-A. The new local
+maintenance and security findings are tracked as R-07/R-16/R-17/R-18. See
+[risk IDs and exit conditions](00_TFG_MASTER_PLAN.md#6-risks-and-scope-control).
+
+## Current R-17 Verification — 2026-10-02
+
+The [current R-17 index](evidence/TFG_A_R17_2026-10-02.json),
+[durable pack](evidence/2026-10-02-r17/README.md) and
+[security assessment](R17_SECURITY_REVIEW.md) record the founder-authorized
+five-finding patch. R-17 is CLOSED for those original findings. Baseline
+`b602bbe1dde92a902c17272d59cd9f0c10b9efe5` and a SHA256 runtime/test-input
+fingerprint identify the uncommitted worktree; no new accepted commit, hosted
+check or cloud/IdP execution is claimed.
+
+| Gate                                 | Result / limit                                                                                                                                             |
+| ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Unit / native PostgreSQL integration | 174 / 35 PASS, no failures/errors/skips; V1-V3 migrate/validate/no-op PASS                                                                                 |
+| Frontend quality and build           | 41 tests, format/lint/types/build PASS; Next 16.3.6, other direct frontend dependencies unchanged                                                          |
+| Browser                              | Nine PASS, six existing skips; intercepted fixtures                                                                                                        |
+| Real Docker and governance           | PASS; UI approval, authenticated API implementation/validation, real UI reads; 401/403/409 and three ordered actors                                        |
+| Value / persistence                  | EUR 18,960 realized synthetic value against EUR 19,440 estimated, variance -480; 30 Evidence and three Ledger facts survive three-container replacement    |
+| Probes / V3 privileges               | Readiness 503 during DB loss then 200; liveness remains 200; Ledger/explanation UPDATE/DELETE denied                                                       |
+| Three image scans                    | Each zero fixable HIGH/CRITICAL and zero secrets; Trivy 0.74.0                                                                                             |
+| Source / history secrets             | Final complete Gitleaks 8.30.1 snapshots zero; 20 initial public-file SHA256 false positives normalized as typed publication metadata without rule changes |
+| Development dependency audit         | npm audit FAIL; Trivy include-dev-deps reports four High package/CVE findings across two existing brace-expansion copies; R-19 OPEN                        |
+| Capture / cleanup                    | New readable 28-second technical WebM and five PNGs; owned scratch resources only, normal volumes/output preserved                                         |
+
+The isolated R-19 proposal updates only brace-expansion 1.1.18→1.1.21 and
+5.0.9→5.0.12; its audit is zero and direct dependencies are unchanged. Applying
+it awaits a scope decision under the founder's five-finding limit. TFG-A stays
+IN PROGRESS while that full-audit result remains unresolved. Default Trivy
+source scope and development-inclusive scans are explicitly separated; neither
+is used to hide the other. The initial Maven Central 429 was resolved by a
+read-only native Maven cache mount and is a superseded tool execution condition.
+
+The previous unaccepted publication metadata now uses schema v2 explicit
+path/sha256 records. Each of the 20 flagged values was verified against its
+public file. Original serialized copies/hashes are retained locally; input
+digests and historical execution results remain unchanged, and artifact
+digest pointers reflect the new representation.
+
+## Previous Local Maintenance Snapshot — 2026-10-01
+
+The [maintenance verification index](evidence/TFG_A_2026-10-01_MAINTENANCE.json)
+and [durable local pack](evidence/2026-10-01-local/README.md) supersede the
+initial attempt for current acceptance. Baseline HEAD is
+`b602bbe1dde92a902c17272d59cd9f0c10b9efe5`; the maintenance worktree is explicitly
+recorded. No new accepted commit, hosted result, external Keycloak conformance,
+AWS resource or live Bedrock execution is claimed.
+
+| Current check                                     | Result                                                                           | Acceptance limit                                                                                                                                                           |
+| ------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Backend default suites                            | 174 PASS, zero failures/errors/skips                                             | Cached Maven 3.9.16 / Oracle JDK 21.0.12; wrapper not exercised                                                                                                            |
+| PostgreSQL integration profile                    | 35 PASS, zero failures/errors/skips                                              | Isolated native PostgreSQL 18.6; V1-V3 migrate/validate/no-op PASS                                                                                                         |
+| Frontend format, lint, types and production build | PASS                                                                             | Next 16.3.5; package/lockfile formatting preserves versions and semantics                                                                                                  |
+| Frontend coverage                                 | 41 tests in ten files PASS                                                       | 95.54% statements, 77.74% branches, 95.49% functions, 97.85% lines                                                                                                         |
+| Chrome fixture-browser acceptance                 | Nine PASS, six intentional skips                                                 | Intercepted API fixtures; separate from the real Docker workflow                                                                                                           |
+| Docker packaging/hardening                        | PASS after LF entrypoint repair                                                  | Non-root/read-only services; only frontend loopback port 3007                                                                                                              |
+| Real Docker/API workflow                          | PASS                                                                             | 30 imported records; 28 initially composed records plus two post-action records; UI approval, API implementation/validation, unmocked UI reads                             |
+| Authority and deterministic value                 | PASS                                                                             | 401, auditor 403 without write, pre-governance 409, three ordered actor-bound Ledger entries; EUR 19,440 estimated, EUR 18,960 realized, variance EUR -480; synthetic only |
+| Container recreation and V3 permissions           | PASS                                                                             | Three containers replaced; 30 Evidence and three Ledger facts preserved; SELECT/INSERT allowed, UPDATE/DELETE denied for Ledger and explanation tables                     |
+| Observability runtime                             | PASS                                                                             | Liveness 200 during DB outage; readiness 503 then 200 after recovery; internal management endpoint                                                                         |
+| Image vulnerability policy                        | FAIL: backend four High package findings, frontend one Critical; PostgreSQL PASS | Trivy 0.74.0, fixable HIGH/CRITICAL; R-17 blocks closure; no exploitability claim or waiver                                                                                |
+| Screenshots / fallback video                      | CAPTURED, visually reviewed                                                      | Five readable viewport captures and a short technical WebM; not the full twelve-minute oral defense                                                                        |
+| Isolated environment cleanup                      | Completed after evidence capture                                                 | Owned rehearsal resources only; normal IMPERATOR volumes and user output preserved                                                                                         |
+
+The three cleanup lists in
+[AwsEvidenceSyncIT](../../src/test/java/imperator/adapters/out/aws/AwsEvidenceSyncIT.java),
+[GitHubEvidenceSyncIT](../../src/test/java/imperator/adapters/out/github/GitHubEvidenceSyncIT.java)
+and [FunctionalRestPostgresIT](../../src/test/java/imperator/api/FunctionalRestPostgresIT.java)
+now include all three V3 explanation tables, consistent with the existing
+PostgresRepositoryIT. Foreign keys, migrations and append-only production
+permissions were preserved. R-07 is closed for local evidence.
+
+The eight tracked frontend files were normalized to Prettier's LF endings;
+after Git normalization they have no content diff. JSON equality against HEAD
+also confirms unchanged dependency versions and lockfile semantics. The
+frontend attributes now enforce LF on Windows checkout. Next-generated
+`next-env.d.ts` is excluded from formatting, and build-generated AGENTS/CLAUDE
+metadata is ignored/removed. R-16 is closed. Docker rehearsal independently
+found CRLF entrypoints on the Windows checkout; `.gitattributes` now enforces
+LF, closing R-18 without a shell logic change. The database README's Phase 1
+placeholder claim was corrected to the existing V1-V3 inventory.
+
+R-17 is a new current finding, not a retroactive failure of historical D098.
+The maintained image versions remain unchanged in this increment. Vendor
+patches and the required rerun are detailed in the durable local pack. The
+presence of an affected package does not prove that this application's routes
+reach the vulnerable path; the repository's image policy still fails.
+
+## Superseded Initial TFG-A Attempt
+
+The [initial verification index](evidence/TFG_A_2026-10-01.json) remains an
+unchanged historical snapshot. It recorded 174 passing unit tests, V3 migrations,
+31 passing integration tests and three class/setup errors (34 executed, fewer
+than the intended complete suite), plus eight tracked formatting findings.
+Those results must not be presented as current failures after the authorized
+maintenance. Its locally retained sanitized reports keep their original hashes.
+
+The earlier wrapper/cache/sandbox/browser/build-origin failures and stale
+installed Next 16.3.4 were superseded execution conditions. The new run uses
+locked Next 16.3.5. Early capture attempts had incomplete loading/scroll waits;
+the readable final recording uses a fresh isolated database. These retries are
+not separate successful releases. No normal database or pre-existing
+`output/tfg/` material was changed.
+
+## Historical Non-Canonical Audit Observation
 
 The TFG-A preflight executed the following offline on `2026-09-28` against
 baseline `4dbf4fb`:
@@ -88,3 +220,92 @@ be recorded when they do not expose credentials or personal information.
 - A deployed resource does not prove application acceptance.
 - A screenshot without an immutable execution reference is illustrative only.
 - Estimated savings and AWS prices are not realized Business Value or cost.
+
+## Historical Strict Image Scan Discrepancy — Before B Approval
+
+The current fixable-only image policy passes. Including unfixed findings
+reports backend zero, frontend 53 High/4 Critical and PostgreSQL 81 High/15
+Critical in inherited OS packages, with no corrected versions indicated by
+this historical Trivy snapshot. Before explicit B approval, R-20 was OPEN alongside R-19;
+TFG-A is IN PROGRESS. No suppression, blanket base upgrade or risk acceptance
+was added. See [the security assessment](R17_SECURITY_REVIEW.md).
+
+## R-20 Decision Evidence — 2026-10-02
+
+The [current analysis index](evidence/TFG_A_R20_2026-10-02.json) and
+[formal decision review](R20_SECURITY_DECISION.md) add six pinned official-base
+scans and three exact-content-ID current image scans, current vendor/APT
+classification, 32-CVE reachability matrix and a pending path-B proposal.
+There are 153 binary-package rows, not 153 distinct CVEs. No implementation or
+criterion change, acceptance or candidate runtime regression occurred.
+An evidence-binding discrepancy is also retained: the prior observability
+verifier rebuilt mutable tags, so earlier capture/facts IDs differ from final
+scan IDs. Future approved remediation must reuse exact IDs for all gates.
+
+The [closure-preparation index](evidence/TFG_A_R20_CLOSURE_PREPARATION_2026-10-02.json)
+and [image binding resolution](evidence/2026-10-02-r20-closure/image-binding-resolution.json)
+supersede that preliminary binding explanation: backend changes only its
+provenance index, PostgreSQL changes a Compose label with identical layers,
+and frontend changes its final two Next output layers. Canonical original
+regression payloads were recovered and rescanned; all 153 reviewed findings
+match, with zero fixable High/Critical and secrets. No tests or product rebuild
+were repeated. At preparation time accepted=false; R-19 was OPEN and
+TFG-A IN PROGRESS. B approval is a separate pending owner decision.
+
+## Explicit R-20 B Acceptance / Security Gate — 2026-10-02
+
+The [acceptance record](evidence/2026-10-02-r20-acceptance/acceptance.json)
+registers the founder's explicit approval with accepted=true, exact original
+decision/evidence hashes and exclusive expiry 2026-10-09T00:00:00+02:00
+Europe/Madrid. TFG-A synthetic local loopback only; AWS/production/real data
+excluded; no renewal. Historical proposal/index bytes remain preserved as
+pre-approval records. No residual CVE is declared fixed or suppressed.
+
+At the 2026-10-02 registration, the Security Closure Gate was NO-GO due to
+R-19, then OPEN and unauthorized. That dated state is preserved in its index. Current read-only npm audit retains one High
+aggregate package; source Trivy and publication-secret checks are recorded in
+the [gate index](evidence/TFG_A_SECURITY_CLOSURE_GATE_2026-10-02.json).
+Zero fixable High/Critical and zero secrets remain mandatory. No new functional
+regression, accepted release, TFG-B work or AWS execution is claimed.
+
+## A-S1 R-19 / A-S2 Current Evidence — 2026-10-06
+
+Current local assessment: **2026-10-06**. **R-19 CLOSED for the two authorized
+brace-expansion copies**. The [Security Closure Gate](TFG_A_SECURITY_CLOSURE_GATE.md)
+remains **NO-GO**: R-21 records other npm/source findings and R-22 records newly
+fixable PCRE2/Perl image findings. R-20's historical approval remains preserved;
+it does not transfer to this changed version/database. Current binding is
+**REVIEW REQUIRED / NOT ACCEPTED**. TFG-A remains IN PROGRESS; no AWS or TFG-B
+execution is authorized. See the [R-19 review](R19_SECURITY_REVIEW.md).
+
+The [new index](evidence/TFG_A_R19_2026-10-06.json) records independent owner
+authorization, exactly two lock changes, 174/35/41 passing tests, full frontend
+quality, nine Chrome passes with six intentional skips, real Docker/RBAC/V3,
+persistence/readiness, exact manifests, recording and scoped teardown.
+The [earlier R-19 gate index](evidence/TFG_A_SECURITY_CLOSURE_GATE_2026-10-06.json) records
+NO-GO despite those functional passes: npm8 High aggregates, source1 fixable
+High, frontend8 and PostgreSQL29 fixable High/Critical, with zero secrets.
+
+The [review](R19_SECURITY_REVIEW.md) distinguishes original R-19 closure,
+then-unapplied R-21/R-22 candidates and R-20 early invalidation at that checkpoint. No candidate
+is certified as the release. Historical October 2 zero-fixable image results
+remain dated evidence; fresh provider fixes supersede them for current status.
+The supplied PR screenshots do not verify live GitHub checks or authorize merges.
+
+## R-21/R-22 Current Evidence Pack — 2026-10-06
+
+The [new index](evidence/TFG_A_R21_R22_2026-10-06.json) binds authorized patches,174/35/41 tests, browser9pass/6intentional skips, exact OCI manifests/layers, immutable image scans, full residual matrix115rows/23CVEs, all-severity secrets0, D094 reproducibility retry and scoped cleanup. [Gate index](evidence/TFG_A_SECURITY_CLOSURE_GATE_R21_R22_2026-10-06.json): technicalGO / formalclosurePENDING. Original October2 approval and the earlier R-19 pack/index retain their bytes and original dated status. No accepted release SHA, hosted CI or external/AWS/institutional certification is claimed.
+
+## Explicit A-S2 Closure And A-S3 Evidence — 2026-10-06
+
+The [acceptance pack](evidence/2026-10-06-a-s2-acceptance/README.md) records the affirmative owner message, original proposal hashes, all 38 reviewed file snapshots, current R20 approval, independent approved OPEN/no-fix R23 disposition, inventory/cleanup and publication verification. Earlier proposal packs and historical approval bytes remain immutable. A-S2 technical/formal GO is bounded to exact digests, synthetic local scope and exclusive expiry; it is not zero absolute or TFG-A completion.
+
+The [A-S3 dossier](A_S3_EVIDENCE_VERSIONING.md) separates implemented, locally validated, temporarily accepted, deferred and unimplemented claims. Candidate source/PR preparation does not certify new hosted checks or an owner-approved release commit. Narrated defense is later; AWS/IdP/Bedrock execution remains unperformed and unauthorized here.
+
+## E-GIT-02 / E-DEF-01 — Documentation Review And Defense Preparation — 2026-10-07
+
+Execution class: EXECUTED OFFLINE for hashes/source/document review and existing video QA; PLANNED OFFLINE for final runtime/narrated defense.
+See [review pack](evidence/2026-10-07-a-s3-a-s4/README.md). The prior383runtime files and38approved snapshots retain their hashes.
+Current source/diff review has no additional implementation/dependency change. Docker daemon was stopped during the current query.
+The [memory](08_LOCAL_MVP_MEMORY.md), [script](09_DEFENSE_SCRIPT_12_MIN.md) and [procedure](A_S4_LOCAL_DEFENSE.md) are prepared.
+No new functional regression, image scan, hosted CI, accepted release SHA or academic approval is claimed.

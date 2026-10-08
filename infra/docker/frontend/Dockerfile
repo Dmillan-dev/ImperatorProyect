@@ -29,13 +29,17 @@ ARG VCS_REF
 ARG IMPERATOR_API_ORIGIN=http://backend:8080
 ARG IMPERATOR_RUNTIME_PROFILE=docker-compose
 
-ADD --checksum=sha256:81c5502941118a24d47af69a17b8b0b9548d75cc6d72b3eb3fe01047b46fa10e \
-    https://security.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-8-0_10.42-1+deb12u1_amd64.deb \
+ADD --checksum=sha256:d2f7edfcc7689b9e0761c2742cc824ac86a20768bc5e8057818dc6875291fe76 \
+    https://security.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-8-0_10.42-1+deb12u2_amd64.deb \
     /tmp/libpcre2-8-0.deb
 
+ADD --checksum=sha256:d7d1943aec9597629bf73075efcc5ef6dc9bda96d78e80d843156ecd448478b8 \
+    https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-base_5.36.0-7+deb12u4_amd64.deb \
+    /tmp/imperator-perl-base.deb
+
 RUN set -eu; \
-    dpkg --install /tmp/libpcre2-8-0.deb; \
-    rm -f /tmp/libpcre2-8-0.deb /var/log/dpkg.log; \
+    dpkg --install /tmp/libpcre2-8-0.deb /tmp/imperator-perl-base.deb; \
+    rm -f /tmp/libpcre2-8-0.deb /tmp/imperator-perl-base.deb /var/log/dpkg.log; \
     rm -rf \
         /opt/yarn-v1.22.22 \
         /usr/local/lib/node_modules/corepack \

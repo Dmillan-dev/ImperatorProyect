@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 1,
+  "run": "R20 applicability review and independent R23 disposition preparation; documentation only",
+  "recordedAtUtc": "2026-10-06T19:07:55.982354+00:00",
+  "baselineGitRevision": "b602bbe1dde92a902c17272d59cd9f0c10b9efe5",
+  "worktreeDirty": true,
+  "acceptedCommit": null,
+  "runtimeContentFingerprint": "cbc6535ee56bfa991fb96551a90cda7dc35afd2204056f561900614ab0a5d0b7",
+  "technicalCriterion": "GO from unchanged bound R21/R22 runtime evidence",
+  "formalSecurityClosure": "PENDING OWNER DISPOSITION",
+  "currentR20Accepted": false,
+  "R23Accepted": false,
+  "R23Status": "OPEN / NO FIX AVAILABLE",
+  "TFG_A_COMPLETE": false,
+  "A_S3Authorized": false,
+  "A_S4Authorized": false,
+  "awsAuthorized": false,
+  "expiry": {
+    "local": "2026-10-09T00:00:00+02:00",
+    "timeZone": "Europe/Madrid",
+    "utc": "2026-10-08T22:00:00Z",
+    "exclusive": true,
+    "automaticRenewal": false,
+    "extensionProposed": false
+  },
+  "historicalApproval": {
+    "path": "docs/tfg/evidence/2026-10-02-r20-acceptance/acceptance.json",
+    "sha256": "f05a78809830df4aacd431527997df0acf5d9bc3cd558705d9104149e64a5cb7",
+    "bytes": 8692
+  },
+  "currentImageBindings": [
+    {
+      "service": "backend",
+      "indexDigest": "sha256:681e6e7b77b73170c959ed04697302f6a21d8db98edb3a2b0f3354a44387096d",
+      "platformManifestDigest": "sha256:35793caf489ab2b56806d6d533ccfebe2e5144f38defced0d88f9b85bf138275",
+      "configDigest": "sha256:bae6c993682a2692cc3f1e19e2ebd7111b4d25869c8a5f90b973b94a7d73a33c"
+    },
+    {
+      "service": "frontend",
+      "indexDigest": "sha256:5cd649ff9a460b2abdc8315da2e7568c5a2c2138d99815db89c5c583f88c18b1",
+      "platformManifestDigest": "sha256:de33fcc4e5d99bcec121ae7f4d88dc742d0f2e9ac81839f3fd8dca0d259beaea",
+      "configDigest": "sha256:133dec49d525b150fa6ab117bd2dacfd494aa776e917e8ab03f45f115568b320"
+    },
+    {
+      "service": "postgres",
+      "indexDigest": "sha256:2b73847d07d6cb7da2ace20426de036fa0278feca0bb6520aca62588e9b3f101",
+      "platformManifestDigest": "sha256:c2c532db77cdef99e64c31f08359cd445267f7e50f08c9aef1c976e9cca6dd0c",
+      "configDigest": "sha256:42e661e3f5932273d36c1cf1ad4d407a738e861197e47cf489946ac9de4c3098"
+    }
+  ],
+  "priorRuntimeEvidenceIndex": {
+    "path": "docs/tfg/evidence/TFG_A_R21_R22_2026-10-06.json",
+    "sha256": "af9eb22bab5319b619c8d3fb2199eb725a6007ef285f1c40cb5faaa3339c333e",
+    "bytes": 46277
+  },
+  "scannerDatabases": {
+    "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/scanner-databases.json",
+    "sha256": "e71549c1e9347b2429af59f46a019c609785114f045f88a1a3b6204f74051460",
+    "bytes": 831
+  },
+  "vendorRetrieval": {
+    "path": "docs/tfg/evidence/2026-10-06-r20-applicability/vendor-retrieval.json",
+    "sha256": "86965a49bde65e66acf5937edc3778b0bbe7dd9c945a38f7f3e791646674c70f",
+    "bytes": 625
+  },
+  "cveMatrix": {
+    "path": "docs/tfg/evidence/2026-10-06-r20-applicability/cve-applicability-matrix.json",
+    "sha256": "04ce43241c8fc47c2275c0305f5dd8211ebba3778963734b366bbb9d3bad3982",
+    "bytes": 101381
+  },
+  "r20Proposal": {
+    "path": "docs/tfg/evidence/2026-10-06-r20-applicability/r20-current-version-proposal.json",
+    "sha256": "7bac603ad3286a26405204f4db296bfd20fc2759f0494d7095584205c0edccb1",
+    "bytes": 5920
+  },
+  "r23Proposal": {
+    "path": "docs/tfg/evidence/2026-10-06-r20-applicability/r23-disposition-proposal.json",
+    "sha256": "602ab9885ad5fb7439ca35257b8bb3b9020b74f22f3ce632a13edde396fba017",
+    "bytes": 3430
+  },
+  "currentPrimaryDocuments": [
+    {
+      "path": "README.md",
+      "sha256": "a48de1b28e1fece7e28ed9dcfcf81fa8bdb2d4daa012018248a4ea4124512fc8",
+      "bytes": 19296
+    },
+    {
+      "path": "docs/tfg/R20_SECURITY_DECISION.md",
+      "sha256": "78596718bd52806c38d191e689dcd0a6f8f0271b704c2f00c959ebc17d8b4c2e",
+      "bytes": 27468
+    },
+    {
+      "path": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "sha256": "f738dd7e195a65ea5569c20099afdedf7e804d2d1e3acf6e6f0c36fb633d5316",
+      "bytes": 4542
+    },
+    {
+      "path": "docs/tfg/00_TFG_MASTER_PLAN.md",
+      "sha256": "6f752cfb65d1082c8c8a325ec78eda9bf7ae5880fbc2dffd3ced74f13d3487e4",
+      "bytes": 24571
+    },
+    {
+      "path": "docs/tfg/README.md",
+      "sha256": "9f48feccdc9e3ee0e2676c9f67e738aaa0aff27a3971ed5e82c52dfa3cc4ba29",
+      "bytes": 8687
+    },
+    {
+      "path": "docs/project/PROJECT_STATUS.md",
+      "sha256": "f13c3c6165d8440abfff5913f8feef48d6f17033ad150329ebe6ac16302c7302",
+      "bytes": 46748
+    },
+    {
+      "path": "docs/project/PROJECT_STRUCTURE.md",
+      "sha256": "e054f00bc151a537aab91e27e9a00117c5f2d71f7eb5eac06d7e48a86e5d7164",
+      "bytes": 10863
+    },
+    {
+      "path": "docs/tfg/R20_APPLICABILITY_REVIEW.md",
+      "sha256": "8cdbbccbf4883f1fa6973f5e60b56cf893fd13b667daed56c023215c824ebfc9",
+      "bytes": 9967
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/braces-official-status.json",
+      "sha256": "81073c7e70877382751931ce549db2bd7bb3862f5859e6bef542482d931820a4",
+      "bytes": 898
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/current-postgres-supplement.log",
+      "sha256": "40f9d91f75836fb1e7bcc9e9f3fc16c9e04c4d92109afea24aedfbad8f0cef76",
+      "bytes": 689
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/cve-applicability-matrix.csv",
+      "sha256": "635563545cf6803624c090d9f1b01c37cee99a19b5c1551307858ec9b9e22924",
+      "bytes": 11818
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/cve-applicability-matrix.json",
+      "sha256": "04ce43241c8fc47c2275c0305f5dd8211ebba3778963734b366bbb9d3bad3982",
+      "bytes": 101381
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/CVE_APPLICABILITY_MATRIX.md",
+      "sha256": "621b1e033ad819e74246d9975bf55faf7399b3ba2506a66a433de4bc125ca5e8",
+      "bytes": 38030
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/frontend-bundle-review.json",
+      "sha256": "90863bb4d8c4597cd2ca5597724b154fe0eb25e31d567e101cdecd60884c6dfd",
+      "bytes": 2254
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/frontend-inspection.log",
+      "sha256": "4d25a483f5c992d7e87ab932797ffeef03830e0129928e40c06b9d70ceeef342",
+      "bytes": 67631
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/historical-comparison.json",
+      "sha256": "88454c9ccaf373b95a836601976ec6d3fa0961311f97fd8a4723deee58087d32",
+      "bytes": 2662
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/historical-postgres-same-module-probe.log",
+      "sha256": "40f9d91f75836fb1e7bcc9e9f3fc16c9e04c4d92109afea24aedfbad8f0cef76",
+      "bytes": 689
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/postgres-inspection.log",
+      "sha256": "8ad16c230043d3ea9629d7b673a7712668ea5cc9b27b5e8da9ff3f2cf5a29fa2",
+      "bytes": 133581
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/pre-review-documents/docs__project__PROJECT_STATUS.md.txt",
+      "sha256": "9455b4405b5b46981930b95b3661bcd4625809afd27d0ea797996b24bd237aff",
+      "bytes": 45933
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/pre-review-documents/docs__project__PROJECT_STRUCTURE.md.txt",
+      "sha256": "581f30bc859f6657c08357e24d7810e65bf8a256622b7e2826f93efa286af302",
+      "bytes": 10048
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/pre-review-documents/docs__tfg__00_TFG_MASTER_PLAN.md.txt",
+      "sha256": "40f66ec0cb00cd1ec736eb3cbcdef68235f563e0e265f7b8f2ea567da4022cc5",
+      "bytes": 23588
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/pre-review-documents/docs__tfg__R20_SECURITY_DECISION.md.txt",
+      "sha256": "337ea8d0f849bd08c4388fd66a78b2174102a241d7eecbd1a0fe6844a2abab82",
+      "bytes": 26660
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/pre-review-documents/docs__tfg__README.md.txt",
+      "sha256": "d772ce83aad28e60c7addb655a671074190fb35d0cbffd8cc8bc853a4bdafd74",
+      "bytes": 7879
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/pre-review-documents/docs__tfg__TFG_A_SECURITY_CLOSURE_GATE.md.txt",
+      "sha256": "9816e64cbfc4238fe04e0215208e2b41683bc62430c4313f58673aef3b7e31d4",
+      "bytes": 3734
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/pre-review-documents/README.md.txt",
+      "sha256": "d70598320caa54e67994009f1b0aedb72ee8bebbf61681e7c5d80bc9a32a3db9",
+      "bytes": 18479
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/r20-current-version-proposal.json",
+      "sha256": "7bac603ad3286a26405204f4db296bfd20fc2759f0494d7095584205c0edccb1",
+      "bytes": 5920
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/r23-disposition-proposal.json",
+      "sha256": "602ab9885ad5fb7439ca35257b8bb3b9020b74f22f3ce632a13edde396fba017",
+      "bytes": 3430
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/README.md",
+      "sha256": "00e778b55c280d1ee70801656c2adc6025dbf065177cb6fff24497e8a486f04b",
+      "bytes": 1791
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/review-documentation-only.patch",
+      "sha256": "fcdd6723e3e0c60c6e3137e7a737302ed7ac9c4ede52f6c223daf0b21772f34e",
+      "bytes": 31005
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/review-scope.json",
+      "sha256": "8aa07b5d94c30a8136fb4f6b6d8e97bbcf7b11984ba892a59fad12651d66ac75",
+      "bytes": 667
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/runtime-inspection.json",
+      "sha256": "bd71752ef350efdba8b988aad837f897834e4124aa2528a2a01d4696c212e0b0",
+      "bytes": 7056
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/runtime-probe.sh",
+      "sha256": "f332b5db45aa3e8ad565d99d1b68be153ee2e04cfbc0e529439148671505a7c9",
+      "bytes": 3091
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/scope-verification.json",
+      "sha256": "3c2fdb8ddba449fe3677083ed9fcd5dbbd9c4fa75f640feec465e4bfc2c29654",
+      "bytes": 760
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/source-boundary-review.json",
+      "sha256": "682d54ee5cd0c8337a228ebdf6cf1cd8f0ea19f599ae3dc4ca16fb667fd0bdc7",
+      "bytes": 4507
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/supplement.json",
+      "sha256": "04be1c3adef0b0078c68947438b0dd3ff1a9649ee3cf04d0fb913e6c0ed7e917",
+      "bytes": 4164
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/vendor-pages.json",
+      "sha256": "b52aa0e9eb67e3675bee4010e426f10f420c716696baf421438124e73bacadbb",
+      "bytes": 6182
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/vendor-retrieval.json",
+      "sha256": "86965a49bde65e66acf5937edc3778b0bbe7dd9c945a38f7f3e791646674c70f",
+      "bytes": 625
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/vendor-status.json",
+      "sha256": "daa99422201fc9e6d7a5e6ccf3bb10fc083f2273f8c1d50c0114002769b25cef",
+      "bytes": 27176
+    }
+  ],
+  "method": "Frozen image content and previous regression/Trivy evidence reused, not rerun/rebuilt; read-only/offline probes + fresh official vendor checks + new publication secret verification. No universal non-exploitability proof."
+}

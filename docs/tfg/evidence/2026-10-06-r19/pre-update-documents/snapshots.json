@@ -1,0 +1,98 @@
+[
+  {
+    "path": "README.md",
+    "snapshot": "README.md",
+    "sha256": "d17d0d8455c861cb82319c7809764bfe6ab706934dd93c99b39341447ab8aec8",
+    "publishedSnapshot": "README.md.txt"
+  },
+  {
+    "path": "docs/tfg/README.md",
+    "snapshot": "docs__tfg__README.md",
+    "sha256": "d1568d1d8008ee828c19799fd3020a094ecfe668cb1ae93db8e0af9318e27338",
+    "publishedSnapshot": "docs__tfg__README.md.txt"
+  },
+  {
+    "path": "docs/tfg/00_TFG_MASTER_PLAN.md",
+    "snapshot": "docs__tfg__00_TFG_MASTER_PLAN.md",
+    "sha256": "39513200e68a1c500c5e13121af899e8d4411cdb44697c7815ba50fb8b636d0f",
+    "publishedSnapshot": "docs__tfg__00_TFG_MASTER_PLAN.md.txt"
+  },
+  {
+    "path": "docs/tfg/01_ACADEMIC_SCOPE.md",
+    "snapshot": "docs__tfg__01_ACADEMIC_SCOPE.md",
+    "sha256": "1740f188c709527dd365beb00a9364ab139951fa5a4c0f4dd98e8191a2149edb",
+    "publishedSnapshot": "docs__tfg__01_ACADEMIC_SCOPE.md.txt"
+  },
+  {
+    "path": "docs/tfg/02_COMPETENCY_MATRIX.md",
+    "snapshot": "docs__tfg__02_COMPETENCY_MATRIX.md",
+    "sha256": "86c53a57545233359a430a0cd2cc90fa093188cb08f4384f79c2c3ba2e6d9ec3",
+    "publishedSnapshot": "docs__tfg__02_COMPETENCY_MATRIX.md.txt"
+  },
+  {
+    "path": "docs/tfg/03_TRACEABILITY_MATRIX.md",
+    "snapshot": "docs__tfg__03_TRACEABILITY_MATRIX.md",
+    "sha256": "d047e2f725b0f325d9ea5afeab52896ccbc99faadd5a7d22fa1f5c3389164678",
+    "publishedSnapshot": "docs__tfg__03_TRACEABILITY_MATRIX.md.txt"
+  },
+  {
+    "path": "docs/tfg/04_EVIDENCE_REGISTER.md",
+    "snapshot": "docs__tfg__04_EVIDENCE_REGISTER.md",
+    "sha256": "bbc72c603369367248f65e9fb95593b31ab7e1c7e21795a61e0c1cbc1d20f821",
+    "publishedSnapshot": "docs__tfg__04_EVIDENCE_REGISTER.md.txt"
+  },
+  {
+    "path": "docs/tfg/05_ARCHITECTURE.md",
+    "snapshot": "docs__tfg__05_ARCHITECTURE.md",
+    "sha256": "83345581dbe87f957e4fc8ba8e7a1c35daed1551dcad0b5d365a7907425a9a91",
+    "publishedSnapshot": "docs__tfg__05_ARCHITECTURE.md.txt"
+  },
+  {
+    "path": "docs/tfg/06_LOCAL_VS_AWS.md",
+    "snapshot": "docs__tfg__06_LOCAL_VS_AWS.md",
+    "sha256": "41c179080d3d16ee98f4a381952e19f6d49fe02d8356a460f0e0c3df2b1f0067",
+    "publishedSnapshot": "docs__tfg__06_LOCAL_VS_AWS.md.txt"
+  },
+  {
+    "path": "docs/tfg/07_DEMO_AND_DEFENSE.md",
+    "snapshot": "docs__tfg__07_DEMO_AND_DEFENSE.md",
+    "sha256": "82532aadd8da990cd796d5add5d45e4fe50a9eee369651784625a32c1d32cd5a",
+    "publishedSnapshot": "docs__tfg__07_DEMO_AND_DEFENSE.md.txt"
+  },
+  {
+    "path": "docs/tfg/R17_SECURITY_REVIEW.md",
+    "snapshot": "docs__tfg__R17_SECURITY_REVIEW.md",
+    "sha256": "4afac801ec28c044b28ca4de80547b71f3d8b6af37f9556b9ebfd6e31678132d",
+    "publishedSnapshot": "docs__tfg__R17_SECURITY_REVIEW.md.txt"
+  },
+  {
+    "path": "docs/tfg/R20_SECURITY_DECISION.md",
+    "snapshot": "docs__tfg__R20_SECURITY_DECISION.md",
+    "sha256": "48eb028f2118a1bb775db3365d5a1f0e55a165e128ff45d9fa0b79978f20461c",
+    "publishedSnapshot": "docs__tfg__R20_SECURITY_DECISION.md.txt"
+  },
+  {
+    "path": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+    "snapshot": "docs__tfg__TFG_A_SECURITY_CLOSURE_GATE.md",
+    "sha256": "7a2831e2dee5f98fcf8ca2dc84266ec145687b0d1a77c9e51a88f37a0456e283",
+    "publishedSnapshot": "docs__tfg__TFG_A_SECURITY_CLOSURE_GATE.md.txt"
+  },
+  {
+    "path": "docs/project/PROJECT_STRUCTURE.md",
+    "snapshot": "docs__project__PROJECT_STRUCTURE.md",
+    "sha256": "8142953fdc22f6cbd7ee6fb2d9670b16c86f1118f613efb3d9fb97656fc5695d",
+    "publishedSnapshot": "docs__project__PROJECT_STRUCTURE.md.txt"
+  },
+  {
+    "path": "SECURITY.md",
+    "snapshot": "SECURITY.md",
+    "sha256": "bda958512d13ea4dab55082dafb9613779806e9417a4e880df64d5f8d1d186de",
+    "publishedSnapshot": "SECURITY.md.txt"
+  },
+  {
+    "path": "docs/project/PROJECT_STATUS.md",
+    "snapshot": "docs__project__PROJECT_STATUS.md",
+    "sha256": "7bac97ba42686b37001ee7cbdf807723b12b50aa474a4c8844efc7a226f7bcea",
+    "publishedSnapshot": "docs__project__PROJECT_STATUS.md.txt"
+  }
+]

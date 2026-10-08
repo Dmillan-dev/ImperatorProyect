@@ -1,0 +1,71 @@
+{
+  "accepted": false,
+  "status": "PENDING explicit founder approval",
+  "owner": {
+    "role": "Founder / project owner",
+    "identity": "User in this project conversation",
+    "authority": "Explicit project-local R-20 B criterion/risk approval only",
+    "approved": false,
+    "approvedAtUtc": null
+  },
+  "reviewer": {
+    "role": "Technical evidence reviewer",
+    "identity": "Codex in this session",
+    "authority": "Evidence verification and recommendation only; no authority to accept risk",
+    "reviewedAtUtc": "2026-10-02T17:05:02.849816+00:00",
+    "riskApproval": false
+  },
+  "academicReviewer": {
+    "role": "TFG tutor / supervisor",
+    "identity": null,
+    "status": "Not identified; no institutional approval claimed",
+    "authority": "Review institutional assessment criteria; project-local approval cannot stand in for tutor/institution approval"
+  },
+  "expiry": {
+    "local": "2026-10-09T00:00:00+02:00",
+    "timeZone": "Europe/Madrid",
+    "utc": "2026-10-08T22:00:00Z",
+    "exclusive": true,
+    "effectiveOnlyAfterExplicitApproval": true,
+    "renewal": "No automatic extension; fresh review and explicit approval required",
+    "earlyInvalidation": [
+      "Vendor fix becomes available",
+      "Image/base digest or runtime/test input changes",
+      "Scanner/vendor data changes until reviewed and re-attested",
+      "New feature, configuration, data or exposure boundary",
+      "Any fixable High/Critical, detected secret or new unreviewed finding"
+    ]
+  },
+  "scope": "Synthetic data; local loopback academic rehearsal only; no public/pilot/AWS/customer exposure",
+  "criterionAmendment": {
+    "status": "PROPOSED; not effective",
+    "change": "Permit a time-bounded local academic residual-risk disposition for the 32 reviewed OS CVEs instead of demanding absolute zero for this R-20 record; retain zero fixable High/Critical and zero detected secrets",
+    "riskStatusIfApproved": "ACCEPTED TEMPORARILY; not CLOSED, remediated or zero vulnerabilities"
+  },
+  "approvalQuestion": "\u00bfAUTORIZO LA ACEPTACI\u00d3N TEMPORAL DE R-20 SEG\u00daN B?",
+  "approvalBinding": {
+    "decisionDocument": {
+      "path": "docs/tfg/R20_SECURITY_DECISION.md",
+      "sha256": "0170865ea08d6b6c73fb83793c7a3e67444f9fbf1394617ea9b2e1ca8b6d50a9",
+      "bytes": 23747
+    },
+    "cveMatrix": {
+      "path": "docs/tfg/evidence/2026-10-02-r20/cve-matrix.json",
+      "sha256": "68d979aefe37b361a3d3de1ba138509dc805e84e3223322605e68af6876d8353",
+      "bytes": 82053
+    },
+    "imageBinding": {
+      "path": "docs/tfg/evidence/2026-10-02-r20-closure/image-binding-resolution.json",
+      "sha256": "cd0fd843d7eb99e34b4d6e35dcc078309b4ce9a0d64537557d8ba9db0e7c3e79",
+      "bytes": 10239
+    },
+    "scanEvidence": {
+      "path": "docs/tfg/evidence/2026-10-02-r20-closure/canonical-scans.json",
+      "sha256": "57ab0bc061ee8c80178cf8bc52250b10f96cf61fc7066d84aa14ab1c943a45ea",
+      "bytes": 52939
+    }
+  },
+  "risk19": "OPEN; separate, explicitly unauthorized and unchanged",
+  "risk20": "OPEN; accepted=false",
+  "tfgA": "IN PROGRESS; R-19 and closure gate remain pending"
+}

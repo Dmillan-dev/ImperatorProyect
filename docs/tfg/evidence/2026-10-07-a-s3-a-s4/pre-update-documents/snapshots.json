@@ -1,0 +1,134 @@
+[
+  {
+    "original": {
+      "path": "README.md",
+      "sha256": "3f24a5c8ead8e9a0de71ac694310653bdd54df57f3e8c8c57cd2d7295eb3729b",
+      "bytes": 19532
+    },
+    "snapshot": {
+      "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/pre-update-documents/README.md.txt",
+      "sha256": "3f24a5c8ead8e9a0de71ac694310653bdd54df57f3e8c8c57cd2d7295eb3729b",
+      "bytes": 19532
+    }
+  },
+  {
+    "original": {
+      "path": "docs/project/PROJECT_STATUS.md",
+      "sha256": "560de51c4be923c773f00213343af6e997131d59cf65b3bff37de29dcbb0fc32",
+      "bytes": 46358
+    },
+    "snapshot": {
+      "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/pre-update-documents/docs__project__PROJECT_STATUS.md.txt",
+      "sha256": "560de51c4be923c773f00213343af6e997131d59cf65b3bff37de29dcbb0fc32",
+      "bytes": 46358
+    }
+  },
+  {
+    "original": {
+      "path": "docs/tfg/README.md",
+      "sha256": "e660d0175b4ca47f1a1a2890cd6181b602842dec850dbcc499fd4167c0ef2658",
+      "bytes": 7407
+    },
+    "snapshot": {
+      "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/pre-update-documents/docs__tfg__README.md.txt",
+      "sha256": "e660d0175b4ca47f1a1a2890cd6181b602842dec850dbcc499fd4167c0ef2658",
+      "bytes": 7407
+    }
+  },
+  {
+    "original": {
+      "path": "docs/tfg/00_TFG_MASTER_PLAN.md",
+      "sha256": "53558744447f2cb136eee05244acc3f5ae776ce199971687660b80c35494ea06",
+      "bytes": 22966
+    },
+    "snapshot": {
+      "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/pre-update-documents/docs__tfg__00_TFG_MASTER_PLAN.md.txt",
+      "sha256": "53558744447f2cb136eee05244acc3f5ae776ce199971687660b80c35494ea06",
+      "bytes": 22966
+    }
+  },
+  {
+    "original": {
+      "path": "docs/tfg/03_TRACEABILITY_MATRIX.md",
+      "sha256": "a623ebba2c40d5e88cf4d511319d40c6f7a3221e02c77e09db2998a40144f452",
+      "bytes": 12858
+    },
+    "snapshot": {
+      "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/pre-update-documents/docs__tfg__03_TRACEABILITY_MATRIX.md.txt",
+      "sha256": "a623ebba2c40d5e88cf4d511319d40c6f7a3221e02c77e09db2998a40144f452",
+      "bytes": 12858
+    }
+  },
+  {
+    "original": {
+      "path": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "sha256": "5365cd3aaf4c427d703205afb1dd777b371c109c1347e1542a60a113685bcca1",
+      "bytes": 32129
+    },
+    "snapshot": {
+      "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/pre-update-documents/docs__tfg__04_EVIDENCE_REGISTER.md.txt",
+      "sha256": "5365cd3aaf4c427d703205afb1dd777b371c109c1347e1542a60a113685bcca1",
+      "bytes": 32129
+    }
+  },
+  {
+    "original": {
+      "path": "docs/tfg/05_ARCHITECTURE.md",
+      "sha256": "66544c41f6254cf02151e809375a8bb5806b755f21febfdc2202486f77c0f0a1",
+      "bytes": 7266
+    },
+    "snapshot": {
+      "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/pre-update-documents/docs__tfg__05_ARCHITECTURE.md.txt",
+      "sha256": "66544c41f6254cf02151e809375a8bb5806b755f21febfdc2202486f77c0f0a1",
+      "bytes": 7266
+    }
+  },
+  {
+    "original": {
+      "path": "docs/tfg/07_DEMO_AND_DEFENSE.md",
+      "sha256": "dcf9129fdb55581ad351ae1c8cb7b5737d54ebaccd16faabb7d339d059e9f2b4",
+      "bytes": 7804
+    },
+    "snapshot": {
+      "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/pre-update-documents/docs__tfg__07_DEMO_AND_DEFENSE.md.txt",
+      "sha256": "dcf9129fdb55581ad351ae1c8cb7b5737d54ebaccd16faabb7d339d059e9f2b4",
+      "bytes": 7804
+    }
+  },
+  {
+    "original": {
+      "path": "docs/tfg/A_S3_EVIDENCE_VERSIONING.md",
+      "sha256": "3cbcf07c2f7e68ebbe0fb53bc7f92003b3f0607790090f1b49692fb4c2ecf79a",
+      "bytes": 4776
+    },
+    "snapshot": {
+      "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/pre-update-documents/docs__tfg__A_S3_EVIDENCE_VERSIONING.md.txt",
+      "sha256": "3cbcf07c2f7e68ebbe0fb53bc7f92003b3f0607790090f1b49692fb4c2ecf79a",
+      "bytes": 4776
+    }
+  },
+  {
+    "original": {
+      "path": "docs/tfg/01_ACADEMIC_SCOPE.md",
+      "sha256": "d7bad6218a703c25f66d60541ee0be6f9f33dfada091d8104d900b4b862e98fd",
+      "bytes": 6162
+    },
+    "snapshot": {
+      "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/pre-update-documents/docs__tfg__01_ACADEMIC_SCOPE.md.txt",
+      "sha256": "d7bad6218a703c25f66d60541ee0be6f9f33dfada091d8104d900b4b862e98fd",
+      "bytes": 6162
+    }
+  },
+  {
+    "original": {
+      "path": "docs/tfg/02_COMPETENCY_MATRIX.md",
+      "sha256": "345e5a0184f379933fce5219c8397f70f76cf59ac5d62ba67da015ee94acd698",
+      "bytes": 18223
+    },
+    "snapshot": {
+      "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/pre-update-documents/docs__tfg__02_COMPETENCY_MATRIX.md.txt",
+      "sha256": "345e5a0184f379933fce5219c8397f70f76cf59ac5d62ba67da015ee94acd698",
+      "bytes": 18223
+    }
+  }
+]

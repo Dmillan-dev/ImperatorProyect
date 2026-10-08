@@ -1,0 +1,79 @@
+{
+  "result": "PASS for local version preparation; not release acceptance",
+  "recordedAtUtc": "2026-10-07T10:25:23.486945+00:00",
+  "baseCommit": "b602bbe1dde92a902c17272d59cd9f0c10b9efe5",
+  "parentCandidate": "8380e8d6e70ca4c858604ce4fcc0e0198fa162e1",
+  "candidateCommit": "b02e3e2eb10ff2734ce05691dda04fcf0ff82058",
+  "candidateTree": "da44bebd3e6167361f812b456490f91a15ccc71d",
+  "candidateBranch": "tfg/a-s3-a-s4-documentation",
+  "candidateCheckout": "D:\\Imperator\\build\\tfg-a\\a-s3-a-s4-2026-10-07\\review-checkout",
+  "sourceFilesVerified": 1194,
+  "runtimeRawInputsVerified": 383,
+  "runtimeContentFingerprint": "cbc6535ee56bfa991fb96551a90cda7dc35afd2204056f561900614ab0a5d0b7",
+  "documentationOnlyDeltaFromParent": true,
+  "candidateDelta": {
+    "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/candidate-delta.json",
+    "sha256": "1346483c2170caa838734f0ccb55120305b9bd7295caa75480293d854925856e",
+    "bytes": 23135
+  },
+  "exactSourceZip": {
+    "path": "build/tfg-a/a-s3-a-s4-2026-10-07/exact-source.zip",
+    "sha256": "a264e6e507c4fa445d20a3d51e7f617a28cfcc6460cbae8840c288e954515326",
+    "bytes": 18923026
+  },
+  "gitBundle": {
+    "path": "build/tfg-a/a-s3-a-s4-2026-10-07/candidate.bundle",
+    "sha256": "bd15cb57d07eccd7b0a275c6dbf6038311bbb93c99bc69a488677b7a50268248",
+    "bytes": 13593859
+  },
+  "bundlePrerequisite": "b602bbe1dde92a902c17272d59cd9f0c10b9efe5",
+  "bundleVerified": true,
+  "candidateWorkingTreeClean": true,
+  "originalGitIndexOrBranchChanged": false,
+  "acceptedReleaseCommit": null,
+  "newCodeDependencyImageChange": false,
+  "approvedRuntimeImageReference": "Unchanged prior exact bindings; no live Docker query completed today. No new build or automatic transfer.",
+  "CIWorkflowAssociation": {
+    "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/ci-association.json",
+    "sha256": "618dd117479296371d028852330e785838dabe781d490a4dcd7dbce340cd663f",
+    "bytes": 1779
+  },
+  "hostedRun": null,
+  "hostedPassed": false,
+  "PRPublished": false,
+  "remotePush": false,
+  "historySecretScan": {
+    "scanner": "Gitleaks8.30.1",
+    "command": [
+      "D:\\Imperator\\build\\tools\\gitleaks-8.30.1\\gitleaks.exe",
+      "git",
+      "D:\\Imperator\\build\\tfg-a\\a-s3-a-s4-2026-10-07\\review-checkout",
+      "--redact",
+      "--no-banner",
+      "--report-format",
+      "json",
+      "--report-path",
+      "D:\\Imperator\\build\\tfg-a\\a-s3-a-s4-2026-10-07\\candidate-history-gitleaks.json"
+    ],
+    "exitCode": 0,
+    "findings": 0,
+    "report": {
+      "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/candidate-history-gitleaks.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    }
+  },
+  "nonEvidenceDiffCheck": "PASS (CRLF-aware)",
+  "fullDiffCheckExitCode": 2,
+  "fullEvidenceWarningFiles": 33,
+  "fullEvidenceWarningLocations": 377,
+  "A_S3": "LOCAL REVIEW CANDIDATE PREPARED / OWNER ACCEPTANCE-INTEGRATION-HOSTED CI PENDING",
+  "A_S4": "MATERIALS PREPARED / FINAL RUNTIME AND NARRATION PENDING",
+  "TFG_A_COMPLETE": false,
+  "awsAuthorized": false,
+  "postCommitMetadata": "Candidate SHA/delta/history scan/receipt/CI pointer and later publication attestation are outside commit; source ZIP and manifest bind exact input bytes.",
+  "supersededUnpublishedCandidate": {
+    "commit": "49b82f88c4c93d48a201d5c4a4ba8097b9547767",
+    "reason": "Clarified demo ADMIN authority and28+2Evidence split before review/publication; never owner accepted or published."
+  }
+}

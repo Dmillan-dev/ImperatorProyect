@@ -1,0 +1,12 @@
+[
+  {
+    "package": "node_modules/@typescript-eslint/typescript-estree/node_modules/brace-expansion",
+    "before": "5.0.9",
+    "after": "5.0.12"
+  },
+  {
+    "package": "node_modules/brace-expansion",
+    "before": "1.1.18",
+    "after": "1.1.21"
+  }
+]

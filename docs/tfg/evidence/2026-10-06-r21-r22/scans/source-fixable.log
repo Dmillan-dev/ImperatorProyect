@@ -1,0 +1,26 @@
+2026-10-06T17:32:48Z	INFO	[vuln] Vulnerability scanning is enabled
+2026-10-06T17:32:48Z	INFO	[misconfig] Misconfiguration scanning is enabled
+2026-10-06T17:32:48Z	INFO	[checks-client] Using existing checks from cache	path="/root/.cache/trivy/policy/content"
+2026-10-06T17:33:05Z	INFO	[secret] Secret scanning is enabled
+2026-10-06T17:33:05Z	INFO	[secret] If your scanning is slow, please try '--scanners vuln,misconfig' to disable secret scanning
+2026-10-06T17:33:05Z	INFO	[secret] Please see https://trivy.dev/docs/v0.74/guide/scanner/secret#recommendation for faster secret detection
+2026-10-06T17:33:14Z	INFO	[npm] Run "npm install" to collect the license information of packages	dir="frontend/node_modules"
+2026-10-06T17:33:14Z	ERROR	[dockerfile scanner] Failed to parse file	file_path="infra/aws/images/migration/Dockerfile.dockerignore" err="parse dockerfile instruction: parse instruction \"**\": unknown instruction: **"
+2026-10-06T17:33:14Z	ERROR	[dockerfile scanner] Failed to parse file	file_path="infra/docker/backend/Dockerfile.dockerignore" err="parse dockerfile instruction: parse instruction \"**\": unknown instruction: **"
+2026-10-06T17:33:14Z	ERROR	[dockerfile scanner] Failed to parse file	file_path="infra/docker/frontend/Dockerfile.dockerignore" err="parse dockerfile instruction: parse instruction \"**\": unknown instruction: **"
+2026-10-06T17:33:14Z	ERROR	[dockerfile scanner] Failed to parse file	file_path="infra/docker/postgresql/Dockerfile.dockerignore" err="parse dockerfile instruction: parse instruction \"**\": unknown instruction: **"
+2026-10-06T17:33:20Z	INFO	[terraform scanner] Scanning root module	file_path="infra/aws/terraform/bootstrap"
+2026-10-06T17:33:20Z	WARN	[terraform parser] Variable values were not found in the environment or variable files. Evaluating may not work correctly.	module="root" variables="github_owner, github_repository, state_bucket_name"
+2026-10-06T17:33:20Z	INFO	[terraform scanner] Scanning root module	file_path="infra/aws/terraform/pilot"
+2026-10-06T17:33:20Z	WARN	[terraform parser] Variable values were not found in the environment or variable files. Evaluating may not work correctly.	module="root" variables="allowed_https_egress_cidrs, application_database_secret_arn, backend_image_uri, bedrock_invoke_resource_arns, bedrock_model_id, budget_alert_email, certificate_arn, database_admin_image_uri, domain_name, expected_account_id, frontend_image_uri, jwt_issuer_uri, jwt_jwk_set_uri, migration_image_uri, monthly_budget_usd, route53_zone_id"
+2026-10-06T17:33:20Z	INFO	[terraform executor] Ignore finding	rule="aws-elb-alb-not-public" range="infra/aws/terraform/pilot/load-balancer.tf:6"
+2026-10-06T17:33:22Z	INFO	Number of language-specific files	num=2
+2026-10-06T17:33:22Z	INFO	[npm] Detecting vulnerabilities...
+2026-10-06T17:33:22Z	INFO	[pom] Detecting vulnerabilities...
+2026-10-06T17:33:22Z	INFO	Detected config files	num=12
+
+📣 [34mNotices:[0m
+  - Version 0.75.0 of Trivy is now available, current version is 0.74.0
+
+To suppress version checks, run Trivy scans with the --skip-version-check flag
+

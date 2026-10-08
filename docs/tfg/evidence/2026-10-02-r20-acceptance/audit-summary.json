@@ -1,0 +1,33 @@
+{
+  "executedAtUtc": "2026-10-02T17:19:11.049557+00:00",
+  "command": [
+    "npm.cmd",
+    "audit",
+    "--package-lock-only",
+    "--ignore-scripts",
+    "--json",
+    "--cache",
+    "D:\\Imperator\\build\\tfg-a\\r20-acceptance-2026-10-02\\npm-cache"
+  ],
+  "exitCode": 1,
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 1,
+      "critical": 0,
+      "total": 1
+    },
+    "dependencies": {
+      "prod": 23,
+      "dev": 518,
+      "optional": 121,
+      "peer": 8,
+      "peerOptional": 0,
+      "total": 578
+    }
+  },
+  "dependenciesUnchanged": true,
+  "risk19Authorized": false
+}

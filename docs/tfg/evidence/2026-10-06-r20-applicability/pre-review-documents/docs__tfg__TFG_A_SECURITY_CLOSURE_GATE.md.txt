@@ -1,0 +1,26 @@
+# TFG-A Security Closure Gate — R-21/R-22 Re-evaluation 2026-10-06
+
+**A-S2 technical criterion GO. Formal security closure PENDING RESIDUAL DISPOSITION. TFG-A IN PROGRESS. A-S3/A-S4 blocked.**
+
+The [current R-21/R-22 review](R21_R22_SECURITY_REVIEW.md), [exact evidence pack](evidence/2026-10-06-r21-r22/README.md) and [dated gate index](evidence/TFG_A_SECURITY_CLOSURE_GATE_R21_R22_2026-10-06.json) supersede the earlier R-19 checkpoint for the current technical result. Earlier packs and the original risk approval retain their original bytes.
+
+| Required A-S2 technical criterion | Result                                                                 |
+| --------------------------------- | ---------------------------------------------------------------------- |
+| Backend fixable High/Critical     | 0 / PASS                                                               |
+| Frontend fixable High/Critical    | 0 / PASS                                                               |
+| PostgreSQL fixable High/Critical  | 0 / PASS                                                               |
+| Secrets                           | 0 in source/history and all images; ALL Trivy secret severities / PASS |
+
+Source vulnerability/configuration gate also passes with development dependencies included. Regression174+35+41, frontend quality/build, Docker/API/UI/RBAC, FlywayV1–V3, append-only permissions, persistence, readiness/recovery, exact OCI bindings, D094 and scoped cleanup PASS. Playwright9 passes/6 intentional skips. Production npm audit0. Full scans remain visible and FAIL for non-fixable residuals: frontend48High/1Critical, PostgreSQL63High/3Critical, source braces1High; full npm5High affected-package aggregates from that one advisory.
+
+## Risk Disposition Boundary
+
+R-17/R-19 remain CLOSED for their original findings. R-21 is CLOSED for its two newly authorized corrected advisories; R-22 CLOSED for its authorized PCRE2/Perl findings. The braces development residual is separately registered **R-23 OPEN / NOT ACCEPTED**, and was not modified.
+
+R-20 is historically ACCEPTED TEMPORARILY, but **currentVersionAccepted=false / REVIEW REQUIRED** for these changed image/runtime/test/lock/DB hashes. Current image residual matrix115rows/23distinctCVEs is a subset of historical CVE identities; this does not transfer approval across versions. Review must consider changed Perl installed-version bindings and the complete new hash index. The original [approval](evidence/2026-10-02-r20-acceptance/acceptance.json) remains immutable and expires exclusively **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**. No automatic renewal, extension or acceptance transfer. Local loopback TFG-A/synthetic only; AWS/production/real data and pilot exposure excluded. Codex verifies evidence and cannot accept risk.
+
+## Current Decision
+
+The zero-fixable/zero-secret criterion requested by the owner now permits **A-S2 technical GO**. It is not an absolute-zero scan, residual-risk approval, accepted local SHA or TFG-A completion. Formal Security Closure remains **PENDING RESIDUAL DISPOSITION** until current R-20 applicability is explicitly decided and independent braces disposition is documented. The owner has explicitly prohibited automatic advancement: **A-S3/A-S4/TFG-B/AWS remain blocked and no further dependency update is authorized**.
+
+Dirty local worktree is bound by actual runtime content fingerprint and frozen OCI digests, on baseline `b602bbe1dde92a902c17272d59cd9f0c10b9efe5`; no accepted commit/hosted CI/external IdP/institutional approval is claimed. D101 and narrated defense remain separate obligations. Historical source/PR states are evidence snapshots, not current hosted checks.

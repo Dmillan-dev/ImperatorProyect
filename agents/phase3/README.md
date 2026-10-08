@@ -2,7 +2,10 @@
 
 Status: **ACTIVE**
 
-Current gate: **D101 Stage A - D095 external Keycloak HTTPS conformance**
+Current work: **TFG-A - bounded maintenance and isolated local evidence**
+
+D101: **OPERATOR-DEFERRED / BLOCKED_EXTERNAL**; mandatory before Pilot
+Readiness under D095, not a new product or TFG sprint.
 
 Authorization: **D079 - Phase 3 Vertical-Slice Acceleration; D085 - MVP Delivery Roadmap Evolution; D095 - D092 Runtime Certification Scope Correction; D096 - Minimum Observability Runtime Contract; D097 - MVP Observability Scope Correction; D098 - Runtime Supply Chain Refresh; D099 - Auditable Amazon Bedrock Explanation; D100 - AWS SAA Portfolio Deployment Contract**
 
@@ -91,7 +94,7 @@ Locked constraints:
 ## Controlled Sequence
 
 | Gate | Objective | Status |
-|---|---|---|
+| --------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | 3.0 | Functional Runtime Composition | CERTIFIED |
 | 3.1 | JSONL Evidence Import, Validation And Normalization | CERTIFIED |
 | 3.2 | Deterministic Decision Creation | CERTIFIED |
@@ -135,7 +138,8 @@ Locked constraints:
 | D099 | Auditable Amazon Bedrock Explanation | ACCEPTED; IMPLEMENTATION COMPLETE / HOSTED REPOSITORY PASS |
 | D100 | AWS SAA Portfolio Deployment | ACCEPTED; IMPLEMENTATION COMPLETE / HOSTED REPOSITORY PASS / AWS APPLY NOT AUTHORIZED |
 | 4.4.2 | TFG Bedrock And AWS Deployment Preparation | COMPLETE / HOSTED REPOSITORY PASS |
-| D101 Stage A | D095 External Keycloak HTTPS Conformance | AUTHORIZED / CURRENT |
+| TFG-A           | Bounded maintenance, risk control and isolated local evidence | IN PROGRESS / CURRENT; not a product sprint                                           |
+| D101 Stage A    | D095 External Keycloak HTTPS Conformance                      | OPERATOR-DEFERRED / BLOCKED_EXTERNAL                                                  |
 | D101 Stages B-C | Costed AWS Plan And Authorized Deployment | BLOCKED / NOT AUTHORIZED |
 | 4.5 | Pilot Readiness | NOT OPEN |
 | 5.0 | MVP Release | PENDING |
@@ -695,9 +699,11 @@ application and migration image, PostgreSQL D094 and AWS IaC checks passed. No
 AWS authentication, `terraform plan`, `terraform apply`, image publication,
 real Bedrock invocation, cloud resource or deployment was executed.
 
-D101 Stage A is the sole current gate and authorizes only the external Keycloak
-HTTPS conformance required by D095. D101 Stages B and C remain blocked. The
-current prompt is
+The founder started TFG-A bounded maintenance and isolated local evidence on
+2026-10-01. D101 is OPERATOR-DEFERRED / BLOCKED_EXTERNAL, not completed or
+waived; D095 remains mandatory before Pilot Readiness. D101 Stages B-C and
+TFG-B/C/D remain not authorized. The existing D101 prompt is a deferred
+external dependency procedure, not the current sprint:
 `agents/phase3/SPRINT_4.5_D101_PILOT_IDENTITY_AND_AWS_CERTIFICATION_PROMPT.md`.
 
 ## Demonstration And Pilot Boundary

@@ -105,6 +105,18 @@ $requiredFragments = @(
     "-buildvcs=false",
     "-buildid="
 )
+$perlPatch = $lock.runtimePatches.perl
+if ($null -eq $perlPatch -or @($perlPatch.packages).Count -ne 4) {
+    throw "The pinned Bookworm Perl security patch requires all four runtime packages."
+}
+foreach ($package in @($perlPatch.packages)) {
+    if ($package.version -ne $perlPatch.version -or
+        $package.sourceSha256 -notmatch "^[0-9a-f]{64}$" -or
+        [string]::IsNullOrWhiteSpace($package.sourceUrl)) {
+        throw "Invalid pinned Perl patch entry: $($package.package)"
+    }
+    $requiredFragments += @($package.sourceUrl, $package.sourceSha256)
+}
 foreach ($fragment in $requiredFragments) {
     if (-not $dockerfile.Contains($fragment)) {
         throw "Dockerfile and supply-chain lock disagree: $fragment"
@@ -301,6 +313,16 @@ if ($pcre2Version.Trim() -ne $lock.runtimePatches.pcre2.version) {
     throw "Unexpected libpcre2 runtime version: $pcre2Version"
 }
 
+foreach ($package in @($perlPatch.packages)) {
+    $installedVersion = (Get-CheckedOutput -Command $docker -Arguments @(
+        "run", "--rm", "--entrypoint", "dpkg-query", $ImageTag,
+        '--showformat=${Version}', "--show", $package.package
+    )) -join "`n"
+    if ($installedVersion.Trim() -ne $package.version) {
+        throw "Unexpected $($package.package) runtime version: $installedVersion"
+    }
+}
+
 Invoke-Checked -Command $trivy -Arguments @(
     "image",
     "--image-src", "docker",
@@ -341,6 +363,7 @@ if ($vulnerabilities.Count -gt 0 -or $secrets.Count -gt 0) {
 foreach ($forbiddenCve in @(
         $lock.acceptance.forbiddenCve
         $lock.runtimePatches.pcre2.fixedCves
+        $perlPatch.fixedCves
     )) {
     if ((Get-Content -Raw -LiteralPath $scanJsonPath).Contains(
             $forbiddenCve

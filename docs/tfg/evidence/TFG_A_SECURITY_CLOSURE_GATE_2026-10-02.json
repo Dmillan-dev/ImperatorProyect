@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "track": "TFG-A",
+  "gate": "Security Closure Gate",
+  "status": "NO-GO",
+  "complete": false,
+  "recordedAtUtc": "2026-10-02T17:29:05.066497+00:00",
+  "baselineGitCommit": "b602bbe1dde92a902c17272d59cd9f0c10b9efe5",
+  "newCommitCreated": false,
+  "scope": "Security preflight only; explicit R-20 B registration; no dependency or product change; no TFG-B/AWS",
+  "risks": {
+    "risk17": "CLOSED for original five",
+    "risk19": "OPEN; separately unauthorized; no remediation applied",
+    "risk20": "ACCEPTED TEMPORARILY"
+  },
+  "tfgA": "IN PROGRESS",
+  "approval": {
+    "path": "docs/tfg/evidence/2026-10-02-r20-acceptance/acceptance.json",
+    "sha256": "f05a78809830df4aacd431527997df0acf5d9bc3cd558705d9104149e64a5cb7",
+    "bytes": 8692
+  },
+  "currentDecision": {
+    "path": "docs/tfg/R20_SECURITY_DECISION.md",
+    "sha256": "48eb028f2118a1bb775db3365d5a1f0e55a165e128ff45d9fa0b79978f20461c",
+    "bytes": 25397
+  },
+  "analysisIndex": {
+    "path": "docs/tfg/evidence/TFG_A_R20_2026-10-02.json",
+    "sha256": "53b645c2819e67b14f40963da758371f86d85c361ab50bc9b647f3e799bbb447",
+    "bytes": 12751
+  },
+  "gateDocument": {
+    "path": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+    "sha256": "7a2831e2dee5f98fcf8ca2dc84266ec145687b0d1a77c9e51a88f37a0456e283",
+    "bytes": 4695
+  },
+  "runtimeTestInputs": {
+    "source": {
+      "path": "docs/tfg/evidence/TFG_A_R17_2026-10-02.json",
+      "sha256": "2c36a2b8cd34cb386ac1e22bc18be91065070c1a0e484dedcfd608be12824574",
+      "bytes": 75520
+    },
+    "sha256": "3e9382b6ce80ec50b09547c4ceca28b94e9df2bb61c16395f59d76edfcc73c63",
+    "checkedRecords": 346,
+    "unchanged": true
+  },
+  "canonicalImages": [
+    {
+      "service": "backend",
+      "indexDigest": "sha256:be4875883dd38b6b09b1a9c5f6cb63d6be3f62ed12c33f1f3f3b19cc047f45c5",
+      "platformManifestDigest": "sha256:4159c0dee5e61a2d76f87f546dc72134c45c3786960c654fb5661c2032c7e56b",
+      "configDigest": "sha256:7f639b3fcbf8eeeea5f76b4e2ea0241131a99b93f2986ceb2855a95e8b3d9031",
+      "scanImageId": "sha256:7f639b3fcbf8eeeea5f76b4e2ea0241131a99b93f2986ceb2855a95e8b3d9031",
+      "osCounts": {},
+      "fixableHighCritical": 0,
+      "secrets": 0,
+      "strictExitCode": 0,
+      "reportPath": "docs/tfg/evidence/2026-10-02-r20-closure/backend-canonical-trivy.json",
+      "reportSha256": "a0fa5c795142adea1fd0e1cc20b8e5c687f8723ae50212b83b18d0f1e12dcb19"
+    },
+    {
+      "service": "frontend",
+      "indexDigest": "sha256:f9f8a5e21c79c922d505ba78e2193ae293a49ebc7038b39c2cf7e8377700ca40",
+      "platformManifestDigest": "sha256:82582f8aee09291e5cada3f28046e2539bebf029333b080a1db420902531738d",
+      "configDigest": "sha256:0cd5667c82950ba30d238da3479fa079d009de54f2d726294564d10e6e440e7a",
+      "scanImageId": "sha256:0cd5667c82950ba30d238da3479fa079d009de54f2d726294564d10e6e440e7a",
+      "osCounts": {
+        "HIGH": 53,
+        "CRITICAL": 4
+      },
+      "fixableHighCritical": 0,
+      "secrets": 0,
+      "strictExitCode": 1,
+      "reportPath": "docs/tfg/evidence/2026-10-02-r20-closure/frontend-canonical-trivy.json",
+      "reportSha256": "74086a5579217ce0befdbf756f7e99b0ae50b7ea4dcc7677105a7d5315bbdf24"
+    },
+    {
+      "service": "postgres",
+      "indexDigest": "sha256:5fb7b30bcc3399f02fb259fc15bfe61338ff90eeb8dd17bd15090f68298a269d",
+      "platformManifestDigest": "sha256:a0a072063a0ee345dcd6ebbc1420bde7d0f203c6619c872d71ca2ca765036a69",
+      "configDigest": "sha256:805fa48d501a9894beb06b82ff09d6d472b4c59b94ee6d74d9eb2ad54f407327",
+      "scanImageId": "sha256:805fa48d501a9894beb06b82ff09d6d472b4c59b94ee6d74d9eb2ad54f407327",
+      "osCounts": {
+        "HIGH": 81,
+        "CRITICAL": 15
+      },
+      "fixableHighCritical": 0,
+      "secrets": 0,
+      "strictExitCode": 1,
+      "reportPath": "docs/tfg/evidence/2026-10-02-r20-closure/postgres-canonical-trivy.json",
+      "reportSha256": "3b6ecab926b9bd9270a03c711c1e4b924a67e20b2823d959b855c3b8210e4172"
+    }
+  ],
+  "controls": [
+    {
+      "check": "Explicit R-20 B approval within scope and expiry",
+      "result": "PASS",
+      "evidence": {
+        "path": "docs/tfg/evidence/2026-10-02-r20-acceptance/acceptance.json",
+        "sha256": "f05a78809830df4aacd431527997df0acf5d9bc3cd558705d9104149e64a5cb7",
+        "bytes": 8692
+      }
+    },
+    {
+      "check": "Canonical image fixable High/Critical and secrets zero",
+      "result": "PASS on reused verified evidence",
+      "evidence": {
+        "path": "docs/tfg/evidence/2026-10-02-r20-closure/canonical-scans.json",
+        "sha256": "57ab0bc061ee8c80178cf8bc52250b10f96cf61fc7066d84aa14ab1c943a45ea",
+        "bytes": 52939
+      },
+      "newlyExecuted": false
+    },
+    {
+      "check": "npm audit includes development dependencies",
+      "result": "FAIL",
+      "exitCode": 1,
+      "counts": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 1,
+        "critical": 0,
+        "total": 1
+      },
+      "evidence": {
+        "path": "docs/tfg/evidence/2026-10-02-r20-acceptance/npm-audit.json",
+        "sha256": "4e7d27e0724f04912ca8e3c2191ff2b85d789c23d4a9466c239c59d7db197c1b",
+        "bytes": 4304
+      }
+    },
+    {
+      "check": "Source Trivy includes dev, zero fixable High/Critical",
+      "result": "FAIL",
+      "exitCode": 1,
+      "counts": {
+        "HIGH": 4
+      },
+      "evidence": {
+        "path": "docs/tfg/evidence/2026-10-02-r20-acceptance/source-with-dev-trivy.json",
+        "sha256": "4ced47eeb2ae0da6f3f7b01bd22cc8e5062d194fd09b07e4c313af2bf2e12e9f",
+        "bytes": 473829
+      }
+    },
+    {
+      "check": "Publication Gitleaks zero",
+      "result": "PASS",
+      "summary": {
+        "executedAtUtc": "2026-10-02T17:29:04.787176+00:00",
+        "scanner": "Gitleaks 8.30.1",
+        "exitCode": 0,
+        "findings": 0,
+        "redacted": true,
+        "ruleChanges": false,
+        "files": 740,
+        "scope": "Complete selected public-source snapshot; modified tracked and new docs/scripts included; ignored build and pre-existing untracked output/tfg excluded"
+      }
+    },
+    {
+      "check": "346 runtime/test inputs match existing R-17 evidence",
+      "result": "PASS",
+      "functionalRegressionRerun": false
+    },
+    {
+      "check": "R-19 separately authorized and remediated",
+      "result": "NOT MET",
+      "authorized": false
+    }
+  ],
+  "blockers": [
+    "Known fixable brace-expansion findings in independent R-19; zero-fixable source gate fails",
+    "R-19 authorization/remediation/affected regression remain absent; not supplied by R-20 acceptance"
+  ],
+  "limitations": [
+    "No new image build or image scan; original canonical scans were hash-verified and reused",
+    "174 unit / 35 integration / 41 frontend tests remain dated R-17 evidence, not repeated this security preflight",
+    "Strict absolute-zero frontend/Postgres exits 1 remain visible; accepted residual set does not change scanner policy",
+    "No automatic transfer to changed images/runtime/scanner evidence and no automatic renewal",
+    "No hosted CI, accepted release, institutional approval, TFG-B, AWS, production or real-data work"
+  ],
+  "artifacts": [
+    {
+      "path": "docs/tfg/evidence/2026-10-02-r20-acceptance/acceptance.json",
+      "sha256": "f05a78809830df4aacd431527997df0acf5d9bc3cd558705d9104149e64a5cb7",
+      "bytes": 8692
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-02-r20-acceptance/analysis-index-before-approval.json",
+      "sha256": "e9836d1e17e42a4fc82ec6e3a2616ccdf372fc7eac595bfca18b75234a28c7ab",
+      "bytes": 10725
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-02-r20-acceptance/approved-decision-snapshot.txt",
+      "sha256": "0170865ea08d6b6c73fb83793c7a3e67444f9fbf1394617ea9b2e1ca8b6d50a9",
+      "bytes": 23747
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-02-r20-acceptance/audit-summary.json",
+      "sha256": "dbddda0fadf49f8507cf66ced01fe266e537019c48c9005f115b3779184e1d75",
+      "bytes": 680
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-02-r20-acceptance/npm-audit.json",
+      "sha256": "4e7d27e0724f04912ca8e3c2191ff2b85d789c23d4a9466c239c59d7db197c1b",
+      "bytes": 4304
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-02-r20-acceptance/preparation-index-before-approval.json",
+      "sha256": "a582754f4e301ea09c27fc654d216f4a621d3ba833581222374897bdb1cd1419",
+      "bytes": 11784
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-02-r20-acceptance/publication-secrets-summary.json",
+      "sha256": "5ae6ec5e1775752973a54ed295a8ff5ee0d8f25b713b3e3ea265b5e4e71668df",
+      "bytes": 359
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-02-r20-acceptance/r17-review-before-r20-approval.txt",
+      "sha256": "0dcd7f11cba568297416fe74eb292d6840035e4a265c8f6bb79a75cc84d84820",
+      "bytes": 9916
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-02-r20-acceptance/README.md",
+      "sha256": "ddd5d13f1e2b0a6946b1a8a3f20b9b81c768e4dc8eda5bb0a2dfd06f5264829a",
+      "bytes": 3807
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-02-r20-acceptance/source-scan-summary.json",
+      "sha256": "212512bf8d87b44aa83975a8fcf4b337c6a337602e72fe04224b7c136393a788",
+      "bytes": 2630
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-02-r20-acceptance/source-with-dev-trivy.json",
+      "sha256": "4ced47eeb2ae0da6f3f7b01bd22cc8e5062d194fd09b07e4c313af2bf2e12e9f",
+      "bytes": 473829
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-02-r20-acceptance/verification.json",
+      "sha256": "963e723fe7090024f7d8141fcc92d73824414479bbabca22fa4eea5346422514",
+      "bytes": 12022
+    }
+  ]
+}

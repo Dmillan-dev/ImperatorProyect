@@ -1,0 +1,1168 @@
+{
+  "atUtc": "2026-10-06T19:29:07.679409+00:00",
+  "images": [
+    {
+      "id": "sha256:04156f7222d2fbbd8343fde4d015a237a8eed5bd694934217da42ac3e8ac1ba3",
+      "repoTags": [
+        "imperator/postgres:tfg-a-e4e8680b2feedee8"
+      ],
+      "repoDigests": [
+        "imperator/postgres@sha256:04156f7222d2fbbd8343fde4d015a237a8eed5bd694934217da42ac3e8ac1ba3"
+      ],
+      "created": "2026-10-01T19:19:24.470423679Z",
+      "sizeBytes": 628020377,
+      "rootFsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9",
+        "sha256:f7daaa1079f0e5c9fc156924353fd619309f56a8a979b90c93d4f4a7510385f9",
+        "sha256:7308c83f2cf9d1f836057cfc2b2edcc8fb700bdf6110d759d8eb3e98cca72fb5",
+        "sha256:8489a6ba3ed946b3926009dc45a032a370ebffc1425bdaf85d8dbfb0d1c3fdb7",
+        "sha256:272ba34d44c5c9b60d3ef4e6e63f8df7f72b6c1806ad802f3f6af2fdc81422dc",
+        "sha256:ef6004653cfc9a7519a0d5d558f2d2129ceded1ef3955277feb3d27ed809db1b"
+      ],
+      "user": "999:999",
+      "labels": {
+        "org.opencontainers.image.revision": "tfg-a-e4e8680b2feedee8",
+        "org.opencontainers.image.source": "https://github.com/Dmillan-dev/ImperatorProyect",
+        "org.opencontainers.image.title": "IMPERATOR PostgreSQL Runtime",
+        "org.opencontainers.image.version": "18.6-gosu1.19-go1.26.6-pcre2deb12u1"
+      }
+    },
+    {
+      "id": "sha256:0a33fd46bbff0fabf711d621e347d88aa27497ce2585324809f86709d198f407",
+      "repoTags": [
+        "imperator/postgres:tfg-a-5939e4576beb47a7"
+      ],
+      "repoDigests": [
+        "imperator/postgres@sha256:0a33fd46bbff0fabf711d621e347d88aa27497ce2585324809f86709d198f407"
+      ],
+      "created": "2026-10-02T10:09:03.702182379Z",
+      "sizeBytes": 628020386,
+      "rootFsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9",
+        "sha256:f7daaa1079f0e5c9fc156924353fd619309f56a8a979b90c93d4f4a7510385f9",
+        "sha256:7308c83f2cf9d1f836057cfc2b2edcc8fb700bdf6110d759d8eb3e98cca72fb5",
+        "sha256:8489a6ba3ed946b3926009dc45a032a370ebffc1425bdaf85d8dbfb0d1c3fdb7",
+        "sha256:272ba34d44c5c9b60d3ef4e6e63f8df7f72b6c1806ad802f3f6af2fdc81422dc",
+        "sha256:33fd993b74f8e60c603978785c882b297e27d37e50761ebb03d707e2867f6ab5"
+      ],
+      "user": "999:999",
+      "labels": {
+        "org.opencontainers.image.revision": "tfg-a-5939e4576beb47a7",
+        "org.opencontainers.image.source": "https://github.com/Dmillan-dev/ImperatorProyect",
+        "org.opencontainers.image.title": "IMPERATOR PostgreSQL Runtime",
+        "org.opencontainers.image.version": "18.6-gosu1.19-go1.26.6-pcre2deb12u1"
+      }
+    },
+    {
+      "id": "sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af",
+      "repoTags": [
+        "postgres:18.6-bookworm",
+        "postgres@sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af"
+      ],
+      "repoDigests": [
+        "postgres@sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af"
+      ],
+      "created": "2026-08-25T00:41:53.724803403Z",
+      "sizeBytes": 623400433,
+      "rootFsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9"
+      ],
+      "user": null,
+      "labels": {}
+    },
+    {
+      "id": "sha256:2103d939daee9cc7d0dfe13b1f2e67f3231d4f0b6fc1bd90b26978753dbff461",
+      "repoTags": [
+        "imperator/frontend:tfg-a-1c0ed64469ec6b54"
+      ],
+      "repoDigests": [
+        "imperator/frontend@sha256:2103d939daee9cc7d0dfe13b1f2e67f3231d4f0b6fc1bd90b26978753dbff461"
+      ],
+      "created": "2026-10-06T15:57:42.128212918Z",
+      "sizeBytes": 385563525,
+      "rootFsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:1e7371fc32429a7e51d407ce762d5d819c5eebbf44c3652bd0d353ed14a09e31",
+        "sha256:42593510e34eca2ac84ebf9c6a22e16ced5956957367dc8688d9de06db2882a9",
+        "sha256:a009183396c313f4e54f120823c621c6e9a7bbc59225e9ddb36b0815bc1e41f9",
+        "sha256:22e1bcb0042509176dd832fe400ab2be89af37a71954be3f17f81859cf289dcf",
+        "sha256:be8348803f359f04f039da602b11b96166ac56b375a6f9da4a6497a9bfad7753",
+        "sha256:7350234e2f145e2e4175c6512f004cf8571b4f35a4372c01d28c1476b7d983ba",
+        "sha256:2e1e325e06fa14ee838768483a089d18aa56b147c54c897b15a85be0add12716",
+        "sha256:499704072b15aea083e8e14642f320aa46dd7ada8955714b47676db021b70ba7",
+        "sha256:5d34ba6a8456022ef47cd7533bf33503860531ce5a6522708b85a93197e548a3"
+      ],
+      "user": "1000:1000",
+      "labels": {
+        "org.opencontainers.image.revision": "tfg-a-1c0ed64469ec6b54",
+        "org.opencontainers.image.source": "https://github.com/Dmillan-dev/ImperatorProyect",
+        "org.opencontainers.image.title": "IMPERATOR Decision Review Workspace",
+        "org.opencontainers.image.version": "0.1.0"
+      }
+    },
+    {
+      "id": "sha256:22aa1712c86b69581c30834822fb01c00644c3c41851f3e7943e7f1f465dc143",
+      "repoTags": [
+        "imperator/frontend:tfg-a-e4e8680b2feedee8"
+      ],
+      "repoDigests": [
+        "imperator/frontend@sha256:22aa1712c86b69581c30834822fb01c00644c3c41851f3e7943e7f1f465dc143"
+      ],
+      "created": "2026-10-01T19:19:32.26878956Z",
+      "sizeBytes": 385563483,
+      "rootFsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:1e7371fc32429a7e51d407ce762d5d819c5eebbf44c3652bd0d353ed14a09e31",
+        "sha256:42593510e34eca2ac84ebf9c6a22e16ced5956957367dc8688d9de06db2882a9",
+        "sha256:a009183396c313f4e54f120823c621c6e9a7bbc59225e9ddb36b0815bc1e41f9",
+        "sha256:22e1bcb0042509176dd832fe400ab2be89af37a71954be3f17f81859cf289dcf",
+        "sha256:be8348803f359f04f039da602b11b96166ac56b375a6f9da4a6497a9bfad7753",
+        "sha256:56647e54d43cfee91f233adc12f6fa3c670a424723b13b4c4cc740fec255e20d",
+        "sha256:6a2cca27fb5ce7d9c7cdcdf86038dd962626863f223635c3bf7923dfbb8cfe10",
+        "sha256:7400c2d64f3e791774411e9af47c85a4e260d7cd0df3b7b7a41e5364ec8580d1",
+        "sha256:5d1255da6075d1bac10fb806301bae850b7daec19ba2321fc036ea51120f5f36"
+      ],
+      "user": "1000:1000",
+      "labels": {
+        "org.opencontainers.image.revision": "tfg-a-e4e8680b2feedee8",
+        "org.opencontainers.image.source": "https://github.com/Dmillan-dev/ImperatorProyect",
+        "org.opencontainers.image.title": "IMPERATOR Decision Review Workspace",
+        "org.opencontainers.image.version": "0.1.0"
+      }
+    },
+    {
+      "id": "sha256:28a898719c18a33f4e8000685287fa36fd0dd9560c6440227d3a732d79bb41d8",
+      "repoTags": [
+        "moby/buildkit:buildx-stable-1"
+      ],
+      "repoDigests": [
+        "moby/buildkit@sha256:28a898719c18a33f4e8000685287fa36fd0dd9560c6440227d3a732d79bb41d8"
+      ],
+      "created": "2026-08-04T13:49:32.438604416Z",
+      "sizeBytes": 353165267,
+      "rootFsDiffIds": [
+        "sha256:31ad4a471c6852bfec14d757cc75a566c82a9769f12c3918cf6bf52cc0eeb3d0",
+        "sha256:9e9bc5278a8efa54d9329f5f42b4ec0da201272578db760f8548911b99eacb54",
+        "sha256:a146b4e0e943a503fd1d53af8e1bf7da0ec2d2ad5b1695e5f6fdefbe6e70b878",
+        "sha256:7921c597567b135939893974ad31119c2e3e601d7cfaa8c2da9aa76687407ec8",
+        "sha256:e9bc039a0970c9827be735873de2d0ce68e65bedf98ba8c0362d3d26e0cc4d79",
+        "sha256:372dc489706056a7e1df426a030b8fbe4f7a2533fc9adfe7f33a51da3651b4bb",
+        "sha256:6625c6ed3078e6c82a103f4d16335e933a85cc46bbb56d5b64e0f725b188763a"
+      ],
+      "user": null,
+      "labels": {}
+    },
+    {
+      "id": "sha256:2b73847d07d6cb7da2ace20426de036fa0278feca0bb6520aca62588e9b3f101",
+      "repoTags": [
+        "imperator/postgres:tfg-a-cbc6535ee56bfa99"
+      ],
+      "repoDigests": [
+        "imperator/postgres@sha256:2b73847d07d6cb7da2ace20426de036fa0278feca0bb6520aca62588e9b3f101"
+      ],
+      "created": "2026-10-06T17:31:38.44027691Z",
+      "sizeBytes": 721499841,
+      "rootFsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9",
+        "sha256:f4a70b5aee39526c874cdb8a0e4e169057012b3173ce62cd5b0a89aa070a8f4a",
+        "sha256:e580f330e7ef657842d39e4765f9c804e1e967a321a1f96fe209cc4ea579d9b7",
+        "sha256:5d7f8ba43803700bd3e1f3d79edb023d36d57d75238ef3390c56e8213b38675b",
+        "sha256:96110127cdc446fc8385da035e8fa316b9c909f02d57d2c8089e230ec5880a6e",
+        "sha256:38bacd9bf279d9ed2ef35098972a725fbdbef46276d1c4df00ff7c73ba72f80a",
+        "sha256:7a6e098f9a84aa6d31e02b1cd43c6edf53be36fbf2022e0204721184f4d6b0d2",
+        "sha256:abdcd104c592672feaeff20ccd0b503a49afdab46a438b45f4b110ba33272489",
+        "sha256:0f10cce1cac426ba926ec53666dc7b3dad4ee2668ebccf4b7a99e74542505484",
+        "sha256:855dd3df4c17cb3aa01cdfc99d0ea05ca0a0fae1c2c7576e8775b2691ccb1787"
+      ],
+      "user": "999:999",
+      "labels": {
+        "org.opencontainers.image.revision": "tfg-a-cbc6535ee56bfa99",
+        "org.opencontainers.image.source": "https://github.com/Dmillan-dev/ImperatorProyect",
+        "org.opencontainers.image.title": "IMPERATOR PostgreSQL Runtime",
+        "org.opencontainers.image.version": "18.6-gosu1.19-go1.26.6-pcre2deb12u2-perldeb12u4"
+      }
+    },
+    {
+      "id": "sha256:5b97e49ae7cfd7d5bed01fdcf60df9b7bf654d24bd7c490aa7a65c2e14e7f8c6",
+      "repoTags": [
+        "imperator/r22-frontend-proposal:20261006"
+      ],
+      "repoDigests": [
+        "imperator/r22-frontend-proposal@sha256:5b97e49ae7cfd7d5bed01fdcf60df9b7bf654d24bd7c490aa7a65c2e14e7f8c6"
+      ],
+      "created": "2026-10-06T16:08:44.319927022Z",
+      "sizeBytes": 402371679,
+      "rootFsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:1e7371fc32429a7e51d407ce762d5d819c5eebbf44c3652bd0d353ed14a09e31",
+        "sha256:42593510e34eca2ac84ebf9c6a22e16ced5956957367dc8688d9de06db2882a9",
+        "sha256:a009183396c313f4e54f120823c621c6e9a7bbc59225e9ddb36b0815bc1e41f9",
+        "sha256:22e1bcb0042509176dd832fe400ab2be89af37a71954be3f17f81859cf289dcf",
+        "sha256:be8348803f359f04f039da602b11b96166ac56b375a6f9da4a6497a9bfad7753",
+        "sha256:7350234e2f145e2e4175c6512f004cf8571b4f35a4372c01d28c1476b7d983ba",
+        "sha256:2e1e325e06fa14ee838768483a089d18aa56b147c54c897b15a85be0add12716",
+        "sha256:499704072b15aea083e8e14642f320aa46dd7ada8955714b47676db021b70ba7",
+        "sha256:5d34ba6a8456022ef47cd7533bf33503860531ce5a6522708b85a93197e548a3",
+        "sha256:c296d00eef220b36356d2d874c1e8c3a881e3fda62baca0b2dc903875707a12e",
+        "sha256:6ab32fea1a0f0092ff703513ee5061610913bc58e34e3430fbe5cc8479148ad6"
+      ],
+      "user": "1000:1000",
+      "labels": {
+        "org.opencontainers.image.revision": "tfg-a-1c0ed64469ec6b54",
+        "org.opencontainers.image.source": "https://github.com/Dmillan-dev/ImperatorProyect",
+        "org.opencontainers.image.title": "IMPERATOR Decision Review Workspace",
+        "org.opencontainers.image.version": "0.1.0"
+      }
+    },
+    {
+      "id": "sha256:5cd649ff9a460b2abdc8315da2e7568c5a2c2138d99815db89c5c583f88c18b1",
+      "repoTags": [
+        "imperator/frontend:tfg-a-cbc6535ee56bfa99"
+      ],
+      "repoDigests": [
+        "imperator/frontend@sha256:5cd649ff9a460b2abdc8315da2e7568c5a2c2138d99815db89c5c583f88c18b1"
+      ],
+      "created": "2026-10-06T17:31:42.012454746Z",
+      "sizeBytes": 400767982,
+      "rootFsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:1e7371fc32429a7e51d407ce762d5d819c5eebbf44c3652bd0d353ed14a09e31",
+        "sha256:42593510e34eca2ac84ebf9c6a22e16ced5956957367dc8688d9de06db2882a9",
+        "sha256:a009183396c313f4e54f120823c621c6e9a7bbc59225e9ddb36b0815bc1e41f9",
+        "sha256:22e1bcb0042509176dd832fe400ab2be89af37a71954be3f17f81859cf289dcf",
+        "sha256:f4a70b5aee39526c874cdb8a0e4e169057012b3173ce62cd5b0a89aa070a8f4a",
+        "sha256:e580f330e7ef657842d39e4765f9c804e1e967a321a1f96fe209cc4ea579d9b7",
+        "sha256:54bfc77dba1bdaab58e88099574eb3acd37a1eec8296074c79067168541c9386",
+        "sha256:1aa762f7d0ad8da8d6f3dd3d396131d18dbbaacc8724cff239d129a1c7b99d11",
+        "sha256:e282498343c55562f7f5c4a2d444adc8645ed5ac20338a2564730ca9e5ee2796",
+        "sha256:0eec1d3e668add4ef9defab22bd4795149ca5390dc30f584725abf5ac401eb0b"
+      ],
+      "user": "1000:1000",
+      "labels": {
+        "org.opencontainers.image.revision": "tfg-a-cbc6535ee56bfa99",
+        "org.opencontainers.image.source": "https://github.com/Dmillan-dev/ImperatorProyect",
+        "org.opencontainers.image.title": "IMPERATOR Decision Review Workspace",
+        "org.opencontainers.image.version": "0.1.0"
+      }
+    },
+    {
+      "id": "sha256:62b1e65e8869bc4b4c6aa4fa2b21595256c7c2f6018a9d9ad61caf87187c1969",
+      "repoTags": [
+        "aquasec/trivy:0.74.0"
+      ],
+      "repoDigests": [
+        "aquasec/trivy@sha256:62b1e65e8869bc4b4c6aa4fa2b21595256c7c2f6018a9d9ad61caf87187c1969"
+      ],
+      "created": "2026-08-14T11:27:20.641164516Z",
+      "sizeBytes": 253157416,
+      "rootFsDiffIds": [
+        "sha256:34884abbe92863fce933ed7c39c0e045631af0ed86d5cc0dfbdf9fdca426ce3c",
+        "sha256:0d1aad113ca3ca312e5a7fd48d2a6afbf48c394461d9b18d760ace7e7e37957b",
+        "sha256:0d6dd896789a57ae1d5fee1e800aea345bd20ef1d1ccb768a09cf60730e94ab9",
+        "sha256:9921bb797236daf91fa3e437771401fb52bd39a00b6c554a8b4dfa077789d56e"
+      ],
+      "user": null,
+      "labels": {
+        "org.opencontainers.image.revision": "e1fd17a0ea4a8cf24bc4b4dd7e2cfbf4bb31b994",
+        "org.opencontainers.image.source": "https://github.com/aquasecurity/trivy",
+        "org.opencontainers.image.title": "trivy",
+        "org.opencontainers.image.version": "0.74.0"
+      }
+    },
+    {
+      "id": "sha256:681e6e7b77b73170c959ed04697302f6a21d8db98edb3a2b0f3354a44387096d",
+      "repoTags": [
+        "imperator/backend:tfg-a-cbc6535ee56bfa99"
+      ],
+      "repoDigests": [
+        "imperator/backend@sha256:681e6e7b77b73170c959ed04697302f6a21d8db98edb3a2b0f3354a44387096d"
+      ],
+      "created": "2026-10-06T17:30:59.166159483Z",
+      "sizeBytes": 506170608,
+      "rootFsDiffIds": [
+        "sha256:ea16cace89338c84eb6bcb91a7efdfcae6838fff359efe951858227436486c34",
+        "sha256:d5878fe0c5eb7212a581d6344bb4e24b6cfc886a7ee85d54203765275a422952",
+        "sha256:40ce23912dbe1d52f377ac170d913284a3c74561447514c63c05cb9379a2a04d",
+        "sha256:d58da301ac9add0a0f31176f925eb1b93e1c2bd147b07555f467cb884fd27e5b",
+        "sha256:8a8eb12d782f1d342a52c3c49dd69e27c2c3f196e0e3fe833a5d2200477be3fa",
+        "sha256:d7f19b798e334ffedafe1eb5a3fa4e68d3e8fb109ddda6b90c8bd7e4ae6dd759",
+        "sha256:463f642a7dc5d79421ff78022f9fb42f351f13d702157d6651bd53d5cd9b85cd",
+        "sha256:50e9ae5943b32bb00f0393e2eddab4f16f23095b5e65f25b6969ebc077f9ae56",
+        "sha256:2b79f29f48dc6a1ccc9429f18f862f51c66444e39fbc7fb5c5177722d6f7361a",
+        "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "sha256:670a90f557ff33c285e3cd34e87bda1c2aeed4efcd92b232f0d86830dba7dda9",
+        "sha256:9dbfb33c15ec0a8b38a44cfa1dea4b5e39005ed598599bb30caf8604f26ec947",
+        "sha256:b247ce2d97bd8c8e985eaf93bfbc0760449ed3ca04259feda49747f11a718422"
+      ],
+      "user": "10001:10001",
+      "labels": {
+        "org.opencontainers.image.revision": "tfg-a-cbc6535ee56bfa99",
+        "org.opencontainers.image.source": "https://github.com/Dmillan-dev/ImperatorProyect",
+        "org.opencontainers.image.title": "IMPERATOR Backend",
+        "org.opencontainers.image.version": "0.1.0"
+      }
+    },
+    {
+      "id": "sha256:7711ad60129ad4ad95b2fea97da4fd2c2a20d8461d7b8d1930fae40b60e0b258",
+      "repoTags": [
+        "imperator/postgres:tfg-a-948a205ca268ae54"
+      ],
+      "repoDigests": [
+        "imperator/postgres@sha256:7711ad60129ad4ad95b2fea97da4fd2c2a20d8461d7b8d1930fae40b60e0b258"
+      ],
+      "created": "2026-10-06T15:51:06.355678239Z",
+      "sizeBytes": 628020383,
+      "rootFsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9",
+        "sha256:f7daaa1079f0e5c9fc156924353fd619309f56a8a979b90c93d4f4a7510385f9",
+        "sha256:7308c83f2cf9d1f836057cfc2b2edcc8fb700bdf6110d759d8eb3e98cca72fb5",
+        "sha256:8489a6ba3ed946b3926009dc45a032a370ebffc1425bdaf85d8dbfb0d1c3fdb7",
+        "sha256:272ba34d44c5c9b60d3ef4e6e63f8df7f72b6c1806ad802f3f6af2fdc81422dc",
+        "sha256:1f260aea2b4ca0212cf837857fcac4d7fec87f856070cac9ce4bb45f8efd1f7a"
+      ],
+      "user": "999:999",
+      "labels": {
+        "org.opencontainers.image.revision": "tfg-a-948a205ca268ae54",
+        "org.opencontainers.image.source": "https://github.com/Dmillan-dev/ImperatorProyect",
+        "org.opencontainers.image.title": "IMPERATOR PostgreSQL Runtime",
+        "org.opencontainers.image.version": "18.6-gosu1.19-go1.26.6-pcre2deb12u1"
+      }
+    },
+    {
+      "id": "sha256:7ce6e7f2b9decc4598f3628852bbfe27bb3d59047414398569a9d6e330a12148",
+      "repoTags": [
+        "imperator/postgres:tfg-a-1c0ed64469ec6b54"
+      ],
+      "repoDigests": [
+        "imperator/postgres@sha256:7ce6e7f2b9decc4598f3628852bbfe27bb3d59047414398569a9d6e330a12148"
+      ],
+      "created": "2026-10-06T15:56:56.097196779Z",
+      "sizeBytes": 628020384,
+      "rootFsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9",
+        "sha256:f7daaa1079f0e5c9fc156924353fd619309f56a8a979b90c93d4f4a7510385f9",
+        "sha256:7308c83f2cf9d1f836057cfc2b2edcc8fb700bdf6110d759d8eb3e98cca72fb5",
+        "sha256:8489a6ba3ed946b3926009dc45a032a370ebffc1425bdaf85d8dbfb0d1c3fdb7",
+        "sha256:272ba34d44c5c9b60d3ef4e6e63f8df7f72b6c1806ad802f3f6af2fdc81422dc",
+        "sha256:56f9b632643e5acbc81c6b816d7b57dba635104ea6b1aabb1db213f1a261ac48"
+      ],
+      "user": "999:999",
+      "labels": {
+        "org.opencontainers.image.revision": "tfg-a-1c0ed64469ec6b54",
+        "org.opencontainers.image.source": "https://github.com/Dmillan-dev/ImperatorProyect",
+        "org.opencontainers.image.title": "IMPERATOR PostgreSQL Runtime",
+        "org.opencontainers.image.version": "18.6-gosu1.19-go1.26.6-pcre2deb12u1"
+      }
+    },
+    {
+      "id": "sha256:7ea89cd7bd312a54795c2c60f6991cd642ebb11b5831b6e707af3788c2b248ed",
+      "repoTags": [
+        "imperator/backend:tfg-a-1c0ed64469ec6b54"
+      ],
+      "repoDigests": [
+        "imperator/backend@sha256:7ea89cd7bd312a54795c2c60f6991cd642ebb11b5831b6e707af3788c2b248ed"
+      ],
+      "created": "2026-10-06T15:56:57.032369599Z",
+      "sizeBytes": 506170588,
+      "rootFsDiffIds": [
+        "sha256:ea16cace89338c84eb6bcb91a7efdfcae6838fff359efe951858227436486c34",
+        "sha256:d5878fe0c5eb7212a581d6344bb4e24b6cfc886a7ee85d54203765275a422952",
+        "sha256:40ce23912dbe1d52f377ac170d913284a3c74561447514c63c05cb9379a2a04d",
+        "sha256:d58da301ac9add0a0f31176f925eb1b93e1c2bd147b07555f467cb884fd27e5b",
+        "sha256:8a8eb12d782f1d342a52c3c49dd69e27c2c3f196e0e3fe833a5d2200477be3fa",
+        "sha256:d7f19b798e334ffedafe1eb5a3fa4e68d3e8fb109ddda6b90c8bd7e4ae6dd759",
+        "sha256:463f642a7dc5d79421ff78022f9fb42f351f13d702157d6651bd53d5cd9b85cd",
+        "sha256:50e9ae5943b32bb00f0393e2eddab4f16f23095b5e65f25b6969ebc077f9ae56",
+        "sha256:71ab1d95ca54711048adacd841f39f83078ca20b15122b393b1c09034e4ecbba",
+        "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "sha256:dbd7a4c3a4963d8739e47e78d618df5adc16444234a6e6f0da0cd1d1ca953cea",
+        "sha256:ba77808ae137f06aaf5da7c6f1a1e45a74bec21d6a5add3f2118b1ec688dc98b",
+        "sha256:90d76dfa9b658702285ce61d9cb6f017804106279bd546dbdedd26d809b60688"
+      ],
+      "user": "10001:10001",
+      "labels": {
+        "org.opencontainers.image.revision": "tfg-a-1c0ed64469ec6b54",
+        "org.opencontainers.image.source": "https://github.com/Dmillan-dev/ImperatorProyect",
+        "org.opencontainers.image.title": "IMPERATOR Backend",
+        "org.opencontainers.image.version": "0.1.0"
+      }
+    },
+    {
+      "id": "sha256:b2c6534593f0fd9f7ef9d699fe11ecc52a2ce01de7df2f9b4a91051cc0e91c75",
+      "repoTags": [
+        "imperator/backend:tfg-a-5939e4576beb47a7"
+      ],
+      "repoDigests": [
+        "imperator/backend@sha256:b2c6534593f0fd9f7ef9d699fe11ecc52a2ce01de7df2f9b4a91051cc0e91c75"
+      ],
+      "created": "2026-10-02T10:09:33.445193062Z",
+      "sizeBytes": 506170565,
+      "rootFsDiffIds": [
+        "sha256:ea16cace89338c84eb6bcb91a7efdfcae6838fff359efe951858227436486c34",
+        "sha256:d5878fe0c5eb7212a581d6344bb4e24b6cfc886a7ee85d54203765275a422952",
+        "sha256:40ce23912dbe1d52f377ac170d913284a3c74561447514c63c05cb9379a2a04d",
+        "sha256:d58da301ac9add0a0f31176f925eb1b93e1c2bd147b07555f467cb884fd27e5b",
+        "sha256:8a8eb12d782f1d342a52c3c49dd69e27c2c3f196e0e3fe833a5d2200477be3fa",
+        "sha256:d7f19b798e334ffedafe1eb5a3fa4e68d3e8fb109ddda6b90c8bd7e4ae6dd759",
+        "sha256:463f642a7dc5d79421ff78022f9fb42f351f13d702157d6651bd53d5cd9b85cd",
+        "sha256:50e9ae5943b32bb00f0393e2eddab4f16f23095b5e65f25b6969ebc077f9ae56",
+        "sha256:0e9b85535d7c8614493070ef5f151c697961a57e5e48b8898bfa3e84f8290fed",
+        "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "sha256:33d83a1c2a09871593644d33366102008e77f8c5932a87d9d9ac441b76ba1dfb",
+        "sha256:49178f576bfede6def98a66893d35e6f7faafe09eb0e029b9b67be2157ecbb7a",
+        "sha256:a5bd84d492677893eb7bd03edbaa54260b06f8ed8ba863fef8ebd5dc0d1ae89b"
+      ],
+      "user": "10001:10001",
+      "labels": {
+        "org.opencontainers.image.revision": "tfg-a-5939e4576beb47a7",
+        "org.opencontainers.image.source": "https://github.com/Dmillan-dev/ImperatorProyect",
+        "org.opencontainers.image.title": "IMPERATOR Backend",
+        "org.opencontainers.image.version": "0.1.0"
+      }
+    },
+    {
+      "id": "sha256:b5e6d6806c66512fa9e1f769d1e40fb9b5c545095f3bd389f05438643aa7a433",
+      "repoTags": [
+        "imperator/r22-postgres-proposal:20261006"
+      ],
+      "repoDigests": [
+        "imperator/r22-postgres-proposal@sha256:b5e6d6806c66512fa9e1f769d1e40fb9b5c545095f3bd389f05438643aa7a433"
+      ],
+      "created": "2026-10-06T16:09:07.875043025Z",
+      "sizeBytes": 723347322,
+      "rootFsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9",
+        "sha256:f7daaa1079f0e5c9fc156924353fd619309f56a8a979b90c93d4f4a7510385f9",
+        "sha256:7308c83f2cf9d1f836057cfc2b2edcc8fb700bdf6110d759d8eb3e98cca72fb5",
+        "sha256:8489a6ba3ed946b3926009dc45a032a370ebffc1425bdaf85d8dbfb0d1c3fdb7",
+        "sha256:272ba34d44c5c9b60d3ef4e6e63f8df7f72b6c1806ad802f3f6af2fdc81422dc",
+        "sha256:56f9b632643e5acbc81c6b816d7b57dba635104ea6b1aabb1db213f1a261ac48",
+        "sha256:bc5b79e5bc3c0f1891c512d00c039dc10ce97a45c845c4ddaf12c6661a4dd51e",
+        "sha256:f9ceeb8055b272e9f70ffcad6dfb1e9c95689e551914121397d1fbe9944f67a6"
+      ],
+      "user": "999:999",
+      "labels": {
+        "org.opencontainers.image.revision": "tfg-a-1c0ed64469ec6b54",
+        "org.opencontainers.image.source": "https://github.com/Dmillan-dev/ImperatorProyect",
+        "org.opencontainers.image.title": "IMPERATOR PostgreSQL Runtime",
+        "org.opencontainers.image.version": "18.6-gosu1.19-go1.26.6-pcre2deb12u1"
+      }
+    },
+    {
+      "id": "sha256:ba849c60be29959425b8734d57b8b4b7d56f98edd9504c9af091d5281095a71e",
+      "repoTags": [
+        "node@sha256:ba849c60be29959425b8734d57b8b4b7d56f98edd9504c9af091d5281095a71e"
+      ],
+      "repoDigests": [
+        "node@sha256:ba849c60be29959425b8734d57b8b4b7d56f98edd9504c9af091d5281095a71e"
+      ],
+      "created": "2026-08-27T17:03:39.400483596Z",
+      "sizeBytes": 329401499,
+      "rootFsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:1e7371fc32429a7e51d407ce762d5d819c5eebbf44c3652bd0d353ed14a09e31",
+        "sha256:42593510e34eca2ac84ebf9c6a22e16ced5956957367dc8688d9de06db2882a9",
+        "sha256:a009183396c313f4e54f120823c621c6e9a7bbc59225e9ddb36b0815bc1e41f9",
+        "sha256:22e1bcb0042509176dd832fe400ab2be89af37a71954be3f17f81859cf289dcf"
+      ],
+      "user": null,
+      "labels": {}
+    },
+    {
+      "id": "sha256:bdaf52271f328b31323e01e0662a8a8682cbfd7b99b5d0f5bf836ae3c9e3a1c5",
+      "repoTags": [
+        "imperator/backend:tfg-a-948a205ca268ae54"
+      ],
+      "repoDigests": [
+        "imperator/backend@sha256:bdaf52271f328b31323e01e0662a8a8682cbfd7b99b5d0f5bf836ae3c9e3a1c5"
+      ],
+      "created": "2026-10-06T15:51:08.465285586Z",
+      "sizeBytes": 506170590,
+      "rootFsDiffIds": [
+        "sha256:ea16cace89338c84eb6bcb91a7efdfcae6838fff359efe951858227436486c34",
+        "sha256:d5878fe0c5eb7212a581d6344bb4e24b6cfc886a7ee85d54203765275a422952",
+        "sha256:40ce23912dbe1d52f377ac170d913284a3c74561447514c63c05cb9379a2a04d",
+        "sha256:d58da301ac9add0a0f31176f925eb1b93e1c2bd147b07555f467cb884fd27e5b",
+        "sha256:8a8eb12d782f1d342a52c3c49dd69e27c2c3f196e0e3fe833a5d2200477be3fa",
+        "sha256:d7f19b798e334ffedafe1eb5a3fa4e68d3e8fb109ddda6b90c8bd7e4ae6dd759",
+        "sha256:463f642a7dc5d79421ff78022f9fb42f351f13d702157d6651bd53d5cd9b85cd",
+        "sha256:50e9ae5943b32bb00f0393e2eddab4f16f23095b5e65f25b6969ebc077f9ae56",
+        "sha256:efdf675dedfa0b9141704fba53cb7b566bd18f0e879e7b96f0a40edfa4dfdafe",
+        "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "sha256:4bce6a03fa4dfbf896e5d2d0a9f94604a4d3cb332c68bbe297b957f40d341b41",
+        "sha256:c73535fa90541ffdf6babcb497578c1e4e7252972af92cb721af305abf05f153",
+        "sha256:9d52ee2eae597bcf737108b9311db5996931ca56624881a976bdd90f1cbd006c"
+      ],
+      "user": "10001:10001",
+      "labels": {
+        "org.opencontainers.image.revision": "tfg-a-948a205ca268ae54",
+        "org.opencontainers.image.source": "https://github.com/Dmillan-dev/ImperatorProyect",
+        "org.opencontainers.image.title": "IMPERATOR Backend",
+        "org.opencontainers.image.version": "0.1.0"
+      }
+    },
+    {
+      "id": "sha256:db6195c21e90872063ff257ec38edcb8d3c77259b25a7a8fee67189511079511",
+      "repoTags": [
+        "flyway/flyway@sha256:db6195c21e90872063ff257ec38edcb8d3c77259b25a7a8fee67189511079511"
+      ],
+      "repoDigests": [
+        "flyway/flyway@sha256:db6195c21e90872063ff257ec38edcb8d3c77259b25a7a8fee67189511079511"
+      ],
+      "created": "2026-07-20T10:09:57.362840962Z",
+      "sizeBytes": 1043353179,
+      "rootFsDiffIds": [
+        "sha256:f103cd120fdd6cbc7f3d0e1d5bfb3e16290c32ead7b822d15c34460ecdf64b29",
+        "sha256:d6894159ffd8a85f9292f0cd878718fce981fe205716b57ebed5a0379f59b479",
+        "sha256:71c4c99aabd1af5aaecb42ca0bd70f1807bcbb1a144b6b3c72ff3cf135168b68",
+        "sha256:1b8d084c3ea64efa1b0fda608db9fe911b3244cbd87d3da685d9284e0705b2cf",
+        "sha256:0418a609d665a23d39d1a8ebeb88b737a30f6cd402bcb7385de71bda3e8bbfa6",
+        "sha256:009d7f8a3f2900d78e3bb1170d9b3172a5276f7c23f56d0ee5b8394bb9a670eb",
+        "sha256:b0972a481c0909c2f7eebd885ab4ad4a4522b08f78093468dbbf18c7f4f38617"
+      ],
+      "user": null,
+      "labels": {
+        "org.opencontainers.image.version": "13.0.0"
+      }
+    },
+    {
+      "id": "sha256:e0e65766c35235eaae9903b1d29620aa01a6daef8e9fafb573dd0c8c9873da06",
+      "repoTags": [],
+      "repoDigests": [],
+      "created": "2026-09-29T12:57:44Z",
+      "sizeBytes": 721500535,
+      "rootFsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9",
+        "sha256:84d6f8d753b6fd6b4e3c5d1ed0a99001e7f4d29d0cfe8a99a648c4b3d525be2b",
+        "sha256:87a9588a5dcbffb3a43ea2c8d829280b93653dff3606f7718446bbd78e7cc01a",
+        "sha256:fa7ce5f3c197b8389b71f01417f9470e5af10d231d55eb9919d47ea17a4e4ed8",
+        "sha256:dfd10ec7a00bdb340491aa6a54fcba92d520606ffe6bd515f51698999d6aa29b",
+        "sha256:116c10e7574855640a3f42b8c55a9dde05723b27ab5c84fe9f09a9c0c0747335",
+        "sha256:2a10aa1527ccf27a84c5d9ebfeedc2bee8c894cfe60144d09c53564ff7c25d48",
+        "sha256:a9a38218ecae75a005a6d72d929157ffd951ab3c41919da9421fd8daddbd48d0",
+        "sha256:75d59dd327c47794a432bd343e62fd51fa2ebbad4d625bb976c1fe64ba879b9b",
+        "sha256:08691a989b3984b60fdbf0b5d6636fd247757cc6a9633c026a592434096ae0c4"
+      ],
+      "user": "999:999",
+      "labels": {
+        "org.opencontainers.image.revision": "b602bbe1dde92a902c17272d59cd9f0c10b9efe5",
+        "org.opencontainers.image.source": "https://github.com/Dmillan-dev/ImperatorProyect",
+        "org.opencontainers.image.title": "IMPERATOR PostgreSQL Runtime",
+        "org.opencontainers.image.version": "18.6-gosu1.19-go1.26.6-pcre2deb12u2-perldeb12u4"
+      }
+    },
+    {
+      "id": "sha256:e9aaf73145bbd1f9f6ec7f6867dd75a44f34b1a6c32a813504bf4129be2d09d7",
+      "repoTags": [
+        "eclipse-temurin@sha256:e9aaf73145bbd1f9f6ec7f6867dd75a44f34b1a6c32a813504bf4129be2d09d7"
+      ],
+      "repoDigests": [
+        "eclipse-temurin@sha256:e9aaf73145bbd1f9f6ec7f6867dd75a44f34b1a6c32a813504bf4129be2d09d7"
+      ],
+      "created": "2026-09-25T22:38:16.754361448Z",
+      "sizeBytes": 403279779,
+      "rootFsDiffIds": [
+        "sha256:ea16cace89338c84eb6bcb91a7efdfcae6838fff359efe951858227436486c34",
+        "sha256:d5878fe0c5eb7212a581d6344bb4e24b6cfc886a7ee85d54203765275a422952",
+        "sha256:40ce23912dbe1d52f377ac170d913284a3c74561447514c63c05cb9379a2a04d",
+        "sha256:d58da301ac9add0a0f31176f925eb1b93e1c2bd147b07555f467cb884fd27e5b",
+        "sha256:8a8eb12d782f1d342a52c3c49dd69e27c2c3f196e0e3fe833a5d2200477be3fa"
+      ],
+      "user": null,
+      "labels": {
+        "org.opencontainers.image.version": "22.04"
+      }
+    },
+    {
+      "id": "sha256:ea9853e4490f1fa2ac291eb318291f2025ed360c244566fbff34eae3d048bacb",
+      "repoTags": [
+        "imperator/backend:tfg-a-e4e8680b2feedee8"
+      ],
+      "repoDigests": [
+        "imperator/backend@sha256:ea9853e4490f1fa2ac291eb318291f2025ed360c244566fbff34eae3d048bacb"
+      ],
+      "created": "2026-10-01T19:19:23.676632056Z",
+      "sizeBytes": 487762923,
+      "rootFsDiffIds": [
+        "sha256:ea16cace89338c84eb6bcb91a7efdfcae6838fff359efe951858227436486c34",
+        "sha256:d5878fe0c5eb7212a581d6344bb4e24b6cfc886a7ee85d54203765275a422952",
+        "sha256:40ce23912dbe1d52f377ac170d913284a3c74561447514c63c05cb9379a2a04d",
+        "sha256:d58da301ac9add0a0f31176f925eb1b93e1c2bd147b07555f467cb884fd27e5b",
+        "sha256:8a8eb12d782f1d342a52c3c49dd69e27c2c3f196e0e3fe833a5d2200477be3fa",
+        "sha256:e6ac371f573776bfbbc443d7863f793cb8b5c9bd441b8c092c2f986ef15c752a",
+        "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "sha256:c639e61198c0102f9b373d61f8cbf7b087eb985d5802989e1301e074d9ca48c7",
+        "sha256:ea503916db5d956d7923672d384b3ba9255f8afaf6b5ed5c2eec571490681c3e",
+        "sha256:3f04c1d4a94437bc27de6416ef8db6d97e57b0fd8a110121c770f234bd311216"
+      ],
+      "user": "10001:10001",
+      "labels": {
+        "org.opencontainers.image.revision": "tfg-a-e4e8680b2feedee8",
+        "org.opencontainers.image.source": "https://github.com/Dmillan-dev/ImperatorProyect",
+        "org.opencontainers.image.title": "IMPERATOR Backend",
+        "org.opencontainers.image.version": "0.1.0"
+      }
+    },
+    {
+      "id": "sha256:ebba0bc1c7dcb9d59444e2715921d723dff981ea7bb63171ae88b3986b910b58",
+      "repoTags": [
+        "imperator/frontend:tfg-a-5939e4576beb47a7"
+      ],
+      "repoDigests": [
+        "imperator/frontend@sha256:ebba0bc1c7dcb9d59444e2715921d723dff981ea7bb63171ae88b3986b910b58"
+      ],
+      "created": "2026-10-02T10:14:57.766818694Z",
+      "sizeBytes": 385563495,
+      "rootFsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:1e7371fc32429a7e51d407ce762d5d819c5eebbf44c3652bd0d353ed14a09e31",
+        "sha256:42593510e34eca2ac84ebf9c6a22e16ced5956957367dc8688d9de06db2882a9",
+        "sha256:a009183396c313f4e54f120823c621c6e9a7bbc59225e9ddb36b0815bc1e41f9",
+        "sha256:22e1bcb0042509176dd832fe400ab2be89af37a71954be3f17f81859cf289dcf",
+        "sha256:be8348803f359f04f039da602b11b96166ac56b375a6f9da4a6497a9bfad7753",
+        "sha256:74fe2facb6e0b27b9db35deb03f72f69df59f5051cdbbdceb560f26f2903661b",
+        "sha256:d57d179a4138536f2477ce19724fcf68bf2285f586f2a9a1c2041b2f059dee02",
+        "sha256:b0642fcc58392333dd7e58cb38eafa2ed163bec5a6b79606ed5ba78b161f1d44",
+        "sha256:179da8de3f475cbe65e963157f836927493eaec49b588f385088bb83fe93c03b"
+      ],
+      "user": "1000:1000",
+      "labels": {
+        "org.opencontainers.image.revision": "tfg-a-5939e4576beb47a7",
+        "org.opencontainers.image.source": "https://github.com/Dmillan-dev/ImperatorProyect",
+        "org.opencontainers.image.title": "IMPERATOR Decision Review Workspace",
+        "org.opencontainers.image.version": "0.1.0"
+      }
+    },
+    {
+      "id": "sha256:f0d25cf40b38c16e7d6b39044b03d621c4809497590c06418a093661c0a5d0e7",
+      "repoTags": [
+        "imperator/frontend:tfg-a-948a205ca268ae54"
+      ],
+      "repoDigests": [
+        "imperator/frontend@sha256:f0d25cf40b38c16e7d6b39044b03d621c4809497590c06418a093661c0a5d0e7"
+      ],
+      "created": "2026-10-06T15:51:55.083271618Z",
+      "sizeBytes": 385562784,
+      "rootFsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:1e7371fc32429a7e51d407ce762d5d819c5eebbf44c3652bd0d353ed14a09e31",
+        "sha256:42593510e34eca2ac84ebf9c6a22e16ced5956957367dc8688d9de06db2882a9",
+        "sha256:a009183396c313f4e54f120823c621c6e9a7bbc59225e9ddb36b0815bc1e41f9",
+        "sha256:22e1bcb0042509176dd832fe400ab2be89af37a71954be3f17f81859cf289dcf",
+        "sha256:be8348803f359f04f039da602b11b96166ac56b375a6f9da4a6497a9bfad7753",
+        "sha256:16390c72a13d9e2fef42695f85a08e2654ec232b720189dcc524a10aa5245cbf",
+        "sha256:2da9c28832f46aafa7613986f36732dc7b7e7dcee4fddad1a992454761507c7b",
+        "sha256:f5de7d8c4f55c74b66f73ea479a6f35901c978a0e6a5aefc6b16f25b3806ed72",
+        "sha256:a8e72358c550ec01785cda01f1fba5869a4ec94a1fa67ce3111b2424fcf19dd0"
+      ],
+      "user": "1000:1000",
+      "labels": {
+        "org.opencontainers.image.revision": "tfg-a-948a205ca268ae54",
+        "org.opencontainers.image.source": "https://github.com/Dmillan-dev/ImperatorProyect",
+        "org.opencontainers.image.title": "IMPERATOR Decision Review Workspace",
+        "org.opencontainers.image.version": "0.1.0"
+      }
+    },
+    {
+      "id": "sha256:fb37d301142af5e10bcd02cd0d38bcc8281cd1389d944700e74d19ce2bdd6615",
+      "repoTags": [
+        "imperator/postgres:r22-d094-20261006"
+      ],
+      "repoDigests": [
+        "imperator/postgres@sha256:fb37d301142af5e10bcd02cd0d38bcc8281cd1389d944700e74d19ce2bdd6615"
+      ],
+      "created": "2026-09-29T12:57:44Z",
+      "sizeBytes": 721500535,
+      "rootFsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9",
+        "sha256:84d6f8d753b6fd6b4e3c5d1ed0a99001e7f4d29d0cfe8a99a648c4b3d525be2b",
+        "sha256:87a9588a5dcbffb3a43ea2c8d829280b93653dff3606f7718446bbd78e7cc01a",
+        "sha256:fa7ce5f3c197b8389b71f01417f9470e5af10d231d55eb9919d47ea17a4e4ed8",
+        "sha256:dfd10ec7a00bdb340491aa6a54fcba92d520606ffe6bd515f51698999d6aa29b",
+        "sha256:116c10e7574855640a3f42b8c55a9dde05723b27ab5c84fe9f09a9c0c0747335",
+        "sha256:2a10aa1527ccf27a84c5d9ebfeedc2bee8c894cfe60144d09c53564ff7c25d48",
+        "sha256:a9a38218ecae75a005a6d72d929157ffd951ab3c41919da9421fd8daddbd48d0",
+        "sha256:75d59dd327c47794a432bd343e62fd51fa2ebbad4d625bb976c1fe64ba879b9b",
+        "sha256:08691a989b3984b60fdbf0b5d6636fd247757cc6a9633c026a592434096ae0c4"
+      ],
+      "user": "999:999",
+      "labels": {
+        "org.opencontainers.image.revision": "b602bbe1dde92a902c17272d59cd9f0c10b9efe5",
+        "org.opencontainers.image.source": "https://github.com/Dmillan-dev/ImperatorProyect",
+        "org.opencontainers.image.title": "IMPERATOR PostgreSQL Runtime",
+        "org.opencontainers.image.version": "18.6-gosu1.19-go1.26.6-pcre2deb12u2-perldeb12u4"
+      }
+    }
+  ],
+  "imageList": [
+    {
+      "Containers": "0",
+      "CreatedAt": "2026-10-06 19:31:42 +0200 CEST",
+      "CreatedSince": "2 hours ago",
+      "Digest": "<none>",
+      "ID": "sha256:5cd649ff9a460b2abdc8315da2e7568c5a2c2138d99815db89c5c583f88c18b1",
+      "Repository": "imperator/frontend",
+      "SharedSize": "N/A",
+      "Size": "401MB",
+      "Tag": "tfg-a-cbc6535ee56bfa99",
+      "UniqueSize": "N/A"
+    },
+    {
+      "Containers": "0",
+      "CreatedAt": "2026-10-06 19:31:38 +0200 CEST",
+      "CreatedSince": "2 hours ago",
+      "Digest": "<none>",
+      "ID": "sha256:2b73847d07d6cb7da2ace20426de036fa0278feca0bb6520aca62588e9b3f101",
+      "Repository": "imperator/postgres",
+      "SharedSize": "N/A",
+      "Size": "722MB",
+      "Tag": "tfg-a-cbc6535ee56bfa99",
+      "UniqueSize": "N/A"
+    },
+    {
+      "Containers": "0",
+      "CreatedAt": "2026-10-06 19:30:59 +0200 CEST",
+      "CreatedSince": "2 hours ago",
+      "Digest": "<none>",
+      "ID": "sha256:681e6e7b77b73170c959ed04697302f6a21d8db98edb3a2b0f3354a44387096d",
+      "Repository": "imperator/backend",
+      "SharedSize": "N/A",
+      "Size": "506MB",
+      "Tag": "tfg-a-cbc6535ee56bfa99",
+      "UniqueSize": "N/A"
+    },
+    {
+      "Containers": "0",
+      "CreatedAt": "2026-10-06 18:09:07 +0200 CEST",
+      "CreatedSince": "3 hours ago",
+      "Digest": "<none>",
+      "ID": "sha256:b5e6d6806c66512fa9e1f769d1e40fb9b5c545095f3bd389f05438643aa7a433",
+      "Repository": "imperator/r22-postgres-proposal",
+      "SharedSize": "N/A",
+      "Size": "723MB",
+      "Tag": "20261006",
+      "UniqueSize": "N/A"
+    },
+    {
+      "Containers": "0",
+      "CreatedAt": "2026-10-06 18:08:44 +0200 CEST",
+      "CreatedSince": "3 hours ago",
+      "Digest": "<none>",
+      "ID": "sha256:5b97e49ae7cfd7d5bed01fdcf60df9b7bf654d24bd7c490aa7a65c2e14e7f8c6",
+      "Repository": "imperator/r22-frontend-proposal",
+      "SharedSize": "N/A",
+      "Size": "402MB",
+      "Tag": "20261006",
+      "UniqueSize": "N/A"
+    },
+    {
+      "Containers": "0",
+      "CreatedAt": "2026-10-06 17:57:42 +0200 CEST",
+      "CreatedSince": "4 hours ago",
+      "Digest": "<none>",
+      "ID": "sha256:2103d939daee9cc7d0dfe13b1f2e67f3231d4f0b6fc1bd90b26978753dbff461",
+      "Repository": "imperator/frontend",
+      "SharedSize": "N/A",
+      "Size": "386MB",
+      "Tag": "tfg-a-1c0ed64469ec6b54",
+      "UniqueSize": "N/A"
+    },
+    {
+      "Containers": "0",
+      "CreatedAt": "2026-10-06 17:56:57 +0200 CEST",
+      "CreatedSince": "4 hours ago",
+      "Digest": "<none>",
+      "ID": "sha256:7ea89cd7bd312a54795c2c60f6991cd642ebb11b5831b6e707af3788c2b248ed",
+      "Repository": "imperator/backend",
+      "SharedSize": "N/A",
+      "Size": "506MB",
+      "Tag": "tfg-a-1c0ed64469ec6b54",
+      "UniqueSize": "N/A"
+    },
+    {
+      "Containers": "0",
+      "CreatedAt": "2026-10-06 17:56:56 +0200 CEST",
+      "CreatedSince": "4 hours ago",
+      "Digest": "<none>",
+      "ID": "sha256:7ce6e7f2b9decc4598f3628852bbfe27bb3d59047414398569a9d6e330a12148",
+      "Repository": "imperator/postgres",
+      "SharedSize": "N/A",
+      "Size": "628MB",
+      "Tag": "tfg-a-1c0ed64469ec6b54",
+      "UniqueSize": "N/A"
+    },
+    {
+      "Containers": "0",
+      "CreatedAt": "2026-10-06 17:51:55 +0200 CEST",
+      "CreatedSince": "4 hours ago",
+      "Digest": "<none>",
+      "ID": "sha256:f0d25cf40b38c16e7d6b39044b03d621c4809497590c06418a093661c0a5d0e7",
+      "Repository": "imperator/frontend",
+      "SharedSize": "N/A",
+      "Size": "386MB",
+      "Tag": "tfg-a-948a205ca268ae54",
+      "UniqueSize": "N/A"
+    },
+    {
+      "Containers": "0",
+      "CreatedAt": "2026-10-06 17:51:08 +0200 CEST",
+      "CreatedSince": "4 hours ago",
+      "Digest": "<none>",
+      "ID": "sha256:bdaf52271f328b31323e01e0662a8a8682cbfd7b99b5d0f5bf836ae3c9e3a1c5",
+      "Repository": "imperator/backend",
+      "SharedSize": "N/A",
+      "Size": "506MB",
+      "Tag": "tfg-a-948a205ca268ae54",
+      "UniqueSize": "N/A"
+    },
+    {
+      "Containers": "0",
+      "CreatedAt": "2026-10-06 17:51:06 +0200 CEST",
+      "CreatedSince": "4 hours ago",
+      "Digest": "<none>",
+      "ID": "sha256:7711ad60129ad4ad95b2fea97da4fd2c2a20d8461d7b8d1930fae40b60e0b258",
+      "Repository": "imperator/postgres",
+      "SharedSize": "N/A",
+      "Size": "628MB",
+      "Tag": "tfg-a-948a205ca268ae54",
+      "UniqueSize": "N/A"
+    },
+    {
+      "Containers": "0",
+      "CreatedAt": "2026-10-02 12:14:57 +0200 CEST",
+      "CreatedSince": "4 days ago",
+      "Digest": "<none>",
+      "ID": "sha256:ebba0bc1c7dcb9d59444e2715921d723dff981ea7bb63171ae88b3986b910b58",
+      "Repository": "imperator/frontend",
+      "SharedSize": "N/A",
+      "Size": "386MB",
+      "Tag": "tfg-a-5939e4576beb47a7",
+      "UniqueSize": "N/A"
+    },
+    {
+      "Containers": "0",
+      "CreatedAt": "2026-10-02 12:09:33 +0200 CEST",
+      "CreatedSince": "4 days ago",
+      "Digest": "<none>",
+      "ID": "sha256:b2c6534593f0fd9f7ef9d699fe11ecc52a2ce01de7df2f9b4a91051cc0e91c75",
+      "Repository": "imperator/backend",
+      "SharedSize": "N/A",
+      "Size": "506MB",
+      "Tag": "tfg-a-5939e4576beb47a7",
+      "UniqueSize": "N/A"
+    },
+    {
+      "Containers": "0",
+      "CreatedAt": "2026-10-02 12:09:03 +0200 CEST",
+      "CreatedSince": "4 days ago",
+      "Digest": "<none>",
+      "ID": "sha256:0a33fd46bbff0fabf711d621e347d88aa27497ce2585324809f86709d198f407",
+      "Repository": "imperator/postgres",
+      "SharedSize": "N/A",
+      "Size": "628MB",
+      "Tag": "tfg-a-5939e4576beb47a7",
+      "UniqueSize": "N/A"
+    },
+    {
+      "Containers": "0",
+      "CreatedAt": "2026-10-01 21:19:32 +0200 CEST",
+      "CreatedSince": "5 days ago",
+      "Digest": "<none>",
+      "ID": "sha256:22aa1712c86b69581c30834822fb01c00644c3c41851f3e7943e7f1f465dc143",
+      "Repository": "imperator/frontend",
+      "SharedSize": "N/A",
+      "Size": "386MB",
+      "Tag": "tfg-a-e4e8680b2feedee8",
+      "UniqueSize": "N/A"
+    },
+    {
+      "Containers": "0",
+      "CreatedAt": "2026-10-01 21:19:24 +0200 CEST",
+      "CreatedSince": "5 days ago",
+      "Digest": "<none>",
+      "ID": "sha256:04156f7222d2fbbd8343fde4d015a237a8eed5bd694934217da42ac3e8ac1ba3",
+      "Repository": "imperator/postgres",
+      "SharedSize": "N/A",
+      "Size": "628MB",
+      "Tag": "tfg-a-e4e8680b2feedee8",
+      "UniqueSize": "N/A"
+    },
+    {
+      "Containers": "0",
+      "CreatedAt": "2026-10-01 21:19:23 +0200 CEST",
+      "CreatedSince": "5 days ago",
+      "Digest": "<none>",
+      "ID": "sha256:ea9853e4490f1fa2ac291eb318291f2025ed360c244566fbff34eae3d048bacb",
+      "Repository": "imperator/backend",
+      "SharedSize": "N/A",
+      "Size": "488MB",
+      "Tag": "tfg-a-e4e8680b2feedee8",
+      "UniqueSize": "N/A"
+    },
+    {
+      "Containers": "0",
+      "CreatedAt": "2026-09-29 14:57:44 +0200 CEST",
+      "CreatedSince": "7 days ago",
+      "Digest": "<none>",
+      "ID": "sha256:e0e65766c35235eaae9903b1d29620aa01a6daef8e9fafb573dd0c8c9873da06",
+      "Repository": "<none>",
+      "SharedSize": "N/A",
+      "Size": "722MB",
+      "Tag": "<none>",
+      "UniqueSize": "N/A"
+    },
+    {
+      "Containers": "0",
+      "CreatedAt": "2026-09-29 14:57:44 +0200 CEST",
+      "CreatedSince": "7 days ago",
+      "Digest": "<none>",
+      "ID": "sha256:fb37d301142af5e10bcd02cd0d38bcc8281cd1389d944700e74d19ce2bdd6615",
+      "Repository": "imperator/postgres",
+      "SharedSize": "N/A",
+      "Size": "722MB",
+      "Tag": "r22-d094-20261006",
+      "UniqueSize": "N/A"
+    },
+    {
+      "Containers": "0",
+      "CreatedAt": "2026-09-26 00:38:16 +0200 CEST",
+      "CreatedSince": "10 days ago",
+      "Digest": "",
+      "ID": "sha256:e9aaf73145bbd1f9f6ec7f6867dd75a44f34b1a6c32a813504bf4129be2d09d7",
+      "Repository": "eclipse-temurin",
+      "SharedSize": "N/A",
+      "Size": "407MB",
+      "Tag": "<none>",
+      "UniqueSize": "N/A"
+    },
+    {
+      "Containers": "0",
+      "CreatedAt": "2026-08-27 19:03:39 +0200 CEST",
+      "CreatedSince": "5 weeks ago",
+      "Digest": "",
+      "ID": "sha256:ba849c60be29959425b8734d57b8b4b7d56f98edd9504c9af091d5281095a71e",
+      "Repository": "node",
+      "SharedSize": "N/A",
+      "Size": "332MB",
+      "Tag": "<none>",
+      "UniqueSize": "N/A"
+    },
+    {
+      "Containers": "0",
+      "CreatedAt": "2026-08-25 02:41:53 +0200 CEST",
+      "CreatedSince": "6 weeks ago",
+      "Digest": "<none>",
+      "ID": "sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af",
+      "Repository": "postgres",
+      "SharedSize": "N/A",
+      "Size": "630MB",
+      "Tag": "18.6-bookworm",
+      "UniqueSize": "N/A"
+    },
+    {
+      "Containers": "0",
+      "CreatedAt": "2026-08-14 13:27:20 +0200 CEST",
+      "CreatedSince": "7 weeks ago",
+      "Digest": "<none>",
+      "ID": "sha256:62b1e65e8869bc4b4c6aa4fa2b21595256c7c2f6018a9d9ad61caf87187c1969",
+      "Repository": "aquasec/trivy",
+      "SharedSize": "N/A",
+      "Size": "254MB",
+      "Tag": "0.74.0",
+      "UniqueSize": "N/A"
+    },
+    {
+      "Containers": "0",
+      "CreatedAt": "2026-08-04 15:49:32 +0200 CEST",
+      "CreatedSince": "2 months ago",
+      "Digest": "<none>",
+      "ID": "sha256:28a898719c18a33f4e8000685287fa36fd0dd9560c6440227d3a732d79bb41d8",
+      "Repository": "moby/buildkit",
+      "SharedSize": "N/A",
+      "Size": "355MB",
+      "Tag": "buildx-stable-1",
+      "UniqueSize": "N/A"
+    },
+    {
+      "Containers": "0",
+      "CreatedAt": "2026-07-20 12:09:57 +0200 CEST",
+      "CreatedSince": "2 months ago",
+      "Digest": "",
+      "ID": "sha256:db6195c21e90872063ff257ec38edcb8d3c77259b25a7a8fee67189511079511",
+      "Repository": "flyway/flyway",
+      "SharedSize": "N/A",
+      "Size": "1.04GB",
+      "Tag": "<none>",
+      "UniqueSize": "N/A"
+    }
+  ],
+  "containers": [],
+  "volumes": [
+    "25b252e5eedc6927c9996f9875c45a81f283d01576a2b3e8b2c5440e25bf17b6",
+    "30310d9c766c0a7ba7d54865038f1089110c13d64ea762e945efee3301717d9b",
+    "5806de03956f1bd6793233a0ab54559457ba2a3cf94e36714819b5c08706c371",
+    "595a4dc14ea2777f9cd517d49ec4c5181057108b95d3831c849070bc469e12bb",
+    "59a8f1a16b732f849ee043ae91907f8acadd88c6624dc5fc445aa5b7fb39b20a",
+    "79c411f77e43bd4b67cb834965ba3d8a69c7d055a6f476f1160c9151f321367e",
+    "b727219bbededc8d71ac73fa5a6d0f3513238cb0485e13105c01fa3100373b85",
+    "ff8593932ab037c115cdd2ef87b7092082d4a3499e7dcb4f20a085d4a48d0a5c",
+    "imperator_postgres-data",
+    "imperator_prometheus-data"
+  ],
+  "networks": [
+    {
+      "CreatedAt": "2026-10-06 19:29:02.665941697 +0000 UTC",
+      "Driver": "bridge",
+      "ID": "5cc3261cc693",
+      "IPv4": "true",
+      "IPv6": "false",
+      "Internal": "false",
+      "Labels": "",
+      "Name": "bridge",
+      "Scope": "local"
+    },
+    {
+      "CreatedAt": "2026-08-10 09:05:09.68006841 +0000 UTC",
+      "Driver": "host",
+      "ID": "384a9593a77f",
+      "IPv4": "true",
+      "IPv6": "false",
+      "Internal": "false",
+      "Labels": "",
+      "Name": "host",
+      "Scope": "local"
+    },
+    {
+      "CreatedAt": "2026-09-09 16:36:37.154044337 +0000 UTC",
+      "Driver": "bridge",
+      "ID": "c91c64586536",
+      "IPv4": "true",
+      "IPv6": "false",
+      "Internal": "true",
+      "Labels": "com.docker.compose.config-hash=8274d650539d6316c315e39a88646f3cc76138c28b80b38fb9b9c6467b427012,com.docker.compose.network=observability-internal,com.docker.compose.project=imperator,com.docker.compose.version=5.3.1",
+      "Name": "imperator_observability-internal",
+      "Scope": "local"
+    },
+    {
+      "CreatedAt": "2026-08-10 09:05:09.656325169 +0000 UTC",
+      "Driver": "null",
+      "ID": "4d693bfa6746",
+      "IPv4": "true",
+      "IPv6": "false",
+      "Internal": "false",
+      "Labels": "",
+      "Name": "none",
+      "Scope": "local"
+    }
+  ],
+  "readOnly": true,
+  "deletedResources": []
+}

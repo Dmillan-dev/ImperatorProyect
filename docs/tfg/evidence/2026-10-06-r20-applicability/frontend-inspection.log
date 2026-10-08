@@ -1,0 +1,1521 @@
+
+SECTION identity
+uid=1000(node) gid=1000(node) groups=1000(node)
+PRETTY_NAME="Debian GNU/Linux 12 (bookworm)"
+NAME="Debian GNU/Linux"
+VERSION_ID="12"
+VERSION="12 (bookworm)"
+VERSION_CODENAME=bookworm
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+
+SECTION inventory
+adduser	3.134	adduser	3.134
+apt	2.6.1	apt	2.6.1
+base-files	12.4+deb12u15	base-files	12.4+deb12u15
+base-passwd	3.6.1	base-passwd	3.6.1
+bash	5.2.15-2+b13	bash	5.2.15-2
+bsdutils	1:2.38.1-5+deb12u3	util-linux	2.38.1-5+deb12u3
+coreutils	9.1-1	coreutils	9.1-1
+dash	0.5.12-2	dash	0.5.12-2
+debconf	1.5.82	debconf	1.5.82
+debian-archive-keyring	2023.3+deb12u2	debian-archive-keyring	2023.3+deb12u2
+debianutils	5.7-0.5~deb12u1	debianutils	5.7-0.5~deb12u1
+diffutils	1:3.8-4	diffutils	1:3.8-4
+dpkg	1.21.23	dpkg	1.21.23
+e2fsprogs	1.47.0-2+b2	e2fsprogs	1.47.0-2
+findutils	4.9.0-4	findutils	4.9.0-4
+gcc-12-base:amd64	12.2.0-14+deb12u1	gcc-12	12.2.0-14+deb12u1
+gpgv	2.2.40-1.1+deb12u2	gnupg2	2.2.40-1.1+deb12u2
+grep	3.8-5	grep	3.8-5
+gzip	1.12-1	gzip	1.12-1
+hostname	3.23+nmu1	hostname	3.23+nmu1
+init-system-helpers	1.65.2+deb12u1	init-system-helpers	1.65.2+deb12u1
+libacl1:amd64	2.3.1-3	acl	2.3.1-3
+libapt-pkg6.0:amd64	2.6.1	apt	2.6.1
+libattr1:amd64	1:2.5.1-4	attr	1:2.5.1-4
+libaudit-common	1:3.0.9-1	audit	1:3.0.9-1
+libaudit1:amd64	1:3.0.9-1	audit	1:3.0.9-1
+libblkid1:amd64	2.38.1-5+deb12u3	util-linux	2.38.1-5+deb12u3
+libbz2-1.0:amd64	1.0.8-5+b1	bzip2	1.0.8-5
+libc-bin	2.36-9+deb12u14	glibc	2.36-9+deb12u14
+libc6:amd64	2.36-9+deb12u14	glibc	2.36-9+deb12u14
+libcap-ng0:amd64	0.8.3-1+b3	libcap-ng	0.8.3-1
+libcap2:amd64	1:2.66-4+deb12u3+b1	libcap2	1:2.66-4+deb12u3
+libcom-err2:amd64	1.47.0-2+b2	e2fsprogs	1.47.0-2
+libcrypt1:amd64	1:4.4.33-2	libxcrypt	1:4.4.33-2
+libdb5.3:amd64	5.3.28+dfsg2-1	db5.3	5.3.28+dfsg2-1
+libdebconfclient0:amd64	0.270	cdebconf	0.270
+libext2fs2:amd64	1.47.0-2+b2	e2fsprogs	1.47.0-2
+libffi8:amd64	3.4.4-1	libffi	3.4.4-1
+libgcc-s1:amd64	12.2.0-14+deb12u1	gcc-12	12.2.0-14+deb12u1
+libgcrypt20:amd64	1.10.1-3+deb12u1	libgcrypt20	1.10.1-3+deb12u1
+libgmp10:amd64	2:6.2.1+dfsg1-1.1	gmp	2:6.2.1+dfsg1-1.1
+libgnutls30:amd64	3.7.9-2+deb12u7	gnutls28	3.7.9-2+deb12u7
+libgpg-error0:amd64	1.46-1	libgpg-error	1.46-1
+libhogweed6:amd64	3.8.1-2	nettle	3.8.1-2
+libidn2-0:amd64	2.3.3-1+b1	libidn2	2.3.3-1
+liblz4-1:amd64	1.9.4-1	lz4	1.9.4-1
+liblzma5:amd64	5.4.1-1+deb12u1	xz-utils	5.4.1-1+deb12u1
+libmd0:amd64	1.0.4-2	libmd	1.0.4-2
+libmount1:amd64	2.38.1-5+deb12u3	util-linux	2.38.1-5+deb12u3
+libnettle8:amd64	3.8.1-2	nettle	3.8.1-2
+libp11-kit0:amd64	0.24.1-2	p11-kit	0.24.1-2
+libpam-modules:amd64	1.5.2-6+deb12u2	pam	1.5.2-6+deb12u2
+libpam-modules-bin	1.5.2-6+deb12u2	pam	1.5.2-6+deb12u2
+libpam-runtime	1.5.2-6+deb12u2	pam	1.5.2-6+deb12u2
+libpam0g:amd64	1.5.2-6+deb12u2	pam	1.5.2-6+deb12u2
+libpcre2-8-0:amd64	10.42-1+deb12u2	pcre2	10.42-1+deb12u2
+libseccomp2:amd64	2.5.4-1+deb12u1	libseccomp	2.5.4-1+deb12u1
+libselinux1:amd64	3.4-1+b6	libselinux	3.4-1
+libsemanage-common	3.4-1	libsemanage	3.4-1
+libsemanage2:amd64	3.4-1+b5	libsemanage	3.4-1
+libsepol2:amd64	3.4-2.1	libsepol	3.4-2.1
+libsmartcols1:amd64	2.38.1-5+deb12u3	util-linux	2.38.1-5+deb12u3
+libss2:amd64	1.47.0-2+b2	e2fsprogs	1.47.0-2
+libstdc++6:amd64	12.2.0-14+deb12u1	gcc-12	12.2.0-14+deb12u1
+libsystemd0:amd64	252.39-1~deb12u2	systemd	252.39-1~deb12u2
+libtasn1-6:amd64	4.19.0-2+deb12u1	libtasn1-6	4.19.0-2+deb12u1
+libtinfo6:amd64	6.4-4	ncurses	6.4-4
+libudev1:amd64	252.39-1~deb12u2	systemd	252.39-1~deb12u2
+libunistring2:amd64	1.0-2	libunistring	1.0-2
+libuuid1:amd64	2.38.1-5+deb12u3	util-linux	2.38.1-5+deb12u3
+libxxhash0:amd64	0.8.1-1	xxhash	0.8.1-1
+libzstd1:amd64	1.5.4+dfsg2-5	libzstd	1.5.4+dfsg2-5
+login	1:4.13+dfsg1-1+deb12u2	shadow	1:4.13+dfsg1-1+deb12u2
+logsave	1.47.0-2+b2	e2fsprogs	1.47.0-2
+mawk	1.3.4.20200120-3.1	mawk	1.3.4.20200120-3.1
+mount	2.38.1-5+deb12u3	util-linux	2.38.1-5+deb12u3
+ncurses-base	6.4-4	ncurses	6.4-4
+ncurses-bin	6.4-4	ncurses	6.4-4
+passwd	1:4.13+dfsg1-1+deb12u2	shadow	1:4.13+dfsg1-1+deb12u2
+perl-base	5.36.0-7+deb12u4	perl	5.36.0-7+deb12u4
+sed	4.9-1+deb12u1	sed	4.9-1+deb12u1
+sysvinit-utils	3.06-4	sysvinit	3.06-4
+tar	1.34+dfsg-1.2+deb12u1	tar	1.34+dfsg-1.2+deb12u1
+tzdata	2026b-0+deb12u1	tzdata	2026b-0+deb12u1
+usr-is-merged	37~deb12u1	usrmerge	37~deb12u1
+util-linux	2.38.1-5+deb12u3	util-linux	2.38.1-5+deb12u3
+util-linux-extra	2.38.1-5+deb12u3	util-linux	2.38.1-5+deb12u3
+zlib1g:amd64	1:1.2.13.dfsg-1	zlib	1:1.2.13.dfsg-1
+
+SECTION affected-package-files
+PACKAGE zlib1g
+/.
+/lib
+/lib/x86_64-linux-gnu
+/lib/x86_64-linux-gnu/libz.so.1.2.13
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/zlib1g
+/usr/share/doc/zlib1g/changelog.Debian.gz
+/usr/share/doc/zlib1g/changelog.gz
+/usr/share/doc/zlib1g/copyright
+/lib/x86_64-linux-gnu/libz.so.1
+PACKAGE libsystemd0
+/.
+/usr
+/usr/lib
+/usr/lib/x86_64-linux-gnu
+/usr/lib/x86_64-linux-gnu/libsystemd.so.0.35.0
+/usr/share
+/usr/share/doc
+/usr/share/doc/libsystemd0
+/usr/share/doc/libsystemd0/NEWS.Debian.gz
+/usr/share/doc/libsystemd0/changelog.Debian.gz
+/usr/share/doc/libsystemd0/copyright
+/usr/lib/x86_64-linux-gnu/libsystemd.so.0
+PACKAGE libudev1
+/.
+/usr
+/usr/lib
+/usr/lib/x86_64-linux-gnu
+/usr/lib/x86_64-linux-gnu/libudev.so.1.7.5
+/usr/share
+/usr/share/doc
+/usr/share/doc/libudev1
+/usr/share/doc/libudev1/NEWS.Debian.gz
+/usr/share/doc/libudev1/changelog.Debian.gz
+/usr/share/doc/libudev1/copyright
+/usr/lib/x86_64-linux-gnu/libudev.so.1
+PACKAGE libxml2
+PACKAGE libsqlite3-0
+PACKAGE libldap-2.5-0
+PACKAGE perl-base
+/.
+/usr
+/usr/bin
+/usr/bin/perl
+/usr/bin/perl5.36.0
+/usr/lib
+/usr/lib/x86_64-linux-gnu
+/usr/lib/x86_64-linux-gnu/perl-base
+/usr/lib/x86_64-linux-gnu/perl-base/AutoLoader.pm
+/usr/lib/x86_64-linux-gnu/perl-base/Carp
+/usr/lib/x86_64-linux-gnu/perl-base/Carp/Heavy.pm
+/usr/lib/x86_64-linux-gnu/perl-base/Carp.pm
+/usr/lib/x86_64-linux-gnu/perl-base/Config.pm
+/usr/lib/x86_64-linux-gnu/perl-base/Config_git.pl
+/usr/lib/x86_64-linux-gnu/perl-base/Config_heavy.pl
+/usr/lib/x86_64-linux-gnu/perl-base/Cwd.pm
+/usr/lib/x86_64-linux-gnu/perl-base/DynaLoader.pm
+/usr/lib/x86_64-linux-gnu/perl-base/Errno.pm
+/usr/lib/x86_64-linux-gnu/perl-base/Exporter
+/usr/lib/x86_64-linux-gnu/perl-base/Exporter/Heavy.pm
+/usr/lib/x86_64-linux-gnu/perl-base/Exporter.pm
+/usr/lib/x86_64-linux-gnu/perl-base/Fcntl.pm
+/usr/lib/x86_64-linux-gnu/perl-base/File
+/usr/lib/x86_64-linux-gnu/perl-base/File/Basename.pm
+/usr/lib/x86_64-linux-gnu/perl-base/File/Glob.pm
+/usr/lib/x86_64-linux-gnu/perl-base/File/Path.pm
+/usr/lib/x86_64-linux-gnu/perl-base/File/Spec
+/usr/lib/x86_64-linux-gnu/perl-base/File/Spec/Unix.pm
+/usr/lib/x86_64-linux-gnu/perl-base/File/Spec.pm
+/usr/lib/x86_64-linux-gnu/perl-base/File/Temp.pm
+/usr/lib/x86_64-linux-gnu/perl-base/FileHandle.pm
+/usr/lib/x86_64-linux-gnu/perl-base/Getopt
+/usr/lib/x86_64-linux-gnu/perl-base/Getopt/Long.pm
+/usr/lib/x86_64-linux-gnu/perl-base/Hash
+/usr/lib/x86_64-linux-gnu/perl-base/Hash/Util.pm
+/usr/lib/x86_64-linux-gnu/perl-base/IO
+/usr/lib/x86_64-linux-gnu/perl-base/IO/File.pm
+/usr/lib/x86_64-linux-gnu/perl-base/IO/Handle.pm
+/usr/lib/x86_64-linux-gnu/perl-base/IO/Pipe.pm
+/usr/lib/x86_64-linux-gnu/perl-base/IO/Seekable.pm
+/usr/lib/x86_64-linux-gnu/perl-base/IO/Select.pm
+/usr/lib/x86_64-linux-gnu/perl-base/IO/Socket
+/usr/lib/x86_64-linux-gnu/perl-base/IO/Socket/INET.pm
+/usr/lib/x86_64-linux-gnu/perl-base/IO/Socket/IP.pm
+/usr/lib/x86_64-linux-gnu/perl-base/IO/Socket/UNIX.pm
+/usr/lib/x86_64-linux-gnu/perl-base/IO/Socket.pm
+/usr/lib/x86_64-linux-gnu/perl-base/IO.pm
+/usr/lib/x86_64-linux-gnu/perl-base/IPC
+/usr/lib/x86_64-linux-gnu/perl-base/IPC/Open2.pm
+/usr/lib/x86_64-linux-gnu/perl-base/IPC/Open3.pm
+/usr/lib/x86_64-linux-gnu/perl-base/List
+/usr/lib/x86_64-linux-gnu/perl-base/List/Util.pm
+/usr/lib/x86_64-linux-gnu/perl-base/POSIX.pm
+/usr/lib/x86_64-linux-gnu/perl-base/Scalar
+/usr/lib/x86_64-linux-gnu/perl-base/Scalar/Util.pm
+/usr/lib/x86_64-linux-gnu/perl-base/SelectSaver.pm
+/usr/lib/x86_64-linux-gnu/perl-base/Socket.pm
+/usr/lib/x86_64-linux-gnu/perl-base/Symbol.pm
+/usr/lib/x86_64-linux-gnu/perl-base/Text
+/usr/lib/x86_64-linux-gnu/perl-base/Text/ParseWords.pm
+/usr/lib/x86_64-linux-gnu/perl-base/Text/Tabs.pm
+/usr/lib/x86_64-linux-gnu/perl-base/Text/Wrap.pm
+/usr/lib/x86_64-linux-gnu/perl-base/Tie
+/usr/lib/x86_64-linux-gnu/perl-base/Tie/Hash.pm
+/usr/lib/x86_64-linux-gnu/perl-base/XSLoader.pm
+/usr/lib/x86_64-linux-gnu/perl-base/attributes.pm
+/usr/lib/x86_64-linux-gnu/perl-base/auto
+/usr/lib/x86_64-linux-gnu/perl-base/auto/Cwd
+/usr/lib/x86_64-linux-gnu/perl-base/auto/Cwd/Cwd.so
+/usr/lib/x86_64-linux-gnu/perl-base/auto/Fcntl
+/usr/lib/x86_64-linux-gnu/perl-base/auto/Fcntl/Fcntl.so
+/usr/lib/x86_64-linux-gnu/perl-base/auto/File
+/usr/lib/x86_64-linux-gnu/perl-base/auto/File/Glob
+/usr/lib/x86_64-linux-gnu/perl-base/auto/File/Glob/Glob.so
+/usr/lib/x86_64-linux-gnu/perl-base/auto/Hash
+/usr/lib/x86_64-linux-gnu/perl-base/auto/Hash/Util
+/usr/lib/x86_64-linux-gnu/perl-base/auto/Hash/Util/Util.so
+/usr/lib/x86_64-linux-gnu/perl-base/auto/IO
+/usr/lib/x86_64-linux-gnu/perl-base/auto/IO/IO.so
+/usr/lib/x86_64-linux-gnu/perl-base/auto/List
+/usr/lib/x86_64-linux-gnu/perl-base/auto/List/Util
+/usr/lib/x86_64-linux-gnu/perl-base/auto/List/Util/Util.so
+/usr/lib/x86_64-linux-gnu/perl-base/auto/POSIX
+/usr/lib/x86_64-linux-gnu/perl-base/auto/POSIX/POSIX.so
+/usr/lib/x86_64-linux-gnu/perl-base/auto/Socket
+/usr/lib/x86_64-linux-gnu/perl-base/auto/Socket/Socket.so
+/usr/lib/x86_64-linux-gnu/perl-base/auto/attributes
+/usr/lib/x86_64-linux-gnu/perl-base/auto/attributes/attributes.so
+/usr/lib/x86_64-linux-gnu/perl-base/auto/re
+/usr/lib/x86_64-linux-gnu/perl-base/auto/re/re.so
+/usr/lib/x86_64-linux-gnu/perl-base/base.pm
+/usr/lib/x86_64-linux-gnu/perl-base/builtin.pm
+/usr/lib/x86_64-linux-gnu/perl-base/bytes.pm
+/usr/lib/x86_64-linux-gnu/perl-base/bytes_heavy.pl
+/usr/lib/x86_64-linux-gnu/perl-base/constant.pm
+/usr/lib/x86_64-linux-gnu/perl-base/feature.pm
+/usr/lib/x86_64-linux-gnu/perl-base/fields.pm
+/usr/lib/x86_64-linux-gnu/perl-base/integer.pm
+/usr/lib/x86_64-linux-gnu/perl-base/lib.pm
+/usr/lib/x86_64-linux-gnu/perl-base/locale.pm
+/usr/lib/x86_64-linux-gnu/perl-base/overload.pm
+/usr/lib/x86_64-linux-gnu/perl-base/overloading.pm
+/usr/lib/x86_64-linux-gnu/perl-base/parent.pm
+/usr/lib/x86_64-linux-gnu/perl-base/re.pm
+/usr/lib/x86_64-linux-gnu/perl-base/strict.pm
+/usr/lib/x86_64-linux-gnu/perl-base/unicore
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/Age.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/Bc.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/Bmg.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/Bpb.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/Bpt.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/Cf.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/Ea.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/EqUIdeo.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/GCB.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/Gc.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/Hst.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/Identif2.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/Identifi.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/InPC.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/InSC.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/Isc.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/Jg.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/Jt.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/Lb.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/Lc.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/NFCQC.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/NFDQC.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/NFKCCF.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/NFKCQC.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/NFKDQC.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/Na1.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/NameAlia.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/Nt.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/Nv.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/PerlDeci.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/SB.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/Sc.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/Scx.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/Tc.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/Uc.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/Vo.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/WB.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/_PerlLB.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/To/_PerlSCX.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Age
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Age/NA.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Age/V100.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Age/V11.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Age/V110.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Age/V120.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Age/V130.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Age/V140.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Age/V20.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Age/V30.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Age/V31.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Age/V32.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Age/V40.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Age/V41.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Age/V50.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Age/V51.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Age/V52.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Age/V60.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Age/V61.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Age/V70.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Age/V80.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Age/V90.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Alpha
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Alpha/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Bc
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Bc/AL.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Bc/AN.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Bc/B.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Bc/BN.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Bc/CS.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Bc/EN.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Bc/ES.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Bc/ET.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Bc/L.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Bc/NSM.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Bc/ON.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Bc/R.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Bc/WS.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/BidiC
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/BidiC/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/BidiM
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/BidiM/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Blk
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Blk/NB.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Bpt
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Bpt/C.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Bpt/N.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Bpt/O.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/CE
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/CE/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/CI
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/CI/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/CWCF
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/CWCF/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/CWCM
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/CWCM/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/CWKCF
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/CWKCF/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/CWL
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/CWL/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/CWT
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/CWT/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/CWU
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/CWU/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Cased
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Cased/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Ccc
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Ccc/A.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Ccc/AL.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Ccc/AR.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Ccc/ATAR.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Ccc/B.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Ccc/BR.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Ccc/DB.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Ccc/NK.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Ccc/NR.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Ccc/OV.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Ccc/VR.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/CompEx
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/CompEx/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/DI
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/DI/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Dash
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Dash/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Dep
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Dep/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Dia
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Dia/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Dt
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Dt/Com.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Dt/Enc.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Dt/Fin.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Dt/Font.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Dt/Init.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Dt/Iso.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Dt/Med.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Dt/Nar.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Dt/Nb.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Dt/NonCanon.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Dt/Sqr.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Dt/Sub.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Dt/Sup.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Dt/Vert.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/EBase
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/EBase/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/EComp
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/EComp/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/EPres
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/EPres/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Ea
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Ea/A.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Ea/H.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Ea/N.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Ea/Na.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Ea/W.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Emoji
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Emoji/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Ext
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Ext/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/ExtPict
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/ExtPict/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/GCB
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/GCB/CN.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/GCB/EX.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/GCB/LV.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/GCB/LVT.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/GCB/PP.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/GCB/SM.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/GCB/XX.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/C.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/Cf.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/Cn.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/L.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/LC.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/Ll.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/Lm.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/Lo.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/Lu.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/M.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/Mc.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/Me.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/Mn.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/N.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/Nd.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/Nl.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/No.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/P.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/Pc.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/Pd.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/Pe.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/Pf.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/Pi.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/Po.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/Ps.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/S.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/Sc.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/Sk.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/Sm.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/So.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/Z.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Gc/Zs.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/GrBase
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/GrBase/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/GrExt
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/GrExt/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Hex
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Hex/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Hst
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Hst/NA.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Hyphen
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Hyphen/T.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/IDC
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/IDC/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/IDS
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/IDS/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/IdStatus
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/IdStatus/Allowed.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/IdStatus/Restrict.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/IdType
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/IdType/DefaultI.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/IdType/Exclusio.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/IdType/Inclusio.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/IdType/LimitedU.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/IdType/NotChara.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/IdType/NotNFKC.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/IdType/NotXID.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/IdType/Obsolete.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/IdType/Recommen.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/IdType/Technica.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/IdType/Uncommon.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Ideo
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Ideo/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/In
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/In/10_0.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/In/11_0.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/In/12_0.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/In/12_1.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/In/13_0.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/In/14_0.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/In/2_0.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/In/2_1.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/In/3_0.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/In/3_1.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/In/3_2.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/In/4_0.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/In/4_1.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/In/5_0.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/In/5_1.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/In/5_2.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/In/6_0.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/In/6_1.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/In/6_2.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/In/6_3.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/In/7_0.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/In/8_0.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/In/9_0.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InPC
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InPC/Bottom.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InPC/BottomAn.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InPC/Left.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InPC/LeftAndR.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InPC/NA.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InPC/Overstru.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InPC/Right.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InPC/Top.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InPC/TopAndBo.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InPC/TopAndL2.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InPC/TopAndLe.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InPC/TopAndRi.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InPC/VisualOr.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InSC
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InSC/Avagraha.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InSC/Bindu.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InSC/Cantilla.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InSC/Consona2.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InSC/Consona3.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InSC/Consona4.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InSC/Consona5.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InSC/Consona6.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InSC/Consona7.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InSC/Consona8.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InSC/Consonan.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InSC/Invisibl.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InSC/Nukta.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InSC/Number.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InSC/Other.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InSC/PureKill.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InSC/Syllable.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InSC/ToneMark.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InSC/Virama.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InSC/Visarga.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InSC/Vowel.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InSC/VowelDep.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/InSC/VowelInd.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jg
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jg/Ain.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jg/Alef.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jg/Beh.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jg/Dal.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jg/FarsiYeh.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jg/Feh.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jg/Gaf.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jg/Hah.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jg/HanifiRo.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jg/Kaf.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jg/Lam.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jg/NoJoinin.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jg/Noon.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jg/Qaf.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jg/Reh.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jg/Sad.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jg/Seen.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jg/Tah.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jg/Waw.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jg/Yeh.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jt
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jt/C.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jt/D.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jt/L.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jt/R.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jt/T.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Jt/U.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lb
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lb/AI.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lb/AL.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lb/BA.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lb/BB.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lb/CJ.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lb/CL.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lb/CM.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lb/EX.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lb/GL.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lb/ID.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lb/IN.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lb/IS.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lb/NS.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lb/NU.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lb/OP.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lb/PO.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lb/PR.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lb/QU.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lb/SA.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lb/XX.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lower
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Lower/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Math
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Math/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/NFCQC
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/NFCQC/M.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/NFCQC/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/NFDQC
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/NFDQC/N.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/NFDQC/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/NFKCQC
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/NFKCQC/N.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/NFKCQC/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/NFKDQC
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/NFKDQC/N.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/NFKDQC/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nt
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nt/Di.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nt/None.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nt/Nu.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/0.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/1.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/10.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/100.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/1000.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/10000.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/100000.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/11.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/12.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/13.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/14.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/15.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/16.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/17.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/18.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/19.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/1_16.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/1_2.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/1_3.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/1_4.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/1_6.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/1_8.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/2.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/20.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/200.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/2000.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/20000.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/2_3.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/3.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/30.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/300.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/3000.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/30000.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/3_16.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/3_4.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/4.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/40.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/400.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/4000.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/40000.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/5.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/50.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/500.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/5000.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/50000.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/6.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/60.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/600.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/6000.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/60000.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/7.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/70.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/700.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/7000.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/70000.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/8.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/80.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/800.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/8000.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/80000.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/9.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/90.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/900.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/9000.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Nv/90000.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/PCM
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/PCM/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/PatSyn
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/PatSyn/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Perl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Perl/Alnum.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Perl/Assigned.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Perl/Blank.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Perl/Graph.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Perl/PerlWord.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Perl/PosixPun.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Perl/Print.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Perl/SpacePer.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Perl/Title.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Perl/Word.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Perl/XPosixPu.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Perl/_PerlAny.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Perl/_PerlCh2.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Perl/_PerlCha.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Perl/_PerlFol.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Perl/_PerlIDC.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Perl/_PerlIDS.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Perl/_PerlIsI.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Perl/_PerlNch.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Perl/_PerlPat.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Perl/_PerlPr2.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Perl/_PerlPro.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Perl/_PerlQuo.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/QMark
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/QMark/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/SB
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/SB/AT.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/SB/CL.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/SB/EX.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/SB/FO.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/SB/LE.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/SB/LO.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/SB/NU.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/SB/SC.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/SB/ST.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/SB/Sp.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/SB/UP.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/SB/XX.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/SD
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/SD/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/STerm
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/STerm/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Arab.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Beng.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Cprt.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Cyrl.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Deva.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Dupl.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Geor.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Glag.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Gong.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Gonm.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Gran.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Grek.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Gujr.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Guru.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Han.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Hang.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Hira.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Kana.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Knda.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Latn.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Limb.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Linb.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Mlym.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Mong.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Mult.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Orya.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Sinh.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Syrc.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Taml.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Telu.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Zinh.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Sc/Zyyy.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Adlm.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Arab.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Armn.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Beng.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Bhks.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Bopo.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Cakm.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Cham.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Copt.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Cprt.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Cyrl.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Deva.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Diak.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Dupl.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Ethi.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Geor.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Glag.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Gong.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Gonm.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Gran.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Grek.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Gujr.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Guru.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Han.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Hang.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Hebr.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Hira.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Hmng.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Hmnp.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Kana.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Khar.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Khmr.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Khoj.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Knda.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Kthi.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Lana.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Lao.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Latn.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Limb.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Lina.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Linb.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Mlym.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Mong.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Mult.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Mymr.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Nand.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Nko.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Orya.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Phlp.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Rohg.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Shrd.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Sind.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Sinh.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Syrc.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Tagb.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Takr.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Talu.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Taml.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Tang.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Telu.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Thaa.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Tibt.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Tirh.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Vith.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Xsux.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Yezi.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Yi.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Zinh.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Zyyy.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Scx/Zzzz.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Term
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Term/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/UIdeo
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/UIdeo/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Upper
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Upper/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/VS
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/VS/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Vo
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Vo/R.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Vo/Tr.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Vo/Tu.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/Vo/U.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/WB
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/WB/EX.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/WB/Extend.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/WB/FO.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/WB/HL.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/WB/KA.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/WB/LE.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/WB/MB.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/WB/ML.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/WB/MN.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/WB/NU.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/WB/WSegSpac.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/WB/XX.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/XIDC
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/XIDC/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/XIDS
+/usr/lib/x86_64-linux-gnu/perl-base/unicore/lib/XIDS/Y.pl
+/usr/lib/x86_64-linux-gnu/perl-base/utf8.pm
+/usr/lib/x86_64-linux-gnu/perl-base/vars.pm
+/usr/lib/x86_64-linux-gnu/perl-base/warnings
+/usr/lib/x86_64-linux-gnu/perl-base/warnings/register.pm
+/usr/lib/x86_64-linux-gnu/perl-base/warnings.pm
+/usr/share
+/usr/share/doc
+/usr/share/doc/perl
+/usr/share/doc/perl/AUTHORS.gz
+/usr/share/doc/perl/Documentation
+/usr/share/doc/perl-base
+/usr/share/doc/perl-base/changelog.Debian.gz
+/usr/share/doc/perl-base/changelog.gz
+/usr/share/doc/perl-base/copyright
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/perl-base
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/perl.1.gz
+/usr/share/man/man1/perl5.36.0.1.gz
+PACKAGE perl-modules-5.36
+PACKAGE ncurses-bin
+/.
+/usr
+/usr/bin
+/usr/bin/clear
+/usr/bin/infocmp
+/usr/bin/tabs
+/usr/bin/tic
+/usr/bin/toe
+/usr/bin/tput
+/usr/bin/tset
+/usr/share
+/usr/share/doc
+/usr/share/doc/ncurses-bin
+/usr/share/doc/ncurses-bin/changelog.Debian.gz
+/usr/share/doc/ncurses-bin/changelog.gz
+/usr/share/doc/ncurses-bin/copyright
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/captoinfo.1.gz
+/usr/share/man/man1/clear.1.gz
+/usr/share/man/man1/infocmp.1.gz
+/usr/share/man/man1/infotocap.1.gz
+/usr/share/man/man1/tabs.1.gz
+/usr/share/man/man1/tic.1.gz
+/usr/share/man/man1/toe.1.gz
+/usr/share/man/man1/tput.1.gz
+/usr/share/man/man1/tset.1.gz
+/usr/share/man/man5
+/usr/share/man/man5/scr_dump.5.gz
+/usr/share/man/man5/term.5.gz
+/usr/share/man/man5/terminfo.5.gz
+/usr/share/man/man5/user_caps.5.gz
+/usr/share/man/man7
+/usr/share/man/man7/term.7.gz
+/usr/bin/captoinfo
+/usr/bin/infotocap
+/usr/bin/reset
+/usr/share/man/man1/reset.1.gz
+PACKAGE libtinfo6
+/.
+/lib
+/lib/x86_64-linux-gnu
+/lib/x86_64-linux-gnu/libtinfo.so.6.4
+/usr
+/usr/lib
+/usr/lib/x86_64-linux-gnu
+/usr/lib/x86_64-linux-gnu/libtic.so.6.4
+/usr/share
+/usr/share/doc
+/usr/share/doc/libtinfo6
+/usr/share/doc/libtinfo6/changelog.Debian.gz
+/usr/share/doc/libtinfo6/changelog.gz
+/usr/share/doc/libtinfo6/copyright
+/lib/x86_64-linux-gnu/libtinfo.so.6
+/usr/lib/x86_64-linux-gnu/libtic.so.6
+PACKAGE libacl1
+/.
+/usr
+/usr/lib
+/usr/lib/x86_64-linux-gnu
+/usr/lib/x86_64-linux-gnu/libacl.so.1.1.2301
+/usr/share
+/usr/share/doc
+/usr/share/doc/libacl1
+/usr/share/doc/libacl1/changelog.Debian.gz
+/usr/share/doc/libacl1/changelog.gz
+/usr/share/doc/libacl1/copyright
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/libacl1
+/usr/lib/x86_64-linux-gnu/libacl.so.1
+PACKAGE util-linux
+/.
+/bin
+/bin/dmesg
+/bin/findmnt
+/bin/lsblk
+/bin/more
+/bin/mountpoint
+/bin/su
+/bin/wdctl
+/etc
+/etc/pam.d
+/etc/pam.d/runuser
+/etc/pam.d/runuser-l
+/etc/pam.d/su
+/etc/pam.d/su-l
+/lib
+/lib/systemd
+/lib/systemd/system
+/lib/systemd/system/fstrim.service
+/lib/systemd/system/fstrim.timer
+/sbin
+/sbin/agetty
+/sbin/blkdiscard
+/sbin/blkid
+/sbin/blkzone
+/sbin/blockdev
+/sbin/chcpu
+/sbin/ctrlaltdel
+/sbin/findfs
+/sbin/fsck
+/sbin/fsck.cramfs
+/sbin/fsck.minix
+/sbin/fsfreeze
+/sbin/fstrim
+/sbin/isosize
+/sbin/mkfs
+/sbin/mkfs.bfs
+/sbin/mkfs.cramfs
+/sbin/mkfs.minix
+/sbin/mkswap
+/sbin/pivot_root
+/sbin/runuser
+/sbin/sulogin
+/sbin/swaplabel
+/sbin/switch_root
+/sbin/wipefs
+/sbin/zramctl
+/usr
+/usr/bin
+/usr/bin/addpart
+/usr/bin/choom
+/usr/bin/chrt
+/usr/bin/delpart
+/usr/bin/fallocate
+/usr/bin/flock
+/usr/bin/getopt
+/usr/bin/hardlink
+/usr/bin/ionice
+/usr/bin/ipcmk
+/usr/bin/ipcrm
+/usr/bin/ipcs
+/usr/bin/last
+/usr/bin/lscpu
+/usr/bin/lsipc
+/usr/bin/lslocks
+/usr/bin/lslogins
+/usr/bin/lsmem
+/usr/bin/lsns
+/usr/bin/mcookie
+/usr/bin/mesg
+/usr/bin/namei
+/usr/bin/nsenter
+/usr/bin/partx
+/usr/bin/prlimit
+/usr/bin/rename.ul
+/usr/bin/resizepart
+/usr/bin/rev
+/usr/bin/setarch
+/usr/bin/setpriv
+/usr/bin/setsid
+/usr/bin/setterm
+/usr/bin/taskset
+/usr/bin/uclampset
+/usr/bin/unshare
+/usr/bin/utmpdump
+/usr/bin/whereis
+/usr/lib
+/usr/lib/mime
+/usr/lib/mime/packages
+/usr/lib/mime/packages/util-linux
+/usr/sbin
+/usr/sbin/chmem
+/usr/sbin/ldattach
+/usr/sbin/readprofile
+/usr/sbin/rtcwake
+/usr/share
+/usr/share/bash-completion
+/usr/share/bash-completion/completions
+/usr/share/bash-completion/completions/addpart
+/usr/share/bash-completion/completions/blkdiscard
+/usr/share/bash-completion/completions/blkid
+/usr/share/bash-completion/completions/blkzone
+/usr/share/bash-completion/completions/blockdev
+/usr/share/bash-completion/completions/chcpu
+/usr/share/bash-completion/completions/chmem
+/usr/share/bash-completion/completions/chrt
+/usr/share/bash-completion/completions/ctrlaltdel
+/usr/share/bash-completion/completions/delpart
+/usr/share/bash-completion/completions/dmesg
+/usr/share/bash-completion/completions/fallocate
+/usr/share/bash-completion/completions/findfs
+/usr/share/bash-completion/completions/findmnt
+/usr/share/bash-completion/completions/flock
+/usr/share/bash-completion/completions/fsck
+/usr/share/bash-completion/completions/fsck.cramfs
+/usr/share/bash-completion/completions/fsck.minix
+/usr/share/bash-completion/completions/fsfreeze
+/usr/share/bash-completion/completions/fstrim
+/usr/share/bash-completion/completions/getopt
+/usr/share/bash-completion/completions/hardlink
+/usr/share/bash-completion/completions/ionice
+/usr/share/bash-completion/completions/ipcmk
+/usr/share/bash-completion/completions/ipcrm
+/usr/share/bash-completion/completions/ipcs
+/usr/share/bash-completion/completions/isosize
+/usr/share/bash-completion/completions/last
+/usr/share/bash-completion/completions/ldattach
+/usr/share/bash-completion/completions/lsblk
+/usr/share/bash-completion/completions/lscpu
+/usr/share/bash-completion/completions/lsipc
+/usr/share/bash-completion/completions/lslocks
+/usr/share/bash-completion/completions/lslogins
+/usr/share/bash-completion/completions/lsmem
+/usr/share/bash-completion/completions/lsns
+/usr/share/bash-completion/completions/mcookie
+/usr/share/bash-completion/completions/mesg
+/usr/share/bash-completion/completions/mkfs
+/usr/share/bash-completion/completions/mkfs.bfs
+/usr/share/bash-completion/completions/mkfs.cramfs
+/usr/share/bash-completion/completions/mkfs.minix
+/usr/share/bash-completion/completions/mkswap
+/usr/share/bash-completion/completions/more
+/usr/share/bash-completion/completions/mountpoint
+/usr/share/bash-completion/completions/namei
+/usr/share/bash-completion/completions/nsenter
+/usr/share/bash-completion/completions/partx
+/usr/share/bash-completion/completions/pivot_root
+/usr/share/bash-completion/completions/prlimit
+/usr/share/bash-completion/completions/readprofile
+/usr/share/bash-completion/completions/resizepart
+/usr/share/bash-completion/completions/rev
+/usr/share/bash-completion/completions/rtcwake
+/usr/share/bash-completion/completions/setarch
+/usr/share/bash-completion/completions/setpriv
+/usr/share/bash-completion/completions/setsid
+/usr/share/bash-completion/completions/setterm
+/usr/share/bash-completion/completions/su
+/usr/share/bash-completion/completions/swaplabel
+/usr/share/bash-completion/completions/taskset
+/usr/share/bash-completion/completions/uclampset
+/usr/share/bash-completion/completions/unshare
+/usr/share/bash-completion/completions/utmpdump
+/usr/share/bash-completion/completions/wdctl
+/usr/share/bash-completion/completions/whereis
+/usr/share/bash-completion/completions/wipefs
+/usr/share/bash-completion/completions/zramctl
+/usr/share/doc
+/usr/share/doc/util-linux
+/usr/share/doc/util-linux/00-about-docs.txt
+/usr/share/doc/util-linux/AUTHORS.gz
+/usr/share/doc/util-linux/PAM-configuration.txt
+/usr/share/doc/util-linux/README.Debian
+/usr/share/doc/util-linux/blkid.txt
+/usr/share/doc/util-linux/cal.txt
+/usr/share/doc/util-linux/changelog.Debian.gz
+/usr/share/doc/util-linux/changelog.gz
+/usr/share/doc/util-linux/col.txt
+/usr/share/doc/util-linux/copyright
+/usr/share/doc/util-linux/deprecated.txt
+/usr/share/doc/util-linux/examples
+/usr/share/doc/util-linux/examples/getopt-example.bash
+/usr/share/doc/util-linux/examples/getopt-example.tcsh
+/usr/share/doc/util-linux/getopt.txt
+/usr/share/doc/util-linux/getopt_changelog.txt
+/usr/share/doc/util-linux/howto-build-sys.txt
+/usr/share/doc/util-linux/howto-compilation.txt
+/usr/share/doc/util-linux/howto-contribute.txt.gz
+/usr/share/doc/util-linux/howto-debug.txt
+/usr/share/doc/util-linux/howto-man-page.txt
+/usr/share/doc/util-linux/howto-pull-request.txt.gz
+/usr/share/doc/util-linux/howto-tests.txt
+/usr/share/doc/util-linux/howto-usage-function.txt.gz
+/usr/share/doc/util-linux/hwclock.txt
+/usr/share/doc/util-linux/modems-with-agetty.txt
+/usr/share/doc/util-linux/mount.txt
+/usr/share/doc/util-linux/parse-date.txt.gz
+/usr/share/doc/util-linux/pg.txt
+/usr/share/doc/util-linux/poeigl.txt.gz
+/usr/share/doc/util-linux/release-schedule.txt
+/usr/share/doc/util-linux/releases
+/usr/share/doc/util-linux/releases/v2.13-ReleaseNotes.gz
+/usr/share/doc/util-linux/releases/v2.14-ReleaseNotes.gz
+/usr/share/doc/util-linux/releases/v2.15-ReleaseNotes.gz
+/usr/share/doc/util-linux/releases/v2.16-ReleaseNotes.gz
+/usr/share/doc/util-linux/releases/v2.17-ReleaseNotes.gz
+/usr/share/doc/util-linux/releases/v2.18-ReleaseNotes.gz
+/usr/share/doc/util-linux/releases/v2.19-ReleaseNotes.gz
+/usr/share/doc/util-linux/releases/v2.20-ReleaseNotes.gz
+/usr/share/doc/util-linux/releases/v2.21-ReleaseNotes.gz
+/usr/share/doc/util-linux/releases/v2.22-ReleaseNotes.gz
+/usr/share/doc/util-linux/releases/v2.23-ReleaseNotes.gz
+/usr/share/doc/util-linux/releases/v2.24-ReleaseNotes.gz
+/usr/share/doc/util-linux/releases/v2.25-ReleaseNotes.gz
+/usr/share/doc/util-linux/releases/v2.26-ReleaseNotes.gz
+/usr/share/doc/util-linux/releases/v2.27-ReleaseNotes.gz
+/usr/share/doc/util-linux/releases/v2.28-ReleaseNotes.gz
+/usr/share/doc/util-linux/releases/v2.29-ReleaseNotes.gz
+/usr/share/doc/util-linux/releases/v2.30-ReleaseNotes.gz
+/usr/share/doc/util-linux/releases/v2.31-ReleaseNotes.gz
+/usr/share/doc/util-linux/releases/v2.32-ReleaseNotes.gz
+/usr/share/doc/util-linux/releases/v2.33-ReleaseNotes.gz
+/usr/share/doc/util-linux/releases/v2.34-ReleaseNotes.gz
+/usr/share/doc/util-linux/releases/v2.35-ReleaseNotes.gz
+/usr/share/doc/util-linux/releases/v2.36-ReleaseNotes.gz
+/usr/share/doc/util-linux/releases/v2.37-ReleaseNotes.gz
+/usr/share/doc/util-linux/releases/v2.38-ReleaseNotes.gz
+/usr/share/doc/util-linux/releases/v2.38.1-ReleaseNotes.gz
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/util-linux
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/choom.1.gz
+/usr/share/man/man1/chrt.1.gz
+/usr/share/man/man1/dmesg.1.gz
+/usr/share/man/man1/fallocate.1.gz
+/usr/share/man/man1/flock.1.gz
+/usr/share/man/man1/getopt.1.gz
+/usr/share/man/man1/hardlink.1.gz
+/usr/share/man/man1/ionice.1.gz
+/usr/share/man/man1/ipcmk.1.gz
+/usr/share/man/man1/ipcrm.1.gz
+/usr/share/man/man1/ipcs.1.gz
+/usr/share/man/man1/last.1.gz
+/usr/share/man/man1/lscpu.1.gz
+/usr/share/man/man1/lsipc.1.gz
+/usr/share/man/man1/lslogins.1.gz
+/usr/share/man/man1/lsmem.1.gz
+/usr/share/man/man1/mcookie.1.gz
+/usr/share/man/man1/mesg.1.gz
+/usr/share/man/man1/more.1.gz
+/usr/share/man/man1/mountpoint.1.gz
+/usr/share/man/man1/namei.1.gz
+/usr/share/man/man1/nsenter.1.gz
+/usr/share/man/man1/prlimit.1.gz
+/usr/share/man/man1/rename.ul.1.gz
+/usr/share/man/man1/rev.1.gz
+/usr/share/man/man1/runuser.1.gz
+/usr/share/man/man1/setpriv.1.gz
+/usr/share/man/man1/setsid.1.gz
+/usr/share/man/man1/setterm.1.gz
+/usr/share/man/man1/su.1.gz
+/usr/share/man/man1/taskset.1.gz
+/usr/share/man/man1/uclampset.1.gz
+/usr/share/man/man1/unshare.1.gz
+/usr/share/man/man1/utmpdump.1.gz
+/usr/share/man/man1/whereis.1.gz
+/usr/share/man/man5
+/usr/share/man/man5/adjtime_config.5.gz
+/usr/share/man/man5/terminal-colors.d.5.gz
+/usr/share/man/man8
+/usr/share/man/man8/addpart.8.gz
+/usr/share/man/man8/agetty.8.gz
+/usr/share/man/man8/blkdiscard.8.gz
+/usr/share/man/man8/blkid.8.gz
+/usr/share/man/man8/blkzone.8.gz
+/usr/share/man/man8/blockdev.8.gz
+/usr/share/man/man8/chcpu.8.gz
+/usr/share/man/man8/chmem.8.gz
+/usr/share/man/man8/ctrlaltdel.8.gz
+/usr/share/man/man8/delpart.8.gz
+/usr/share/man/man8/findfs.8.gz
+/usr/share/man/man8/findmnt.8.gz
+/usr/share/man/man8/fsck.8.gz
+/usr/share/man/man8/fsck.cramfs.8.gz
+/usr/share/man/man8/fsck.minix.8.gz
+/usr/share/man/man8/fsfreeze.8.gz
+/usr/share/man/man8/fstrim.8.gz
+/usr/share/man/man8/isosize.8.gz
+/usr/share/man/man8/ldattach.8.gz
+/usr/share/man/man8/lsblk.8.gz
+/usr/share/man/man8/lslocks.8.gz
+/usr/share/man/man8/lsns.8.gz
+/usr/share/man/man8/mkfs.8.gz
+/usr/share/man/man8/mkfs.bfs.8.gz
+/usr/share/man/man8/mkfs.cramfs.8.gz
+/usr/share/man/man8/mkfs.minix.8.gz
+/usr/share/man/man8/mkswap.8.gz
+/usr/share/man/man8/partx.8.gz
+/usr/share/man/man8/pivot_root.8.gz
+/usr/share/man/man8/readprofile.8.gz
+/usr/share/man/man8/resizepart.8.gz
+/usr/share/man/man8/rtcwake.8.gz
+/usr/share/man/man8/setarch.8.gz
+/usr/share/man/man8/sulogin.8.gz
+/usr/share/man/man8/swaplabel.8.gz
+/usr/share/man/man8/switch_root.8.gz
+/usr/share/man/man8/wdctl.8.gz
+/usr/share/man/man8/wipefs.8.gz
+/usr/share/man/man8/zramctl.8.gz
+/usr/share/util-linux
+/usr/share/util-linux/logcheck
+/usr/share/util-linux/logcheck/ignore.d.server
+/usr/share/util-linux/logcheck/ignore.d.server/util-linux
+/sbin/getty
+/usr/bin/i386
+/usr/bin/lastb
+/usr/bin/linux32
+/usr/bin/linux64
+/usr/bin/x86_64
+/usr/share/bash-completion/completions/lastb
+/usr/share/bash-completion/completions/runuser
+/usr/share/man/man1/lastb.1.gz
+/usr/share/man/man8/getty.8.gz
+/usr/share/man/man8/i386.8.gz
+/usr/share/man/man8/linux32.8.gz
+/usr/share/man/man8/linux64.8.gz
+/usr/share/man/man8/x86_64.8.gz
+PACKAGE mount
+/.
+/bin
+/bin/mount
+/bin/umount
+/sbin
+/sbin/losetup
+/sbin/swapoff
+/sbin/swapon
+/usr
+/usr/share
+/usr/share/bash-completion
+/usr/share/bash-completion/completions
+/usr/share/bash-completion/completions/losetup
+/usr/share/bash-completion/completions/mount
+/usr/share/bash-completion/completions/swapoff
+/usr/share/bash-completion/completions/swapon
+/usr/share/bash-completion/completions/umount
+/usr/share/doc
+/usr/share/doc/mount
+/usr/share/doc/mount/changelog.Debian.gz
+/usr/share/doc/mount/changelog.gz
+/usr/share/doc/mount/copyright
+/usr/share/doc/mount/examples
+/usr/share/doc/mount/examples/filesystems
+/usr/share/doc/mount/examples/fstab
+/usr/share/doc/mount/examples/mount.fstab
+/usr/share/doc/mount/mount.txt
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/mount
+/usr/share/man
+/usr/share/man/man5
+/usr/share/man/man5/fstab.5.gz
+/usr/share/man/man8
+/usr/share/man/man8/losetup.8.gz
+/usr/share/man/man8/mount.8.gz
+/usr/share/man/man8/swapon.8.gz
+/usr/share/man/man8/umount.8.gz
+/usr/share/man/man8/swapoff.8.gz
+PACKAGE gzip
+/.
+/bin
+/bin/gunzip
+/bin/gzexe
+/bin/gzip
+/bin/uncompress
+/bin/zcat
+/bin/zcmp
+/bin/zdiff
+/bin/zegrep
+/bin/zfgrep
+/bin/zforce
+/bin/zgrep
+/bin/zless
+/bin/zmore
+/bin/znew
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/gzip
+/usr/share/doc/gzip/NEWS.gz
+/usr/share/doc/gzip/README.gz
+/usr/share/doc/gzip/TODO
+/usr/share/doc/gzip/changelog.Debian.gz
+/usr/share/doc/gzip/changelog.gz
+/usr/share/doc/gzip/copyright
+/usr/share/info
+/usr/share/info/gzip.info.gz
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/gzexe.1.gz
+/usr/share/man/man1/gzip.1.gz
+/usr/share/man/man1/zdiff.1.gz
+/usr/share/man/man1/zforce.1.gz
+/usr/share/man/man1/zgrep.1.gz
+/usr/share/man/man1/zless.1.gz
+/usr/share/man/man1/zmore.1.gz
+/usr/share/man/man1/znew.1.gz
+/usr/share/man/man1/gunzip.1.gz
+/usr/share/man/man1/uncompress.1.gz
+/usr/share/man/man1/zcat.1.gz
+/usr/share/man/man1/zcmp.1.gz
+/usr/share/man/man1/zegrep.1.gz
+/usr/share/man/man1/zfgrep.1.gz
+
+SECTION binaries-and-links
+COMMAND node
+/usr/local/bin/node
+	linux-vdso.so.1 (0x0000754a80807000)
+	libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x0000754a807f8000)
+	libstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x0000754a805de000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x0000754a804fe000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x0000754a804de000)
+	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x0000754a804d9000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x0000754a802f5000)
+	/lib64/ld-linux-x86-64.so.2 (0x0000754a80809000)
+COMMAND postgres
+ABSENT
+COMMAND perl
+/usr/bin/perl
+COMMAND python
+ABSENT
+COMMAND python3
+ABSENT
+COMMAND infocmp
+/usr/bin/infocmp
+COMMAND mount
+/usr/bin/mount
+COMMAND nsenter
+/usr/bin/nsenter
+COMMAND setfacl
+ABSENT
+COMMAND getfacl
+ABSENT
+COMMAND gzip
+/usr/bin/gzip
+COMMAND homectl
+ABSENT
+COMMAND systemd-homed
+ABSENT
+COMMAND sqlite3
+ABSENT
+
+SECTION specific-components
+ABSENT /usr/lib/systemd/systemd-homed
+ABSENT /lib/systemd/systemd-homed
+ABSENT /usr/bin/homectl
+ABSENT /usr/lib/python3/dist-packages/libxml2.py
+ABSENT /usr/lib/postgresql/18/lib/plperl.so
+ABSENT /usr/lib/postgresql/18/lib/plpython3.so
+ABSENT /usr/share/perl/5.36.0/Archive/Tar.pm
+
+SECTION perl
+ptrsize=8; ivsize=8
+Archive::Tar ABSENT
+Storable ABSENT
+IO::Compress::Gzip ABSENT
+
+SECTION fstab-and-suid
+# UNCONFIGURED FSTAB FOR BASE SYSTEM
+4755 /usr/bin/mount
+4755 /usr/bin/su
+4755 /usr/bin/gpasswd
+4755 /usr/bin/passwd
+4755 /usr/bin/chsh
+4755 /usr/bin/umount
+2755 /usr/bin/expiry
+4755 /usr/bin/chfn
+4755 /usr/bin/newgrp
+2755 /usr/bin/chage
+2755 /usr/sbin/unix_chkpwd
+
+SECTION postgres-init
+
+SECTION frontend-packages
+/app/.next/package.json
+/app/node_modules/@img/colour/package.json
+/app/node_modules/@img/sharp-libvips-linux-x64/package.json
+/app/node_modules/@img/sharp-linux-x64/package.json
+/app/node_modules/@next/env/package.json
+/app/node_modules/@swc/helpers/package.json
+/app/node_modules/client-only/package.json
+/app/node_modules/detect-libc/package.json
+/app/node_modules/next/dist/compiled/@edge-runtime/cookies/package.json
+/app/node_modules/next/dist/compiled/@edge-runtime/ponyfill/package.json
+/app/node_modules/next/dist/compiled/@edge-runtime/primitives/package.json
+/app/node_modules/next/dist/compiled/@hapi/accept/package.json
+/app/node_modules/next/dist/compiled/@mswjs/interceptors/ClientRequest/package.json
+/app/node_modules/next/dist/compiled/@napi-rs/triples/package.json
+/app/node_modules/next/dist/compiled/@opentelemetry/api/package.json
+/app/node_modules/next/dist/compiled/@vercel/detect-agent/package.json
+/app/node_modules/next/dist/compiled/async-retry/package.json
+/app/node_modules/next/dist/compiled/async-sema/package.json
+/app/node_modules/next/dist/compiled/busboy/package.json
+/app/node_modules/next/dist/compiled/bytes/package.json
+/app/node_modules/next/dist/compiled/ci-info/package.json
+/app/node_modules/next/dist/compiled/commander/package.json
+/app/node_modules/next/dist/compiled/comment-json/package.json
+/app/node_modules/next/dist/compiled/compression/package.json
+/app/node_modules/next/dist/compiled/conf/package.json
+/app/node_modules/next/dist/compiled/content-disposition/package.json
+/app/node_modules/next/dist/compiled/cookie/package.json
+/app/node_modules/next/dist/compiled/cross-spawn/package.json
+/app/node_modules/next/dist/compiled/debug/package.json
+/app/node_modules/next/dist/compiled/edge-runtime/package.json
+/app/node_modules/next/dist/compiled/find-up/package.json
+/app/node_modules/next/dist/compiled/fresh/package.json
+/app/node_modules/next/dist/compiled/httpxy/package.json
+/app/node_modules/next/dist/compiled/image-size/package.json
+/app/node_modules/next/dist/compiled/ipaddr.js/package.json
+/app/node_modules/next/dist/compiled/is-animated/package.json
+/app/node_modules/next/dist/compiled/is-docker/package.json
+/app/node_modules/next/dist/compiled/is-wsl/package.json
+/app/node_modules/next/dist/compiled/jsonwebtoken/package.json
+/app/node_modules/next/dist/compiled/nanoid/package.json
+/app/node_modules/next/dist/compiled/p-limit/package.json
+/app/node_modules/next/dist/compiled/p-queue/package.json
+/app/node_modules/next/dist/compiled/path-browserify/package.json
+/app/node_modules/next/dist/compiled/path-to-regexp/package.json
+/app/node_modules/next/dist/compiled/picomatch/package.json
+/app/node_modules/next/dist/compiled/react-is/package.json
+/app/node_modules/next/dist/compiled/regenerator-runtime/package.json
+/app/node_modules/next/dist/compiled/semver/package.json
+/app/node_modules/next/dist/compiled/send/package.json
+/app/node_modules/next/dist/compiled/source-map/package.json
+/app/node_modules/next/dist/compiled/stacktrace-parser/package.json
+/app/node_modules/next/dist/compiled/string-hash/package.json
+/app/node_modules/next/dist/compiled/strip-ansi/package.json
+/app/node_modules/next/dist/compiled/superstruct/package.json
+/app/node_modules/next/dist/compiled/tar/package.json
+/app/node_modules/next/dist/compiled/text-table/package.json
+/app/node_modules/next/dist/compiled/watchpack/package.json
+/app/node_modules/next/dist/compiled/write-file-atomic/package.json
+/app/node_modules/next/dist/compiled/ws/package.json
+/app/node_modules/next/dist/compiled/zod-validation-error/package.json
+/app/node_modules/next/dist/compiled/zod/package.json
+/app/node_modules/next/package.json
+/app/node_modules/react-dom/package.json
+/app/node_modules/react/package.json
+/app/node_modules/semver/package.json
+/app/node_modules/sharp/node_modules/semver/package.json
+/app/node_modules/sharp/package.json
+/app/node_modules/styled-jsx/package.json
+/app/package.json
+braces UNRESOLVED MODULE_NOT_FOUND
+micromatch UNRESOLVED MODULE_NOT_FOUND
+fast-glob UNRESOLVED MODULE_NOT_FOUND
+eslint UNRESOLVED MODULE_NOT_FOUND
+next/dist/compiled/micromatch UNRESOLVED MODULE_NOT_FOUND
+next/dist/compiled/glob UNRESOLVED MODULE_NOT_FOUND
+next/dist/compiled/picomatch RESOLVES /app/node_modules/next/dist/compiled/picomatch/index.js
+[{"path":"/app/node_modules/next/dist/compiled/picomatch/index.js","mentions":["braces"],"sha256":"607dc79784c1161c33076903769dba23e63d9d9ccfe3c4695a32ebe3a5ab892d"},{"path":"/app/node_modules/next/dist/server/app-render/csrf-protection.js","mentions":["micromatch"],"sha256":"bab4f59d84cc04915032ad5db93c013b150e74e34d1b702244f522101fccd3f0"},{"path":"/app/node_modules/react/cjs/react.development.js","mentions":["braces"],"sha256":"97bef56f30daa05320514ea220d7d03eb765635519ff2d5650c4887772aa5767"}]

@@ -1,0 +1,19 @@
+{
+  "historicalApprovalPath": "docs/tfg/evidence/2026-10-02-r20-acceptance/acceptance.json",
+  "historicalApprovalSha256": "f05a78809830df4aacd431527997df0acf5d9bc3cd558705d9104149e64a5cb7",
+  "historicalAccepted": true,
+  "currentVersionAccepted": false,
+  "currentBindingStatus": "REVIEW REQUIRED / NOT ACCEPTED",
+  "automaticTransfer": false,
+  "automaticRenewal": false,
+  "expiryLocal": "2026-10-09T00:00:00+02:00",
+  "timeZone": "Europe/Madrid",
+  "expiryUtc": "2026-10-08T22:00:00Z",
+  "earlyInvalidationReasons": [
+    "Runtime lockfile/image identities changed",
+    "Scanner/vendor data changed",
+    "37 canonical image rows now have vendor fixes",
+    "New unreviewed npm/source findings"
+  ],
+  "reviewerMayAcceptRisk": false
+}

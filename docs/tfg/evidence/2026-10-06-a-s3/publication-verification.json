@@ -1,0 +1,101 @@
+{
+  "result": "PASS",
+  "atUtc": "2026-10-06T19:54:32.132256+00:00",
+  "checksPassed": 2660,
+  "A_S3IndexSha256": "4e14e8e1ad75b7eadf8507907c29f690b2d8a0152e096dde6a84e50241aa2201",
+  "candidateCommit": "8380e8d6e70ca4c858604ce4fcc0e0198fa162e1",
+  "acceptedReleaseCommit": null,
+  "sourceInputs": {
+    "path": "docs/tfg/evidence/2026-10-06-a-s3/publication-inputs.json",
+    "sha256": "ce344dc451a41f8604427a6327d98134cb4b60bb9a5f8999299ba41b3ff23e5b",
+    "bytes": 217348
+  },
+  "secretReports": [
+    {
+      "path": "docs/tfg/evidence/2026-10-06-a-s3/publication-gitleaks.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-a-s3/publication-trivy.json",
+      "sha256": "0bb34a4f2ea050cb8889920e83e8be94fb963f43e72d0c867b7d61e892de2d02",
+      "bytes": 44188
+    }
+  ],
+  "scannerCommands": [
+    [
+      "D:\\Imperator\\build\\tools\\gitleaks-8.30.1\\gitleaks.exe",
+      "dir",
+      "D:\\Imperator\\build\\tfg-a\\a-s2-acceptance-2026-10-06\\a-s3-publication-source",
+      "--redact",
+      "--no-banner",
+      "--report-format",
+      "json",
+      "--report-path",
+      "D:\\Imperator\\build\\tfg-a\\a-s2-acceptance-2026-10-06\\a-s3-secret-reports\\gitleaks.json"
+    ],
+    [
+      "C:/Users/J4GG3R/AppData/Local/Programs/DockerDesktop/resources/bin/docker.exe",
+      "run",
+      "--rm",
+      "--network",
+      "none",
+      "--mount",
+      "type=bind,source=D:\\Imperator\\build\\tfg-a\\a-s2-acceptance-2026-10-06\\a-s3-publication-source,target=/source,readonly",
+      "--mount",
+      "type=bind,source=D:\\Imperator\\build\\tfg-a\\a-s2-acceptance-2026-10-06\\a-s3-secret-reports,target=/reports",
+      "--mount",
+      "type=bind,source=D:\\Imperator\\build\\tfg-a\\a-s2-acceptance-2026-10-06\\artifact-cache,target=/cache",
+      "--mount",
+      "type=bind,source=D:\\Imperator\\build\\tfg-a\\2026-10-01-docker\\trivy-cache\\db,target=/cache/db,readonly",
+      "--mount",
+      "type=bind,source=D:\\Imperator\\build\\tfg-a\\2026-10-01-docker\\trivy-cache\\java-db,target=/cache/java-db,readonly",
+      "aquasec/trivy:0.74.0@sha256:62b1e65e8869bc4b4c6aa4fa2b21595256c7c2f6018a9d9ad61caf87187c1969",
+      "fs",
+      "--cache-dir",
+      "/cache",
+      "--offline-scan",
+      "--skip-db-update",
+      "--skip-java-db-update",
+      "--skip-version-check",
+      "--scanners",
+      "secret",
+      "--exit-code",
+      "1",
+      "--format",
+      "json",
+      "--output",
+      "/reports/trivy.json",
+      "/source"
+    ]
+  ],
+  "secretsAllSeverities": 0,
+  "documentation": {
+    "format": "PASS",
+    "links": {
+      "markdownFiles": 44,
+      "linksChecked": 361,
+      "issues": []
+    },
+    "rootDiff": "PASS"
+  },
+  "VCSMetadataOnlyChange": ".gitattributes: preserve raw evidence bytes; shell/frontend rules unchanged",
+  "actualRuntimeInputsUnchanged": 383,
+  "approvedImagesAndNormalVolumesUnchanged": true,
+  "originalGitIndexAndBranchUnchanged": true,
+  "currentA_S2Formal": "GO / LOCAL-SYNTHETIC / TEMPORARY",
+  "R20AcceptedCurrentVersion": true,
+  "R23DispositionApproved": true,
+  "R23Closed": false,
+  "A_S3": "LOCAL CANDIDATE PREPARED / HOSTED CI-REVIEW-INTEGRATION PENDING",
+  "rawEvidenceWhitespaceWarnings": {
+    "locations": 377,
+    "files": 33,
+    "ordinarySourceDocs": "PASS",
+    "rawArtifactByteHashesPreserved": true
+  },
+  "TFG_A_COMPLETE": false,
+  "A_S4Executed": false,
+  "awsAuthorized": false,
+  "postCommitMetadataNotInCandidate": true
+}

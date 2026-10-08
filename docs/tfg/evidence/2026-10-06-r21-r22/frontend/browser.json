@@ -1,0 +1,754 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\Imperator\\frontend\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config=../build/tfg-a/r21-r22-2026-10-06/playwright.config.ts"
+    ],
+    "configFile": "D:\\Imperator\\build\\tfg-a\\r21-r22-2026-10-06\\playwright.config.ts",
+    "rootDir": "D:/Imperator/frontend/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 3
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Imperator/build/tfg-a/r21-r22-2026-10-06/frontend/browser-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "D:/Imperator/frontend/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/Imperator/build/tfg-a/r21-r22-2026-10-06/frontend/browser-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "compact",
+        "name": "compact",
+        "testDir": "D:/Imperator/frontend/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/Imperator/build/tfg-a/r21-r22-2026-10-06/frontend/browser-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "mobile",
+        "name": "mobile",
+        "testDir": "D:/Imperator/frontend/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "D:/Imperator/build/tfg-a/r21-r22-2026-10-06/frontend/browser.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 16,
+    "webServer": {
+      "command": "npm run dev -- --hostname 127.0.0.1 --port 3100",
+      "url": "http://127.0.0.1:3100",
+      "reuseExistingServer": false,
+      "timeout": 120000,
+      "cwd": "D:/Imperator/frontend"
+    }
+  },
+  "suites": [
+    {
+      "title": "decision-review.spec.ts",
+      "file": "decision-review.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "renders the complete Decision Review Workspace without viewport overflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2515,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-06T17:34:17.246Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6cb21f1e537d0959772a-ade63a7035651992d307",
+          "file": "decision-review.spec.ts",
+          "line": 23,
+          "column": 1
+        },
+        {
+          "title": "keeps AUDITOR read-only, redacts Evidence and separates unrealized value",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1686,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-06T17:34:20.168Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6cb21f1e537d0959772a-d3cfe39d088e215a0b56",
+          "file": "decision-review.spec.ts",
+          "line": 67,
+          "column": 1
+        },
+        {
+          "title": "presents PLATFORM_ENGINEER and FINANCE actions exactly",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2032,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-06T17:34:21.864Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6cb21f1e537d0959772a-da0eabe70e5c27040f80",
+          "file": "decision-review.spec.ts",
+          "line": 91,
+          "column": 1
+        },
+        {
+          "title": "contains secondary 403, 404, malformed, empty and timeout failures",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10900,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-06T17:34:23.906Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6cb21f1e537d0959772a-7c0c96a7b72ba5988098",
+          "file": "decision-review.spec.ts",
+          "line": 124,
+          "column": 1
+        },
+        {
+          "title": "clears the volatile session on a 401 Decision response",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 639,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-06T17:34:34.816Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6cb21f1e537d0959772a-674609f568954583e818",
+          "file": "decision-review.spec.ts",
+          "line": 153,
+          "column": 1
+        },
+        {
+          "title": "renders the complete Decision Review Workspace without viewport overflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "compact",
+              "projectName": "compact",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2462,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-06T17:34:17.196Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6cb21f1e537d0959772a-326eb860f4e1999bdeb4",
+          "file": "decision-review.spec.ts",
+          "line": 23,
+          "column": 1
+        },
+        {
+          "title": "keeps AUDITOR read-only, redacts Evidence and separates unrealized value",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "compact",
+              "projectName": "compact",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1628,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-06T17:34:20.115Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6cb21f1e537d0959772a-c3b6328b0fe9000c9ca8",
+          "file": "decision-review.spec.ts",
+          "line": 67,
+          "column": 1
+        },
+        {
+          "title": "presents PLATFORM_ENGINEER and FINANCE actions exactly",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "One browser project proves the complete role matrix",
+                  "location": {
+                    "file": "D:\\Imperator\\frontend\\e2e\\decision-review.spec.ts",
+                    "line": 94,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "compact",
+              "projectName": "compact",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "skipped",
+                  "duration": 516,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-06T17:34:21.761Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "One browser project proves the complete role matrix",
+                      "location": {
+                        "file": "D:\\Imperator\\frontend\\e2e\\decision-review.spec.ts",
+                        "line": 94,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "6cb21f1e537d0959772a-312653265cca8a54fa5a",
+          "file": "decision-review.spec.ts",
+          "line": 91,
+          "column": 1
+        },
+        {
+          "title": "contains secondary 403, 404, malformed, empty and timeout failures",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "The error matrix is viewport-independent",
+                  "location": {
+                    "file": "D:\\Imperator\\frontend\\e2e\\decision-review.spec.ts",
+                    "line": 127,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "compact",
+              "projectName": "compact",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "skipped",
+                  "duration": 349,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-06T17:34:22.287Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "The error matrix is viewport-independent",
+                      "location": {
+                        "file": "D:\\Imperator\\frontend\\e2e\\decision-review.spec.ts",
+                        "line": 127,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "6cb21f1e537d0959772a-6505a5c91226a04c91f9",
+          "file": "decision-review.spec.ts",
+          "line": 124,
+          "column": 1
+        },
+        {
+          "title": "clears the volatile session on a 401 Decision response",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Authentication behavior is viewport-independent",
+                  "location": {
+                    "file": "D:\\Imperator\\frontend\\e2e\\decision-review.spec.ts",
+                    "line": 156,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "compact",
+              "projectName": "compact",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "skipped",
+                  "duration": 316,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-06T17:34:22.650Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Authentication behavior is viewport-independent",
+                      "location": {
+                        "file": "D:\\Imperator\\frontend\\e2e\\decision-review.spec.ts",
+                        "line": 156,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "6cb21f1e537d0959772a-98f99f0310934a5ef991",
+          "file": "decision-review.spec.ts",
+          "line": 153,
+          "column": 1
+        },
+        {
+          "title": "renders the complete Decision Review Workspace without viewport overflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 2463,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-06T17:34:17.262Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6cb21f1e537d0959772a-c3396a2a1698295db130",
+          "file": "decision-review.spec.ts",
+          "line": 23,
+          "column": 1
+        },
+        {
+          "title": "keeps AUDITOR read-only, redacts Evidence and separates unrealized value",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 1654,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-06T17:34:20.118Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6cb21f1e537d0959772a-e1d3667ab6c1e5d90941",
+          "file": "decision-review.spec.ts",
+          "line": 67,
+          "column": 1
+        },
+        {
+          "title": "presents PLATFORM_ENGINEER and FINANCE actions exactly",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "One browser project proves the complete role matrix",
+                  "location": {
+                    "file": "D:\\Imperator\\frontend\\e2e\\decision-review.spec.ts",
+                    "line": 94,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "skipped",
+                  "duration": 491,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-06T17:34:21.787Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "One browser project proves the complete role matrix",
+                      "location": {
+                        "file": "D:\\Imperator\\frontend\\e2e\\decision-review.spec.ts",
+                        "line": 94,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "6cb21f1e537d0959772a-8aaa25f5dabd189492eb",
+          "file": "decision-review.spec.ts",
+          "line": 91,
+          "column": 1
+        },
+        {
+          "title": "contains secondary 403, 404, malformed, empty and timeout failures",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "The error matrix is viewport-independent",
+                  "location": {
+                    "file": "D:\\Imperator\\frontend\\e2e\\decision-review.spec.ts",
+                    "line": 127,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "skipped",
+                  "duration": 389,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-06T17:34:22.289Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "The error matrix is viewport-independent",
+                      "location": {
+                        "file": "D:\\Imperator\\frontend\\e2e\\decision-review.spec.ts",
+                        "line": 127,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "6cb21f1e537d0959772a-420aac9e027a5966c68f",
+          "file": "decision-review.spec.ts",
+          "line": 124,
+          "column": 1
+        },
+        {
+          "title": "clears the volatile session on a 401 Decision response",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Authentication behavior is viewport-independent",
+                  "location": {
+                    "file": "D:\\Imperator\\frontend\\e2e\\decision-review.spec.ts",
+                    "line": 156,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "skipped",
+                  "duration": 307,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-06T17:34:22.694Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Authentication behavior is viewport-independent",
+                      "location": {
+                        "file": "D:\\Imperator\\frontend\\e2e\\decision-review.spec.ts",
+                        "line": 156,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "6cb21f1e537d0959772a-82db3418ebda2efaa754",
+          "file": "decision-review.spec.ts",
+          "line": 153,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-06T17:34:03.412Z",
+    "duration": 32537.41,
+    "expected": 9,
+    "skipped": 6,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

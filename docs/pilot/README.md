@@ -49,7 +49,7 @@ blocked.
 ## Package Map
 
 | Document | Purpose |
-|---|---|
+| ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | `01_Controlled_Environment_and_Evidence_Register.md` | Freeze the proposed single-customer environment, access worksheet and ownership of all 30 Evidence facts |
 | `02_Pilot_Execution_Runbook.md` | Define preflight, rehearsal, future customer-pilot sequence, incidents and closeout |
 | `03_Security_Data_and_Operations_Readiness.md` | Prepare security questionnaire, retention, deletion, backup/restore, DNS/TLS, secrets, DPA and NDA inputs |
@@ -58,7 +58,7 @@ blocked.
 ## Two Different Milestones
 
 | Milestone | Data | Current authority |
-|---|---|---|
+| -------------------- | --------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Commercial rehearsal | Canonical synthetic 30-Evidence dataset and fixed D082 values | Completed locally for Sprint 4.3 with D093/R16, local JWT/RBAC and persistence/recreation; operational external IdP conformance remains separate under D095 |
 | Customer pilot | Customer-approved normalized facts and customer-specific values | Not authorized; requires explicit pilot/data/policy approval |
 
@@ -75,7 +75,9 @@ D097 MVP Scope Correction: FROZEN / ACCEPTED
 D098 Runtime Supply Chain Refresh: COMPLETE / HOSTED PASS
 Sprint 4.4 MVP Application Observability: COMPLETE / HOSTED PASS
 D099/D100 Bedrock and AWS Pilot Preparation: COMPLETE / HOSTED REPOSITORY PASS
-External Pilot Identity Conformance: D101 STAGE A AUTHORIZED / CURRENT
+Current work: TFG-A BOUNDED MAINTENANCE AND LOCAL EVIDENCE / IN PROGRESS
+External Pilot Identity Conformance: D101 OPERATOR-DEFERRED / BLOCKED_EXTERNAL
+D095 remains mandatory before Pilot Readiness; D101 is not a TFG sprint
 D101 Stages B-C: BLOCKED / NOT AUTHORIZED
 Sprint 4.5: NOT OPEN
 Customer data: FORBIDDEN

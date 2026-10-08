@@ -1,0 +1,54 @@
+{
+  "proposalOnly": true,
+  "applied": false,
+  "accepted": false,
+  "executedAtUtc": "2026-10-06T16:04:06.750773+00:00",
+  "availabilityExitCode": 0,
+  "packages": {
+    "libpcre2-8-0": "10.42-1+deb12u2",
+    "perl-base": "5.36.0-7+deb12u4",
+    "perl": "5.36.0-7+deb12u4",
+    "libperl5.36": "5.36.0-7+deb12u4",
+    "perl-modules-5.36": "5.36.0-7+deb12u4"
+  },
+  "downloads": [
+    {
+      "path": "libpcre2-8-0_10.42-1+deb12u2_amd64.deb",
+      "bytes": 261628,
+      "sha256": "d2f7edfcc7689b9e0761c2742cc824ac86a20768bc5e8057818dc6875291fe76"
+    },
+    {
+      "path": "libperl5.36_5.36.0-7+deb12u4_amd64.deb",
+      "bytes": 4207640,
+      "sha256": "ed8480b621ad574c25aea30d36194d0133ea74093756ecbe3dff157d0510ef7f"
+    },
+    {
+      "path": "perl-base_5.36.0-7+deb12u4_amd64.deb",
+      "bytes": 1609596,
+      "sha256": "d7d1943aec9597629bf73075efcc5ef6dc9bda96d78e80d843156ecd448478b8"
+    },
+    {
+      "path": "perl-modules-5.36_5.36.0-7+deb12u4_all.deb",
+      "bytes": 2817356,
+      "sha256": "3ed38ffa8320e9bf7597cefa01b6a6ace4a08ccc77cdfd15ef7d8b711dea7166"
+    },
+    {
+      "path": "perl_5.36.0-7+deb12u4_amd64.deb",
+      "bytes": 239392,
+      "sha256": "67e7a883c5d835939638f89a750799282df243ac1446281aa92ef9e19300940b"
+    }
+  ],
+  "frontendPackages": [
+    "libpcre2-8-0",
+    "perl-base"
+  ],
+  "postgresPackages": [
+    "libpcre2-8-0",
+    "perl-base",
+    "perl",
+    "libperl5.36",
+    "perl-modules-5.36"
+  ],
+  "scope": "Same Bookworm release; keep PostgreSQL 18.6, Java 21, Spring, Node and all base digests unchanged; update checksum-pinned security patch inputs and D094 lock coherently only after independent authorization",
+  "requires": "Fresh regression, exact-image scans and explicit new residual-risk review; no automatic R20 acceptance transfer"
+}

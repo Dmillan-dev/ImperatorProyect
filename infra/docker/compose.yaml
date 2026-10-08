@@ -54,7 +54,12 @@ services:
         max-file: "3"
 
   flyway-migrate:
-    image: flyway/flyway:13.0.0@sha256:db6195c21e90872063ff257ec38edcb8d3c77259b25a7a8fee67189511079511
+    image: imperator/migration:${IMPERATOR_IMAGE_TAG:?Set IMPERATOR_IMAGE_TAG to the current Git SHA}
+    build:
+      context: ../..
+      dockerfile: infra/aws/images/migration/Dockerfile
+      args:
+        VCS_REF: ${IMPERATOR_IMAGE_TAG:?Set IMPERATOR_IMAGE_TAG to the current Git SHA}
     platform: linux/amd64
     entrypoint:
       - /bin/sh
@@ -101,7 +106,12 @@ services:
         max-file: "3"
 
   flyway-validate:
-    image: flyway/flyway:13.0.0@sha256:db6195c21e90872063ff257ec38edcb8d3c77259b25a7a8fee67189511079511
+    image: imperator/migration:${IMPERATOR_IMAGE_TAG:?Set IMPERATOR_IMAGE_TAG to the current Git SHA}
+    build:
+      context: ../..
+      dockerfile: infra/aws/images/migration/Dockerfile
+      args:
+        VCS_REF: ${IMPERATOR_IMAGE_TAG:?Set IMPERATOR_IMAGE_TAG to the current Git SHA}
     platform: linux/amd64
     entrypoint:
       - /bin/sh

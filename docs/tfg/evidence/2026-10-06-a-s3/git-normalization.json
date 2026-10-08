@@ -1,0 +1,2035 @@
+{
+  "result": "PASS",
+  "normalizedSourceFiles": [
+    {
+      "path": ".github/README.md",
+      "rawSha256": "ad367e24eb051651edf9559f9499df00ca8e4680f5ab27218d4d30c2677b49c6",
+      "gitBlobSha256": "0eaea397e4c35ccdae6a8c6255c012f1da9c11a791b36448e6da5129189f3ea5",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": ".github/dependabot.yml",
+      "rawSha256": "8ec15595263c00a69d7223515615d5d299b625f8fc19283455582d86df4f3ee2",
+      "gitBlobSha256": "550261ae2882a223f9514bc3836aa4e281a5c9de9406b176f1d6be57ab1c03b0",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": ".github/workflows/aws-iac.yml",
+      "rawSha256": "c518fe4234ae4b2adc6d4e13f7feb9cd337b99d4058083ef4cdb012321141e51",
+      "gitBlobSha256": "733d051250d28f51834f3c2bead3d05b6b61ab7131c4d25649022453b97211f2",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": ".github/workflows/aws-pilot-deploy.yml",
+      "rawSha256": "f3cf192cea3c61a9a368badcfcece802a262d51a3e2f417371833314dcaf3e3e",
+      "gitBlobSha256": "214d951f5e650b6467bdccf1063b3ecb7458147c23e2227e9cd37ce76362d92a",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": ".github/workflows/aws-pilot-publish.yml",
+      "rawSha256": "8b0a395304cb26b7c81f23fbe86a6aaf6a6b55910df505f68045e5c703ebd5c7",
+      "gitBlobSha256": "2d9a68fdc45831c080c39c59260d3ed3763ecae73dda0e3244a3261d76705c4f",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": ".github/workflows/java-ci.yml",
+      "rawSha256": "e5992d46dceb3b7417b255bd5267b95628d74521f663dcba7d00f976d30c12a4",
+      "gitBlobSha256": "85d02731f64efab18b16a3ececb1cbad95830a5136712ad6ea6d51d42cad40ec",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": ".github/workflows/security.yml",
+      "rawSha256": "0fd976f415dd007563dd8c94b69d7c7cbbc0ff811aeb620ea2c2670b1f032db3",
+      "gitBlobSha256": "3e83134e56b89a1bf409ef54b3e02ee69bcfd77901ce72af6a3398cce12acb7e",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": ".gitignore",
+      "rawSha256": "976960a1d583798368497902534d96d2d243830b27379b1d6fa2d764de15a89c",
+      "gitBlobSha256": "d9ea6f35898fd0f0c4028e96ce2e981c1e0d3dfc6eafcd5ea8483574050582fd",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": ".mvn/wrapper/maven-wrapper.properties",
+      "rawSha256": "51b221ede4e074d19bb44d6d485bb7b298e77874572a09697aba0a9e234e0745",
+      "gitBlobSha256": "9e702bcd7e68ba1cace0a3382a7082e6e1e1b321688a7a3fbf4d5ae7eb0af533",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "LICENSE",
+      "rawSha256": "7b911e9ec6faae2b502363138e1ff12ead1d614c999f6f05e47531d748603fe9",
+      "gitBlobSha256": "0f0d7e9b70a4765b9449bd00d0f907215beb2e68148b0ca3372d4a1452887be9",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "agents/README.md",
+      "rawSha256": "0dce3711fa706195cf44b16366396794e8f035bf5cd33844297a8f41dbe189f4",
+      "gitBlobSha256": "140b61f706d022d0071cb87ab76ab1832fcd95b0a6d8cbe35348a279fea12c33",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "agents/ai/README.md",
+      "rawSha256": "48b5efd9853646c8cdd7551071c38152ee61a9fd3f2cb268eebc149ddb11856f",
+      "gitBlobSha256": "c3967f4d9240a9e3500661f7dd143b118735ee12815e8b6ee021e8b4728ae7e3",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "agents/backend/README.md",
+      "rawSha256": "cf1ac96d62be6bc701361ce7ba041ebd2c5fdbf640721a18866df67d0851c261",
+      "gitBlobSha256": "236cfa044dde0923d95a1321e7d1aa87a0c9e8e0310ddbc0e7c0e63e80b60b74",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "agents/cto/README.md",
+      "rawSha256": "3bda4869397df5de192c8ad98edc2498ea467d81064618f547581c53a81aef1d",
+      "gitBlobSha256": "ac0d2036944d8c318161ed1522f426a8a564333a97f329d23862ab0fb2b43787",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "agents/frontend/README.md",
+      "rawSha256": "aa0cf7c5dbe34e896ca13bc4f452aa3fdecfb1c2b13da58c7cfc3833f38ef840",
+      "gitBlobSha256": "6da9ccf20e1308bab2bf4f17083569d5f47b40b534c497f811f7dbdedadba980",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "agents/phase2/README.md",
+      "rawSha256": "96ccc2981330d42bfa8e661b25e99f5230ecc04f083228b0d971a93a571fe94c",
+      "gitBlobSha256": "797675c785c6309f20fac06ff52667d3d3a261d5242416285c8d7da93a8caf38",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "agents/phase2/SPRINT_2.7.6.0_BUILD_FOUNDATION_PROMPT.md",
+      "rawSha256": "a89ec26bf3f44177215a29628dd03e4ded28a0c0c88db7d99eb147526cfadcd3",
+      "gitBlobSha256": "69678eca4216f92488ad311763d03ed7adce0be56b1196769f1f9ee01d84b8ab",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "agents/phase2/SPRINT_2.7.6.1_PERSISTENCE_CONTRACT_PROMPT.md",
+      "rawSha256": "d8b77d54c7c409d3ce665eb88c6c050d570dbff824dfe619b136e8ca1a226355",
+      "gitBlobSha256": "188a512bee4b3345279f08d1f26d3dbff9d44dca011b8293d3d0e1fd1e23d5b3",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "agents/phase2/SPRINT_2.7.6.2_FLYWAY_V1_PROMPT.md",
+      "rawSha256": "e8d7c9f4c8489b9eb52d963b5424ea925d42cc078915a12595f030e26626beb3",
+      "gitBlobSha256": "010c96221a668028cfea15be775563d86455f6281bb6ad7904c0dce6b3461981",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "agents/phase2/SPRINT_2.7.7_POSTGRESQL_INTEGRATION_PROMPT.md",
+      "rawSha256": "6a298d1efebccd4632902817fe7f7935b494ba51b02e433f5f3213267664658a",
+      "gitBlobSha256": "d9b80b44a3e974ff34da83193c462ca05c124e29759c77cdd9fed1c92a4a5066",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "agents/phase2/SPRINT_ARTIFACT_INDEX.md",
+      "rawSha256": "8b7cdaa302edba8118df9f971903f54726cbdec8431db46244ce7c49f2aacd5d",
+      "gitBlobSha256": "b4b1c5fc0fda2f012a987426d2815c254c52bc0eba166ac614faa0200898ceda",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "agents/phase3/README.md",
+      "rawSha256": "13f8ffdeed89cc0a3d1b751d3daf989156772ae260efec767dd8cf91b9b6ace6",
+      "gitBlobSha256": "16ee9f7b27a812f0e805f41d630cb09336d0b84fcb0258b3b22ae6c336b44032",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "agents/phase3/SPRINT_4.4.1_D096_CERTIFICATION_CLOSURE_PROMPT.md",
+      "rawSha256": "902bbc7da442fec91743812b0f28f0c39aa11c21d3e3a557e699f9b72fc7b2c4",
+      "gitBlobSha256": "c1fa1f694436798482502601fa1d63357263a8ea8e11c1c2f021ede89e635606",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "agents/phase3/SPRINT_4.4_D097_MVP_OBSERVABILITY_IMPLEMENTATION_PROMPT.md",
+      "rawSha256": "17ea010a2001aec3db9bdca0deedd03df618bcb4fcf3caec6210d52362ba1297",
+      "gitBlobSha256": "33d593e7f5c56b477924c268aedb21cf6fbd6e943cc65183862312f1c576503a",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "agents/phase3/SPRINT_ARTIFACT_INDEX.md",
+      "rawSha256": "f659cdd01d25ca30e11d22fe58da8879bc3178eb52207e5ef579c19efd1a1674",
+      "gitBlobSha256": "6354b98ec7533ea55655b510f409c449102b03bcb85ec70fa64b6404ffa6185f",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "agents/product/README.md",
+      "rawSha256": "542895d0795524fb7319b503fb594741ed5841878e4479e0977e4048251a67ce",
+      "gitBlobSha256": "c0e97e529fad400b6599f56da928760ee3324e67bb447f32866f16f32acc4ab8",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "agents/security/README.md",
+      "rawSha256": "3e0f28b2dc42306582d7ef146a95f653d16b31957fae21e6cd9b36f0794febef",
+      "gitBlobSha256": "2e80699342fb23a9f81370b84ffb15b1e151802df45a3bb055ccf5c3cb1a18fa",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/README.md",
+      "rawSha256": "8c016ec44654486ec1b028b4ea339972a858b61cc95c5f09fc0650645827af6c",
+      "gitBlobSha256": "70d2ef0e4c8a8b452d08768bd8267da6e70dc872748a00110c44b7d39ae13583",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/adapters/README.md",
+      "rawSha256": "f71c43ad15a1f810ac937d023adeb3c1cfbd1d5da6482520ea16750b1216a334",
+      "gitBlobSha256": "761f7ce75785e104dd82810e10d847953e9bc8b9dd3a42d7a266c120e81fdad2",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/adapters/out/README.md",
+      "rawSha256": "7b9ca2fdf8d0a0e4cb7cbfc8c4884b0deb9c66905149e007ce20b0539916a25d",
+      "gitBlobSha256": "8e2f1c170e2189dc4cc35090e36ba48716cb7a31e21a0496832e1f5eb242cf21",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/adapters/out/bedrock/AwsBedrockConverseGateway.java",
+      "rawSha256": "269c402df6cba0f8936d08a5eac72c583206b785e5f16e7aaebdc3d9f5023854",
+      "gitBlobSha256": "d5ba911e85c0400b75fc27e786017b1bdbb0db5d199c7d6397a1452f9f5c7507",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/adapters/out/bedrock/BedrockConverseGateway.java",
+      "rawSha256": "df53dae1fd0409fa96777c006faf456350f98aeef9c6f7c0e669196c13138644",
+      "gitBlobSha256": "96b2f222334ea0b94a0eec7f7c353fdec4ff4eaf4ac5c72b9a974cb6d42f3e9d",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/adapters/out/bedrock/BedrockConverseResult.java",
+      "rawSha256": "3c816b0048f986cca02a0ec22336cc1430415796e735bed10104fc07e0d2fe2c",
+      "gitBlobSha256": "63f0980338d6a8e361b691fbb03c58af88237f814e7af659606e223abf8e6560",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/adapters/out/bedrock/BedrockExplanationProvider.java",
+      "rawSha256": "21ad547397cc999161b9df2e49f5e16696e2ad32214fc8b6ef4cd5aaccc1a6b5",
+      "gitBlobSha256": "1a1c5909a7f0727d95aadbbaef8ba0cd075d1db27eed07588b2209d97c39bc71",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/adapters/out/bedrock/BedrockExplanationSettings.java",
+      "rawSha256": "6e5cb21f41d591896d9c0e8ed4194ef058cb42face28ad1d935d961a2e6ea651",
+      "gitBlobSha256": "54b0a5096815acfbcf93ef22cf71d58538acc724ca007322f41be688b0caa1ae",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/PostgresConnectionProvider.java",
+      "rawSha256": "05adabeb890632fa3e5024cf21a1f320f1ad9f058fbb1c9839315cb6f06d38c9",
+      "gitBlobSha256": "0935f80738e8bdc604d8fccbc22dede3036fbd9f62c0df3c56acaab4c3217e2f",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/PostgresDataSource.java",
+      "rawSha256": "1ad3476156b8a3a838e425bdf38c0699c3ef02505d285308eaa59eaa08c7304b",
+      "gitBlobSha256": "dc20704e983e937279282537681fe5a54247c61ea70f4d20796031d0449b3fb4",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/PostgresDecisionRepository.java",
+      "rawSha256": "f8038d61989473f3e7706a8155f740904d4d5fb7e1fda619f432f4b07168438c",
+      "gitBlobSha256": "61599874c07d5ebd748888663aad62b2f45d39ad7df6df28bb711790d0c71dd1",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/PostgresEvidenceRepository.java",
+      "rawSha256": "c8db3f173129ba4457da242119d4e9dfb19543cb03c801de9dde36e70015943c",
+      "gitBlobSha256": "08a67088bfc145f51b26402e0e1f70f737a1a143d2d45bdd0340512086123aea",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/PostgresLedgerRepository.java",
+      "rawSha256": "431f2c1a6cdfb454c8958832fc4e687fd4dd9c8720bb88911080059de6be1b0c",
+      "gitBlobSha256": "1844f0dce06eb4e6a8aa7561070647979c85bbc683f0d135f19ad141e7e1b6ce",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/PostgresLocalTransactions.java",
+      "rawSha256": "4628e2ab1027aaab87162e6ac1b1961ac63ff934350d4db0a5b30e40a44135f9",
+      "gitBlobSha256": "22845d3ca9cfde0a1fffb6ad38e4a370238635c56e514adf65dcc42b770e052a",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/PostgresMvpReadModelQueryAdapter.java",
+      "rawSha256": "f61c977c573ac8fb0dabf21c94fdab1ab48ab7c4a7484c12e400043b447cd6f2",
+      "gitBlobSha256": "1a342eaf9970159233421302cf5da3744e9cc18812d6fd4f448dab2caae0501c",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/PostgresRecommendationExplanationRepository.java",
+      "rawSha256": "b83fd5eac6981dc6dfbf448a0b3cb46cb4343298dd0493a90225421d20a120a4",
+      "gitBlobSha256": "cdf12f8ca13614062845ca7bd098ef6b08696d4bb88026d8eca7709876ff4456",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/PostgresRecommendationRepository.java",
+      "rawSha256": "48f02f585fac35ed50251e92d9d13b52f0ea77af31825a92ae5fa92e66de474e",
+      "gitBlobSha256": "f99e6f44bcbf7c0f3cad1546cb34d6e4c1983ae7eaad5131e16c1790979ffcbc",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/PostgresTransactionRunner.java",
+      "rawSha256": "7ffbc5b5596666b880221c2691fc95b9bdb92a03ae9870c31487da71a35683b2",
+      "gitBlobSha256": "7c6ad73c5142e9a30643e80ed33f111028a58882fde1ad75f938876c8d4b76f6",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/README.md",
+      "rawSha256": "524c748cf471dce9fa105a3ec46fb5160a4b9da1618e8d730a47ec99ad89a47f",
+      "gitBlobSha256": "e80cdba31524e692d95cd6fe9f51b1c0e71d4d7d6238d169c2f399afbaae06e1",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/mapper/PostgresDecisionMapper.java",
+      "rawSha256": "a3292fe4d5e283aa2a5e0234e6a041e94b874c9d80a2096ec63130ede75060ee",
+      "gitBlobSha256": "ba7e1b42397a15192694ed1ab7031524a4feab54c4e37daffc7cb3eb93ec327b",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/mapper/README.md",
+      "rawSha256": "3beb012b0883cebab2eb9c641f26f85c3c68299caf256a2e161ff2e41f022023",
+      "gitBlobSha256": "3fb6d3c3c49abf668f8451a0abd8b01ee001272b09039bd067d06c11055a5b9d",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/model/README.md",
+      "rawSha256": "e01944b18b0803da85971645ffc2beb8eb01c7a2edb8159d3a2418d64d2151b6",
+      "gitBlobSha256": "a136c5cc8a8e2302039ac4f77e0705e8083e221123e03f9b22c06863cf8dd9f5",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/businessvalue/BusinessValueController.java",
+      "rawSha256": "f371d3f48dcfa22cbe906cffa98cf0bfd6c800adad6d14c85ff747b6e78f698f",
+      "gitBlobSha256": "d00867c407eb733955e9655a3cd8dcb0680b2a64d7ea7be480002d54d921361d",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/businessvalue/BusinessValueResponse.java",
+      "rawSha256": "7e98a59fdbb2914fa93f04db887d9a17e68fd95d877bdc142f33ebb04216a43a",
+      "gitBlobSha256": "1d2a6cadf47a62ecd952fd54799ff4a2d6feef891185264b6ce64208196286f8",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/businessvalue/BusinessValueRestMapper.java",
+      "rawSha256": "6659934bddef4281b1f5b91c929459716d4842ca6e79a3cd85b73ce47c9b2900",
+      "gitBlobSha256": "5b386868c1976667345fc9cfb1c036a6e7516ad7a21a305361ace420110d77f1",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/businessvalue/README.md",
+      "rawSha256": "7067394df956406cc285b6372422d0249921850ae21d01982553e2c3cdb2b6ce",
+      "gitBlobSha256": "6c2dab75e598af69b22b37251cfc42cfc828b9961c2a40996da784dc80dc957e",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/decisions/DecisionApiModels.java",
+      "rawSha256": "474bf70094313e7713e27e5450030404fa9ef83eb029053e94665e93fed447a5",
+      "gitBlobSha256": "6b9704741115c86479846c0ead8d2313eaf7d6a93b35b826b18abe952c236462",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/decisions/DecisionContextController.java",
+      "rawSha256": "62f0a91c9c3f1b3c726613f8850ff4f253456beda5dfbd14585705939ccfbece",
+      "gitBlobSha256": "0f30bf66abb4579edb8f62d18399cb64e67d46ce19bffc76a6514e80135a1182",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/decisions/DecisionController.java",
+      "rawSha256": "3b728110ac7a4a2c6fa770a35409d0b900a2e61fc1fe830beb39e4e8530a0a66",
+      "gitBlobSha256": "618fe0ba37ba564aced443faec309e5b8e2e3892d39c3c98eb4ea4c9349f73ef",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/decisions/DecisionRestMapper.java",
+      "rawSha256": "b5f14abb8df4aa609a3ededf3e8d05d8527d450ee758863f9a57b6b82e21fae2",
+      "gitBlobSha256": "fe42cae208772cf38a39863a970ffc3993ca3d324237683eab22f1d91c989e24",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/decisions/README.md",
+      "rawSha256": "ba194a79226e4559b144ef6ad81dd856f958bba0804e873c027d8c2a1daf50f8",
+      "gitBlobSha256": "ccaa29b3f28351f22c6795abcb9c07bccaa4f6c88efc46748e7846e861583818",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/errors/ApiContractException.java",
+      "rawSha256": "ee25d7aea57a5e9e53d5b82c3b38ee5eb45c828fd242478931cc87e47b078b4d",
+      "gitBlobSha256": "d0a26ae644e0b1d3ffb4a43928a309979c3062752311bc98af6e67378a9da25d",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/errors/ApiErrorAttributes.java",
+      "rawSha256": "9d6f3347705dffd6ea6e062f3575b4f3aec2d6136bff913345553306194f5737",
+      "gitBlobSha256": "2d6f08f895c943f0880edf013848000fd5690a8c16303799b7f43e2ec88d4b3a",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/errors/ApiErrorCode.java",
+      "rawSha256": "5e3f665452d9d2e5def772cfeefaff093f5ff3afe6519681022fd122da16a84d",
+      "gitBlobSha256": "333761068f30c6357e0e7b3d94cce7672a2a2109e77bfff7f06f8a852781eea8",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/errors/ApiErrorResponse.java",
+      "rawSha256": "66b998e78729dfe13c375ad5fba3f27c3d21d599b23f5b04e194ba7ce56cc7b1",
+      "gitBlobSha256": "e2846ab9063d51535d34c3d20793a6e0c582825f4045513ceec3a8c8a5380901",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/errors/ApiExceptionHandler.java",
+      "rawSha256": "e5318f2fc855ee3f97d2a4426aef5d00e8007ffa7c0d8218bd279f431898f56b",
+      "gitBlobSha256": "d0512eb74b559920a32ade5b2a194377d7e0216269cb19a6c04acaabb66fcde3",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/errors/CorrelationIdFilter.java",
+      "rawSha256": "600cc9f2e35d028590ce86f10d84093ac39880fbd488ea3965c09047b3109801",
+      "gitBlobSha256": "83cb39b5ded0a939f06216ef26f32a9280edb72b334e3ad0a772db9180221d03",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/errors/NotImplementedApiException.java",
+      "rawSha256": "7dd9be75a1bf445aa08a3fdabbe1c3b5f5a7102bbf0c32929e603de12204df16",
+      "gitBlobSha256": "27a2e54fa1171943e8bb40d6a810a08969ecc0760a056094d72dbce26203631f",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/evidence/EvidenceController.java",
+      "rawSha256": "c01a5df1d60b6deeb5125fa4775350fe149ee1fceade4648205e9035e66184cc",
+      "gitBlobSha256": "ed38639ea9b7416434617c4eb65b6b48edcd7cc209df8520036cc5e4d1bee029",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/evidence/EvidenceImportItemResponse.java",
+      "rawSha256": "b4352f4c3a8e746ed28dee508be2b5b17da3b1d77b899a2f2dbd9837279a1f68",
+      "gitBlobSha256": "a264d824205e6da8b4854c659ea584cdb428bb2591a1413dd97b6206a1ec7cfd",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/evidence/EvidenceImportLine.java",
+      "rawSha256": "544fdb186e80140ceca1e351bf27cc541cd2eadc8ff4846ab48875b7345fcbed",
+      "gitBlobSha256": "bac62d3e21ac20a5a4ccba9b4c49b1f14c35fff218a9bd2fa6e4863379dd538b",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/evidence/EvidenceImportResponse.java",
+      "rawSha256": "ba89180dd150fdda7eb01f66187d77f96580117a2aaf7b8a04cf67e1c7dae8fc",
+      "gitBlobSha256": "5b1aaf402d57a8fa5a87878aa30c1622ceb4906d958b198613e8324bbf86d40a",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/evidence/EvidenceNdjsonImporter.java",
+      "rawSha256": "d693e283175d33240650c10da8077fa391749150391ad1972e5d6552aca25a0b",
+      "gitBlobSha256": "dc5302baff4f11985d1b2ff0b06026df8d6bb9af0243301332c23101a8e4e272",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/evidence/README.md",
+      "rawSha256": "ec2dce3fb2d0fd6edcde010ac1f5075ed8de8e9654cd33b8d13f3e84502914d0",
+      "gitBlobSha256": "85f032cb9baaa1c1c72647ebf8f950e1a306f088c2eab1bd4ea831ef942a6b1e",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/ledger/LedgerApiModels.java",
+      "rawSha256": "5d053a9a54747d35fbc42b7dc70f55db971219352e9b8ee59cc6d145ab2b4371",
+      "gitBlobSha256": "31f473674d1f77726828d2059bc8b209b28cc7f9b180552c30dff25c86e1be40",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/ledger/LedgerController.java",
+      "rawSha256": "cf58660a1f110c43e3385af89ea11a15152ad9166767dd5289d9d6053426bfe1",
+      "gitBlobSha256": "8d46e29d06be2e73f470e96ab2719f5d344d92412ff29bc522f05c956957e04c",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/ledger/LedgerRestMapper.java",
+      "rawSha256": "51e0b947a056a6d57406b8c81787296904b6f57eb207966cc58a2502de519c90",
+      "gitBlobSha256": "d785a2048e129ab5f68851fb557071af141a475b603681847d759456e7074c1e",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/ledger/README.md",
+      "rawSha256": "9de0f5c8b6335fa8d5d4e72e743a78ab921f349d2270522269e71b3953c1f350",
+      "gitBlobSha256": "1237c2bdca74afdb79831efad71b0d4c3a365fabb211ee9a92f40829e360a739",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/observability/ImperatorHttpRequestFilter.java",
+      "rawSha256": "1d6b25b988a1b5bc7074068ca833e6d73d8d98631cecab548d55959e4b5ac94c",
+      "gitBlobSha256": "4b1556aeeb6ff16dd073bfdc88f79f094bd24ac073ece292ed9c60dd257324fd",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/observability/ImperatorInputPortTelemetry.java",
+      "rawSha256": "9addcb9432a377661acf44f594009b1cb1886c016ad0040750e83868e0519946",
+      "gitBlobSha256": "a5326cb1aacd8447efdcd0c067addd4a64c761350670b8da6fbd22587807e722",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/observability/ImperatorMeterContractFilter.java",
+      "rawSha256": "c7aacfc9c690bfb7fb3779efcdfafe0bb6a52b60a4871eae593d5897b4669f16",
+      "gitBlobSha256": "26013b4ebc9fcd1b9a28b64b71ed819f01d49a300f5b2096f10d7728489a0f24",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/observability/ImperatorRouteCatalog.java",
+      "rawSha256": "c150e05d7a2b83ccbae9619e5b4d9e2c9b693e1367f749c3e4aeb681b73ad974",
+      "gitBlobSha256": "51dbb84c53ac8001409eb8b9e31c71ca2751fbe957f1fb71576bf0b737be34b8",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/observability/ImperatorServerRequestObservationConvention.java",
+      "rawSha256": "658042058e16903ad7022ee3395821908650bb1531bb1e756da9df3d1d9a8761",
+      "gitBlobSha256": "12969655f12e0f42211a802f3a74bf7516cfb36c54b25d6e69fea298b86d5cb0",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/observability/ImperatorTelemetry.java",
+      "rawSha256": "23565daf6087acf5771e5d6eac7ae5c809075b6b243189546e9b7a8f1bfa5181",
+      "gitBlobSha256": "bd61d5096f1177abd8dc3c50b00c57f2b3db33358007648bc50d80d9418ad672",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/observability/PostgresReadinessHealthIndicator.java",
+      "rawSha256": "6dded08719fbb17258962fe8022a94d91d1b5dfa5127d2775ea6dc4b42cd0f2d",
+      "gitBlobSha256": "adb98237d724932b3c51c50a3789c272c606b32be79106e31c5ae2ad0fd8e087",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/recommendations/README.md",
+      "rawSha256": "b123eb9d752e6c2683a565e34579a288e7895cab0befdec7b639ed2ebe384fd5",
+      "gitBlobSha256": "a794d35631923216e3d35eed5b7694ac1dfa72683cbe58893c96d1acbb588828",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/recommendations/RecommendationController.java",
+      "rawSha256": "3f1300df3ddd11cf270877e30f87de22f9ff0cb49f0b7d627a9006d5f95fb3dd",
+      "gitBlobSha256": "1b40cd40e01712af147449459c0c7547f76aa38e643c57e24be56f7f4f82281d",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/recommendations/RecommendationResponse.java",
+      "rawSha256": "7b1f1ddf8a69864af1821c3627cc8e8604e1b857bf59af96cd700bbb635bf15a",
+      "gitBlobSha256": "94dff1334027f767e790c5807d6fd20e7d1bf005afe0cd24d191a0535da1d273",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/recommendations/RecommendationRestMapper.java",
+      "rawSha256": "d4c5e753e0b17c7ed2cadabf45b422dfb0f81a930604c2dd9c8cdfc9aed1603a",
+      "gitBlobSha256": "154b0d18dad0d3f4edb755ed307f463ee9bf1cc3d4c9fe5961f33b57924e54cf",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/security/JwtAccessDeniedHandler.java",
+      "rawSha256": "a1195247f30c274c1b69687ccd749861d2ede89739f25b8574b193fac2bc4812",
+      "gitBlobSha256": "d9a7638f716eccffea2e837c54ecc1c51fdc36463be90ee5c853340dcac0af3b",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/security/JwtActorContextResolver.java",
+      "rawSha256": "5180a60fabedb11334f79dfe6feba7335b7204079241273e513d5d5674de0714",
+      "gitBlobSha256": "2df8c3958d364024dab6a4578f046d7287cc76e7cea9bd2e892ff08f44a6419e",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/security/JwtAuthenticationEntryPoint.java",
+      "rawSha256": "ccae982da3fbcfd3d5b0f58039288a06f90542a8265fd49c9b43b394d6603540",
+      "gitBlobSha256": "7e9f980bbb180acb793b380bc71ba9c04e85c42613ba9881aecbeabd6b738eb1",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/security/JwtContractValidator.java",
+      "rawSha256": "729c2f1dd8d730b950f562807b4f8456c4d2dfafe896256e97ba5a6913ccc7f3",
+      "gitBlobSha256": "f6f84c617695d21b30dc897881e3cb9f4e03e570aaf00c7a5f82c2b772ba8c2b",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/security/JwtResourceServerConfiguration.java",
+      "rawSha256": "f9b38d5163855dca16c7daadd99239e68ce4424cf72662b00bfd2743bd2c7800",
+      "gitBlobSha256": "4f18cdb1063de11f7f10e8c92776c358675d60f2ff198f4430281cffc9bb65ae",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/api/security/StrictBearerTokenResolver.java",
+      "rawSha256": "c9831c5db28e1cdb09b4362f5dec3faf965c64d1e8f055538a736b128c6af025",
+      "gitBlobSha256": "e9bdfdefd28847dd5ac7b94499dd863f3e653a1bb3e78337f766f25e6fea6846",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/README.md",
+      "rawSha256": "6f9052dae6c6123e73ec42ae26743ffdca90496fb90ca0477659c7b28bfa2a2c",
+      "gitBlobSha256": "347a4f73d7e23b57f343181b8672bfd8ceffc51f3a1511f49d822ab036c6533b",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/appendledgerentry/AppendLedgerEntryCommand.java",
+      "rawSha256": "ff5ce19e31459458cc0489e07bc07eec90df5fa254d17cc47e2e9f776a447e0a",
+      "gitBlobSha256": "dfde28df4894362f93463d2f32ddb6ed45d89fefb717f717d9e068940760c1bc",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/appendledgerentry/AppendLedgerEntryResult.java",
+      "rawSha256": "a52000f9ebe2a833e7953f3676fc51d848cb34eb87cfcb2a601de95a8356d95c",
+      "gitBlobSha256": "7a0eb1c7506c8d3caccdd48b3f8ab4d62b3d7e16998c5f202465cbbf4b952ffd",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/appendledgerentry/AppendLedgerEntryUseCase.java",
+      "rawSha256": "2bf89ed3a87fcc2625b82733cff2ae67edff2074754f11b9370ad092e481896d",
+      "gitBlobSha256": "dda833ad8cbecc24040f88d66b56a59228bcb9dd84bfbe09bf53a532b822005c",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/appendledgerentry/README.md",
+      "rawSha256": "57462838c968878db9b21bd3215a2fdce9f6cf3751727ea099f45005660b4753",
+      "gitBlobSha256": "4ebf0269667e60275cf28f807c3dcb5d8dca5196bc650a1c43376fc1d940242b",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/businessvalue/BusinessValueProjection.java",
+      "rawSha256": "60f911fa0bf99e3e171a0b07bcf368359498d229c198446d56ca161d75c1ca97",
+      "gitBlobSha256": "a4c9f84861e2a7122c901551cfb9439aa243ac3056df8b270243ee462e636de0",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/businessvalue/ProjectBusinessValueUseCase.java",
+      "rawSha256": "4aaafdf3051b750efe7fc128839ba8eaee45bcc120c4d503843c1ee80a77f026",
+      "gitBlobSha256": "78e34bf7db7f35ed40e6c384bbeafee15d09b4bb246c8247c59f62072176f4ff",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/businessvalue/README.md",
+      "rawSha256": "f241c06b772613bfa53c7c2156dd760a10594e0573f9b5912295104750f63272",
+      "gitBlobSha256": "d03f3106b420e88b31fdaeaf2be836de728a336b0565b65802a14a1cb9076e48",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/composecase/ComposeDrcAoa001Command.java",
+      "rawSha256": "8327c5f2f208a2e7f1af1c603c47bbb222398f7666342b18f6a6b893faf683ae",
+      "gitBlobSha256": "27f3eae34b9e5c7854315c031c631bbfc13ddb0299f7d2a3fe76bf7e20a0b70e",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/composecase/ComposeDrcAoa001Result.java",
+      "rawSha256": "427b6f45f452ac55c1f771951d9b5855ae9cf03816ff21b63513d63f7ef6e7f7",
+      "gitBlobSha256": "9ff19559ba1ac4b0eaa1d0b85b0fad0d67b534d3d34756658e0758b40c55f6ce",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/composecase/ComposeDrcAoa001UseCase.java",
+      "rawSha256": "cd50fea32bdf3635e3e634687399230387f49c03c5053e841515096f47c878ba",
+      "gitBlobSha256": "f5eba02d5e57de91b2c3e11860a22efa9abd15776d378f3eade430edf0931124",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/createdecision/CreateDecisionUseCase.java",
+      "rawSha256": "ecc6ddf6d18a75e3507e15ef07099ca05f76b117e8dd0ca193938e19998ac6cd",
+      "gitBlobSha256": "4fb1e0bdf0e8a048677f2aae152a2ccf987e9d8e3f7a1ce2f3d5598d7cb1bbc3",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/createdecision/README.md",
+      "rawSha256": "db7bba8bebf8190835939aca7aafad9d7f8fb82746848df8a0677e6db192ef50",
+      "gitBlobSha256": "efd306ccf4097a051403bebd442f60cd2b7af8710241bf48c099d64c0b692cc1",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/exceptions/DecisionCreationConflictException.java",
+      "rawSha256": "b18f3f7502885a31ab2bb73a474436b22cc673ac9ffabdc6f267cffb41df24cc",
+      "gitBlobSha256": "13ed120cf8119598d48f59404dcfb6a02b30d37dc2f551b2c4bc68d77328cea5",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/exceptions/README.md",
+      "rawSha256": "84df13576f6bc351ea881dffebadd628510fdead29a52c67e833f2cd3b3543de",
+      "gitBlobSha256": "d6dbb6ce316fde2eab13944ddd812e1f42c920dced221058c1d21d0609dd274d",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/exceptions/RecommendationCreationConflictException.java",
+      "rawSha256": "0e682ebde2dcd6d75ba0ca54dcd4c1767ca1029d564b6ae8f2cda1ddae6e7810",
+      "gitBlobSha256": "d93d765b7f598ed5efabba55c95f49cc9956f50c87b49423f5c67356442338a7",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/exceptions/RecommendationNotReadyException.java",
+      "rawSha256": "c13de009348934fc8f8f47eed6bc0bcbfef42d679341dcd65593531ae3bf5ad8",
+      "gitBlobSha256": "2fb03b833f7f6eb555f62fa76bae7a8efc0970b69f5711448e87070f08c1a092",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/generaterecommendation/GenerateRecommendationCommand.java",
+      "rawSha256": "d5bb41880d91323053ff5f74382fc4862342be56a12c303dc172909788031392",
+      "gitBlobSha256": "ab2726004d4ac565a0da2b580cbebe4f2e4430a316e76375945ba06811fb3643",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/generaterecommendation/GenerateRecommendationResult.java",
+      "rawSha256": "ba17121f0b30f715df540c7c244a9d04cb3bfc106894e9f353e114d5177dc4ad",
+      "gitBlobSha256": "1b5edf6d49e02d87c914ae1a98244f47c62fd47f3b4f3b309ecd5ef822a9c5bb",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/generaterecommendation/GenerateRecommendationUseCase.java",
+      "rawSha256": "88075d7d834c5124ffca04c2a112fa3d0fa8b670b0b9ae2e4593f21621c2389b",
+      "gitBlobSha256": "1a6860870d541bc48f45faffdcb280c9ab284f896c6d29a9c86788b400fd55a0",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/generaterecommendation/README.md",
+      "rawSha256": "e3ade44120d0a1cdf71de819eff5e222c8d4b3afac912cb17727bd417d163543",
+      "gitBlobSha256": "93a5af317ae32098d1e24b1609b839bcdff761f543a8aebfe6accad6736db8a8",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/importevidence/ImportEvidenceUseCase.java",
+      "rawSha256": "296c874a852bc34229e02041662bbd3e1d27c4594159ea0b1223e0e388b882b6",
+      "gitBlobSha256": "742d136437c845f9ffdea4a70863cd4ade7868b43be36e11db5aea2b7e9085cc",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/importevidence/README.md",
+      "rawSha256": "93fa6d70c939302f4e6f831c955c14a82790a5cdb391649d6fffe7069e8ef036",
+      "gitBlobSha256": "72ad1834122bd34d906194d5c52ccc1c73f5e995db9eac9c4118f37da84eb7dd",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/ledger/LedgerChain.java",
+      "rawSha256": "b9b1b7a171a39e30b54d2d90980ea26810d4383151f4291ed5493ebce5c59918",
+      "gitBlobSha256": "23a271b55d17ad2582a572c670478dae549e215d3d382d1414d070ea2e3e1a47",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/DecisionDetail.java",
+      "rawSha256": "73690c4913e664145a0be364014bd9054ae7fe677a47345bdf533670a9aba660",
+      "gitBlobSha256": "486de7600f59e1693c684e035f728c56eabd9395ae538b8ee086c4418e11ae4d",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/DecisionRoiView.java",
+      "rawSha256": "6f304e5047844846358f382a14cb92473015ffc4c608b0e2e33e11f898deb136",
+      "gitBlobSha256": "e059acbda44e26c09c57cd706ee0c416093b4300c53cb1d7f5f621dff01687c9",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/DecisionSummary.java",
+      "rawSha256": "ac1d54e9032bf512a5019512b9f6114b460a6fa29ba50cd483b757340ebeb9af",
+      "gitBlobSha256": "53b1fa9fb3936ef0c578cfa27895448afe8b1ffb66fec84b2334456d5d1bd496",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/DecisionTimelineItem.java",
+      "rawSha256": "750f7444c4fee4043ad6b2fa9301d511faec541807885481ca522b2b9264d3e9",
+      "gitBlobSha256": "8eac86cff137118478a7aeeef25d099fea3430b7da7c44fa43a7996f264fb7da",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/EvidenceSummary.java",
+      "rawSha256": "a2f13ed7003f328ec6b707cf4f062afd16f610e8da1155d0070dcd2a2e1e8656",
+      "gitBlobSha256": "beaed465e2f9d8d85f1227ca1d916ac2e8c36e917fbc80ab0453939ac2138647",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/GetDecisionEvidenceQuery.java",
+      "rawSha256": "91e90ec2bc6297ed039a1504950cce1fe80f65548a9d7fdf5491de5ce21ffc16",
+      "gitBlobSha256": "61f215103550f7d78a2ab8c234e526f6749afd4e6e0470a149564ce1c5699fcc",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/GetDecisionEvidenceUseCase.java",
+      "rawSha256": "c1b0053bbbf4bbf229b700dca3291391aab78cc49b8065a83916321e281b9fce",
+      "gitBlobSha256": "693dd266c7ad0d745f29a8c664706d16473f913882da97c139f3606e4335ed86",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/GetDecisionLedgerQuery.java",
+      "rawSha256": "3ccc1c3d3077c0a7adf10a4f1e2d344a7cd89a3d77a4288e84f510c4b012a222",
+      "gitBlobSha256": "af3495018796c06457869c47405e83ea3d3d30693ec6de6179683cf306c5df82",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/GetDecisionLedgerUseCase.java",
+      "rawSha256": "ca16e1e2ba5495d999362cd99b0351ec05f182cfd1a96bed3506225abd9ba59a",
+      "gitBlobSha256": "29a0817dd58ad0355e4f76a6686bb6b6878adbdd4faa9ef73865930f98c39619",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/GetDecisionQuery.java",
+      "rawSha256": "0847d5f0de01162c7dfba7df357d1a40ed2739119738f93391c86562247e7db6",
+      "gitBlobSha256": "1344ab15c6d8ea4e28f04b18fadb0f4361f7dabf7c5ba65fcb03e030f0134bce",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/GetDecisionRoiQuery.java",
+      "rawSha256": "7c5e3a4b1174e1cd03c18edd067fb7235d5f6e70a579916de7e2b2970b885427",
+      "gitBlobSha256": "766f41db11e12115df58a54fae2a702fb0ecbc59d13a73fa3d576781dbc2033b",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/GetDecisionRoiUseCase.java",
+      "rawSha256": "d4a7f9e75a365dcabb8c4b993746cd4c383eeea87f70bb4c91b088742c17ed5f",
+      "gitBlobSha256": "c10918da75ad47cc7972bfa4cd6f3f6ec8d37da598aea7408eac05f56b075462",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/GetDecisionTimelineQuery.java",
+      "rawSha256": "82688279fee875dd3df602f39c6dfca4daae399e341e279450bd6f77ffc601dd",
+      "gitBlobSha256": "44649dac0eb7a26324f1c7ce94a0ffeb2b71c1143f1a143e4f637006e57ab0cf",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/GetDecisionTimelineUseCase.java",
+      "rawSha256": "2f8f1f5d228383fc4f0d4c66668ea3bed715cbd99114f5d7d1fb51807b2cdf27",
+      "gitBlobSha256": "6db2adeafb93b1bfa47e32e7a5e6c6abce1fde0fdf01c314b0967772bf478422",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/GetDecisionUseCase.java",
+      "rawSha256": "752d772f6f45327c173d551d666bc5df8b8b7c973c1579bb82e483d0e9676bc1",
+      "gitBlobSha256": "b5abe0883d7e80bb8f978d85d365298a85aaf931494ad384f3ab9d8a52f941f8",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/GetRecommendationQuery.java",
+      "rawSha256": "a41d3b3d61b1a3014e85f136eb0c908f4b6c4df4f2b31c0bc85eb7069dbd5612",
+      "gitBlobSha256": "69ce34f956cc0b513ad9961f8b85c21e0807db05e00ff990111e29f083b45a09",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/GetRecommendationUseCase.java",
+      "rawSha256": "8b16159954c6350045943d143c09c5d1ce9344eb80864f899db6c644c480882b",
+      "gitBlobSha256": "bad4eddc85171c78311cd5b1446f5c4a2771093d383a72690103c264f208aa2a",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/LedgerEntryView.java",
+      "rawSha256": "dd60782fb8bbae672a72bcc41e95c5dee60ddd90c3e4c9bac246017cac42b9ce",
+      "gitBlobSha256": "eb95408dd0b937671375adacf099188419b276165a3c215ee79444c30ed6aec2",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/ListDecisionsQuery.java",
+      "rawSha256": "e1d80e54238454f54fa59c55bda80ad1cd1a31afff3abdcbec093b6959561861",
+      "gitBlobSha256": "efa69a9a1d19ab742198d1e261695d48c3aa748dfc05797fd1ab90b890a0cc6f",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/ListDecisionsUseCase.java",
+      "rawSha256": "2c0896053f6e2c568853dc805431f0ac868c00386ecac44439b18fef428ae917",
+      "gitBlobSha256": "0ce1aab8931f8a0f53e344d3ea149eae9c51a93628f813bde689d16a4519b26e",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/ListLedgerEntriesQuery.java",
+      "rawSha256": "3118d1f7d734af1a7b819ac1edcd9e6ce08675048b5a53ce582b70004ad5e5de",
+      "gitBlobSha256": "c6fbfafec52d56029434a00fae37a78a440a0779305407eeb226ce7bd365b41d",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/ListLedgerEntriesUseCase.java",
+      "rawSha256": "2fb67e0951669a0e626f1e4a145aeeaa8270475ceabc3d53c92df26aeb3ce1d2",
+      "gitBlobSha256": "dc7084b5c48ba39c65ced9f2cbc5fcf06475d520840c66ce440616c90b194ef4",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/MvpDecisionReadSnapshot.java",
+      "rawSha256": "9c3295bc410eca268c52a10dc783a47c571e1274ee11f00d87b24ccf377457ce",
+      "gitBlobSha256": "78fc6d42fba2ce2efb880aac409255a7a28ac0ec0ccbbf982a3f1e82bbad338d",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/PageRequest.java",
+      "rawSha256": "d3ed5fcd30d8a8798e6bc263425af41d69428b5deab0656f16468f796df08aa5",
+      "gitBlobSha256": "15b07ea421c4fc04e59e4a0a76a05d2d5802020c9b96a2e2448b5f40cc9dc7f3",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/PageResult.java",
+      "rawSha256": "488855ec792f1c003ccbacda1435053d1fa08d245f878e89d6cc72744e63e11d",
+      "gitBlobSha256": "99e0aafad48d15e761fd67fb14dda0c374a6ec1886b61f62dc54a90308dbe88f",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/QuerySupport.java",
+      "rawSha256": "201fa8973891f2e9d7bab05719ae8bf3f32608aa00cd3e46cb9f30f0f89ece92",
+      "gitBlobSha256": "bef0f719003ef75e2bce80bd18cd262a28445b414cd3e5e6a173ad90f1cbd405",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/README.md",
+      "rawSha256": "6c769ca3cef10a9edd001ca85a36baee72a4e3fe0ba3dd0a1dfc4dab4ff62b38",
+      "gitBlobSha256": "bbdc6f86c6c0ebdbba1c1578add0a66a862c5392604fcc27d9c024d0881860a8",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/RecommendationExplanationView.java",
+      "rawSha256": "3b9c57bb51b0d4ff9b110873caf32aca2614a2154983e34ae0e62057c0416ad3",
+      "gitBlobSha256": "4737e669f53d82da29d163b2fd68bbf29087f6ad4c9f2406d7969c4101c19ed8",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/RecommendationView.java",
+      "rawSha256": "d27fd96e45c53668840e0392377e892735bc6946273530fb95ab3afbfe114385",
+      "gitBlobSha256": "612cbb57a972dee1b94bac2d3365088c01162d18f5b2164979e982532dbe03aa",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/query/SortDirection.java",
+      "rawSha256": "68ff3b47b7b07220b9d8422eb2d39a677f3e1736490af6b9dce0c568266b1a5a",
+      "gitBlobSha256": "06f4e5daa56d7c05aad9278481d8111a8a46f741da38a9867b67d5ce56be137e",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/reviewdecision/README.md",
+      "rawSha256": "1c18e0251df38569fc052cbcf919a1eaa1e14f0844fa61f538eae9b051a9d65c",
+      "gitBlobSha256": "75ac2be684af8319c04b9f3c9cea452d9f3ca95d85e49972901461a142304ab0",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/reviewdecision/ReviewDecisionAction.java",
+      "rawSha256": "026e2299a2298759e544cf13355f49d509c9d1218294904335d6a27bcba36edc",
+      "gitBlobSha256": "d179aff4458d838e18400517c1128d9c57aaea89387a93ca0eb62b2a782b61b2",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/reviewdecision/ReviewDecisionCommand.java",
+      "rawSha256": "99cfe9d8f5304297d8ab7348a1bc684593b21467f2f5f2f87e0b9546d2596419",
+      "gitBlobSha256": "2080d72d97f684bc53e620bf7319424515278ad6b9a8b1efda0d482351d36609",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/reviewdecision/ReviewDecisionResult.java",
+      "rawSha256": "2fdc985d82198ac9be0cf97f8fecd60bbe5ab56add2be8759d67254dd13254e2",
+      "gitBlobSha256": "2e558b0de044ca931efeaa16dd0b133f536d064dd23047fbb4f88b6b89496a24",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/application/reviewdecision/ReviewDecisionUseCase.java",
+      "rawSha256": "fe150b7410736962301e5bd6afc66f61fe37b6cfa5254357c7d88a8b6d41c263",
+      "gitBlobSha256": "b886b8f2fdcf050b021da357129722a2bae4b8e927f9f13cbe383d1d170aafd6",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/bootstrap/BedrockRuntimeConfiguration.java",
+      "rawSha256": "daedb124d63f33c20aed8c757e288dff544776d61184597511caa6a220d2f0cf",
+      "gitBlobSha256": "f15c064be9be754d3d1284fd58b903ba11293c84ab17071a163f1e3cf5f20662",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/bootstrap/BedrockRuntimeProperties.java",
+      "rawSha256": "1c661161728d9c39599c9e48d4b80e67fc2ab9a92c7e41e86651824ee4c82b69",
+      "gitBlobSha256": "316e461d833f7529651ef76a92445f7c85a662b4901a44165d9d5a515f8b6217",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/bootstrap/ImperatorApplication.java",
+      "rawSha256": "1443516fe5955cedd6e25e2c5f9bd4107b0804dd0382770a728e0ca6fc40360f",
+      "gitBlobSha256": "f053e2c975e57cbbb20ba43a2a1473bd6ea82380852118e8255d98e59f41192f",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/bootstrap/ObservabilityRuntimeConfiguration.java",
+      "rawSha256": "dc1010d6743f59a7087443a85e5711622fe5c5468ad53a192d3db03b73d54577",
+      "gitBlobSha256": "ec3cf4d20d2a4519db3619a93979f578f6a0c0a7c083675d6f684c8038c7aff9",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/bootstrap/PostgresRuntimeConfiguration.java",
+      "rawSha256": "fadc2fa786debff527cf5a58758e85bcfa9925e88105757ac842deb6083c9437",
+      "gitBlobSha256": "835bd982c6f803ccef17c4d9cfde1e364501bff920ed8a10bac713fcf8b7abd6",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/bootstrap/PostgresRuntimeProperties.java",
+      "rawSha256": "f8f0ebb1fe649afd094ea2e6d3390d05f5aa5b24ec57b74377b55e25666123fc",
+      "gitBlobSha256": "ba7ede5b19328ee4c3b98836e7c4a94ce31254e715dff6163fdb1bdf1bd90afc",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/domain/README.md",
+      "rawSha256": "e20f83cf77ebf54640c8f86784aa35323e92d9cc9ceed655405b10de5ebb8792",
+      "gitBlobSha256": "8f594763ad5f6bffb4e8845da3f6b80caaedb467741852a4890bb4e34e5d359f",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/domain/businessvalue/README.md",
+      "rawSha256": "7cc9c1479d4815e216cc3edc051900a9af8e0d4d3db3e1d6538d8f4d38e938fb",
+      "gitBlobSha256": "2d4112084cfa4d2599268d1f270666ff1b93cb4cbd536b91becb14258b48d1f5",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/domain/decision/DrcAoa001RecommendationPolicy.java",
+      "rawSha256": "010ce4f04b8455f496b0e5bb0405c840362c7794d0a417389fcfaf4a59aa0a7f",
+      "gitBlobSha256": "91e3c63ca40c5ac13647129715595a21c318c1e217e983055b0abf6f249d6225",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/domain/decision/DrcAoa001ResultValidationPolicy.java",
+      "rawSha256": "3580d249f516876f8e1835353d2a66631672907b51dd0b71cd89363c5ad74a00",
+      "gitBlobSha256": "70c6f21a0b8acf56f04d97fa320043770f251f45d455418323a286fb83f5eb86",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/domain/decision/README.md",
+      "rawSha256": "066f88df67cf0de6af00657b05bd45049442ffccea477bf145f1b87913176f94",
+      "gitBlobSha256": "65b0ba044a0a324d42be9fa16017eeacd931080aaf0c286589d8a19c02985cfc",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/domain/evidence/README.md",
+      "rawSha256": "13cd2c8ac2614dc5a29a1723e2407edadad1d626a990d8923fb9ad6fe1922e8c",
+      "gitBlobSha256": "00f6d8a427be8f3eac06dcb9e10501b3a89c2389ebc0c2d964c1a1f3cb0c072c",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/domain/ledger/LedgerEntry.java",
+      "rawSha256": "e14e64e553e3bc1c2c09ebe1408bf0d59617b52248372764528cf4ce07a53f5b",
+      "gitBlobSha256": "cfa76ab5973b2de0b52bf4c6e5e22cf8cd06129e4724361f639847f1c22bae73",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/domain/ledger/README.md",
+      "rawSha256": "ad980ef3108a67052fc956bffb284eb4b0df5d1ee6e5bb7b3463828d874deff5",
+      "gitBlobSha256": "1ad946f500c93b10a13e2c43758b30fe181512b0f526c7efbd8e6bd8cc113933",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/domain/shared/README.md",
+      "rawSha256": "d8b27083ad9c51767a03e5e287221626b41be85475875d930b8a8bb6f2307f8e",
+      "gitBlobSha256": "420d5c8a500054767ae72a41a10fa947ca6264f723f7a53ffeaea8ce2fe172c0",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/ports/README.md",
+      "rawSha256": "75f44ef6f8c04fb8b5655c0e7be00a5f0c1a2f4c4377312c0071df650633199d",
+      "gitBlobSha256": "40d39d01f184ef3889522bac7a86e3e7609aca743de2fa6d3f2ed425c86ffcae",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/ports/in/ComposeDrcAoa001InputPort.java",
+      "rawSha256": "85a6f64a8ef907e9a5382bae6d255290e4184451d6e5c6c3ec01b27443f4eb41",
+      "gitBlobSha256": "ef303fa96b201b3d95229d1c820ec40826908890fd487e51fda7444f348aeb87",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/ports/in/GetDecisionEvidenceInputPort.java",
+      "rawSha256": "e397ee964ebe14861bdad70a7496bf6314fe1603681904cf29a9904c69f7f3d4",
+      "gitBlobSha256": "4f93122a42f3a99cd13e4ed5a51c00f18ca48198012b6913b584824659b875c6",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/ports/in/GetDecisionInputPort.java",
+      "rawSha256": "68192c049f2d721a7980be0fb6c5d7be5b234420de0bb2ae5844f95b862708d0",
+      "gitBlobSha256": "24e932f7c59a51d00d559622e63924282a919da1fdba1a1dec785ae2edc679a7",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/ports/in/GetDecisionLedgerInputPort.java",
+      "rawSha256": "4b6f00bd4fd79a7956f87767fb76aabd66ffcd2f70dde24a46cd7a23f2d7bc8b",
+      "gitBlobSha256": "6a9743bc6ea096314a778c9448fe378603cb1fb3c14478ca45a0244bc6194fa4",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/ports/in/GetDecisionRoiInputPort.java",
+      "rawSha256": "ba40ceabd0c2ea256d2c759bfe365399648b014fa9c963035616ef501ae28e22",
+      "gitBlobSha256": "26f503c04ac6eb6f130cf4bdc3d34a0bfeb64ef5ce361a184858ec165e79fe76",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/ports/in/GetDecisionTimelineInputPort.java",
+      "rawSha256": "ac25884d41dc06088877c51984dbd85c98c83d6594db25ee05ff99fc8a5efe89",
+      "gitBlobSha256": "b210cf687dcac21f804c92f04dc65f8a8dee71b1663a753c2d5df820970736e7",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/ports/in/GetRecommendationInputPort.java",
+      "rawSha256": "2a6a4b47bbbbc453bb01452cfab322f22a9ecb7a059a8216d82f8fb8cee71232",
+      "gitBlobSha256": "1f3ab432259cae67c07d4f3580b773f7134290dfe08b83b668f1df51858f79ee",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/ports/in/ListDecisionsInputPort.java",
+      "rawSha256": "4f6cadd352be2ebf1e4605b004207ae77a9776f9c0de6224d4258fd6c4274483",
+      "gitBlobSha256": "ea170a8ebe3321e04f36046797f55782d12611c4f5b7c520dbec7161b812fc10",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/ports/in/ListLedgerEntriesInputPort.java",
+      "rawSha256": "e08412259d3778c040ec4e60e761020fbeef192e3ba37988761ba5bdb4d8c14f",
+      "gitBlobSha256": "80314c50f95106746d867aee921fcd30849fb21c1fe8e68fe248071d53f9aa4b",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/ports/in/ProjectBusinessValueInputPort.java",
+      "rawSha256": "88d763fade75484f6015dcbc41c2ead28f442880c26f1ab4efe7f6d1af9bc33d",
+      "gitBlobSha256": "5dc7f40c785b96a591e723c696d350b46883e6965c9e79468e2440f485d26440",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/ports/in/README.md",
+      "rawSha256": "8a38415fb923d29b38e8b820d1e74d9bf8811109b229f9bf5f9a6260044441ed",
+      "gitBlobSha256": "bc836225e57f50fee8a3669a4eabe06a78e8f23af60fa9177c39bdbf551ac606",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/ports/out/DecisionRepository.java",
+      "rawSha256": "0a497f69109c803c25792ae316fe81950af0e918706ec5a0f0db4032f340c402",
+      "gitBlobSha256": "6d1b0af6eeb250c661a602c7e2db38bf178b51bad590f46f24bae6c0cfad12c8",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/ports/out/ExplanationProvider.java",
+      "rawSha256": "83ee9402c47f3659b9061d0279908d94982487fd0227a5343c75fb85baee956e",
+      "gitBlobSha256": "30fdd6d4583ce87ad790bd268279a74c09f12d4080819c81b7028d78a552967f",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/ports/out/ExplanationStatus.java",
+      "rawSha256": "a435769d932a2ffadcaf115b9dab07f13841e564b1ed64e5d87f824799a36441",
+      "gitBlobSha256": "ae2944ee62144c9470aaec1b4436bb538784dffdc4a80cac26a99812555faca7",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/ports/out/LedgerRepository.java",
+      "rawSha256": "e9a13982fc9d54cb5f2bdc24c2b99e023295cf353c57b8dc138064f3ef7514f0",
+      "gitBlobSha256": "f5f557510f1144c188e56cc9f11c1066bcf34654b21ce687e4c0f24a62afdb87",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/ports/out/MvpReadModelQueryPort.java",
+      "rawSha256": "252e4083aff01885133f53cedeab50502114ed8e947600c9d299bb1ae5639e9b",
+      "gitBlobSha256": "60a323ddef8bb484c4867a7ef6c65ef2817f5898a2d35cdce49340d6450edf99",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/ports/out/README.md",
+      "rawSha256": "0eaea7a7ce4a5a2fd9e10e7da2f305b6e1e9a5f40964a94b744323e5c42b2f04",
+      "gitBlobSha256": "2859b2d7a5f896330d4a7b07974de0a65278e72065ef7845553803e93dad6466",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/ports/out/RecommendationExplanation.java",
+      "rawSha256": "295a1de4730f3c408ca4ffbbee7cc779119994f7622b3a721d4bfede0d2ce67a",
+      "gitBlobSha256": "e8cd492f831733b13caaf9d9619a184ff2c8c26634bcdfee639c7353bfdf187c",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/ports/out/RecommendationExplanationEvidence.java",
+      "rawSha256": "f52aab856d76a320d4bb58d04d21bb7434a9a1473aa8b1703f5d9dd5147455ab",
+      "gitBlobSha256": "126e508f8b4d1028399d138148a8c25c33c74c01eb65bbff63918e721479c5bf",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/ports/out/RecommendationExplanationRecord.java",
+      "rawSha256": "6fb92d20786e8d09a14068e55da3903a07250e3782b10f370a8bcfb41b12fa85",
+      "gitBlobSha256": "5d5268b5a22e9f3c57fd26eb0ea9d25eddd8057b6aabfcb0f22e2de9e3d408b6",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/ports/out/RecommendationExplanationRepository.java",
+      "rawSha256": "3d66eaa1c7f708888a4d51769edba8d71ade174e1d3df91b69917606315f9d7e",
+      "gitBlobSha256": "7bfea5d71c1185edb6da03199ae85cf72f98d598980a382a865cfa030d8e98b7",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/ports/out/RecommendationExplanationRequest.java",
+      "rawSha256": "37a31ce01a051983742af6e63363a83bcfa16d1bd3e065ae9311a4ff62b009ac",
+      "gitBlobSha256": "d75509d7bb0aeee900ec91ff02f993d5aeb967e8b80ef634c9da53c2a5b9406e",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/ports/out/RecommendationRepository.java",
+      "rawSha256": "cc8c79124184b08b65eda1ad47dfa6ef9e786e786cb32489cf764aadd79d70b1",
+      "gitBlobSha256": "513e6e575212925364a3ed62f3dbae05dda060a14569b83b2f48f8a9e12c7a96",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-java/ports/out/TransactionRunner.java",
+      "rawSha256": "99951dfa35b3b99b46a2b4c011627fe1e4899dbbbfa14ea239f9ff2bfd0582c1",
+      "gitBlobSha256": "1560e5c7cc8d5d7850c6b8ef07a7dd2a93eea969a1917b1f34f40e139f249d75",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "backend-python/README.md",
+      "rawSha256": "78d33c49f9d99bbbd3f32c5a5c206f2db237be9e47862801704fc083fd541d21",
+      "gitBlobSha256": "46128311b7f30abb04c7597566ad18a9af8ebc98006ae60dbf922bfd8cf70810",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "database/migrations/V1__initial_schema.sql",
+      "rawSha256": "a8270bea7e5ed2ae7143bfe7b1d66b8fdf04a8ce22d13020f6f3c0c1dd772775",
+      "gitBlobSha256": "b248d2ef3b484c8188d19d34aa570c5dea19b2592f4bb72ff9251ef34bb9ac32",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "database/migrations/V2__unique_decision_case_id.sql",
+      "rawSha256": "be2108c5e054d8121c20b0feca79c5857bbd847bdea4a2d7f9b727fa3940991b",
+      "gitBlobSha256": "1fc17f658f2841dd0cfe58299423e978ff1d3d7cd15b6a936a01baa6564a0289",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "database/migrations/V3__recommendation_explanation_attempts.sql",
+      "rawSha256": "fc9efd776021e2488aee55c046d99886b362d56ba2764bb262e10abe15c78ea3",
+      "gitBlobSha256": "5cd003eb8e123c12eddd5c3dd0f148e707b6c96969959dc60e0ebdb6a692fa12",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "demos/README.md",
+      "rawSha256": "765e726ff6d8a457bd88619a25bf0053074edd1a1b256c3e6bffe0ef50a273ae",
+      "gitBlobSha256": "557b16a5108683c01c50102ae896991b168658a03d9dc8017d0153e0c814de39",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/README.md",
+      "rawSha256": "7a53d57592a33f76205b8b38329b83b623cc78ea4b4574854f1471ba9290be06",
+      "gitBlobSha256": "9ec1f414f9c6b65229b1f33afd83f7844bfca735de3cc746a44ed5ee5f40e1f1",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/ai/12_AI_Agent_Context_Pack.md",
+      "rawSha256": "fd0be11eabbfe1652e7c0201ffd42feac9fb823434d13478e008cac19cce4616",
+      "gitBlobSha256": "32ddcb48acd57a54ca9631510cf322a463579b2911cb3eb7e61d89c9c465ded2",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/ai/60_Bedrock_Explanation_Evaluation.md",
+      "rawSha256": "43c00ce33c7cc64586b31c613f938e5e4764562f19244478b2fdf5f58c20bfb3",
+      "gitBlobSha256": "63f5ac596be79a8b7dda401547a4aff7e9e8e0fe1841f0773e27d3640a54165e",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/ai/IMPERATOR_One_Page_Project_Prompt_ES.md",
+      "rawSha256": "3ce3014a333e3b9062847580bbc9bf9acaaee29b9333ad45b6275be20d03e2a4",
+      "gitBlobSha256": "11240897dcd99e6fe61f9f8ccddda911803d9a7a5bb851f6fc45dd16aab5c4c5",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/architecture/18_Architecture_Thesis.md",
+      "rawSha256": "5f4b925767b773a5b22d67eebcdce8ca62a3b3f069d2f0eb53abad1e2838ee74",
+      "gitBlobSha256": "fdd2c6553c4977e8036e14d20cdcb48796f7755f18eae430090723d40098c9a1",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/architecture/21_Technical_Architecture_Context.md",
+      "rawSha256": "9b2c7f5953d70d5ce228b3f926586b7f8958d5f3b28c92af71c631191c3d56f0",
+      "gitBlobSha256": "88fdccfade0fac6a463b883107fdafda82e3f8bd377cb82077f53cb06b5d5911",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/architecture/40_Persistence_Schema_Contract.md",
+      "rawSha256": "8db3b155e0309bcb28bf220498523d0d2d748fadb43a877eff02d68199a4d997",
+      "gitBlobSha256": "686fda381a1610a07b6f37419ebcc3059faa2457226d82fdcf64bac148e5fb38",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/architecture/41_REST_Adapter_Foundation_Closure.md",
+      "rawSha256": "9fcd42c0ff6b087b1f349496ba52bb44239034cb1abc3f56509d63f2a3757fbc",
+      "gitBlobSha256": "25239e72b2d8ee6904bcb1b3364cd6310d4cbfdad69245384144a65635f163b3",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/architecture/42_Deterministic_Decision_Creation_Contract.md",
+      "rawSha256": "4985fa9ebd5e697044268caae81135ed2ad135022e6276f2674a9391750d2474",
+      "gitBlobSha256": "d2cc7c419f459f39f266c9ec5c5ff7bdeb399f8fa9649fdcfcbfc81874a719df",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/architecture/43_Deterministic_Recommendation_ROI_Contract.md",
+      "rawSha256": "68f77671a571b9434de9fa5ef1694df89b31d236796fa5880bcf654f96f2e0cb",
+      "gitBlobSha256": "24b7ee87960c6a7c8bdac9098129554ff5e3d3beeb0a4e7cadb50e5a03c68876",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/architecture/44_Review_Ledger_Result_Validation_Contract.md",
+      "rawSha256": "e4fc873298ad09c95fbcf51cb8afd70f83decb4ae760a8a31bfce05afdbb0c4c",
+      "gitBlobSha256": "8b18df658e832b23069c66e1b74e227617d41c591345e36a75ca620d0208d833",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/architecture/45_Functional_REST_Application_Contract.md",
+      "rawSha256": "65f78475c1683ba5464932afed919f431550b32eaa705347e75e198111fb5f3a",
+      "gitBlobSha256": "ce632877d6f2345e3563869e800a769c5ca92599666d5858e7b0f1fdc2b180e8",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/architecture/46_JWT_Authentication_Contract.md",
+      "rawSha256": "de4cdd04505db7d0da5ecda574df79d0e4495ec2e06595b6dcf99a495aa940e3",
+      "gitBlobSha256": "596a092e195b6e5d6527f024e9b521646f7a82d49368a5a1c579605894bab471",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/architecture/56_Observability_Runtime_Contract.md",
+      "rawSha256": "b68e7fcb7e79c4e53a61f9ab0270d8fe69b0b66b8eb177aa4c397ba4b944c2ab",
+      "gitBlobSha256": "a433d5f6290d9324f8e5f5d286a90921a59c4e27a8e3666f6ad9128f017a8ece",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/architecture/57_MVP_Observability_Scope_Correction.md",
+      "rawSha256": "1fc3a5c2d391fc5e63ed9f85df06dbdaefe650df64894cc7aae005b1b114798e",
+      "gitBlobSha256": "9f79127925d975b43d4f8462269bf4a68e936df95890e3a348277b5ead772ed2",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/architecture/58_Runtime_Supply_Chain_Refresh.md",
+      "rawSha256": "599bc286a22ab722f0b19be2a44087593c54d6689cc2b5146161dd4df4618908",
+      "gitBlobSha256": "92d5b07a01b108004110ad0da02162fce15447bbcf950d7b37c37b9889b4c21d",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/architecture/59_Bedrock_Auditable_Explanation_Contract.md",
+      "rawSha256": "b4cc5a1c2b83a88611981d1dcad898d4eaecf31ad58b3ef9be16640a36cbb180",
+      "gitBlobSha256": "45536d79e082c09cf4f547c668df54c5853227a4b9b8ef96ae303e68359244a4",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/architecture/60_AWS_MVP_Deployment_Preparation.md",
+      "rawSha256": "23f102ced19d4ace9b0c43b042963dbbe152427c25992ca2165af28215d1b30b",
+      "gitBlobSha256": "9a214f8024fdcfb7bcf2edbb15320c184c42dffd4b9cd7ed2198515b7f1be2d8",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/architecture/61_AWS_SAA_Portfolio_Deployment_Contract.md",
+      "rawSha256": "95fd3e32f16b9eb3ff9a4e32e5ea800966c9985cfb02a4ff748a95ca114c3b47",
+      "gitBlobSha256": "e6840adf3466b4fc4a9e6c981abd6ba06a041e1b037ab88bd534ddbaa14c61f5",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/architecture/phase0-guidelines.md",
+      "rawSha256": "42b30fa54f5b5adb2df696cca887257fc5ac504d9313ae7fc66eb72d7c346083",
+      "gitBlobSha256": "8a4829166f426d296d1949924aafaf1368696557b09fed6c52996e45b210f3c2",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/architecture/structure.md",
+      "rawSha256": "9f25ed2499c3990de8953b31bee874218a1e3485bca20e4ae7293d31638b2a12",
+      "gitBlobSha256": "d211801bd06c64c8b8f69860adc531482de495dbaf36d209a158ae44f3f6fa00",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/business/19_Executive_Summary.md",
+      "rawSha256": "54e3ee514a9908b7de29c29836d37a6187dc704ff971f8b0c5157b58d55c469e",
+      "gitBlobSha256": "ed2e7c84b2393ded1d7fea330c655687ec60aac6d9f0897b1812abc2ebbdf749",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/business/21_Design_Partner_Discovery_Playbook.md",
+      "rawSha256": "a94caf44988c72b7fe73209f25a205fb2afb1f764040979724b5cfb22f07b218",
+      "gitBlobSha256": "fab49c58f22079ec7139d839fa07d57b7435126f3b89ed0791474ed130eed8bb",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/decisions/14_Decision_Log.md",
+      "rawSha256": "0de09f38db1f6c2b95229285e68905df0a75ab5d0c82f1415949b71e4842465a",
+      "gitBlobSha256": "c713e8b951297f474b5c97ad560fb009c8f6dae322b138116cdd87af02e73ed1",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/decisions/adr/ADR_D012_Use_gRPC_Protobuf.md",
+      "rawSha256": "b3cb7d71305f31a644db937d95679c333b30c4fa330e761602b081b826581e6e",
+      "gitBlobSha256": "5d3ce0f4dae948898c38c70febd75808e42efbaf51d9f40204bc8486af03e8d7",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/decisions/adr/ADR_D013_Mandate_gRPC_Internal.md",
+      "rawSha256": "27c036d2953c150108c75b0636b1c9cb2363045d397ea5253e9a74a2589c73a4",
+      "gitBlobSha256": "8bd7bf667927d18da5d6e718e2924116270e56152d80c4fb8598d15efa2edb08",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/demos/45_End_To_End_Business_Value_Demo.md",
+      "rawSha256": "4d568c3c7bf75fe9e0e6b1b763008b621c03cafe3c01543808b25ed973d82304",
+      "gitBlobSha256": "1212bf8d8e90326e81d301bbaa136fdd04407c585202430e5b264de0d6c77be9",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/demos/46_DRC_AOA_001_Pilot_E2E_Readiness_Checklist.md",
+      "rawSha256": "c48ee7b83ae5ce2573627456e63d72733b3d741b4731079019429f809fe4c37f",
+      "gitBlobSha256": "9bc4b3cc9a633a467c928bd05283aac75c6c3d49c0ccfd054f25ee6e00654ed3",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/pilot/03_Security_Data_and_Operations_Readiness.md",
+      "rawSha256": "0a225feb7ac5ece65425a2402b4ca17e7853d12e82fb22713563aa26e882f9d4",
+      "gitBlobSha256": "f2d126cf93b78a5bba0a8cd7c5cb485ad7a7144df08471f5d146dd029cdad11f",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/pilot/04_Pilot_Evidence_Pack_and_Acceptance.md",
+      "rawSha256": "f4773ca7b2e41044948239bdbb56db8586e7eb51f5e389d76432c00627383fb3",
+      "gitBlobSha256": "4e2c21ac458c1e0af5a75776961f0f0fe3720e12896d259b0e9487fed54ad7f7",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/pilot/README.md",
+      "rawSha256": "bbee874684f5d62a0f392a5cf01a0250d889753a0eea6360c47db9aae3a366d8",
+      "gitBlobSha256": "4eec7bf196e77a2ec6813c3f6c3297aa06b11d50a484030015fd7af422dc8f60",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/portfolio/README.md",
+      "rawSha256": "a0e16f5a239d86a3d42bcf8f6a503256b01fffefacfb7093b3b1d2d5a24dc84f",
+      "gitBlobSha256": "9e539a0dfb48301b89f4e69d8705336efa92503cffcda7409777be4e8ecb92f4",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/portfolio/recruiter-summary.md",
+      "rawSha256": "69c6de24592baf62d30912dc7eec9e58f3cb67b45b3fe29bd9ad49e4407d7a8f",
+      "gitBlobSha256": "b063d1eaecb583bbeb6869992b6aec9d65cc41182c92703c5f60cff63dec34dc",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/portfolio/technical-evidence.md",
+      "rawSha256": "6dfd6272f582841ed549a86aaea6036097247894188d4a3215164ad27018fe6a",
+      "gitBlobSha256": "76e4054ba0dc95b9931c5e1354c063960a3af8f5c932126536926fb9241b8538",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/product/17_Product_Surface_and_Context_Engine_Thesis.md",
+      "rawSha256": "0a7192bf8431c7c8b4a858c2d2a3ef9e1886abb99423705d71933d23bbe5a877",
+      "gitBlobSha256": "4a9bfad09b799ea7e0f212e514ee5c94134f67877c2f4ba7221e1a912da79ed5",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/product/30_Pilot_Readiness_Preparation_Checklist.md",
+      "rawSha256": "6a3424c87502ab6ed29c545b2359afeb7cc57280b625d1793cdd28dbce596838",
+      "gitBlobSha256": "a697f5df215d3257dcf528762a5a69bfd950580705f2fc1a399c49734d3fe116",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/project/PHASE_AND_SPRINT_MAP.md",
+      "rawSha256": "3cb5cc72658cca8cecb64ba3db444de91409e8c8481eda3ae82aebdc0ce4b99f",
+      "gitBlobSha256": "3d2ff290aa1d4d50fade6961befdaf3e05434c13cf6d9c01ea762c16738aacce",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/project/README.md",
+      "rawSha256": "51ae0a0408dacf5817378da03131700c6ecfd427d9675e8aa47403415dbb6f58",
+      "gitBlobSha256": "ad739c4212a9a2726013017b9dfd557af98d4f10ac495b30a0c22898e2407656",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/project/SECURITY_AUDIT_2026-09-09.md",
+      "rawSha256": "e4c7741d7b8b422525870ad38c44de3b5e08bbe91b152ea4a14ab487b53a94c8",
+      "gitBlobSha256": "c6d4086a204138bc5bb22fafd5bb4274006ebb5ad6a866f8e9fe664f108c8805",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/research/Experiment_Record.md",
+      "rawSha256": "fd04ca39413a8199a46b69919461f4186f9e3fc8c40512e15a64bf7ce459902a",
+      "gitBlobSha256": "94f7d672c8a190f1d0282a1783b3515611efbe8f2632d1467ea0ad0f61a7959a",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/research/Hypothesis.md",
+      "rawSha256": "7735b9fde4d10ef1f045f9c8df82e9efe15801c94335ecd4d767444a8d519179",
+      "gitBlobSha256": "6dbbfd53f664ad77dcf6d596eb8263f18fc734f5d3f5a071fde09387ec71a08c",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/rfcs/0001-knowledge-graph-model.md",
+      "rawSha256": "46fb02c95a2241487647dbfa2b6ba94766099a0ad09f90ecd2bd2c2b42e6561a",
+      "gitBlobSha256": "b0bd0732ada9a87bc443cdc1481c7293595636b6d864c1718085db6e3d452066",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/rfcs/README.md",
+      "rawSha256": "a00d15d40c6e24275c565f73d2c787bf8e065548b1fbf6c3aa919d65d0d24d08",
+      "gitBlobSha256": "f700a0af2977647cd3ad28053f2c5c17e0760470966f22964b74031767cf2479",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/runbooks/aws-pilot-deployment.md",
+      "rawSha256": "43ab219dc3af761e48271a92840e1b29fd82367b4848476ca56dfc21da15d2e4",
+      "gitBlobSha256": "8cf77d54f8af08914fd6e471c2decbed0362589eae686016e85476e3bd82d28d",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/runbooks/bedrock-explanations.md",
+      "rawSha256": "17ce549a2da078ccf17fbd8167c6093823c44cde8b302dc557e455bfe4ea769a",
+      "gitBlobSha256": "7c83d6e179c5bfe52ad075ef1992cbd42404e845fbaed31d90019b4ff92125ad",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "docs/runbooks/observability-runtime.md",
+      "rawSha256": "5c515218597ad4a5ec2b499ec55fe46acdf64b942bbac0c8bd718b24a9cf5e77",
+      "gitBlobSha256": "eb6c6c7297fd5ca1437d05833bfad676ca2abb1a575db02d203bd2b836385a7c",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/README.md",
+      "rawSha256": "c878fbea9d01a856f418ebede3c0d799bc308340fc59a1014950c5c3a8e03a8e",
+      "gitBlobSha256": "105c3adc6e6c7d404dcc2e13b12c71b6a68874310dfd466220bc8c96b2bfc950",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/aws/README.md",
+      "rawSha256": "db7368df7723fd4c3307d85fc077868e385ca15d950e0c45d5bbeec0bc8407de",
+      "gitBlobSha256": "ef66d7fb5119dbfcd4f055116ffce55ffb0aa432ca792d5841cb0bc8474e1336",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/aws/images/migration/Dockerfile",
+      "rawSha256": "6957b46a2edf9c966dbcb4ee761423b84a7a8325ebee930855ee4285c0560dbe",
+      "gitBlobSha256": "00c2e9c1ee261666c2549717a185927ed167948b1193aa4d66ec88d36cf817f7",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/aws/images/migration/Dockerfile.dockerignore",
+      "rawSha256": "0d7e681297a2749de98a9239b4210b54e49013e13e866fb022c1cec99679c2fd",
+      "gitBlobSha256": "a837b42cabe5929206ce2be0b41fc5c42a4126f8fe5cc723b6acb2bba7e4bb83",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/aws/terraform/README.md",
+      "rawSha256": "b3d1ebba2a20ee2985bb93fbb90d5f1224b9720f1fa33701dce05a32d1361c62",
+      "gitBlobSha256": "6c7de2c97ed2a57ffe9c625279893255627d61bf5451e883d43372accbc42589",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/aws/terraform/bootstrap/.terraform.lock.hcl",
+      "rawSha256": "c4127c840d7d8d8e56195ffcdfac4cdc39cef8415fa927a6d176cb1a9ab932cf",
+      "gitBlobSha256": "b665ce8e923595355b9b5568de3130f1cbecf6ee3cde45317c189cc8c7a44708",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/aws/terraform/bootstrap/bootstrap.tftest.hcl",
+      "rawSha256": "204133fda2fdf354c7372a5ad4132b3a0480237c916c7d8b02486d0cf2589a96",
+      "gitBlobSha256": "5a2ca7f6cd915705d5000c5bd5edd001b265b574debf04f4aceb29c5e5453546",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/aws/terraform/bootstrap/main.tf",
+      "rawSha256": "56f8504c404da38f3722f3c03d6fabc875e5ad0379b9d0c7e1526231d1e1f6bb",
+      "gitBlobSha256": "4e12329f3aa49d60dc0a8653281fef19f2c72159ac4a308345c5740f1142f2c0",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/aws/terraform/bootstrap/outputs.tf",
+      "rawSha256": "a6011b996d2a343e8b65cea046db24098ea7dc8811d5589a0936af173930485a",
+      "gitBlobSha256": "a5ea2ebd5704041b958f6abfa84713401ee30b39084d507e1cfcf9c02bd3715f",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/aws/terraform/bootstrap/terraform.tfvars.example",
+      "rawSha256": "139e9acb8be5e88fd9b0cdeb89dd977b00d7ad74f1920a924e2447d7476b0220",
+      "gitBlobSha256": "25ec6dd2e6919af9b1e4b4f29bca966c42d9d2dedb14c7dab92927dd6f25015a",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/aws/terraform/bootstrap/variables.tf",
+      "rawSha256": "1cd283f07228cbbb9a1bbc4e06134e3b968e6ec4d991ffa4ebef0bc2873903b1",
+      "gitBlobSha256": "0ac3251d5e1404dbb51001fdd5ac2452f75bbefa8a98d988aa0dc71c4760e565",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/aws/terraform/bootstrap/versions.tf",
+      "rawSha256": "acd0ffc29f3b09e47c8b9332948b7c905c64408ae97a28f4b937c0e204a44276",
+      "gitBlobSha256": "546fa299d62b48f0522c34c3179df39cea662b0204082dae01f96bc682304887",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/aws/terraform/pilot/.terraform.lock.hcl",
+      "rawSha256": "c4127c840d7d8d8e56195ffcdfac4cdc39cef8415fa927a6d176cb1a9ab932cf",
+      "gitBlobSha256": "b665ce8e923595355b9b5568de3130f1cbecf6ee3cde45317c189cc8c7a44708",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/aws/terraform/pilot/audit.tf",
+      "rawSha256": "c57068941c91157f00e7da41eacf79b45375f9e509bb6040cf527179a407ca44",
+      "gitBlobSha256": "ca5da0f09356442707a0a71ae7ad739fdafa95237449d386f3741740c78aa00b",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/aws/terraform/pilot/database.tf",
+      "rawSha256": "900bf7d32d00139d0e575d629181d3095cc8352f9bc91acf2acbbc8304d9ef29",
+      "gitBlobSha256": "9497c63c51b69360feb638d73ffa3e9913df541efcef3b8eb29b1522af3d41b1",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/aws/terraform/pilot/ecs.tf",
+      "rawSha256": "cdbeee61c44416aeee4dff2374d48d0eb838109d5f487f35bf266a142fa5d2e3",
+      "gitBlobSha256": "87f410f363a947e535b1b18b96c8b82f9e4f5859fdb61cfe817670b38eebfefb",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/aws/terraform/pilot/iam.tf",
+      "rawSha256": "4affba9ef48aab9f5585fbca806fbbdc87fdb71fac6d996b6fb31c48050ae690",
+      "gitBlobSha256": "e51218b47a5a337c2ba4c9c8d8ebf6487b83c028939afd211f3f80a6d20cd676",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/aws/terraform/pilot/load-balancer.tf",
+      "rawSha256": "38d8ba1ea27535730ac83564dd15daefa9cd00e7369fd714064440c8abac0c93",
+      "gitBlobSha256": "9533a5b806d3bcb84b83725c0cfb3e04f72239250bb74a756456fd4eb42f6394",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/aws/terraform/pilot/locals.tf",
+      "rawSha256": "2299c5f08d55d48f4753f59adeae4cd987a1cdd39fa04b3e78dfb764eb878de1",
+      "gitBlobSha256": "0743f7c2c421ee7e2ff2b9ecf0844e4207b725f0525a9a2b690897c27e2f41a4",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/aws/terraform/pilot/monitoring.tf",
+      "rawSha256": "fba6e5650be356a6bb2b4c93850bd68ffac59e62714d8499443a9f77ee8a2b05",
+      "gitBlobSha256": "3f6247de40191a2e5fff8885356ab6d256fd166a7ebc718e8caa18aa62414e78",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/aws/terraform/pilot/network.tf",
+      "rawSha256": "a5c2ef8ca6ac6e923891f26a328d79ea92569b037d101586b43e3d9f33593933",
+      "gitBlobSha256": "6babd14bc5b99871a30ea563af6fbdde7dc2d2ecd3b4c1c4491892eec16a454b",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/aws/terraform/pilot/outputs.tf",
+      "rawSha256": "d74b31bc8669235a9b18789629d1ce5dc91239de32f8cb5fe1337884ae4afbc1",
+      "gitBlobSha256": "aef0d6913d3d43e540b87bb755a23f225fd42bc3b925aab34a24b86e372b74e7",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/aws/terraform/pilot/pilot.tftest.hcl",
+      "rawSha256": "729ce2da5558cf584ca1f15cff2f1b12a704e70d8539cffb39f55100ee0e8a5b",
+      "gitBlobSha256": "cfd2bef4ca9261e6e37dd62f7e4d151051adf2de9a6f226b76acbb6798b222ba",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/aws/terraform/pilot/security.tf",
+      "rawSha256": "4f7b2e58dfbcb8117aedd48d7852d7f99a231f43ffa067aa78747b38657f623f",
+      "gitBlobSha256": "a8b69fcfb913fde9ed594025ffbbc814c6c739e39f8e5d4c019113e6503cdd11",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/aws/terraform/pilot/terraform.tfvars.example",
+      "rawSha256": "955591dba40d1346e5ad8899acec41ee2a03899c39d09ea6cfebd4dac0222344",
+      "gitBlobSha256": "500be51641489c73639208450390cf0a7f12ec394f1ad402f3f70ad4e9e1cf2f",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/aws/terraform/pilot/variables.tf",
+      "rawSha256": "7e63f90e64a819882253257cbdf3d9fa0600373cca2d30061eb390d1bf331f98",
+      "gitBlobSha256": "340e05eeff772dbec5a5b0acfc71acc1c3e7ac8d73a619cb77c7699f002b0566",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/aws/terraform/pilot/versions.tf",
+      "rawSha256": "8eac1838932d134642d45c1486ee17975190794d58ec411f34ba156d3e338935",
+      "gitBlobSha256": "3f8c4cd1b8f6d0121f580061516e22fa0360e898350dd5be667924820fd710a8",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/docker/.env.example",
+      "rawSha256": "72376608aac147cb09e62108f73badf8724d1b74e8bbaca32b6e55f4db935d0a",
+      "gitBlobSha256": "fe9280b80d3ef4a929aaae9967ed4e6001f5884b08ab56c7c8ed65846965b66e",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/docker/README.md",
+      "rawSha256": "e69429e67d005f496dc50b5180c1bd396643d07db98e01b0b36fe31b223e48b9",
+      "gitBlobSha256": "d74309dd1b44f71a15e952019fc88d447ab9ae5341062f67278d1d47275b5d90",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/docker/backend/Dockerfile",
+      "rawSha256": "66433fc8708b0ff06098d9e10cdb522c0ca2030cedb77f524b31c5188a3a6a20",
+      "gitBlobSha256": "ec27275e2a9a7333ef14d5a5225497ef9e2c242d0b12454c935fab89591d17bf",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/docker/compose.yaml",
+      "rawSha256": "dc32dac0787b32f0f93e813bcece8502c8e2e29385ba4e845e1e509abc126959",
+      "gitBlobSha256": "653be9792f2bab187cda301eafa2c91ed2a9b659db490173d6e8790a1fa6c4f0",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/docker/frontend/Dockerfile",
+      "rawSha256": "3edeb91749a1dc2a1836a2e4e73cda398a801b7da5e6e909ed7e93b995325830",
+      "gitBlobSha256": "c68fb320cb0eb21aba20b51da6096b20025f1130075e4859f3c1ef2164953822",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/docker/postgresql/Dockerfile",
+      "rawSha256": "3bc0585f5a8acbaed6b10dfc5bc0545e206652c9f02fbd7f03318166e2a79fa9",
+      "gitBlobSha256": "0e360b7a705be15bf6daa74a4921d2f193983cb85c8ef6fe0105aebb1b64124f",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/docker/postgresql/Dockerfile.dockerignore",
+      "rawSha256": "40e7324f556d2e1e22e3badafcc6c1c29e2b20d0fed7876687281d0c2374b8ec",
+      "gitBlobSha256": "198c42125b2777a26f0bbdcf4060490ba36b52567cc11ba08cdcd2865f9c6d8f",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/docker/postgresql/supply-chain-lock.json",
+      "rawSha256": "2d592db663b8ba099d015e60b7204ebd33119b233c969f55c7b031202954322c",
+      "gitBlobSha256": "8327f54d2faf2c73adaf657e14aba65496241d1bd0455d3ffc602af13d91086d",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "infra/docker/secrets/README.md",
+      "rawSha256": "a7a00150fe0ed44877b8075d5ebbd99802ad4a4c4c5eb6d4dd088244f6a15787",
+      "gitBlobSha256": "88cf82fc6b1c1cf5c4d4f17768426d73f32b61230108765a31c572b63594af90",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "mvnw",
+      "rawSha256": "b1ef6ce14df54e6f8552734080184b18f78b0a0c61ed80c08d7d78b254e44941",
+      "gitBlobSha256": "cae96cef89ebea3531221f4ae17c23cf8edf67d00eae8306d4186ae1bbed4d02",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "mvnw.cmd",
+      "rawSha256": "46eedb8419bd14fe70d5bb2916d7b6f51806e51b39d5b76a42610384ca929c1c",
+      "gitBlobSha256": "4a361e1374a3e5ad6d03e18e9adc0cf181ac5058ac6203b76f0ba3b456b56481",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "pom.xml",
+      "rawSha256": "6e6360a3751e52d7fdae3fee9663574ee5ecaf455512b4791122c5683b23beed",
+      "gitBlobSha256": "d549cc31580b71687049d320a28068e8aae9a36f43e46edcccac4da22a00254a",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "proto/Agent.proto",
+      "rawSha256": "d78d2ad41067deb92ea6754ec66205082b5d4ccc72e0ddcdfddcf86c75375107",
+      "gitBlobSha256": "dead3e604b5dd8378259906f9a59d5c9aee32d552db4635f7003efb3f9c3af44",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "proto/Cost.proto",
+      "rawSha256": "f95a1b9267c27c413452df643046524f0bd5d3f056f1a020631e07fcb4397f6b",
+      "gitBlobSha256": "013a8101093f233c960220dbd27bb34b66d66ba1239879aec286f30f38193ffc",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "proto/Decision.proto",
+      "rawSha256": "4fc996f70ba3293b7b031a0ca59a0d21d8f67955527ac81a3086a00043f1b181",
+      "gitBlobSha256": "b9b7424d50c4e8843402dc605263e326e1d850059ac33adaba8bcf7508221590",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "proto/Incident.proto",
+      "rawSha256": "29914450701d54b809e1efda86086df166dcb490a883ea9af513deb1ebf4bb93",
+      "gitBlobSha256": "1f3aa741c507160f77718187ee57461f3e14b256b9da5293bdfca785e4a29ef3",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "proto/Model.proto",
+      "rawSha256": "9909cc75bd321942595f1df8d5284df851ba9b527a79b36836b8a71afa3b599c",
+      "gitBlobSha256": "a80c103a8a03cf98437abd4ca4594baf6651d95c76999519f3f72f41425f38f5",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "proto/Person.proto",
+      "rawSha256": "43324742c9f2b75965540d85d05b9d00056da052843fac99971f3b515d426088",
+      "gitBlobSha256": "1c0fff521b2a0936177dc130835e1fa82ce5e38df113e46d28f96630dd51959e",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "proto/Policy.proto",
+      "rawSha256": "b0449b2556027155033e41af2706cc255bea226a74d972eb66b97d1edb39d315",
+      "gitBlobSha256": "736e14a8a59a0c5dbb8f4430287f46a47c0b7f499356be03b1c0cb1b8cd7c91c",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "proto/README.md",
+      "rawSha256": "51d036189adb69a6f9e786512c0b8fe9cf1f5d1a4a98f7c62b7a50ebae1b3162",
+      "gitBlobSha256": "f669b2eaa6bda9851603f5816bc7627f6613147d86c722d9f5ca4aa02004e7b6",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "proto/Resource.proto",
+      "rawSha256": "d8d19664999fe19175dcaf9c4a20fbbf158d50a43633220b2f48ae7e8c61769d",
+      "gitBlobSha256": "30251061447d17bbee3936563aa3836ebfe35bba372b8ea94059b83a3f021a41",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "proto/Team.proto",
+      "rawSha256": "542479b1d7afb36e95f95174461726ee037ac933d8f9b7b5e9ae54d7941144f5",
+      "gitBlobSha256": "1d75e3bde70d7f624333c49291f166affc4a3a762c282c5c474e7ca62969dcb1",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "samples/README.md",
+      "rawSha256": "1534ca3d836ad3910f123479e430db7b8d007f17f613095753f0080f8c31a87f",
+      "gitBlobSha256": "097e1dc7a5b895151d8b23a920911407e07a78ee69e4b6a30cc6fd9630776267",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "samples/bedrock-explanation-evaluation/cases.json",
+      "rawSha256": "93ef9e1046575122346dee2c8506624ed9973143333c47a425ef9b1e8e16dd8b",
+      "gitBlobSha256": "a143c7125cafccba878f0364f8fe3307c7a7f6eccf768a7a1c2de2ea210f566d",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "samples/bedrock-explanation-evaluation/results-template.csv",
+      "rawSha256": "ce248897f93b82cac5977607c80504e7202f592249c5b238736409627a74ce70",
+      "gitBlobSha256": "0c0ddd963e9d3d273fa6eb79527411120f8b63e8b075b552e388bb75dee58157",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "samples/decision-cases/ai-onboarding-assistant/README.md",
+      "rawSha256": "e5e109d05d056f6d63344718da8e68f89776bd7c8996e8c594849c15b28820a3",
+      "gitBlobSha256": "87df1c02047fa6e234981ffdbcd357ca76045ddad1ccba81b82b4320d25b9745",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "scripts/verify-observability-runtime.ps1",
+      "rawSha256": "d076fde2a928e67bea1dfb151ba04f57558eb71cf992058405552e396e0d2f85",
+      "gitBlobSha256": "60a27030bf6eea1b46382a0717c8a3d0a9ec82578ddb2eb4e2bc659dbd19536b",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "scripts/verify-postgres-runtime-image.ps1",
+      "rawSha256": "de3a39c0f88966c688a1ecf9ec248e692eb0769fd896a90d28e8955452c7a68f",
+      "gitBlobSha256": "e661d446dd311ffda00c3fabfa52e6b7f861627ae5117d770a8473158c27b9a0",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "services/README.md",
+      "rawSha256": "b8ae55798760365b7e067879eeac0df326c47784e7694bdc4a0c2b4407df3a2f",
+      "gitBlobSha256": "d77e0e14b5de6b4f2d686091dab0603a788579aa4a1cf635471ef88ecd292e22",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/adapters/out/bedrock/BedrockExplanationProviderTest.java",
+      "rawSha256": "ad3d23a09a045002e22c897e8e6c34342cdb2cecdba1508b183042006faf7486",
+      "gitBlobSha256": "bac63959cb7e9dafb6fbd79739f94e85495f4f47b0658059bc310f7a1077952b",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/adapters/out/postgresql/PostgresRepositoryIT.java",
+      "rawSha256": "1bcd65cb901dcf20156437267af541c984241910723904d584f60200b9ad94bd",
+      "gitBlobSha256": "d8d42a3dbaa6e0b0e378c9d781c193b36cb66520a97f1f6400baad99741d9190",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/api/FunctionalRestApiContractTest.java",
+      "rawSha256": "115344197810f75a6661bb968fcc7f3e85e35f2ae775a4d6be04dbf65d858679",
+      "gitBlobSha256": "d7b899c22914fe3e43707e991113bda9b6267b04cc553cc6a51334f7dabcf025",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/api/FunctionalRestPostgresIT.java",
+      "rawSha256": "83dd0b30bb65491a1c09293a3db7ab21c3cc8622105ea6dd442de64d899db564",
+      "gitBlobSha256": "f666eab648b651cda4f60a41b7c68d90ae193f26e079e5dc13c27b5f95171c6b",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/api/businessvalue/BusinessValueRouteContractTest.java",
+      "rawSha256": "cd8a83105a9e6630f32a5c8bddd7153a91422c3f6d68fd6a672e15684288e3ee",
+      "gitBlobSha256": "3cf54285a6290f492ed48eb882ecdbbb97a96cdd11fb023969bfb75acd3e026f",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/api/decisions/DecisionCompositionRouteContractTest.java",
+      "rawSha256": "27d323e3657645554a617dae5aed6227c1d95ac882c81b4ee6b04e1397860d46",
+      "gitBlobSha256": "ebee2dcba8e1394107dcb6501daea3c3f76a4e06c40229ccb29e82e168ef9f29",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/api/decisions/DecisionContextRouteContractTest.java",
+      "rawSha256": "b0dc9c75f67d69e53b439dd554e239f41120af0093fb7163bb4a8897891f8821",
+      "gitBlobSha256": "46dcd96ebb7429fe9b2af2893414a53854a9f2ec250ecc745be5eb1fb263dae5",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/api/decisions/DecisionRouteContractTest.java",
+      "rawSha256": "8e66eba2c10e1ba2af32af39f237f9b35c702931d18fbd3e6f0b1771f65b576e",
+      "gitBlobSha256": "6194399a18712d8a082c3bd079935c4cf01a0b8e8634ee79181e4a43863b7fb1",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/api/errors/ApiErrorContractTest.java",
+      "rawSha256": "7c46763869e4e64a0d4cef2020a6478d650857725a9b62e512c9418177224e87",
+      "gitBlobSha256": "cbb7216fcef62e6505fdf59abb9fb9c6cf7a5f4127e324db8b9781a270ab0742",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/api/evidence/EndToEndBusinessValueDemoTest.java",
+      "rawSha256": "dd43c681f99ca63d01d0d9d3689e128a221e707893ec76ff29a8ed6718a8e978",
+      "gitBlobSha256": "e3e04e6420a941b15c6d185f0642dc2d24811b4c0a4373fb8596f3deff1b7ae5",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/api/evidence/EvidenceImportHttpIT.java",
+      "rawSha256": "500ff9579a94259e6f26f41ed6d1182dcb0f0a5cf581c8976de46bcefa63fb40",
+      "gitBlobSha256": "a05f1c2b57a07c8b4c53fcedf61b7c8908935b3642a8dec027cfd0edb1c9f71b",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/api/evidence/EvidenceImportRouteContractTest.java",
+      "rawSha256": "ce7fa7c472e3b67fd69d8e3f9d5c57479129a3879878fe9ae4020fea21c70aea",
+      "gitBlobSha256": "ce771650d3085aea8ca10474d6faf95327bac28b280e14b13c3052a4725e3fb7",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/api/ledger/LedgerCommandRouteContractTest.java",
+      "rawSha256": "481301301bad531368287c0642e330520826ae617230a2033313c980dc3dadef",
+      "gitBlobSha256": "dbe610aa7162955ef8b251359d1d768c56ed5fd7946cff3a4632650df4c58682",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/api/ledger/LedgerReadRouteContractTest.java",
+      "rawSha256": "f2db45e4fc87cf1a5d28e4d267f2b53c428ac33ed635ab802c9df94c19d10991",
+      "gitBlobSha256": "abd0d8d41d6da7383f2f3d2ec54e2ac9fa88e03337b51b50793e7ad231ee09c7",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/api/observability/CorrelationMdcContractTest.java",
+      "rawSha256": "c4917ad442e2a36e8deb88ec65729f86dd5d940eeafde24265fc9b31dcb33066",
+      "gitBlobSha256": "5d21c920b43e00d429579a2e7bfe8f25aec7c68353a94cab0f0038d346be5c64",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/api/observability/ImperatorRouteCatalogContractTest.java",
+      "rawSha256": "3e7f15f6b04b27459fb5706577f2279f014c438d3330938fa3172317c21f7cc5",
+      "gitBlobSha256": "e0f88c60c58da346631803edf33583f53852acc0042fb780b20211734afa2e1d",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/api/observability/ImperatorTelemetryContractTest.java",
+      "rawSha256": "a30e42a890cced7927d1d75d4db4a4f8ffc77357112948d27ac2100bc947c79b",
+      "gitBlobSha256": "adaa69024899c99d82b4e78dd77455eb2ae0b84c500cfecf17b6601196f54b4d",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/api/observability/ObservabilityEndpointContractTest.java",
+      "rawSha256": "dc84b8b04756148cd4e19302cbd9b6a13b82fa50801a7918cac2e1766e069dbe",
+      "gitBlobSha256": "bdfc4f79d731bf04e9559cc71699e6fdfeb691cdcf546653429f7d9002a4b01a",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/api/recommendations/RecommendationRestMapperTest.java",
+      "rawSha256": "d84559c830d1a66199400cddb2a22b7d9e03e4fbe2ec651e1dc172f86795c27d",
+      "gitBlobSha256": "86bfa0b819e7be2e28108e05f526ce8317f605fa92f2cb975cef1d406f161f3d",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/api/recommendations/RecommendationRouteContractTest.java",
+      "rawSha256": "db64794db2d0304369790dc1b705b80835e759665940fdb82e7c65e4885876bc",
+      "gitBlobSha256": "a63d13f9502b44abd3cb19542187e4f195fe1324505143e481c27ed71f1d1bb5",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/api/security/JwtAuthenticationContractTest.java",
+      "rawSha256": "f9c4e1b9b486688db74bfbb53798bef6ac0560cc7fc00a42f020c8d946b343c2",
+      "gitBlobSha256": "355965f344b4e3376b3e1bff70517ac2df95d05faea3c3866834670acf0f8a23",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/api/security/RbacAuthorizationContractTest.java",
+      "rawSha256": "42b11ca4838d96477522345a579d3f2fa5bba0b2de43fe0a7688baf31785f625",
+      "gitBlobSha256": "57d4bd9da975adf4a660e6a9a18e7c78e204437193c73028da8777e532075220",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/application/composecase/ComposeDrcAoa001UseCaseTest.java",
+      "rawSha256": "7b81657bb77a572d7968b90d9f0342af3a512b6619179c0d9873ff0347b48001",
+      "gitBlobSha256": "4119454e8a88c115ae17f36b15646257345f83765999bd340658944448670f67",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/application/createdecision/CreateDecisionUseCaseTest.java",
+      "rawSha256": "e2d7c7a67580683833e40dcad104fd8dbf3b903370beb436b991d0cec4c06aab",
+      "gitBlobSha256": "e7909dae8800f26142a5f1bdd2307ef85ff1f35deb09ebc686dad7790034d623",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/application/generaterecommendation/GenerateRecommendationExplanationTest.java",
+      "rawSha256": "5f6fb582d3c22eca370fb7206e9680c3f46eea9989e1fa22479d8d06a1cc6c97",
+      "gitBlobSha256": "9fb876df33610464bcb87bdd45093867c01edeb5f756f6ab400c66dee30eaccf",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/application/importevidence/ImportEvidenceUseCaseTest.java",
+      "rawSha256": "814661c7aea6dea971b081c24820159de569aa6937c468745f00eaed58aef829",
+      "gitBlobSha256": "ec1416ac771505c23c837de74b82765a6ff32855e041a703c4e4a2098f6c003d",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/application/ledger/LedgerChainTest.java",
+      "rawSha256": "c64a589a973dc6298782f2161182ad5d03771def56f43b0a7b9cb2523f188b3f",
+      "gitBlobSha256": "a9a17f74c25e5ed3ad40d44b3195d3bc456a9db7ef1e1763bb2abbc0b7888992",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/application/query/MvpQueryUseCasesTest.java",
+      "rawSha256": "5c27a85fa05df639b868fa021a44b5628c993bbab627aab03e7b05afaa66c279",
+      "gitBlobSha256": "21b239f640fdf51d9d3bd136c4bcd97a9b012e47ab9329bb63825fbd21051966",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/application/query/README.md",
+      "rawSha256": "dec8925cd4b0346a172a7c3622dc38dfee26f3ee208096903afc102b01ad3c08",
+      "gitBlobSha256": "46c10bbd989cf72f92d59bcc8ddb68e943030b08963548b53bed4b0732955684",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/application/reviewdecision/ReviewLedgerGovernanceTest.java",
+      "rawSha256": "ff9a362477587d2c3a0f76429adbe2882bb90d839b9c4b094c6ac26fe9b602e6",
+      "gitBlobSha256": "1063f802def9b9c4b58dd891903b4b039db7fccf49506325a2e09ab2291bcb23",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/bootstrap/ImperatorApplicationTest.java",
+      "rawSha256": "d0c3459df6fd3e22f1745fc9b7adbd9f247ec468dd189a6ef95d97423188fae1",
+      "gitBlobSha256": "c1c1b1590d1db0066904cac62cfc4e604883e1cae8ef7ce231ef24ae3da3cfa3",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/bootstrap/PostgresRuntimeConfigurationTest.java",
+      "rawSha256": "a91b69ac79d7286792d920e803bd0133b2443bbdcad95a8b3363a23d5cb47314",
+      "gitBlobSha256": "4e267358df2d99167a437ca9c394a4fc55690b01b14eab2fe6f67684b39b03b4",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/domain/decision/DrcAoa001RecommendationPolicyTest.java",
+      "rawSha256": "ac4f9f0dcda920d3f8a0b91483e6db6fd3d5ea0a8056e1f03ee97cc5be4a38d5",
+      "gitBlobSha256": "50a26302f7c009a29e86efcf2494c66d34cf89fe22db2d62a1d6c404fd2f37d8",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/domain/decision/DrcAoa001ResultValidationPolicyTest.java",
+      "rawSha256": "53b85f5c1a1c5221f2ab5013579d41e715110de2beedaed099edf8a64dda5839",
+      "gitBlobSha256": "9746caca890fa558571ae2478e64178cc4a70ef588d2af0b5b742cd04a2a6c96",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/imperator/support/DrcAoa001EvidenceFixture.java",
+      "rawSha256": "b43140c6fc2c6f996ea8596e98853a3110d67e5b3043d5ba51a8b997440c9842",
+      "gitBlobSha256": "c144deeef689282d7bc0a04fb6817f121c35c97a6aef07241dd826b5a0bbfca0",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/testsupport/security/JwtTestFixture.java",
+      "rawSha256": "71fc882eb7a8ba5e33b470c615aaf28ccaede076b6dc8274f1c6099a8bb52341",
+      "gitBlobSha256": "0d81cf210c1c1d92c6b6ee68c4be12baa3e9b0c63a8b0b7e3a8b7a07a48b30f0",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/java/testsupport/security/JwtTestSecurityConfiguration.java",
+      "rawSha256": "8555aef10df91bd48d1c5e93483a2d3807f6a3aec8a2b8f37f24882557924453",
+      "gitBlobSha256": "db7e048ab9616c620ffced4a39b806307898cb6b5e5c5365b328acc65b72ef82",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/resources/evidence/drc-aoa-001-business-value-demo.jsonl",
+      "rawSha256": "be5379e1807f39b25b58fdd9b57dc81fef4519376f8e70aae315b87ea8740831",
+      "gitBlobSha256": "72a2e5702d2e753e9bacf8f05a5a7f6782fd70c4800bf5c9a46744f7f688ee39",
+      "difference": "CRLF-to-LF only"
+    },
+    {
+      "path": "src/test/resources/evidence/drc-aoa-001-sample.jsonl",
+      "rawSha256": "8274f56ba78e24db7b0836b463be883df9f1fa0c4fba021094e2ef6666c14c7c",
+      "gitBlobSha256": "96ee3dd9b6550fa2c16861571066a53d2e8fed39d7257eb54f346d1dc3854b45",
+      "difference": "CRLF-to-LF only"
+    }
+  ],
+  "count": 337,
+  "rawEvidenceBlobsPreserved": true,
+  "workingRuntimeInputsUnchanged": 383,
+  "VCSMetadataChange": {
+    "path": ".gitattributes",
+    "sha256": "66af97f50904de4f6935a823cad35100d079002935a4db7dfcf1eb0d566d8f40",
+    "bytes": 291
+  }
+}

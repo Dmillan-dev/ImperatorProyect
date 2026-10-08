@@ -1,0 +1,28 @@
+{
+  "exitCode": 0,
+  "command": [
+    "pwsh.exe",
+    "-NoProfile",
+    "-File",
+    "D:\\Imperator\\scripts\\verify-postgres-runtime-image.ps1",
+    "-ImageTag",
+    "imperator/postgres:r22-d094-20261006",
+    "-EvidenceDirectory",
+    "D:\\Imperator\\build\\tfg-a\\r21-r22-2026-10-06\\d094",
+    "-ExpectedRuntimeDigest",
+    "sha256:51aedc834ddd564fc0c8f6bccb17a314f33bac0e07da76d42405cf31b7389db6"
+  ],
+  "initialFailure": "Native and container Trivy shared the artifact cache; native bbolt panic exit2. Initial log preserved. Retry uses isolated native artifact cache and byte-identical vulnerability/Java DBs. No application change or scanner downgrade.",
+  "expectedRuntimeManifest": "sha256:51aedc834ddd564fc0c8f6bccb17a314f33bac0e07da76d42405cf31b7389db6",
+  "canonicalImagesRebuiltByThisVerifier": false,
+  "databaseCopies": [
+    {
+      "path": "db/trivy.db",
+      "sha256": "9cc5366f2b39f4be91a78e77b2c0311eaa8f62dea163767764579752a6a026c6"
+    },
+    {
+      "path": "java-db/trivy-java.db",
+      "sha256": "34982cc6b6834a74b02c12f8bed9944fe1c8093725d44a1da346230f4e002e71"
+    }
+  ]
+}

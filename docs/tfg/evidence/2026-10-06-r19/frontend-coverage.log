@@ -1,0 +1,35 @@
+
+> imperator-decision-review-workspace@0.1.0 test:coverage
+> vitest run --coverage
+
+
+ RUN  v4.1.11 D:/Imperator/frontend
+      Coverage enabled with v8
+
+
+ Test Files  10 passed (10)
+      Tests  41 passed (41)
+   Start at  17:57:03
+   Duration  6.61s (transform 1.03s, setup 4.96s, import 3.39s, tests 6.57s, environment 19.44s)
+
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |   95.54 |    77.74 |   95.49 |   97.85 |                   
+ ...ecision-review |   93.75 |     74.7 |   93.82 |   96.77 |                   
+  ...on-dialog.tsx |   95.58 |     87.5 |     100 |     100 | ...17,368,428-429 
+  ...bootstrap.tsx |   89.65 |       75 |      90 |   96.15 | 129               
+  ...workspace.tsx |   90.56 |    65.35 |   89.65 |      92 | 74,192-202        
+  presenters.ts    |   93.75 |    88.88 |     100 |   93.33 | 30                
+  use-workspace.ts |   95.94 |       84 |      95 |   98.48 | 190               
+ services/auth     |   97.77 |       85 |     100 |     100 |                   
+  session.tsx      |   97.77 |       85 |     100 |     100 | 103-119           
+-------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 95.54% ( 343/359 )
+Branches     : 77.74% ( 234/301 )
+Functions    : 95.49% ( 106/111 )
+Lines        : 97.85% ( 320/327 )
+================================================================================

@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "recordedAtUtc": "2026-10-06T19:40:28.919879+00:00",
+  "technicalCriterion": "GO",
+  "formalSecurityClosure": "GO / LOCAL-SYNTHETIC / TEMPORARY",
+  "criteria": {
+    "backendFixableHighCritical": 0,
+    "frontendFixableHighCritical": 0,
+    "postgresFixableHighCritical": 0,
+    "secretsAllSeverities": 0
+  },
+  "runtimeEvidence": "Prior exact R21/R22 regression/scans; unchanged383inputs and same3image identities. No rebuild/rerun in documentation closure.",
+  "currentR20Accepted": true,
+  "R20Approval": {
+    "path": "docs/tfg/evidence/2026-10-06-a-s2-acceptance/r20-current-acceptance.json",
+    "sha256": "7ad22cfab4afaf6907ae430a5a8b349ec7072464174d17810dd00126437498d0",
+    "bytes": 7148
+  },
+  "R23DispositionApproved": true,
+  "R23Accepted": false,
+  "R23Closed": false,
+  "R23Status": "OPEN / NO FIX AVAILABLE",
+  "R23Disposition": {
+    "path": "docs/tfg/evidence/2026-10-06-a-s2-acceptance/r23-approved-open-disposition.json",
+    "sha256": "4cbfa48d43c162b010510abe3415c8d114babce92ad6bcab01948892ae346d22",
+    "bytes": 4519
+  },
+  "expiry": {
+    "local": "2026-10-09T00:00:00+02:00",
+    "timeZone": "Europe/Madrid",
+    "utc": "2026-10-08T22:00:00Z",
+    "exclusive": true,
+    "automaticRenewal": false,
+    "extensionProposed": false,
+    "earlyInvalidation": [
+      "Vendor fix becomes available",
+      "Image/base digest or runtime/test input changes",
+      "Scanner/vendor data changes until reviewed and re-attested",
+      "New feature, configuration, data or exposure boundary",
+      "Any fixable High/Critical, detected secret or new unreviewed finding"
+    ]
+  },
+  "acceptanceIndex": {
+    "path": "docs/tfg/evidence/TFG_A_A_S2_ACCEPTANCE_2026-10-06.json",
+    "sha256": "af289c68b83310124660afa3692d39379d5cb23fdf05526bafa33514a278736c",
+    "bytes": 15976
+  },
+  "acceptedCommit": null,
+  "TFG_A_COMPLETE": false,
+  "A_S3": "AUTHORIZED / ACTIVE EVIDENCE-VERSIONING ONLY",
+  "A_S4": "LATER / NOT EXECUTED",
+  "awsAuthorized": false,
+  "noAutomaticFutureImageApproval": true
+}

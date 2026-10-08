@@ -1,0 +1,60 @@
+[
+  {
+    "image": "imperator/backend:tfg-a-e4e8680b2feedee8",
+    "exitCode": 1,
+    "findings": [
+      {
+        "id": "CVE-2026-84782",
+        "package": "libssl3",
+        "installed": "3.0.2-0ubuntu1.29",
+        "fixed": "3.0.2-0ubuntu1.30",
+        "severity": "HIGH"
+      },
+      {
+        "id": "CVE-2026-84782",
+        "package": "openssl",
+        "installed": "3.0.2-0ubuntu1.29",
+        "fixed": "3.0.2-0ubuntu1.30",
+        "severity": "HIGH"
+      },
+      {
+        "id": "CVE-2026-91776",
+        "package": "tools.jackson.core:jackson-databind",
+        "installed": "3.1.6",
+        "fixed": "3.1.7, 3.2.3",
+        "severity": "HIGH"
+      },
+      {
+        "id": "CVE-2026-91777",
+        "package": "tools.jackson.core:jackson-databind",
+        "installed": "3.1.6",
+        "fixed": "3.1.7, 3.2.3",
+        "severity": "HIGH"
+      }
+    ],
+    "executedAtUtc": "2026-10-01T19:37:55.652028+00:00",
+    "policy": "Trivy 0.74.0; fixable HIGH/CRITICAL vulnerabilities; same image-policy version as repository workflow"
+  },
+  {
+    "image": "imperator/frontend:tfg-a-e4e8680b2feedee8",
+    "exitCode": 1,
+    "findings": [
+      {
+        "id": "GHSA-vcvr-r3jv-pc5j",
+        "package": "next",
+        "installed": "16.3.5",
+        "fixed": "16.3.6",
+        "severity": "CRITICAL"
+      }
+    ],
+    "executedAtUtc": "2026-10-01T19:38:02.372768+00:00",
+    "policy": "Trivy 0.74.0; fixable HIGH/CRITICAL vulnerabilities; same image-policy version as repository workflow"
+  },
+  {
+    "image": "imperator/postgres:tfg-a-e4e8680b2feedee8",
+    "exitCode": 0,
+    "findings": [],
+    "executedAtUtc": "2026-10-01T19:38:08.793404+00:00",
+    "policy": "Trivy 0.74.0; fixable HIGH/CRITICAL vulnerabilities; same image-policy version as repository workflow"
+  }
+]

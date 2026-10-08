@@ -1,0 +1,44 @@
+[
+  {
+    "check": "format",
+    "command": "npm.cmd run format:check",
+    "exitCode": 0,
+    "executedAtUtc": "2026-10-06T17:33:14.012360+00:00"
+  },
+  {
+    "check": "lint",
+    "command": "npm.cmd run lint",
+    "exitCode": 0,
+    "executedAtUtc": "2026-10-06T17:33:21.347648+00:00"
+  },
+  {
+    "check": "typecheck",
+    "command": "npm.cmd run typecheck",
+    "exitCode": 0,
+    "executedAtUtc": "2026-10-06T17:33:24.782365+00:00"
+  },
+  {
+    "check": "coverage",
+    "command": "npm.cmd run test:coverage",
+    "exitCode": 0,
+    "executedAtUtc": "2026-10-06T17:33:36.389428+00:00"
+  },
+  {
+    "check": "build",
+    "command": "npm.cmd run build",
+    "exitCode": 0,
+    "executedAtUtc": "2026-10-06T17:33:57.430204+00:00"
+  },
+  {
+    "check": "audit",
+    "command": "npm.cmd audit --json --cache D:\\Imperator\\build\\tfg-a\\r21-r22-2026-10-06\\frontend\\npm-cache",
+    "exitCode": 1,
+    "executedAtUtc": "2026-10-06T17:34:02.332650+00:00"
+  },
+  {
+    "check": "browser-chrome",
+    "command": "npm.cmd run test:e2e -- --config=../build/tfg-a/r21-r22-2026-10-06/playwright.config.ts",
+    "exitCode": 0,
+    "executedAtUtc": "2026-10-06T17:34:35.985134+00:00"
+  }
+]

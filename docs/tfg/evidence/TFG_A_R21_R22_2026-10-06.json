@@ -1,0 +1,1116 @@
+{
+  "schemaVersion": 1,
+  "run": "R21/R22 scoped patch plus complete local regression and A-S2 technical gate",
+  "executedAtUtc": "2026-10-06T17:51:50.957672+00:00",
+  "baselineGitRevision": "b602bbe1dde92a902c17272d59cd9f0c10b9efe5",
+  "worktreeDirty": true,
+  "newAcceptedCommit": false,
+  "runtimeContentFingerprint": "cbc6535ee56bfa991fb96551a90cda7dc35afd2204056f561900614ab0a5d0b7",
+  "runtimeManifest": {
+    "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/source-manifest.json",
+    "sha256": "cde68dffaa752125ae500b537430d0bc41784e317c5fa4d520aaa00336d3c0e6",
+    "bytes": 65916
+  },
+  "imageBinding": {
+    "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/image-binding.json",
+    "sha256": "2cc40c8ea1da2d71d37e43dbaf0029afff953c80eb13d8b3d74644ac1a9b0fbe",
+    "bytes": 12690
+  },
+  "scannerDatabases": {
+    "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/scanner-databases.json",
+    "sha256": "e71549c1e9347b2429af59f46a019c609785114f045f88a1a3b6204f74051460",
+    "bytes": 831
+  },
+  "authorization": {
+    "path": "docs/tfg/evidence/2026-10-06-r21-r22/authorization.json",
+    "sha256": "b0ff91d47267946a9e1a03e090756b35c1c9e8145aa2eed53d9718721a79cbc3",
+    "bytes": 887
+  },
+  "verification": {
+    "result": "PASS",
+    "executedAtUtc": "2026-10-06T17:38:11.929038+00:00",
+    "changesExactlyAuthorized": true,
+    "changedFiles": [
+      "frontend/package-lock.json",
+      "frontend/package.json",
+      "infra/docker/frontend/Dockerfile",
+      "infra/docker/postgresql/Dockerfile",
+      "infra/docker/postgresql/supply-chain-lock.json",
+      "scripts/verify-postgres-runtime-image.ps1"
+    ],
+    "lockEntriesChanged": 28,
+    "installed": {
+      "sharp": "0.35.5",
+      "source-map-js": "1.2.2",
+      "braces": "3.0.3"
+    },
+    "backendTests": {
+      "unit": {
+        "tests": 174,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "integration": {
+        "tests": 35,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    },
+    "frontendTests": 41,
+    "browser": {
+      "startTime": "2026-10-06T17:34:03.412Z",
+      "duration": 32537.41,
+      "expected": 9,
+      "skipped": 6,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "images": {
+      "backend": {
+        "fixableHighCritical": 0,
+        "allHigh": 0,
+        "allCritical": 0,
+        "allRows": 0,
+        "secretsAllSeverities": 0,
+        "imageId": "sha256:681e6e7b77b73170c959ed04697302f6a21d8db98edb3a2b0f3354a44387096d"
+      },
+      "frontend": {
+        "fixableHighCritical": 0,
+        "allHigh": 48,
+        "allCritical": 1,
+        "allRows": 49,
+        "secretsAllSeverities": 0,
+        "imageId": "sha256:5cd649ff9a460b2abdc8315da2e7568c5a2c2138d99815db89c5c583f88c18b1"
+      },
+      "postgres": {
+        "fixableHighCritical": 0,
+        "allHigh": 63,
+        "allCritical": 3,
+        "allRows": 66,
+        "secretsAllSeverities": 0,
+        "imageId": "sha256:2b73847d07d6cb7da2ace20426de036fa0278feca0bb6520aca62588e9b3f101"
+      }
+    },
+    "sourceFixableHighCritical": 0,
+    "sourceAllHighCritical": 1,
+    "npmAudit": {
+      "exitCode": 1,
+      "highAffectedPackageAggregates": 5,
+      "distinctAdvisories": 1,
+      "underlyingPackage": "braces",
+      "patchedVersionPublished": false,
+      "accepted": false
+    },
+    "A_S2TechnicalCriterion": "GO",
+    "formalSecurityClosure": "PENDING RESIDUAL RISK DISPOSITION",
+    "currentR20Accepted": false,
+    "A_S3": "BLOCKED / NOT AUTHORIZED",
+    "A_S4": "BLOCKED / NOT AUTHORIZED",
+    "TFG_A_COMPLETE": false,
+    "awsAuthorized": false,
+    "newAcceptedCommit": false,
+    "limitations": [
+      "Dirty local worktree bound by runtime content fingerprint; baseline SHA is not an accepted release SHA",
+      "Local loopback/synthetic ephemeral JWKS fixture, not external IdP or AWS certification",
+      "Browser suite intentionally skips six cases",
+      "Short silent captioned fallback, not full narrated oral defense",
+      "Npm audit and full Trivy scans remain FAIL for unfixed residuals"
+    ],
+    "R21": "CLOSED for authorized source-map-js/sharp findings only; braces tracked independently as R23",
+    "R22": "CLOSED for authorized PCRE2/Perl corrected findings",
+    "R23": "OPEN / braces tooling residual NOT ACCEPTED",
+    "D094Verification": "PASS on isolated-cache reproducibility retry; independent verification image, not canonical runtime identity",
+    "scopedCleanup": "PASS"
+  },
+  "riskDispositions": {
+    "R17": "CLOSED original findings",
+    "R19": "CLOSED original findings",
+    "R21": "CLOSED authorized source-map-js/sharp corrected findings",
+    "R22": "CLOSED authorized PCRE2/Perl corrected findings",
+    "R23": "OPEN / braces tooling residual NOT ACCEPTED",
+    "R20": "HISTORICAL ACCEPTED TEMPORARILY; current binding REVIEW REQUIRED / NOT ACCEPTED"
+  },
+  "currentR20Accepted": false,
+  "historicalApproval": {
+    "path": "docs/tfg/evidence/2026-10-02-r20-acceptance/acceptance.json",
+    "sha256": "f05a78809830df4aacd431527997df0acf5d9bc3cd558705d9104149e64a5cb7",
+    "bytes": 8692
+  },
+  "expiry": {
+    "local": "2026-10-09T00:00:00+02:00",
+    "timeZone": "Europe/Madrid",
+    "utc": "2026-10-08T22:00:00Z",
+    "exclusive": true,
+    "effectiveOnlyAfterExplicitApproval": true,
+    "renewal": "No automatic extension; fresh review and explicit approval required",
+    "earlyInvalidation": [
+      "Vendor fix becomes available",
+      "Image/base digest or runtime/test input changes",
+      "Scanner/vendor data changes until reviewed and re-attested",
+      "New feature, configuration, data or exposure boundary",
+      "Any fixable High/Critical, detected secret or new unreviewed finding"
+    ]
+  },
+  "currentPrimaryDocuments": [
+    {
+      "path": "README.md",
+      "sha256": "d70598320caa54e67994009f1b0aedb72ee8bebbf61681e7c5d80bc9a32a3db9",
+      "bytes": 18479
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "49bb066b6608fb4cc758b3f2e49f8e4c371ac1a6500de3112a4c3bd363eb83f9",
+      "bytes": 7506
+    },
+    {
+      "path": "docs/project/PROJECT_STATUS.md",
+      "sha256": "9455b4405b5b46981930b95b3661bcd4625809afd27d0ea797996b24bd237aff",
+      "bytes": 45933
+    },
+    {
+      "path": "docs/project/PROJECT_STRUCTURE.md",
+      "sha256": "581f30bc859f6657c08357e24d7810e65bf8a256622b7e2826f93efa286af302",
+      "bytes": 10048
+    },
+    {
+      "path": "docs/tfg/00_TFG_MASTER_PLAN.md",
+      "sha256": "40f66ec0cb00cd1ec736eb3cbcdef68235f563e0e265f7b8f2ea567da4022cc5",
+      "bytes": 23588
+    },
+    {
+      "path": "docs/tfg/README.md",
+      "sha256": "d772ce83aad28e60c7addb655a671074190fb35d0cbffd8cc8bc853a4bdafd74",
+      "bytes": 7879
+    },
+    {
+      "path": "docs/tfg/R17_SECURITY_REVIEW.md",
+      "sha256": "2971d05b7f9fc2027ce6f70fce61ee91265008cf1af6e64b07ad264d5aa0ebbe",
+      "bytes": 11396
+    },
+    {
+      "path": "docs/tfg/R19_SECURITY_REVIEW.md",
+      "sha256": "62ebd4ed1828f7568cbe77e4e9c80fd31ce8d2d739ebac9e028fd3b7cde7c289",
+      "bytes": 13308
+    },
+    {
+      "path": "docs/tfg/R20_SECURITY_DECISION.md",
+      "sha256": "337ea8d0f849bd08c4388fd66a78b2174102a241d7eecbd1a0fe6844a2abab82",
+      "bytes": 26660
+    },
+    {
+      "path": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "sha256": "9816e64cbfc4238fe04e0215208e2b41683bc62430c4313f58673aef3b7e31d4",
+      "bytes": 3734
+    },
+    {
+      "path": "docs/tfg/01_ACADEMIC_SCOPE.md",
+      "sha256": "93efeb74cebbe11e7c746aa659820db6f247c6073518671f0acc7f2dec85a9f7",
+      "bytes": 6017
+    },
+    {
+      "path": "docs/tfg/02_COMPETENCY_MATRIX.md",
+      "sha256": "4330ed8ba082f1b58bfe52823ea0fd4447586134bfa364f060437cf999b3b464",
+      "bytes": 18078
+    },
+    {
+      "path": "docs/tfg/03_TRACEABILITY_MATRIX.md",
+      "sha256": "ec9cd0661aebc3e132599be6814950ed30494aa32d1a202aaacc71f64149c442",
+      "bytes": 10445
+    },
+    {
+      "path": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "sha256": "9b10b670efe8c412cd23950fcd58304237edd1e3f08defeacac7c0dddc75cb32",
+      "bytes": 31076
+    },
+    {
+      "path": "docs/tfg/05_ARCHITECTURE.md",
+      "sha256": "b65c397b0c8bcc77fbeb14f5d9760be53d48552b89158e010269392da26b55e8",
+      "bytes": 7121
+    },
+    {
+      "path": "docs/tfg/06_LOCAL_VS_AWS.md",
+      "sha256": "1e270303188a5ea32cdcd8473bd3fda06251f3ad4a668e9044c84004147f4fc7",
+      "bytes": 5694
+    },
+    {
+      "path": "docs/tfg/07_DEMO_AND_DEFENSE.md",
+      "sha256": "875be85e5fed2f19d95c7b49be19814d1a007a04c79d9370b03a92d6b301693d",
+      "bytes": 7649
+    },
+    {
+      "path": "docs/tfg/R21_R22_SECURITY_REVIEW.md",
+      "sha256": "6df4b0a3f7ede92220feecfe27b90ae0b82364fea418aa82ae0763635fab7043",
+      "bytes": 11167
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/README.md",
+      "sha256": "604a49e1470344ebef7babd57b091c2d1bd7b22845a69cc6c9afedbe61122eb5",
+      "bytes": 2302
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/applied-security-only.patch",
+      "sha256": "6fbaa63914fc2cc6696f3bad4bf895697500c21ba416c68635f93bdf91b3e582",
+      "bytes": 32263
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/authorization.json",
+      "sha256": "b0ff91d47267946a9e1a03e090756b35c1c9e8145aa2eed53d9718721a79cbc3",
+      "bytes": 887
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/backend-integration.log",
+      "sha256": "b22eedc69602bf962f0e13b762f0670e23c10f52f1dd04d4547ece07739a2d20",
+      "bytes": 13637
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/backend-result.json",
+      "sha256": "89195fa3261a9c93ff020d90bd7a391181d5b72dd729947c91c2b240aa243a40",
+      "bytes": 364
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/failsafe-reports/TEST-imperator.adapters.out.aws.AwsEvidenceSyncIT.xml",
+      "sha256": "985b2074259861d40327475c58841e806d2b994256d893439395f8189ee059b9",
+      "bytes": 31647
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/failsafe-reports/TEST-imperator.adapters.out.github.GitHubEvidenceSyncIT.xml",
+      "sha256": "f648f8b663edb571b4364a78139f000bf5f4d56553776fd13a789e0aaa72fed7",
+      "bytes": 31654
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/failsafe-reports/TEST-imperator.adapters.out.postgresql.PostgresRepositoryIT.xml",
+      "sha256": "6cfbe2c5c52da18456ad733aa0d99b0232be80e095bdfcf649e45a7e09bbffdd",
+      "bytes": 36599
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/failsafe-reports/TEST-imperator.api.evidence.EvidenceImportHttpIT.xml",
+      "sha256": "ee4e86c8091e831c39ab24d2c2a36a610b1868702400f678b1cd23fae487fecf",
+      "bytes": 32133
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/failsafe-reports/TEST-imperator.api.FunctionalRestPostgresIT.xml",
+      "sha256": "63892bc76450347cf1843548bb35148bbb0a9aebc36b373e27f1480b3d0733b0",
+      "bytes": 32258
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/maven-version.log",
+      "sha256": "d10c8ce7acba8b4d14401cd40e609e0652bbc2c4920cc30dc34cf550e0aa3ced",
+      "bytes": 414
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/postgres-start.log",
+      "sha256": "46038efb813fbca18a92272496901190638dea3f97b51f7af0daa1ca2eb13818",
+      "bytes": 54
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/postgres-stop.log",
+      "sha256": "191c515470746fe1146fc3e4708b7c986a62aae6eaa6cb98542f92928e03f5db",
+      "bytes": 97
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.adapters.out.aws.AwsSdkEvidenceSourceAdapterTest.xml",
+      "sha256": "fb43f3935b4c2c1ecae08787115bb18a268294b6b6046d2fe7bae9c9a03140b6",
+      "bytes": 32670
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.adapters.out.bedrock.BedrockExplanationProviderTest.xml",
+      "sha256": "9487978182defe9b2863f8d6b32914f585880a208ee019c00a19463be613517c",
+      "bytes": 31822
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.adapters.out.github.GitHubRestAdapterTest.xml",
+      "sha256": "ebb0e8dc806547badeb03b0744ef24e939d0ed27d4653e83d3e02b91d17f9c86",
+      "bytes": 32694
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.api.businessvalue.BusinessValueRouteContractTest.xml",
+      "sha256": "e113434f6eeac6c8328cadcdc32432e58bb9eba4de24beb325c0d64841567604",
+      "bytes": 32450
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.api.decisions.DecisionCompositionRouteContractTest.xml",
+      "sha256": "e2d41f74a2cc10e0c1605af383b988cbb45e9307893355b7f4feca1dffd68b3c",
+      "bytes": 32476
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.api.decisions.DecisionContextRouteContractTest.xml",
+      "sha256": "18e33f1e591833bbc89f30300d48016591bcd9e4047cecb6c7a41c875bf2897d",
+      "bytes": 32600
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.api.decisions.DecisionRouteContractTest.xml",
+      "sha256": "e5b1e060b4b0c13c77e30b83687e786cd407932ba50ab6037c5ed073d98a4088",
+      "bytes": 32548
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.api.decisions.RbacEvidenceVisibilityContractTest.xml",
+      "sha256": "cf8a2ffbc680f0771391f66695f70ba6336dd304eeea72731a3263ec9d4c19f8",
+      "bytes": 31847
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.api.errors.ApiErrorContractTest.xml",
+      "sha256": "31dae27957990202111d261d5de04399d19dbdf932d088f0bd54115f77c61a65",
+      "bytes": 32592
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.api.evidence.EndToEndBusinessValueDemoTest.xml",
+      "sha256": "12706668c51f65e1a4e3e73c077412bc972d5e7831fc9c6f8bee0742954424d7",
+      "bytes": 31687
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.api.evidence.EvidenceImportRouteContractTest.xml",
+      "sha256": "2ef285dd6cafd72b7deae9ba5067221dcc5647289f1b5854db38e13b23e526b0",
+      "bytes": 33098
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.api.FunctionalRestApiContractTest.xml",
+      "sha256": "eb2d33ad5db7fd459c40a1cfa3b18ea587d304049def7cee534814539f2ae57f",
+      "bytes": 32215
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.api.ledger.LedgerCommandRouteContractTest.xml",
+      "sha256": "45b2ac38ab73a913ed71a16d3963e6c3a8ce1088143544530fbdf067635ef91d",
+      "bytes": 32691
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.api.ledger.LedgerReadRouteContractTest.xml",
+      "sha256": "afd618957c8e8582ddeeb593df16c214eb39ef06a9f0ca76cd1cbfafbf551480",
+      "bytes": 32401
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.api.observability.CorrelationMdcContractTest.xml",
+      "sha256": "dda760d31a80590608dbbab6f368b1b9d8b0e986ba1ecfce682332586575a4ea",
+      "bytes": 31832
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.api.observability.ImperatorRouteCatalogContractTest.xml",
+      "sha256": "21eacb2395453769dbd6c26896a8b99cf69df2476c3b5b9b64034c1e3cd06b92",
+      "bytes": 31852
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.api.observability.ImperatorTelemetryContractTest.xml",
+      "sha256": "a9188bde389e2abb92e4f76c8f8ec8b6d3e4ba6315ca372fa3175b2c9465812d",
+      "bytes": 32145
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.api.observability.ObservabilityEndpointContractTest.xml",
+      "sha256": "82858930da5fc3ac712bdcb6597874d6be183e6fdcc19f0ed72464e026f615e2",
+      "bytes": 32250
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.api.recommendations.RecommendationRestMapperTest.xml",
+      "sha256": "b268ece557a819fa5857209979dff7580d0d9af93b2d5d013ed89528f7d5b0c3",
+      "bytes": 31912
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.api.recommendations.RecommendationRouteContractTest.xml",
+      "sha256": "1797b5f2240b1020ecfe2443dd8f032ee3b076bfde2d3d38ce65d0e2c39690b8",
+      "bytes": 32703
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.api.security.JwtAuthenticationContractTest.xml",
+      "sha256": "87200f824fae36222cf36dc60c727c5232b66acb8396a8449f413b1c83d5debb",
+      "bytes": 32807
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.api.security.RbacAuthorizationContractTest.xml",
+      "sha256": "c2fd1ea8ac7f6c74cac2e477817bce4c776575b45389db1a419e8bb1e2ae1f96",
+      "bytes": 32335
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.application.composecase.ComposeDrcAoa001UseCaseTest.xml",
+      "sha256": "37e826d98601aae33af047a871c480f250b68552c19bcbb7b062484a1676b2b4",
+      "bytes": 32756
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.application.createdecision.CreateDecisionUseCaseTest.xml",
+      "sha256": "a706c7a662b4e34e238441c13970c10922e79e297c33950203fe9262b5a02118",
+      "bytes": 32692
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.application.generaterecommendation.GenerateRecommendationExplanationTest.xml",
+      "sha256": "eccb775be7844132723fd5b939f4bd610f3cc239b62383b894328bd660be43c3",
+      "bytes": 32892
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.application.importevidence.ImportEvidenceUseCaseTest.xml",
+      "sha256": "4ae8ebc21629c97dd944aac3b728f6cb153572207d0d9588a69838c0b51130c6",
+      "bytes": 32056
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.application.ledger.LedgerChainTest.xml",
+      "sha256": "202e2d193af2898d926c3e96f9fdfbf9fee7538259fb633904191566682084e9",
+      "bytes": 32375
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.application.query.MvpQueryUseCasesTest.xml",
+      "sha256": "379aebb74a20cb2becc461d933be7a593c9f0b6560b055efff00b22162778c7b",
+      "bytes": 32490
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.application.reviewdecision.ReviewLedgerGovernanceTest.xml",
+      "sha256": "7fb2391367397e2537874ab0c32d1e60bc6fbe18200e56ee671ce90a8e48ca1f",
+      "bytes": 32765
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.application.synchronizeevidence.SynchronizeEvidenceUseCaseTest.xml",
+      "sha256": "29a6dacee37dc4bd40319b65463221b62943ec6086ac9c4a4a1cd8d3179d99bb",
+      "bytes": 32614
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.bootstrap.AwsRuntimePropertiesTest.xml",
+      "sha256": "3f8f2cbb784b0fa1609f033664a308cb528279653feba4e53a6d1fcdf11d3bff",
+      "bytes": 31876
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.bootstrap.GitHubRuntimePropertiesTest.xml",
+      "sha256": "356bceaf17d6127161a4129638ff6e1612ff7e68e3cfdd8ec7533e5643a9ae81",
+      "bytes": 31872
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.bootstrap.ImperatorApplicationTest.xml",
+      "sha256": "8708b881a561a141400b05f64f073850ab74dfbc6786cb213b24d943961bfc31",
+      "bytes": 31874
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.bootstrap.PostgresRuntimeConfigurationTest.xml",
+      "sha256": "f0032ff7f1e8536c43f45faf2e4cf160d1d506d8d41652b81b1bc81aaed0e867",
+      "bytes": 32061
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.domain.decision.DrcAoa001RecommendationPolicyTest.xml",
+      "sha256": "a868cd65170532b035342a67f17e126a1b93da2b6f82464b0d93326a256b0ebc",
+      "bytes": 32242
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/backend/surefire-reports/TEST-imperator.domain.decision.DrcAoa001ResultValidationPolicyTest.xml",
+      "sha256": "f89c75b9657ee7fb541f8ea5579a76a067a60e8771c0d804be507ba64436381e",
+      "bytes": 32334
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/baseline.json",
+      "sha256": "e3d24c8dcb8b91215b0dc25142b17bfd802cb1fa7f06f79447f74ebadb075af0",
+      "bytes": 104409
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/cleanup.log",
+      "sha256": "16b70ede63915c61e63e4e66e6a2fcdf091f7d5534e56c91e3e2dd121fd720b1",
+      "bytes": 2255
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/d094/buildkit-metadata.json",
+      "sha256": "d89b3e01792298813cbdcabb1de2ff71513477c28c3a6d6009c9609d6d2bea2e",
+      "bytes": 4834
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/d094/postgres-sbom.cdx.json",
+      "sha256": "90cf9c7c70738d6c989a6c061fd2921ef7b0df72f1d701ed1c0cbed160807282",
+      "bytes": 873242
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/d094/provenance.json",
+      "sha256": "0605baac5a0e1b1ec9afebc877561faa6dfbd69a03b514928a22bc4e5b8a675b",
+      "bytes": 5508
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/d094/sha256-manifest.txt",
+      "sha256": "d8e9114f0dfa972cddecd23198b6c693df6780f4e89d416f68aeb1d6cc8a5353",
+      "bytes": 427
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/d094/trivy-report.txt",
+      "sha256": "1acee4c7db86b466fd071635d67b2f4795b3229a6a8adc714a72ddeef9e86722",
+      "bytes": 1537
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/d094/trivy-result.json",
+      "sha256": "3d861855c0a1887daf6590c169e7573aaea0fb25fb207d6b10638740c7412a63",
+      "bytes": 803624
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/d094-initial-shared-cache-failure.log",
+      "sha256": "9bd955fdd1f17e4fba5d92ebdab98085c9f8755efedd29efb69283bf6c611f59",
+      "bytes": 14261
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/d094-retry.log",
+      "sha256": "ea4856a8727ea4148b88904538e53e662d1b496704fd7476aa62ace31a1fef32",
+      "bytes": 14069
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/d094-run.json",
+      "sha256": "1d1471c6a1a71102797cb314ff0fccd09a333ae7d5a90a0c8d9090c5fdf13ea7",
+      "bytes": 1130
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/build.log",
+      "sha256": "5f5157e6b0aeaad2ca1af891c37548b58030ef85a0d9a3eca23aa8c71eea7510",
+      "bytes": 29281
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/capture/01-deterministic-recommendation.png",
+      "sha256": "fcf7b6a38fdddac37c4acbcf1a6aa462e6d6267b319724028fb0250bfb0e8208",
+      "bytes": 90606
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/capture/02-human-approval.png",
+      "sha256": "f021723dca8cabf45ce6a1206b99fa010cb2f457da8c79d7adee17337974a1f7",
+      "bytes": 52436
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/capture/03-implementation.png",
+      "sha256": "3d542418999c6abf788e05fb04d47a94dcdf79f45773b014c747cac0a4c5fa83",
+      "bytes": 57682
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/capture/04-realized-business-value.png",
+      "sha256": "aabd4c345bc9aeb4cce4ec4c38b68c327d1cff5cb4e82326814970135db40cfc",
+      "bytes": 70167
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/capture/05-auditor-ledger.png",
+      "sha256": "b9638460ed8cdece19e028d044c3954636d7484350ea6a5c824e0be4cb0a1225",
+      "bytes": 73807
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/capture/rehearsal.json",
+      "sha256": "0b97d394632160baf6acd2da11901d2e9858e8d55d966df0145c566af0be2296",
+      "bytes": 27460
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/capture/tfg-a-docker-demo.webm",
+      "sha256": "e05640b60b109a024a874b3cb7cb072ea3f6bf3e2f095ef810334840a3f1e437",
+      "bytes": 2725472
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/capture.log",
+      "sha256": "9d0c5a5f0349782740d6e8a7d96aae1c7ce6a83b83aa52ae631179af1d72f7e8",
+      "bytes": 56
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/cleanup-ownership.json",
+      "sha256": "b9441ac92861638bf6d2e11acf500b1112d07637dcbe607d4a7ca2391eda8744",
+      "bytes": 3877
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/cleanup.json",
+      "sha256": "6693d433669bb347d0f5a87f545ab1a15305695f30173c27616caddaad95f61c",
+      "bytes": 2075
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/frozen-images.json",
+      "sha256": "478802491def46822b269a687aaa2328972dae05e59d678776b9c09ad558367d",
+      "bytes": 4910
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/image-binding.json",
+      "sha256": "2cc40c8ea1da2d71d37e43dbaf0029afff953c80eb13d8b3d74644ac1a9b0fbe",
+      "bytes": 12690
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/images-after-observability.json",
+      "sha256": "5443ad819dc9947b9aeec72822ac99ec6944696255aae06594ddf0e68d00d084",
+      "bytes": 5162
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/images-after-recreation.json",
+      "sha256": "6ee3c16e3c4de7141395c602f8b04640cc51cd676ed59f362ec3550afdbab08a",
+      "bytes": 5240
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/images-before-regression.json",
+      "sha256": "33ea0f0f48b5e74431e41e83103e094e02d97598dfce987019e4f179b138e982",
+      "bytes": 5240
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/manifests/backend-config.json",
+      "sha256": "bae6c993682a2692cc3f1e19e2ebd7111b4d25869c8a5f90b973b94a7d73a33c",
+      "bytes": 9243
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/manifests/backend-index.json",
+      "sha256": "681e6e7b77b73170c959ed04697302f6a21d8db98edb3a2b0f3354a44387096d",
+      "bytes": 856
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/manifests/backend-platform-manifest.json",
+      "sha256": "35793caf489ab2b56806d6d533ccfebe2e5144f38defced0d88f9b85bf138275",
+      "bytes": 2766
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/manifests/frontend-config.json",
+      "sha256": "133dec49d525b150fa6ab117bd2dacfd494aa776e917e8ab03f45f115568b320",
+      "bytes": 11132
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/manifests/frontend-index.json",
+      "sha256": "5cd649ff9a460b2abdc8315da2e7568c5a2c2138d99815db89c5c583f88c18b1",
+      "bytes": 856
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/manifests/frontend-platform-manifest.json",
+      "sha256": "de33fcc4e5d99bcec121ae7f4d88dc742d0f2e9ac81839f3fd8dca0d259beaea",
+      "bytes": 2391
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/manifests/postgres-config.json",
+      "sha256": "42e661e3f5932273d36c1cf1ad4d407a738e861197e47cf489946ac9de4c3098",
+      "bytes": 15055
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/manifests/postgres-index.json",
+      "sha256": "2b73847d07d6cb7da2ace20426de036fa0278feca0bb6520aca62588e9b3f101",
+      "bytes": 856
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/manifests/postgres-platform-manifest.json",
+      "sha256": "c2c532db77cdef99e64c31f08359cd445267f7e50f08c9aef1c976e9cca6dd0c",
+      "bytes": 4486
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/observability/endpoint-matrix.json",
+      "sha256": "a4cf23f48911ea4562a7e9d533151ff4ee17183480dc5c07882f90685be482cf",
+      "bytes": 207
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/observability/metric-names.txt",
+      "sha256": "38e71b608bc70b1d12eca320f07acb198cd833d58963f9b479856ca099723991",
+      "bytes": 4023
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/observability/safe-event-sample.jsonl",
+      "sha256": "77231e2f65b1b7362690bedbe0898f3374adbc68d532c697148a7491dcc1cc03",
+      "bytes": 1777
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/observability/verification.json",
+      "sha256": "de6022833b51e199580830fe46528637ccc2aa639746db3cd95a5b856f05f0b9",
+      "bytes": 669
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/observability-pwsh.log",
+      "sha256": "8a553feda13dbf1a270e4de58d68c9250a9c9a4627d2df0a9b120c515e59318b",
+      "bytes": 2270
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/persistence.json",
+      "sha256": "96e93ebb9d1035b3a39f2880cba504ea783ca0234a74deca7d1df3b1429b429a",
+      "bytes": 1019
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/recreation.log",
+      "sha256": "145e190cc23a86e09c74c3a009a1655deaf387b59041f448ec9c1aa60f49ef1c",
+      "bytes": 2471
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/regression-result.json",
+      "sha256": "c4c432102b1efbfce3176ebb3b5b7579fb8f82f880cb45adc09d74b21894b00a",
+      "bytes": 384
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/source-manifest.json",
+      "sha256": "cde68dffaa752125ae500b537430d0bc41784e317c5fa4d520aaa00336d3c0e6",
+      "bytes": 65916
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/start.log",
+      "sha256": "27b18a6084f30eb689150fe5d4c1d2762652defdc95dea52e42cc2b7a85cdff3",
+      "bytes": 2116
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/video-metadata.txt",
+      "sha256": "195e145d9e9a0d578169e7c5752e82d459c20c2a2cfc3e469a3fe54357a65fc9",
+      "bytes": 2024
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/video-qa-14.png",
+      "sha256": "3d8ab2f66abec5b21e37fd1c6439cc70ff5f2910476cdfc5588136ad939ada04",
+      "bytes": 280857
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/video-qa-23.png",
+      "sha256": "9b4701ff35ef5fb4ee5473c6ccec42d4492b4d537ddd484be147f4f6e7f82194",
+      "bytes": 461156
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/video-qa-4.png",
+      "sha256": "25c230e489a9ae781fb66b5fbc42a2183a81b9d158aa885330a1494c75d48bbd",
+      "bytes": 482000
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/video-qa.json",
+      "sha256": "86fa8b15b8e04546a55a64dcc493c488239ca108dd26f87e7b28fae57c70ce3c",
+      "bytes": 290
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/extra-verification.json",
+      "sha256": "3704a23006042fb8a2f671d442deaeded3c38144e514a0c09b26dd4da4f4c3fc",
+      "bytes": 2724
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/frontend/audit-production.json",
+      "sha256": "96f423ce26c0eb6a80d4c6b78b11eaefd2572b206b43b3d31685a3de9aa5888d",
+      "bytes": 365
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/frontend/audit-production.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/frontend/audit.json",
+      "sha256": "df0901ab3626049e6c397fa458183a78250b80e683824d02d408315ae2cb5fe4",
+      "bytes": 3023
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/frontend/audit.log",
+      "sha256": "dcd34e14153643a6fff3b7bfc597ceb94bdfc14a9bbfe82dfecbeafa6ef63748",
+      "bytes": 3232
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/frontend/browser-chrome.log",
+      "sha256": "66b983728e9e9335dec0fe3a3b919314d49e4643511b62183a879201e572d366",
+      "bytes": 7859
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/frontend/browser.json",
+      "sha256": "2c24bdc26573326d725ea998a1180f270a7153343cbf5a3acc17ca9a7697fbbd",
+      "bytes": 23813
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/frontend/build.log",
+      "sha256": "123ca00880e3b88b590498a4409b14be8df1d30da13dfa415222640e59d3c174",
+      "bytes": 922
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/frontend/coverage.log",
+      "sha256": "365092b3ec7b9ece245c3579e9c63653ffe3d67efc8feb76ecdab81564de6d00",
+      "bytes": 1709
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/frontend/format.log",
+      "sha256": "0fdfea6c362f10e71a8b76517627b7eb04eed39705e7f07c94a10190cc6030f9",
+      "bytes": 146
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/frontend/lint.log",
+      "sha256": "91f5b65e4bbb03a02c7e51c171dfef0251f9b3339e79119827d981362e87dd62",
+      "bytes": 79
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/frontend/results.json",
+      "sha256": "735a6c8474988328cb12e097793febd584776e36d9d8fdcdd7615c6b936348ad",
+      "bytes": 1225
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/frontend/typecheck.log",
+      "sha256": "1bd54d7d2d4ffe8afa8d6e291dfce8f1653f1ff331f842e2c2b3d40acab7156a",
+      "bytes": 71
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/npm-ci.log",
+      "sha256": "1ed358fa09cb996a37f3f36457e3ee48faf04884847f6618576e722979099570",
+      "bytes": 809
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/patch-application.json",
+      "sha256": "aad5b9f6f01694d6e7870235eea07673b88242e0bed7339e68000cbc372a2453",
+      "bytes": 872
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/pre-patch-documents/docs__project__PROJECT_STATUS.md.txt",
+      "sha256": "13c08d3811cd7413f846a79859ee6e12e56cbacdcf8d2f7dbb02161e9331e9e1",
+      "bytes": 43295
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/pre-patch-documents/docs__project__PROJECT_STRUCTURE.md.txt",
+      "sha256": "7085d61cbd83916acfbd9a6a111a3d300e250260ac6ef21adcbcbcb04a59f5e5",
+      "bytes": 10521
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/pre-patch-documents/docs__tfg__00_TFG_MASTER_PLAN.md.txt",
+      "sha256": "fca7585fca071d2548d1ec557ef50241204d06123d83041eb7e3950d51eeb8d0",
+      "bytes": 23657
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/pre-patch-documents/docs__tfg__01_ACADEMIC_SCOPE.md.txt",
+      "sha256": "807b4bb27d61d0c44deac1028d783df432668fa883d145d1bc83a96bb88b130d",
+      "bytes": 5198
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/pre-patch-documents/docs__tfg__02_COMPETENCY_MATRIX.md.txt",
+      "sha256": "346cb19ec732eb8aebb3077251ddd395a6f6149098a064fc5028e579a8c5a498",
+      "bytes": 17250
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/pre-patch-documents/docs__tfg__03_TRACEABILITY_MATRIX.md.txt",
+      "sha256": "b53d21eb3a4620d261070e471fdf8619833fd33cc2641cefc86832a34843a0ed",
+      "bytes": 9631
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/pre-patch-documents/docs__tfg__04_EVIDENCE_REGISTER.md.txt",
+      "sha256": "22dd1289399b41f84088bd80f2e4f4ba7fc57404081e31b8d55cabfecb2837dd",
+      "bytes": 29602
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/pre-patch-documents/docs__tfg__05_ARCHITECTURE.md.txt",
+      "sha256": "7493242466cfe91b48e67917b5b51ac849e36a798a70126d5fd7a057b529bc9a",
+      "bytes": 6305
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/pre-patch-documents/docs__tfg__06_LOCAL_VS_AWS.md.txt",
+      "sha256": "a978749c761b0a464fa65dcf7a446b591a163f8ba393b0a9c23b1f34593d3c74",
+      "bytes": 4882
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/pre-patch-documents/docs__tfg__07_DEMO_AND_DEFENSE.md.txt",
+      "sha256": "cc27fb027846725976e8e86642e56ec4f94efac5f12c7bda710b8bd10ec18367",
+      "bytes": 6711
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/pre-patch-documents/docs__tfg__R17_SECURITY_REVIEW.md.txt",
+      "sha256": "f0ebaa598ad5faf9a95230e820b01d38e9088743eeb000243cce42ded2f43c91",
+      "bytes": 10622
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/pre-patch-documents/docs__tfg__R19_SECURITY_REVIEW.md.txt",
+      "sha256": "a057cb00071edc3760c4a960607c034de77e2304b2203a75dc53a385d91a9480",
+      "bytes": 12534
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/pre-patch-documents/docs__tfg__R20_SECURITY_DECISION.md.txt",
+      "sha256": "b9fdc21b4256950d7fb97572ecac6d67ff2edbdf7df0ef949ac056063b5c2df9",
+      "bytes": 25886
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/pre-patch-documents/docs__tfg__README.md.txt",
+      "sha256": "c4d86a3b0406554de4596f29c2b506d592b64700548464a2374e23061a2df536",
+      "bytes": 7608
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/pre-patch-documents/docs__tfg__TFG_A_SECURITY_CLOSURE_GATE.md.txt",
+      "sha256": "ec3096e6c4beffd5e1c504eadb67de92c5c5416becb2e382cda9f2aff30dad6f",
+      "bytes": 5163
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/pre-patch-documents/README.md.txt",
+      "sha256": "79379f04b02f738cd9bb0d6dc59c94be91f8db03f329739ea2dd9321575d7b3f",
+      "bytes": 18289
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/pre-patch-documents/SECURITY.md.txt",
+      "sha256": "d20066cfd6c573b5cb971cc852b85da2f59f6892b5dfd9091d4f802980594227",
+      "bytes": 7273
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/pre-patch-documents/snapshots.json",
+      "sha256": "9c31cae6686f43c0caff849b37142f2bffdb116774f8010367c7d5810ffe1570",
+      "bytes": 3571
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/r20-current-binding.json",
+      "sha256": "0779ad67aaffe6a59cdbaa0875b6b0d56a5d5fef2f065e1fff16f24a1d7f5856",
+      "bytes": 2009
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/README.md",
+      "sha256": "604a49e1470344ebef7babd57b091c2d1bd7b22845a69cc6c9afedbe61122eb5",
+      "bytes": 2302
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/residual-image-matrix.csv",
+      "sha256": "5464b68ab4417cbb802468b16973a4e8dee97f100d388904f63ffd6fbfe43905",
+      "bytes": 17877
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/residual-image-matrix.json",
+      "sha256": "b547ac63023d4f144300f0d92a282f20173497a1b6c773dea4017ce09e30c65c",
+      "bytes": 47149
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/backend-all-secrets.json",
+      "sha256": "8fe1f49b495364b8f1ab7e337613b4b7eb6f90c97962b698305c2fe46d0a4d4d",
+      "bytes": 522955
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/backend-all-secrets.log",
+      "sha256": "b8b99a944c241e4f8174a395db029d03c2933bb5af3738cccad4e42d117d8b18",
+      "bytes": 514
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/backend-all.json",
+      "sha256": "6024204db62411adaa099c4b95e1d23b9bdbf25f3a2ed76575ae2baac42389bd",
+      "bytes": 591405
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/backend-all.log",
+      "sha256": "965d7bef920f18918472afbf5dde590947c77bd333780ac1a29f03dc0cb24d82",
+      "bytes": 536
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/backend-fixable.json",
+      "sha256": "47ae744f0b857b12a4de29ae7581bb4823151240b262e67a4428dd1c9be79903",
+      "bytes": 591405
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/backend-fixable.log",
+      "sha256": "7e7a445e539dc8f2949b29791010eece90fd98a5f9ca8e2b19918745a9f762b3",
+      "bytes": 854
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/frontend-all-secrets.json",
+      "sha256": "f4752bd6b03b0dbb3bce4ea410dfa76e0f8d5331b3633c140a750f8b76e76452",
+      "bytes": 396555
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/frontend-all-secrets.log",
+      "sha256": "1fa4f3286df2a07bf7c4a6fa8dbfab191ddd66ea000590440bd0df1a0cb98587",
+      "bytes": 514
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/frontend-all.json",
+      "sha256": "1a3925e4441f603cedaf1d22f06e9213fa35beb4f0faec7e391485b553b2c9d5",
+      "bytes": 533737
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/frontend-all.log",
+      "sha256": "4e12a63462976ac61ffba8704f44072813d953d866e3509ecd96c916fcf28a72",
+      "bytes": 719
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/frontend-fixable.json",
+      "sha256": "9ff212549a6c5c97f8abb2b88d2333c1f566ef89c46638150e458aff02c9174d",
+      "bytes": 396556
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/frontend-fixable.log",
+      "sha256": "ac8ce672877677b8227ca16d2e89f6fcfb80605d7c0b722738b667bfe8729228",
+      "bytes": 1037
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/history-secrets.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/history-secrets.log",
+      "sha256": "dcf24bae0305cb8aa06d972fc2bae712572e8f1ef24df9ec10bab63f6ff16b45",
+      "bytes": 111
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/postgres-all-secrets.json",
+      "sha256": "653429695ef0c323e3c06f28d44aba35ebd00c97990d7e9bf12db364fd8abd6a",
+      "bytes": 803827
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/postgres-all-secrets.log",
+      "sha256": "95f50989e99023f9d166ec8905c3b643a7298e9f485d6ccb081145214f123d9b",
+      "bytes": 514
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/postgres-all.json",
+      "sha256": "63dc04acb87d02cfe28c80a0fc4d1020a397e543468eb7d00ff06996a794ed02",
+      "bytes": 1007846
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/postgres-all.log",
+      "sha256": "5f836ba1938f00357123d7cbdf4c1b72d6e2d8c6d6d6555c4fba2afd902e6916",
+      "bytes": 720
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/postgres-fixable.json",
+      "sha256": "29e3dfb901bd0a8d01b618f6166c3a8ae35beb719accf79d76c1265371197b20",
+      "bytes": 803827
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/postgres-fixable.log",
+      "sha256": "04a80ccca6374c75bf7284f9adc8696ecf3ac84f87ddfe52ec59b9ed2235a19d",
+      "bytes": 1038
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/scanner-databases.json",
+      "sha256": "e71549c1e9347b2429af59f46a019c609785114f045f88a1a3b6204f74051460",
+      "bytes": 831
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/source-all-secrets.json",
+      "sha256": "ceed4d711dc95c2f0f917cbb5ebc338e20c0e7467cbd39674ac28ee7eebe8e94",
+      "bytes": 121610
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/source-all-secrets.log",
+      "sha256": "452667c230ab03b8bb662784a966bae2c88d362865002035a080024477ae5fed",
+      "bytes": 701
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/source-all.json",
+      "sha256": "20d3095efa03329bf50f637395e5af02a8788ab38194fdfe0586cb894c3e31cc",
+      "bytes": 463448
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/source-all.log",
+      "sha256": "d914f142a3133ac4939ce6e2e0421fc9fc0e8b476c4ef6593d6c0c428e482ab2",
+      "bytes": 557
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/source-fixable.json",
+      "sha256": "87f8194e330d0255ae1b069d60840e5e3186d31d9a5ab41107fc0b25446798b5",
+      "bytes": 462654
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/source-fixable.log",
+      "sha256": "97c454da5e6e1348dfd648012d49a314e3fa29523363cc2351b7bc253a29f921",
+      "bytes": 3084
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/source-inputs.json",
+      "sha256": "f308b7ad25dfb7bb4585daece207c5b3b9dc90ce4a37679e747b0c9e4d2f2fee",
+      "bytes": 142172
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/source-secrets.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/source-secrets.log",
+      "sha256": "06dbe3452918aa1c1eb54640863a766a25dd86929e689ed57d982a5e77522873",
+      "bytes": 81
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/summary.json",
+      "sha256": "29a5b5a29e9128d49259aa0e19a41dc8b074f50aca02c525559fadb747dfb2eb",
+      "bytes": 229469
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/secret-checksum-alert-review.json",
+      "sha256": "a4a4d2ab01e40d1a503ed4daf1f707290e070b4385908f212df4c86f464d9fe5",
+      "bytes": 5789
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/sharp-native-versions.json",
+      "sha256": "8a4fdc165cc3176551269c0a9d0e67877cd7318b8759a61967e9f853b616da2b",
+      "bytes": 618
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/verification.json",
+      "sha256": "ab7fd4b938cdc6fdda721d62d46e4473899a08b25d6a2c1643d79eb949e702b1",
+      "bytes": 3047
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/volumes-before.json",
+      "sha256": "059e79c8f8cddf5937723ea5ce47740fdd5c30754191f8b5276c64e9f026e6d5",
+      "bytes": 4341
+    }
+  ],
+  "institutionalApproval": false,
+  "A_S3Authorized": false,
+  "A_S4Authorized": false,
+  "awsAuthorized": false,
+  "TFG_A_COMPLETE": false,
+  "imageNamespaces": "Docker .Id and actual container .Image and Trivy ImageID are OCI indices here; Compose label is platform manifest; config digest is distinct. Content hashes/layers verified."
+}

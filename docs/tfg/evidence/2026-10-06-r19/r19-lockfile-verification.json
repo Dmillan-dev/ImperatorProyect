@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "changedEntries": [
+    "node_modules/@typescript-eslint/typescript-estree/node_modules/brace-expansion",
+    "node_modules/brace-expansion"
+  ],
+  "directDependenciesUnchanged": true,
+  "lineEndingNormalizationOnly": true,
+  "initialPatchedSha256": "c1bdeb963e50a7ec63d580db5bef27d79c315db1fdf5af0b03ef53ba30828a0b",
+  "finalPatchedSha256": "5691cb96ad69270ec7393cb3689187c490744f63e0d089b00944759b660f1dc6",
+  "finalSize": 311667,
+  "executedAtUtc": "2026-10-06T15:56:33.301029+00:00"
+}

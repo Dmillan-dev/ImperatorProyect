@@ -1,0 +1,164 @@
+{
+  "atUtc": "2026-10-06T19:29:13.953340+00:00",
+  "generatedDirectories": [
+    {
+      "path": "build/tfg-a",
+      "exists": true,
+      "files": 13701,
+      "bytes": 15637519054
+    },
+    {
+      "path": "target",
+      "exists": true,
+      "files": 479,
+      "bytes": 46986188
+    },
+    {
+      "path": "tmp",
+      "exists": true,
+      "files": 258,
+      "bytes": 76132890
+    },
+    {
+      "path": "frontend/.next",
+      "exists": true,
+      "files": 1674,
+      "bytes": 286778359
+    },
+    {
+      "path": "frontend/coverage",
+      "exists": true,
+      "files": 1,
+      "bytes": 3077
+    },
+    {
+      "path": "frontend/playwright-report",
+      "exists": true,
+      "files": 39,
+      "bytes": 1929391
+    },
+    {
+      "path": "frontend/test-results",
+      "exists": true,
+      "files": 31,
+      "bytes": 52398
+    }
+  ],
+  "largeGeneratedFiles": [
+    {
+      "path": "build/tfg-a/2026-10-01-docker/trivy-cache/java-db/trivy-java.db",
+      "bytes": 1546518528
+    },
+    {
+      "path": "build/tfg-a/r20-applicability-2026-10-06/secret-cache/java-db/trivy-java.db",
+      "bytes": 1546518528
+    },
+    {
+      "path": "build/tfg-a/r21-r22-2026-10-06/d094-cache/java-db/trivy-java.db",
+      "bytes": 1546518528
+    },
+    {
+      "path": "build/tfg-a/r21-r22-2026-10-06/publication-cache/java-db/trivy-java.db",
+      "bytes": 1546518528
+    },
+    {
+      "path": "build/tfg-a/2026-10-01-docker/trivy-cache/db/trivy.db",
+      "bytes": 1433591808
+    },
+    {
+      "path": "build/tfg-a/r20-applicability-2026-10-06/secret-cache/db/trivy.db",
+      "bytes": 1433591808
+    },
+    {
+      "path": "build/tfg-a/r21-r22-2026-10-06/d094-cache/db/trivy.db",
+      "bytes": 1433591808
+    },
+    {
+      "path": "build/tfg-a/r21-r22-2026-10-06/publication-cache/db/trivy.db",
+      "bytes": 1433591808
+    },
+    {
+      "path": "build/tfg-a/r20-closure-2026-10-02/current-images.tar",
+      "bytes": 367547392
+    },
+    {
+      "path": "build/tfg-a/r21-r22-2026-10-06/d094-before-retry.tar",
+      "bytes": 181261312
+    },
+    {
+      "path": "build/tfg-a/r21-r22-2026-10-06/docker/postgres-final.tar",
+      "bytes": 181241856
+    },
+    {
+      "path": "build/tfg-a/r20-closure-2026-10-02/postgres-regression.oci.tar",
+      "bytes": 158730240
+    },
+    {
+      "path": "build/tfg-a/r19-final-2026-10-06/docker/postgres-final.tar",
+      "bytes": 158709760
+    },
+    {
+      "path": "build/tfg-a/r20-closure-2026-10-02/backend-regression.oci.tar",
+      "bytes": 143636480
+    },
+    {
+      "path": "build/tfg-a/r19-final-2026-10-06/docker/backend-final.tar",
+      "bytes": 143626752
+    },
+    {
+      "path": "build/tfg-a/r21-r22-2026-10-06/docker/backend-final.tar",
+      "bytes": 143626752
+    },
+    {
+      "path": "build/tfg-a/r20-closure-2026-10-02/blobs/8e38d8544e5392718cf637e26f8a31e2e6a58620b07711b9ad095ac153ea3a4a",
+      "bytes": 113935777
+    },
+    {
+      "path": "build/tfg-a/r20-closure-2026-10-02/oci/postgres/blobs/sha256/8e38d8544e5392718cf637e26f8a31e2e6a58620b07711b9ad095ac153ea3a4a",
+      "bytes": 113935777
+    },
+    {
+      "path": "build/tfg-a/r21-r22-2026-10-06/docker/frontend-final.tar",
+      "bytes": 97395712
+    },
+    {
+      "path": "build/tfg-a/r20-closure-2026-10-02/frontend-regression.oci.tar",
+      "bytes": 93460480
+    },
+    {
+      "path": "build/tfg-a/r19-final-2026-10-06/docker/frontend-final.tar",
+      "bytes": 93455360
+    },
+    {
+      "path": "build/tfg-a/r20-applicability-2026-10-06/debian-tracker-raw.json",
+      "bytes": 81700640
+    },
+    {
+      "path": "build/tfg-a/r20-2026-10-02/debian-security-tracker.json",
+      "bytes": 79700093
+    },
+    {
+      "path": "build/tfg-a/r20-closure-2026-10-02/blobs/2b841c180a91f75f5d01a2aed904d56f2c6a0808b2346236f853ab6a26841b07",
+      "bytes": 53097305
+    },
+    {
+      "path": "build/tfg-a/r20-closure-2026-10-02/oci/backend/blobs/sha256/2b841c180a91f75f5d01a2aed904d56f2c6a0808b2346236f853ab6a26841b07",
+      "bytes": 53097305
+    }
+  ],
+  "credentialLikeFiles": [],
+  "privateContentsRead": false,
+  "deletions": [],
+  "excludedFromDeletion": [
+    ".git",
+    ".agents",
+    ".codex",
+    ".aws",
+    "output",
+    "docs/tfg/evidence",
+    "database",
+    "Docker volumes",
+    "node_modules",
+    "frozen OCI archives and scanner databases"
+  ]
+}

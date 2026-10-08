@@ -8,7 +8,7 @@ index, not a replacement for contracts or acceptance evidence.
 ## Status Vocabulary
 
 | Status | Meaning |
-|---|---|
+| --------- | ------------------------------------------------------------------- |
 | COMPLETE | Formally closed and preserved as history |
 | CERTIFIED | Executed against its required real runtime and accepted |
 | ACTIVE | Parent phase currently being executed |
@@ -20,7 +20,7 @@ index, not a replacement for contracts or acceptance evidence.
 ## Phase Overview
 
 | Phase | Objective | Status | Primary control |
-|---|---|---|---|
+| ------- | ----------------------------------------------------------------- | -------- | ---------------------------------------------------------- |
 | Phase 0 | Strategy, product definition and architecture readiness | COMPLETE | `docs/architecture/30_Phase_0_Closure_Readiness_Review.md` |
 | Phase 1 | Freeze the limited MVP contract and agentic delivery dossier | COMPLETE | `agents/phase1/12_phase1_closure.md` |
 | Phase 2 | Build executable platform foundation without product intelligence | COMPLETE | D079; `agents/phase2/README.md` |
@@ -81,7 +81,7 @@ the Phase 3 business workflow.
 ### Main Sprint Sequence
 
 | Sprint | Objective | Status |
-|---|---|---|
+| ----------------------------- | --------------------------------- | ---------------- |
 | Sprint 0 | Contract Gate | COMPLETE |
 | Sprint 1 | Repository and Project Shell | COMPLETE |
 | Sprint 2.1 | Domain Package Skeleton | COMPLETE |
@@ -107,7 +107,7 @@ demonstration.
 ### Sprint 2.7 - PostgreSQL Persistence
 
 | Micro-sprint | Deliverable | Status |
-|---|---|---|
+| ------------ | ---------------------------------------------- | --------- |
 | 2.7.1 | PostgreSQL adapter foundation | COMPLETE |
 | 2.7.2 | Adapter-owned persistence records | COMPLETE |
 | 2.7.3 | Pure PostgreSQL/domain mappers | COMPLETE |
@@ -133,7 +133,7 @@ Frozen persistence authorities:
 ### Sprint 2.8 - REST Adapter
 
 | Micro-sprint | Deliverable | Status |
-|---|---|---|
+| --------------------------------- | ------------------------------------------- | -------- |
 | 2.8.0 | Spring Boot Web Runtime Foundation | COMPLETE |
 | 2.8.1 | REST Error and Correlation Contract | COMPLETE |
 | 2.8.2 | Evidence Import Route Shell | COMPLETE |
@@ -188,7 +188,7 @@ not the Phase 2 route-shell plan.
 ### Controlled Delivery Sequence
 
 | Gate | Objective | Status |
-|---|---|---|
+| --------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | 3.0 | Functional Runtime Composition | CERTIFIED |
 | 3.1 | JSONL Evidence Import, Validation And Normalization | CERTIFIED |
 | 3.2 | Deterministic Decision Creation | CERTIFIED |
@@ -232,7 +232,8 @@ not the Phase 2 route-shell plan.
 | D099 | Auditable Amazon Bedrock Explanation | ACCEPTED; IMPLEMENTATION COMPLETE / HOSTED REPOSITORY PASS |
 | D100 | AWS SAA Portfolio Deployment | ACCEPTED; IMPLEMENTATION COMPLETE / HOSTED REPOSITORY PASS / AWS APPLY NOT AUTHORIZED |
 | 4.4.2 | TFG Bedrock And AWS Deployment Preparation | COMPLETE / HOSTED REPOSITORY PASS |
-| D101 Stage A | D095 External Keycloak HTTPS Conformance | AUTHORIZED / CURRENT |
+| TFG-A           | Bounded maintenance, risk control and isolated local evidence | IN PROGRESS / CURRENT; not a product sprint                                           |
+| D101 Stage A    | D095 External Keycloak HTTPS Conformance                      | OPERATOR-DEFERRED / BLOCKED_EXTERNAL; mandatory before Pilot Readiness                |
 | D101 Stages B-C | Costed AWS Plan And Authorized Deployment | BLOCKED / NOT AUTHORIZED |
 | 4.5 | Pilot Readiness | NOT OPEN |
 | 5.0 | MVP Release | PENDING |
@@ -319,9 +320,12 @@ alerts beyond MVP. D098 and Sprint 4.4 pass locally and hosted; merge `4fd18fa`
 is the certified observability baseline. D099 and D100 add the audited Bedrock
 explanation and offline AWS pilot preparation with 171 default Java tests, 41
 frontend tests and passing Terraform validation/mock plans. Their repository
-implementation is COMPLETE / HOSTED PASS on merge `22a9917`. D101 Stage A now
-authorizes only D095 external Keycloak HTTPS conformance. The PostgreSQL V3
-runtime evidence and every live AWS action remain pending and unauthorized.
+implementation is COMPLETE / HOSTED REPOSITORY PASS on merge `22a9917`.
+On 2026-10-01 the founder started TFG-A documentation and local evidence work.
+D101 is OPERATOR-DEFERRED / BLOCKED_EXTERNAL, remains mandatory under D095
+before Pilot Readiness and is not another TFG sprint. PostgreSQL V3 local
+verification is tracked in the TFG Evidence Register; the earlier certification
+record is preserved. TFG-B/C/D and every live AWS action remain unauthorized.
 
 Active Phase 3 execution authority:
 

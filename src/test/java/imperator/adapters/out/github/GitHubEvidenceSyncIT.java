@@ -47,6 +47,9 @@ final class GitHubEvidenceSyncIT {
         ) {
             statement.execute("""
                     TRUNCATE TABLE
+                        recommendation_explanation_assumptions,
+                        recommendation_explanation_evidence,
+                        recommendation_explanations,
                         ledger_evidence_snapshots,
                         ledger_entries,
                         recommendation_evidence,

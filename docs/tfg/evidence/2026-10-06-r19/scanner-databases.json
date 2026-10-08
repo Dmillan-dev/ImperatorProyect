@@ -1,0 +1,25 @@
+{
+  "scanner": "aquasec/trivy:0.74.0@sha256:62b1e65e8869bc4b4c6aa4fa2b21595256c7c2f6018a9d9ad61caf87187c1969",
+  "databases": [
+    {
+      "path": "db/trivy.db",
+      "sha256": "9cc5366f2b39f4be91a78e77b2c0311eaa8f62dea163767764579752a6a026c6",
+      "metadata": {
+        "Version": 2,
+        "NextUpdate": "2026-10-07T13:07:05.606377538Z",
+        "UpdatedAt": "2026-10-06T13:07:05.606377799Z",
+        "DownloadedAt": "2026-10-06T15:52:53.617200198Z"
+      }
+    },
+    {
+      "path": "java-db/trivy-java.db",
+      "sha256": "34982cc6b6834a74b02c12f8bed9944fe1c8093725d44a1da346230f4e002e71",
+      "metadata": {
+        "Version": 1,
+        "NextUpdate": "2026-10-09T01:08:12.735023748Z",
+        "UpdatedAt": "2026-10-06T01:08:12.735023878Z",
+        "DownloadedAt": "2026-10-06T15:54:40.211485075Z"
+      }
+    }
+  ]
+}

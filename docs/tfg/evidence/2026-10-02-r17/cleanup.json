@@ -1,0 +1,44 @@
+{
+  "removedDockerVolume": "imperator-r17-20261002_postgres-data",
+  "ownedContainersNetworksVolumesRemaining": 0,
+  "fixtureRemoved": true,
+  "preserved": [
+    "output/tfg/",
+    "historical decisions and deferred placeholders",
+    "sanitized reports and current evidence",
+    "tool installations and useful dependency/scanner caches",
+    "current image tags for security review"
+  ],
+  "normalDatabaseReset": false,
+  "deleted": [
+    {
+      "path": "build/tfg-a/r17-2026-10-02/backend/postgres-data",
+      "reason": "Stopped isolated test cluster; sanitized reports retained",
+      "bytes": 50816777.0
+    },
+    {
+      "path": "frontend/AGENTS.md",
+      "reason": "Next-managed metadata generated during this verification",
+      "bytes": 678
+    },
+    {
+      "path": "frontend/CLAUDE.md",
+      "reason": "Next-managed metadata generated during this verification",
+      "bytes": 11
+    },
+    {
+      "path": "build/tfg-a/r17-2026-10-02/docker/private",
+      "reason": "Ephemeral rehearsal keys, passwords and truststore after teardown",
+      "bytes": 4896.0
+    }
+  ],
+  "removedDockerProject": "imperator-r17-20261002",
+  "deletedFileBytes": 50822362.0,
+  "executedAtUtc": "2026-10-02T10:31:23.1974292Z",
+  "globalPrune": false,
+  "preservedNormalVolumes": [
+    "imperator_postgres-data",
+    "imperator_prometheus-data"
+  ],
+  "result": "PASS"
+}

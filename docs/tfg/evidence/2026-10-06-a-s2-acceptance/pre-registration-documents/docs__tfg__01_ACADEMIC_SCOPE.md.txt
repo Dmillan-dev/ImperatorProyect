@@ -1,0 +1,118 @@
+# TFG-A Academic Scope
+
+## Current Security Work Order — R-21/R-22, 2026-10-06
+
+Current local assessment after explicitly authorized R-21/R-22: **2026-10-06**. R-17/R-19 and the authorized R-21/R-22 corrected findings are CLOSED. **A-S2 technical GO; formal security closure PENDING RESIDUAL DISPOSITION.** Exact-image regression174/35/41, Docker/RBAC/V3/persistence/recovery, zero fixable High/Critical and zero secrets PASS. Full scans retain non-fixable residuals. Historical R-20 approval does not transfer; current binding accepted=false / REVIEW REQUIRED. Braces is separately tracked R-23 OPEN / NOT ACCEPTED. TFG-A IN PROGRESS; A-S3/A-S4/TFG-B/AWS blocked. See the [current review](R21_R22_SECURITY_REVIEW.md) and [gate](TFG_A_SECURITY_CLOSURE_GATE.md).
+
+Document status: **TFG-A IN PROGRESS**
+
+## Problem
+
+Organizations accumulate operational facts but often cannot reconstruct why a
+decision was proposed, which Evidence supported it, who authorized it or
+whether its expected economic value was later observed.
+
+## Proposed Solution
+
+IMPERATOR is a modular decision-governance platform that normalizes Evidence,
+creates one deterministic Decision and Recommendation, estimates ROI, supports
+human review, records append-only governance events and projects Business
+Value. An optional generative provider explains an already persisted
+Recommendation but has no decision, approval or execution authority.
+
+## General Objective
+
+Design, implement and objectively evaluate a secure cloud-native application
+that is reproducible locally and prepared for a controlled AWS deployment,
+while preserving deterministic business behavior, human authority and
+traceable technical evidence.
+
+## Specific Objectives
+
+1. `TFG-O-01`: Apply hexagonal boundaries to keep business policy independent of Spring,
+   PostgreSQL, AWS and HTTP.
+2. `TFG-O-02`: Expose the value loop through a validated REST API and Next.js workspace.
+3. `TFG-O-03`: Persist the decision graph and append-only Ledger in PostgreSQL.
+4. `TFG-O-04`: Enforce fail-closed JWT authentication, RBAC and Evidence redaction.
+5. `TFG-O-05`: Package, observe and verify the runtime through hardened containers.
+6. `TFG-O-06`: Demonstrate automated testing and software supply-chain controls.
+7. `TFG-O-07`: Integrate a bounded Bedrock explanation without delegating business
+   authority to the model.
+8. `TFG-O-08`: Design a reproducible AWS target and justify its security, availability,
+   operations and cost trade-offs.
+9. `TFG-O-09`: Distinguish all offline evidence from live AWS evidence.
+
+## Canonical Use Case
+
+Only `DRC-AOA-001` is included. It evaluates a synthetic cost-recovery decision
+for an onboarding assistant. Its fixed flow is:
+
+```text
+30 synthetic Evidence records
+-> one Decision
+-> one deterministic MODEL_CHANGE Recommendation and estimated ROI
+-> optional bounded explanation
+-> assigned human review
+-> implementation and result-validation Ledger entries
+-> projected realized Business Value
+```
+
+## Included
+
+- Java 21 and Spring Boot modular monolith;
+- Next.js Decision Review Workspace;
+- PostgreSQL and Flyway migrations;
+- REST, JWT resource-server validation and four-role RBAC;
+- GitHub and AWS read-only Evidence adapters;
+- Docker Compose local runtime and observability;
+- optional Bedrock explanation adapter, disabled in the base local Compose
+  runtime; AWS pilot variables/workflow enable it only for later authorized execution;
+- Terraform and GitHub workflows for the AWS target, validated offline;
+- CI, CodeQL, dependency, secret, image and IaC controls; and
+- synthetic data, academic evidence and defense material.
+
+## Explicitly Excluded
+
+- real customer, personal or production data;
+- multi-tenancy, organization administration or tenant claims;
+- a second business case or generic workflow engine;
+- autonomous actions, agents, RAG, embeddings or vector databases;
+- model training or AI ownership of Recommendation, ROI or approval;
+- microservice decomposition, EKS, Kafka, Redis or service mesh;
+- services added solely to list AWS products;
+- production SLA, multi-region recovery or claimed full high availability;
+- commercial login, token persistence or an IdP packaged by IMPERATOR;
+- Prometheus/Grafana runtime services; and
+- any live AWS action during TFG-A.
+
+## Identity Status
+
+D087, D088 and D095 remain unchanged. No external Keycloak endpoint is
+available. D101 scheduling is `OPERATOR-DEFERRED`; its capability evidence
+status is `BLOCKED_EXTERNAL`. It remains mandatory before Pilot Readiness,
+non-loopback customer exposure or MVP Release. Local authentication and
+authorization evidence must never be misrepresented as external IdP
+conformance.
+
+## Scope Control
+
+Use risk `R-01` in the [Master Plan](00_TFG_MASTER_PLAN.md#6-risks-and-scope-control)
+to reject additions that do not serve the single case or its acceptance evidence.
+The founder has authorized the three V3 test-cleanup corrections, eight
+formatting corrections, LF container entrypoints, local rehearsal/capture and
+verified generated-residue cleanup. These changes preserve business behavior,
+dependencies and D087/D088/D095. The founder separately authorized the five-finding R-17 patch, which now passes
+the fixable-only image policy. R-19 is CLOSED after its authorized two-entry patch. Authorized R-21/R-22 corrected findings now pass the A-S2 technical criterion;
+formal closure remains pending current R-20/R-23 residual disposition; no added product feature is
+justified. See the current Security Closure Gate.
+ECR naming, deploy IAM and delivery-workflow fixes remain separately authorized
+TFG-B. Historical decisions remain unchanged.
+
+## Success Statement
+
+TFG-A succeeds when the implemented local product, target AWS architecture,
+competencies and evidence can be understood and audited, with all current local
+acceptance gates passing and no added product scope.
+It does not require or imply an AWS deployment.
+
+See the [current security review](R21_R22_SECURITY_REVIEW.md) before claiming full closure.

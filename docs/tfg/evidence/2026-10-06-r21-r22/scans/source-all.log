@@ -1,0 +1,11 @@
+2026-10-06T17:33:23Z	INFO	[vuln] Vulnerability scanning is enabled
+2026-10-06T17:33:28Z	INFO	[npm] Run "npm install" to collect the license information of packages	dir="frontend/node_modules"
+2026-10-06T17:33:28Z	INFO	Number of language-specific files	num=2
+2026-10-06T17:33:28Z	INFO	[npm] Detecting vulnerabilities...
+2026-10-06T17:33:28Z	INFO	[pom] Detecting vulnerabilities...
+
+📣 [34mNotices:[0m
+  - Version 0.75.0 of Trivy is now available, current version is 0.74.0
+
+To suppress version checks, run Trivy scans with the --skip-version-check flag
+

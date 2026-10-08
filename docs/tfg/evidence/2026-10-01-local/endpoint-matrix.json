@@ -1,0 +1,10 @@
+{
+  "livez": 200,
+  "readyz": 200,
+  "liveness": 200,
+  "readiness": 200,
+  "metrics": 200,
+  "postgres_down_liveness": 200,
+  "postgres_down_readiness": 503,
+  "postgres_recovered_readiness": 200
+}

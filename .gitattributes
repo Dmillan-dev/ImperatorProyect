@@ -1,0 +1,6 @@
+# Linux container entrypoints must survive Windows checkouts unchanged.
+*.sh text eol=lf
+# Prettier checks LF; keep the frontend checkout reproducible on Windows.
+frontend/** text=auto eol=lf
+# Preserve approved raw evidence hashes on Windows and Linux checkouts.
+docs/tfg/evidence/** -text

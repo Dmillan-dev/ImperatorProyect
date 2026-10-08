@@ -1,0 +1,92 @@
+{
+  "reviewedAtUtc": "2026-10-06T19:05:53.638647+00:00",
+  "files": [
+    {
+      "path": "infra/docker/compose.yaml",
+      "sha256": "dc32dac0787b32f0f93e813bcece8502c8e2e29385ba4e845e1e509abc126959",
+      "bytes": 9090
+    },
+    {
+      "path": "infra/docker/frontend/Dockerfile",
+      "sha256": "3edeb91749a1dc2a1836a2e4e73cda398a801b7da5e6e909ed7e93b995325830",
+      "bytes": 2787
+    },
+    {
+      "path": "infra/docker/postgresql/Dockerfile",
+      "sha256": "3bc0585f5a8acbaed6b10dfc5bc0545e206652c9f02fbd7f03318166e2a79fa9",
+      "bytes": 3788
+    },
+    {
+      "path": "frontend/package.json",
+      "sha256": "0443930226b0ebed832ab07df1cf27e861b46d7e52994fb321627145772d16ac",
+      "bytes": 1485
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "sha256": "aafd8f21e62e8322729182315fe63c60e01565c7ac2982c6f1c57add7120f1a2",
+      "bytes": 311667
+    },
+    {
+      "path": "frontend/eslint.config.mjs",
+      "sha256": "46d115c18ed68621adb9ce61537f0f2ae88cc37d6708f85f3be81d451ecf5505",
+      "bytes": 365
+    },
+    {
+      "path": "frontend/next.config.ts",
+      "sha256": "2cefc23040e68582b02f0e0eb9c12e06d9edfbcdb4cace3abd230842e4d9ea33",
+      "bytes": 2311
+    },
+    {
+      "path": "backend-java/api/evidence/EvidenceController.java",
+      "sha256": "c01a5df1d60b6deeb5125fa4775350fe149ee1fceade4648205e9035e66184cc",
+      "bytes": 1353
+    },
+    {
+      "path": "backend-java/api/evidence/EvidenceNdjsonImporter.java",
+      "sha256": "d693e283175d33240650c10da8077fa391749150391ad1972e5d6552aca25a0b",
+      "bytes": 22422
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/PostgresMvpReadModelQueryAdapter.java",
+      "sha256": "f61c977c573ac8fb0dabf21c94fdab1ab48ab7c4a7484c12e400043b447cd6f2",
+      "bytes": 8715
+    },
+    {
+      "path": "infra/docker/postgresql/provision-app-role.sh",
+      "sha256": "ee57a4f3d2b7fbdb441ceb3e931625f234e5e769c4f1fb9fe7a5fddba651aed3",
+      "bytes": 3686
+    },
+    {
+      "path": ".github/workflows/security.yml",
+      "sha256": "0fd976f415dd007563dd8c94b69d7c7cbbc0ff811aeb620ea2c2670b1f032db3",
+      "bytes": 11230
+    },
+    {
+      "path": ".github/workflows/java-ci.yml",
+      "sha256": "e5992d46dceb3b7417b255bd5267b95628d74521f663dcba7d00f976d30c12a4",
+      "bytes": 1409
+    }
+  ],
+  "reviewedPaths": [
+    "backend-java/api",
+    "backend-java/adapters/out/postgresql",
+    "frontend/app",
+    "frontend/components",
+    "frontend/lib",
+    "database/migrations"
+  ],
+  "observations": {
+    "import": "NDJSON byte input decoded through application importer; no reviewed XML/raw SQL/SQLite/tar/glob-pattern API.",
+    "SQL": "PreparedStatement bindings; dynamic sort columns/directions are fixed switch/enum values. No denial of arbitrary SQL to a compromised connected role was proved. Append-only DML permissions are not XML-function restrictions.",
+    "privileges": "Canonical Compose controls differ from stricter offline probes; PG keeps five allowlisted capabilities, writable data/tmpfs and SUID binaries.",
+    "kernel": "6.18.33.1-microsoft-standard-WSL2 in current read-only probe; Linux>=6.15 CVE78409 prerequisite is present. This is a current observation, not the historical October2 kernel claim.",
+    "initialization": "Official PG entrypoint can gunzip init files; reviewed directory empty, no Compose init-archive mount, Flyway SQL uncompressed.",
+    "CI": "Versioned workflows execute pull_request jobs on ubuntu runners with contents:read and time limits. No dedicated hosted frontend lint/test job was found in this checkout; no fresh hosted CI pass or isolation assurance is claimed. Frontend local eslint patterns are fixed by repository configuration; untrusted PR/config/code can change these patterns.",
+    "R23mitigations": "Lockfile marks the entire reported braces chain dev:true. Standalone production output checked separately. Trusted local synthetic rehearsal is the reviewed scope; do not treat package dev flag or npm omit-dev alone as proof of production absence."
+  },
+  "limitations": [
+    "No exploit payloads executed; no formal attack-surface proof, fuzzing or complete function-level libxml2 call graph.",
+    "No new runtime/SQL session, application regression or hosted checks executed in this documentation-only review; prior exact-image evidence is reused with hashes.",
+    "No new tooling isolation/AST depth limits/CI rules are implemented. Proposed operational conditions must not be described as existing enforced mitigations."
+  ]
+}
