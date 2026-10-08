@@ -35,7 +35,9 @@ COPY infra/docker/flyway/entrypoint.sh /opt/imperator/entrypoint.sh
 
 USER root
 # Remove only unused drivers containing the affected shaded Jackson copies.
-RUN dpkg --install /tmp/imperator-libssl3t64.deb /tmp/imperator-openssl.deb \
+RUN chmod 0644 /flyway/lib/jackson-core-2.22.3.jar /flyway/lib/jackson-databind-2.22.3.jar \
+        /flyway/lib/jackson-core-3.1.7.jar /flyway/lib/jackson-databind-3.1.7.jar \
+    && dpkg --install /tmp/imperator-libssl3t64.deb /tmp/imperator-openssl.deb \
     && rm -f /tmp/imperator-libssl3t64.deb /tmp/imperator-openssl.deb /var/log/dpkg.log \
     && rm -rf /flyway/drivers/aws /flyway/drivers/couchbase \
     && rm -f /flyway/lib/jackson-core-2.22.2.jar /flyway/lib/jackson-databind-2.22.2.jar \

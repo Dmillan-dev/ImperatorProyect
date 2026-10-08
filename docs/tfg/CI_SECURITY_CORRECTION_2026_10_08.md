@@ -21,7 +21,9 @@ AWS deployment, merging Dependabot #57–59 or closing the TFG gates automatical
 - Migration image: Noble OpenSSL .15 → .16, Jackson 2.22.3 / 3.1.7,
   checksum-pinned artifacts and removal of unused AWS Secrets Manager/Couchbase
   driver directories containing affected shaded Jackson copies. Flyway 13.7.0,
-  its base digest and PostgreSQL JDBC 42.7.12 are retained.
+  its base digest and PostgreSQL JDBC 42.7.12 are retained. The four downloaded
+  Jackson JARs are explicitly mode 0644 so user 10001 can load them; the first
+  real migration reproduced a 0600 remote-ADD permission failure before this fix.
 - Local Compose uses this existing patched migration image for migrate/validate
   instead of an independently pinned Flyway 13.0 image. This makes the local
   migration runtime and the image scanned by CI the same artifact. No AWS is used.
