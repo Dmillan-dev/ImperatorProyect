@@ -1,8 +1,25 @@
 # IMPERATOR TFG Academic Evidence
 
-Document status: **TFG-A FINAL REVIEW CANDIDATE / DOCUMENTATION ONLY**
+## Delivery Materials — 2026-10-07
 
-Baseline: `4dbf4fbe89dad0c6fcfd906aac7624075846c37a`
+[Memory draft](08_LOCAL_MVP_MEMORY.md), [twelve-minute script](09_DEFENSE_SCRIPT_12_MIN.md),
+[A-S4 procedure](A_S4_LOCAL_DEFENSE.md) and [release gate](10_LOCAL_MVP_RELEASE_GATE.md) are prepared.
+A-S3 source review/version/CI remains active; A-S4 final runtime and narration remain unexecuted.
+The [dated review](evidence/2026-10-07-a-s3-a-s4/README.md) records stale-document discrepancies, preserved history and current Docker unavailability.
+No accepted SHA, automatic risk extension or new CI/runtime result is claimed.
+
+## Current Owner Decision And Sprint — 2026-10-06
+
+**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](A_S3_EVIDENCE_VERSIONING.md).
+
+Document status: **TFG-A IN PROGRESS / A-S2 TECHNICAL AND FORMAL GO / A-S3 EVIDENCE-VERSIONING ACTIVE**
+
+Implementation baseline for this iteration: `b602bbe1dde92a902c17272d59cd9f0c10b9efe5`
+
+Started by founder instruction on `2026-10-01`, then extended to bounded
+test/format maintenance, Docker rehearsal, capture and verified residue cleanup.
+On 2026-10-02 the five-finding R-17 patch and complete functional/runtime rerun
+pass; all three fixable-only image vulnerability/secret gates are zero.
 
 This directory explains how the existing IMPERATOR implementation supports a
 DAM final project focused on software engineering, cloud architecture,
@@ -96,5 +113,18 @@ Pilot consequence: mandatory before Pilot Readiness
 AWS / Terraform plan/apply / Bedrock live execution: EXTERNAL GATE REQUIRED
 ```
 
-TFG-A changes documentation and evidence organization only. It introduces no
-product sprint, architecture decision, runtime capability or release claim.
+TFG-A includes only founder-authorized maintenance, evidence capture and
+documentation. It introduces no new product feature, architecture decision or
+release claim. Historical certification is separate from the current
+image/security audit results; all AWS/IdP dependencies retain their gates.
+
+## Earlier A-S1 / A-S2 Checkpoint (Superseded)
+
+The [original R-20 approval](evidence/2026-10-02-r20-acceptance/acceptance.json)
+remains a preserved historical record. Expiry stays 2026-10-09T00:00:00+02:00
+Europe/Madrid, no renewal. Its early-invalidation conditions now apply to the
+changed version and provider fixes; no automatic transfer or new acceptance.
+
+Read the [current runtime evidence pack](evidence/2026-10-06-r21-r22/README.md) and
+[current formal acceptance](evidence/2026-10-06-a-s2-acceptance/README.md) before
+claiming local certification. Earlier dated packs retain their historical states.

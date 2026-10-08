@@ -1,0 +1,26 @@
+{
+  "result": "PASS",
+  "applied": true,
+  "authorization": "Explicit user authorization R21/R22 only, 2026-10-06",
+  "acceptedResidualRisk": false,
+  "changedFiles": [
+    "frontend/package-lock.json",
+    "frontend/package.json",
+    "infra/docker/frontend/Dockerfile",
+    "infra/docker/postgresql/Dockerfile",
+    "infra/docker/postgresql/supply-chain-lock.json",
+    "scripts/verify-postgres-runtime-image.ps1"
+  ],
+  "lockEntriesChanged": 28,
+  "unexpectedDependencyChanges": [],
+  "patches": [
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r19/r21-security-only.patch",
+      "sha256": "129b98d06f1987ef383c0345b60526fa9700f1053d9949c34a97d7c9e516ef60"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r19/r22-security-only.patch",
+      "sha256": "8c3720d9c7ae9d17674a3905295a8979220a56840116445943d5d5b93420a38f"
+    }
+  ]
+}

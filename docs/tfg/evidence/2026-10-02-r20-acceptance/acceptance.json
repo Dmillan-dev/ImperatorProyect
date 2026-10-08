@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "risk": "R-20",
+  "path": "B",
+  "status": "ACCEPTED TEMPORARILY",
+  "accepted": true,
+  "approvalRecordedAtUtc": "2026-10-02T17:16:32Z",
+  "effectiveFromUtc": "2026-10-02T17:16:32Z",
+  "timestampBasis": "UTC registration time after receipt of the explicit affirmative user message; exact client send timestamp is unavailable",
+  "approvalSource": "Explicit affirmative user message in this project conversation",
+  "owner": {
+    "role": "Founder / project owner",
+    "identity": "User in this project conversation",
+    "authority": "Explicit project-local R-20 B criterion/risk approval only",
+    "approved": true,
+    "approvedAtUtc": "2026-10-02T17:16:32Z"
+  },
+  "reviewer": {
+    "role": "Technical evidence reviewer",
+    "identity": "Codex in this session",
+    "authority": "Evidence verification and recommendation only; no authority to accept risk",
+    "reviewedAtUtc": "2026-10-02T17:05:02.849816+00:00",
+    "riskApproval": false
+  },
+  "academicReviewer": {
+    "role": "TFG tutor / supervisor",
+    "identity": null,
+    "status": "Not identified; no institutional approval claimed",
+    "authority": "Review institutional assessment criteria; project-local approval cannot stand in for tutor/institution approval"
+  },
+  "expiry": {
+    "local": "2026-10-09T00:00:00+02:00",
+    "timeZone": "Europe/Madrid",
+    "utc": "2026-10-08T22:00:00Z",
+    "exclusive": true,
+    "effectiveOnlyAfterExplicitApproval": true,
+    "renewal": "No automatic extension; fresh review and explicit approval required",
+    "earlyInvalidation": [
+      "Vendor fix becomes available",
+      "Image/base digest or runtime/test input changes",
+      "Scanner/vendor data changes until reviewed and re-attested",
+      "New feature, configuration, data or exposure boundary",
+      "Any fixable High/Critical, detected secret or new unreviewed finding"
+    ]
+  },
+  "scope": {
+    "track": "TFG-A",
+    "execution": "Local loopback academic rehearsal only",
+    "data": "Synthetic only",
+    "excluded": [
+      "AWS",
+      "Production",
+      "Real data",
+      "Public/pilot/customer exposure"
+    ]
+  },
+  "mandatoryGates": {
+    "fixableHighCritical": 0,
+    "secrets": 0,
+    "ruleChanges": false
+  },
+  "criterionAmendment": {
+    "status": "APPROVED FOR THE BOUND R-20 LOCAL RECORD ONLY",
+    "change": "Permit a time-bounded local academic residual-risk disposition for the 32 reviewed OS CVEs instead of demanding absolute zero for this R-20 record; retain zero fixable High/Critical and zero detected secrets",
+    "notRemediation": true,
+    "institutionalApprovalClaimed": false
+  },
+  "approvedEvidence": {
+    "decisionSnapshot": {
+      "path": "docs/tfg/evidence/2026-10-02-r20-acceptance/approved-decision-snapshot.txt",
+      "sha256": "0170865ea08d6b6c73fb83793c7a3e67444f9fbf1394617ea9b2e1ca8b6d50a9",
+      "bytes": 23747
+    },
+    "proposal": {
+      "path": "docs/tfg/evidence/2026-10-02-r20-closure/approval-proposal.json",
+      "sha256": "25c0e9ab74c0c9982f6d96151fe7d6dc827f055d1fffb8b0b0e565f8af693f8e",
+      "bytes": 3184
+    },
+    "matrix": {
+      "path": "docs/tfg/evidence/2026-10-02-r20/cve-matrix.json",
+      "sha256": "68d979aefe37b361a3d3de1ba138509dc805e84e3223322605e68af6876d8353",
+      "bytes": 82053
+    },
+    "binding": {
+      "path": "docs/tfg/evidence/2026-10-02-r20-closure/image-binding-resolution.json",
+      "sha256": "cd0fd843d7eb99e34b4d6e35dcc078309b4ce9a0d64537557d8ba9db0e7c3e79",
+      "bytes": 10239
+    },
+    "scans": {
+      "path": "docs/tfg/evidence/2026-10-02-r20-closure/canonical-scans.json",
+      "sha256": "57ab0bc061ee8c80178cf8bc52250b10f96cf61fc7066d84aa14ab1c943a45ea",
+      "bytes": 52939
+    },
+    "database": {
+      "path": "docs/tfg/evidence/2026-10-02-r20-closure/scan-db.json",
+      "sha256": "b047db4c35cb7297830d2544ac293fcc8d2601dfc1e4ce66e18f9cce461e0fbb",
+      "bytes": 579
+    },
+    "preparationIndexSnapshot": {
+      "path": "docs/tfg/evidence/2026-10-02-r20-acceptance/preparation-index-before-approval.json",
+      "sha256": "a582754f4e301ea09c27fc654d216f4a621d3ba833581222374897bdb1cd1419",
+      "bytes": 11784
+    },
+    "analysisIndexSnapshot": {
+      "path": "docs/tfg/evidence/2026-10-02-r20-acceptance/analysis-index-before-approval.json",
+      "sha256": "e9836d1e17e42a4fc82ec6e3a2616ccdf372fc7eac595bfca18b75234a28c7ab",
+      "bytes": 10725
+    },
+    "runtimeTestInputs": {
+      "source": {
+        "path": "docs/tfg/evidence/TFG_A_R17_2026-10-02.json",
+        "sha256": "2c36a2b8cd34cb386ac1e22bc18be91065070c1a0e484dedcfd608be12824574",
+        "bytes": 75520
+      },
+      "sha256": "3e9382b6ce80ec50b09547c4ceca28b94e9df2bb61c16395f59d76edfcc73c63",
+      "checkedRecords": 346,
+      "unchanged": true
+    }
+  },
+  "canonicalImages": [
+    {
+      "service": "backend",
+      "indexDigest": "sha256:be4875883dd38b6b09b1a9c5f6cb63d6be3f62ed12c33f1f3f3b19cc047f45c5",
+      "platformManifestDigest": "sha256:4159c0dee5e61a2d76f87f546dc72134c45c3786960c654fb5661c2032c7e56b",
+      "configDigest": "sha256:7f639b3fcbf8eeeea5f76b4e2ea0241131a99b93f2986ceb2855a95e8b3d9031",
+      "scanImageId": "sha256:7f639b3fcbf8eeeea5f76b4e2ea0241131a99b93f2986ceb2855a95e8b3d9031",
+      "osCounts": {},
+      "fixableHighCritical": 0,
+      "secrets": 0,
+      "strictExitCode": 0,
+      "reportPath": "docs/tfg/evidence/2026-10-02-r20-closure/backend-canonical-trivy.json",
+      "reportSha256": "a0fa5c795142adea1fd0e1cc20b8e5c687f8723ae50212b83b18d0f1e12dcb19"
+    },
+    {
+      "service": "frontend",
+      "indexDigest": "sha256:f9f8a5e21c79c922d505ba78e2193ae293a49ebc7038b39c2cf7e8377700ca40",
+      "platformManifestDigest": "sha256:82582f8aee09291e5cada3f28046e2539bebf029333b080a1db420902531738d",
+      "configDigest": "sha256:0cd5667c82950ba30d238da3479fa079d009de54f2d726294564d10e6e440e7a",
+      "scanImageId": "sha256:0cd5667c82950ba30d238da3479fa079d009de54f2d726294564d10e6e440e7a",
+      "osCounts": {
+        "HIGH": 53,
+        "CRITICAL": 4
+      },
+      "fixableHighCritical": 0,
+      "secrets": 0,
+      "strictExitCode": 1,
+      "reportPath": "docs/tfg/evidence/2026-10-02-r20-closure/frontend-canonical-trivy.json",
+      "reportSha256": "74086a5579217ce0befdbf756f7e99b0ae50b7ea4dcc7677105a7d5315bbdf24"
+    },
+    {
+      "service": "postgres",
+      "indexDigest": "sha256:5fb7b30bcc3399f02fb259fc15bfe61338ff90eeb8dd17bd15090f68298a269d",
+      "platformManifestDigest": "sha256:a0a072063a0ee345dcd6ebbc1420bde7d0f203c6619c872d71ca2ca765036a69",
+      "configDigest": "sha256:805fa48d501a9894beb06b82ff09d6d472b4c59b94ee6d74d9eb2ad54f407327",
+      "scanImageId": "sha256:805fa48d501a9894beb06b82ff09d6d472b4c59b94ee6d74d9eb2ad54f407327",
+      "osCounts": {
+        "HIGH": 81,
+        "CRITICAL": 15
+      },
+      "fixableHighCritical": 0,
+      "secrets": 0,
+      "strictExitCode": 1,
+      "reportPath": "docs/tfg/evidence/2026-10-02-r20-closure/postgres-canonical-trivy.json",
+      "reportSha256": "3b6ecab926b9bd9270a03c711c1e4b924a67e20b2823d959b855c3b8210e4172"
+    }
+  ],
+  "residualFindings": {
+    "packageFindings": 153,
+    "distinctCves": 32,
+    "sourcePackages": 12,
+    "frontend": {
+      "high": 53,
+      "critical": 4
+    },
+    "postgres": {
+      "high": 81,
+      "critical": 15
+    },
+    "backend": {
+      "high": 0,
+      "critical": 0
+    },
+    "acceptedScope": "Reviewed OS residual set only; conditional reachability assessments remain conditional; no blanket VEX/ignore or remediation claim"
+  },
+  "risk19": {
+    "status": "OPEN",
+    "authorized": false,
+    "coveredByAcceptance": false
+  },
+  "tfgA": {
+    "status": "IN PROGRESS",
+    "closureImplied": false
+  },
+  "nextGate": "TFG-A Security Closure Gate only; no TFG-B or AWS authorization",
+  "userApprovalText": "Sí. Autorizo la aceptación temporal de R-20 según B, exclusivamente bajo estas condiciones:\nÁmbito: TFG-A, ensayo local y únicamente datos sintéticos.\nFuera de alcance: AWS, producción y datos reales.\nCaducidad: 09/10/2026 a las 00:00 Europe/Madrid (UTC+02:00).\nSin renovación automática.\nGates que permanecen: 0 vulnerabilidades High/Critical corregibles y 0 secretos.\nR-19: permanece abierto y no queda autorizado por esta decisión.\nLa aceptación de R-20 no implica todavía el cierre de TFG-A.",
+  "revocation": "Exclusive expiry or unreviewed evidence/exposure changes invalidate this bounded exception; no automatic renewal. Known independent R-19 remains a closure blocker and is not waived."
+}

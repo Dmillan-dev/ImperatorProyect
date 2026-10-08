@@ -1,0 +1,324 @@
+{
+  "executedAtUtc": "2026-10-02T17:28:20.304052+00:00",
+  "result": "PASS: explicit bounded R-20 approval correctly registered; expected security gate NO-GO retained",
+  "consistencyChecks": 78,
+  "runtimeInputRecords": 346,
+  "publishedArtifactRecords": 11,
+  "checks": [
+    {
+      "check": "Published hash/size docs/tfg/evidence/2026-10-02-r20-acceptance/acceptance.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Published hash/size docs/tfg/evidence/2026-10-02-r20-acceptance/analysis-index-before-approval.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Published hash/size docs/tfg/evidence/2026-10-02-r20-acceptance/approved-decision-snapshot.txt",
+      "result": "PASS"
+    },
+    {
+      "check": "Published hash/size docs/tfg/evidence/2026-10-02-r20-acceptance/audit-summary.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Published hash/size docs/tfg/evidence/2026-10-02-r20-acceptance/npm-audit.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Published hash/size docs/tfg/evidence/2026-10-02-r20-acceptance/preparation-index-before-approval.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Published hash/size docs/tfg/evidence/2026-10-02-r20-acceptance/publication-secrets-summary.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Published hash/size docs/tfg/evidence/2026-10-02-r20-acceptance/r17-review-before-r20-approval.txt",
+      "result": "PASS"
+    },
+    {
+      "check": "Published hash/size docs/tfg/evidence/2026-10-02-r20-acceptance/README.md",
+      "result": "PASS"
+    },
+    {
+      "check": "Published hash/size docs/tfg/evidence/2026-10-02-r20-acceptance/source-scan-summary.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Published hash/size docs/tfg/evidence/2026-10-02-r20-acceptance/source-with-dev-trivy.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Published hash/size docs/tfg/evidence/2026-10-02-r20-acceptance/acceptance.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Published hash/size docs/tfg/R20_SECURITY_DECISION.md",
+      "result": "PASS"
+    },
+    {
+      "check": "Published hash/size docs/tfg/evidence/TFG_A_R20_2026-10-02.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Published hash/size docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "result": "PASS"
+    },
+    {
+      "check": "Approved immutable evidence docs/tfg/evidence/2026-10-02-r20-acceptance/approved-decision-snapshot.txt",
+      "result": "PASS"
+    },
+    {
+      "check": "Approved immutable evidence docs/tfg/evidence/2026-10-02-r20-closure/approval-proposal.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Approved immutable evidence docs/tfg/evidence/2026-10-02-r20/cve-matrix.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Approved immutable evidence docs/tfg/evidence/2026-10-02-r20-closure/image-binding-resolution.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Approved immutable evidence docs/tfg/evidence/2026-10-02-r20-closure/canonical-scans.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Approved immutable evidence docs/tfg/evidence/2026-10-02-r20-closure/scan-db.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Approved immutable evidence docs/tfg/evidence/2026-10-02-r20-acceptance/preparation-index-before-approval.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Approved immutable evidence docs/tfg/evidence/2026-10-02-r20-acceptance/analysis-index-before-approval.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/approval-proposal.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/backend-canonical-trivy.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/canonical-scans.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/frontend-canonical-trivy.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/historical-analysis-index.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/historical-decision-before-preparation.txt",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/image-binding-resolution.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/manifests/0a33fd46bbff0fabf711d621e347d88aa27497ce2585324809f86709d198f407.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/manifests/0cd5667c82950ba30d238da3479fa079d009de54f2d726294564d10e6e440e7a.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/manifests/31f8cc7f5a8dcee9ea26aca99319267d34238046c5161be4629f2ff48d7c28d3.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/manifests/4159c0dee5e61a2d76f87f546dc72134c45c3786960c654fb5661c2032c7e56b.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/manifests/5fb7b30bcc3399f02fb259fc15bfe61338ff90eeb8dd17bd15090f68298a269d.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/manifests/75bbda312f07e34829019dc948dc11ae30eb09113f6a5025cc6025d1993fbf68.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/manifests/7f639b3fcbf8eeeea5f76b4e2ea0241131a99b93f2986ceb2855a95e8b3d9031.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/manifests/7fc3b727025f0a5d438b4cefd069d7c7c62687f4f2f898618f2be8532e4b007d.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/manifests/805fa48d501a9894beb06b82ff09d6d472b4c59b94ee6d74d9eb2ad54f407327.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/manifests/82582f8aee09291e5cada3f28046e2539bebf029333b080a1db420902531738d.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/manifests/a0a072063a0ee345dcd6ebbc1420bde7d0f203c6619c872d71ca2ca765036a69.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/manifests/b2c6534593f0fd9f7ef9d699fe11ecc52a2ce01de7df2f9b4a91051cc0e91c75.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/manifests/be4875883dd38b6b09b1a9c5f6cb63d6be3f62ed12c33f1f3f3b19cc047f45c5.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/manifests/c17787a7c6cc60a9015e38c4ebbc7902fb8e94147d83f5bc823a1c82f179c41f.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/manifests/ebba0bc1c7dcb9d59444e2715921d723dff981ea7bb63171ae88b3986b910b58.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/manifests/f9f8a5e21c79c922d505ba78e2193ae293a49ebc7038b39c2cf7e8377700ca40.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/postgres-canonical-trivy.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/publication-secrets-summary.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/README.md",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/scan-db.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/timezone-verification.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Historical preparation artifact intact docs/tfg/evidence/2026-10-02-r20-closure/verification.json",
+      "result": "PASS"
+    },
+    {
+      "check": "Approved original decision retained",
+      "result": "PASS"
+    },
+    {
+      "check": "Pre-approval current index retained",
+      "result": "PASS"
+    },
+    {
+      "check": "Original preparation index unchanged",
+      "result": "PASS"
+    },
+    {
+      "check": "Current decision hash matches current analysis index",
+      "result": "PASS"
+    },
+    {
+      "check": "Explicit owner approval recorded independently from reviewer",
+      "result": "PASS"
+    },
+    {
+      "check": "Acceptance unexpired, exclusive correct UTC/local boundary",
+      "result": "PASS"
+    },
+    {
+      "check": "Approval time provenance is registration, not fabricated send time",
+      "result": "PASS"
+    },
+    {
+      "check": "Scope and mandatory gates preserved",
+      "result": "PASS"
+    },
+    {
+      "check": "No renewal and no production transfer",
+      "result": "PASS"
+    },
+    {
+      "check": "R-19 not covered, authorized or closed",
+      "result": "PASS"
+    },
+    {
+      "check": "346 runtime/test inputs unchanged",
+      "result": "PASS"
+    },
+    {
+      "check": "Runtime fingerprint unchanged",
+      "result": "PASS"
+    },
+    {
+      "check": "All original R-17 artifacts unchanged",
+      "result": "PASS"
+    },
+    {
+      "check": "R-19 brace entries unchanged",
+      "result": "PASS"
+    },
+    {
+      "check": "Baseline Git commit unchanged",
+      "result": "PASS"
+    },
+    {
+      "check": "Current DB unchanged since bound canonical scans",
+      "result": "PASS"
+    },
+    {
+      "check": "Canonical image scan retained backend",
+      "result": "PASS"
+    },
+    {
+      "check": "Canonical image scan retained frontend",
+      "result": "PASS"
+    },
+    {
+      "check": "Canonical image scan retained postgres",
+      "result": "PASS"
+    },
+    {
+      "check": "Residual matrix retained, no suppression or remediation",
+      "result": "PASS"
+    },
+    {
+      "check": "Current npm audit fails with existing one High aggregate package",
+      "result": "PASS"
+    },
+    {
+      "check": "Source fixable gate fails, not relabelled PASS",
+      "result": "PASS"
+    },
+    {
+      "check": "Source raw-report digest matches",
+      "result": "PASS"
+    },
+    {
+      "check": "Publication scan zero without changed rules",
+      "result": "PASS"
+    },
+    {
+      "check": "Master risk table and bounded criterion amendment reflect approval",
+      "result": "PASS"
+    },
+    {
+      "check": "Current docs keep security gate NO-GO and TFG-A open",
+      "result": "PASS"
+    }
+  ],
+  "securityClosureGateResult": "NO-GO",
+  "securityClosureGateComplete": false,
+  "r19Authorized": false
+}

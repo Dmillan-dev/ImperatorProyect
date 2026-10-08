@@ -1,0 +1,221 @@
+# R-20 Security Decision Review
+
+Review date: **2026-10-02**. Decision state: **ANALYSIS COMPLETE / DECISION PENDING**.
+R-17's five original findings remain remediated. R-19 remains independent and
+unapproved. TFG-A remains **IN PROGRESS**. This review applies no dependency,
+base-image, scanner-policy or risk-acceptance change.
+
+## Recommendation
+
+**Do not update the whole stack. Recommend path B for the current academic
+local scope, subject to explicit owner/tutor approval of the residual risk and
+the academic acceptance criterion.** The measured options do not demonstrate
+an absolute-zero intervention small enough to treat as the original patch.
+This is a recommendation, not an accepted exception or a closure declaration.
+
+R-19 is a reasonable separate two-entry lockfile patch once authorized. Java,
+Spring, Next beyond the already fixed version, React, application code and
+PostgreSQL's major version have no demonstrated need to change for R-20.
+Retain the existing zero **fixable** High/Critical and zero-secret CI gates.
+Continue reporting all unfixed findings alongside them.
+
+A controlled Debian Trixie base refresh is a credible **partial reduction** for
+later review, especially for PostgreSQL's inherited OpenSSL/PCRE2 packages and
+Perl findings. It is not an absolute-zero solution. For this TFG iteration,
+do not adopt it merely to improve a scanner total: it requires its own supply
+chain and runtime acceptance. A same-suite PostgreSQL OpenSSL security refresh
+is also available, but the current Bookworm candidate remains affected by
+CVE-2026-84782; it is maintenance, not evidence that R-20 is solved.
+
+## What R-20 Actually Requires
+
+The repository's implemented baseline is **zero fixable High/Critical**, not
+zero High/Critical irrespective of vendor fix status:
+
+- [Security workflow](../../.github/workflows/security.yml) configures
+  `ignore-unfixed: true` for source and application images.
+- [D094 contract](../architecture/55_PostgreSQL_Runtime_Supply_Chain_Remediation_Contract.md)
+  requires zero fixable High/Critical and secrets; the
+  [database verifier](../../scripts/verify-postgres-runtime-image.ps1) uses
+  `--ignore-unfixed`.
+- [D098 verification](../architecture/58_Runtime_Supply_Chain_Refresh.md)
+  explicitly requires zero fixable findings and the pinned Bookworm PCRE2
+  patch, without a vulnerability exception or unsupported major update.
+
+The founder's later absolute-zero objective adds a stricter TFG-A decision
+condition. It has not silently replaced CI, nor has CI silently satisfied it.
+R-20 records that discrepancy and remains OPEN until one of these occurs:
+
+1. A bounded patch produces zero High/Critical **without** `--ignore-unfixed`,
+   exclusions or vulnerability waivers, on all three final images, followed by
+   the required regression and exact-image evidence; or
+2. The owner explicitly chooses an academic criterion amendment and signs a
+   bounded residual-risk disposition. Record it as **ACCEPTED TEMPORARILY**,
+   not “zero vulnerabilities” or “remediated.” Keep the residual register and
+   expiry active. Existing fixable/secret gates remain unchanged. The current
+   [master-plan DoD](00_TFG_MASTER_PLAN.md#7-tfg-a-definition-of-done) forbids
+   waiver-based closure; path B therefore needs an explicit approved amendment,
+   not an automatic status edit.
+
+Maintaining absolute zero is a valid alternative, but it keeps TFG-A blocked
+on R-20; it does not authorize an unbounded operating-system redesign.
+
+## Why The Findings Are Unfixed
+
+Trivy 0.74.0 documents `--ignore-unfixed` as filtering `affected`,
+`will_not_fix`, `fix_deferred` and `end_of_life`. These statuses describe vendor
+fix availability or disposition, not whether an attacker can reach the code.
+See [Trivy filtering](https://trivy.dev/docs/v0.74/guide/configuration/filtering/)
+and [Debian coverage](https://trivy.dev/docs/v0.74/guide/coverage/os/debian/).
+
+The current exact-image rerun confirms:
+
+| Image      | High | Critical | Distinct CVEs | affected | fix_deferred | will_not_fix | end_of_life |
+| ---------- | ---: | -------: | ------------: | -------: | -----------: | -----------: | ----------: |
+| Backend    |    0 |        0 |             0 |        0 |            0 |            0 |           0 |
+| Frontend   |   53 |        4 |            19 |       49 |            7 |            1 |           0 |
+| PostgreSQL |   81 |       15 |            32 |       76 |           19 |            1 |           0 |
+
+The 153 rows are **32 distinct CVEs in 12 Debian source packages**, repeated
+across binary packages and two images. They are not 153 distinct exploitable
+defects. Every mapped source/CVE pair is still open for Bookworm in the current
+official tracker; two additional source packages sharing CVE IDs already have
+fixes, but they are **not** the source packages producing these installed
+binaries. The [per-CVE matrix](evidence/2026-10-02-r20/CVE_MATRIX.md) and
+[machine analysis](evidence/2026-10-02-r20/cve-matrix.json) record each installed
+version, vendor status/fix in Bookworm/Trixie/Sid, trigger and bounded impact.
+
+The comparison uses one unchanged Trivy database snapshot, updated
+2026-10-01 13:01 UTC and downloaded that evening, to avoid changing the database
+between candidates. Debian's independent tracker was retrieved on
+2026-10-02 11:10 UTC. Those are different data products and timestamps; no
+claim that the scanner database was freshly rebuilt today is made. Scanner
+severity may fall back to another vendor when Debian urgency is unassigned;
+a High/Critical label is not itself evidence of a reachable product route.
+
+Current signature-verified APT metadata and a **simulation only** show:
+
+- All 18 affected frontend binary packages are already their configured
+  Bookworm candidates: zero targeted package upgrades.
+- PostgreSQL offers only `libssl3`/`openssl` 3.0.20-1~deb12u2 →
+  3.0.22-1~deb12u1 among its 27 affected binary packages. The official
+  [OpenSSL tracker](https://security-tracker.debian.org/tracker/CVE-2026-84782)
+  still marks that Bookworm security version vulnerable. No package was
+  installed; runtime images and application inputs remain unchanged.
+
+No `end_of_life` finding appears in this scan. Bookworm's release/support
+position is independently described by [Debian](https://www.debian.org/releases/bookworm/);
+absence of a particular backport is not equivalent to a claim that the entire
+distribution is unsupported.
+
+## Reachability And Residual Risk
+
+These are conditional assessments, not a blanket “not exploitable” statement.
+No exploit attempts or denial-of-service tests were performed.
+
+| Family / example                       | Evidence in IMPERATOR                                                                                                                                      | Proposed disposition                                                                                                                      |
+| -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| MiniZip, CVE-2023-45853                | Debian says the vulnerable contrib/minizip code is not built for this Bookworm source; no MiniZip files found                                              | Candidate component-not-present assessment; owner/reviewer approval required; no automatic ignore rule                                    |
+| Perl 32-bit regex, CVE-2026-8376       | Both images report Perl ptrsize=8 and ivsize=8; advisory requires a 32-bit build                                                                           | Candidate prerequisite-not-met assessment; does not dispose of other Perl defects                                                         |
+| Archive::Tar / IO::Compress / Storable | All three modules absent in frontend; PostgreSQL has Archive::Tar/Storable, no IO::Compress or plperl.so; no product Perl invocation found                 | Frontend component distinctions and conditional PostgreSQL residual risk; do not call all Perl findings absent                            |
+| Mount/nsenter, ACL, ncurses and gzip   | No ordinary product route to these triggers found; non-root/read-only/no-new-privileges, no SYS_ADMIN; PostgreSQL retains its five documented capabilities | Local prerequisites constrained; post-compromise/operator use not excluded; official PostgreSQL initializer still supports archive inputs |
+| systemd-homed                          | homed service/executable absent; PostgreSQL links libsystemd                                                                                               | Distinguish absent homed service from a present shared library                                                                            |
+| OpenSSL DTLS and PCRE2 JIT             | No DTLS/PCRE2 JIT application endpoint found; PostgreSQL links libssl, Node's executable does not link system PCRE2                                        | Trigger not identified, not general library absence; other transitive consumers not fully traced                                          |
+| SQLite and LDAP                        | SQLite is installed, not in postgres's direct link set; PostgreSQL links LDAP but configured authentication is SCRAM; no product SQLite/LDAP feature found | Conditional residual risks; operator configuration and transitive consumers remain outside the proof                                      |
+| libxml2, including CVE-2026-6653       | Library directly linked into PostgreSQL; inspected API/schema use JSON and prepared queries, with no XML feature                                           | Real installed parser: do not classify as absent; SQL-capable/compromised clients remain a possible path                                  |
+
+Primary clarifications:
+[MiniZip source/binary distinction](https://security-tracker.debian.org/tracker/CVE-2023-45853),
+[32-bit Perl prerequisite](https://security-tracker.debian.org/tracker/CVE-2026-8376),
+[ACL backport/ABI constraints](https://security-tracker.debian.org/tracker/CVE-2026-54369),
+and [libxml2 stable backport limitation](https://security-tracker.debian.org/tracker/CVE-2026-6653).
+For CVE-2026-13221, Debian flags Bookworm but its advisory notes introduction
+in Perl 5.37.10; a backport/source reconciliation is required before claiming
+that installed Perl 5.36 is unaffected. This unresolved discrepancy is retained.
+
+## Measured Alternatives And Scope Cost
+
+The following are **official base-image OS scans**, not certification of a
+modified IMPERATOR image. They use pinned manifest digests, linux/amd64 and
+the same Trivy database. npm/Go findings in the untrimmed official bases are
+recorded separately in the [comparison](evidence/2026-10-02-r20/scan-comparison.json);
+the existing product runtimes remove/rebuild those components and currently
+have zero language-package High/Critical findings.
+
+| Option                                              | OS High / Critical | Correctable OS rows | Assessment                                                                           |
+| --------------------------------------------------- | -----------------: | ------------------: | ------------------------------------------------------------------------------------ |
+| Current IMPERATOR frontend, Node 24.20.0 / Bookworm |             53 / 4 |                   0 | Baseline; existing PCRE2 patch already applied                                       |
+| Official Node 24.20.0 / Bookworm                    |             56 / 4 |                   3 | Same published digest as pinned base; omits IMPERATOR's existing PCRE2 patch         |
+| Official Node 24.21.0 / Bookworm                    |             53 / 4 |                   0 | Updating Node alone does not reduce current OS findings                              |
+| Official Node 24.20.0 / Trixie                      |             58 / 3 |                  18 | Keeping Node exact version while changing suite still requires security patches      |
+| Official Node 24.21.0 / Trixie                      |             48 / 0 |                   5 | Partial reduction; 43 current rows have no indicated fix                             |
+| Current IMPERATOR PostgreSQL 18.6 / Bookworm        |            81 / 15 |                   0 | Baseline, custom rebuilt gosu and existing PCRE2 patch                               |
+| Current official PostgreSQL 18.6 / Bookworm         |            81 / 15 |                   0 | Newer published base digest does not fix the reported OS set                         |
+| Official PostgreSQL 18.6 / Trixie                   |             68 / 1 |                   7 | Partial reduction; 62 current rows have no indicated fix, including Critical libxml2 |
+
+Trixie fixes several Perl/SQLite/OpenSSL issues, but ACL, ncurses, systemd,
+some util-linux issues and libxml2 remain open. “The provider cannot currently
+fix everything **in the supported stable suite**” is supported here; “there
+is no fix anywhere” is false. Sid/upstream corrections exist, but mixing Sid
+packages into stable images creates ABI/dependency/supply-chain work rather
+than a supported minimal security patch.
+
+A Trixie adoption would affect at least both image Dockerfiles, their PCRE2
+security-package pins, the workflow's exact Bookworm-version assertion and
+D094/D098 verification assumptions. Preserve historical contracts; review a
+new bounded amendment instead of rewriting their accepted evidence. Rebuild
+gosu with its existing pinned inputs, retain non-root/read-only/loopback
+controls, certify SBOM/provenance and reproducibility, then run
+174 unit / 35 integration / 41 frontend, quality/build, real Docker/RBAC,
+Flyway/permissions, persistence, recovery and both scan policies on exact
+final images. None of that adoption is claimed executed by this analysis.
+
+Alpine changes glibc to musl and affects native Next/Sharp/SWC components and
+PostgreSQL packaging/locales; distroless/custom pruning affects shell-based
+initialization, provisioning and diagnostics. Rebuilding native libraries,
+deleting package metadata to hide alerts, using Sid, disabling PostgreSQL
+features or replacing the distribution solely to chase zero is not a bounded
+TFG-A fix. No zero result is claimed for those untested approaches. Official
+[Node variant documentation](https://github.com/nodejs/docker-node/blob/main/README.md)
+explains the libc difference; the [official PostgreSQL variants](https://github.com/docker-library/official-images/blob/master/library/postgres)
+show that PostgreSQL 18.6 can be kept when comparing suites.
+
+## Concrete Pending Decisions
+
+| Decision                        | Proposed choice                                                                           | Boundary / required evidence                                                                                                        | Current state                      |
+| ------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| R-19                            | Authorize only brace-expansion 1.1.18→1.1.21 and 5.0.9→5.0.12                             | Unchanged direct dependencies; isolated audit zero already prepared; apply and rerun affected quality/build/runtime scans           | PENDING; not authorized or applied |
+| R-20 absolute-zero criterion    | Recommend path B for synthetic loopback academic rehearsal only                           | Explicit owner/tutor criterion amendment and reviewed CVE dispositions; preserve zero-fixable/zero-secret gates and full raw counts | PENDING; no risk accepted          |
+| R-20 partial base refresh       | Defer adoption for this closure decision; retain as a bounded security-maintenance option | Trixie does not close absolute zero; amendment and full supply-chain/runtime regression required before adopting                    | NOT APPLIED                        |
+| Java/Spring/other stack refresh | No blanket refresh for R-20                                                               | Reconsider only for an independent advisory, support deadline or compatibility requirement                                          | No R-20-driven update justified    |
+
+For path B, the proposed acceptance record must list all 32 CVEs and the exact
+image/package versions, identify **owner and reviewer**, and distinguish
+component/prerequisite exclusions from accepted residual risk. Limit it to
+synthetic data on loopback; prohibit public/pilot/AWS/customer exposure under
+this record. Proposed review/expiry: **2026-10-09**, or earlier when a vendor
+fix, base digest, scanner data, application feature or exposure boundary
+changes. A fixable High/Critical, a detected secret, expired acceptance or new
+unreviewed finding is a NO-GO. Do not add a blanket ignore/VEX document or
+claim that a recorded acceptance removes a vulnerability.
+
+These conditions are a reviewable proposal. Owner/reviewer identities and
+approval are deliberately unfilled; silence is not acceptance. R-19 approval
+does not authorize R-20 acceptance, a base change or TFG-B.
+
+## Evidence And Binding Limitation
+
+See the [dated evidence pack](evidence/2026-10-02-r20/README.md) and
+[machine index](evidence/TFG_A_R20_2026-10-02.json). All runtime/test input
+SHA256 records from R-17 remain unchanged. This was an analysis turn; the
+previous 174/35/41 regression results remain dated R-17 evidence, not newly
+executed tests on candidate bases.
+
+An additional binding discrepancy was found: the previous observability
+verifier rebuilt mutable project tags, so the earlier capture/persistence
+image IDs differ from the final scanner IDs. Source inputs match, but that is
+not one exact-image end-to-end certificate. Historical reports remain intact.
+This review re-inspects and scans current images by exact content ID, and
+official candidates by manifest digest. Any approved patch must build once
+and reuse exact IDs for its scan/runtime evidence. See the
+[binding review](evidence/2026-10-02-r20/binding-review.json).

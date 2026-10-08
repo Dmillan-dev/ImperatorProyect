@@ -1,0 +1,22 @@
+{
+  "authorized": true,
+  "authorizationSource": "Explicit user instruction to continue A-S1 R-19 and A-S2 on 2026-10-06",
+  "registrationTimeBasis": "Tool execution/recording timestamps; exact user client-send timestamp unavailable",
+  "scope": "Only isolated brace-expansion patch and A-S2 local verification; no unrelated dependency/base update, PR merge, external IdP, AWS or real data",
+  "risk": "R-19",
+  "status": "CLOSED for original brace-expansion finding",
+  "applied": true,
+  "directDependenciesUnchanged": true,
+  "installedVersions": [
+    {
+      "path": "node_modules/brace-expansion",
+      "version": "1.1.21"
+    },
+    {
+      "path": "node_modules/@typescript-eslint/typescript-estree/node_modules/brace-expansion",
+      "version": "5.0.12"
+    }
+  ],
+  "currentSecurityGate": "NO_GO",
+  "otherRiskAcceptance": false
+}

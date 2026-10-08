@@ -1,0 +1,118 @@
+{
+  "result": "PASS",
+  "executedAtUtc": "2026-10-06T19:42:05.532169+00:00",
+  "checksPassed": 2705,
+  "acceptanceIndexSha256": "af289c68b83310124660afa3692d39379d5cb23fdf05526bafa33514a278736c",
+  "gateIndexSha256": "ad18210e710c06fad25ba88b2a0bb42293d7736588fcf876051672d12c1d9d47",
+  "publicationInputs": {
+    "path": "docs/tfg/evidence/2026-10-06-a-s2-acceptance/publication-inputs.json",
+    "sha256": "d45aefc6bfcc613d666d4ebaa9a8d0694cb3cdcbf8a737b0577e9d6995b115bf",
+    "bytes": 215316
+  },
+  "secretScans": [
+    {
+      "scanner": "Gitleaks8.30.1",
+      "command": [
+        "D:\\Imperator\\build\\tools\\gitleaks-8.30.1\\gitleaks.exe",
+        "dir",
+        "D:\\Imperator\\build\\tfg-a\\a-s2-acceptance-2026-10-06\\publication-source",
+        "--redact",
+        "--no-banner",
+        "--report-format",
+        "json",
+        "--report-path",
+        "D:\\Imperator\\build\\tfg-a\\a-s2-acceptance-2026-10-06\\secret-reports\\gitleaks.json"
+      ],
+      "exitCode": 0,
+      "findings": 0,
+      "report": {
+        "path": "docs/tfg/evidence/2026-10-06-a-s2-acceptance/publication-gitleaks.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3
+      }
+    },
+    {
+      "scanner": "Trivy0.74.0",
+      "command": [
+        "C:/Users/J4GG3R/AppData/Local/Programs/DockerDesktop/resources/bin/docker.exe",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--mount",
+        "type=bind,source=D:\\Imperator\\build\\tfg-a\\a-s2-acceptance-2026-10-06\\publication-source,target=/source,readonly",
+        "--mount",
+        "type=bind,source=D:\\Imperator\\build\\tfg-a\\a-s2-acceptance-2026-10-06\\secret-reports,target=/reports",
+        "--mount",
+        "type=bind,source=D:\\Imperator\\build\\tfg-a\\a-s2-acceptance-2026-10-06\\artifact-cache,target=/cache",
+        "--mount",
+        "type=bind,source=D:\\Imperator\\build\\tfg-a\\2026-10-01-docker\\trivy-cache\\db,target=/cache/db,readonly",
+        "--mount",
+        "type=bind,source=D:\\Imperator\\build\\tfg-a\\2026-10-01-docker\\trivy-cache\\java-db,target=/cache/java-db,readonly",
+        "aquasec/trivy:0.74.0@sha256:62b1e65e8869bc4b4c6aa4fa2b21595256c7c2f6018a9d9ad61caf87187c1969",
+        "fs",
+        "--cache-dir",
+        "/cache",
+        "--offline-scan",
+        "--skip-db-update",
+        "--skip-java-db-update",
+        "--skip-version-check",
+        "--scanners",
+        "secret",
+        "--exit-code",
+        "1",
+        "--format",
+        "json",
+        "--output",
+        "/reports/trivy.json",
+        "/source"
+      ],
+      "exitCode": 0,
+      "findingsAllSeverities": 0,
+      "report": {
+        "path": "docs/tfg/evidence/2026-10-06-a-s2-acceptance/publication-trivy.json",
+        "sha256": "cdda32e5fbb14709a69147c297b43be06cecd4158f1785de3a4183bb17326acc",
+        "bytes": 44188
+      }
+    }
+  ],
+  "documentation": {
+    "formatFiles": 23,
+    "format": "PASS",
+    "links": {
+      "markdownFiles": 43,
+      "linksChecked": 357,
+      "issues": []
+    },
+    "diff": "PASS"
+  },
+  "implementationChanged": false,
+  "runtimeInputsUnchanged": 383,
+  "sameApprovedImages": true,
+  "historicalArtifactsUnchanged": true,
+  "originalVolumesUnchanged": true,
+  "runtimeRegressionRerun": false,
+  "A_S2Formal": "GO / LOCAL-SYNTHETIC / TEMPORARY",
+  "currentR20Accepted": true,
+  "R23DispositionApproved": true,
+  "R23Closed": false,
+  "TFG_A_COMPLETE": false,
+  "A_S3Authorized": true,
+  "awsAuthorized": false,
+  "expiry": {
+    "local": "2026-10-09T00:00:00+02:00",
+    "timeZone": "Europe/Madrid",
+    "utc": "2026-10-08T22:00:00Z",
+    "exclusive": true,
+    "automaticRenewal": false,
+    "extensionProposed": false,
+    "earlyInvalidation": [
+      "Vendor fix becomes available",
+      "Image/base digest or runtime/test input changes",
+      "Scanner/vendor data changes until reviewed and re-attested",
+      "New feature, configuration, data or exposure boundary",
+      "Any fixable High/Critical, detected secret or new unreviewed finding"
+    ]
+  },
+  "cacheDuplicationAvoided": "Frozen DB dirs mounted read-only with isolated small artifact cache; no fresh multi-gigabyte DB copy."
+}

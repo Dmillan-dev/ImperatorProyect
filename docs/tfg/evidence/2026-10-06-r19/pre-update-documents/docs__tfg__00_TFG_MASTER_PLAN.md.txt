@@ -1,0 +1,222 @@
+# IMPERATOR DAM TFG Master Plan
+
+Document status: **TFG-A IN PROGRESS / R-17 ORIGINAL FIVE CLOSED; R-19 OPEN; R-20 ACCEPTED TEMPORARILY**
+
+Implementation baseline for this iteration: `b602bbe1dde92a902c17272d59cd9f0c10b9efe5`
+Planning review: `2026-10-02`
+
+The founder started TFG-A and subsequently authorized correction of the three
+V3 test-cleanup lists, the eight frontend formatting findings, Docker rehearsal,
+recording, verified residue cleanup and a current structure guide. This bounded
+maintenance does not open TFG-B, change frozen contracts or authorize live AWS
+or external IdP execution. On 2026-10-02 the founder authorized only the necessary fixes for the five
+R-17 image findings and the complete local rerun. Those fixes and image gates
+now pass. An additional development-only audit finding is separately recorded
+as R-19; its two-patch proposal awaits a scope decision.
+The earlier `4dbf4fb` mapping remains historical evidence, not certification of
+this implementation baseline.
+
+## 1. Academic Positioning
+
+Recommended title:
+
+> Design and implementation of a secure cloud-native platform for operational
+> decision traceability and analysis, deployable on AWS and integrated with
+> responsible generative AI.
+
+The academic value is not the number of technologies used. It is the ability
+to justify one coherent system from requirements through architecture,
+implementation, security, testing, cloud preparation, cost and limitations.
+
+Four evidence pillars organize the defense:
+
+1. DAM and software engineering: Java 21, Spring Boot, Next.js, PostgreSQL,
+   REST, hexagonal architecture, tests and Docker.
+2. AWS architecture knowledge: VPC, ALB, ECS/Fargate, RDS, ECR, IAM/OIDC,
+   secrets, observability, Terraform, availability and cost trade-offs.
+3. Responsible generative AI: Bedrock Converse, bounded context, output
+   validation, failure isolation and human authority.
+4. DevSecOps and cloud security: CodeQL, Trivy, Gitleaks, immutable images,
+   provenance, least privilege and supply-chain gates.
+
+These pillars demonstrate applied knowledge aligned with AWS certification
+domains. They do not claim or replace an AWS certification.
+
+## 2. Delivery Tracks
+
+| Track | Purpose                                                                    | Current status   | External execution                    |
+| ----- | -------------------------------------------------------------------------- | ---------------- | ------------------------------------- |
+| TFG-A | Freeze scope, competencies, evidence, architecture and local demo          | `IN PROGRESS`    | Forbidden                             |
+| TFG-B | Resolve delivery findings, review current pricing, then an authorized plan | `NOT AUTHORIZED` | Separate authorization required       |
+| TFG-C | Deploy the synthetic AWS MVP                                               | `NOT AUTHORIZED` | Separate apply authorization required |
+| TFG-D | Validate runtime, cost, rollback and teardown                              | `NOT AUTHORIZED` | Runs only after TFG-C approval        |
+
+These labels are academic delivery tracks and must not be confused with D101
+Stages A-C. D101 remains the external identity gate defined by the project
+control plane.
+
+`IN PROGRESS` and `NOT AUTHORIZED` describe academic-track workflow only. They
+are not product sprint, capability or evidence statuses.
+
+## 3. TFG-A Deliverables
+
+- frozen academic title, problem, objective and exclusions;
+- one canonical `DRC-AOA-001` value loop;
+- competency and requirement traceability matrices;
+- evidence register with unambiguous execution status;
+- local and AWS architecture diagrams;
+- local-to-AWS comparison and trade-off record;
+- local demonstration and defense script;
+- final-memory structure and evidence capture rules;
+- explicit account of every external item that remains unexecuted;
+- a risk register with evidence, owner, delivery track and exit condition; and
+- a dated local verification index that distinguishes historical results,
+  newly executed checks and unavailable runtime checks.
+
+## 4. Proposed Final Memory
+
+| Chapter                      | Target content                                               |
+| ---------------------------- | ------------------------------------------------------------ |
+| Abstract                     | Problem, method, implemented result and explicit limitations |
+| 1. Introduction              | Motivation, context, users and academic relevance            |
+| 2. Objectives and scope      | General/specific objectives, MVP and exclusions              |
+| 3. Requirements and planning | RF/RNF, methodology, schedule, risks and budget              |
+| 4. Analysis and architecture | Domain, data, local architecture and AWS target              |
+| 5. Security and DevSecOps    | JWT/RBAC, secrets, supply chain and threat controls          |
+| 6. Implementation            | Java, Next.js, PostgreSQL, Docker and provider adapters      |
+| 7. Responsible AI            | Bedrock boundary, context, validation and human review       |
+| 8. AWS design                | Networking, compute, data, IAM, operations and trade-offs    |
+| 9. Verification              | Unit, integration, E2E, security and IaC evidence            |
+| 10. Cost and operations      | Estimates, measured cost, rollback and teardown              |
+| 11. Results                  | Local result and, only if executed, AWS result               |
+| 12. Conclusions              | Objective assessment, limitations and future work            |
+
+The final institution template and submission date must be confirmed with the
+tutor. No date in this plan is represented as an official academic deadline.
+
+## 5. Relative Schedule
+
+| Cycle | Outcome                                                                  |
+| ----- | ------------------------------------------------------------------------ |
+| A1    | TFG-A package reviewed and scope frozen                                  |
+| A2    | Memory skeleton, diagrams and RF/RNF table populated                     |
+| A3    | Local demo rehearsed and final local evidence captured by SHA            |
+| B1    | TFG-B delivery findings, IAM and pricing review separately authorized    |
+| B2    | D101 passed; bootstrap/publication and real plan separately authorized   |
+| C1    | Approved plan and cost reviewed; AWS pilot apply separately authorized   |
+| C2    | Inactive infrastructure applied; migration and permission tasks passed   |
+| C3    | Services activated and synthetic runtime smoke verified                  |
+| D1    | E2E, Bedrock, replacement, rollback, cost and teardown evidence captured |
+| Final | Release evidence frozen; memory, annexes and defense completed           |
+
+TFG-A through the local defense can proceed while D101 is operator-deferred.
+Live Pilot Readiness and AWS deployment cannot use that deferral as a bypass.
+
+## 6. Risks And Scope Control
+
+`FACT` records inspected source or executed evidence. `INFERENCE` records its
+likely consequence. `RECOMMENDATION` identifies bounded future work. A risk is
+closed only by its exit evidence, not by documenting a mitigation.
+
+| ID   | Risk / evidence                                                                                                                                               | Reduction and exit condition                                                                                                                                                                                                                                                                      | Owner / track                             | State                                                                                            |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| R-01 | Scope expansion                                                                                                                                               | One case, four roles, one modular monolith, existing UI and synthetic data; reject any addition without a requirement and acceptance evidence                                                                                                                                                     | Product / all tracks                      | CONTROLLED; ongoing                                                                              |
+| R-02 | Conflicting current-state claims (`FACT`)                                                                                                                     | Synchronize current control to TFG-A and operator-deferred D101; preserve historical decisions and distinguish source from runtime                                                                                                                                                                | Context / TFG-A                           | Documentation resolution recorded in Evidence Register                                           |
+| R-03 | ECR naming mismatch (`FACT`): bootstrap uses `imperator-pilot/*`, workflows use `imperator/pilot/*`                                                           | Resolve naming and output/workflow correspondence before publication; prove all four digests map to the created repositories                                                                                                                                                                      | Delivery / TFG-B                          | OPEN; publication blocked                                                                        |
+| R-04 | Deploy IAM contains `ecs:*`, `elasticloadbalancing:*` and broad resources (`FACT`)                                                                            | Review action/resource/condition scope and PassRole; justify required wildcards and test permitted/denied access before use                                                                                                                                                                       | Security / TFG-B                          | OPEN                                                                                             |
+| R-05 | Deploy re-plans instead of consuming a previously reviewed plan; publication has no `pilot` environment (`FACT`)                                              | Bind approval to the plan applied and verify separate publication protection and accepted-SHA checks                                                                                                                                                                                              | Delivery / TFG-B                          | OPEN                                                                                             |
+| R-06 | Report counts belong to different revisions (`FACT`)                                                                                                          | Record baseline SHA, worktree inputs, date, tool, result, artifact hash and limits                                                                                                                                                                                                                | QA / TFG-A                                | Current maintenance index captured; accepted release SHA/review pending                          |
+| R-07 | Historical V3 runtime debt and three test-cleanup omissions (`FACT`)                                                                                          | V3-aware cleanup in the three authorized classes; native PostgreSQL 18.6 migrate/validate/no-op, 35 integration tests and Docker append-only privilege checks pass                                                                                                                                | QA / TFG-A                                | CLOSED for local V3 evidence; RDS remains unexecuted                                             |
+| R-08 | NAT, ALB, RDS and retained resources can dominate demo cost (`INFERENCE`)                                                                                     | Current regional Calculator estimate, approved budget, short runtime, destroy and residual-cost inventory; alerts are not a spending cap                                                                                                                                                          | FinOps / TFG-B and TFG-D                  | OPEN; no measured AWS cost                                                                       |
+| R-09 | External Keycloak unavailable (`FACT` in recorded control)                                                                                                    | Keep D101 OPERATOR-DEFERRED / BLOCKED_EXTERNAL as a mandatory dependency; no pilot, external exposure or release bypass                                                                                                                                                                           | Operator / external dependency            | BLOCKED_EXTERNAL; not a TFG sprint                                                               |
+| R-10 | Small RDS and restricted HTTPS egress are untested sizing/connectivity assumptions (`INFERENCE`)                                                              | Verify resource availability, DB pressure, provider routes and reviewed CIDRs; resize only from evidence                                                                                                                                                                                          | Operations / TFG-C and TFG-D              | LIVE VALIDATION PENDING                                                                          |
+| R-11 | Valid JSON/references do not prove faithful AI narrative (`INFERENCE`)                                                                                        | Synthetic evaluation with human review, known references and immutable deterministic values; test failure isolation and report rejected output                                                                                                                                                    | AI / TFG-D                                | Offline adapter evidence; live evaluation pending                                                |
+| R-12 | Micrometer business metrics have no inspected automatic CloudWatch exporter; CloudTrail is regional (`FACT`)                                                  | Use existing safe logs/internal metrics; state audit coverage and verify notifications without adding an observability platform                                                                                                                                                                   | Operations / TFG-A and TFG-D              | Limitation documented; live checks pending                                                       |
+| R-13 | Image rollback does not reverse Flyway; audit bucket permits force destroy (`FACT`)                                                                           | Forward-only schema recovery, known-good digest manifest and export of sanitized evidence before destroy                                                                                                                                                                                          | Operations / TFG-D                        | EXECUTION PENDING                                                                                |
+| R-14 | Internet/IdP/cloud failure during defense (`INFERENCE`)                                                                                                       | Real local Docker workflow and sanitized fallback WebM captured; preserve reports after teardown                                                                                                                                                                                                  | Student / TFG-A and final defense         | Technical rehearsal CAPTURED; full oral rehearsal and accepted-release capture pending           |
+| R-15 | Official deadline/template not available (`FACT` for this package)                                                                                            | Confirm institution requirements; use relative cycles and remove optional work before core evidence                                                                                                                                                                                               | Student and tutor / TFG-A                 | OPEN                                                                                             |
+| R-16 | Eight tracked frontend files failed formatting (`FACT`)                                                                                                       | Formatting-only correction; JSON/dependency semantics unchanged; exclude Next-generated metadata from formatting                                                                                                                                                                                  | QA / authorized maintenance               | CLOSED; final format check PASS                                                                  |
+| R-17 | Five original image package findings: OpenSSL/Jackson backend and Next frontend (`FACT`)                                                                      | Jackson 3.1.7, Next 16.3.6 and checksum-pinned OpenSSL 3.0.2-0ubuntu1.30; Java/base digests unchanged; all three fixable-only image vulnerability/secret gates now zero                                                                                                                           | Security / authorized local maintenance   | CLOSED; dated rerun and hashes in R-17 evidence pack                                             |
+| R-18 | Windows CRLF made Linux entrypoints fail (`FACT`)                                                                                                             | Normalize the three existing shell entrypoints to LF and enforce `*.sh text eol=lf`; migrated Docker workflow now passes                                                                                                                                                                          | QA / authorized maintenance               | CLOSED; no shell behavior changed                                                                |
+| R-19 | Fresh npm audit finds brace-expansion in two pre-existing dev-transitive copies; Trivy with include-dev-deps confirms four High package/CVE findings (`FACT`) | Isolated proposal changes only 1.1.18→1.1.21 and 5.0.9→5.0.12, direct dependencies unchanged, candidate audit zero; apply only after scope decision, repeat affected gates                                                                                                                        | Security / proposed local maintenance     | OPEN; current npm/development source audit prevents full closure                                 |
+| R-20 | Strict canonical regression-image scan including unfixed findings: frontend 53 High/4 Critical, PostgreSQL 81 High/15 Critical; backend zero (`FACT`)         | Founder explicitly approved B for TFG-A synthetic loopback only, excluding AWS/production/real data; bound 32-CVE matrix and exact images retained; exclusive expiry 2026-10-09T00:00:00+02:00 Europe/Madrid; no renewal; zero fixable High/Critical and zero secrets mandatory; R-19 independent | Security / temporary academic disposition | ACCEPTED TEMPORARILY; approval registered 2026-10-02T17:16:32Z; not remediation or TFG-A closure |
+
+Scope reductions are explicit: no extra business case, production login,
+tenant model, asynchronous queue, cache, RAG, Knowledge Base, agent, Python
+service, Kubernetes, Multi-AZ RDS, autoscaling or additional AWS service is
+required to close this MVP. Existing read-only connector smoke evidence remains
+a pilot obligation; it does not replace the synthetic canonical case with live
+billing facts. AWS deployment cost and synthetic business ROI are separate.
+
+Detailed discrepancy dispositions and source links are maintained in
+[Evidence Register](04_EVIDENCE_REGISTER.md#discrepancy-dispositions).
+
+## 7. TFG-A Definition Of Done
+
+TFG-A is complete only when:
+
+- every document in this package is internally consistent;
+- every claim links to repository evidence or is marked pending;
+- no AWS, Terraform plan/apply, Bedrock or external IdP execution occurred;
+- no frozen contract, business rule, workflow or product scope changed;
+- the diff is limited to the founder-authorized maintenance and its evidence;
+- current image security policy and repeated frontend audit pass, with any
+  additional finding explicitly resolved; no blanket High/Critical waiver
+  closes a risk. The founder-approved R-20 B amendment permits only the
+  hash-bound 32-CVE residual OS set for synthetic local TFG-A rehearsal until
+  2026-10-09T00:00:00+02:00 Europe/Madrid. Record ACCEPTED TEMPORARILY, not CLOSED;
+  zero fixable High/Critical and zero secrets remain mandatory. R-19 is excluded;
+- documentation validation passes;
+- the final local run records PostgreSQL V3 behavior, frontend quality and
+  browser acceptance; unavailable Docker/runtime checks remain explicitly
+  pending until executed;
+- the real local workflow, readable sanitized fallback recording and scoped
+  teardown are captured; and
+- a reviewer can answer what was built, why, how, what it demonstrates and
+  what remains pending without inspecting implementation history.
+
+TFG-A remains IN PROGRESS until these conditions are met. Documentation
+validation alone does not certify the local runtime or close this track.
+Completion does not open TFG-B, discharge D101 or authorize AWS.
+
+## 8. Final MVP Release Boundary
+
+The local academic MVP is demonstrable before live AWS. The AWS MVP and project
+MVP Release require separate objective evidence: reviewed cost and plan,
+external identity conformance, immutable published images, HTTPS, private
+tasks/data, successful migrations, synthetic E2E, one audited Bedrock call,
+safe telemetry, persistence after task replacement, rollback, teardown and all
+required hosted checks passing on the accepted SHA.
+
+## 9. Exact Next Action
+
+R-07, R-16, R-17 and R-18 now have passing local exit evidence. The 2026-10-02
+R-17 rerun has 174/35/41 passing tests, frontend quality/build/browser acceptance,
+real Docker/RBAC, V3/privileges, readiness recovery, persistence and new fallback
+capture. Backend/frontend/PostgreSQL images have zero fixable High/Critical and
+zero detected secrets; final source/history Gitleaks scans are zero.
+
+R-20 analysis is complete and the risk is ACCEPTED TEMPORARILY. The [formal decision
+review](R20_SECURITY_DECISION.md) maps the 153 binary-package findings to 32 CVEs,
+explains provider/backport and component distinctions, measures six pinned base
+options. The founder explicitly approved path B for a temporary TFG-A academic
+loopback exception, synthetic data only, with AWS/production/real data excluded.
+The zero-fixable/zero-secret gates stay intact. Absolute zero is not met.
+The [acceptance record](evidence/2026-10-02-r20-acceptance/acceptance.json)
+binds the original decision and evidence; no base refresh was applied.
+
+The [closure-preparation pack](evidence/2026-10-02-r20-closure/README.md)
+now resolves the image identity discrepancy, confirms all 153 reviewed rows
+on the original regression payloads with updated scanner data, and specifies
+owner/reviewer roles and exclusive expiry. That historical preparation remains
+unchanged. The subsequent explicit approval activates only the bounded R-20
+DoD amendment above; it cannot close TFG-A while R-19 is OPEN or replace the
+[Security Closure Gate](TFG_A_SECURITY_CLOSURE_GATE.md), the only active next gate.
+
+R-19 is separate: npm audit and Trivy including development dependencies still
+find existing brace-expansion versions. The [security review and concrete patch
+proposal](R17_SECURITY_REVIEW.md) are the next decision object. The founder's
+five-finding limit is preserved until that decision arrives. Do not mark TFG-A
+COMPLETE or advance to TFG-B while the repeated audit remains unresolved.
+Accepted-release/hosted evidence and the oral defense remain later delivery
+obligations; D101 is mandatory before a live pilot.

@@ -1,0 +1,46 @@
+{
+  "historicalApproval": {
+    "path": "docs/tfg/evidence/2026-10-02-r20-acceptance/acceptance.json",
+    "sha256": "f05a78809830df4aacd431527997df0acf5d9bc3cd558705d9104149e64a5cb7",
+    "bytes": 8692
+  },
+  "currentAccepted": false,
+  "automaticTransfer": false,
+  "historicalDistinctCves": 32,
+  "currentDistinctCves": 23,
+  "historicalRows": 153,
+  "currentRows": 115,
+  "newDistinctCves": [],
+  "removedDistinctCves": [
+    "CVE-2026-103111",
+    "CVE-2026-13221",
+    "CVE-2026-42496",
+    "CVE-2026-42497",
+    "CVE-2026-48962",
+    "CVE-2026-57432",
+    "CVE-2026-57433",
+    "CVE-2026-8376",
+    "CVE-2026-86139"
+  ],
+  "rowCountLimit": "115 current package/CVE rows versus153 original source-matrix rows;9 removed identities include8 corrected by R22 and one vendor-classification change, not9 code fixes.",
+  "survivingVersionChange": "Five Archive::Tar CVE-2026-9538 package rows move Perl u3 to u4; module2.40 still affected.",
+  "exactBindingChanged": [
+    "OCI image index/platform/config/layers",
+    "lockfile/runtime content",
+    "regression input hashes",
+    "scanner databases/vendor snapshots"
+  ],
+  "scopeComparison": "Same local loopback/synthetic services and features, no new public/SQL/XML/archive/DTLS interface introduced by R21/R22. Source/Compose assumptions checked. Reduced CVE identities alone do not prove equivalent exploitability.",
+  "moduleDiscrepancy": {
+    "historicalObservation": "Original probe required IO::Compress and reported ABSENT; review generalized this to the family.",
+    "resolvedObservation": "Correct require IO::Compress::Gzip finds version2.106 in retained historical PostgreSQL payload and current payload; IO::Compress itself is absent in both. Archive::Tar2.40 present in both.",
+    "cause": "Probe module-name mismatch/overbroad historical inference, not evidence of a newly added gzip module.",
+    "historicalImageLink": "Retained probe image index matches original canonical binding record; hashes preserved.",
+    "originalArtifactEdited": false,
+    "correctedOnlyInNewReview": true,
+    "riskEffect": "R22 repaired listed IO::Compress CVEs, but historical family-absence reasoning must not be reused. Surviving Archive::Tar9538 still needs conditional disposition."
+  },
+  "reachabilityComparison": "No new product entry identified. Equivalent or narrower bounded residual is a recommendation with explicit SQL/operator/tooling uncertainties, not proven universal safety.",
+  "recommendation": "Offer fresh owner attestation of current exact23-CVE OS set under unchanged scope and expiry; not an automatic acceptance transfer or renewal. R23 independent.",
+  "approvalRequired": true
+}

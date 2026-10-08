@@ -1,0 +1,81 @@
+{
+  "result": "PASS for evidence consistency, scope, immutable binding and all-severity secrets",
+  "executedAtUtc": "2026-10-06T17:52:39.633929+00:00",
+  "checksPassed": 2379,
+  "evidenceIndexSha256": "af9eb22bab5319b619c8d3fb2199eb725a6007ef285f1c40cb5faaa3339c333e",
+  "gateIndexSha256": "b878813437872a140525b6c3a05169551bc184a92d602bce14d5262b231cda32",
+  "publicationInputsSha256": "b2490a06681a96747f72b2408cb0ddb86b6f4eb38325f2a7c09a27bff48cb64d",
+  "publicationSecretReports": [
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/publication-gitleaks.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/publication-trivy.json",
+      "sha256": "0386db4a0f73a5524fc00abc80f92e45be50acfa9fcbedf8d33a82783581196a"
+    }
+  ],
+  "secretChecks": {
+    "Gitleaks": {
+      "exitCode": 0,
+      "findings": 0,
+      "command": [
+        "D:\\Imperator\\build\\tools\\gitleaks-8.30.1\\gitleaks.exe",
+        "dir",
+        "D:\\Imperator\\build\\tfg-a\\r21-r22-2026-10-06\\publication-source",
+        "--redact",
+        "--no-banner",
+        "--report-format",
+        "json",
+        "--report-path",
+        "D:\\Imperator\\build\\tfg-a\\r21-r22-2026-10-06\\publication-secret-reports\\gitleaks.json"
+      ]
+    },
+    "TrivyPublication": {
+      "exitCode": 0,
+      "findings": 0,
+      "severity": "ALL; no filtering",
+      "command": [
+        "C:/Users/J4GG3R/AppData/Local/Programs/DockerDesktop/resources/bin/docker.exe",
+        "run",
+        "--rm",
+        "--mount",
+        "type=bind,source=D:\\Imperator\\build\\tfg-a\\r21-r22-2026-10-06\\publication-source,target=/source,readonly",
+        "--mount",
+        "type=bind,source=D:\\Imperator\\build\\tfg-a\\r21-r22-2026-10-06\\publication-secret-reports,target=/reports",
+        "--mount",
+        "type=bind,source=D:\\Imperator\\build\\tfg-a\\r21-r22-2026-10-06\\publication-cache,target=/root/.cache/trivy",
+        "--mount",
+        "type=bind,source=C:/Users/J4GG3R/.m2/repository,target=/root/.m2/repository,readonly",
+        "aquasec/trivy:0.74.0@sha256:62b1e65e8869bc4b4c6aa4fa2b21595256c7c2f6018a9d9ad61caf87187c1969",
+        "fs",
+        "--offline-scan",
+        "--skip-db-update",
+        "--skip-java-db-update",
+        "--skip-version-check",
+        "--scanners",
+        "secret",
+        "--exit-code",
+        "1",
+        "--format",
+        "json",
+        "--output",
+        "/reports/trivy.json",
+        "/source"
+      ]
+    },
+    "TrivyCanonicalImages": {
+      "findings": 0,
+      "severity": "ALL; no filtering",
+      "reusedReports": "Fresh complete all-severity reports from this run, hashes bound in artifact index; immutable image identities unchanged"
+    }
+  },
+  "A_S2TechnicalCriterion": "GO",
+  "formalSecurityClosure": "PENDING RESIDUAL DISPOSITION",
+  "currentR20Accepted": false,
+  "R23Accepted": false,
+  "TFG_A_COMPLETE": false,
+  "A_S3Authorized": false,
+  "A_S4Authorized": false,
+  "awsAuthorized": false
+}

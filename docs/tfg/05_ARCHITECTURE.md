@@ -1,6 +1,10 @@
 # TFG Architecture View
 
-Document status: **TFG-A FINAL REVIEW CANDIDATE**
+## Current Owner Decision And Sprint — 2026-10-06
+
+**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](A_S3_EVIDENCE_VERSIONING.md).
+
+Document status: **TFG-A IN PROGRESS**
 
 Capability status: local runtime `VALIDATED OFFLINE`; AWS Terraform source
 `VALIDATED OFFLINE`; live AWS runtime `NOT IMPLEMENTED`.
@@ -66,6 +70,22 @@ target declaration, not evidence of a deployed or tested AWS environment.
 | CloudWatch/CloudTrail | Operational and management-plane evidence                            | Live redaction/alarms remain unproved |
 | Bedrock Converse      | Adds bounded explanation within DRC-AOA-001 through an existing port | Optional and non-authoritative        |
 
+## Delivery Limits Before Live Execution
+
+Terraform roots and mock tests are offline evidence of configuration only.
+The source audit found ECR name disagreement between bootstrap and workflows,
+broad deploy IAM and a separate reviewed-plan binding gap. These remain
+TFG-B findings in the [risk register](00_TFG_MASTER_PLAN.md#6-risks-and-scope-control);
+the diagram is not evidence that the delivery chain is ready to execute.
+
+Local JSON logs use Elastic Common Schema; `ecs` is a log format, not a claim
+of Amazon ECS operation. Micrometer business metrics remain internal and are
+not automatically exported to CloudWatch by the inspected configuration.
+ALB terminates public TLS; target traffic uses HTTP inside the VPC. The RDS
+JDBC declaration uses `sslmode=require`; full certificate/hostname verification
+must not be inferred from that setting alone. CloudTrail is Region-scoped and
+does not establish complete global-service auditing.
+
 ## Responsible AI Boundary
 
 ```text
@@ -101,3 +121,12 @@ has one NAT gateway, one frontend task, one backend task and Single-AZ RDS.
 Therefore it demonstrates architecture trade-offs and replacement behavior,
 not full high availability. ECS autoscaling and multi-region recovery are `NOT
 IMPLEMENTED`.
+
+The current local rehearsal adds no runtime component to this architecture.
+Its unpublished HTTPS/JWKS fixture is test tooling, not a packaged IdP.
+Runtime behavior passes and original R-17/R-19 findings are CLOSED. Authorized
+R-21/R-22 corrected findings pass A-S2 technically; formal GO is registered
+through the explicit current R-20 acceptance and separate approved OPEN R-23 disposition; see the
+[Evidence Register](04_EVIDENCE_REGISTER.md).
+
+See the [current security review](R21_R22_SECURITY_REVIEW.md) before claiming full closure.

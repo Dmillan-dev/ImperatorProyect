@@ -1,0 +1,18 @@
+{
+  "previousGitCommit": "b602bbe1dde92a902c17272d59cd9f0c10b9efe5",
+  "runtimeTestInputSha256": "3e9382b6ce80ec50b09547c4ceca28b94e9df2bb61c16395f59d76edfcc73c63",
+  "runtimeInputsUnchanged": true,
+  "previousRuntimeFactImageIds": {
+    "backend": "sha256:be4875883dd38b6b09b1a9c5f6cb63d6be3f62ed12c33f1f3f3b19cc047f45c5",
+    "frontend": "sha256:f9f8a5e21c79c922d505ba78e2193ae293a49ebc7038b39c2cf7e8377700ca40",
+    "postgres": "sha256:5fb7b30bcc3399f02fb259fc15bfe61338ff90eeb8dd17bd15090f68298a269d"
+  },
+  "currentScannedImageIds": {
+    "backend": "sha256:b2c6534593f0fd9f7ef9d699fe11ecc52a2ce01de7df2f9b4a91051cc0e91c75",
+    "frontend": "sha256:ebba0bc1c7dcb9d59444e2715921d723dff981ea7bb63171ae88b3986b910b58",
+    "postgres": "sha256:0a33fd46bbff0fabf711d621e347d88aa27497ce2585324809f86709d198f407"
+  },
+  "idsDiffer": true,
+  "explanation": "The prior observability verifier rebuilds mutable project tags before its scan. Earlier capture/persistence/facts and final scans bind different image IDs; source inputs match, but one exact-image end-to-end certificate is not claimed. R-20 analysis uses exact content IDs and pinned candidate manifest digests. Historical evidence is not overwritten.",
+  "followUp": "Any approved patch must build once and reuse exact IDs/digests for scans and runtime regression, then record them in one index."
+}

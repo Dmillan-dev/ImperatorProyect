@@ -1,0 +1,13 @@
+{
+  "result": "PASS for decoding and expected runtime; representative frames reviewed separately",
+  "durationSeconds": 27.16,
+  "audioTrackPresent": false,
+  "technicalFallbackOnly": true,
+  "oralDefenseRehearsal": false,
+  "frames": [
+    4,
+    14,
+    23
+  ],
+  "syntheticOnly": true
+}

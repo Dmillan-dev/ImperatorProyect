@@ -1,0 +1,46 @@
+{
+  "status": "PREPARED / HOSTED EXECUTION PENDING",
+  "repository": "https://github.com/Dmillan-dev/ImperatorProyect",
+  "sourceBaseline": "b602bbe1dde92a902c17272d59cd9f0c10b9efe5",
+  "requiredWorkflowSources": [
+    ".github/workflows/java-ci.yml",
+    ".github/workflows/security.yml"
+  ],
+  "expectedChecks": [
+    "Java CI / Java 21 Maven verification",
+    "Security / Source, dependency and configuration scan",
+    "Security / Application image scan",
+    "Security / PostgreSQL D094 supply-chain gate",
+    "Security / Full Git history secret scan"
+  ],
+  "frontendLocalChecks": "format/lint/typecheck/coverage/build/Playwright evidence indexed; no dedicated hosted frontend workflow claimed",
+  "hostedRunUrl": null,
+  "submittedSha": null,
+  "hostedPassed": false,
+  "remotePublished": false,
+  "branchProtectionInspected": false,
+  "CIImageApprovalTransfer": false,
+  "blockedMerges": [
+    "PR57",
+    "PR58",
+    "PR59"
+  ],
+  "requiredNext": "Actual PR/submitted SHA and required hosted checks; rebuilt images require independent current-binding review.",
+  "reviewedAtUtc": "2026-10-07T10:19:46.268792+00:00",
+  "candidateSourceSha": "b02e3e2eb10ff2734ce05691dda04fcf0ff82058",
+  "workflowBindings": [
+    {
+      "path": ".github/workflows/java-ci.yml",
+      "sha256": "e5992d46dceb3b7417b255bd5267b95628d74521f663dcba7d00f976d30c12a4",
+      "bytes": 1409
+    },
+    {
+      "path": ".github/workflows/security.yml",
+      "sha256": "0fd976f415dd007563dd8c94b69d7c7cbbc0ff811aeb620ea2c2670b1f032db3",
+      "bytes": 11230
+    }
+  ],
+  "readOnlyLookup": "Public web tool could not access the commit/runs endpoints. No absence or success inferred; no authenticated lookup executed.",
+  "acceptedReleaseCommit": null,
+  "CIEnvironmentChangesAuthorized": false
+}

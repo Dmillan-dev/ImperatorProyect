@@ -1,0 +1,23 @@
+{
+  "registeredAtUtc": "2026-10-06T19:31:42.555275+00:00",
+  "source": "Explicit affirmative user message in this project conversation",
+  "timestampBasis": "UTC registration time; exact client send time unavailable; no backdating",
+  "approver": {
+    "role": "Project owner",
+    "identity": "User in this project conversation"
+  },
+  "R20Decision": "Approve exact current R20 B proposal/digests,23conditional residual OS CVEs, local synthetic only, zero fixable H/C and zero secrets, exclusive2026-10-09T00:00:00+02:00 Europe/Madrid, no automatic renewal or transfer, no AWS/production/real data/scope expansion.",
+  "R23Decision": "Approve independent disposition retaining OPEN / NO FIX AVAILABLE, development tooling and documented mitigation, package absent in inspected production; no closure or speculative upgrade.",
+  "A_S2Decision": "Technical GO to formal GO for this exact bounded local security record.",
+  "A_S3Authorization": "Evidence/versioning/documentation only, no implementation/dependency change; review cleanup and images.",
+  "excluded": [
+    "Any further upgrade",
+    "Functional or architecture changes",
+    "AWS",
+    "Production",
+    "Real data",
+    "PR57\u201359 merge",
+    "Automatic TFG-A completion",
+    "A-S4 execution"
+  ]
+}

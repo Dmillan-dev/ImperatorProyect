@@ -1,0 +1,17 @@
+{
+  "authorizedWork": "R20 applicability review + classify exact23unfixed OS CVEs + independent R23 decision preparation; technical STOP, no upgrades",
+  "executedAtUtc": "2026-10-06T19:05:53.638647+00:00",
+  "implementationChanged": false,
+  "runtimeRebuilt": false,
+  "fullRegressionRerun": false,
+  "riskAccepted": false,
+  "newRiskIdentifiersOpened": false,
+  "dependencyOrGateChanges": false,
+  "preservedHistoricalApproval": {
+    "path": "docs/tfg/evidence/2026-10-02-r20-acceptance/acceptance.json",
+    "sha256": "f05a78809830df4aacd431527997df0acf5d9bc3cd558705d9104149e64a5cb7",
+    "bytes": 8692
+  },
+  "A_S3Authorized": false,
+  "awsAuthorized": false
+}

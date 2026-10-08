@@ -1,0 +1,22 @@
+{
+  "result": "PASS",
+  "recordedAtUtc": "2026-10-06T19:07:55.970856+00:00",
+  "changedExistingFiles": [
+    "README.md",
+    "docs/project/PROJECT_STATUS.md",
+    "docs/project/PROJECT_STRUCTURE.md",
+    "docs/tfg/00_TFG_MASTER_PLAN.md",
+    "docs/tfg/R20_SECURITY_DECISION.md",
+    "docs/tfg/README.md",
+    "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md"
+  ],
+  "newCurrentReview": "docs/tfg/R20_APPLICABILITY_REVIEW.md",
+  "allOtherBaselineFilesUnchanged": true,
+  "baselineFilesVerified": 1009,
+  "runtimeInputFilesVerified": 383,
+  "runtimeContentFingerprint": "cbc6535ee56bfa991fb96551a90cda7dc35afd2204056f561900614ab0a5d0b7",
+  "historicalArtifactsUnchanged": true,
+  "newApproval": false,
+  "newRiskIdentifier": false,
+  "newImplementationChange": false
+}

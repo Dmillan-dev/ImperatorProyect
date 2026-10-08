@@ -20,6 +20,9 @@ Read these files in order:
 For a compact project description, use
 [IMPERATOR Project Context](../ai/IMPERATOR_Project_Context.md).
 
+For the implemented directories, reading order and safe cleanup boundaries,
+use [Current MVP Project Structure](PROJECT_STRUCTURE.md).
+
 Current execution evidence:
 
 - [Security And Maintenance Audit - 2026-09-09](SECURITY_AUDIT_2026-09-09.md)
@@ -28,7 +31,7 @@ Current execution evidence:
 ## Document Classes
 
 | Class | Purpose | Mutation rule |
-|---|---|---|
+| --------------------- | --------------------------------------------------- | ----------------------------------------------------------- |
 | Current control | Current phase, sprint and next gate | Update at every formal sprint closure |
 | Accepted decision | Chronological record of approved choices | Append only; corrections require explicit approval |
 | Frozen contract | Product, architecture or persistence authority | Do not edit without an evidenced contradiction and approval |
@@ -89,7 +92,7 @@ Always load:
 Then load only the contracts required by the task:
 
 | Task type | Additional required context |
-|---|---|
+| ---------------- | ---------------------------------------------------------------------- |
 | Domain | Core Domain Model, Coding Principles, Implementation Contract |
 | Application | Domain contracts, application boundary policy, transaction contract |
 | Persistence | Persistence contracts 39 and 40, V1 migration, repository ports |

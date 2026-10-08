@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 3,
+  "track": "TFG-A",
+  "analysis": "R-20",
+  "status": "ANALYSIS COMPLETE / CLOSURE PREPARATION VERIFIED / APPROVAL PENDING",
+  "recordedAtUtc": "2026-10-02T11:27:31.948496+00:00",
+  "baselineGitCommit": "b602bbe1dde92a902c17272d59cd9f0c10b9efe5",
+  "newCommitCreated": false,
+  "priorIndex": {
+    "path": "docs/tfg/evidence/TFG_A_R17_2026-10-02.json",
+    "sha256": "2c36a2b8cd34cb386ac1e22bc18be91065070c1a0e484dedcfd608be12824574"
+  },
+  "runtimeTestInputs": {
+    "sha256": "3e9382b6ce80ec50b09547c4ceca28b94e9df2bb61c16395f59d76edfcc73c63",
+    "unchanged": true,
+    "checkedRecords": 346,
+    "recordSource": "docs/tfg/evidence/TFG_A_R17_2026-10-02.json"
+  },
+  "currentImages": [
+    {
+      "image": "backend",
+      "imageId": "sha256:b2c6534593f0fd9f7ef9d699fe11ecc52a2ce01de7df2f9b4a91051cc0e91c75",
+      "osCounts": {},
+      "osUniqueCves": 0,
+      "languageFindings": 0,
+      "secrets": 0,
+      "fixableOsCount": 0,
+      "scannedAtUtc": "2026-10-02T11:14:47.942508+00:00"
+    },
+    {
+      "image": "frontend",
+      "imageId": "sha256:ebba0bc1c7dcb9d59444e2715921d723dff981ea7bb63171ae88b3986b910b58",
+      "osCounts": {
+        "HIGH": 53,
+        "CRITICAL": 4
+      },
+      "osUniqueCves": 19,
+      "languageFindings": 0,
+      "secrets": 0,
+      "fixableOsCount": 0,
+      "scannedAtUtc": "2026-10-02T11:14:48.896599+00:00"
+    },
+    {
+      "image": "postgres",
+      "imageId": "sha256:0a33fd46bbff0fabf711d621e347d88aa27497ce2585324809f86709d198f407",
+      "osCounts": {
+        "HIGH": 81,
+        "CRITICAL": 15
+      },
+      "osUniqueCves": 32,
+      "languageFindings": 0,
+      "secrets": 0,
+      "fixableOsCount": 0,
+      "scannedAtUtc": "2026-10-02T11:14:49.923996+00:00"
+    }
+  ],
+  "decision": {
+    "path": "docs/tfg/R20_SECURITY_DECISION.md",
+    "recommended": "B: explicit temporary academic criterion/risk decision; no blanket stack update",
+    "accepted": false,
+    "risk19": "Separate two-entry patch, still unapproved and unapplied",
+    "risk20": "OPEN; absolute zero not reached",
+    "tfgA": "IN PROGRESS",
+    "proposedExpiry": "2026-10-09T00:00:00+02:00",
+    "owner": {
+      "role": "Founder / project owner",
+      "identity": "User in this project conversation",
+      "authority": "Explicit project-local R-20 B criterion/risk approval only",
+      "approved": false,
+      "approvedAtUtc": null
+    },
+    "reviewer": {
+      "role": "Technical evidence reviewer",
+      "identity": "Codex in this session",
+      "authority": "Evidence verification and recommendation only; no authority to accept risk",
+      "reviewedAtUtc": "2026-10-02T17:05:02.849816+00:00",
+      "riskApproval": false
+    },
+    "sha256": "0170865ea08d6b6c73fb83793c7a3e67444f9fbf1394617ea9b2e1ca8b6d50a9",
+    "proposedExpiryUtc": "2026-10-08T22:00:00Z",
+    "expiryTimeZone": "Europe/Madrid",
+    "expiryExclusive": true,
+    "academicReviewer": {
+      "role": "TFG tutor / supervisor",
+      "identity": null,
+      "status": "Not identified; no institutional approval claimed",
+      "authority": "Review institutional assessment criteria; project-local approval cannot stand in for tutor/institution approval"
+    }
+  },
+  "research": {
+    "packageFindings": 153,
+    "uniqueCves": 32,
+    "sourcePackages": 12,
+    "scannerStatuses": {
+      "affected": 125,
+      "fix_deferred": 26,
+      "will_not_fix": 2
+    },
+    "vendorRetrievedAtUtc": "2026-10-02T11:10:45.790825+00:00",
+    "vendorTrackerSha256": "dc8a3d79fcae820cd90318a45d3d6db868899b0153ff546637190b43b531722d",
+    "scanner": "Trivy 0.74.0",
+    "dbMetadata": {
+      "Version": 2,
+      "NextUpdate": "2026-10-02T13:01:27.395440584Z",
+      "UpdatedAt": "2026-10-01T13:01:27.395440834Z",
+      "DownloadedAt": "2026-10-01T19:36:07.359292303Z"
+    },
+    "officialBasesScanned": 6,
+    "apt": "Current signed APT metadata and targeted upgrade simulation only; no install",
+    "nativeRuntime": "Read-only/no-network ephemeral container inspection, no exploit attempts"
+  },
+  "commands": [
+    {
+      "command": "docker image inspect <three existing image tags>",
+      "result": "Exact current IDs inspected; previous mutable-tag binding discrepancy documented"
+    },
+    {
+      "command": "docker run --rm -i --network none --read-only --cap-drop ALL --security-opt no-new-privileges:true --entrypoint sh <exact ID> -s",
+      "result": "dpkg inventory, ldd, Perl build/modules and component-file inspection; stdin supplied as UTF-8 LF bytes"
+    },
+    {
+      "command": "docker buildx imagetools inspect <six explicit official version/suite tags>",
+      "result": "Manifest digests recorded before candidate scans; no production pins changed"
+    },
+    {
+      "command": "trivy image --scanners vuln,secret --platform linux/amd64 --skip-db-update --severity HIGH,CRITICAL --exit-code 1 --format json <exact ID or pinned official digest>",
+      "result": "Nine complete reports; current 0/57/96 reproduced; no ignore-unfixed or suppression; same DB snapshot"
+    },
+    {
+      "command": "HTTPS GET https://security-tracker.debian.org/tracker/data/json",
+      "result": "Current vendor facts matched to actual dpkg source packages; all 32 mapped Bookworm source/CVE pairs open"
+    },
+    {
+      "command": "docker run --rm -i --user 0:0 --read-only --cap-drop ALL --security-opt no-new-privileges:true --tmpfs /var/lib/apt/lists --tmpfs /var/cache/apt --tmpfs /tmp --entrypoint sh <exact ID> -s",
+      "result": "apt-get -o APT::Sandbox::User=root update; apt-cache policy <affected installed packages>; apt-get --simulate --no-install-recommends --only-upgrade install <same packages>; no install"
+    },
+    {
+      "command": "Scoped input/artifact/matrix consistency and documentation link checks",
+      "result": "PASS; runtime/test input SHA256 values unchanged"
+    }
+  ],
+  "securityPublication": {
+    "scanner": "Gitleaks 8.30.1",
+    "mode": "Complete selected public-source snapshot; includes modified tracked files and new docs/scripts/.gitattributes; pre-existing untracked output/tfg excluded",
+    "exitCode": 0,
+    "findings": 0,
+    "redacted": true,
+    "executedAtUtc": "2026-10-02T11:28:38.389392+00:00",
+    "ruleChanges": false
+  },
+  "evidenceLimitations": [
+    "Official base-image scans are not candidate IMPERATOR builds or runtime acceptance",
+    "No 174/35/41 test rerun this analysis turn; prior evidence is separately dated",
+    "All OS findings remain visible; no risk, criterion or stack change authorized",
+    "No hosted CI, cloud, external IdP, release commit or publication",
+    "Historical final-tag and original regression OCI indexes differ; current closure preparation identifies and scans the original regression platform payloads. No transfer of later frontend observability evidence is claimed."
+  ],
+  "localIgnoredEvidenceRoot": "build/tfg-a/r20-2026-10-02",
+  "artifacts": [
+    {
+      "path": "docs/tfg/evidence/2026-10-02-r20/apt-probe.json",
+      "sha256": "eb8a8ba32e2d00864d3ff3a909298fd75ec5037a839b07ca5c6db0364cbfd42c",
+      "bytes": 1796
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-02-r20/binding-review.json",
+      "sha256": "01d1559812697546193c36e6a09aee036afb582780cd77649595721ad0b9a18f",
+      "bytes": 1373
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-02-r20/candidate-manifests.json",
+      "sha256": "d16a5e37be14da3dffea43a24c079884a948b6fc8c73779b0851803f38d208e2",
+      "bytes": 2169
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-02-r20/cve-matrix.json",
+      "sha256": "68d979aefe37b361a3d3de1ba138509dc805e84e3223322605e68af6876d8353",
+      "bytes": 82053
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-02-r20/CVE_MATRIX.md",
+      "sha256": "ad708185e09b1c1baa8a8f6a66113467af224ea60cea4d38d2ca1529bdba4bd0",
+      "bytes": 6538
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-02-r20/frontend-apt-probe.log",
+      "sha256": "7da8ad74c893f80663aeb503b22b9f93f638c96031c3883473664e13ba7b1c32",
+      "bytes": 6869
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-02-r20/frontend-runtime-inspection.log",
+      "sha256": "c07c7ca9117d7ca873707a79c344aeef0b60f56542a6b4edee120e8781824010",
+      "bytes": 5116
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-02-r20/postgres-apt-probe.log",
+      "sha256": "5d47cb15eb920db45bdd7397a960099e04520211f76df98b23d908ba2ed5106e",
+      "bytes": 10753
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-02-r20/postgres-runtime-inspection.log",
+      "sha256": "59bc2b00573c3178876d7758dd40e73259dc228df149225b8fc1488cc462b60b",
+      "bytes": 11081
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-02-r20/primary-source-retrieval.json",
+      "sha256": "fdf4dcf9504c90a72eee7326bc34803049324ee936b27befcc706a29c1b6b8dc",
+      "bytes": 1918
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-02-r20/README.md",
+      "sha256": "f634c66071a362015f0a764f891964a7a0f14e2e46c7f0711d9cb70b58ab77d7",
+      "bytes": 2324
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-02-r20/runtime-inspection.json",
+      "sha256": "7f9a344366bb6245a4c8f0827847dabacc34a39b3b87fa3a6eeaae7742c72cef",
+      "bytes": 893
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-02-r20/scan-comparison.json",
+      "sha256": "436a92b537aa16804793ca73b28e19418d36c62eee1dd43bf78ef77f141bcb54",
+      "bytes": 188747
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-02-r20/source-secrets-summary.json",
+      "sha256": "f9d662845cc94030ad9edac884557400d28d8ef1efa27fe43d0937354df7f152",
+      "bytes": 344
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-02-r20/trivy-db-metadata.json",
+      "sha256": "485ef6dc64c8e9b3f86aa6f57ea1269d541110515784fb73363a2f418efe524e",
+      "bytes": 176
+    }
+  ],
+  "currentImagesEvidenceRole": "Historical analysis final-tag scans; canonical original regression payload scans are recorded in the closure-preparation index",
+  "closurePreparation": {
+    "path": "docs/tfg/evidence/TFG_A_R20_CLOSURE_PREPARATION_2026-10-02.json",
+    "recordedAtUtc": "2026-10-02T17:12:57.121244+00:00",
+    "accepted": false,
+    "gateComplete": false,
+    "originalAnalysisIndex": {
+      "path": "docs/tfg/evidence/2026-10-02-r20-closure/historical-analysis-index.json",
+      "sha256": "8adedefc8d8eee22a09989e5b028ad1ed6716b6c7144f90cfcdd8cbff7589e7d",
+      "bytes": 8853
+    },
+    "imageBinding": "RESOLVED by recovery and fresh scan of original regression platform payloads; historical final-tag scans retained"
+  }
+}

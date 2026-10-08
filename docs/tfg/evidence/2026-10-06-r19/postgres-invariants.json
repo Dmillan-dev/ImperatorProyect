@@ -1,0 +1,11 @@
+{
+  "result": "PASS for pinned runtime identities and gosu user switch; security gate FAIL separately",
+  "versions": {
+    "gosu": "1.19 (go1.26.6 on linux/amd64; gc)",
+    "postgres": "postgres (PostgreSQL) 18.6 (Debian 18.6-1.pgdg12+2)",
+    "pcre2": "10.42-1+deb12u1"
+  },
+  "commandsUseExactImage": true,
+  "formalCleanGitD094Certification": false,
+  "executedAtUtc": "2026-10-06T16:03:51.849425+00:00"
+}

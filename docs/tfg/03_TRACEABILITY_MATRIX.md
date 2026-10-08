@@ -1,10 +1,16 @@
 # TFG Requirement Traceability Matrix
 
-Document status: **TFG-A FINAL REVIEW CANDIDATE**
+## Current Owner Decision And Sprint — 2026-10-06
 
-The accepted source SHA for this initial mapping is
-`4dbf4fbe89dad0c6fcfd906aac7624075846c37a`. Final academic evidence must bind
-to the final accepted release SHA instead of silently reusing this baseline.
+**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](A_S3_EVIDENCE_VERSIONING.md).
+
+Document status: **TFG-A IN PROGRESS**
+
+The initial mapping used `4dbf4fbe89dad0c6fcfd906aac7624075846c37a`.
+This TFG-A iteration inspects implementation SHA
+`b602bbe1dde92a902c17272d59cd9f0c10b9efe5`. Historical validation labels below
+retain their original scope; current runs are indexed in the Evidence Register.
+Final academic evidence must bind to the accepted release SHA.
 
 | ID             | Objective / competency                                                                                        | Requirement                                   | Implementation                      | Validation                                      | Evidence    | Status              |
 | -------------- | ------------------------------------------------------------------------------------------------------------- | --------------------------------------------- | ----------------------------------- | ----------------------------------------------- | ----------- | ------------------- |
@@ -31,6 +37,53 @@ to the final accepted release SHA instead of silently reusing this baseline.
 
 ## Traceability Rule
 
+The Developer Associate and GitHub Foundations rows extend the same academic
+requirements, not the business scope. Their evidence links are:
+
+| Requirement                | Additional competencies             | Evidence / limitation                                                    |
+| -------------------------- | ----------------------------------- | ------------------------------------------------------------------------ |
+| `TFG-RF-08`                | `DVA-01`                            | `E-AI-01`; provider and failure tests, real Bedrock pending              |
+| `TFG-NFR-02`, `TFG-NFR-03` | `DVA-02`, `GH-03`                   | `E-SEC-01`, `E-SEC-02`; cloud permissions and external settings unproved |
+| `TFG-NFR-05`               | `DVA-04`                            | `E-OPS-01`; local signals, AWS diagnosis pending                         |
+| `TFG-NFR-07`               | `DVA-05`, `GH-01`, `GH-02`, `GH-03` | `E-SC-02`, `E-GIT-01`; each result retains its revision                  |
+| `TFG-CLOUD-01`             | `DVA-01`, `DVA-02`                  | `E-AWS-01`; offline configuration validation only                        |
+| `TFG-CLOUD-03`             | `DVA-03`                            | `E-AWS-03`; delivery source exists, execution remains `NOT IMPLEMENTED`  |
+| `TFG-CLOUD-04`             | `DVA-04`                            | `E-AWS-04`; AWS recovery still unexecuted                                |
+| `TFG-O-09`                 | `GH-01`, `GH-02`, `GH-04`           | `E-GIT-01`; history, planning and documentation inspection               |
+
+`TFG-NFR-04` includes V3 as implemented migration source. The earlier
+`E-DATA-01` PostgreSQL certification covers V1/V2. Current V3 execution is
+recorded separately as `E-DATA-02`: all 35 native integration tests, Docker
+migration/persistence and append-only privileges now pass. The current image
+October 2 fixable-only image gate passed after R-17 remediation. On October 6
+R-19 and authorized R-21/R-22 corrected findings are CLOSED. A-S2 technical GO
+now has formal GO through explicit current R-20 acceptance and the independent approved open R-23 disposition; passing tests alone never replace security acceptance. No status in this table certifies
+the entire current release by inheriting an earlier result.
+
 Every final-memory claim must include at least one requirement ID and evidence
 ID. Screenshots alone are supporting material, not proof of behavior; they must
 be paired with a command result, test report, cloud record or immutable commit.
+
+See the [current security review](R21_R22_SECURITY_REVIEW.md) before claiming full closure.
+
+## Current A-S2 / A-S3 Traceability
+
+| Requirement / evidence        | Current demonstrated result                                                    | Binding / limitation                                                                      |
+| ----------------------------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------- |
+| TFG-NFR-03 / E-SEC-02         | Zero source/history/image secrets; new decision publication separately scanned | Exact prior runtime plus current publication receipt; no exposure/real-data certification |
+| TFG-NFR-04 / E-DATA-02        | V1–V3, 35 integration tests, persistence and recovery PASS                     | Current frozen R21/R22 images; no new regression claimed                                  |
+| TFG-NFR-06 / E-SC-01          | Zero fixable H/C; 23 OS CVEs conditionally accepted                            | Exact current R20 approval; exclusive expiry and early invalidation                       |
+| TFG-NFR-07 / E-SC-02          | A-S2 formal GO; R23 tooling disposition approved, risk remains OPEN            | Full audit findings retained; hosted checks for new candidate remain PENDING              |
+| TFG-O-09 / E-GIT-01           | A-S3 source/evidence/PR candidate preparation                                  | Accepted runtime fingerprint distinct from Git release approval/hosted CI                 |
+| TFG-RF-08 / E-AI-01           | Explanation provider implemented/tested offline                                | No live Bedrock call or autonomous approval claim                                         |
+| TFG-ID-01 / E-ID-01           | External IdP remains BLOCKED_EXTERNAL                                          | Local synthetic JWT fixture does not discharge D101                                       |
+| TFG-CLOUD-02–04 / E-AWS-02–04 | Live cost/deployment/rollback remain NOT IMPLEMENTED                           | AWS blocked; not a prerequisite claimed automatically for local academic rehearsal        |
+
+See [current owner approval](evidence/2026-10-06-a-s2-acceptance/README.md) and [A-S3](A_S3_EVIDENCE_VERSIONING.md).
+
+## Final Memory / Defense Mapping — 2026-10-07
+
+The [memory](08_LOCAL_MVP_MEMORY.md) maps each evaluated result to requirement/evidence IDs.
+The [script](09_DEFENSE_SCRIPT_12_MIN.md) names the API/UI distinction, synthetic values, exact security disposition and offline/live boundaries.
+Their 2026-10-07 [review pack](evidence/2026-10-07-a-s3-a-s4/README.md) preserves source and current image bindings.
+A candidate SHA is not owner acceptance; hosted CI and final defense remain PENDING.

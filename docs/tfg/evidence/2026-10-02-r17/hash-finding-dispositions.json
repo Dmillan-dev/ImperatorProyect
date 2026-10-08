@@ -1,0 +1,159 @@
+{
+  "rawFindings": 20,
+  "confirmedCredentials": 0,
+  "dispositions": [
+    {
+      "artifact": "docs/tfg/evidence/TFG_A_2026-10-01_MAINTENANCE.json",
+      "line": 534,
+      "sourceFile": "backend-java/api/decisions/DecisionApiModels.java",
+      "sha256": "474bf70094313e7713e27e5450030404fa9ef83eb029053e94665e93fed447a5",
+      "disposition": "Verified public file SHA256; not a credential"
+    },
+    {
+      "artifact": "docs/tfg/evidence/TFG_A_2026-10-01_MAINTENANCE.json",
+      "line": 540,
+      "sourceFile": "backend-java/api/errors/ApiErrorAttributes.java",
+      "sha256": "9d6f3347705dffd6ea6e062f3575b4f3aec2d6136bff913345553306194f5737",
+      "disposition": "Verified public file SHA256; not a credential"
+    },
+    {
+      "artifact": "docs/tfg/evidence/TFG_A_2026-10-01_MAINTENANCE.json",
+      "line": 541,
+      "sourceFile": "backend-java/api/errors/ApiErrorCode.java",
+      "sha256": "5e3f665452d9d2e5def772cfeefaff093f5ff3afe6519681022fd122da16a84d",
+      "disposition": "Verified public file SHA256; not a credential"
+    },
+    {
+      "artifact": "docs/tfg/evidence/TFG_A_2026-10-01_MAINTENANCE.json",
+      "line": 542,
+      "sourceFile": "backend-java/api/errors/ApiErrorResponse.java",
+      "sha256": "66b998e78729dfe13c375ad5fba3f27c3d21d599b23f5b04e194ba7ce56cc7b1",
+      "disposition": "Verified public file SHA256; not a credential"
+    },
+    {
+      "artifact": "docs/tfg/evidence/TFG_A_2026-10-01_MAINTENANCE.json",
+      "line": 545,
+      "sourceFile": "backend-java/api/errors/NotImplementedApiException.java",
+      "sha256": "7dd9be75a1bf445aa08a3fdabbe1c3b5f5a7102bbf0c32929e603de12204df16",
+      "disposition": "Verified public file SHA256; not a credential"
+    },
+    {
+      "artifact": "docs/tfg/evidence/TFG_A_2026-10-01_MAINTENANCE.json",
+      "line": 551,
+      "sourceFile": "backend-java/api/ledger/LedgerApiModels.java",
+      "sha256": "5d053a9a54747d35fbc42b7dc70f55db971219352e9b8ee59cc6d145ab2b4371",
+      "disposition": "Verified public file SHA256; not a credential"
+    },
+    {
+      "artifact": "docs/tfg/evidence/TFG_A_2026-10-01_MAINTENANCE.json",
+      "line": 564,
+      "sourceFile": "backend-java/api/security/JwtAccessDeniedHandler.java",
+      "sha256": "a1195247f30c274c1b69687ccd749861d2ede89739f25b8574b193fac2bc4812",
+      "disposition": "Verified public file SHA256; not a credential"
+    },
+    {
+      "artifact": "docs/tfg/evidence/TFG_A_2026-10-01_MAINTENANCE.json",
+      "line": 570,
+      "sourceFile": "backend-java/api/security/StrictBearerTokenResolver.java",
+      "sha256": "c9831c5db28e1cdb09b4362f5dec3faf965c64d1e8f055538a736b128c6af025",
+      "disposition": "Verified public file SHA256; not a credential"
+    },
+    {
+      "artifact": "docs/tfg/evidence/TFG_A_2026-10-01_MAINTENANCE.json",
+      "line": 744,
+      "sourceFile": "frontend/tests/api-client.test.ts",
+      "sha256": "dfa42743bd4c8f1ef3e67e78d61d4353e90c6e1381bcd11e23b1935556b566e2",
+      "disposition": "Verified public file SHA256; not a credential"
+    },
+    {
+      "artifact": "docs/tfg/evidence/TFG_A_2026-10-01_MAINTENANCE.json",
+      "line": 780,
+      "sourceFile": "src/test/java/imperator/api/FunctionalRestApiContractTest.java",
+      "sha256": "115344197810f75a6661bb968fcc7f3e85e35f2ae775a4d6be04dbf65d858679",
+      "disposition": "Verified public file SHA256; not a credential"
+    },
+    {
+      "artifact": "docs/tfg/evidence/2026-10-01-local/docker-source-manifest.json",
+      "line": 74,
+      "sourceFile": "backend-java/api/decisions/DecisionApiModels.java",
+      "sha256": "474bf70094313e7713e27e5450030404fa9ef83eb029053e94665e93fed447a5",
+      "disposition": "Verified public file SHA256; not a credential"
+    },
+    {
+      "artifact": "docs/tfg/evidence/2026-10-01-local/docker-source-manifest.json",
+      "line": 81,
+      "sourceFile": "backend-java/api/errors/ApiErrorAttributes.java",
+      "sha256": "9d6f3347705dffd6ea6e062f3575b4f3aec2d6136bff913345553306194f5737",
+      "disposition": "Verified public file SHA256; not a credential"
+    },
+    {
+      "artifact": "docs/tfg/evidence/2026-10-01-local/docker-source-manifest.json",
+      "line": 82,
+      "sourceFile": "backend-java/api/errors/ApiErrorCode.java",
+      "sha256": "5e3f665452d9d2e5def772cfeefaff093f5ff3afe6519681022fd122da16a84d",
+      "disposition": "Verified public file SHA256; not a credential"
+    },
+    {
+      "artifact": "docs/tfg/evidence/2026-10-01-local/docker-source-manifest.json",
+      "line": 83,
+      "sourceFile": "backend-java/api/errors/ApiErrorResponse.java",
+      "sha256": "66b998e78729dfe13c375ad5fba3f27c3d21d599b23f5b04e194ba7ce56cc7b1",
+      "disposition": "Verified public file SHA256; not a credential"
+    },
+    {
+      "artifact": "docs/tfg/evidence/2026-10-01-local/docker-source-manifest.json",
+      "line": 86,
+      "sourceFile": "backend-java/api/errors/NotImplementedApiException.java",
+      "sha256": "7dd9be75a1bf445aa08a3fdabbe1c3b5f5a7102bbf0c32929e603de12204df16",
+      "disposition": "Verified public file SHA256; not a credential"
+    },
+    {
+      "artifact": "docs/tfg/evidence/2026-10-01-local/docker-source-manifest.json",
+      "line": 93,
+      "sourceFile": "backend-java/api/ledger/LedgerApiModels.java",
+      "sha256": "5d053a9a54747d35fbc42b7dc70f55db971219352e9b8ee59cc6d145ab2b4371",
+      "disposition": "Verified public file SHA256; not a credential"
+    },
+    {
+      "artifact": "docs/tfg/evidence/2026-10-01-local/docker-source-manifest.json",
+      "line": 108,
+      "sourceFile": "backend-java/api/security/JwtAccessDeniedHandler.java",
+      "sha256": "a1195247f30c274c1b69687ccd749861d2ede89739f25b8574b193fac2bc4812",
+      "disposition": "Verified public file SHA256; not a credential"
+    },
+    {
+      "artifact": "docs/tfg/evidence/2026-10-01-local/docker-source-manifest.json",
+      "line": 114,
+      "sourceFile": "backend-java/api/security/StrictBearerTokenResolver.java",
+      "sha256": "c9831c5db28e1cdb09b4362f5dec3faf965c64d1e8f055538a736b128c6af025",
+      "disposition": "Verified public file SHA256; not a credential"
+    },
+    {
+      "artifact": "docs/tfg/evidence/2026-10-01-local/docker-source-manifest.json",
+      "line": 310,
+      "sourceFile": "frontend/tests/api-client.test.ts",
+      "sha256": "dfa42743bd4c8f1ef3e67e78d61d4353e90c6e1381bcd11e23b1935556b566e2",
+      "disposition": "Verified public file SHA256; not a credential"
+    },
+    {
+      "artifact": "docs/tfg/evidence/2026-10-01-local/docker-source-manifest.json",
+      "line": 350,
+      "sourceFile": "src/test/java/imperator/api/FunctionalRestApiContractTest.java",
+      "sha256": "115344197810f75a6661bb968fcc7f3e85e35f2ae775a4d6be04dbf65d858679",
+      "disposition": "Verified public file SHA256; not a credential"
+    }
+  ],
+  "normalization": {
+    "executedAtUtc": "2026-10-02T10:19:26.625447+00:00",
+    "reason": "Filename-to-hash dictionaries triggered generic-api-key on public source SHA256 values. Use explicit path/sha256 records; execution results, input digest and file hashes are unchanged.",
+    "priorSerializedSha256": {
+      "TFG_A_2026-10-01_MAINTENANCE.json": "0de433f822382e8351a80ed5f7501d8ed9e246e43c1d7cde796c6a197c09b8d1",
+      "docker-source-manifest.json": "eae9ba4dc878ed34b47294a2a65c81b12622c064eb5ebaf3717d3ffa1e574cd8"
+    },
+    "oldSerializedCopies": "Local ignored publication-metadata-before/; not re-published",
+    "confirmedCredentialCount": 0,
+    "sourceFileDigestsUnchanged": true,
+    "artifactDigestPointerUpdated": true,
+    "scannerRulesChanged": false
+  }
+}

@@ -1,0 +1,1153 @@
+--- a/README.md
++++ b/README.md
+@@ -1,8 +1,8 @@
+ # IMPERATOR
+ 
+-## Current R-20 Applicability Review — 2026-10-06
+-
+-The current23-CVE/115-row applicability review is complete:3affected optional subcomponents absent,1unused protocol,19conditional residuals with explicit prerequisites/uncertainties. Historical Perl probe-name discrepancy resolved without editing old evidence. `braces` is absent as a package from the inspected production image but present in development tooling. Current R20 proposal remains `accepted:false`; independent R23 remains **OPEN / NO FIX AVAILABLE / NOT ACCEPTED**. No upgrades or automatic advancement. A-S2 technical GO; formal closure awaits explicit owner disposition; original exclusive expiry2026-10-09T00:00:00+02:00 remains unchanged. See the [applicability review](docs/tfg/R20_APPLICABILITY_REVIEW.md), exact proposals and artifact index.
++## Current Owner Decision And Sprint — 2026-10-06
++
++**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](docs/tfg/evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](docs/tfg/A_S3_EVIDENCE_VERSIONING.md).
+ 
+ ### DAM TFG MVP for operational decision traceability
+ 
+@@ -55,7 +55,7 @@
+ 
+ ## Current Delivery And Evidence Status
+ 
+-**2026-10-06: R-17/R-19 CLOSED; authorized R-21/R-22 patches applied and verified. A-S2 technical GO; formal security closure PENDING RESIDUAL DISPOSITION. TFG-A IN PROGRESS.**
++**2026-10-06: R-17/R-19 CLOSED; authorized R-21/R-22 patches applied and verified. A-S2 technical and formal GO; A-S3 evidence/versioning ACTIVE. TFG-A IN PROGRESS.**
+ 
+ Only source-map-js1.2.1→1.2.2, sharp0.35.4→0.35.5 and its mandatory native subtree, and checksum-pinned Bookworm PCRE2/Perl security patches were applied. Six files and28 lock entries; other dependencies, base digests, Java/Spring/Node/PostgreSQL versions, business logic and architecture are unchanged from the task-start local worktree. Braces3.0.3 is unchanged; PR #57–59 were not merged.
+ 
+@@ -74,15 +74,15 @@
+ 
+ The [current review](docs/tfg/R21_R22_SECURITY_REVIEW.md), [dated evidence](docs/tfg/evidence/2026-10-06-r21-r22/README.md) and [gate](docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md) bind tests, raw scans, source/DB hashes, OCI manifests/config/layers, five captures,27.16-second captioned technical fallback and owned-resource cleanup. Baseline `b602bbe1dde92a902c17272d59cd9f0c10b9efe5` identifies a dirty local worktree, not an accepted release SHA or hosted-CI pass. Local loopback/synthetic fixture is not external IdP/AWS certification or a narrated twelve-minute defense.
+ 
+-D101 remains OPERATOR-DEFERRED / BLOCKED_EXTERNAL, mandatory before pilot/non-loopback exposure or MVP Release. A-S3/A-S4, TFG-B/C/D and AWS remain blocked/unauthorized. No further dependency update is authorized.
++D101 remains OPERATOR-DEFERRED / BLOCKED_EXTERNAL, mandatory before pilot/non-loopback exposure or MVP Release. A-S3 evidence/versioning is authorized; A-S4 remains later and TFG-B/C/D/AWS stay blocked/unauthorized. No further dependency update is authorized.
+ 
+ ## R-20 Approval And Current Security Gate
+ 
+-The [historical R-20 B approval](docs/tfg/evidence/2026-10-02-r20-acceptance/acceptance.json) is preserved unchanged. Local loopback TFG-A and synthetic data only; AWS/production/real data/pilot exposure excluded. Exclusive expiry **2026-10-09 00:00 Europe/Madrid (UTC+02:00) = 2026-10-08 22:00 UTC**, with no automatic renewal.
+-
+-**Current version binding: REVIEW REQUIRED / NOT ACCEPTED.** Current image residual matrix115rows/23distinctCVEs has no new distinct CVE versus the historical32-CVE matrix, but image/lock/runtime/test/DB hashes and surviving Perl package-version bindings changed. A subset does not automatically transfer acceptance. The independent unfixed braces tooling residual is tracked **R-23 OPEN / NOT ACCEPTED**. No fixable vulnerability or detected secret is waived.
+-
+-**A-S2 technical GO does not close TFG-A.** Formal security closure awaits explicit current-version residual disposition; this task stops here without A-S3 advancement or institutional acceptance claims.
++The [current explicit R-20 approval](docs/tfg/evidence/2026-10-06-a-s2-acceptance/r20-current-acceptance.json) binds the inspected 23-CVE/115-row OS residual to the exact current images, runtime inputs, scanner databases and reviewed evidence. The historical October 2 approval and original proposal bytes remain unchanged; current approval is a new explicit decision, not an inherited acceptance.
++
++**A-S2 formal GO applies only to local synthetic TFG-A until 2026-10-09 00:00 Europe/Madrid (UTC+02:00), exclusively.** No fixable vulnerability or secret is waived. The independent [R-23 disposition](docs/tfg/evidence/2026-10-06-a-s2-acceptance/r23-approved-open-disposition.json) is approved while the risk remains OPEN / NO FIX AVAILABLE. Full scanner/audit failures remain visible; no absolute-zero or universal non-exploitability claim.
++
++[A-S3](docs/tfg/A_S3_EVIDENCE_VERSIONING.md) now prepares source version, evidence, traceability and PR/CI linkage. No code/dependency change, AWS action or PR #57–59 merge is authorized. A-S2 closure alone does not complete TFG-A or the narrated defense.
+ 
+ | Evidence label    | Meaning                                                    |
+ | ----------------- | ---------------------------------------------------------- |
+--- a/SECURITY.md
++++ b/SECURITY.md
+@@ -1,4 +1,8 @@
+ # Security Policy
++
++## Current Owner Decision And Sprint — 2026-10-06
++
++**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](docs/tfg/evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](docs/tfg/A_S3_EVIDENCE_VERSIONING.md).
+ 
+ IMPERATOR is a pre-pilot portfolio MVP. Security reports are welcome, but the
+ project does not currently provide a production support SLA.
+@@ -88,9 +92,12 @@
+ `infra/docker/.env.example` contains placeholders only. Local `.env` files,
+ Docker secret values, generated runtime evidence, database dumps, logs and
+ private commercial discovery records are excluded by `.gitignore` and must not
+-be attached to issues, pull requests or workflow artifacts.
++be attached to issues, pull requests or workflow artifacts. Curated sanitized
++synthetic reports under `docs/tfg/evidence/` are separately reviewed publication
++artifacts; preserve hashes and scan them before versioning. This does not authorize
++raw credential/customer/runtime-dump publication.
+ 
+-## Current Local Security Verification — R-21/R-22, 2026-10-06
++## Historical Local Security Verification — Before Current Explicit Approval
+ 
+ **A-S2 technical GO; formal security closure PENDING RESIDUAL DISPOSITION.** Only the explicitly authorized source-map-js/sharp and Bookworm PCRE2/Perl patches were applied.174 unit+35 integration+41 frontend, quality, Docker/RBAC/FlywayV3/persistence/readiness/recovery, exact-image scan binding, D094 and scoped cleanup PASS; Playwright9pass/6intentional skips. Trivy source/images zero fixable High/Critical, source configuration zeroHigh/Critical, secrets zero at all severities. Production npm audit0.
+ 
+--- a/docs/project/PROJECT_STATUS.md
++++ b/docs/project/PROJECT_STATUS.md
+@@ -1,10 +1,10 @@
+ # IMPERATOR Project Status
+ 
+-## Current R-20 Applicability Review — 2026-10-06
+-
+-The current23-CVE/115-row applicability review is complete:3affected optional subcomponents absent,1unused protocol,19conditional residuals with explicit prerequisites/uncertainties. Historical Perl probe-name discrepancy resolved without editing old evidence. `braces` is absent as a package from the inspected production image but present in development tooling. Current R20 proposal remains `accepted:false`; independent R23 remains **OPEN / NO FIX AVAILABLE / NOT ACCEPTED**. No upgrades or automatic advancement. A-S2 technical GO; formal closure awaits explicit owner disposition; original exclusive expiry2026-10-09T00:00:00+02:00 remains unchanged. See the [applicability review](../tfg/R20_APPLICABILITY_REVIEW.md), exact proposals and artifact index.
+-
+-Control-plane documentation synchronized: **2026-10-02**
++## Current Owner Decision And Sprint — 2026-10-06
++
++**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](../tfg/evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](../tfg/TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](../tfg/A_S3_EVIDENCE_VERSIONING.md).
++
++Control-plane documentation synchronized: **2026-10-06**
+ 
+ Runtime certification dates below remain historical. This update records the
+ founder-authorized TFG-A start, bounded maintenance and D101 scheduling
+@@ -13,126 +13,126 @@
+ 
+ ## Current Gate
+ 
+-| Field                                       | Value                                                                                                                                      |
+-| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+-| Product lifecycle                           | Phase 3 - First Business Value Loop                                                                                                        |
+-| Phase status                                | Active                                                                                                                                     |
+-| Sprint 2.8.2 acceptance                     | PASS                                                                                                                                       |
+-| Sprint 2.8.3 acceptance                     | PASS                                                                                                                                       |
+-| Sprint 2.8.4 acceptance                     | PASS                                                                                                                                       |
+-| Sprint 2.8.5 acceptance                     | PASS                                                                                                                                       |
+-| Sprint 2.8.6 acceptance                     | PASS                                                                                                                                       |
+-| Sprint 2.8.7 acceptance                     | PASS                                                                                                                                       |
+-| Sprint 2.8.8 acceptance                     | PASS                                                                                                                                       |
+-| Sprint 2.8.8.2 acceptance                   | PASS                                                                                                                                       |
+-| Sprint 3.0 acceptance                       | CERTIFIED                                                                                                                                  |
+-| Sprint 3.1 acceptance                       | CERTIFIED                                                                                                                                  |
+-| Sprint 3.1 closure                          | COMPLETE                                                                                                                                   |
+-| Sprint 3.2 acceptance                       | CERTIFIED                                                                                                                                  |
+-| Sprint 3.2 closure                          | COMPLETE                                                                                                                                   |
+-| Sprint 3.3 acceptance                       | CERTIFIED                                                                                                                                  |
+-| Sprint 3.3 closure                          | COMPLETE                                                                                                                                   |
+-| Sprint 3.3.1 closure                        | COMPLETE                                                                                                                                   |
+-| Sprint 3.4 implementation                   | PASS                                                                                                                                       |
+-| Sprint 3.4 PostgreSQL certification         | PASS - D084 obligation discharged on 2026-08-02                                                                                            |
+-| Sprint 3.4 closure                          | CERTIFIED / COMPLETE                                                                                                                       |
+-| Sprint 3.4.1 documentation synchronization  | COMPLETE                                                                                                                                   |
+-| Sprint 3.5 acceptance                       | CERTIFIED                                                                                                                                  |
+-| Sprint 3.5 closure                          | COMPLETE                                                                                                                                   |
+-| Sprint 3.5.1 documentation synchronization  | COMPLETE                                                                                                                                   |
+-| Sprint 3.6 implementation                   | PASS                                                                                                                                       |
+-| Sprint 3.6 GitHub Actions certification     | PASS                                                                                                                                       |
+-| Sprint 3.6 closure                          | CERTIFIED / COMPLETE                                                                                                                       |
+-| Sprint 3.6.1 documentation synchronization  | COMPLETE                                                                                                                                   |
+-| D085 roadmap decision                       | ACCEPTED / COMPLETE                                                                                                                        |
+-| D086 Functional REST contract               | ACCEPTED / COMPLETE                                                                                                                        |
+-| Sprint 3.7 implementation                   | PASS                                                                                                                                       |
+-| Sprint 3.7 PostgreSQL certification         | PASS                                                                                                                                       |
+-| Sprint 3.7 closure                          | CERTIFIED / COMPLETE                                                                                                                       |
+-| Sprint 3.7.1 documentation synchronization  | COMPLETE                                                                                                                                   |
+-| D087 JWT Authentication contract            | ACCEPTED / COMPLETE                                                                                                                        |
+-| Sprint 3.8 implementation                   | PASS                                                                                                                                       |
+-| Sprint 3.8 PostgreSQL certification         | PASS                                                                                                                                       |
+-| Sprint 3.8 closure                          | CERTIFIED / COMPLETE                                                                                                                       |
+-| Sprint 3.8.1 documentation synchronization  | COMPLETE                                                                                                                                   |
+-| D088 RBAC Authorization contract            | ACCEPTED / COMPLETE                                                                                                                        |
+-| Sprint 3.9 implementation                   | PASS                                                                                                                                       |
+-| Sprint 3.9 PostgreSQL certification         | PASS - PostgreSQL 18.4 under the 18.x (18.2+) gate                                                                                         |
+-| Sprint 3.9 closure                          | CERTIFIED / COMPLETE                                                                                                                       |
+-| Sprint 3.9.1 documentation synchronization  | COMPLETE                                                                                                                                   |
+-| D089 GitHub Integration contract            | ACCEPTED / COMPLETE / FROZEN                                                                                                               |
+-| Sprint 4.0 implementation                   | PASS                                                                                                                                       |
+-| Sprint 4.0 PostgreSQL certification         | PASS - PostgreSQL 18.4 under the 18.x (18.2+) gate                                                                                         |
+-| Sprint 4.0 closure                          | CERTIFIED / COMPLETE                                                                                                                       |
+-| Sprint 4.0.1 documentation synchronization  | COMPLETE                                                                                                                                   |
+-| D090 AWS Integration contract               | ACCEPTED / COMPLETE / FROZEN                                                                                                               |
+-| Sprint 4.1 implementation                   | PASS                                                                                                                                       |
+-| Sprint 4.1 PostgreSQL certification         | PASS - PostgreSQL 18.4 under the 18.x (18.2+) gate                                                                                         |
+-| Sprint 4.1 closure                          | CERTIFIED / COMPLETE                                                                                                                       |
+-| Sprint 4.1.1 documentation synchronization  | COMPLETE                                                                                                                                   |
+-| D091 Decision Review Workspace contract     | ACCEPTED / COMPLETE / FROZEN                                                                                                               |
+-| Sprint 4.2 implementation                   | PASS                                                                                                                                       |
+-| Sprint 4.2 frontend certification           | PASS - format, lint, types, tests, coverage, build, audit and Playwright                                                                   |
+-| Sprint 4.2 backend regression               | PASS - 139 default tests and 31 PostgreSQL 18.4 integration tests                                                                          |
+-| Sprint 4.2 closure                          | CERTIFIED / COMPLETE                                                                                                                       |
+-| Sprint 4.2.1 documentation synchronization  | COMPLETE                                                                                                                                   |
+-| D092 Docker Production Runtime contract     | ACCEPTED / COMPLETE / FROZEN                                                                                                               |
+-| D093 DRC-AOA-001 Case Composition contract  | ACCEPTED / COMPLETE / FROZEN                                                                                                               |
+-| D093/R16 implementation                     | PASS                                                                                                                                       |
+-| D094 PostgreSQL supply-chain remediation    | ACCEPTED / COMPLETE / PASS                                                                                                                 |
+-| D095 runtime certification scope correction | ACCEPTED / COMPLETE                                                                                                                        |
+-| D096 minimum observability runtime contract | ACCEPTED / COMPLETE / FROZEN                                                                                                               |
+-| D097 MVP observability scope correction     | ACCEPTED / COMPLETE / HOSTED PASS                                                                                                          |
+-| D098 runtime supply-chain refresh           | ACCEPTED / FROZEN; COMPLETE / HOSTED PASS                                                                                                  |
+-| D099 auditable Amazon Bedrock explanation   | ACCEPTED; IMPLEMENTATION COMPLETE / HOSTED REPOSITORY PASS on `22a9917`                                                                    |
+-| D100 AWS SAA portfolio deployment           | ACCEPTED; IMPLEMENTATION COMPLETE / HOSTED REPOSITORY PASS / AWS APPLY NOT AUTHORIZED                                                      |
+-| Sprint 4.3 implementation                   | PASS                                                                                                                                       |
+-| Sprint 4.3 local runtime certification      | PASS - Docker, security, local JWT/RBAC E2E and persistence/recreation                                                                     |
+-| Sprint 4.3 closure                          | CERTIFIED / COMPLETE under D095                                                                                                            |
+-| Sprint 4.3.1 documentation synchronization  | COMPLETE                                                                                                                                   |
+-| Sprint 4.4.2 Bedrock and AWS preparation    | COMPLETE / HOSTED REPOSITORY PASS on `22a9917`                                                                                             |
+-| External Pilot Identity Conformance         | D101 OPERATOR-DEFERRED / BLOCKED_EXTERNAL; mandatory under D095 before Pilot Readiness                                                     |
+-| Sprint 4.4 contract gate                    | COMPLETE - D096 frozen and narrowly corrected by D097; no runtime change                                                                   |
+-| Sprint 4.4 implementation                   | CERTIFIED / COMPLETE / HOSTED PASS                                                                                                         |
+-| Sprint 4.4 structural preflight             | D098 COMPLETE / HOSTED PASS                                                                                                                |
+-| Last completed gate                         | Sprint 4.4.2 - D099/D100 repository implementation                                                                                         |
+-| Phase 2 closure                             | COMPLETE under D079; Sprints 2.9-2.13 deferred                                                                                             |
+-| Current control gate                        | TFG-A - bounded maintenance, risk control and isolated local evidence                                                                      |
+-| TFG-A workflow                              | IN PROGRESS; R-17/R-19 and authorized R-21/R-22 corrected findings CLOSED; A-S2 technical GO; formal closure pending R-20/R-23 disposition |
+-| Phase 3 authorization                       | Authorized by D079 and evolved by D085                                                                                                     |
++| Field                                       | Value                                                                                                                                |
++| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
++| Product lifecycle                           | Phase 3 - First Business Value Loop                                                                                                  |
++| Phase status                                | Active                                                                                                                               |
++| Sprint 2.8.2 acceptance                     | PASS                                                                                                                                 |
++| Sprint 2.8.3 acceptance                     | PASS                                                                                                                                 |
++| Sprint 2.8.4 acceptance                     | PASS                                                                                                                                 |
++| Sprint 2.8.5 acceptance                     | PASS                                                                                                                                 |
++| Sprint 2.8.6 acceptance                     | PASS                                                                                                                                 |
++| Sprint 2.8.7 acceptance                     | PASS                                                                                                                                 |
++| Sprint 2.8.8 acceptance                     | PASS                                                                                                                                 |
++| Sprint 2.8.8.2 acceptance                   | PASS                                                                                                                                 |
++| Sprint 3.0 acceptance                       | CERTIFIED                                                                                                                            |
++| Sprint 3.1 acceptance                       | CERTIFIED                                                                                                                            |
++| Sprint 3.1 closure                          | COMPLETE                                                                                                                             |
++| Sprint 3.2 acceptance                       | CERTIFIED                                                                                                                            |
++| Sprint 3.2 closure                          | COMPLETE                                                                                                                             |
++| Sprint 3.3 acceptance                       | CERTIFIED                                                                                                                            |
++| Sprint 3.3 closure                          | COMPLETE                                                                                                                             |
++| Sprint 3.3.1 closure                        | COMPLETE                                                                                                                             |
++| Sprint 3.4 implementation                   | PASS                                                                                                                                 |
++| Sprint 3.4 PostgreSQL certification         | PASS - D084 obligation discharged on 2026-08-02                                                                                      |
++| Sprint 3.4 closure                          | CERTIFIED / COMPLETE                                                                                                                 |
++| Sprint 3.4.1 documentation synchronization  | COMPLETE                                                                                                                             |
++| Sprint 3.5 acceptance                       | CERTIFIED                                                                                                                            |
++| Sprint 3.5 closure                          | COMPLETE                                                                                                                             |
++| Sprint 3.5.1 documentation synchronization  | COMPLETE                                                                                                                             |
++| Sprint 3.6 implementation                   | PASS                                                                                                                                 |
++| Sprint 3.6 GitHub Actions certification     | PASS                                                                                                                                 |
++| Sprint 3.6 closure                          | CERTIFIED / COMPLETE                                                                                                                 |
++| Sprint 3.6.1 documentation synchronization  | COMPLETE                                                                                                                             |
++| D085 roadmap decision                       | ACCEPTED / COMPLETE                                                                                                                  |
++| D086 Functional REST contract               | ACCEPTED / COMPLETE                                                                                                                  |
++| Sprint 3.7 implementation                   | PASS                                                                                                                                 |
++| Sprint 3.7 PostgreSQL certification         | PASS                                                                                                                                 |
++| Sprint 3.7 closure                          | CERTIFIED / COMPLETE                                                                                                                 |
++| Sprint 3.7.1 documentation synchronization  | COMPLETE                                                                                                                             |
++| D087 JWT Authentication contract            | ACCEPTED / COMPLETE                                                                                                                  |
++| Sprint 3.8 implementation                   | PASS                                                                                                                                 |
++| Sprint 3.8 PostgreSQL certification         | PASS                                                                                                                                 |
++| Sprint 3.8 closure                          | CERTIFIED / COMPLETE                                                                                                                 |
++| Sprint 3.8.1 documentation synchronization  | COMPLETE                                                                                                                             |
++| D088 RBAC Authorization contract            | ACCEPTED / COMPLETE                                                                                                                  |
++| Sprint 3.9 implementation                   | PASS                                                                                                                                 |
++| Sprint 3.9 PostgreSQL certification         | PASS - PostgreSQL 18.4 under the 18.x (18.2+) gate                                                                                   |
++| Sprint 3.9 closure                          | CERTIFIED / COMPLETE                                                                                                                 |
++| Sprint 3.9.1 documentation synchronization  | COMPLETE                                                                                                                             |
++| D089 GitHub Integration contract            | ACCEPTED / COMPLETE / FROZEN                                                                                                         |
++| Sprint 4.0 implementation                   | PASS                                                                                                                                 |
++| Sprint 4.0 PostgreSQL certification         | PASS - PostgreSQL 18.4 under the 18.x (18.2+) gate                                                                                   |
++| Sprint 4.0 closure                          | CERTIFIED / COMPLETE                                                                                                                 |
++| Sprint 4.0.1 documentation synchronization  | COMPLETE                                                                                                                             |
++| D090 AWS Integration contract               | ACCEPTED / COMPLETE / FROZEN                                                                                                         |
++| Sprint 4.1 implementation                   | PASS                                                                                                                                 |
++| Sprint 4.1 PostgreSQL certification         | PASS - PostgreSQL 18.4 under the 18.x (18.2+) gate                                                                                   |
++| Sprint 4.1 closure                          | CERTIFIED / COMPLETE                                                                                                                 |
++| Sprint 4.1.1 documentation synchronization  | COMPLETE                                                                                                                             |
++| D091 Decision Review Workspace contract     | ACCEPTED / COMPLETE / FROZEN                                                                                                         |
++| Sprint 4.2 implementation                   | PASS                                                                                                                                 |
++| Sprint 4.2 frontend certification           | PASS - format, lint, types, tests, coverage, build, audit and Playwright                                                             |
++| Sprint 4.2 backend regression               | PASS - 139 default tests and 31 PostgreSQL 18.4 integration tests                                                                    |
++| Sprint 4.2 closure                          | CERTIFIED / COMPLETE                                                                                                                 |
++| Sprint 4.2.1 documentation synchronization  | COMPLETE                                                                                                                             |
++| D092 Docker Production Runtime contract     | ACCEPTED / COMPLETE / FROZEN                                                                                                         |
++| D093 DRC-AOA-001 Case Composition contract  | ACCEPTED / COMPLETE / FROZEN                                                                                                         |
++| D093/R16 implementation                     | PASS                                                                                                                                 |
++| D094 PostgreSQL supply-chain remediation    | ACCEPTED / COMPLETE / PASS                                                                                                           |
++| D095 runtime certification scope correction | ACCEPTED / COMPLETE                                                                                                                  |
++| D096 minimum observability runtime contract | ACCEPTED / COMPLETE / FROZEN                                                                                                         |
++| D097 MVP observability scope correction     | ACCEPTED / COMPLETE / HOSTED PASS                                                                                                    |
++| D098 runtime supply-chain refresh           | ACCEPTED / FROZEN; COMPLETE / HOSTED PASS                                                                                            |
++| D099 auditable Amazon Bedrock explanation   | ACCEPTED; IMPLEMENTATION COMPLETE / HOSTED REPOSITORY PASS on `22a9917`                                                              |
++| D100 AWS SAA portfolio deployment           | ACCEPTED; IMPLEMENTATION COMPLETE / HOSTED REPOSITORY PASS / AWS APPLY NOT AUTHORIZED                                                |
++| Sprint 4.3 implementation                   | PASS                                                                                                                                 |
++| Sprint 4.3 local runtime certification      | PASS - Docker, security, local JWT/RBAC E2E and persistence/recreation                                                               |
++| Sprint 4.3 closure                          | CERTIFIED / COMPLETE under D095                                                                                                      |
++| Sprint 4.3.1 documentation synchronization  | COMPLETE                                                                                                                             |
++| Sprint 4.4.2 Bedrock and AWS preparation    | COMPLETE / HOSTED REPOSITORY PASS on `22a9917`                                                                                       |
++| External Pilot Identity Conformance         | D101 OPERATOR-DEFERRED / BLOCKED_EXTERNAL; mandatory under D095 before Pilot Readiness                                               |
++| Sprint 4.4 contract gate                    | COMPLETE - D096 frozen and narrowly corrected by D097; no runtime change                                                             |
++| Sprint 4.4 implementation                   | CERTIFIED / COMPLETE / HOSTED PASS                                                                                                   |
++| Sprint 4.4 structural preflight             | D098 COMPLETE / HOSTED PASS                                                                                                          |
++| Last completed gate                         | Sprint 4.4.2 - D099/D100 repository implementation                                                                                   |
++| Phase 2 closure                             | COMPLETE under D079; Sprints 2.9-2.13 deferred                                                                                       |
++| Current control gate                        | TFG-A - bounded maintenance, risk control and isolated local evidence                                                                |
++| TFG-A workflow                              | IN PROGRESS; R-17/R-19 and authorized R-21/R-22 corrected findings CLOSED; A-S2 technical/formal GO; A-S3 evidence/versioning ACTIVE |
++| Phase 3 authorization                       | Authorized by D079 and evolved by D085                                                                                               |
+ 
+ ## Verified Foundation
+ 
+-| Capability                                 | Status                                                | Evidence                                                                                                                                                                                                                                                  |
+-| ------------------------------------------ | ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+-| Java build                                 | PASS                                                  | Java 21, Maven Wrapper 3.3.4, Maven 3.9.16                                                                                                                                                                                                                |
+-| Domain                                     | PASS                                                  | Framework-free domain model and value objects                                                                                                                                                                                                             |
+-| Application                                | PASS                                                  | Deterministic use cases plus the non-persisted Business Value projection                                                                                                                                                                                  |
+-| Ports                                      | PASS                                                  | Inbound, outbound and explicit transaction ports                                                                                                                                                                                                          |
+-| PostgreSQL persistence                     | PASS                                                  | JDBC adapters and PostgreSQL 18.x certification, most recently 18.6                                                                                                                                                                                       |
+-| Database schema                            | D099 IMPLEMENTED / HOSTED REPOSITORY PASS             | Flyway V1-V3; the original seven business tables remain authoritative and three separate explanation-audit tables are added; current local V3 migrate/validate/no-op, 35 integration tests and Docker privileges/persistence PASS; RDS remains unexecuted |
+-| Transactions                               | PASS                                                  | Repository and use-case atomicity certification                                                                                                                                                                                                           |
+-| Web runtime                                | PASS                                                  | Spring Boot executable composition root                                                                                                                                                                                                                   |
+-| REST error contract                        | PASS                                                  | Four-field envelope for controlled and framework errors                                                                                                                                                                                                   |
+-| HTTP correlation                           | PASS                                                  | `X-Correlation-ID` validation, normalization and propagation                                                                                                                                                                                              |
+-| REST adapter foundation                    | COMPLETE                                              | All 15 frozen MVP route shells certified by document 41                                                                                                                                                                                                   |
+-| Functional runtime composition             | CERTIFIED                                             | Spring, existing use cases, repositories and transaction runner verified against PostgreSQL 18.2                                                                                                                                                          |
+-| Functional REST                            | CERTIFIED / COMPLETE                                  | All 15 D086 routes are wired through REST DTOs and mappers to Application input ports and certified against PostgreSQL 18.2                                                                                                                               |
+-| Deterministic Decision creation            | CERTIFIED                                             | Eligible Evidence creates one atomic, retry-safe and concurrency-safe Decision                                                                                                                                                                            |
+-| Deterministic Recommendation and ROI       | CERTIFIED                                             | DRC-AOA-001-v1 derives one atomic Recommendation with annualized savings, confidence and risk                                                                                                                                                             |
+-| Explanation Provider integration           | D099 IMPLEMENTED / HOSTED REPOSITORY PASS             | Optional audited Bedrock explanation executes after deterministic persistence, has no decision/ROI authority and remains disabled by default                                                                                                              |
+-| Human Review, Ledger and Result Validation | CERTIFIED / COMPLETE                                  | Atomic review and Ledger behavior, replay, linearity, result validation, rollback and concurrency passed against PostgreSQL 18.2; D084 is discharged                                                                                                      |
+-| End-to-End Local Business Value Demo       | CERTIFIED / COMPLETE                                  | Deterministic local `DRC-AOA-001` workflow and traceable projection verified with 30 Evidence records                                                                                                                                                     |
+-| JWT Authentication                         | CERTIFIED / COMPLETE                                  | D087 Resource Server perimeter, RS256/JWKS validation and JWT-derived actor identity passed PostgreSQL 18.2 certification                                                                                                                                 |
+-| RBAC Authorization                         | CERTIFIED / COMPLETE                                  | D088 15-route/four-role enforcement, governance preservation and Evidence redaction passed PostgreSQL 18.4 certification                                                                                                                                  |
+-| GitHub Integration                         | CERTIFIED / COMPLETE                                  | D089 one-repository, read-only GitHub REST synchronization produces deterministic supporting Evidence and passed PostgreSQL 18.4 certification                                                                                                            |
+-| AWS Integration                            | CERTIFIED / COMPLETE                                  | D090 one-account, one-Region, read-only AWS SDK synchronization produces deterministic `E-AWS-001` through `E-AWS-004` Evidence and passed PostgreSQL 18.4 certification                                                                                  |
+-| Frontend runtime                           | CERTIFIED / COMPLETE                                  | D091 single-case Decision Review Workspace passed all frontend gates and unchanged backend/PostgreSQL regression                                                                                                                                          |
+-| DRC-AOA-001 runtime composition            | CERTIFIED / COMPLETE                                  | D093 R16 composes one idempotent Decision/Recommendation graph through existing D081/D082 boundaries                                                                                                                                                      |
+-| Local container runtime                    | D098 historical COMPLETE / HOSTED PASS                | Current R-21/R-22 local regression PASS; fixable H/C backend0/frontend0/PostgreSQL0 and secrets0; full residuals retained; A-S2 technical GO; current R-20 NOT ACCEPTED; R-23 OPEN; no new hosted or release certification                                |
+-| Observability runtime                      | D097 CERTIFIED / HOSTED PASS                          | Safe ECS logs, bounded metrics, MDC correlation, probes and internal Actuator pass; Prometheus/Grafana runtime services, dashboards and alerts are absent                                                                                                 |
+-| Java backend CI                            | D099 HOSTED PASS                                      | Java 21 verification for merge `22a9917` passed together with CodeQL and the required security gates                                                                                                                                                      |
+-| AWS deployment preparation                 | D100 IMPLEMENTATION COMPLETE / HOSTED REPOSITORY PASS | Locked Terraform bootstrap/pilot roots and OIDC workflows pass hosted offline validation; no AWS authentication, plan/apply, image publication, resource or live deployment is claimed                                                                    |
++| Capability                                 | Status                                                | Evidence                                                                                                                                                                                                                                                       |
++| ------------------------------------------ | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
++| Java build                                 | PASS                                                  | Java 21, Maven Wrapper 3.3.4, Maven 3.9.16                                                                                                                                                                                                                     |
++| Domain                                     | PASS                                                  | Framework-free domain model and value objects                                                                                                                                                                                                                  |
++| Application                                | PASS                                                  | Deterministic use cases plus the non-persisted Business Value projection                                                                                                                                                                                       |
++| Ports                                      | PASS                                                  | Inbound, outbound and explicit transaction ports                                                                                                                                                                                                               |
++| PostgreSQL persistence                     | PASS                                                  | JDBC adapters and PostgreSQL 18.x certification, most recently 18.6                                                                                                                                                                                            |
++| Database schema                            | D099 IMPLEMENTED / HOSTED REPOSITORY PASS             | Flyway V1-V3; the original seven business tables remain authoritative and three separate explanation-audit tables are added; current local V3 migrate/validate/no-op, 35 integration tests and Docker privileges/persistence PASS; RDS remains unexecuted      |
++| Transactions                               | PASS                                                  | Repository and use-case atomicity certification                                                                                                                                                                                                                |
++| Web runtime                                | PASS                                                  | Spring Boot executable composition root                                                                                                                                                                                                                        |
++| REST error contract                        | PASS                                                  | Four-field envelope for controlled and framework errors                                                                                                                                                                                                        |
++| HTTP correlation                           | PASS                                                  | `X-Correlation-ID` validation, normalization and propagation                                                                                                                                                                                                   |
++| REST adapter foundation                    | COMPLETE                                              | All 15 frozen MVP route shells certified by document 41                                                                                                                                                                                                        |
++| Functional runtime composition             | CERTIFIED                                             | Spring, existing use cases, repositories and transaction runner verified against PostgreSQL 18.2                                                                                                                                                               |
++| Functional REST                            | CERTIFIED / COMPLETE                                  | All 15 D086 routes are wired through REST DTOs and mappers to Application input ports and certified against PostgreSQL 18.2                                                                                                                                    |
++| Deterministic Decision creation            | CERTIFIED                                             | Eligible Evidence creates one atomic, retry-safe and concurrency-safe Decision                                                                                                                                                                                 |
++| Deterministic Recommendation and ROI       | CERTIFIED                                             | DRC-AOA-001-v1 derives one atomic Recommendation with annualized savings, confidence and risk                                                                                                                                                                  |
++| Explanation Provider integration           | D099 IMPLEMENTED / HOSTED REPOSITORY PASS             | Optional audited Bedrock explanation executes after deterministic persistence, has no decision/ROI authority and remains disabled by default                                                                                                                   |
++| Human Review, Ledger and Result Validation | CERTIFIED / COMPLETE                                  | Atomic review and Ledger behavior, replay, linearity, result validation, rollback and concurrency passed against PostgreSQL 18.2; D084 is discharged                                                                                                           |
++| End-to-End Local Business Value Demo       | CERTIFIED / COMPLETE                                  | Deterministic local `DRC-AOA-001` workflow and traceable projection verified with 30 Evidence records                                                                                                                                                          |
++| JWT Authentication                         | CERTIFIED / COMPLETE                                  | D087 Resource Server perimeter, RS256/JWKS validation and JWT-derived actor identity passed PostgreSQL 18.2 certification                                                                                                                                      |
++| RBAC Authorization                         | CERTIFIED / COMPLETE                                  | D088 15-route/four-role enforcement, governance preservation and Evidence redaction passed PostgreSQL 18.4 certification                                                                                                                                       |
++| GitHub Integration                         | CERTIFIED / COMPLETE                                  | D089 one-repository, read-only GitHub REST synchronization produces deterministic supporting Evidence and passed PostgreSQL 18.4 certification                                                                                                                 |
++| AWS Integration                            | CERTIFIED / COMPLETE                                  | D090 one-account, one-Region, read-only AWS SDK synchronization produces deterministic `E-AWS-001` through `E-AWS-004` Evidence and passed PostgreSQL 18.4 certification                                                                                       |
++| Frontend runtime                           | CERTIFIED / COMPLETE                                  | D091 single-case Decision Review Workspace passed all frontend gates and unchanged backend/PostgreSQL regression                                                                                                                                               |
++| DRC-AOA-001 runtime composition            | CERTIFIED / COMPLETE                                  | D093 R16 composes one idempotent Decision/Recommendation graph through existing D081/D082 boundaries                                                                                                                                                           |
++| Local container runtime                    | D098 historical COMPLETE / HOSTED PASS                | Current R-21/R-22 local regression PASS; fixable H/C backend0/frontend0/PostgreSQL0 and secrets0; full residuals retained; A-S2 technical/formal GO; current R-20 ACCEPTED TEMPORARILY; R-23 OPEN/disposition approved; no new hosted or release certification |
++| Observability runtime                      | D097 CERTIFIED / HOSTED PASS                          | Safe ECS logs, bounded metrics, MDC correlation, probes and internal Actuator pass; Prometheus/Grafana runtime services, dashboards and alerts are absent                                                                                                      |
++| Java backend CI                            | D099 HOSTED PASS                                      | Java 21 verification for merge `22a9917` passed together with CodeQL and the required security gates                                                                                                                                                           |
++| AWS deployment preparation                 | D100 IMPLEMENTATION COMPLETE / HOSTED REPOSITORY PASS | Locked Terraform bootstrap/pilot roots and OIDC workflows pass hosted offline validation; no AWS authentication, plan/apply, image publication, resource or live deployment is claimed                                                                         |
+ 
+ ## Current TFG-A R-17 Verification
+ 
+@@ -149,7 +149,7 @@
+ authorized its two-entry brace-expansion patch and A-S2 verification. R-19 is
+ CLOSED; repeated 174/35/41 tests and functional Docker controls pass. Fresh
+ That earlier checkpoint was NO-GO; the later authorized R-21/R-22 rerun
+-now has A-S2 technical GO, formal closure pending R-20/R-23 disposition. Read the
++now has A-S2 technical GO, formal GO through current explicit owner dispositions. Read the
+ [current review](../tfg/R19_SECURITY_REVIEW.md) and
+ [new evidence](../tfg/evidence/2026-10-06-r19/README.md). The following R-17 links
+ identify the historical October2 run.
+@@ -455,8 +455,8 @@
+ 
+ ## Current A-S1 / A-S2 Control — R-21/R-22, 2026-10-06
+ 
+-**Authorized R-21/R-22 corrected findings CLOSED. A-S2 technical GO; formal security closure PENDING RESIDUAL DISPOSITION. TFG-A IN PROGRESS.** Complete local174/35/41 and quality/runtime regression PASS; Playwright9PASS/6intentional skips. Exact canonical image fixable High/Critical0/0/0, all-severity secrets0, production npm audit0. Full residual scans remain visible: frontend48High/1Critical, PostgreSQL63High/3Critical, braces development1High/five npm package aggregates.
+-
+-The [current review](../tfg/R21_R22_SECURITY_REVIEW.md) and [gate](../tfg/TFG_A_SECURITY_CLOSURE_GATE.md) bind the actual dirty worktree and exact image/runtime/scanner hashes. Original historical R-20 acceptance stays immutable, but current binding accepted=false/REVIEW REQUIRED; exclusive expiry2026-10-09T00:00:00+02:00 Europe/Madrid unchanged, no transfer or renewal. The unfixed braces component is separately R-23 OPEN/NOT ACCEPTED. No accepted commit, hosted CI, external IdP, institutional acceptance or AWS execution is claimed.
+-
+-This authorized task stops at A-S2 re-evaluation. A-S3/A-S4/TFG-B/AWS remain blocked/unauthorized; no general update or PR #57–59 merge. The [earlier R-19 checkpoint](../tfg/evidence/2026-10-06-r19/README.md) remains dated historical evidence, not the current technical gate. D101 and narrated defense remain separate prerequisites.
++**Authorized R-21/R-22 corrected findings CLOSED. A-S2 technical and formal GO; A-S3 evidence/versioning ACTIVE. TFG-A IN PROGRESS.** Complete local174/35/41 and quality/runtime regression PASS; Playwright9PASS/6intentional skips. Exact canonical image fixable High/Critical0/0/0, all-severity secrets0, production npm audit0. Full residual scans remain visible: frontend48High/1Critical, PostgreSQL63High/3Critical, braces development1High/five npm package aggregates.
++
++The current owner dispositions are registered in the [A-S2 acceptance pack](../tfg/evidence/2026-10-06-a-s2-acceptance/README.md). R20 exact current binding is accepted temporarily until the original exclusive expiry; R23 independently remains OPEN/no-fix with approved disposition. A-S3 evidence/versioning is active. No new hosted/external/institutional approval is claimed.
++
++A-S2 is formally closed for the exact bounded security record. A-S3 evidence/versioning is authorized; A-S4 remains later and TFG-B/AWS remain blocked; no general update or PR #57–59 merge. The [earlier R-19 checkpoint](../tfg/evidence/2026-10-06-r19/README.md) remains dated historical evidence, not the current technical gate. D101 and narrated defense remain separate prerequisites.
+--- a/docs/project/PROJECT_STRUCTURE.md
++++ b/docs/project/PROJECT_STRUCTURE.md
+@@ -1,8 +1,8 @@
+ # Current MVP Project Structure
+ 
+-## Current R-20 Applicability Review — 2026-10-06
++## Current Owner Decision And Sprint — 2026-10-06
+ 
+-The current23-CVE/115-row applicability review is complete:3affected optional subcomponents absent,1unused protocol,19conditional residuals with explicit prerequisites/uncertainties. Historical Perl probe-name discrepancy resolved without editing old evidence. `braces` is absent as a package from the inspected production image but present in development tooling. Current R20 proposal remains `accepted:false`; independent R23 remains **OPEN / NO FIX AVAILABLE / NOT ACCEPTED**. No upgrades or automatic advancement. A-S2 technical GO; formal closure awaits explicit owner disposition; original exclusive expiry2026-10-09T00:00:00+02:00 remains unchanged. See the [applicability review](../tfg/R20_APPLICABILITY_REVIEW.md), exact proposals and artifact index.
++**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](../tfg/evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](../tfg/TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](../tfg/A_S3_EVIDENCE_VERSIONING.md).
+ 
+ This guide describes the implemented repository. The Phase 0 structure in
+ Document 24 remains historical planning, not the current runtime inventory.
+@@ -85,13 +85,19 @@
+ 
+ ## Active Sprint Order — R-21/R-22, 2026-10-06
+ 
+-| Sprint                       | Current state / boundary                                                                                                             |
+-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+-| A-S1                         | Authorized R-19 and R-21/R-22 corrected patches finished; exact changes and complete regression indexed                              |
+-| A-S2 technical gate          | GO: backend/frontend/PostgreSQL zero fixable High/Critical and all-severity secrets0                                                 |
+-| A-S2 formal Security Closure | PENDING: explicitly review exact current R-20 residual binding and independent R-23 braces tooling residual; no automatic acceptance |
+-| A-S3 / A-S4                  | BLOCKED / NOT AUTHORIZED; accepted local SHA/review/final academic closure only after required dispositions and explicit instruction |
+-| TFG-B                        | BLOCKED / NOT AUTHORIZED; AWS readiness remains later, with D101 prerequisite maintained                                             |
+-| TFG-C / D / defense          | Later separately authorized controlled deployment, validation/cost/security/teardown, memory and narrated defense                    |
++| Sprint                       | Current state / boundary                                                                                                                         |
++| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
++| A-S1                         | Authorized R-19 and R-21/R-22 corrected patches finished; exact changes and complete regression indexed                                          |
++| A-S2 technical gate          | GO: backend/frontend/PostgreSQL zero fixable High/Critical and all-severity secrets0                                                             |
++| A-S2 formal Security Closure | GO: exact current R20 accepted temporarily; R23 open/no-fix disposition independently approved; expiry and zero-fixable/zero-secret gates remain |
++| A-S3 / A-S4                  | A-S3 ACTIVE: evidence/versioning/PR preparation only; A-S4 later and not executed                                                                |
++| TFG-B                        | BLOCKED / NOT AUTHORIZED; AWS readiness remains later, with D101 prerequisite maintained                                                         |
++| TFG-C / D / defense          | Later separately authorized controlled deployment, validation/cost/security/teardown, memory and narrated defense                                |
+ 
+-Use the [current review](../tfg/R21_R22_SECURITY_REVIEW.md) and [gate](../tfg/TFG_A_SECURITY_CLOSURE_GATE.md). This task stops at A-S2; no further dependency update, PR #57–59 merge, module relocation or AWS action. Owned generated residue has been removed after verified teardown; original Docker volumes and user output are preserved.
++Use the [current review](../tfg/R21_R22_SECURITY_REVIEW.md) and [gate](../tfg/TFG_A_SECURITY_CLOSURE_GATE.md). A-S2 is closed for the bounded security record; A-S3 is authorized; no further dependency update, PR #57–59 merge, module relocation or AWS action. Owned generated residue has been removed after verified teardown; original Docker volumes and user output are preserved.
++
++## Cleanup And Image Retention — 2026-10-06
++
++The [cleanup record](../tfg/evidence/2026-10-06-a-s2-acceptance/cleanup-and-image-disposition.json) verifies 0 containers, 10 preserved original volumes and no credential-like files in the inspected generated directories. Three stopped auxiliary scanner caches were removed after both DB hashes matched the retained frozen source: 8,944,526,230 bytes. The retained DBs, OCI archives, evidence, node_modules, normal volumes and user output are preserved. No global prune.
++
++All 25 Docker image identities are classified: 3 current approved, 12 historical, 6 pinned bases/tools, 2 patch proposals and 2 D094 auxiliaries. A dangling D094 image is not assumed useless. Images were not deleted or retagged; only the 3 approved images may support the current bounded rehearsal. Historical/proposal tags do not inherit acceptance.
+--- a/docs/tfg/00_TFG_MASTER_PLAN.md
++++ b/docs/tfg/00_TFG_MASTER_PLAN.md
+@@ -1,10 +1,10 @@
+ # IMPERATOR DAM TFG Master Plan
+ 
+-## Current R-20 Applicability Review — 2026-10-06
+-
+-The current23-CVE/115-row applicability review is complete:3affected optional subcomponents absent,1unused protocol,19conditional residuals with explicit prerequisites/uncertainties. Historical Perl probe-name discrepancy resolved without editing old evidence. `braces` is absent as a package from the inspected production image but present in development tooling. Current R20 proposal remains `accepted:false`; independent R23 remains **OPEN / NO FIX AVAILABLE / NOT ACCEPTED**. No upgrades or automatic advancement. A-S2 technical GO; formal closure awaits explicit owner disposition; original exclusive expiry2026-10-09T00:00:00+02:00 remains unchanged. See the [applicability review](R20_APPLICABILITY_REVIEW.md), exact proposals and artifact index.
+-
+-Document status: **TFG-A IN PROGRESS / A-S2 TECHNICAL GO / FORMAL SECURITY CLOSURE PENDING RESIDUAL DISPOSITION**
++## Current Owner Decision And Sprint — 2026-10-06
++
++**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](A_S3_EVIDENCE_VERSIONING.md).
++
++Document status: **TFG-A IN PROGRESS / A-S2 TECHNICAL AND FORMAL GO / A-S3 EVIDENCE-VERSIONING ACTIVE**
+ 
+ Implementation baseline for this iteration: `b602bbe1dde92a902c17272d59cd9f0c10b9efe5`
+ Planning review: `2026-10-06`
+@@ -125,31 +125,31 @@
+ likely consequence. `RECOMMENDATION` identifies bounded future work. A risk is
+ closed only by its exit evidence, not by documenting a mitigation.
+ 
+-| ID   | Risk / evidence                                                                                                                                  | Reduction and exit condition                                                                                                                                                      | Owner / track                               | State                                                                                  |
+-| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- | -------------------------------------------------------------------------------------- |
+-| R-01 | Scope expansion                                                                                                                                  | One case, four roles, one modular monolith, existing UI and synthetic data; reject any addition without a requirement and acceptance evidence                                     | Product / all tracks                        | CONTROLLED; ongoing                                                                    |
+-| R-02 | Conflicting current-state claims (`FACT`)                                                                                                        | Synchronize current control to TFG-A and operator-deferred D101; preserve historical decisions and distinguish source from runtime                                                | Context / TFG-A                             | Documentation resolution recorded in Evidence Register                                 |
+-| R-03 | ECR naming mismatch (`FACT`): bootstrap uses `imperator-pilot/*`, workflows use `imperator/pilot/*`                                              | Resolve naming and output/workflow correspondence before publication; prove all four digests map to the created repositories                                                      | Delivery / TFG-B                            | OPEN; publication blocked                                                              |
+-| R-04 | Deploy IAM contains `ecs:*`, `elasticloadbalancing:*` and broad resources (`FACT`)                                                               | Review action/resource/condition scope and PassRole; justify required wildcards and test permitted/denied access before use                                                       | Security / TFG-B                            | OPEN                                                                                   |
+-| R-05 | Deploy re-plans instead of consuming a previously reviewed plan; publication has no `pilot` environment (`FACT`)                                 | Bind approval to the plan applied and verify separate publication protection and accepted-SHA checks                                                                              | Delivery / TFG-B                            | OPEN                                                                                   |
+-| R-06 | Report counts belong to different revisions (`FACT`)                                                                                             | Record baseline SHA, worktree inputs, date, tool, result, artifact hash and limits                                                                                                | QA / TFG-A                                  | Current maintenance index captured; accepted release SHA/review pending                |
+-| R-07 | Historical V3 runtime debt and three test-cleanup omissions (`FACT`)                                                                             | V3-aware cleanup in the three authorized classes; native PostgreSQL 18.6 migrate/validate/no-op, 35 integration tests and Docker append-only privilege checks pass                | QA / TFG-A                                  | CLOSED for local V3 evidence; RDS remains unexecuted                                   |
+-| R-08 | NAT, ALB, RDS and retained resources can dominate demo cost (`INFERENCE`)                                                                        | Current regional Calculator estimate, approved budget, short runtime, destroy and residual-cost inventory; alerts are not a spending cap                                          | FinOps / TFG-B and TFG-D                    | OPEN; no measured AWS cost                                                             |
+-| R-09 | External Keycloak unavailable (`FACT` in recorded control)                                                                                       | Keep D101 OPERATOR-DEFERRED / BLOCKED_EXTERNAL as a mandatory dependency; no pilot, external exposure or release bypass                                                           | Operator / external dependency              | BLOCKED_EXTERNAL; not a TFG sprint                                                     |
+-| R-10 | Small RDS and restricted HTTPS egress are untested sizing/connectivity assumptions (`INFERENCE`)                                                 | Verify resource availability, DB pressure, provider routes and reviewed CIDRs; resize only from evidence                                                                          | Operations / TFG-C and TFG-D                | LIVE VALIDATION PENDING                                                                |
+-| R-11 | Valid JSON/references do not prove faithful AI narrative (`INFERENCE`)                                                                           | Synthetic evaluation with human review, known references and immutable deterministic values; test failure isolation and report rejected output                                    | AI / TFG-D                                  | Offline adapter evidence; live evaluation pending                                      |
+-| R-12 | Micrometer business metrics have no inspected automatic CloudWatch exporter; CloudTrail is regional (`FACT`)                                     | Use existing safe logs/internal metrics; state audit coverage and verify notifications without adding an observability platform                                                   | Operations / TFG-A and TFG-D                | Limitation documented; live checks pending                                             |
+-| R-13 | Image rollback does not reverse Flyway; audit bucket permits force destroy (`FACT`)                                                              | Forward-only schema recovery, known-good digest manifest and export of sanitized evidence before destroy                                                                          | Operations / TFG-D                          | EXECUTION PENDING                                                                      |
+-| R-14 | Internet/IdP/cloud failure during defense (`INFERENCE`)                                                                                          | Real local Docker workflow and sanitized fallback WebM captured; preserve reports after teardown                                                                                  | Student / TFG-A and final defense           | Technical rehearsal CAPTURED; full oral rehearsal and accepted-release capture pending |
+-| R-15 | Official deadline/template not available (`FACT` for this package)                                                                               | Confirm institution requirements; use relative cycles and remove optional work before core evidence                                                                               | Student and tutor / TFG-A                   | OPEN                                                                                   |
+-| R-16 | Eight tracked frontend files failed formatting (`FACT`)                                                                                          | Formatting-only correction; JSON/dependency semantics unchanged; exclude Next-generated metadata from formatting                                                                  | QA / authorized maintenance                 | CLOSED; final format check PASS                                                        |
+-| R-17 | Five original image package findings: OpenSSL/Jackson backend and Next frontend (`FACT`)                                                         | Jackson 3.1.7, Next 16.3.6 and checksum-pinned OpenSSL 3.0.2-0ubuntu1.30; Java/base digests unchanged; all three fixable-only image vulnerability/secret gates now zero           | Security / authorized local maintenance     | CLOSED; dated rerun and hashes in R-17 evidence pack                                   |
+-| R-18 | Windows CRLF made Linux entrypoints fail (`FACT`)                                                                                                | Normalize the three existing shell entrypoints to LF and enforce `*.sh text eol=lf`; migrated Docker workflow now passes                                                          | QA / authorized maintenance                 | CLOSED; no shell behavior changed                                                      |
+-| R-19 | Two original brace-expansion dev-transitive copies (`FACT`)                                                                                      | Owner-authorized 1.1.18→1.1.21 and 5.0.9→5.0.12 only; semantic lock check, installed versions, regression and finding identities verified; whole dependency gate remains separate | Security / A-S1                             | CLOSED for original finding, 2026-10-06; see R19_SECURITY_REVIEW.md                    |
+-| R-20 | Historical32-CVE acceptance; reviewed current23-CVE/115-row residual (`FACT`),3absent subcomponents/1unused protocol/19conditional (`INFERENCE`) | Exact current-version proposal prepared; unchanged exclusive expiry; original approval immutable; explicit owner re-attestation required, no transfer/renewal                     | Security / bounded local synthetic decision | HISTORICAL ACCEPTED TEMPORARILY; CURRENT PROPOSAL READY / NOT ACCEPTED                 |
+-| R-21 | source-map-js/sharp fixable advisories (`FACT`)                                                                                                  | Explicitly authorized prepared patch applied; exactly28 required lock entries; complete regression and production audit0                                                          | Security / scoped patch only                | CLOSED for the two corrected advisories; braces separated as R-23                      |
+-| R-22 | Newly corrected PCRE2/Perl Bookworm image findings (`FACT`)                                                                                      | Five checksum-pinned packages; exact canonical versions/scans0fixable, D094 retry/reproducibility and complete regression PASS; base digests unchanged                            | Security / no major/base refresh            | CLOSED for authorized corrected findings; residual OS R-20 separate                    |
+-| R-23 | braces3.0.3 transitive dev advisory; package absent in inspected production, tooling reach remains (`FACT/INFERENCE`)                            | No published fix; reviewed bundle/chain and bounded tooling controls; independent owner disposition prepared; no update/suppression                                               | Security / independent tooling residual     | OPEN / NO FIX AVAILABLE / NOT ACCEPTED                                                 |
++| ID   | Risk / evidence                                                                                                  | Reduction and exit condition                                                                                                                                                      | Owner / track                           | State                                                                                  |
++| ---- | ---------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- | -------------------------------------------------------------------------------------- |
++| R-01 | Scope expansion                                                                                                  | One case, four roles, one modular monolith, existing UI and synthetic data; reject any addition without a requirement and acceptance evidence                                     | Product / all tracks                    | CONTROLLED; ongoing                                                                    |
++| R-02 | Conflicting current-state claims (`FACT`)                                                                        | Synchronize current control to TFG-A and operator-deferred D101; preserve historical decisions and distinguish source from runtime                                                | Context / TFG-A                         | Documentation resolution recorded in Evidence Register                                 |
++| R-03 | ECR naming mismatch (`FACT`): bootstrap uses `imperator-pilot/*`, workflows use `imperator/pilot/*`              | Resolve naming and output/workflow correspondence before publication; prove all four digests map to the created repositories                                                      | Delivery / TFG-B                        | OPEN; publication blocked                                                              |
++| R-04 | Deploy IAM contains `ecs:*`, `elasticloadbalancing:*` and broad resources (`FACT`)                               | Review action/resource/condition scope and PassRole; justify required wildcards and test permitted/denied access before use                                                       | Security / TFG-B                        | OPEN                                                                                   |
++| R-05 | Deploy re-plans instead of consuming a previously reviewed plan; publication has no `pilot` environment (`FACT`) | Bind approval to the plan applied and verify separate publication protection and accepted-SHA checks                                                                              | Delivery / TFG-B                        | OPEN                                                                                   |
++| R-06 | Report counts belong to different revisions (`FACT`)                                                             | Record baseline SHA, worktree inputs, date, tool, result, artifact hash and limits                                                                                                | QA / TFG-A                              | Current maintenance index captured; accepted release SHA/review pending                |
++| R-07 | Historical V3 runtime debt and three test-cleanup omissions (`FACT`)                                             | V3-aware cleanup in the three authorized classes; native PostgreSQL 18.6 migrate/validate/no-op, 35 integration tests and Docker append-only privilege checks pass                | QA / TFG-A                              | CLOSED for local V3 evidence; RDS remains unexecuted                                   |
++| R-08 | NAT, ALB, RDS and retained resources can dominate demo cost (`INFERENCE`)                                        | Current regional Calculator estimate, approved budget, short runtime, destroy and residual-cost inventory; alerts are not a spending cap                                          | FinOps / TFG-B and TFG-D                | OPEN; no measured AWS cost                                                             |
++| R-09 | External Keycloak unavailable (`FACT` in recorded control)                                                       | Keep D101 OPERATOR-DEFERRED / BLOCKED_EXTERNAL as a mandatory dependency; no pilot, external exposure or release bypass                                                           | Operator / external dependency          | BLOCKED_EXTERNAL; not a TFG sprint                                                     |
++| R-10 | Small RDS and restricted HTTPS egress are untested sizing/connectivity assumptions (`INFERENCE`)                 | Verify resource availability, DB pressure, provider routes and reviewed CIDRs; resize only from evidence                                                                          | Operations / TFG-C and TFG-D            | LIVE VALIDATION PENDING                                                                |
++| R-11 | Valid JSON/references do not prove faithful AI narrative (`INFERENCE`)                                           | Synthetic evaluation with human review, known references and immutable deterministic values; test failure isolation and report rejected output                                    | AI / TFG-D                              | Offline adapter evidence; live evaluation pending                                      |
++| R-12 | Micrometer business metrics have no inspected automatic CloudWatch exporter; CloudTrail is regional (`FACT`)     | Use existing safe logs/internal metrics; state audit coverage and verify notifications without adding an observability platform                                                   | Operations / TFG-A and TFG-D            | Limitation documented; live checks pending                                             |
++| R-13 | Image rollback does not reverse Flyway; audit bucket permits force destroy (`FACT`)                              | Forward-only schema recovery, known-good digest manifest and export of sanitized evidence before destroy                                                                          | Operations / TFG-D                      | EXECUTION PENDING                                                                      |
++| R-14 | Internet/IdP/cloud failure during defense (`INFERENCE`)                                                          | Real local Docker workflow and sanitized fallback WebM captured; preserve reports after teardown                                                                                  | Student / TFG-A and final defense       | Technical rehearsal CAPTURED; full oral rehearsal and accepted-release capture pending |
++| R-15 | Official deadline/template not available (`FACT` for this package)                                               | Confirm institution requirements; use relative cycles and remove optional work before core evidence                                                                               | Student and tutor / TFG-A               | OPEN                                                                                   |
++| R-16 | Eight tracked frontend files failed formatting (`FACT`)                                                          | Formatting-only correction; JSON/dependency semantics unchanged; exclude Next-generated metadata from formatting                                                                  | QA / authorized maintenance             | CLOSED; final format check PASS                                                        |
++| R-17 | Five original image package findings: OpenSSL/Jackson backend and Next frontend (`FACT`)                         | Jackson 3.1.7, Next 16.3.6 and checksum-pinned OpenSSL 3.0.2-0ubuntu1.30; Java/base digests unchanged; all three fixable-only image vulnerability/secret gates now zero           | Security / authorized local maintenance | CLOSED; dated rerun and hashes in R-17 evidence pack                                   |
++| R-18 | Windows CRLF made Linux entrypoints fail (`FACT`)                                                                | Normalize the three existing shell entrypoints to LF and enforce `*.sh text eol=lf`; migrated Docker workflow now passes                                                          | QA / authorized maintenance             | CLOSED; no shell behavior changed                                                      |
++| R-19 | Two original brace-expansion dev-transitive copies (`FACT`)                                                      | Owner-authorized 1.1.18→1.1.21 and 5.0.9→5.0.12 only; semantic lock check, installed versions, regression and finding identities verified; whole dependency gate remains separate | Security / A-S1                         | CLOSED for original finding, 2026-10-06; see R19_SECURITY_REVIEW.md                    |
++| R-20 | Current 23-CVE/115-row conditional OS residual; exact image/evidence proposal approved by owner                  | Immutable current approval, exclusive expiry 2026-10-09T00:00:00+02:00; zero fixable H/C and zero secrets; early invalidation/no transfer/no renewal                              | Security / local synthetic only         | ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC                                                 |
++| R-21 | source-map-js/sharp fixable advisories (`FACT`)                                                                  | Explicitly authorized prepared patch applied; exactly28 required lock entries; complete regression and production audit0                                                          | Security / scoped patch only            | CLOSED for the two corrected advisories; braces separated as R-23                      |
++| R-22 | Newly corrected PCRE2/Perl Bookworm image findings (`FACT`)                                                      | Five checksum-pinned packages; exact canonical versions/scans0fixable, D094 retry/reproducibility and complete regression PASS; base digests unchanged                            | Security / no major/base refresh        | CLOSED for authorized corrected findings; residual OS R-20 separate                    |
++| R-23 | braces 3.0.3 development-tooling advisory, package absent in inspected production                                | Independent owner disposition approved; documented mitigation and review triggers; no speculative update, closure or R20 bundling                                                 | Security / development tooling          | OPEN / NO FIX AVAILABLE — DISPOSITION APPROVED                                         |
+ 
+ Scope reductions are explicit: no extra business case, production login,
+ tenant model, asynchronous queue, cache, RAG, Knowledge Base, agent, Python
+@@ -171,11 +171,12 @@
+ - no frozen contract, business rule, workflow or product scope changed;
+ - the diff is limited to the founder-authorized maintenance and its evidence;
+ - current image security policy and repeated frontend audit pass, with any
+-  additional finding explicitly resolved; no blanket High/Critical waiver
++  additional finding explicitly remediated or given an approved bounded disposition,
++  with full residual counts visible; no blanket High/Critical waiver
+   closes a risk. The founder-approved R-20 B amendment permits only the
+-  hash-bound 32-CVE residual OS set for synthetic local TFG-A rehearsal until
++  hash-bound current 23-CVE residual OS set for synthetic local TFG-A rehearsal until
+   2026-10-09T00:00:00+02:00 Europe/Madrid. Record ACCEPTED TEMPORARILY, not CLOSED;
+-  zero fixable High/Critical and zero secrets remain mandatory. R-19 is excluded;
++  zero fixable High/Critical and zero secrets remain mandatory. R-23 remains OPEN / NO FIX AVAILABLE under its separate approved development-tooling disposition, with full audit results visible; it is not included in the OS acceptance. R-19 is excluded;
+ - documentation validation passes;
+ - the final local run records PostgreSQL V3 behavior, frontend quality and
+   browser acceptance; unavailable Docker/runtime checks remain explicitly
+@@ -206,10 +207,4 @@
+ capture. Backend/frontend/PostgreSQL images have zero fixable High/Critical and
+ zero detected secrets; final source/history Gitleaks scans are zero.
+ 
+-## Current Security Work Order — R-21/R-22, 2026-10-06
+-
+-Current local assessment after explicitly authorized R-21/R-22: **2026-10-06**. R-17/R-19 and the authorized R-21/R-22 corrected findings are CLOSED. **A-S2 technical GO; formal security closure PENDING RESIDUAL DISPOSITION.** Exact-image regression174/35/41, Docker/RBAC/V3/persistence/recovery, zero fixable High/Critical and zero secrets PASS. Full scans retain non-fixable residuals. Historical R-20 approval does not transfer; current binding accepted=false / REVIEW REQUIRED. Braces is separately tracked R-23 OPEN / NOT ACCEPTED. TFG-A IN PROGRESS; A-S3/A-S4/TFG-B/AWS blocked. See the [current review](R21_R22_SECURITY_REVIEW.md) and [gate](TFG_A_SECURITY_CLOSURE_GATE.md).
+-
+-The narrow authorized patches and complete local regression are finished. A-S2 technical criterion is GO, while formal closure awaits explicit review/disposition of the exact current R-20 residual and independent R-23 braces tooling risk. Current image residual115rows/23distinctCVEs has no new CVE identity versus the historical matrix; changed image, runtime, lock, test, DB and Perl version hashes prevent approval transfer. The historical approval/expiry2026-10-09T00:00:00+02:00 remain immutable; no renewal or risk acceptance is implied.
+-
+-Stop at A-S2. A-S3/A-S4/TFG-B/AWS and PR #57–59 merges remain unauthorized; no further dependency update is authorized. D101 and a narrated defense remain independent obligations. DoD/security rules and scope exclusions are unchanged.
++The narrow patches, complete local regression, applicability review and explicit current R-20/R-23 dispositions are registered. A-S2 is technical and formal GO for the exact local synthetic binding until its exclusive expiry. A-S3 evidence/versioning is now authorized; source, manifests, risks and traces must remain consistent. No further upgrade, PR #57–59 merge, automatic TFG-A completion or AWS execution is authorized. A-S4 narrated defense and D101 remain separate obligations.
+--- a/docs/tfg/01_ACADEMIC_SCOPE.md
++++ b/docs/tfg/01_ACADEMIC_SCOPE.md
+@@ -1,8 +1,8 @@
+ # TFG-A Academic Scope
+ 
+-## Current Security Work Order — R-21/R-22, 2026-10-06
++## Current Owner Decision And Sprint — 2026-10-06
+ 
+-Current local assessment after explicitly authorized R-21/R-22: **2026-10-06**. R-17/R-19 and the authorized R-21/R-22 corrected findings are CLOSED. **A-S2 technical GO; formal security closure PENDING RESIDUAL DISPOSITION.** Exact-image regression174/35/41, Docker/RBAC/V3/persistence/recovery, zero fixable High/Critical and zero secrets PASS. Full scans retain non-fixable residuals. Historical R-20 approval does not transfer; current binding accepted=false / REVIEW REQUIRED. Braces is separately tracked R-23 OPEN / NOT ACCEPTED. TFG-A IN PROGRESS; A-S3/A-S4/TFG-B/AWS blocked. See the [current review](R21_R22_SECURITY_REVIEW.md) and [gate](TFG_A_SECURITY_CLOSURE_GATE.md).
++**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](A_S3_EVIDENCE_VERSIONING.md).
+ 
+ Document status: **TFG-A IN PROGRESS**
+ 
+--- a/docs/tfg/02_COMPETENCY_MATRIX.md
++++ b/docs/tfg/02_COMPETENCY_MATRIX.md
+@@ -1,8 +1,8 @@
+ # TFG Competency Matrix
+ 
+-## Current Security Work Order — R-21/R-22, 2026-10-06
++## Current Owner Decision And Sprint — 2026-10-06
+ 
+-Current local assessment after explicitly authorized R-21/R-22: **2026-10-06**. R-17/R-19 and the authorized R-21/R-22 corrected findings are CLOSED. **A-S2 technical GO; formal security closure PENDING RESIDUAL DISPOSITION.** Exact-image regression174/35/41, Docker/RBAC/V3/persistence/recovery, zero fixable High/Critical and zero secrets PASS. Full scans retain non-fixable residuals. Historical R-20 approval does not transfer; current binding accepted=false / REVIEW REQUIRED. Braces is separately tracked R-23 OPEN / NOT ACCEPTED. TFG-A IN PROGRESS; A-S3/A-S4/TFG-B/AWS blocked. See the [current review](R21_R22_SECURITY_REVIEW.md) and [gate](TFG_A_SECURITY_CLOSURE_GATE.md).
++**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](A_S3_EVIDENCE_VERSIONING.md).
+ 
+ Document status: **TFG-A IN PROGRESS / NOT A CERTIFICATION CLAIM**
+ 
+--- a/docs/tfg/03_TRACEABILITY_MATRIX.md
++++ b/docs/tfg/03_TRACEABILITY_MATRIX.md
+@@ -1,8 +1,8 @@
+ # TFG Requirement Traceability Matrix
+ 
+-## Current Security Work Order — R-21/R-22, 2026-10-06
++## Current Owner Decision And Sprint — 2026-10-06
+ 
+-Current local assessment after explicitly authorized R-21/R-22: **2026-10-06**. R-17/R-19 and the authorized R-21/R-22 corrected findings are CLOSED. **A-S2 technical GO; formal security closure PENDING RESIDUAL DISPOSITION.** Exact-image regression174/35/41, Docker/RBAC/V3/persistence/recovery, zero fixable High/Critical and zero secrets PASS. Full scans retain non-fixable residuals. Historical R-20 approval does not transfer; current binding accepted=false / REVIEW REQUIRED. Braces is separately tracked R-23 OPEN / NOT ACCEPTED. TFG-A IN PROGRESS; A-S3/A-S4/TFG-B/AWS blocked. See the [current review](R21_R22_SECURITY_REVIEW.md) and [gate](TFG_A_SECURITY_CLOSURE_GATE.md).
++**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](A_S3_EVIDENCE_VERSIONING.md).
+ 
+ Document status: **TFG-A IN PROGRESS**
+ 
+@@ -57,7 +57,7 @@
+ migration/persistence and append-only privileges now pass. The current image
+ October 2 fixable-only image gate passed after R-17 remediation. On October 6
+ R-19 and authorized R-21/R-22 corrected findings are CLOSED. A-S2 technical GO
+-is separate from formal closure pending current R-20/R-23 residual disposition; passing tests cannot replace security acceptance. No status in this table certifies
++now has formal GO through explicit current R-20 acceptance and the independent approved open R-23 disposition; passing tests alone never replace security acceptance. No status in this table certifies
+ the entire current release by inheriting an earlier result.
+ 
+ Every final-memory claim must include at least one requirement ID and evidence
+@@ -65,3 +65,18 @@
+ be paired with a command result, test report, cloud record or immutable commit.
+ 
+ See the [current security review](R21_R22_SECURITY_REVIEW.md) before claiming full closure.
++
++## Current A-S2 / A-S3 Traceability
++
++| Requirement / evidence        | Current demonstrated result                                                    | Binding / limitation                                                                      |
++| ----------------------------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------- |
++| TFG-NFR-03 / E-SEC-02         | Zero source/history/image secrets; new decision publication separately scanned | Exact prior runtime plus current publication receipt; no exposure/real-data certification |
++| TFG-NFR-04 / E-DATA-02        | V1–V3, 35 integration tests, persistence and recovery PASS                     | Current frozen R21/R22 images; no new regression claimed                                  |
++| TFG-NFR-06 / E-SC-01          | Zero fixable H/C; 23 OS CVEs conditionally accepted                            | Exact current R20 approval; exclusive expiry and early invalidation                       |
++| TFG-NFR-07 / E-SC-02          | A-S2 formal GO; R23 tooling disposition approved, risk remains OPEN            | Full audit findings retained; hosted checks for new candidate remain PENDING              |
++| TFG-O-09 / E-GIT-01           | A-S3 source/evidence/PR candidate preparation                                  | Accepted runtime fingerprint distinct from Git release approval/hosted CI                 |
++| TFG-RF-08 / E-AI-01           | Explanation provider implemented/tested offline                                | No live Bedrock call or autonomous approval claim                                         |
++| TFG-ID-01 / E-ID-01           | External IdP remains BLOCKED_EXTERNAL                                          | Local synthetic JWT fixture does not discharge D101                                       |
++| TFG-CLOUD-02–04 / E-AWS-02–04 | Live cost/deployment/rollback remain NOT IMPLEMENTED                           | AWS blocked; not a prerequisite claimed automatically for local academic rehearsal        |
++
++See [current owner approval](evidence/2026-10-06-a-s2-acceptance/README.md) and [A-S3](A_S3_EVIDENCE_VERSIONING.md).
+--- a/docs/tfg/04_EVIDENCE_REGISTER.md
++++ b/docs/tfg/04_EVIDENCE_REGISTER.md
+@@ -1,10 +1,10 @@
+ # TFG Evidence Register
+ 
+-## Current Security Work Order — R-21/R-22, 2026-10-06
+-
+-Current local assessment after explicitly authorized R-21/R-22: **2026-10-06**. R-17/R-19 and the authorized R-21/R-22 corrected findings are CLOSED. **A-S2 technical GO; formal security closure PENDING RESIDUAL DISPOSITION.** Exact-image regression174/35/41, Docker/RBAC/V3/persistence/recovery, zero fixable High/Critical and zero secrets PASS. Full scans retain non-fixable residuals. Historical R-20 approval does not transfer; current binding accepted=false / REVIEW REQUIRED. Braces is separately tracked R-23 OPEN / NOT ACCEPTED. TFG-A IN PROGRESS; A-S3/A-S4/TFG-B/AWS blocked. See the [current review](R21_R22_SECURITY_REVIEW.md) and [gate](TFG_A_SECURITY_CLOSURE_GATE.md).
+-
+-Document status: **TFG-A IN PROGRESS / R-19/R-21/R-22 CORRECTED FINDINGS CLOSED; A-S2 TECHNICAL GO; FORMAL CLOSURE PENDING; R-20 CURRENT BINDING REVIEW REQUIRED**
++## Current Owner Decision And Sprint — 2026-10-06
++
++**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](A_S3_EVIDENCE_VERSIONING.md).
++
++Document status: **TFG-A IN PROGRESS / R-19/R-21/R-22 CORRECTED FINDINGS CLOSED; A-S2 TECHNICAL AND FORMAL GO; A-S3 ACTIVE; R-20 CURRENT BINDING REVIEW REQUIRED**
+ 
+ ## Execution Classification
+ 
+@@ -295,3 +295,9 @@
+ ## R-21/R-22 Current Evidence Pack — 2026-10-06
+ 
+ The [new index](evidence/TFG_A_R21_R22_2026-10-06.json) binds authorized patches,174/35/41 tests, browser9pass/6intentional skips, exact OCI manifests/layers, immutable image scans, full residual matrix115rows/23CVEs, all-severity secrets0, D094 reproducibility retry and scoped cleanup. [Gate index](evidence/TFG_A_SECURITY_CLOSURE_GATE_R21_R22_2026-10-06.json): technicalGO / formalclosurePENDING. Original October2 approval and the earlier R-19 pack/index retain their bytes and original dated status. No accepted release SHA, hosted CI or external/AWS/institutional certification is claimed.
++
++## Explicit A-S2 Closure And A-S3 Evidence — 2026-10-06
++
++The [acceptance pack](evidence/2026-10-06-a-s2-acceptance/README.md) records the affirmative owner message, original proposal hashes, all 38 reviewed file snapshots, current R20 approval, independent approved OPEN/no-fix R23 disposition, inventory/cleanup and publication verification. Earlier proposal packs and historical approval bytes remain immutable. A-S2 technical/formal GO is bounded to exact digests, synthetic local scope and exclusive expiry; it is not zero absolute or TFG-A completion.
++
++The [A-S3 dossier](A_S3_EVIDENCE_VERSIONING.md) separates implemented, locally validated, temporarily accepted, deferred and unimplemented claims. Candidate source/PR preparation does not certify new hosted checks or an owner-approved release commit. Narrated defense is later; AWS/IdP/Bedrock execution remains unperformed and unauthorized here.
+--- a/docs/tfg/05_ARCHITECTURE.md
++++ b/docs/tfg/05_ARCHITECTURE.md
+@@ -1,8 +1,8 @@
+ # TFG Architecture View
+ 
+-## Current Security Work Order — R-21/R-22, 2026-10-06
++## Current Owner Decision And Sprint — 2026-10-06
+ 
+-Current local assessment after explicitly authorized R-21/R-22: **2026-10-06**. R-17/R-19 and the authorized R-21/R-22 corrected findings are CLOSED. **A-S2 technical GO; formal security closure PENDING RESIDUAL DISPOSITION.** Exact-image regression174/35/41, Docker/RBAC/V3/persistence/recovery, zero fixable High/Critical and zero secrets PASS. Full scans retain non-fixable residuals. Historical R-20 approval does not transfer; current binding accepted=false / REVIEW REQUIRED. Braces is separately tracked R-23 OPEN / NOT ACCEPTED. TFG-A IN PROGRESS; A-S3/A-S4/TFG-B/AWS blocked. See the [current review](R21_R22_SECURITY_REVIEW.md) and [gate](TFG_A_SECURITY_CLOSURE_GATE.md).
++**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](A_S3_EVIDENCE_VERSIONING.md).
+ 
+ Document status: **TFG-A IN PROGRESS**
+ 
+--- a/docs/tfg/06_LOCAL_VS_AWS.md
++++ b/docs/tfg/06_LOCAL_VS_AWS.md
+@@ -1,8 +1,8 @@
+ # Local MVP To AWS MVP
+ 
+-## Current Security Work Order — R-21/R-22, 2026-10-06
++## Current Owner Decision And Sprint — 2026-10-06
+ 
+-Current local assessment after explicitly authorized R-21/R-22: **2026-10-06**. R-17/R-19 and the authorized R-21/R-22 corrected findings are CLOSED. **A-S2 technical GO; formal security closure PENDING RESIDUAL DISPOSITION.** Exact-image regression174/35/41, Docker/RBAC/V3/persistence/recovery, zero fixable High/Critical and zero secrets PASS. Full scans retain non-fixable residuals. Historical R-20 approval does not transfer; current binding accepted=false / REVIEW REQUIRED. Braces is separately tracked R-23 OPEN / NOT ACCEPTED. TFG-A IN PROGRESS; A-S3/A-S4/TFG-B/AWS blocked. See the [current review](R21_R22_SECURITY_REVIEW.md) and [gate](TFG_A_SECURITY_CLOSURE_GATE.md).
++**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](A_S3_EVIDENCE_VERSIONING.md).
+ 
+ Document status: **TFG-A IN PROGRESS**
+ 
+@@ -17,7 +17,7 @@
+ not certify V3 or the current release without its dated result. Current native
+ and Docker V3 checks pass. Original R-17/R-19 findings are CLOSED; fresh
+ Authorized R-21/R-22 corrected findings now pass; A-S2 technical GO,
+-formal closure pending current R-20/R-23 residual disposition. These
++formal GO through the explicit current R20 acceptance and separate approved open R23 disposition. These
+ results are indexed in the [Evidence Register](04_EVIDENCE_REGISTER.md).
+ 
+ | Concern            | Local MVP                                | AWS target                              | Offline source evidence |
+--- a/docs/tfg/07_DEMO_AND_DEFENSE.md
++++ b/docs/tfg/07_DEMO_AND_DEFENSE.md
+@@ -1,10 +1,10 @@
+ # TFG Demo And Defense Guide
+ 
+-## Current Security Work Order — R-21/R-22, 2026-10-06
++## Current Owner Decision And Sprint — 2026-10-06
+ 
+-Current local assessment after explicitly authorized R-21/R-22: **2026-10-06**. R-17/R-19 and the authorized R-21/R-22 corrected findings are CLOSED. **A-S2 technical GO; formal security closure PENDING RESIDUAL DISPOSITION.** Exact-image regression174/35/41, Docker/RBAC/V3/persistence/recovery, zero fixable High/Critical and zero secrets PASS. Full scans retain non-fixable residuals. Historical R-20 approval does not transfer; current binding accepted=false / REVIEW REQUIRED. Braces is separately tracked R-23 OPEN / NOT ACCEPTED. TFG-A IN PROGRESS; A-S3/A-S4/TFG-B/AWS blocked. See the [current review](R21_R22_SECURITY_REVIEW.md) and [gate](TFG_A_SECURITY_CLOSURE_GATE.md).
++**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](A_S3_EVIDENCE_VERSIONING.md).
+ 
+-Document status: **TFG-A IN PROGRESS / CURRENT TECHNICAL REHEARSAL CAPTURED; R-19/R-21/R-22 CORRECTED FINDINGS CLOSED; A-S2 TECHNICAL GO; FORMAL CLOSURE PENDING**
++Document status: **TFG-A IN PROGRESS / CURRENT TECHNICAL REHEARSAL CAPTURED; R-19/R-21/R-22 CORRECTED FINDINGS CLOSED; A-S2 TECHNICAL AND FORMAL GO; A-S3 ACTIVE**
+ 
+ ## Defense Objective
+ 
+@@ -93,7 +93,7 @@
+ The 2026-10-06 rehearsal repeats functional acceptance after R-19 remediation:
+ five captures and a 28.20-second captioned fallback, plus persistence/readiness
+ on unchanged images. R-19 is CLOSED; R-21/R-22 and current R-20 binding keep
+-A-S2 technical GO; formal closure pending current R-20/R-23 disposition. Bind the final
++A-S2 technical GO; formal GO through the explicit current R20/R23 owner decisions. Bind the final
+ release pack to its accepted SHA. The present worktree pack retains its actual
+ input fingerprint. Owned scratch resources and secrets are cleaned only after
+ capture/persistence checks; normal project databases are preserved.
+--- a/docs/tfg/R17_SECURITY_REVIEW.md
++++ b/docs/tfg/R17_SECURITY_REVIEW.md
+@@ -1,4 +1,10 @@
+ # R-17 Security Remediation Review
++
++## Current Owner Decision And Sprint — 2026-10-06
++
++**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](A_S3_EVIDENCE_VERSIONING.md).
++
++The earlier checkpoint below is preserved review context; its pending-approval status is superseded by the current owner decisions.
+ 
+ ## Current Checkpoint After R-21/R-22 — 2026-10-06
+ 
+--- a/docs/tfg/R19_SECURITY_REVIEW.md
++++ b/docs/tfg/R19_SECURITY_REVIEW.md
+@@ -1,4 +1,10 @@
+ # R-19 Remediation And A-S2 Review — 2026-10-06
++
++## Current Owner Decision And Sprint — 2026-10-06
++
++**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](A_S3_EVIDENCE_VERSIONING.md).
++
++The earlier checkpoint below is preserved review context; its pending-approval status is superseded by the current owner decisions.
+ 
+ ## Current Checkpoint After R-21/R-22 — 2026-10-06
+ 
+--- a/docs/tfg/R20_APPLICABILITY_REVIEW.md
++++ b/docs/tfg/R20_APPLICABILITY_REVIEW.md
+@@ -1,8 +1,12 @@
+ # R-20 Applicability Review And Independent R-23 Decision — 2026-10-06
+ 
+-**Review complete; current-version risk acceptance remains false. A-S2 technical GO, formal Security Closure PENDING OWNER DISPOSITION. TFG-A IN PROGRESS; A-S3/A-S4/AWS blocked.**
++## Current Owner Decision And Sprint — 2026-10-06
+ 
+-This is the authorized technical stop: evidence inspection and decision preparation only. No dependency, base image, runtime code, architecture, vulnerability filter or risk acceptance changed. Historical artifacts remain byte-identical. The source of truth is the repository and the inspected frozen images, not prior narrative assumptions.
++**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](A_S3_EVIDENCE_VERSIONING.md).
++
++**Review complete and current-version R20 acceptance explicitly registered. A-S2 technical/formal GO; R23 remains independently OPEN / NO FIX AVAILABLE with approved disposition. A-S3 evidence/versioning authorized; TFG-A IN PROGRESS.**
++
++This is the authorized technical stop: evidence inspection and decision preparation only. The review changed no dependency, base image, runtime code, architecture or vulnerability filter; its subsequent owner acceptance is registered separately. Historical artifacts remain byte-identical. The source of truth is the repository and the inspected frozen images, not prior narrative assumptions.
+ 
+ ## Measured Residual And Applicability
+ 
+@@ -40,15 +44,13 @@
+ 
+ The code remains present in developer tooling. Current local patterns are repository-defined; an untrusted checkout/PR or modified config can change them. `dev:true` does not make developer/CI denial of service harmless. No new pattern-depth limit, sandbox or hosted frontend gate is implemented. Proposed disposable-tooling conditions are labelled as proposals, not existing enforced controls.
+ 
+-Recommended status: **OPEN / NO FIX AVAILABLE**, with bounded tooling mitigation documented and an independent explicit owner disposition. It is not CLOSED or automatically ACCEPTED. The [R23 proposal](evidence/2026-10-06-r20-applicability/r23-disposition-proposal.json) retains `accepted:false` and unapproved owner fields; OS-only R20 approval cannot decide it.
++Recommended status: **OPEN / NO FIX AVAILABLE**, with bounded tooling mitigation documented and an independent explicit owner disposition. It is not CLOSED; the independent disposition has now been explicitly approved. The original [R23 proposal](evidence/2026-10-06-r20-applicability/r23-disposition-proposal.json) retains its historical false/unapproved fields; the new independent disposition records owner approval without closing it. OS-only R20 approval cannot decide it.
+ 
+-## Concrete Decisions Prepared, Not Approved
++## Explicit Current Owner Dispositions
+ 
+-The [R20 current-version proposal](evidence/2026-10-06-r20-applicability/r20-current-version-proposal.json) binds all three OCI indices/platform manifests/configs, runtime fingerprint, scanner databases, previous regression index, current matrix/vendor/inspection hashes and original immutable acceptance hash. Baseline Git revision is a dirty worktree base, not an accepted release commit.
++The [current R20 acceptance](evidence/2026-10-06-a-s2-acceptance/r20-current-acceptance.json) binds the original proposal and exact current image/matrix/runtime/scanner evidence. The [independent R23 disposition](evidence/2026-10-06-a-s2-acceptance/r23-approved-open-disposition.json) is approved while the risk remains OPEN / NO FIX AVAILABLE, not closed or included in R20. Original proposal files retain false approval fields as historical preparation artifacts; current decisions are new immutable records.
+ 
+-Only the project owner/user can explicitly attest the current-version OS residual. Codex verifies/recommends and cannot accept it. Tutor/institutional approval is separate and is not claimed. Recommended B scope remains TFG-A local loopback with synthetic data only; AWS, production, real data and public/pilot exposure excluded. **Exclusive expiry remains2026-10-09T00:00:00+02:00 Europe/Madrid =2026-10-08T22:00:00Z. No extension or automatic renewal is proposed.** Effective approval cannot be backdated or inferred from elapsed time, historical authorization or this recommendation. Existing early-invalidation conditions remain mandatory.
+-
+-The owner may approve the exact R20 proposal, retain absolute-zero blocking, or require additional analysis. R23 requires a separate explicit decision on its open/no-fix tooling disposition. Until both records are resolved, formal A-S2 stays pending; even a favorable decision does not authorize automatic A-S3 execution or TFG-A completion. No R19 rework, PR57–59 merge, deployment or new development is authorized here.
++Scope is exclusively local loopback TFG-A with synthetic data. AWS, production, real data and public/pilot exposure remain excluded. Exclusive expiry is unchanged: **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal, extension or future-image transfer. Zero fixable H/C, zero secrets and early-invalidation triggers remain mandatory. Owner approval is project-local, not tutor/institutional certification. A-S2 formal GO does not complete TFG-A; A-S3 evidence/versioning is separately authorized by the same message, with no upgrades or implementation changes.
+ 
+ ## Verification Boundary
+ 
+--- a/docs/tfg/R20_SECURITY_DECISION.md
++++ b/docs/tfg/R20_SECURITY_DECISION.md
+@@ -1,321 +1,16 @@
+-# R-20 Security Decision Review
++# R-20 Current Security Decision
+ 
+-## Current R-20 Applicability Review — 2026-10-06
++**ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC. A-S2 technical and formal GO for the exact current record.**
+ 
+-The current23-CVE/115-row applicability review is complete:3affected optional subcomponents absent,1unused protocol,19conditional residuals with explicit prerequisites/uncertainties. Historical Perl probe-name discrepancy resolved without editing old evidence. `braces` is absent as a package from the inspected production image but present in development tooling. Current R20 proposal remains `accepted:false`; independent R23 remains **OPEN / NO FIX AVAILABLE / NOT ACCEPTED**. No upgrades or automatic advancement. A-S2 technical GO; formal closure awaits explicit owner disposition; original exclusive expiry2026-10-09T00:00:00+02:00 remains unchanged. See the [applicability review](R20_APPLICABILITY_REVIEW.md), exact proposals and artifact index.
++The owner explicitly approved [the current proposal](evidence/2026-10-06-r20-applicability/r20-current-version-proposal.json). The [registered acceptance](evidence/2026-10-06-a-s2-acceptance/r20-current-acceptance.json) records authority/time, exact image indices/platform/configs, runtime fingerprint, matrix/vendor/scanner hashes, original proposal and 38 reviewed file snapshots. Historical October 2 acceptance and original proposal files are unchanged; this is a new explicit decision, not automatic transfer.
+ 
+-## Current Checkpoint After R-21/R-22 — 2026-10-06
++- Scope: local loopback TFG-A only, synthetic data only. AWS/production/real data/public or pilot exposure excluded.
++- Residual: 23 OS CVEs / 115 package rows accepted conditionally, not repaired or declared inexploitable. Per-CVE applicability and native SQL/XML/operator uncertainties remain visible.
++- Mandatory gates: backend/frontend/PostgreSQL fixable High/Critical = 0; secrets at all severities = 0. No scanner suppressions or gate changes.
++- Exclusive expiry: **2026-10-09 00:00 Europe/Madrid (UTC+02:00) = 2026-10-08 22:00 UTC**. No renewal/extension/future-image transfer.
++- Early invalidation: vendor fix, changed runtime/base/image/test/DB inputs, exposure/data/features, fixable H/C, secrets or unreviewed finding. Reassessment and explicit decision required.
++- Owner authority is project-local. Codex verifies evidence; tutor/institutional approval is not claimed.
+ 
+-**A-S2 technical GO; formal security closure PENDING RESIDUAL DISPOSITION.** Authorized corrected R-21/R-22 findings CLOSED; full residuals retained; current R-20 binding accepted=false/REVIEW REQUIRED, historical approval/expiry immutable; separate braces R-23 OPEN/NOT ACCEPTED. A-S3/A-S4/TFG-B/AWS stay blocked. See [current review](R21_R22_SECURITY_REVIEW.md) and [gate](TFG_A_SECURITY_CLOSURE_GATE.md).
++R23 is independent: [approved open disposition](evidence/2026-10-06-a-s2-acceptance/r23-approved-open-disposition.json), **OPEN / NO FIX AVAILABLE**, not closed or included in R20. Braces remains a development dependency; inspected production package absence does not mean arbitrary developer/CI input is safe.
+ 
+-## Preserved Earlier Checkpoint
+-
+-The earlier recommendation/checkpoint below records its original observation and authority. Its prior NO-GO/proposal-only wording is historical; it cannot override the later technical result or accept the current residual. Original artifact packs/approval bytes are unchanged.
+-
+-Current local assessment: **2026-10-06**. **R-19 CLOSED for the two authorized
+-brace-expansion copies**. The [Security Closure Gate](TFG_A_SECURITY_CLOSURE_GATE.md)
+-remains **NO-GO**: R-21 records other npm/source findings and R-22 records newly
+-fixable PCRE2/Perl image findings. R-20's historical approval remains preserved;
+-it does not transfer to this changed version/database. Current binding is
+-**REVIEW REQUIRED / NOT ACCEPTED**. TFG-A remains IN PROGRESS; no AWS or TFG-B
+-execution is authorized. See the [R-19 review](R19_SECURITY_REVIEW.md).
+-
+-The remainder records the October 2 review/approval context. The immutable
+-approved decision bytes remain in the acceptance pack. Statements there about
+-R-19 being pending describe that registration state, superseded by its independent
+-October 6 authorization/remediation. Today's provider fixes invalidate automatic
+-reuse of the original current-security claim; expiry is not extended.
+-
+-## Historical Recommendation — 2026-10-02
+-
+-**Do not update the whole stack. Recommend path B for the current academic
+-local scope, subject to explicit project-owner approval of the residual risk and
+-the project-local academic criterion amendment.** The TFG tutor reviews institutional
+-assessment requirements separately; no tutor or institutional approval is claimed.
+-The measured options do not demonstrate
+-an absolute-zero intervention small enough to treat as the original patch.
+-This was the reviewed recommendation. The owner has now approved the bounded
+-project-local B disposition below; it is not a TFG-A closure declaration or
+-institutional approval.
+-
+-R-19 is a reasonable separate two-entry lockfile patch once authorized. Java,
+-Spring, Next beyond the already fixed version, React, application code and
+-PostgreSQL's major version have no demonstrated need to change for R-20.
+-Retain the existing zero **fixable** High/Critical and zero-secret CI gates.
+-Continue reporting all unfixed findings alongside them.
+-
+-A controlled Debian Trixie base refresh is a credible **partial reduction** for
+-later review, especially for PostgreSQL's inherited OpenSSL/PCRE2 packages and
+-Perl findings. It is not an absolute-zero solution. For this TFG iteration,
+-do not adopt it merely to improve a scanner total: it requires its own supply
+-chain and runtime acceptance. A same-suite PostgreSQL OpenSSL security refresh
+-is also available, but the current Bookworm candidate remains affected by
+-CVE-2026-84782; it is maintenance, not evidence that R-20 is solved.
+-
+-## What R-20 Actually Requires
+-
+-The repository's implemented baseline is **zero fixable High/Critical**, not
+-zero High/Critical irrespective of vendor fix status:
+-
+-- [Security workflow](../../.github/workflows/security.yml) configures
+-  `ignore-unfixed: true` for source and application images.
+-- [D094 contract](../architecture/55_PostgreSQL_Runtime_Supply_Chain_Remediation_Contract.md)
+-  requires zero fixable High/Critical and secrets; the
+-  [database verifier](../../scripts/verify-postgres-runtime-image.ps1) uses
+-  `--ignore-unfixed`.
+-- [D098 verification](../architecture/58_Runtime_Supply_Chain_Refresh.md)
+-  explicitly requires zero fixable findings and the pinned Bookworm PCRE2
+-  patch, without a vulnerability exception or unsupported major update.
+-
+-The founder's later absolute-zero objective adds a stricter TFG-A decision
+-condition. It has not silently replaced CI, nor has CI silently satisfied it.
+-R-20 recorded that discrepancy and remained OPEN until one of these occurred:
+-
+-1. A bounded patch produces zero High/Critical **without** `--ignore-unfixed`,
+-   exclusions or vulnerability waivers, on all three final images, followed by
+-   the required regression and exact-image evidence; or
+-2. The owner explicitly chooses an academic criterion amendment and signs a
+-   bounded residual-risk disposition. Record it as **ACCEPTED TEMPORARILY**,
+-   not “zero vulnerabilities” or “remediated.” Keep the residual register and
+-   expiry active. Existing fixable/secret gates remain unchanged. The current
+-   [master-plan DoD](00_TFG_MASTER_PLAN.md#7-tfg-a-definition-of-done) forbids
+-   waiver-based closure; path B therefore needs an explicit approved amendment,
+-   not an automatic status edit.
+-
+-Maintaining absolute zero is a valid alternative, but it keeps TFG-A blocked
+-on R-20; it does not authorize an unbounded operating-system redesign.
+-The founder has explicitly chosen option 2 for the bound synthetic/local record.
+-Absolute-zero scan failures remain visible; only this project-local academic
+-criterion has a temporary approved disposition.
+-
+-## Why The Findings Are Unfixed
+-
+-Trivy 0.74.0 documents `--ignore-unfixed` as filtering `affected`,
+-`will_not_fix`, `fix_deferred` and `end_of_life`. These statuses describe vendor
+-fix availability or disposition, not whether an attacker can reach the code.
+-See [Trivy filtering](https://trivy.dev/docs/v0.74/guide/configuration/filtering/)
+-and [Debian coverage](https://trivy.dev/docs/v0.74/guide/coverage/os/debian/).
+-
+-The closure-preparation rerun on the original regression payloads confirms:
+-
+-| Image      | High | Critical | Distinct CVEs | affected | fix_deferred | will_not_fix | end_of_life |
+-| ---------- | ---: | -------: | ------------: | -------: | -----------: | -----------: | ----------: |
+-| Backend    |    0 |        0 |             0 |        0 |            0 |            0 |           0 |
+-| Frontend   |   53 |        4 |            19 |       49 |            7 |            1 |           0 |
+-| PostgreSQL |   81 |       15 |            32 |       76 |           19 |            1 |           0 |
+-
+-The 153 rows are **32 distinct CVEs in 12 Debian source packages**, repeated
+-across binary packages and two images. They are not 153 distinct exploitable
+-defects. Every mapped source/CVE pair is still open for Bookworm in the current
+-official tracker; two additional source packages sharing CVE IDs already have
+-fixes, but they are **not** the source packages producing these installed
+-binaries. The [per-CVE matrix](evidence/2026-10-02-r20/CVE_MATRIX.md) and
+-[machine analysis](evidence/2026-10-02-r20/cve-matrix.json) record each installed
+-version, vendor status/fix in Bookworm/Trixie/Sid, trigger and bounded impact.
+-
+-The historical base comparison uses one unchanged Trivy database snapshot, updated
+-2026-10-01 13:01 UTC and downloaded that evening, to avoid changing the database
+-between candidates. Debian's independent tracker was retrieved on
+-2026-10-02 11:10 UTC. Those are different data products and timestamps; no
+-claim that the scanner database was freshly rebuilt today is made. Scanner
+-severity may fall back to another vendor when Debian urgency is unassigned;
+-a High/Critical label is not itself evidence of a reachable product route.
+-
+-For closure preparation, the three original regression images were recovered
+-without rebuilding and scanned using Trivy 0.74.0 pinned by image digest and
+-the vulnerability database updated **2026-10-02T12:48:00.080865328Z**.
+-The Java artifact index remains the recorded, still-current cached snapshot;
+-it is distinct from the vulnerability database. All **153 package/CVE/version/status
+-rows exactly match** the reviewed 32-CVE matrix. Fixable High/Critical,
+-language-package High/Critical and detected secrets remain zero. Strict Trivy
+-exit codes are **0 / 1 / 1**: unfixed findings still fail absolute zero.
+-See [canonical scans and database identities](evidence/2026-10-02-r20-closure/README.md).
+-
+-Current signature-verified APT metadata and a **simulation only** show:
+-
+-- All 18 affected frontend binary packages are already their configured
+-  Bookworm candidates: zero targeted package upgrades.
+-- PostgreSQL offers only `libssl3`/`openssl` 3.0.20-1~deb12u2 →
+-  3.0.22-1~deb12u1 among its 27 affected binary packages. The official
+-  [OpenSSL tracker](https://security-tracker.debian.org/tracker/CVE-2026-84782)
+-  still marks that Bookworm security version vulnerable. No package was
+-  installed; runtime images and application inputs remain unchanged.
+-
+-No `end_of_life` finding appears in this scan. Bookworm's release/support
+-position is independently described by [Debian](https://www.debian.org/releases/bookworm/);
+-absence of a particular backport is not equivalent to a claim that the entire
+-distribution is unsupported.
+-
+-## Reachability And Residual Risk
+-
+-These are conditional assessments, not a blanket “not exploitable” statement.
+-No exploit attempts or denial-of-service tests were performed.
+-
+-| Family / example                       | Evidence in IMPERATOR                                                                                                                                      | Proposed disposition                                                                                                                      |
+-| -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+-| MiniZip, CVE-2023-45853                | Debian says the vulnerable contrib/minizip code is not built for this Bookworm source; no MiniZip files found                                              | Candidate component-not-present assessment; owner/reviewer approval required; no automatic ignore rule                                    |
+-| Perl 32-bit regex, CVE-2026-8376       | Both images report Perl ptrsize=8 and ivsize=8; advisory requires a 32-bit build                                                                           | Candidate prerequisite-not-met assessment; does not dispose of other Perl defects                                                         |
+-| Archive::Tar / IO::Compress / Storable | All three modules absent in frontend; PostgreSQL has Archive::Tar/Storable, no IO::Compress or plperl.so; no product Perl invocation found                 | Frontend component distinctions and conditional PostgreSQL residual risk; do not call all Perl findings absent                            |
+-| Mount/nsenter, ACL, ncurses and gzip   | No ordinary product route to these triggers found; non-root/read-only/no-new-privileges, no SYS_ADMIN; PostgreSQL retains its five documented capabilities | Local prerequisites constrained; post-compromise/operator use not excluded; official PostgreSQL initializer still supports archive inputs |
+-| systemd-homed                          | homed service/executable absent; PostgreSQL links libsystemd                                                                                               | Distinguish absent homed service from a present shared library                                                                            |
+-| OpenSSL DTLS and PCRE2 JIT             | No DTLS/PCRE2 JIT application endpoint found; PostgreSQL links libssl, Node's executable does not link system PCRE2                                        | Trigger not identified, not general library absence; other transitive consumers not fully traced                                          |
+-| SQLite and LDAP                        | SQLite is installed, not in postgres's direct link set; PostgreSQL links LDAP but configured authentication is SCRAM; no product SQLite/LDAP feature found | Conditional residual risks; operator configuration and transitive consumers remain outside the proof                                      |
+-| libxml2, including CVE-2026-6653       | Library directly linked into PostgreSQL; inspected API/schema use JSON and prepared queries, with no XML feature                                           | Real installed parser: do not classify as absent; SQL-capable/compromised clients remain a possible path                                  |
+-
+-Primary clarifications:
+-[MiniZip source/binary distinction](https://security-tracker.debian.org/tracker/CVE-2023-45853),
+-[32-bit Perl prerequisite](https://security-tracker.debian.org/tracker/CVE-2026-8376),
+-[ACL backport/ABI constraints](https://security-tracker.debian.org/tracker/CVE-2026-54369),
+-and [libxml2 stable backport limitation](https://security-tracker.debian.org/tracker/CVE-2026-6653).
+-For CVE-2026-13221, Debian flags Bookworm but its advisory notes introduction
+-in Perl 5.37.10; a backport/source reconciliation is required before claiming
+-that installed Perl 5.36 is unaffected. This unresolved discrepancy is retained.
+-
+-## Measured Alternatives And Scope Cost
+-
+-The following are **official base-image OS scans**, not certification of a
+-modified IMPERATOR image. They use pinned manifest digests, linux/amd64 and
+-the same Trivy database. npm/Go findings in the untrimmed official bases are
+-recorded separately in the [comparison](evidence/2026-10-02-r20/scan-comparison.json);
+-the existing product runtimes remove/rebuild those components and currently
+-have zero language-package High/Critical findings.
+-
+-| Option                                              | OS High / Critical | Correctable OS rows | Assessment                                                                           |
+-| --------------------------------------------------- | -----------------: | ------------------: | ------------------------------------------------------------------------------------ |
+-| Current IMPERATOR frontend, Node 24.20.0 / Bookworm |             53 / 4 |                   0 | Baseline; existing PCRE2 patch already applied                                       |
+-| Official Node 24.20.0 / Bookworm                    |             56 / 4 |                   3 | Same published digest as pinned base; omits IMPERATOR's existing PCRE2 patch         |
+-| Official Node 24.21.0 / Bookworm                    |             53 / 4 |                   0 | Updating Node alone does not reduce current OS findings                              |
+-| Official Node 24.20.0 / Trixie                      |             58 / 3 |                  18 | Keeping Node exact version while changing suite still requires security patches      |
+-| Official Node 24.21.0 / Trixie                      |             48 / 0 |                   5 | Partial reduction; 43 current rows have no indicated fix                             |
+-| Current IMPERATOR PostgreSQL 18.6 / Bookworm        |            81 / 15 |                   0 | Baseline, custom rebuilt gosu and existing PCRE2 patch                               |
+-| Current official PostgreSQL 18.6 / Bookworm         |            81 / 15 |                   0 | Newer published base digest does not fix the reported OS set                         |
+-| Official PostgreSQL 18.6 / Trixie                   |             68 / 1 |                   7 | Partial reduction; 62 current rows have no indicated fix, including Critical libxml2 |
+-
+-Trixie fixes several Perl/SQLite/OpenSSL issues, but ACL, ncurses, systemd,
+-some util-linux issues and libxml2 remain open. “The provider cannot currently
+-fix everything **in the supported stable suite**” is supported here; “there
+-is no fix anywhere” is false. Sid/upstream corrections exist, but mixing Sid
+-packages into stable images creates ABI/dependency/supply-chain work rather
+-than a supported minimal security patch.
+-
+-A Trixie adoption would affect at least both image Dockerfiles, their PCRE2
+-security-package pins, the workflow's exact Bookworm-version assertion and
+-D094/D098 verification assumptions. Preserve historical contracts; review a
+-new bounded amendment instead of rewriting their accepted evidence. Rebuild
+-gosu with its existing pinned inputs, retain non-root/read-only/loopback
+-controls, certify SBOM/provenance and reproducibility, then run
+-174 unit / 35 integration / 41 frontend, quality/build, real Docker/RBAC,
+-Flyway/permissions, persistence, recovery and both scan policies on exact
+-final images. None of that adoption is claimed executed by this analysis.
+-
+-Alpine changes glibc to musl and affects native Next/Sharp/SWC components and
+-PostgreSQL packaging/locales; distroless/custom pruning affects shell-based
+-initialization, provisioning and diagnostics. Rebuilding native libraries,
+-deleting package metadata to hide alerts, using Sid, disabling PostgreSQL
+-features or replacing the distribution solely to chase zero is not a bounded
+-TFG-A fix. No zero result is claimed for those untested approaches. Official
+-[Node variant documentation](https://github.com/nodejs/docker-node/blob/main/README.md)
+-explains the libc difference; the [official PostgreSQL variants](https://github.com/docker-library/official-images/blob/master/library/postgres)
+-show that PostgreSQL 18.6 can be kept when comparing suites.
+-
+-## Concrete Pending Decisions
+-
+-| Decision                        | Proposed choice                                                                           | Boundary / required evidence                                                                                                                                                                 | Current state                                           |
+-| ------------------------------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+-| R-19                            | Authorize only brace-expansion 1.1.18→1.1.21 and 5.0.9→5.0.12                             | Unchanged direct dependencies; isolated audit zero already prepared; apply and rerun affected quality/build/runtime scans                                                                    | PENDING; not authorized or applied                      |
+-| R-20 absolute-zero criterion    | Path B approved for synthetic loopback academic rehearsal only                            | Explicit project-owner approval bound to all 32 CVEs and exact canonical images; preserve zero-fixable/zero-secret gates and full raw counts; institutional assessment remains for the tutor | ACCEPTED TEMPORARILY; expires 2026-10-09T00:00:00+02:00 |
+-| R-20 partial base refresh       | Defer adoption for this closure decision; retain as a bounded security-maintenance option | Trixie does not close absolute zero; amendment and full supply-chain/runtime regression required before adopting                                                                             | NOT APPLIED                                             |
+-| Java/Spring/other stack refresh | No blanket refresh for R-20                                                               | Reconsider only for an independent advisory, support deadline or compatibility requirement                                                                                                   | No R-20-driven update justified                         |
+-
+-## Effective Acceptance, Expiry And Approval Authority
+-
+-The historical [approval proposal](evidence/2026-10-02-r20-closure/approval-proposal.json)
+-retains its original **`accepted: false`** pre-approval state. The current
+-[acceptance record](evidence/2026-10-02-r20-acceptance/acceptance.json) records
+-**`accepted: true` / `ACCEPTED TEMPORARILY`** after the explicit affirmative user
+-message. Approval was registered at **2026-10-02T17:16:32Z**; this is the agent's
+-UTC registration time, not an invented client message-send timestamp. The exact
+-approved decision/proposal/matrix/image/scan/database bytes are hash-bound and
+-preserved. The expiry is
+-**2026-10-09T00:00:00+02:00, Europe/Madrid (CEST)**, equivalent to
+-**2026-10-08T22:00:00Z**. It is an exclusive boundary: acceptance
+-applies from its recorded effective approval registration instant until, but not
+-including, that expiry. At the expiry instant it ceases to authorize the local
+-exception; R-20 becomes blocking again. No automatic renewal or grace period.
+-
+-- **Project approver and risk owner:** the founder/project owner, the user in
+-  this conversation. Only their explicit approval can activate the project-local
+-  B disposition and its project-local criterion amendment. Explicit approval is
+-  now recorded; it grants no R-19, TFG-B, AWS or release authorization.
+-- **Technical evidence reviewer:** Codex in this session, responsible for
+-  manifest, scan, matrix and hash consistency. Technical verification or a
+-  recommendation cannot accept risk on the owner's behalf.
+-- **Academic reviewer:** the TFG tutor/supervisor for institutional assessment
+-  criteria. Their personal identity and approval are not in the repository;
+-  this role is identified without inventing a name or signature. A project-local
+-  owner decision does not certify institutional acceptance.
+-
+-Approval binds the pre-approval decision snapshot, full 32-CVE matrix, canonical
+-platform/configuration digests, scan/database hashes, scope and expiry. The
+-current document adds the recorded result without replacing those approved
+-bytes. Silence, completed technical review, unchanged findings and a passing
+-fixable-only gate are not acceptance. The explicit owner decision accepts the
+-reviewed residual set only for its bounded scope. Component/prerequisite
+-distinctions remain conditional; no vulnerability is declared remediated or
+-automatically unaffected, and the original matrix is retained unchanged.
+-
+-Limit B to **synthetic data on loopback**; prohibit public/pilot/AWS/customer
+-exposure under this record. Reopen review earlier for a vendor fix, changed
+-image/base or runtime input, changed scanner/vendor data, application feature,
+-configuration, data or exposure boundary. Until reviewed and re-attested, changed
+-evidence is outside this accepted record. A fixable High/Critical, detected secret,
+-expired acceptance or new unreviewed finding is a NO-GO. No blanket ignore/VEX
+-document or claim that an acceptance removes a vulnerability.
+-
+-The current state is **R-20 = ACCEPTED TEMPORARILY**, not CLOSED,
+-remediated or zero vulnerabilities. The master-plan DoD amendment is effective
+-only for this explicitly approved bound R-20 record, while zero fixable
+-High/Critical and zero-secret closure requirements remain mandatory.
+-**R-19 stays OPEN and separately unauthorized**; this approval does not permit
+-its lockfile patch. The known R-19 findings are not waived by this R-20 record
+-and continue to block the Security Closure Gate. R-20 approval alone cannot
+-make TFG-A COMPLETE: R-19 and the TFG-A Security
+-Closure Gate must also pass. TFG-B/AWS readiness requires a separate authorized
+-step; no AWS, production or real-data action or D101 discharge follows from
+-this acceptance. The [Security Closure Gate](TFG_A_SECURITY_CLOSURE_GATE.md)
+-is the only active next gate; it is not passed while R-19 remains unresolved.
+-
+-## Evidence And Resolved Image Binding
+-
+-See the [dated evidence pack](evidence/2026-10-02-r20/README.md) and
+-[analysis index](evidence/TFG_A_R20_2026-10-02.json), supplemented by the
+-[closure-preparation index](evidence/TFG_A_R20_CLOSURE_PREPARATION_2026-10-02.json).
+-All runtime/test input
+-SHA256 records from R-17 remain unchanged. This was an analysis turn; the
+-previous 174/35/41 regression results remain dated R-17 evidence, not newly
+-executed tests on candidate bases.
+-
+-The previous [binding review](evidence/2026-10-02-r20/binding-review.json)
+-correctly found different top-level IDs, but its rebuild explanation was
+-incomplete. These IDs are **OCI provenance indexes**, not configuration hashes.
+-The [resolution](evidence/2026-10-02-r20-closure/image-binding-resolution.json)
+-compares original BuildKit indexes, platform manifests, configuration and layers
+-against archived Compose container image labels:
+-
+-| Image      | Original regression platform manifest                                     | Canonical configuration                                                   | Comparison with historical final scan                                        |
+-| ---------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+-| Backend    | `sha256:4159c0dee5e61a2d76f87f546dc72134c45c3786960c654fb5661c2032c7e56b` | `sha256:7f639b3fcbf8eeeea5f76b4e2ea0241131a99b93f2986ceb2855a95e8b3d9031` | Same manifest/config/13 layers; provenance index changed                     |
+-| Frontend   | `sha256:82582f8aee09291e5cada3f28046e2539bebf029333b080a1db420902531738d` | `sha256:0cd5667c82950ba30d238da3479fa079d009de54f2d726294564d10e6e440e7a` | Runtime settings/first 8 layers identical; final 2 Next output layers differ |
+-| PostgreSQL | `sha256:a0a072063a0ee345dcd6ebbc1420bde7d0f203c6619c872d71ca2ca765036a69` | `sha256:805fa48d501a9894beb06b82ff09d6d472b4c59b94ee6d74d9eb2ad54f407327` | Same 18 layers; sole runtime config change is Compose service label          |
+-
+-All original linux/amd64 manifest/configuration/layer bytes were recovered
+-locally, digest-verified and rescanned using single-platform OCI input layouts.
+-Their wrapper indexes are separately identified; they do not masquerade as the
+-historical attestation indexes. No product rebuild, tag replacement, runtime
+-regression or dependency change occurred. Canonical **frontend is the earlier
+-capture/persistence build**; later observability results are not transferred to
+-its different Next output layers. Historical reports and the pre-preparation
+-decision/index are retained with hashes. The three canonical strict scans now
+-bind the reviewed package matrix to the original observed rehearsal payloads,
+-resolving this discrepancy for the proposed R-20 B scope. This is not a single
+-accepted-release certificate or the full TFG-A closure gate.
++See [applicability review](R20_APPLICABILITY_REVIEW.md), [current gate](TFG_A_SECURITY_CLOSURE_GATE.md), [A-S3](A_S3_EVIDENCE_VERSIONING.md), immutable [historical approval](evidence/2026-10-02-r20-acceptance/acceptance.json) and [approved review snapshots](evidence/2026-10-06-a-s2-acceptance/approved-38-files.json). No upgrade is authorized; TFG-A IN PROGRESS, A-S4 later and AWS blocked.
+--- a/docs/tfg/R21_R22_SECURITY_REVIEW.md
++++ b/docs/tfg/R21_R22_SECURITY_REVIEW.md
+@@ -1,4 +1,10 @@
+ # R-21 / R-22 Scoped Remediation And A-S2 — 2026-10-06
++
++## Current Owner Decision And Sprint — 2026-10-06
++
++**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](A_S3_EVIDENCE_VERSIONING.md).
++
++The R21/R22 checkpoint below is historical verification context; its original pending-approval wording is superseded by the registered owner decisions above.
+ 
+ **R-21 authorized source-map-js/sharp findings CLOSED. R-22 authorized PCRE2/Perl findings CLOSED. A-S2 technical criterion GO. Formal security closure PENDING RESIDUAL DISPOSITION. TFG-A IN PROGRESS.**
+ 
+--- a/docs/tfg/README.md
++++ b/docs/tfg/README.md
+@@ -1,10 +1,10 @@
+ # IMPERATOR TFG Academic Evidence
+ 
+-## Current R-20 Applicability Review — 2026-10-06
++## Current Owner Decision And Sprint — 2026-10-06
+ 
+-The current23-CVE/115-row applicability review is complete:3affected optional subcomponents absent,1unused protocol,19conditional residuals with explicit prerequisites/uncertainties. Historical Perl probe-name discrepancy resolved without editing old evidence. `braces` is absent as a package from the inspected production image but present in development tooling. Current R20 proposal remains `accepted:false`; independent R23 remains **OPEN / NO FIX AVAILABLE / NOT ACCEPTED**. No upgrades or automatic advancement. A-S2 technical GO; formal closure awaits explicit owner disposition; original exclusive expiry2026-10-09T00:00:00+02:00 remains unchanged. See the [applicability review](R20_APPLICABILITY_REVIEW.md), exact proposals and artifact index.
++**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](A_S3_EVIDENCE_VERSIONING.md).
+ 
+-Document status: **TFG-A IN PROGRESS / A-S2 TECHNICAL GO / FORMAL SECURITY CLOSURE PENDING RESIDUAL DISPOSITION**
++Document status: **TFG-A IN PROGRESS / A-S2 TECHNICAL AND FORMAL GO / A-S3 EVIDENCE-VERSIONING ACTIVE**
+ 
+ Implementation baseline for this iteration: `b602bbe1dde92a902c17272d59cd9f0c10b9efe5`
+ 
+@@ -12,7 +12,6 @@
+ test/format maintenance, Docker rehearsal, capture and verified residue cleanup.
+ On 2026-10-02 the five-finding R-17 patch and complete functional/runtime rerun
+ pass; all three fixable-only image vulnerability/secret gates are zero.
+-Current local assessment after explicitly authorized R-21/R-22: **2026-10-06**. R-17/R-19 and the authorized R-21/R-22 corrected findings are CLOSED. **A-S2 technical GO; formal security closure PENDING RESIDUAL DISPOSITION.** Exact-image regression174/35/41, Docker/RBAC/V3/persistence/recovery, zero fixable High/Critical and zero secrets PASS. Full scans retain non-fixable residuals. Historical R-20 approval does not transfer; current binding accepted=false / REVIEW REQUIRED. Braces is separately tracked R-23 OPEN / NOT ACCEPTED. TFG-A IN PROGRESS; A-S3/A-S4/TFG-B/AWS blocked. See the [current review](R21_R22_SECURITY_REVIEW.md) and [gate](TFG_A_SECURITY_CLOSURE_GATE.md).
+ 
+ This directory explains how the existing IMPERATOR implementation supports a
+ DAM final project focused on software engineering, cloud architecture,
+@@ -111,9 +110,7 @@
+ release claim. Historical certification is separate from the current
+ image/security audit results; all AWS/IdP dependencies retain their gates.
+ 
+-## Current A-S1 / A-S2 Status
+-
+-Current local assessment after explicitly authorized R-21/R-22: **2026-10-06**. R-17/R-19 and the authorized R-21/R-22 corrected findings are CLOSED. **A-S2 technical GO; formal security closure PENDING RESIDUAL DISPOSITION.** Exact-image regression174/35/41, Docker/RBAC/V3/persistence/recovery, zero fixable High/Critical and zero secrets PASS. Full scans retain non-fixable residuals. Historical R-20 approval does not transfer; current binding accepted=false / REVIEW REQUIRED. Braces is separately tracked R-23 OPEN / NOT ACCEPTED. TFG-A IN PROGRESS; A-S3/A-S4/TFG-B/AWS blocked. See the [current review](R21_R22_SECURITY_REVIEW.md) and [gate](TFG_A_SECURITY_CLOSURE_GATE.md).
++## Earlier A-S1 / A-S2 Checkpoint (Superseded)
+ 
+ The [original R-20 approval](evidence/2026-10-02-r20-acceptance/acceptance.json)
+ remains a preserved historical record. Expiry stays 2026-10-09T00:00:00+02:00
+--- a/docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md
++++ b/docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md
+@@ -1,30 +1,23 @@
+-# TFG-A Security Closure Gate — R-21/R-22 Re-evaluation 2026-10-06
++# TFG-A Security Closure Gate — Explicit Owner Decision 2026-10-06
+ 
+-## Current R-20 Applicability Review — 2026-10-06
++**A-S2 technical GO / formal GO for the exact local synthetic security record. TFG-A IN PROGRESS. A-S3 authorized for evidence/versioning only.**
+ 
+-The current23-CVE/115-row applicability review is complete:3affected optional subcomponents absent,1unused protocol,19conditional residuals with explicit prerequisites/uncertainties. Historical Perl probe-name discrepancy resolved without editing old evidence. `braces` is absent as a package from the inspected production image but present in development tooling. Current R20 proposal remains `accepted:false`; independent R23 remains **OPEN / NO FIX AVAILABLE / NOT ACCEPTED**. No upgrades or automatic advancement. A-S2 technical GO; formal closure awaits explicit owner disposition; original exclusive expiry2026-10-09T00:00:00+02:00 remains unchanged. See the [applicability review](R20_APPLICABILITY_REVIEW.md), exact proposals and artifact index.
++| Control                                               | Result                                                                         |
++| ----------------------------------------------------- | ------------------------------------------------------------------------------ |
++| Backend / frontend / PostgreSQL fixable High/Critical | 0 / 0 / 0, exact frozen images                                                 |
++| Secrets                                               | 0 source/history/images; new publication separately verified at all severities |
++| Backend unit / integration / frontend                 | 174 / 35 / 41 PASS in bound prior regression                                   |
++| Docker/RBAC/Flyway/V3/persistence/readiness/recovery  | PASS in bound exact-image regression                                           |
++| Playwright                                            | 9 PASS / 6 intentional skips                                                   |
++| R17 / R19 / authorized corrected R21 / R22            | CLOSED                                                                         |
++| R20                                                   | ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC — 23 conditional OS CVEs                |
++| R23                                                   | OPEN / NO FIX AVAILABLE — independent disposition APPROVED; not closed         |
++| A-S2 technical / formal                               | GO / GO                                                                        |
++| A-S3                                                  | ACTIVE — documentation, versioning, evidence, PR/CI preparation only           |
++| A-S4 / TFG-A COMPLETE / AWS                           | Later / false / blocked                                                        |
+ 
+-**A-S2 technical criterion GO. Formal security closure PENDING RESIDUAL DISPOSITION. TFG-A IN PROGRESS. A-S3/A-S4 blocked.**
++The [owner authorization](evidence/2026-10-06-a-s2-acceptance/owner-authorization.json), [R20 acceptance](evidence/2026-10-06-a-s2-acceptance/r20-current-acceptance.json), [R23 disposition](evidence/2026-10-06-a-s2-acceptance/r23-approved-open-disposition.json) and [closure index](evidence/TFG_A_SECURITY_CLOSURE_GATE_ACCEPTED_2026-10-06.json) bind this gate. The earlier [R21/R22 pack](evidence/2026-10-06-r21-r22/README.md) supplies runtime/scanner evidence; [applicability](R20_APPLICABILITY_REVIEW.md) supplies the individual residual assessment. No new regression or image rebuild is claimed in this documentation-only closure.
+ 
+-The [current R-21/R-22 review](R21_R22_SECURITY_REVIEW.md), [exact evidence pack](evidence/2026-10-06-r21-r22/README.md) and [dated gate index](evidence/TFG_A_SECURITY_CLOSURE_GATE_R21_R22_2026-10-06.json) supersede the earlier R-19 checkpoint for the current technical result. Earlier packs and the original risk approval retain their original bytes.
++Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal, extension or future-image transfer. Local synthetic only; no AWS, production, real data or public/pilot exposure. Zero fixable H/C and zero secrets plus the registered early-invalidation conditions remain mandatory. GO ceases to support operation at expiry/invalidation; the historical decision record remains preserved.
+ 
+-| Required A-S2 technical criterion | Result                                                                 |
+-| --------------------------------- | ---------------------------------------------------------------------- |
+-| Backend fixable High/Critical     | 0 / PASS                                                               |
+-| Frontend fixable High/Critical    | 0 / PASS                                                               |
+-| PostgreSQL fixable High/Critical  | 0 / PASS                                                               |
+-| Secrets                           | 0 in source/history and all images; ALL Trivy secret severities / PASS |
+-
+-Source vulnerability/configuration gate also passes with development dependencies included. Regression174+35+41, frontend quality/build, Docker/API/UI/RBAC, FlywayV1–V3, append-only permissions, persistence, readiness/recovery, exact OCI bindings, D094 and scoped cleanup PASS. Playwright9 passes/6 intentional skips. Production npm audit0. Full scans remain visible and FAIL for non-fixable residuals: frontend48High/1Critical, PostgreSQL63High/3Critical, source braces1High; full npm5High affected-package aggregates from that one advisory.
+-
+-## Risk Disposition Boundary
+-
+-R-17/R-19 remain CLOSED for their original findings. R-21 is CLOSED for its two newly authorized corrected advisories; R-22 CLOSED for its authorized PCRE2/Perl findings. The braces development residual is separately registered **R-23 OPEN / NOT ACCEPTED**, and was not modified.
+-
+-R-20 is historically ACCEPTED TEMPORARILY, but **currentVersionAccepted=false / REVIEW REQUIRED** for these changed image/runtime/test/lock/DB hashes. Current image residual matrix115rows/23distinctCVEs is a subset of historical CVE identities; this does not transfer approval across versions. Review must consider changed Perl installed-version bindings and the complete new hash index. The original [approval](evidence/2026-10-02-r20-acceptance/acceptance.json) remains immutable and expires exclusively **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**. No automatic renewal, extension or acceptance transfer. Local loopback TFG-A/synthetic only; AWS/production/real data and pilot exposure excluded. Codex verifies evidence and cannot accept risk.
+-
+-## Current Decision
+-
+-The zero-fixable/zero-secret criterion requested by the owner now permits **A-S2 technical GO**. It is not an absolute-zero scan, residual-risk approval, accepted local SHA or TFG-A completion. Formal Security Closure remains **PENDING RESIDUAL DISPOSITION** until current R-20 applicability is explicitly decided and independent braces disposition is documented. The owner has explicitly prohibited automatic advancement: **A-S3/A-S4/TFG-B/AWS remain blocked and no further dependency update is authorized**.
+-
+-Dirty local worktree is bound by actual runtime content fingerprint and frozen OCI digests, on baseline `b602bbe1dde92a902c17272d59cd9f0c10b9efe5`; no accepted commit/hosted CI/external IdP/institutional approval is claimed. D101 and narrated defense remain separate obligations. Historical source/PR states are evidence snapshots, not current hosted checks.
++Full scans stay visible: frontend48High/1Critical, PostgreSQL63High/3Critical, source braces1High and full npm5High affected-package aggregates/one advisory. Formal GO is a bounded explicit decision, not absolute zero, universal non-exploitability, TFG-A completion, accepted release commit, hosted CI pass or institutional certification. No further upgrade or PR57–59 merge is authorized. [A-S3](A_S3_EVIDENCE_VERSIONING.md) records the next version/evidence boundary.

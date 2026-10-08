@@ -1,0 +1,37 @@
+Docker version 29.8.0, build 88096ef
+Docker Compose version v5.5.1
+ Container imperator-r21-r22-20261006-backend-1 Running 
+ Container imperator-r21-r22-20261006-frontend-1 Running 
+ Container imperator-r21-r22-20261006-postgres-1 Running 
+ Container imperator-r21-r22-20261006-postgres-1 Waiting 
+ Container imperator-r21-r22-20261006-postgres-1 Healthy 
+ Container imperator-r21-r22-20261006-flyway-migrate-1 Starting 
+ Container imperator-r21-r22-20261006-flyway-migrate-1 Started 
+ Container imperator-r21-r22-20261006-flyway-migrate-1 Waiting 
+ Container imperator-r21-r22-20261006-flyway-migrate-1 Exited 
+ Container imperator-r21-r22-20261006-flyway-validate-1 Starting 
+ Container imperator-r21-r22-20261006-flyway-validate-1 Started 
+ Container imperator-r21-r22-20261006-flyway-validate-1 Waiting 
+ Container imperator-r21-r22-20261006-flyway-validate-1 Exited 
+ Container imperator-r21-r22-20261006-postgres-permissions-1 Starting 
+ Container imperator-r21-r22-20261006-postgres-permissions-1 Started 
+ Container imperator-r21-r22-20261006-postgres-permissions-1 Waiting 
+ Container imperator-r21-r22-20261006-postgres-permissions-1 Exited 
+ Container imperator-r21-r22-20261006-backend-1 Waiting 
+ Container imperator-r21-r22-20261006-backend-1 Healthy 
+ Container imperator-r21-r22-20261006-frontend-1 Waiting 
+ Container imperator-r21-r22-20261006-postgres-1 Waiting 
+ Container imperator-r21-r22-20261006-flyway-migrate-1 Waiting 
+ Container imperator-r21-r22-20261006-flyway-validate-1 Waiting 
+ Container imperator-r21-r22-20261006-postgres-permissions-1 Waiting 
+ Container imperator-r21-r22-20261006-backend-1 Waiting 
+ Container imperator-r21-r22-20261006-frontend-1 Healthy 
+ Container imperator-r21-r22-20261006-flyway-migrate-1 Exited 
+ Container imperator-r21-r22-20261006-backend-1 Healthy 
+ Container imperator-r21-r22-20261006-flyway-validate-1 Exited 
+ Container imperator-r21-r22-20261006-postgres-1 Healthy 
+ Container imperator-r21-r22-20261006-postgres-permissions-1 Exited 
+4682a81bec326c4fc71f2fd29fcb6050cebf74cfd0e122f918504fd794c27591
+4682a81bec326c4fc71f2fd29fcb6050cebf74cfd0e122f918504fd794c27591
+D097 application-native observability verification: PASS
+Evidence=D:\Imperator\build\tfg-a\r21-r22-2026-10-06\docker\observability

@@ -1,0 +1,57 @@
+{
+  "exactImageId": "sha256:5cd649ff9a460b2abdc8315da2e7568c5a2c2138d99815db89c5c583f88c18b1",
+  "inspectionLogLocalOnly": {
+    "path": "build/tfg-a/r20-applicability-2026-10-06/frontend-bundle-mention-review.log",
+    "sha256": "9e1b3ae989ce4fd9836693de28b831dc1159377fbc86ffb2514a04381a7b20d6"
+  },
+  "files": [
+    {
+      "path": "/app/node_modules/next/dist/compiled/picomatch/index.js",
+      "sha256": "607dc79784c1161c33076903769dba23e63d9d9ccfe3c4695a32ebe3a5ab892d",
+      "bytes": 23909,
+      "tokensFound": [
+        "braces"
+      ],
+      "interpretation": "Picomatch parser brace counters; distinct dependency-free package, no braces package import/AST-walker signatures found."
+    },
+    {
+      "path": "/app/node_modules/next/dist/compiled/picomatch/package.json",
+      "sha256": "bcb6e75087cfe22755400218f098b6b36805627e5f54171abf58454f6484ac47",
+      "bytes": 116,
+      "tokensFound": [],
+      "interpretation": "Package identity is picomatch, not braces."
+    },
+    {
+      "path": "/app/node_modules/next/dist/server/app-render/csrf-protection.js",
+      "sha256": "bab4f59d84cc04915032ad5db93c013b150e74e34d1b702244f522101fccd3f0",
+      "bytes": 3642,
+      "tokensFound": [
+        "micromatch"
+      ],
+      "interpretation": "Micromatch is mentioned in comments about a separate matcher implementation, not imported here."
+    },
+    {
+      "path": "/app/node_modules/react/cjs/react.development.js",
+      "sha256": "97bef56f30daa05320514ea220d7d03eb765635519ff2d5650c4887772aa5767",
+      "bytes": 49165,
+      "tokensFound": [
+        "braces"
+      ],
+      "interpretation": "The word braces appears in a React diagnostic about import syntax, not an imported glob library."
+    }
+  ],
+  "wholeImageSearch": {
+    "scope": "All .js/.cjs/.mjs/.json files below /app",
+    "packagesUnresolved": [
+      "braces",
+      "micromatch",
+      "fast-glob",
+      "eslint",
+      "next/dist/compiled/micromatch",
+      "next/dist/compiled/glob"
+    ],
+    "picomatchResolves": true,
+    "universalAbsenceProof": false,
+    "limit": "Package inventory, traced standalone output, resolution checks and reviewed lexical matches; not a universal semantic proof over every possible obfuscated/unlabelled code fragment."
+  }
+}

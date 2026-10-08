@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "executedAtUtc": "2026-10-06T17:34:22.846426+00:00",
+  "actualImageIdentityUnchanged": true,
+  "buildsInFinalRun": 1,
+  "project": "imperator-r21-r22-20261006",
+  "observabilityShell": "PowerShell 7; this run used no Windows PowerShell 5 retry",
+  "scope": "Local loopback, synthetic data, ephemeral RS256 JWKS fixture; no external IdP or AWS certification"
+}

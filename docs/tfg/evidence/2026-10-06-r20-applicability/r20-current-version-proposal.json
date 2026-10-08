@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "risk": "R-20",
+  "option": "B",
+  "status": "PROPOSAL READY / EXPLICIT CURRENT-VERSION APPROVAL REQUIRED",
+  "accepted": false,
+  "currentVersionAccepted": false,
+  "approvedAtUtc": null,
+  "approver": {
+    "role": "Project owner",
+    "identity": "User in this project conversation",
+    "approved": false
+  },
+  "reviewer": {
+    "identity": "Codex",
+    "role": "Technical evidence reviewer",
+    "riskApprovalAuthority": false
+  },
+  "academicReviewer": {
+    "role": "TFG tutor/supervisor",
+    "identity": null,
+    "institutionalApprovalClaimed": false
+  },
+  "scope": {
+    "track": "TFG-A",
+    "execution": "Local loopback academic rehearsal only",
+    "data": "Synthetic only",
+    "excluded": [
+      "AWS",
+      "Production",
+      "Real data",
+      "Public/pilot/customer exposure"
+    ]
+  },
+  "expiry": {
+    "local": "2026-10-09T00:00:00+02:00",
+    "timeZone": "Europe/Madrid",
+    "utc": "2026-10-08T22:00:00Z",
+    "exclusive": true,
+    "automaticRenewal": false,
+    "extensionProposed": false
+  },
+  "mandatoryGates": {
+    "backendFixableHighCritical": 0,
+    "frontendFixableHighCritical": 0,
+    "postgresFixableHighCritical": 0,
+    "secretsAllSeverities": 0
+  },
+  "reviewedResidual": {
+    "distinctOsCves": 23,
+    "packageCveRows": 115,
+    "matrix": {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/cve-applicability-matrix.json",
+      "sha256": "04ce43241c8fc47c2275c0305f5dd8211ebba3778963734b366bbb9d3bad3982",
+      "bytes": 101381
+    },
+    "comparability": "Conditionally equivalent or narrower within reviewed local scope; SQL/native parser/operator uncertainties retained."
+  },
+  "currentImages": [
+    {
+      "service": "backend",
+      "indexDigest": "sha256:681e6e7b77b73170c959ed04697302f6a21d8db98edb3a2b0f3354a44387096d",
+      "platformManifestDigest": "sha256:35793caf489ab2b56806d6d533ccfebe2e5144f38defced0d88f9b85bf138275",
+      "configDigest": "sha256:bae6c993682a2692cc3f1e19e2ebd7111b4d25869c8a5f90b973b94a7d73a33c"
+    },
+    {
+      "service": "frontend",
+      "indexDigest": "sha256:5cd649ff9a460b2abdc8315da2e7568c5a2c2138d99815db89c5c583f88c18b1",
+      "platformManifestDigest": "sha256:de33fcc4e5d99bcec121ae7f4d88dc742d0f2e9ac81839f3fd8dca0d259beaea",
+      "configDigest": "sha256:133dec49d525b150fa6ab117bd2dacfd494aa776e917e8ab03f45f115568b320"
+    },
+    {
+      "service": "postgres",
+      "indexDigest": "sha256:2b73847d07d6cb7da2ace20426de036fa0278feca0bb6520aca62588e9b3f101",
+      "platformManifestDigest": "sha256:c2c532db77cdef99e64c31f08359cd445267f7e50f08c9aef1c976e9cca6dd0c",
+      "configDigest": "sha256:42e661e3f5932273d36c1cf1ad4d407a738e861197e47cf489946ac9de4c3098"
+    }
+  ],
+  "runtimeContentFingerprint": "cbc6535ee56bfa991fb96551a90cda7dc35afd2204056f561900614ab0a5d0b7",
+  "baselineGitRevision": "b602bbe1dde92a902c17272d59cd9f0c10b9efe5",
+  "worktreeDirty": true,
+  "acceptedCommit": null,
+  "boundEvidence": [
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/image-binding.json",
+      "sha256": "2cc40c8ea1da2d71d37e43dbaf0029afff953c80eb13d8b3d74644ac1a9b0fbe",
+      "bytes": 12690
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/source-manifest.json",
+      "sha256": "cde68dffaa752125ae500b537430d0bc41784e317c5fa4d520aaa00336d3c0e6",
+      "bytes": 65916
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/scans/scanner-databases.json",
+      "sha256": "e71549c1e9347b2429af59f46a019c609785114f045f88a1a3b6204f74051460",
+      "bytes": 831
+    },
+    {
+      "path": "docs/tfg/evidence/TFG_A_R21_R22_2026-10-06.json",
+      "sha256": "af9eb22bab5319b619c8d3fb2199eb725a6007ef285f1c40cb5faaa3339c333e",
+      "bytes": 46277
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/historical-comparison.json",
+      "sha256": "88454c9ccaf373b95a836601976ec6d3fa0961311f97fd8a4723deee58087d32",
+      "bytes": 2662
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/vendor-status.json",
+      "sha256": "daa99422201fc9e6d7a5e6ccf3bb10fc083f2273f8c1d50c0114002769b25cef",
+      "bytes": 27176
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/runtime-inspection.json",
+      "sha256": "bd71752ef350efdba8b988aad837f897834e4124aa2528a2a01d4696c212e0b0",
+      "bytes": 7056
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r20-applicability/source-boundary-review.json",
+      "sha256": "682d54ee5cd0c8337a228ebdf6cf1cd8f0ea19f599ae3dc4ca16fb667fd0bdc7",
+      "bytes": 4507
+    }
+  ],
+  "historicalApproval": {
+    "path": "docs/tfg/evidence/2026-10-02-r20-acceptance/acceptance.json",
+    "sha256": "f05a78809830df4aacd431527997df0acf5d9bc3cd558705d9104149e64a5cb7",
+    "bytes": 8692
+  },
+  "criterionAmendment": "Only if expressly approved: permit this exact current23-CVE unfixed OS residual for local synthetic TFG-A until original exclusive expiry; zero fixable H/C and zero secrets remain mandatory. This is temporary residual acceptance, not remediation/absolute zero.",
+  "earlyInvalidation": [
+    "Vendor fix becomes available",
+    "Image/base digest or runtime/test input changes",
+    "Scanner/vendor data changes until reviewed and re-attested",
+    "New feature, configuration, data or exposure boundary",
+    "Any fixable High/Critical, detected secret or new unreviewed finding"
+  ],
+  "r23Included": false,
+  "automaticTransfer": false,
+  "automaticAdvance": false,
+  "TFG_A_COMPLETE": false,
+  "A_S3Authorized": false,
+  "awsAuthorized": false,
+  "explicitDecisionText": "Approve temporary R20 B disposition for the exact current image/matrix/runtime/DB binding in this proposal, local synthetic TFG-A only, until2026-10-09T00:00:00+02:00, without renewal, subject to zero fixable H/C/zero secrets and early invalidation; R23 requires its independent disposition.",
+  "historicalApprovalDoesNotAuthorizeThisProposal": true
+}

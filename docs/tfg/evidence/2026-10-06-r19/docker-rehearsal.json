@@ -1,0 +1,746 @@
+{
+  "executionClass": "EXECUTED OFFLINE",
+  "syntheticOnly": true,
+  "apiInterception": false,
+  "steps": [
+    {
+      "name": "Unauthenticated read denied",
+      "status": 401,
+      "expected": 401,
+      "result": {
+        "code": "AUTHENTICATION_REQUIRED",
+        "message": "Authentication required",
+        "correlationId": "d5249292-b782-4177-8b85-ea512c0e876b",
+        "details": {}
+      }
+    },
+    {
+      "name": "Import canonical 30-record synthetic pack",
+      "status": 200,
+      "expected": 200,
+      "result": {
+        "status": "ACCEPTED",
+        "accepted": 30,
+        "rejected": 0,
+        "items": [
+          {
+            "line": 1,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000201",
+            "reason": null
+          },
+          {
+            "line": 2,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000202",
+            "reason": null
+          },
+          {
+            "line": 3,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000203",
+            "reason": null
+          },
+          {
+            "line": 4,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000204",
+            "reason": null
+          },
+          {
+            "line": 5,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000205",
+            "reason": null
+          },
+          {
+            "line": 6,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000206",
+            "reason": null
+          },
+          {
+            "line": 7,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000207",
+            "reason": null
+          },
+          {
+            "line": 8,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000208",
+            "reason": null
+          },
+          {
+            "line": 9,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000209",
+            "reason": null
+          },
+          {
+            "line": 10,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000210",
+            "reason": null
+          },
+          {
+            "line": 11,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000211",
+            "reason": null
+          },
+          {
+            "line": 12,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000212",
+            "reason": null
+          },
+          {
+            "line": 13,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000213",
+            "reason": null
+          },
+          {
+            "line": 14,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000214",
+            "reason": null
+          },
+          {
+            "line": 15,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000215",
+            "reason": null
+          },
+          {
+            "line": 16,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000216",
+            "reason": null
+          },
+          {
+            "line": 17,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000217",
+            "reason": null
+          },
+          {
+            "line": 18,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000218",
+            "reason": null
+          },
+          {
+            "line": 19,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000219",
+            "reason": null
+          },
+          {
+            "line": 20,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000220",
+            "reason": null
+          },
+          {
+            "line": 21,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000221",
+            "reason": null
+          },
+          {
+            "line": 22,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000222",
+            "reason": null
+          },
+          {
+            "line": 23,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000223",
+            "reason": null
+          },
+          {
+            "line": 24,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000224",
+            "reason": null
+          },
+          {
+            "line": 25,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000225",
+            "reason": null
+          },
+          {
+            "line": 26,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000226",
+            "reason": null
+          },
+          {
+            "line": 27,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000227",
+            "reason": null
+          },
+          {
+            "line": 28,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000228",
+            "reason": null
+          },
+          {
+            "line": 29,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000229",
+            "reason": null
+          },
+          {
+            "line": 30,
+            "status": "ACCEPTED",
+            "evidenceId": "00000000-0000-4000-8000-000000000230",
+            "reason": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "Compose existing canonical case",
+      "status": 201,
+      "expected": 201,
+      "result": {
+        "caseId": "DRC-AOA-001",
+        "decisionId": "ae525f87-edef-4b5f-a74e-200ab81c3aad",
+        "decisionStatus": "CREATED",
+        "recommendationId": "26c77381-ac2b-41ac-8a13-754358a2b811",
+        "recommendationType": "MODEL_CHANGE",
+        "estimatedAnnualizedSavings": {
+          "amount": "19440.00",
+          "currency": "EUR"
+        },
+        "confidence": 92,
+        "risk": "LOW",
+        "evidenceCount": 28,
+        "workspacePath": "/decisions/ae525f87-edef-4b5f-a74e-200ab81c3aad",
+        "replayed": false,
+        "resumed": false
+      }
+    },
+    {
+      "name": "Composition replay is idempotent",
+      "status": 200,
+      "expected": 200,
+      "result": {
+        "caseId": "DRC-AOA-001",
+        "decisionId": "ae525f87-edef-4b5f-a74e-200ab81c3aad",
+        "decisionStatus": "CREATED",
+        "recommendationId": "26c77381-ac2b-41ac-8a13-754358a2b811",
+        "recommendationType": "MODEL_CHANGE",
+        "estimatedAnnualizedSavings": {
+          "amount": "19440.00",
+          "currency": "EUR"
+        },
+        "confidence": 92,
+        "risk": "LOW",
+        "evidenceCount": 28,
+        "workspacePath": "/decisions/ae525f87-edef-4b5f-a74e-200ab81c3aad",
+        "replayed": true,
+        "resumed": false
+      }
+    },
+    {
+      "name": "Auditor cannot approve",
+      "status": 403,
+      "expected": 403,
+      "result": {
+        "code": "ACCESS_DENIED",
+        "message": "Access denied",
+        "correlationId": "4d6d6ed4-3d5e-4901-86a9-ab58da5bd100",
+        "details": {}
+      }
+    },
+    {
+      "name": "Denied command appended no Ledger entry",
+      "status": 200,
+      "expected": 200,
+      "result": {
+        "items": [],
+        "page": 0,
+        "size": 20,
+        "totalItems": 0,
+        "totalPages": 0
+      }
+    },
+    {
+      "name": "Value is not realized before governance",
+      "status": 409,
+      "expected": 409,
+      "result": {
+        "code": "BUSINESS_VALUE_NOT_READY",
+        "message": "Business Value is not ready for Decision ae525f87-edef-4b5f-a74e-200ab81c3aad: Decision must be APPROVED",
+        "correlationId": "fcdec700-3d0c-45fc-bdb3-2a574abd80e5",
+        "details": {}
+      }
+    },
+    {
+      "name": "Human ADMIN approval through real UI",
+      "status": 201,
+      "result": {
+        "ledgerEntryId": "4eee8ea1-2581-4e88-b41d-7e9e7be7555c",
+        "decisionId": "ae525f87-edef-4b5f-a74e-200ab81c3aad",
+        "recommendationId": "26c77381-ac2b-41ac-8a13-754358a2b811",
+        "status": "APPROVED",
+        "reviewerId": "d303bde2-57d1-4677-9451-788c750f27ff",
+        "reviewerRole": "ADMIN",
+        "reviewReason": "Authorized synthetic approval for the TFG rehearsal",
+        "replayed": false
+      }
+    },
+    {
+      "name": "Platform engineer records implementation",
+      "status": 201,
+      "expected": 201,
+      "result": {
+        "ledgerEntryId": "5f1b1826-08c3-4ca2-9318-10bf4c244aa0",
+        "decisionId": "ae525f87-edef-4b5f-a74e-200ab81c3aad",
+        "recommendationId": "26c77381-ac2b-41ac-8a13-754358a2b811",
+        "entryType": "IMPLEMENTATION_MARKED",
+        "occurredAt": "2026-07-15T10:30:00Z",
+        "evidenceSnapshotCount": 1,
+        "realizedSaving": null,
+        "replayed": false
+      }
+    },
+    {
+      "name": "Finance validates the result",
+      "status": 201,
+      "expected": 201,
+      "result": {
+        "ledgerEntryId": "262d1f89-4e57-4b7a-9a6e-4bc9e7a6beef",
+        "decisionId": "ae525f87-edef-4b5f-a74e-200ab81c3aad",
+        "recommendationId": "26c77381-ac2b-41ac-8a13-754358a2b811",
+        "entryType": "RESULT_VALIDATED",
+        "occurredAt": "2026-08-01T00:00:00Z",
+        "evidenceSnapshotCount": 1,
+        "realizedSaving": {
+          "amount": "18960.00",
+          "currency": "EUR"
+        },
+        "replayed": false
+      }
+    },
+    {
+      "name": "Business Value derives from validated facts",
+      "status": 200,
+      "expected": 200,
+      "result": {
+        "caseId": "DRC-AOA-001",
+        "correlationKey": "DRC-AOA-001",
+        "decisionId": "ae525f87-edef-4b5f-a74e-200ab81c3aad",
+        "decisionTitle": "Optimize AI onboarding assistant cost",
+        "businessNeed": "Reduce recurring AI expenditure without losing exception-handling quality",
+        "decisionStatus": "APPROVED",
+        "decisionCreatedAt": "2026-07-01T09:00:00Z",
+        "recommendationId": "26c77381-ac2b-41ac-8a13-754358a2b811",
+        "recommendationType": "MODEL_CHANGE",
+        "recommendedAction": "Change the AI Onboarding Assistant to a lower-cost model for standard onboarding requests, with a high-capability fallback for exceptions.",
+        "deterministicReason": "Current monthly cost is EUR 2340.00 and projected monthly cost after the model change is EUR 720.00, yielding estimated monthly recovery of EUR 1620.00 and estimated annualized recovery of EUR 19440.00 under the accepted assumptions.",
+        "explanation": null,
+        "recommendationCreatedAt": "2026-07-01T10:00:00Z",
+        "estimatedSavings": {
+          "amount": "19440.00",
+          "currency": "EUR"
+        },
+        "realizedSavings": {
+          "amount": "18960.00",
+          "currency": "EUR"
+        },
+        "variance": "-480.00",
+        "annualizedBaselineCost": {
+          "amount": "28080.00",
+          "currency": "EUR"
+        },
+        "annualizedPostActionCost": {
+          "amount": "9000.00",
+          "currency": "EUR"
+        },
+        "actualTransitionCost": {
+          "amount": "120.00",
+          "currency": "EUR"
+        },
+        "confidence": 92,
+        "risk": "LOW",
+        "policyVersion": "DRC-AOA-001-v1",
+        "evidenceIds": [
+          "00000000-0000-4000-8000-000000000201",
+          "00000000-0000-4000-8000-000000000202",
+          "00000000-0000-4000-8000-000000000203",
+          "00000000-0000-4000-8000-000000000204",
+          "00000000-0000-4000-8000-000000000205",
+          "00000000-0000-4000-8000-000000000206",
+          "00000000-0000-4000-8000-000000000207",
+          "00000000-0000-4000-8000-000000000208",
+          "00000000-0000-4000-8000-000000000209",
+          "00000000-0000-4000-8000-000000000210",
+          "00000000-0000-4000-8000-000000000211",
+          "00000000-0000-4000-8000-000000000212",
+          "00000000-0000-4000-8000-000000000213",
+          "00000000-0000-4000-8000-000000000214",
+          "00000000-0000-4000-8000-000000000215",
+          "00000000-0000-4000-8000-000000000216",
+          "00000000-0000-4000-8000-000000000217",
+          "00000000-0000-4000-8000-000000000218",
+          "00000000-0000-4000-8000-000000000219",
+          "00000000-0000-4000-8000-000000000220",
+          "00000000-0000-4000-8000-000000000221",
+          "00000000-0000-4000-8000-000000000222",
+          "00000000-0000-4000-8000-000000000223",
+          "00000000-0000-4000-8000-000000000224",
+          "00000000-0000-4000-8000-000000000225",
+          "00000000-0000-4000-8000-000000000226",
+          "00000000-0000-4000-8000-000000000227",
+          "00000000-0000-4000-8000-000000000228",
+          "00000000-0000-4000-8000-000000000229",
+          "00000000-0000-4000-8000-000000000230"
+        ],
+        "assumptionIds": [
+          "A-ROI-001",
+          "A-ROI-002",
+          "A-ROI-003",
+          "A-ROI-004"
+        ],
+        "approvalEntryId": "4eee8ea1-2581-4e88-b41d-7e9e7be7555c",
+        "implementationEntryId": "5f1b1826-08c3-4ca2-9318-10bf4c244aa0",
+        "validationEntryId": "262d1f89-4e57-4b7a-9a6e-4bc9e7a6beef",
+        "ledgerHistory": [
+          {
+            "id": "4eee8ea1-2581-4e88-b41d-7e9e7be7555c",
+            "type": "APPROVED",
+            "actorId": "d303bde2-57d1-4677-9451-788c750f27ff",
+            "actorRole": "ADMIN",
+            "occurredAt": "2026-07-01T11:00:00Z",
+            "previousEntryId": null,
+            "evidenceIds": [
+              "00000000-0000-4000-8000-000000000201",
+              "00000000-0000-4000-8000-000000000202",
+              "00000000-0000-4000-8000-000000000203",
+              "00000000-0000-4000-8000-000000000204",
+              "00000000-0000-4000-8000-000000000205",
+              "00000000-0000-4000-8000-000000000206",
+              "00000000-0000-4000-8000-000000000207",
+              "00000000-0000-4000-8000-000000000208",
+              "00000000-0000-4000-8000-000000000209",
+              "00000000-0000-4000-8000-000000000210",
+              "00000000-0000-4000-8000-000000000211",
+              "00000000-0000-4000-8000-000000000212",
+              "00000000-0000-4000-8000-000000000213",
+              "00000000-0000-4000-8000-000000000214",
+              "00000000-0000-4000-8000-000000000215",
+              "00000000-0000-4000-8000-000000000216",
+              "00000000-0000-4000-8000-000000000217",
+              "00000000-0000-4000-8000-000000000218",
+              "00000000-0000-4000-8000-000000000219",
+              "00000000-0000-4000-8000-000000000220",
+              "00000000-0000-4000-8000-000000000221",
+              "00000000-0000-4000-8000-000000000222",
+              "00000000-0000-4000-8000-000000000223",
+              "00000000-0000-4000-8000-000000000224",
+              "00000000-0000-4000-8000-000000000225",
+              "00000000-0000-4000-8000-000000000226",
+              "00000000-0000-4000-8000-000000000227",
+              "00000000-0000-4000-8000-000000000228"
+            ]
+          },
+          {
+            "id": "5f1b1826-08c3-4ca2-9318-10bf4c244aa0",
+            "type": "IMPLEMENTATION_MARKED",
+            "actorId": "28ad9182-6015-4234-9d10-b8759c9335d4",
+            "actorRole": "PLATFORM_ENGINEER",
+            "occurredAt": "2026-07-15T10:30:00Z",
+            "previousEntryId": "4eee8ea1-2581-4e88-b41d-7e9e7be7555c",
+            "evidenceIds": [
+              "00000000-0000-4000-8000-000000000229"
+            ]
+          },
+          {
+            "id": "262d1f89-4e57-4b7a-9a6e-4bc9e7a6beef",
+            "type": "RESULT_VALIDATED",
+            "actorId": "67e08b31-79e9-45c7-ab02-aa0e2625ea64",
+            "actorRole": "FINANCE",
+            "occurredAt": "2026-08-01T00:00:00Z",
+            "previousEntryId": "5f1b1826-08c3-4ca2-9318-10bf4c244aa0",
+            "evidenceIds": [
+              "00000000-0000-4000-8000-000000000230"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "Three ordered authority-bound Ledger entries",
+      "status": 200,
+      "expected": 200,
+      "result": {
+        "items": [
+          {
+            "ledgerEntryId": "4eee8ea1-2581-4e88-b41d-7e9e7be7555c",
+            "decisionId": "ae525f87-edef-4b5f-a74e-200ab81c3aad",
+            "recommendationId": "26c77381-ac2b-41ac-8a13-754358a2b811",
+            "actorId": "d303bde2-57d1-4677-9451-788c750f27ff",
+            "actorRole": "ADMIN",
+            "occurredAt": "2026-07-01T11:00:00Z",
+            "entryType": "APPROVED",
+            "changeSummary": "Decision approved",
+            "reason": "Authorized synthetic approval for the TFG rehearsal",
+            "evidenceIds": [
+              "00000000-0000-4000-8000-000000000201",
+              "00000000-0000-4000-8000-000000000202",
+              "00000000-0000-4000-8000-000000000203",
+              "00000000-0000-4000-8000-000000000204",
+              "00000000-0000-4000-8000-000000000205",
+              "00000000-0000-4000-8000-000000000206",
+              "00000000-0000-4000-8000-000000000207",
+              "00000000-0000-4000-8000-000000000208",
+              "00000000-0000-4000-8000-000000000209",
+              "00000000-0000-4000-8000-000000000210",
+              "00000000-0000-4000-8000-000000000211",
+              "00000000-0000-4000-8000-000000000212",
+              "00000000-0000-4000-8000-000000000213",
+              "00000000-0000-4000-8000-000000000214",
+              "00000000-0000-4000-8000-000000000215",
+              "00000000-0000-4000-8000-000000000216",
+              "00000000-0000-4000-8000-000000000217",
+              "00000000-0000-4000-8000-000000000218",
+              "00000000-0000-4000-8000-000000000219",
+              "00000000-0000-4000-8000-000000000220",
+              "00000000-0000-4000-8000-000000000221",
+              "00000000-0000-4000-8000-000000000222",
+              "00000000-0000-4000-8000-000000000223",
+              "00000000-0000-4000-8000-000000000224",
+              "00000000-0000-4000-8000-000000000225",
+              "00000000-0000-4000-8000-000000000226",
+              "00000000-0000-4000-8000-000000000227",
+              "00000000-0000-4000-8000-000000000228"
+            ],
+            "estimatedSavings": {
+              "amount": "19440.00",
+              "currency": "EUR"
+            },
+            "realizedSavings": null,
+            "confidence": 92,
+            "risk": "LOW",
+            "previousEntryId": null,
+            "metadata": {}
+          },
+          {
+            "ledgerEntryId": "5f1b1826-08c3-4ca2-9318-10bf4c244aa0",
+            "decisionId": "ae525f87-edef-4b5f-a74e-200ab81c3aad",
+            "recommendationId": "26c77381-ac2b-41ac-8a13-754358a2b811",
+            "actorId": "28ad9182-6015-4234-9d10-b8759c9335d4",
+            "actorRole": "PLATFORM_ENGINEER",
+            "occurredAt": "2026-07-15T10:30:00Z",
+            "entryType": "IMPLEMENTATION_MARKED",
+            "changeSummary": "Recommendation implementation marked",
+            "reason": "Canonical synthetic model-routing deployment",
+            "evidenceIds": [
+              "00000000-0000-4000-8000-000000000229"
+            ],
+            "estimatedSavings": null,
+            "realizedSavings": null,
+            "confidence": null,
+            "risk": null,
+            "previousEntryId": "4eee8ea1-2581-4e88-b41d-7e9e7be7555c",
+            "metadata": {
+              "implementation_period": "2026-07"
+            }
+          },
+          {
+            "ledgerEntryId": "262d1f89-4e57-4b7a-9a6e-4bc9e7a6beef",
+            "decisionId": "ae525f87-edef-4b5f-a74e-200ab81c3aad",
+            "recommendationId": "26c77381-ac2b-41ac-8a13-754358a2b811",
+            "actorId": "67e08b31-79e9-45c7-ab02-aa0e2625ea64",
+            "actorRole": "FINANCE",
+            "occurredAt": "2026-08-01T00:00:00Z",
+            "entryType": "RESULT_VALIDATED",
+            "changeSummary": "Recommendation result validated",
+            "reason": "Canonical synthetic financial validation",
+            "evidenceIds": [
+              "00000000-0000-4000-8000-000000000230"
+            ],
+            "estimatedSavings": {
+              "amount": "19440.00",
+              "currency": "EUR"
+            },
+            "realizedSavings": {
+              "amount": "18960.00",
+              "currency": "EUR"
+            },
+            "confidence": 92,
+            "risk": "LOW",
+            "previousEntryId": "5f1b1826-08c3-4ca2-9318-10bf4c244aa0",
+            "metadata": {
+              "annualized_post_action_cost": "9000.00",
+              "outcome_note": "Canonical synthetic financial validation",
+              "actual_transition_cost": "120.00",
+              "validation_period": "2026-07",
+              "annualized_baseline_cost": "28080.00",
+              "variance": "-480.00"
+            }
+          }
+        ],
+        "page": 0,
+        "size": 20,
+        "totalItems": 3,
+        "totalPages": 1
+      }
+    }
+  ],
+  "environment": "Real Docker frontend/backend/PostgreSQL; local HTTPS/JWKS fixture",
+  "limitations": "Approval uses the UI. Implementation/result facts use authenticated API commands, followed by unmocked UI reads. Not external Keycloak or AWS acceptance.",
+  "businessValue": {
+    "caseId": "DRC-AOA-001",
+    "correlationKey": "DRC-AOA-001",
+    "decisionId": "ae525f87-edef-4b5f-a74e-200ab81c3aad",
+    "decisionTitle": "Optimize AI onboarding assistant cost",
+    "businessNeed": "Reduce recurring AI expenditure without losing exception-handling quality",
+    "decisionStatus": "APPROVED",
+    "decisionCreatedAt": "2026-07-01T09:00:00Z",
+    "recommendationId": "26c77381-ac2b-41ac-8a13-754358a2b811",
+    "recommendationType": "MODEL_CHANGE",
+    "recommendedAction": "Change the AI Onboarding Assistant to a lower-cost model for standard onboarding requests, with a high-capability fallback for exceptions.",
+    "deterministicReason": "Current monthly cost is EUR 2340.00 and projected monthly cost after the model change is EUR 720.00, yielding estimated monthly recovery of EUR 1620.00 and estimated annualized recovery of EUR 19440.00 under the accepted assumptions.",
+    "explanation": null,
+    "recommendationCreatedAt": "2026-07-01T10:00:00Z",
+    "estimatedSavings": {
+      "amount": "19440.00",
+      "currency": "EUR"
+    },
+    "realizedSavings": {
+      "amount": "18960.00",
+      "currency": "EUR"
+    },
+    "variance": "-480.00",
+    "annualizedBaselineCost": {
+      "amount": "28080.00",
+      "currency": "EUR"
+    },
+    "annualizedPostActionCost": {
+      "amount": "9000.00",
+      "currency": "EUR"
+    },
+    "actualTransitionCost": {
+      "amount": "120.00",
+      "currency": "EUR"
+    },
+    "confidence": 92,
+    "risk": "LOW",
+    "policyVersion": "DRC-AOA-001-v1",
+    "evidenceIds": [
+      "00000000-0000-4000-8000-000000000201",
+      "00000000-0000-4000-8000-000000000202",
+      "00000000-0000-4000-8000-000000000203",
+      "00000000-0000-4000-8000-000000000204",
+      "00000000-0000-4000-8000-000000000205",
+      "00000000-0000-4000-8000-000000000206",
+      "00000000-0000-4000-8000-000000000207",
+      "00000000-0000-4000-8000-000000000208",
+      "00000000-0000-4000-8000-000000000209",
+      "00000000-0000-4000-8000-000000000210",
+      "00000000-0000-4000-8000-000000000211",
+      "00000000-0000-4000-8000-000000000212",
+      "00000000-0000-4000-8000-000000000213",
+      "00000000-0000-4000-8000-000000000214",
+      "00000000-0000-4000-8000-000000000215",
+      "00000000-0000-4000-8000-000000000216",
+      "00000000-0000-4000-8000-000000000217",
+      "00000000-0000-4000-8000-000000000218",
+      "00000000-0000-4000-8000-000000000219",
+      "00000000-0000-4000-8000-000000000220",
+      "00000000-0000-4000-8000-000000000221",
+      "00000000-0000-4000-8000-000000000222",
+      "00000000-0000-4000-8000-000000000223",
+      "00000000-0000-4000-8000-000000000224",
+      "00000000-0000-4000-8000-000000000225",
+      "00000000-0000-4000-8000-000000000226",
+      "00000000-0000-4000-8000-000000000227",
+      "00000000-0000-4000-8000-000000000228",
+      "00000000-0000-4000-8000-000000000229",
+      "00000000-0000-4000-8000-000000000230"
+    ],
+    "assumptionIds": [
+      "A-ROI-001",
+      "A-ROI-002",
+      "A-ROI-003",
+      "A-ROI-004"
+    ],
+    "approvalEntryId": "4eee8ea1-2581-4e88-b41d-7e9e7be7555c",
+    "implementationEntryId": "5f1b1826-08c3-4ca2-9318-10bf4c244aa0",
+    "validationEntryId": "262d1f89-4e57-4b7a-9a6e-4bc9e7a6beef",
+    "ledgerHistory": [
+      {
+        "id": "4eee8ea1-2581-4e88-b41d-7e9e7be7555c",
+        "type": "APPROVED",
+        "actorId": "d303bde2-57d1-4677-9451-788c750f27ff",
+        "actorRole": "ADMIN",
+        "occurredAt": "2026-07-01T11:00:00Z",
+        "previousEntryId": null,
+        "evidenceIds": [
+          "00000000-0000-4000-8000-000000000201",
+          "00000000-0000-4000-8000-000000000202",
+          "00000000-0000-4000-8000-000000000203",
+          "00000000-0000-4000-8000-000000000204",
+          "00000000-0000-4000-8000-000000000205",
+          "00000000-0000-4000-8000-000000000206",
+          "00000000-0000-4000-8000-000000000207",
+          "00000000-0000-4000-8000-000000000208",
+          "00000000-0000-4000-8000-000000000209",
+          "00000000-0000-4000-8000-000000000210",
+          "00000000-0000-4000-8000-000000000211",
+          "00000000-0000-4000-8000-000000000212",
+          "00000000-0000-4000-8000-000000000213",
+          "00000000-0000-4000-8000-000000000214",
+          "00000000-0000-4000-8000-000000000215",
+          "00000000-0000-4000-8000-000000000216",
+          "00000000-0000-4000-8000-000000000217",
+          "00000000-0000-4000-8000-000000000218",
+          "00000000-0000-4000-8000-000000000219",
+          "00000000-0000-4000-8000-000000000220",
+          "00000000-0000-4000-8000-000000000221",
+          "00000000-0000-4000-8000-000000000222",
+          "00000000-0000-4000-8000-000000000223",
+          "00000000-0000-4000-8000-000000000224",
+          "00000000-0000-4000-8000-000000000225",
+          "00000000-0000-4000-8000-000000000226",
+          "00000000-0000-4000-8000-000000000227",
+          "00000000-0000-4000-8000-000000000228"
+        ]
+      },
+      {
+        "id": "5f1b1826-08c3-4ca2-9318-10bf4c244aa0",
+        "type": "IMPLEMENTATION_MARKED",
+        "actorId": "28ad9182-6015-4234-9d10-b8759c9335d4",
+        "actorRole": "PLATFORM_ENGINEER",
+        "occurredAt": "2026-07-15T10:30:00Z",
+        "previousEntryId": "4eee8ea1-2581-4e88-b41d-7e9e7be7555c",
+        "evidenceIds": [
+          "00000000-0000-4000-8000-000000000229"
+        ]
+      },
+      {
+        "id": "262d1f89-4e57-4b7a-9a6e-4bc9e7a6beef",
+        "type": "RESULT_VALIDATED",
+        "actorId": "67e08b31-79e9-45c7-ab02-aa0e2625ea64",
+        "actorRole": "FINANCE",
+        "occurredAt": "2026-08-01T00:00:00Z",
+        "previousEntryId": "5f1b1826-08c3-4ca2-9318-10bf4c244aa0",
+        "evidenceIds": [
+          "00000000-0000-4000-8000-000000000230"
+        ]
+      }
+    ]
+  },
+  "result": "PASS",
+  "executedAtUtc": "2026-10-06T15:58:56.913Z"
+}

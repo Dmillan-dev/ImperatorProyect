@@ -103,8 +103,11 @@ spend. The first case is `DRC-AOA-001`, AI Onboarding Assistant Recovery.
 - Sprint 4.3.1 documentation synchronization: complete.
 - D099/D100 repository implementation: COMPLETE / HOSTED PASS on merge
   `22a9917`; this is not live AWS evidence.
-- Current gate: D101 Stage A external Keycloak HTTPS conformance required by
-  D095.
+- Current work: TFG-A academic documentation, risk control, README
+  synchronization, authorized test/format maintenance and isolated local evidence, started by the founder on
+  2026-10-01. This is not a new product sprint.
+- D101: OPERATOR-DEFERRED / BLOCKED_EXTERNAL; D095 external Keycloak HTTPS
+  conformance remains mandatory before Pilot Readiness, exposure or release.
 - D101 Stages B and C: BLOCKED; no AWS plan/apply, publication or deployment.
 - Sprints 2.9 through 2.13: deferred, not completed.
 

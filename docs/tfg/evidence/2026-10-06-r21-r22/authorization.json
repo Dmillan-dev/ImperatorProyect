@@ -1,0 +1,24 @@
+{
+  "recordedAtUtc": "2026-10-06T17:38:11.928710+00:00",
+  "timestampBasis": "Registration after receipt of explicit user authorization; client send timestamp unavailable",
+  "scope": [
+    "R21 source-map-js according to prepared patch",
+    "R21 sharp and mandatory native subtree according to prepared patch",
+    "R22 checksum-pinned PCRE2/Perl Bookworm patches and lock/verifier according to prepared patch",
+    "Complete local synthetic regression and A-S2 re-evaluation"
+  ],
+  "excluded": [
+    "Other dependency upgrades",
+    "braces changes",
+    "Java/Spring/Node/base image changes",
+    "Bookworm to Trixie",
+    "Other PostgreSQL updates",
+    "Architecture or functional changes",
+    "AWS/Keycloak/Bedrock",
+    "Merge PR57/58/59",
+    "Automatic R20 acceptance transfer",
+    "A-S3/A-S4 advancement"
+  ],
+  "residualRiskAccepted": false,
+  "userAuthorization": true
+}

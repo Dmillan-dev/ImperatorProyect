@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "registeredAtUtc": "2026-10-06T19:31:42.555275+00:00",
+  "reviewedFiles": 38,
+  "currentR20Accepted": true,
+  "R23DispositionApproved": true,
+  "R23Accepted": false,
+  "R23Closed": false,
+  "originalProposalBytesUnchanged": true,
+  "historicalApprovalBytesUnchanged": true,
+  "A_S2Technical": "GO",
+  "A_S2Formal": "GO",
+  "TFG_A_COMPLETE": false,
+  "A_S3": "AUTHORIZED EVIDENCE/VERSIONING ONLY",
+  "A_S4": "PENDING",
+  "awsAuthorized": false
+}

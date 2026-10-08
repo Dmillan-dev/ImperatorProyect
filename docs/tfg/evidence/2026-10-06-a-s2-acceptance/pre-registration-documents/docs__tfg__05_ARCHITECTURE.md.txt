@@ -1,0 +1,132 @@
+# TFG Architecture View
+
+## Current Security Work Order — R-21/R-22, 2026-10-06
+
+Current local assessment after explicitly authorized R-21/R-22: **2026-10-06**. R-17/R-19 and the authorized R-21/R-22 corrected findings are CLOSED. **A-S2 technical GO; formal security closure PENDING RESIDUAL DISPOSITION.** Exact-image regression174/35/41, Docker/RBAC/V3/persistence/recovery, zero fixable High/Critical and zero secrets PASS. Full scans retain non-fixable residuals. Historical R-20 approval does not transfer; current binding accepted=false / REVIEW REQUIRED. Braces is separately tracked R-23 OPEN / NOT ACCEPTED. TFG-A IN PROGRESS; A-S3/A-S4/TFG-B/AWS blocked. See the [current review](R21_R22_SECURITY_REVIEW.md) and [gate](TFG_A_SECURITY_CLOSURE_GATE.md).
+
+Document status: **TFG-A IN PROGRESS**
+
+Capability status: local runtime `VALIDATED OFFLINE`; AWS Terraform source
+`VALIDATED OFFLINE`; live AWS runtime `NOT IMPLEMENTED`.
+
+## Local MVP
+
+```mermaid
+flowchart LR
+    Reviewer[Human reviewer] --> Web[Next.js workspace]
+    Web --> API[Spring Boot REST API]
+    Token[Controlled JWT fixture] --> API
+    API --> App[Application services]
+    App --> Domain[Deterministic Domain policies]
+    App --> DBAdapter[PostgreSQL adapter]
+    App --> Providers[Read-only provider adapters]
+    DBAdapter --> DB[(PostgreSQL)]
+    Providers --> GitHub[GitHub API]
+    Providers --> AWS[AWS API adapter tests]
+    App -. optional .-> Explain[ExplanationProvider]
+```
+
+The local runtime is one modular monolith plus frontend and database. Domain,
+Application and Ports do not depend on Spring, HTTP, JDBC, AWS or Bedrock. This
+keeps the same business implementation portable between local and AWS runtime
+environments.
+
+## AWS Target
+
+```mermaid
+flowchart TB
+    Internet --> DNS[Route 53]
+    DNS --> ALB[Public ALB<br/>ACM HTTPS]
+    ALB --> Frontend[Private frontend<br/>ECS/Fargate]
+    ALB --> Backend[Private backend<br/>ECS/Fargate]
+    Backend --> RDS[(Private RDS PostgreSQL)]
+    Backend --> Bedrock[Bedrock Runtime]
+    Backend -. trusted HTTPS .-> IdP[External Keycloak<br/>BLOCKED_EXTERNAL]
+    GitHubActions[GitHub Actions OIDC] --> ECR[Immutable ECR images]
+    ECR --> Frontend
+    ECR --> Backend
+    Backend --> CW[CloudWatch]
+    Frontend --> CW
+    Management[AWS management events] --> Trail[CloudTrail]
+    Trail --> Audit[(Encrypted S3 audit bucket)]
+```
+
+Current AWS status: Terraform, workflows and application adapters are
+implemented and validated offline. Every AWS resource in this diagram is a
+target declaration, not evidence of a deployed or tested AWS environment.
+
+## Decision Rationale
+
+| Decision              | Rationale                                                            | Explicit limitation                   |
+| --------------------- | -------------------------------------------------------------------- | ------------------------------------- |
+| Modular monolith      | Preserves one-case transaction and delivery simplicity               | Not independent service scaling       |
+| ECS/Fargate           | Reuses OCI images without managing EC2 hosts                         | One task/service in the pilot         |
+| RDS PostgreSQL        | Managed form of the existing PostgreSQL source of truth              | Single-AZ target, not production HA   |
+| Public ALB            | Controlled HTTPS product boundary and path routing                   | Intentional public resource           |
+| Private tasks/RDS     | No direct workload or database exposure                              | One NAT is an egress dependency       |
+| ECR digests           | Binds runtime artifacts to reviewed source                           | Publication is not yet executed       |
+| GitHub OIDC           | Avoids static CI AWS keys                                            | Requires protected environment setup  |
+| Secrets Manager       | Keeps database secrets out of source and Terraform values            | Secret creation is a separate write   |
+| CloudWatch/CloudTrail | Operational and management-plane evidence                            | Live redaction/alarms remain unproved |
+| Bedrock Converse      | Adds bounded explanation within DRC-AOA-001 through an existing port | Optional and non-authoritative        |
+
+## Delivery Limits Before Live Execution
+
+Terraform roots and mock tests are offline evidence of configuration only.
+The source audit found ECR name disagreement between bootstrap and workflows,
+broad deploy IAM and a separate reviewed-plan binding gap. These remain
+TFG-B findings in the [risk register](00_TFG_MASTER_PLAN.md#6-risks-and-scope-control);
+the diagram is not evidence that the delivery chain is ready to execute.
+
+Local JSON logs use Elastic Common Schema; `ecs` is a log format, not a claim
+of Amazon ECS operation. Micrometer business metrics remain internal and are
+not automatically exported to CloudWatch by the inspected configuration.
+ALB terminates public TLS; target traffic uses HTTP inside the VPC. The RDS
+JDBC declaration uses `sslmode=require`; full certificate/hostname verification
+must not be inferred from that setting alone. CloudTrail is Region-scoped and
+does not establish complete global-service auditing.
+
+## Responsible AI Boundary
+
+```text
+validated Evidence summaries
+-> deterministic Recommendation and ROI persisted
+-> bounded context
+-> Bedrock Converse
+-> strict output validation
+-> separate explanation-attempt record
+-> human review
+```
+
+The model cannot choose an action, alter ROI/confidence/risk, approve a
+Decision, write the Ledger or execute a change. Unknown references, malformed
+JSON, secret-like material and excessive output fail closed. Provider failure
+does not invalidate the deterministic Recommendation.
+
+## Security Boundaries
+
+- ALB is the only intended public AWS entry point.
+- Security groups allow explicit ALB-to-task and backend-to-RDS paths.
+- Application and migration database identities remain separate.
+- GitHub build, deploy, ECS execution and ECS task roles remain separate.
+- JWT authentication, route RBAC, Application authority and Domain invariants
+  are independent controls.
+- Provider input is untrusted and cannot become business authority.
+- Logs and metrics exclude bearer tokens, secrets and raw Evidence content.
+
+## Availability Truth
+
+Two public and two private subnets plus the ALB span two AZs. The pilot still
+has one NAT gateway, one frontend task, one backend task and Single-AZ RDS.
+Therefore it demonstrates architecture trade-offs and replacement behavior,
+not full high availability. ECS autoscaling and multi-region recovery are `NOT
+IMPLEMENTED`.
+
+The current local rehearsal adds no runtime component to this architecture.
+Its unpublished HTTPS/JWKS fixture is test tooling, not a packaged IdP.
+Runtime behavior passes and original R-17/R-19 findings are CLOSED. Authorized
+R-21/R-22 corrected findings now pass A-S2 technically; formal closure remains
+pending current R-20/R-23 residual disposition; see the
+[Evidence Register](04_EVIDENCE_REGISTER.md).
+
+See the [current security review](R21_R22_SECURITY_REVIEW.md) before claiming full closure.

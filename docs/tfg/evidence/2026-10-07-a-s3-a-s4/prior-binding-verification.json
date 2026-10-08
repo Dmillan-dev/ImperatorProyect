@@ -1,0 +1,16 @@
+{
+  "result": "PASS",
+  "atUtc": "2026-10-07T10:10:50.538437+00:00",
+  "runtimeInputs": 383,
+  "runtimeContentFingerprint": "cbc6535ee56bfa991fb96551a90cda7dc35afd2204056f561900614ab0a5d0b7",
+  "approvedReviewSnapshots": 38,
+  "priorA_S3Index": {
+    "path": "docs/tfg/evidence/TFG_A_A_S3_2026-10-06.json",
+    "sha256": "4e14e8e1ad75b7eadf8507907c29f690b2d8a0152e096dde6a84e50241aa2201",
+    "bytes": 3676
+  },
+  "priorCandidateCommit": "8380e8d6e70ca4c858604ce4fcc0e0198fa162e1",
+  "historicalArtifactsModified": false,
+  "freshFunctionalRegression": false,
+  "hostedCIClaimed": false
+}

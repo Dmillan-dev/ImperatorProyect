@@ -6,6 +6,7 @@ Purpose:
 Define how AI agents should work on IMPERATOR without mixing responsibilities.
 
 Who uses this folder:
+
 - CTO / Product Guardian.
 - Architecture Guardian.
 - Implementation Agent.
@@ -13,12 +14,14 @@ Who uses this folder:
 - Context Keeper.
 
 Contains:
+
 - Agent roles.
 - Sprint prompts.
 - Phase execution plans.
 - Review and handoff rules.
 
 Never contains:
+
 - Product runtime code.
 - Build manifests.
 - Application source.
@@ -68,8 +71,11 @@ Phase 3 is named `First Business Value Loop` and is active under D079.
 The current authorized gate is maintained in
 `docs/project/PROJECT_STATUS.md`. D096 is frozen, D097 narrows its MVP scope,
 and D098, D097 and Sprint 4.4 are COMPLETE / HOSTED PASS. D099/D100 repository
-implementation is COMPLETE / HOSTED PASS on merge `22a9917`; D101 Stage A for
-D095 external Keycloak HTTPS conformance is current before any live pilot step.
+implementation is COMPLETE / HOSTED REPOSITORY PASS on merge `22a9917`.
+Current founder-authorized work is TFG-A academic documentation, bounded maintenance and isolated
+local evidence. D101 is OPERATOR-DEFERRED / BLOCKED_EXTERNAL and remains a
+mandatory external prerequisite under D095 before any live pilot step; it is
+not another TFG sprint.
 
 Phase 3 agents may implement only the bounded `DRC-AOA-001` sequence in
 `agents/phase3/README.md`. Sprint 3.0 runtime composition and Sprint 3.1 JSONL
@@ -179,7 +185,7 @@ From Sprint 1 onward, do not use one general-purpose agent for implementation.
 Use five separated roles:
 
 | Role | Writes code | Purpose | Veto |
-|---|---|---|---|
+| ---------------------- | ------------------------ | ---------------------------------------------------------------------------------------------------- | ---------------------------- |
 | Architecture Guardian | No | Checks hexagonal architecture, DDD, documents 31-38, dependencies, debt and contract drift. | Yes |
 | Implementation Agent | Yes | Implements only the assigned sprint deliverable/module. | No |
 | Quality Agent | No product functionality | Reviews naming, complexity, duplication, dead code, imports, coupling, SOLID and Clean Architecture. | Can block acceptance |
@@ -217,7 +223,7 @@ The task-specific reading matrix lives in `docs/project/README.md`.
 ## Agent Areas
 
 | Agent | Primary ownership | Must not own |
-|---|---|---|
+| --------------- | -------------------------------------------------------------------------- | ----------------------------------------------------------- |
 | CTO Agent | architecture coherence, decisions, sequencing, technical boundaries | product copy or connector facts alone |
 | Product Agent | MVP story, domain meaning, buyer value, screen/product contracts | provider permissions or technical implementation |
 | Connector Agent | Jira, GitHub, AWS and AI provider source contracts | ROI math, approval authority or recommendation ownership |
@@ -231,7 +237,7 @@ The task-specific reading matrix lives in `docs/project/README.md`.
 ## Handoff Rules
 
 | From | To | Handoff trigger |
-|---|---|---|
+| --------- | -------------- | -------------------------------------------------------------------- |
 | Product | Connector | Product claim needs source evidence |
 | Connector | Security | Evidence contains Confidential, Restricted or unknown sensitivity |
 | Connector | FinOps | Cost, currency, billing period or usage/cost attribution is involved |
@@ -245,7 +251,7 @@ The task-specific reading matrix lives in `docs/project/README.md`.
 ## MVP Work Packages
 
 | Work package | Lead agent | Supporting agents | Canonical docs |
-|---|---|---|---|
+| -------------------------------------- | ---------- | ---------------------------------------------- | --------------------------------------------- |
 | Decision ROI Case meaning | Product | CTO, Backend | Core Domain Model, MVP Blueprint |
 | Manual evidence proof | Product | Connector, FinOps, Security, QA | Manual Evidence Pack |
 | Connector contracts | Connector | Security, FinOps, Backend, Product | Per-Connector MVP Contracts |

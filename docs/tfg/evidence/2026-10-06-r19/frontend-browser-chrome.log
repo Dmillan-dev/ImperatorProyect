@@ -1,0 +1,67 @@
+
+> imperator-decision-review-workspace@0.1.0 test:e2e
+> playwright test --config=../build/tfg-a/r19-final-2026-10-06/playwright.config.ts
+
+[WebServer] (node:23008) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:35472) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:35804) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] ⚠ Slow filesystem detected. The benchmark took 457ms. If \\?\D:\Imperator\frontend\.next\dev is a network drive, consider moving it to a local folder.
+[WebServer] See more: https://nextjs.org/docs/app/guides/local-development
+
+Running 15 tests using 3 workers
+
+(node:9712) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:4380) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:7520) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:15592) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [browser] eval() is not supported in this environment. If this page was served with a `Content-Security-Policy` header, make sure that `unsafe-eval` is included. React requires eval() in development mode for various debugging features like reconstructing callstacks from a different environment.
+[WebServer] React will never use eval() in production mode 
+[WebServer] [browser] eval() is not supported in this environment. If this page was served with a `Content-Security-Policy` header, make sure that `unsafe-eval` is included. React requires eval() in development mode for various debugging features like reconstructing callstacks from a different environment.
+[WebServer] React will never use eval() in production mode 
+[WebServer] [browser] eval() is not supported in this environment. If this page was served with a `Content-Security-Policy` header, make sure that `unsafe-eval` is included. React requires eval() in development mode for various debugging features like reconstructing callstacks from a different environment.
+[WebServer] React will never use eval() in production mode 
+  ok  1 [compact] › e2e\decision-review.spec.ts:23:1 › renders the complete Decision Review Workspace without viewport overflow (2.8s)
+  ok  2 [mobile] › e2e\decision-review.spec.ts:23:1 › renders the complete Decision Review Workspace without viewport overflow (2.8s)
+  ok  3 [desktop] › e2e\decision-review.spec.ts:23:1 › renders the complete Decision Review Workspace without viewport overflow (2.7s)
+[WebServer] (node:41604) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [browser] eval() is not supported in this environment. If this page was served with a `Content-Security-Policy` header, make sure that `unsafe-eval` is included. React requires eval() in development mode for various debugging features like reconstructing callstacks from a different environment.
+[WebServer] React will never use eval() in production mode 
+[WebServer] [browser] eval() is not supported in this environment. If this page was served with a `Content-Security-Policy` header, make sure that `unsafe-eval` is included. React requires eval() in development mode for various debugging features like reconstructing callstacks from a different environment.
+[WebServer] React will never use eval() in production mode 
+[WebServer] [browser] eval() is not supported in this environment. If this page was served with a `Content-Security-Policy` header, make sure that `unsafe-eval` is included. React requires eval() in development mode for various debugging features like reconstructing callstacks from a different environment.
+[WebServer] React will never use eval() in production mode 
+  ok  6 [mobile] › e2e\decision-review.spec.ts:67:1 › keeps AUDITOR read-only, redacts Evidence and separates unrealized value (1.7s)
+  ok  4 [compact] › e2e\decision-review.spec.ts:67:1 › keeps AUDITOR read-only, redacts Evidence and separates unrealized value (1.8s)
+  ok  5 [desktop] › e2e\decision-review.spec.ts:67:1 › keeps AUDITOR read-only, redacts Evidence and separates unrealized value (1.8s)
+  -   7 [mobile] › e2e\decision-review.spec.ts:91:1 › presents PLATFORM_ENGINEER and FINANCE actions exactly
+  -   8 [compact] › e2e\decision-review.spec.ts:91:1 › presents PLATFORM_ENGINEER and FINANCE actions exactly
+  -  10 [mobile] › e2e\decision-review.spec.ts:124:1 › contains secondary 403, 404, malformed, empty and timeout failures
+  -  11 [compact] › e2e\decision-review.spec.ts:124:1 › contains secondary 403, 404, malformed, empty and timeout failures
+[WebServer] [browser] eval() is not supported in this environment. If this page was served with a `Content-Security-Policy` header, make sure that `unsafe-eval` is included. React requires eval() in development mode for various debugging features like reconstructing callstacks from a different environment.
+[WebServer] React will never use eval() in production mode 
+  -  12 [mobile] › e2e\decision-review.spec.ts:153:1 › clears the volatile session on a 401 Decision response
+[WebServer] (node:12616) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+  -  13 [compact] › e2e\decision-review.spec.ts:153:1 › clears the volatile session on a 401 Decision response
+  ok  9 [desktop] › e2e\decision-review.spec.ts:91:1 › presents PLATFORM_ENGINEER and FINANCE actions exactly (1.5s)
+[WebServer] [browser] eval() is not supported in this environment. If this page was served with a `Content-Security-Policy` header, make sure that `unsafe-eval` is included. React requires eval() in development mode for various debugging features like reconstructing callstacks from a different environment.
+[WebServer] React will never use eval() in production mode 
+[WebServer] (node:38736) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+  ok 14 [desktop] › e2e\decision-review.spec.ts:124:1 › contains secondary 403, 404, malformed, empty and timeout failures (11.0s)
+[WebServer] [browser] eval() is not supported in this environment. If this page was served with a `Content-Security-Policy` header, make sure that `unsafe-eval` is included. React requires eval() in development mode for various debugging features like reconstructing callstacks from a different environment.
+[WebServer] React will never use eval() in production mode 
+[WebServer] (node:29176) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+  ok 15 [desktop] › e2e\decision-review.spec.ts:153:1 › clears the volatile session on a 401 Decision response (773ms)
+
+  6 skipped
+  9 passed (24.8s)

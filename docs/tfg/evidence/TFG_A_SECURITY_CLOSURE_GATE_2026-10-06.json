@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "track": "TFG-A",
+  "gate": "Security Closure Gate / A-S2",
+  "executedAtUtc": "2026-10-06T16:29:21.110830+00:00",
+  "decision": "NO_GO",
+  "tfgAComplete": false,
+  "baselineGitCommit": "b602bbe1dde92a902c17272d59cd9f0c10b9efe5",
+  "runtimeTestInputsSha256": "22644274499e7d04ee3a375cb0833f0310fdf49b4a85792b32d3674cca03ff99",
+  "r19": "CLOSED for original finding",
+  "r20": {
+    "historicalApprovalPath": "docs/tfg/evidence/2026-10-02-r20-acceptance/acceptance.json",
+    "historicalApprovalSha256": "f05a78809830df4aacd431527997df0acf5d9bc3cd558705d9104149e64a5cb7",
+    "historicalAccepted": true,
+    "currentVersionAccepted": false,
+    "currentBindingStatus": "REVIEW REQUIRED / NOT ACCEPTED",
+    "automaticTransfer": false,
+    "automaticRenewal": false,
+    "expiryLocal": "2026-10-09T00:00:00+02:00",
+    "timeZone": "Europe/Madrid",
+    "expiryUtc": "2026-10-08T22:00:00Z",
+    "earlyInvalidationReasons": [
+      "Runtime lockfile/image identities changed",
+      "Scanner/vendor data changed",
+      "37 canonical image rows now have vendor fixes",
+      "New unreviewed npm/source findings"
+    ],
+    "reviewerMayAcceptRisk": false
+  },
+  "blockingRisks": [
+    "R-21",
+    "R-22",
+    "R-20 current binding"
+  ],
+  "security": {
+    "unit": {
+      "tests": 174,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "integration": {
+      "tests": 35,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "frontendTests": 41,
+    "frontendQuality": [
+      {
+        "check": "format",
+        "command": "npm.cmd run format:check",
+        "exitCode": 0,
+        "executedAtUtc": "2026-10-06T15:56:50.542882+00:00"
+      },
+      {
+        "check": "lint",
+        "command": "npm.cmd run lint",
+        "exitCode": 0,
+        "executedAtUtc": "2026-10-06T15:56:56.942595+00:00"
+      },
+      {
+        "check": "typecheck",
+        "command": "npm.cmd run typecheck",
+        "exitCode": 0,
+        "executedAtUtc": "2026-10-06T15:57:02.395384+00:00"
+      },
+      {
+        "check": "coverage",
+        "command": "npm.cmd run test:coverage",
+        "exitCode": 0,
+        "executedAtUtc": "2026-10-06T15:57:10.471960+00:00"
+      },
+      {
+        "check": "build",
+        "command": "npm.cmd run build",
+        "exitCode": 0,
+        "executedAtUtc": "2026-10-06T15:57:22.581595+00:00"
+      },
+      {
+        "check": "browser-chrome",
+        "command": "npm.cmd run test:e2e -- --config=../build/tfg-a/r19-final-2026-10-06/playwright.config.ts",
+        "exitCode": 0,
+        "executedAtUtc": "2026-10-06T15:57:55.557081+00:00"
+      }
+    ],
+    "npmAudit": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 7,
+      "critical": 0,
+      "total": 7
+    },
+    "imageFixableHighCritical": {
+      "backend": 0,
+      "frontend": 8,
+      "postgres": 29
+    },
+    "sourceFixableHighCritical": 1,
+    "sourceSecrets": 0,
+    "historySecrets": 0,
+    "imageSecrets": 0,
+    "docker": "PASS for functional controls; image security FAIL",
+    "closureGate": "NO_GO",
+    "proposalsApplied": false,
+    "awsExecuted": false,
+    "institutionalApprovalClaimed": false
+  },
+  "evidenceIndex": {
+    "path": "docs/tfg/evidence/TFG_A_R19_2026-10-06.json",
+    "sha256": "abf73761e76ca2d652e159c519b6b3361c488946b5164a3da52e1f544b0404e4"
+  },
+  "commands": {
+    "path": "docs/tfg/evidence/2026-10-06-r19/commands.json",
+    "sha256": "27016db2e0060bebe76e6f178ebe5cad56c3cfe5b42051bb505e084a57699f40"
+  },
+  "scope": "Local loopback synthetic academic rehearsal only; no approval to advance TFG-B or execute AWS"
+}

@@ -1,0 +1,50 @@
+{
+  "proposalOnly": true,
+  "applied": false,
+  "accepted": false,
+  "changedFiles": [
+    "infra/docker/frontend/Dockerfile",
+    "infra/docker/postgresql/Dockerfile",
+    "infra/docker/postgresql/supply-chain-lock.json",
+    "scripts/verify-postgres-runtime-image.ps1"
+  ],
+  "packages": [
+    {
+      "package": "libpcre2-8-0",
+      "version": "10.42-1+deb12u2",
+      "url": "https://security.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-8-0_10.42-1+deb12u2_amd64.deb",
+      "sha256": "d2f7edfcc7689b9e0761c2742cc824ac86a20768bc5e8057818dc6875291fe76",
+      "download": "libpcre2-8-0_10.42-1+deb12u2_amd64.deb"
+    },
+    {
+      "package": "libperl5.36",
+      "version": "5.36.0-7+deb12u4",
+      "url": "https://security.debian.org/debian-security/pool/updates/main/p/perl/libperl5.36_5.36.0-7+deb12u4_amd64.deb",
+      "sha256": "ed8480b621ad574c25aea30d36194d0133ea74093756ecbe3dff157d0510ef7f",
+      "download": "libperl5.36_5.36.0-7+deb12u4_amd64.deb"
+    },
+    {
+      "package": "perl-base",
+      "version": "5.36.0-7+deb12u4",
+      "url": "https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-base_5.36.0-7+deb12u4_amd64.deb",
+      "sha256": "d7d1943aec9597629bf73075efcc5ef6dc9bda96d78e80d843156ecd448478b8",
+      "download": "perl-base_5.36.0-7+deb12u4_amd64.deb"
+    },
+    {
+      "package": "perl-modules-5.36",
+      "version": "5.36.0-7+deb12u4",
+      "url": "https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-modules-5.36_5.36.0-7+deb12u4_all.deb",
+      "sha256": "3ed38ffa8320e9bf7597cefa01b6a6ace4a08ccc77cdfd15ef7d8b711dea7166",
+      "download": "perl-modules-5.36_5.36.0-7+deb12u4_all.deb"
+    },
+    {
+      "package": "perl",
+      "version": "5.36.0-7+deb12u4",
+      "url": "https://security.debian.org/debian-security/pool/updates/main/p/perl/perl_5.36.0-7+deb12u4_amd64.deb",
+      "sha256": "67e7a883c5d835939638f89a750799282df243ac1446281aa92ef9e19300940b",
+      "download": "perl_5.36.0-7+deb12u4_amd64.deb"
+    }
+  ],
+  "boundary": "D094 supply-chain patch/lock verification must be extended coherently before canonical release acceptance; no frozen contract edited or waiver applied",
+  "verificationCoverage": "Proposed verifier also checks all four Perl source URLs/checksums and installed versions and forbids all seven repaired Perl CVEs; canonical rebuild/regression remains required"
+}

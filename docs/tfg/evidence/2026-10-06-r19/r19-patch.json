@@ -1,0 +1,111 @@
+{
+  "authorizedBy": "Explicit user instruction to continue A-S1 R-19 and A-S2 on 2026-10-06; no PR merge or blanket update authorized",
+  "recordedAtUtc": "2026-10-06T15:43:21.296869+00:00",
+  "applied": true,
+  "directDependenciesUnchanged": true,
+  "changes": [
+    {
+      "path": "node_modules/@typescript-eslint/typescript-estree/node_modules/brace-expansion",
+      "before": {
+        "version": "5.0.9",
+        "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-5.0.9.tgz",
+        "integrity": "sha512-ScQ4IuvIEF1TMlP7Zt+vjJ//9zlPb2SDcxWxM3bk8s6t6GGdJ7KO1dCcTidOPJKePW30LE/2cT7wCyPho9/Wxg==",
+        "dev": true,
+        "license": "MIT",
+        "dependencies": {
+          "balanced-match": "^4.0.2"
+        },
+        "engines": {
+          "node": "20 || >=22"
+        }
+      },
+      "after": {
+        "version": "5.0.12",
+        "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-5.0.12.tgz",
+        "integrity": "sha512-YovQ3rzhaLMIrDjNDMkNS01tea93qhEhG5xy8f6+R0l+dw3Ki+5sCoIoI942iuLZTHWogWktgwVDhU09iNEimQ==",
+        "dev": true,
+        "license": "MIT",
+        "dependencies": {
+          "balanced-match": "^4.0.2"
+        },
+        "engines": {
+          "node": "20 || >=22"
+        }
+      }
+    },
+    {
+      "path": "node_modules/brace-expansion",
+      "before": {
+        "version": "1.1.18",
+        "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.18.tgz",
+        "integrity": "sha512-Edep/X9fGqVNmzKBVsDYIOtD+z1tuezV70LBjdCst9Tqu76lsnvRiZ6oTic1n+/BIwX6QDGAO94PN4N2SADvtw==",
+        "dev": true,
+        "license": "MIT",
+        "dependencies": {
+          "balanced-match": "^1.0.0",
+          "concat-map": "0.0.1"
+        }
+      },
+      "after": {
+        "version": "1.1.21",
+        "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.21.tgz",
+        "integrity": "sha512-9zeA+KLZNNzglF2TPKRQEDyx6Yby7daAkuy8MiPzpXPsYDWi/DRM8jmwUDxokQjYqBpv5DgPiwD4h4ZZSy1Ujw==",
+        "dev": true,
+        "license": "MIT",
+        "dependencies": {
+          "balanced-match": "^1.0.0",
+          "concat-map": "0.0.1"
+        }
+      }
+    }
+  ],
+  "before": [
+    {
+      "path": "frontend/package.json",
+      "sha256": "fa5a51aa35e99b19ec3c9c5b7f26d234045be9de5b181992aebca77d5fc70483"
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "sha256": "aca6270c2ef985f35f227e1fc2415904633653316b4f289e214336f72a8a827e"
+    }
+  ],
+  "after": [
+    {
+      "path": "frontend/package.json",
+      "sha256": "fa5a51aa35e99b19ec3c9c5b7f26d234045be9de5b181992aebca77d5fc70483"
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "sha256": "c1bdeb963e50a7ec63d580db5bef27d79c315db1fdf5af0b03ef53ba30828a0b"
+    }
+  ],
+  "baselineAuditExit": 1,
+  "baselineAudit": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 8,
+    "critical": 0,
+    "total": 8
+  },
+  "candidateAuditExit": 1,
+  "candidateAudit": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 8,
+    "critical": 0,
+    "total": 8
+  },
+  "r19FindingsRemoved": true,
+  "otherAuditFindings": [
+    "@next/eslint-plugin-next",
+    "braces",
+    "eslint-config-next",
+    "fast-glob",
+    "micromatch",
+    "next",
+    "sharp",
+    "source-map-js"
+  ]
+}

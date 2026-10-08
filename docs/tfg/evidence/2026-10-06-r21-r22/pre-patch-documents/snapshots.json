@@ -1,0 +1,87 @@
+[
+  {
+    "source": "README.md",
+    "snapshot": "pre-patch-documents/README.md.txt",
+    "sha256": "79379f04b02f738cd9bb0d6dc59c94be91f8db03f329739ea2dd9321575d7b3f"
+  },
+  {
+    "source": "SECURITY.md",
+    "snapshot": "pre-patch-documents/SECURITY.md.txt",
+    "sha256": "d20066cfd6c573b5cb971cc852b85da2f59f6892b5dfd9091d4f802980594227"
+  },
+  {
+    "source": "docs/project/PROJECT_STATUS.md",
+    "snapshot": "pre-patch-documents/docs__project__PROJECT_STATUS.md.txt",
+    "sha256": "13c08d3811cd7413f846a79859ee6e12e56cbacdcf8d2f7dbb02161e9331e9e1"
+  },
+  {
+    "source": "docs/project/PROJECT_STRUCTURE.md",
+    "snapshot": "pre-patch-documents/docs__project__PROJECT_STRUCTURE.md.txt",
+    "sha256": "7085d61cbd83916acfbd9a6a111a3d300e250260ac6ef21adcbcbcb04a59f5e5"
+  },
+  {
+    "source": "docs/tfg/00_TFG_MASTER_PLAN.md",
+    "snapshot": "pre-patch-documents/docs__tfg__00_TFG_MASTER_PLAN.md.txt",
+    "sha256": "fca7585fca071d2548d1ec557ef50241204d06123d83041eb7e3950d51eeb8d0"
+  },
+  {
+    "source": "docs/tfg/README.md",
+    "snapshot": "pre-patch-documents/docs__tfg__README.md.txt",
+    "sha256": "c4d86a3b0406554de4596f29c2b506d592b64700548464a2374e23061a2df536"
+  },
+  {
+    "source": "docs/tfg/R17_SECURITY_REVIEW.md",
+    "snapshot": "pre-patch-documents/docs__tfg__R17_SECURITY_REVIEW.md.txt",
+    "sha256": "f0ebaa598ad5faf9a95230e820b01d38e9088743eeb000243cce42ded2f43c91"
+  },
+  {
+    "source": "docs/tfg/R19_SECURITY_REVIEW.md",
+    "snapshot": "pre-patch-documents/docs__tfg__R19_SECURITY_REVIEW.md.txt",
+    "sha256": "a057cb00071edc3760c4a960607c034de77e2304b2203a75dc53a385d91a9480"
+  },
+  {
+    "source": "docs/tfg/R20_SECURITY_DECISION.md",
+    "snapshot": "pre-patch-documents/docs__tfg__R20_SECURITY_DECISION.md.txt",
+    "sha256": "b9fdc21b4256950d7fb97572ecac6d67ff2edbdf7df0ef949ac056063b5c2df9"
+  },
+  {
+    "source": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+    "snapshot": "pre-patch-documents/docs__tfg__TFG_A_SECURITY_CLOSURE_GATE.md.txt",
+    "sha256": "ec3096e6c4beffd5e1c504eadb67de92c5c5416becb2e382cda9f2aff30dad6f"
+  },
+  {
+    "source": "docs/tfg/01_ACADEMIC_SCOPE.md",
+    "snapshot": "pre-patch-documents/docs__tfg__01_ACADEMIC_SCOPE.md.txt",
+    "sha256": "807b4bb27d61d0c44deac1028d783df432668fa883d145d1bc83a96bb88b130d"
+  },
+  {
+    "source": "docs/tfg/02_COMPETENCY_MATRIX.md",
+    "snapshot": "pre-patch-documents/docs__tfg__02_COMPETENCY_MATRIX.md.txt",
+    "sha256": "346cb19ec732eb8aebb3077251ddd395a6f6149098a064fc5028e579a8c5a498"
+  },
+  {
+    "source": "docs/tfg/03_TRACEABILITY_MATRIX.md",
+    "snapshot": "pre-patch-documents/docs__tfg__03_TRACEABILITY_MATRIX.md.txt",
+    "sha256": "b53d21eb3a4620d261070e471fdf8619833fd33cc2641cefc86832a34843a0ed"
+  },
+  {
+    "source": "docs/tfg/04_EVIDENCE_REGISTER.md",
+    "snapshot": "pre-patch-documents/docs__tfg__04_EVIDENCE_REGISTER.md.txt",
+    "sha256": "22dd1289399b41f84088bd80f2e4f4ba7fc57404081e31b8d55cabfecb2837dd"
+  },
+  {
+    "source": "docs/tfg/05_ARCHITECTURE.md",
+    "snapshot": "pre-patch-documents/docs__tfg__05_ARCHITECTURE.md.txt",
+    "sha256": "7493242466cfe91b48e67917b5b51ac849e36a798a70126d5fd7a057b529bc9a"
+  },
+  {
+    "source": "docs/tfg/06_LOCAL_VS_AWS.md",
+    "snapshot": "pre-patch-documents/docs__tfg__06_LOCAL_VS_AWS.md.txt",
+    "sha256": "a978749c761b0a464fa65dcf7a446b591a163f8ba393b0a9c23b1f34593d3c74"
+  },
+  {
+    "source": "docs/tfg/07_DEMO_AND_DEFENSE.md",
+    "snapshot": "pre-patch-documents/docs__tfg__07_DEMO_AND_DEFENSE.md.txt",
+    "sha256": "cc27fb027846725976e8e86642e56ec4f94efac5f12c7bda710b8bd10ec18367"
+  }
+]

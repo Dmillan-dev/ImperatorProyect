@@ -1,0 +1,99 @@
+{
+  "result": "PASS",
+  "recordedAtUtc": "2026-10-06T19:50:46.510599+00:00",
+  "baseCommit": "b602bbe1dde92a902c17272d59cd9f0c10b9efe5",
+  "candidateCommit": "8380e8d6e70ca4c858604ce4fcc0e0198fa162e1",
+  "candidateTree": "94cf85d1d618cb4078c80ab4e7b37546c305a2fc",
+  "candidateBranch": "tfg/a-s3-security-evidence",
+  "candidateCheckout": "D:\\Imperator\\build\\tfg-a\\a-s3-2026-10-06\\review-checkout",
+  "candidateSourceFilesVerified": 1160,
+  "runtimeRawInputsVerified": 383,
+  "gitCanonicalBlobIdentityVerified": true,
+  "rawEvidenceBlobsPreserved": true,
+  "gitNormalization": {
+    "path": "docs/tfg/evidence/2026-10-06-a-s3/git-normalization.json",
+    "sha256": "473b80b12b3f4f194bcbe33f899578bf2019ef1b4f95340156dfefeb56251352",
+    "bytes": 100288
+  },
+  "exactByteSourceArchive": {
+    "path": "build/tfg-a/a-s3-2026-10-06/exact-source.zip",
+    "sha256": "7eea044741de03fdc92c337033aa3776fb0e411d12f33abffa985d0f8cb848d6",
+    "bytes": 18639971
+  },
+  "candidateBundle": {
+    "path": "build/tfg-a/a-s3-2026-10-06/candidate.bundle",
+    "sha256": "ed8fee522fcb519974a7f320cf5dd2c92decd4721d6a65ceaed2de41c7b32069",
+    "bytes": 13432198
+  },
+  "bundlePrerequisite": "b602bbe1dde92a902c17272d59cd9f0c10b9efe5",
+  "bundleVerification": "PASS",
+  "workingTreeCleanInCandidate": true,
+  "originalGitIndexOrBranchChanged": false,
+  "acceptedReleaseCommit": null,
+  "runtimeContentFingerprint": "cbc6535ee56bfa991fb96551a90cda7dc35afd2204056f561900614ab0a5d0b7",
+  "approvedRuntimeImageBindingUnchanged": true,
+  "newCodeOrDependencyChange": false,
+  "VCSMetadataChange": {
+    "path": ".gitattributes",
+    "sha256": "66af97f50904de4f6935a823cad35100d079002935a4db7dfcf1eb0d566d8f40",
+    "bytes": 291
+  },
+  "initialCandidateRejected": {
+    "commit": "27b284021a8c23c4db11fe9921e12855f7026e59",
+    "reason": "Disabled input normalization created spurious CRLF diffs; never published/accepted",
+    "log": {
+      "path": "build/tfg-a/a-s3-2026-10-06/candidate-diff-check.log",
+      "sha256": "a1e21bfc42c11ebead8f11d4f6d242d113d3692ed3307da1059b354863bfb254",
+      "bytes": 12768915
+    }
+  },
+  "candidateChangeSummary": {
+    "path": "docs/tfg/evidence/2026-10-06-a-s3/candidate-changes.json",
+    "sha256": "c0f31c96c687b14e46365e0d1b34a5578c5290935d39c60fd7e081825f498d4f",
+    "bytes": 46277
+  },
+  "newCommitSecretScan": {
+    "scanner": "Gitleaks8.30.1",
+    "command": [
+      "D:\\Imperator\\build\\tools\\gitleaks-8.30.1\\gitleaks.exe",
+      "git",
+      "D:\\Imperator\\build\\tfg-a\\a-s3-2026-10-06\\review-checkout",
+      "--log-opts",
+      "b602bbe1dde92a902c17272d59cd9f0c10b9efe5..8380e8d6e70ca4c858604ce4fcc0e0198fa162e1",
+      "--redact",
+      "--no-banner",
+      "--report-format",
+      "json",
+      "--report-path",
+      "D:\\Imperator\\build\\tfg-a\\a-s3-2026-10-06\\candidate-gitleaks.json"
+    ],
+    "exitCode": 0,
+    "findings": 0,
+    "report": {
+      "path": "docs/tfg/evidence/2026-10-06-a-s3/candidate-gitleaks.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    }
+  },
+  "nonEvidenceDiffCheck": "PASS (CRLF-aware)",
+  "fullRawEvidenceDiffCheckExitCode": 2,
+  "fullRawEvidenceDiffCheckLog": {
+    "path": "build/tfg-a/a-s3-2026-10-06/candidate-diff-check-corrected.log",
+    "sha256": "74f547fbab4f006b517e473938c12b831e3d0921e7e11e2c4758994e35d43c17",
+    "bytes": 46849
+  },
+  "CIWorkflowAssociation": {
+    "path": "docs/tfg/evidence/2026-10-06-a-s3/ci-association.json",
+    "sha256": "bc2181cf0e132bc7f5e51785c2e012db65cdd314a92a940607c09eb4f29415c2",
+    "bytes": 1073
+  },
+  "hostedRun": null,
+  "hostedChecksPassed": false,
+  "PRPublished": false,
+  "remotePush": false,
+  "A_S3": "ACTIVE / LOCAL CANDIDATE PREPARED; review/integration/hosted CI pending",
+  "TFG_A_COMPLETE": false,
+  "A_S4Executed": false,
+  "awsAuthorized": false,
+  "postCommitMetadata": "Version receipt/change/normalization/commit-secret reports are outside candidate commit; source ZIP/manifest bind exact input bytes, Git commit binds canonical blobs."
+}

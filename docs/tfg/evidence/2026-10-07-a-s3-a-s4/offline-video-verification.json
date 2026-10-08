@@ -1,0 +1,61 @@
+{
+  "result": "PASS for full offline decode and image integrity; not an oral rehearsal",
+  "checkedAtUtc": "2026-10-07T10:19:47.164736+00:00",
+  "video": {
+    "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/capture/tfg-a-docker-demo.webm",
+    "sha256": "e05640b60b109a024a874b3cb7cb072ea3f6bf3e2f095ef810334840a3f1e437",
+    "bytes": 2725472
+  },
+  "decoder": "C:\\Users\\J4GG3R\\AppData\\Roaming\\Python\\Python313\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe",
+  "command": [
+    "C:\\Users\\J4GG3R\\AppData\\Roaming\\Python\\Python313\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe",
+    "-nostdin",
+    "-v",
+    "error",
+    "-threads",
+    "1",
+    "-i",
+    "D:\\Imperator\\docs\\tfg\\evidence\\2026-10-06-r21-r22\\docker\\capture\\tfg-a-docker-demo.webm",
+    "-f",
+    "null",
+    "-"
+  ],
+  "exitCode": 0,
+  "externalNetworkUsed": false,
+  "durationSeconds": 27.16,
+  "audioPresent": false,
+  "screenshots": [
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/capture/01-deterministic-recommendation.png",
+      "sha256": "fcf7b6a38fdddac37c4acbcf1a6aa462e6d6267b319724028fb0250bfb0e8208",
+      "bytes": 90606
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/capture/02-human-approval.png",
+      "sha256": "f021723dca8cabf45ce6a1206b99fa010cb2f457da8c79d7adee17337974a1f7",
+      "bytes": 52436
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/capture/03-implementation.png",
+      "sha256": "3d542418999c6abf788e05fb04d47a94dcdf79f45773b014c747cac0a4c5fa83",
+      "bytes": 57682
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/capture/04-realized-business-value.png",
+      "sha256": "aabd4c345bc9aeb4cce4ec4c38b68c327d1cff5cb4e82326814970135db40cfc",
+      "bytes": 70167
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/capture/05-auditor-ledger.png",
+      "sha256": "b9638460ed8cdece19e028d044c3954636d7484350ea6a5c824e0be4cb0a1225",
+      "bytes": 73807
+    }
+  ],
+  "technicalFallbackOnly": true,
+  "oralDefenseRehearsal": false,
+  "narratedRecordingCreated": false,
+  "agendaSeconds": 720,
+  "agendaHumanTimingMeasured": false,
+  "syntheticOnly": "Same previously inspected synthetic artifacts, unchanged hashes",
+  "limitation": "Decode verifies readable media structure; playback in the chosen defense player and human narration remain pending."
+}

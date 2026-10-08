@@ -1,0 +1,190 @@
+--- a/infra/docker/frontend/Dockerfile
++++ b/infra/docker/frontend/Dockerfile
+@@ -29,13 +29,17 @@
+ ARG IMPERATOR_API_ORIGIN=http://backend:8080
+ ARG IMPERATOR_RUNTIME_PROFILE=docker-compose
+ 
+-ADD --checksum=sha256:81c5502941118a24d47af69a17b8b0b9548d75cc6d72b3eb3fe01047b46fa10e \
+-    https://security.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-8-0_10.42-1+deb12u1_amd64.deb \
++ADD --checksum=sha256:d2f7edfcc7689b9e0761c2742cc824ac86a20768bc5e8057818dc6875291fe76 \
++    https://security.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-8-0_10.42-1+deb12u2_amd64.deb \
+     /tmp/libpcre2-8-0.deb
+ 
++ADD --checksum=sha256:d7d1943aec9597629bf73075efcc5ef6dc9bda96d78e80d843156ecd448478b8 \
++    https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-base_5.36.0-7+deb12u4_amd64.deb \
++    /tmp/imperator-perl-base.deb
++
+ RUN set -eu; \
+-    dpkg --install /tmp/libpcre2-8-0.deb; \
+-    rm -f /tmp/libpcre2-8-0.deb /var/log/dpkg.log; \
++    dpkg --install /tmp/libpcre2-8-0.deb /tmp/imperator-perl-base.deb; \
++    rm -f /tmp/libpcre2-8-0.deb /tmp/imperator-perl-base.deb /var/log/dpkg.log; \
+     rm -rf \
+         /opt/yarn-v1.22.22 \
+         /usr/local/lib/node_modules/corepack \
+--- a/infra/docker/postgresql/Dockerfile
++++ b/infra/docker/postgresql/Dockerfile
+@@ -28,15 +28,31 @@
+ 
+ ARG VCS_REF
+ 
+-ADD --checksum=sha256:81c5502941118a24d47af69a17b8b0b9548d75cc6d72b3eb3fe01047b46fa10e \
+-    https://security.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-8-0_10.42-1+deb12u1_amd64.deb \
++ADD --checksum=sha256:d2f7edfcc7689b9e0761c2742cc824ac86a20768bc5e8057818dc6875291fe76 \
++    https://security.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-8-0_10.42-1+deb12u2_amd64.deb \
+     /tmp/libpcre2-8-0.deb
++
++ADD --checksum=sha256:d7d1943aec9597629bf73075efcc5ef6dc9bda96d78e80d843156ecd448478b8 \
++    https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-base_5.36.0-7+deb12u4_amd64.deb \
++    /tmp/imperator-perl-base.deb
++
++ADD --checksum=sha256:67e7a883c5d835939638f89a750799282df243ac1446281aa92ef9e19300940b \
++    https://security.debian.org/debian-security/pool/updates/main/p/perl/perl_5.36.0-7+deb12u4_amd64.deb \
++    /tmp/imperator-perl.deb
++
++ADD --checksum=sha256:ed8480b621ad574c25aea30d36194d0133ea74093756ecbe3dff157d0510ef7f \
++    https://security.debian.org/debian-security/pool/updates/main/p/perl/libperl5.36_5.36.0-7+deb12u4_amd64.deb \
++    /tmp/imperator-libperl5.36.deb
++
++ADD --checksum=sha256:3ed38ffa8320e9bf7597cefa01b6a6ace4a08ccc77cdfd15ef7d8b711dea7166 \
++    https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-modules-5.36_5.36.0-7+deb12u4_all.deb \
++    /tmp/imperator-perl-modules-5.36.deb
+ 
+ LABEL org.opencontainers.image.title="IMPERATOR PostgreSQL Runtime" \
+       org.opencontainers.image.description="PostgreSQL 18.6 with rebuilt gosu and a pinned Debian security patch" \
+       org.opencontainers.image.source="https://github.com/Dmillan-dev/ImperatorProyect" \
+       org.opencontainers.image.revision="${VCS_REF}" \
+-      org.opencontainers.image.version="18.6-gosu1.19-go1.26.6-pcre2deb12u1" \
++      org.opencontainers.image.version="18.6-gosu1.19-go1.26.6-pcre2deb12u2-perldeb12u4" \
+       org.opencontainers.image.base.name="postgres:18.6-bookworm" \
+       org.opencontainers.image.base.digest="sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af" \
+       org.opencontainers.image.licenses="PostgreSQL AND Apache-2.0"
+@@ -45,9 +61,10 @@
+ COPY --from=gosu-build /build/gosu/LICENSE /usr/local/share/licenses/gosu/LICENSE
+ COPY --chown=999:999 provision-app-role.sh /opt/imperator/provision-app-role.sh
+ 
+-RUN dpkg --install /tmp/libpcre2-8-0.deb \
++RUN dpkg --install /tmp/libpcre2-8-0.deb /tmp/imperator-perl-base.deb /tmp/imperator-perl.deb /tmp/imperator-libperl5.36.deb /tmp/imperator-perl-modules-5.36.deb \
+     && rm -f \
+         /tmp/libpcre2-8-0.deb \
++        /tmp/imperator-perl-base.deb /tmp/imperator-perl.deb /tmp/imperator-libperl5.36.deb /tmp/imperator-perl-modules-5.36.deb \
+         /var/cache/ldconfig/aux-cache \
+         /var/log/dpkg.log \
+     && chmod 0755 /usr/local/bin/gosu \
+--- a/infra/docker/postgresql/supply-chain-lock.json
++++ b/infra/docker/postgresql/supply-chain-lock.json
+@@ -27,13 +27,56 @@
+   "runtimePatches": {
+     "pcre2": {
+       "package": "libpcre2-8-0",
+-      "version": "10.42-1+deb12u1",
++      "version": "10.42-1+deb12u2",
+       "architecture": "amd64",
+-      "sourceUrl": "https://security.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-8-0_10.42-1+deb12u1_amd64.deb",
+-      "sourceSha256": "81c5502941118a24d47af69a17b8b0b9548d75cc6d72b3eb3fe01047b46fa10e",
++      "sourceUrl": "https://security.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-8-0_10.42-1+deb12u2_amd64.deb",
++      "sourceSha256": "d2f7edfcc7689b9e0761c2742cc824ac86a20768bc5e8057818dc6875291fe76",
+       "fixedCves": [
++        "CVE-2026-103111",
+         "CVE-2026-86145",
+         "CVE-2026-89161"
++      ]
++    },
++    "perl": {
++      "version": "5.36.0-7+deb12u4",
++      "packages": [
++        {
++          "package": "perl-base",
++          "version": "5.36.0-7+deb12u4",
++          "sourceUrl": "https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-base_5.36.0-7+deb12u4_amd64.deb",
++          "sourceSha256": "d7d1943aec9597629bf73075efcc5ef6dc9bda96d78e80d843156ecd448478b8",
++          "architecture": "amd64"
++        },
++        {
++          "package": "perl",
++          "version": "5.36.0-7+deb12u4",
++          "sourceUrl": "https://security.debian.org/debian-security/pool/updates/main/p/perl/perl_5.36.0-7+deb12u4_amd64.deb",
++          "sourceSha256": "67e7a883c5d835939638f89a750799282df243ac1446281aa92ef9e19300940b",
++          "architecture": "amd64"
++        },
++        {
++          "package": "libperl5.36",
++          "version": "5.36.0-7+deb12u4",
++          "sourceUrl": "https://security.debian.org/debian-security/pool/updates/main/p/perl/libperl5.36_5.36.0-7+deb12u4_amd64.deb",
++          "sourceSha256": "ed8480b621ad574c25aea30d36194d0133ea74093756ecbe3dff157d0510ef7f",
++          "architecture": "amd64"
++        },
++        {
++          "package": "perl-modules-5.36",
++          "version": "5.36.0-7+deb12u4",
++          "sourceUrl": "https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-modules-5.36_5.36.0-7+deb12u4_all.deb",
++          "sourceSha256": "3ed38ffa8320e9bf7597cefa01b6a6ace4a08ccc77cdfd15ef7d8b711dea7166",
++          "architecture": "all"
++        }
++      ],
++      "fixedCves": [
++        "CVE-2026-13221",
++        "CVE-2026-42496",
++        "CVE-2026-8376",
++        "CVE-2026-42497",
++        "CVE-2026-48962",
++        "CVE-2026-57432",
++        "CVE-2026-57433"
+       ]
+     }
+   },
+@@ -48,7 +91,7 @@
+   },
+   "acceptance": {
+     "forbiddenCve": "CVE-2025-68121",
+-    "runtimeVersionLabel": "18.6-gosu1.19-go1.26.6-pcre2deb12u1",
++    "runtimeVersionLabel": "18.6-gosu1.19-go1.26.6-pcre2deb12u2-perldeb12u4",
+     "maximumFixableSeverity": "MEDIUM",
+     "secretFindings": 0,
+     "postgresUid": 999,
+--- a/scripts/verify-postgres-runtime-image.ps1
++++ b/scripts/verify-postgres-runtime-image.ps1
+@@ -105,6 +105,18 @@
+     "-buildvcs=false",
+     "-buildid="
+ )
++$perlPatch = $lock.runtimePatches.perl
++if ($null -eq $perlPatch -or @($perlPatch.packages).Count -ne 4) {
++    throw "The pinned Bookworm Perl security patch requires all four runtime packages."
++}
++foreach ($package in @($perlPatch.packages)) {
++    if ($package.version -ne $perlPatch.version -or
++        $package.sourceSha256 -notmatch "^[0-9a-f]{64}$" -or
++        [string]::IsNullOrWhiteSpace($package.sourceUrl)) {
++        throw "Invalid pinned Perl patch entry: $($package.package)"
++    }
++    $requiredFragments += @($package.sourceUrl, $package.sourceSha256)
++}
+ foreach ($fragment in $requiredFragments) {
+     if (-not $dockerfile.Contains($fragment)) {
+         throw "Dockerfile and supply-chain lock disagree: $fragment"
+@@ -301,6 +313,16 @@
+     throw "Unexpected libpcre2 runtime version: $pcre2Version"
+ }
+ 
++foreach ($package in @($perlPatch.packages)) {
++    $installedVersion = (Get-CheckedOutput -Command $docker -Arguments @(
++        "run", "--rm", "--entrypoint", "dpkg-query", $ImageTag,
++        '--showformat=${Version}', "--show", $package.package
++    )) -join "`n"
++    if ($installedVersion.Trim() -ne $package.version) {
++        throw "Unexpected $($package.package) runtime version: $installedVersion"
++    }
++}
++
+ Invoke-Checked -Command $trivy -Arguments @(
+     "image",
+     "--image-src", "docker",
+@@ -341,6 +363,7 @@
+ foreach ($forbiddenCve in @(
+         $lock.acceptance.forbiddenCve
+         $lock.runtimePatches.pcre2.fixedCves
++        $perlPatch.fixedCves
+     )) {
+     if ((Get-Content -Raw -LiteralPath $scanJsonPath).Contains(
+             $forbiddenCve

@@ -1,0 +1,10 @@
+{
+  "python": "Python 3.13.15",
+  "node": "v24.19.0",
+  "npm": "11.17.0",
+  "dockerCli": "Docker version 29.8.0, build 88096ef",
+  "gitleaks": "8.30.1",
+  "trivyContainer": "aquasec/trivy:0.74.0@sha256:62b1e65e8869bc4b4c6aa4fa2b21595256c7c2f6018a9d9ad61caf87187c1969",
+  "backendRuntime": "Pinned Oracle JDK21/Maven3.9.16/native PostgreSQL18.6; full identities in maven-version.log",
+  "observabilityHostShell": "PowerShell7"
+}

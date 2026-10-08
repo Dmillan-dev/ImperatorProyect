@@ -1,0 +1,67 @@
+# R-21 / R-22 Scoped Remediation And A-S2 — 2026-10-06
+
+**R-21 authorized source-map-js/sharp findings CLOSED. R-22 authorized PCRE2/Perl findings CLOSED. A-S2 technical criterion GO. Formal security closure PENDING RESIDUAL DISPOSITION. TFG-A IN PROGRESS.**
+
+The owner explicitly authorized only the two prepared patches and complete local regression. [Authorization](evidence/2026-10-06-r21-r22/authorization.json) excludes other dependency updates, business or architecture changes, AWS/Keycloak/Bedrock, PR #57–59 merges and automatic advancement to A-S3/A-S4. No residual-risk approval was granted by this authorization.
+
+## Applied Change And Scope Proof
+
+The [applied diff](evidence/2026-10-06-r21-r22/applied-security-only.patch) modifies exactly six files from the task-start worktree. `frontend/package.json` changes only the existing sharp override. The lockfile changes exactly 28 entries: source-map-js, sharp and its required native optional subtree. Direct dependencies/devDependencies and all unrelated lock records are unchanged. [Scope proof](evidence/2026-10-06-r21-r22/patch-application.json).
+
+| Authorized component           | Before                           | Installed after                 |
+| ------------------------------ | -------------------------------- | ------------------------------- |
+| source-map-js                  | 1.2.1                            | 1.2.2                           |
+| sharp                          | 0.35.4                           | 0.35.5                          |
+| sharp native libvips / librsvg | Required previous native subtree | libvips 8.18.7 / librsvg 2.63.2 |
+| PCRE2 libpcre2-8-0             | 10.42-1+deb12u1                  | 10.42-1+deb12u2                 |
+| Perl packages                  | 5.36.0-7+deb12u3                 | 5.36.0-7+deb12u4                |
+
+Frontend installs only PCRE2 and perl-base. PostgreSQL installs PCRE2 plus perl-base, perl, libperl5.36 and perl-modules-5.36. Security package URLs and SHA256 checksums are pinned in Dockerfiles/lock and installation is checked on actual canonical images. No apt upgrade, new general dependency, Java/Spring/Node/PostgreSQL version change, Bookworm-to-Trixie migration or base digest refresh occurred. Braces remains 3.0.3. The existing R-17/R-19 fixes remain installed. Existing dirty changes from earlier work are preserved.
+
+## Complete Local Regression
+
+| Control                                 | Result and boundary                                                                                                                   |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Backend / native PostgreSQL integration | 174 unit + 35 integration PASS; failures/errors/skips0                                                                                |
+| Frontend                                | 41 tests PASS; format/lint/typecheck/coverage/build PASS                                                                              |
+| Playwright fixture suite                | 9 PASS, 6 intentional skips; unexpected/flaky0                                                                                        |
+| Real Docker/API/UI and RBAC             | PASS; 401/403/409 and authorized actor binding; no API interception                                                                   |
+| Flyway / V3 permissions                 | V1–V3 PASS; Ledger and all three explanation tables SELECT/INSERT true, UPDATE/DELETE false                                           |
+| Persistence                             | Three actual containers replaced; same own volume; Evidence30/Ledger3 and EUR18,960 value unchanged                                   |
+| Readiness / recovery                    | DB stopped: live200/ready503; DB restarted: ready200                                                                                  |
+| OCI content binding                     | Index → amd64 manifest → config → every compressed layer + rootfs diffIDs verified against actual container and Trivy IDs             |
+| Gitleaks and Trivy secrets              | Source/history and each canonical image zero; Trivy secret checks include ALL severities                                              |
+| Production npm audit                    | `npm audit --omit=dev`: exit0, zero findings                                                                                          |
+| D094 lock/verifier                      | PASS; separately reproducible verification image, actual canonical package checks recorded                                            |
+| Cleanup                                 | Own project, named/anonymous test volume, stopped native cluster and ephemeral keys/passwords removed; all original volumes preserved |
+| Captures / recording                    | Five sanitized captures and 27.16-second decoded, captioned silent technical fallback; representative images/frames reviewed          |
+
+The capture approves through the real UI. Implementation and finance validation use authenticated API commands to link initially unlinked post-action Evidence, followed by real UI reads. It does not claim full UI selection for those two records or a twelve-minute narrated defense. Short-lived RS256 HTTPS/JWKS is test tooling, not external Keycloak certification. Integration uses native PostgreSQL18.6 and JDK21.0.12; Docker regression uses the three separately frozen canonical images. [Results](evidence/2026-10-06-r21-r22/verification.json).
+
+D094 initially failed in native Trivy's bbolt artifact cache while native/container processes shared that cache. The failure log is retained. A retry with an independent native artifact cache and byte-identical frozen vulnerability/Java databases passed, reproducing the same amd64 manifest. This changes verification tooling only. D094's auxiliary reproducibility image is explicitly separate from the canonical runtime/scan images; it cannot substitute their identity evidence. Dirty worktree means `formalReleaseEligible=false`, despite verified D094 reproducibility.
+
+## Actual Security Results
+
+| Canonical image | Fixable High/Critical | All High | All Critical | Secrets, all severities |
+| --------------- | --------------------- | -------- | ------------ | ----------------------- |
+| Backend         | 0                     | 0        | 0            | 0                       |
+| Frontend        | 0                     | 48       | 1            | 0                       |
+| PostgreSQL      | 0                     | 63       | 3            | 0                       |
+
+Source Trivy including development: zero fixable High/Critical and zero High/Critical misconfigurations; full source scan retains one High, braces. Full npm audit deliberately remains FAIL: **5 High affected-package aggregates from one underlying advisory**, not five distinct CVEs. The packages are braces, micromatch, fast-glob, @next/eslint-plugin-next and eslint-config-next. Production npm audit is zero.
+
+Trivy is pinned0.74.0, image digest `62b1e65e8869bc4b4c6aa4fa2b21595256c7c2f6018a9d9ad61caf87187c1969`; frozen vulnerability DB UpdatedAt2026-10-06T13:07:05Z and Java index UpdatedAt2026-10-06T01:08:12Z. Exact database hashes and raw scans are retained. The immutable IDs in [image-binding](evidence/2026-10-06-r21-r22/docker/image-binding.json) bind regression and scans; there was no canonical rebuild between them. On this Docker Desktop store, Docker image Id, actual container Image and Trivy ImageID identify the OCI index; Compose's image label is the platform manifest, and config is a separate digest namespace. The source/test/runtime fingerprint identifies the actual dirty bytes; baseline Git SHA `b602bbe1dde92a902c17272d59cd9f0c10b9efe5` is not an accepted release SHA. No CI/security policy, secret rules, CVE ignores or severity thresholds were weakened.
+
+## Independent Residual Decisions
+
+**R-20:** the immutable October2 approval remains historically ACCEPTED TEMPORARILY. This exact rebuilt version remains **REVIEW REQUIRED / currentVersionAccepted=false**. There are115 current package/CVE rows,23 distinct image CVEs; no new distinct image CVE versus the historical32-CVE matrix.37 now-correctable rows from the R-19 checkpoint are removed. Five surviving CVE-2026-9538 Perl rows change installed version from deb12u3 to deb12u4; those are changed bindings, not five new CVEs. One historical libxml2 row disappeared with scanner data before this patch and is not claimed as a code repair. Complete row/version comparisons are in the [residual matrix](evidence/2026-10-06-r21-r22/residual-image-matrix.json).
+
+A subset of previously reviewed CVEs does not carry approval across new image/lock/test/DB hashes. The owner must explicitly re-attest a reviewed, exact current binding if desired. Caducity remains exclusive **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**, with no automatic renewal. Scope remains TFG-A loopback/synthetic only; AWS/production/real data/pilot exposure are excluded. This task grants no risk acceptance and never marks R-20 newly CLOSED.
+
+**R-23 (separate braces tooling residual): OPEN / NOT ACCEPTED.** This is the unfixed component previously grouped under R-21, now separated so closure of the two authorized corrected advisories cannot conceal it. [GHSA-vfj7-8cjw-p6xm / CVE-2026-93687](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm) reports stack-exhaustion denial of service in deeply nested brace patterns, affected <=3.0.3 and no published patched version as checked2026-10-06. The installed chain is development-only in this lockfile and not present in the production audit; repository lint/build patterns are controlled. These observations bound the identified exposure; they are not proof of unexploitability and do not accept the risk. No version force, eslint downgrade, suppression or extra update was attempted. This needs a separate documented disposition or future vendor fix within a newly authorized change.
+
+## Gate Decision And Stop Point
+
+R-21's two authorized fixable findings and R-22's authorized PCRE2/Perl findings are CLOSED on this measured local version. **A-S2 technical zero-fixable/zero-secret criterion: GO.** Formal Security Closure remains **PENDING RESIDUAL DISPOSITION**, current R-20 binding is not accepted and R-23 is OPEN. The repository's prior `NO-GO` records remain dated history, not the current technical result. No absolute-zero security claim, TFG-A COMPLETE declaration, accepted commit, hosted CI certification or institutional acceptance is made.
+
+**Stop here.** A-S3, A-S4, TFG-B and AWS stay blocked/unauthorized. The next decision is current-version residual review only; no chain of further dependency updates is authorized and no existing gate/DoD is silently weakened. Dependabot #57–59 were not merged; their screenshots show different starting dependency versions and #59's failed security checks cannot be diagnosed without its logs. No refreshed hosted PR status is claimed.

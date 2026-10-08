@@ -1,0 +1,202 @@
+[
+  {
+    "path": "README.md",
+    "sha256": "44507f9e0e555922482fe4748142e188225060fcf5546a6cb361d6c8fc0677e1",
+    "bytes": 20366
+  },
+  {
+    "path": "docs/project/PROJECT_STATUS.md",
+    "sha256": "e8bf7fb41d0e94f9ccad1770964b53e46d6ff26f6724ceb37832a53e61cdb622",
+    "bytes": 47020
+  },
+  {
+    "path": "docs/tfg/00_TFG_MASTER_PLAN.md",
+    "sha256": "bafa1bfca3a718064fcec0888274af9a586aac1ca6a7dfc4e3d5d412008dd3a5",
+    "bytes": 23600
+  },
+  {
+    "path": "docs/tfg/01_ACADEMIC_SCOPE.md",
+    "sha256": "55e9e05af257105d230deee3fbeabfb066f6cabe70b5920443c73570cd4f893c",
+    "bytes": 6205
+  },
+  {
+    "path": "docs/tfg/02_COMPETENCY_MATRIX.md",
+    "sha256": "a6a476303303ebc6642bb8edaa166c15c049c128107ef08611ce6eeb729013d9",
+    "bytes": 18267
+  },
+  {
+    "path": "docs/tfg/03_TRACEABILITY_MATRIX.md",
+    "sha256": "9ac40eb2b3db672f1ed6cb7b98652973bc85b022be466143fe182d568c0b6904",
+    "bytes": 13350
+  },
+  {
+    "path": "docs/tfg/04_EVIDENCE_REGISTER.md",
+    "sha256": "07bbfc07dfd2a9c53e0397e664e603590bbf67ebd06a8246617786cec11f1943",
+    "bytes": 32889
+  },
+  {
+    "path": "docs/tfg/05_ARCHITECTURE.md",
+    "sha256": "ea0109316faa4d0473d0d9fd701dfddedf4da04aeb68798dab91df9dd528c933",
+    "bytes": 7305
+  },
+  {
+    "path": "docs/tfg/07_DEMO_AND_DEFENSE.md",
+    "sha256": "8d07358b338c678998e0a90f44d5eb12b673254ca82c92c09cdb2d300775b508",
+    "bytes": 8537
+  },
+  {
+    "path": "docs/tfg/08_LOCAL_MVP_MEMORY.md",
+    "sha256": "6562ca73249628021dbc2e8d1688f96bab3478ab8f4ca7637f5289e1ffd91e5c",
+    "bytes": 17781
+  },
+  {
+    "path": "docs/tfg/09_DEFENSE_SCRIPT_12_MIN.md",
+    "sha256": "0bcc04c984e1caede1c03a2ae2706dedc43c4399d4301733b46b3347efc177a7",
+    "bytes": 11733
+  },
+  {
+    "path": "docs/tfg/10_LOCAL_MVP_RELEASE_GATE.md",
+    "sha256": "71737d5fad1c9a145a8e27fdd5286a434342f4fcc097ed2310ce72cce26471c3",
+    "bytes": 5579
+  },
+  {
+    "path": "docs/tfg/A_S3_EVIDENCE_VERSIONING.md",
+    "sha256": "3c35ffb180ac58370b5a3522c15e006a0beed3ff163638a7c7cb5c2158068221",
+    "bytes": 5476
+  },
+  {
+    "path": "docs/tfg/A_S4_LOCAL_DEFENSE.md",
+    "sha256": "0e8c4649c3f06d5e27b1fd7a7d6fa8c002e5116f219578818018654d8b085602",
+    "bytes": 7110
+  },
+  {
+    "path": "docs/tfg/README.md",
+    "sha256": "8096562a7ff738d5e6c3128422e1ae30e2a969c30c43a343c4003bc2c53b26b1",
+    "bytes": 8061
+  },
+  {
+    "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/candidate-delta.json",
+    "sha256": "1346483c2170caa838734f0ccb55120305b9bd7295caa75480293d854925856e",
+    "bytes": 23135
+  },
+  {
+    "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/candidate-history-gitleaks.json",
+    "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "bytes": 3
+  },
+  {
+    "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/candidate-inputs.json",
+    "sha256": "fcb2872f560c8502861fa830ad2e46ed426db35caa69800b889db3ed8a64289a",
+    "bytes": 235456
+  },
+  {
+    "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/ci-association.json",
+    "sha256": "618dd117479296371d028852330e785838dabe781d490a4dcd7dbce340cd663f",
+    "bytes": 1779
+  },
+  {
+    "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/offline-video-verification.json",
+    "sha256": "1f2ad11c15a0bcc6a3982b39e258367b365b24a3b0e7e96f7078994837727d2e",
+    "bytes": 2432
+  },
+  {
+    "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/PR_DRAFT.md",
+    "sha256": "b8176d96e8be7cc18fc2992984d0c01c274d08a19f1ff5733111f818b5c44c38",
+    "bytes": 3820
+  },
+  {
+    "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/pre-update-documents/docs__project__PROJECT_STATUS.md.txt",
+    "sha256": "560de51c4be923c773f00213343af6e997131d59cf65b3bff37de29dcbb0fc32",
+    "bytes": 46358
+  },
+  {
+    "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/pre-update-documents/docs__tfg__00_TFG_MASTER_PLAN.md.txt",
+    "sha256": "53558744447f2cb136eee05244acc3f5ae776ce199971687660b80c35494ea06",
+    "bytes": 22966
+  },
+  {
+    "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/pre-update-documents/docs__tfg__01_ACADEMIC_SCOPE.md.txt",
+    "sha256": "d7bad6218a703c25f66d60541ee0be6f9f33dfada091d8104d900b4b862e98fd",
+    "bytes": 6162
+  },
+  {
+    "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/pre-update-documents/docs__tfg__02_COMPETENCY_MATRIX.md.txt",
+    "sha256": "345e5a0184f379933fce5219c8397f70f76cf59ac5d62ba67da015ee94acd698",
+    "bytes": 18223
+  },
+  {
+    "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/pre-update-documents/docs__tfg__03_TRACEABILITY_MATRIX.md.txt",
+    "sha256": "a623ebba2c40d5e88cf4d511319d40c6f7a3221e02c77e09db2998a40144f452",
+    "bytes": 12858
+  },
+  {
+    "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/pre-update-documents/docs__tfg__04_EVIDENCE_REGISTER.md.txt",
+    "sha256": "5365cd3aaf4c427d703205afb1dd777b371c109c1347e1542a60a113685bcca1",
+    "bytes": 32129
+  },
+  {
+    "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/pre-update-documents/docs__tfg__05_ARCHITECTURE.md.txt",
+    "sha256": "66544c41f6254cf02151e809375a8bb5806b755f21febfdc2202486f77c0f0a1",
+    "bytes": 7266
+  },
+  {
+    "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/pre-update-documents/docs__tfg__07_DEMO_AND_DEFENSE.md.txt",
+    "sha256": "dcf9129fdb55581ad351ae1c8cb7b5737d54ebaccd16faabb7d339d059e9f2b4",
+    "bytes": 7804
+  },
+  {
+    "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/pre-update-documents/docs__tfg__A_S3_EVIDENCE_VERSIONING.md.txt",
+    "sha256": "3cbcf07c2f7e68ebbe0fb53bc7f92003b3f0607790090f1b49692fb4c2ecf79a",
+    "bytes": 4776
+  },
+  {
+    "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/pre-update-documents/docs__tfg__README.md.txt",
+    "sha256": "e660d0175b4ca47f1a1a2890cd6181b602842dec850dbcc499fd4167c0ef2658",
+    "bytes": 7407
+  },
+  {
+    "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/pre-update-documents/README.md.txt",
+    "sha256": "3f24a5c8ead8e9a0de71ac694310653bdd54df57f3e8c8c57cd2d7295eb3729b",
+    "bytes": 19532
+  },
+  {
+    "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/pre-update-documents/snapshots.json",
+    "sha256": "f747a94ae248be61243a676ff5fb1e469325daf9c23651c5843ca4ed9593c9e7",
+    "bytes": 4677
+  },
+  {
+    "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/preflight.json",
+    "sha256": "efbc789397a43cab56c34ada26e251b3fe8b97438cd1ec31764ca0a69c5c8579",
+    "bytes": 1893
+  },
+  {
+    "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/prior-binding-verification.json",
+    "sha256": "ffa2e414a79f8a81173f0259ed68a2460d498f827a1e880cae268ce49517477b",
+    "bytes": 589
+  },
+  {
+    "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/README.md",
+    "sha256": "aa4fd43dd203386181ffade81a04c9046b3a3c68062f596012111ebb4a3ea4c0",
+    "bytes": 5049
+  },
+  {
+    "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/source-diff-review.json",
+    "sha256": "72bc56bf76045bb76affcd03811a7e4150a1002c8d32a103d117de9d40f39f03",
+    "bytes": 48355
+  },
+  {
+    "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/version-receipt.json",
+    "sha256": "b1e13ae62d6ba62fa8a5add66be0c9ceab27f0f2a5420ddab819eadf6c5c5132",
+    "bytes": 3488
+  },
+  {
+    "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/VERSIONING_NOTES.md",
+    "sha256": "f7f162d7b431262f2b8c4900a5a50b4157408153255a4a12c1a81d6371fbb367",
+    "bytes": 1656
+  },
+  {
+    "path": "docs/tfg/evidence/TFG_A_A_S3_A_S4_2026-10-07.json",
+    "sha256": "a78edd0a404380a4e47ccf99b4243926f9d0b321a7cf76f8c31e151f05269c58",
+    "bytes": 10297
+  }
+]

@@ -1,0 +1,98 @@
+{
+  "result": "PASS",
+  "executedAtUtc": "2026-10-06T17:38:11.929038+00:00",
+  "changesExactlyAuthorized": true,
+  "changedFiles": [
+    "frontend/package-lock.json",
+    "frontend/package.json",
+    "infra/docker/frontend/Dockerfile",
+    "infra/docker/postgresql/Dockerfile",
+    "infra/docker/postgresql/supply-chain-lock.json",
+    "scripts/verify-postgres-runtime-image.ps1"
+  ],
+  "lockEntriesChanged": 28,
+  "installed": {
+    "sharp": "0.35.5",
+    "source-map-js": "1.2.2",
+    "braces": "3.0.3"
+  },
+  "backendTests": {
+    "unit": {
+      "tests": 174,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "integration": {
+      "tests": 35,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "frontendTests": 41,
+  "browser": {
+    "startTime": "2026-10-06T17:34:03.412Z",
+    "duration": 32537.41,
+    "expected": 9,
+    "skipped": 6,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "images": {
+    "backend": {
+      "fixableHighCritical": 0,
+      "allHigh": 0,
+      "allCritical": 0,
+      "allRows": 0,
+      "secretsAllSeverities": 0,
+      "imageId": "sha256:681e6e7b77b73170c959ed04697302f6a21d8db98edb3a2b0f3354a44387096d"
+    },
+    "frontend": {
+      "fixableHighCritical": 0,
+      "allHigh": 48,
+      "allCritical": 1,
+      "allRows": 49,
+      "secretsAllSeverities": 0,
+      "imageId": "sha256:5cd649ff9a460b2abdc8315da2e7568c5a2c2138d99815db89c5c583f88c18b1"
+    },
+    "postgres": {
+      "fixableHighCritical": 0,
+      "allHigh": 63,
+      "allCritical": 3,
+      "allRows": 66,
+      "secretsAllSeverities": 0,
+      "imageId": "sha256:2b73847d07d6cb7da2ace20426de036fa0278feca0bb6520aca62588e9b3f101"
+    }
+  },
+  "sourceFixableHighCritical": 0,
+  "sourceAllHighCritical": 1,
+  "npmAudit": {
+    "exitCode": 1,
+    "highAffectedPackageAggregates": 5,
+    "distinctAdvisories": 1,
+    "underlyingPackage": "braces",
+    "patchedVersionPublished": false,
+    "accepted": false
+  },
+  "A_S2TechnicalCriterion": "GO",
+  "formalSecurityClosure": "PENDING RESIDUAL RISK DISPOSITION",
+  "currentR20Accepted": false,
+  "A_S3": "BLOCKED / NOT AUTHORIZED",
+  "A_S4": "BLOCKED / NOT AUTHORIZED",
+  "TFG_A_COMPLETE": false,
+  "awsAuthorized": false,
+  "newAcceptedCommit": false,
+  "limitations": [
+    "Dirty local worktree bound by runtime content fingerprint; baseline SHA is not an accepted release SHA",
+    "Local loopback/synthetic ephemeral JWKS fixture, not external IdP or AWS certification",
+    "Browser suite intentionally skips six cases",
+    "Short silent captioned fallback, not full narrated oral defense",
+    "Npm audit and full Trivy scans remain FAIL for unfixed residuals"
+  ],
+  "R21": "CLOSED for authorized source-map-js/sharp findings only; braces tracked independently as R23",
+  "R22": "CLOSED for authorized PCRE2/Perl corrected findings",
+  "R23": "OPEN / braces tooling residual NOT ACCEPTED",
+  "D094Verification": "PASS on isolated-cache reproducibility retry; independent verification image, not canonical runtime identity",
+  "scopedCleanup": "PASS"
+}

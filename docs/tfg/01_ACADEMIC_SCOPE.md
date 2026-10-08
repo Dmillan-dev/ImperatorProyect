@@ -1,6 +1,10 @@
 # TFG-A Academic Scope
 
-Document status: **TFG-A FINAL REVIEW CANDIDATE**
+## Current Owner Decision And Sprint — 2026-10-06
+
+**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](A_S3_EVIDENCE_VERSIONING.md).
+
+Document status: **TFG-A IN PROGRESS**
 
 ## Problem
 
@@ -61,7 +65,8 @@ for an onboarding assistant. Its fixed flow is:
 - REST, JWT resource-server validation and four-role RBAC;
 - GitHub and AWS read-only Evidence adapters;
 - Docker Compose local runtime and observability;
-- optional Bedrock explanation adapter, disabled by default;
+- optional Bedrock explanation adapter, disabled in the base local Compose
+  runtime; AWS pilot variables/workflow enable it only for later authorized execution;
 - Terraform and GitHub workflows for the AWS target, validated offline;
 - CI, CodeQL, dependency, secret, image and IaC controls; and
 - synthetic data, academic evidence and defense material.
@@ -89,8 +94,25 @@ non-loopback customer exposure or MVP Release. Local authentication and
 authorization evidence must never be misrepresented as external IdP
 conformance.
 
+## Scope Control
+
+Use risk `R-01` in the [Master Plan](00_TFG_MASTER_PLAN.md#6-risks-and-scope-control)
+to reject additions that do not serve the single case or its acceptance evidence.
+The founder has authorized the three V3 test-cleanup corrections, eight
+formatting corrections, LF container entrypoints, local rehearsal/capture and
+verified generated-residue cleanup. These changes preserve business behavior,
+dependencies and D087/D088/D095. The founder separately authorized the five-finding R-17 patch, which now passes
+the fixable-only image policy. R-19 is CLOSED after its authorized two-entry patch. Authorized R-21/R-22 corrected findings now pass the A-S2 technical criterion;
+formal GO is registered through the explicit current R-20 acceptance and separate approved OPEN R-23 disposition; no added product feature is
+justified. See the current Security Closure Gate.
+ECR naming, deploy IAM and delivery-workflow fixes remain separately authorized
+TFG-B. Historical decisions remain unchanged.
+
 ## Success Statement
 
 TFG-A succeeds when the implemented local product, target AWS architecture,
-competencies and evidence can be understood and audited without changing code.
+competencies and evidence can be understood and audited, with all current local
+acceptance gates passing and no added product scope.
 It does not require or imply an AWS deployment.
+
+See the [current security review](R21_R22_SECURITY_REVIEW.md) before claiming full closure.

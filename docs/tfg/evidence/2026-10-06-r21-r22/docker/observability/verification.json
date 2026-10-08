@@ -1,0 +1,28 @@
+{
+  "decision": "D097",
+  "sourceRevision": "b602bbe1dde92a902c17272d59cd9f0c10b9efe5",
+  "worktreeDirty": true,
+  "imageTag": "tfg-a-cbc6535ee56bfa99",
+  "services": [
+    "backend",
+    "flyway-migrate",
+    "flyway-validate",
+    "frontend",
+    "postgres",
+    "postgres-permissions"
+  ],
+  "managementPortPublished": false,
+  "deferredMonitoringAssets": 0,
+  "customMetricSeries": 4,
+  "endpoints": {
+    "livez": 200,
+    "readyz": 200,
+    "liveness": 200,
+    "readiness": 200,
+    "metrics": 200,
+    "postgres_down_liveness": 200,
+    "postgres_down_readiness": 503,
+    "postgres_recovered_readiness": 200
+  },
+  "result": "PASS"
+}

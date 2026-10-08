@@ -1,0 +1,324 @@
+{
+  "result": "PASS",
+  "atUtc": "2026-10-06T19:33:41.616341+00:00",
+  "duplicateCacheDeletion": [
+    {
+      "path": "build/tfg-a/r20-applicability-2026-10-06/secret-cache",
+      "resolvedAbsolutePath": "D:\\Imperator\\build\\tfg-a\\r20-applicability-2026-10-06\\secret-cache",
+      "bytesRemoved": 2980110642,
+      "filesRemoved": 4,
+      "databaseHashProof": [
+        {
+          "path": "db/trivy.db",
+          "sha256": "9cc5366f2b39f4be91a78e77b2c0311eaa8f62dea163767764579752a6a026c6",
+          "sameAsRetainedSource": true
+        },
+        {
+          "path": "java-db/trivy-java.db",
+          "sha256": "34982cc6b6834a74b02c12f8bed9944fe1c8093725d44a1da346230f4e002e71",
+          "sameAsRetainedSource": true
+        }
+      ],
+      "reason": "Stopped, generated duplicate DB and reproducible temporary scanner artifact cache; indexed reports/evidence are elsewhere and unchanged.",
+      "restoration": "Copy retained source db/java-db bytes into a fresh isolated cache if reproducing the recorded command; artifact cache may be regenerated."
+    },
+    {
+      "path": "build/tfg-a/r21-r22-2026-10-06/d094-cache",
+      "resolvedAbsolutePath": "D:\\Imperator\\build\\tfg-a\\r21-r22-2026-10-06\\d094-cache",
+      "bytesRemoved": 2984304946,
+      "filesRemoved": 5,
+      "databaseHashProof": [
+        {
+          "path": "db/trivy.db",
+          "sha256": "9cc5366f2b39f4be91a78e77b2c0311eaa8f62dea163767764579752a6a026c6",
+          "sameAsRetainedSource": true
+        },
+        {
+          "path": "java-db/trivy-java.db",
+          "sha256": "34982cc6b6834a74b02c12f8bed9944fe1c8093725d44a1da346230f4e002e71",
+          "sameAsRetainedSource": true
+        }
+      ],
+      "reason": "Stopped, generated duplicate DB and reproducible temporary scanner artifact cache; indexed reports/evidence are elsewhere and unchanged.",
+      "restoration": "Copy retained source db/java-db bytes into a fresh isolated cache if reproducing the recorded command; artifact cache may be regenerated."
+    },
+    {
+      "path": "build/tfg-a/r21-r22-2026-10-06/publication-cache",
+      "resolvedAbsolutePath": "D:\\Imperator\\build\\tfg-a\\r21-r22-2026-10-06\\publication-cache",
+      "bytesRemoved": 2980110642,
+      "filesRemoved": 4,
+      "databaseHashProof": [
+        {
+          "path": "db/trivy.db",
+          "sha256": "9cc5366f2b39f4be91a78e77b2c0311eaa8f62dea163767764579752a6a026c6",
+          "sameAsRetainedSource": true
+        },
+        {
+          "path": "java-db/trivy-java.db",
+          "sha256": "34982cc6b6834a74b02c12f8bed9944fe1c8093725d44a1da346230f4e002e71",
+          "sameAsRetainedSource": true
+        }
+      ],
+      "reason": "Stopped, generated duplicate DB and reproducible temporary scanner artifact cache; indexed reports/evidence are elsewhere and unchanged.",
+      "restoration": "Copy retained source db/java-db bytes into a fresh isolated cache if reproducing the recorded command; artifact cache may be regenerated."
+    }
+  ],
+  "bytesRemoved": 8944526230,
+  "retainedFrozenDatabases": [
+    {
+      "path": "build/tfg-a/2026-10-01-docker/trivy-cache/db/trivy.db",
+      "sha256": "9cc5366f2b39f4be91a78e77b2c0311eaa8f62dea163767764579752a6a026c6"
+    },
+    {
+      "path": "build/tfg-a/2026-10-01-docker/trivy-cache/java-db/trivy-java.db",
+      "sha256": "34982cc6b6834a74b02c12f8bed9944fe1c8093725d44a1da346230f4e002e71"
+    }
+  ],
+  "credentialLikeFilesInGeneratedInventory": 0,
+  "containersBefore": 0,
+  "imagesBefore": 25,
+  "imageClassificationCounts": {
+    "HISTORICAL TFG RUNTIME": 12,
+    "PINNED BASE OR VERIFICATION TOOL": 6,
+    "CURRENT ACCEPTED RUNTIME": 3,
+    "HISTORICAL PATCH PROPOSAL": 2,
+    "D094 AUXILIARY REPRODUCIBILITY": 2
+  },
+  "images": [
+    {
+      "id": "sha256:04156f7222d2fbbd8343fde4d015a237a8eed5bd694934217da42ac3e8ac1ba3",
+      "tags": [
+        "imperator/postgres:tfg-a-e4e8680b2feedee8"
+      ],
+      "classification": "HISTORICAL TFG RUNTIME",
+      "action": "RETAIN; dated regression/acceptance comparator, not transferable approval",
+      "sizeBytes": 628020377
+    },
+    {
+      "id": "sha256:0a33fd46bbff0fabf711d621e347d88aa27497ce2585324809f86709d198f407",
+      "tags": [
+        "imperator/postgres:tfg-a-5939e4576beb47a7"
+      ],
+      "classification": "HISTORICAL TFG RUNTIME",
+      "action": "RETAIN; dated regression/acceptance comparator, not transferable approval",
+      "sizeBytes": 628020386
+    },
+    {
+      "id": "sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af",
+      "tags": [
+        "postgres:18.6-bookworm",
+        "postgres@sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af"
+      ],
+      "classification": "PINNED BASE OR VERIFICATION TOOL",
+      "action": "RETAIN; needed for offline reproduction or build verification; no upgrade",
+      "sizeBytes": 623400433
+    },
+    {
+      "id": "sha256:2103d939daee9cc7d0dfe13b1f2e67f3231d4f0b6fc1bd90b26978753dbff461",
+      "tags": [
+        "imperator/frontend:tfg-a-1c0ed64469ec6b54"
+      ],
+      "classification": "HISTORICAL TFG RUNTIME",
+      "action": "RETAIN; dated regression/acceptance comparator, not transferable approval",
+      "sizeBytes": 385563525
+    },
+    {
+      "id": "sha256:22aa1712c86b69581c30834822fb01c00644c3c41851f3e7943e7f1f465dc143",
+      "tags": [
+        "imperator/frontend:tfg-a-e4e8680b2feedee8"
+      ],
+      "classification": "HISTORICAL TFG RUNTIME",
+      "action": "RETAIN; dated regression/acceptance comparator, not transferable approval",
+      "sizeBytes": 385563483
+    },
+    {
+      "id": "sha256:28a898719c18a33f4e8000685287fa36fd0dd9560c6440227d3a732d79bb41d8",
+      "tags": [
+        "moby/buildkit:buildx-stable-1"
+      ],
+      "classification": "PINNED BASE OR VERIFICATION TOOL",
+      "action": "RETAIN; needed for offline reproduction or build verification; no upgrade",
+      "sizeBytes": 353165267
+    },
+    {
+      "id": "sha256:2b73847d07d6cb7da2ace20426de036fa0278feca0bb6520aca62588e9b3f101",
+      "tags": [
+        "imperator/postgres:tfg-a-cbc6535ee56bfa99"
+      ],
+      "classification": "CURRENT ACCEPTED RUNTIME",
+      "action": "PROTECT exact approved index/platform/config/layers",
+      "sizeBytes": 721499841
+    },
+    {
+      "id": "sha256:5b97e49ae7cfd7d5bed01fdcf60df9b7bf654d24bd7c490aa7a65c2e14e7f8c6",
+      "tags": [
+        "imperator/r22-frontend-proposal:20261006"
+      ],
+      "classification": "HISTORICAL PATCH PROPOSAL",
+      "action": "RETAIN; distinguishes proposal scan from canonical regression, not approved deployment image",
+      "sizeBytes": 402371679
+    },
+    {
+      "id": "sha256:5cd649ff9a460b2abdc8315da2e7568c5a2c2138d99815db89c5c583f88c18b1",
+      "tags": [
+        "imperator/frontend:tfg-a-cbc6535ee56bfa99"
+      ],
+      "classification": "CURRENT ACCEPTED RUNTIME",
+      "action": "PROTECT exact approved index/platform/config/layers",
+      "sizeBytes": 400767982
+    },
+    {
+      "id": "sha256:62b1e65e8869bc4b4c6aa4fa2b21595256c7c2f6018a9d9ad61caf87187c1969",
+      "tags": [
+        "aquasec/trivy:0.74.0"
+      ],
+      "classification": "PINNED BASE OR VERIFICATION TOOL",
+      "action": "RETAIN; needed for offline reproduction or build verification; no upgrade",
+      "sizeBytes": 253157416
+    },
+    {
+      "id": "sha256:681e6e7b77b73170c959ed04697302f6a21d8db98edb3a2b0f3354a44387096d",
+      "tags": [
+        "imperator/backend:tfg-a-cbc6535ee56bfa99"
+      ],
+      "classification": "CURRENT ACCEPTED RUNTIME",
+      "action": "PROTECT exact approved index/platform/config/layers",
+      "sizeBytes": 506170608
+    },
+    {
+      "id": "sha256:7711ad60129ad4ad95b2fea97da4fd2c2a20d8461d7b8d1930fae40b60e0b258",
+      "tags": [
+        "imperator/postgres:tfg-a-948a205ca268ae54"
+      ],
+      "classification": "HISTORICAL TFG RUNTIME",
+      "action": "RETAIN; dated regression/acceptance comparator, not transferable approval",
+      "sizeBytes": 628020383
+    },
+    {
+      "id": "sha256:7ce6e7f2b9decc4598f3628852bbfe27bb3d59047414398569a9d6e330a12148",
+      "tags": [
+        "imperator/postgres:tfg-a-1c0ed64469ec6b54"
+      ],
+      "classification": "HISTORICAL TFG RUNTIME",
+      "action": "RETAIN; dated regression/acceptance comparator, not transferable approval",
+      "sizeBytes": 628020384
+    },
+    {
+      "id": "sha256:7ea89cd7bd312a54795c2c60f6991cd642ebb11b5831b6e707af3788c2b248ed",
+      "tags": [
+        "imperator/backend:tfg-a-1c0ed64469ec6b54"
+      ],
+      "classification": "HISTORICAL TFG RUNTIME",
+      "action": "RETAIN; dated regression/acceptance comparator, not transferable approval",
+      "sizeBytes": 506170588
+    },
+    {
+      "id": "sha256:b2c6534593f0fd9f7ef9d699fe11ecc52a2ce01de7df2f9b4a91051cc0e91c75",
+      "tags": [
+        "imperator/backend:tfg-a-5939e4576beb47a7"
+      ],
+      "classification": "HISTORICAL TFG RUNTIME",
+      "action": "RETAIN; dated regression/acceptance comparator, not transferable approval",
+      "sizeBytes": 506170565
+    },
+    {
+      "id": "sha256:b5e6d6806c66512fa9e1f769d1e40fb9b5c545095f3bd389f05438643aa7a433",
+      "tags": [
+        "imperator/r22-postgres-proposal:20261006"
+      ],
+      "classification": "HISTORICAL PATCH PROPOSAL",
+      "action": "RETAIN; distinguishes proposal scan from canonical regression, not approved deployment image",
+      "sizeBytes": 723347322
+    },
+    {
+      "id": "sha256:ba849c60be29959425b8734d57b8b4b7d56f98edd9504c9af091d5281095a71e",
+      "tags": [
+        "node@sha256:ba849c60be29959425b8734d57b8b4b7d56f98edd9504c9af091d5281095a71e"
+      ],
+      "classification": "PINNED BASE OR VERIFICATION TOOL",
+      "action": "RETAIN; needed for offline reproduction or build verification; no upgrade",
+      "sizeBytes": 329401499
+    },
+    {
+      "id": "sha256:bdaf52271f328b31323e01e0662a8a8682cbfd7b99b5d0f5bf836ae3c9e3a1c5",
+      "tags": [
+        "imperator/backend:tfg-a-948a205ca268ae54"
+      ],
+      "classification": "HISTORICAL TFG RUNTIME",
+      "action": "RETAIN; dated regression/acceptance comparator, not transferable approval",
+      "sizeBytes": 506170590
+    },
+    {
+      "id": "sha256:db6195c21e90872063ff257ec38edcb8d3c77259b25a7a8fee67189511079511",
+      "tags": [
+        "flyway/flyway@sha256:db6195c21e90872063ff257ec38edcb8d3c77259b25a7a8fee67189511079511"
+      ],
+      "classification": "PINNED BASE OR VERIFICATION TOOL",
+      "action": "RETAIN; needed for offline reproduction or build verification; no upgrade",
+      "sizeBytes": 1043353179
+    },
+    {
+      "id": "sha256:e0e65766c35235eaae9903b1d29620aa01a6daef8e9fafb573dd0c8c9873da06",
+      "tags": [],
+      "classification": "D094 AUXILIARY REPRODUCIBILITY",
+      "action": "RETAIN; dangling index also inspected/archived in D094 path; not canonical runtime",
+      "sizeBytes": 721500535
+    },
+    {
+      "id": "sha256:e9aaf73145bbd1f9f6ec7f6867dd75a44f34b1a6c32a813504bf4129be2d09d7",
+      "tags": [
+        "eclipse-temurin@sha256:e9aaf73145bbd1f9f6ec7f6867dd75a44f34b1a6c32a813504bf4129be2d09d7"
+      ],
+      "classification": "PINNED BASE OR VERIFICATION TOOL",
+      "action": "RETAIN; needed for offline reproduction or build verification; no upgrade",
+      "sizeBytes": 403279779
+    },
+    {
+      "id": "sha256:ea9853e4490f1fa2ac291eb318291f2025ed360c244566fbff34eae3d048bacb",
+      "tags": [
+        "imperator/backend:tfg-a-e4e8680b2feedee8"
+      ],
+      "classification": "HISTORICAL TFG RUNTIME",
+      "action": "RETAIN; dated regression/acceptance comparator, not transferable approval",
+      "sizeBytes": 487762923
+    },
+    {
+      "id": "sha256:ebba0bc1c7dcb9d59444e2715921d723dff981ea7bb63171ae88b3986b910b58",
+      "tags": [
+        "imperator/frontend:tfg-a-5939e4576beb47a7"
+      ],
+      "classification": "HISTORICAL TFG RUNTIME",
+      "action": "RETAIN; dated regression/acceptance comparator, not transferable approval",
+      "sizeBytes": 385563495
+    },
+    {
+      "id": "sha256:f0d25cf40b38c16e7d6b39044b03d621c4809497590c06418a093661c0a5d0e7",
+      "tags": [
+        "imperator/frontend:tfg-a-948a205ca268ae54"
+      ],
+      "classification": "HISTORICAL TFG RUNTIME",
+      "action": "RETAIN; dated regression/acceptance comparator, not transferable approval",
+      "sizeBytes": 385562784
+    },
+    {
+      "id": "sha256:fb37d301142af5e10bcd02cd0d38bcc8281cd1389d944700e74d19ce2bdd6615",
+      "tags": [
+        "imperator/postgres:r22-d094-20261006"
+      ],
+      "classification": "D094 AUXILIARY REPRODUCIBILITY",
+      "action": "RETAIN; dangling index also inspected/archived in D094 path; not canonical runtime",
+      "sizeBytes": 721500535
+    }
+  ],
+  "imagesDeleted": [],
+  "normalVolumesDeleted": [],
+  "globalPruneUsed": false,
+  "userOutputDeleted": false,
+  "historicalEvidenceDeleted": false,
+  "implementationChanged": false,
+  "notes": [
+    "25images have identified roles; no automatic deletion/retagging or base refresh.",
+    "SUID files and unused affected packages are not removed to manipulate scanner totals.",
+    "Build cache is not globally pruned. Disk reclaim figure is exact deleted file bytes, not Docker virtual disk compaction or unique compressed image-layer space."
+  ]
+}

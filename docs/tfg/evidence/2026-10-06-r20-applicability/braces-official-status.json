@@ -1,0 +1,27 @@
+{
+  "retrievedAtUtc": "2026-10-06T19:07:02.331026+00:00",
+  "url": "https://api.github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+  "htmlUrl": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+  "rawLocalOnly": "build/tfg-a/r20-applicability-2026-10-06/braces-official-raw.json",
+  "rawSha256": "b3961db9d1e95c8d03b9266e0cc6420efa3789f9361ef02d65f8f5997d9fc6b8",
+  "responseDate": "Tue, 06 Oct 2026 19:07:07 GMT",
+  "ghsa": "GHSA-vfj7-8cjw-p6xm",
+  "cve": "CVE-2026-93687",
+  "severity": "high",
+  "publishedAt": "2026-09-18T18:31:41Z",
+  "updatedAt": "2026-10-02T22:36:34Z",
+  "withdrawnAt": null,
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "npm",
+        "name": "braces"
+      },
+      "vulnerable_version_range": "<= 3.0.3",
+      "first_patched_version": null,
+      "vulnerable_functions": []
+    }
+  ],
+  "patchedVersionPublished": false,
+  "descriptionRepublished": false
+}

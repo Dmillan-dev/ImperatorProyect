@@ -1,0 +1,88 @@
+{
+  "result": "PASS for documentation/source/hash/media/publication checks",
+  "executedAtUtc": "2026-10-07T10:29:20.317993+00:00",
+  "checksPassed": 3999,
+  "currentIndex": {
+    "path": "docs/tfg/evidence/TFG_A_A_S3_A_S4_2026-10-07.json",
+    "sha256": "a78edd0a404380a4e47ccf99b4243926f9d0b321a7cf76f8c31e151f05269c58",
+    "bytes": 10297
+  },
+  "publicationInputs": {
+    "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/publication-inputs.json",
+    "sha256": "8b2fedecf6d673fd6fe205834e4f06885144c37638e22691aac7301118e5cb7a",
+    "bytes": 7332
+  },
+  "candidateCommit": "b02e3e2eb10ff2734ce05691dda04fcf0ff82058",
+  "acceptedReleaseCommit": null,
+  "currentPrimaryDocuments": 15,
+  "runtimeInputsUnchanged": 383,
+  "approvedSnapshotsVerified": 38,
+  "priorHistoricalArtifactsUnchanged": true,
+  "sourceVersionArchiveFilesVerified": 1194,
+  "originalGitIndexOrBranchChanged": false,
+  "documentation": {
+    "format": "PASS",
+    "links": "PASS",
+    "linkCounts": {
+      "markdownFiles": 51,
+      "linksChecked": 445,
+      "issues": []
+    },
+    "root-diff": "PASS"
+  },
+  "historySecrets": 0,
+  "historyCommitsScanned": 128,
+  "publicationSecretScan": {
+    "scanner": "Gitleaks8.30.1",
+    "command": [
+      "D:\\Imperator\\build\\tools\\gitleaks-8.30.1\\gitleaks.exe",
+      "dir",
+      "D:\\Imperator\\build\\tfg-a\\a-s3-a-s4-2026-10-07\\publication-source",
+      "--redact",
+      "--no-banner",
+      "--report-format",
+      "json",
+      "--report-path",
+      "D:\\Imperator\\build\\tfg-a\\a-s3-a-s4-2026-10-07\\publication-gitleaks.json"
+    ],
+    "exitCode": 0,
+    "findings": 0,
+    "report": {
+      "path": "docs/tfg/evidence/2026-10-07-a-s3-a-s4/publication-gitleaks.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    }
+  },
+  "freshTrivyRun": false,
+  "freshFunctionalRegression": false,
+  "currentDocker": "UNAVAILABLE / DAEMON STOPPED",
+  "offlineVideoFullDecode": "PASS;27.16seconds;noaudio;historicalsyntheticfallback",
+  "visualQA": "Captures04/05reviewed;04showscompleteBusinessValue;05showsorderedLedgerbutbottomprojectioncut",
+  "twelveMinuteAgenda": "720plannedseconds;humanmeasuredrehearsalPENDING",
+  "ordinarySourceDocDiffCheck": "PASS",
+  "fullRawEvidenceDiffCheck": {
+    "exitCode": 2,
+    "warningFiles": 33,
+    "locations": 377,
+    "rawBytesPreserved": true
+  },
+  "A_S3": "PENDING OWNER SHA/PR/CI",
+  "A_S4": "MATERIALS PREPARED;FINAL EXECUTION PENDING",
+  "TFG_A_COMPLETE": false,
+  "awsAuthorized": false,
+  "expiry": {
+    "local": "2026-10-09T00:00:00+02:00",
+    "timeZone": "Europe/Madrid",
+    "utc": "2026-10-08T22:00:00Z",
+    "exclusive": true,
+    "automaticRenewal": false,
+    "extensionProposed": false,
+    "earlyInvalidation": [
+      "Vendor fix becomes available",
+      "Image/base digest or runtime/test input changes",
+      "Scanner/vendor data changes until reviewed and re-attested",
+      "New feature, configuration, data or exposure boundary",
+      "Any fixable High/Critical, detected secret or new unreviewed finding"
+    ]
+  }
+}

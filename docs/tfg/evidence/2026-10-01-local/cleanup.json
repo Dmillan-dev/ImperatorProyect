@@ -1,0 +1,126 @@
+{
+  "preservedNormalVolumes": [
+    "imperator_postgres-data",
+    "imperator_prometheus-data"
+  ],
+  "result": "PASS",
+  "normalDatabaseReset": false,
+  "fixtureRemoved": true,
+  "removedDockerProject": "imperator-tfg-a-20261001",
+  "ownedContainersNetworksVolumesRemaining": 0,
+  "removedDockerVolume": "imperator-tfg-a-20261001_postgres-data",
+  "deleted": [
+    {
+      "path": "build/tfg-a/2026-10-01/postgres-data",
+      "bytes": 41636454.0,
+      "reason": "Stopped isolated test cluster; sanitized reports retained"
+    },
+    {
+      "path": "build/tfg-a/2026-10-01-native/postgres-data",
+      "bytes": 41902658.0,
+      "reason": "Stopped isolated test cluster; sanitized reports retained"
+    },
+    {
+      "path": "build/tfg-a/2026-10-01-verified/postgres-data",
+      "bytes": 41639496.0,
+      "reason": "Stopped isolated test cluster; sanitized reports retained"
+    },
+    {
+      "path": "build/tfg-a/2026-10-01-jdbc/postgres-data",
+      "bytes": 49877036.0,
+      "reason": "Stopped isolated test cluster; sanitized reports retained"
+    },
+    {
+      "path": "build/tfg-a/2026-10-01-final/postgres-data",
+      "bytes": 50783877.0,
+      "reason": "Stopped isolated test cluster; sanitized reports retained"
+    },
+    {
+      "path": "build/tfg-a/2026-10-01-closure-backend/postgres-data",
+      "bytes": 50792289.0,
+      "reason": "Stopped isolated test cluster; sanitized reports retained"
+    },
+    {
+      "path": "frontend/AGENTS.md",
+      "bytes": 678,
+      "reason": "Next-managed metadata generated during this verification"
+    },
+    {
+      "path": "frontend/CLAUDE.md",
+      "bytes": 11,
+      "reason": "Next-managed metadata generated during this verification"
+    },
+    {
+      "path": "build/tfg-a/2026-10-01-docker/private",
+      "bytes": 4896.0,
+      "reason": "Ephemeral rehearsal keys, passwords and truststore after teardown"
+    },
+    {
+      "reason": "Superseded CRLF-input build created by this task",
+      "image": "imperator/backend:tfg-a-548418dc24b78877"
+    },
+    {
+      "reason": "Superseded CRLF-input build created by this task",
+      "image": "imperator/frontend:tfg-a-548418dc24b78877"
+    },
+    {
+      "reason": "Superseded CRLF-input build created by this task",
+      "image": "imperator/postgres:tfg-a-548418dc24b78877"
+    },
+    {
+      "path": "build/tfg-a/update-docs.py",
+      "bytes": 25693,
+      "reason": "Superseded one-off helper from the initial documentation-only attempt"
+    },
+    {
+      "path": "build/tfg-a/finalize_docs.py",
+      "bytes": 10992,
+      "reason": "Superseded one-off helper from the initial documentation-only attempt"
+    },
+    {
+      "path": "build/tfg-a/finish_evidence.py",
+      "bytes": 3237,
+      "reason": "Superseded one-off helper from the initial documentation-only attempt"
+    },
+    {
+      "path": "build/tfg-a/run-local.ps1",
+      "bytes": 5191,
+      "reason": "Superseded one-off helper from the initial documentation-only attempt"
+    },
+    {
+      "path": "build/tfg-a/validate_final.py",
+      "bytes": 2224,
+      "reason": "Superseded one-off helper from the initial documentation-only attempt"
+    },
+    {
+      "path": "build/tfg-a/2026-10-01-docker/capture/video-qa-5.png",
+      "bytes": 457927,
+      "reason": "Superseded visual QA frame; final recording retained"
+    },
+    {
+      "path": "build/tfg-a/2026-10-01-docker/capture/video-qa-12.png",
+      "bytes": 442259,
+      "reason": "Superseded visual QA frame; final recording retained"
+    },
+    {
+      "path": "build/tfg-a/2026-10-01-docker/capture/video-qa-20.png",
+      "bytes": 473401,
+      "reason": "Superseded visual QA frame; final recording retained"
+    },
+    {
+      "path": "build/tfg-a/2026-10-01-docker/capture/video-qa-24.png",
+      "bytes": 261736,
+      "reason": "Superseded visual QA frame; final recording retained"
+    }
+  ],
+  "globalPrune": false,
+  "executedAtUtc": "2026-10-01T19:58:11.7892882Z",
+  "deletedFileBytes": 278320055.0,
+  "preserved": [
+    "output/tfg/",
+    "historical decisions and deferred placeholders",
+    "sanitized reports and current evidence",
+    "tool installations and useful dependency/scanner caches",
+    "current image tags for security review"
+  ]
+}

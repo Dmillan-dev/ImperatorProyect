@@ -1,0 +1,317 @@
+# R-20 Security Decision Review
+
+## Current Checkpoint After R-21/R-22 — 2026-10-06
+
+**A-S2 technical GO; formal security closure PENDING RESIDUAL DISPOSITION.** Authorized corrected R-21/R-22 findings CLOSED; full residuals retained; current R-20 binding accepted=false/REVIEW REQUIRED, historical approval/expiry immutable; separate braces R-23 OPEN/NOT ACCEPTED. A-S3/A-S4/TFG-B/AWS stay blocked. See [current review](R21_R22_SECURITY_REVIEW.md) and [gate](TFG_A_SECURITY_CLOSURE_GATE.md).
+
+## Preserved Earlier Checkpoint
+
+The earlier recommendation/checkpoint below records its original observation and authority. Its prior NO-GO/proposal-only wording is historical; it cannot override the later technical result or accept the current residual. Original artifact packs/approval bytes are unchanged.
+
+Current local assessment: **2026-10-06**. **R-19 CLOSED for the two authorized
+brace-expansion copies**. The [Security Closure Gate](TFG_A_SECURITY_CLOSURE_GATE.md)
+remains **NO-GO**: R-21 records other npm/source findings and R-22 records newly
+fixable PCRE2/Perl image findings. R-20's historical approval remains preserved;
+it does not transfer to this changed version/database. Current binding is
+**REVIEW REQUIRED / NOT ACCEPTED**. TFG-A remains IN PROGRESS; no AWS or TFG-B
+execution is authorized. See the [R-19 review](R19_SECURITY_REVIEW.md).
+
+The remainder records the October 2 review/approval context. The immutable
+approved decision bytes remain in the acceptance pack. Statements there about
+R-19 being pending describe that registration state, superseded by its independent
+October 6 authorization/remediation. Today's provider fixes invalidate automatic
+reuse of the original current-security claim; expiry is not extended.
+
+## Historical Recommendation — 2026-10-02
+
+**Do not update the whole stack. Recommend path B for the current academic
+local scope, subject to explicit project-owner approval of the residual risk and
+the project-local academic criterion amendment.** The TFG tutor reviews institutional
+assessment requirements separately; no tutor or institutional approval is claimed.
+The measured options do not demonstrate
+an absolute-zero intervention small enough to treat as the original patch.
+This was the reviewed recommendation. The owner has now approved the bounded
+project-local B disposition below; it is not a TFG-A closure declaration or
+institutional approval.
+
+R-19 is a reasonable separate two-entry lockfile patch once authorized. Java,
+Spring, Next beyond the already fixed version, React, application code and
+PostgreSQL's major version have no demonstrated need to change for R-20.
+Retain the existing zero **fixable** High/Critical and zero-secret CI gates.
+Continue reporting all unfixed findings alongside them.
+
+A controlled Debian Trixie base refresh is a credible **partial reduction** for
+later review, especially for PostgreSQL's inherited OpenSSL/PCRE2 packages and
+Perl findings. It is not an absolute-zero solution. For this TFG iteration,
+do not adopt it merely to improve a scanner total: it requires its own supply
+chain and runtime acceptance. A same-suite PostgreSQL OpenSSL security refresh
+is also available, but the current Bookworm candidate remains affected by
+CVE-2026-84782; it is maintenance, not evidence that R-20 is solved.
+
+## What R-20 Actually Requires
+
+The repository's implemented baseline is **zero fixable High/Critical**, not
+zero High/Critical irrespective of vendor fix status:
+
+- [Security workflow](../../.github/workflows/security.yml) configures
+  `ignore-unfixed: true` for source and application images.
+- [D094 contract](../architecture/55_PostgreSQL_Runtime_Supply_Chain_Remediation_Contract.md)
+  requires zero fixable High/Critical and secrets; the
+  [database verifier](../../scripts/verify-postgres-runtime-image.ps1) uses
+  `--ignore-unfixed`.
+- [D098 verification](../architecture/58_Runtime_Supply_Chain_Refresh.md)
+  explicitly requires zero fixable findings and the pinned Bookworm PCRE2
+  patch, without a vulnerability exception or unsupported major update.
+
+The founder's later absolute-zero objective adds a stricter TFG-A decision
+condition. It has not silently replaced CI, nor has CI silently satisfied it.
+R-20 recorded that discrepancy and remained OPEN until one of these occurred:
+
+1. A bounded patch produces zero High/Critical **without** `--ignore-unfixed`,
+   exclusions or vulnerability waivers, on all three final images, followed by
+   the required regression and exact-image evidence; or
+2. The owner explicitly chooses an academic criterion amendment and signs a
+   bounded residual-risk disposition. Record it as **ACCEPTED TEMPORARILY**,
+   not “zero vulnerabilities” or “remediated.” Keep the residual register and
+   expiry active. Existing fixable/secret gates remain unchanged. The current
+   [master-plan DoD](00_TFG_MASTER_PLAN.md#7-tfg-a-definition-of-done) forbids
+   waiver-based closure; path B therefore needs an explicit approved amendment,
+   not an automatic status edit.
+
+Maintaining absolute zero is a valid alternative, but it keeps TFG-A blocked
+on R-20; it does not authorize an unbounded operating-system redesign.
+The founder has explicitly chosen option 2 for the bound synthetic/local record.
+Absolute-zero scan failures remain visible; only this project-local academic
+criterion has a temporary approved disposition.
+
+## Why The Findings Are Unfixed
+
+Trivy 0.74.0 documents `--ignore-unfixed` as filtering `affected`,
+`will_not_fix`, `fix_deferred` and `end_of_life`. These statuses describe vendor
+fix availability or disposition, not whether an attacker can reach the code.
+See [Trivy filtering](https://trivy.dev/docs/v0.74/guide/configuration/filtering/)
+and [Debian coverage](https://trivy.dev/docs/v0.74/guide/coverage/os/debian/).
+
+The closure-preparation rerun on the original regression payloads confirms:
+
+| Image      | High | Critical | Distinct CVEs | affected | fix_deferred | will_not_fix | end_of_life |
+| ---------- | ---: | -------: | ------------: | -------: | -----------: | -----------: | ----------: |
+| Backend    |    0 |        0 |             0 |        0 |            0 |            0 |           0 |
+| Frontend   |   53 |        4 |            19 |       49 |            7 |            1 |           0 |
+| PostgreSQL |   81 |       15 |            32 |       76 |           19 |            1 |           0 |
+
+The 153 rows are **32 distinct CVEs in 12 Debian source packages**, repeated
+across binary packages and two images. They are not 153 distinct exploitable
+defects. Every mapped source/CVE pair is still open for Bookworm in the current
+official tracker; two additional source packages sharing CVE IDs already have
+fixes, but they are **not** the source packages producing these installed
+binaries. The [per-CVE matrix](evidence/2026-10-02-r20/CVE_MATRIX.md) and
+[machine analysis](evidence/2026-10-02-r20/cve-matrix.json) record each installed
+version, vendor status/fix in Bookworm/Trixie/Sid, trigger and bounded impact.
+
+The historical base comparison uses one unchanged Trivy database snapshot, updated
+2026-10-01 13:01 UTC and downloaded that evening, to avoid changing the database
+between candidates. Debian's independent tracker was retrieved on
+2026-10-02 11:10 UTC. Those are different data products and timestamps; no
+claim that the scanner database was freshly rebuilt today is made. Scanner
+severity may fall back to another vendor when Debian urgency is unassigned;
+a High/Critical label is not itself evidence of a reachable product route.
+
+For closure preparation, the three original regression images were recovered
+without rebuilding and scanned using Trivy 0.74.0 pinned by image digest and
+the vulnerability database updated **2026-10-02T12:48:00.080865328Z**.
+The Java artifact index remains the recorded, still-current cached snapshot;
+it is distinct from the vulnerability database. All **153 package/CVE/version/status
+rows exactly match** the reviewed 32-CVE matrix. Fixable High/Critical,
+language-package High/Critical and detected secrets remain zero. Strict Trivy
+exit codes are **0 / 1 / 1**: unfixed findings still fail absolute zero.
+See [canonical scans and database identities](evidence/2026-10-02-r20-closure/README.md).
+
+Current signature-verified APT metadata and a **simulation only** show:
+
+- All 18 affected frontend binary packages are already their configured
+  Bookworm candidates: zero targeted package upgrades.
+- PostgreSQL offers only `libssl3`/`openssl` 3.0.20-1~deb12u2 →
+  3.0.22-1~deb12u1 among its 27 affected binary packages. The official
+  [OpenSSL tracker](https://security-tracker.debian.org/tracker/CVE-2026-84782)
+  still marks that Bookworm security version vulnerable. No package was
+  installed; runtime images and application inputs remain unchanged.
+
+No `end_of_life` finding appears in this scan. Bookworm's release/support
+position is independently described by [Debian](https://www.debian.org/releases/bookworm/);
+absence of a particular backport is not equivalent to a claim that the entire
+distribution is unsupported.
+
+## Reachability And Residual Risk
+
+These are conditional assessments, not a blanket “not exploitable” statement.
+No exploit attempts or denial-of-service tests were performed.
+
+| Family / example                       | Evidence in IMPERATOR                                                                                                                                      | Proposed disposition                                                                                                                      |
+| -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| MiniZip, CVE-2023-45853                | Debian says the vulnerable contrib/minizip code is not built for this Bookworm source; no MiniZip files found                                              | Candidate component-not-present assessment; owner/reviewer approval required; no automatic ignore rule                                    |
+| Perl 32-bit regex, CVE-2026-8376       | Both images report Perl ptrsize=8 and ivsize=8; advisory requires a 32-bit build                                                                           | Candidate prerequisite-not-met assessment; does not dispose of other Perl defects                                                         |
+| Archive::Tar / IO::Compress / Storable | All three modules absent in frontend; PostgreSQL has Archive::Tar/Storable, no IO::Compress or plperl.so; no product Perl invocation found                 | Frontend component distinctions and conditional PostgreSQL residual risk; do not call all Perl findings absent                            |
+| Mount/nsenter, ACL, ncurses and gzip   | No ordinary product route to these triggers found; non-root/read-only/no-new-privileges, no SYS_ADMIN; PostgreSQL retains its five documented capabilities | Local prerequisites constrained; post-compromise/operator use not excluded; official PostgreSQL initializer still supports archive inputs |
+| systemd-homed                          | homed service/executable absent; PostgreSQL links libsystemd                                                                                               | Distinguish absent homed service from a present shared library                                                                            |
+| OpenSSL DTLS and PCRE2 JIT             | No DTLS/PCRE2 JIT application endpoint found; PostgreSQL links libssl, Node's executable does not link system PCRE2                                        | Trigger not identified, not general library absence; other transitive consumers not fully traced                                          |
+| SQLite and LDAP                        | SQLite is installed, not in postgres's direct link set; PostgreSQL links LDAP but configured authentication is SCRAM; no product SQLite/LDAP feature found | Conditional residual risks; operator configuration and transitive consumers remain outside the proof                                      |
+| libxml2, including CVE-2026-6653       | Library directly linked into PostgreSQL; inspected API/schema use JSON and prepared queries, with no XML feature                                           | Real installed parser: do not classify as absent; SQL-capable/compromised clients remain a possible path                                  |
+
+Primary clarifications:
+[MiniZip source/binary distinction](https://security-tracker.debian.org/tracker/CVE-2023-45853),
+[32-bit Perl prerequisite](https://security-tracker.debian.org/tracker/CVE-2026-8376),
+[ACL backport/ABI constraints](https://security-tracker.debian.org/tracker/CVE-2026-54369),
+and [libxml2 stable backport limitation](https://security-tracker.debian.org/tracker/CVE-2026-6653).
+For CVE-2026-13221, Debian flags Bookworm but its advisory notes introduction
+in Perl 5.37.10; a backport/source reconciliation is required before claiming
+that installed Perl 5.36 is unaffected. This unresolved discrepancy is retained.
+
+## Measured Alternatives And Scope Cost
+
+The following are **official base-image OS scans**, not certification of a
+modified IMPERATOR image. They use pinned manifest digests, linux/amd64 and
+the same Trivy database. npm/Go findings in the untrimmed official bases are
+recorded separately in the [comparison](evidence/2026-10-02-r20/scan-comparison.json);
+the existing product runtimes remove/rebuild those components and currently
+have zero language-package High/Critical findings.
+
+| Option                                              | OS High / Critical | Correctable OS rows | Assessment                                                                           |
+| --------------------------------------------------- | -----------------: | ------------------: | ------------------------------------------------------------------------------------ |
+| Current IMPERATOR frontend, Node 24.20.0 / Bookworm |             53 / 4 |                   0 | Baseline; existing PCRE2 patch already applied                                       |
+| Official Node 24.20.0 / Bookworm                    |             56 / 4 |                   3 | Same published digest as pinned base; omits IMPERATOR's existing PCRE2 patch         |
+| Official Node 24.21.0 / Bookworm                    |             53 / 4 |                   0 | Updating Node alone does not reduce current OS findings                              |
+| Official Node 24.20.0 / Trixie                      |             58 / 3 |                  18 | Keeping Node exact version while changing suite still requires security patches      |
+| Official Node 24.21.0 / Trixie                      |             48 / 0 |                   5 | Partial reduction; 43 current rows have no indicated fix                             |
+| Current IMPERATOR PostgreSQL 18.6 / Bookworm        |            81 / 15 |                   0 | Baseline, custom rebuilt gosu and existing PCRE2 patch                               |
+| Current official PostgreSQL 18.6 / Bookworm         |            81 / 15 |                   0 | Newer published base digest does not fix the reported OS set                         |
+| Official PostgreSQL 18.6 / Trixie                   |             68 / 1 |                   7 | Partial reduction; 62 current rows have no indicated fix, including Critical libxml2 |
+
+Trixie fixes several Perl/SQLite/OpenSSL issues, but ACL, ncurses, systemd,
+some util-linux issues and libxml2 remain open. “The provider cannot currently
+fix everything **in the supported stable suite**” is supported here; “there
+is no fix anywhere” is false. Sid/upstream corrections exist, but mixing Sid
+packages into stable images creates ABI/dependency/supply-chain work rather
+than a supported minimal security patch.
+
+A Trixie adoption would affect at least both image Dockerfiles, their PCRE2
+security-package pins, the workflow's exact Bookworm-version assertion and
+D094/D098 verification assumptions. Preserve historical contracts; review a
+new bounded amendment instead of rewriting their accepted evidence. Rebuild
+gosu with its existing pinned inputs, retain non-root/read-only/loopback
+controls, certify SBOM/provenance and reproducibility, then run
+174 unit / 35 integration / 41 frontend, quality/build, real Docker/RBAC,
+Flyway/permissions, persistence, recovery and both scan policies on exact
+final images. None of that adoption is claimed executed by this analysis.
+
+Alpine changes glibc to musl and affects native Next/Sharp/SWC components and
+PostgreSQL packaging/locales; distroless/custom pruning affects shell-based
+initialization, provisioning and diagnostics. Rebuilding native libraries,
+deleting package metadata to hide alerts, using Sid, disabling PostgreSQL
+features or replacing the distribution solely to chase zero is not a bounded
+TFG-A fix. No zero result is claimed for those untested approaches. Official
+[Node variant documentation](https://github.com/nodejs/docker-node/blob/main/README.md)
+explains the libc difference; the [official PostgreSQL variants](https://github.com/docker-library/official-images/blob/master/library/postgres)
+show that PostgreSQL 18.6 can be kept when comparing suites.
+
+## Concrete Pending Decisions
+
+| Decision                        | Proposed choice                                                                           | Boundary / required evidence                                                                                                                                                                 | Current state                                           |
+| ------------------------------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| R-19                            | Authorize only brace-expansion 1.1.18→1.1.21 and 5.0.9→5.0.12                             | Unchanged direct dependencies; isolated audit zero already prepared; apply and rerun affected quality/build/runtime scans                                                                    | PENDING; not authorized or applied                      |
+| R-20 absolute-zero criterion    | Path B approved for synthetic loopback academic rehearsal only                            | Explicit project-owner approval bound to all 32 CVEs and exact canonical images; preserve zero-fixable/zero-secret gates and full raw counts; institutional assessment remains for the tutor | ACCEPTED TEMPORARILY; expires 2026-10-09T00:00:00+02:00 |
+| R-20 partial base refresh       | Defer adoption for this closure decision; retain as a bounded security-maintenance option | Trixie does not close absolute zero; amendment and full supply-chain/runtime regression required before adopting                                                                             | NOT APPLIED                                             |
+| Java/Spring/other stack refresh | No blanket refresh for R-20                                                               | Reconsider only for an independent advisory, support deadline or compatibility requirement                                                                                                   | No R-20-driven update justified                         |
+
+## Effective Acceptance, Expiry And Approval Authority
+
+The historical [approval proposal](evidence/2026-10-02-r20-closure/approval-proposal.json)
+retains its original **`accepted: false`** pre-approval state. The current
+[acceptance record](evidence/2026-10-02-r20-acceptance/acceptance.json) records
+**`accepted: true` / `ACCEPTED TEMPORARILY`** after the explicit affirmative user
+message. Approval was registered at **2026-10-02T17:16:32Z**; this is the agent's
+UTC registration time, not an invented client message-send timestamp. The exact
+approved decision/proposal/matrix/image/scan/database bytes are hash-bound and
+preserved. The expiry is
+**2026-10-09T00:00:00+02:00, Europe/Madrid (CEST)**, equivalent to
+**2026-10-08T22:00:00Z**. It is an exclusive boundary: acceptance
+applies from its recorded effective approval registration instant until, but not
+including, that expiry. At the expiry instant it ceases to authorize the local
+exception; R-20 becomes blocking again. No automatic renewal or grace period.
+
+- **Project approver and risk owner:** the founder/project owner, the user in
+  this conversation. Only their explicit approval can activate the project-local
+  B disposition and its project-local criterion amendment. Explicit approval is
+  now recorded; it grants no R-19, TFG-B, AWS or release authorization.
+- **Technical evidence reviewer:** Codex in this session, responsible for
+  manifest, scan, matrix and hash consistency. Technical verification or a
+  recommendation cannot accept risk on the owner's behalf.
+- **Academic reviewer:** the TFG tutor/supervisor for institutional assessment
+  criteria. Their personal identity and approval are not in the repository;
+  this role is identified without inventing a name or signature. A project-local
+  owner decision does not certify institutional acceptance.
+
+Approval binds the pre-approval decision snapshot, full 32-CVE matrix, canonical
+platform/configuration digests, scan/database hashes, scope and expiry. The
+current document adds the recorded result without replacing those approved
+bytes. Silence, completed technical review, unchanged findings and a passing
+fixable-only gate are not acceptance. The explicit owner decision accepts the
+reviewed residual set only for its bounded scope. Component/prerequisite
+distinctions remain conditional; no vulnerability is declared remediated or
+automatically unaffected, and the original matrix is retained unchanged.
+
+Limit B to **synthetic data on loopback**; prohibit public/pilot/AWS/customer
+exposure under this record. Reopen review earlier for a vendor fix, changed
+image/base or runtime input, changed scanner/vendor data, application feature,
+configuration, data or exposure boundary. Until reviewed and re-attested, changed
+evidence is outside this accepted record. A fixable High/Critical, detected secret,
+expired acceptance or new unreviewed finding is a NO-GO. No blanket ignore/VEX
+document or claim that an acceptance removes a vulnerability.
+
+The current state is **R-20 = ACCEPTED TEMPORARILY**, not CLOSED,
+remediated or zero vulnerabilities. The master-plan DoD amendment is effective
+only for this explicitly approved bound R-20 record, while zero fixable
+High/Critical and zero-secret closure requirements remain mandatory.
+**R-19 stays OPEN and separately unauthorized**; this approval does not permit
+its lockfile patch. The known R-19 findings are not waived by this R-20 record
+and continue to block the Security Closure Gate. R-20 approval alone cannot
+make TFG-A COMPLETE: R-19 and the TFG-A Security
+Closure Gate must also pass. TFG-B/AWS readiness requires a separate authorized
+step; no AWS, production or real-data action or D101 discharge follows from
+this acceptance. The [Security Closure Gate](TFG_A_SECURITY_CLOSURE_GATE.md)
+is the only active next gate; it is not passed while R-19 remains unresolved.
+
+## Evidence And Resolved Image Binding
+
+See the [dated evidence pack](evidence/2026-10-02-r20/README.md) and
+[analysis index](evidence/TFG_A_R20_2026-10-02.json), supplemented by the
+[closure-preparation index](evidence/TFG_A_R20_CLOSURE_PREPARATION_2026-10-02.json).
+All runtime/test input
+SHA256 records from R-17 remain unchanged. This was an analysis turn; the
+previous 174/35/41 regression results remain dated R-17 evidence, not newly
+executed tests on candidate bases.
+
+The previous [binding review](evidence/2026-10-02-r20/binding-review.json)
+correctly found different top-level IDs, but its rebuild explanation was
+incomplete. These IDs are **OCI provenance indexes**, not configuration hashes.
+The [resolution](evidence/2026-10-02-r20-closure/image-binding-resolution.json)
+compares original BuildKit indexes, platform manifests, configuration and layers
+against archived Compose container image labels:
+
+| Image      | Original regression platform manifest                                     | Canonical configuration                                                   | Comparison with historical final scan                                        |
+| ---------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| Backend    | `sha256:4159c0dee5e61a2d76f87f546dc72134c45c3786960c654fb5661c2032c7e56b` | `sha256:7f639b3fcbf8eeeea5f76b4e2ea0241131a99b93f2986ceb2855a95e8b3d9031` | Same manifest/config/13 layers; provenance index changed                     |
+| Frontend   | `sha256:82582f8aee09291e5cada3f28046e2539bebf029333b080a1db420902531738d` | `sha256:0cd5667c82950ba30d238da3479fa079d009de54f2d726294564d10e6e440e7a` | Runtime settings/first 8 layers identical; final 2 Next output layers differ |
+| PostgreSQL | `sha256:a0a072063a0ee345dcd6ebbc1420bde7d0f203c6619c872d71ca2ca765036a69` | `sha256:805fa48d501a9894beb06b82ff09d6d472b4c59b94ee6d74d9eb2ad54f407327` | Same 18 layers; sole runtime config change is Compose service label          |
+
+All original linux/amd64 manifest/configuration/layer bytes were recovered
+locally, digest-verified and rescanned using single-platform OCI input layouts.
+Their wrapper indexes are separately identified; they do not masquerade as the
+historical attestation indexes. No product rebuild, tag replacement, runtime
+regression or dependency change occurred. Canonical **frontend is the earlier
+capture/persistence build**; later observability results are not transferred to
+its different Next output layers. Historical reports and the pre-preparation
+decision/index are retained with hashes. The three canonical strict scans now
+bind the reviewed package matrix to the original observed rehearsal payloads,
+resolving this discrepancy for the proposed R-20 B scope. This is not a single
+accepted-release certificate or the full TFG-A closure gate.

@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "Version": 2,
+    "NextUpdate": "2026-10-03T12:48:00.080864987Z",
+    "UpdatedAt": "2026-10-02T12:48:00.080865328Z",
+    "DownloadedAt": "2026-10-02T17:00:02.882074781Z"
+  },
+  "sha256": "fc07a783247f127f56453c76baf92eec9573767be8f1c153b57dfc3d2bfff9bf",
+  "javaMetadata": {
+    "Version": 1,
+    "NextUpdate": "2026-10-04T00:59:54.094024949Z",
+    "UpdatedAt": "2026-10-01T00:59:54.094025329Z",
+    "DownloadedAt": "2026-10-01T19:37:53.943338681Z"
+  },
+  "javaDbSha256": "37418de6e936d802e94712d3d3e6e41f189bdfffd0fa23ea88b383dab4543137"
+}

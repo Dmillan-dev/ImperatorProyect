@@ -1,0 +1,7 @@
+6.18.33.1-microsoft-standard-WSL2
+IO::Compress ABSENT error=Can't locate IO/Compress.pm in @INC (you may need to install the IO::Compress module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.36.0 /usr/local/share/perl/5.36.0 /usr/lib/x86_64-linux-gnu/perl5/5.36 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.36 /usr/share/perl/5.36 /usr/local/lib/site_perl) at -e line 1.
+IO::Compress::Gzip PRESENT version=2.106 file=/usr/share/perl/5.36/IO/Compress/Gzip.pm
+Archive::Tar PRESENT version=2.40 file=/usr/share/perl/5.36/Archive/Tar.pm
+total 8
+drwxr-xr-x 2 root root 4096 Aug 25 00:41 .
+drwxr-xr-x 1 root root 4096 Oct  6 18:59 ..

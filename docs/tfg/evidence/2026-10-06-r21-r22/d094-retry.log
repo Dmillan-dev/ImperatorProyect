@@ -1,0 +1,204 @@
+Docker version 29.8.0, build 88096ef
+Docker Compose version v5.5.1
+DockerServer=29.8.0 OS=Docker Desktop Architecture=x86_64
+github.com/docker/buildx v0.37.0 ac30b249211430b85fb8f37b6e7154b5c47ba0b6
+Version: 0.74.0
+Vulnerability DB:
+  Version: 2
+  UpdatedAt: 2026-10-06 13:07:05.606377799 +0000 UTC
+  NextUpdate: 2026-10-07 13:07:05.606377538 +0000 UTC
+  DownloadedAt: 2026-10-06 15:52:53.617200198 +0000 UTC
+Java DB:
+  Version: 1
+  UpdatedAt: 2026-10-06 01:08:12.735023878 +0000 UTC
+  NextUpdate: 2026-10-09 01:08:12.735023748 +0000 UTC
+  DownloadedAt: 2026-10-06 15:54:40.211485075 +0000 UTC
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 3.98kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+#2 DONE 0.1s
+
+#3 docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+#3 resolve docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e 0.1s done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/golang:1.26.6-bookworm@sha256:433f9dc4f8ea3a1ce4e28f9f15d0f7c056b10475307f886d6f1ac1ccc4abd976
+#4 DONE 0.1s
+
+#5 [internal] load metadata for docker.io/library/postgres:18.6-bookworm@sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af
+#5 DONE 0.1s
+
+#6 [stage-1  6/10] ADD --checksum=sha256:3ed38ffa8320e9bf7597cefa01b6a6ace4a08ccc77cdfd15ef7d8b711dea7166     https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-modules-5.36_5.36.0-7+deb12u4_all.deb     /tmp/imperator-perl-modules-5.36.deb
+#6 DONE 0.0s
+
+#7 [stage-1  4/10] ADD --checksum=sha256:67e7a883c5d835939638f89a750799282df243ac1446281aa92ef9e19300940b     https://security.debian.org/debian-security/pool/updates/main/p/perl/perl_5.36.0-7+deb12u4_amd64.deb     /tmp/imperator-perl.deb
+#7 DONE 0.0s
+
+#8 [gosu-build 1/4] FROM docker.io/library/golang:1.26.6-bookworm@sha256:433f9dc4f8ea3a1ce4e28f9f15d0f7c056b10475307f886d6f1ac1ccc4abd976
+#8 resolve docker.io/library/golang:1.26.6-bookworm@sha256:433f9dc4f8ea3a1ce4e28f9f15d0f7c056b10475307f886d6f1ac1ccc4abd976 0.1s done
+#8 DONE 0.1s
+
+#9 [gosu-build 3/4] ADD --checksum=sha256:33d7537d588ea49458b9509bcf4554bdf5ceacc66da71e5caa1058ea3b689c3b     https://github.com/tianon/gosu/archive/6456aaa0f3c854d199d0f037f068eb97515b7513.tar.gz     /tmp/gosu-source.tar.gz
+#9 CACHED
+
+#10 [gosu-build 2/4] WORKDIR /build/gosu
+#10 CACHED
+
+#11 [stage-1  2/10] ADD --checksum=sha256:d2f7edfcc7689b9e0761c2742cc824ac86a20768bc5e8057818dc6875291fe76     https://security.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-8-0_10.42-1+deb12u2_amd64.deb     /tmp/libpcre2-8-0.deb
+#11 CACHED
+
+#12 [stage-1  5/10] ADD --checksum=sha256:ed8480b621ad574c25aea30d36194d0133ea74093756ecbe3dff157d0510ef7f     https://security.debian.org/debian-security/pool/updates/main/p/perl/libperl5.36_5.36.0-7+deb12u4_amd64.deb     /tmp/imperator-libperl5.36.deb
+#12 CACHED
+
+#13 [stage-1  3/10] ADD --checksum=sha256:d7d1943aec9597629bf73075efcc5ef6dc9bda96d78e80d843156ecd448478b8     https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-base_5.36.0-7+deb12u4_amd64.deb     /tmp/imperator-perl-base.deb
+#13 CACHED
+
+#14 [gosu-build 3/4] ADD --checksum=sha256:33d7537d588ea49458b9509bcf4554bdf5ceacc66da71e5caa1058ea3b689c3b     https://github.com/tianon/gosu/archive/6456aaa0f3c854d199d0f037f068eb97515b7513.tar.gz     /tmp/gosu-source.tar.gz
+#14 ...
+
+#6 [stage-1  6/10] ADD --checksum=sha256:3ed38ffa8320e9bf7597cefa01b6a6ace4a08ccc77cdfd15ef7d8b711dea7166     https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-modules-5.36_5.36.0-7+deb12u4_all.deb     /tmp/imperator-perl-modules-5.36.deb
+#6 CACHED
+
+#15 [internal] load build context
+#15 transferring context: 43B done
+#15 DONE 0.0s
+
+#7 [stage-1  4/10] ADD --checksum=sha256:67e7a883c5d835939638f89a750799282df243ac1446281aa92ef9e19300940b     https://security.debian.org/debian-security/pool/updates/main/p/perl/perl_5.36.0-7+deb12u4_amd64.deb     /tmp/imperator-perl.deb
+#7 CACHED
+
+#16 [stage-1  1/10] FROM docker.io/library/postgres:18.6-bookworm@sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af
+#16 resolve docker.io/library/postgres:18.6-bookworm@sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af 0.1s done
+#16 CACHED
+
+#14 [gosu-build 3/4] ADD --checksum=sha256:33d7537d588ea49458b9509bcf4554bdf5ceacc66da71e5caa1058ea3b689c3b     https://github.com/tianon/gosu/archive/6456aaa0f3c854d199d0f037f068eb97515b7513.tar.gz     /tmp/gosu-source.tar.gz
+#14 DONE 0.2s
+
+#17 [stage-1  2/10] ADD --checksum=sha256:d2f7edfcc7689b9e0761c2742cc824ac86a20768bc5e8057818dc6875291fe76     https://security.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-8-0_10.42-1+deb12u2_amd64.deb     /tmp/libpcre2-8-0.deb
+#17 DONE 0.2s
+
+#18 [stage-1  3/10] ADD --checksum=sha256:d7d1943aec9597629bf73075efcc5ef6dc9bda96d78e80d843156ecd448478b8     https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-base_5.36.0-7+deb12u4_amd64.deb     /tmp/imperator-perl-base.deb
+#18 DONE 0.3s
+
+#19 [gosu-build 4/4] RUN tar --extract         --gzip         --file /tmp/gosu-source.tar.gz         --strip-components 1     && rm /tmp/gosu-source.tar.gz     && test -f LICENSE     && CGO_ENABLED=0 GOOS=linux GOARCH=amd64        go build          -trimpath          -buildvcs=false          -ldflags='-s -w -buildid='          -o /out/gosu          .     && /out/gosu --version     && /out/gosu nobody true
+#19 ...
+
+#20 [stage-1  4/10] ADD --checksum=sha256:67e7a883c5d835939638f89a750799282df243ac1446281aa92ef9e19300940b     https://security.debian.org/debian-security/pool/updates/main/p/perl/perl_5.36.0-7+deb12u4_amd64.deb     /tmp/imperator-perl.deb
+#20 DONE 0.2s
+
+#21 [stage-1  5/10] ADD --checksum=sha256:ed8480b621ad574c25aea30d36194d0133ea74093756ecbe3dff157d0510ef7f     https://security.debian.org/debian-security/pool/updates/main/p/perl/libperl5.36_5.36.0-7+deb12u4_amd64.deb     /tmp/imperator-libperl5.36.deb
+#21 DONE 0.2s
+
+#19 [gosu-build 4/4] RUN tar --extract         --gzip         --file /tmp/gosu-source.tar.gz         --strip-components 1     && rm /tmp/gosu-source.tar.gz     && test -f LICENSE     && CGO_ENABLED=0 GOOS=linux GOARCH=amd64        go build          -trimpath          -buildvcs=false          -ldflags='-s -w -buildid='          -o /out/gosu          .     && /out/gosu --version     && /out/gosu nobody true
+#19 0.524 go: downloading github.com/moby/sys/user v0.1.0
+#19 0.524 go: downloading golang.org/x/sys v0.1.0
+#19 ...
+
+#22 [stage-1  6/10] ADD --checksum=sha256:3ed38ffa8320e9bf7597cefa01b6a6ace4a08ccc77cdfd15ef7d8b711dea7166     https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-modules-5.36_5.36.0-7+deb12u4_all.deb     /tmp/imperator-perl-modules-5.36.deb
+#22 DONE 0.1s
+
+#19 [gosu-build 4/4] RUN tar --extract         --gzip         --file /tmp/gosu-source.tar.gz         --strip-components 1     && rm /tmp/gosu-source.tar.gz     && test -f LICENSE     && CGO_ENABLED=0 GOOS=linux GOARCH=amd64        go build          -trimpath          -buildvcs=false          -ldflags='-s -w -buildid='          -o /out/gosu          .     && /out/gosu --version     && /out/gosu nobody true
+#19 3.636 1.19 (go1.26.6 on linux/amd64; gc)
+#19 DONE 3.7s
+
+#23 [stage-1  7/10] COPY --from=gosu-build /out/gosu /usr/local/bin/gosu
+#23 DONE 0.2s
+
+#24 [stage-1  8/10] COPY --from=gosu-build /build/gosu/LICENSE /usr/local/share/licenses/gosu/LICENSE
+#24 DONE 0.1s
+
+#25 [stage-1  9/10] COPY --chown=999:999 provision-app-role.sh /opt/imperator/provision-app-role.sh
+#25 DONE 0.1s
+
+#26 [stage-1 10/10] RUN dpkg --install /tmp/libpcre2-8-0.deb /tmp/imperator-perl-base.deb /tmp/imperator-perl.deb /tmp/imperator-libperl5.36.deb /tmp/imperator-perl-modules-5.36.deb     && rm -f         /tmp/libpcre2-8-0.deb         /tmp/imperator-perl-base.deb /tmp/imperator-perl.deb /tmp/imperator-libperl5.36.deb /tmp/imperator-perl-modules-5.36.deb         /var/cache/ldconfig/aux-cache         /var/log/dpkg.log     && chmod 0755 /usr/local/bin/gosu     && chmod 0555 /opt/imperator/provision-app-role.sh     && chmod 0444 /usr/local/share/licenses/gosu/LICENSE     && gosu --version     && gosu nobody true     && postgres --version
+#26 0.378 (Reading database ... 12163 files and directories currently installed.)
+#26 0.378 Preparing to unpack /tmp/libpcre2-8-0.deb ...
+#26 0.434 Unpacking libpcre2-8-0:amd64 (10.42-1+deb12u2) over (10.42-1) ...
+#26 0.584 Preparing to unpack /tmp/imperator-perl-base.deb ...
+#26 0.634 Unpacking perl-base (5.36.0-7+deb12u4) over (5.36.0-7+deb12u3) ...
+#26 5.376 Preparing to unpack /tmp/imperator-perl.deb ...
+#26 5.426 Unpacking perl (5.36.0-7+deb12u4) over (5.36.0-7+deb12u3) ...
+#26 5.761 Preparing to unpack /tmp/imperator-libperl5.36.deb ...
+#26 5.803 Unpacking libperl5.36:amd64 (5.36.0-7+deb12u4) over (5.36.0-7+deb12u3) ...
+#26 9.005 Preparing to unpack .../imperator-perl-modules-5.36.deb ...
+#26 9.046 Unpacking perl-modules-5.36 (5.36.0-7+deb12u4) over (5.36.0-7+deb12u3) ...
+#26 18.01 Setting up libpcre2-8-0:amd64 (10.42-1+deb12u2) ...
+#26 18.05 Setting up perl-base (5.36.0-7+deb12u4) ...
+#26 18.10 Setting up perl-modules-5.36 (5.36.0-7+deb12u4) ...
+#26 18.14 Setting up libperl5.36:amd64 (5.36.0-7+deb12u4) ...
+#26 18.18 Setting up perl (5.36.0-7+deb12u4) ...
+#26 18.24 Processing triggers for libc-bin (2.36-9+deb12u14) ...
+#26 18.36 1.19 (go1.26.6 on linux/amd64; gc)
+#26 18.37 postgres (PostgreSQL) 18.6 (Debian 18.6-1.pgdg12+2)
+#26 DONE 18.4s
+
+#27 exporting to oci image format
+#27 exporting layers
+#27 exporting layers 2.7s done
+#27 rewriting layers with source-date-epoch 1790686664 (2026-09-29 12:57:44 +0000 UTC)
+#27 rewriting layers with source-date-epoch 1790686664 (2026-09-29 12:57:44 +0000 UTC) 1.6s done
+#27 exporting manifest sha256:51aedc834ddd564fc0c8f6bccb17a314f33bac0e07da76d42405cf31b7389db6 done
+#27 exporting config sha256:d278f336a50b3b9fd896dafae47894018ba9ff6bbbbd159a8b84a50f790a099b done
+#27 exporting attestation manifest sha256:f60b63b8c366dbd6441fc168c5c3dcf9768e8d31625b9466466e8dbe66a95d98
+#27 exporting attestation manifest sha256:f60b63b8c366dbd6441fc168c5c3dcf9768e8d31625b9466466e8dbe66a95d98 0.1s done
+#27 exporting manifest list sha256:fb37d301142af5e10bcd02cd0d38bcc8281cd1389d944700e74d19ce2bdd6615 0.0s done
+#27 sending tarball
+#27 sending tarball 3.2s done
+#27 DONE 7.9s
+
+#28 resolving provenance for metadata file
+#28 DONE 0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/vjzz1rhosgq5md0xfqh4fiykd
+Loaded image: imperator/postgres:r22-d094-20261006
+2026-10-06T19:37:17+02:00	INFO	[vuln] Vulnerability scanning is enabled
+2026-10-06T19:37:17+02:00	INFO	[secret] Secret scanning is enabled
+2026-10-06T19:37:17+02:00	INFO	[secret] If your scanning is slow, please try '--scanners vuln' to disable secret scanning
+2026-10-06T19:37:17+02:00	INFO	[secret] Please see https://trivy.dev/docs/v0.74/guide/scanner/secret#recommendation for faster secret detection
+2026-10-06T19:37:23+02:00	INFO	Detected OS	family="debian" version="12.15"
+2026-10-06T19:37:23+02:00	INFO	[debian] Detecting vulnerabilities...	os_version="12" pkg_num=147
+2026-10-06T19:37:23+02:00	INFO	Number of language-specific files	num=1
+2026-10-06T19:37:23+02:00	INFO	[gobinary] Detecting vulnerabilities...
+2026-10-06T19:37:23+02:00	WARN	Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.74/guide/scanner/vulnerability#severity-selection for details.
+
+📣 [34mNotices:[0m
+  - Version 0.75.0 of Trivy is now available, current version is 0.74.0
+
+To suppress version checks, run Trivy scans with the --skip-version-check flag
+
+2026-10-06T19:37:24+02:00	INFO	[vuln] Vulnerability scanning is enabled
+2026-10-06T19:37:24+02:00	INFO	[secret] Secret scanning is enabled
+2026-10-06T19:37:24+02:00	INFO	[secret] If your scanning is slow, please try '--scanners vuln' to disable secret scanning
+2026-10-06T19:37:24+02:00	INFO	[secret] Please see https://trivy.dev/docs/v0.74/guide/scanner/secret#recommendation for faster secret detection
+2026-10-06T19:37:24+02:00	INFO	Detected OS	family="debian" version="12.15"
+2026-10-06T19:37:24+02:00	INFO	[debian] Detecting vulnerabilities...	os_version="12" pkg_num=147
+2026-10-06T19:37:24+02:00	INFO	Number of language-specific files	num=1
+2026-10-06T19:37:24+02:00	INFO	[gobinary] Detecting vulnerabilities...
+2026-10-06T19:37:24+02:00	WARN	Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.74/guide/scanner/vulnerability#severity-selection for details.
+
+📣 [34mNotices:[0m
+  - Version 0.75.0 of Trivy is now available, current version is 0.74.0
+
+To suppress version checks, run Trivy scans with the --skip-version-check flag
+
+2026-10-06T19:37:24+02:00	INFO	[vuln] Vulnerability scanning is enabled
+2026-10-06T19:37:31+02:00	INFO	Detected OS	family="debian" version="12.15"
+2026-10-06T19:37:31+02:00	INFO	[debian] Detecting vulnerabilities...	os_version="12" pkg_num=147
+2026-10-06T19:37:31+02:00	INFO	Number of language-specific files	num=1
+2026-10-06T19:37:31+02:00	INFO	[gobinary] Detecting vulnerabilities...
+2026-10-06T19:37:31+02:00	WARN	Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.74/guide/scanner/vulnerability#severity-selection for details.
+
+📣 [34mNotices:[0m
+  - Version 0.75.0 of Trivy is now available, current version is 0.74.0
+
+To suppress version checks, run Trivy scans with the --skip-version-check flag
+
+D094 image verification: PASS
+Image=imperator/postgres:r22-d094-20261006
+ImageIndexDigest=sha256:fb37d301142af5e10bcd02cd0d38bcc8281cd1389d944700e74d19ce2bdd6615
+RuntimeManifestDigest=sha256:51aedc834ddd564fc0c8f6bccb17a314f33bac0e07da76d42405cf31b7389db6
+DirtyWorktree=True
+Evidence=D:\Imperator\build\tfg-a\r21-r22-2026-10-06\d094

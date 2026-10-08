@@ -1,0 +1,45 @@
+{
+  "checkedAtUtc": "2026-10-07T10:19:46.267559+00:00",
+  "R20Accepted": true,
+  "expiry": {
+    "local": "2026-10-09T00:00:00+02:00",
+    "timeZone": "Europe/Madrid",
+    "utc": "2026-10-08T22:00:00Z",
+    "exclusive": true,
+    "automaticRenewal": false,
+    "extensionProposed": false,
+    "earlyInvalidation": [
+      "Vendor fix becomes available",
+      "Image/base digest or runtime/test input changes",
+      "Scanner/vendor data changes until reviewed and re-attested",
+      "New feature, configuration, data or exposure boundary",
+      "Any fixable High/Critical, detected secret or new unreviewed finding"
+    ]
+  },
+  "notExpiredAtCheck": true,
+  "earlyInvalidationNotReAttested": "No new supplier/advisory query or fresh runtime scan; acceptance record/unchanged source verified only.",
+  "R23Status": "OPEN / NO FIX AVAILABLE",
+  "docker": "UNAVAILABLE / DAEMON STOPPED",
+  "dockerCurrentInventory": null,
+  "dockerQueryError": "npipe dockerDesktopLinuxEngine pipe does not exist; approved read-only query returned nonzero",
+  "historicalDockerInventory": {
+    "path": "docs/tfg/evidence/2026-10-06-a-s2-acceptance/docker-inventory.json",
+    "sha256": "29004c2926675239e4a3b2de70ac978b57f52212a279a76d5ef66a5e85fea1d0",
+    "bytes": 56904
+  },
+  "imageBindings": {
+    "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/image-binding.json",
+    "sha256": "2cc40c8ea1da2d71d37e43dbaf0029afff953c80eb13d8b3d74644ac1a9b0fbe",
+    "bytes": 12690
+  },
+  "acceptedReleaseCommit": null,
+  "hostedCI": "PENDING / NO AUTHENTICATED RUN ASSOCIATION",
+  "liveDefenseReadiness": "PENDING SHA/CI/Docker/current acceptance preflight",
+  "finalDefenseExecuted": false,
+  "narratedRecordingCreated": false,
+  "servicesStarted": false,
+  "imagesBuiltPulledRetaggedDeleted": false,
+  "volumesChanged": false,
+  "remotePublication": false,
+  "gateFormal": "GO / LOCAL-SYNTHETIC / TEMPORARY"
+}

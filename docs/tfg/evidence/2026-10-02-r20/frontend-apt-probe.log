@@ -1,0 +1,184 @@
+Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [34.8 kB]
+Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8790 kB]
+Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [6924 B]
+Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [345 kB]
+Fetched 9383 kB in 1s (6553 kB/s)
+Reading package lists...
+
+CANDIDATE_POLICY
+bsdutils:
+  Installed: 1:2.38.1-5+deb12u3
+  Candidate: 1:2.38.1-5+deb12u3
+  Version table:
+ *** 1:2.38.1-5+deb12u3 500
+        500 http://deb.debian.org/debian bookworm/main amd64 Packages
+        100 /var/lib/dpkg/status
+     1:2.38.1-5+deb12u1 500
+        500 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages
+gzip:
+  Installed: 1.12-1
+  Candidate: 1.12-1
+  Version table:
+ *** 1.12-1 500
+        500 http://deb.debian.org/debian bookworm/main amd64 Packages
+        100 /var/lib/dpkg/status
+libacl1:
+  Installed: 2.3.1-3
+  Candidate: 2.3.1-3
+  Version table:
+ *** 2.3.1-3 500
+        500 http://deb.debian.org/debian bookworm/main amd64 Packages
+        100 /var/lib/dpkg/status
+libblkid1:
+  Installed: 2.38.1-5+deb12u3
+  Candidate: 2.38.1-5+deb12u3
+  Version table:
+ *** 2.38.1-5+deb12u3 500
+        500 http://deb.debian.org/debian bookworm/main amd64 Packages
+        100 /var/lib/dpkg/status
+     2.38.1-5+deb12u1 500
+        500 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages
+libmount1:
+  Installed: 2.38.1-5+deb12u3
+  Candidate: 2.38.1-5+deb12u3
+  Version table:
+ *** 2.38.1-5+deb12u3 500
+        500 http://deb.debian.org/debian bookworm/main amd64 Packages
+        100 /var/lib/dpkg/status
+     2.38.1-5+deb12u1 500
+        500 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages
+libpcre2-8-0:
+  Installed: 10.42-1+deb12u1
+  Candidate: 10.42-1+deb12u1
+  Version table:
+ *** 10.42-1+deb12u1 500
+        500 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages
+        100 /var/lib/dpkg/status
+     10.42-1 500
+        500 http://deb.debian.org/debian bookworm/main amd64 Packages
+libsmartcols1:
+  Installed: 2.38.1-5+deb12u3
+  Candidate: 2.38.1-5+deb12u3
+  Version table:
+ *** 2.38.1-5+deb12u3 500
+        500 http://deb.debian.org/debian bookworm/main amd64 Packages
+        100 /var/lib/dpkg/status
+     2.38.1-5+deb12u1 500
+        500 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages
+libsystemd0:
+  Installed: 252.39-1~deb12u2
+  Candidate: 252.39-1~deb12u2
+  Version table:
+ *** 252.39-1~deb12u2 500
+        500 http://deb.debian.org/debian bookworm/main amd64 Packages
+        100 /var/lib/dpkg/status
+     252.38-1~deb12u1 500
+        500 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages
+libtinfo6:
+  Installed: 6.4-4
+  Candidate: 6.4-4
+  Version table:
+ *** 6.4-4 500
+        500 http://deb.debian.org/debian bookworm/main amd64 Packages
+        100 /var/lib/dpkg/status
+libudev1:
+  Installed: 252.39-1~deb12u2
+  Candidate: 252.39-1~deb12u2
+  Version table:
+ *** 252.39-1~deb12u2 500
+        500 http://deb.debian.org/debian bookworm/main amd64 Packages
+        100 /var/lib/dpkg/status
+     252.38-1~deb12u1 500
+        500 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages
+libuuid1:
+  Installed: 2.38.1-5+deb12u3
+  Candidate: 2.38.1-5+deb12u3
+  Version table:
+ *** 2.38.1-5+deb12u3 500
+        500 http://deb.debian.org/debian bookworm/main amd64 Packages
+        100 /var/lib/dpkg/status
+     2.38.1-5+deb12u1 500
+        500 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages
+mount:
+  Installed: 2.38.1-5+deb12u3
+  Candidate: 2.38.1-5+deb12u3
+  Version table:
+ *** 2.38.1-5+deb12u3 500
+        500 http://deb.debian.org/debian bookworm/main amd64 Packages
+        100 /var/lib/dpkg/status
+     2.38.1-5+deb12u1 500
+        500 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages
+ncurses-base:
+  Installed: 6.4-4
+  Candidate: 6.4-4
+  Version table:
+ *** 6.4-4 500
+        500 http://deb.debian.org/debian bookworm/main amd64 Packages
+        100 /var/lib/dpkg/status
+ncurses-bin:
+  Installed: 6.4-4
+  Candidate: 6.4-4
+  Version table:
+ *** 6.4-4 500
+        500 http://deb.debian.org/debian bookworm/main amd64 Packages
+        100 /var/lib/dpkg/status
+perl-base:
+  Installed: 5.36.0-7+deb12u3
+  Candidate: 5.36.0-7+deb12u3
+  Version table:
+ *** 5.36.0-7+deb12u3 500
+        500 http://deb.debian.org/debian bookworm/main amd64 Packages
+        100 /var/lib/dpkg/status
+     5.36.0-7+deb12u2 500
+        500 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages
+util-linux:
+  Installed: 2.38.1-5+deb12u3
+  Candidate: 2.38.1-5+deb12u3
+  Version table:
+ *** 2.38.1-5+deb12u3 500
+        500 http://deb.debian.org/debian bookworm/main amd64 Packages
+        100 /var/lib/dpkg/status
+     2.38.1-5+deb12u1 500
+        500 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages
+util-linux-extra:
+  Installed: 2.38.1-5+deb12u3
+  Candidate: 2.38.1-5+deb12u3
+  Version table:
+ *** 2.38.1-5+deb12u3 500
+        500 http://deb.debian.org/debian bookworm/main amd64 Packages
+        100 /var/lib/dpkg/status
+     2.38.1-5+deb12u1 500
+        500 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages
+zlib1g:
+  Installed: 1:1.2.13.dfsg-1
+  Candidate: 1:1.2.13.dfsg-1
+  Version table:
+ *** 1:1.2.13.dfsg-1 500
+        500 http://deb.debian.org/debian bookworm/main amd64 Packages
+        100 /var/lib/dpkg/status
+
+SIMULATE_TARGETED_SECURITY_UPDATE
+Reading package lists...
+Building dependency tree...
+Reading state information...
+bsdutils is already the newest version (1:2.38.1-5+deb12u3).
+gzip is already the newest version (1.12-1).
+libacl1 is already the newest version (2.3.1-3).
+libblkid1 is already the newest version (2.38.1-5+deb12u3).
+libmount1 is already the newest version (2.38.1-5+deb12u3).
+libpcre2-8-0 is already the newest version (10.42-1+deb12u1).
+libsmartcols1 is already the newest version (2.38.1-5+deb12u3).
+libsystemd0 is already the newest version (252.39-1~deb12u2).
+libtinfo6 is already the newest version (6.4-4).
+libudev1 is already the newest version (252.39-1~deb12u2).
+libuuid1 is already the newest version (2.38.1-5+deb12u3).
+mount is already the newest version (2.38.1-5+deb12u3).
+ncurses-base is already the newest version (6.4-4).
+ncurses-bin is already the newest version (6.4-4).
+perl-base is already the newest version (5.36.0-7+deb12u3).
+util-linux is already the newest version (2.38.1-5+deb12u3).
+util-linux-extra is already the newest version (2.38.1-5+deb12u3).
+zlib1g is already the newest version (1:1.2.13.dfsg-1).
+0 upgraded, 0 newly installed, 0 to remove and 2 not upgraded.

@@ -1,0 +1,51 @@
+{
+  "historicalApprovalPath": "docs/tfg/evidence/2026-10-02-r20-acceptance/acceptance.json",
+  "historicalApprovalSha256": "f05a78809830df4aacd431527997df0acf5d9bc3cd558705d9104149e64a5cb7",
+  "historicalAccepted": true,
+  "currentVersionAccepted": false,
+  "currentBindingStatus": "REVIEW REQUIRED / NOT ACCEPTED",
+  "automaticTransfer": false,
+  "automaticRenewal": false,
+  "expiry": {
+    "local": "2026-10-09T00:00:00+02:00",
+    "timeZone": "Europe/Madrid",
+    "utc": "2026-10-08T22:00:00Z",
+    "exclusive": true,
+    "effectiveOnlyAfterExplicitApproval": true,
+    "renewal": "No automatic extension; fresh review and explicit approval required",
+    "earlyInvalidation": [
+      "Vendor fix becomes available",
+      "Image/base digest or runtime/test input changes",
+      "Scanner/vendor data changes until reviewed and re-attested",
+      "New feature, configuration, data or exposure boundary",
+      "Any fixable High/Critical, detected secret or new unreviewed finding"
+    ]
+  },
+  "currentImages": {
+    "backend": {
+      "fixableHighCritical": 0,
+      "allHigh": 0,
+      "allCritical": 0,
+      "allRows": 0,
+      "secretsAllSeverities": 0,
+      "imageId": "sha256:681e6e7b77b73170c959ed04697302f6a21d8db98edb3a2b0f3354a44387096d"
+    },
+    "frontend": {
+      "fixableHighCritical": 0,
+      "allHigh": 48,
+      "allCritical": 1,
+      "allRows": 49,
+      "secretsAllSeverities": 0,
+      "imageId": "sha256:5cd649ff9a460b2abdc8315da2e7568c5a2c2138d99815db89c5c583f88c18b1"
+    },
+    "postgres": {
+      "fixableHighCritical": 0,
+      "allHigh": 63,
+      "allCritical": 3,
+      "allRows": 66,
+      "secretsAllSeverities": 0,
+      "imageId": "sha256:2b73847d07d6cb7da2ace20426de036fa0278feca0bb6520aca62588e9b3f101"
+    }
+  },
+  "requiredIndependentDisposition": "Re-review exact current image/input/DB hashes and residual matrix, then explicit owner re-attestation. Braces tooling risk remains outside R20 OS approval. No approval is requested or inferred by this record."
+}

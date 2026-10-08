@@ -1,0 +1,179 @@
+# R-19 Remediation And A-S2 Review — 2026-10-06
+
+## Current Owner Decision And Sprint — 2026-10-06
+
+**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](A_S3_EVIDENCE_VERSIONING.md).
+
+The earlier checkpoint below is preserved review context; its pending-approval status is superseded by the current owner decisions.
+
+## Current Checkpoint After R-21/R-22 — 2026-10-06
+
+**A-S2 technical GO; formal security closure PENDING RESIDUAL DISPOSITION.** Authorized corrected R-21/R-22 findings CLOSED; full residuals retained; current R-20 binding accepted=false/REVIEW REQUIRED, historical approval/expiry immutable; separate braces R-23 OPEN/NOT ACCEPTED. A-S3/A-S4/TFG-B/AWS stay blocked. See [current review](R21_R22_SECURITY_REVIEW.md) and [gate](TFG_A_SECURITY_CLOSURE_GATE.md).
+
+## Preserved Earlier Checkpoint
+
+The earlier recommendation/checkpoint below records its original observation and authority. Its prior NO-GO/proposal-only wording is historical; it cannot override the later technical result or accept the current residual. Original artifact packs/approval bytes are unchanged.
+
+**R-19 CLOSED for its original brace-expansion finding. A-S2 Security Closure
+Gate NO-GO. TFG-A IN PROGRESS.** Functional validation passes; the current local
+version is not certified as security-complete. The [evidence pack](evidence/2026-10-06-r19/README.md)
+and [machine index](evidence/TFG_A_R19_2026-10-06.json) bind commands and hashes.
+
+## Authorized Change
+
+The owner explicitly instructed continuation of A-S1 R-19 and A-S2 in this
+conversation on 2026-10-06. This independently authorizes the isolated R-19
+patch. It does not authorize Dependabot group merges, unrelated dependency
+changes, additional risk acceptance, AWS or production.
+
+| Lock entry                                                                       | Before | After  | Relationship           |
+| -------------------------------------------------------------------------------- | ------ | ------ | ---------------------- |
+| `node_modules/brace-expansion`                                                   | 1.1.18 | 1.1.21 | Development transitive |
+| `node_modules/@typescript-eslint/typescript-estree/node_modules/brace-expansion` | 5.0.9  | 5.0.12 | Development transitive |
+
+Only version, official registry tarball and SHA512 integrity change in those
+two entries. `package.json` and every other dependency record are unchanged
+from the starting local worktree. The registry metadata was independently
+queried and `npm ci` installed the patched lockfile. The patch covers
+[CVE-2026-102276](https://github.com/advisories/GHSA-6j4f-fj2g-mc7p),
+[CVE-2026-102278](https://github.com/advisories/GHSA-qhr7-859c-m2p7) and the
+moderate [GHSA-q2hr-2g5m-vwhr](https://github.com/advisories/GHSA-q2hr-2g5m-vwhr).
+
+The first writer emitted CRLF and failed formatting. LF normalization changed
+no JSON semantics; the complete frontend and Docker regression was repeated
+on the final LF lockfile. Initial logs remain separate in ignored local build
+output. No initial failing check is relabelled PASS.
+
+## Final Local Regression
+
+| Control                               | Result                                                                                        |
+| ------------------------------------- | --------------------------------------------------------------------------------------------- |
+| Backend unit tests                    | 174 PASS, zero errors/failures/skips                                                          |
+| PostgreSQL integration                | 35 PASS, zero errors/failures/skips; isolated native PostgreSQL 18.6                          |
+| Frontend unit/coverage                | 41 PASS                                                                                       |
+| Format, lint, types, production build | PASS on final lockfile                                                                        |
+| Chrome fixture Playwright             | 9 PASS; 6 intentional skips                                                                   |
+| Real Docker/API/UI rehearsal          | PASS; no API interception; 401/403/409 and actor binding verified                             |
+| Flyway V1–V3 / application privileges | PASS; SELECT/INSERT allowed, UPDATE/DELETE denied on Ledger and three explanation tables      |
+| Container replacement persistence     | PASS; 30 Evidence, three Ledger entries, realized EUR 18,960, variance EUR -480               |
+| Readiness/recovery                    | PASS: DB down live 200 / ready 503; recovered ready 200                                       |
+| Exact image binding                   | PASS; index→amd64 manifest→configuration→RootFS, actual containers and scans verified         |
+| Source/history/image detected secrets | Zero; Gitleaks and Trivy policies unchanged                                                   |
+| Full npm audit                        | FAIL: 8 High affected-package aggregates from 3 underlying advisories; brace-expansion absent |
+| Source Trivy, development included    | FAIL: 1 fixable High; 2 High when unfixed included                                            |
+| Canonical image security              | FAIL: frontend 8 fixable High/Critical; PostgreSQL 29; backend 0                              |
+| Scoped teardown                       | PASS; normal volumes and user output preserved                                                |
+
+The npm baseline and patched audit each total eight High package aggregates.
+Their package/advisory identities differ; a count alone cannot measure the
+patch effect. The baseline lists brace-expansion; the patched report does not.
+Current audits include propagated parent-package effects, not eight distinct
+CVEs. Trivy's CVE/source coverage differs from the live npm advisory service;
+Trivy's source scan does not yet report the sharp advisory. Neither scanner's
+absence overrides the other scanner's positive finding.
+
+The final capture contains five readable screenshots and a silent, captioned
+28.20-second WebM. It is a technical fallback, not the full narrated oral defense.
+ADMIN approval used the real UI; implementation and finance validation used
+authenticated API commands followed by unmocked UI reads. An ephemeral local
+HTTPS/JWKS fixture is not external Keycloak/D095/D101 certification.
+
+## R-21: Current npm And Source Findings
+
+| Package         | Installed | Fixed          | Advisory                                                            | Boundary                                                                                                                                 |
+| --------------- | --------- | -------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `source-map-js` | 1.2.1     | 1.2.2          | [CVE-2026-93749](https://github.com/advisories/GHSA-68fv-2mgg-jv7q) | Build/transitive source-map processing; no untrusted source-map route found in application code                                          |
+| `sharp`         | 0.35.4    | 0.35.5         | [CVE-2026-96889](https://github.com/advisories/GHSA-wq5f-xc86-pv6w) | Next production transitive; existing exact override pins it; no next/image imports or SVG upload route found in inspected product source |
+| `braces`        | 3.0.3     | None published | [CVE-2026-93687](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm) | Development glob/ESLint chain; npm also flags micromatch, fast-glob, @next/eslint-plugin-next and eslint-config-next                     |
+
+These exposure observations are bounded source inferences, not proof of
+unexploitability or grounds to waive a fixable finding. The sharp maintainer
+describes a librsvg memory vulnerability and recommends 0.35.5. Its advisory
+was published to GitHub's reviewed database on 2026-10-06. The source-map
+advisory was updated 2026-10-05. No blanket stack upgrade is justified.
+
+The isolated [R-21 proposal](evidence/2026-10-06-r19/r21-proposal.json) changes
+only the sharp override to 0.35.5 and source-map-js to 1.2.2, plus sharp's
+required optional native packages: **28 lock entries**, no direct dependency
+updates and no unexpected unrelated changes. Candidate npm audit reduces to
+**5 High affected-package aggregates**, all the one unfixed braces chain;
+candidate Trivy has **zero fixable** High/Critical and one unfixed High.
+Candidate package files are retained locally in ignored build output and bound
+by proposal hashes. The proposal is **not applied or accepted**. Its install,
+quality, runtime and final canonical-image regression remain required after
+independent authorization.
+
+Do not run `npm audit fix --force`: its suggested eslint-config-next 14.2.35
+would cross major versions to avoid the dependency chain. Braces has no
+published patched version; its tooling-only residual needs its own reviewed
+decision or an upstream fix. R-20's OS approval does not cover it.
+
+## R-22: Provider Fixes Now Available
+
+The same fresh vulnerability database is frozen across canonical and candidate
+scans: updated 2026-10-06 13:07 UTC. The separate Java index is updated
+2026-10-06 01:08 UTC. Tool version and container digest remain Trivy 0.74.0;
+there are no scanner upgrades, VEX waivers or policy changes.
+
+| Image      | All High | All Critical | Fixable High/Critical | Packages needing security patches                             |
+| ---------- | -------: | -----------: | --------------------: | ------------------------------------------------------------- |
+| Backend    |        0 |            0 |                     0 | None                                                          |
+| Frontend   |       53 |            4 |                     8 | libpcre2-8-0, perl-base                                       |
+| PostgreSQL |       80 |           15 |                    29 | libpcre2-8-0, perl-base, perl, libperl5.36, perl-modules-5.36 |
+
+PCRE2 has a Bookworm security fix at **10.42-1+deb12u2** for
+[CVE-2026-103111](https://security-tracker.debian.org/tracker/CVE-2026-103111).
+Perl's Bookworm fix is **5.36.0-7+deb12u4**, including
+[CVE-2026-13221](https://security-tracker.debian.org/tracker/CVE-2026-13221) and
+six other CVEs enumerated in the proposal. Five exact Debian package downloads
+were verified against checksums from authenticated APT package indexes.
+
+A concrete [security-only diff](evidence/2026-10-06-r19/r22-security-only.patch)
+and [package/lock proposal](evidence/2026-10-06-r19/r22-packages.json) cover only
+two Dockerfiles, the PostgreSQL supply-chain lock and its verifier. Same Bookworm suite,
+same Java/Spring/Node/PostgreSQL major versions and same base digests.
+The D094 lock/verification coverage must be extended coherently before a
+canonical release; no frozen contract has been edited by this preparation.
+
+Review-only derivatives of the exact canonical images prove **zero fixable
+High/Critical and zero detected secrets** after these OS patches. Full scans
+still return FAIL: frontend **49** residual rows and PostgreSQL **66**.
+These derivatives are feasibility evidence, not deployed or accepted release
+images; canonical Dockerfile rebuild and regression remain required.
+
+## R-20 Binding And PR Discrepancies
+
+The original [acceptance](evidence/2026-10-02-r20-acceptance/acceptance.json)
+is preserved unchanged. Its early invalidation conditions include vendor fixes,
+changed image/input/database hashes and any fixable High/Critical. All now
+apply. **Historical approval is not current-version acceptance. Current
+binding: REVIEW REQUIRED / accepted=false.** No new risk was accepted by Codex.
+The exclusive expiry remains **2026-10-09T00:00:00+02:00 Europe/Madrid**
+(**2026-10-08T22:00:00Z**) without automatic renewal or extension.
+
+All 152 current image package/CVE/installed-version rows are a subset of the
+153 original rows; the PostgreSQL libxml2/CVE-2026-86139 row is no longer
+reported. This is a scanner-data change, not an application remediation claim.
+37 rows now have vendor fixes. The original 32-CVE acceptance cannot waive
+those fixable findings, nor accept the independent new npm findings.
+
+The supplied PR screenshots are remote snapshots, not live hosted-check
+verification. #57 targets Jackson 3.1.6 while local R-17 already has 3.1.7;
+#58 targets Next 16.3.5 while local R-17 already has 16.3.6. #58's six-package
+group and #57's twelve-package group exceed R-19's two-entry patch. #59 changes
+Temurin base digests, unnecessary for the measured current backend (zero).
+Its displayed three failed security checks are unresolved; without logs their
+causes cannot be assigned. “Able to merge” establishes conflict status only.
+No PR was merged, reviewed externally or edited in this task.
+
+## Next Work Order
+
+1. Independently authorize and apply only the reviewed R-21 fixable npm patches
+   and R-22 OS security patch/lock changes; retain Java/Spring/base digests.
+2. Repeat affected regression and both scan policies on exact rebuilt images.
+3. Review the remaining braces tooling advisory separately and re-attest the
+   remaining R-20 OS residual with explicit owner approval, within the existing
+   expiry; no accepted=true is inferred from successful tests.
+4. Re-run A-S2. Only PASS can lead to accepted local SHA/review and TFG-A closure.
+5. Then authorize TFG-B AWS readiness independently. D101 remains mandatory
+   before external/pilot exposure; AWS deployment remains a later authorization.

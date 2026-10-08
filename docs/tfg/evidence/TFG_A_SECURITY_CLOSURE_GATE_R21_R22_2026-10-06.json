@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "recordedAtUtc": "2026-10-06T17:51:50.964240+00:00",
+  "technicalCriterion": "GO",
+  "formalSecurityClosure": "PENDING RESIDUAL DISPOSITION",
+  "TFG_A_COMPLETE": false,
+  "implementationRevision": "b602bbe1dde92a902c17272d59cd9f0c10b9efe5",
+  "worktreeDirty": true,
+  "acceptedCommit": null,
+  "runtimeContentFingerprint": "cbc6535ee56bfa991fb96551a90cda7dc35afd2204056f561900614ab0a5d0b7",
+  "criteria": {
+    "backendFixableHighCritical": 0,
+    "frontendFixableHighCritical": 0,
+    "postgresFixableHighCritical": 0,
+    "secretsAllSeverities": 0
+  },
+  "regression": "PASS with six intentional browser skips; detailed limits in indexed verification",
+  "currentR20Accepted": false,
+  "R23Accepted": false,
+  "residualImageRows": 115,
+  "residualImageDistinctCves": 23,
+  "fullNpmAuditHighPackageAggregates": 5,
+  "fullNpmDistinctAdvisories": 1,
+  "productionNpmAuditFindings": 0,
+  "A_S3": "BLOCKED / NOT AUTHORIZED",
+  "A_S4": "BLOCKED / NOT AUTHORIZED",
+  "awsAuthorized": false,
+  "evidenceIndex": {
+    "path": "docs/tfg/evidence/TFG_A_R21_R22_2026-10-06.json",
+    "sha256": "af9eb22bab5319b619c8d3fb2199eb725a6007ef285f1c40cb5faaa3339c333e",
+    "bytes": 46277
+  },
+  "imageBinding": {
+    "path": "docs/tfg/evidence/2026-10-06-r21-r22/docker/image-binding.json",
+    "sha256": "2cc40c8ea1da2d71d37e43dbaf0029afff953c80eb13d8b3d74644ac1a9b0fbe",
+    "bytes": 12690
+  },
+  "currentRiskBinding": {
+    "path": "docs/tfg/evidence/2026-10-06-r21-r22/r20-current-binding.json",
+    "sha256": "0779ad67aaffe6a59cdbaa0875b6b0d56a5d5fef2f065e1fff16f24a1d7f5856",
+    "bytes": 2009
+  },
+  "historicalApproval": {
+    "path": "docs/tfg/evidence/2026-10-02-r20-acceptance/acceptance.json",
+    "sha256": "f05a78809830df4aacd431527997df0acf5d9bc3cd558705d9104149e64a5cb7",
+    "bytes": 8692
+  }
+}

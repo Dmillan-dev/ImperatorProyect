@@ -1,0 +1,112 @@
+{
+  "postgres": {
+    "containerId": "4682a81bec326c4fc71f2fd29fcb6050cebf74cfd0e122f918504fd794c27591",
+    "name": "/imperator-r21-r22-20261006-postgres-1",
+    "project": "imperator-r21-r22-20261006",
+    "image": "sha256:2b73847d07d6cb7da2ace20426de036fa0278feca0bb6520aca62588e9b3f101",
+    "mounts": [
+      {
+        "Type": "bind",
+        "Source": "D:/Imperator/build/tfg-a/r21-r22-2026-10-06/docker/private/postgres-owner-password",
+        "Destination": "/run/secrets/postgres-owner-password",
+        "Mode": "",
+        "RW": false,
+        "Propagation": "rprivate"
+      },
+      {
+        "Type": "volume",
+        "Name": "imperator-r21-r22-20261006_postgres-data",
+        "Source": "/var/lib/docker/volumes/imperator-r21-r22-20261006_postgres-data/_data",
+        "Destination": "/var/lib/postgresql",
+        "Driver": "local",
+        "Mode": "rw",
+        "RW": true,
+        "Propagation": ""
+      }
+    ],
+    "portBindings": {}
+  },
+  "postgres-permissions": {
+    "containerId": "dfc152ae0fea658292e929f9b7342a3cb8ae74f1ec5bca45f67da6a7ae032090",
+    "name": "/imperator-r21-r22-20261006-postgres-permissions-1",
+    "project": "imperator-r21-r22-20261006",
+    "image": "sha256:2b73847d07d6cb7da2ace20426de036fa0278feca0bb6520aca62588e9b3f101",
+    "mounts": [
+      {
+        "Type": "bind",
+        "Source": "D:\\Imperator\\infra\\docker\\postgresql\\provision-app-role.sh",
+        "Destination": "/opt/imperator/provision-app-role.sh",
+        "Mode": "ro",
+        "RW": false,
+        "Propagation": "rprivate"
+      },
+      {
+        "Type": "bind",
+        "Source": "D:/Imperator/build/tfg-a/r21-r22-2026-10-06/docker/private/postgres-app-password",
+        "Destination": "/run/secrets/postgres-app-password",
+        "Mode": "",
+        "RW": false,
+        "Propagation": "rprivate"
+      },
+      {
+        "Type": "bind",
+        "Source": "D:/Imperator/build/tfg-a/r21-r22-2026-10-06/docker/private/postgres-owner-password",
+        "Destination": "/run/secrets/postgres-owner-password",
+        "Mode": "",
+        "RW": false,
+        "Propagation": "rprivate"
+      },
+      {
+        "Type": "volume",
+        "Name": "e5461b087471e6a1542c691b9db370f9226cc8e12b00aef90ccb9d218f2ccf19",
+        "Source": "/var/lib/docker/volumes/e5461b087471e6a1542c691b9db370f9226cc8e12b00aef90ccb9d218f2ccf19/_data",
+        "Destination": "/var/lib/postgresql",
+        "Driver": "local",
+        "Mode": "",
+        "RW": true,
+        "Propagation": ""
+      }
+    ],
+    "portBindings": {}
+  },
+  "frontend": {
+    "containerId": "9db4976ad94d82e9dd6e68e6222fea3cac11be1134934bafa2cd0fd2b0942f39",
+    "name": "/imperator-r21-r22-20261006-frontend-1",
+    "project": "imperator-r21-r22-20261006",
+    "image": "sha256:5cd649ff9a460b2abdc8315da2e7568c5a2c2138d99815db89c5c583f88c18b1",
+    "mounts": [],
+    "portBindings": {
+      "3000/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "3008"
+        }
+      ]
+    }
+  },
+  "backend": {
+    "containerId": "e86fd5ef2bd92507412ed389b521dc694ca9ae5a6fd03b872270199207c2ea75",
+    "name": "/imperator-r21-r22-20261006-backend-1",
+    "project": "imperator-r21-r22-20261006",
+    "image": "sha256:681e6e7b77b73170c959ed04697302f6a21d8db98edb3a2b0f3354a44387096d",
+    "mounts": [
+      {
+        "Type": "bind",
+        "Source": "D:/Imperator/build/tfg-a/r21-r22-2026-10-06/docker/private/truststore.p12",
+        "Destination": "/opt/imperator/tfg-truststore.p12",
+        "Mode": "ro",
+        "RW": false,
+        "Propagation": "rprivate"
+      },
+      {
+        "Type": "bind",
+        "Source": "D:/Imperator/build/tfg-a/r21-r22-2026-10-06/docker/private/postgres-app-password",
+        "Destination": "/run/secrets/postgres-app-password",
+        "Mode": "",
+        "RW": false,
+        "Propagation": "rprivate"
+      }
+    ],
+    "portBindings": {}
+  }
+}

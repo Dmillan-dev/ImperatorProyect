@@ -1,0 +1,130 @@
+# R-17 Security Remediation Review
+
+Latest current-version assessment: see [R-19/A-S2 review](R19_SECURITY_REVIEW.md).
+The original R-17 five findings remain CLOSED as a dated remediation. R-19 is
+now independently CLOSED; fresh R-21/R-22 findings and R-20 changed binding keep
+TFG-A IN PROGRESS. The October 2 review below is historical, not today's gate.
+
+Review date: **2026-10-02**. Baseline:
+`b602bbe1dde92a902c17272d59cd9f0c10b9efe5` plus the authorized local maintenance
+worktree. Status at this historical R-17 review, before R-20 approval:
+**ORIGINAL FIVE-FINDING R-17 CLOSED; R-19 DEVELOPMENT AUDIT AND R-20 STRICT IMAGE SCAN OPEN**.
+
+Subsequent [explicit R-20 B acceptance](evidence/2026-10-02-r20-acceptance/acceptance.json)
+records ACCEPTED TEMPORARILY for the bound synthetic/local scope. R-19 remains
+OPEN and unauthorized; TFG-A and its Security Closure Gate are not complete.
+The original pre-approval review bytes are archived with the acceptance evidence.
+
+The founder authorized analysis of the five current image findings, only the
+necessary patches, full local regression/security verification and closure if
+the evidence passes. This opens no TFG-B work, cloud execution or product
+feature. Earlier [scan results](evidence/2026-10-01-local/image-scans.json)
+remain historical; they are not overwritten by this increment.
+
+## Finding Assessment And Minimal Patch
+
+Five package findings represent four distinct vulnerabilities. OpenSSL is
+reported in two installed OS packages. Reachability statements below are
+bounded source/runtime assessments, not proof against every indirect path.
+
+| Package / relationship                                                                                               | CVE / GHSA                           | Before → fixed                        | IMPERATOR impact and observed reachability                                                                                                                                 | Code change required                                                                        |
+| -------------------------------------------------------------------------------------------------------------------- | ------------------------------------ | ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `libssl3`, transitive OS package inherited from pinned Temurin Jammy runtime                                         | CVE-2026-84782                       | 3.0.2-0ubuntu1.29 → 3.0.2-0ubuntu1.30 | Affected DTLS retransmission can disclose memory or crash; no DTLS endpoint, native DTLS invocation or OpenSSL integration found in the Java application                   | No application change; install the checksum-pinned corrected OS package                     |
+| `openssl`, CLI inherited from the same runtime                                                                       | CVE-2026-84782                       | 3.0.2-0ubuntu1.29 → 3.0.2-0ubuntu1.30 | Same vulnerability, second package finding; entrypoint executes Java, not OpenSSL; JDBC/JWKS/provider HTTPS uses Java networking                                           | No application change; install the companion corrected CLI package                          |
+| `tools.jackson.core:jackson-databind`, transitive through Spring Boot WebMVC/Jackson starters; existing BOM override | CVE-2026-91776 / GHSA-wv8q-qhhj-9h54 | 3.1.6 → 3.1.7                         | Unbounded cache of unknown name-based polymorphic type IDs with a fallback/default implementation; no JsonTypeInfo/default-typing configuration found in production source | No DTO or mapper change; existing Jackson BOM patch also aligns required jackson-core 3.1.7 |
+| Same Databind jar and dependency path                                                                                | CVE-2026-91777 / GHSA-cxp5-3px4-pw24 | 3.1.6 → 3.1.7                         | Quadratic completion of unresolved object-ID references; no JsonIdentityInfo identity-enabled collection/map found in production source                                    | Same patch; not a second dependency upgrade                                                 |
+| `next`, direct npm runtime dependency                                                                                | GHSA-vcvr-r3jv-pc5j / CVE-2026-94545 | 16.3.5 → 16.3.6                       | Node ImageResponse with attacker-controlled SVG can enable code execution; no next/og, ImageResponse or dynamic Open Graph generation found in app/features/services       | No UI/API change; only Next and its exact-version @next/env/SWC dependencies change         |
+
+Primary evidence for the vulnerable conditions and corrected versions:
+[Ubuntu](https://ubuntu.com/security/CVE-2026-84782),
+[FasterXML cache advisory](https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-wv8q-qhhj-9h54),
+[FasterXML identity advisory](https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-cxp5-3px4-pw24),
+and [Vercel](https://github.com/vercel/next.js/security/advisories/GHSA-vcvr-r3jv-pc5j).
+The application does deserialize authenticated REST input; absence of the
+specific vulnerable annotations is not a general claim that JSON is trusted.
+
+The image policy requires remediation even when the inspected application
+does not expose the documented trigger. No risk waiver, ignore rule, lowered
+severity threshold or scanner suppression was added.
+
+## Preserved Scope
+
+Java version, JDK/JRE base digests, Spring Boot 4.1.1, Maven, Tomcat, AWS SDK,
+Node, React, PostgreSQL, Flyway, Terraform and workflows remain unchanged.
+`eslint-config-next` stays at 16.3.5; the repeated lint/type/build suite verifies
+that its patch does not need to change for the Next runtime fix. Business
+source, REST contracts, migrations, D087/D088/D095 and the single synthetic
+case remain unchanged.
+
+The existing pinned Java runtime is patched with exactly two Ubuntu amd64
+artifacts, using SHA256 from signature-verified APT metadata. This follows the
+repository's existing checksum-pinned Debian-package remediation pattern.
+It does not perform an unrestricted apt upgrade or replace Java. Image facts
+compare the old/new Java version and complete OS package inventories; only
+libssl3/openssl may differ. The Dockerfile frontend directive uses the same
+digest-pinned Dockerfile parser as the other images.
+
+## Additional Finding During The Required Rerun
+
+The fresh npm audit reports `brace-expansion` in two existing **development-only
+transitive** paths: 1.1.18 and 5.0.9. They were not introduced by the Next patch;
+the lockfile comparison shows that the initial patch changed only Next/env/SWC.
+Advisories concern recursive/quadratic expansion of untrusted glob patterns:
+[nested expansion](https://github.com/juliangruber/brace-expansion/security/advisories/GHSA-qhr7-859c-m2p7),
+[comma parsing](https://github.com/juliangruber/brace-expansion/security/advisories/GHSA-6j4f-fj2g-mc7p),
+[quadratic rewriting](https://github.com/juliangruber/brace-expansion/security/advisories/GHSA-q2hr-2g5m-vwhr).
+Trivy with `--include-dev-deps` confirms four High package/CVE findings:
+CVE-2026-102276 and CVE-2026-102278 in each installed copy. No product route
+accepts glob patterns. These dependencies serve local
+lint/test tooling, not the deployed standalone application. Runtime absence
+must be read from the new image scan, not inferred from the dev flag alone.
+
+A separately prepared proposal changes only those locked copies to **1.1.21
+and 5.0.12**, preserving every direct dependency. Its isolated npm audit is
+zero. Applying it is pending the founder's scope decision because the current
+instruction expressly limits updates to the five original R-17 findings.
+It is not applied silently and does not justify weakening a failing audit.
+
+## Absolute-Zero Discrepancy
+
+The additional image scan **without `--ignore-unfixed`** does not meet the
+requested absolute zero: backend 0, frontend **53 High + 4 Critical** and
+PostgreSQL **81 High + 15 Critical** package/CVE findings. These are inherited
+Debian OS packages with no corrected version indicated by this Trivy database
+snapshot, not new application findings introduced by the five-finding patch.
+See [the complete strict results](evidence/2026-10-02-r17/all-image-severities.json).
+Scanner counts are not proof of application exploitability or proof that no
+upstream solution exists. **R-20 OPEN** requires bounded reachability/upstream
+analysis and a separately reviewed remediation or risk decision; no blanket
+base-image replacement or risk acceptance has been performed. Passing the
+existing fixable-only policy does not satisfy the absolute-zero request.
+
+## Acceptance
+
+Current runs use separate ignored outputs under
+`build/tfg-a/r17-2026-10-02/` and a new owned Docker project
+`imperator-r17-20261002`, loopback port 3008. They repeat backend default/native
+integration, frontend format/lint/types/coverage/build/browser/audit,
+real Docker API/UI governance/RBAC, migration/permissions, recreation,
+readiness recovery, image/source Trivy and source/history Gitleaks.
+
+R-17 and TFG-A closure are recorded only after the relevant gates pass, with
+baseline commit, SHA256 input fingerprint, actual commands, versions, UTC
+execution times, selected sanitized artifacts and hashes. A worktree SHA256
+is never described as a Git commit SHA or new hosted acceptance. AWS and
+external Keycloak remain unexecuted and retain separate gates. A short
+technical fallback is separate from the twelve-minute oral defense rehearsal.
+
+Final R-17 image/runtime checks pass, with a 28.04-second readable fallback.
+The [current verification index](evidence/TFG_A_R17_2026-10-02.json) records
+the exact SHA256 worktree inputs and selected artifacts. R-19 and R-20 prevent full
+security closure pending their bounded decisions. Twenty Gitleaks alerts in
+earlier filename/hash metadata were verified against public source files and
+normalized as explicit path/sha256 records; the final complete scan is zero.
+
+## R-20 Follow-up Review
+
+The [formal R-20 decision review](R20_SECURITY_DECISION.md) now classifies all
+32 CVEs and measures bounded base-image options. It supersedes the preliminary
+recommendation to investigate them, while preserving the original scan results.
+R-19 and R-20 remain OPEN; no acceptance or further dependency change occurred.

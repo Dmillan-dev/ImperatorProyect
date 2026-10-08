@@ -1,0 +1,189 @@
+{
+  "result": "PASS",
+  "executedAtUtc": "2026-10-06T16:06:57.214518+00:00",
+  "noRebuildDuringRegressionOrScans": true,
+  "namespaceNotes": "On this Docker Desktop image store, Docker image .Id, actual container .Image and Trivy ImageID are the same OCI index. Compose image label is the amd64 platform manifest. The configuration digest is a third namespace, recovered from the verified platform manifest. Verify content-addressed descriptor links and all rootfs diffIDs; do not relabel the container OCI index as a config digest.",
+  "images": [
+    {
+      "service": "backend",
+      "result": "PASS",
+      "indexDigest": "sha256:7ea89cd7bd312a54795c2c60f6991cd642ebb11b5831b6e707af3788c2b248ed",
+      "platformManifestDigest": "sha256:3000a041921b8f5d93cafe67c9e26c80e8bcc7115ef5c4302213fa6743cb27cf",
+      "configDigest": "sha256:6c332a68166c6afd89bccfc3219febede47d24f57f2ce8493efa9923cafaec90",
+      "actualContainerImage": "sha256:7ea89cd7bd312a54795c2c60f6991cd642ebb11b5831b6e707af3788c2b248ed",
+      "actualContainerImageNamespace": "OCI index, verified on this Docker Desktop image store",
+      "trivyImageId": "sha256:7ea89cd7bd312a54795c2c60f6991cd642ebb11b5831b6e707af3788c2b248ed",
+      "rootFsDiffIds": [
+        "sha256:ea16cace89338c84eb6bcb91a7efdfcae6838fff359efe951858227436486c34",
+        "sha256:d5878fe0c5eb7212a581d6344bb4e24b6cfc886a7ee85d54203765275a422952",
+        "sha256:40ce23912dbe1d52f377ac170d913284a3c74561447514c63c05cb9379a2a04d",
+        "sha256:d58da301ac9add0a0f31176f925eb1b93e1c2bd147b07555f467cb884fd27e5b",
+        "sha256:8a8eb12d782f1d342a52c3c49dd69e27c2c3f196e0e3fe833a5d2200477be3fa",
+        "sha256:d7f19b798e334ffedafe1eb5a3fa4e68d3e8fb109ddda6b90c8bd7e4ae6dd759",
+        "sha256:463f642a7dc5d79421ff78022f9fb42f351f13d702157d6651bd53d5cd9b85cd",
+        "sha256:50e9ae5943b32bb00f0393e2eddab4f16f23095b5e65f25b6969ebc077f9ae56",
+        "sha256:71ab1d95ca54711048adacd841f39f83078ca20b15122b393b1c09034e4ecbba",
+        "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "sha256:dbd7a4c3a4963d8739e47e78d618df5adc16444234a6e6f0da0cd1d1ca953cea",
+        "sha256:ba77808ae137f06aaf5da7c6f1a1e45a74bec21d6a5add3f2118b1ec688dc98b",
+        "sha256:90d76dfa9b658702285ce61d9cb6f017804106279bd546dbdedd26d809b60688"
+      ],
+      "manifestLayerDigests": [
+        "sha256:20c3783cc497b5b0df1fc5f92bd64c3d2fbb24057c88692c8fda205b6ea8a2f2",
+        "sha256:283c139709fe7bcd89a1cc7c302b901b0d9729aaa0536d1eaa8d46d48c8e9cd6",
+        "sha256:2b841c180a91f75f5d01a2aed904d56f2c6a0808b2346236f853ab6a26841b07",
+        "sha256:63613abe73dc47abe044fc4ab923aeaf0ea86c58ced1fe5e23e632f9176a93ea",
+        "sha256:ce110be0146dbad245d038711c5d2bb77782715c20216ddd46bde4b6ebf07a22",
+        "sha256:2ead14210107eea6e862aac7497c3048eb2bc5d07cab753c2a27fe70f83ffce8",
+        "sha256:bf13556f926bf4b20e7ea7620384ab20789d2625255ea37101593cac33e9d444",
+        "sha256:9be4107633c85c7c230eb7e2d6a3e2fbb33a4aa96dcb480307773a4d7e8d6740",
+        "sha256:963b6328e79a12d453c8272cd046a7e21f985d873463659e1b71073e011241fb",
+        "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+        "sha256:4868b324b8f957ae2a6f10b387f3ab2a40ef7865c457311a6f3f09050195eb2b",
+        "sha256:5b38ca4232eae5cd7d859461fd761994a84a2688cb9f034cd1fe6ff27ddfe556",
+        "sha256:2aec778d97474487f89e29c9d910a0ea69a78bffff4848a86a5e15ef91adea0b"
+      ],
+      "rawManifests": [
+        {
+          "path": "manifests/backend-index.json",
+          "sha256": "7ea89cd7bd312a54795c2c60f6991cd642ebb11b5831b6e707af3788c2b248ed",
+          "bytes": 856
+        },
+        {
+          "path": "manifests/backend-platform-manifest.json",
+          "sha256": "3000a041921b8f5d93cafe67c9e26c80e8bcc7115ef5c4302213fa6743cb27cf",
+          "bytes": 2766
+        },
+        {
+          "path": "manifests/backend-config.json",
+          "sha256": "6c332a68166c6afd89bccfc3219febede47d24f57f2ce8493efa9923cafaec90",
+          "bytes": 9244
+        }
+      ],
+      "archive": "build/tfg-a/r19-final-2026-10-06/docker/backend-final.tar",
+      "archiveSha256": "5ff4a83ecdc00a330cddc0610ab6a748d97489b37617ff7c0f37cee53669bab9"
+    },
+    {
+      "service": "frontend",
+      "result": "PASS",
+      "indexDigest": "sha256:2103d939daee9cc7d0dfe13b1f2e67f3231d4f0b6fc1bd90b26978753dbff461",
+      "platformManifestDigest": "sha256:8a8dac6eaf10eb23d6139dff61584403a2105f42745601c553ebe23fcca4763d",
+      "configDigest": "sha256:8f82aaa4d20bc1daf10e1ec6b11be8971d2e93ac4a6fc915fa4970c3059e418c",
+      "actualContainerImage": "sha256:2103d939daee9cc7d0dfe13b1f2e67f3231d4f0b6fc1bd90b26978753dbff461",
+      "actualContainerImageNamespace": "OCI index, verified on this Docker Desktop image store",
+      "trivyImageId": "sha256:2103d939daee9cc7d0dfe13b1f2e67f3231d4f0b6fc1bd90b26978753dbff461",
+      "rootFsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:1e7371fc32429a7e51d407ce762d5d819c5eebbf44c3652bd0d353ed14a09e31",
+        "sha256:42593510e34eca2ac84ebf9c6a22e16ced5956957367dc8688d9de06db2882a9",
+        "sha256:a009183396c313f4e54f120823c621c6e9a7bbc59225e9ddb36b0815bc1e41f9",
+        "sha256:22e1bcb0042509176dd832fe400ab2be89af37a71954be3f17f81859cf289dcf",
+        "sha256:be8348803f359f04f039da602b11b96166ac56b375a6f9da4a6497a9bfad7753",
+        "sha256:7350234e2f145e2e4175c6512f004cf8571b4f35a4372c01d28c1476b7d983ba",
+        "sha256:2e1e325e06fa14ee838768483a089d18aa56b147c54c897b15a85be0add12716",
+        "sha256:499704072b15aea083e8e14642f320aa46dd7ada8955714b47676db021b70ba7",
+        "sha256:5d34ba6a8456022ef47cd7533bf33503860531ce5a6522708b85a93197e548a3"
+      ],
+      "manifestLayerDigests": [
+        "sha256:a8ac7f6c67abc236e4c745052c404112b8fab6fe8ac3a329d1ef3b867ad67c71",
+        "sha256:013634040cec61eda7919c9682291bc50456a54539f410ef5233821fb9a8c4d9",
+        "sha256:a82db95c01928dce3a29c0d23bcd2588dafeba6f24ae23115195e3e3d6cc5437",
+        "sha256:9803e0ff8c3d881aa142790ec91f17a1a6fa25189d082c58f4e66cbba4253b66",
+        "sha256:2254049a7d7763ea7d56bf06d9a6d5cb882d88b136a84c18c254ead00ac5c874",
+        "sha256:9891542c62f2fdebd6c6bc9e875a9fc4dae17170ba6411c42d01c9b3b533c4c4",
+        "sha256:8e877c125df63005c7cb6731fcce9777298a5830a3d896ecf9d36a04991ee0e4",
+        "sha256:9eb3eabb2d8ce27839e18ca1eeccf12b56e3bd1229427e422c41f1eb89cef22b",
+        "sha256:cfa6d1db9c691e54f5c9011519e8ac54fe757fcc85386bb7fc0f245c73d999c1",
+        "sha256:5bfed3508d1ae78f3f77005a0401c58fb58c139c2763c9f4459462f2cc1d0201"
+      ],
+      "rawManifests": [
+        {
+          "path": "manifests/frontend-index.json",
+          "sha256": "2103d939daee9cc7d0dfe13b1f2e67f3231d4f0b6fc1bd90b26978753dbff461",
+          "bytes": 856
+        },
+        {
+          "path": "manifests/frontend-platform-manifest.json",
+          "sha256": "8a8dac6eaf10eb23d6139dff61584403a2105f42745601c553ebe23fcca4763d",
+          "bytes": 2198
+        },
+        {
+          "path": "manifests/frontend-config.json",
+          "sha256": "8f82aaa4d20bc1daf10e1ec6b11be8971d2e93ac4a6fc915fa4970c3059e418c",
+          "bytes": 10753
+        }
+      ],
+      "archive": "build/tfg-a/r19-final-2026-10-06/docker/frontend-final.tar",
+      "archiveSha256": "0a9b4930d642b1db4bdc659f1af0890be53d6c7246bcc22df7c41d690d429f4f"
+    },
+    {
+      "service": "postgres",
+      "result": "PASS",
+      "indexDigest": "sha256:7ce6e7f2b9decc4598f3628852bbfe27bb3d59047414398569a9d6e330a12148",
+      "platformManifestDigest": "sha256:54af04164449d25119b99f2f46d1bc6f6c065aeb46ac7fffd904d33d77af1f45",
+      "configDigest": "sha256:e257e11b20da0b7f494f6aac280c3793fe419749ea66b507a9eca837f2b02d19",
+      "actualContainerImage": "sha256:7ce6e7f2b9decc4598f3628852bbfe27bb3d59047414398569a9d6e330a12148",
+      "actualContainerImageNamespace": "OCI index, verified on this Docker Desktop image store",
+      "trivyImageId": "sha256:7ce6e7f2b9decc4598f3628852bbfe27bb3d59047414398569a9d6e330a12148",
+      "rootFsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9",
+        "sha256:f7daaa1079f0e5c9fc156924353fd619309f56a8a979b90c93d4f4a7510385f9",
+        "sha256:7308c83f2cf9d1f836057cfc2b2edcc8fb700bdf6110d759d8eb3e98cca72fb5",
+        "sha256:8489a6ba3ed946b3926009dc45a032a370ebffc1425bdaf85d8dbfb0d1c3fdb7",
+        "sha256:272ba34d44c5c9b60d3ef4e6e63f8df7f72b6c1806ad802f3f6af2fdc81422dc",
+        "sha256:56f9b632643e5acbc81c6b816d7b57dba635104ea6b1aabb1db213f1a261ac48"
+      ],
+      "manifestLayerDigests": [
+        "sha256:a8ac7f6c67abc236e4c745052c404112b8fab6fe8ac3a329d1ef3b867ad67c71",
+        "sha256:a1e3ce97a8279499a0a9bcb2417379aae28fca52dc301365b1f8bfe1c641a1d5",
+        "sha256:37111c57f5aa35dd2ad36433dd125b416383462017b0adfc882869ee68862d50",
+        "sha256:41cb1fe8c0d14ec66b7b7abe5cce60ba181e92683906e3684ff5e8064aece0ba",
+        "sha256:227fb2bf8d7b11a11161e4292644f360b46d1893e8f4c1fc25da79042233c964",
+        "sha256:a39d72951262533e1ab70b13d7bac8cc215c177dc9cc39e688c347895ba04335",
+        "sha256:9696c0868ba1861fe5e5007a146ba8f4eb666353f0a55d0e5c4e8944f8d86eb1",
+        "sha256:4e16465a208f813fca0e07cd0409aa10dc07611de4267578457c107df76a52e1",
+        "sha256:8e38d8544e5392718cf637e26f8a31e2e6a58620b07711b9ad095ac153ea3a4a",
+        "sha256:9d291e6dbf34edf2065ff886c53a20707b060d87315eb40e1fad0ebae29ae515",
+        "sha256:0868f91773479569838111233a5534c60d1363e4d604815d8381d70a3b8353ca",
+        "sha256:80ee9aeea627de0a8e2c682b5f25931a0e6c8d15d82713aab5e8bd9c94c3b141",
+        "sha256:88f5f2b697ce7cf0e8b16f546bb0eda2e886bd8f8c20ca5e8cd5a65c50ede8f4",
+        "sha256:b1030ea79b43ec20fc3db617aca24e36dffbaff6296daccffe0bfc481b8fca04",
+        "sha256:54c6ca058504c864fb50d69585388930c454e8a216d43c4cd2d3c65296de04a3",
+        "sha256:2645b09375c79118a5056c07289f15e59481aa2811d22d57f6cea3450ec43f08",
+        "sha256:34888f0d6194d1a38c6426623e23c653a6d9bd48ec2dc51a6235432b7b4c0f15",
+        "sha256:0ff371a51db101617dbb86c36b70e64cbf0910af0dcfdf1e712f9744f5bf19b6"
+      ],
+      "rawManifests": [
+        {
+          "path": "manifests/postgres-index.json",
+          "sha256": "7ce6e7f2b9decc4598f3628852bbfe27bb3d59047414398569a9d6e330a12148",
+          "bytes": 856
+        },
+        {
+          "path": "manifests/postgres-platform-manifest.json",
+          "sha256": "54af04164449d25119b99f2f46d1bc6f6c065aeb46ac7fffd904d33d77af1f45",
+          "bytes": 3717
+        },
+        {
+          "path": "manifests/postgres-config.json",
+          "sha256": "e257e11b20da0b7f494f6aac280c3793fe419749ea66b507a9eca837f2b02d19",
+          "bytes": 13504
+        }
+      ],
+      "archive": "build/tfg-a/r19-final-2026-10-06/docker/postgres-final.tar",
+      "archiveSha256": "8a12adb77887a90da7c9a330d4c77c8f2390b03e5b9d9601bfa02e21ed703904"
+    }
+  ]
+}

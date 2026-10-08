@@ -1,0 +1,33 @@
+[
+  {
+    "image": "frontend",
+    "imageId": "sha256:ebba0bc1c7dcb9d59444e2715921d723dff981ea7bb63171ae88b3986b910b58",
+    "created": "2026-10-02T10:14:57.766818694Z",
+    "configUser": "1000:1000",
+    "command": [
+      "node",
+      "server.js"
+    ],
+    "entrypoint": [
+      "docker-entrypoint.sh"
+    ],
+    "exitCode": 0,
+    "executedAtUtc": "2026-10-02T11:15:29.973368+00:00",
+    "log": "frontend-runtime-inspection.log"
+  },
+  {
+    "image": "postgres",
+    "imageId": "sha256:0a33fd46bbff0fabf711d621e347d88aa27497ce2585324809f86709d198f407",
+    "created": "2026-10-02T10:09:03.702182379Z",
+    "configUser": "999:999",
+    "command": [
+      "postgres"
+    ],
+    "entrypoint": [
+      "docker-entrypoint.sh"
+    ],
+    "exitCode": 0,
+    "executedAtUtc": "2026-10-02T11:15:30.963577+00:00",
+    "log": "postgres-runtime-inspection.log"
+  }
+]

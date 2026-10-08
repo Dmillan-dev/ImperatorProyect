@@ -1,0 +1,31 @@
+{
+  "result": "PASS",
+  "executedAtUtc": "2026-10-01T19:53:11.130031+00:00",
+  "replacedContainers": 3,
+  "unchangedBusinessValue": true,
+  "unchangedLedger": true,
+  "evidenceCount": 30,
+  "ledgerEntries": 3,
+  "realizedSavings": {
+    "amount": "18960.00",
+    "currency": "EUR"
+  },
+  "variance": "-480.00",
+  "images": {
+    "backend": "sha256:0a1749842fdd2f3170ff37e4d745884587f0de74c641fe21264c72efe5c28bdb",
+    "frontend": "sha256:be19801cb4ca2df3f99ebc10781d20867d35f3b94136429955696b3188b2a7d3",
+    "postgres": "sha256:4f9879f168065b949dbe9481bd7806a0a6c8f57a0ae36611a3f9b52dfa609cc3"
+  },
+  "databaseChecks": [
+    "1|t",
+    "2|t",
+    "3|t",
+    "evidence|30",
+    "ledger|3",
+    "ledger_entries|t|t|f|f",
+    "recommendation_explanation_assumptions|t|t|f|f",
+    "recommendation_explanation_evidence|t|t|f|f",
+    "recommendation_explanations|t|t|f|f"
+  ],
+  "limitation": "Existing rehearsal volume retained for recreation; no existing normal imperator volume touched"
+}

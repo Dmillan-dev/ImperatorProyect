@@ -1,37 +1,31 @@
-# database
+# PostgreSQL Persistence
 
-## Purpose
+This directory contains the implemented Flyway history used by Java JDBC
+adapters, the native integration profile and Docker runtime.
 
-Frontera de persistencia conceptual y migraciones PostgreSQL cuando sean autorizadas.
+| Migration                                     | Responsibility                                                                |
+| --------------------------------------------- | ----------------------------------------------------------------------------- |
+| `V1__initial_schema.sql`                      | Evidence, Decisions, Recommendations, supporting links and append-only Ledger |
+| `V2__unique_decision_case_id.sql`             | One deterministic Decision per canonical case                                 |
+| `V3__recommendation_explanation_attempts.sql` | Separate explanation attempts, Evidence links and assumptions                 |
 
-## Who Uses This Folder
+Migration files are forward-only history. Do not edit them to clear test data,
+weaken foreign keys or give the application update/delete authority over audit
+history. Test-only cleanup includes all related tables and uses an isolated
+database with the integration owner identity.
 
-- Implementation Agent during the PostgreSQL persistence sprint.
-- Architecture Guardian to verify persistence remains an adapter detail.
-- Quality Agent to review migrations and database naming once authorized.
+Docker provisions separate application permissions through
+`infra/docker/postgresql/provision-app-role.sh`. The integration profile checks
+migration, validation, a second no-op migration, persistence and permissions.
+Synthetic JSONL datasets live in `src/test/resources/evidence/`. Credentials,
+dumps and runtime database files never belong here. Business policy stays in
+`backend-java/domain/`.
 
-## Contains
+See the [backend verification commands](../backend-java/README.md),
+[Docker runtime](../infra/docker/README.md),
+[current structure guide](../docs/project/PROJECT_STRUCTURE.md) and
+[TFG evidence](../docs/tfg/04_EVIDENCE_REGISTER.md).
 
-- Future PostgreSQL migrations.
-- Future database documentation tied to implemented persistence.
-- Future seed or fixture files only when explicitly authorized.
-
-Sprint 1 status:
-- Repository shell only.
-- No SQL migrations.
-- No seed data.
-- No schema files.
-- No database runtime configuration.
-
-## Never Contains
-
-- Domain model definitions as the source of truth.
-- Java, Python or React source code.
-- Business rules.
-- Runtime credentials.
-- Unapproved fake business data.
-
-## Authorized Next Use
-
-Sprint 2.7 may define PostgreSQL persistence foundation. Database work must
-adapt to the existing domain and ports; it must not force domain changes.
+The former repository-shell description belonged to Phase 1 and no longer
+describes the implementation. No schema or business behavior changed to
+resolve that documentation discrepancy.

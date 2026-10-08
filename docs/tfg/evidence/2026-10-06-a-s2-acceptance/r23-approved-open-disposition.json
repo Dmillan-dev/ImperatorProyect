@@ -1,0 +1,76 @@
+{
+  "risk": "R-23",
+  "status": "OPEN / NO FIX AVAILABLE",
+  "accepted": false,
+  "riskDispositionApproved": true,
+  "component": "braces",
+  "installedVersion": "3.0.3",
+  "advisory": "GHSA-vfj7-8cjw-p6xm",
+  "cve": "CVE-2026-93687",
+  "officialAdvisoryUrl": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+  "patchedVersion": "No patched version published in official advisory at review time",
+  "dependency": "Transitive development dependency through eslint-config-next -> @next/eslint-plugin-next -> fast-glob -> micromatch -> braces",
+  "devFlagsVerified": [
+    "braces",
+    "micromatch",
+    "fast-glob",
+    "@next/eslint-plugin-next",
+    "eslint-config-next"
+  ],
+  "auditEvidence": {
+    "path": "docs/tfg/evidence/2026-10-06-r21-r22/frontend/audit.json",
+    "sha256": "df0901ab3626049e6c397fa458183a78250b80e683824d02d408315ae2cb5fe4",
+    "bytes": 3023
+  },
+  "affectedPackageAggregates": 5,
+  "distinctAdvisories": 1,
+  "productionNpmAuditFindings": 0,
+  "productionPackageIncluded": false,
+  "productionAbsenceBasis": "Exact standalone image inventory, failed module resolutions, full /app JS/JSON token scan and manual review of all3 lexical-hit files; production audit0 supports but does not establish absence alone.",
+  "productionAbsenceLimit": "Scoped component/package finding, not a universal proof of every unlabeled code fragment or of Picomatch safety.",
+  "vulnerableMechanism": "Deep attacker-controlled nested glob patterns drive recursive AST walking and exhaust the JavaScript call stack.",
+  "developmentReachability": "Vulnerable code present in developer/lint glob chain. No runtime endpoint takes glob patterns. Current lint configuration is versioned and repository-defined, but an untrusted checkout/PR or changed glob configuration can feed pathological patterns; development dependency is not harmless by definition.",
+  "existingMitigations": [
+    "Reviewed rehearsal uses trusted local checkout with fixed lint/configuration patterns.",
+    "No braces package in inspected traced standalone production output.",
+    "Registry integrity and lockfile pinning improve identity; they do not cure the recursion vulnerability."
+  ],
+  "proposedOperationalConditionsNotEnforced": [
+    "Keep affected developer tooling restricted to reviewed local checkouts; do not feed attacker-controlled nested glob patterns.",
+    "Run any untrusted branch/tooling in disposable least-privileged environments without real data, deployment credentials or mounted sensitive host resources; no new isolation workflow has been implemented.",
+    "Stop and reassess if advisory provides fix, dependency/runtime scope changes, or a tool failure exposes reachable untrusted pattern input."
+  ],
+  "recommendedDisposition": "Retain OPEN / NO FIX AVAILABLE with documented bounded tooling controls and explicit independent owner acknowledgement; do not mark CLOSED, bundle into OS R20 approval, suppress the finding, or upgrade without authorization.",
+  "ownerDecision": {
+    "approved": true,
+    "approver": "Project owner / user in this conversation",
+    "decision": "Retain OPEN / NO FIX AVAILABLE with documented scoped mitigation; do not close or merge into R20 OS acceptance.",
+    "approvedAtUtc": "2026-10-06T19:31:42.555275+00:00"
+  },
+  "blocksAutomaticFormalGo": false,
+  "newRiskIdentifiersOpened": false,
+  "officialStatusEvidence": {
+    "path": "docs/tfg/evidence/2026-10-06-r20-applicability/braces-official-status.json",
+    "sha256": "81073c7e70877382751931ce549db2bd7bb3862f5859e6bef542482d931820a4",
+    "bytes": 898
+  },
+  "closed": false,
+  "approvedProposal": {
+    "path": "docs/tfg/evidence/2026-10-06-r20-applicability/r23-disposition-proposal.json",
+    "sha256": "602ab9885ad5fb7439ca35257b8bb3b9020b74f22f3ce632a13edde396fba017",
+    "bytes": 3430
+  },
+  "approvalSource": {
+    "path": "docs/tfg/evidence/2026-10-06-a-s2-acceptance/owner-authorization.json",
+    "sha256": "ad68a383bbf54ca3a9144908b37bd42b6946019949723d8ce244049e0ec95b84",
+    "bytes": 1268
+  },
+  "scope": "Independent documented development-tooling disposition for this inspected local synthetic version; outside OS R20 acceptance.",
+  "operationalConditionsImplementation": "Acknowledged conditions, not a claim that new automated isolation/depth checks were implemented.",
+  "reviewTriggers": [
+    "Published vendor fix",
+    "New/untrusted glob-input path",
+    "Changed tooling/production package scope or image binding",
+    "Exposure or data outside this local synthetic boundary"
+  ]
+}

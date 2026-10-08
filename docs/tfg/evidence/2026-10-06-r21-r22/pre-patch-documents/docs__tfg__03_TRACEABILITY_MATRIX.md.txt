@@ -1,0 +1,63 @@
+# TFG Requirement Traceability Matrix
+
+Document status: **TFG-A IN PROGRESS**
+
+The initial mapping used `4dbf4fbe89dad0c6fcfd906aac7624075846c37a`.
+This TFG-A iteration inspects implementation SHA
+`b602bbe1dde92a902c17272d59cd9f0c10b9efe5`. Historical validation labels below
+retain their original scope; current runs are indexed in the Evidence Register.
+Final academic evidence must bind to the accepted release SHA.
+
+| ID             | Objective / competency                                                                                        | Requirement                                   | Implementation                      | Validation                                      | Evidence    | Status              |
+| -------------- | ------------------------------------------------------------------------------------------------------------- | --------------------------------------------- | ----------------------------------- | ----------------------------------------------- | ----------- | ------------------- |
+| `TFG-RF-01`    | `TFG-O-02`; `DAM-01`, `DAM-05`                                                                                | Import normalized synthetic Evidence          | R01 import workflow and API         | Java/API/PostgreSQL tests                       | `E-CORE-01` | `VALIDATED OFFLINE` |
+| `TFG-RF-02`    | `TFG-O-02`; `DAM-01`, `DAM-05`                                                                                | Create one traceable Decision                 | D081 and D093 composition           | Composition and replay tests                    | `E-CORE-02` | `VALIDATED OFFLINE` |
+| `TFG-RF-03`    | `TFG-O-02`; `DAM-01`                                                                                          | Generate deterministic Recommendation and ROI | D082 policy                         | Exact-value policy tests                        | `E-CORE-03` | `VALIDATED OFFLINE` |
+| `TFG-RF-04`    | `TFG-O-02`, `TFG-O-04`; `DAM-01`, `AI-04`                                                                     | Require human governance                      | D083 review flows                   | Role, actor and sequence tests                  | `E-GOV-01`  | `VALIDATED OFFLINE` |
+| `TFG-RF-05`    | `TFG-O-03`, `TFG-O-04`; `DAM-03`                                                                              | Preserve append-only history                  | Ledger domain/repository            | Replay, fork and concurrency tests              | `E-GOV-02`  | `VALIDATED OFFLINE` |
+| `TFG-RF-06`    | `TFG-O-02`, `TFG-O-03`; `DAM-01`, `DAM-05`                                                                    | Project realized Business Value               | Business Value query                | Complete/incomplete flow tests                  | `E-CORE-04` | `VALIDATED OFFLINE` |
+| `TFG-RF-07`    | `TFG-O-02`; `DAM-02`                                                                                          | Present one review workspace                  | Next.js application                 | Unit/component and Playwright evidence          | `E-UI-01`   | `VALIDATED OFFLINE` |
+| `TFG-RF-08`    | `TFG-O-07`; `AI-01`, `AI-02`, `AI-03`, `AI-04`, `AI-05`, `AI-06`                                              | Explain without delegating decisions          | Bedrock explanation provider        | Provider/output/failure tests                   | `E-AI-01`   | `VALIDATED OFFLINE` |
+| `TFG-NFR-01`   | `TFG-O-01`; `DAM-04`                                                                                          | Preserve hexagonal dependency direction       | Module/package boundaries           | Architecture inspection and compilation         | `E-ARCH-01` | `VALIDATED OFFLINE` |
+| `TFG-NFR-02`   | `TFG-O-04`; `CP-02`, `CP-05`, `SAA-01`, `DEVSEC-07`                                                           | Authenticate and authorize fail closed        | D087/D088 Resource Server and RBAC  | JWT negatives and route matrix                  | `E-SEC-01`  | `VALIDATED OFFLINE` |
+| `TFG-NFR-03`   | `TFG-O-04`; `CP-02`, `CP-05`, `AI-05`, `DEVSEC-03`                                                            | Protect sensitive Evidence and secrets        | Redaction and scanner controls      | Visibility and secret scans                     | `E-SEC-02`  | `VALIDATED OFFLINE` |
+| `TFG-NFR-04`   | `TFG-O-03`; `DAM-03`                                                                                          | Persist and migrate safely                    | JDBC, transactions and Flyway       | PostgreSQL integration profile                  | `E-DATA-01` | `VALIDATED OFFLINE` |
+| `TFG-NFR-05`   | `TFG-O-05`; `SAA-05`                                                                                          | Expose bounded operational signals            | Actuator, ECS logs, MDC and metrics | D097 observability tests                        | `E-OPS-01`  | `VALIDATED OFFLINE` |
+| `TFG-NFR-06`   | `TFG-O-05`; `DAM-07`, `DEVSEC-04`, `DEVSEC-05`                                                                | Ship hardened reproducible containers         | D092-D098 Docker assets             | Hosted image and D094 gates                     | `E-SC-01`   | `VALIDATED OFFLINE` |
+| `TFG-NFR-07`   | `TFG-O-06`, `TFG-O-09`; `DAM-06`, `DEVSEC-01`, `DEVSEC-02`, `DEVSEC-03`, `DEVSEC-04`, `DEVSEC-05`             | Enforce software supply-chain gates           | CI, CodeQL, Trivy and Gitleaks      | Hosted checks on accepted SHA                   | `E-SC-02`   | `VALIDATED OFFLINE` |
+| `TFG-CLOUD-01` | `TFG-O-08`, `TFG-O-09`; `CP-01`, `CP-03`, `CP-05`, `SAA-01`, `SAA-02`, `SAA-03`, `SAA-04`, `SAA-05`, `SAA-06` | Define a secure AWS target                    | D100 Terraform roots                | fmt/validate/test and misconfiguration scan     | `E-AWS-01`  | `VALIDATED OFFLINE` |
+| `TFG-CLOUD-02` | `TFG-O-08`, `TFG-O-09`; `CP-04`, `SAA-04`                                                                     | Estimate and constrain pilot cost             | Planning contract only              | Not executed; TFG-B review required             | `E-AWS-02`  | `NOT IMPLEMENTED`   |
+| `TFG-CLOUD-03` | `TFG-O-08`, `TFG-O-09`; `SAA-06`, `DEVSEC-06`                                                                 | Deploy the same application to AWS            | Publish/deploy workflows only       | Not executed; plan/apply authorization required | `E-AWS-03`  | `NOT IMPLEMENTED`   |
+| `TFG-CLOUD-04` | `TFG-O-08`, `TFG-O-09`; `CP-04`, `SAA-02`, `SAA-04`, `SAA-05`                                                 | Prove cloud rollback and teardown             | D100 runbook only                   | Not executed; live AWS required                 | `E-AWS-04`  | `NOT IMPLEMENTED`   |
+| `TFG-ID-01`    | `TFG-O-04`, `TFG-O-09`; `CP-05`, `SAA-01`                                                                     | Prove external IdP conformance                | D101 procedure only                 | Not executed; external IdP unavailable          | `E-ID-01`   | `BLOCKED_EXTERNAL`  |
+
+## Traceability Rule
+
+The Developer Associate and GitHub Foundations rows extend the same academic
+requirements, not the business scope. Their evidence links are:
+
+| Requirement                | Additional competencies             | Evidence / limitation                                                    |
+| -------------------------- | ----------------------------------- | ------------------------------------------------------------------------ |
+| `TFG-RF-08`                | `DVA-01`                            | `E-AI-01`; provider and failure tests, real Bedrock pending              |
+| `TFG-NFR-02`, `TFG-NFR-03` | `DVA-02`, `GH-03`                   | `E-SEC-01`, `E-SEC-02`; cloud permissions and external settings unproved |
+| `TFG-NFR-05`               | `DVA-04`                            | `E-OPS-01`; local signals, AWS diagnosis pending                         |
+| `TFG-NFR-07`               | `DVA-05`, `GH-01`, `GH-02`, `GH-03` | `E-SC-02`, `E-GIT-01`; each result retains its revision                  |
+| `TFG-CLOUD-01`             | `DVA-01`, `DVA-02`                  | `E-AWS-01`; offline configuration validation only                        |
+| `TFG-CLOUD-03`             | `DVA-03`                            | `E-AWS-03`; delivery source exists, execution remains `NOT IMPLEMENTED`  |
+| `TFG-CLOUD-04`             | `DVA-04`                            | `E-AWS-04`; AWS recovery still unexecuted                                |
+| `TFG-O-09`                 | `GH-01`, `GH-02`, `GH-04`           | `E-GIT-01`; history, planning and documentation inspection               |
+
+`TFG-NFR-04` includes V3 as implemented migration source. The earlier
+`E-DATA-01` PostgreSQL certification covers V1/V2. Current V3 execution is
+recorded separately as `E-DATA-02`: all 35 native integration tests, Docker
+migration/persistence and append-only privileges now pass. The current image
+October 2 fixable-only image gate passed after R-17 remediation. On October 6
+R-19 is CLOSED, but R-21/R-22 security findings and current R-20 binding keep
+A-S2 NO-GO; passing tests cannot replace security acceptance. No status in this table certifies
+the entire current release by inheriting an earlier result.
+
+Every final-memory claim must include at least one requirement ID and evidence
+ID. Screenshots alone are supporting material, not proof of behavior; they must
+be paired with a command result, test report, cloud record or immutable commit.
+
+See the [current security review](R19_SECURITY_REVIEW.md) before claiming full closure.

@@ -1,0 +1,458 @@
+# IMPERATOR Project Status
+
+Control-plane documentation synchronized: **2026-10-02**
+
+Runtime certification dates below remain historical. This update records the
+founder-authorized TFG-A start, bounded maintenance and D101 scheduling
+deferral. Current local results are recorded separately below; historical
+certifications, D087/D088/D095 and external execution gates remain unchanged.
+
+## Current Gate
+
+| Field                                       | Value                                                                                                                                      |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| Product lifecycle                           | Phase 3 - First Business Value Loop                                                                                                        |
+| Phase status                                | Active                                                                                                                                     |
+| Sprint 2.8.2 acceptance                     | PASS                                                                                                                                       |
+| Sprint 2.8.3 acceptance                     | PASS                                                                                                                                       |
+| Sprint 2.8.4 acceptance                     | PASS                                                                                                                                       |
+| Sprint 2.8.5 acceptance                     | PASS                                                                                                                                       |
+| Sprint 2.8.6 acceptance                     | PASS                                                                                                                                       |
+| Sprint 2.8.7 acceptance                     | PASS                                                                                                                                       |
+| Sprint 2.8.8 acceptance                     | PASS                                                                                                                                       |
+| Sprint 2.8.8.2 acceptance                   | PASS                                                                                                                                       |
+| Sprint 3.0 acceptance                       | CERTIFIED                                                                                                                                  |
+| Sprint 3.1 acceptance                       | CERTIFIED                                                                                                                                  |
+| Sprint 3.1 closure                          | COMPLETE                                                                                                                                   |
+| Sprint 3.2 acceptance                       | CERTIFIED                                                                                                                                  |
+| Sprint 3.2 closure                          | COMPLETE                                                                                                                                   |
+| Sprint 3.3 acceptance                       | CERTIFIED                                                                                                                                  |
+| Sprint 3.3 closure                          | COMPLETE                                                                                                                                   |
+| Sprint 3.3.1 closure                        | COMPLETE                                                                                                                                   |
+| Sprint 3.4 implementation                   | PASS                                                                                                                                       |
+| Sprint 3.4 PostgreSQL certification         | PASS - D084 obligation discharged on 2026-08-02                                                                                            |
+| Sprint 3.4 closure                          | CERTIFIED / COMPLETE                                                                                                                       |
+| Sprint 3.4.1 documentation synchronization  | COMPLETE                                                                                                                                   |
+| Sprint 3.5 acceptance                       | CERTIFIED                                                                                                                                  |
+| Sprint 3.5 closure                          | COMPLETE                                                                                                                                   |
+| Sprint 3.5.1 documentation synchronization  | COMPLETE                                                                                                                                   |
+| Sprint 3.6 implementation                   | PASS                                                                                                                                       |
+| Sprint 3.6 GitHub Actions certification     | PASS                                                                                                                                       |
+| Sprint 3.6 closure                          | CERTIFIED / COMPLETE                                                                                                                       |
+| Sprint 3.6.1 documentation synchronization  | COMPLETE                                                                                                                                   |
+| D085 roadmap decision                       | ACCEPTED / COMPLETE                                                                                                                        |
+| D086 Functional REST contract               | ACCEPTED / COMPLETE                                                                                                                        |
+| Sprint 3.7 implementation                   | PASS                                                                                                                                       |
+| Sprint 3.7 PostgreSQL certification         | PASS                                                                                                                                       |
+| Sprint 3.7 closure                          | CERTIFIED / COMPLETE                                                                                                                       |
+| Sprint 3.7.1 documentation synchronization  | COMPLETE                                                                                                                                   |
+| D087 JWT Authentication contract            | ACCEPTED / COMPLETE                                                                                                                        |
+| Sprint 3.8 implementation                   | PASS                                                                                                                                       |
+| Sprint 3.8 PostgreSQL certification         | PASS                                                                                                                                       |
+| Sprint 3.8 closure                          | CERTIFIED / COMPLETE                                                                                                                       |
+| Sprint 3.8.1 documentation synchronization  | COMPLETE                                                                                                                                   |
+| D088 RBAC Authorization contract            | ACCEPTED / COMPLETE                                                                                                                        |
+| Sprint 3.9 implementation                   | PASS                                                                                                                                       |
+| Sprint 3.9 PostgreSQL certification         | PASS - PostgreSQL 18.4 under the 18.x (18.2+) gate                                                                                         |
+| Sprint 3.9 closure                          | CERTIFIED / COMPLETE                                                                                                                       |
+| Sprint 3.9.1 documentation synchronization  | COMPLETE                                                                                                                                   |
+| D089 GitHub Integration contract            | ACCEPTED / COMPLETE / FROZEN                                                                                                               |
+| Sprint 4.0 implementation                   | PASS                                                                                                                                       |
+| Sprint 4.0 PostgreSQL certification         | PASS - PostgreSQL 18.4 under the 18.x (18.2+) gate                                                                                         |
+| Sprint 4.0 closure                          | CERTIFIED / COMPLETE                                                                                                                       |
+| Sprint 4.0.1 documentation synchronization  | COMPLETE                                                                                                                                   |
+| D090 AWS Integration contract               | ACCEPTED / COMPLETE / FROZEN                                                                                                               |
+| Sprint 4.1 implementation                   | PASS                                                                                                                                       |
+| Sprint 4.1 PostgreSQL certification         | PASS - PostgreSQL 18.4 under the 18.x (18.2+) gate                                                                                         |
+| Sprint 4.1 closure                          | CERTIFIED / COMPLETE                                                                                                                       |
+| Sprint 4.1.1 documentation synchronization  | COMPLETE                                                                                                                                   |
+| D091 Decision Review Workspace contract     | ACCEPTED / COMPLETE / FROZEN                                                                                                               |
+| Sprint 4.2 implementation                   | PASS                                                                                                                                       |
+| Sprint 4.2 frontend certification           | PASS - format, lint, types, tests, coverage, build, audit and Playwright                                                                   |
+| Sprint 4.2 backend regression               | PASS - 139 default tests and 31 PostgreSQL 18.4 integration tests                                                                          |
+| Sprint 4.2 closure                          | CERTIFIED / COMPLETE                                                                                                                       |
+| Sprint 4.2.1 documentation synchronization  | COMPLETE                                                                                                                                   |
+| D092 Docker Production Runtime contract     | ACCEPTED / COMPLETE / FROZEN                                                                                                               |
+| D093 DRC-AOA-001 Case Composition contract  | ACCEPTED / COMPLETE / FROZEN                                                                                                               |
+| D093/R16 implementation                     | PASS                                                                                                                                       |
+| D094 PostgreSQL supply-chain remediation    | ACCEPTED / COMPLETE / PASS                                                                                                                 |
+| D095 runtime certification scope correction | ACCEPTED / COMPLETE                                                                                                                        |
+| D096 minimum observability runtime contract | ACCEPTED / COMPLETE / FROZEN                                                                                                               |
+| D097 MVP observability scope correction     | ACCEPTED / COMPLETE / HOSTED PASS                                                                                                          |
+| D098 runtime supply-chain refresh           | ACCEPTED / FROZEN; COMPLETE / HOSTED PASS                                                                                                  |
+| D099 auditable Amazon Bedrock explanation   | ACCEPTED; IMPLEMENTATION COMPLETE / HOSTED REPOSITORY PASS on `22a9917`                                                                    |
+| D100 AWS SAA portfolio deployment           | ACCEPTED; IMPLEMENTATION COMPLETE / HOSTED REPOSITORY PASS / AWS APPLY NOT AUTHORIZED                                                      |
+| Sprint 4.3 implementation                   | PASS                                                                                                                                       |
+| Sprint 4.3 local runtime certification      | PASS - Docker, security, local JWT/RBAC E2E and persistence/recreation                                                                     |
+| Sprint 4.3 closure                          | CERTIFIED / COMPLETE under D095                                                                                                            |
+| Sprint 4.3.1 documentation synchronization  | COMPLETE                                                                                                                                   |
+| Sprint 4.4.2 Bedrock and AWS preparation    | COMPLETE / HOSTED REPOSITORY PASS on `22a9917`                                                                                             |
+| External Pilot Identity Conformance         | D101 OPERATOR-DEFERRED / BLOCKED_EXTERNAL; mandatory under D095 before Pilot Readiness                                                     |
+| Sprint 4.4 contract gate                    | COMPLETE - D096 frozen and narrowly corrected by D097; no runtime change                                                                   |
+| Sprint 4.4 implementation                   | CERTIFIED / COMPLETE / HOSTED PASS                                                                                                         |
+| Sprint 4.4 structural preflight             | D098 COMPLETE / HOSTED PASS                                                                                                                |
+| Last completed gate                         | Sprint 4.4.2 - D099/D100 repository implementation                                                                                         |
+| Phase 2 closure                             | COMPLETE under D079; Sprints 2.9-2.13 deferred                                                                                             |
+| Current control gate                        | TFG-A - bounded maintenance, risk control and isolated local evidence                                                                      |
+| TFG-A workflow                              | IN PROGRESS; R-17/R-19 and authorized R-21/R-22 corrected findings CLOSED; A-S2 technical GO; formal closure pending R-20/R-23 disposition |
+| Phase 3 authorization                       | Authorized by D079 and evolved by D085                                                                                                     |
+
+## Verified Foundation
+
+| Capability                                 | Status                                                | Evidence                                                                                                                                                                                                                                                  |
+| ------------------------------------------ | ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Java build                                 | PASS                                                  | Java 21, Maven Wrapper 3.3.4, Maven 3.9.16                                                                                                                                                                                                                |
+| Domain                                     | PASS                                                  | Framework-free domain model and value objects                                                                                                                                                                                                             |
+| Application                                | PASS                                                  | Deterministic use cases plus the non-persisted Business Value projection                                                                                                                                                                                  |
+| Ports                                      | PASS                                                  | Inbound, outbound and explicit transaction ports                                                                                                                                                                                                          |
+| PostgreSQL persistence                     | PASS                                                  | JDBC adapters and PostgreSQL 18.x certification, most recently 18.6                                                                                                                                                                                       |
+| Database schema                            | D099 IMPLEMENTED / HOSTED REPOSITORY PASS             | Flyway V1-V3; the original seven business tables remain authoritative and three separate explanation-audit tables are added; current local V3 migrate/validate/no-op, 35 integration tests and Docker privileges/persistence PASS; RDS remains unexecuted |
+| Transactions                               | PASS                                                  | Repository and use-case atomicity certification                                                                                                                                                                                                           |
+| Web runtime                                | PASS                                                  | Spring Boot executable composition root                                                                                                                                                                                                                   |
+| REST error contract                        | PASS                                                  | Four-field envelope for controlled and framework errors                                                                                                                                                                                                   |
+| HTTP correlation                           | PASS                                                  | `X-Correlation-ID` validation, normalization and propagation                                                                                                                                                                                              |
+| REST adapter foundation                    | COMPLETE                                              | All 15 frozen MVP route shells certified by document 41                                                                                                                                                                                                   |
+| Functional runtime composition             | CERTIFIED                                             | Spring, existing use cases, repositories and transaction runner verified against PostgreSQL 18.2                                                                                                                                                          |
+| Functional REST                            | CERTIFIED / COMPLETE                                  | All 15 D086 routes are wired through REST DTOs and mappers to Application input ports and certified against PostgreSQL 18.2                                                                                                                               |
+| Deterministic Decision creation            | CERTIFIED                                             | Eligible Evidence creates one atomic, retry-safe and concurrency-safe Decision                                                                                                                                                                            |
+| Deterministic Recommendation and ROI       | CERTIFIED                                             | DRC-AOA-001-v1 derives one atomic Recommendation with annualized savings, confidence and risk                                                                                                                                                             |
+| Explanation Provider integration           | D099 IMPLEMENTED / HOSTED REPOSITORY PASS             | Optional audited Bedrock explanation executes after deterministic persistence, has no decision/ROI authority and remains disabled by default                                                                                                              |
+| Human Review, Ledger and Result Validation | CERTIFIED / COMPLETE                                  | Atomic review and Ledger behavior, replay, linearity, result validation, rollback and concurrency passed against PostgreSQL 18.2; D084 is discharged                                                                                                      |
+| End-to-End Local Business Value Demo       | CERTIFIED / COMPLETE                                  | Deterministic local `DRC-AOA-001` workflow and traceable projection verified with 30 Evidence records                                                                                                                                                     |
+| JWT Authentication                         | CERTIFIED / COMPLETE                                  | D087 Resource Server perimeter, RS256/JWKS validation and JWT-derived actor identity passed PostgreSQL 18.2 certification                                                                                                                                 |
+| RBAC Authorization                         | CERTIFIED / COMPLETE                                  | D088 15-route/four-role enforcement, governance preservation and Evidence redaction passed PostgreSQL 18.4 certification                                                                                                                                  |
+| GitHub Integration                         | CERTIFIED / COMPLETE                                  | D089 one-repository, read-only GitHub REST synchronization produces deterministic supporting Evidence and passed PostgreSQL 18.4 certification                                                                                                            |
+| AWS Integration                            | CERTIFIED / COMPLETE                                  | D090 one-account, one-Region, read-only AWS SDK synchronization produces deterministic `E-AWS-001` through `E-AWS-004` Evidence and passed PostgreSQL 18.4 certification                                                                                  |
+| Frontend runtime                           | CERTIFIED / COMPLETE                                  | D091 single-case Decision Review Workspace passed all frontend gates and unchanged backend/PostgreSQL regression                                                                                                                                          |
+| DRC-AOA-001 runtime composition            | CERTIFIED / COMPLETE                                  | D093 R16 composes one idempotent Decision/Recommendation graph through existing D081/D082 boundaries                                                                                                                                                      |
+| Local container runtime                    | D098 historical COMPLETE / HOSTED PASS                | Current R-21/R-22 local regression PASS; fixable H/C backend0/frontend0/PostgreSQL0 and secrets0; full residuals retained; A-S2 technical GO; current R-20 NOT ACCEPTED; R-23 OPEN; no new hosted or release certification                                |
+| Observability runtime                      | D097 CERTIFIED / HOSTED PASS                          | Safe ECS logs, bounded metrics, MDC correlation, probes and internal Actuator pass; Prometheus/Grafana runtime services, dashboards and alerts are absent                                                                                                 |
+| Java backend CI                            | D099 HOSTED PASS                                      | Java 21 verification for merge `22a9917` passed together with CodeQL and the required security gates                                                                                                                                                      |
+| AWS deployment preparation                 | D100 IMPLEMENTATION COMPLETE / HOSTED REPOSITORY PASS | Locked Terraform bootstrap/pilot roots and OIDC workflows pass hosted offline validation; no AWS authentication, plan/apply, image publication, resource or live deployment is claimed                                                                    |
+
+## Current TFG-A R-17 Verification
+
+On 2026-10-02 the founder authorized only fixes necessary for the five image
+findings. Jackson 3.1.7, Next 16.3.6 and checksum-pinned OpenSSL/libssl3
+3.0.2-0ubuntu1.30 remove them. Java, Spring, Java base digests and business
+source remain unchanged. Repeated 174/35 backend/native integration and 41
+frontend tests, format/lint/types/build, nine browser cases (six existing skips),
+real Docker/RBAC, Flyway V3/privileges, readiness recovery and replacement
+persistence pass. All three image High/Critical/secret gates and final
+Gitleaks source/history scans are zero. R-17 is CLOSED for its original scope.
+
+That October2 run left R-19 pending. On October6 the owner independently
+authorized its two-entry brace-expansion patch and A-S2 verification. R-19 is
+CLOSED; repeated 174/35/41 tests and functional Docker controls pass. Fresh
+That earlier checkpoint was NO-GO; the later authorized R-21/R-22 rerun
+now has A-S2 technical GO, formal closure pending R-20/R-23 disposition. Read the
+[current review](../tfg/R19_SECURITY_REVIEW.md) and
+[new evidence](../tfg/evidence/2026-10-06-r19/README.md). The following R-17 links
+identify the historical October2 run.
+See the [current R-17 pack](../tfg/evidence/2026-10-02-r17/README.md),
+[index](../tfg/evidence/TFG_A_R17_2026-10-02.json) and
+[security review](../tfg/R17_SECURITY_REVIEW.md). Baseline HEAD plus worktree
+SHA256 inputs identify this local run; accepted release/hosted evidence is
+separate. No new sprint or cloud authority is opened.
+
+## Historical Verification
+
+Sprint 4.3 was certified on 2026-09-08 from implementation merge
+`1613b5daeb19ae29e0b96797cb6aca24972d1af0` and D095 control commit
+`31f6e51027d2ae3e1fa3de1fb5ee3a16d2f2cf3f` with:
+
+```text
+mvnw.cmd clean verify
+mvnw.cmd -Ppostgresql-integration clean verify
+docker compose build/up/down
+scripts/verify-docker-runtime.ps1
+scripts/verify-postgres-runtime-image.ps1
+trivy image --scanners vuln,secret --severity HIGH,CRITICAL --ignore-unfixed
+```
+
+Certification evidence:
+
+- Java 21 default tests: 151 passed, 0 failed;
+- PostgreSQL 18.6, Flyway V1/V2 migrate/validate/no-op migrate and 34
+  integration tests: PASS;
+- frontend format, lint, strict TypeScript, 41 tests, production build, npm
+  audit and Playwright acceptance: PASS;
+- D093 R16 authorization, two-step resumability, replay, conflict handling and
+  unique `case_id` migration: PASS;
+- hosted Java CI and Security workflows on the merged implementation: PASS;
+- D094 two-build reproducibility, pinned inputs, SBOM, provenance and final
+  PostgreSQL runtime identity: PASS;
+- SHA-tagged backend, frontend and PostgreSQL images: zero fixable
+  High/Critical findings and zero secrets;
+- PostgreSQL 18.6, Flyway migrate/validate, least-privilege provisioning,
+  non-root users, read-only filesystems and dropped capabilities: PASS;
+- only the frontend is published, on loopback; backend and PostgreSQL remain
+  internal, and unauthenticated API access returns safe `401`;
+- local protocol conformance with an ephemeral Keycloak outside the IMPERATOR
+  Compose project proved RS256, `kid`, issuer, audience, UUID subject, one exact
+  role, four-role D088 outcomes and fail-closed negative cases;
+- API-only `DRC-AOA-001` rehearsal proved 30-Evidence import/replay, R16
+  composition/replay, approval, implementation, result validation, ordered
+  Ledger and Business Value;
+- normal Compose recreation preserved Flyway history and the complete imported
+  case without duplicates;
+- external Keycloak HTTPS conformance is not claimed; D095 defers it as a
+  mandatory gate before Sprint 4.5, customer data or MVP Release;
+- runtime credentials, JWTs, private keys and generated evidence committed:
+  none;
+- `BUILD SUCCESS`: PASS.
+
+Sprint 4.3.1 documentation verification:
+
+- active project-control, agent, runtime, security, pilot, portfolio and
+  AI-context documents
+  synchronized: PASS;
+- broken local links: 0;
+- stale active statements naming Sprint 4.3 as current, blocked or next: 0;
+- next delivery gate identified as Sprint 4.4 Observability: PASS;
+- Java, Java tests, SQL, Flyway, dependencies, runtime configuration, D092-D095,
+  previous decisions and frozen contracts modified by Sprint 4.3.1: no.
+
+This full integration-profile run includes the Sprint 3.4 governance and
+Ledger certification suite. The D084 deferred obligation is therefore
+**DISCHARGED**; D084 remains an immutable historical record of the earlier
+environmental exception, not an active certification debt.
+
+Sprint 3.6 CI remains certified independently through GitHub Actions run
+`30708049322` for commit `c3bb8f6`, which verified Java 21, Maven Wrapper,
+the default build, 89 tests and executable JAR packaging on Ubuntu 24.04.
+
+Sprint 4.4 authorization preflight on 2026-09-08:
+
+- repository `main` synchronized with `origin/main` at `54938a3`: PASS;
+- changed implementation files before authorization: none;
+- Domain, Application and Ports framework/provider import isolation: PASS;
+- Java 21 and pinned Maven 3.9.16 default verification: 151 passed;
+- frontend Prettier, ESLint, strict TypeScript, 41 tests and production build:
+  PASS;
+- base Compose interpolation and schema using synthetic `.env.example`: PASS;
+- Docker runtime execution: unavailable because Docker Engine was not running;
+- PostgreSQL integration and container regressions: retained from Sprint 4.3
+  certification and must be rerun before Sprint 4.4 certification; and
+- Windows `mvnw.cmd`: local launcher failure observed; the pinned Maven
+  distribution and hosted Linux wrapper remain operational. No wrapper change
+  is authorized by D096.
+
+D097 scope correction on 2026-09-11:
+
+- the proposed application-native D096 implementation remains eligible for
+  Sprint 4.4 after rework: AUTHORIZED;
+- Prometheus and Grafana services, images, Compose assets, dashboards and alert
+  rules: DEFERRED BEYOND MVP;
+- reported findings in those optional images: not ignored, waived or
+  suppressed; the images must be absent from the active MVP runtime;
+- Actuator, bounded metrics, safe ECS JSON logs, correlation and exact probes:
+  retained;
+- maintained application/runtime image, source, dependency, CodeQL and secret
+  gates: remain blocking; and
+- Sprint 4.4 certification, external Pilot Identity Conformance, Sprint 4.5 and
+  MVP Release: not claimed by this documentation-only decision.
+
+D098 runtime supply-chain refresh on 2026-09-14:
+
+- hosted `Application image scan` and `PostgreSQL D094 supply-chain gate`:
+  FAIL against the updated vulnerability database;
+- common remaining runtime package: `libpcre2-8-0` `10.42-1` with fixable
+  `CVE-2026-86145` and `CVE-2026-89161`;
+- exact Debian security package `10.42-1+deb12u1`, URL and SHA-256: pinned in
+  both final-image builds;
+- final-image package-version assertions and PostgreSQL lock/provenance:
+  updated under D098;
+- vulnerability ignores, waivers, severity reductions or non-blocking scans:
+  none;
+- local source/configuration syntax checks: PASS;
+- Docker Desktop `4.91.0`, Engine `29.8.0` and Buildx `0.37.0`: available;
+- frontend Node `24.19.0` and final-image `libpcre2-8-0`
+  `10.42-1+deb12u1` assertions: PASS;
+- backend, frontend and PostgreSQL Trivy scans: zero fixable High/Critical
+  findings and zero secrets;
+- PostgreSQL two-build runtime-manifest reproducibility:
+  `sha256:2b7cdecf1ebf5ba2eb7aacb828baf6bc18804d5932602509ce2a15cdaecd05b7`;
+- D094 SBOM/provenance, PostgreSQL `18.6`, gosu `1.19`, Flyway,
+  least-privilege, non-root/read-only and Compose runtime checks: PASS;
+- obsolete D096 Prometheus/Grafana and pre-D098 application image tags:
+  removed locally without deleting persistent volumes;
+- local D098 certification: PASS; hosted Security and CodeQL evidence: PASS;
+  and
+- Sprint 4.4 D097 implementation: UNBLOCKED.
+
+D097 MVP observability implementation on 2026-09-15:
+
+- Java 21 with Maven 3.9.16: 162 default tests passed;
+- PostgreSQL 18.6, Flyway V1/V2 migrate/validate/no-op and 34 integration
+  tests: PASS;
+- frontend format, lint, strict TypeScript, 41 tests, Linux container build and
+  npm audit with zero vulnerabilities: PASS;
+- D097 runtime verification: ECS JSON, sentinel redaction, canonical
+  correlation, bounded metrics, exact endpoints and telemetry failure
+  isolation: PASS;
+- PostgreSQL loss/recovery: liveness `200`, readiness `503`, recovered
+  readiness `200`;
+- management port `9090`: internal, unpublished and unproxied;
+- D092-D095 Compose hardening and normal recreation persistence: PASS;
+- repository Trivy: zero High/Critical fixable vulnerabilities, secrets and
+  Dockerfile misconfigurations;
+- final backend, frontend and PostgreSQL images: zero High/Critical fixable
+  vulnerabilities and zero secrets;
+- D094 two-build runtime digest:
+  `sha256:1507efd63a6027eb5d604d1806e500b8e8ba25ca5ee11567e3bbf72a302bdeb1`;
+- full-history Gitleaks 8.30.1: 126 commits scanned, no leaks;
+- active Prometheus/Grafana runtime services, assets, profiles, networks,
+  volumes, secrets, dashboards and alerts: absent; and
+- hosted post-change Java CI, Security and CodeQL: PASS on merge `4fd18fa`.
+
+D099/D100 repository closure on merge `22a9917`:
+
+- Java 21 Maven verification: PASS;
+- CodeQL for Actions, Java/Kotlin, JavaScript/TypeScript and Python: PASS;
+- source, dependency and configuration scan: PASS;
+- full Git history secret scan: PASS;
+- application image scan, including the hardened migration image: PASS;
+- PostgreSQL D094 supply-chain gate: PASS;
+- AWS Terraform format, validation and offline tests: PASS; and
+- live AWS authentication, plan/apply, image publication, Bedrock invocation
+  and deployment: NOT EXECUTED / NOT AUTHORIZED.
+
+## Active Blocking Risk
+
+The D092-D098 runtime remains certified historical evidence. D099/D100
+repository implementation and hosted checks pass on merge `22a9917`. The
+external blocking risk for a live pilot is D095 Keycloak HTTPS conformance;
+D101 is operator-deferred and does not block TFG-A documentation/local work. Real
+PostgreSQL V3, AWS account/Region/cost, immutable publication, live runtime and
+Bedrock evidence remain explicit later evidence. No AWS plan/apply, image
+publication or real Bedrock invocation has been executed.
+
+## Known Non-Blocking Risks
+
+- The inspected Windows host cannot currently start Maven through `mvnw.cmd`
+  because its wrapper PowerShell launcher fails before Maven execution. The
+  exact cached Maven 3.9.16 distribution passes, and hosted Linux `./mvnw`
+  remains green. D096 does not authorize wrapper maintenance.
+- Default `clean verify` executes the Spring Boot and HTTP contract suite only.
+  Real-database certification remains intentionally explicit through the
+  `postgresql-integration` profile and external `IMPERATOR_IT_*` configuration.
+- JWT runtime requires externally supplied issuer and HTTPS JWKS configuration;
+  no identity provider or production key material belongs in this repository.
+- D088 is deliberately limited to one validated role, the current single-case
+  MVP and no tenant/organization entitlement model. It is not authorization
+  for real-customer exposure or a pilot.
+- D089 is deliberately limited to one fine-grained token, one organization,
+  one repository, on-demand polling and GitHub Evidence only. It adds no public
+  trigger, durable cursor or production credential lifecycle.
+- No live GitHub smoke test is part of this certified automated gate. D089
+  requires a separately authorized non-customer sandbox check before Pilot
+  Readiness.
+- D090 is deliberately limited to SDK default credentials, one account, one
+  Region, one tagged workload, on-demand synchronization and read-only AWS
+  Evidence. It adds no public trigger, durable cursor, cross-account access or
+  production credential lifecycle.
+- No live AWS smoke test is part of the certified automated gate. A separately
+  authorized non-customer sandbox check remains required before Pilot
+  Readiness.
+- D091 deliberately implements a volatile bearer-token bootstrap, not a login,
+  authorization server, SSO provider or production browser session lifecycle.
+- Frontend role visibility is presentation only. D087 authentication, D088
+  authorization and D083 Application governance remain authoritative.
+- The Decision Review Workspace and local Docker packaging are certified.
+  Operational external identity, customer data and non-loopback exposure remain
+  prohibited until their later gates pass.
+
+## Next Control Gate
+
+D099/D100 repository certification is COMPLETE / HOSTED REPOSITORY PASS on
+merge `22a9917`; this is not live AWS acceptance. The founder authorized TFG-A
+on 2026-10-01: academic documentation, risk control, README synchronization and
+isolated local evidence capture only. TFG-A is IN PROGRESS and is not a new
+product sprint.
+
+D101 scheduling is OPERATOR-DEFERRED and its external capability status is
+BLOCKED_EXTERNAL. The earlier Stage A scheduling authority is deferred, not
+completed or waived. D095 remains mandatory before Pilot Readiness,
+non-loopback exposure or MVP Release. D101 is a dependency, not a TFG sprint.
+TFG-B/C/D and D101 Stages B-C remain not authorized: no AWS authentication,
+live Terraform plan/apply, publication, Bedrock call or deployment is opened.
+
+The current [TFG risk register](../tfg/00_TFG_MASTER_PLAN.md#6-risks-and-scope-control)
+and [Evidence Register](../tfg/04_EVIDENCE_REGISTER.md) distinguish resolved
+documentation discrepancies from ECR/IAM/delivery findings deferred to TFG-B.
+A final current local result does not rewrite prior certification records.
+
+Current TFG-A maintenance verification supersedes the initial failed attempt:
+174 default tests, all 35 PostgreSQL integration tests, V1-V3 migration checks
+and frontend quality gates pass. Docker workflow, persistence, readiness
+recovery and technical capture pass. The subsequent R-17 patch passes image security; development-only audit R-19
+remains open, so TFG-A is IN PROGRESS. See the Evidence Register
+for actual tools, worktree inputs, hashes and limitations.
+
+Current execution authorities:
+
+- D079 through D100 in `docs/decisions/14_Decision_Log.md`;
+- `agents/phase3/README.md`;
+- `agents/phase3/SPRINT_4.4_D097_MVP_OBSERVABILITY_IMPLEMENTATION_PROMPT.md`;
+- `agents/phase3/SPRINT_4.5_D101_PILOT_IDENTITY_AND_AWS_CERTIFICATION_PROMPT.md`
+  as the deferred external dependency procedure only;
+- `docs/product/29_Decision_Review_Workspace_Screen_Contract.md`;
+- `docs/architecture/50_Executive_Dashboard_Contract.md`;
+- `docs/architecture/46_JWT_Authentication_Contract.md`;
+- `docs/architecture/47_RBAC_Authorization_Contract.md`;
+- `docs/architecture/48_GitHub_Integration_Contract.md`;
+- `docs/architecture/49_AWS_Integration_Contract.md`;
+- `docs/architecture/51_Docker_Production_Runtime_Contract.md`;
+- `docs/architecture/52_DRC_AOA_001_Case_Composition_Contract.md`;
+- `docs/architecture/54_Observability_Preparation.md`;
+- `docs/architecture/55_PostgreSQL_Runtime_Supply_Chain_Remediation_Contract.md`;
+- `docs/architecture/56_Observability_Runtime_Contract.md`;
+- `docs/architecture/57_MVP_Observability_Scope_Correction.md`;
+- `docs/architecture/58_Runtime_Supply_Chain_Refresh.md`;
+- `docs/architecture/59_Bedrock_Auditable_Explanation_Contract.md`;
+- `docs/architecture/60_AWS_MVP_Deployment_Preparation.md`;
+- `docs/architecture/61_AWS_SAA_Portfolio_Deployment_Contract.md`;
+- `docs/runbooks/bedrock-explanations.md`;
+- `docs/runbooks/aws-pilot-deployment.md`;
+- `docs/architecture/28_Per_Connector_MVP_Contracts.md`;
+- `docs/architecture/CONNECTOR_FRAMEWORK.md`;
+- `docs/architecture/35_Coding_Principles.md`;
+- `docs/architecture/37_Implementation_Contract.md`.
+
+## Current Architectural Invariants
+
+- Domain and Application do not depend on Spring, Servlet, JDBC or adapters.
+- PostgreSQL adapts to the domain; it does not reshape it.
+- REST code lives under `backend-java/api` and `imperator.api.*`.
+- The public REST base path is `/api/v1`.
+- HTTP correlation is not domain evidence correlation.
+- Ledger history is append-only.
+- Connectors normalize supporting Evidence and have no Decision, ROI, approval
+  or Ledger authority.
+- Phase 2 is closed; Phase 3 business behavior remains limited to
+  `DRC-AOA-001` and the currently authorized sprint.
+- One module is implemented per agent iteration.
+
+## Status Update Ownership
+
+The Context Keeper updates this file after a sprint is formally accepted.
+Changes must report verified state only; planned or assumed work must not be
+reported as complete.
+
+## Historical Strict Image Scan Discrepancy â€” Before B Approval
+
+The current fixable-only image policy passes. Including unfixed findings
+reports backend zero, frontend 53 High/4 Critical and PostgreSQL 81 High/15
+Critical in inherited OS packages, with no corrected versions indicated by
+this historical Trivy snapshot. Before explicit B approval, R-20 was OPEN alongside R-19;
+TFG-A is IN PROGRESS. No suppression, blanket base upgrade or risk acceptance
+was added. See [the security assessment](../tfg/R17_SECURITY_REVIEW.md).
+
+## Current A-S1 / A-S2 Control — R-21/R-22, 2026-10-06
+
+**Authorized R-21/R-22 corrected findings CLOSED. A-S2 technical GO; formal security closure PENDING RESIDUAL DISPOSITION. TFG-A IN PROGRESS.** Complete local174/35/41 and quality/runtime regression PASS; Playwright9PASS/6intentional skips. Exact canonical image fixable High/Critical0/0/0, all-severity secrets0, production npm audit0. Full residual scans remain visible: frontend48High/1Critical, PostgreSQL63High/3Critical, braces development1High/five npm package aggregates.
+
+The [current review](../tfg/R21_R22_SECURITY_REVIEW.md) and [gate](../tfg/TFG_A_SECURITY_CLOSURE_GATE.md) bind the actual dirty worktree and exact image/runtime/scanner hashes. Original historical R-20 acceptance stays immutable, but current binding accepted=false/REVIEW REQUIRED; exclusive expiry2026-10-09T00:00:00+02:00 Europe/Madrid unchanged, no transfer or renewal. The unfixed braces component is separately R-23 OPEN/NOT ACCEPTED. No accepted commit, hosted CI, external IdP, institutional acceptance or AWS execution is claimed.
+
+This authorized task stops at A-S2 re-evaluation. A-S3/A-S4/TFG-B/AWS remain blocked/unauthorized; no general update or PR #57–59 merge. The [earlier R-19 checkpoint](../tfg/evidence/2026-10-06-r19/README.md) remains dated historical evidence, not the current technical gate. D101 and narrated defense remain separate prerequisites.

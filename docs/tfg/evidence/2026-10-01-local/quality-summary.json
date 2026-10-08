@@ -1,0 +1,374 @@
+{
+  "backend": {
+    "check": "backend-postgresql",
+    "sourceRevision": "b602bbe1dde92a902c17272d59cd9f0c10b9efe5",
+    "executedAtUtc": "2026-10-01T19:08:25.815443+00:00",
+    "exitCode": 0,
+    "database": "isolated native PostgreSQL 18.6 on loopback",
+    "limitations": "Direct pinned Maven with Oracle JDK 21.0.12; not Docker, hosted CI, external IdP or AWS certification."
+  },
+  "unit": {
+    "total": 174,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "classes": [
+      {
+        "name": "imperator.adapters.out.aws.AwsSdkEvidenceSourceAdapterTest",
+        "tests": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.adapters.out.bedrock.BedrockExplanationProviderTest",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.adapters.out.github.GitHubRestAdapterTest",
+        "tests": 11,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.api.businessvalue.BusinessValueRouteContractTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.api.decisions.DecisionCompositionRouteContractTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.api.decisions.DecisionContextRouteContractTest",
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.api.decisions.DecisionRouteContractTest",
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.api.decisions.RbacEvidenceVisibilityContractTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.api.errors.ApiErrorContractTest",
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.api.evidence.EndToEndBusinessValueDemoTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.api.evidence.EvidenceImportRouteContractTest",
+        "tests": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.api.FunctionalRestApiContractTest",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.api.ledger.LedgerCommandRouteContractTest",
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.api.ledger.LedgerReadRouteContractTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.api.observability.CorrelationMdcContractTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.api.observability.ImperatorRouteCatalogContractTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.api.observability.ImperatorTelemetryContractTest",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.api.observability.ObservabilityEndpointContractTest",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.api.recommendations.RecommendationRestMapperTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.api.recommendations.RecommendationRouteContractTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.api.security.JwtAuthenticationContractTest",
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.api.security.RbacAuthorizationContractTest",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.application.composecase.ComposeDrcAoa001UseCaseTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.application.createdecision.CreateDecisionUseCaseTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.application.generaterecommendation.GenerateRecommendationExplanationTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.application.importevidence.ImportEvidenceUseCaseTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.application.ledger.LedgerChainTest",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.application.query.MvpQueryUseCasesTest",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.application.reviewdecision.ReviewLedgerGovernanceTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.application.synchronizeevidence.SynchronizeEvidenceUseCaseTest",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.bootstrap.AwsRuntimePropertiesTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.bootstrap.GitHubRuntimePropertiesTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.bootstrap.ImperatorApplicationTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.bootstrap.PostgresRuntimeConfigurationTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.domain.decision.DrcAoa001RecommendationPolicyTest",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.domain.decision.DrcAoa001ResultValidationPolicyTest",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    ]
+  },
+  "integration": {
+    "total": 35,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "classes": [
+      {
+        "name": "imperator.adapters.out.aws.AwsEvidenceSyncIT",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.adapters.out.github.GitHubEvidenceSyncIT",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.adapters.out.postgresql.PostgresRepositoryIT",
+        "tests": 30,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.api.evidence.EvidenceImportHttpIT",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "imperator.api.FunctionalRestPostgresIT",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    ]
+  },
+  "frontendChecks": [
+    {
+      "check": "format",
+      "command": "npm.cmd run format:check",
+      "exitCode": 1,
+      "executedAtUtc": "2026-10-01T19:06:10.040428+00:00"
+    },
+    {
+      "check": "lint",
+      "command": "npm.cmd run lint",
+      "exitCode": 0,
+      "executedAtUtc": "2026-10-01T19:06:45.408101+00:00"
+    },
+    {
+      "check": "typecheck",
+      "command": "npm.cmd run typecheck",
+      "exitCode": 0,
+      "executedAtUtc": "2026-10-01T19:06:56.271799+00:00"
+    },
+    {
+      "check": "coverage",
+      "command": "npm.cmd run test:coverage",
+      "exitCode": 0,
+      "executedAtUtc": "2026-10-01T19:07:16.252152+00:00"
+    },
+    {
+      "check": "build",
+      "command": "npm.cmd run build",
+      "exitCode": 0,
+      "executedAtUtc": "2026-10-01T19:07:41.811378+00:00"
+    },
+    {
+      "check": "browser-chrome",
+      "command": "npm.cmd run test:e2e -- --config=../build/tfg-a/playwright.closure.config.ts",
+      "exitCode": 0,
+      "executedAtUtc": "2026-10-01T19:08:15.885028+00:00"
+    },
+    {
+      "check": "format-final",
+      "command": "npm.cmd run format:check",
+      "exitCode": 0,
+      "executedAtUtc": "2026-10-01T20:01:59.227093+00:00",
+      "evidence": "format-final.log; supersedes generated next-env finding"
+    }
+  ],
+  "frontendTests": 41,
+  "frontendTestFiles": 10,
+  "coverage": {
+    "statements": 95.54,
+    "branches": 77.74,
+    "functions": 95.49,
+    "lines": 97.85
+  },
+  "browser": {
+    "passed": 9,
+    "skipped": 6,
+    "failed": 0,
+    "apiInterception": true
+  },
+  "limitations": "Direct cached Maven; installed Chrome channel; six existing intentional browser skips. No hosted/AWS/IdP acceptance.",
+  "formattingCause": "Eight files had CRLF working-copy endings. Git-normalized content and package/lockfile JSON equal HEAD; frontend attributes now enforce LF."
+}

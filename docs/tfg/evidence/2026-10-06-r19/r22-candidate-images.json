@@ -1,0 +1,14 @@
+{
+  "frontend": {
+    "tag": "imperator/r22-frontend-proposal:20261006",
+    "localImageId": "sha256:5b97e49ae7cfd7d5bed01fdcf60df9b7bf654d24bd7c490aa7a65c2e14e7f8c6",
+    "canonical": false,
+    "accepted": false
+  },
+  "postgres": {
+    "tag": "imperator/r22-postgres-proposal:20261006",
+    "localImageId": "sha256:b5e6d6806c66512fa9e1f769d1e40fb9b5c545095f3bd389f05438643aa7a433",
+    "canonical": false,
+    "accepted": false
+  }
+}
