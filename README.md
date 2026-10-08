@@ -1,5 +1,30 @@
 # IMPERATOR
 
+## Security CI correction candidate — 2026-10-08
+
+PR #60/#61 published documentation while the tested security patches remained local.
+The replacement candidate integrates those patches, Next 16.3.8 and the narrowly
+scoped migration-image remediation. Local Compose now uses that same patched
+migration image instead of its separate Flyway 13.0 image. Java, Spring, Node,
+PostgreSQL and the pinned backend/frontend/PostgreSQL bases are unchanged.
+
+Local regression: 174 unit + 35 integration + 41 frontend tests PASS;
+Playwright 9 PASS / 6 intentional skips; lint, types, format and build PASS.
+Production npm audit: 0. Full audit retains the five R-23 development-tooling
+entries. Backend/frontend/migration image scans: 0 fixable High/Critical and
+0 secrets. Exact-commit PostgreSQL certification, runtime and hosted CI are
+recorded separately in the correction review, never inferred from historical evidence.
+
+**This is a review candidate, not a release or renewed R-20 acceptance.**
+R-20 remains bound to its previously approved digests and expires exclusively
+2026-10-09 00:00 Europe/Madrid (2026-10-08 22:00 UTC), without automatic renewal.
+New image digests require their own applicability decision. R-23 remains OPEN /
+NO FIX AVAILABLE. A-S3 closure and A-S4 defense are pending; AWS remains blocked.
+
+See [correction scope, unpublished-item inventory and gates](docs/tfg/CI_SECURITY_CORRECTION_2026_10_08.md).
+The dated sections below describe their original evidence; their former upgrade
+restrictions and Docker availability statements are historical, not current certification.
+
 ## A-S3 / A-S4 Preparation — 2026-10-07
 
 A-S3 local source/diff review and PR preparation continue; accepted release SHA and hosted CI remain pending.

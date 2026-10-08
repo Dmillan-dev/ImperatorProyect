@@ -3,3 +3,5 @@ coverage
 node_modules
 playwright-report
 test-results
+# Next.js owns this generated type-reference file.
+next-env.d.ts

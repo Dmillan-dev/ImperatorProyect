@@ -389,6 +389,9 @@ final class FunctionalRestPostgresIT {
         try (Connection connection = adminDataSource.getConnection(); Statement statement = connection.createStatement()) {
             statement.execute("""
                     TRUNCATE TABLE
+                        recommendation_explanation_assumptions,
+                        recommendation_explanation_evidence,
+                        recommendation_explanations,
                         ledger_evidence_snapshots,
                         ledger_entries,
                         recommendation_evidence,

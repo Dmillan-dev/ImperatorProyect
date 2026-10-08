@@ -27,13 +27,56 @@
   "runtimePatches": {
     "pcre2": {
       "package": "libpcre2-8-0",
-      "version": "10.42-1+deb12u1",
+      "version": "10.42-1+deb12u2",
       "architecture": "amd64",
-      "sourceUrl": "https://security.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-8-0_10.42-1+deb12u1_amd64.deb",
-      "sourceSha256": "81c5502941118a24d47af69a17b8b0b9548d75cc6d72b3eb3fe01047b46fa10e",
+      "sourceUrl": "https://security.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-8-0_10.42-1+deb12u2_amd64.deb",
+      "sourceSha256": "d2f7edfcc7689b9e0761c2742cc824ac86a20768bc5e8057818dc6875291fe76",
       "fixedCves": [
+        "CVE-2026-103111",
         "CVE-2026-86145",
         "CVE-2026-89161"
+      ]
+    },
+    "perl": {
+      "version": "5.36.0-7+deb12u4",
+      "packages": [
+        {
+          "package": "perl-base",
+          "version": "5.36.0-7+deb12u4",
+          "sourceUrl": "https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-base_5.36.0-7+deb12u4_amd64.deb",
+          "sourceSha256": "d7d1943aec9597629bf73075efcc5ef6dc9bda96d78e80d843156ecd448478b8",
+          "architecture": "amd64"
+        },
+        {
+          "package": "perl",
+          "version": "5.36.0-7+deb12u4",
+          "sourceUrl": "https://security.debian.org/debian-security/pool/updates/main/p/perl/perl_5.36.0-7+deb12u4_amd64.deb",
+          "sourceSha256": "67e7a883c5d835939638f89a750799282df243ac1446281aa92ef9e19300940b",
+          "architecture": "amd64"
+        },
+        {
+          "package": "libperl5.36",
+          "version": "5.36.0-7+deb12u4",
+          "sourceUrl": "https://security.debian.org/debian-security/pool/updates/main/p/perl/libperl5.36_5.36.0-7+deb12u4_amd64.deb",
+          "sourceSha256": "ed8480b621ad574c25aea30d36194d0133ea74093756ecbe3dff157d0510ef7f",
+          "architecture": "amd64"
+        },
+        {
+          "package": "perl-modules-5.36",
+          "version": "5.36.0-7+deb12u4",
+          "sourceUrl": "https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-modules-5.36_5.36.0-7+deb12u4_all.deb",
+          "sourceSha256": "3ed38ffa8320e9bf7597cefa01b6a6ace4a08ccc77cdfd15ef7d8b711dea7166",
+          "architecture": "all"
+        }
+      ],
+      "fixedCves": [
+        "CVE-2026-13221",
+        "CVE-2026-42496",
+        "CVE-2026-8376",
+        "CVE-2026-42497",
+        "CVE-2026-48962",
+        "CVE-2026-57432",
+        "CVE-2026-57433"
       ]
     }
   },
@@ -48,7 +91,7 @@
   },
   "acceptance": {
     "forbiddenCve": "CVE-2025-68121",
-    "runtimeVersionLabel": "18.6-gosu1.19-go1.26.6-pcre2deb12u1",
+    "runtimeVersionLabel": "18.6-gosu1.19-go1.26.6-pcre2deb12u2-perldeb12u4",
     "maximumFixableSeverity": "MEDIUM",
     "secretFindings": 0,
     "postgresUid": 999,
