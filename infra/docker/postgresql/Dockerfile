@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
 
-FROM golang:1.26.6-bookworm@sha256:433f9dc4f8ea3a1ce4e28f9f15d0f7c056b10475307f886d6f1ac1ccc4abd976 AS gosu-build
+FROM golang:1.26.9-bookworm@sha256:d9c68c2c51161e12fd77e4c6320687c9cd86e1af1e3ad6e6cd63ff970641453c AS gosu-build
 
 WORKDIR /build/gosu
 
@@ -52,7 +52,7 @@ LABEL org.opencontainers.image.title="IMPERATOR PostgreSQL Runtime" \
       org.opencontainers.image.description="PostgreSQL 18.6 with rebuilt gosu and a pinned Debian security patch" \
       org.opencontainers.image.source="https://github.com/Dmillan-dev/ImperatorProyect" \
       org.opencontainers.image.revision="${VCS_REF}" \
-      org.opencontainers.image.version="18.6-gosu1.19-go1.26.6-pcre2deb12u2-perldeb12u4" \
+      org.opencontainers.image.version="18.6-gosu1.19-go1.26.9-pcre2deb12u2-perldeb12u4" \
       org.opencontainers.image.base.name="postgres:18.6-bookworm" \
       org.opencontainers.image.base.digest="sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af" \
       org.opencontainers.image.licenses="PostgreSQL AND Apache-2.0"
