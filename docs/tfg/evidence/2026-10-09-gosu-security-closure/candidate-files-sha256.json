@@ -1,0 +1,958 @@
+{
+  "algorithm": "SHA-256",
+  "selfExcluded": true,
+  "sourceSha": "a931601102ee19a90b3dad8477408ac0d1854669",
+  "scope": "Technical candidate inputs, documentary drafts and new candidate evidence; no owner acceptance or formal closure recorded by this catalogue.",
+  "files": [
+    {
+      "path": "docs/project/PROJECT_STATUS.md",
+      "bytes": 50275,
+      "sha256": "33ca4ff41f5687aaf70ad68d81f2f976b8e0f77a7f84639a1030dd8fe7a5ab7c"
+    },
+    {
+      "path": "docs/tfg/00_TFG_MASTER_PLAN.md",
+      "bytes": 26597,
+      "sha256": "266c01eb90d8d44516707c6e129c92f276580593db22f29bdb0ed9e44f500a84"
+    },
+    {
+      "path": "docs/tfg/03_TRACEABILITY_MATRIX.md",
+      "bytes": 16217,
+      "sha256": "e0273e526aa7260043f5868084604631194d99a089b4ae7af6b188442b2c4e36"
+    },
+    {
+      "path": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "bytes": 35978,
+      "sha256": "b3e81ed2d838c49a54e11af140584ac4e7505e2dbdb44938e54f35daee30712f"
+    },
+    {
+      "path": "docs/tfg/08_LOCAL_MVP_MEMORY.md",
+      "bytes": 20694,
+      "sha256": "7557b217c0174cc1e8cad296046e4b7d59c6997cd44d73588317d6f514f9c454"
+    },
+    {
+      "path": "docs/tfg/10_LOCAL_MVP_RELEASE_GATE.md",
+      "bytes": 8398,
+      "sha256": "74160aa0f0cdeff4ccc085be305d11d1db1429b8b9d652b30b23979522dfaaf6"
+    },
+    {
+      "path": "docs/tfg/A_S3_EVIDENCE_VERSIONING.md",
+      "bytes": 8300,
+      "sha256": "413b21f6da7d7b19210825b10cbb29f859867269b428754c540884cd2f539171"
+    },
+    {
+      "path": "docs/tfg/A_S4_LOCAL_DEFENSE.md",
+      "bytes": 9951,
+      "sha256": "2ec2c18a09eaacbef3548afe55a6aa721750816632c71bd1368bec83aa2c7b0d"
+    },
+    {
+      "path": "docs/tfg/CI_SECURITY_CORRECTION_2026_10_08.md",
+      "bytes": 8288,
+      "sha256": "f4a590f001311e1718d4187f87e5c298769e66d62d4046f2083ef5ee041f2695"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/applicability/braces-advisory-current.json",
+      "bytes": 2523,
+      "sha256": "d918adabcec6b9a4a21b9dfc089cdd89d08bcaa04f3b40c32cfcd53770a4dcc7"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/applicability/current-cve-applicability-matrix.json",
+      "bytes": 106470,
+      "sha256": "90c187c1bdc591137a2ae183784709fe9bab435ded03295e2b13f0d791fc4d50"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/applicability/debian-vendor-current.json",
+      "bytes": 42826,
+      "sha256": "7b995caee5586f2c7f6e3396986a987cbc5eb09a6448620ea5a06c1302d053f1"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/applicability/frontend-inspection.log",
+      "bytes": 67696,
+      "sha256": "0145a4aecaad9bcd93a90534beb07ce96e5aab74cff0f8f6f24c2b05c358c3a3"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/applicability/postgres-inspection.log",
+      "bytes": 133581,
+      "sha256": "6686595758b8db813666b91a827b30be7b0fded727d566053f720b9c408bb108"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/applicability/residual-comparison.json",
+      "bytes": 965,
+      "sha256": "139a8b9886adf93f6e6ede4e729cad7a2bf4cdbb5ac8003880137f8e61263924"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/applicability/runtime-inspection.json",
+      "bytes": 1163,
+      "sha256": "2f65305cac85d9849f9915ed1d51934672c4ec56db9ba25d6f60ca8376f5096e"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/applicability/source-boundary-current.json",
+      "bytes": 3587,
+      "sha256": "2247ab6e2f3f6ec602476bfd9e18e55c858b6c32b1a7c70413a43cd48ba1ab7c"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/authorized-patch.json",
+      "bytes": 1204,
+      "sha256": "b37b9c1992b8260ea47a4c025c364ea5ed894896274331521f779c4488c65961"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/backend-result.json",
+      "bytes": 926,
+      "sha256": "0a5e98d3d1b3144ebd55e58a413d7be1d02054037274847d94ad662289d91a10"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/docker-remove.log",
+      "bytes": 30,
+      "sha256": "7005ddf6fbb707b61b70c3428e8ff0d2f51d14f05eb93e90372c1da8aa83b400"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/docker-start.log",
+      "bytes": 66,
+      "sha256": "a3c46c5ae4956cf04232dc29ae8d47f58a5fd0fe184bf6f253c1ba8cff9d0d44"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/docker-stop.log",
+      "bytes": 30,
+      "sha256": "7005ddf6fbb707b61b70c3428e8ff0d2f51d14f05eb93e90372c1da8aa83b400"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/failsafe-reports/failsafe-summary.xml",
+      "bytes": 501,
+      "sha256": "1ec77064228d897b1a0852854d10d6eeab39eab8510a895a043fa41b2653387b"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/failsafe-reports/TEST-imperator.adapters.out.aws.AwsEvidenceSyncIT.xml",
+      "bytes": 31876,
+      "sha256": "d612faab1e3ea22accbd55e93246c4b20f4aed4e722e587eff77a30e1d623e32"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/failsafe-reports/TEST-imperator.adapters.out.github.GitHubEvidenceSyncIT.xml",
+      "bytes": 31883,
+      "sha256": "e9052b88f94fb25555c210ef69d14cd7158de0774b743503a4fad997a3f349e0"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/failsafe-reports/TEST-imperator.adapters.out.postgresql.PostgresRepositoryIT.xml",
+      "bytes": 36825,
+      "sha256": "298adfd6a7e3545a2480106dae8b6dddfc6714f8ca961fd353ddc3e3413d8807"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/failsafe-reports/TEST-imperator.api.evidence.EvidenceImportHttpIT.xml",
+      "bytes": 32363,
+      "sha256": "e6900559cebea0cc49c130ee9fb2b9aea24a9c00eda2024396992b62406053b3"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/failsafe-reports/TEST-imperator.api.FunctionalRestPostgresIT.xml",
+      "bytes": 32487,
+      "sha256": "ac4e50979bf467a2cc02e0ba562070820851520a0baefb354d846a0909e19144"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/maven-integration.log",
+      "bytes": 13735,
+      "sha256": "c74b9d517a220b54e69e7c0bf69c9e848496926367c82492f4161981adae511a"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/postgres-runtime.log",
+      "bytes": 12750,
+      "sha256": "115f5ecafc9aeba653d1cdeeefec757e31ddd9ffeac9f6dd873778e5374e0b75"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.adapters.out.aws.AwsSdkEvidenceSourceAdapterTest.xml",
+      "bytes": 32903,
+      "sha256": "93e817657be793426d5c5b412eba08cbb8d53646d7b129a91e1b5c1d0d40b253"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.adapters.out.bedrock.BedrockExplanationProviderTest.xml",
+      "bytes": 32056,
+      "sha256": "4696766d0b3670f3b8f732faf26bdc9f7cfcc13b148ad675b11057427a89af52"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.adapters.out.github.GitHubRestAdapterTest.xml",
+      "bytes": 32925,
+      "sha256": "45edb9d2dbb71d36226da398d9450bca67091374d80a8238c429a706723c3143"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.businessvalue.BusinessValueRouteContractTest.xml",
+      "bytes": 32680,
+      "sha256": "082bdbf8f971df27653004e4c393d3acc56cafae9f66a12602e05430d639f65e"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.decisions.DecisionCompositionRouteContractTest.xml",
+      "bytes": 32705,
+      "sha256": "bbbec31d3428b83395d0a0abf56b9a85fb02ed7fc0541f7351e8961acbcbc087"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.decisions.DecisionContextRouteContractTest.xml",
+      "bytes": 32831,
+      "sha256": "7381ad8c85b6852180d8accdcb24bdb0793208047713f8792948b8f114dc6eaa"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.decisions.DecisionRouteContractTest.xml",
+      "bytes": 32780,
+      "sha256": "c7905f6bf105dd0c32b4ea00d5eaae949ef1091e1e83708eab817b60cac9d0e4"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.decisions.RbacEvidenceVisibilityContractTest.xml",
+      "bytes": 32079,
+      "sha256": "71f27130db849f5f3fbb5124f7ccbd8f66b3c454c16363abfc2a39304bf8a77e"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.errors.ApiErrorContractTest.xml",
+      "bytes": 32826,
+      "sha256": "5cf86d4d23eb39e9ca040b05a04f1d7e5dcc3c56ff84094258e5eb4aaf4fedfa"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.evidence.EndToEndBusinessValueDemoTest.xml",
+      "bytes": 31920,
+      "sha256": "3cc5076b9162a5c24297b650e84f8e2d148591157d80739f4feaada58b9d0dba"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.evidence.EvidenceImportRouteContractTest.xml",
+      "bytes": 33328,
+      "sha256": "2b610198d2c9c21f0bd8119c3f269fb3ffaa2bd9ed0d6833dc7383a68eb3376b"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.FunctionalRestApiContractTest.xml",
+      "bytes": 32445,
+      "sha256": "3cf4263c1f4fca1cddf1f0f8f5336888204035be9460fba0444ce40b29bb0c57"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.ledger.LedgerCommandRouteContractTest.xml",
+      "bytes": 32922,
+      "sha256": "60d89a9097afa734dfd2ab237d3b020d91812c1bd80280be9ddcd8384de8f1ef"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.ledger.LedgerReadRouteContractTest.xml",
+      "bytes": 32634,
+      "sha256": "0b0f769ff3f5e2f81fa7ec8e42ff8f246cf4cb5ab1068539dacc799b20678fe8"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.observability.CorrelationMdcContractTest.xml",
+      "bytes": 32064,
+      "sha256": "b1e7d588ba01c3399039668c738f6a971d95c2a777795a2105da44b91240b571"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.observability.ImperatorRouteCatalogContractTest.xml",
+      "bytes": 32081,
+      "sha256": "afdc724b0653e0dd74e2ed338c10af30d6dcc9b9dfb56fae9f693eae4a7aa5a7"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.observability.ImperatorTelemetryContractTest.xml",
+      "bytes": 32372,
+      "sha256": "89e57fd80009205da1c3b6cd49f4dfeedf84dac8c3fdc921862812549f4d66a4"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.observability.ObservabilityEndpointContractTest.xml",
+      "bytes": 32481,
+      "sha256": "dbaacf736700bd7a9e217b43d15aba9783c20298df585e2d1a23978f98169d55"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.recommendations.RecommendationRestMapperTest.xml",
+      "bytes": 32139,
+      "sha256": "bd0304732cbea9bffcb66b3997258d8faeddb746e67d1d927bb2bf2e4ece5367"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.recommendations.RecommendationRouteContractTest.xml",
+      "bytes": 32929,
+      "sha256": "efa3290a220a14f64f9d94af99107df5a0758624ca5ff45004111bff1dd49b1f"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.security.JwtAuthenticationContractTest.xml",
+      "bytes": 33040,
+      "sha256": "3a10d384f1d3381443f89759e35b01045f7346a4239021bd4752ebc5ae373055"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.security.RbacAuthorizationContractTest.xml",
+      "bytes": 32562,
+      "sha256": "fae9cbdfbd387921d2afbb9d6baee502666757b348958740aa9337ef778e19d7"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.application.composecase.ComposeDrcAoa001UseCaseTest.xml",
+      "bytes": 32980,
+      "sha256": "5debb3f38fa2d3fb8a858ae5c5e941c7f0414abee5c25cd928469cfa88f5c17a"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.application.createdecision.CreateDecisionUseCaseTest.xml",
+      "bytes": 32921,
+      "sha256": "962465911cf162ed89884aad6916ebc64c57a074ff03364302bc2b883f74c3fd"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.application.generaterecommendation.GenerateRecommendationExplanationTest.xml",
+      "bytes": 33118,
+      "sha256": "4a62cd4096ed5d62c7bb3433954dded09c6668a9de55aea362154f516f66f41e"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.application.importevidence.ImportEvidenceUseCaseTest.xml",
+      "bytes": 32280,
+      "sha256": "e093c557e3dbc42f6a37adf79d87344d0f68f2a46c772e43e74b604e854f0ed7"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.application.ledger.LedgerChainTest.xml",
+      "bytes": 32599,
+      "sha256": "14852564e33838becfe8ed3d5e47cc703714e3a29f0a9f4b6fe3031b2c1174f1"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.application.query.MvpQueryUseCasesTest.xml",
+      "bytes": 32724,
+      "sha256": "98f25002c48801a12f0c05c81c50678772f2a03821c0dd0b173f5c4a66327f75"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.application.reviewdecision.ReviewLedgerGovernanceTest.xml",
+      "bytes": 32997,
+      "sha256": "ff8ec9c0727059806942610bdb7193eb3c1622f4b406b9b85db4fb5ee56fbba6"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.application.synchronizeevidence.SynchronizeEvidenceUseCaseTest.xml",
+      "bytes": 32840,
+      "sha256": "1f5468693f7ac72d887e37bc05c8de500adc8039c0cbbba52de49c221d4d2e91"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.bootstrap.AwsRuntimePropertiesTest.xml",
+      "bytes": 32102,
+      "sha256": "1a1abcff26d7cbdeb359d35f866e82f04514efe29af68cc4097a3ef452ace6a3"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.bootstrap.GitHubRuntimePropertiesTest.xml",
+      "bytes": 32102,
+      "sha256": "6087869ee84c4428a072d6be64fc729ae1903edb722f312e79aa341e50cd9283"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.bootstrap.ImperatorApplicationTest.xml",
+      "bytes": 32105,
+      "sha256": "bbee09b4ee7c58d57eda175c6610312ef79a11b16ddbd5a0205d7c205c8c21f8"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.bootstrap.PostgresRuntimeConfigurationTest.xml",
+      "bytes": 32292,
+      "sha256": "46c6d8eb5494021fbbe919e36db689e0722e62d7b9a009f9fbca66ffc1cb98d9"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.domain.decision.DrcAoa001RecommendationPolicyTest.xml",
+      "bytes": 32469,
+      "sha256": "8c67c22a9f8ca4327acaed7074c4511d7736d3e274371949910291d15c221161"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.domain.decision.DrcAoa001ResultValidationPolicyTest.xml",
+      "bytes": 32563,
+      "sha256": "72fcc857792e33651f801a66fd1040559a613c7dcfc792fd62e1320be0ffa579"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/builder-bootstrap.log",
+      "bytes": 2337,
+      "sha256": "b37d2170d3b093997c759ca93bf7168408ab892fde9906b33237fda8a6201172"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/builder-create.log",
+      "bytes": 24,
+      "sha256": "55eaa7399cf07fde8dcf921b13783e2ddb9a10ff04e00ff91f6b8cb3651fb8ca"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/candidate-ci-current.json",
+      "bytes": 4736,
+      "sha256": "a7290a1b7f9655f9027c1f48ee66b0338cc8646f21c145919b816c7dc50946d9"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/candidate-ci-latest.json",
+      "bytes": 2590,
+      "sha256": "d0323848f1a4159ad0e212aa4b3b728b723d151d8a2f7df792a2957a066b6fc3"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/candidate-pr.json",
+      "bytes": 407,
+      "sha256": "41cd769229c76e70ea1f77688d0fe71834d3e71490f030eb887c60498de75bca"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/candidate-review-state.json",
+      "bytes": 1788,
+      "sha256": "e1de089be6d249dcf002d2939469d27f45b16425659e897c1d38c761e4549cf9"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/candidate-validation.json",
+      "bytes": 806,
+      "sha256": "4bb7653537678cf8252940c2e9075bda3cf60af046b0475cd6e3fe9e950d8e8a"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/CI_ASSOCIATION.md",
+      "bytes": 1024,
+      "sha256": "f16bcbf6fbbbe15e883c0ab799cb3b5764005b3a5944705f3cc8a3028c456a16"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094/first/buildkit-metadata.json",
+      "bytes": 4878,
+      "sha256": "059c43b626b09c819a2de3190f97cd6d07189e03c67804690091c6776382e6f1"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094/first/postgres-sbom.cdx.json",
+      "bytes": 882050,
+      "sha256": "9e926b5672967ec6405e79c2ee74586b3e4ed4c5f8afd21cc15002e521864a3b"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094/first/provenance.json",
+      "bytes": 5529,
+      "sha256": "0a015195cb208b3122a2321f4071e1feb81b412abb05de6f7be5e5869c2ca02b"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094/first/sha256-manifest.txt",
+      "bytes": 427,
+      "sha256": "f5981d73eeb40c8718832223acd3a98efac6bce2797bb521b6168f03a502b4fc"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094/first/trivy-report.txt",
+      "bytes": 1882,
+      "sha256": "f9230396370c00212a6bd5cbf0f47f3b529f4c5988938a9de881ed8ab3a72bf7"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094/first/trivy-result.json",
+      "bytes": 803716,
+      "sha256": "c2281669e803e280fddac78e92bcdb8763025e64e3b16c4949e65979a5440b98"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094/repeat/buildkit-metadata.json",
+      "bytes": 4885,
+      "sha256": "39ddce13835298dbdffa063c6679a38474cf6e5e375d50b2ef723e6e10226718"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094/repeat/postgres-sbom.cdx.json",
+      "bytes": 882071,
+      "sha256": "2aae2404816775baeb8b81eed9d7616a254f43dabf14f8084baed93e8dbbc593"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094/repeat/provenance.json",
+      "bytes": 5534,
+      "sha256": "2da02779f4936ae3e2e7110dd8f3515863ddb49536bed8e83edb079ba0f11868"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094/repeat/sha256-manifest.txt",
+      "bytes": 427,
+      "sha256": "14c8d7c653658da1fd4e97e7de84a18b4ebafc417b66cf5bbd7f8ce55d74bd67"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094/repeat/trivy-report.txt",
+      "bytes": 2010,
+      "sha256": "8e2fa7dbf688fb95d98af03e7a6951aa93ec1fe33e3f5d4bed1175f0547bfebb"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094/repeat/trivy-result.json",
+      "bytes": 803744,
+      "sha256": "a018f287302db35afca2b5675614f7f8cebd577e6b692e3f33415a84adeb4e2a"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094-first-command.json",
+      "bytes": 498,
+      "sha256": "bb297569c8b4e1525ae6823fe3b6a82253f39653a007057b4feeec60e626cf84"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094-first.log",
+      "bytes": 29249,
+      "sha256": "5c6f44fa9fb2744c1f732a2788c478f9768341c6ea7e717cd4dbdef32636bce8"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094-repeat-command.json",
+      "bytes": 808,
+      "sha256": "620f09d1a50f5674a4688c7d569eb90122e2a6afad72138309cb7c3a7211afe8"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094-repeat.log",
+      "bytes": 14490,
+      "sha256": "5453983510bc9e6ec30cc244275cfb20e65803ad1ec67b7317f5b635d57650a6"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/docker-before.json",
+      "bytes": 3322,
+      "sha256": "e9b67ade6a85a34d95cd0182fb4f147a1244f728eacc93c68acf75bb3d2b92b6"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/document-changes.json",
+      "bytes": 5248,
+      "sha256": "c51a8527244e0174766b4afb756365d63e6620275c65980402610ee474bea986"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/final-documentary-secret-result.json",
+      "bytes": 616,
+      "sha256": "7cd27142b74d1f62fa1b4f63e4adf7868767a26a4e377164a51fa8ddb7724656"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/final-technical-review-validation.json",
+      "bytes": 1197,
+      "sha256": "3e88861dca7cdde4dd1b8ee2fe8d8866c9ca2a5d2cd5c5b044a39f7f1607e4f2"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-browser-install-pinned.log",
+      "bytes": 8458,
+      "sha256": "db3f07aa1c2306ea582d96be0cfdc455e0b3655ddbd2b01af49385d3be784f72"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-build-configured.log",
+      "bytes": 923,
+      "sha256": "4d624bc1b3b0609c4ec6c941680d6dbf9e13c2632522226c064a79b3be4a4a19"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-build.log",
+      "bytes": 692,
+      "sha256": "9d2890edd48414276db6d9e51dbb418f1f10782870629ecd8fd7bc29722b4b63"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-format.log",
+      "bytes": 146,
+      "sha256": "0fdfea6c362f10e71a8b76517627b7eb04eed39705e7f07c94a10190cc6030f9"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-lint.log",
+      "bytes": 79,
+      "sha256": "91f5b65e4bbb03a02c7e51c171dfef0251f9b3339e79119827d981362e87dd62"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-npm-audit-full.log",
+      "bytes": 3023,
+      "sha256": "df0901ab3626049e6c397fa458183a78250b80e683824d02d408315ae2cb5fe4"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-npm-audit-production.log",
+      "bytes": 365,
+      "sha256": "96f423ce26c0eb6a80d4c6b78b11eaefd2572b206b43b3d31685a3de9aa5888d"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-npm-ci.log",
+      "bytes": 545,
+      "sha256": "56261fa4d65b920ea8adbff2004fa49fb3531d1ec3b0a84fbe95d800edfdd6ee"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-playwright-configured.log",
+      "bytes": 7306,
+      "sha256": "4b0ba6a1ede3218892acc34cee8edfdf9d1cb434e650658cf65c3c2866150486"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-playwright.log",
+      "bytes": 36803,
+      "sha256": "0b4a54307fb43ebc4b1840b6705f380ebc3e3ca45262a3e255362a4dd9816835"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-results.json",
+      "bytes": 1881,
+      "sha256": "5cee22ba834e8fd1de449bc95e3b60cb998ce880e7a70c279baab8ebaee69879"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-resume-results.json",
+      "bytes": 2553,
+      "sha256": "48e07d86753869ef059d7c7a4850e5783868c7de5b2e3ca77ed1c523b9987624"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-tests.log",
+      "bytes": 329,
+      "sha256": "01c45a38784c4aab35b99e9b4f3268cff93cbdce6b8d966cd41efa8dab1be4f4"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-types.log",
+      "bytes": 71,
+      "sha256": "1bd54d7d2d4ffe8afa8d6e291dfce8f1653f1ff331f842e2c2b3d40acab7156a"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/gitleaks-current-source.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/gitleaks-current-source.log",
+      "bytes": 79,
+      "sha256": "cfb465fe723bf18069422ba11604641d5a3160d0c5ecb12d418e5f5d8be6a7b5"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/gitleaks-final-documentary.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/gitleaks-final-documentary.log",
+      "bytes": 81,
+      "sha256": "fb0f6c6870d4f830acbb88655440ccc92977a47782c49d2a337eef85070dbf90"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/gitleaks-new-evidence.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/gitleaks-new-evidence.log",
+      "bytes": 81,
+      "sha256": "a6f94aa6bd93996c1a9e97d8985faa462391c459b62559a635c4cff91357590d"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/helpers/capture.py",
+      "bytes": 2301,
+      "sha256": "27efb852f60938bee13722c9b738bd6ac14817b8598efc094570e29919f37739"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/helpers/run-backend.py",
+      "bytes": 5114,
+      "sha256": "36601d3079e7873426ff86df3cb3ca407122611b7b7b9615691d1deb9ce4a89b"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/helpers/run-frontend.py",
+      "bytes": 1258,
+      "sha256": "1e4a4b44e31ce0aa92ef4d00b6b1a2178c7a58177a4d09c9fda19b16937aa00a"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/helpers/run-persistence-recovery.py",
+      "bytes": 5266,
+      "sha256": "b51578ed38053cd626f9ee36f6f48151e0f0ea798a6d5bc71bccf4994292b5c6"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/helpers/run-scans.py",
+      "bytes": 4357,
+      "sha256": "86a8aa04bce7ed9ecfe6a42904934829ca0b7a45d542e47247e76d68e1d10085"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/playwright-configured-results.json",
+      "bytes": 1008,
+      "sha256": "e3b8ede9a275c5a8e9d8cfd202ea7afe37293826e8d1694f23e19df15d9e383c"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/PR_BODY.md",
+      "bytes": 1443,
+      "sha256": "44bd53aa2c435b9f9562215f913b10d8f70f4503331dd8bde09d1f054323bf26"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/R20_PROPOSED_DECISION.json",
+      "bytes": 4667,
+      "sha256": "4f0e3b8d2a409631f49a3b8254f6374c9c1f563182a10c2c6d6b6679170dbc41"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/R20_PROPOSED_DECISION.md",
+      "bytes": 2811,
+      "sha256": "5ea4fed7ffe16ae3fb37c1fd6afdc65517a4b94bb5c64f03b0a5d8fadad8cf3e"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/R23_CURRENT_REVIEW.json",
+      "bytes": 875,
+      "sha256": "6eafad5c3ee7fbca107204b1d7a4d139897e511fe7b863d6e6c345aa7493a136"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/capture/01-deterministic-recommendation.png",
+      "bytes": 90652,
+      "sha256": "9641d256d4b07083fce2b4ccfb3373c7212dc66c2ce8f7f9fa3fd5bc48b8264e"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/capture/02-human-approval.png",
+      "bytes": 52361,
+      "sha256": "30fa1ad5df9eb745eee1c6add446cd5d475d4c083eb2b7be2667806d8cd16568"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/capture/03-implementation.png",
+      "bytes": 57968,
+      "sha256": "ddaa6e64ab50b6d30fb34508b104411d1dfd0e6702db70031ce9015776984440"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/capture/04-realized-business-value.png",
+      "bytes": 69899,
+      "sha256": "6c2e518398d94d2d9449bb00b2cdc2b27e8491739f2cc975c8e323bc7d14b920"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/capture/05-auditor-ledger.png",
+      "bytes": 73607,
+      "sha256": "90a074f45b746082f3a79bb5bfbd5acc4160aec960730a2be3fd3efb62344e6a"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/capture/rehearsal.json",
+      "bytes": 27460,
+      "sha256": "b00e1fa1c26dfe206fe0a1400363d5015df74612b9424ea5c9079490eb7ef03c"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/capture/tfg-a-docker-demo.webm",
+      "bytes": 2221670,
+      "sha256": "a3a4affd7f5db049f31eefb4328c97f34d03fef2e43eb8402bf19e83ec8a4774"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/capture/video-qa.json",
+      "bytes": 534,
+      "sha256": "821d553e0c27c9d093b4910ecdbeb95a3accbd1fd0cc72ea24eafa53fcc214d3"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/capture.log",
+      "bytes": 56,
+      "sha256": "9d0c5a5f0349782740d6e8a7d96aae1c7ce6a83b83aa52ae631179af1d72f7e8"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/compose-command.json",
+      "bytes": 409,
+      "sha256": "9c52fcd440c9781d17fa29ef408787287f234d48cc8330c974a360ee6564c7e4"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/create.log",
+      "bytes": 1952,
+      "sha256": "022becbf96300a9fb832f1c6fda3cc7249c6efe63163133e767ac78c0216013e"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/demo-identifiers.json",
+      "bytes": 377,
+      "sha256": "8d8603caeefe1db745a1210843a648d5ded422370aa8627aa73602ae39b7d68d"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/fixture-start.log",
+      "bytes": 65,
+      "sha256": "34873e48c8ef2d6b68a70ba0f76a8279a5726e3835fb6f013a8aa8b42ff05e4a"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/persistence.json",
+      "bytes": 11563,
+      "sha256": "a06777e0468f49f9216200610ec5c6e0dc72e0253a1ab7efbced4440c3acc91c"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/readiness-recovery.json",
+      "bytes": 388,
+      "sha256": "c8773eb40b30246e4e970338fee9a972ca849c9b443dee2c4710914e3637ae22"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/readiness-start-postgres.log",
+      "bytes": 115,
+      "sha256": "31c76048ff66320dc6a37e424bfc404a6d152f427b95f780da78d6ab99419cbb"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/readiness-stop-postgres.log",
+      "bytes": 115,
+      "sha256": "e43ff4f34d0a1b717516358b8c123e3c55ca34285c443012663dd0068cdcb154"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/recreation.log",
+      "bytes": 2431,
+      "sha256": "3ac1fc7fc45e29a87d60bc8d8e70459922d89c29b531f2585cb93dc8dc7c0498"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/runtime-image-bindings.json",
+      "bytes": 13742,
+      "sha256": "73931e038246e90cec88d44339a918b43b4bbcc4c7d2a4a846ada2bcd0bdaa7f"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/runtime-inputs-summary.json",
+      "bytes": 877,
+      "sha256": "7697671079b856e7e6ff5a4a70815ccb6f8024f346b52e59fe1c18aeac3a6cc3"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/start.log",
+      "bytes": 2082,
+      "sha256": "f22612af3615b6afb5d104673510a3679a419a03a0973063def211eb8affcc62"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/test-inputs.yaml",
+      "bytes": 1901,
+      "sha256": "ebaedc89ecffcd942ee4ca3fb1c81722fddef631d760b5d86ed88009389a0a7f"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/truststore-setup.log",
+      "bytes": 35,
+      "sha256": "34dfcf24817cef5736127fd0c024eeb7231217040a7d616b0aebb2bdc0e5e74d"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime-cleanup.json",
+      "bytes": 1414,
+      "sha256": "6823e620747ac5266785a7c90706c1456acc26dd7d6d97576ae2fab9a5a7e972"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/backend-credentials.json",
+      "bytes": 522963,
+      "sha256": "cb9d8eab3e3da27af134c339eaf170f64e37bc6ef9e49a7727d2c54a816549e3"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/backend-credentials.log",
+      "bytes": 446,
+      "sha256": "0b01a60a55e5fb8b62feaa469364cf4a65ed87ce8a69b8d0f75301504dbf4750"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/backend-fixable-gate.json",
+      "bytes": 591413,
+      "sha256": "aadf452ecb627e01aefe07dc3bb7de431ec144490141e3a972f37b7a02a95ede"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/backend-fixable-gate.log",
+      "bytes": 384,
+      "sha256": "819ff3ecf402613fd643fff04d567af95729a0f42cdbcf2c0b8703de2e0c716d"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/backend-vulnerabilities.json",
+      "bytes": 733010,
+      "sha256": "8b7801b47fbe93ea59db5d925cf5b795b3f5a0742dca42e15e5361d5700e069b"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/backend-vulnerabilities.log",
+      "bytes": 384,
+      "sha256": "735b213543033d78452ab1a8e77bebaaac55ac3eab8fd9ee0e56dcc12623e8f1"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/download-db-only.log",
+      "bytes": 347,
+      "sha256": "0338f77533541d145b1938d1f16588db2309c9c079a3ccada72fad50dff904b2"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/download-java-db-only.log",
+      "bytes": 465,
+      "sha256": "ef878adc73f95983cfd934eb2e841afb1066f1ea51e17eaecdffa7b1c3ad61d0"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/frontend-credentials.json",
+      "bytes": 396547,
+      "sha256": "3aa480fc309a39f10a4511008bcd38abee3a2442d6c39c710146f9fc92a3b308"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/frontend-credentials.log",
+      "bytes": 446,
+      "sha256": "b03d1c0813869169d24a249ed395bcd2924633c2bd9a4f283235f77acf40e1b3"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/frontend-fixable-gate.json",
+      "bytes": 396547,
+      "sha256": "3adaa047041ee3838e11a5ed2bf79ea18d6bec3177e634092f15e6a14280cba3"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/frontend-fixable-gate.log",
+      "bytes": 572,
+      "sha256": "86b99c75ebff5b73f25d4d354247ccb379e3d0bcfa0f7d5a701527ae64c66e27"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/frontend-vulnerabilities.json",
+      "bytes": 1050177,
+      "sha256": "290f95aa6fa3f9794f27a01749b442656301c4bb5a3e90e622985fe10b72a9f1"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/frontend-vulnerabilities.log",
+      "bytes": 572,
+      "sha256": "333e7e2753e2fc4747003852f5a448eb41eb82bb2a15258e1ec65ba1c260156d"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/migration-credentials.json",
+      "bytes": 428942,
+      "sha256": "49d69308a996cb68819918d8bb407bbac3fbe9e06bd613db6d9fc7bc13b27689"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/migration-credentials.log",
+      "bytes": 446,
+      "sha256": "66cd7da57da2bccd8174d0d46762ee83c5a8e797c43e8b634e598cbcb81b370d"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/migration-fixable-gate.json",
+      "bytes": 590357,
+      "sha256": "e6c7eb744467d4b62677b2caf6229b44664d9299ff5fbb3aad1f3d66e9699460"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/migration-fixable-gate.log",
+      "bytes": 384,
+      "sha256": "c58605f47500f5d754ccb52ee0418b3361fe6840cd36a31c65f17f3e4690e87e"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/migration-vulnerabilities.json",
+      "bytes": 765710,
+      "sha256": "2dd161339844069967697097df1f5354a38a377ed4d8730266cbc5aae2ac4cf7"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/migration-vulnerabilities.log",
+      "bytes": 384,
+      "sha256": "8b780c021e62c1f1892673017da8968535bd644284b4a1389eb4dbe5a02c4d03"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/postgres-credentials.json",
+      "bytes": 803816,
+      "sha256": "f71e7ee419d39dc163fb480ed6f94d58823b1bc8668b311de2140385c4bf8ed8"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/postgres-credentials.log",
+      "bytes": 446,
+      "sha256": "d012888347132276b7ea0e46ad41eb501f92d58c3cdb9b93acb9cab3fb24ff86"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/postgres-fixable-gate.json",
+      "bytes": 803816,
+      "sha256": "49ed467f5af4d27377faa49c6960fce81a897a4ebea1bc863637c2ab4053f439"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/postgres-fixable-gate.log",
+      "bytes": 573,
+      "sha256": "0726491cdab16f403ddb934630b8768b44c7ca13ea5575e18324ee19799f95c6"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/postgres-vulnerabilities.json",
+      "bytes": 2072972,
+      "sha256": "1e5e543946064a11300fb21f09ddfa9a807b40689f039565477282acd581ec34"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/postgres-vulnerabilities.log",
+      "bytes": 573,
+      "sha256": "181825d8789eeadb3f73b4369434538a686e546058a67eac6c010f81b3645f9f"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/scan-commands.json",
+      "bytes": 15453,
+      "sha256": "346eafe25947ab8e180f6bb509aa151672fb32a1d2b909525f60d7f06a31252b"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/scan-summary.json",
+      "bytes": 7937,
+      "sha256": "fe6572fc89b2cb590e2046020016abf41a15d1474dc898828222cee0d60c427a"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/scanner-databases.json",
+      "bytes": 404,
+      "sha256": "8170b5ec1c8f55ef4982aac475dc3ec3d71e147f54089d067152adf80726ef31"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/scanner-tool.json",
+      "bytes": 687,
+      "sha256": "f708f9c998c72f6e732b0e125113552ac5e7cfcd3c11fb3c5c333142f7660448"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/strict-gate.json",
+      "bytes": 8308,
+      "sha256": "b71db9a2ba1ca32450abee0fe34a3a7a000fbfe605b5a12acffdf4b76558a2fb"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/source-secret-check.json",
+      "bytes": 777,
+      "sha256": "0889b0a4f3bbece18200be432174555d31f545bcd56426c9f24e7200c892f546"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/TECHNICAL_VALIDATION.md",
+      "bytes": 7616,
+      "sha256": "f2e5edaaa319cd46281a8839c0c6f81091b3342a9d992f2b6b76acff3f37533a"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/trivy-current-source-command.json",
+      "bytes": 1446,
+      "sha256": "0a8b9ac7dbaf2580b8c7ead8d7efe109044ec750b1aecdad2b2f64eab74689a0"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/trivy-current-source.json",
+      "bytes": 123591,
+      "sha256": "447d2aca267660e0da05e4dad13e8fd1b356ee3d9ac35511ac6a96cf2560972c"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/trivy-current-source.log",
+      "bytes": 22205,
+      "sha256": "9f4e45ea4e27e06be148ebdfa55b02f2a54ebf54cd70828a6b2857565dfb4855"
+    },
+    {
+      "path": "docs/tfg/README.md",
+      "bytes": 10969,
+      "sha256": "c66795b432826449685b74438fc2ec2bd81e4a7c6d73759acff09429daf6b4ca"
+    },
+    {
+      "path": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "bytes": 6358,
+      "sha256": "a0789b02abbb0d258245fc18ad586a3885b48be7a1288b581a2d593bae0b8773"
+    },
+    {
+      "path": "infra/docker/postgresql/Dockerfile",
+      "bytes": 3788,
+      "sha256": "10ea791bacd1ebe41be00929983e5ad399fe332e9332a11abf6e9a06d80e6bf7"
+    },
+    {
+      "path": "infra/docker/postgresql/supply-chain-lock.json",
+      "bytes": 3641,
+      "sha256": "b9c30f4ca975c47d26444f16341da21c9d4f3328d6d388713f9c630998804a3a"
+    },
+    {
+      "path": "README.md",
+      "bytes": 25079,
+      "sha256": "ae034c128566728dfb32ce51a6ddc65b927d2f788040ae372240c668f0fec2d0"
+    },
+    {
+      "path": "scripts/verify-postgres-runtime-image.ps1",
+      "bytes": 16290,
+      "sha256": "f9536746110d18e971d5ca4360c3b60e0a49203bbb7547d4194d94d385764ee0"
+    }
+  ]
+}

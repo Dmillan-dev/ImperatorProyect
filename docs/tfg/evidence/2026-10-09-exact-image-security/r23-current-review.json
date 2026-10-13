@@ -1,0 +1,44 @@
+{
+  "risk": "R-23",
+  "status": "OPEN / NO FIX AVAILABLE",
+  "closed": false,
+  "reviewedAtUtc": "2026-10-09T11:11:37.062253+00:00",
+  "advisory": "GHSA-vfj7-8cjw-p6xm",
+  "url": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+  "officialSnapshot": "braces-advisory-current.json",
+  "installed": [
+    {
+      "path": "node_modules/braces",
+      "version": "3.0.3",
+      "dev": true
+    }
+  ],
+  "officialVulnerabilities": [
+    {
+      "package": {
+        "ecosystem": "npm",
+        "name": "braces"
+      },
+      "vulnerable_version_range": "<= 3.0.3",
+      "first_patched_version": null,
+      "vulnerable_functions": []
+    }
+  ],
+  "developmentReachability": "Transitive lint/glob tooling; untrusted nested patterns may exhaust the JS call stack. Dev-only is not harmless.",
+  "historicalProductionAbsence": "Exact inspected standalone output in the October 6 review; October 8 production npm audit has zero findings. Neither proves current Docker filesystem absence on October 9.",
+  "currentProductionAbsence": "NOT IDENTIFIED IN SCANNER INVENTORY; LIVE FILESYSTEM NOT RE-INSPECTED",
+  "mitigationsHistorical": [
+    "Trusted reviewed checkout and fixed repository lint patterns.",
+    "Lockfile/integrity pins establish identity but do not fix the vulnerability."
+  ],
+  "proposedConditionsNotEnforced": [
+    "Avoid untrusted nested glob input; isolate untrusted tooling without deployment credentials/real data.",
+    "Recheck official advisory when a fix appears or tooling/runtime/input boundary changes."
+  ],
+  "nextReviewSuggested": "2026-10-12",
+  "noUpgradePerformed": true,
+  "r20Included": false,
+  "currentProductionInventory": "No braces package in fresh Trivy package inventory for the exact frontend digest; not a live filesystem inspection or proof that no vendored/embedded code exists.",
+  "inventoryPackageCount": 108,
+  "frontendIndexDigest": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78"
+}

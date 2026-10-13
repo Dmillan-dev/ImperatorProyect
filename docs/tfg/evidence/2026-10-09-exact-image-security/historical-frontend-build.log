@@ -1,0 +1,94 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 3.05kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+#2 DONE 0.1s
+
+#3 docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+#3 resolve docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e 0.1s done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/node:24.20.0-bookworm-slim@sha256:ba849c60be29959425b8734d57b8b4b7d56f98edd9504c9af091d5281095a71e
+#4 DONE 0.1s
+
+#5 [runtime 2/7] ADD --checksum=sha256:d2f7edfcc7689b9e0761c2742cc824ac86a20768bc5e8057818dc6875291fe76     https://security.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-8-0_10.42-1+deb12u2_amd64.deb     /tmp/libpcre2-8-0.deb
+#5 DONE 0.0s
+
+#6 [runtime 3/7] ADD --checksum=sha256:d7d1943aec9597629bf73075efcc5ef6dc9bda96d78e80d843156ecd448478b8     https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-base_5.36.0-7+deb12u4_amd64.deb     /tmp/imperator-perl-base.deb
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 DONE 0.0s
+
+#8 [dependencies 1/4] FROM docker.io/library/node:24.20.0-bookworm-slim@sha256:ba849c60be29959425b8734d57b8b4b7d56f98edd9504c9af091d5281095a71e
+#8 resolve docker.io/library/node:24.20.0-bookworm-slim@sha256:ba849c60be29959425b8734d57b8b4b7d56f98edd9504c9af091d5281095a71e 0.1s done
+#8 DONE 0.1s
+
+#9 [runtime 2/7] ADD --checksum=sha256:d2f7edfcc7689b9e0761c2742cc824ac86a20768bc5e8057818dc6875291fe76     https://security.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-8-0_10.42-1+deb12u2_amd64.deb     /tmp/libpcre2-8-0.deb
+#9 CACHED
+
+#10 [runtime 3/7] ADD --checksum=sha256:d7d1943aec9597629bf73075efcc5ef6dc9bda96d78e80d843156ecd448478b8     https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-base_5.36.0-7+deb12u4_amd64.deb     /tmp/imperator-perl-base.deb
+#10 CACHED
+
+#7 [internal] load build context
+#7 transferring context: 474.02kB 0.1s done
+#7 DONE 0.1s
+
+#11 [runtime 4/7] RUN set -eu;     dpkg --install /tmp/libpcre2-8-0.deb /tmp/imperator-perl-base.deb;     rm -f /tmp/libpcre2-8-0.deb /tmp/imperator-perl-base.deb /var/log/dpkg.log;     rm -rf         /opt/yarn-v1.22.22         /usr/local/lib/node_modules/corepack         /usr/local/lib/node_modules/npm;     rm -f         /usr/local/bin/corepack         /usr/local/bin/npm         /usr/local/bin/npx         /usr/local/bin/pnpx         /usr/local/bin/yarn         /usr/local/bin/yarnpkg
+#11 ...
+
+#12 [dependencies 4/4] RUN npm ci
+#12 CACHED
+
+#13 [build 3/5] COPY --from=dependencies /app/node_modules ./node_modules
+#13 CACHED
+
+#14 [build 4/5] COPY frontend/ ./
+#14 CACHED
+
+#15 [dependencies 2/4] WORKDIR /app
+#15 CACHED
+
+#16 [dependencies 3/4] COPY frontend/package.json frontend/package-lock.json ./
+#16 CACHED
+
+#17 [build 5/5] RUN npm run build
+#17 CACHED
+
+#11 [runtime 4/7] RUN set -eu;     dpkg --install /tmp/libpcre2-8-0.deb /tmp/imperator-perl-base.deb;     rm -f /tmp/libpcre2-8-0.deb /tmp/imperator-perl-base.deb /var/log/dpkg.log;     rm -rf         /opt/yarn-v1.22.22         /usr/local/lib/node_modules/corepack         /usr/local/lib/node_modules/npm;     rm -f         /usr/local/bin/corepack         /usr/local/bin/npm         /usr/local/bin/npx         /usr/local/bin/pnpx         /usr/local/bin/yarn         /usr/local/bin/yarnpkg
+#11 0.511 (Reading database ... 6096 files and directories currently installed.)
+#11 0.511 Preparing to unpack /tmp/libpcre2-8-0.deb ...
+#11 0.590 Unpacking libpcre2-8-0:amd64 (10.42-1+deb12u2) over (10.42-1) ...
+#11 0.969 Preparing to unpack /tmp/imperator-perl-base.deb ...
+#11 1.105 Unpacking perl-base (5.36.0-7+deb12u4) over (5.36.0-7+deb12u3) ...
+#11 7.586 Setting up libpcre2-8-0:amd64 (10.42-1+deb12u2) ...
+#11 7.634 Setting up perl-base (5.36.0-7+deb12u4) ...
+#11 7.716 Processing triggers for libc-bin (2.36-9+deb12u14) ...
+#11 DONE 9.3s
+
+#18 [runtime 5/7] WORKDIR /app
+#18 DONE 0.3s
+
+#19 [runtime 6/7] COPY --from=build --chown=node:node /app/.next/standalone ./
+#19 DONE 0.7s
+
+#20 [runtime 7/7] COPY --from=build --chown=node:node /app/.next/static ./.next/static
+#20 DONE 0.5s
+
+#21 exporting to image
+#21 exporting layers
+#21 exporting layers 1.4s done
+#21 exporting manifest sha256:85decf17bb4f50e1115839c3dbb0dfac31aafaafb567f50212598d08ce5f3daa 0.0s done
+#21 exporting config sha256:d28461f2e94913b6aeb0d29161714c89b2160973329727941b6e086702a2d908 0.1s done
+#21 exporting attestation manifest sha256:6b0ed3e4c70897dccef43d4e1d5b45c65a2967a7c429d3aefa95132501b17369 0.1s done
+#21 exporting manifest list sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78
+#21 exporting manifest list sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 0.1s done
+#21 naming to docker.io/imperator/frontend:6e79e83e909995c50a44aba3608b6ca25a0e4602 done
+#21 unpacking to docker.io/imperator/frontend:6e79e83e909995c50a44aba3608b6ca25a0e4602
+#21 unpacking to docker.io/imperator/frontend:6e79e83e909995c50a44aba3608b6ca25a0e4602 0.9s done
+#21 DONE 2.6s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/sp3wa1x2m9f1peoq9p5epkifs

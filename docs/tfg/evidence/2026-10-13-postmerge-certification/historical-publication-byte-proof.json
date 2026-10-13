@@ -1,0 +1,1475 @@
+{
+  "retainedCount": 238,
+  "files": [
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/artifact-correspondence.json",
+      "sha256": "205fa93e04f06b0c74576f03af3e19426e7d9647d7b03aa28b8a103a7deb61eb",
+      "bytes": 15096
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/backend-credentials.json",
+      "sha256": "cbc467a24a108fdfb871913b42ec33bd6e4a6e195497f1cd35a3788a4e2a5ced",
+      "bytes": 522963
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/backend-credentials.txt",
+      "sha256": "80f4ca20bcf65f3728e85e13825358f5745992f48f1ec4be4cc4b2f3e8a6985c",
+      "bytes": 446
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/backend-fixable-gate.json",
+      "sha256": "9b393b33e4c5e20285d70ba3bc263a392f9ba802e3d0f43382133312bc94379c",
+      "bytes": 591413
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/backend-fixable-gate.txt",
+      "sha256": "0464211ee4776d5fe7e29b7089b60bc9d19b01064b22ebbf73eb024057f38c85",
+      "bytes": 384
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/backend-vulnerabilities.json",
+      "sha256": "df3d7dd47d2fd0a40657cc5359c6ddeb8d7cbe2a249ac5932bfd3bb8170d6782",
+      "bytes": 733010
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/backend-vulnerabilities.txt",
+      "sha256": "422df6efa4cf1cceba314404740484b798f5e4e623a31a7e295b2588dea03093",
+      "bytes": 384
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/braces-advisory-current.json",
+      "sha256": "b3961db9d1e95c8d03b9266e0cc6420efa3789f9361ef02d65f8f5997d9fc6b8",
+      "bytes": 2071
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/current-cve-applicability-matrix.json",
+      "sha256": "fc65fc4c883475371f98db21109e246cf62d09c2b7ac3f5304129296c787c490",
+      "bytes": 115525
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/database-download-commands.json",
+      "sha256": "e4efcc8c0fde1c2a47e6a1928cb5e9a07e861c1cf54d40f0f2c66273c227778d",
+      "bytes": 1306
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/debian-vendor-review.json",
+      "sha256": "fbfae5b089c5659374439ec8e5a853bc2f50a555dbf8813cafd03f894899981a",
+      "bytes": 53620
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/document-changes.json",
+      "sha256": "ad3e467c643d4a3f34c886aab4d1b6d830495e867643bd99ed9f44c3fcb095b1",
+      "bytes": 4549
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/documentary-validation.json",
+      "sha256": "233c6915bff836bb7e7b3030b37aab8c0a92c85d117e32d17f1128944c6551e2",
+      "bytes": 283
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/exact-security-files-sha256.json",
+      "sha256": "e6186477ffc678441d56f1678f27f333cdfbe15ce6ebb475a87f864ef0c489ad",
+      "bytes": 15495
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/EXACT_IMAGE_SECURITY_REVIEW.md",
+      "sha256": "6b84157a33b8c3cde58774ee49f703c8cdca35760f24d5d657c3914794e3708f",
+      "bytes": 9898
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/final-review-validation.json",
+      "sha256": "003202695057b6647e583f94ea8279fb2f7be4ab0a42ddf526818f117366cfff",
+      "bytes": 1080
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/frontend-credentials.json",
+      "sha256": "1622270e51c1c898638e73e98aee5f80929aed23d2972c02edf9a6ab0b8854c2",
+      "bytes": 396547
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/frontend-credentials.txt",
+      "sha256": "96fd0a980e9be31582c117b14f56cc22e9cb5b9a74cbbbc8b20a7ee7dbf9645b",
+      "bytes": 446
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/frontend-fixable-gate.json",
+      "sha256": "21ef30d59e438de595a606ef43e9df74c573b38bb9d9ecbebb47551f1f01afb7",
+      "bytes": 396547
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/frontend-fixable-gate.txt",
+      "sha256": "cfa3a78f43f73a284103e48d4c6855305872879a93e6ffb4ecc9befa346729cc",
+      "bytes": 572
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/frontend-vulnerabilities.json",
+      "sha256": "f030da19072f79bb2bbe592031145ce19f38fc2e315ca859fbcda7769980ffb9",
+      "bytes": 1050177
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/frontend-vulnerabilities.txt",
+      "sha256": "fc7621b157250795b5ea85184eef2b29ac993d554672a48547951f57d7727883",
+      "bytes": 572
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/gitleaks-complete-pack.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/gitleaks-documentary-raw.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/GO-2026-6607.json",
+      "sha256": "f4bf7540a2b1f5671a55ab2445ed6071036a699dcd9ec215ac73f7a57aadc8d6",
+      "bytes": 1252
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/GO-2026-6609.json",
+      "sha256": "3a47edb3f881a474a00b696392923a6f97a8b84fb8ca90cf440c1b2b32366ea7",
+      "bytes": 1087
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/go-builder-proposal-metadata.json",
+      "sha256": "27d1e40169d472684b0ee47ed320a31f0308fe0df12f9e04bc162043b462bdfa",
+      "bytes": 9934
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/gosu-source-review.json",
+      "sha256": "efbedc4d64562c265e0c7405fa4530331009f8c649e76af1bc92cdd58bc793eb",
+      "bytes": 5814
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/historical-backend-build.log",
+      "sha256": "070f2d7054079d7ab4d8a60fa66f7afa192f7d47ea8fa25f7fd76e72c055cba8",
+      "bytes": 5633
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/historical-build-records.json",
+      "sha256": "94a2ea3b93b17fb748714dc5bee49bb2f4ef32be4c8f191da3b9427d41f430ca",
+      "bytes": 1157
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/historical-frontend-build.log",
+      "sha256": "900ef6bfe2bdc56d450b2865256fe40e90e079c82a58dd6b74e143f918b0ebd2",
+      "bytes": 5364
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/historical-migration-build.log",
+      "sha256": "c396505a165ec16f29efbf7ae34ee1d695b87b1407b057895384a752bc118b09",
+      "bytes": 8107
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/historical-postgres-build.log",
+      "sha256": "69a40f7d6cdabdccf22dade5e612296e707a355678a4c0fc269579bf35bb69de",
+      "bytes": 14803
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/historical-report-seal-validation.json",
+      "sha256": "c148697edb632137dfc4a41a2b6664d3797bbb7f9c3b71121c0910e6268f7873",
+      "bytes": 153
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/java-index-db-download.txt",
+      "sha256": "f0fde7f393869bf7780baee7d9a3b3ea20c638095b8cbc59ae3b1e3629d6ac29",
+      "bytes": 465
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/migration-credentials.json",
+      "sha256": "848392ee9c31ea3ab0a7d801cf932f32c9a7840c153ce479deca7b4080fc43a8",
+      "bytes": 428942
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/migration-credentials.txt",
+      "sha256": "c68dd63956d4ac21f03b4626cb51f5e3a6c147d5a9651d3a459d99193b2c0b5d",
+      "bytes": 446
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/migration-fixable-gate.json",
+      "sha256": "8f753fa5e662cb5a9f7e1f2c7975a84369ca620483468397284b21eb0609b30b",
+      "bytes": 590358
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/migration-fixable-gate.txt",
+      "sha256": "8c3c3be25ba8db6518196f2a077be01d9b5a9ecce4355d3b56a01ad41795bd96",
+      "bytes": 384
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/migration-vulnerabilities.json",
+      "sha256": "66b1f9633e72e22207e188198e621b59c63d56a119ed552af6da0355198a9843",
+      "bytes": 765710
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/migration-vulnerabilities.txt",
+      "sha256": "9789cfa31b67ae6735cae5c2ac42b58a0796d0462ef5fecae884c1a401dcb1fa",
+      "bytes": 384
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/minimum-remediation-proposal.json",
+      "sha256": "c1e2a0ee039f749a84139fb665074ba5ad58dac3381e9f18a6a67102f455c097",
+      "bytes": 2036
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/MINIMUM_REMEDIATION_PROPOSAL.md",
+      "sha256": "91dd0b45f5e37e1116c68cc112ffc0f1267055ab4e016d10c20cc6f2478e2b17",
+      "bytes": 4354
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/new-fixable-findings.json",
+      "sha256": "8373286d72ef9febcbcc2d3cfe147065de6b757d5e013522ef60a763b8a51f58",
+      "bytes": 1356
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/postgres-credentials.json",
+      "sha256": "715eae48e3b55abb15449bb915c246f2b6315fe9d75607065c0a32ca2a07857e",
+      "bytes": 803809
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/postgres-credentials.txt",
+      "sha256": "7638246d0f111e789bca99cdb548f7459bc495d03430a62de620aa6e166f4da2",
+      "bytes": 446
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/postgres-fixable-gate.json",
+      "sha256": "3c041becc675b8ea808b4f0392a5e87f04f8f0e229ae10bf4567f28b211b5560",
+      "bytes": 808243
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/postgres-fixable-gate.txt",
+      "sha256": "9b6cbab81d2529da7c64244c041a3991911986bf6fe286c37126660c8a90df96",
+      "bytes": 573
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/postgres-vulnerabilities.json",
+      "sha256": "27f6118625b494e8bb1409962c04bd243a6e20563cc87a93230b9dda988bee17",
+      "bytes": 2100240
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/postgres-vulnerabilities.txt",
+      "sha256": "3bb03a72cc70177bdbe75c11cb054ef712aab02e05eefe67f79c1a9e5e49e154",
+      "bytes": 573
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/preflight-images.json",
+      "sha256": "7f8d006f2b3d4274dfb174dcf4c694540438d3e42428254a99d6115a722ae6ba",
+      "bytes": 12191
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/preservation-validation.json",
+      "sha256": "187774ee15ca506c26c70a3d9471b07f6c18871f67feb870855e1b3ea97f1f2a",
+      "bytes": 986
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/r20-current-review-not-accepted.json",
+      "sha256": "f6fe5ccb1307ae0df99f9b9820e46b1fa7d5fc1d0a0d520f797accd84903a5d6",
+      "bytes": 3304
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/r23-current-review.json",
+      "sha256": "578928d99cd73e63656df30274363db047d0245cbb810436799ce83015ed4363",
+      "bytes": 2002
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/residual-comparison.json",
+      "sha256": "c7d78f442c1678d66dbf88d94e83e09947e854d0d08bc63df67f3771c80f7d26",
+      "bytes": 1932
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/scan-commands.json",
+      "sha256": "04591f32ce387a06fb5e81985008fe07f1d0cb62eaa8837619386648532c983c",
+      "bytes": 18599
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/scan-summary.json",
+      "sha256": "10026b944f8b5fc080b9b02c5f1bd3704f46a64d4d6feb6c3cca1cfa763e3033",
+      "bytes": 1935
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/scanner-databases.json",
+      "sha256": "a880c56f625b6ef90bcc61567efc25dcacd2ef10b3681c45173aa209eab2dbf6",
+      "bytes": 404
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/scanner-tool.json",
+      "sha256": "b99ca5bbd154276528828c43263e22039525ea64e3dcaea783e683d3bb8f6afc",
+      "bytes": 1060
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/secret-review.json",
+      "sha256": "94933d5b448187ad9a11af1f2365fc4f1cd737cf83bcd772a50db4ae932e8b40",
+      "bytes": 793
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/unaccepted-version-candidate.json",
+      "sha256": "0c01299f1a291f0adea249e61af7c0e7b968885012cb6fe172f100529a0f6ef0",
+      "bytes": 2073
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/vulnerability-db-download.txt",
+      "sha256": "8f1e97f21f0356cccd60e6fb76836a8a5ae6c19ee5823c65f569fb61a6b116d4",
+      "bytes": 347
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/authorized-patch.json",
+      "sha256": "b37b9c1992b8260ea47a4c025c364ea5ed894896274331521f779c4488c65961",
+      "bytes": 1204
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/builder-bootstrap.log",
+      "sha256": "b37d2170d3b093997c759ca93bf7168408ab892fde9906b33237fda8a6201172",
+      "bytes": 2337
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/builder-create.log",
+      "sha256": "55eaa7399cf07fde8dcf921b13783e2ddb9a10ff04e00ff91f6b8cb3651fb8ca",
+      "bytes": 24
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/candidate-ci-current.json",
+      "sha256": "a7290a1b7f9655f9027c1f48ee66b0338cc8646f21c145919b816c7dc50946d9",
+      "bytes": 4736
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/candidate-ci-latest.json",
+      "sha256": "d0323848f1a4159ad0e212aa4b3b728b723d151d8a2f7df792a2957a066b6fc3",
+      "bytes": 2590
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/candidate-files-sha256.json",
+      "sha256": "f7a9cd2a0489172e6ea8e03062205710392ca46e92ecc6e61ec69080eebca0dc",
+      "bytes": 43784
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/candidate-pr.json",
+      "sha256": "41cd769229c76e70ea1f77688d0fe71834d3e71490f030eb887c60498de75bca",
+      "bytes": 407
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/candidate-review-state.json",
+      "sha256": "e1de089be6d249dcf002d2939469d27f45b16425659e897c1d38c761e4549cf9",
+      "bytes": 1788
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/candidate-validation.json",
+      "sha256": "4bb7653537678cf8252940c2e9075bda3cf60af046b0475cd6e3fe9e950d8e8a",
+      "bytes": 806
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/CI_ASSOCIATION.md",
+      "sha256": "f16bcbf6fbbbe15e883c0ab799cb3b5764005b3a5944705f3cc8a3028c456a16",
+      "bytes": 1024
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094-first-command.json",
+      "sha256": "bb297569c8b4e1525ae6823fe3b6a82253f39653a007057b4feeec60e626cf84",
+      "bytes": 498
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094-first.log",
+      "sha256": "5c6f44fa9fb2744c1f732a2788c478f9768341c6ea7e717cd4dbdef32636bce8",
+      "bytes": 29249
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094-repeat-command.json",
+      "sha256": "620f09d1a50f5674a4688c7d569eb90122e2a6afad72138309cb7c3a7211afe8",
+      "bytes": 808
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094-repeat.log",
+      "sha256": "5453983510bc9e6ec30cc244275cfb20e65803ad1ec67b7317f5b635d57650a6",
+      "bytes": 14490
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/docker-before.json",
+      "sha256": "e9b67ade6a85a34d95cd0182fb4f147a1244f728eacc93c68acf75bb3d2b92b6",
+      "bytes": 3322
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/document-changes.json",
+      "sha256": "c51a8527244e0174766b4afb756365d63e6620275c65980402610ee474bea986",
+      "bytes": 5248
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/final-documentary-secret-result.json",
+      "sha256": "7cd27142b74d1f62fa1b4f63e4adf7868767a26a4e377164a51fa8ddb7724656",
+      "bytes": 616
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/final-technical-review-validation.json",
+      "sha256": "3e88861dca7cdde4dd1b8ee2fe8d8866c9ca2a5d2cd5c5b044a39f7f1607e4f2",
+      "bytes": 1197
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-browser-install-pinned.log",
+      "sha256": "db3f07aa1c2306ea582d96be0cfdc455e0b3655ddbd2b01af49385d3be784f72",
+      "bytes": 8458
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-build-configured.log",
+      "sha256": "4d624bc1b3b0609c4ec6c941680d6dbf9e13c2632522226c064a79b3be4a4a19",
+      "bytes": 923
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-build.log",
+      "sha256": "9d2890edd48414276db6d9e51dbb418f1f10782870629ecd8fd7bc29722b4b63",
+      "bytes": 692
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-format.log",
+      "sha256": "0fdfea6c362f10e71a8b76517627b7eb04eed39705e7f07c94a10190cc6030f9",
+      "bytes": 146
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-lint.log",
+      "sha256": "91f5b65e4bbb03a02c7e51c171dfef0251f9b3339e79119827d981362e87dd62",
+      "bytes": 79
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-npm-audit-full.log",
+      "sha256": "df0901ab3626049e6c397fa458183a78250b80e683824d02d408315ae2cb5fe4",
+      "bytes": 3023
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-npm-audit-production.log",
+      "sha256": "96f423ce26c0eb6a80d4c6b78b11eaefd2572b206b43b3d31685a3de9aa5888d",
+      "bytes": 365
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-npm-ci.log",
+      "sha256": "56261fa4d65b920ea8adbff2004fa49fb3531d1ec3b0a84fbe95d800edfdd6ee",
+      "bytes": 545
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-playwright-configured.log",
+      "sha256": "4b0ba6a1ede3218892acc34cee8edfdf9d1cb434e650658cf65c3c2866150486",
+      "bytes": 7306
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-playwright.log",
+      "sha256": "0b4a54307fb43ebc4b1840b6705f380ebc3e3ca45262a3e255362a4dd9816835",
+      "bytes": 36803
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-results.json",
+      "sha256": "5cee22ba834e8fd1de449bc95e3b60cb998ce880e7a70c279baab8ebaee69879",
+      "bytes": 1881
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-resume-results.json",
+      "sha256": "48e07d86753869ef059d7c7a4850e5783868c7de5b2e3ca77ed1c523b9987624",
+      "bytes": 2553
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-tests.log",
+      "sha256": "01c45a38784c4aab35b99e9b4f3268cff93cbdce6b8d966cd41efa8dab1be4f4",
+      "bytes": 329
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/frontend-types.log",
+      "sha256": "1bd54d7d2d4ffe8afa8d6e291dfce8f1653f1ff331f842e2c2b3d40acab7156a",
+      "bytes": 71
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/gitleaks-current-source.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/gitleaks-current-source.log",
+      "sha256": "cfb465fe723bf18069422ba11604641d5a3160d0c5ecb12d418e5f5d8be6a7b5",
+      "bytes": 79
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/gitleaks-final-documentary.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/gitleaks-final-documentary.log",
+      "sha256": "fb0f6c6870d4f830acbb88655440ccc92977a47782c49d2a337eef85070dbf90",
+      "bytes": 81
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/gitleaks-new-evidence.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/gitleaks-new-evidence.log",
+      "sha256": "a6f94aa6bd93996c1a9e97d8985faa462391c459b62559a635c4cff91357590d",
+      "bytes": 81
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/playwright-configured-results.json",
+      "sha256": "e3b8ede9a275c5a8e9d8cfd202ea7afe37293826e8d1694f23e19df15d9e383c",
+      "bytes": 1008
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/PR_BODY.md",
+      "sha256": "44bd53aa2c435b9f9562215f913b10d8f70f4503331dd8bde09d1f054323bf26",
+      "bytes": 1443
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/R20_PROPOSED_DECISION.json",
+      "sha256": "4f0e3b8d2a409631f49a3b8254f6374c9c1f563182a10c2c6d6b6679170dbc41",
+      "bytes": 4667
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/R20_PROPOSED_DECISION.md",
+      "sha256": "5ea4fed7ffe16ae3fb37c1fd6afdc65517a4b94bb5c64f03b0a5d8fadad8cf3e",
+      "bytes": 2811
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/R23_CURRENT_REVIEW.json",
+      "sha256": "6eafad5c3ee7fbca107204b1d7a4d139897e511fe7b863d6e6c345aa7493a136",
+      "bytes": 875
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime-cleanup.json",
+      "sha256": "6823e620747ac5266785a7c90706c1456acc26dd7d6d97576ae2fab9a5a7e972",
+      "bytes": 1414
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/source-secret-check.json",
+      "sha256": "0889b0a4f3bbece18200be432174555d31f545bcd56426c9f24e7200c892f546",
+      "bytes": 777
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/TECHNICAL_VALIDATION.md",
+      "sha256": "f2e5edaaa319cd46281a8839c0c6f81091b3342a9d992f2b6b76acff3f37533a",
+      "bytes": 7616
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/trivy-current-source-command.json",
+      "sha256": "0a8b9ac7dbaf2580b8c7ead8d7efe109044ec750b1aecdad2b2f64eab74689a0",
+      "bytes": 1446
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/trivy-current-source.json",
+      "sha256": "447d2aca267660e0da05e4dad13e8fd1b356ee3d9ac35511ac6a96cf2560972c",
+      "bytes": 123591
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/trivy-current-source.log",
+      "sha256": "9f4e45ea4e27e06be148ebdfa55b02f2a54ebf54cd70828a6b2857565dfb4855",
+      "bytes": 22205
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/applicability/braces-advisory-current.json",
+      "sha256": "d918adabcec6b9a4a21b9dfc089cdd89d08bcaa04f3b40c32cfcd53770a4dcc7",
+      "bytes": 2523
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/applicability/current-cve-applicability-matrix.json",
+      "sha256": "90c187c1bdc591137a2ae183784709fe9bab435ded03295e2b13f0d791fc4d50",
+      "bytes": 106470
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/applicability/debian-vendor-current.json",
+      "sha256": "7b995caee5586f2c7f6e3396986a987cbc5eb09a6448620ea5a06c1302d053f1",
+      "bytes": 42826
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/applicability/frontend-inspection.log",
+      "sha256": "0145a4aecaad9bcd93a90534beb07ce96e5aab74cff0f8f6f24c2b05c358c3a3",
+      "bytes": 67696
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/applicability/postgres-inspection.log",
+      "sha256": "6686595758b8db813666b91a827b30be7b0fded727d566053f720b9c408bb108",
+      "bytes": 133581
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/applicability/residual-comparison.json",
+      "sha256": "139a8b9886adf93f6e6ede4e729cad7a2bf4cdbb5ac8003880137f8e61263924",
+      "bytes": 965
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/applicability/runtime-inspection.json",
+      "sha256": "2f65305cac85d9849f9915ed1d51934672c4ec56db9ba25d6f60ca8376f5096e",
+      "bytes": 1163
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/applicability/source-boundary-current.json",
+      "sha256": "2247ab6e2f3f6ec602476bfd9e18e55c858b6c32b1a7c70413a43cd48ba1ab7c",
+      "bytes": 3587
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/backend-result.json",
+      "sha256": "0a5e98d3d1b3144ebd55e58a413d7be1d02054037274847d94ad662289d91a10",
+      "bytes": 926
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/docker-remove.log",
+      "sha256": "7005ddf6fbb707b61b70c3428e8ff0d2f51d14f05eb93e90372c1da8aa83b400",
+      "bytes": 30
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/docker-start.log",
+      "sha256": "a3c46c5ae4956cf04232dc29ae8d47f58a5fd0fe184bf6f253c1ba8cff9d0d44",
+      "bytes": 66
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/docker-stop.log",
+      "sha256": "7005ddf6fbb707b61b70c3428e8ff0d2f51d14f05eb93e90372c1da8aa83b400",
+      "bytes": 30
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/maven-integration.log",
+      "sha256": "c74b9d517a220b54e69e7c0bf69c9e848496926367c82492f4161981adae511a",
+      "bytes": 13735
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/postgres-runtime.log",
+      "sha256": "115f5ecafc9aeba653d1cdeeefec757e31ddd9ffeac9f6dd873778e5374e0b75",
+      "bytes": 12750
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/helpers/capture.py",
+      "sha256": "27efb852f60938bee13722c9b738bd6ac14817b8598efc094570e29919f37739",
+      "bytes": 2301
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/helpers/run-backend.py",
+      "sha256": "36601d3079e7873426ff86df3cb3ca407122611b7b7b9615691d1deb9ce4a89b",
+      "bytes": 5114
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/helpers/run-frontend.py",
+      "sha256": "1e4a4b44e31ce0aa92ef4d00b6b1a2178c7a58177a4d09c9fda19b16937aa00a",
+      "bytes": 1258
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/helpers/run-persistence-recovery.py",
+      "sha256": "b51578ed38053cd626f9ee36f6f48151e0f0ea798a6d5bc71bccf4994292b5c6",
+      "bytes": 5266
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/helpers/run-scans.py",
+      "sha256": "86a8aa04bce7ed9ecfe6a42904934829ca0b7a45d542e47247e76d68e1d10085",
+      "bytes": 4357
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/capture.log",
+      "sha256": "9d0c5a5f0349782740d6e8a7d96aae1c7ce6a83b83aa52ae631179af1d72f7e8",
+      "bytes": 56
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/compose-command.json",
+      "sha256": "9c52fcd440c9781d17fa29ef408787287f234d48cc8330c974a360ee6564c7e4",
+      "bytes": 409
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/create.log",
+      "sha256": "022becbf96300a9fb832f1c6fda3cc7249c6efe63163133e767ac78c0216013e",
+      "bytes": 1952
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/demo-identifiers.json",
+      "sha256": "8d8603caeefe1db745a1210843a648d5ded422370aa8627aa73602ae39b7d68d",
+      "bytes": 377
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/fixture-start.log",
+      "sha256": "34873e48c8ef2d6b68a70ba0f76a8279a5726e3835fb6f013a8aa8b42ff05e4a",
+      "bytes": 65
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/persistence.json",
+      "sha256": "a06777e0468f49f9216200610ec5c6e0dc72e0253a1ab7efbced4440c3acc91c",
+      "bytes": 11563
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/readiness-recovery.json",
+      "sha256": "c8773eb40b30246e4e970338fee9a972ca849c9b443dee2c4710914e3637ae22",
+      "bytes": 388
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/readiness-start-postgres.log",
+      "sha256": "31c76048ff66320dc6a37e424bfc404a6d152f427b95f780da78d6ab99419cbb",
+      "bytes": 115
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/readiness-stop-postgres.log",
+      "sha256": "e43ff4f34d0a1b717516358b8c123e3c55ca34285c443012663dd0068cdcb154",
+      "bytes": 115
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/recreation.log",
+      "sha256": "3ac1fc7fc45e29a87d60bc8d8e70459922d89c29b531f2585cb93dc8dc7c0498",
+      "bytes": 2431
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/runtime-image-bindings.json",
+      "sha256": "73931e038246e90cec88d44339a918b43b4bbcc4c7d2a4a846ada2bcd0bdaa7f",
+      "bytes": 13742
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/runtime-inputs-summary.json",
+      "sha256": "7697671079b856e7e6ff5a4a70815ccb6f8024f346b52e59fe1c18aeac3a6cc3",
+      "bytes": 877
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/start.log",
+      "sha256": "f22612af3615b6afb5d104673510a3679a419a03a0973063def211eb8affcc62",
+      "bytes": 2082
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/test-inputs.yaml",
+      "sha256": "ebaedc89ecffcd942ee4ca3fb1c81722fddef631d760b5d86ed88009389a0a7f",
+      "bytes": 1901
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/truststore-setup.log",
+      "sha256": "34dfcf24817cef5736127fd0c024eeb7231217040a7d616b0aebb2bdc0e5e74d",
+      "bytes": 35
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/backend-credentials.json",
+      "sha256": "cb9d8eab3e3da27af134c339eaf170f64e37bc6ef9e49a7727d2c54a816549e3",
+      "bytes": 522963
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/backend-credentials.log",
+      "sha256": "0b01a60a55e5fb8b62feaa469364cf4a65ed87ce8a69b8d0f75301504dbf4750",
+      "bytes": 446
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/backend-fixable-gate.json",
+      "sha256": "aadf452ecb627e01aefe07dc3bb7de431ec144490141e3a972f37b7a02a95ede",
+      "bytes": 591413
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/backend-fixable-gate.log",
+      "sha256": "819ff3ecf402613fd643fff04d567af95729a0f42cdbcf2c0b8703de2e0c716d",
+      "bytes": 384
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/backend-vulnerabilities.json",
+      "sha256": "8b7801b47fbe93ea59db5d925cf5b795b3f5a0742dca42e15e5361d5700e069b",
+      "bytes": 733010
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/backend-vulnerabilities.log",
+      "sha256": "735b213543033d78452ab1a8e77bebaaac55ac3eab8fd9ee0e56dcc12623e8f1",
+      "bytes": 384
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/download-db-only.log",
+      "sha256": "0338f77533541d145b1938d1f16588db2309c9c079a3ccada72fad50dff904b2",
+      "bytes": 347
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/download-java-db-only.log",
+      "sha256": "ef878adc73f95983cfd934eb2e841afb1066f1ea51e17eaecdffa7b1c3ad61d0",
+      "bytes": 465
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/frontend-credentials.json",
+      "sha256": "3aa480fc309a39f10a4511008bcd38abee3a2442d6c39c710146f9fc92a3b308",
+      "bytes": 396547
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/frontend-credentials.log",
+      "sha256": "b03d1c0813869169d24a249ed395bcd2924633c2bd9a4f283235f77acf40e1b3",
+      "bytes": 446
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/frontend-fixable-gate.json",
+      "sha256": "3adaa047041ee3838e11a5ed2bf79ea18d6bec3177e634092f15e6a14280cba3",
+      "bytes": 396547
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/frontend-fixable-gate.log",
+      "sha256": "86b99c75ebff5b73f25d4d354247ccb379e3d0bcfa0f7d5a701527ae64c66e27",
+      "bytes": 572
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/frontend-vulnerabilities.json",
+      "sha256": "290f95aa6fa3f9794f27a01749b442656301c4bb5a3e90e622985fe10b72a9f1",
+      "bytes": 1050177
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/frontend-vulnerabilities.log",
+      "sha256": "333e7e2753e2fc4747003852f5a448eb41eb82bb2a15258e1ec65ba1c260156d",
+      "bytes": 572
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/migration-credentials.json",
+      "sha256": "49d69308a996cb68819918d8bb407bbac3fbe9e06bd613db6d9fc7bc13b27689",
+      "bytes": 428942
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/migration-credentials.log",
+      "sha256": "66cd7da57da2bccd8174d0d46762ee83c5a8e797c43e8b634e598cbcb81b370d",
+      "bytes": 446
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/migration-fixable-gate.json",
+      "sha256": "e6c7eb744467d4b62677b2caf6229b44664d9299ff5fbb3aad1f3d66e9699460",
+      "bytes": 590357
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/migration-fixable-gate.log",
+      "sha256": "c58605f47500f5d754ccb52ee0418b3361fe6840cd36a31c65f17f3e4690e87e",
+      "bytes": 384
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/migration-vulnerabilities.json",
+      "sha256": "2dd161339844069967697097df1f5354a38a377ed4d8730266cbc5aae2ac4cf7",
+      "bytes": 765710
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/migration-vulnerabilities.log",
+      "sha256": "8b780c021e62c1f1892673017da8968535bd644284b4a1389eb4dbe5a02c4d03",
+      "bytes": 384
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/postgres-credentials.json",
+      "sha256": "f71e7ee419d39dc163fb480ed6f94d58823b1bc8668b311de2140385c4bf8ed8",
+      "bytes": 803816
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/postgres-credentials.log",
+      "sha256": "d012888347132276b7ea0e46ad41eb501f92d58c3cdb9b93acb9cab3fb24ff86",
+      "bytes": 446
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/postgres-fixable-gate.json",
+      "sha256": "49ed467f5af4d27377faa49c6960fce81a897a4ebea1bc863637c2ab4053f439",
+      "bytes": 803816
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/postgres-fixable-gate.log",
+      "sha256": "0726491cdab16f403ddb934630b8768b44c7ca13ea5575e18324ee19799f95c6",
+      "bytes": 573
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/postgres-vulnerabilities.json",
+      "sha256": "1e5e543946064a11300fb21f09ddfa9a807b40689f039565477282acd581ec34",
+      "bytes": 2072972
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/postgres-vulnerabilities.log",
+      "sha256": "181825d8789eeadb3f73b4369434538a686e546058a67eac6c010f81b3645f9f",
+      "bytes": 573
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/scan-commands.json",
+      "sha256": "346eafe25947ab8e180f6bb509aa151672fb32a1d2b909525f60d7f06a31252b",
+      "bytes": 15453
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/scan-summary.json",
+      "sha256": "fe6572fc89b2cb590e2046020016abf41a15d1474dc898828222cee0d60c427a",
+      "bytes": 7937
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/scanner-databases.json",
+      "sha256": "8170b5ec1c8f55ef4982aac475dc3ec3d71e147f54089d067152adf80726ef31",
+      "bytes": 404
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/scanner-tool.json",
+      "sha256": "f708f9c998c72f6e732b0e125113552ac5e7cfcd3c11fb3c5c333142f7660448",
+      "bytes": 687
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/scans/strict-gate.json",
+      "sha256": "b71db9a2ba1ca32450abee0fe34a3a7a000fbfe605b5a12acffdf4b76558a2fb",
+      "bytes": 8308
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/failsafe-reports/failsafe-summary.xml",
+      "sha256": "1ec77064228d897b1a0852854d10d6eeab39eab8510a895a043fa41b2653387b",
+      "bytes": 501
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/failsafe-reports/TEST-imperator.adapters.out.aws.AwsEvidenceSyncIT.xml",
+      "sha256": "d612faab1e3ea22accbd55e93246c4b20f4aed4e722e587eff77a30e1d623e32",
+      "bytes": 31876
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/failsafe-reports/TEST-imperator.adapters.out.github.GitHubEvidenceSyncIT.xml",
+      "sha256": "e9052b88f94fb25555c210ef69d14cd7158de0774b743503a4fad997a3f349e0",
+      "bytes": 31883
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/failsafe-reports/TEST-imperator.adapters.out.postgresql.PostgresRepositoryIT.xml",
+      "sha256": "298adfd6a7e3545a2480106dae8b6dddfc6714f8ca961fd353ddc3e3413d8807",
+      "bytes": 36825
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/failsafe-reports/TEST-imperator.api.evidence.EvidenceImportHttpIT.xml",
+      "sha256": "e6900559cebea0cc49c130ee9fb2b9aea24a9c00eda2024396992b62406053b3",
+      "bytes": 32363
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/failsafe-reports/TEST-imperator.api.FunctionalRestPostgresIT.xml",
+      "sha256": "ac4e50979bf467a2cc02e0ba562070820851520a0baefb354d846a0909e19144",
+      "bytes": 32487
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.adapters.out.aws.AwsSdkEvidenceSourceAdapterTest.xml",
+      "sha256": "93e817657be793426d5c5b412eba08cbb8d53646d7b129a91e1b5c1d0d40b253",
+      "bytes": 32903
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.adapters.out.bedrock.BedrockExplanationProviderTest.xml",
+      "sha256": "4696766d0b3670f3b8f732faf26bdc9f7cfcc13b148ad675b11057427a89af52",
+      "bytes": 32056
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.adapters.out.github.GitHubRestAdapterTest.xml",
+      "sha256": "45edb9d2dbb71d36226da398d9450bca67091374d80a8238c429a706723c3143",
+      "bytes": 32925
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.businessvalue.BusinessValueRouteContractTest.xml",
+      "sha256": "082bdbf8f971df27653004e4c393d3acc56cafae9f66a12602e05430d639f65e",
+      "bytes": 32680
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.decisions.DecisionCompositionRouteContractTest.xml",
+      "sha256": "bbbec31d3428b83395d0a0abf56b9a85fb02ed7fc0541f7351e8961acbcbc087",
+      "bytes": 32705
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.decisions.DecisionContextRouteContractTest.xml",
+      "sha256": "7381ad8c85b6852180d8accdcb24bdb0793208047713f8792948b8f114dc6eaa",
+      "bytes": 32831
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.decisions.DecisionRouteContractTest.xml",
+      "sha256": "c7905f6bf105dd0c32b4ea00d5eaae949ef1091e1e83708eab817b60cac9d0e4",
+      "bytes": 32780
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.decisions.RbacEvidenceVisibilityContractTest.xml",
+      "sha256": "71f27130db849f5f3fbb5124f7ccbd8f66b3c454c16363abfc2a39304bf8a77e",
+      "bytes": 32079
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.errors.ApiErrorContractTest.xml",
+      "sha256": "5cf86d4d23eb39e9ca040b05a04f1d7e5dcc3c56ff84094258e5eb4aaf4fedfa",
+      "bytes": 32826
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.evidence.EndToEndBusinessValueDemoTest.xml",
+      "sha256": "3cc5076b9162a5c24297b650e84f8e2d148591157d80739f4feaada58b9d0dba",
+      "bytes": 31920
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.evidence.EvidenceImportRouteContractTest.xml",
+      "sha256": "2b610198d2c9c21f0bd8119c3f269fb3ffaa2bd9ed0d6833dc7383a68eb3376b",
+      "bytes": 33328
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.FunctionalRestApiContractTest.xml",
+      "sha256": "3cf4263c1f4fca1cddf1f0f8f5336888204035be9460fba0444ce40b29bb0c57",
+      "bytes": 32445
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.ledger.LedgerCommandRouteContractTest.xml",
+      "sha256": "60d89a9097afa734dfd2ab237d3b020d91812c1bd80280be9ddcd8384de8f1ef",
+      "bytes": 32922
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.ledger.LedgerReadRouteContractTest.xml",
+      "sha256": "0b0f769ff3f5e2f81fa7ec8e42ff8f246cf4cb5ab1068539dacc799b20678fe8",
+      "bytes": 32634
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.observability.CorrelationMdcContractTest.xml",
+      "sha256": "b1e7d588ba01c3399039668c738f6a971d95c2a777795a2105da44b91240b571",
+      "bytes": 32064
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.observability.ImperatorRouteCatalogContractTest.xml",
+      "sha256": "afdc724b0653e0dd74e2ed338c10af30d6dcc9b9dfb56fae9f693eae4a7aa5a7",
+      "bytes": 32081
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.observability.ImperatorTelemetryContractTest.xml",
+      "sha256": "89e57fd80009205da1c3b6cd49f4dfeedf84dac8c3fdc921862812549f4d66a4",
+      "bytes": 32372
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.observability.ObservabilityEndpointContractTest.xml",
+      "sha256": "dbaacf736700bd7a9e217b43d15aba9783c20298df585e2d1a23978f98169d55",
+      "bytes": 32481
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.recommendations.RecommendationRestMapperTest.xml",
+      "sha256": "bd0304732cbea9bffcb66b3997258d8faeddb746e67d1d927bb2bf2e4ece5367",
+      "bytes": 32139
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.recommendations.RecommendationRouteContractTest.xml",
+      "sha256": "efa3290a220a14f64f9d94af99107df5a0758624ca5ff45004111bff1dd49b1f",
+      "bytes": 32929
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.security.JwtAuthenticationContractTest.xml",
+      "sha256": "3a10d384f1d3381443f89759e35b01045f7346a4239021bd4752ebc5ae373055",
+      "bytes": 33040
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.api.security.RbacAuthorizationContractTest.xml",
+      "sha256": "fae9cbdfbd387921d2afbb9d6baee502666757b348958740aa9337ef778e19d7",
+      "bytes": 32562
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.application.composecase.ComposeDrcAoa001UseCaseTest.xml",
+      "sha256": "5debb3f38fa2d3fb8a858ae5c5e941c7f0414abee5c25cd928469cfa88f5c17a",
+      "bytes": 32980
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.application.createdecision.CreateDecisionUseCaseTest.xml",
+      "sha256": "962465911cf162ed89884aad6916ebc64c57a074ff03364302bc2b883f74c3fd",
+      "bytes": 32921
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.application.generaterecommendation.GenerateRecommendationExplanationTest.xml",
+      "sha256": "4a62cd4096ed5d62c7bb3433954dded09c6668a9de55aea362154f516f66f41e",
+      "bytes": 33118
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.application.importevidence.ImportEvidenceUseCaseTest.xml",
+      "sha256": "e093c557e3dbc42f6a37adf79d87344d0f68f2a46c772e43e74b604e854f0ed7",
+      "bytes": 32280
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.application.ledger.LedgerChainTest.xml",
+      "sha256": "14852564e33838becfe8ed3d5e47cc703714e3a29f0a9f4b6fe3031b2c1174f1",
+      "bytes": 32599
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.application.query.MvpQueryUseCasesTest.xml",
+      "sha256": "98f25002c48801a12f0c05c81c50678772f2a03821c0dd0b173f5c4a66327f75",
+      "bytes": 32724
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.application.reviewdecision.ReviewLedgerGovernanceTest.xml",
+      "sha256": "ff8ec9c0727059806942610bdb7193eb3c1622f4b406b9b85db4fb5ee56fbba6",
+      "bytes": 32997
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.application.synchronizeevidence.SynchronizeEvidenceUseCaseTest.xml",
+      "sha256": "1f5468693f7ac72d887e37bc05c8de500adc8039c0cbbba52de49c221d4d2e91",
+      "bytes": 32840
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.bootstrap.AwsRuntimePropertiesTest.xml",
+      "sha256": "1a1abcff26d7cbdeb359d35f866e82f04514efe29af68cc4097a3ef452ace6a3",
+      "bytes": 32102
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.bootstrap.GitHubRuntimePropertiesTest.xml",
+      "sha256": "6087869ee84c4428a072d6be64fc729ae1903edb722f312e79aa341e50cd9283",
+      "bytes": 32102
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.bootstrap.ImperatorApplicationTest.xml",
+      "sha256": "bbee09b4ee7c58d57eda175c6610312ef79a11b16ddbd5a0205d7c205c8c21f8",
+      "bytes": 32105
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.bootstrap.PostgresRuntimeConfigurationTest.xml",
+      "sha256": "46c6d8eb5494021fbbe919e36db689e0722e62d7b9a009f9fbca66ffc1cb98d9",
+      "bytes": 32292
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.domain.decision.DrcAoa001RecommendationPolicyTest.xml",
+      "sha256": "8c67c22a9f8ca4327acaed7074c4511d7736d3e274371949910291d15c221161",
+      "bytes": 32469
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/backend/surefire-reports/TEST-imperator.domain.decision.DrcAoa001ResultValidationPolicyTest.xml",
+      "sha256": "72fcc857792e33651f801a66fd1040559a613c7dcfc792fd62e1320be0ffa579",
+      "bytes": 32563
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094/first/buildkit-metadata.json",
+      "sha256": "059c43b626b09c819a2de3190f97cd6d07189e03c67804690091c6776382e6f1",
+      "bytes": 4878
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094/first/postgres-sbom.cdx.json",
+      "sha256": "9e926b5672967ec6405e79c2ee74586b3e4ed4c5f8afd21cc15002e521864a3b",
+      "bytes": 882050
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094/first/provenance.json",
+      "sha256": "0a015195cb208b3122a2321f4071e1feb81b412abb05de6f7be5e5869c2ca02b",
+      "bytes": 5529
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094/first/sha256-manifest.txt",
+      "sha256": "f5981d73eeb40c8718832223acd3a98efac6bce2797bb521b6168f03a502b4fc",
+      "bytes": 427
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094/first/trivy-report.txt",
+      "sha256": "f9230396370c00212a6bd5cbf0f47f3b529f4c5988938a9de881ed8ab3a72bf7",
+      "bytes": 1882
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094/first/trivy-result.json",
+      "sha256": "c2281669e803e280fddac78e92bcdb8763025e64e3b16c4949e65979a5440b98",
+      "bytes": 803716
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094/repeat/buildkit-metadata.json",
+      "sha256": "39ddce13835298dbdffa063c6679a38474cf6e5e375d50b2ef723e6e10226718",
+      "bytes": 4885
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094/repeat/postgres-sbom.cdx.json",
+      "sha256": "2aae2404816775baeb8b81eed9d7616a254f43dabf14f8084baed93e8dbbc593",
+      "bytes": 882071
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094/repeat/provenance.json",
+      "sha256": "2da02779f4936ae3e2e7110dd8f3515863ddb49536bed8e83edb079ba0f11868",
+      "bytes": 5534
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094/repeat/sha256-manifest.txt",
+      "sha256": "14c8d7c653658da1fd4e97e7de84a18b4ebafc417b66cf5bbd7f8ce55d74bd67",
+      "bytes": 427
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094/repeat/trivy-report.txt",
+      "sha256": "8e2fa7dbf688fb95d98af03e7a6951aa93ec1fe33e3f5d4bed1175f0547bfebb",
+      "bytes": 2010
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/d094/repeat/trivy-result.json",
+      "sha256": "a018f287302db35afca2b5675614f7f8cebd577e6b692e3f33415a84adeb4e2a",
+      "bytes": 803744
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/capture/01-deterministic-recommendation.png",
+      "sha256": "9641d256d4b07083fce2b4ccfb3373c7212dc66c2ce8f7f9fa3fd5bc48b8264e",
+      "bytes": 90652
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/capture/02-human-approval.png",
+      "sha256": "30fa1ad5df9eb745eee1c6add446cd5d475d4c083eb2b7be2667806d8cd16568",
+      "bytes": 52361
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/capture/03-implementation.png",
+      "sha256": "ddaa6e64ab50b6d30fb34508b104411d1dfd0e6702db70031ce9015776984440",
+      "bytes": 57968
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/capture/04-realized-business-value.png",
+      "sha256": "6c2e518398d94d2d9449bb00b2cdc2b27e8491739f2cc975c8e323bc7d14b920",
+      "bytes": 69899
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/capture/05-auditor-ledger.png",
+      "sha256": "90a074f45b746082f3a79bb5bfbd5acc4160aec960730a2be3fd3efb62344e6a",
+      "bytes": 73607
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/capture/rehearsal.json",
+      "sha256": "b00e1fa1c26dfe206fe0a1400363d5015df74612b9424ea5c9079490eb7ef03c",
+      "bytes": 27460
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/capture/tfg-a-docker-demo.webm",
+      "sha256": "a3a4affd7f5db049f31eefb4328c97f34d03fef2e43eb8402bf19e83ec8a4774",
+      "bytes": 2221670
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/capture/video-qa.json",
+      "sha256": "821d553e0c27c9d093b4910ecdbeb95a3accbd1fd0cc72ea24eafa53fcc214d3",
+      "bytes": 534
+    }
+  ],
+  "excludedHistoricalAuditCount": 55,
+  "excludedHistoricalAuditFiles": [
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/audit-files-sha256.json",
+      "sha256": "488b60ea39dbbd1b7a272672b9e5c72ac01be407a7da5fc5c8acf2e36d6cb4a8",
+      "bytes": 13709
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/A_S3_POST_MERGE_AUDIT.md",
+      "sha256": "7113b669d9db0e73f01a41296303151e3d0629062ce397fdaa106f6739d72b62",
+      "bytes": 21116
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/braces-advisory.json",
+      "sha256": "d918adabcec6b9a4a21b9dfc089cdd89d08bcaa04f3b40c32cfcd53770a4dcc7",
+      "bytes": 2523
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/dependabot-classification.json",
+      "sha256": "d9df3d7543451b948ecffb61ec6579898d21648b4dc37591b621eed61314a806",
+      "bytes": 2499
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/document-changes.json",
+      "sha256": "da8a9b056f77151e0175bd78ce45043a6466efaf740eec3a714241d27f8ef9eb",
+      "bytes": 4355
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/documentary-validation.json",
+      "sha256": "be83a7bb23e38b6952cfb51ee3a4e6654aadaf44c3ce999409fdb18904b52377",
+      "bytes": 2326
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/github-checks.json",
+      "sha256": "b8285db6d3d19c4dfd9c5d177480a97bb6939d2a341b7e6ac69245ae17598949",
+      "bytes": 12364
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/historical-images.json",
+      "sha256": "dbad4ec91e2dfc9330a9f9689d92ef9e0e51ead984a6c063a69081355c4eeab6",
+      "bytes": 5702
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/historical-receipt-integrity.json",
+      "sha256": "95a26ef36265d2e1fa264bcf3be46b3b8732f4c01f93d926699dbac97b4df35f",
+      "bytes": 394
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/main-d094-proof.json",
+      "sha256": "b1f9f08211cd8ca5ad9207d9c70319c3570c29153f7b063d34e1eda12a6b861b",
+      "bytes": 1040
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/main-image-observations.json",
+      "sha256": "10f7cfa624033375982fccc1005f1e5e1a7225b99f04b7f38930935d3a30775c",
+      "bytes": 1605
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/original-evidence-integrity.json",
+      "sha256": "5371e00751cd6f887c863faf82b733266f1be7a5fe39f76d9a5e3a336b1795b1",
+      "bytes": 166785
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/post-merge-traceability.json",
+      "sha256": "e854a9e38e65ec2ab757e07aa68cb4685b36faa39894ac067630b3709b1c0338",
+      "bytes": 7692
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/preservation-and-scope.json",
+      "sha256": "46f773070541145186700f8248a101dfc5458952e10a8bc37ab9bd19ef01b23e",
+      "bytes": 1069
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/prior-report-seal-check.json",
+      "sha256": "e57b30af8c86dba08fef7c0e760e6e924da11e536acf26e38f274d9ebd7832ba",
+      "bytes": 45
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/r20-proposal-not-accepted.json",
+      "sha256": "06fb768b9a2af913ec77b4b3a1f27980ddc564f8f77d188f179edd535777ff9f",
+      "bytes": 12994
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/r23-review.json",
+      "sha256": "f295dda345637489b66ac4e9e95b706305c2a2211b3dc946aa8e0f59318f4a50",
+      "bytes": 1568
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/ruleset.json",
+      "sha256": "f1b12ecae3204b6a93e0807e0285e929b02d50c03f4f1544f73e24e90abc2223",
+      "bytes": 1741
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/secret-review.json",
+      "sha256": "46a6ddce74a582e8ba4e15fbebf7a159f391a7ebfebb8a60cd13fcbf39dcc7a1",
+      "bytes": 6724
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/ci/application-images.txt",
+      "sha256": "27a2cab363965e0e0b55b5addcb9a6049d246bc1ee33fde0810c3d1caf4c29b1",
+      "bytes": 278481
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/ci/dependabot-113278734309.txt",
+      "sha256": "336d564d7c2eb0aa60a95a70abc6c7661efea4162e52b2946f0af9ae93bf455b",
+      "bytes": 18425
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/ci/dependabot-113278735950.txt",
+      "sha256": "46a45a11c878f1b63f3d1eb17c52aaafb00f1db0737189d69857e81396f0d1dd",
+      "bytes": 18478
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/ci/java-main.txt",
+      "sha256": "4462f10191cdff82f43b00a3802f2b092f83e50c42f6d2aa01870a1dd6a240da",
+      "bytes": 35922
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/local/all-image-secrets-results.json",
+      "sha256": "ec78987aaf8d92b79abbd28190978b84295c3853d9e26d6a77025e79cad4236a",
+      "bytes": 373
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/local/backend-all-secrets.json",
+      "sha256": "ec2869e0216e8c9ad6f2769eb17f7bd953de24a6b6ef017dd6b5f68a2161346e",
+      "bytes": 522870
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/local/backend-final-full-trivy.json",
+      "sha256": "1b86b7eaf870adc6953efe499b9e1497ef76612b94b416c4a0f8eb0e87b793e3",
+      "bytes": 591319
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/local/final-image-bindings.json",
+      "sha256": "0a59fbdc2983ed2d24e443de7411d156d3b2090a7f014000317aa9bf2cf479e9",
+      "bytes": 2376
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/local/final-image-results.json",
+      "sha256": "36e3b11fc7342c4339cccd95475d63c3ee6c60e6168ca69f8d31ea9f237c3d45",
+      "bytes": 1004
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/local/FINAL_REPORT_HASHES.json",
+      "sha256": "31ddf353c600ea99c872d41baac653ce3879653b555f920606205ce625f340ac",
+      "bytes": 10930
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/local/frontend-all-secrets.json",
+      "sha256": "1476616334bd93ff6d049199cf197f645622f02598b93fa4fbe9cdde71d92b43",
+      "bytes": 396454
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/local/frontend-build.txt",
+      "sha256": "deb7310d4289df49928c7d177777272b8938a3545bd9440dc5d4db1694dca39e",
+      "bytes": 922
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/local/frontend-final-full-trivy.json",
+      "sha256": "22d48a290ba837bbe385998203f305427aa7dafb5407d36e1108bb3f68233120",
+      "bytes": 533633
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/local/frontend-format.txt",
+      "sha256": "0fdfea6c362f10e71a8b76517627b7eb04eed39705e7f07c94a10190cc6030f9",
+      "bytes": 146
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/local/frontend-lint.txt",
+      "sha256": "91f5b65e4bbb03a02c7e51c171dfef0251f9b3339e79119827d981362e87dd62",
+      "bytes": 79
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/local/frontend-playwright.txt",
+      "sha256": "70a4298200ba823b25633eb890a54b734a440938b58f02ce788c4b9eb207d838",
+      "bytes": 7555
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/local/frontend-results.json",
+      "sha256": "a43e384bae8a2988af77cf244949ca82c12eb0e598ccd6b2abfb1de38f83dfa4",
+      "bytes": 736
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/local/frontend-tests.txt",
+      "sha256": "7b6dfca4037302a36590ef73f1d803fda7ef4c37f21a3662085efa32e4bb735b",
+      "bytes": 1752
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/local/frontend-types.txt",
+      "sha256": "1bd54d7d2d4ffe8afa8d6e291dfce8f1653f1ff331f842e2c2b3d40acab7156a",
+      "bytes": 71
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/local/maven-final-totals.json",
+      "sha256": "788dfa7798f18f22740415502bf8ddf1adb5f9a93b2324e406fde358f399b422",
+      "bytes": 199
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/local/migration-all-secrets.json",
+      "sha256": "c793e9a5e0456b40f9fa94fa585bfea6ae40d67766786097af8bd024c4e9f0ec",
+      "bytes": 428849
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/local/migration-final-full-trivy.json",
+      "sha256": "6041f1a59d852ae4c66ebeaaf4bb8f4c596a5f3e5add9c2d37a5a48f462951b0",
+      "bytes": 590265
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/local/npm-audit-production.txt",
+      "sha256": "96f423ce26c0eb6a80d4c6b78b11eaefd2572b206b43b3d31685a3de9aa5888d",
+      "bytes": 365
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/local/npm-audit.txt",
+      "sha256": "df0901ab3626049e6c397fa458183a78250b80e683824d02d408315ae2cb5fe4",
+      "bytes": 3023
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/local/postgres-all-secrets.json",
+      "sha256": "2b4de095908f045211f1f694f1e350b60421963c2ed78c87fba515dbf6f8a8ff",
+      "bytes": 803716
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/local/postgres-final-full-trivy.json",
+      "sha256": "fbb2e81dcd9a23291bb2bbf5b4b094bebb7d6bc329b98cf6759e3b9cf61d6119",
+      "bytes": 1007735
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/local/r20-final-residual-comparison.json",
+      "sha256": "f0fc66ba7f7109b1cb6e92ba6c10fb3f45f7f5655c3b2bf9059c45455c04c967",
+      "bytes": 23249
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/local/runtime-final-result.json",
+      "sha256": "29a0264d3dbeb9f0180c530904925344f960a813753343825169793ddf18e8e4",
+      "bytes": 9157
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/local/video-final-qa.json",
+      "sha256": "3c5b9adc820952ff937b35a046343ec6ca342aace701cfb38ba93dbe1b05feaa",
+      "bytes": 230
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/ci/postgres-d094/ci-environment.txt",
+      "sha256": "b7634c596ed701a86d67dccb643d5c82313e35f127cf7db167c07ebbbbe0ab53",
+      "bytes": 339
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/ci/postgres-d094/first/buildkit-metadata.json",
+      "sha256": "6cd0dd21b2de18cfa941cf8215ff885455d399d119e04455d2e427218be08892",
+      "bytes": 17616
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/ci/postgres-d094/first/provenance.json",
+      "sha256": "6f7c1004e085d0299fbd926671af29f38f4a3e3ed5c91a02ae898039a644b89d",
+      "bytes": 5217
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/ci/postgres-d094/first/trivy-result.json",
+      "sha256": "e0ab57950c5eeb11f94da2fcaa0a0429281961bbe362e4ec25fec34fa819ff4b",
+      "bytes": 803713
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/ci/postgres-d094/rebuild/buildkit-metadata.json",
+      "sha256": "ea85de34aa11d1ded3134400127c87350089d5ae4637c2057de7b05a3ac3469e",
+      "bytes": 17616
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/ci/postgres-d094/rebuild/provenance.json",
+      "sha256": "d9d27d0d7a9d0d48ac2b8f643979eb45a79005544eebb8c8847c96698919df03",
+      "bytes": 5215
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-a-s3-post-merge/ci/postgres-d094/rebuild/trivy-result.json",
+      "sha256": "32558ae2d16b8946ac659b40d0d579c460536154be33f54825e10eef0084b20c",
+      "bytes": 803712
+    }
+  ],
+  "originalsUnchangedAndKeptLocally": true,
+  "reason": "Superseded pre-merge audit omitted from this focused publication; 17 generic-api-key flags in it are report SHA-256 values, not credentials; no scanner configuration or ignore rule changed."
+}

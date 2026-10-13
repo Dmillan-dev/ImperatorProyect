@@ -1,0 +1,246 @@
+{
+  "algorithm": "SHA-256",
+  "selfExcluded": true,
+  "files": [
+    {
+      "path": "backend-trivy.json",
+      "bytes": 750693,
+      "sha256": "9f3dc2dafe5006461f347a0da5c1249591c3b7b3deb4167a7b62f71170b025c8"
+    },
+    {
+      "path": "debian-CVE-2026-88647.html",
+      "bytes": 4192,
+      "sha256": "348ea5f9dececcb90422ea3b61652f31bb7b093b766d95203ea95242d1009aea"
+    },
+    {
+      "path": "debian-CVE-2026-88648.html",
+      "bytes": 4210,
+      "sha256": "d481de2606103de6934e7eb2c6ef6b9b517c5999f9d7af2304d598c38342ef1a"
+    },
+    {
+      "path": "docker-cleanup-plan.json",
+      "bytes": 10917,
+      "sha256": "b6731d51a92544dcff0e01a31098a285bce0b3c16ebdc9da1cd0dd7f18b2e801"
+    },
+    {
+      "path": "docker-cleanup-verification.json",
+      "bytes": 2924,
+      "sha256": "3f309feea097f7edad4acdaef3e4aadfa5b472848d6b4ffba2d262ca4df50c22"
+    },
+    {
+      "path": "docker-deletion-results.json",
+      "bytes": 5245,
+      "sha256": "3f394cd93f8a7bcf0216bd41aee4e062050343cbaaa0e3131904804d98f151c8"
+    },
+    {
+      "path": "frontend-trivy.json",
+      "bytes": 1078220,
+      "sha256": "b5c620ce6034fa383cea47af0315037fdacedbe8dc8b7fa50c9ca0c101c28ecb"
+    },
+    {
+      "path": "historical-publication-byte-proof.json",
+      "bytes": 66709,
+      "sha256": "8840991376f288e9a7c3e236270476f4ba23df3c016e50eb05d09d6ff67d3120"
+    },
+    {
+      "path": "integration/artifact-download.json",
+      "bytes": 243,
+      "sha256": "383868e529e6cfcb1f417238761593fc74a5ae8312bae8e39d22bb41af668ef4"
+    },
+    {
+      "path": "integration/current-main.json",
+      "bytes": 2054,
+      "sha256": "7f88f1b86f2449397b8e8c6f8eab3339d96b6ef32740fa3b8d973e1c1946be06"
+    },
+    {
+      "path": "integration/local-image-inventory.json",
+      "bytes": 8988,
+      "sha256": "08f9212f85509a9f29571fc3b74e5c97d27191a741308de581288c36f181e67e"
+    },
+    {
+      "path": "integration/main-ci.json",
+      "bytes": 7853,
+      "sha256": "cc855153f0c112cb3184df162d1f729c79d5f9fbc5a42a5ecaa757b40c5c7dff"
+    },
+    {
+      "path": "integration/main-d094-artifact/ci-environment.txt",
+      "bytes": 339,
+      "sha256": "3fa9ecebf51a1de0e239d0742e5cf10e4ff517f510e7709c34796d7714a4b979"
+    },
+    {
+      "path": "integration/main-d094-artifact/first/buildkit-metadata.json",
+      "bytes": 17112,
+      "sha256": "70d3bca4fb1c7211d596515e739a8c8da71e42f6535ce93da8debb11e4a0ab37"
+    },
+    {
+      "path": "integration/main-d094-artifact/first/postgres-sbom.cdx.json",
+      "bytes": 910330,
+      "sha256": "cc0575a2a1aede83c519c762ff36ecd18eeb2ee6db86685ad9e9bb212faf50c1"
+    },
+    {
+      "path": "integration/main-d094-artifact/first/provenance.json",
+      "bytes": 5217,
+      "sha256": "c64a257f267c1eef749908de3ca624991b821a6a142811468baa63892128599c"
+    },
+    {
+      "path": "integration/main-d094-artifact/first/sha256-manifest.txt",
+      "bytes": 427,
+      "sha256": "3162a162eaf49f85563c41e61f5238b39c23374e9a8dd934c0cf81f65144b59f"
+    },
+    {
+      "path": "integration/main-d094-artifact/first/trivy-report.txt",
+      "bytes": 1882,
+      "sha256": "f886e3a599ffe071c550687b17aa1660a0992bcfe16a2f448c9d318012e2d9fc"
+    },
+    {
+      "path": "integration/main-d094-artifact/first/trivy-result.json",
+      "bytes": 803713,
+      "sha256": "f57c7c2167da4315c8b5374b0cf8b0bc175eefe05b25c98c3ae0a042acf3f9bf"
+    },
+    {
+      "path": "integration/main-d094-artifact/rebuild/buildkit-metadata.json",
+      "bytes": 17112,
+      "sha256": "baebe53f8eaa1fda553d164435609400321b0fafc60ede7a558cc7bc95d6152d"
+    },
+    {
+      "path": "integration/main-d094-artifact/rebuild/postgres-sbom.cdx.json",
+      "bytes": 910330,
+      "sha256": "c64f461dd61234f98c6636d244e6284b886471ac11f421263818aa5856cf3d96"
+    },
+    {
+      "path": "integration/main-d094-artifact/rebuild/provenance.json",
+      "bytes": 5215,
+      "sha256": "ab45ef8979d957a1f775cc67c888e6e6ef1f4d3c06866d413a823fdcc699111e"
+    },
+    {
+      "path": "integration/main-d094-artifact/rebuild/sha256-manifest.txt",
+      "bytes": 427,
+      "sha256": "e6cd86b930579bff4df3ef58881fe28a8e5b4353e127e90ed219b736fa0a503c"
+    },
+    {
+      "path": "integration/main-d094-artifact/rebuild/trivy-report.txt",
+      "bytes": 1882,
+      "sha256": "f886e3a599ffe071c550687b17aa1660a0992bcfe16a2f448c9d318012e2d9fc"
+    },
+    {
+      "path": "integration/main-d094-artifact/rebuild/trivy-result.json",
+      "bytes": 803713,
+      "sha256": "4670a7efaad6adcb4e0f7b696299deade3be73cf4a6f09a27cc31f5dd632f073"
+    },
+    {
+      "path": "integration/source-artifact-correspondence.json",
+      "bytes": 2531,
+      "sha256": "32d1a4c19f4f813faddcae66fa452a7570bf73a5f44ecb236009554840781c7f"
+    },
+    {
+      "path": "integration/VERSION_RECORD.md",
+      "bytes": 5285,
+      "sha256": "93b8b37fc5dcc3818684c5c1063cfa7a1921e2a7d3b3b97801ba62133f0f5096"
+    },
+    {
+      "path": "migration-trivy.json",
+      "bytes": 793091,
+      "sha256": "2fb9c2c7667a4f6a2b5a00ca969f6018a97bbd416942d7c69f55f6dee1f1aa4d"
+    },
+    {
+      "path": "npm-audit-full.json",
+      "bytes": 3023,
+      "sha256": "df0901ab3626049e6c397fa458183a78250b80e683824d02d408315ae2cb5fe4"
+    },
+    {
+      "path": "npm-audit-production.json",
+      "bytes": 365,
+      "sha256": "96f423ce26c0eb6a80d4c6b78b11eaefd2572b206b43b3d31685a3de9aa5888d"
+    },
+    {
+      "path": "npm-audit-summary.json",
+      "bytes": 1024,
+      "sha256": "0559c97b29e012f4d99e394131b7112136e8c12a4adc2b2b89fa92049af122a5"
+    },
+    {
+      "path": "postgres-trivy.json",
+      "bytes": 2141472,
+      "sha256": "0b57cf59fed6ab51502d4716839161d088563a7a9616a8dfbc45c9a7b45f77e7"
+    },
+    {
+      "path": "publication-gitleaks-final.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "publication-links.json",
+      "bytes": 50,
+      "sha256": "7f1700a13f34a11ebfc2118d6d9d13565ae65c47636c566ddd852d2d1bfcab8f"
+    },
+    {
+      "path": "publication-preliminary-flags-redacted.json",
+      "bytes": 13806,
+      "sha256": "095dcf5ac848abea88f611d1e5fb815e6a39d2b3249cc6b59b0d7f989c4ba314"
+    },
+    {
+      "path": "PUBLICATION_SCOPE.md",
+      "bytes": 905,
+      "sha256": "7ca1c3e8fd3bc85e298b223f16e61c2e2001eeb4e63fcd621b60f2fe19de8d8e"
+    },
+    {
+      "path": "PUBLICATION_VALIDATION.json",
+      "bytes": 673,
+      "sha256": "5290f69878420fc7c998a17b710bac47940d353ae31f0afb7b140499ddf0b085"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3604,
+      "sha256": "fb58d658d941f7e752505bcc691ed4d022bd97ef87e310791626e2c47b9f41d5"
+    },
+    {
+      "path": "residual-comparison.json",
+      "bytes": 8908,
+      "sha256": "91f7e5cfdcb1fab497d191817259c0fd5efddadb9732f9b1715f7b5a56fb175a"
+    },
+    {
+      "path": "RESIDUAL_REVIEW.md",
+      "bytes": 2986,
+      "sha256": "fa9175f47a9e7e952a55cc640d214fba3cd6e389268656b1578364b4f3c0ccec"
+    },
+    {
+      "path": "scan-commands.json",
+      "bytes": 7763,
+      "sha256": "b3914361a7a9703f8fb11da961d2b63fc5ff3033aa36fc86c3a7382a5f577756"
+    },
+    {
+      "path": "scanner-databases/db-metadata.json",
+      "bytes": 153,
+      "sha256": "bb47c63f2b9c30cf9f08401475742e6fa544da38b97b8a01e009cd194df1bdba"
+    },
+    {
+      "path": "scanner-databases/java-db-metadata.json",
+      "bytes": 153,
+      "sha256": "68007f0a2dac56980a241a070c44a9e910c44835be8b50a6431c61f1414132b3"
+    },
+    {
+      "path": "scanner-empty.yaml",
+      "bytes": 4,
+      "sha256": "e3566b3a06430868d71e9287dfd6c6c520a3da027aabea01951d407ee131dc2f"
+    },
+    {
+      "path": "scanner-identity.json",
+      "bytes": 500,
+      "sha256": "4fe9ba3df205f1b791bba2c11812a83e59e11a1320ef4108c783335127ab55dc"
+    },
+    {
+      "path": "scanner-version.log",
+      "bytes": 465,
+      "sha256": "be6bd6519f15b89b0bcf9100f676c804adb9fb26b509607b4d55e52b1c8417ad"
+    },
+    {
+      "path": "security-summary.json",
+      "bytes": 2597,
+      "sha256": "86fae1d75feb3d5f932f200aa9b2dc3469b607114c0df47475a86231cfa3d0af"
+    },
+    {
+      "path": "source-gitleaks.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "executable": "C:\\Users\\J4GG3R\\AppData\\Local\\Microsoft\\WinGet\\Packages\\AquaSecurity.Trivy_Microsoft.Winget.Source_8wekyb3d8bbwe\\trivy.EXE",
+  "sha256": "3b4fcf6fec53c4c73c325cfd518c7264100695b19e6c59c6a777e4a67dc9f0e6",
+  "versionOutputBeforeNewCache": "Version: 0.75.0\nVulnerability DB:\n  Version: 2\n  UpdatedAt: 2026-09-20 13:18:06.422928923 +0000 UTC\n  NextUpdate: 2026-09-21 13:18:06.422928453 +0000 UTC\n  DownloadedAt: 2026-09-20 18:04:20.7672603 +0000 UTC\nJava DB:\n  Version: 1\n  UpdatedAt: 2026-09-19 01:01:52.688391724 +0000 UTC\n  NextUpdate: 2026-09-22 01:01:52.688391023 +0000 UTC\n  DownloadedAt: 2026-09-20 18:04:57.3153536 +0000 UTC\nCheck Bundle:\n  Digest: sha256:1583562f8b90ed2a071b99f0e5ffff6b57e4ceb6ca3e4796577b4e6a339eb74c\n  DownloadedAt: 2026-09-20 17:25:28.6597349 +0000 UTC\n",
+  "currentVersion": "0.75.0",
+  "historicalVersion": "0.74.0",
+  "scannerUpgradedByThisOperation": false,
+  "versionDifference": "Installed tool is already 0.75.0. Difference recorded; no installation/update was performed."
+}

@@ -1,0 +1,9 @@
+{
+  "decoding": "PASS",
+  "durationSeconds": 24.88,
+  "audioTrack": false,
+  "sha256": "a3a4affd7f5db049f31eefb4328c97f34d03fef2e43eb8402bf19e83ec8a4774",
+  "videoType": "Technical workflow recording only; not narrated twelve-minute A-S4 defense",
+  "visualCheck": "First recommendation screenshot reviewed: synthetic case/no token visible. Token entry is password-masked in unchanged frontend source; not automated pixel-secret analysis.",
+  "decoder": "Existing bundled imageio-ffmpeg executable; no installation/update"
+}

@@ -1,0 +1,50 @@
+{
+  "recordedAtUtc": "2026-10-09T13:21:23.297326+00:00",
+  "sourceSha": "a931601102ee19a90b3dad8477408ac0d1854669",
+  "branch": "fix/tfg-a-gosu-go1269",
+  "remoteBranchMatchesSource": true,
+  "publishedFiles": [
+    "infra/docker/postgresql/Dockerfile",
+    "infra/docker/postgresql/supply-chain-lock.json",
+    "scripts/verify-postgres-runtime-image.ps1"
+  ],
+  "documentaryChangesCommitted": false,
+  "documentaryChangesPushed": false,
+  "pr": {
+    "number": 64,
+    "url": "https://github.com/Dmillan-dev/ImperatorProyect/pull/64",
+    "draft": true,
+    "state": "open",
+    "headSha": "a931601102ee19a90b3dad8477408ac0d1854669",
+    "baseSha": "3aca0389431b077ddee0b20621f6ccac26238e9f",
+    "createdAt": "2026-10-09T13:14:26Z",
+    "files": "Only three-file Go security patch; documentary changes are uncommitted and not pushed.",
+    "merged": false
+  },
+  "hostedChecks": {
+    "total": 11,
+    "success": 11,
+    "headSha": "a931601102ee19a90b3dad8477408ac0d1854669"
+  },
+  "localTechnicalResults": {
+    "unit": 174,
+    "integration": 35,
+    "frontend": 41,
+    "playwrightPass": 9,
+    "playwrightIntentionalSkip": 6,
+    "fourImageFixableHighCritical": 0,
+    "fourImageSecrets": 0,
+    "sourceSecretFindings": 0,
+    "residualUniqueCVEs": 23,
+    "residualPackageRecords": 115,
+    "d094Repeat": "PASS",
+    "dockerRBACFlywayPersistenceRecovery": "PASS",
+    "sourceFilesystemTrivy": "PASS"
+  },
+  "academicState": {
+    "A-S4": "PENDING",
+    "TFG-A": "IN PROGRESS",
+    "AWS": "BLOCKED"
+  },
+  "decisionReconciliation": "Explicit exact-digest/expiry clarification was requested following conflicting approval-review interpretation. No new owner decision or formal A-S3 closure is recorded in this measurement record."
+}

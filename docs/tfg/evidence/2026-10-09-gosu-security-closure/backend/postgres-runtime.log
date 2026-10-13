@@ -1,0 +1,202 @@
+The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "en_US.utf8".
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are enabled.
+
+fixing permissions on existing directory /var/lib/postgresql/18/docker ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default "max_connections" ... 100
+selecting default "shared_buffers" ... 128MB
+selecting default time zone ... Etc/UTC
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+initdb: warning: enabling "trust" authentication for local connections
+initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+syncing data to disk ... ok
+
+
+Success. You can now start the database server using:
+
+    pg_ctl -D /var/lib/postgresql/18/docker -l logfile start
+
+waiting for server to start....2026-10-09 12:48:02.568 UTC [49] LOG:  starting PostgreSQL 18.6 (Debian 18.6-1.pgdg12+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit
+2026-10-09 12:48:02.568 UTC [49] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-10-09 12:48:02.593 UTC [55] LOG:  database system was shut down at 2026-10-09 12:48:01 UTC
+2026-10-09 12:48:02.603 UTC [49] LOG:  database system is ready to accept connections
+ done
+server started
+CREATE DATABASE
+
+
+/usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+
+waiting for server to shut down...2026-10-09 12:48:02.775 UTC [49] LOG:  received fast shutdown request
+.2026-10-09 12:48:02.783 UTC [49] LOG:  aborting any active transactions
+2026-10-09 12:48:02.785 UTC [49] LOG:  background worker "logical replication launcher" (PID 58) exited with exit code 1
+2026-10-09 12:48:02.785 UTC [53] LOG:  shutting down
+2026-10-09 12:48:02.792 UTC [53] LOG:  checkpoint starting: shutdown immediate
+2026-10-09 12:48:03.050 UTC [53] LOG:  checkpoint complete: wrote 941 buffers (5.7%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.033 s, sync=0.200 s, total=0.266 s; sync files=303, longest=0.008 s, average=0.001 s; distance=4334 kB, estimate=4334 kB; lsn=0/1B94F80, redo lsn=0/1B94F80
+2026-10-09 12:48:03.074 UTC [49] LOG:  database system is shut down
+ done
+server stopped
+
+PostgreSQL init process complete; ready for start up.
+
+2026-10-09 12:48:03.116 UTC [1] LOG:  starting PostgreSQL 18.6 (Debian 18.6-1.pgdg12+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit
+2026-10-09 12:48:03.117 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-09 12:48:03.117 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2026-10-09 12:48:03.124 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-10-09 12:48:03.142 UTC [71] LOG:  database system was shut down at 2026-10-09 12:48:03 UTC
+2026-10-09 12:48:03.152 UTC [1] LOG:  database system is ready to accept connections
+2026-10-09 12:48:44.423 UTC [191] ERROR:  insert or update on table "decision_evidence" violates foreign key constraint "fk_decision_evidence_evidence"
+2026-10-09 12:48:44.423 UTC [191] DETAIL:  Key (evidence_id)=(c5dcd377-b800-4dc4-9cf1-05c6c48e24a0) is not present in table "evidence".
+2026-10-09 12:48:44.423 UTC [191] STATEMENT:  INSERT INTO decision_evidence (
+	    decision_id,
+	    evidence_id
+	) VALUES ($1, $2)
+	
+2026-10-09 12:48:44.471 UTC [194] ERROR:  insert or update on table "recommendation_evidence" violates foreign key constraint "fk_recommendation_evidence_evidence"
+2026-10-09 12:48:44.471 UTC [194] DETAIL:  Key (evidence_id)=(ee9e5373-8ea1-468a-b825-14f7dbcb1a0a) is not present in table "evidence".
+2026-10-09 12:48:44.471 UTC [194] STATEMENT:  INSERT INTO recommendation_evidence (
+	    recommendation_id,
+	    evidence_id
+	) VALUES ($1, $2)
+	
+2026-10-09 12:48:44.531 UTC [198] ERROR:  insert or update on table "ledger_evidence_snapshots" violates foreign key constraint "fk_ledger_snapshots_evidence"
+2026-10-09 12:48:44.531 UTC [198] DETAIL:  Key (evidence_id)=(fe493604-bc2f-479d-aeb0-1a2bbe819e88) is not present in table "evidence".
+2026-10-09 12:48:44.531 UTC [198] STATEMENT:  INSERT INTO ledger_evidence_snapshots (
+	    ledger_entry_id,
+	    evidence_id
+	) VALUES ($1, $2)
+	
+2026-10-09 12:48:45.510 UTC [259] ERROR:  duplicate key value violates unique constraint "pk_evidence"
+2026-10-09 12:48:45.510 UTC [259] DETAIL:  Key (id)=(3a75d316-e55a-4982-a126-817433feb90c) already exists.
+2026-10-09 12:48:45.510 UTC [259] STATEMENT:  INSERT INTO evidence (
+	    id,
+	    timestamp,
+	    source,
+	    source_type,
+	    source_object_ref,
+	    entity,
+	    event_type,
+	    severity,
+	    actor,
+	    evidence_type,
+	    observed_fact,
+	    business_meaning,
+	    correlation_key,
+	    sensitivity,
+	    confidence,
+	    review_status,
+	    raw_payload_mode,
+	    metadata
+	) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)
+	
+2026-10-09 12:48:45.521 UTC [260] ERROR:  duplicate key value violates unique constraint "pk_recommendations"
+2026-10-09 12:48:45.521 UTC [260] DETAIL:  Key (id)=(2ae72b51-93fc-4cbe-9087-042f3c8b2194) already exists.
+2026-10-09 12:48:45.521 UTC [260] STATEMENT:  INSERT INTO recommendations (
+	    id,
+	    decision_id,
+	    type,
+	    suggested_action,
+	    reason,
+	    estimated_saving_amount,
+	    estimated_saving_currency,
+	    confidence_percentage,
+	    risk,
+	    owner_id,
+	    required_approver_id,
+	    created_at
+	) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
+	
+2026-10-09 12:48:45.532 UTC [261] ERROR:  duplicate key value violates unique constraint "uq_recommendations_decision_id"
+2026-10-09 12:48:45.532 UTC [261] DETAIL:  Key (decision_id)=(3ee400ae-5149-4960-abb5-698bc72edc4a) already exists.
+2026-10-09 12:48:45.532 UTC [261] STATEMENT:  INSERT INTO recommendations (
+	    id,
+	    decision_id,
+	    type,
+	    suggested_action,
+	    reason,
+	    estimated_saving_amount,
+	    estimated_saving_currency,
+	    confidence_percentage,
+	    risk,
+	    owner_id,
+	    required_approver_id,
+	    created_at
+	) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
+	
+2026-10-09 12:48:46.045 UTC [301] ERROR:  permission denied for table recommendation_explanations
+2026-10-09 12:48:46.045 UTC [301] STATEMENT:  UPDATE recommendation_explanations SET status = status WHERE id = $1
+2026-10-09 12:48:46.054 UTC [302] ERROR:  permission denied for table recommendation_explanations
+2026-10-09 12:48:46.054 UTC [302] STATEMENT:  DELETE FROM recommendation_explanations WHERE id = $1
+2026-10-09 12:48:48.519 UTC [482] ERROR:  permission denied for table ledger_entries
+2026-10-09 12:48:48.519 UTC [482] STATEMENT:  UPDATE ledger_entries SET reason = reason WHERE id = $1
+2026-10-09 12:48:48.529 UTC [483] ERROR:  permission denied for table ledger_entries
+2026-10-09 12:48:48.529 UTC [483] STATEMENT:  DELETE FROM ledger_entries WHERE id = $1
+2026-10-09 12:48:48.539 UTC [484] ERROR:  permission denied for table ledger_evidence_snapshots
+2026-10-09 12:48:48.539 UTC [484] STATEMENT:  UPDATE ledger_evidence_snapshots SET evidence_id = evidence_id WHERE ledger_entry_id = $1
+2026-10-09 12:48:48.549 UTC [485] ERROR:  permission denied for table ledger_evidence_snapshots
+2026-10-09 12:48:48.549 UTC [485] STATEMENT:  DELETE FROM ledger_evidence_snapshots WHERE ledger_entry_id = $1
+2026-10-09 12:48:51.988 UTC [592] ERROR:  duplicate key value violates unique constraint "pk_evidence"
+2026-10-09 12:48:51.988 UTC [592] DETAIL:  Key (id)=(f821316e-e663-495b-9d68-94a2e09f7dea) already exists.
+2026-10-09 12:48:51.988 UTC [592] STATEMENT:  INSERT INTO evidence SELECT * FROM evidence WHERE id = $1
+2026-10-09 12:48:51.997 UTC [593] ERROR:  null value in column "timestamp" of relation "evidence" violates not-null constraint
+2026-10-09 12:48:51.997 UTC [593] DETAIL:  Failing row contains (5f3b1bfb-ddd4-49c5-9b37-23f9f5863e58, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null).
+2026-10-09 12:48:51.997 UTC [593] STATEMENT:  INSERT INTO evidence (id) VALUES ($1)
+2026-10-09 12:48:52.006 UTC [594] ERROR:  insert or update on table "decision_evidence" violates foreign key constraint "fk_decision_evidence_evidence"
+2026-10-09 12:48:52.006 UTC [594] DETAIL:  Key (evidence_id)=(fbef59d4-f0cc-481a-93e7-0aaae6857054) is not present in table "evidence".
+2026-10-09 12:48:52.006 UTC [594] STATEMENT:  INSERT INTO decision_evidence (decision_id, evidence_id) VALUES ($1, $2)
+2026-10-09 12:48:52.015 UTC [595] ERROR:  duplicate key value violates unique constraint "pk_decision_evidence"
+2026-10-09 12:48:52.015 UTC [595] DETAIL:  Key (decision_id, evidence_id)=(3c6d057c-cd11-4cc4-9451-79141b138f76, f821316e-e663-495b-9d68-94a2e09f7dea) already exists.
+2026-10-09 12:48:52.015 UTC [595] STATEMENT:  INSERT INTO decision_evidence (decision_id, evidence_id) VALUES ($1, $2)
+2026-10-09 12:48:52.023 UTC [596] ERROR:  duplicate key value violates unique constraint "uq_recommendations_decision_id"
+2026-10-09 12:48:52.023 UTC [596] DETAIL:  Key (decision_id)=(3c6d057c-cd11-4cc4-9451-79141b138f76) already exists.
+2026-10-09 12:48:52.023 UTC [596] STATEMENT:  INSERT INTO recommendations (
+	    id,
+	    decision_id,
+	    type,
+	    suggested_action,
+	    reason,
+	    estimated_saving_amount,
+	    estimated_saving_currency,
+	    confidence_percentage,
+	    risk,
+	    owner_id,
+	    required_approver_id,
+	    created_at
+	)
+	SELECT
+	    $1,
+	    decision_id,
+	    type,
+	    suggested_action,
+	    reason,
+	    estimated_saving_amount,
+	    estimated_saving_currency,
+	    confidence_percentage,
+	    risk,
+	    owner_id,
+	    required_approver_id,
+	    created_at
+	FROM recommendations
+	WHERE id = $2
+	
+2026-10-09 12:48:52.033 UTC [597] ERROR:  new row for relation "recommendations" violates check constraint "ck_recommendations_confidence_percentage"
+2026-10-09 12:48:52.033 UTC [597] DETAIL:  Failing row contains (7da6ea49-ab91-4e24-9efc-c8a26a88d090, 3c6d057c-cd11-4cc4-9451-79141b138f76, RIGHTSIZE_INSTANCE, Reduce the instance allocation, Canonical evidence shows sustained over-provisioning, 125.50, EUR, 101, MEDIUM, c07dd5ab-009f-419e-b914-98a46bd23593, 15d38e1b-016f-4997-b6c0-b94277f2a751, 2026-07-29 12:02:00+02).
+2026-10-09 12:48:52.033 UTC [597] STATEMENT:  UPDATE recommendations SET confidence_percentage = 101 WHERE id = $1
+2026-10-09 12:48:52.042 UTC [598] ERROR:  new row for relation "evidence" violates check constraint "ck_evidence_severity"
+2026-10-09 12:48:52.042 UTC [598] DETAIL:  Failing row contains (f821316e-e663-495b-9d68-94a2e09f7dea, 2026-07-29 12:00:00+02, billing-export, POSTGRESQL_IT, source-a7a2c503-8489-490a-b935-300d68b2af77, cloud-account, cost_anomaly, INVALID, integration-suite, COST, A workload is oversized, The workload can reduce operating cost, case-schema-constraints, INTERNAL, HIGH, ACCEPTED, not_stored, {"environment":"integration","sprint":"2.7.7"}).
+2026-10-09 12:48:52.042 UTC [598] STATEMENT:  UPDATE evidence SET severity = 'INVALID' WHERE id = $1
+2026-10-09 12:48:52.068 UTC [600] ERROR:  new row for relation "ledger_entries" violates check constraint "ck_ledger_entries_estimated_saving_pair"
+2026-10-09 12:48:52.068 UTC [600] DETAIL:  Failing row contains (04da7de4-93fc-453c-a07d-2959e8588468, 3c6d057c-cd11-4cc4-9451-79141b138f76, null, 1fd74301-fb7c-4951-aae2-68c8b88403ae, FINOPS_APPROVER, 2026-07-29 12:05:00+02, case_closed, Case closed, Constraint verification probe, 1.00, null, null, null, null, null, null, {"source":"postgresql-it"}).
+2026-10-09 12:48:52.068 UTC [600] STATEMENT:  UPDATE ledger_entries SET estimated_saving_amount = 1.00 WHERE id = $1
+2026-10-09 12:48:52.077 UTC [601] ERROR:  new row for relation "ledger_entries" violates check constraint "ck_ledger_entries_realized_saving_pair"
+2026-10-09 12:48:52.077 UTC [601] DETAIL:  Failing row contains (04da7de4-93fc-453c-a07d-2959e8588468, 3c6d057c-cd11-4cc4-9451-79141b138f76, null, 1fd74301-fb7c-4951-aae2-68c8b88403ae, FINOPS_APPROVER, 2026-07-29 12:05:00+02, case_closed, Case closed, Constraint verification probe, null, null, 1.00, null, null, null, null, {"source":"postgresql-it"}).
+2026-10-09 12:48:52.077 UTC [601] STATEMENT:  UPDATE ledger_entries SET realized_saving_amount = 1.00 WHERE id = $1

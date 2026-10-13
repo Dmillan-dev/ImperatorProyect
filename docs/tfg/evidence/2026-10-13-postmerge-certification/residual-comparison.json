@@ -1,0 +1,202 @@
+{
+  "historicalUniqueCves": 23,
+  "currentUniqueCves": 25,
+  "addedCves": [
+    "CVE-2026-88647",
+    "CVE-2026-88648"
+  ],
+  "removedCves": [],
+  "addedPackageRows": [
+    {
+      "VulnerabilityID": "CVE-2026-88647",
+      "PkgID": "libgnutls30@3.7.9-2+deb12u7",
+      "PkgName": "libgnutls30",
+      "PkgIdentifier": {
+        "PURL": "pkg:deb/debian/libgnutls30@3.7.9-2%2Bdeb12u7?arch=amd64&distro=debian-12.15",
+        "UID": "1825cdc4e3258ffb"
+      },
+      "InstalledVersion": "3.7.9-2+deb12u7",
+      "Status": "affected",
+      "Layer": {
+        "Digest": "sha256:a8ac7f6c67abc236e4c745052c404112b8fab6fe8ac3a329d1ef3b867ad67c71",
+        "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8"
+      },
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-88647",
+      "DataSource": {
+        "ID": "debian",
+        "Name": "Debian Security Tracker",
+        "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+      },
+      "Fingerprint": "sha256:eb642c10eff8294459c0dc5c31a5f1110d378cbc01f852ed14472bb74f0edc60",
+      "Title": "gnutls: gnutls: Information disclosure via hostname verification bypass",
+      "Description": "A hostname verification bypass in GnuTLS v3.8.13 allows attackers to circumvent the Common Name fallback mechanism and eavesdrop on communications via a crafted certificate.",
+      "Severity": "HIGH",
+      "CweIDs": [
+        "CWE-297"
+      ],
+      "VendorSeverity": {
+        "redhat": 3
+      },
+      "CVSS": {
+        "redhat": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+          "V3Score": 7.4
+        }
+      },
+      "References": [
+        "https://access.redhat.com/security/cve/CVE-2026-88647",
+        "https://gist.github.com/lkloliver/f98ec3de1a871fdfc02b70b8b9ba7642",
+        "https://gitlab.com/gnutls/gnutls/-/issues/1802",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-88647",
+        "https://www.cve.org/CVERecord?id=CVE-2026-88647"
+      ],
+      "PublishedDate": "2026-10-08T17:17:17.783Z",
+      "LastModifiedDate": "2026-10-10T03:17:08.62Z",
+      "component": "frontend",
+      "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-88648",
+      "PkgID": "libgnutls30@3.7.9-2+deb12u7",
+      "PkgName": "libgnutls30",
+      "PkgIdentifier": {
+        "PURL": "pkg:deb/debian/libgnutls30@3.7.9-2%2Bdeb12u7?arch=amd64&distro=debian-12.15",
+        "UID": "1825cdc4e3258ffb"
+      },
+      "InstalledVersion": "3.7.9-2+deb12u7",
+      "Status": "affected",
+      "Layer": {
+        "Digest": "sha256:a8ac7f6c67abc236e4c745052c404112b8fab6fe8ac3a329d1ef3b867ad67c71",
+        "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8"
+      },
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-88648",
+      "DataSource": {
+        "ID": "debian",
+        "Name": "Debian Security Tracker",
+        "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+      },
+      "Fingerprint": "sha256:a1ce333562afa8ae6b74a285569911f8d38fd872f2a2b5fe180a64025ea93a5d",
+      "Title": "gnutls: gnutls: Cross-domain certificate restriction bypass via incomplete X.509 validation",
+      "Description": "Incomplete X.509 implementation in GnuTLS v3.8.13 allows attackers controlling a subordinate Certificate Authority to bypass cross-domain PKI restrictions and issue unauthorized certificates.",
+      "Severity": "HIGH",
+      "VendorSeverity": {
+        "redhat": 3
+      },
+      "CVSS": {
+        "redhat": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+          "V3Score": 7.4
+        }
+      },
+      "References": [
+        "https://access.redhat.com/security/cve/CVE-2026-88648",
+        "https://gist.github.com/lkloliver/1f2a97cb8d0b31aa27b6bd0354358d7d",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-88648",
+        "https://www.cve.org/CVERecord?id=CVE-2026-88648",
+        "https://www.rfc-editor.org/rfc/rfc5280#section-4.2.1.10",
+        "https://www.rfc-editor.org/rfc/rfc5280#section-6.1.4"
+      ],
+      "PublishedDate": "2026-10-08T19:20:52.703Z",
+      "LastModifiedDate": "2026-10-08T21:33:42.423Z",
+      "component": "frontend",
+      "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-88647",
+      "PkgID": "libgnutls30@3.7.9-2+deb12u7",
+      "PkgName": "libgnutls30",
+      "PkgIdentifier": {
+        "PURL": "pkg:deb/debian/libgnutls30@3.7.9-2%2Bdeb12u7?arch=amd64&distro=debian-12.15",
+        "UID": "1825cdc4e3258ffb"
+      },
+      "InstalledVersion": "3.7.9-2+deb12u7",
+      "Status": "affected",
+      "Layer": {
+        "Digest": "sha256:a8ac7f6c67abc236e4c745052c404112b8fab6fe8ac3a329d1ef3b867ad67c71",
+        "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8"
+      },
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-88647",
+      "DataSource": {
+        "ID": "debian",
+        "Name": "Debian Security Tracker",
+        "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+      },
+      "Fingerprint": "sha256:eec663ef410cf0eee59055162e06d797a0f047d4c0ab656e503bf06f418fd0c3",
+      "Title": "gnutls: gnutls: Information disclosure via hostname verification bypass",
+      "Description": "A hostname verification bypass in GnuTLS v3.8.13 allows attackers to circumvent the Common Name fallback mechanism and eavesdrop on communications via a crafted certificate.",
+      "Severity": "HIGH",
+      "CweIDs": [
+        "CWE-297"
+      ],
+      "VendorSeverity": {
+        "redhat": 3
+      },
+      "CVSS": {
+        "redhat": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+          "V3Score": 7.4
+        }
+      },
+      "References": [
+        "https://access.redhat.com/security/cve/CVE-2026-88647",
+        "https://gist.github.com/lkloliver/f98ec3de1a871fdfc02b70b8b9ba7642",
+        "https://gitlab.com/gnutls/gnutls/-/issues/1802",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-88647",
+        "https://www.cve.org/CVERecord?id=CVE-2026-88647"
+      ],
+      "PublishedDate": "2026-10-08T17:17:17.783Z",
+      "LastModifiedDate": "2026-10-10T03:17:08.62Z",
+      "component": "postgres",
+      "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-88648",
+      "PkgID": "libgnutls30@3.7.9-2+deb12u7",
+      "PkgName": "libgnutls30",
+      "PkgIdentifier": {
+        "PURL": "pkg:deb/debian/libgnutls30@3.7.9-2%2Bdeb12u7?arch=amd64&distro=debian-12.15",
+        "UID": "1825cdc4e3258ffb"
+      },
+      "InstalledVersion": "3.7.9-2+deb12u7",
+      "Status": "affected",
+      "Layer": {
+        "Digest": "sha256:a8ac7f6c67abc236e4c745052c404112b8fab6fe8ac3a329d1ef3b867ad67c71",
+        "DiffID": "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8"
+      },
+      "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-88648",
+      "DataSource": {
+        "ID": "debian",
+        "Name": "Debian Security Tracker",
+        "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+      },
+      "Fingerprint": "sha256:8c88fc97eed9255494be8f927f642946a9e6e2fa1ba543662ad322ca8807866a",
+      "Title": "gnutls: gnutls: Cross-domain certificate restriction bypass via incomplete X.509 validation",
+      "Description": "Incomplete X.509 implementation in GnuTLS v3.8.13 allows attackers controlling a subordinate Certificate Authority to bypass cross-domain PKI restrictions and issue unauthorized certificates.",
+      "Severity": "HIGH",
+      "VendorSeverity": {
+        "redhat": 3
+      },
+      "CVSS": {
+        "redhat": {
+          "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+          "V3Score": 7.4
+        }
+      },
+      "References": [
+        "https://access.redhat.com/security/cve/CVE-2026-88648",
+        "https://gist.github.com/lkloliver/1f2a97cb8d0b31aa27b6bd0354358d7d",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-88648",
+        "https://www.cve.org/CVERecord?id=CVE-2026-88648",
+        "https://www.rfc-editor.org/rfc/rfc5280#section-4.2.1.10",
+        "https://www.rfc-editor.org/rfc/rfc5280#section-6.1.4"
+      ],
+      "PublishedDate": "2026-10-08T19:20:52.703Z",
+      "LastModifiedDate": "2026-10-08T21:33:42.423Z",
+      "component": "postgres",
+      "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)"
+    }
+  ],
+  "removedPackageRows": [],
+  "riskEquivalentNotEstablished": true,
+  "automaticAcceptance": false
+}

@@ -1,0 +1,24 @@
+{
+  "sourceSha": "a931601102ee19a90b3dad8477408ac0d1854669",
+  "imageReference": "imperator/postgres@sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9",
+  "imageIndexDigest": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9",
+  "runtimeManifestDigest": "sha256:c22d3892c45e412fbdb36d4e17d4580359be3bba87873710cceeeaf777b68717",
+  "exitCode": 0,
+  "totals": {
+    "surefire-reports": {
+      "tests": 174,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0
+    },
+    "failsafe-reports": {
+      "tests": 35,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0
+    }
+  },
+  "scope": "Synthetic integration harness: same exact PostgreSQL image; temporary loopback JDBC port55439 differs from canonical Compose runtime, which publishes no database port.",
+  "existingVolumesUntouched": true,
+  "executedAtUtc": "2026-10-09T12:49:07.009611+00:00"
+}

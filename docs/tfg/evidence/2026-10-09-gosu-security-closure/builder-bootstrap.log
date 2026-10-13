@@ -1,0 +1,53 @@
+#1 [internal] booting buildkit
+#1 pulling image moby/buildkit@sha256:cec9f139f45e93c5c69c60f8b07cfad9f43f4ef6b6a6cd917527fea5ff2e3dea
+#1 pulling image moby/buildkit@sha256:cec9f139f45e93c5c69c60f8b07cfad9f43f4ef6b6a6cd917527fea5ff2e3dea 1.5s done
+#1 creating container buildx_buildkit_imperator-gosu-202610090
+#1 creating container buildx_buildkit_imperator-gosu-202610090 1.6s done
+#1 DONE 3.2s
+Name:          imperator-gosu-20261009
+Driver:        docker-container
+Last Activity: 2026-10-09 12:42:43 +0000 UTC
+
+Nodes:
+Name:                  imperator-gosu-202610090
+Endpoint:              desktop-linux
+Driver Options:        image="moby/buildkit@sha256:cec9f139f45e93c5c69c60f8b07cfad9f43f4ef6b6a6cd917527fea5ff2e3dea"
+Status:                running
+BuildKit daemon flags: --allow-insecure-entitlement=network.host
+BuildKit version:      v0.33.1
+Platforms:             linux/amd64, linux/amd64/v2, linux/amd64/v3, linux/arm64, linux/riscv64, linux/ppc64le, linux/s390x, linux/386, linux/arm/v7, linux/arm/v6
+Features:
+ Automatically load images to the Docker Engine image store: false
+ Cache export:                                               true
+ Direct push:                                                true
+ Docker exporter:                                            true
+ Multi-platform build:                                       true
+ OCI exporter:                                               true
+Labels:
+ org.mobyproject.buildkit.worker.executor:         oci
+ org.mobyproject.buildkit.worker.hostname:         964f39e8e12d
+ org.mobyproject.buildkit.worker.network:          host
+ org.mobyproject.buildkit.worker.oci.process-mode: sandbox
+ org.mobyproject.buildkit.worker.selinux.enabled:  false
+ org.mobyproject.buildkit.worker.snapshotter:      overlayfs
+GC Policy rule#0:
+ All:            false
+ Filters:        type==source.local type==exec.cachemount type==source.git.checkout
+ Keep Duration:  48h0m0s
+ Max Used Space: 488.3MiB
+GC Policy rule#1:
+ All:            false
+ Keep Duration:  1440h0m0s
+ Reserved Space: 9.313GiB
+ Max Used Space: 93.13GiB
+ Min Free Space: 188.1GiB
+GC Policy rule#2:
+ All:            false
+ Reserved Space: 9.313GiB
+ Max Used Space: 93.13GiB
+ Min Free Space: 188.1GiB
+GC Policy rule#3:
+ All:            true
+ Reserved Space: 9.313GiB
+ Max Used Space: 93.13GiB
+ Min Free Space: 188.1GiB

@@ -1,0 +1,91 @@
+{
+  "sourceSha": "a931601102ee19a90b3dad8477408ac0d1854669",
+  "files": [
+    {
+      "path": "infra/docker/compose.yaml",
+      "sha256": "ffe7f44a88599b3330640bc29350d357ead4d94ae8d57b7ca02b7b17cd354425",
+      "bytes": 9472,
+      "sameBytesAsOriginal38FileReview": false
+    },
+    {
+      "path": "infra/docker/frontend/Dockerfile",
+      "sha256": "3edeb91749a1dc2a1836a2e4e73cda398a801b7da5e6e909ed7e93b995325830",
+      "bytes": 2787,
+      "sameBytesAsOriginal38FileReview": true
+    },
+    {
+      "path": "infra/docker/postgresql/Dockerfile",
+      "sha256": "10ea791bacd1ebe41be00929983e5ad399fe332e9332a11abf6e9a06d80e6bf7",
+      "bytes": 3788,
+      "sameBytesAsOriginal38FileReview": false
+    },
+    {
+      "path": "frontend/package.json",
+      "sha256": "e28f8ab772cd562c013227ea2dcfdc245dd6f268e8e9120fa324c7edf090fa55",
+      "bytes": 1485,
+      "sameBytesAsOriginal38FileReview": false
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "sha256": "ea48414f2269d4d1e57c4292583221223e12eeadf388b6736fc8c96a6612768b",
+      "bytes": 311667,
+      "sameBytesAsOriginal38FileReview": false
+    },
+    {
+      "path": "frontend/eslint.config.mjs",
+      "sha256": "46d115c18ed68621adb9ce61537f0f2ae88cc37d6708f85f3be81d451ecf5505",
+      "bytes": 365,
+      "sameBytesAsOriginal38FileReview": true
+    },
+    {
+      "path": "frontend/next.config.ts",
+      "sha256": "2cefc23040e68582b02f0e0eb9c12e06d9edfbcdb4cace3abd230842e4d9ea33",
+      "bytes": 2311,
+      "sameBytesAsOriginal38FileReview": true
+    },
+    {
+      "path": "backend-java/api/evidence/EvidenceController.java",
+      "sha256": "c01a5df1d60b6deeb5125fa4775350fe149ee1fceade4648205e9035e66184cc",
+      "bytes": 1353,
+      "sameBytesAsOriginal38FileReview": true
+    },
+    {
+      "path": "backend-java/api/evidence/EvidenceNdjsonImporter.java",
+      "sha256": "d693e283175d33240650c10da8077fa391749150391ad1972e5d6552aca25a0b",
+      "bytes": 22422,
+      "sameBytesAsOriginal38FileReview": true
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/PostgresMvpReadModelQueryAdapter.java",
+      "sha256": "f61c977c573ac8fb0dabf21c94fdab1ab48ab7c4a7484c12e400043b447cd6f2",
+      "bytes": 8715,
+      "sameBytesAsOriginal38FileReview": true
+    },
+    {
+      "path": "infra/docker/postgresql/provision-app-role.sh",
+      "sha256": "ee57a4f3d2b7fbdb441ceb3e931625f234e5e769c4f1fb9fe7a5fddba651aed3",
+      "bytes": 3686,
+      "sameBytesAsOriginal38FileReview": true
+    },
+    {
+      "path": ".github/workflows/security.yml",
+      "sha256": "c37d4d34e8ac5cfce286d2393c713ae7481968da4cbec44bab4afe73c49678ba",
+      "bytes": 11230,
+      "sameBytesAsOriginal38FileReview": false
+    },
+    {
+      "path": ".github/workflows/java-ci.yml",
+      "sha256": "e5992d46dceb3b7417b255bd5267b95628d74521f663dcba7d00f976d30c12a4",
+      "bytes": 1409,
+      "sameBytesAsOriginal38FileReview": true
+    }
+  ],
+  "filesReviewed": 13,
+  "changesSinceRecordedRuntimeSource": [
+    "infra/docker/postgresql/Dockerfile",
+    "infra/docker/postgresql/supply-chain-lock.json",
+    "scripts/verify-postgres-runtime-image.ps1"
+  ],
+  "deltaAssessment": "Only compiler pin, matching runtime labels/lock and D094 expected compiler assertion. Application routes, SQL/input formats, IAM/IdP/AWS behavior and three other runtime build inputs unchanged.",
+  "limitation": "Historical technical assessments retained with current source/file inspection; no static callgraph or penetration-test claim."
+}

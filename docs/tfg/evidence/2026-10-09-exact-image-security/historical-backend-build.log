@@ -1,0 +1,103 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 2.60kB done
+#1 DONE 0.1s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+#2 DONE 0.1s
+
+#3 docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+#3 resolve docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e 0.0s done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/eclipse-temurin:21-jre-jammy@sha256:e9aaf73145bbd1f9f6ec7f6867dd75a44f34b1a6c32a813504bf4129be2d09d7
+#4 DONE 0.1s
+
+#5 [internal] load metadata for docker.io/library/eclipse-temurin:21-jdk-jammy@sha256:6adefddd4a20bceef702cedb0b03952fcd7691f9c7ccffe27014992abc0b46bd
+#5 DONE 0.1s
+
+#6 [runtime 3/9] ADD --checksum=sha256:a5b9484a287aba47096fa9ea9821c5c98cf95b8dd726786e7c3a3311fb8eb3b4     https://security.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_3.0.2-0ubuntu1.30_amd64.deb     /tmp/openssl.deb
+#6 DONE 0.0s
+
+#7 [runtime 2/9] ADD --checksum=sha256:d1b4636e32ac6d3b95d583ac05ac548b1aa248414bae1c51b14f54be0f8fd7bc     https://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl3_3.0.2-0ubuntu1.30_amd64.deb     /tmp/libssl3.deb
+#7 DONE 0.0s
+
+#8 [internal] load build context
+#8 DONE 0.0s
+
+#9 [runtime 1/9] FROM docker.io/library/eclipse-temurin:21-jre-jammy@sha256:e9aaf73145bbd1f9f6ec7f6867dd75a44f34b1a6c32a813504bf4129be2d09d7
+#9 resolve docker.io/library/eclipse-temurin:21-jre-jammy@sha256:e9aaf73145bbd1f9f6ec7f6867dd75a44f34b1a6c32a813504bf4129be2d09d7 0.1s done
+#9 DONE 0.1s
+
+#10 [build 1/7] FROM docker.io/library/eclipse-temurin:21-jdk-jammy@sha256:6adefddd4a20bceef702cedb0b03952fcd7691f9c7ccffe27014992abc0b46bd
+#10 resolve docker.io/library/eclipse-temurin:21-jdk-jammy@sha256:6adefddd4a20bceef702cedb0b03952fcd7691f9c7ccffe27014992abc0b46bd
+#10 resolve docker.io/library/eclipse-temurin:21-jdk-jammy@sha256:6adefddd4a20bceef702cedb0b03952fcd7691f9c7ccffe27014992abc0b46bd 0.1s done
+#10 DONE 0.2s
+
+#11 [runtime 3/9] ADD --checksum=sha256:a5b9484a287aba47096fa9ea9821c5c98cf95b8dd726786e7c3a3311fb8eb3b4     https://security.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_3.0.2-0ubuntu1.30_amd64.deb     /tmp/openssl.deb
+#11 CACHED
+
+#12 [runtime 2/9] ADD --checksum=sha256:d1b4636e32ac6d3b95d583ac05ac548b1aa248414bae1c51b14f54be0f8fd7bc     https://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl3_3.0.2-0ubuntu1.30_amd64.deb     /tmp/libssl3.deb
+#12 CACHED
+
+#13 [runtime 4/9] RUN dpkg --install /tmp/libssl3.deb /tmp/openssl.deb     && rm -f /tmp/libssl3.deb /tmp/openssl.deb /var/log/dpkg.log
+#13 CACHED
+
+#8 [internal] load build context
+#8 transferring context: 814.05kB 0.1s done
+#8 DONE 0.1s
+
+#14 [runtime 5/9] RUN groupadd --gid 10001 imperator     && useradd --uid 10001 --gid 10001 --home-dir /opt/imperator        --no-create-home --shell /usr/sbin/nologin imperator     && mkdir -p /opt/imperator     && chown 10001:10001 /opt/imperator
+#14 ...
+
+#15 [build 4/7] COPY .mvn/ .mvn/
+#15 CACHED
+
+#16 [build 5/7] COPY mvnw pom.xml ./
+#16 CACHED
+
+#17 [build 6/7] COPY backend-java/ backend-java/
+#17 CACHED
+
+#18 [build 2/7] WORKDIR /workspace
+#18 CACHED
+
+#19 [build 3/7] RUN apt-get update     && apt-get install --yes --no-install-recommends unzip     && rm -rf /var/lib/apt/lists/*
+#19 CACHED
+
+#20 [build 7/7] RUN sed -i 's/\r$//' mvnw     && chmod 0755 mvnw     && ./mvnw --batch-mode --no-transfer-progress -DskipTests package     && test -f target/imperator-backend-0.1.0.jar
+#20 CACHED
+
+#14 [runtime 5/9] RUN groupadd --gid 10001 imperator     && useradd --uid 10001 --gid 10001 --home-dir /opt/imperator        --no-create-home --shell /usr/sbin/nologin imperator     && mkdir -p /opt/imperator     && chown 10001:10001 /opt/imperator
+#14 DONE 0.6s
+
+#21 [runtime 6/9] WORKDIR /opt/imperator
+#21 DONE 0.2s
+
+#22 [runtime 7/9] COPY --from=build --chown=10001:10001     /workspace/target/imperator-backend-0.1.0.jar     /opt/imperator/imperator-backend.jar
+#22 DONE 0.2s
+
+#23 [runtime 8/9] COPY --chown=10001:10001 infra/docker/backend/entrypoint.sh     /opt/imperator/entrypoint.sh
+#23 DONE 0.3s
+
+#24 [runtime 9/9] RUN chmod 0555 /opt/imperator/entrypoint.sh
+#24 DONE 0.5s
+
+#25 exporting to image
+#25 exporting layers
+#25 exporting layers 1.7s done
+#25 exporting manifest sha256:645e2aa935ab08a3765f8b62c81b7c210c27867435efa22145b12aaba179a67f 0.1s done
+#25 exporting config sha256:8580139fe8a1bef8b5d5046a70471675f36bcb52f93850fbfdb5207e1f96964e
+#25 exporting config sha256:8580139fe8a1bef8b5d5046a70471675f36bcb52f93850fbfdb5207e1f96964e 0.1s done
+#25 exporting attestation manifest sha256:c68fd0815355c5bb53de9efbfec018b292189e36206d93c3f2b4de3d31407ffc
+#25 exporting attestation manifest sha256:c68fd0815355c5bb53de9efbfec018b292189e36206d93c3f2b4de3d31407ffc 0.1s done
+#25 exporting manifest list sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757
+#25 exporting manifest list sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 0.1s done
+#25 naming to docker.io/imperator/backend:6e79e83e909995c50a44aba3608b6ca25a0e4602
+#25 naming to docker.io/imperator/backend:6e79e83e909995c50a44aba3608b6ca25a0e4602 0.0s done
+#25 unpacking to docker.io/imperator/backend:6e79e83e909995c50a44aba3608b6ca25a0e4602
+#25 unpacking to docker.io/imperator/backend:6e79e83e909995c50a44aba3608b6ca25a0e4602 0.7s done
+#25 DONE 3.1s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/h3l8pidugnnwgxoz6m3unabcw

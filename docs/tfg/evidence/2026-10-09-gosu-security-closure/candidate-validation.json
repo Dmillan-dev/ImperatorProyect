@@ -1,0 +1,22 @@
+{
+  "recordedAtUtc": "2026-10-09T13:12:24.586770+00:00",
+  "originalRootHeadIndexStatusPendingBytesUnchanged": true,
+  "originalEvidenceByteIdentical": 547,
+  "priorOctober9PackFilesByteIdentical": 117,
+  "originalReceiptsUnchanged": true,
+  "currentTrackedOrdinaryDocsChanged": 12,
+  "candidatePatchFiles": [
+    "infra/docker/postgresql/Dockerfile",
+    "infra/docker/postgresql/supply-chain-lock.json",
+    "scripts/verify-postgres-runtime-image.ps1"
+  ],
+  "newEvidenceJsonParsed": 51,
+  "relativeMarkdownLinksChecked": 211,
+  "brokenLinks": [],
+  "helperPythonSyntaxValid": true,
+  "gitDiffCheckExit": 0,
+  "stagingEmpty": true,
+  "localPatchCommit": "a931601102ee19a90b3dad8477408ac0d1854669",
+  "pushPerformed": false,
+  "formalRiskDecisionNotRecordedDuringValidation": true
+}

@@ -1,0 +1,73 @@
+{
+  "historicalHCBindings": 115,
+  "currentHCBindings": 117,
+  "unchangedBindings": 115,
+  "removedBindings": [],
+  "addedBindings": [
+    {
+      "service": "postgres",
+      "id": "CVE-2026-78667",
+      "package": "stdlib",
+      "installed": "v1.26.6",
+      "fixed": "1.26.9, 1.27.2",
+      "status": "fixed",
+      "severity": "HIGH",
+      "targetType": "gobinary",
+      "target": "usr/local/bin/gosu",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78667",
+      "publishedDate": "2026-10-08T23:17:03.88Z"
+    },
+    {
+      "service": "postgres",
+      "id": "CVE-2026-97031",
+      "package": "stdlib",
+      "installed": "v1.26.6",
+      "fixed": "1.26.9, 1.27.2",
+      "status": "fixed",
+      "severity": "HIGH",
+      "targetType": "gobinary",
+      "target": "usr/local/bin/gosu",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-97031",
+      "publishedDate": "2026-10-08T23:17:06.037Z"
+    }
+  ],
+  "currentNonFixableBindings": 115,
+  "currentNonFixableUniqueCVEs": 23,
+  "currentAllUniqueHCCVEs": 25,
+  "nonFixableCVEs": [
+    "CVE-2023-2953",
+    "CVE-2023-45853",
+    "CVE-2025-69720",
+    "CVE-2025-7458",
+    "CVE-2026-11822",
+    "CVE-2026-11824",
+    "CVE-2026-16742",
+    "CVE-2026-41992",
+    "CVE-2026-53613",
+    "CVE-2026-54369",
+    "CVE-2026-6653",
+    "CVE-2026-74860",
+    "CVE-2026-76642",
+    "CVE-2026-78408",
+    "CVE-2026-78409",
+    "CVE-2026-78410",
+    "CVE-2026-84782",
+    "CVE-2026-86138",
+    "CVE-2026-86140",
+    "CVE-2026-86142",
+    "CVE-2026-86143",
+    "CVE-2026-86144",
+    "CVE-2026-9538"
+  ],
+  "comparisonKey": [
+    "service",
+    "CVE",
+    "package",
+    "installedVersion",
+    "fixedVersion",
+    "status",
+    "severity",
+    "targetType"
+  ],
+  "excludedFromKey": "Mutable target prefix, timestamps and scanner/report identifiers; artifact identities verified separately."
+}

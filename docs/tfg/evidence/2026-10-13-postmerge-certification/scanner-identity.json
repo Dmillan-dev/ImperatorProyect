@@ -1,0 +1,8 @@
+{
+  "tool": "Trivy 0.74.0 existing local tool image",
+  "image": "aquasec/trivy@sha256:62b1e65e8869bc4b4c6aa4fa2b21595256c7c2f6018a9d9ad61caf87187c1969",
+  "nativeToolUnavailable": "Windows application-control policy blocked native Trivy; no policy changed or disabled. Existing scanner image used with --pull never.",
+  "fullReports": "vuln+secret, all severities, no ignore-unfixed, no VEX, no advisory suppression",
+  "noProductImagesBuiltOrPulled": true,
+  "newMvpRuntimeExecuted": false
+}

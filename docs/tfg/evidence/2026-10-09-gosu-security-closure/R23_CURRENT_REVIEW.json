@@ -1,0 +1,18 @@
+{
+  "risk": "R-23",
+  "status": "OPEN / NO FIX AVAILABLE",
+  "closed": false,
+  "advisory": "GHSA-vfj7-8cjw-p6xm",
+  "officialSnapshot": "applicability/braces-advisory-current.json",
+  "scope": "braces3.0.3 development lint/glob tooling",
+  "currentRuntimeEvidence": "applicability/frontend-inspection.log",
+  "runtimePackage": "No braces package found in fresh exact-frontend filesystem/module inspection; compiled picomatch is separate, no universal absence-of-code or non-exploitability claim.",
+  "fix": "No first_patched_version published by official advisory",
+  "mitigations": [
+    "Trusted reviewed checkout and fixed glob inputs.",
+    "Isolate untrusted development tooling; no deployment credentials/real data.",
+    "Recheck advisory when vendor fix/input/tooling boundary changes."
+  ],
+  "noSpeculativeUpdate": true,
+  "r20Included": false
+}

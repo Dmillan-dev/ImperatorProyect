@@ -1,0 +1,72 @@
+{
+  "recordedAtUtc": "2026-10-09T13:18:01.044823+00:00",
+  "headSha": "a931601102ee19a90b3dad8477408ac0d1854669",
+  "checks": [
+    {
+      "name": "CodeQL",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Dmillan-dev/ImperatorProyect/runs/113836381801"
+    },
+    {
+      "name": "Source, dependency and configuration scan",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/37935439727/job/113836192134"
+    },
+    {
+      "name": "Application image scan",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/37935439727/job/113836192000"
+    },
+    {
+      "name": "PostgreSQL D094 supply-chain gate",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/37935439727/job/113836191943"
+    },
+    {
+      "name": "Full Git history secret scan",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/37935439727/job/113836191648"
+    },
+    {
+      "name": "Java 21 Maven verification",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/37935439623/job/113836190977"
+    },
+    {
+      "name": "Analyze (javascript-typescript)",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/37935436284/job/113836186022"
+    },
+    {
+      "name": "Analyze (actions)",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/37935436284/job/113836185854"
+    },
+    {
+      "name": "Analyze (java-kotlin)",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/37935436284/job/113836185692"
+    },
+    {
+      "name": "Analyze (python)",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/37935436284/job/113836185524"
+    },
+    {
+      "name": "submit-maven",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/37935323964/job/113835811247"
+    }
+  ]
+}

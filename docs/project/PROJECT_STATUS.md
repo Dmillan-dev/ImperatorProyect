@@ -1,5 +1,13 @@
 # IMPERATOR Project Status
 
+## Post-merge verification - 2026-10-13
+
+PR64 is merged into main `0797671e06baa2b20f8ce5a842ac04140d84e591`; its tree equals the tested a931601 candidate. Fresh main CI:10/10 checks PASS. The four retained local image IDs/origins/rootfs match the runtime evidence dated 09/10; CI-built images remain separately identified.
+
+Fresh full four-image scans:0 fixable High/Critical and0 secrets at all severities. Residuals now total25 unique CVEs/119 package rows, including two added GnuTLS CVEs. R-20's historical authorization expired 09/10; the23-CVE accepted:false proposal does not automatically cover this delta. R-23 remains OPEN independently; production npm audit 0 and full development audit 5 High. No upgrade or new functional runtime is claimed.
+
+**A-S3 formal: PENDING applicable explicit risk decision and publication review; A-S4: PENDING; TFG-A: IN PROGRESS; AWS: BLOCKED.** The current record supersedes dated state claims below while preserving historical evidence and receipts. See [post-merge verification](../tfg/evidence/2026-10-13-postmerge-certification/README.md).
+
 ## Local TFG Delivery Update — 2026-10-07
 
 A-S3 local candidate review/document synchronization and PR preparation are active; owner-accepted SHA and new hosted checks remain pending.

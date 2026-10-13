@@ -1,0 +1,36 @@
+{
+  "status": "BLOCKING / NO REMEDIATION AUTHORIZED OR APPLIED",
+  "findings": [
+    {
+      "service": "postgres",
+      "id": "CVE-2026-78667",
+      "package": "stdlib",
+      "installed": "v1.26.6",
+      "fixed": "1.26.9, 1.27.2",
+      "status": "fixed",
+      "severity": "HIGH",
+      "targetType": "gobinary",
+      "target": "usr/local/bin/gosu",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78667",
+      "publishedDate": "2026-10-08T23:17:03.88Z"
+    },
+    {
+      "service": "postgres",
+      "id": "CVE-2026-97031",
+      "package": "stdlib",
+      "installed": "v1.26.6",
+      "fixed": "1.26.9, 1.27.2",
+      "status": "fixed",
+      "severity": "HIGH",
+      "targetType": "gobinary",
+      "target": "usr/local/bin/gosu",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-97031",
+      "publishedDate": "2026-10-08T23:17:06.037Z"
+    }
+  ],
+  "installedCompiler": "1.26.6",
+  "minimumSameLineFixedCompiler": "1.26.9",
+  "component": "Go stdlib compiled into /usr/local/bin/gosu",
+  "sourceReview": "gosu-source-review.json",
+  "reachability": "Gosu privilege-switch source has no direct HTTP/TLS imports. No normal network product entry identified by this limited review; not a binary callgraph, pentest or proof of non-exploitability. The strict fixable gate remains failed."
+}

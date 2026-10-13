@@ -1,0 +1,16 @@
+{
+  "command": [
+    "pwsh",
+    "-NoProfile",
+    "-File",
+    "D:\\Imperator\\build\\worktrees\\tfg-a-go1269-20261009\\scripts\\verify-postgres-runtime-image.ps1",
+    "-EvidenceDirectory",
+    "build/go1269-d094/first",
+    "-RequireCleanWorktree"
+  ],
+  "startedAtUtc": "2026-10-09T12:42:43.236734+00:00",
+  "finishedAtUtc": "2026-10-09T12:44:13.643924+00:00",
+  "exitCode": 0,
+  "builder": "imperator-gosu-20261009",
+  "sourceSha": "a931601102ee19a90b3dad8477408ac0d1854669"
+}

@@ -1,0 +1,76 @@
+{
+  "changes": [
+    {
+      "path": "README.md",
+      "beforeSha256": "d08d0f57706163eedf505e8c9c2c82cb16acce4d1c820badca274f331f0fb60d",
+      "afterSha256": "dd70aa50976c3327ce4673c45fe1ea8fa6b44438996f3a304597b0f2a2cfc35a",
+      "scope": "Replace only the prior current-state documentary block; preserve dated historical sections and original EOL/BOM."
+    },
+    {
+      "path": "docs/tfg/README.md",
+      "beforeSha256": "6e1e93324793551c75c7af4b9c43bd6d2f48165008673682ea794fc59489bc18",
+      "afterSha256": "8510ee1ce01fc298e00ad260c4366eb4c53c8ffbd80b368a46d02af585159dc5",
+      "scope": "Replace only the prior current-state documentary block; preserve dated historical sections and original EOL/BOM."
+    },
+    {
+      "path": "docs/tfg/00_TFG_MASTER_PLAN.md",
+      "beforeSha256": "b2ec85f415d7704237e6a5cec223e8e69c6d9105888f1a7df2fa31e094fda64c",
+      "afterSha256": "7f3537995e66f82ea570b020a385c999d670bae1bcead21caf635b03b871b26d",
+      "scope": "Replace only the prior current-state documentary block; preserve dated historical sections and original EOL/BOM."
+    },
+    {
+      "path": "docs/tfg/03_TRACEABILITY_MATRIX.md",
+      "beforeSha256": "f7064ef357ed5c68aff80f5a729a232bddb4521464b515bc25b93c36a9a67946",
+      "afterSha256": "6faa69e306f398b99ae07a9a282ef8af5661fd0926f0a8eb0df952d506d529b4",
+      "scope": "Replace only the prior current-state documentary block; preserve dated historical sections and original EOL/BOM."
+    },
+    {
+      "path": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "beforeSha256": "1ed852cbcf2d7a1a2f52b1470e942c64f44c5e9ad6c7f301150efdfaccf2aac5",
+      "afterSha256": "90fe2de5612e3bf784a0f480c759dedb01b872e119a4e05844b9f839d6c08726",
+      "scope": "Replace only the prior current-state documentary block; preserve dated historical sections and original EOL/BOM."
+    },
+    {
+      "path": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "beforeSha256": "00ee28b7cd1cea62f29ad6437b33e06a8ebb3ddce5278ad67d03fd9b11e11710",
+      "afterSha256": "56763fe7c492c5361eaffcdafb8b17bd784af49a8c68893f630d69b1947c75d1",
+      "scope": "Replace only the prior current-state documentary block; preserve dated historical sections and original EOL/BOM."
+    },
+    {
+      "path": "docs/tfg/A_S3_EVIDENCE_VERSIONING.md",
+      "beforeSha256": "b46a9175fe70ce93e66a750eaa9223c71fdf7aa73101e248b55e4f835fe27b77",
+      "afterSha256": "a4c4c1ef7f09f57a61b865542880ebe91931e708928440fd4f5304ea5ce3d7ee",
+      "scope": "Replace only the prior current-state documentary block; preserve dated historical sections and original EOL/BOM."
+    },
+    {
+      "path": "docs/tfg/A_S4_LOCAL_DEFENSE.md",
+      "beforeSha256": "c77688745b5d2b38a8b4c31fc5e2b0d3982901fa7568df633a53bbccf43e06a3",
+      "afterSha256": "e3438376b9eb17c32b92c315e3829fe8d1cef74016582e0b48e7a76e00d57cbe",
+      "scope": "Replace only the prior current-state documentary block; preserve dated historical sections and original EOL/BOM."
+    },
+    {
+      "path": "docs/tfg/10_LOCAL_MVP_RELEASE_GATE.md",
+      "beforeSha256": "44e7845d3f392e64c7a81f9a85bab3077995239089fc037085f88864abcc3dbf",
+      "afterSha256": "6eb021a0d1b8be34debb2ac486756061795111a796caaa844eec7d7745d64bcf",
+      "scope": "Replace only the prior current-state documentary block; preserve dated historical sections and original EOL/BOM."
+    },
+    {
+      "path": "docs/tfg/08_LOCAL_MVP_MEMORY.md",
+      "beforeSha256": "0eb0b620c2bc4b868266c93e19da3006cbd9b8cae3dad622a8db2e8aa9f6f33f",
+      "afterSha256": "f83027ee6fbf0fe440634b4d0716c291bcae16276e3908e49ce690ac638ca0c1",
+      "scope": "Replace only the prior current-state documentary block; preserve dated historical sections and original EOL/BOM."
+    },
+    {
+      "path": "docs/tfg/CI_SECURITY_CORRECTION_2026_10_08.md",
+      "beforeSha256": "7763732f2ea2910cd7786be5b5139a73c7251ae5950f1b8ffbddbf47e4b569ae",
+      "afterSha256": "276a29382dd12e392fd5c530ad873626b3715ef6d0b0bbf7000d6d747899fb18",
+      "scope": "Replace only the prior current-state documentary block; preserve dated historical sections and original EOL/BOM."
+    },
+    {
+      "path": "docs/project/PROJECT_STATUS.md",
+      "beforeSha256": "b58fbca983ed87a9e1ccd21120fd9aaa6df40777730ffcd8daaa8725448075dd",
+      "afterSha256": "952edebec5da409c34e402a48f3fd017f4cf7844181bdbd0532999408e7cd724",
+      "scope": "Replace only the prior current-state documentary block; preserve dated historical sections and original EOL/BOM."
+    }
+  ]
+}

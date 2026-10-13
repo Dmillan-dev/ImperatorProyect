@@ -1,0 +1,263 @@
+{
+  "sourceSha": "0797671e06baa2b20f8ce5a842ac04140d84e591",
+  "checks": [
+    {
+      "name": "submit-maven",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38386848603/job/115260645953",
+      "completed_at": "2026-10-13T10:57:32Z"
+    },
+    {
+      "name": "Analyze (javascript-typescript)",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38386844372/job/115260631933",
+      "completed_at": "2026-10-13T10:58:26Z"
+    },
+    {
+      "name": "Analyze (python)",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38386844372/job/115260631914",
+      "completed_at": "2026-10-13T10:57:54Z"
+    },
+    {
+      "name": "Analyze (java-kotlin)",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38386844372/job/115260631886",
+      "completed_at": "2026-10-13T10:59:07Z"
+    },
+    {
+      "name": "Analyze (actions)",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38386844372/job/115260631807",
+      "completed_at": "2026-10-13T10:57:47Z"
+    },
+    {
+      "name": "Java 21 Maven verification",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38386844673/job/115260628474",
+      "completed_at": "2026-10-13T10:57:50Z"
+    },
+    {
+      "name": "Source, dependency and configuration scan",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38386844306/job/115260625314",
+      "completed_at": "2026-10-13T10:57:39Z"
+    },
+    {
+      "name": "Full Git history secret scan",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38386844306/job/115260625218",
+      "completed_at": "2026-10-13T10:57:22Z"
+    },
+    {
+      "name": "Application image scan",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38386844306/job/115260625101",
+      "completed_at": "2026-10-13T10:59:46Z"
+    },
+    {
+      "name": "PostgreSQL D094 supply-chain gate",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38386844306/job/115260624957",
+      "completed_at": "2026-10-13T10:58:40Z"
+    }
+  ],
+  "securityJobs": [
+    {
+      "name": "PostgreSQL D094 supply-chain gate",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check out repository",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install Trivy",
+          "conclusion": "success"
+        },
+        {
+          "name": "Prepare D094 diagnostic evidence",
+          "conclusion": "success"
+        },
+        {
+          "name": "Enable containerd image store",
+          "conclusion": "success"
+        },
+        {
+          "name": "Configure attestation-capable Buildx builder",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build and certify PostgreSQL runtime image",
+          "conclusion": "success"
+        },
+        {
+          "name": "Preserve D094 evidence",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Install Trivy",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Check out repository",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "Application image scan",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check out repository",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build backend image",
+          "conclusion": "success"
+        },
+        {
+          "name": "Scan backend image",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build frontend image",
+          "conclusion": "success"
+        },
+        {
+          "name": "Verify frontend runtime security patch",
+          "conclusion": "success"
+        },
+        {
+          "name": "Scan frontend image",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build database migration image",
+          "conclusion": "success"
+        },
+        {
+          "name": "Scan database migration image",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Scan database migration image",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Scan frontend image",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Scan backend image",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Check out repository",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "Full Git history secret scan",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check out complete repository history",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install checksum-pinned Gitleaks",
+          "conclusion": "success"
+        },
+        {
+          "name": "Scan complete Git history with redaction",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Check out complete repository history",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "Source, dependency and configuration scan",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check out repository",
+          "conclusion": "success"
+        },
+        {
+          "name": "Assert deferred monitoring runtime is absent",
+          "conclusion": "success"
+        },
+        {
+          "name": "Scan repository with Trivy",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Scan repository with Trivy",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Check out repository",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 11807416272,
+      "name": "d094-postgresql-supply-chain-0797671e06baa2b20f8ce5a842ac04140d84e591",
+      "size_in_bytes": 354491,
+      "expired": false,
+      "archive_download_url": "https://api.github.com/repos/Dmillan-dev/ImperatorProyect/actions/artifacts/11807416272/zip",
+      "digest": "sha256:a6fe8b9262a83f102977fd55090929f7177729bd5a6a98eacdbb877fc63cf2f7"
+    }
+  ]
+}

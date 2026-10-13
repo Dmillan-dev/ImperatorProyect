@@ -1,0 +1,68 @@
+{
+  "risk": "R-20",
+  "status": "READY FOR EXPLICIT OWNER DECISION / NOT ACCEPTED",
+  "accepted": false,
+  "proposedAtUtc": "2026-10-09T13:00:38.963694+00:00",
+  "scope": [
+    "TFG-A",
+    "LOCAL ONLY",
+    "SYNTHETIC DATA ONLY"
+  ],
+  "excluded": [
+    "AWS",
+    "PRODUCTION",
+    "REAL DATA",
+    "PUBLIC EXPOSURE",
+    "CUSTOMER DEPLOYMENT",
+    "PRODUCT EXPANSION"
+  ],
+  "sourceCandidateSha": "a931601102ee19a90b3dad8477408ac0d1854669",
+  "images": [
+    {
+      "component": "migration",
+      "indexDigest": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4",
+      "platformManifestDigest": "sha256:a4b1f621b007dca0d3cf099bd4d1e3246bffccddb240ffba7ee0b567ac6f1227",
+      "buildSourceSha": "6e79e83e909995c50a44aba3608b6ca25a0e4602"
+    },
+    {
+      "component": "backend",
+      "indexDigest": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757",
+      "platformManifestDigest": "sha256:645e2aa935ab08a3765f8b62c81b7c210c27867435efa22145b12aaba179a67f",
+      "buildSourceSha": "6e79e83e909995c50a44aba3608b6ca25a0e4602"
+    },
+    {
+      "component": "frontend",
+      "indexDigest": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78",
+      "platformManifestDigest": "sha256:85decf17bb4f50e1115839c3dbb0dfac31aafaafb567f50212598d08ce5f3daa",
+      "buildSourceSha": "6e79e83e909995c50a44aba3608b6ca25a0e4602"
+    },
+    {
+      "component": "postgres",
+      "indexDigest": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9",
+      "platformManifestDigest": "sha256:c22d3892c45e412fbdb36d4e17d4580359be3bba87873710cceeeaf777b68717",
+      "buildSourceSha": "a931601102ee19a90b3dad8477408ac0d1854669"
+    }
+  ],
+  "residualUniqueCVEs": 23,
+  "residualPackageRecords": 115,
+  "riskCharacterization": "Conditional residual; not declared inexploitable. Current exact-runtime probes plus unchanged application/source boundaries support bounded applicability; static inspection is not penetration testing.",
+  "fixableHighCritical": 0,
+  "imageSecrets": 0,
+  "sourceGitleaksFindings": 0,
+  "proposedExclusiveExpiry": "2026-10-16T00:00:00+02:00",
+  "proposedExclusiveExpiryUtc": "2026-10-15T22:00:00Z",
+  "timezone": "Europe/Madrid",
+  "renewalAutomatic": false,
+  "transferToFutureImages": false,
+  "r23": "OPEN / NO FIX AVAILABLE; independent and not closed by R-20",
+  "mitigations": {
+    "M1": "Canonical Compose exposes frontend only at 127.0.0.1; backend and PostgreSQL have no published host ports. PostgreSQL uses only internal data network. Academic scope requires synthetic data; loopback does not block a malicious local user/browser or an already compromised container.",
+    "M2": "Frontend uid1000/cap_drop ALL; PostgreSQL image uid999 and five allowed capabilities CHOWN,DAC_OVERRIDE,FOWNER,SETGID,SETUID; neither grants SYS_ADMIN. Both read_only and no-new-privileges. Writable tmpfs/database volume and SUID files still exist. These controls limit privilege paths; they do not repair memory corruption.",
+    "M3": "Application import uses NDJSON/JSON and Java prepared statements; dynamic sort names map to fixed enumerated SQL fragments. No reviewed public route accepts raw SQL, XML, SQLite databases, Perl programs or OS command strings. Static review is not proof against unknown bugs or stolen DB credentials.",
+    "M4": "No fstab entries authorizing user mounts, no systemd-homed daemon/managed users, no Python/libxml2 SAX bindings in reviewed images. Absence is scoped to these exact inspected image files/configuration.",
+    "M5": "Existing Compose CPU/memory/PID limits: frontend0.5CPU/512MiB/100PIDs, PostgreSQL1CPU/1024MiB/200PIDs. These bound some resource exhaustion; they do not guarantee service availability or prevent leaks/code execution.",
+    "M6": "Versioned PostgreSQL initialization directory is empty; Compose does not mount untrusted init archives and uses uncompressed versioned Flyway SQL. LDAP is not configured (SCRAM host authentication). PostgreSQL TCP/TLS use does not enable DTLS. Operator changes to any of these assumptions invalidate this review."
+  },
+  "functionalRegression": "174 unit +35 integration +41 frontend, lint/types/build/format, Playwright9PASS/6intentional skips, exact-image Docker/RBAC/Flyway/persistence/readiness/recovery PASS",
+  "approvalBoundary": "User authorization to apply/test the Go security patch is recorded separately. This new exact-digest residual decision requires explicit confirmation of its scope and expiry before accepted becomes true. Hosted candidate CI/formal A-S3 review remain separate gates."
+}

@@ -1,0 +1,42 @@
+{
+  "priorRecords": 117,
+  "currentRecords": 115,
+  "residualUniqueCVEs": 23,
+  "unchangedResidualRecords": 115,
+  "removedFixableFindings": [
+    {
+      "service": "postgres",
+      "id": "CVE-2026-78667",
+      "package": "stdlib",
+      "installed": "v1.26.6",
+      "fixed": "1.26.9, 1.27.2",
+      "status": "fixed",
+      "severity": "HIGH",
+      "targetType": "gobinary",
+      "target": "usr/local/bin/gosu"
+    },
+    {
+      "service": "postgres",
+      "id": "CVE-2026-97031",
+      "package": "stdlib",
+      "installed": "v1.26.6",
+      "fixed": "1.26.9, 1.27.2",
+      "status": "fixed",
+      "severity": "HIGH",
+      "targetType": "gobinary",
+      "target": "usr/local/bin/gosu"
+    }
+  ],
+  "addedFindings": [],
+  "sameConditionsNotInexploitable": true,
+  "comparisonFields": [
+    "service",
+    "id",
+    "package",
+    "installed",
+    "fixed",
+    "status",
+    "severity",
+    "targetType"
+  ]
+}

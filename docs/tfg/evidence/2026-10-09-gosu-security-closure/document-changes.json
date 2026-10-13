@@ -1,0 +1,86 @@
+[
+  {
+    "path": "README.md",
+    "mainBeforeSha256": "2cb53ae3ceff8ce2fcf6373fd7c94afec5353f82a78e5cb0f52f532caf11865a",
+    "priorAuditDocSha256": "dd70aa50976c3327ce4673c45fe1ea8fa6b44438996f3a304597b0f2a2cfc35a",
+    "newSha256": "ae034c128566728dfb32ce51a6ddc65b927d2f788040ae372240c668f0fec2d0",
+    "scope": "Update only current-state summary; carry forward byte-preserved dated historical body."
+  },
+  {
+    "path": "docs/tfg/README.md",
+    "mainBeforeSha256": "10aaaa12efb1957c34945b776d2e8efe4efa82adc7c28e714042f9bc0faeb220",
+    "priorAuditDocSha256": "8510ee1ce01fc298e00ad260c4366eb4c53c8ffbd80b368a46d02af585159dc5",
+    "newSha256": "c66795b432826449685b74438fc2ec2bd81e4a7c6d73759acff09429daf6b4ca",
+    "scope": "Update only current-state summary; carry forward byte-preserved dated historical body."
+  },
+  {
+    "path": "docs/tfg/00_TFG_MASTER_PLAN.md",
+    "mainBeforeSha256": "0e4b8cb04083d0836c1fbb834c99fb9be0ce6c7a17d7031ed0225d16458eeeab",
+    "priorAuditDocSha256": "7f3537995e66f82ea570b020a385c999d670bae1bcead21caf635b03b871b26d",
+    "newSha256": "266c01eb90d8d44516707c6e129c92f276580593db22f29bdb0ed9e44f500a84",
+    "scope": "Update only current-state summary; carry forward byte-preserved dated historical body."
+  },
+  {
+    "path": "docs/tfg/03_TRACEABILITY_MATRIX.md",
+    "mainBeforeSha256": "ab1b02dcf8ef372f772f7a1f2cf72a3d9a6f23513345e90bf392b4f077dff012",
+    "priorAuditDocSha256": "6faa69e306f398b99ae07a9a282ef8af5661fd0926f0a8eb0df952d506d529b4",
+    "newSha256": "e0273e526aa7260043f5868084604631194d99a089b4ae7af6b188442b2c4e36",
+    "scope": "Update only current-state summary; carry forward byte-preserved dated historical body."
+  },
+  {
+    "path": "docs/tfg/04_EVIDENCE_REGISTER.md",
+    "mainBeforeSha256": "a95f0624cb31658af3278ba07a738663ad496950bc1e6051f5c2ebabcb638b8c",
+    "priorAuditDocSha256": "90fe2de5612e3bf784a0f480c759dedb01b872e119a4e05844b9f839d6c08726",
+    "newSha256": "b3e81ed2d838c49a54e11af140584ac4e7505e2dbdb44938e54f35daee30712f",
+    "scope": "Update only current-state summary; carry forward byte-preserved dated historical body."
+  },
+  {
+    "path": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+    "mainBeforeSha256": "5fae82d4dbfa9dca58177bee927bbddaeb5be16f4f0058d75656610eb134acc2",
+    "priorAuditDocSha256": "56763fe7c492c5361eaffcdafb8b17bd784af49a8c68893f630d69b1947c75d1",
+    "newSha256": "a0789b02abbb0d258245fc18ad586a3885b48be7a1288b581a2d593bae0b8773",
+    "scope": "Update only current-state summary; carry forward byte-preserved dated historical body."
+  },
+  {
+    "path": "docs/tfg/A_S3_EVIDENCE_VERSIONING.md",
+    "mainBeforeSha256": "33dfe7ddd76724b9409011615a74bc8347d7aade78bad2ea907f2708c5755bc2",
+    "priorAuditDocSha256": "a4c4c1ef7f09f57a61b865542880ebe91931e708928440fd4f5304ea5ce3d7ee",
+    "newSha256": "413b21f6da7d7b19210825b10cbb29f859867269b428754c540884cd2f539171",
+    "scope": "Update only current-state summary; carry forward byte-preserved dated historical body."
+  },
+  {
+    "path": "docs/tfg/A_S4_LOCAL_DEFENSE.md",
+    "mainBeforeSha256": "1732eb717b0ed1067534f85fa58ffa9cb6d3a5c472abd54b0de2d40ccb5fc097",
+    "priorAuditDocSha256": "e3438376b9eb17c32b92c315e3829fe8d1cef74016582e0b48e7a76e00d57cbe",
+    "newSha256": "2ec2c18a09eaacbef3548afe55a6aa721750816632c71bd1368bec83aa2c7b0d",
+    "scope": "Update only current-state summary; carry forward byte-preserved dated historical body."
+  },
+  {
+    "path": "docs/tfg/10_LOCAL_MVP_RELEASE_GATE.md",
+    "mainBeforeSha256": "12b2b417e4b24cf45c3c9f3a3bdd231111c72e70a506890c97021b9676f369fc",
+    "priorAuditDocSha256": "6eb021a0d1b8be34debb2ac486756061795111a796caaa844eec7d7745d64bcf",
+    "newSha256": "74160aa0f0cdeff4ccc085be305d11d1db1429b8b9d652b30b23979522dfaaf6",
+    "scope": "Update only current-state summary; carry forward byte-preserved dated historical body."
+  },
+  {
+    "path": "docs/tfg/08_LOCAL_MVP_MEMORY.md",
+    "mainBeforeSha256": "265b95b262c92cd8b92f58b13986dd5f8c47de1a88a865559747627cdc5638a3",
+    "priorAuditDocSha256": "f83027ee6fbf0fe440634b4d0716c291bcae16276e3908e49ce690ac638ca0c1",
+    "newSha256": "7557b217c0174cc1e8cad296046e4b7d59c6997cd44d73588317d6f514f9c454",
+    "scope": "Update only current-state summary; carry forward byte-preserved dated historical body."
+  },
+  {
+    "path": "docs/tfg/CI_SECURITY_CORRECTION_2026_10_08.md",
+    "mainBeforeSha256": "aaf7fc881d4ce937615648d47b28ddd74a445a15694c6b7c0ee16b7aac384b18",
+    "priorAuditDocSha256": "276a29382dd12e392fd5c530ad873626b3715ef6d0b0bbf7000d6d747899fb18",
+    "newSha256": "f4a590f001311e1718d4187f87e5c298769e66d62d4046f2083ef5ee041f2695",
+    "scope": "Update only current-state summary; carry forward byte-preserved dated historical body."
+  },
+  {
+    "path": "docs/project/PROJECT_STATUS.md",
+    "mainBeforeSha256": "0e209299cf92d9cb3e62343792138f7a7d1e37ec11ca8a07493d62b76b3f707b",
+    "priorAuditDocSha256": "952edebec5da409c34e402a48f3fd017f4cf7844181bdbd0532999408e7cd724",
+    "newSha256": "33ca4ff41f5687aaf70ad68d81f2f976b8e0f77a7f84639a1030dd8fe7a5ab7c",
+    "scope": "Update only current-state summary; carry forward byte-preserved dated historical body."
+  }
+]

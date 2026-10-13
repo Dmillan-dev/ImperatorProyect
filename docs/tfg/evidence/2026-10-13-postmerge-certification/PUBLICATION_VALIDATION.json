@@ -1,0 +1,16 @@
+{
+  "stagedFiles": 299,
+  "ordinaryDocs": 12,
+  "evidenceFiles": 287,
+  "scopeViolations": [],
+  "ordinaryDiffCheckExit": 0,
+  "fullDiffCheckExit": 2,
+  "rawEvidenceWarnings": 20776,
+  "warningsOutsideEvidence": 0,
+  "historicalByteIdenticalFiles": 238,
+  "invalidJson": [],
+  "currentManifestFilesVerified": 48,
+  "publicationGitleaksFindings": 0,
+  "verdict": "PASS - DOCUMENTARY SCOPE; RAW WARNINGS CONFINED TO BYTE-PRESERVED EVIDENCE",
+  "recordScope": "Publication paths including this validation record; manifest excludes itself. Full diff warnings are retained; ordinary-doc check is zero; no blanket whitespace normalization or scanner exemptions."
+}

@@ -1,0 +1,204 @@
+{
+  "recordedAtUtc": "2026-10-09T11:03:28.973218+00:00",
+  "status": "PROPOSAL ONLY / NOT APPLIED",
+  "officialImage": "docker.io/library/golang:1.26.9-bookworm",
+  "registryManifestUrl": "https://registry-1.docker.io/v2/library/golang/manifests/1.26.9-bookworm",
+  "indexDigest": "sha256:d9c68c2c51161e12fd77e4c6320687c9cd86e1af1e3ad6e6cd63ff970641453c",
+  "headerDigestVerified": true,
+  "linuxAmd64Descriptors": [
+    {
+      "annotations": {
+        "com.docker.official-images.bashbrew.arch": "amd64",
+        "org.opencontainers.image.base.digest": "sha256:17923645546d74acef88727bce62c23bbaed953fc7097c41a8b777bba3ca98de",
+        "org.opencontainers.image.base.name": "buildpack-deps:bookworm-scm",
+        "org.opencontainers.image.created": "2026-10-08T17:12:26Z",
+        "org.opencontainers.image.revision": "863ac37dfb5a3fd948626c8b4a818b6bd73b88a8",
+        "org.opencontainers.image.source": "https://github.com/docker-library/golang.git#863ac37dfb5a3fd948626c8b4a818b6bd73b88a8:1.26/bookworm",
+        "org.opencontainers.image.url": "https://hub.docker.com/_/golang",
+        "org.opencontainers.image.version": "1.26.9-bookworm"
+      },
+      "digest": "sha256:bcef992b77b1e2031aaaa51da75cebc32da8e9c182e12e633ea79023c79d9eff",
+      "mediaType": "application/vnd.oci.image.manifest.v1+json",
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "size": 2322
+    }
+  ],
+  "imagePulled": false,
+  "imageBuilt": false,
+  "manifest": {
+    "manifests": [
+      {
+        "annotations": {
+          "com.docker.official-images.bashbrew.arch": "amd64",
+          "org.opencontainers.image.base.digest": "sha256:17923645546d74acef88727bce62c23bbaed953fc7097c41a8b777bba3ca98de",
+          "org.opencontainers.image.base.name": "buildpack-deps:bookworm-scm",
+          "org.opencontainers.image.created": "2026-10-08T17:12:26Z",
+          "org.opencontainers.image.revision": "863ac37dfb5a3fd948626c8b4a818b6bd73b88a8",
+          "org.opencontainers.image.source": "https://github.com/docker-library/golang.git#863ac37dfb5a3fd948626c8b4a818b6bd73b88a8:1.26/bookworm",
+          "org.opencontainers.image.url": "https://hub.docker.com/_/golang",
+          "org.opencontainers.image.version": "1.26.9-bookworm"
+        },
+        "digest": "sha256:bcef992b77b1e2031aaaa51da75cebc32da8e9c182e12e633ea79023c79d9eff",
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "platform": {
+          "architecture": "amd64",
+          "os": "linux"
+        },
+        "size": 2322
+      },
+      {
+        "annotations": {
+          "com.docker.official-images.bashbrew.arch": "amd64",
+          "vnd.docker.reference.digest": "sha256:bcef992b77b1e2031aaaa51da75cebc32da8e9c182e12e633ea79023c79d9eff",
+          "vnd.docker.reference.type": "attestation-manifest"
+        },
+        "digest": "sha256:18dc9b85f4fb1dab8cb900eeee4942de2aedc6d623d1124ae3f04fe431e271a7",
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "platform": {
+          "architecture": "unknown",
+          "os": "unknown"
+        },
+        "size": 842
+      },
+      {
+        "annotations": {
+          "com.docker.official-images.bashbrew.arch": "arm32v7",
+          "org.opencontainers.image.base.digest": "sha256:dbc50f36ca5e4ee445ffe3c1810f8c97de7fe7a04d2ef6fa3263726019b8a206",
+          "org.opencontainers.image.base.name": "buildpack-deps:bookworm-scm",
+          "org.opencontainers.image.created": "2026-10-08T17:11:52Z",
+          "org.opencontainers.image.revision": "863ac37dfb5a3fd948626c8b4a818b6bd73b88a8",
+          "org.opencontainers.image.source": "https://github.com/docker-library/golang.git#863ac37dfb5a3fd948626c8b4a818b6bd73b88a8:1.26/bookworm",
+          "org.opencontainers.image.url": "https://hub.docker.com/_/golang",
+          "org.opencontainers.image.version": "1.26.9-bookworm"
+        },
+        "digest": "sha256:c26de4d40fbc3e58220157d2d0ba22a9e628c9f4e89102c4bf2082fb2de4144e",
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "platform": {
+          "architecture": "arm",
+          "os": "linux",
+          "variant": "v7"
+        },
+        "size": 2324
+      },
+      {
+        "annotations": {
+          "com.docker.official-images.bashbrew.arch": "arm32v7",
+          "vnd.docker.reference.digest": "sha256:c26de4d40fbc3e58220157d2d0ba22a9e628c9f4e89102c4bf2082fb2de4144e",
+          "vnd.docker.reference.type": "attestation-manifest"
+        },
+        "digest": "sha256:898be5e2ba0997c6bb74511962a3f450f1776bc8b0f98885d13dabec44b9d5f1",
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "platform": {
+          "architecture": "unknown",
+          "os": "unknown"
+        },
+        "size": 842
+      },
+      {
+        "annotations": {
+          "com.docker.official-images.bashbrew.arch": "arm64v8",
+          "org.opencontainers.image.base.digest": "sha256:5c622c484a937f524bb2d8a2bf7fb1a45ce77fda7b56d20fe1fdf7bdff35f69a",
+          "org.opencontainers.image.base.name": "buildpack-deps:bookworm-scm",
+          "org.opencontainers.image.created": "2026-10-08T17:12:00Z",
+          "org.opencontainers.image.revision": "863ac37dfb5a3fd948626c8b4a818b6bd73b88a8",
+          "org.opencontainers.image.source": "https://github.com/docker-library/golang.git#863ac37dfb5a3fd948626c8b4a818b6bd73b88a8:1.26/bookworm",
+          "org.opencontainers.image.url": "https://hub.docker.com/_/golang",
+          "org.opencontainers.image.version": "1.26.9-bookworm"
+        },
+        "digest": "sha256:3d79ef488855a5ad990b346addf552d6671f20ca2710ad29da7232e0326785de",
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "platform": {
+          "architecture": "arm64",
+          "os": "linux",
+          "variant": "v8"
+        },
+        "size": 2324
+      },
+      {
+        "annotations": {
+          "com.docker.official-images.bashbrew.arch": "arm64v8",
+          "vnd.docker.reference.digest": "sha256:3d79ef488855a5ad990b346addf552d6671f20ca2710ad29da7232e0326785de",
+          "vnd.docker.reference.type": "attestation-manifest"
+        },
+        "digest": "sha256:dabb6ed1328c04a4d8c852417606ea4b2896be2a4ac64c6fb3c749d347cde781",
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "platform": {
+          "architecture": "unknown",
+          "os": "unknown"
+        },
+        "size": 842
+      },
+      {
+        "annotations": {
+          "com.docker.official-images.bashbrew.arch": "i386",
+          "org.opencontainers.image.base.digest": "sha256:0bb5628edb65f3ac34ed946eb1c2001bb5926c47fbfb80427f3842ac27b57427",
+          "org.opencontainers.image.base.name": "buildpack-deps:bookworm-scm",
+          "org.opencontainers.image.created": "2026-10-08T17:12:08Z",
+          "org.opencontainers.image.revision": "863ac37dfb5a3fd948626c8b4a818b6bd73b88a8",
+          "org.opencontainers.image.source": "https://github.com/docker-library/golang.git#863ac37dfb5a3fd948626c8b4a818b6bd73b88a8:1.26/bookworm",
+          "org.opencontainers.image.url": "https://hub.docker.com/_/golang",
+          "org.opencontainers.image.version": "1.26.9-bookworm"
+        },
+        "digest": "sha256:ad43c6f46929a8a717bcf1628b02a3ae12db9ea8ba6d808ff195ddc7f664f061",
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "platform": {
+          "architecture": "386",
+          "os": "linux"
+        },
+        "size": 2321
+      },
+      {
+        "annotations": {
+          "com.docker.official-images.bashbrew.arch": "i386",
+          "vnd.docker.reference.digest": "sha256:ad43c6f46929a8a717bcf1628b02a3ae12db9ea8ba6d808ff195ddc7f664f061",
+          "vnd.docker.reference.type": "attestation-manifest"
+        },
+        "digest": "sha256:9ba7660f5e8e3f59e5d0753710a825b3730d83732d3122de27d17de03069bbe8",
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "platform": {
+          "architecture": "unknown",
+          "os": "unknown"
+        },
+        "size": 842
+      },
+      {
+        "annotations": {
+          "com.docker.official-images.bashbrew.arch": "ppc64le",
+          "org.opencontainers.image.base.digest": "sha256:419383d6082127498e0e04eebe6923be0e6df9627285a90e66cb37d7ffc6af4d",
+          "org.opencontainers.image.base.name": "buildpack-deps:bookworm-scm",
+          "org.opencontainers.image.created": "2026-10-08T17:13:59Z",
+          "org.opencontainers.image.revision": "863ac37dfb5a3fd948626c8b4a818b6bd73b88a8",
+          "org.opencontainers.image.source": "https://github.com/docker-library/golang.git#863ac37dfb5a3fd948626c8b4a818b6bd73b88a8:1.26/bookworm",
+          "org.opencontainers.image.url": "https://hub.docker.com/_/golang",
+          "org.opencontainers.image.version": "1.26.9-bookworm"
+        },
+        "digest": "sha256:110cec6e10f14fa9b5154c4e1a512c68764bbf0fb6cfa43a25f9fad02402d1ff",
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "platform": {
+          "architecture": "ppc64le",
+          "os": "linux"
+        },
+        "size": 2324
+      },
+      {
+        "annotations": {
+          "com.docker.official-images.bashbrew.arch": "ppc64le",
+          "vnd.docker.reference.digest": "sha256:110cec6e10f14fa9b5154c4e1a512c68764bbf0fb6cfa43a25f9fad02402d1ff",
+          "vnd.docker.reference.type": "attestation-manifest"
+        },
+        "digest": "sha256:64de263f03ec5a92d67e718a826abf67873251ad020212c4af3580077a08d5ee",
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "platform": {
+          "architecture": "unknown",
+          "os": "unknown"
+        },
+        "size": 842
+      }
+    ],
+    "mediaType": "application/vnd.oci.image.index.v1+json",
+    "schemaVersion": 2
+  }
+}

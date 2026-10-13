@@ -1,0 +1,78 @@
+[
+  {
+    "check": "npm-ci",
+    "command": [
+      "C:\\WINDOWS\\system32\\cmd.exe",
+      "/d",
+      "/c",
+      "npm.cmd",
+      "ci",
+      "--no-audit",
+      "--no-fund"
+    ],
+    "exitCode": 0,
+    "startedAtUtc": "2026-10-09T12:44:05.918474+00:00",
+    "finishedAtUtc": "2026-10-09T12:45:27.649803+00:00",
+    "sourceSha": "a931601102ee19a90b3dad8477408ac0d1854669"
+  },
+  {
+    "check": "tests",
+    "command": [
+      "C:\\WINDOWS\\system32\\cmd.exe",
+      "/d",
+      "/c",
+      "npm.cmd",
+      "run",
+      "test"
+    ],
+    "exitCode": 0,
+    "startedAtUtc": "2026-10-09T12:45:27.650398+00:00",
+    "finishedAtUtc": "2026-10-09T12:45:37.051462+00:00",
+    "sourceSha": "a931601102ee19a90b3dad8477408ac0d1854669"
+  },
+  {
+    "check": "lint",
+    "command": [
+      "C:\\WINDOWS\\system32\\cmd.exe",
+      "/d",
+      "/c",
+      "npm.cmd",
+      "run",
+      "lint"
+    ],
+    "exitCode": 0,
+    "startedAtUtc": "2026-10-09T12:45:37.051894+00:00",
+    "finishedAtUtc": "2026-10-09T12:45:45.506925+00:00",
+    "sourceSha": "a931601102ee19a90b3dad8477408ac0d1854669"
+  },
+  {
+    "check": "types",
+    "command": [
+      "C:\\WINDOWS\\system32\\cmd.exe",
+      "/d",
+      "/c",
+      "npm.cmd",
+      "run",
+      "typecheck"
+    ],
+    "exitCode": 0,
+    "startedAtUtc": "2026-10-09T12:45:45.507340+00:00",
+    "finishedAtUtc": "2026-10-09T12:45:48.724835+00:00",
+    "sourceSha": "a931601102ee19a90b3dad8477408ac0d1854669"
+  },
+  {
+    "check": "build",
+    "command": [
+      "C:\\WINDOWS\\system32\\cmd.exe",
+      "/d",
+      "/c",
+      "npm.cmd",
+      "run",
+      "build"
+    ],
+    "exitCode": 1,
+    "startedAtUtc": "2026-10-09T12:45:48.725285+00:00",
+    "finishedAtUtc": "2026-10-09T12:45:54.317533+00:00",
+    "sourceSha": "a931601102ee19a90b3dad8477408ac0d1854669"
+  }
+]
