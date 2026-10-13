@@ -1,0 +1,11 @@
+{
+  "number": 64,
+  "url": "https://github.com/Dmillan-dev/ImperatorProyect/pull/64",
+  "draft": true,
+  "state": "open",
+  "headSha": "a931601102ee19a90b3dad8477408ac0d1854669",
+  "baseSha": "3aca0389431b077ddee0b20621f6ccac26238e9f",
+  "createdAt": "2026-10-09T13:14:26Z",
+  "files": "Only three-file Go security patch; documentary changes are uncommitted and not pushed.",
+  "merged": false
+}

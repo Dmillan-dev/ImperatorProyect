@@ -1,0 +1,29 @@
+[
+  {
+    "check": "browser-install-pinned",
+    "command": [
+      "node",
+      "node_modules/playwright/cli.js",
+      "install",
+      "chromium"
+    ],
+    "exitCode": 0,
+    "startedAtUtc": "2026-10-09T12:50:58.980433+00:00",
+    "finishedAtUtc": "2026-10-09T12:51:16.947920+00:00",
+    "browsersPath": "D:\\Imperator\\build\\tfg-a\\go1269-2026-10-09\\playwright-browsers",
+    "scope": "Browser required by existing lockfile; no dependency/Node upgrade and no global browser replacement."
+  },
+  {
+    "check": "playwright-configured",
+    "command": [
+      "node",
+      "node_modules/playwright/cli.js",
+      "test"
+    ],
+    "exitCode": 0,
+    "startedAtUtc": "2026-10-09T12:51:16.948327+00:00",
+    "finishedAtUtc": "2026-10-09T12:51:45.998417+00:00",
+    "browsersPath": "D:\\Imperator\\build\\tfg-a\\go1269-2026-10-09\\playwright-browsers",
+    "scope": "Browser required by existing lockfile; no dependency/Node upgrade and no global browser replacement."
+  }
+]

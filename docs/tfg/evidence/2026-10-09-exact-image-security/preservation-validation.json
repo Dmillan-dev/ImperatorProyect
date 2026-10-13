@@ -1,0 +1,28 @@
+{
+  "rootHeadBranchStatusIndexAndPendingBytesUnchanged": true,
+  "originalEvidenceByteIdentical": 547,
+  "historicalAuditFilesByteIdenticalIncludingCatalog": 55,
+  "receiptsByteIdentical": 2,
+  "gitattributesUnchanged": true,
+  "b02e3e2CheckoutUnchanged": true,
+  "ordinaryDocPathsChanged": [
+    "README.md",
+    "docs/project/PROJECT_STATUS.md",
+    "docs/tfg/00_TFG_MASTER_PLAN.md",
+    "docs/tfg/03_TRACEABILITY_MATRIX.md",
+    "docs/tfg/04_EVIDENCE_REGISTER.md",
+    "docs/tfg/08_LOCAL_MVP_MEMORY.md",
+    "docs/tfg/10_LOCAL_MVP_RELEASE_GATE.md",
+    "docs/tfg/A_S3_EVIDENCE_VERSIONING.md",
+    "docs/tfg/A_S4_LOCAL_DEFENSE.md",
+    "docs/tfg/CI_SECURITY_CORRECTION_2026_10_08.md",
+    "docs/tfg/README.md",
+    "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md"
+  ],
+  "codeDependencyDockerWorkflowInfrastructureChanged": false,
+  "stagingEmpty": true,
+  "commitPerformed": false,
+  "pushPerformed": false,
+  "gitDiffCheckExit": 0,
+  "gitDiffCheckOutput": ""
+}

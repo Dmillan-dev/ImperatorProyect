@@ -1,0 +1,77 @@
+{
+  "sourceMain": "0797671e06baa2b20f8ce5a842ac04140d84e591",
+  "scope": "Full unfiltered four-image vuln+secret reports; all secret severities; H/C classification derived from full data. No suppression/VEX or upgrades.",
+  "images": [
+    {
+      "component": "backend",
+      "reportedImageId": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757",
+      "fixableHighCritical": 0,
+      "nonFixableHighCriticalRecords": 0,
+      "uniqueResidualCves": 0,
+      "secretsAllSeverities": 0,
+      "reportSha256": "9f3dc2dafe5006461f347a0da5c1249591c3b7b3deb4167a7b62f71170b025c8"
+    },
+    {
+      "component": "frontend",
+      "reportedImageId": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78",
+      "fixableHighCritical": 0,
+      "nonFixableHighCriticalRecords": 51,
+      "uniqueResidualCves": 13,
+      "secretsAllSeverities": 0,
+      "reportSha256": "b5c620ce6034fa383cea47af0315037fdacedbe8dc8b7fa50c9ca0c101c28ecb"
+    },
+    {
+      "component": "migration",
+      "reportedImageId": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4",
+      "fixableHighCritical": 0,
+      "nonFixableHighCriticalRecords": 0,
+      "uniqueResidualCves": 0,
+      "secretsAllSeverities": 0,
+      "reportSha256": "2fb9c2c7667a4f6a2b5a00ca969f6018a97bbd416942d7c69f55f6dee1f1aa4d"
+    },
+    {
+      "component": "postgres",
+      "reportedImageId": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9",
+      "fixableHighCritical": 0,
+      "nonFixableHighCriticalRecords": 68,
+      "uniqueResidualCves": 25,
+      "secretsAllSeverities": 0,
+      "reportSha256": "0b57cf59fed6ab51502d4716839161d088563a7a9616a8dfbc45c9a7b45f77e7"
+    }
+  ],
+  "fixableHighCriticalTotal": 0,
+  "secretsTotal": 0,
+  "residualPackageRecords": 119,
+  "uniqueResidualCves": 25,
+  "residualCves": [
+    "CVE-2023-2953",
+    "CVE-2023-45853",
+    "CVE-2025-69720",
+    "CVE-2025-7458",
+    "CVE-2026-11822",
+    "CVE-2026-11824",
+    "CVE-2026-16742",
+    "CVE-2026-41992",
+    "CVE-2026-53613",
+    "CVE-2026-54369",
+    "CVE-2026-6653",
+    "CVE-2026-74860",
+    "CVE-2026-76642",
+    "CVE-2026-78408",
+    "CVE-2026-78409",
+    "CVE-2026-78410",
+    "CVE-2026-84782",
+    "CVE-2026-86138",
+    "CVE-2026-86140",
+    "CVE-2026-86142",
+    "CVE-2026-86143",
+    "CVE-2026-86144",
+    "CVE-2026-88647",
+    "CVE-2026-88648",
+    "CVE-2026-9538"
+  ],
+  "fixableFindings": [],
+  "technicalGate": "PASS",
+  "riskAccepted": false,
+  "newRuntimeExecuted": false
+}

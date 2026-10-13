@@ -1,0 +1,98 @@
+[
+  {
+    "check": "build-configured",
+    "command": [
+      "C:\\WINDOWS\\system32\\cmd.exe",
+      "/d",
+      "/c",
+      "npm.cmd",
+      "run",
+      "build"
+    ],
+    "startedAtUtc": "2026-10-09T12:48:01.181315+00:00",
+    "finishedAtUtc": "2026-10-09T12:48:31.019579+00:00",
+    "exitCode": 0,
+    "sourceSha": "a931601102ee19a90b3dad8477408ac0d1854669",
+    "environment": {
+      "IMPERATOR_API_ORIGIN": "http://127.0.0.1:8080",
+      "NEXT_TELEMETRY_DISABLED": "1"
+    }
+  },
+  {
+    "check": "format",
+    "command": [
+      "C:\\WINDOWS\\system32\\cmd.exe",
+      "/d",
+      "/c",
+      "npm.cmd",
+      "run",
+      "format:check"
+    ],
+    "startedAtUtc": "2026-10-09T12:48:31.020144+00:00",
+    "finishedAtUtc": "2026-10-09T12:48:32.584969+00:00",
+    "exitCode": 0,
+    "sourceSha": "a931601102ee19a90b3dad8477408ac0d1854669",
+    "environment": {
+      "IMPERATOR_API_ORIGIN": "http://127.0.0.1:8080",
+      "NEXT_TELEMETRY_DISABLED": "1"
+    }
+  },
+  {
+    "check": "npm-audit-production",
+    "command": [
+      "C:\\WINDOWS\\system32\\cmd.exe",
+      "/d",
+      "/c",
+      "npm.cmd",
+      "audit",
+      "--omit=dev",
+      "--json"
+    ],
+    "startedAtUtc": "2026-10-09T12:48:32.585505+00:00",
+    "finishedAtUtc": "2026-10-09T12:48:34.015720+00:00",
+    "exitCode": 0,
+    "sourceSha": "a931601102ee19a90b3dad8477408ac0d1854669",
+    "environment": {
+      "IMPERATOR_API_ORIGIN": "http://127.0.0.1:8080",
+      "NEXT_TELEMETRY_DISABLED": "1"
+    }
+  },
+  {
+    "check": "npm-audit-full",
+    "command": [
+      "C:\\WINDOWS\\system32\\cmd.exe",
+      "/d",
+      "/c",
+      "npm.cmd",
+      "audit",
+      "--json"
+    ],
+    "startedAtUtc": "2026-10-09T12:48:34.016189+00:00",
+    "finishedAtUtc": "2026-10-09T12:48:38.682112+00:00",
+    "exitCode": 1,
+    "sourceSha": "a931601102ee19a90b3dad8477408ac0d1854669",
+    "environment": {
+      "IMPERATOR_API_ORIGIN": "http://127.0.0.1:8080",
+      "NEXT_TELEMETRY_DISABLED": "1"
+    }
+  },
+  {
+    "check": "playwright",
+    "command": [
+      "C:\\WINDOWS\\system32\\cmd.exe",
+      "/d",
+      "/c",
+      "npm.cmd",
+      "run",
+      "test:e2e"
+    ],
+    "startedAtUtc": "2026-10-09T12:48:38.682759+00:00",
+    "finishedAtUtc": "2026-10-09T12:49:00.896220+00:00",
+    "exitCode": 1,
+    "sourceSha": "a931601102ee19a90b3dad8477408ac0d1854669",
+    "environment": {
+      "IMPERATOR_API_ORIGIN": "http://127.0.0.1:8080",
+      "NEXT_TELEMETRY_DISABLED": "1"
+    }
+  }
+]

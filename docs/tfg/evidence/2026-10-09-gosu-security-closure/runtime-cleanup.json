@@ -1,0 +1,55 @@
+{
+  "recordedAtUtc": "2026-10-09T13:07:52.723051+00:00",
+  "commands": [
+    {
+      "command": [
+        "docker",
+        "compose",
+        "--project-name",
+        "imperator-go1269-20261009",
+        "--env-file",
+        "D:\\Imperator\\build\\worktrees\\tfg-a-go1269-20261009\\build\\go1269-runtime\\runtime.env",
+        "-f",
+        "D:\\Imperator\\build\\worktrees\\tfg-a-go1269-20261009\\infra\\docker\\compose.yaml",
+        "-f",
+        "D:\\Imperator\\build\\worktrees\\tfg-a-go1269-20261009\\build\\go1269-runtime\\test-inputs.yaml",
+        "down",
+        "--remove-orphans"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "docker",
+        "stop",
+        "imperator-go1269-20261009-jwks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "docker",
+        "rm",
+        "imperator-go1269-20261009-jwks"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "docker",
+        "buildx",
+        "stop",
+        "imperator-gosu-20261009"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "existingImagesPreserved": 30,
+  "existingVolumesPreserved": 13,
+  "currentImageCount": 32,
+  "applicationAndJwksContainersRemoved": true,
+  "ownedBuildkitStopped": true,
+  "noVolumeRemovalOrPrune": true,
+  "originalFourImageIdentityPreserved": true,
+  "newExactScannedFourImageIdentityPreserved": true
+}

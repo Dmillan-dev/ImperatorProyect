@@ -1,0 +1,12 @@
+[
+  "docker",
+  "compose",
+  "--project-name",
+  "imperator-go1269-20261009",
+  "--env-file",
+  "D:\\Imperator\\build\\worktrees\\tfg-a-go1269-20261009\\build\\go1269-runtime\\runtime.env",
+  "-f",
+  "D:\\Imperator\\build\\worktrees\\tfg-a-go1269-20261009\\infra\\docker\\compose.yaml",
+  "-f",
+  "D:\\Imperator\\build\\worktrees\\tfg-a-go1269-20261009\\build\\go1269-runtime\\test-inputs.yaml"
+]

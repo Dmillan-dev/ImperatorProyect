@@ -1,0 +1,61 @@
+[WebServer] (node:103380) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:107384) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:110136) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 15 tests using 3 workers
+
+(node:104796) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:108892) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:74528) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:106664) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [browser] eval() is not supported in this environment. If this page was served with a `Content-Security-Policy` header, make sure that `unsafe-eval` is included. React requires eval() in development mode for various debugging features like reconstructing callstacks from a different environment.
+[WebServer] React will never use eval() in production mode 
+[WebServer] [browser] eval() is not supported in this environment. If this page was served with a `Content-Security-Policy` header, make sure that `unsafe-eval` is included. React requires eval() in development mode for various debugging features like reconstructing callstacks from a different environment.
+[WebServer] React will never use eval() in production mode 
+[WebServer] [browser] eval() is not supported in this environment. If this page was served with a `Content-Security-Policy` header, make sure that `unsafe-eval` is included. React requires eval() in development mode for various debugging features like reconstructing callstacks from a different environment.
+[WebServer] React will never use eval() in production mode 
+  ok  3 [mobile] › e2e\decision-review.spec.ts:23:1 › renders the complete Decision Review Workspace without viewport overflow (2.2s)
+  ok  2 [compact] › e2e\decision-review.spec.ts:23:1 › renders the complete Decision Review Workspace without viewport overflow (2.2s)
+  ok  1 [desktop] › e2e\decision-review.spec.ts:23:1 › renders the complete Decision Review Workspace without viewport overflow (2.3s)
+[WebServer] [browser] eval() is not supported in this environment. If this page was served with a `Content-Security-Policy` header, make sure that `unsafe-eval` is included. React requires eval() in development mode for various debugging features like reconstructing callstacks from a different environment.
+[WebServer] React will never use eval() in production mode 
+[WebServer] (node:21284) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [browser] eval() is not supported in this environment. If this page was served with a `Content-Security-Policy` header, make sure that `unsafe-eval` is included. React requires eval() in development mode for various debugging features like reconstructing callstacks from a different environment.
+[WebServer] React will never use eval() in production mode 
+[WebServer] [browser] eval() is not supported in this environment. If this page was served with a `Content-Security-Policy` header, make sure that `unsafe-eval` is included. React requires eval() in development mode for various debugging features like reconstructing callstacks from a different environment.
+[WebServer] React will never use eval() in production mode 
+  ok  4 [mobile] › e2e\decision-review.spec.ts:67:1 › keeps AUDITOR read-only, redacts Evidence and separates unrealized value (965ms)
+  ok  5 [compact] › e2e\decision-review.spec.ts:67:1 › keeps AUDITOR read-only, redacts Evidence and separates unrealized value (985ms)
+  -   7 [mobile] › e2e\decision-review.spec.ts:91:1 › presents PLATFORM_ENGINEER and FINANCE actions exactly
+  ok  6 [desktop] › e2e\decision-review.spec.ts:67:1 › keeps AUDITOR read-only, redacts Evidence and separates unrealized value (1.0s)
+  -   8 [compact] › e2e\decision-review.spec.ts:91:1 › presents PLATFORM_ENGINEER and FINANCE actions exactly
+  -   9 [mobile] › e2e\decision-review.spec.ts:124:1 › contains secondary 403, 404, malformed, empty and timeout failures
+  -  11 [compact] › e2e\decision-review.spec.ts:124:1 › contains secondary 403, 404, malformed, empty and timeout failures
+  -  12 [mobile] › e2e\decision-review.spec.ts:153:1 › clears the volatile session on a 401 Decision response
+  -  13 [compact] › e2e\decision-review.spec.ts:153:1 › clears the volatile session on a 401 Decision response
+[WebServer] [browser] eval() is not supported in this environment. If this page was served with a `Content-Security-Policy` header, make sure that `unsafe-eval` is included. React requires eval() in development mode for various debugging features like reconstructing callstacks from a different environment.
+[WebServer] React will never use eval() in production mode 
+[WebServer] (node:112772) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+  ok 10 [desktop] › e2e\decision-review.spec.ts:91:1 › presents PLATFORM_ENGINEER and FINANCE actions exactly (855ms)
+[WebServer] [browser] eval() is not supported in this environment. If this page was served with a `Content-Security-Policy` header, make sure that `unsafe-eval` is included. React requires eval() in development mode for various debugging features like reconstructing callstacks from a different environment.
+[WebServer] React will never use eval() in production mode 
+[WebServer] (node:71896) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+  ok 14 [desktop] › e2e\decision-review.spec.ts:124:1 › contains secondary 403, 404, malformed, empty and timeout failures (10.7s)
+[WebServer] [browser] eval() is not supported in this environment. If this page was served with a `Content-Security-Policy` header, make sure that `unsafe-eval` is included. React requires eval() in development mode for various debugging features like reconstructing callstacks from a different environment.
+[WebServer] React will never use eval() in production mode 
+[WebServer] (node:108808) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+  ok 15 [desktop] › e2e\decision-review.spec.ts:153:1 › clears the volatile session on a 401 Decision response (546ms)
+
+  6 skipped
+  9 passed (28.5s)

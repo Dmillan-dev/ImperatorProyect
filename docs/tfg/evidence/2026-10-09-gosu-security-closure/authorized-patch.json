@@ -1,0 +1,25 @@
+{
+  "authorization": "User: aceptar y continuar progresio, fixeo y arreglado del proyecto hasta cierre de A-S3",
+  "scope": "Minimum Go1.26.9 compiler patch and necessary D094 expected-version assertion; no other stack/product changes.",
+  "recordedAtUtc": "2026-10-09T12:41:18.230983+00:00",
+  "baseSha": "3aca0389431b077ddee0b20621f6ccac26238e9f",
+  "files": [
+    {
+      "path": "infra/docker/postgresql/Dockerfile",
+      "beforeSha256": "3bc0585f5a8acbaed6b10dfc5bc0545e206652c9f02fbd7f03318166e2a79fa9",
+      "afterSha256": "10ea791bacd1ebe41be00929983e5ad399fe332e9332a11abf6e9a06d80e6bf7"
+    },
+    {
+      "path": "infra/docker/postgresql/supply-chain-lock.json",
+      "beforeSha256": "2d592db663b8ba099d015e60b7204ebd33119b233c969f55c7b031202954322c",
+      "afterSha256": "b9c30f4ca975c47d26444f16341da21c9d4f3328d6d388713f9c630998804a3a"
+    },
+    {
+      "path": "scripts/verify-postgres-runtime-image.ps1",
+      "beforeSha256": "de3a39c0f88966c688a1ecf9ec248e692eb0769fd896a90d28e8955452c7a68f",
+      "afterSha256": "f9536746110d18e971d5ca4360c3b60e0a49203bbb7547d4194d94d385764ee0"
+    }
+  ],
+  "riskAccepted": false,
+  "pushAuthorizedOrPerformed": false
+}

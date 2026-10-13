@@ -1,0 +1,32 @@
+{
+  "buildLogs": {
+    "migration": {
+      "evidence": "historical-migration-build.log",
+      "bytes": 8107,
+      "sha256": "c396505a165ec16f29efbf7ae34ee1d695b87b1407b057895384a752bc118b09",
+      "historicalOnly": true
+    },
+    "backend": {
+      "evidence": "historical-backend-build.log",
+      "bytes": 5633,
+      "sha256": "070f2d7054079d7ab4d8a60fa66f7afa192f7d47ea8fa25f7fd76e72c055cba8",
+      "historicalOnly": true
+    },
+    "frontend": {
+      "evidence": "historical-frontend-build.log",
+      "bytes": 5364,
+      "sha256": "900ef6bfe2bdc56d450b2865256fe40e90e079c82a58dd6b74e143f918b0ebd2",
+      "historicalOnly": true
+    },
+    "postgres": {
+      "evidence": "historical-postgres-build.log",
+      "bytes": 14803,
+      "sha256": "69a40f7d6cdabdccf22dade5e612296e707a355678a4c0fc269579bf35bb69de",
+      "historicalOnly": true
+    }
+  },
+  "sourceSha": "6e79e83e909995c50a44aba3608b6ca25a0e4602",
+  "runtimeRecord": "../2026-10-09-a-s3-post-merge/local/runtime-final-result.json",
+  "historicalReportSeal": "../2026-10-09-a-s3-post-merge/local/FINAL_REPORT_HASHES.json",
+  "noBuildExecuted": true
+}

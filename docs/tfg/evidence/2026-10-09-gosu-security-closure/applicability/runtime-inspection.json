@@ -1,0 +1,22 @@
+[
+  {
+    "service": "postgres",
+    "containerId": "452e46902181c625459d28e898d27f5c8d83b88b9e62525e28e2c556cd9c8ee5",
+    "actualImage": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9",
+    "exitCode": 0,
+    "probeOriginalSha256": "f332b5db45aa3e8ad565d99d1b68be153ee2e04cfbc0e529439148671505a7c9",
+    "probeInputLfSha256": "f332b5db45aa3e8ad565d99d1b68be153ee2e04cfbc0e529439148671505a7c9",
+    "outputSha256": "6686595758b8db813666b91a827b30be7b0fded727d566053f720b9c408bb108",
+    "executedAtUtc": "2026-10-09T12:55:10.957960+00:00"
+  },
+  {
+    "service": "frontend",
+    "containerId": "43014ad519bb2a68a2e1af1bd5d933e1a7d5fb6121a211ec7654faf892fadb00",
+    "actualImage": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78",
+    "exitCode": 0,
+    "probeOriginalSha256": "f332b5db45aa3e8ad565d99d1b68be153ee2e04cfbc0e529439148671505a7c9",
+    "probeInputLfSha256": "f332b5db45aa3e8ad565d99d1b68be153ee2e04cfbc0e529439148671505a7c9",
+    "outputSha256": "0145a4aecaad9bcd93a90534beb07ce96e5aab74cff0f8f6f24c2b05c358c3a3",
+    "executedAtUtc": "2026-10-09T12:55:12.129029+00:00"
+  }
+]

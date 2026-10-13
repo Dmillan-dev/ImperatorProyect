@@ -1,0 +1,40 @@
+[
+  {
+    "check": "vulnerability-db",
+    "command": [
+      "C:\\Users\\J4GG3R\\AppData\\Local\\Microsoft\\WinGet\\Packages\\AquaSecurity.Trivy_Microsoft.Winget.Source_8wekyb3d8bbwe\\trivy.EXE",
+      "--cache-dir",
+      "D:\\Imperator\\build\\tfg-a\\exact-security-2026-10-09\\trivy-cache",
+      "--config",
+      "",
+      "image",
+      "--download-db-only",
+      "--disable-telemetry",
+      "--skip-version-check",
+      "--no-progress"
+    ],
+    "startedAtUtc": "2026-10-09T10:58:16.319581+00:00",
+    "finishedAtUtc": "2026-10-09T10:58:23.625070+00:00",
+    "exitCode": 0,
+    "log": "vulnerability-db-download.txt"
+  },
+  {
+    "check": "java-index-db",
+    "command": [
+      "C:\\Users\\J4GG3R\\AppData\\Local\\Microsoft\\WinGet\\Packages\\AquaSecurity.Trivy_Microsoft.Winget.Source_8wekyb3d8bbwe\\trivy.EXE",
+      "--cache-dir",
+      "D:\\Imperator\\build\\tfg-a\\exact-security-2026-10-09\\trivy-cache",
+      "--config",
+      "",
+      "image",
+      "--download-java-db-only",
+      "--disable-telemetry",
+      "--skip-version-check",
+      "--no-progress"
+    ],
+    "startedAtUtc": "2026-10-09T10:58:23.625668+00:00",
+    "finishedAtUtc": "2026-10-09T10:58:55.857406+00:00",
+    "exitCode": 0,
+    "log": "java-index-db-download.txt"
+  }
+]

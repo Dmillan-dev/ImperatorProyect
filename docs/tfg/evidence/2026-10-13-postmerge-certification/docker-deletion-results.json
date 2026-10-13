@@ -1,0 +1,137 @@
+[
+  {
+    "id": "sha256:04156f7222d2fbbd8343fde4d015a237a8eed5bd694934217da42ac3e8ac1ba3",
+    "tag": "imperator/postgres:tfg-a-e4e8680b2feedee8",
+    "exitCode": 0,
+    "output": [
+      "Untagged: imperator/postgres:tfg-a-e4e8680b2feedee8",
+      "Deleted: sha256:04156f7222d2fbbd8343fde4d015a237a8eed5bd694934217da42ac3e8ac1ba3"
+    ]
+  },
+  {
+    "id": "sha256:0a33fd46bbff0fabf711d621e347d88aa27497ce2585324809f86709d198f407",
+    "tag": "imperator/postgres:tfg-a-5939e4576beb47a7",
+    "exitCode": 0,
+    "output": [
+      "Untagged: imperator/postgres:tfg-a-5939e4576beb47a7",
+      "Deleted: sha256:0a33fd46bbff0fabf711d621e347d88aa27497ce2585324809f86709d198f407"
+    ]
+  },
+  {
+    "id": "sha256:2103d939daee9cc7d0dfe13b1f2e67f3231d4f0b6fc1bd90b26978753dbff461",
+    "tag": "imperator/frontend:tfg-a-1c0ed64469ec6b54",
+    "exitCode": 0,
+    "output": [
+      "Untagged: imperator/frontend:tfg-a-1c0ed64469ec6b54",
+      "Deleted: sha256:2103d939daee9cc7d0dfe13b1f2e67f3231d4f0b6fc1bd90b26978753dbff461"
+    ]
+  },
+  {
+    "id": "sha256:22aa1712c86b69581c30834822fb01c00644c3c41851f3e7943e7f1f465dc143",
+    "tag": "imperator/frontend:tfg-a-e4e8680b2feedee8",
+    "exitCode": 0,
+    "output": [
+      "Untagged: imperator/frontend:tfg-a-e4e8680b2feedee8",
+      "Deleted: sha256:22aa1712c86b69581c30834822fb01c00644c3c41851f3e7943e7f1f465dc143"
+    ]
+  },
+  {
+    "id": "sha256:2b73847d07d6cb7da2ace20426de036fa0278feca0bb6520aca62588e9b3f101",
+    "tag": "imperator/postgres:tfg-a-cbc6535ee56bfa99",
+    "exitCode": 0,
+    "output": [
+      "Untagged: imperator/postgres:tfg-a-cbc6535ee56bfa99",
+      "Deleted: sha256:2b73847d07d6cb7da2ace20426de036fa0278feca0bb6520aca62588e9b3f101"
+    ]
+  },
+  {
+    "id": "sha256:5cd649ff9a460b2abdc8315da2e7568c5a2c2138d99815db89c5c583f88c18b1",
+    "tag": "imperator/frontend:tfg-a-cbc6535ee56bfa99",
+    "exitCode": 0,
+    "output": [
+      "Untagged: imperator/frontend:tfg-a-cbc6535ee56bfa99",
+      "Deleted: sha256:5cd649ff9a460b2abdc8315da2e7568c5a2c2138d99815db89c5c583f88c18b1"
+    ]
+  },
+  {
+    "id": "sha256:681e6e7b77b73170c959ed04697302f6a21d8db98edb3a2b0f3354a44387096d",
+    "tag": "imperator/backend:tfg-a-cbc6535ee56bfa99",
+    "exitCode": 0,
+    "output": [
+      "Untagged: imperator/backend:tfg-a-cbc6535ee56bfa99",
+      "Deleted: sha256:681e6e7b77b73170c959ed04697302f6a21d8db98edb3a2b0f3354a44387096d"
+    ]
+  },
+  {
+    "id": "sha256:7711ad60129ad4ad95b2fea97da4fd2c2a20d8461d7b8d1930fae40b60e0b258",
+    "tag": "imperator/postgres:tfg-a-948a205ca268ae54",
+    "exitCode": 0,
+    "output": [
+      "Untagged: imperator/postgres:tfg-a-948a205ca268ae54",
+      "Deleted: sha256:7711ad60129ad4ad95b2fea97da4fd2c2a20d8461d7b8d1930fae40b60e0b258"
+    ]
+  },
+  {
+    "id": "sha256:7ce6e7f2b9decc4598f3628852bbfe27bb3d59047414398569a9d6e330a12148",
+    "tag": "imperator/postgres:tfg-a-1c0ed64469ec6b54",
+    "exitCode": 0,
+    "output": [
+      "Untagged: imperator/postgres:tfg-a-1c0ed64469ec6b54",
+      "Deleted: sha256:7ce6e7f2b9decc4598f3628852bbfe27bb3d59047414398569a9d6e330a12148"
+    ]
+  },
+  {
+    "id": "sha256:7ea89cd7bd312a54795c2c60f6991cd642ebb11b5831b6e707af3788c2b248ed",
+    "tag": "imperator/backend:tfg-a-1c0ed64469ec6b54",
+    "exitCode": 0,
+    "output": [
+      "Untagged: imperator/backend:tfg-a-1c0ed64469ec6b54",
+      "Deleted: sha256:7ea89cd7bd312a54795c2c60f6991cd642ebb11b5831b6e707af3788c2b248ed"
+    ]
+  },
+  {
+    "id": "sha256:b2c6534593f0fd9f7ef9d699fe11ecc52a2ce01de7df2f9b4a91051cc0e91c75",
+    "tag": "imperator/backend:tfg-a-5939e4576beb47a7",
+    "exitCode": 0,
+    "output": [
+      "Untagged: imperator/backend:tfg-a-5939e4576beb47a7",
+      "Deleted: sha256:b2c6534593f0fd9f7ef9d699fe11ecc52a2ce01de7df2f9b4a91051cc0e91c75"
+    ]
+  },
+  {
+    "id": "sha256:bdaf52271f328b31323e01e0662a8a8682cbfd7b99b5d0f5bf836ae3c9e3a1c5",
+    "tag": "imperator/backend:tfg-a-948a205ca268ae54",
+    "exitCode": 0,
+    "output": [
+      "Untagged: imperator/backend:tfg-a-948a205ca268ae54",
+      "Deleted: sha256:bdaf52271f328b31323e01e0662a8a8682cbfd7b99b5d0f5bf836ae3c9e3a1c5"
+    ]
+  },
+  {
+    "id": "sha256:ea9853e4490f1fa2ac291eb318291f2025ed360c244566fbff34eae3d048bacb",
+    "tag": "imperator/backend:tfg-a-e4e8680b2feedee8",
+    "exitCode": 0,
+    "output": [
+      "Untagged: imperator/backend:tfg-a-e4e8680b2feedee8",
+      "Deleted: sha256:ea9853e4490f1fa2ac291eb318291f2025ed360c244566fbff34eae3d048bacb"
+    ]
+  },
+  {
+    "id": "sha256:ebba0bc1c7dcb9d59444e2715921d723dff981ea7bb63171ae88b3986b910b58",
+    "tag": "imperator/frontend:tfg-a-5939e4576beb47a7",
+    "exitCode": 0,
+    "output": [
+      "Untagged: imperator/frontend:tfg-a-5939e4576beb47a7",
+      "Deleted: sha256:ebba0bc1c7dcb9d59444e2715921d723dff981ea7bb63171ae88b3986b910b58"
+    ]
+  },
+  {
+    "id": "sha256:f0d25cf40b38c16e7d6b39044b03d621c4809497590c06418a093661c0a5d0e7",
+    "tag": "imperator/frontend:tfg-a-948a205ca268ae54",
+    "exitCode": 0,
+    "output": [
+      "Untagged: imperator/frontend:tfg-a-948a205ca268ae54",
+      "Deleted: sha256:f0d25cf40b38c16e7d6b39044b03d621c4809497590c06418a093661c0a5d0e7"
+    ]
+  }
+]

@@ -1,0 +1,374 @@
+{
+  "algorithm": "SHA-256",
+  "selfExcluded": true,
+  "sourceSha": "6e79e83e909995c50a44aba3608b6ca25a0e4602",
+  "integratedMainSha": "3aca0389431b077ddee0b20621f6ccac26238e9f",
+  "accepted": false,
+  "files": [
+    {
+      "path": "docs/project/PROJECT_STATUS.md",
+      "bytes": 49900,
+      "sha256": "952edebec5da409c34e402a48f3fd017f4cf7844181bdbd0532999408e7cd724"
+    },
+    {
+      "path": "docs/tfg/00_TFG_MASTER_PLAN.md",
+      "bytes": 26222,
+      "sha256": "7f3537995e66f82ea570b020a385c999d670bae1bcead21caf635b03b871b26d"
+    },
+    {
+      "path": "docs/tfg/03_TRACEABILITY_MATRIX.md",
+      "bytes": 15842,
+      "sha256": "6faa69e306f398b99ae07a9a282ef8af5661fd0926f0a8eb0df952d506d529b4"
+    },
+    {
+      "path": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "bytes": 35603,
+      "sha256": "90fe2de5612e3bf784a0f480c759dedb01b872e119a4e05844b9f839d6c08726"
+    },
+    {
+      "path": "docs/tfg/08_LOCAL_MVP_MEMORY.md",
+      "bytes": 20319,
+      "sha256": "f83027ee6fbf0fe440634b4d0716c291bcae16276e3908e49ce690ac638ca0c1"
+    },
+    {
+      "path": "docs/tfg/10_LOCAL_MVP_RELEASE_GATE.md",
+      "bytes": 8023,
+      "sha256": "6eb021a0d1b8be34debb2ac486756061795111a796caaa844eec7d7745d64bcf"
+    },
+    {
+      "path": "docs/tfg/A_S3_EVIDENCE_VERSIONING.md",
+      "bytes": 7925,
+      "sha256": "a4c4c1ef7f09f57a61b865542880ebe91931e708928440fd4f5304ea5ce3d7ee"
+    },
+    {
+      "path": "docs/tfg/A_S4_LOCAL_DEFENSE.md",
+      "bytes": 9576,
+      "sha256": "e3438376b9eb17c32b92c315e3829fe8d1cef74016582e0b48e7a76e00d57cbe"
+    },
+    {
+      "path": "docs/tfg/CI_SECURITY_CORRECTION_2026_10_08.md",
+      "bytes": 7913,
+      "sha256": "276a29382dd12e392fd5c530ad873626b3715ef6d0b0bbf7000d6d747899fb18"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/artifact-correspondence.json",
+      "bytes": 15096,
+      "sha256": "205fa93e04f06b0c74576f03af3e19426e7d9647d7b03aa28b8a103a7deb61eb"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/backend-credentials.json",
+      "bytes": 522963,
+      "sha256": "cbc467a24a108fdfb871913b42ec33bd6e4a6e195497f1cd35a3788a4e2a5ced"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/backend-credentials.txt",
+      "bytes": 446,
+      "sha256": "80f4ca20bcf65f3728e85e13825358f5745992f48f1ec4be4cc4b2f3e8a6985c"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/backend-fixable-gate.json",
+      "bytes": 591413,
+      "sha256": "9b393b33e4c5e20285d70ba3bc263a392f9ba802e3d0f43382133312bc94379c"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/backend-fixable-gate.txt",
+      "bytes": 384,
+      "sha256": "0464211ee4776d5fe7e29b7089b60bc9d19b01064b22ebbf73eb024057f38c85"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/backend-vulnerabilities.json",
+      "bytes": 733010,
+      "sha256": "df3d7dd47d2fd0a40657cc5359c6ddeb8d7cbe2a249ac5932bfd3bb8170d6782"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/backend-vulnerabilities.txt",
+      "bytes": 384,
+      "sha256": "422df6efa4cf1cceba314404740484b798f5e4e623a31a7e295b2588dea03093"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/braces-advisory-current.json",
+      "bytes": 2071,
+      "sha256": "b3961db9d1e95c8d03b9266e0cc6420efa3789f9361ef02d65f8f5997d9fc6b8"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/current-cve-applicability-matrix.json",
+      "bytes": 115525,
+      "sha256": "fc65fc4c883475371f98db21109e246cf62d09c2b7ac3f5304129296c787c490"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/database-download-commands.json",
+      "bytes": 1306,
+      "sha256": "e4efcc8c0fde1c2a47e6a1928cb5e9a07e861c1cf54d40f0f2c66273c227778d"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/debian-vendor-review.json",
+      "bytes": 53620,
+      "sha256": "fbfae5b089c5659374439ec8e5a853bc2f50a555dbf8813cafd03f894899981a"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/document-changes.json",
+      "bytes": 4549,
+      "sha256": "ad3e467c643d4a3f34c886aab4d1b6d830495e867643bd99ed9f44c3fcb095b1"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/documentary-validation.json",
+      "bytes": 283,
+      "sha256": "233c6915bff836bb7e7b3030b37aab8c0a92c85d117e32d17f1128944c6551e2"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/EXACT_IMAGE_SECURITY_REVIEW.md",
+      "bytes": 9898,
+      "sha256": "6b84157a33b8c3cde58774ee49f703c8cdca35760f24d5d657c3914794e3708f"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/final-review-validation.json",
+      "bytes": 1080,
+      "sha256": "003202695057b6647e583f94ea8279fb2f7be4ab0a42ddf526818f117366cfff"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/frontend-credentials.json",
+      "bytes": 396547,
+      "sha256": "1622270e51c1c898638e73e98aee5f80929aed23d2972c02edf9a6ab0b8854c2"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/frontend-credentials.txt",
+      "bytes": 446,
+      "sha256": "96fd0a980e9be31582c117b14f56cc22e9cb5b9a74cbbbc8b20a7ee7dbf9645b"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/frontend-fixable-gate.json",
+      "bytes": 396547,
+      "sha256": "21ef30d59e438de595a606ef43e9df74c573b38bb9d9ecbebb47551f1f01afb7"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/frontend-fixable-gate.txt",
+      "bytes": 572,
+      "sha256": "cfa3a78f43f73a284103e48d4c6855305872879a93e6ffb4ecc9befa346729cc"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/frontend-vulnerabilities.json",
+      "bytes": 1050177,
+      "sha256": "f030da19072f79bb2bbe592031145ce19f38fc2e315ca859fbcda7769980ffb9"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/frontend-vulnerabilities.txt",
+      "bytes": 572,
+      "sha256": "fc7621b157250795b5ea85184eef2b29ac993d554672a48547951f57d7727883"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/gitleaks-complete-pack.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/gitleaks-documentary-raw.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/GO-2026-6607.json",
+      "bytes": 1252,
+      "sha256": "f4bf7540a2b1f5671a55ab2445ed6071036a699dcd9ec215ac73f7a57aadc8d6"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/GO-2026-6609.json",
+      "bytes": 1087,
+      "sha256": "3a47edb3f881a474a00b696392923a6f97a8b84fb8ca90cf440c1b2b32366ea7"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/go-builder-proposal-metadata.json",
+      "bytes": 9934,
+      "sha256": "27d1e40169d472684b0ee47ed320a31f0308fe0df12f9e04bc162043b462bdfa"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/gosu-source-review.json",
+      "bytes": 5814,
+      "sha256": "efbedc4d64562c265e0c7405fa4530331009f8c649e76af1bc92cdd58bc793eb"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/historical-backend-build.log",
+      "bytes": 5633,
+      "sha256": "070f2d7054079d7ab4d8a60fa66f7afa192f7d47ea8fa25f7fd76e72c055cba8"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/historical-build-records.json",
+      "bytes": 1157,
+      "sha256": "94a2ea3b93b17fb748714dc5bee49bb2f4ef32be4c8f191da3b9427d41f430ca"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/historical-frontend-build.log",
+      "bytes": 5364,
+      "sha256": "900ef6bfe2bdc56d450b2865256fe40e90e079c82a58dd6b74e143f918b0ebd2"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/historical-migration-build.log",
+      "bytes": 8107,
+      "sha256": "c396505a165ec16f29efbf7ae34ee1d695b87b1407b057895384a752bc118b09"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/historical-postgres-build.log",
+      "bytes": 14803,
+      "sha256": "69a40f7d6cdabdccf22dade5e612296e707a355678a4c0fc269579bf35bb69de"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/historical-report-seal-validation.json",
+      "bytes": 153,
+      "sha256": "c148697edb632137dfc4a41a2b6664d3797bbb7f9c3b71121c0910e6268f7873"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/java-index-db-download.txt",
+      "bytes": 465,
+      "sha256": "f0fde7f393869bf7780baee7d9a3b3ea20c638095b8cbc59ae3b1e3629d6ac29"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/migration-credentials.json",
+      "bytes": 428942,
+      "sha256": "848392ee9c31ea3ab0a7d801cf932f32c9a7840c153ce479deca7b4080fc43a8"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/migration-credentials.txt",
+      "bytes": 446,
+      "sha256": "c68dd63956d4ac21f03b4626cb51f5e3a6c147d5a9651d3a459d99193b2c0b5d"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/migration-fixable-gate.json",
+      "bytes": 590358,
+      "sha256": "8f753fa5e662cb5a9f7e1f2c7975a84369ca620483468397284b21eb0609b30b"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/migration-fixable-gate.txt",
+      "bytes": 384,
+      "sha256": "8c3c3be25ba8db6518196f2a077be01d9b5a9ecce4355d3b56a01ad41795bd96"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/migration-vulnerabilities.json",
+      "bytes": 765710,
+      "sha256": "66b1f9633e72e22207e188198e621b59c63d56a119ed552af6da0355198a9843"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/migration-vulnerabilities.txt",
+      "bytes": 384,
+      "sha256": "9789cfa31b67ae6735cae5c2ac42b58a0796d0462ef5fecae884c1a401dcb1fa"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/minimum-remediation-proposal.json",
+      "bytes": 2036,
+      "sha256": "c1e2a0ee039f749a84139fb665074ba5ad58dac3381e9f18a6a67102f455c097"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/MINIMUM_REMEDIATION_PROPOSAL.md",
+      "bytes": 4354,
+      "sha256": "91dd0b45f5e37e1116c68cc112ffc0f1267055ab4e016d10c20cc6f2478e2b17"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/new-fixable-findings.json",
+      "bytes": 1356,
+      "sha256": "8373286d72ef9febcbcc2d3cfe147065de6b757d5e013522ef60a763b8a51f58"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/postgres-credentials.json",
+      "bytes": 803809,
+      "sha256": "715eae48e3b55abb15449bb915c246f2b6315fe9d75607065c0a32ca2a07857e"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/postgres-credentials.txt",
+      "bytes": 446,
+      "sha256": "7638246d0f111e789bca99cdb548f7459bc495d03430a62de620aa6e166f4da2"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/postgres-fixable-gate.json",
+      "bytes": 808243,
+      "sha256": "3c041becc675b8ea808b4f0392a5e87f04f8f0e229ae10bf4567f28b211b5560"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/postgres-fixable-gate.txt",
+      "bytes": 573,
+      "sha256": "9b6cbab81d2529da7c64244c041a3991911986bf6fe286c37126660c8a90df96"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/postgres-vulnerabilities.json",
+      "bytes": 2100240,
+      "sha256": "27f6118625b494e8bb1409962c04bd243a6e20563cc87a93230b9dda988bee17"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/postgres-vulnerabilities.txt",
+      "bytes": 573,
+      "sha256": "3bb03a72cc70177bdbe75c11cb054ef712aab02e05eefe67f79c1a9e5e49e154"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/preflight-images.json",
+      "bytes": 12191,
+      "sha256": "7f8d006f2b3d4274dfb174dcf4c694540438d3e42428254a99d6115a722ae6ba"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/preservation-validation.json",
+      "bytes": 986,
+      "sha256": "187774ee15ca506c26c70a3d9471b07f6c18871f67feb870855e1b3ea97f1f2a"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/r20-current-review-not-accepted.json",
+      "bytes": 3304,
+      "sha256": "f6fe5ccb1307ae0df99f9b9820e46b1fa7d5fc1d0a0d520f797accd84903a5d6"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/r23-current-review.json",
+      "bytes": 2002,
+      "sha256": "578928d99cd73e63656df30274363db047d0245cbb810436799ce83015ed4363"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/residual-comparison.json",
+      "bytes": 1932,
+      "sha256": "c7d78f442c1678d66dbf88d94e83e09947e854d0d08bc63df67f3771c80f7d26"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/scan-commands.json",
+      "bytes": 18599,
+      "sha256": "04591f32ce387a06fb5e81985008fe07f1d0cb62eaa8837619386648532c983c"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/scan-summary.json",
+      "bytes": 1935,
+      "sha256": "10026b944f8b5fc080b9b02c5f1bd3704f46a64d4d6feb6c3cca1cfa763e3033"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/scanner-databases.json",
+      "bytes": 404,
+      "sha256": "a880c56f625b6ef90bcc61567efc25dcacd2ef10b3681c45173aa209eab2dbf6"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/scanner-tool.json",
+      "bytes": 1060,
+      "sha256": "b99ca5bbd154276528828c43263e22039525ea64e3dcaea783e683d3bb8f6afc"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/secret-review.json",
+      "bytes": 793,
+      "sha256": "94933d5b448187ad9a11af1f2365fc4f1cd737cf83bcd772a50db4ae932e8b40"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/unaccepted-version-candidate.json",
+      "bytes": 2073,
+      "sha256": "0c01299f1a291f0adea249e61af7c0e7b968885012cb6fe172f100529a0f6ef0"
+    },
+    {
+      "path": "docs/tfg/evidence/2026-10-09-exact-image-security/vulnerability-db-download.txt",
+      "bytes": 347,
+      "sha256": "8f1e97f21f0356cccd60e6fb76836a8a5ae6c19ee5823c65f569fb61a6b116d4"
+    },
+    {
+      "path": "docs/tfg/README.md",
+      "bytes": 10594,
+      "sha256": "8510ee1ce01fc298e00ad260c4366eb4c53c8ffbd80b368a46d02af585159dc5"
+    },
+    {
+      "path": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "bytes": 5983,
+      "sha256": "56763fe7c492c5361eaffcdafb8b17bd784af49a8c68893f630d69b1947c75d1"
+    },
+    {
+      "path": "README.md",
+      "bytes": 24704,
+      "sha256": "dd70aa50976c3327ce4673c45fe1ea8fa6b44438996f3a304597b0f2a2cfc35a"
+    }
+  ]
+}

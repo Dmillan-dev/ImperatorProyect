@@ -1,0 +1,12 @@
+2026-10-13T11:17:20Z	INFO	Loaded	file_path="/work/scanner-empty.yaml"
+Version: 0.74.0
+Vulnerability DB:
+  Version: 2
+  UpdatedAt: 2026-10-13 06:41:11.035783622 +0000 UTC
+  NextUpdate: 2026-10-14 06:41:11.035783311 +0000 UTC
+  DownloadedAt: 2026-10-13 11:15:50.477608052 +0000 UTC
+Java DB:
+  Version: 1
+  UpdatedAt: 2026-10-13 01:09:47.998143143 +0000 UTC
+  NextUpdate: 2026-10-16 01:09:47.998142983 +0000 UTC
+  DownloadedAt: 2026-10-13 11:17:19.768640692 +0000 UTC

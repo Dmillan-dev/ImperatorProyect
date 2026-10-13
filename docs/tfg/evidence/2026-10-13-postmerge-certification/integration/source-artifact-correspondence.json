@@ -1,0 +1,59 @@
+{
+  "mainSha": "0797671e06baa2b20f8ce5a842ac04140d84e591",
+  "mainTree": "ac2179bdecd690a374b60fdef468196032178474",
+  "candidateTree": "ac2179bdecd690a374b60fdef468196032178474",
+  "checkoutClean": true,
+  "mergeDiffFiles": [
+    "infra/docker/postgresql/Dockerfile",
+    "infra/docker/postgresql/supply-chain-lock.json",
+    "scripts/verify-postgres-runtime-image.ps1"
+  ],
+  "fileHashes": [
+    {
+      "path": "infra/docker/postgresql/Dockerfile",
+      "gitBlobSha256": "4fa553c034395be7dae1dba207dbf25b9128830fc2cc45cf6c1ecfceddb9a86d",
+      "checkoutSha256": "10ea791bacd1ebe41be00929983e5ad399fe332e9332a11abf6e9a06d80e6bf7",
+      "sameContentAfterEOLNormalization": true
+    },
+    {
+      "path": "infra/docker/postgresql/supply-chain-lock.json",
+      "gitBlobSha256": "db9997dd9cee1f1c490b3c4e3eb6889913a833f410e2608b32270cf5a515d379",
+      "checkoutSha256": "b9c30f4ca975c47d26444f16341da21c9d4f3328d6d388713f9c630998804a3a",
+      "sameContentAfterEOLNormalization": true
+    },
+    {
+      "path": "scripts/verify-postgres-runtime-image.ps1",
+      "gitBlobSha256": "77ba48221ecec97c3226ea2c898ff31afea6db6c9e992f0b02477c2d050d230b",
+      "checkoutSha256": "f9536746110d18e971d5ca4360c3b60e0a49203bbb7547d4194d94d385764ee0",
+      "sameContentAfterEOLNormalization": true
+    }
+  ],
+  "imageComparison": {
+    "oldLocalIndex": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9",
+    "oldLocalRuntime": "sha256:c22d3892c45e412fbdb36d4e17d4580359be3bba87873710cceeeaf777b68717",
+    "newCiIndex": "sha256:e2823c6a61ee528b766e7781b38bc958ba64e522e781f7b881d9f36508d35364",
+    "newCiRuntime": "sha256:3900d5a0f3511bc05775e8a84eaca4f06cd32c3fbeaeabefc0429db8c418be4b",
+    "sameRuntimeManifest": false,
+    "samePinnedInputs": true,
+    "oldSourceDateEpoch": "1791549715",
+    "newSourceDateEpoch": "1791889019",
+    "ciReproducibilityVerified": true
+  },
+  "sbomComparison": {
+    "oldComponents": 153,
+    "newComponents": 153,
+    "removed": [],
+    "added": []
+  },
+  "ciPgScan": {
+    "vulnerabilityRows": 0,
+    "fixableHighCritical": 0,
+    "reportedHighCritical": 0,
+    "secretRows": 0,
+    "scope": "HIGH,CRITICAL; --ignore-unfixed; configured vuln/secret gate only. Not a full residual CVE matrix or all-severity secret scan."
+  },
+  "historicalRuntimeEvidenceDate": "2026-10-09",
+  "newLocalRuntimeExecuted": false,
+  "riskAcceptanceChanged": false,
+  "sameProductBuildInputsSinceRetainedImagesSourceExceptPostgres": true
+}

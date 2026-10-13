@@ -1,0 +1,45 @@
+{
+  "recordedAtUtc": "2026-10-09T11:17:02.939734+00:00",
+  "accepted": false,
+  "releaseApproved": false,
+  "mainSha": "3aca0389431b077ddee0b20621f6ccac26238e9f",
+  "recordedBuildSourceSha": "6e79e83e909995c50a44aba3608b6ca25a0e4602",
+  "sameGitTree": "7d86c37ed40d2fe345dc51998b36603427ebc98a",
+  "imageBindings": [
+    {
+      "component": "migration",
+      "indexDigest": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4",
+      "platformManifestDigest": "sha256:a4b1f621b007dca0d3cf099bd4d1e3246bffccddb240ffba7ee0b567ac6f1227",
+      "configDigest": "sha256:c0e2cf0463009436431ddca03630cb6192cca07c150da1336d95692b91a146ac"
+    },
+    {
+      "component": "backend",
+      "indexDigest": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757",
+      "platformManifestDigest": "sha256:645e2aa935ab08a3765f8b62c81b7c210c27867435efa22145b12aaba179a67f",
+      "configDigest": "sha256:8580139fe8a1bef8b5d5046a70471675f36bcb52f93850fbfdb5207e1f96964e"
+    },
+    {
+      "component": "frontend",
+      "indexDigest": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78",
+      "platformManifestDigest": "sha256:85decf17bb4f50e1115839c3dbb0dfac31aafaafb567f50212598d08ce5f3daa",
+      "configDigest": "sha256:d28461f2e94913b6aeb0d29161714c89b2160973329727941b6e086702a2d908"
+    },
+    {
+      "component": "postgres",
+      "indexDigest": "sha256:aa6f9e2344c82cddfeef9c2bca2f0145aab30e88b5305b0648c3dc27eddb7fc6",
+      "platformManifestDigest": "sha256:abe13e246dba26ebf75ac3c0b04eb4ed8ce6814b940bac423c5a72bc19fbd2b3",
+      "configDigest": "sha256:21c75d7fa4902a48c98379798e8d6faec9b2d0000199d409193f355544e20aed"
+    }
+  ],
+  "evidenceCatalogue": "exact-security-files-sha256.json",
+  "gate": "NO-GO / 2 FIXABLE HIGH",
+  "R20": "EXPIRED / NOT RENEWED",
+  "R23": "OPEN / NO FIX AVAILABLE",
+  "A-S3": "BLOCKED",
+  "A-S4": "PENDING",
+  "TFG-A": "IN PROGRESS",
+  "AWS": "BLOCKED",
+  "receiptCreated": false,
+  "commitPerformed": false,
+  "pushPerformed": false
+}

@@ -1,5 +1,13 @@
 # IMPERATOR DAM TFG Master Plan
 
+## Post-merge verification - 2026-10-13
+
+PR64 is merged into main `0797671e06baa2b20f8ce5a842ac04140d84e591`; its tree equals the tested a931601 candidate. Fresh main CI:10/10 checks PASS. The four retained local image IDs/origins/rootfs match the runtime evidence dated 09/10; CI-built images remain separately identified.
+
+Fresh full four-image scans:0 fixable High/Critical and0 secrets at all severities. Residuals now total25 unique CVEs/119 package rows, including two added GnuTLS CVEs. R-20's historical authorization expired 09/10; the23-CVE accepted:false proposal does not automatically cover this delta. R-23 remains OPEN independently; production npm audit 0 and full development audit 5 High. No upgrade or new functional runtime is claimed.
+
+**A-S3 formal: PENDING applicable explicit risk decision and publication review; A-S4: PENDING; TFG-A: IN PROGRESS; AWS: BLOCKED.** The current record supersedes dated state claims below while preserving historical evidence and receipts. See [post-merge verification](evidence/2026-10-13-postmerge-certification/README.md).
+
 ## Current Owner Decision And Sprint — 2026-10-06
 
 **A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](A_S3_EVIDENCE_VERSIONING.md).

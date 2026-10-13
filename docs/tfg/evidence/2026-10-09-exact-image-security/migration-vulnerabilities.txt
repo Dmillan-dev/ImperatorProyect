@@ -1,0 +1,5 @@
+2026-10-09T13:00:29+02:00	INFO	[vuln] Vulnerability scanning is enabled
+2026-10-09T13:00:41+02:00	INFO	Detected OS	family="ubuntu" version="24.04"
+2026-10-09T13:00:41+02:00	INFO	[ubuntu] Detecting vulnerabilities...	os_version="24.04" pkg_num=108
+2026-10-09T13:00:41+02:00	INFO	Number of language-specific files	num=1
+2026-10-09T13:00:41+02:00	INFO	[jar] Detecting vulnerabilities...

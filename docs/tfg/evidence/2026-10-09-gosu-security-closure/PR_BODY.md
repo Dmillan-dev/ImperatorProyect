@@ -1,0 +1,7 @@
+Two newly published High CVEs (CVE-2026-78667 and CVE-2026-97031) affect the Go1.26.6 stdlib compiled into PostgreSQL's gosu helper. Rebuild the same gosu1.19 source with pinned Go1.26.9, update matching image/lock labels and D094's expected compiler assertion. PostgreSQL18.6/Bookworm, PCRE2/Perl pins, Java/Spring/Node, other images and application behavior stay unchanged.
+
+Local validation on a931601: two clean D094 builds produce identical runtime manifest c22d3892c45e412fbdb36d4e17d4580359be3bba87873710cceeeaf777b68717. Fresh scans of the canonical rebuilt PG and retained backend/frontend/migration images report zero fixable High/Critical and zero file/config secrets; 23 non-fixable residual CVEs remain unchanged. Current-source Gitleaks reports zero findings.
+
+174 unit +35 exact-PG integration +41 frontend tests pass, along with lint/types/build/format and production npm audit. Playwright:9 pass/6 intentional skips. Exact-image local synthetic Docker RBAC, V1-V3 Flyway, append-only permissions, persistence across recreation and readiness503/liveness200/recovery200 pass.
+
+This PR contains only the three-file security patch. Its evidence consolidation and exact-digest R-20 decision are maintained separately for formal A-S3 review. Local results do not substitute for this PR's hosted CI, approve a release, close R-23, complete A-S4 or authorize AWS. No additional dependency updates or PR57-59 merge is included.

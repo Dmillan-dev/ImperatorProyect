@@ -1,0 +1,62 @@
+{
+  "pr": 64,
+  "state": "closed",
+  "merged": true,
+  "mergedAt": "2026-10-13T10:57:00Z",
+  "mergedBy": "Dmillan-dev",
+  "mergeCommit": "0797671e06baa2b20f8ce5a842ac04140d84e591",
+  "main": "0797671e06baa2b20f8ce5a842ac04140d84e591",
+  "mainMessage": "fix(security): rebuild gosu with Go 1.26.9 (#64)\n\nCo-authored-by: Daniel Millan Perez <dmillan.evidence262@slmails.com>",
+  "mainRuns": [
+    {
+      "id": 38386848603,
+      "name": "Automatic Dependency Submission (Maven)",
+      "event": "dynamic",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "0797671e06baa2b20f8ce5a842ac04140d84e591",
+      "run_attempt": 1,
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38386848603",
+      "created_at": "2026-10-13T10:57:05Z"
+    },
+    {
+      "id": 38386844673,
+      "name": "Java CI",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "0797671e06baa2b20f8ce5a842ac04140d84e591",
+      "run_attempt": 1,
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38386844673",
+      "created_at": "2026-10-13T10:57:03Z"
+    },
+    {
+      "id": 38386844372,
+      "name": "Push on main",
+      "event": "dynamic",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "0797671e06baa2b20f8ce5a842ac04140d84e591",
+      "run_attempt": 1,
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38386844372",
+      "created_at": "2026-10-13T10:57:03Z"
+    },
+    {
+      "id": 38386844306,
+      "name": "Security",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "0797671e06baa2b20f8ce5a842ac04140d84e591",
+      "run_attempt": 1,
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38386844306",
+      "created_at": "2026-10-13T10:57:03Z"
+    }
+  ],
+  "openPRs": [
+    {
+      "number": null,
+      "title": null
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+2026-10-09T14:48:56+02:00	INFO	[vulndb] Need to update DB
+2026-10-09T14:48:56+02:00	INFO	[vulndb] Downloading vulnerability DB...
+2026-10-09T14:48:56+02:00	INFO	[vulndb] Downloading artifact...	repo="mirror.gcr.io/aquasec/trivy-db:2"
+2026-10-09T14:49:07+02:00	INFO	[vulndb] Artifact successfully downloaded	repo="mirror.gcr.io/aquasec/trivy-db:2"

@@ -1,0 +1,10 @@
+{
+  "decisionId": "66b680da-4d27-421a-bf47-f6ba0bff30fb",
+  "recommendationId": "600f005d-f336-42fc-93a5-e601fbc56ab6",
+  "actors": {
+    "ADMIN": "be577cd6-1774-463c-841a-ad2b5b643d5e",
+    "PLATFORM_ENGINEER": "e1456352-c0af-4b6e-9143-19ed24d398e3",
+    "FINANCE": "7f0a4fff-0482-488e-8b5b-36a17106ff20",
+    "AUDITOR": "ac7c2e60-5421-4e3a-a5b9-c239cdb226a2"
+  }
+}
