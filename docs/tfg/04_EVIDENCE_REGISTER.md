@@ -1,16 +1,20 @@
 # TFG Evidence Register
 
+## Estado actual tras #68 — 13/10/2026
+
+Main `c69f682` integrado y CI 10/10 PASS. Cuatro imágenes locales conservadas; 0 H/C corregibles y 0 secretos enescaneos 13/10, 25 CVEresiduales/119 filas. R-20 caducado; propuesta actual`accepted: false`. R-23 OPEN independiente. A-S3 formal pendiente R-20; A-S4: memoria/ensayo/narraciónpendientes; TFG-A IN PROGRESS y AWS bloqueado. [Registroactual](evidence/2026-10-13-main-closure/README.md). Las secciones fechadas posteriores son históricas y no renuevan aceptación.
+
 ## Post-merge verification - 2026-10-13
 
 PR64 is merged into main `0797671e06baa2b20f8ce5a842ac04140d84e591`; its tree equals the tested a931601 candidate. Fresh main CI:10/10 checks PASS. The four retained local image IDs/origins/rootfs match the runtime evidence dated 09/10; CI-built images remain separately identified.
 
-Fresh full four-image scans:0 fixable High/Critical and0 secrets at all severities. Residuals now total25 unique CVEs/119 package rows, including two added GnuTLS CVEs. R-20's historical authorization expired 09/10; the23-CVE accepted:false proposal does not automatically cover this delta. R-23 remains OPEN independently; production npm audit 0 and full development audit 5 High. No upgrade or new functional runtime is claimed.
+Fresh full four-image scans: 0 fixable High/Critical and 0 secrets at all severities. Residuals now total 25 unique CVEs/119 package rows, including two added GnuTLS CVEs. R-20's historical authorization expired 09/10; the 23-CVE `accepted: false` proposal does not automatically cover this delta. R-23 remains OPEN independently; production npm audit 0 and full development audit 5 High. No upgrade or new functional runtime is claimed.
 
 **A-S3 formal: PENDING applicable explicit risk decision and publication review; A-S4: PENDING; TFG-A: IN PROGRESS; AWS: BLOCKED.** The current record supersedes dated state claims below while preserving historical evidence and receipts. See [post-merge verification](evidence/2026-10-13-postmerge-certification/README.md).
 
 ## Current Owner Decision And Sprint — 2026-10-06
 
-**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](A_S3_EVIDENCE_VERSIONING.md).
+**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00: 00+02:00 Europe/Madrid = 2026-10-08T22:00: 00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](A_S3_EVIDENCE_VERSIONING.md).
 
 Document status: **TFG-A IN PROGRESS / R-19/R-21/R-22 CORRECTED FINDINGS CLOSED; A-S2 TECHNICAL AND FORMAL GO; A-S3 ACTIVE; CURRENT R-20 BINDING APPROVED; FUTURE EXECUTION PREFLIGHT REQUIRED**
 
@@ -105,8 +109,8 @@ source scope and development-inclusive scans are explicitly separated; neither
 is used to hide the other. The initial Maven Central 429 was resolved by a
 read-only native Maven cache mount and is a superseded tool execution condition.
 
-The previous unaccepted publication metadata now uses schema v2 explicit
-path/sha256 records. Each of the 20 flagged values was verified against its
+The previous unaccepted publication metadata now uses schema v 2 explicit
+path/sha 256 records. Each of the 20 flagged values was verified against its
 public file. Original serialized copies/hashes are retained locally; input
 digests and historical execution results remain unchanged, and artifact
 digest pointers reflect the new representation.
@@ -264,7 +268,7 @@ TFG-A IN PROGRESS. B approval is a separate pending owner decision.
 
 The [acceptance record](evidence/2026-10-02-r20-acceptance/acceptance.json)
 registers the founder's explicit approval with accepted=true, exact original
-decision/evidence hashes and exclusive expiry 2026-10-09T00:00:00+02:00
+decision/evidence hashes and exclusive expiry 2026-10-09T00:00: 00+02:00
 Europe/Madrid. TFG-A synthetic local loopback only; AWS/production/real data
 excluded; no renewal. Historical proposal/index bytes remain preserved as
 pre-approval records. No residual CVE is declared fixed or suppressed.
@@ -291,8 +295,8 @@ authorization, exactly two lock changes, 174/35/41 passing tests, full frontend
 quality, nine Chrome passes with six intentional skips, real Docker/RBAC/V3,
 persistence/readiness, exact manifests, recording and scoped teardown.
 The [earlier R-19 gate index](evidence/TFG_A_SECURITY_CLOSURE_GATE_2026-10-06.json) records
-NO-GO despite those functional passes: npm8 High aggregates, source1 fixable
-High, frontend8 and PostgreSQL29 fixable High/Critical, with zero secrets.
+NO-GO despite those functional passes: npm 8 High aggregates, source 1 fixable
+High, frontend 8 and PostgreSQL29 fixable High/Critical, with zero secrets.
 
 The [review](R19_SECURITY_REVIEW.md) distinguishes original R-19 closure,
 then-unapplied R-21/R-22 candidates and R-20 early invalidation at that checkpoint. No candidate
@@ -302,7 +306,7 @@ The supplied PR screenshots do not verify live GitHub checks or authorize merges
 
 ## R-21/R-22 Current Evidence Pack — 2026-10-06
 
-The [new index](evidence/TFG_A_R21_R22_2026-10-06.json) binds authorized patches,174/35/41 tests, browser9pass/6intentional skips, exact OCI manifests/layers, immutable image scans, full residual matrix115rows/23CVEs, all-severity secrets0, D094 reproducibility retry and scoped cleanup. [Gate index](evidence/TFG_A_SECURITY_CLOSURE_GATE_R21_R22_2026-10-06.json): technicalGO / formalclosurePENDING. Original October2 approval and the earlier R-19 pack/index retain their bytes and original dated status. No accepted release SHA, hosted CI or external/AWS/institutional certification is claimed.
+The [new index](evidence/TFG_A_R21_R22_2026-10-06.json) binds authorized patches,174/35/41 tests, browser 9pass/6intentional skips, exact OCI manifests/layers, immutable image scans, full residual matrix 115rows/23 CVEs, all-severity secrets 0, D094 reproducibility retry and scoped cleanup. [Gate index](evidence/TFG_A_SECURITY_CLOSURE_GATE_R21_R22_2026-10-06.json): technicalGO / formalclosurePENDING. Original October 2 approval and the earlier R-19 pack/index retain their bytes and original dated status. No accepted release SHA, hosted CI or external/AWS/institutional certification is claimed.
 
 ## Explicit A-S2 Closure And A-S3 Evidence — 2026-10-06
 
@@ -313,7 +317,7 @@ The [A-S3 dossier](A_S3_EVIDENCE_VERSIONING.md) separates implemented, locally v
 ## E-GIT-02 / E-DEF-01 — Documentation Review And Defense Preparation — 2026-10-07
 
 Execution class: EXECUTED OFFLINE for hashes/source/document review and existing video QA; PLANNED OFFLINE for final runtime/narrated defense.
-See [review pack](evidence/2026-10-07-a-s3-a-s4/README.md). The prior383runtime files and38approved snapshots retain their hashes.
+See [review pack](evidence/2026-10-07-a-s3-a-s4/README.md). The prior 383runtime files and 38approved snapshots retain their hashes.
 Current source/diff review has no additional implementation/dependency change. Docker daemon was stopped during the current query.
 The [memory](08_LOCAL_MVP_MEMORY.md), [script](09_DEFENSE_SCRIPT_12_MIN.md) and [procedure](A_S4_LOCAL_DEFENSE.md) are prepared.
 No new functional regression, image scan, hosted CI, accepted release SHA or academic approval is claimed.

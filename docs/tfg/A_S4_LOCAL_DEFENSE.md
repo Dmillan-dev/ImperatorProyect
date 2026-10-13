@@ -1,71 +1,48 @@
 # A-S4 — Preparación y defensa local
 
-## Post-merge verification - 2026-10-13
+Revisión: **13/10/2026**. **PREPARACIÓN DOCUMENTAL; ensayo final y grabación narrada PENDIENTES.** A-S3 espera la decisión R-20 actual. Se puede preparar memoria, guion y respaldo sin ejecutar servicios. No se da por cumplida una defensa humana por crear estos documentos.
 
-PR64 is merged into main `0797671e06baa2b20f8ce5a842ac04140d84e591`; its tree equals the tested a931601 candidate. Fresh main CI:10/10 checks PASS. The four retained local image IDs/origins/rootfs match the runtime evidence dated 09/10; CI-built images remain separately identified.
+## Material de la versión actual
 
-Fresh full four-image scans:0 fixable High/Critical and0 secrets at all severities. Residuals now total25 unique CVEs/119 package rows, including two added GnuTLS CVEs. R-20's historical authorization expired 09/10; the23-CVE accepted:false proposal does not automatically cover this delta. R-23 remains OPEN independently; production npm audit 0 and full development audit 5 High. No upgrade or new functional runtime is claimed.
+- [Memoria](08_LOCAL_MVP_MEMORY.md), [guion 12 minutos](09_DEFENSE_SCRIPT_12_MIN.md), [trazabilidad](03_TRACEABILITY_MATRIX.md), [entrega DAM](11_DAM_MEMORY_DELIVERY.md).
+- [Ensayo real 09/10](evidence/2026-10-09-gosu-security-closure/runtime/capture/rehearsal.json), cinco capturas y [vídeo técnico](evidence/2026-10-09-gosu-security-closure/runtime/capture/tfg-a-docker-demo.webm), [QA](evidence/2026-10-09-gosu-security-closure/runtime/capture/video-qa.json).
+- [Registro main / CI/artefactos](evidence/2026-10-13-main-closure/README.md) y [propuesta R-20](evidence/2026-10-13-main-closure/R20_CURRENT_PROPOSAL.md).
 
-**A-S3 formal: PENDING applicable explicit risk decision and publication review; A-S4: PENDING; TFG-A: IN PROGRESS; AWS: BLOCKED.** The current record supersedes dated state claims below while preserving historical evidence and receipts. See [post-merge verification](evidence/2026-10-13-postmerge-certification/README.md).
+El vídeo técnico 09/10 dura 24,88 segundos y no tiene audio. No sustituye una defensa narrada de 12 minutos. El clip 06/10 es histórico y no representa el runtime actual.
 
-**PREPARACIÓN DOCUMENTAL. Ensayo final y grabación narrada pendientes.** A-S3 continúa con revisión, aceptación de SHA y CI pendientes. Preparar estos materiales no salta ese gate, completa TFG-A ni autoriza AWS.
+## Preflight obligatorio antes de ejecutar
 
-## Material preparado
+1. A-S3 formal cerrado con una decisión vigente para **los cuatro digests locales** fijados en el [JSON de propuesta](evidence/2026-10-13-main-closure/R20_CURRENT_PROPOSAL.json). Hasta que se apruebe, `accepted: false`. Comprobar caducidad, matriz residual, 0 H/C corregibles y 0 secretos. El merge/CI no acepta el riesgo.
+2. Inspeccionar IDs/orígenes/capas y fixture HTTPS/JWKS local. Backend/frontend/migración tienen origen 6e79e83; PostgreSQL a931601. No usar los antiguos tfg-a-cbc ni reemplazarlos por las imágenes nuevas de CI.
+3. Revisar un harness aislado basado en las [entradas del ensayo](evidence/2026-10-09-gosu-security-closure/runtime/runtime-inputs-summary.json), imágenes exactas, `--no-build --pull never`, solo loopback, proveedores externos desactivados y volumen sintético nuevo. La configuración genérica de Compose contiene build contexts; no es un preflight completo.
+4. Tokens efímeros por stdin/espacio privado; nunca en repositorio, argumentos visibles, informe o vídeo. No limpiar bases normales. Verificar Flyway V1–V3, privilegios de aplicación y salud antes de importar la fixture 30 registros.
 
-- [Memoria desarrollada](08_LOCAL_MVP_MEMORY.md): requisitos, arquitectura, implementación, evaluación y limitaciones, con enlaces a evidencias.
-- [Guion de doce minutos](09_DEFENSE_SCRIPT_12_MIN.md): tiempos, narración, pantallas, acciones y respuestas al tribunal.
-- [Matriz de trazabilidad](03_TRACEABILITY_MATRIX.md) y [criterios de entrega](10_LOCAL_MVP_RELEASE_GATE.md).
-- [Pack actual API/UI](evidence/2026-10-06-r21-r22/docker/capture/rehearsal.json), cinco capturas y [WebM local](evidence/2026-10-06-r21-r22/docker/capture/tfg-a-docker-demo.webm).
+El inventario 13/10 confirma disponibilidad y coincidencia de las cuatro imágenes; 0 contenedores activos. No es una ejecución nueva. La propuesta de caducidad 16/10 tampoco es una autorización de arranque.
 
-El WebM existente dura 27,16 segundos y no tiene audio. Sirve como respaldo técnico, no como ensayo oral. No se ha fabricado una narración para marcar esta obligación como cumplida.
+## Ensayo y grabación pendientes
 
-## Identidad y preflight
+Después del gate, medir 12 minutos con una persona y ejecutar solo el caso `DRC-AOA-001` sintético: 30 evidencias, recomendación `MODEL_CHANGE`, 19.440 EUR estimados, aprobación humana, implementación y validación financiera por API autenticada con lectura UI, 3 hechos Ledger, 18.960 EUR realizados simulados y −480 EUR de variación. No afirmar un flujo completo exclusivamente por interfaz ni un ahorro empresarial real.
 
-Antes de una demo ejecutada deben constar: SHA aceptado, huella de entrada, imágenes reales inspeccionadas, fecha, vigencia de R-20, proyecto Docker exclusivo y datos sintéticos. Los tres OCI índices aprobados son:
+Verificar 401/403 y asignación de actor; Flyway, permisos append-only de la cuenta de aplicación, persistencia y ready 503/live 200/recovery 200. Registrar modo vivo/grabado, hora, SHA, digests, duración medida y desviaciones. La evidencia 09/10 no sustituye las mediciones del ensayo final.
 
-| Servicio   | Índice OCI aprobado                                                       |
-| ---------- | ------------------------------------------------------------------------- |
-| Backend    | `sha256:681e6e7b77b73170c959ed04697302f6a21d8db98edb3a2b0f3354a44387096d` |
-| Frontend   | `sha256:5cd649ff9a460b2abdc8315da2e7568c5a2c2138d99815db89c5c583f88c18b1` |
-| PostgreSQL | `sha256:2b73847d07d6cb7da2ace20426de036fa0278feca0bb6520aca62588e9b3f101` |
+Grabar pantalla y narración con medios locales. Reproducir el vídeo final, comprobar audio comprensible, pantallas legibles y ausencia de secretos/notificaciones. Calcular hash y anexar resultados reales. Si hay un fallo, registrarlo; no rellenar un PASS ni una aprobación del tutor por inferencia.
 
-Plataforma, configuración y capas se verifican contra [image-binding.json](evidence/2026-10-06-r21-r22/docker/image-binding.json). En este Docker Desktop se registró `Image.Id` como índice OCI; no se confunde con el config digest. Comparar solo una etiqueta o el número de versión es insuficiente.
+Retirar únicamente recursos propiedad de ese ensayo con autorización y control de alcance. La limpieza 13/10 ya retiró 15 intermedias; volúmenes/cachés/bases/herramientas permanecen. No ejecutar prune ni borrar recursos antiguos para preparar la defensa.
 
-La caducidad es exclusiva: **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**. Después de ese instante, o si ocurre una invalidación anticipada, no ejecutar amparándose en R-20. La revisión del 07/10/2026 no vuelve a certificar el advisory ni renueva el scanner; verifica los registros aprobados y sus hashes. No existe renovación automática.
+## Respaldo offline
 
-La consulta Docker del 07/10/2026 encontró el daemon detenido. El inventario histórico del 06/10/2026 conserva 25 imágenes y 10 volúmenes; ese dato no es un inventario vivo del día 7. La disponibilidad actual y la validación runtime siguen pendientes.
+Abrir desde disco memoria, diagramas, capturas y vídeo técnico, identificando siempre la ejecución histórica 09/10. Preparar narración humana y archivos locales; no depender de GitHub, AWS, Keycloak externo o Bedrock. La disponibilidad de archivos no demuestra una nueva ejecución autorizada. Si R-20 caduca, usar solo material histórico hasta nueva decisión.
 
-## Procedimiento del ensayo vivo, pendiente de ejecutar
+## Gate de salida
 
-1. Resolver el cierre A-S3: revisión humana, SHA aceptado y checks requeridos asociados. Si ese cierre falta, preparar el material y no registrar una defensa final ejecutada.
-2. Arrancar Docker Desktop y consultar `docker info`. Inspeccionar las tres imágenes y la disponibilidad local de herramientas y mounts; no construir, descargar ni retaggear por iniciativa propia. Si la imagen exacta no está disponible, detener el ensayo vivo.
-3. Reutilizar la configuración de ensayo y el fixture JWT/HTTPS local ya validados, con un nombre de proyecto nuevo y un volumen exclusivo. La configuración ordinaria contiene build contexts y dependencias de autenticación: `docker compose up` aislado no es un procedimiento completo para esta defensa. Usar un override revisado con imágenes exactas, `--no-build --pull never` y la misma frontera loopback. No inventar que un comando de arranque genérico resuelve estas precondiciones.
-4. Crear credenciales efímeras en el espacio privado del ensayo. No persistir tokens en repositorio, argumentos, grabación o informe. Comprobar permisos V3 y salud antes de introducir datos.
-5. Importar la fixture versionada de treinta registros y componer un caso nuevo con identificadores sintéticos. No truncar ni reinicializar una base normal del proyecto. El [helper existente](../../scripts/tfg/README.md) documenta el contrato y recibe la entrada con tokens por stdin.
-6. Seguir el guion: evidencia, recomendación, rechazo seguro al auditor, aprobación, implementación, validación financiera, Ledger y Business Value. Identificar los comandos API y las lecturas UI; no usar mocks como prueba del backend real.
-7. Verificar 30 evidencias, tres hechos del Ledger, 18.960 EUR realizados sintéticos y variación −480 EUR. Comprobar persistencia y recovery mediante el procedimiento ya validado, preservando el volumen exclusivo hasta acabar las aserciones.
-8. Ensayar con una persona durante doce minutos. Registrar tiempo real, desviaciones, modo vivo/grabado y SHA/digests; los 720 segundos del guion son planificación, no tiempo medido.
-9. Grabar la explicación y la pantalla con medios locales. Revisar reproducción, audio, legibilidad y ausencia de secretos, notificaciones o datos personales. Hash del vídeo final y capturas; no publicar por inferencia.
-10. Retirar únicamente recursos creados por ese ensayo, tras verificar propiedad y paths. No utilizar `docker system prune`, borrar las diez bases anteriores ni eliminar imágenes de evidencias históricas.
+| Criterio | Estado 13/10 |
+| --- | --- |
+| Memoria y guion | BORRADOR preparado; ajuste DAM y tutor pendientes |
+| CI del main integrado | 10/10 PASS sobre `c69f682` |
+| R-20 vigente/A-S3 formal | PENDIENTES |
+| Demo final autorizada | PENDIENTE |
+| Ensayo cronometrado y narración | PENDIENTES |
+| Vídeo final audio / pantalla/hash | PENDIENTE |
+| Tutor/centro | PENDIENTE; criterios y fecha deben confirmarse |
 
-No se ejecutó este procedimiento en la preparación documental; necesita recuperar el daemon y cumplir los gates anteriores.
-
-## Respaldo sin servicios externos
-
-Copiar o abrir desde disco la memoria, el guion, las cinco capturas, el informe del ensayo y el WebM. El paquete debe reproducirse sin GitHub, AWS, IdP externo, Bedrock o red. La instalación previa de Docker, browser y dependencias del ensayo vivo no se presenta como independiente de descargas si aún no está disponible.
-
-Usar el vídeo grabado acompañado de narración en directo es válido como explicación de un ensayo histórico. Identificarlo como tal. Si caduca R-20, los archivos siguen describiendo la ejecución fechada, pero no demuestran una autorización runtime vigente. No efectuar nuevas llamadas de proveedor para completar la defensa.
-
-## Cierre A-S4
-
-| Criterio                                 | Estado actual                                           |
-| ---------------------------------------- | ------------------------------------------------------- |
-| Memoria con evidencia y diagramas        | BORRADOR DESARROLLADO; revisión institucional pendiente |
-| Guion y preparación de preguntas         | PREPARADOS; ensayo real pendiente                       |
-| SHA aceptado / CI efectiva               | PENDIENTES A-S3                                         |
-| Demo final local bajo aceptación vigente | PENDIENTE; daemon detenido al comprobarlo               |
-| Vídeo técnico previo verificable         | EXISTENTE; sin audio y no defensa oral                  |
-| Ensayo de doce minutos y grabación final | PENDIENTES                                              |
-| Aprobación académica                     | PENDIENTE tutor/centro; no inferida de tests            |
-
-La finalización académica local no descarga D101, autoriza una release operativa o abre TFG-B/C/D.
+TFG-A solo se declara COMPLETE cuando se cumplen DoD y revisión académica; A-S3 no permite saltar A-S4. AWS sigue bloqueado y R-23 OPEN. No se añaden funcionalidades para cerrar estos gates.

@@ -1,12 +1,14 @@
 # IMPERATOR
 
-## Post-merge verification - 2026-10-13
+## Estado verificado tras merge — 13/10/2026
 
-PR64 is merged into main `0797671e06baa2b20f8ce5a842ac04140d84e591`; its tree equals the tested a931601 candidate. Fresh main CI:10/10 checks PASS. The four retained local image IDs/origins/rootfs match the runtime evidence dated 09/10; CI-built images remain separately identified.
+Main `c69f682e190e887549a5a864ff688c6d53941fa7` integra #68 y tiene **10/10 checks CI correctos**. El árbol coincide con el candidato documental 10dd707 y no cambia las entradas del producto frente a main `0797671`. [Registro SHA/CI/artefactos](docs/tfg/evidence/2026-10-13-main-closure/README.md).
 
-Fresh full four-image scans:0 fixable High/Critical and0 secrets at all severities. Residuals now total25 unique CVEs/119 package rows, including two added GnuTLS CVEs. R-20's historical authorization expired 09/10; the23-CVE accepted:false proposal does not automatically cover this delta. R-23 remains OPEN independently; production npm audit 0 and full development audit 5 High. No upgrade or new functional runtime is claimed.
+Las cuatro imágenes locales conservadas mantienen identidad y capas del ensayo del 09/10. Escaneos completos del 13/10: **0 High/Critical corregibles y 0 secretos;25 CVE residuales/119 filas**. Los artefactos nuevos de CI son distintos y se identifican por separado.
 
-**A-S3 formal: PENDING applicable explicit risk decision and publication review; A-S4: PENDING; TFG-A: IN PROGRESS; AWS: BLOCKED.** The current record supersedes dated state claims below while preserving historical evidence and receipts. See [post-merge verification](docs/tfg/evidence/2026-10-13-postmerge-certification/README.md).
+**A-S3 formal: pendiente de decisión R-20 vigente; A-S4: preparación documental; TFG-A: IN PROGRESS; R-23: OPEN; AWS: BLOCKED.** La aceptación anterior caducó 09/10. La [propuesta actual](docs/tfg/evidence/2026-10-13-main-closure/R20_CURRENT_PROPOSAL.md) permanece`accepted: false` y propone 16/10/2026 00:00 Europe/Madrid, sin renovación ni transferencia automática.
+
+Siguiente trabajo: decisión R-20 → registrofinalA-S3 → [memoriaDAM](docs/tfg/11_DAM_MEMORY_DELIVERY.md), [ensayo 12 minutos](docs/tfg/09_DEFENSE_SCRIPT_12_MIN.md) y grabación narrada → revisión del tutor y DoD. No nuevos upgrades ni funcionalidades. Las secciones fechadas siguientes conservan contexto histórico; no representan aceptación vigente.
 
 ## Security CI correction candidate — 2026-10-08
 
@@ -46,7 +48,7 @@ See the [review record](docs/tfg/evidence/2026-10-07-a-s3-a-s4/README.md).
 
 ## Current Owner Decision And Sprint — 2026-10-06
 
-**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](docs/tfg/evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](docs/tfg/A_S3_EVIDENCE_VERSIONING.md).
+**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00: 00+02:00 Europe/Madrid = 2026-10-08T22:00: 00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](docs/tfg/evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](docs/tfg/A_S3_EVIDENCE_VERSIONING.md).
 
 ### DAM TFG MVP for operational decision traceability
 
@@ -101,7 +103,7 @@ bound to the accepted implementation SHA and execution evidence.
 
 **2026-10-06: R-17/R-19 CLOSED; authorized R-21/R-22 patches applied and verified. A-S2 technical and formal GO; A-S3 evidence/versioning ACTIVE. TFG-A IN PROGRESS.**
 
-Only source-map-js1.2.1→1.2.2, sharp0.35.4→0.35.5 and its mandatory native subtree, and checksum-pinned Bookworm PCRE2/Perl security patches were applied. Six files and28 lock entries; other dependencies, base digests, Java/Spring/Node/PostgreSQL versions, business logic and architecture are unchanged from the task-start local worktree. Braces3.0.3 is unchanged; PR #57–59 were not merged.
+Only source-map-js 1.2.1→1.2.2, sharp 0.35.4→0.35.5 and its mandatory native subtree, and checksum-pinned Bookworm PCRE2/Perl security patches were applied. Six files and 28 lock entries; other dependencies, base digests, Java/Spring/Node/PostgreSQL versions, business logic and architecture are unchanged from the task-start local worktree. Braces 3.0.3 is unchanged; PR #57–59 were not merged.
 
 | Current local control                                                      | Result                                                                   |
 | -------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
@@ -114,7 +116,7 @@ Only source-map-js1.2.1→1.2.2, sharp0.35.4→0.35.5 and its mandatory native s
 | Fixable High/Critical: backend / frontend / PostgreSQL                     | 0 / 0 / 0; A-S2 technical GO                                             |
 | Production npm audit                                                       | 0                                                                        |
 | Full npm audit                                                             | FAIL:5 High affected-package aggregates from one unfixed braces advisory |
-| Full Trivy images                                                          | Frontend48High/1Critical; PostgreSQL63High/3Critical; backend0           |
+| Full Trivy images                                                          | Frontend 48High/1Critical; PostgreSQL63High/3Critical; backend 0           |
 
 The [current review](docs/tfg/R21_R22_SECURITY_REVIEW.md), [dated evidence](docs/tfg/evidence/2026-10-06-r21-r22/README.md) and [gate](docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md) bind tests, raw scans, source/DB hashes, OCI manifests/config/layers, five captures,27.16-second captioned technical fallback and owned-resource cleanup. Baseline `b602bbe1dde92a902c17272d59cd9f0c10b9efe5` identifies a dirty local worktree, not an accepted release SHA or hosted-CI pass. Local loopback/synthetic fixture is not external IdP/AWS certification or a narrated twelve-minute defense.
 

@@ -1,20 +1,18 @@
 # IMPERATOR — Memoria del MVP local
 
-## Post-merge verification - 2026-10-13
+## Versión integrada y estado actual — 13/10/2026
 
-PR64 is merged into main `0797671e06baa2b20f8ce5a842ac04140d84e591`; its tree equals the tested a931601 candidate. Fresh main CI:10/10 checks PASS. The four retained local image IDs/origins/rootfs match the runtime evidence dated 09/10; CI-built images remain separately identified.
+Main `c69f682e190e887549a5a864ff688c6d53941fa7` integra #68 y tiene 10/10 checks correctos. [Registro fuente/CI/artefactos](evidence/2026-10-13-main-closure/README.md). Las cuatro imágenes locales coinciden con las usadas el 09/10; las nuevas de CI se identifican por separado.
 
-Fresh full four-image scans:0 fixable High/Critical and0 secrets at all severities. Residuals now total25 unique CVEs/119 package rows, including two added GnuTLS CVEs. R-20's historical authorization expired 09/10; the23-CVE accepted:false proposal does not automatically cover this delta. R-23 remains OPEN independently; production npm audit 0 and full development audit 5 High. No upgrade or new functional runtime is claimed.
+Escaneos completos del 13/10: 0 High/Critical corregibles, 0 secretos, 25 CVE residuales / 119 filas. Aceptación anterior caducada; propuesta actual pendiente. **A-S3 formal pendiente de R-20; A-S4 pendiente de memoria final, ensayo y narración; TFG-A IN PROGRESS; AWS bloqueado.**
 
-**A-S3 formal: PENDING applicable explicit risk decision and publication review; A-S4: PENDING; TFG-A: IN PROGRESS; AWS: BLOCKED.** The current record supersedes dated state claims below while preserving historical evidence and receipts. See [post-merge verification](evidence/2026-10-13-postmerge-certification/README.md).
-
-Estado: **borrador académico desarrollado el 07/10/2026**. Pendientes la plantilla del centro, los datos de portada, la revisión del tutor, el SHA aceptado y la defensa narrada. Las pruebas citadas se ejecutaron el 06/10/2026; esta memoria no presenta nuevas ejecuciones.
+Estado: **borrador académico actualizado el 13/10/2026**. Autor: Daniel Millan Perez, DAM. Pendientes ajuste final a plantilla, revisión del tutor y defensa narrada. Resultados funcionales citados: ensayo del 09/10; CI y escaneos actuales:13/10. Main `c69f682` integrado y CI 10/10 PASS. R-20 actual: 25 CVE no aceptado; no se presenta nueva ejecución funcional. Véase [entrega DAM](11_DAM_MEMORY_DELIVERY.md).
 
 ## Resumen
 
 IMPERATOR aborda la dificultad de reconstruir una decisión operativa: qué hechos la justificaron, qué política produjo la recomendación, quién la autorizó y qué valor se observó después. El resultado implementado es un monolito modular Java con interfaz Next.js, API REST y persistencia PostgreSQL. El caso `DRC-AOA-001` utiliza treinta evidencias sintéticas y una política determinista. La revisión humana y el registro de hechos ordenados conectan la recomendación con una proyección de valor económico.
 
-El MVP se ha validado localmente mediante pruebas unitarias, integración con PostgreSQL, pruebas de interfaz y un ensayo Docker con la API real. Se documentan autenticación, autorización por rol y actor, migraciones, persistencia y recuperación. La generación de explicaciones está implementada y probada sin una llamada real a Bedrock. AWS constituye una arquitectura objetivo, sin despliegue ni coste real medido. La seguridad incluye una aceptación temporal, local y sintética de 23 CVE residuales sobre imágenes concretas, y una disposición independiente que mantiene abierto el riesgo de `braces` en desarrollo.
+El MVP se ha validado localmente mediante pruebas unitarias, integración con PostgreSQL, pruebas de interfaz y un ensayo Docker con la API real. Se documentan autenticación, autorización por rol y actor, migraciones, persistencia y recuperación. La generación de explicaciones está implementada y probada sin una llamada real a Bedrock. AWS constituye una arquitectura objetivo, sin despliegue ni coste real medido. La evaluación actual conserva 25 CVE residuales/119 filas, con 0 High/Critical corregibles y 0 secretos. La aceptación anterior de 23 CVE caducó; la decisión actual está pendiente para los digests locales exactos. El riesgo de `braces` en desarrollo permanece abierto de forma independiente.
 
 Palabras clave: trazabilidad, gobernanza de decisiones, arquitectura hexagonal, PostgreSQL, RBAC, DevSecOps, IA responsable.
 
@@ -84,7 +82,7 @@ V3 incorpora `recommendation_explanations`, `recommendation_explanation_evidence
 
 La pila conservada es Java 21, Spring Boot, Next.js, PostgreSQL 18.6, Flyway y Docker. Los números completos de dependencias y bases se toman de los archivos versionados y manifests, evitando presentar una versión publicada posteriormente como la ejecutada.
 
-El ensayo importa treinta evidencias sintéticas: veintiocho previas a la decisión y dos posteriores a la acción. Compone `DRC-AOA-001` con el conjunto previo; los dos registros posteriores sustentan implementación y validación. La política produce una recomendación `MODEL_CHANGE`. Su resultado estimado es 19.440,00 EUR; después de aprobación, implementación y validación del resultado, la proyección realizada sintética es 18.960,00 EUR, con una variación de −480,00 EUR. Las cifras son valores del caso de evaluación; no constituyen ahorros reales de una empresa ni métricas de rentabilidad observadas en producción.
+El ensayo importa treinta evidencias sintéticas: veintiocho previas a la decisión y dos posteriores a la acción. Compone `DRC-AOA-001` con el conjunto previo; los dos registros posteriores sustentan implementación y validación. La política produce una recomendación `MODEL_CHANGE`. Su resultado estimado es 19.440, 00 EUR; después de aprobación, implementación y validación del resultado, la proyección realizada sintética es 18.960, 00 EUR, con una variación de −480, 00 EUR. Las cifras son valores del caso de evaluación; no constituyen ahorros reales de una empresa ni métricas de rentabilidad observadas en producción.
 
 La aprobación se realiza en la interfaz. La implementación y la validación financiera del ensayo utilizan comandos autenticados de la API para enlazar evidencias posteriores, y luego se leen desde la UI sin interceptar las respuestas. La evidencia actual no demuestra la selección de esos registros previamente no vinculados mediante el selector de la interfaz. Esta limitación se conserva y no se amplía la UI para ocultarla.
 
@@ -94,13 +92,13 @@ JWT y RBAC aplican controles de autenticación, permisos de ruta y autoridad del
 
 Las imágenes inspeccionadas conservan sus identidades OCI y medidas de endurecimiento: identidades de servicio, filesystem de solo lectura donde está configurado, permisos reducidos y `no-new-privileges`. PostgreSQL requiere un volumen y capacidades concretas para operar. No se presenta el conjunto como un sistema sin superficie de ataque o sin vulnerabilidades.
 
-R-17, R-19, R-21 y R-22 documentan correcciones acotadas. El resultado de los escaneos sobre las imágenes aprobadas es cero High/Critical corregibles y cero secretos. El informe completo conserva 115 filas paquete/CVE correspondientes a 23 CVE distintas en frontend y PostgreSQL; estos residuos no se esconden por el filtro del gate.
+R-17, R-19, R-21 y R-22 documentan correcciones acotadas y el parche Go 1.26.9 se integró en #64. Los escaneos completos del 13/10 conservan 119 filas/25 CVE en frontend y PostgreSQL, con 0 H/C corregibles y 0 secretos en las cuatro imágenes. Frente al 09/10 hay dosCVE nuevos de GnuTLS; no se ocultan por el filtro del gate.
 
-R-20 acepta condicionalmente esos 23 CVE para los digests aprobados, únicamente en entorno local con datos sintéticos. No los declara inexplotables. La aceptación termina el **09/10/2026 a las 00:00 Europe/Madrid**, equivalente a **08/10/2026 22:00 UTC**, y no se renueva ni transfiere automáticamente. También puede invalidarse antes por cambios o un fix disponible, conforme al registro aprobado.
+La aceptación R-20 anterior caducó 09/10/2026 00:00 Europe/Madrid. La [propuesta actual](evidence/2026-10-13-main-closure/R20_CURRENT_PROPOSAL.md) mantiene `accepted: false` para los 25 CVE, ámbito local/sintético, cuatro índices y fecha propuesta 16/10. No declara inexplotabilidad ni transfiere aceptación a imágenes nuevas de CI. La revisión reutiliza probes históricos identificados por fecha; la alcanzabilidad de las dos rutas GnuTLS no está demostrada ni descartada.
 
-R-23 mantiene `braces` como **OPEN / NO FIX AVAILABLE**, separado de R-20. El paquete aparece en tooling de desarrollo y no como paquete en la imagen de producción inspeccionada. La ausencia del paquete no es una prueba universal de ausencia de cualquier código equivalente. El advisory inspeccionado no publicaba un fix; eso es una observación fechada, no una garantía futura. Las condiciones propuestas para trabajo con repositorios/configuración no confiables no se describen como controles automatizados ya implementados.
+R-23 mantiene `braces` como **OPEN / NO FIX AVAILABLE**, separado de R-20. Está en el tooling de desarrollo y no se identificó como paquete en la imagen de producción inspeccionada; esa ausencia no prueba que no exista cualquier código equivalente. El advisory inspeccionado no publica una versión corregida, observación fechada y no garantía futura. Las recomendaciones para trabajar con entradas/configuración confiables no son controles automatizados ya demostrados. npm audit producción: 0; audit completo de tooling: 5 High registrados. No se persigue una actualización especulativa ni se abre una cadena de upgrades.
 
-Fuentes de estas decisiones: [aceptación exacta R-20](evidence/2026-10-06-a-s2-acceptance/r20-current-acceptance.json), [disposición R-23](evidence/2026-10-06-a-s2-acceptance/r23-approved-open-disposition.json) y [revisión individual](R20_APPLICABILITY_REVIEW.md).
+Fuentes: [escaneos completos](evidence/2026-10-13-postmerge-certification/security-summary.json), [matriz por CVE](evidence/2026-10-13-main-closure/current-cve-review.json), [propuesta R-20](evidence/2026-10-13-main-closure/R20_CURRENT_PROPOSAL.json), [historia de aceptación](evidence/2026-10-06-a-s2-acceptance/r20-current-acceptance.json) y [R-23](evidence/2026-10-06-a-s2-acceptance/r23-approved-open-disposition.json). Ningún registro histórico se modifica.
 
 ## 7. IA responsable y arquitectura AWS
 
@@ -112,25 +110,25 @@ No se ha medido un coste AWS, efectuado un plan/apply ni validado rollback o tea
 
 ## 8. Evaluación y reproducibilidad
 
-| Control del 06/10/2026      | Resultado                                                                         | Límite de interpretación                                                  |
+| Control del ensayo del 09/10/2026      | Resultado                                                                         | Límite de interpretación                                                  |
 | --------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| Backend                     | 174 unitarios y 35 integración PostgreSQL PASS                                    | Ejecución local; no CI nueva asociada al candidato                        |
+| Backend                     | 174 unitarios y 35 integración PostgreSQL PASS                                    | Resultados locales del 09/10; CI main 13/10 registrada por separado                        |
 | Frontend                    | 41 tests; formato, lint, tipos y build PASS                                       | No equivale a navegación de toda la aplicación real                       |
 | Playwright con fixtures     | 9 PASS y 6 skips intencionales                                                    | Los skips se muestran; no se cuentan como PASS ni demuestran backend real |
 | Ensayo real Docker/API/UI   | Flujo y RBAC PASS; cinco capturas                                                 | Datos sintéticos; comandos API y lecturas UI identificados                |
 | Persistencia y recuperación | Tres contenedores reemplazados; datos conservados; readiness/recovery comprobados | No prueba recuperación AWS o de desastre físico                           |
 | Seguridad de producción     | Fixable H/C = 0; secretos = 0                                                     | Residuos visibles bajo decisión temporal específica                       |
-| Grabación técnica           | WebM 27,16 segundos, sin audio                                                    | Respaldo técnico; ensayo oral de doce minutos pendiente                   |
+| Grabación técnica           | WebM24,88 segundos, sin audio                                                    | Respaldo técnico; ensayo oral de doce minutos pendiente                   |
 
-Los datos brutos se conservan en el [pack R-21/R-22](evidence/2026-10-06-r21-r22/README.md). El archivo de fuente exacta y el bundle Git permiten distinguir bytes originales de normalización de finales de línea. Los manifests enlazan imagen índice, plataforma amd64, configuración y capas; una etiqueta mutable no basta como identidad.
+Los datos brutos se conservan en el [pack R-21/R-22](evidence/2026-10-06-r21-r22/README.md). El archivo de fuente exacta y el bundle Git permiten distinguir bytes originales de normalización de finales de línea. Los manifests enlazan imagen índice, plataforma amd 64, configuración y capas; una etiqueta mutable no basta como identidad.
 
-La revisión de documentación del 07/10/2026 no vuelve a ejecutar todas las pruebas. Un ensayo posterior debe comprobar caducidad, digests y precondiciones. Si Docker o la certificación de versión no están disponibles, se usa el material grabado identificándolo como reproducción de evidencia histórica; no se registra un runtime PASS nuevo.
+La revisión 13/10 verifica main / CI, inventario y escaneos, sin repetir la regresión funcional 09/10. Un ensayo posterior debe comprobar caducidad, digests y precondiciones. Si Docker o la certificación de versión no están disponibles, se usa el material grabado identificándolo como reproducción de evidencia histórica; no se registra un runtime PASS nuevo.
 
 ## 9. Resultados, límites y conclusiones
 
 El resultado local demuestra que un conjunto de hechos puede originar una recomendación reproducible, mantenerse bajo autoridad humana y producir una proyección económica rastreable. La separación del dominio, la persistencia y la verificación de permisos ofrecen argumentos técnicos concretos para defender el diseño.
 
-Permanecen pendientes la aceptación de un SHA de entrega, la asociación efectiva de CI a ese SHA, la defensa narrada y la revisión académica. La aceptación de vulnerabilidades tiene fecha y alcance; la clasificación de aplicabilidad no prueba inexplotabilidad. La identidad externa, Bedrock real, costes y operación AWS no se han ejecutado. Estas limitaciones delimitan lo demostrado y evitan convertir preparación en certificación.
+Main `c69f682` y su CI 10/10 están verificados. Permanecen pendientes la decisión vigente R-20, el registro formal de versión de entrega, la defensa narrada y la revisión académica. La aceptación de vulnerabilidades tiene fecha y alcance; la clasificación de aplicabilidad no prueba inexplotabilidad. La identidad externa, Bedrock real, costes y operación AWS no se han ejecutado. Estas limitaciones delimitan lo demostrado y evitan convertir preparación en certificación.
 
 La siguiente mejora necesaria es completar la entrega y su defensa, sin nuevos upgrades ni funcionalidades. La evolución cloud se condiciona a los requisitos del tutor y a los gates de TFG-B/C/D. El MVP académico local y una release operativa del producto tienen criterios distintos.
 
@@ -140,4 +138,4 @@ La siguiente mejora necesaria es completar la entrega y su defensa, sin nuevos u
 - [Trazabilidad](03_TRACEABILITY_MATRIX.md), [registro de evidencias](04_EVIDENCE_REGISTER.md) y [arquitectura](05_ARCHITECTURE.md).
 - [Gate de seguridad](TFG_A_SECURITY_CLOSURE_GATE.md), revisión R-20 y disposiciones aprobadas citadas.
 - [Guion de defensa](09_DEFENSE_SCRIPT_12_MIN.md), [procedimiento A-S4](A_S4_LOCAL_DEFENSE.md) y [gate de entrega](10_LOCAL_MVP_RELEASE_GATE.md).
-- Normativa, plantilla institucional y bibliografía externa exigida por el centro: **pendientes de aportar y revisar; no inventadas**.
+- Criterios de entrega DAM aportados por el usuario: [mapa institucional](11_DAM_MEMORY_DELIVERY.md). Marco legal, citas externas y maquetación final: **pendientes de revisión; no inventados**.

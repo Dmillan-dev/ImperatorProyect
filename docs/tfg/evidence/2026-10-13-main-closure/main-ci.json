@@ -1,0 +1,78 @@
+{
+  "date": "2026-10-13",
+  "sha": "c69f682e190e887549a5a864ff688c6d53941fa7",
+  "pr": 68,
+  "merged": true,
+  "mergedAt": "2026-10-13T12:01:12Z",
+  "checks": [
+    {
+      "name": "submit-maven",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38394265998/job/115285380364"
+    },
+    {
+      "name": "Analyze (python)",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38394266272/job/115285380011"
+    },
+    {
+      "name": "Analyze (javascript-typescript)",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38394266272/job/115285379951"
+    },
+    {
+      "name": "Analyze (java-kotlin)",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38394266272/job/115285379935"
+    },
+    {
+      "name": "Analyze (actions)",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38394266272/job/115285379615"
+    },
+    {
+      "name": "PostgreSQL D094 supply-chain gate",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38394266089/job/115285373772"
+    },
+    {
+      "name": "Application image scan",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38394266089/job/115285373658"
+    },
+    {
+      "name": "Full Git history secret scan",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38394266089/job/115285373636"
+    },
+    {
+      "name": "Java 21 Maven verification",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38394266063/job/115285373488"
+    },
+    {
+      "name": "Source, dependency and configuration scan",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38394266089/job/115285373372"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 11810908629,
+      "name": "d094-postgresql-supply-chain-c69f682e190e887549a5a864ff688c6d53941fa7",
+      "digest": "sha256:96488bc69514f7eb267328bf409c73aedfb03261f663d842602b3187a865cfe9",
+      "expired": false,
+      "archive_download_url": "https://api.github.com/repos/Dmillan-dev/ImperatorProyect/actions/artifacts/11810908629/zip"
+    }
+  ]
+}

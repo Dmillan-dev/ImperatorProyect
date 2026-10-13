@@ -1,6 +1,6 @@
 # Defensa local — Guion de doce minutos
 
-**Preparado el 07/10/2026; no ensayado ni grabado como defensa oral.** Los bloques suman 720 segundos. El tiempo combina narración, navegación y lectura; debe medirse con una persona y un cronómetro. El texto no garantiza la duración por su longitud.
+**Actualizado el 13/10/2026; no ensayado ni grabado como defensa oral.** Main c69f682 tiene 10/10CI PASS. R-20 actual: 25 CVE sigue pendiente: no hay ejecución final autorizada por esta preparación. Las capturas y el ensayo técnico citados proceden del 09/10. Los bloques suman 720 segundos. El tiempo combina narración, navegación y lectura; debe medirse con una persona y un cronómetro. El texto no garantiza la duración por su longitud.
 
 ## Agenda cronometrada
 
@@ -41,7 +41,7 @@ Mostrar los dos diagramas de la memoria. Indicar que el modelo conceptual no sus
 
 La recomendación conserva sus referencias de evidencia y supuestos. Podemos inspeccionar la relación entre hechos, decisión y resultado sin depender de una explicación de IA.»
 
-Reservar tiempo para enseñar la importación/composición desde el informe real y abrir la captura 01 o la pantalla correspondiente. Si se usa evidencia grabada, decir expresamente «este es el ensayo ejecutado el 6 de octubre». No afirmar una importación nueva si solo se está leyendo un caso existente. No mostrar tokens, comandos que los contienen o pestañas personales.
+Reservar tiempo para enseñar la importación/composición desde el informe real y abrir la captura 01 o la pantalla correspondiente. Si se usa evidencia grabada, decir expresamente «este es el ensayo ejecutado el 9 de octubre». No afirmar una importación nueva si solo se está leyendo un caso existente. No mostrar tokens, comandos que los contienen o pestañas personales.
 
 ### 04:00–05:30 · Autoridad y aprobación
 
@@ -77,13 +77,13 @@ Mostrar resúmenes e informes fechados. No usar un badge como prueba de CI del S
 
 ### 09:00–10:15 · Seguridad y decisión temporal
 
-«Los parches autorizados dejan cero High/Critical corregibles en producción y cero secretos en los escaneos registrados. El informe completo conserva 23 CVE residuales, con 115 filas por paquete e imagen. No afirmo que sean inexplotables.
+«Los escaneos completos del 13 de octubre sobre las cuatro imágenes locales conservadas muestran cero High/Critical corregibles y cero secretos. Quedan 25 CVE residuales y 119 filas por paquete-imagen; no afirmo que sean inexplotables. Dos observaciones de GnuTLS son nuevas frente al ensayo del 09/10 y su alcance ejecutable desde el producto no está demostrado.
 
-R-20 registra una aceptación condicionada a estos digests, al entorno local y a datos sintéticos. Caduca el 9 de octubre de 2026 a las cero horas, Europe/Madrid, y no se renueva ni transfiere automáticamente. R-23 permanece abierto: braces está en el tooling de desarrollo y no aparece como paquete en la imagen de producción inspeccionada. La disposición de ese riesgo es independiente.
+La aceptación anterior R-20 caducó el 9 de octubre. La propuesta actual sigue pendiente de aprobación, limitada al entorno local, datos sintéticos y digests exactos; 16 de octubre a las cero horas Europe/Madrid es una fecha propuesta, no autorizada. R-23 permanece abierto e independiente en el tooling de desarrollo.
 
-Los hashes enlazan fuente, informes y capturas. El SHA del código y los digests de las imágenes son identidades distintas; una nueva compilación no hereda esta aceptación.»
+Main `c69f682` tiene diez checks correctos. Las imágenes construidas por CI tienen sus propios digests y no heredan la aprobación local ni el ensayo anterior. La fuente, el artefacto y la autorización son registros distintos.»
 
-Mostrar la decisión explícita y sus límites. Antes de cualquier ejecución comprobar que aún está vigente; después de caducar no presentar el runtime como actualmente autorizado.
+Mostrar la [propuesta y su estado real](evidence/2026-10-13-main-closure/R20_CURRENT_PROPOSAL.md). Si más adelante se aprueba, usar únicamente el registro explícito vigente y adaptar esta narración al estado demostrado; no decir que ya está aceptada. Hasta entonces utilizar solo evidencia histórica y no iniciar el runtime.
 
 ### 10:15–11:15 · IA, AWS y límites
 
@@ -107,7 +107,7 @@ Cerrar mostrando la matriz de requisitos y el estado real de la entrega, sin dec
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | ¿Por qué un monolito?     | Un caso y transacciones relacionadas; reduce coordinación y despliegues. No se necesita separar servicios para demostrar los requisitos.   |
 | ¿Qué aporta IA?           | Explicación opcional de un resultado ya calculado, con validación y fallo aislado. El resultado determinista permanece útil sin proveedor. |
-| ¿Es segura la aplicación? | Tiene controles y evaluación explícita; quedan CVE aceptadas temporalmente. No afirmo seguridad absoluta.                                  |
+| ¿Es segura la aplicación? | Tiene controles y evaluación; los 25 CVE residuales actuales esperan aceptación explícita. No afirmo seguridad absoluta.                                  |
 | ¿Por qué no cero CVE?     | Se remedió lo corregible autorizado y se evaluó el residuo; no se eliminaron paquetes ni cambiaron bases para manipular el contador.       |
 | ¿El Ledger es inmutable?  | Append-only bajo la identidad y contrato de aplicación verificados; no ofrece una garantía criptográfica frente al propietario de la base. |
 | ¿Se ha desplegado AWS?    | No. Es arquitectura e infraestructura probada offline, con gates pendientes.                                                               |
@@ -118,5 +118,5 @@ Cerrar mostrando la matriz de requisitos y el estado real de la entrega, sin dec
 
 - Duración real, desviación por bloque y correcciones: **PENDIENTES**.
 - Grabación final con narración y revisión visual: **PENDIENTE**.
-- SHA aceptado, digests comprobados y modo de demo usado: **PENDIENTES de cierre A-S3 y preflight**.
+- SHA main `c69f682` y CI 10/10: **VERIFICADOS**; aceptación de riesgo para entrega/digests y modo final de demo: **PENDIENTES A-S3 y preflight**.
 - Evaluación por tutor/centro: **PENDIENTE**.

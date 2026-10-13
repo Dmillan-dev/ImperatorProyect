@@ -1,5 +1,9 @@
 # TFG-A Security Closure Gate — Explicit Owner Decision 2026-10-06
 
+## Estado actual tras #68 — 13/10/2026
+
+Main `c69f682` integrado y CI 10/10 PASS. Cuatro imágenes locales identificadas contra el runtime del 09/10. Escaneos completos del 13/10: 0 H/C corregibles, 0 secretos y 25 CVE residuales / 119 filas. La aceptación R-20 anterior caducó; [propuesta actual](evidence/2026-10-13-main-closure/R20_CURRENT_PROPOSAL.md) pendiente, `accepted: false`. R-23 OPEN independiente. A-S3 formal pendiente de decisión; A-S4 ensayo/narración/tutor pendientes; TFG-A IN PROGRESS y AWS bloqueado. [Registro verificable](evidence/2026-10-13-main-closure/README.md). Las secciones fechadas anteriores se conservan como historia, sin aceptación vigente por inferencia.
+
 ## Post-merge verification - 2026-10-13
 
 PR64 is merged into main `0797671e06baa2b20f8ce5a842ac04140d84e591`; its tree equals the tested a931601 candidate. Fresh main CI:10/10 checks PASS. The four retained local image IDs/origins/rootfs match the runtime evidence dated 09/10; CI-built images remain separately identified.

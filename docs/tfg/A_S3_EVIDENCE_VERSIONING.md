@@ -1,54 +1,36 @@
-# A-S3 — Local Evidence And Versioning
+# A-S3 — Evidencia y versión tras merge
 
-## Post-merge verification - 2026-10-13
+Revisión: **13/10/2026**. Main integrado: `c69f682e190e887549a5a864ff688c6d53941fa7`, PR68 fusionada y 10/10 checks success. [Registro verificable](evidence/2026-10-13-main-closure/README.md). **A-S3 formal: PENDING R-20; TFG-A: IN PROGRESS.**
 
-PR64 is merged into main `0797671e06baa2b20f8ce5a842ac04140d84e591`; its tree equals the tested a931601 candidate. Fresh main CI:10/10 checks PASS. The four retained local image IDs/origins/rootfs match the runtime evidence dated 09/10; CI-built images remain separately identified.
+## Fuente, construcción y runtime
 
-Fresh full four-image scans:0 fixable High/Critical and0 secrets at all severities. Residuals now total25 unique CVEs/119 package rows, including two added GnuTLS CVEs. R-20's historical authorization expired 09/10; the23-CVE accepted:false proposal does not automatically cover this delta. R-23 remains OPEN independently; production npm audit 0 and full development audit 5 High. No upgrade or new functional runtime is claimed.
+El árbol integrado coincide con el candidato documental 10dd707. Frente a main `0797671` no cambia ninguna entrada del producto. Los cuatro artefactos locales conservados mantienen IDs, origen y capas del ensayo del 09/10; PostgreSQL procede de a931601 y backend/frontend/migración de 6e79e83. No se cambia su origen a c69f682 por un merge documental.
 
-**A-S3 formal: PENDING applicable explicit risk decision and publication review; A-S4: PENDING; TFG-A: IN PROGRESS; AWS: BLOCKED.** The current record supersedes dated state claims below while preserving historical evidence and receipts. See [post-merge verification](evidence/2026-10-13-postmerge-certification/README.md).
+Los nuevos artefactos PostgreSQL de CI están identificados por separado: reconstrucción reproducible dentro de ese SHA, pero manifiesto runtime distinto al local. Entradas y SBOM coincidentes no demuestran igualdad de imágenes. La defensa prevista usa los artefactos locales históricamente validados, condicionados a una decisión vigente; no pretende ejecutar imágenes nuevas de CI sin review.
 
-**AUTHORIZED / ACTIVE. A-S2 formal GO is registered; TFG-A IN PROGRESS. No implementation or dependency update. A-S4 later; AWS blocked.**
+## Checklist actual
 
-## Version And Approval Boundaries
+| Control | Resultado |
+| --- | --- |
+| #64 y #68 integradas en main | DONE |
+| CI efectiva del SHA c69f682 | 10/10 PASS |
+| Fuente y entradas versionadas | VERIFICADAS; sin cambios funcionales en #68 |
+| Cuatro imágenes locales ↔ runtime 09/10 | IDs/origen/rootfs coincidentes |
+| Escaneos completos del 13/10 sobre esas mismas imágenes | 0 H/C corregibles; 0 secretos;25 CVE residuales/119 filas |
+| Decisión vigente R-20 para esos 25 CVE y digests | PENDIENTE; `accepted: false` |
+| R-23 | OPEN independiente; no inventar una actualización |
+| Evidencias originales/receipts | PRESERVADOS; nuevos registros separados |
+| Cierre formal A-S3 | PENDIENTE decisión y registro de versión revisada |
+| A-S4 | Guion/memoria preparados; ejecución/narración/tutor pendientes |
 
-The approved runtime content fingerprint is `cbc6535ee56bfa991fb96551a90cda7dc35afd2204056f561900614ab0a5d0b7`, on source baseline `b602bbe1dde92a902c17272d59cd9f0c10b9efe5` plus the indexed local changes. Exact OCI index/platform/config/layer bindings are in [R20 acceptance](evidence/2026-10-06-a-s2-acceptance/r20-current-acceptance.json). Do not use mutable tags or a source commit as proof of a newly rebuilt image.
+El merge del propietario confirma integración documental, no renovación del riesgo. La [propuesta actual](evidence/2026-10-13-main-closure/R20_CURRENT_PROPOSAL.md) fija caducidad propuesta 16/10/2026 00:00 Europe/Madrid, todavía no autorizada. La aceptación anterior expiró 09/10; la propuesta de 23 CVE no se transfiere a 25.
 
-The prior local review candidate `8380e8d6e70ca4c858604ce4fcc0e0198fa162e1` freezes existing source and evidence in an isolated checkout.
-The 2026-10-07 documentation review prepares a descendant candidate and a separate receipt; neither is owner-accepted automatically. Its candidate commit records source identity; it does not become an owner-accepted release SHA, a new image acceptance or a hosted CI pass automatically. The original worktree/index/branch stays unchanged apart from authorized documentation. Candidate images must not be rebuilt/deployed by inference; rebuilt digests invalidate current binding until reviewed.
+## Qué permite cerrar A-S3
 
-## A-S3 Checklist
+Registrar una decisión explícita válida para los 25 residuos, los cuatro índices/manifiestos, scope local/sintético y caducidad. Verificar que continúan 0 H/C corregibles y 0 secretos, preservar los informes completos y R-23 abierto, y revisar el paquete de entrega con el SHA integrado y origen de cada artefacto. Si cambia el residuo, un digest o una condición, parar y decidir; no abrir otra cadena de upgrades.
 
-| Work                                                          | State / evidence                                                                               |
-| ------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| Register exact R20 approval and separate OPEN R23 disposition | DONE — immutable approval pack                                                                 |
-| Preserve old approval/proposals/38 reviewed versions          | DONE — hash-bound snapshots; no historical overwrite                                           |
-| Freeze current image identity and runtime inputs              | DONE — same 3 indices/platforms/configs/rootfs and 383 source inputs                           |
-| Synchronize README, risks, DoD, evidence and traceability     | DONE in current documentation; scoped diff indexed                                             |
-| Audit project/image cleanup                                   | DONE — duplicate caches removed with identical-DB proof; image identities classified/preserved |
-| Prepare isolated source version and PR description            | Prior candidate8380e8d prepared; documentation descendant receipt records actual result        |
-| Associate required CI                                         | Workflow sources and expected checks identified; new hosted execution PENDING                  |
-| Accepted release SHA / publish / merge                        | PENDING review and actual integration; not supplied by baseline or runtime fingerprint         |
-| Final narrated local defense                                  | A-S4 later; existing silent technical fallback is not that defense                             |
+La futura aprobación se añadirá como registro nuevo: no sobrescribir aceptación caducada, b02e3e2 ni receipts. El cierre técnico/documental A-S3 no sustituye el [gate A-S4](A_S4_LOCAL_DEFENSE.md) ni la aprobación académica. D101/IdP externo, AWS, Bedrock real y release operativa quedan pendientes.
 
-## Claims For The Local MVP
+## Historia preservada
 
-Implemented and locally validated: Evidence → Decision → deterministic Recommendation → Human Review → append-only Ledger → Result Validation → Business Value; four roles; DRC-AOA-001; PostgreSQL/Flyway V3; Docker; RBAC; persistence/recovery. Regression174/35/41 and Playwright9/6 intentional skips are prior exact-image evidence, not rerun in A-S3.
-
-Temporarily accepted: exact 23-CVE OS residual only, local synthetic until exclusive2026-10-09T00:00:00+02:00, no renewal/transfer. Independently documented open risk: braces development tooling with approved disposition. Full audit/image findings remain visible. No global safety or absolute-zero statement.
-
-Implemented/tested offline, live execution unproved: AI explanation provider. Not validated here: live Bedrock, external IdP/D101, AWS deployment/cost/rollback/teardown, new hosted CI and institutional academic acceptance. Tutor requirements may make AWS mandatory; no such decision is inferred.
-
-## CI And PR Preparation
-
-See the [local PR draft](evidence/2026-10-06-a-s3/PR_DRAFT.md) and [CI association](evidence/2026-10-06-a-s3/ci-association.json). Java verification, source security, application-image scan and PostgreSQL D094 must be evaluated against the eventual submitted SHA; historical badges/screenshots and local PASS do not prove those hosted checks passed. Full residual report remains separate from the enforced zero-fixable gate. CI rebuilt images are not automatically covered by current R20 approval.
-
-No remote push, PR publication, merge, branch-rule waiver or PR57–59 update is part of this local preparation. The expiry/early-invalidation check is mandatory before any later defense rehearsal. A-S3 remains active until source/review/CI requirements are resolved; A-S4 and TFG-A completion are not automatically executed.
-
-## 2026-10-07 Review / Defense Preparation
-
-The [dated review](evidence/2026-10-07-a-s3-a-s4/README.md) records documentation contradictions before synchronization,
-source/diff review, exact binding and the local documentation-candidate receipt.
-A-S4 [materials](A_S4_LOCAL_DEFENSE.md) can be prepared independently while A-S3 acceptance/integration/CI is pending.
-The final runtime/defense remains pending; Docker daemon is currently stopped.
-No original/historical approval, image, source dependency or required gate is changed.
+[Aceptación 06/10](evidence/2026-10-06-a-s2-acceptance/README.md), [review 07/10](evidence/2026-10-07-a-s3-a-s4/README.md), [ensayo del 09/10](evidence/2026-10-09-gosu-security-closure/TECHNICAL_VALIDATION.md) y [escaneos 13/10](evidence/2026-10-13-postmerge-certification/README.md) mantienen sus fechas y bytes. Las instrucciones activas actuales sustituyen sus procedimientos antiguos, no sus evidencias.
