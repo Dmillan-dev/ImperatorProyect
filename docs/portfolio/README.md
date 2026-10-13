@@ -15,6 +15,7 @@ architecture and product contracts.
 
 ## Contains
 
+- [Featured Project](featured-project.md): current, reusable GitHub profile introduction;
 - [Technical Evidence](technical-evidence.md): implementation inventory,
   diagrams, security controls, DevSecOps state and known gaps;
 - [Recruiter Summary](recruiter-summary.md): concise pitches, CV bullets and

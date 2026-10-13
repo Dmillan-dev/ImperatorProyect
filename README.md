@@ -1,293 +1,108 @@
 # IMPERATOR
 
-## Post-merge verification - 2026-10-13
+### Operational decisions, backed by evidence.
 
-PR64 is merged into main `0797671e06baa2b20f8ce5a842ac04140d84e591`; its tree equals the tested a931601 candidate. Fresh main CI:10/10 checks PASS. The four retained local image IDs/origins/rootfs match the runtime evidence dated 09/10; CI-built images remain separately identified.
+**IMPERATOR connects operational evidence to a recommendation, a human decision and a validated outcome.** It helps engineering, finance and audit teams answer: **Why was this change proposed? Who approved it? Did it deliver the expected value?**
 
-Fresh full four-image scans:0 fixable High/Critical and0 secrets at all severities. Residuals now total25 unique CVEs/119 package rows, including two added GnuTLS CVEs. R-20's historical authorization expired 09/10; the23-CVE accepted:false proposal does not automatically cover this delta. R-23 remains OPEN independently; production npm audit 0 and full development audit 5 High. No upgrade or new functional runtime is claimed.
-
-**A-S3 formal: PENDING applicable explicit risk decision and publication review; A-S4: PENDING; TFG-A: IN PROGRESS; AWS: BLOCKED.** The current record supersedes dated state claims below while preserving historical evidence and receipts. See [post-merge verification](docs/tfg/evidence/2026-10-13-postmerge-certification/README.md).
-
-## Security CI correction candidate — 2026-10-08
-
-PR #60/#61 published documentation while the tested security patches remained local.
-The replacement candidate integrates those patches, Next 16.3.8 and the narrowly
-scoped migration-image remediation. Local Compose now uses that same patched
-migration image instead of its separate Flyway 13.0 image. Java, Spring, Node,
-PostgreSQL and the pinned backend/frontend/PostgreSQL bases are unchanged.
-
-Local regression: 174 unit + 35 integration + 41 frontend tests PASS;
-Playwright 9 PASS / 6 intentional skips; lint, types, format and build PASS.
-Production npm audit: 0. Full audit retains the five R-23 development-tooling
-entries. Backend/frontend/migration image scans: 0 fixable High/Critical and
-0 secrets. Exact-commit PostgreSQL certification, runtime and hosted CI are
-recorded separately in the correction review, never inferred from historical evidence.
-
-**This is a review candidate, not a release or renewed R-20 acceptance.**
-R-20 remains bound to its previously approved digests and expires exclusively
-2026-10-09 00:00 Europe/Madrid (2026-10-08 22:00 UTC), without automatic renewal.
-New image digests require their own applicability decision. R-23 remains OPEN /
-NO FIX AVAILABLE. A-S3 closure and A-S4 defense are pending; AWS remains blocked.
-
-See [correction scope, unpublished-item inventory and gates](docs/tfg/CI_SECURITY_CORRECTION_2026_10_08.md).
-The dated sections below describe their original evidence; their former upgrade
-restrictions and Docker availability statements are historical, not current certification.
-
-## A-S3 / A-S4 Preparation — 2026-10-07
-
-A-S3 local source/diff review and PR preparation continue; accepted release SHA and hosted CI remain pending.
-A-S4 now has a [developed memory draft](docs/tfg/08_LOCAL_MVP_MEMORY.md),
-[twelve-minute script](docs/tfg/09_DEFENSE_SCRIPT_12_MIN.md) and
-[local rehearsal procedure](docs/tfg/A_S4_LOCAL_DEFENSE.md). These are prepared materials, not an executed oral defense.
-The [release/academic gate](docs/tfg/10_LOCAL_MVP_RELEASE_GATE.md) separates TFG-A document closure, defense and product release.
-Current Docker is unavailable because the daemon is stopped; prior exact-image evidence remains dated.
-No implementation/dependency/image change, expiry extension, accepted SHA, hosted PASS or COMPLETE is inferred.
-See the [review record](docs/tfg/evidence/2026-10-07-a-s3-a-s4/README.md).
-
-## Current Owner Decision And Sprint — 2026-10-06
-
-**A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00:00+02:00 Europe/Madrid = 2026-10-08T22:00:00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](docs/tfg/evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](docs/tfg/A_S3_EVIDENCE_VERSIONING.md).
-
-### DAM TFG MVP for operational decision traceability
-
-> Transform operational evidence into explainable, measurable and auditable
-> business decisions.
-
-**Java 21 Â· Spring Boot 4.1 Â· Next.js 16 Â· PostgreSQL 18 Â· JWT/RBAC Â· Docker Â· AWS preparation Â· DevSecOps**
+Built as a **local academic MVP** with Java 21, Spring Boot, Next.js and PostgreSQL. One synthetic case demonstrates the complete decision lifecycle; cloud deployment is a later, gated phase.
 
 [![Java CI](https://github.com/Dmillan-dev/ImperatorProyect/actions/workflows/java-ci.yml/badge.svg)](https://github.com/Dmillan-dev/ImperatorProyect/actions/workflows/java-ci.yml)
 [![Security](https://github.com/Dmillan-dev/ImperatorProyect/actions/workflows/security.yml/badge.svg)](https://github.com/Dmillan-dev/ImperatorProyect/actions/workflows/security.yml)
-![Lifecycle](https://img.shields.io/badge/lifecycle-pre--pilot-c58b00)
-![AWS](https://img.shields.io/badge/AWS-offline_evidence_only-555555)
 
-[TFG scope and evidence](docs/tfg/README.md) |
-[Project status](docs/project/PROJECT_STATUS.md) |
-[Project structure and work order](docs/project/PROJECT_STRUCTURE.md) |
-[Technical evidence](docs/portfolio/technical-evidence.md) |
-[Security](SECURITY.md) |
-[Architecture decisions](docs/decisions/14_Decision_Log.md)
+[Explore the workflow](#how-it-works) · [See the demo](#the-demonstrated-case) · [Architecture](#architecture) · [Project status](#current-stage) · [Documentation](#documentation)
 
-## What The MVP Does
+## Why IMPERATOR?
 
-IMPERATOR reconstructs which Evidence supported an operational decision, how
-its Recommendation and ROI were calculated, who approved it, and whether its
-expected value was subsequently validated. The implemented product is a Java
-modular monolith, PostgreSQL persistence and a Next.js Decision Review
-Workspace for exactly one synthetic case: `DRC-AOA-001`, AI Onboarding
-Assistant Recovery.
+Operational records often explain **what happened**, while the reasons, approvals and results of a change are scattered across tools. IMPERATOR brings those links into one review workspace and a persistent decision history.
 
-```text
-Evidence â†’ Decision â†’ deterministic Recommendation and ROI
-â†’ optional AI explanation â†’ Human Review â†’ append-only Ledger
-â†’ Result Validation â†’ Business Value
-```
+| User | Practical value |
+| --- | --- |
+| Engineering | Trace the evidence and assumptions behind a proposed change; record implementation. |
+| Finance | Compare estimated value with a result validated against post-action evidence. |
+| Decision owner | Approve or reject with explicit responsibility and a recorded reason. |
+| Audit | Reconstruct the sequence of evidence, recommendation, actors and outcomes. |
 
-**Bedrock explains; it never decides.** Business rules, amounts, confidence,
-risk and authority belong to the application. The model cannot approve a
-Decision, modify its Recommendation, write the Ledger or execute a change.
-
-The reference case has 30 synthetic Evidence records. Its fixed policy
-estimates EUR 1,620 monthly recovery and EUR 19,440 annualized recovery. These
-are synthetic business values, not measured AWS deployment costs or customer
-savings. Business Value requires human implementation and result-validation
-facts before it is projected.
-
-![Synthetic Decision Review Workspace](output/commercial/linkedin-discovery-kit/IMPERATOR_Workspace_Captura_Limpia.png)
-
-The screenshot is illustrative synthetic material. Final TFG captures must be
-bound to the accepted implementation SHA and execution evidence.
-
-## Current Delivery And Evidence Status
-
-**2026-10-06: R-17/R-19 CLOSED; authorized R-21/R-22 patches applied and verified. A-S2 technical and formal GO; A-S3 evidence/versioning ACTIVE. TFG-A IN PROGRESS.**
-
-Only source-map-js1.2.1→1.2.2, sharp0.35.4→0.35.5 and its mandatory native subtree, and checksum-pinned Bookworm PCRE2/Perl security patches were applied. Six files and28 lock entries; other dependencies, base digests, Java/Spring/Node/PostgreSQL versions, business logic and architecture are unchanged from the task-start local worktree. Braces3.0.3 is unchanged; PR #57–59 were not merged.
-
-| Current local control                                                      | Result                                                                   |
-| -------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| Backend / PostgreSQL integration / frontend                                | 174 / 35 / 41 PASS                                                       |
-| Format, lint, types, coverage, build                                       | PASS                                                                     |
-| Playwright                                                                 | 9 PASS / 6 intentional skips                                             |
-| Exact-image Docker/API/UI/RBAC, Flyway/V3, persistence, readiness/recovery | PASS                                                                     |
-| D094 lock/verifier and scoped cleanup                                      | PASS; original volumes preserved                                         |
-| Detected secrets, all severities                                           | 0; source/history and all canonical images                               |
-| Fixable High/Critical: backend / frontend / PostgreSQL                     | 0 / 0 / 0; A-S2 technical GO                                             |
-| Production npm audit                                                       | 0                                                                        |
-| Full npm audit                                                             | FAIL:5 High affected-package aggregates from one unfixed braces advisory |
-| Full Trivy images                                                          | Frontend48High/1Critical; PostgreSQL63High/3Critical; backend0           |
-
-The [current review](docs/tfg/R21_R22_SECURITY_REVIEW.md), [dated evidence](docs/tfg/evidence/2026-10-06-r21-r22/README.md) and [gate](docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md) bind tests, raw scans, source/DB hashes, OCI manifests/config/layers, five captures,27.16-second captioned technical fallback and owned-resource cleanup. Baseline `b602bbe1dde92a902c17272d59cd9f0c10b9efe5` identifies a dirty local worktree, not an accepted release SHA or hosted-CI pass. Local loopback/synthetic fixture is not external IdP/AWS certification or a narrated twelve-minute defense.
-
-D101 remains OPERATOR-DEFERRED / BLOCKED_EXTERNAL, mandatory before pilot/non-loopback exposure or MVP Release. A-S3 evidence/versioning is authorized; A-S4 remains later and TFG-B/C/D/AWS stay blocked/unauthorized. No further dependency update is authorized.
-
-## R-20 Approval And Current Security Gate
-
-The [current explicit R-20 approval](docs/tfg/evidence/2026-10-06-a-s2-acceptance/r20-current-acceptance.json) binds the inspected 23-CVE/115-row OS residual to the exact current images, runtime inputs, scanner databases and reviewed evidence. The historical October 2 approval and original proposal bytes remain unchanged; current approval is a new explicit decision, not an inherited acceptance.
-
-**A-S2 formal GO applies only to local synthetic TFG-A until 2026-10-09 00:00 Europe/Madrid (UTC+02:00), exclusively.** No fixable vulnerability or secret is waived. The independent [R-23 disposition](docs/tfg/evidence/2026-10-06-a-s2-acceptance/r23-approved-open-disposition.json) is approved while the risk remains OPEN / NO FIX AVAILABLE. Full scanner/audit failures remain visible; no absolute-zero or universal non-exploitability claim.
-
-[A-S3](docs/tfg/A_S3_EVIDENCE_VERSIONING.md) now prepares source version, evidence, traceability and PR/CI linkage. No code/dependency change, AWS action or PR #57–59 merge is authorized. A-S2 closure alone does not complete TFG-A or the narrated defense.
-
-| Evidence label    | Meaning                                                    |
-| ----------------- | ---------------------------------------------------------- |
-| IMPLEMENTED       | Source or configuration exists                             |
-| VALIDATED OFFLINE | Identified checks passed without live AWS deployment       |
-| VALIDATED IN AWS  | Behavior executed against identified AWS resources         |
-| OPERATIONAL       | Deployed pilot completed its acceptance window             |
-| NOT IMPLEMENTED   | The specified capability or executed environment is absent |
-
-`OPERATOR-DEFERRED` is scheduling; `BLOCKED_EXTERNAL` describes a dependency.
-Neither discharges an acceptance gate. Source implementation and execution
-evidence are reported separately throughout the TFG package.
-
-## Local Architecture
+## How it works
 
 ```mermaid
 flowchart LR
-    Reviewer[Human reviewer] --> Web[Next.js workspace]
-    Web -->|same-origin API proxy| API[Spring Boot REST and JWT/RBAC]
-    API --> App[Application and ports]
-    App --> Domain[Deterministic Domain policies]
-    App --> JDBC[PostgreSQL adapters]
-    JDBC --> DB[(PostgreSQL)]
-    App --> Connectors[Read-only GitHub/AWS adapters]
-    App -. after deterministic commit .-> Explain[ExplanationProvider]
-    Explain --> Bedrock[Optional Bedrock adapter]
+    E[Operational evidence] --> D[Decision case]
+    D --> R[Deterministic recommendation]
+    R --> H[Human review]
+    H --> I[Implementation]
+    I --> V[Result validation]
+    V --> B[Business value]
+    H -. recorded facts .-> L[(Decision Ledger)]
+    I -. recorded facts .-> L
+    V -. recorded facts .-> L
 ```
 
-Domain, Application and Ports remain independent of Spring, JDBC, HTTP and AWS
-SDKs. The backend uses explicit JDBC transactions. Business Value is a read
-projection of persisted governance facts; it is not a second financial engine.
+- **Evidence:** import normalized facts and preserve their references.
+- **Recommendation:** apply a fixed business policy to calculate the proposal and estimated value.
+- **Governance:** require the assigned human actor, the correct role and the permitted sequence of actions.
+- **Decision Ledger:** retain ordered governance facts; the application database role cannot update or delete its history.
+- **Business Value:** project a validated result from persisted implementation and validation facts.
 
-Compose runs frontend, backend and PostgreSQL plus one-shot migration,
-validation and permission tasks. Only the frontend publishes a loopback port.
-The management endpoint on port 9090 is internal. The browser holds a supplied
-short-lived bearer token in memory; a commercial login/session system is outside
-this MVP. `backend-python/` and `services/` are placeholders, not runtime services.
+An optional AI explanation can accompany the recommendation. **Business rules calculate the result; humans retain approval authority.** The provider cannot change amounts, approve decisions or write the Ledger.
 
-## AWS Target: The Same Product
+## The demonstrated case
 
-The accepted [D100 target](docs/architecture/61_AWS_SAA_Portfolio_Deployment_Contract.md)
-reuses the application and container build definitions:
+**`DRC-AOA-001` — optimize the cost of an AI onboarding assistant.** Thirty synthetic evidence records support a `MODEL_CHANGE` recommendation: use a lower-cost model for routine requests and retain a more capable fallback for exceptions.
 
-```text
-Route 53 + ACM â†’ public HTTPS ALB
-â†’ private frontend/backend ECS/Fargate â†’ private Single-AZ RDS PostgreSQL
+| Estimated annual recovery | Validated simulated annual recovery | Variance |
+| ---: | ---: | ---: |
+| €19,440 | €18,960 | −€480 |
 
-GitHub OIDC â†’ immutable ECR images â†’ controlled Terraform delivery
-Secrets Manager â†’ ECS secret injection
-CloudWatch + SNS â†’ operational evidence
-CloudTrail â†’ encrypted S3 audit storage
-Backend â†’ optional Bedrock explanation
-```
+These are **synthetic evaluation values**. Twenty-eight records support the recommendation; two post-action records support implementation and result validation.
 
-The target has two-AZ subnets/ALB, one NAT gateway, one task per application
-service and Single-AZ RDS. This demonstrates security and availability
-trade-offs; it is not full high availability. The `bootstrap` Terraform root
-owns protected state, ECR and GitHub roles; `pilot` owns the runtime and uses
-S3 locking. Task services start inactive until database tasks pass.
+![IMPERATOR workspace showing the synthetic cost-recovery recommendation](docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/capture/01-deterministic-recommendation.png)
 
-AWS resources, publication, plan/apply, Bedrock calls, costs, rollback and
-teardown remain unexecuted. ACM/DNS and the application secret also require
-reviewed external inputs. See [local vs AWS](docs/tfg/06_LOCAL_VS_AWS.md) and
-the [deployment runbook](docs/runbooks/aws-pilot-deployment.md).
+*Actual local rehearsal capture, 9 October 2026. The dates shown inside the workspace belong to the synthetic dataset.*
 
-## Security And DevSecOps
+Four roles participate: **ADMIN, PLATFORM_ENGINEER, FINANCE and AUDITOR**. In the recorded rehearsal, approval uses the UI; implementation and financial validation use authenticated API commands, with results then displayed in the workspace. See the [rehearsal report](docs/tfg/evidence/2026-10-09-gosu-security-closure/runtime/capture/rehearsal.json).
 
-- D087: RS256/JWKS validation, exact audience, issuer, time, UUID subject,
-  mandatory `kid` and one exact role.
-- D088: explicit grants for `ADMIN`, `PLATFORM_ENGINEER`, `FINANCE` and
-  `AUDITOR`; server-side actor authority and domain invariants still apply.
-- Confidential Evidence is redacted; Restricted handling fails closed.
-- The database application role cannot update/delete Ledger history.
-- Container hardening, pinned inputs, Trivy and Gitleaks are implemented;
-  D094 includes PostgreSQL SBOM/provenance and reproducibility evidence.
-- Java CI, Security and offline AWS IaC workflows are versioned. CodeQL is
-  recorded as GitHub-managed analysis; current account settings require
-  external inspection before making a new hosted-configuration claim.
-- GitHub OIDC and ECS task roles avoid static AWS keys. Database secret values,
-  bearer tokens, private keys and customer data do not belong in Git.
+## Architecture
 
-The AWS deploy role still needs least-privilege review. Publication protection,
-accepted-SHA checks, exact-image scanning and approval of the plan actually
-applied are TFG-B findings, not capabilities certified by this README.
-D087, D088 and D095 remain unchanged.
+| Layer | Implementation |
+| --- | --- |
+| Workspace | Next.js / React / TypeScript; one decision-review workspace. |
+| Backend | Java 21 / Spring Boot modular monolith; hexagonal Domain, Application, ports and adapters. |
+| Persistence | PostgreSQL, explicit JDBC transactions and Flyway V1–V3 migrations. |
+| Authorization | RS256 JWT validation, four-role RBAC and server-side actor/state checks. |
+| Local delivery | Hardened Docker images, Compose and internal liveness/readiness probes. |
+| Repository automation | GitHub Actions, Maven, frontend checks, Trivy, Gitleaks and CodeQL. |
 
-## Observability And Responsible AI
+Business policy stays independent of HTTP, Spring, JDBC and provider SDKs. Read-only GitHub/AWS evidence adapters and an optional Amazon Bedrock explanation adapter are implemented; live provider validation remains pending.
 
-Local diagnostics include bounded Micrometer metrics, correlation IDs,
-Actuator probes and JSON logs in Elastic Common Schema format. `ecs` log
-format does not imply execution on Amazon ECS. `/livez` checks application
-liveness; `/readyz` also checks database readiness.
+The AWS target uses **ECS/Fargate, RDS, Terraform and GitHub OIDC**. Its deployment, provider validation and operational costs remain pending. [Architecture](docs/tfg/05_ARCHITECTURE.md) · [Local versus AWS](docs/tfg/06_LOCAL_VS_AWS.md).
 
-There is no automatic business-metric-to-CloudWatch exporter in the inspected
-source. Prometheus/Grafana services remain deferred under D097. Existing safe
-logs and internal metrics provide the bounded MVP evidence.
+## Current stage
 
-Bedrock Converse receives prepared context after Recommendation persistence.
-Strict output validation limits fields, references and size. Explanation
-attempts are stored separately with provider/model/prompt metadata, tokens,
-latency and status. Reads do not invoke the provider. Failure cannot roll back
-the deterministic business state. JSON/reference validity does not establish
-narrative fidelity: synthetic human evaluation remains required.
+**Local academic MVP / pre-pilot.** The core workflow is implemented and has local execution evidence. Formal academic delivery remains in progress.
 
-See [D099](docs/architecture/59_Bedrock_Auditable_Explanation_Contract.md),
-the [Bedrock runbook](docs/runbooks/bedrock-explanations.md) and
-the [evaluation rubric](docs/ai/60_Bedrock_Explanation_Evaluation.md).
+| Area | State |
+| --- | --- |
+| Core workflow, four roles and PostgreSQL persistence | Implemented and validated in the local synthetic rehearsal. |
+| Tests | 174 backend unit, 35 PostgreSQL integration and 41 frontend tests passed in the 9 October evaluation; Playwright: 9 passed, 6 intentional skips. |
+| Docker/runtime | RBAC, Flyway, persistence after recreation and readiness/recovery validated on the identified local images. |
+| Security | 13 October scans: 0 fixable High/Critical and 0 secrets across four retained images; 25 residual CVEs await the current R-20 decision. R-23 development tooling remains open. |
+| Optional AI | Explanation adapter tested offline; live Bedrock validation pending. |
+| AWS | Target architecture and delivery preparation exist; live deployment remains pending and gated. |
+| TFG delivery | Applicable security decision, final version closure, narrated defence and tutor review pending. |
 
-## TFG Scope And Risk Control
+Exact SHAs, image digests, scanner reports and historical decisions belong in the [evidence record](docs/tfg/evidence/2026-10-13-main-closure/README.md) and [security gate](docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md). Earlier risk acceptance has expired; it does not authorize a new run or different images.
 
-The [risk register](docs/tfg/00_TFG_MASTER_PLAN.md#6-risks-and-scope-control)
-assigns reductions, tracks and exit evidence. A risk is closed by verification,
-not by documenting a mitigation.
+## Explore and verify locally
 
-- Reuse one modular monolith, one workspace, one case and four roles.
-- Keep synthetic business ROI separate from AWS deployment cost.
-- Resolve the ECR mismatch before publication: bootstrap declares
-  `imperator-pilot/*`, while workflows reference `imperator/pilot/*`.
-- Review IAM, approved-plan binding, provider egress and runtime sizing before
-  external execution.
-- Use a current regional Pricing Calculator estimate, short demo windows,
-  rollback and verified teardown; Budgets alerts are not a spending cap.
-- Keep a local demo and sanitized recording as defense fallback.
+Start with the [backend guide](backend-java/README.md), [frontend guide](frontend/README.md) and [local defence preflight](docs/tfg/A_S4_LOCAL_DEFENSE.md). The rehearsal uses isolated synthetic data and a local HTTPS/JWKS fixture; external identity-provider conformance is a separate gate.
 
-The MVP excludes new cases, real customer data, multi-tenancy, commercial
-login, extra microservices, Python AI service, RAG/Knowledge Bases, agents,
-queues, cache, EKS/Kubernetes, Multi-AZ RDS, autoscaling and services added only
-for certification coverage. No such feature is required to finish this TFG.
-
-## Roadmap
-
-| Track                    | Bounded outcome                                                                                                            | Current status                                     |
-| ------------------------ | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
-| TFG-A                    | Scope, five-certification matrix, traceability, risk register, local evidence and defense rehearsal                        | IN PROGRESS                                        |
-| TFG-B                    | Delivery findings, IAM/security review and current pricing; live plan only after external gates and separate authorization | NOT AUTHORIZED                                     |
-| External D101 dependency | D095 Keycloak HTTPS conformance before pilot                                                                               | OPERATOR-DEFERRED / BLOCKED_EXTERNAL; not a sprint |
-| TFG-C                    | Authorized publication and AWS deployment of the synthetic MVP                                                             | NOT AUTHORIZED                                     |
-| TFG-D                    | Runtime/AI validation, measured cost, rollback, teardown and recreation                                                    | NOT AUTHORIZED                                     |
-
-Applied knowledge maps to DAM, Cloud Practitioner, Solutions Architect
-Associate, Developer Associate, AI Practitioner and GitHub Foundations in the
-[competency matrix](docs/tfg/02_COMPETENCY_MATRIX.md). The project demonstrates
-selected competencies; it neither covers every exam objective nor grants a
-professional credential.
-
-## Local Verification
-
-Use Java 21 and the pinned Maven 3.9.16 wrapper:
+With Java 21, run backend verification from the repository root:
 
 ```powershell
 .\mvnw.cmd clean verify
-.\mvnw.cmd -Ppostgresql-integration clean verify
 ```
 
-The integration profile requires an empty isolated database and the six
-`IMPERATOR_IT_*` variables documented in [backend-java/README.md](backend-java/README.md).
-It runs Flyway migrate/validate/no-op and database integration tests. Earlier
-Windows wrapper failures do not authorize changing the wrapper; any direct
-cached-Maven invocation must be recorded as such.
-
-With Node.js 24 LTS and npm 11:
+With Node.js 24 and npm 11, run frontend checks:
 
 ```powershell
 cd frontend
@@ -296,45 +111,28 @@ npm run format:check
 npm run lint
 npm run typecheck
 npm run test:coverage
-$env:IMPERATOR_API_ORIGIN = "http://127.0.0.1:8080"
-npm run build
-npm run test:e2e
 ```
 
-Browser acceptance uses intercepted synthetic API fixtures. It verifies UI
-behavior and is separate from the real backend/database runtime rehearsal.
-Docker prerequisites and verification are in [infra/docker/README.md](infra/docker/README.md).
-Offline IaC commands are in [infra/aws/terraform/README.md](infra/aws/terraform/README.md).
+Database integration, browser tests, build and Docker execution require their documented inputs. Follow the [integration configuration](backend-java/README.md#persistence-certification), [frontend quality gates](frontend/README.md#quality-gates) and [runtime preflight](docs/tfg/A_S4_LOCAL_DEFENSE.md#preflight-obligatorio-antes-de-ejecutar) before executing them. The current exact-image security decision is still pending.
 
-## Repository Map
+## Repository guide
 
-| Path                               | Purpose                                                  |
-| ---------------------------------- | -------------------------------------------------------- |
-| `backend-java/`                    | Domain, Application, ports, adapters, API and bootstrap  |
-| `src/test/java/`                   | Backend unit, contract and PostgreSQL integration suites |
-| `frontend/`                        | Single-case Next.js Decision Review Workspace            |
-| `database/`                        | Flyway migrations                                        |
-| `infra/docker/`                    | Local runtime and hardened images                        |
-| `infra/aws/`                       | Offline Terraform, migration image and AWS preparation   |
-| `.github/`                         | CI/security/IaC and manual AWS delivery workflows        |
-| `docs/tfg/`                        | Academic scope, traceability, risks and evidence         |
-| `docs/project/`, `docs/decisions/` | Current control and immutable accepted decisions         |
-| `samples/`, `scripts/`             | Synthetic fixtures and verification tools                |
+| Path | Purpose |
+| --- | --- |
+| `backend-java/` | Business rules, use cases, ports, adapters and REST API. |
+| `src/test/` | Backend tests and versioned synthetic fixtures. |
+| `frontend/` | Decision Review Workspace and UI tests. |
+| `database/` | Flyway schema migrations. |
+| `infra/docker/` | Local runtime, images and verification. |
+| `infra/aws/` | Terraform and future cloud-delivery preparation. |
+| `docs/tfg/` | Scope, requirements, memory, risks, defence and evidence. |
+| `docs/architecture/`, `docs/decisions/` | Technical contracts and design decisions. |
 
-Follow the [current structure and verification order](docs/project/PROJECT_STRUCTURE.md)
-to work from one case, its acceptance tests and its evidence. Keep existing
-packages and historical decisions in place; remove only verified generated
-residue after capture.
+## Documentation
 
-Local `output/tfg/` material is an auxiliary draft; it does not replace
-versioned TFG or project-control authority.
+- **Understand the product:** [academic scope](docs/tfg/01_ACADEMIC_SCOPE.md) · [architecture](docs/tfg/05_ARCHITECTURE.md) · [technical evidence](docs/portfolio/technical-evidence.md).
+- **Review the delivery:** [project status](docs/project/PROJECT_STATUS.md) · [traceability](docs/tfg/03_TRACEABILITY_MATRIX.md) · [risks and scope control](docs/tfg/00_TFG_MASTER_PLAN.md#6-risks-and-scope-control).
+- **Finish the TFG:** [memory draft](docs/tfg/08_LOCAL_MVP_MEMORY.md) · [DAM delivery guide](docs/tfg/11_DAM_MEMORY_DELIVERY.md) · [twelve-minute defence](docs/tfg/09_DEFENSE_SCRIPT_12_MIN.md).
+- **Portfolio introduction:** [Featured Project](docs/portfolio/featured-project.md).
 
-## Security Disclosure And License
-
-Report vulnerabilities privately following [SECURITY.md](SECURITY.md).
-Credentials, JWTs, private keys, customer data, database dumps, local `.env`
-files and raw generated runtime evidence are excluded from Git. Publish only
-reviewed sanitized evidence.
-
-Copyright (c) 2026 Daniel Millan Perez. Public portfolio review is governed by
-the proprietary, all-rights-reserved [LICENSE](LICENSE).
+Report vulnerabilities privately through [SECURITY.md](SECURITY.md). Portfolio and academic review are governed by the [all-rights-reserved license](LICENSE).

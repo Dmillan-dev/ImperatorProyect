@@ -1,49 +1,35 @@
 # Gate de entrega local — A-S3 y A-S4
 
-## Post-merge verification - 2026-10-13
-
-PR64 is merged into main `0797671e06baa2b20f8ce5a842ac04140d84e591`; its tree equals the tested a931601 candidate. Fresh main CI:10/10 checks PASS. The four retained local image IDs/origins/rootfs match the runtime evidence dated 09/10; CI-built images remain separately identified.
-
-Fresh full four-image scans:0 fixable High/Critical and0 secrets at all severities. Residuals now total25 unique CVEs/119 package rows, including two added GnuTLS CVEs. R-20's historical authorization expired 09/10; the23-CVE accepted:false proposal does not automatically cover this delta. R-23 remains OPEN independently; production npm audit 0 and full development audit 5 High. No upgrade or new functional runtime is claimed.
-
-**A-S3 formal: PENDING applicable explicit risk decision and publication review; A-S4: PENDING; TFG-A: IN PROGRESS; AWS: BLOCKED.** The current record supersedes dated state claims below while preserving historical evidence and receipts. See [post-merge verification](evidence/2026-10-13-postmerge-certification/README.md).
-
-Revisión del **07/10/2026**. Fuente de verdad: documentos y evidencias del repositorio. A-S2 formal GO continúa siendo una decisión local/sintética y temporal; no representa cero CVE absoluto ni una release operativa del producto.
-
-## Interpretación de las dos fases
-
-La instrucción actual sitúa el cierre documental/formal de TFG-A en A-S3 y la defensa académica en A-S4. Se conserva la [Definition of Done](00_TFG_MASTER_PLAN.md#7-tfg-a-definition-of-done), que exige evidencias y no permite cerrar por editar documentos. A-S3 debe resolver el versionado/revisión/CI y el cierre explícito del paquete; A-S4 debe resolver memoria, ensayo y grabación. No se elimina ningún requisito porque la fase cambie de nombre.
-
-El MVP local puede demostrar requisitos implementados. La validez académica final depende del tutor y del centro. AWS obligatorio o dispensado, plantilla, fecha de entrega y criterios del tribunal no están confirmados en el repositorio. Una release/piloto del producto conserva el gate D101 y los criterios externos existentes.
+Estado 13/10/2026: main `c69f682` integrado, CI 10/10 PASS, **TFG-A IN PROGRESS**. [Registro post-merge](evidence/2026-10-13-main-closure/README.md). R-20 anterior caducado; propuesta 25 CVE `accepted: false`. R-23 OPEN independiente.
 
 ## A-S3 — Evidencia y versión
 
-| Criterio                                                          | Estado                            | Evidencia / siguiente resultado necesario                                                               |
-| ----------------------------------------------------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| R-20 y R-23 registrados por separado                              | PASS histórico vigente por fecha  | [Decisiones explícitas](evidence/2026-10-06-a-s2-acceptance/README.md); mantener digests y caducidad    |
-| Runtime/source/capturas vinculados                                | VERIFICADO sobre fuente histórica | 383 archivos y [manifest OCI](evidence/2026-10-06-r21-r22/docker/image-binding.json); no reconstrucción |
-| Documentación coherente y discrepancias explicadas                | REVISIÓN LOCAL preparada          | [Disposiciones de revisión](evidence/2026-10-07-a-s3-a-s4/README.md); preservar snapshots anteriores    |
-| Diff de candidato acotado a mantenimiento autorizado y evidencias | REVISIÓN LOCAL preparada          | Diff por grupos; bruto conserva hashes y advertencias de formato                                        |
-| SHA revisado y aceptado por propietario                           | PENDIENTE                         | Candidato local no equivale a SHA aceptado; registrar decisión independiente                            |
-| PR acotada                                                        | BORRADOR LOCAL                    | No publicada ni fusionada; PR #57–59 siguen fuera de alcance                                            |
-| CI real asociada al SHA enviado                                   | PENDIENTE                         | URL, head SHA, checks y artefactos; sin heredar badges anteriores                                       |
-| Imágenes de CI y aprobación                                       | PENDIENTE si CI reconstruye       | Digest nuevo necesita revisión; aceptación R-20 no transferida                                          |
-| Cierre formal TFG-A documental/técnico                            | PENDIENTE                         | Registrar decisión y DoD cumplida; no cerrar por preparación de la memoria                              |
+| Criterio | Estado / evidencia |
+| --- | --- |
+| Fuente integrada y revisión | #68 fusionada; árbol del candidato documental idéntico |
+| CI efectiva exactoSHA | 10/10 success sobre `c69f682`; URLs archivadas |
+| Fuente/construcción/escaneo/runtime | Cadena histórica identificada; cuatro locales inspeccionados y CI separado |
+| Escaneos producción completos | 0 H/C corregibles y 0 secretos;25 CVE residuales/119 filas conservados |
+| R-20 aplicable y vigente | PENDIENTE aprobación explícita de la propuesta 25 CVE y cuatro índices |
+| R-23 | OPEN / NO FIX AVAILABLE; tooling independiente |
+| Evidencias/receipts | No sobrescribir; decisiones posteriores como nuevos registros |
+| Cierre formal A-S3 | PENDIENTE R-20 y acta de versión de entrega |
 
-## A-S4 — Defensa local
+Las imágenes nuevas de CI quedan fuera de la propuesta de aceptación local. No se afirma igualdad binaria por igualdad de fuente/SBOM. D094 formalReleaseEligible es elegibilidad técnica, no aprobación académica.
 
-| Criterio                                            | Estado                | Resultado necesario                                                       |
-| --------------------------------------------------- | --------------------- | ------------------------------------------------------------------------- |
-| Memoria con RF/RNF, diagramas, resultados y límites | BORRADOR DESARROLLADO | Ajustar plantilla e incorporar revisión académica                         |
-| Trazabilidad de afirmaciones                        | PREPARADA             | Matriz, fuente, capturas y resultados de la versión aceptada              |
-| Guion de doce minutos                               | PREPARADO             | Cronometrar con una persona; registrar duración real                      |
-| Runtime local final                                 | PENDIENTE             | Docker disponible, SHA/digests y aceptación vigente antes de ensayo       |
-| Fallback offline                                    | MATERIAL EXISTENTE    | Comprobar reproducción local; registrar evidencia histórica correctamente |
-| Grabación narrada final                             | PENDIENTE             | Audio/pantalla, QA y hashes; vídeo de 27 segundos no sustituye defensa    |
-| MVP TFG defendido/aceptado                          | PENDIENTE             | Revisión del tutor/centro, sin inferir aceptación desde PASS técnico      |
+## A-S4 — Defensa y memoria
 
-## Alcance que se mantiene
+| Criterio | Estado / salida exigida |
+| --- | --- |
+| Memoria ajustada al centro | BORRADOR; [mapa DAM](11_DAM_MEMORY_DELIVERY.md), plantilla/maquetación/revisión pendientes |
+| Requisitos/diagramas/manual/resultados | Material existente; revisión final y trazabilidad de cada afirmación |
+| Preflight de ejecución final | PENDIENTE decisión vigente antes de iniciar servicios |
+| Demo local sintética | PENDIENTE final; ensayo histórico 09/10 no se cuenta como ensayo nuevo |
+| Ensayo 12 minutos | PENDIENTE duración medida con una persona |
+| Grabación final narrada | PENDIENTE QA audio / pantalla/hash; clip 24,88 s sin audio es técnico |
+| Revisión tutor/centro | PENDIENTE; confirmar perfil/plantilla/calendario y si AWS es obligatorio |
+| TFG-A COMPLETE / MVP académico aprobado | PENDIENTE DoD y revisión académica |
 
-No nuevas dependencias, cambios de código, bases, arquitectura, funcionalidades, AWS, Keycloak o Bedrock. R-23 continúa abierto. La aceptación R-20 caduca el **09/10/2026 00:00 Europe/Madrid** y se invalida antes según las condiciones del registro. Una defensa posterior exige resolver su autorización runtime; reproducir evidencia histórica no la renueva.
+Preparar A-S4 documentalmente es posible durante el bloqueo R-20; no permite ejecutar el MVP sin aceptación ni cerrar la fase por editar estados. La validez como DAM debe decidirla el tutor; arquitectura web puede justificarse por persistencia/API/seguridad/pruebas, pero no se presupone equivalencia con requisitos de móvil/escritorio.
 
-Las comprobaciones de documentación/hash y del vídeo son locales; no se presentan como nueva regresión funcional, nueva consulta de vulnerabilidades del proveedor ni CI alojada. La indisponibilidad Docker actual queda registrada, no convertida en PASS.
+No upgrades, cambios funcionales, Docker/imágenes base, workflows, Terraform, AWS, Bedrock ni Keycloak externo en este cierre documental. La [Definition of Done](00_TFG_MASTER_PLAN.md#7-tfg-a-definition-of-done) continúa vigente. La aceptación anterior caducó 09/10; 16/10 es solo una fecha propuesta y no se renueva automáticamente.

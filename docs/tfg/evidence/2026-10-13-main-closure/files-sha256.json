@@ -1,0 +1,121 @@
+{
+  "algorithm": "SHA-256",
+  "selfExcluded": true,
+  "files": [
+    {
+      "path": "artifact-download.json",
+      "bytes": 299,
+      "sha256": "0e7af835fe7cb768cc6f207999f57581d478c1195b70f531e1414ec9baa4c665"
+    },
+    {
+      "path": "current-cve-review.json",
+      "bytes": 62475,
+      "sha256": "8e5a731a671399e5498f919f423737f50b13716873b168fdd1dc1bc039ffe3d5"
+    },
+    {
+      "path": "local-images.json",
+      "bytes": 7205,
+      "sha256": "8dec48f204fed5f89bdba45939afc8154c77bfe9c3239153599812c6ed2261c7"
+    },
+    {
+      "path": "main-ci.json",
+      "bytes": 2916,
+      "sha256": "9a71bdd095bc1740fe55839963134d31c12d96543f397f07719df64c8243a113"
+    },
+    {
+      "path": "main-d094-artifact/ci-environment.txt",
+      "bytes": 339,
+      "sha256": "bb37c28207eef6f852ff8196b805b082c84c045afee5f9797fe115036aca0850"
+    },
+    {
+      "path": "main-d094-artifact/first/buildkit-metadata.json",
+      "bytes": 17150,
+      "sha256": "99d075f825a74a2862064a7cda1241f690ceab820d5669ba1d27e554cfee25df"
+    },
+    {
+      "path": "main-d094-artifact/first/postgres-sbom.cdx.json",
+      "bytes": 910330,
+      "sha256": "db0d71b69770a809ccf6b419939c9584d6d2a0af08ea9b66bb1c231f68093d7f"
+    },
+    {
+      "path": "main-d094-artifact/first/provenance.json",
+      "bytes": 5217,
+      "sha256": "219c5d37de3f8bfaeee2ce074757f45bac7afb847b2882a176ff0998e55b2692"
+    },
+    {
+      "path": "main-d094-artifact/first/sha256-manifest.txt",
+      "bytes": 427,
+      "sha256": "83baf140b009e2729e78adaa24c76534e03988e62b799f6bc26d31a0e21139ce"
+    },
+    {
+      "path": "main-d094-artifact/first/trivy-report.txt",
+      "bytes": 1882,
+      "sha256": "b2d79b8b886e46d601e2e62e25761cf0e65ee8a7217acbde75abc2cbea8b22db"
+    },
+    {
+      "path": "main-d094-artifact/first/trivy-result.json",
+      "bytes": 803713,
+      "sha256": "847188a3af230180761214d909e7a5cd553799fae371aa6bd72b489b6111863e"
+    },
+    {
+      "path": "main-d094-artifact/rebuild/buildkit-metadata.json",
+      "bytes": 17150,
+      "sha256": "a971886d70c492c0ad33919bf60097bbaf056c0ec08e4faedf110151c56dedf1"
+    },
+    {
+      "path": "main-d094-artifact/rebuild/postgres-sbom.cdx.json",
+      "bytes": 910330,
+      "sha256": "a13eada0b442386528661f95956c6b7b777252df5da56897d445143e0299592f"
+    },
+    {
+      "path": "main-d094-artifact/rebuild/provenance.json",
+      "bytes": 5215,
+      "sha256": "af43bea7138f1ec4ecbeca5a073f9b61e7466887482364299a5056bd1e424464"
+    },
+    {
+      "path": "main-d094-artifact/rebuild/sha256-manifest.txt",
+      "bytes": 427,
+      "sha256": "e24d94ffbbf160786d8bb3de9785b06f037696ed523dddeaa95a16a4ff6d8ec3"
+    },
+    {
+      "path": "main-d094-artifact/rebuild/trivy-report.txt",
+      "bytes": 1882,
+      "sha256": "b2d79b8b886e46d601e2e62e25761cf0e65ee8a7217acbde75abc2cbea8b22db"
+    },
+    {
+      "path": "main-d094-artifact/rebuild/trivy-result.json",
+      "bytes": 803713,
+      "sha256": "dc2771ab0b03dc13e8130f07a8d70dcca74f9973b822472155192b93b98e6012"
+    },
+    {
+      "path": "PREPARATION_VALIDATION.json",
+      "bytes": 1236,
+      "sha256": "a6f5c0a9a5225e660c1518ccf4dd5f9108ce025304ec7bf323c480b188c230b3"
+    },
+    {
+      "path": "publication-gitleaks.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "R20_CURRENT_PROPOSAL.json",
+      "bytes": 5560,
+      "sha256": "3bb004b16ca8f59a226133dc1b8bd770b5d08a9ecd23d37d0d7c42aa197ab613"
+    },
+    {
+      "path": "R20_CURRENT_PROPOSAL.md",
+      "bytes": 4623,
+      "sha256": "7812bd964bda2a65511c295f3c04e120e5181d83011fac0641d097bacb87d27d"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3672,
+      "sha256": "20cf57e1a4b67574728fb6d4845a26ea6d50600a79c1b83ef5b26ed9c707c69a"
+    },
+    {
+      "path": "source-ci-correspondence.json",
+      "bytes": 29441,
+      "sha256": "3214c826689c92fe49c02759921d05a33ab1870748c91af0ad4bdbde4df5880d"
+    }
+  ]
+}
