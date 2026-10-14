@@ -85,12 +85,12 @@ The AWS target uses **ECS/Fargate, RDS, Terraform and GitHub OIDC**. Its deploym
 | Core workflow, four roles and PostgreSQL persistence | Implemented and validated in the local synthetic rehearsal. |
 | Tests | 174 backend unit, 35 PostgreSQL integration and 41 frontend tests passed in the 9 October evaluation; Playwright: 9 passed, 6 intentional skips. |
 | Docker/runtime | RBAC, Flyway, persistence after recreation and readiness/recovery validated on the identified local images. |
-| Security | 13 October scans: 0 fixable High/Critical and 0 secrets across four retained images; 25 residual CVEs await the current R-20 decision. R-23 development tooling remains open. |
+| Security | 14 October scans: 0 fixable High/Critical and 0 secrets. The unchanged accepted set contains 25 CVEs; current scanner reports 23 H/C and two known GnuTLS CVEs as LOW. R-20 is temporarily accepted for the exact local images until 16 October 00:00 Europe/Madrid; R-23 tooling remains open. |
 | Optional AI | Explanation adapter tested offline; live Bedrock validation pending. |
 | AWS | Target architecture and delivery preparation exist; live deployment remains pending and gated. |
-| TFG delivery | Applicable security decision, final version closure, narrated defence and tutor review pending. |
+| TFG delivery | Exact-image residual risk accepted and A-S3 evidence/version gate complete; final memory, narrated defence and academic review remain pending. |
 
-Exact SHAs, image digests, scanner reports and historical decisions belong in the [evidence record](docs/tfg/evidence/2026-10-13-main-closure/README.md) and [security gate](docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md). Earlier risk acceptance has expired; it does not authorize a new run or different images.
+Exact SHAs, image digests, scanner reports and historical decisions belong in the [evidence record](docs/tfg/evidence/2026-10-13-main-closure/README.md) and [security gate](docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md). The [current temporary acceptance](docs/tfg/evidence/2026-10-14-r20-acceptance/R20_ACCEPTED_DECISION.json) covers only the four identified local images with synthetic data, until 16 October 00:00 Europe/Madrid, without automatic renewal or transfer.
 
 ## Explore and verify locally
 
@@ -113,7 +113,7 @@ npm run typecheck
 npm run test:coverage
 ```
 
-Database integration, browser tests, build and Docker execution require their documented inputs. Follow the [integration configuration](backend-java/README.md#persistence-certification), [frontend quality gates](frontend/README.md#quality-gates) and [runtime preflight](docs/tfg/A_S4_LOCAL_DEFENSE.md#preflight-obligatorio-antes-de-ejecutar) before executing them. The current exact-image security decision is still pending.
+Database integration, browser tests, build and Docker execution require their documented inputs. Follow the [integration configuration](backend-java/README.md#persistence-certification), [frontend quality gates](frontend/README.md#quality-gates) and [runtime preflight](docs/tfg/A_S4_LOCAL_DEFENSE.md#preflight-obligatorio-antes-de-ejecutar) before executing them. Execution must satisfy the current acceptance conditions, exact-image binding and expiry.
 
 ## Repository guide
 

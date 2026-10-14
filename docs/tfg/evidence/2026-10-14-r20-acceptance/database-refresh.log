@@ -1,0 +1,5 @@
+2026-10-14T10:14:32Z	INFO	Loaded	file_path="/work/scanner-empty.yaml"
+2026-10-14T10:14:32Z	INFO	[vulndb] Need to update DB
+2026-10-14T10:14:32Z	INFO	[vulndb] Downloading vulnerability DB...
+2026-10-14T10:14:32Z	INFO	[vulndb] Downloading artifact...	repo="mirror.gcr.io/aquasec/trivy-db:2"
+2026-10-14T10:15:15Z	INFO	[vulndb] Artifact successfully downloaded	repo="mirror.gcr.io/aquasec/trivy-db:2"

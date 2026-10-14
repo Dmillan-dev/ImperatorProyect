@@ -1,0 +1,13 @@
+Sí, apruebo la aceptación temporal de R-20,
+
+- AWS: continúa bloqueado. Esta aprobación no autoriza despliegues, uso de datos reales ni validación de proveedores en AWS.
+
+La aprobación se refiere únicamente a la aceptación temporal del riesgo residual documentado; no significa que los 25 CVE estén corregidos ni que las imágenes hayan superado un nuevo escaneo.
+
+Secuencia autorizada
+1. Registrar la decisión R-20 vinculada a los cuatro digests exactos.
+2. Completar el cierre formal de A-S3 con la decisión y las evidencias correspondientes.
+3. Continuar con A-S4: memoria final, ensayo narrado de doce minutos, grabación y revisión del tutor.
+4. Declarar TFG-A COMPLETE solo después de verificar todos los criterios formales de terminado.
+
+continuar para el cierre del proyecto MVP
