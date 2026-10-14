@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-14",
+  "initialDocumentaryCommit": "353468569959ef23aa594b2a481e06387c46ce00",
+  "initialScriptSha256": "110644fb9b206b16b48e6d8f0e4225dcc715c0296dc331ac9e634e6dc197bf47",
+  "currentScriptSha256": "a99429b33525b1aafa026633f7d7ed11a99c72b222171798c0ad544029d41650",
+  "change": "Remove two leftover references to an automated narrated draft. Automatic speech was not generated; only the English script and silent technical clip exist.",
+  "humanNarration": "PENDING",
+  "measuredHumanSeconds": null,
+  "historicalPackAndPendingRecordBytesPreserved": true,
+  "riskDecisionsUnchanged": true
+}

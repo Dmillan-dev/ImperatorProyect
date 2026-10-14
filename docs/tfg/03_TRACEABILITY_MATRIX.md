@@ -2,7 +2,10 @@
 
 ## Estado vigente del 14 de octubre de 2026
 
-**R-20 ACCEPTED TEMPORARILY; A-S3 COMPLETE local académico; A-S4 IN PROGRESS; TFG-A IN PROGRESS; AWS BLOCKED.** Aceptación explícita para los cuatro índices/manifiestos locales y el conjunto conservador de 25 CVE del 13/10, exclusivamente datos sintéticos, hasta 16/10/2026 00:00 Europe/Madrid; sin renovación ni transferencia. Escaneo independiente 14/10:0H/C corregibles y 0 secretos, 23 CVE H/C más dos GnuTLS conocidas ahora LOW y sin fix. R-23 OPEN independiente. [Acta y evidencia](evidence/2026-10-14-r20-acceptance/A_S3_CLOSURE_RECORD.md). Las secciones anteriores fechadas se conservan como historia y no sustituyen esta decisión.
+**R-20 ACCEPTED TEMPORARILY; A-S3 COMPLETE local académico; A-S4 IN PROGRESS; TFG-A IN PROGRESS; AWS BLOCKED.** Aceptación explícita para los cuatro índices/manifiestos locales y el conjunto conservador de 25 CVE del 13/10, exclusivamente datos sintéticos, hasta 16/10/2026 00:00 Europe/Madrid; sin renovación ni transferencia. Escaneo independiente 14/10: 0 H/C corregibles y 0 secretos, 23 CVE H/C más dos GnuTLS conocidas ahora LOW y sin fix. R-23 OPEN independiente. [Acta y evidencia](evidence/2026-10-14-r20-acceptance/A_S3_CLOSURE_RECORD.md). Las secciones históricas siguientes se conservan y no sustituyen esta decisión.
+
+
+Preparación A-S4: [memoria PDF de 29 páginas](evidence/2026-10-14-a-s4-runtime/IMPERATOR_Memoria_TFG_Local.pdf), [guion en inglés](09_DEFENSE_SCRIPT_12_MIN.md) y [ensayo técnico real 14/10](evidence/2026-10-14-a-s4-runtime/README.md). API/UI, Flyway, RBAC, persistencia y recovery PASS; contenedores del ensayo retirados, imágenes/volumen conservados. CI main tras #72: 10/10 PASS sobre `adbe45e`. Ensayo oral humano, grabación narrada y revisión académica PENDING. La preparación de materiales no cierra A-S4 ni TFG-A.
 
 ## Estado actual tras #68 — 13/10/2026
 

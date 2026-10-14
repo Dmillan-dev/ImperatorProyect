@@ -144,3 +144,7 @@ changed version and provider fixes; no automatic transfer or new acceptance.
 Read the [current runtime evidence pack](evidence/2026-10-06-r21-r22/README.md) and
 [current formal acceptance](evidence/2026-10-06-a-s2-acceptance/README.md) before
 claiming local certification. Earlier dated packs retain their historical states.
+
+## A-S4 preparado para revisión
+
+[Memoria PDF, 29 páginas](evidence/2026-10-14-a-s4-runtime/IMPERATOR_Memoria_TFG_Local.pdf), [texto editable](08_LOCAL_MVP_MEMORY.md), [guion inglés](09_DEFENSE_SCRIPT_12_MIN.md) y [ensayo técnico 14/10](evidence/2026-10-14-a-s4-runtime/README.md). Defensa oral, grabación narrada y revisión académica PENDING; TFG-A IN PROGRESS.

@@ -1,62 +1,29 @@
-# Entrega DAM — IMPERATOR y cierre académico
+# Entrega DAM — IMPERATOR local
 
-Autor: **Daniel Millan Perez**. Proyecto académico con datos sintéticos. Revisión 13/10/2026, scope local. Este mapa procede de las diapositivas aportadas por el usuario `20260311 PI- 10ª sesión.pptx`, slides 2–7, y las plantillas institucionales consultadas. Son criterios del material entregado, pendientes de confirmación final por tutor; no una aprobación de IMPERATOR.
+Autor: **Daniel Millan Perez**, DAM. La portada no incluye tutor ni fecha de entrega, según indicación del autor. Proyecto académico local con datos sintéticos. Estos criterios se extraen del material institucional aportado; la revisión y aprobación académicas siguen pendientes.
 
-## Encaje y alcance defendible
+IMPERATOR demuestra Java, acceso a datos PostgreSQL/JDBC/Flyway, interfaz, API, estados, transacciones, roles, pruebas y planificación mediante un caso de gestión y trazabilidad de decisiones. Debe confirmarse académicamente el encaje de la aplicación web en DAM; no se añaden móvil, escritorio, cloud o IA real sin un requisito confirmado.
 
-IMPERATOR demuestra programación Java, acceso a datos PostgreSQL/JDBC/Flyway, interfaz, API, estados, transacciones, roles, pruebas y planificación. Puede plantearse como gestión y trazabilidad de decisiones operativas con un único caso sintético. El tutor debe confirmar que una aplicación web cumple el perfil DAM de esta convocatoria y que cloud/IA/móvil/escritorio no son obligatorios. No se modifica el producto para satisfacer requisitos no confirmados.
+## Entregables preparados
 
-Incluido: DRC-AOA-001, 30 hechos, 4 roles, recomendación determinista, aprobación humana, implementación/validación vía API con lectura UI, Ledger 3 eventos y valoración simulada. Excluido: AWS real, IdP externo, Bedrock real, clientes, producción, datos reales y más casos/funcionalidades.
-
-## Mapa de entregas y lo que falta
-
-| Entrega institucional | Material IMPERATOR existente | Revisión pendiente |
+| Entrega institucional | Material verificable | Pendiente |
 | --- | --- | --- |
-| Tarea 0: propuesta obligatoria no evaluable | Alcance/objetivos en 01_ACADEMIC_SCOPE | Confirmar propuesta IMPERATOR aceptada y requisitos de esta convocatoria con el tutor |
-| Tarea 1: resumen/abstract/contexto/usuarios/objetivo/legal | Memoria 08, cuatro roles y caso local | Incorporar abstract y marco legal revisado; no inventar cliente/empresa |
-| Tarea 2: RF/RNF, tareas, método, temporalización/Gantt, presupuesto/licencia/riesgos | Matriz 03, plan 00, registro de riesgos del plan 00, LICENSE existente | Gantt planificado/real con fechas verificadas; presupuesto de desarrollo documentado, licencia fiel al repositorio |
-| Tarea 3: ER/relacional/SQL, UML/estados/actividad, UI y componentes | Memoria 08, arquitectura 05, Flyway V1–V3 y capturas del 09/10 | Diagramas exportables consistentes con migraciones; distinguir capturas implementadas de mockups |
-| Tarea 4: código propio relevante, fuentes externas y tests | Implementación del repositorio, informes 174/35/41, Playwright 9+6 skips | Seleccionar fragmentos propios y explicar decisiones; atribuir librerías/código ajeno; indicar fechas/baselines |
-| Tarea 5: instalación/manual/conclusiones/bitácora semanal | scripts/tfg, guía A-S4 y memoria 08 | Manual reproducible con preflight vigente; bitácora de hechos reales, sin inventar horas o retrospectiva |
-| Tarea 6: memoria final | Borrador 08 | Arial 11, interlineado 1,5 y 20–40 páginas sin anexos; maquetar/renderizar y revisar tutor |
+| Tarea 0, propuesta | Alcance y objetivos, 01_ACADEMIC_SCOPE | Confirmación académica de propuesta |
+| Tarea 1, resumen/contexto/legal | Memoria: resumen español, abstract inglés, usuarios, objetivo y marco de datos | Revisión académica |
+| Tarea 2, planificación | RF/RNF, método, fases relativas, presupuesto explícitamente hipotético, licencia y riesgos | Validar criterio del centro; no inventar horas/fechas reales |
+| Tarea 3, diseño | Arquitectura, ER conceptual, relacional/migraciones, estados, UI real | Revisión de modelos/figuras |
+| Tarea 4, implementación/pruebas | Fragmentos propios, crédito de componentes, resultados fechados y límites | Revisión técnica académica |
+| Tarea 5, manual/conclusiones/bitácora | Instalación/preflight, roles, errores, conclusiones y hitos reales | Completar evaluación oral |
+| Tarea 6, memoria | [PDF de 29 páginas](evidence/2026-10-14-a-s4-runtime/IMPERATOR_Memoria_TFG_Local.pdf), Arial 11 en cuerpo, interlineado 1,5; todas las páginas renderizadas y revisadas | Aprobación académica |
 
-La licencia del repositorio reserva derechos y permite evaluación según sus términos; no se describe como MIT/opensource ni se cambia. No confundir 19.440/18.960 EUR simulados con presupuesto de proyecto, ingresos o beneficios reales. El presupuesto debe especificar horas demostrables, tarifa como hipótesis, hardware existente, costes locales; no se han contratado recursos ni medido costes AWS; no introducir importes sin fuente / criterio.
+[Texto editable](08_LOCAL_MVP_MEMORY.md), [guion inglés](09_DEFENSE_SCRIPT_12_MIN.md), [defensa](A_S4_LOCAL_DEFENSE.md), [trazabilidad](03_TRACEABILITY_MATRIX.md). El PDF incluye diagramas y fragmentos; Markdown conserva el texto editable. La memoria está preparada para revisión, no se registra como aprobada.
 
-## Abstract preparado para revisar
+El presupuesto es un escenario académico: 168 horas propuestas a 15 EUR/h, 2.520 EUR, sin atribuir horas trabajadas. No hay compras ni costes AWS medidos. Las cifras 19.440/18.960 EUR son simulaciones del caso, separadas de ese presupuesto. LICENSE reserva derechos y permite evaluación según sus términos; no se presenta como MIT ni se cambia.
 
-IMPERATOR is a local academic application for tracing operational decisions from supporting evidence to human approval and a validated outcome. The implementation combines a Java modular backend, a web interface and PostgreSQL persistence. One synthetic case with thirty evidence records and four roles demonstrates deterministic recommendations, authenticated governance commands, an append-only application ledger and simulated business value. Evaluation includes unit, integration and frontend tests, Docker persistence and recovery checks, and supply-chain scans. The current integrated source has passing CI, while formal delivery still requires an applicable residual-risk decision, a narrated demonstration and academic review. No live AWS deployment or generative-AI provider is claimed.
+## Cierre pendiente
 
-## Estructura propuesta de memoria, 30 páginas orientativas
+A-S3 está cerrado y R-20 aceptado temporalmente para los cuatro índices locales hasta 16/10/2026 00:00 Europe/Madrid. [Ensayo técnico nuevo 14/10](evidence/2026-10-14-a-s4-runtime/README.md) PASS, con clip breve sin audio. Los 174/35/41 tests y Playwright 9 PASS/6 skips se citan con su baseline histórico 09/10; no se atribuyen a una nueva ejecución unitaria.
 
-| Capítulo | Páginas orientativas | Contenido |
-| --- | ---: | --- |
-| Resumen/abstract/índice | 2 | Problema, resultado y límites |
-| Contexto, usuarios, objetivos y legal | 3 | Académico/sintético, roles, alcance y normativa revisada |
-| Acuerdo/planificación | 4 | RF/RNF, método, sprints/Gantt, costes/licencia/riesgos |
-| Análisis/diseño | 6 | ER/relacional, SQL, UML/estados, UI, componentes/tecnologías |
-| Implementación | 5 | Fragmentos propios relevantes, validación/permiso/transacción, fuentes externas |
-| Evaluación | 4 | Tests, RBAC, Flyway, persistencia/recovery, seguridad y límites de evidencias |
-| Instalación/manual | 3 | Entorno, preflight, flujo por roles, errores y respaldo offline |
-| Conclusiones/cierre | 3 | Objetivos realmente cubiertos, pendientes y bitácora resumida |
+Faltan ensayo oral medido en inglés, grabación de pantalla y voz, QA final y revisión académica. Registrar hechos en el [formulario de defensa](evidence/2026-10-14-a-s4-runtime/HUMAN_DEFENSE_REVIEW.md), sin rellenar PASS por inferencia. No se solicita publicar nombre de tutor ni fecha de entrega.
 
-El objetivo 30 páginas es planificación, no extensión comprobada. Anexos: informes íntegros/hash, scripts, bitácora ampliada, capturas y matriz completa. Comprobar referencias/figuras y paginación en el documento finalmente renderizado.
-
-## Sprint final sin ampliar producto
-
-1. **Gate R-20/A-S3:** aprobar o rechazar propuesta exacta 25 CVE, cuatro digests y caducidad; registrar decisión y versión/CI/evidencias. Sin ejecución antes del gate.
-2. **A-S4a — Memoria:** confirmar perfil/plantilla/calendario con tutor; completar huecos de tabla, maquetar, revisar y entregar borrador. Se puede preparar durante R-20 pendiente.
-3. **A-S4b — Defensa:** preflight bajo aceptación vigente, ensayo 12 minutos medidos, grabación narrada, QA audio/imagen/secretos/hash y respaldo offline.
-4. **Cierre TFG-A:** revisar DoD/matriz, feedback del tutor, documentación final y entrega aceptada. No declarar COMPLETE antes de esos resultados. AWS permanece bloqueado.
-
-## Registro a completar con hechos
-
-| Dato | Estado |
-| --- | --- |
-| Tutor/centro y calendario definitivo | PENDIENTE confirmación |
-| Propuesta IMPERATOR aceptada en DAM | PENDIENTE confirmación |
-| Memoria final 20–40 páginas revisadas | PENDIENTE |
-| Ensayo humano: fecha/duración/desviaciones | PENDIENTE |
-| Grabación narrada: archivo/hash/QA | PENDIENTE |
-| Evaluación tutor/centro | PENDIENTE |
-
-La elección formal de IMPERATOR y los requisitos de la convocatoria deben confirmarse con el tutor. Este mapa no sustituye esa revisión ni una propuesta aceptada.
+A-S4 y TFG-A siguen IN PROGRESS. R-23 sigue OPEN independiente. AWS, datos reales, producción y validación de proveedores externos quedan fuera de alcance.

@@ -1,48 +1,42 @@
-# A-S4 — Preparación y defensa local
+# A-S4 — Memoria y defensa local
 
-Revisión: **13/10/2026**. **PREPARACIÓN DOCUMENTAL; ensayo final y grabación narrada PENDIENTES.** A-S3 espera la decisión R-20 actual. Se puede preparar memoria, guion y respaldo sin ejecutar servicios. No se da por cumplida una defensa humana por crear estos documentos.
+Revisión 14/10/2026. **IN PROGRESS**. A-S3 está cerrado y R-20 aceptado temporalmente para cuatro imágenes locales exactas. La memoria y el guion están preparados; la defensa humana medida, grabación con voz y revisión académica siguen pendientes.
 
-## Material de la versión actual
+## Material preparado
 
-- [Memoria](08_LOCAL_MVP_MEMORY.md), [guion 12 minutos](09_DEFENSE_SCRIPT_12_MIN.md), [trazabilidad](03_TRACEABILITY_MATRIX.md), [entrega DAM](11_DAM_MEMORY_DELIVERY.md).
-- [Ensayo real 09/10](evidence/2026-10-09-gosu-security-closure/runtime/capture/rehearsal.json), cinco capturas y [vídeo técnico](evidence/2026-10-09-gosu-security-closure/runtime/capture/tfg-a-docker-demo.webm), [QA](evidence/2026-10-09-gosu-security-closure/runtime/capture/video-qa.json).
-- [Registro main / CI/artefactos](evidence/2026-10-13-main-closure/README.md) y [propuesta R-20](evidence/2026-10-13-main-closure/R20_CURRENT_PROPOSAL.md).
+- [Memoria editable](08_LOCAL_MVP_MEMORY.md) y [PDF revisado de 29 páginas](evidence/2026-10-14-a-s4-runtime/IMPERATOR_Memoria_TFG_Local.pdf): autor Daniel Millan Perez, DAM; portada sin tutor ni fecha de entrega.
+- [Guion inglés](09_DEFENSE_SCRIPT_12_MIN.md): diez bloques, 720 segundos planificados. No acredita el tiempo oral de una persona.
+- [Ensayo técnico real 14/10](evidence/2026-10-14-a-s4-runtime/README.md): API/UI, cuatro roles, Flyway V1–V3, persistencia y recuperación PASS; [limpieza específica](evidence/2026-10-14-a-s4-runtime/cleanup.json) completada conservando imágenes y volumen sintético.
+- [Capturas y clip técnico](evidence/2026-10-14-a-s4-runtime/capture/rehearsal.json), [QA](evidence/2026-10-14-a-s4-runtime/capture/video-qa.json). Clip de 24,64 segundos **sin audio**; respaldo técnico, no defensa final narrada.
+- [Trazabilidad](03_TRACEABILITY_MATRIX.md), [mapa DAM](11_DAM_MEMORY_DELIVERY.md), [gate de entrega](10_LOCAL_MVP_RELEASE_GATE.md).
 
-El vídeo técnico 09/10 dura 24,88 segundos y no tiene audio. No sustituye una defensa narrada de 12 minutos. El clip 06/10 es histórico y no representa el runtime actual.
+## Preflight para otra ejecución
 
-## Preflight obligatorio antes de ejecutar
+Consultar la [decisión R-20](evidence/2026-10-14-r20-acceptance/R20_ACCEPTED_DECISION.json): aceptación local/sintética hasta **16/10/2026 00:00 Europe/Madrid**, sin renovación automática. Verificar cuatro índices exactos, mitigaciones, 0 H/C corregibles y 0 secretos. Las imágenes de CI y las futuras imágenes no heredan la aceptación. Si caduca o cambia el alcance/artefacto/riesgo, detener la ejecución y solicitar una decisión válida; se puede revisar material histórico offline.
 
-1. A-S3 formal cerrado con una decisión vigente para **los cuatro digests locales** fijados en el [JSON de propuesta](evidence/2026-10-13-main-closure/R20_CURRENT_PROPOSAL.json). Hasta que se apruebe, `accepted: false`. Comprobar caducidad, matriz residual, 0 H/C corregibles y 0 secretos. El merge/CI no acepta el riesgo.
-2. Inspeccionar IDs/orígenes/capas y fixture HTTPS/JWKS local. Backend/frontend/migración tienen origen 6e79e83; PostgreSQL a931601. No usar los antiguos tfg-a-cbc ni reemplazarlos por las imágenes nuevas de CI.
-3. Revisar un harness aislado basado en las [entradas del ensayo](evidence/2026-10-09-gosu-security-closure/runtime/runtime-inputs-summary.json), imágenes exactas, `--no-build --pull never`, solo loopback, proveedores externos desactivados y volumen sintético nuevo. La configuración genérica de Compose contiene build contexts; no es un preflight completo.
-4. Tokens efímeros por stdin/espacio privado; nunca en repositorio, argumentos visibles, informe o vídeo. No limpiar bases normales. Verificar Flyway V1–V3, privilegios de aplicación y salud antes de importar la fixture 30 registros.
+Usar un proyecto aislado, secretos efímeros privados, imágenes existentes, `--no-build --pull never`, loopback, proveedores externos desactivados y volumen sintético. No mostrar JWT, claves, contraseñas, terminal con secretos ni notificaciones. El ensayo 14/10 retiró sus contenedores; no hay una demo viva dejada en ejecución. La configuración genérica de Compose no sustituye el fixture y preflight documentados.
 
-El inventario 13/10 confirma disponibilidad y coincidencia de las cuatro imágenes; 0 contenedores activos. No es una ejecución nueva. La propuesta de caducidad 16/10 tampoco es una autorización de arranque.
+## Trabajo humano pendiente
 
-## Ensayo y grabación pendientes
+1. Revisar la memoria y practicar el guion en inglés con cronómetro. Registrar duración real, pausas, desvíos y preguntas; no usar los 720 segundos planificados como medición.
+2. Grabar pantalla y **tu narración** con un grabador local. Se puede narrar material técnico ya capturado, identificándolo claramente como reproducción del ensayo 14/10; no presentarlo como interacción nueva.
+3. Reproducir íntegro el archivo final y comprobar voz inteligible, pantalla legible, coherencia de roles/cifras y ausencia de secretos. Registrar hash, duración, idioma, ejecución viva o evidencia reproducida y QA en el [formulario pendiente](evidence/2026-10-14-a-s4-runtime/HUMAN_DEFENSE_REVIEW.md).
+4. Obtener revisión académica y resolver observaciones. Confirmar el encaje DAM local y los criterios del centro; no se presume aprobación.
 
-Después del gate, medir 12 minutos con una persona y ejecutar solo el caso `DRC-AOA-001` sintético: 30 evidencias, recomendación `MODEL_CHANGE`, 19.440 EUR estimados, aprobación humana, implementación y validación financiera por API autenticada con lectura UI, 3 hechos Ledger, 18.960 EUR realizados simulados y −480 EUR de variación. No afirmar un flujo completo exclusivamente por interfaz ni un ahorro empresarial real.
+La narración automática opcional no se generó: la política de ejecución de Windows rechazó el script y no se eludió. Crear voz automática tampoco habría demostrado un ensayo oral humano.
 
-Verificar 401/403 y asignación de actor; Flyway, permisos append-only de la cuenta de aplicación, persistencia y ready 503/live 200/recovery 200. Registrar modo vivo/grabado, hora, SHA, digests, duración medida y desviaciones. La evidencia 09/10 no sustituye las mediciones del ensayo final.
+## Salida
 
-Grabar pantalla y narración con medios locales. Reproducir el vídeo final, comprobar audio comprensible, pantallas legibles y ausencia de secretos/notificaciones. Calcular hash y anexar resultados reales. Si hay un fallo, registrarlo; no rellenar un PASS ni una aprobación del tutor por inferencia.
-
-Retirar únicamente recursos propiedad de ese ensayo con autorización y control de alcance. La limpieza 13/10 ya retiró 15 intermedias; volúmenes/cachés/bases/herramientas permanecen. No ejecutar prune ni borrar recursos antiguos para preparar la defensa.
-
-## Respaldo offline
-
-Abrir desde disco memoria, diagramas, capturas y vídeo técnico, identificando siempre la ejecución histórica 09/10. Preparar narración humana y archivos locales; no depender de GitHub, AWS, Keycloak externo o Bedrock. La disponibilidad de archivos no demuestra una nueva ejecución autorizada. Si R-20 caduca, usar solo material histórico hasta nueva decisión.
-
-## Gate de salida
-
-| Criterio | Estado 13/10 |
+| Control | Estado |
 | --- | --- |
-| Memoria y guion | BORRADOR preparado; ajuste DAM y tutor pendientes |
-| CI del main integrado | 10/10 PASS sobre `c69f682` |
-| R-20 vigente/A-S3 formal | PENDIENTES |
-| Demo final autorizada | PENDIENTE |
-| Ensayo cronometrado y narración | PENDIENTES |
-| Vídeo final audio / pantalla/hash | PENDIENTE |
-| Tutor/centro | PENDIENTE; criterios y fecha deben confirmarse |
+| A-S3 y R-20 para índices exactos | COMPLETE / ACCEPTED TEMPORARY |
+| CI main tras #72 | 10/10 PASS sobre `adbe45e` |
+| Memoria PDF y texto | Preparados y maquetación revisada; aprobación académica PENDING |
+| Guion inglés | Preparado; duración planificada 12 minutos |
+| Demo técnica real / persistencia / recovery | PASS medido 14/10 |
+| Ensayo oral humano | PENDING |
+| Grabación narrada / QA final | PENDING |
+| Revisión académica | PENDING |
+| TFG-A | IN PROGRESS |
 
-TFG-A solo se declara COMPLETE cuando se cumplen DoD y revisión académica; A-S3 no permite saltar A-S4. AWS sigue bloqueado y R-23 OPEN. No se añaden funcionalidades para cerrar estos gates.
+R-23 sigue OPEN independiente. AWS, producción, datos reales y proveedores externos permanecen bloqueados. No se amplía el MVP para completar estos entregables.

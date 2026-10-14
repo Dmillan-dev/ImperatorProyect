@@ -1,0 +1,28 @@
+{
+  "status": "IN PROGRESS",
+  "humanOralRehearsal": {
+    "status": "PENDING",
+    "measuredSeconds": null
+  },
+  "finalNarratedRecording": {
+    "status": "PENDING",
+    "path": null,
+    "sha256": null,
+    "durationSeconds": null
+  },
+  "academicReview": {
+    "status": "PENDING",
+    "approved": false
+  },
+  "defenceLanguage": "English",
+  "sourceTechnicalRehearsal": "30a03dab7d26c1ddf3b30c4ea052614efe39c405",
+  "as3MergedSha": "adbe45eabb3a79807ec0e55c791006927dcb3f64",
+  "as3": "COMPLETE",
+  "tfgA": "IN PROGRESS",
+  "aws": "BLOCKED",
+  "tutorOnCover": false,
+  "submissionDateOnCover": false,
+  "scriptPlannedSeconds": 720,
+  "scriptSha256": "110644fb9b206b16b48e6d8f0e4225dcc715c0296dc331ac9e634e6dc197bf47",
+  "memorySha256": "c1851c04b3c042c8176e0e5af5f5207ec2fa6451a35aa01ff0833aef8d4053a2"
+}
