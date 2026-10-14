@@ -1,0 +1,85 @@
+{
+  "phase": "A-S3",
+  "status": "COMPLETE / LOCAL ACADEMIC EVIDENCE AND VERSION GATE",
+  "closedLocalDate": "2026-10-14",
+  "sourceSha": "30a03dab7d26c1ddf3b30c4ea052614efe39c405",
+  "sourceWasCleanAtReview": true,
+  "sourceCI": {
+    "success": 10,
+    "failed": 0,
+    "record": "main-ci.json"
+  },
+  "riskDecision": "R20_ACCEPTED_DECISION.json",
+  "riskDecisionSha256": "b1229f00fed0afe72d20aee2488a7ca8fa780364db6e924c2b53123d7b745234",
+  "images": [
+    {
+      "component": "migration",
+      "indexDigest": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4",
+      "platformManifestDigest": "sha256:a4b1f621b007dca0d3cf099bd4d1e3246bffccddb240ffba7ee0b567ac6f1227",
+      "buildSourceSha": "6e79e83e909995c50a44aba3608b6ca25a0e4602"
+    },
+    {
+      "component": "backend",
+      "indexDigest": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757",
+      "platformManifestDigest": "sha256:645e2aa935ab08a3765f8b62c81b7c210c27867435efa22145b12aaba179a67f",
+      "buildSourceSha": "6e79e83e909995c50a44aba3608b6ca25a0e4602"
+    },
+    {
+      "component": "frontend",
+      "indexDigest": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78",
+      "platformManifestDigest": "sha256:85decf17bb4f50e1115839c3dbb0dfac31aafaafb567f50212598d08ce5f3daa",
+      "buildSourceSha": "6e79e83e909995c50a44aba3608b6ca25a0e4602"
+    },
+    {
+      "component": "postgres",
+      "indexDigest": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9",
+      "platformManifestDigest": "sha256:c22d3892c45e412fbdb36d4e17d4580359be3bba87873710cceeeaf777b68717",
+      "buildSourceSha": "a931601102ee19a90b3dad8477408ac0d1854669"
+    }
+  ],
+  "acceptedResidualSet": {
+    "cves": 25,
+    "packageBindings": 119,
+    "basis": "13/10 full reports; kept unchanged as conservative accepted scope"
+  },
+  "freshScan": {
+    "date": "2026-10-14",
+    "fixableHighCritical": 0,
+    "secrets": 0,
+    "highCriticalCves": 23,
+    "highCriticalRows": 115,
+    "twoAcceptedGnuTlsCvesNowLow": true,
+    "riskIdentitySetUnchanged": true,
+    "independentReview": "scan-delta-review.json"
+  },
+  "productionNpmAudit": 0,
+  "fullNpmAuditHigh": 5,
+  "r23": "OPEN / NO FIX AVAILABLE; independent previously approved tooling disposition; unchanged advisory chain",
+  "historicalFunctionalEvidence": {
+    "date": "2026-10-09",
+    "unit": 174,
+    "integration": 35,
+    "frontend": 41,
+    "playwrightPass": 9,
+    "playwrightIntentionalSkips": 6,
+    "exactImageRuntime": "../2026-10-09-gosu-security-closure/runtime/runtime-image-bindings.json",
+    "rerunClaimedByAs3": false
+  },
+  "historicalEvidenceByteIdentical": 858,
+  "scope": "Version/evidence closure. Approval is not a repair/new scan. Fresh14/10 scan is separately measured. No code/dependency/image/workflow/architecture changes. CI builds are not the accepted local artifacts.",
+  "exclusiveExpiry": "2026-10-16T00:00:00+02:00",
+  "expiryUtc": "2026-10-15T22:00:00Z",
+  "as4": "IN PROGRESS / FINAL HUMAN REHEARSAL AND ACADEMIC REVIEW STILL REQUIRED",
+  "tfgA": "IN PROGRESS",
+  "aws": "BLOCKED",
+  "completionNotInferred": true,
+  "npmRemediationSuggestion": {
+    "package": "eslint-config-next",
+    "proposedVersion": "14.2.35",
+    "semverMajor": true,
+    "sameSuggestionAs13October": true,
+    "applied": false,
+    "bracePatchedVersionPublished": false,
+    "scope": "Tooling R-23 remains independent. No major/downgrade/general upgrade authorized."
+  }
+}

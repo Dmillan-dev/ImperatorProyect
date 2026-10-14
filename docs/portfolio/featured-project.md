@@ -10,4 +10,4 @@ A **local academic MVP** that connects operational evidence to deterministic rec
 - **Security & delivery:** hardened images, GitHub Actions, Trivy, Gitleaks and CodeQL; residual-risk decisions remain explicit and bound to identified artifacts.
 - **Cloud preparation:** read-only GitHub/AWS evidence adapters, Terraform and OIDC workflows for a future ECS/Fargate and RDS pilot. An optional Bedrock explanation adapter is implemented and tested offline; business decisions remain deterministic and human-controlled.
 
-**Current stage: local MVP / pre-pilot.** Final security approval, academic version closure and a narrated defence remain pending. Live AWS deployment and provider validation are future gates.
+**Current stage: local MVP / pre-pilot.** Exact-image residual risk is temporarily accepted and the local evidence/version gate is complete; the final memory, narrated defence and academic review remain pending. Live AWS deployment and provider validation are future gates.

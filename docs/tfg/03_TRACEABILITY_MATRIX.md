@@ -1,5 +1,9 @@
 # TFG Requirement Traceability Matrix
 
+## Estado vigente del 14 de octubre de 2026
+
+**R-20 ACCEPTED TEMPORARILY; A-S3 COMPLETE local académico; A-S4 IN PROGRESS; TFG-A IN PROGRESS; AWS BLOCKED.** Aceptación explícita para los cuatro índices/manifiestos locales y el conjunto conservador de 25 CVE del 13/10, exclusivamente datos sintéticos, hasta 16/10/2026 00:00 Europe/Madrid; sin renovación ni transferencia. Escaneo independiente 14/10:0H/C corregibles y 0 secretos, 23 CVE H/C más dos GnuTLS conocidas ahora LOW y sin fix. R-23 OPEN independiente. [Acta y evidencia](evidence/2026-10-14-r20-acceptance/A_S3_CLOSURE_RECORD.md). Las secciones anteriores fechadas se conservan como historia y no sustituyen esta decisión.
+
 ## Estado actual tras #68 — 13/10/2026
 
 Main `c69f682` integrado y CI 10/10 PASS. Cuatro imágenes locales conservadas; 0 H/C corregibles y 0 secretos enescaneos 13/10, 25 CVEresiduales/119 filas. R-20 caducado; propuesta actual`accepted: false`. R-23 OPEN independiente. A-S3 formal pendiente R-20; A-S4: memoria/ensayo/narraciónpendientes; TFG-A IN PROGRESS y AWS bloqueado. [Registroactual](evidence/2026-10-13-main-closure/README.md). Las secciones fechadas posteriores son históricas y no renuevan aceptación.

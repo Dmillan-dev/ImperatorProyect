@@ -1,0 +1,66 @@
+{
+  "verifiedLocalDate": "2026-10-14",
+  "sha": "30a03dab7d26c1ddf3b30c4ea052614efe39c405",
+  "checks": [
+    {
+      "name": "Analyze (python)",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38445727248/job/115463504159"
+    },
+    {
+      "name": "Analyze (java-kotlin)",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38445727248/job/115463504021"
+    },
+    {
+      "name": "Analyze (actions)",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38445727248/job/115463503976"
+    },
+    {
+      "name": "Analyze (javascript-typescript)",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38445727248/job/115463503848"
+    },
+    {
+      "name": "submit-maven",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38445726270/job/115463500928"
+    },
+    {
+      "name": "PostgreSQL D094 supply-chain gate",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38445726870/job/115463496785"
+    },
+    {
+      "name": "Full Git history secret scan",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38445726870/job/115463496675"
+    },
+    {
+      "name": "Application image scan",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38445726870/job/115463496607"
+    },
+    {
+      "name": "Source, dependency and configuration scan",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38445726870/job/115463496485"
+    },
+    {
+      "name": "Java 21 Maven verification",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38445726523/job/115463495344"
+    }
+  ]
+}

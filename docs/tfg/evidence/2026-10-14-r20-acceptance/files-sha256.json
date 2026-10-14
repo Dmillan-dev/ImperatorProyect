@@ -1,0 +1,151 @@
+{
+  "algorithm": "SHA-256",
+  "selfExcluded": true,
+  "files": [
+    {
+      "path": "A_S3_CLOSURE_RECORD.json",
+      "bytes": 3487,
+      "sha256": "6e8e7440c621f4024234dd216a24e8a51a6d40a72f498cc03436b3eb690dc313"
+    },
+    {
+      "path": "A_S3_CLOSURE_RECORD.md",
+      "bytes": 2880,
+      "sha256": "f54a048fa25e544382e5462a011aa73605a45b1eb6f8e46ade5653d257d85692"
+    },
+    {
+      "path": "backend-full.log",
+      "bytes": 924,
+      "sha256": "b3f50cde04b115f9c750d4c84addb33c8a64488bf20a47306757800078298161"
+    },
+    {
+      "path": "backend-trivy.json",
+      "bytes": 765799,
+      "sha256": "6adf5df3bb2cbcb4d768abe508a91720d51a9ee69ee9966d75892519864303f0"
+    },
+    {
+      "path": "database-refresh.log",
+      "bytes": 397,
+      "sha256": "48a494708eff39b8ad35bbdb0ee8a7d1ada4f6beeb67f91934fd3f95467984dc"
+    },
+    {
+      "path": "frontend-full.log",
+      "bytes": 1107,
+      "sha256": "4705cb663978b8d73ecb2e222a15429a52077e8e950e2e9201b2c47f81d4dc16"
+    },
+    {
+      "path": "frontend-trivy.json",
+      "bytes": 1081238,
+      "sha256": "e06f21e8b37f6e804a7b5339a2ce9391d47033701030fe7a23e13a05be0df475"
+    },
+    {
+      "path": "historical-byte-proof.json",
+      "bytes": 206,
+      "sha256": "3f517ec16cc9c96b0dd6ac3bff83c587f0dec559da8faac77457ded32b5a90ff"
+    },
+    {
+      "path": "image-inventory.json",
+      "bytes": 7775,
+      "sha256": "584f6190745fa5cb3caa215ee5771889266e6ab504a1dc4f0f3d2d05b8705e5f"
+    },
+    {
+      "path": "java-database-refresh.log",
+      "bytes": 70,
+      "sha256": "6f539f49239863c6170d22eb0b15debc32bf56e3dcaf396ed9dc820e7f1d7fd5"
+    },
+    {
+      "path": "main-ci.json",
+      "bytes": 2464,
+      "sha256": "c60b2385363b06ebb78bc93bbb77c21189a496725d51b4a80abfb76650efe010"
+    },
+    {
+      "path": "migration-full.log",
+      "bytes": 924,
+      "sha256": "7f7e647fca3afd59a0099b6274f17107115f5a0dbbece06d1779d495426f34c8"
+    },
+    {
+      "path": "migration-trivy.json",
+      "bytes": 807876,
+      "sha256": "fe1a90de0a95b3e8dc244c5cda7e7faa24edbb907b6d3da239d5fd0a557e8201"
+    },
+    {
+      "path": "npm-audit-full.json",
+      "bytes": 3023,
+      "sha256": "df0901ab3626049e6c397fa458183a78250b80e683824d02d408315ae2cb5fe4"
+    },
+    {
+      "path": "npm-audit-production.json",
+      "bytes": 365,
+      "sha256": "96f423ce26c0eb6a80d4c6b78b11eaefd2572b206b43b3d31685a3de9aa5888d"
+    },
+    {
+      "path": "owner-approval.txt",
+      "bytes": 800,
+      "sha256": "918a9c495ad61ed85500f2b3e57f961581413a9c25c5f277227347ec05c4ea25"
+    },
+    {
+      "path": "postgres-full.log",
+      "bytes": 1108,
+      "sha256": "710f3a229c36e852afb528ff8fa532d62552672634869ac831e13d727a85d13a"
+    },
+    {
+      "path": "postgres-trivy.json",
+      "bytes": 2145956,
+      "sha256": "91f54ae62c4c46e5126cdf0c9c584d27f7143abe42787ef56902a4667c41e475"
+    },
+    {
+      "path": "R20_ACCEPTED_DECISION.json",
+      "bytes": 6746,
+      "sha256": "b1229f00fed0afe72d20aee2488a7ca8fa780364db6e924c2b53123d7b745234"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2558,
+      "sha256": "801cb6d91bd5774db2e23d8189dfb6cde9f713b087c2e991a558242891ea1d5f"
+    },
+    {
+      "path": "registration-gitleaks.json",
+      "bytes": 4,
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f"
+    },
+    {
+      "path": "REGISTRATION_VALIDATION.json",
+      "bytes": 489,
+      "sha256": "14b141d2fcd16d8696d5eefb00b343cb70bcecfbfe2ace783f56900f78de95b7"
+    },
+    {
+      "path": "scan-commands.json",
+      "bytes": 7695,
+      "sha256": "fc3976280ff4a94067a3ff881daea29c388719db0a56882cc8d5b6a01a855390"
+    },
+    {
+      "path": "scan-delta-review.json",
+      "bytes": 2417,
+      "sha256": "3d6381c555053e390489843672b1196105fa40e6ae338e33184f5805ddc9daf3"
+    },
+    {
+      "path": "scanner-databases/db-metadata.json",
+      "bytes": 153,
+      "sha256": "b5e01d1443eb069c606c4ae038455a8684081003439b5470f424db3159a03842"
+    },
+    {
+      "path": "scanner-databases/java-db-metadata.json",
+      "bytes": 153,
+      "sha256": "68007f0a2dac56980a241a070c44a9e910c44835be8b50a6431c61f1414132b3"
+    },
+    {
+      "path": "scanner-empty.yaml",
+      "bytes": 4,
+      "sha256": "e3566b3a06430868d71e9287dfd6c6c520a3da027aabea01951d407ee131dc2f"
+    },
+    {
+      "path": "scanner-version.log",
+      "bytes": 465,
+      "sha256": "f8bc9be504b1fd9da8b7671cd0460c389fe69b5bec809311e9d17a396d4b0f4a"
+    },
+    {
+      "path": "security-revalidation.json",
+      "bytes": 2492,
+      "sha256": "97ed9357b7b07d229ab31300afc2738b7fb98be8463603a8cb5dc1d0ec895cb6"
+    }
+  ]
+}

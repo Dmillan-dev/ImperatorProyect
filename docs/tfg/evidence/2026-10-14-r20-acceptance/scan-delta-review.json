@@ -1,0 +1,66 @@
+{
+  "reviewDate": "2026-10-14",
+  "result": "PASS / CURRENT FINDINGS REMAIN WITHIN EXPLICIT ACCEPTED SET",
+  "initialStrictHighCriticalComparison": "The raw scan summary conservatively stopped on a changed H/C-only set. That diagnostic is preserved unchanged; this review compares the complete approved CVE/package/version set across all severities.",
+  "acceptedSetStill25Cves": true,
+  "same119AcceptedPackageIdentityBindings": true,
+  "currentHighCriticalCves": 23,
+  "currentHighCriticalRows": 115,
+  "acceptedCvesNowLow": [
+    "CVE-2026-88647",
+    "CVE-2026-88648"
+  ],
+  "changedObservations": [
+    {
+      "service": "frontend",
+      "cve": "CVE-2026-88647",
+      "package": "libgnutls30",
+      "installed": "3.7.9-2+deb12u7",
+      "previousSeverity": "HIGH",
+      "severity": "LOW",
+      "status": "affected",
+      "fixed": null
+    },
+    {
+      "service": "frontend",
+      "cve": "CVE-2026-88648",
+      "package": "libgnutls30",
+      "installed": "3.7.9-2+deb12u7",
+      "previousSeverity": "HIGH",
+      "severity": "LOW",
+      "status": "affected",
+      "fixed": null
+    },
+    {
+      "service": "postgres",
+      "cve": "CVE-2026-88647",
+      "package": "libgnutls30",
+      "installed": "3.7.9-2+deb12u7",
+      "previousSeverity": "HIGH",
+      "severity": "LOW",
+      "status": "affected",
+      "fixed": null
+    },
+    {
+      "service": "postgres",
+      "cve": "CVE-2026-88648",
+      "package": "libgnutls30",
+      "installed": "3.7.9-2+deb12u7",
+      "previousSeverity": "HIGH",
+      "severity": "LOW",
+      "status": "affected",
+      "fixed": null
+    }
+  ],
+  "newHighCriticalOutsideApproval": 0,
+  "fixableHighCritical": 0,
+  "secrets": 0,
+  "newImageOrPackageVersions": false,
+  "acceptedMatrixReplaced": false,
+  "acceptedSeverityDowngradedByAgent": false,
+  "riskScopeBroadened": false,
+  "expiryChanged": false,
+  "approvalIsNewScan": false,
+  "limits": "The original accepted risk register keeps all25 CVEs with its conservative13/10 classification. A lower scanner observation does not repair them, remove them from accepted scope or declare inexploitable. No CVE/package/version identity, image, exposure or scope change occurred. New or escalated findings, fixes, runtime/configuration changes or expiry still invalidate before execution.",
+  "acceptanceApplicableForSameFourIndices": true
+}

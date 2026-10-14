@@ -1,0 +1,83 @@
+{
+  "scanDate": "2026-10-14",
+  "approvalDate": "2026-10-14",
+  "approvalIsScan": false,
+  "images": [
+    {
+      "component": "migration",
+      "id": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4",
+      "fixableHighCritical": 0,
+      "nonFixableRecords": 0,
+      "uniqueResidualCves": 0,
+      "secretsAllSeverities": 0,
+      "reportSha256": "fe1a90de0a95b3e8dc244c5cda7e7faa24edbb907b6d3da239d5fd0a557e8201"
+    },
+    {
+      "component": "backend",
+      "id": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757",
+      "fixableHighCritical": 0,
+      "nonFixableRecords": 0,
+      "uniqueResidualCves": 0,
+      "secretsAllSeverities": 0,
+      "reportSha256": "6adf5df3bb2cbcb4d768abe508a91720d51a9ee69ee9966d75892519864303f0"
+    },
+    {
+      "component": "frontend",
+      "id": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78",
+      "fixableHighCritical": 0,
+      "nonFixableRecords": 49,
+      "uniqueResidualCves": 11,
+      "secretsAllSeverities": 0,
+      "reportSha256": "e06f21e8b37f6e804a7b5339a2ce9391d47033701030fe7a23e13a05be0df475"
+    },
+    {
+      "component": "postgres",
+      "id": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9",
+      "fixableHighCritical": 0,
+      "nonFixableRecords": 66,
+      "uniqueResidualCves": 23,
+      "secretsAllSeverities": 0,
+      "reportSha256": "91f54ae62c4c46e5126cdf0c9c584d27f7143abe42787ef56902a4667c41e475"
+    }
+  ],
+  "fixableHighCritical": 0,
+  "secretsAllSeverities": 0,
+  "residualRecords": 115,
+  "residualUniqueCves": 23,
+  "addedResidualBindings": [],
+  "removedResidualBindings": [
+    [
+      "frontend",
+      "CVE-2026-88647",
+      "libgnutls30",
+      "3.7.9-2+deb12u7",
+      "HIGH"
+    ],
+    [
+      "frontend",
+      "CVE-2026-88648",
+      "libgnutls30",
+      "3.7.9-2+deb12u7",
+      "HIGH"
+    ],
+    [
+      "postgres",
+      "CVE-2026-88647",
+      "libgnutls30",
+      "3.7.9-2+deb12u7",
+      "HIGH"
+    ],
+    [
+      "postgres",
+      "CVE-2026-88648",
+      "libgnutls30",
+      "3.7.9-2+deb12u7",
+      "HIGH"
+    ]
+  ],
+  "sameAcceptedResidualBindings": false,
+  "fixableFindings": [],
+  "scope": "New independent full scans, no suppression, no ignore-unfixed. Exact accepted local indices only; no MVP runtime executed.",
+  "technicalGate": "PASS",
+  "acceptanceApplicableAfterRevalidation": false
+}
