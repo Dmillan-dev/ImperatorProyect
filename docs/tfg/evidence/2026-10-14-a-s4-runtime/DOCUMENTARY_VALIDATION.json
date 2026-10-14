@@ -1,0 +1,17 @@
+{
+  "historicalEvidenceByteIdentical": 888,
+  "jsonFilesValid": 11,
+  "localLinksChecked": 159,
+  "brokenLinks": 0,
+  "ordinaryDiffCheckExit": 0,
+  "scope": "Documentary A-S4 only; no product/configuration/dependency changes",
+  "pdfPages": 29,
+  "pdfVisualQA": "PASS all pages rendered and reviewed",
+  "humanOralRehearsal": "PENDING",
+  "finalNarratedRecording": "PENDING",
+  "academicReview": "PENDING",
+  "as3": "COMPLETE",
+  "as4": "IN PROGRESS",
+  "tfgA": "IN PROGRESS",
+  "aws": "BLOCKED"
+}

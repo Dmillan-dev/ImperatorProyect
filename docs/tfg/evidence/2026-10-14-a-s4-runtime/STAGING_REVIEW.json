@@ -1,0 +1,25 @@
+{
+  "ordinaryDocumentFiles": 10,
+  "ordinaryDocumentDiffCheckExit": 0,
+  "fullDiffCheckExit": 2,
+  "rawEvidenceWarningCount": 1974,
+  "warningsOutsideEvidence": 0,
+  "rawEvidenceBytesPreservedInIndex": true,
+  "warningPaths": {
+    "docs/tfg/evidence/2026-10-14-a-s4-runtime/DOCUMENTARY_VALIDATION.json": 17,
+    "docs/tfg/evidence/2026-10-14-a-s4-runtime/IMPERATOR_Memoria_TFG_Local.pdf": 201,
+    "docs/tfg/evidence/2026-10-14-a-s4-runtime/main-ci-after-as3.json": 1155,
+    "docs/tfg/evidence/2026-10-14-a-s4-runtime/persistence.json": 196,
+    "docs/tfg/evidence/2026-10-14-a-s4-runtime/pr72-merge.json": 5,
+    "docs/tfg/evidence/2026-10-14-a-s4-runtime/readiness-recovery.json": 20,
+    "docs/tfg/evidence/2026-10-14-a-s4-runtime/rehearsal-result.json": 198,
+    "docs/tfg/evidence/2026-10-14-a-s4-runtime/runtime-image-bindings.json": 182
+  },
+  "warningKinds": {
+    "trailing whitespace": 1974
+  },
+  "oldEvidenceChanged": false,
+  "productDependencyDockerWorkflowInfraChanges": false,
+  "reviewedStagedFilesBeforeAddingThisReport": 34,
+  "expectedFinalStagedFiles": 35
+}

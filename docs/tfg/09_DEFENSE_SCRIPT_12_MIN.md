@@ -1,122 +1,71 @@
-# Defensa local — Guion de doce minutos
+# IMPERATOR Twelve minute local TFG defence
 
-**Actualizado el 13/10/2026; no ensayado ni grabado como defensa oral.** Main c69f682 tiene 10/10CI PASS. R-20 actual: 25 CVE sigue pendiente: no hay ejecución final autorizada por esta preparación. Las capturas y el ensayo técnico citados proceden del 09/10. Los bloques suman 720 segundos. El tiempo combina narración, navegación y lectura; debe medirse con una persona y un cronómetro. El texto no garantiza la duración por su longitud.
+Language: English. Prepared 14/10/2026. Prepared for student narration. The oral rehearsal, recording and academic review remain pending.
 
-## Agenda cronometrada
+Source 30a03da; same four accepted image indices; R-20 expires 16/10/2026 00:00 Europe/Madrid. AWS remains blocked.
 
-| Bloque                        | Intervalo   | Segundos | Pantalla / evidencia                               |
-| ----------------------------- | ----------- | -------: | -------------------------------------------------- |
-| Problema y alcance            | 00:00–01:00 |       60 | Portada y flujo del caso                           |
-| Arquitectura y datos          | 01:00–02:00 |       60 | Diagramas de la memoria                            |
-| Evidencia y recomendación     | 02:00–04:00 |      120 | Caso compuesto; captura 01; informe de importación |
-| Autoridad y aprobación        | 04:00–05:30 |       90 | Captura 02; aserciones 401/403                     |
-| Implementación y validación   | 05:30–07:00 |       90 | Capturas 03/04; comandos API identificados         |
-| Ledger y valor                | 07:00–08:00 |       60 | Captura 05; persistencia                           |
-| Verificación y recuperación   | 08:00–09:00 |       60 | Informes de tests y readiness                      |
-| Seguridad y decisión temporal | 09:00–10:15 |       75 | R-20 exacto, R-23 y gate                           |
-| IA, AWS y límites             | 10:15–11:15 |       60 | Diagrama de límites; sin invocación externa        |
-| Conclusión                    | 11:15–12:00 |       45 | Matriz de objetivos y pendientes                   |
+## 00:00 to 01:00 Problem and scope
 
-## Narración y acciones
+IMPERATOR traces an operational decision from supporting evidence to human approval and a validated outcome. The practical questions are simple: why was a change proposed, who authorized it, and did it deliver the expected value? This is a local academic MVP, built around one synthetic case and four roles. The economic figures are simulation values, not customer savings. In this presentation, I use verified technical evidence. I will identify recorded material clearly and distinguish the technical rehearsal from my oral presentation. The product stays unchanged during this final phase. We focus on the implemented workflow, its evidence and its limits.
 
-### 00:00–01:00 · Problema y alcance
+Visual: intro. Identify the source as recorded technical evidence; never show tokens.
 
-«IMPERATOR permite reconstruir una decisión operativa: qué hechos la justificaron, qué regla produjo la recomendación, quién la autorizó y qué resultado se validó. El problema no termina al generar una recomendación: también hay que explicar y conservar su responsabilidad.
+## 01:00 to 02:00 Architecture and data
 
-El MVP presentado cubre un único caso, DRC-AOA-001, con treinta evidencias sintéticas y cuatro roles. La demostración es local. Las cifras que mostraré sirven para evaluar el sistema; no representan ahorros reales de una empresa.»
+The application combines a Next.js decision review workspace, a Java twenty-one Spring Boot backend and PostgreSQL persistence. The backend is a modular monolith with hexagonal boundaries. Domain rules are independent of HTTP, Spring, JDBC and provider libraries. Application use cases coordinate ports and transactions; adapters handle technical details. Flyway applies schema versions one to three. Recommendation data and governance facts have explicit references and constraints. Business value is a read projection of persisted implementation and validation facts, not a separate financial engine. One monolith is sufficient for this single-case evaluation and keeps the local reproduction manageable.
 
-Mostrar el flujo Evidence → Decision → Recommendation → Human Review → Ledger → Business Value. No dedicar este minuto a enumerar todas las tecnologías.
+Visual: architecture. Identify the source as recorded technical evidence; never show tokens.
 
-### 01:00–02:00 · Arquitectura y datos
+## 02:00 to 04:00 Evidence and recommendation
 
-«La solución utiliza una interfaz Next.js, una API Spring Boot y PostgreSQL. Dentro del backend, el dominio contiene políticas deterministas y los casos de uso coordinan puertos. Los adaptadores de infraestructura no adquieren autoridad sobre el negocio. Esta separación permite probar la política sin Spring o AWS y mantener el monolito sencillo para este alcance.
+The demonstrated case is D R C, A O A, zero zero one. It evaluates the cost of an AI onboarding assistant. Thirty normalized synthetic evidence records enter the case. Twenty-eight support the recommendation; two later records support implementation and financial validation. The policy recommends a model change: use a lower-cost model for routine onboarding requests and preserve a more capable fallback for exceptions. The simulated monthly cost moves from two thousand three hundred and forty euros to seven hundred and twenty euros. That gives an estimated monthly recovery of one thousand six hundred and twenty euros, and an annual estimate of nineteen thousand four hundred and forty euros. This amount is calculated by application code. A language model does not invent it. The screenshot comes from the real local Docker rehearsal performed on the four accepted images. The dates visible inside the case belong to the synthetic fixture, not the date of this recording. Evidence references and assumptions remain available for inspection. The optional explanation is unavailable in the local baseline because external providers are disabled. That state does not prevent the deterministic recommendation from being useful. Take time to inspect the context, monetary cards and policy result before moving to governance.
 
-Flyway aplica las versiones V1 a V3. El Ledger conserva hechos ordenados; las explicaciones opcionales se registran aparte. La cuenta de aplicación y la cuenta de migraciones tienen responsabilidades diferentes.»
+Visual: 01-deterministic-recommendation.png. Identify the source as recorded technical evidence; never show tokens.
 
-Mostrar los dos diagramas de la memoria. Indicar que el modelo conceptual no sustituye las migraciones físicas.
+## 04:00 to 05:30 Human authority and approval
 
-### 02:00–04:00 · Evidencia y recomendación
+Authentication, route permissions and business authority are separate controls. The server validates the signed token and exact role. The application then checks the assigned actor and whether the action is allowed in the current state. An auditor can read, but an attempted write returns forbidden and does not add a Ledger fact. A request without authentication returns unauthorized. Approval belongs to the assigned human actor, not the optional explanation provider. In this rehearsal, the administrator is the assigned approver. That is a deliberate simplification of the academic case, not a permanent enterprise governance model. The approval action was performed through the workspace. The resulting fact records actor, role, time, reason and evidence relationships. Hiding a button alone would not enforce this responsibility; the server and business rules must reject unauthorized commands. The displayed state is captured evidence from the successful real API and UI workflow.
 
-«El caso importa treinta hechos normalizados y compone una decisión trazable. La política produce la misma recomendación y estimación para la entrada canónica. El resultado mostrado es MODEL_CHANGE y la estimación sintética es 19.440 euros. Esa cifra la calcula el código; no la inventa un modelo generativo.
+Visual: 02-human-approval.png. Identify the source as recorded technical evidence; never show tokens.
 
-La recomendación conserva sus referencias de evidencia y supuestos. Podemos inspeccionar la relación entre hechos, decisión y resultado sin depender de una explicación de IA.»
+## 05:30 to 07:00 Implementation and financial validation
 
-Reservar tiempo para enseñar la importación/composición desde el informe real y abrir la captura 01 o la pantalla correspondiente. Si se usa evidencia grabada, decir expresamente «este es el ensayo ejecutado el 9 de octubre». No afirmar una importación nueva si solo se está leyendo un caso existente. No mostrar tokens, comandos que los contienen o pestañas personales.
+Approval does not by itself demonstrate a result. The platform engineer records implementation, and Finance validates the outcome against post-action evidence. Actor assignment, sequence and chronology form part of the contract. In the technical rehearsal, these two operations were authenticated API commands, followed by unmocked reads in the workspace. The evidence does not claim that the UI selected previously unlinked post-action records. This boundary matters when describing what was tested. After validation, the simulated annual realized value is eighteen thousand nine hundred and sixty euros. Compared with the annual estimate, the variance is minus four hundred and eighty euros. The result is synthetic. It demonstrates how an expected amount becomes a validated projection, without presenting an estimate as confirmed business savings. Implementation and validation facts are retained so that another reviewer can reconstruct the responsibility and the evidence supporting this projection.
 
-### 04:00–05:30 · Autoridad y aprobación
+Visual: 04-realized-business-value.png. Identify the source as recorded technical evidence; never show tokens.
 
-«Los roles limitan las operaciones, y el actor asignado limita quién puede asumir la responsabilidad. Un auditor puede consultar, pero su intento de escritura se deniega sin añadir un hecho al Ledger. Sin autenticación, la API devuelve 401. Para la aprobación debe intervenir la persona con el rol y actor correctos.
+## 07:00 to 08:00 Ledger and business value
 
-Esta decisión humana no se delega al proveedor de explicación. Los controles se aplican en servidor; ocultar un botón en la interfaz no sería suficiente.»
+The Decision Ledger now contains three ordered governance facts: approval, implementation and result validation. Each fact keeps its actor, reason, evidence snapshot and link to the previous entry. The application database role can read and insert, but cannot update or delete this history. This is an append-only application contract, not a claim that a database administrator can never alter physical data. The business-value view reads the validated facts. The optional explanation is stored separately and cannot write the Ledger. The auditor can inspect the sequence and the economic projection without receiving write authority. The persisted links make the outcome reviewable.
 
-Mostrar la captura 02 y las aserciones del ensayo. Si el runtime está disponible y aprobado, efectuar únicamente la operación prevista en un caso aislado. En modo grabado, describir la aserción histórica; no representar una captura como una interacción nueva.
+Visual: 05-auditor-ledger.png. Identify the source as recorded technical evidence; never show tokens.
 
-### 05:30–07:00 · Implementación y validación
+## 08:00 to 09:00 Verification and recovery
 
-«La aprobación no acredita por sí misma un resultado. Primero se registra la implementación y después Finanzas valida el resultado con evidencias posteriores. La secuencia y los actores son parte del contrato.
+The historical functional regression records one hundred and seventy-four backend unit tests, thirty-five PostgreSQL integration tests and forty-one frontend tests passing. Playwright records nine passed cases and six intentional skips. The skips are not counted as passes. The new local technical rehearsal uses the real API and the same accepted images, with a new synthetic volume and credentials. Flyway versions one to three and application privileges pass. Replacing the three service containers preserves thirty evidence rows, three Ledger facts and the same projections. When PostgreSQL stops, readiness becomes unavailable while liveness remains healthy. After restart, readiness recovers and the facts remain intact.
 
-En este ensayo, esos dos comandos se ejecutaron por la API autenticada y luego se leyeron en la UI. La evidencia no demuestra seleccionarlos mediante el selector de evidencias previamente no vinculadas. Expongo esta limitación para que se entienda exactamente qué comportamiento se verificó.»
+Visual: verification. Identify the source as recorded technical evidence; never show tokens.
 
-Mostrar las capturas 03 y 04 y localizar los pasos correspondientes del informe. No ampliar la interfaz ni preparar otra funcionalidad durante la defensa.
+## 09:00 to 10:15 Security and temporary risk decision
 
-### 07:00–08:00 · Ledger y valor
+Security approval and scanning are distinct facts. The owner approved the conservative set of twenty-five residual C V Es for four exact local image indices, with synthetic data only. The independent scan on October fourteenth measures zero fixable High or Critical vulnerabilities and zero secrets. Two known Gnu TLS findings are now classified Low by the scanner. They remain affected and without a fix; they are not removed from the accepted risk register or declared inexploitable. The same twenty-five finding identities and package versions remain present. The original conservative acceptance is kept. It expires exclusively on October sixteenth, at midnight Europe Madrid, without automatic renewal or transfer to new images. R twenty-three, concerning development tooling, remains open independently. Live AWS, production and real data are excluded. Full reports, dates and hashes remain available so that the decision can be reviewed.
 
-«El Ledger conserva tres hechos de gobernanza ordenados. Business Value proyecta el resultado validado: 18.960 euros sintéticos, frente a una estimación de 19.440. La diferencia es menos 480 euros. Distinguir previsto y realizado evita presentar una expectativa como un resultado confirmado.
+Visual: security. Identify the source as recorded technical evidence; never show tokens.
 
-El control append-only se verificó con los permisos de la cuenta de aplicación y pruebas de persistencia. No estoy afirmando que un administrador de base de datos no pueda modificar físicamente los datos.»
+## 10:15 to 11:15 AI and cloud limits
 
-Mostrar captura 05 y el resultado de persistencia tras reemplazar los tres contenedores.
+AI is limited to explaining a recommendation that has already been calculated and persisted. It cannot decide, approve, change the economic amount or execute the proposed change. The adapter and failure cases are tested offline. No live Bedrock request is claimed in this demonstration. Read-only GitHub and AWS evidence adapters, Terraform and OIDC workflows prepare a possible future cloud pilot. Their source implementation does not demonstrate a deployed service, measured cloud cost, rollback or teardown. The current defence is local and uses synthetic data. External identity conformity remains a separate gate. AWS remains blocked, and this risk acceptance does not authorize cloud resources or provider validation.
 
-### 08:00–09:00 · Verificación y recuperación
+Visual: limits. Identify the source as recorded technical evidence; never show tokens.
 
-«La evaluación local incluye 174 tests unitarios backend, 35 de integración PostgreSQL y 41 frontend. Playwright tiene nueve casos aprobados y seis skips intencionales, que no cuento como aprobados. Las pruebas con fixtures se complementan con un ensayo API/UI real en Docker.
+## 11:15 to 12:00 Conclusion and remaining gate
 
-Se verificaron Flyway V1 a V3, persistencia tras reemplazo y la transición de readiness cuando la base de datos deja de estar disponible. Liveness y readiness responden a preguntas diferentes: el proceso puede seguir vivo aunque temporalmente no esté preparado para servir.»
+The implemented result links evidence, deterministic policy, human responsibility, persistent history and validated simulated value. The evidence and version gate is complete for the accepted local scope. The memory and this technical narrated draft support the next human rehearsal. The student still needs to measure a real twelve-minute oral presentation, review the final recording and obtain academic feedback. Those results are not fabricated by generating a script or video. T F G A remains in progress until every formal criterion is verified. No product expansion or AWS deployment is needed for the authorized local work.
 
-Mostrar resúmenes e informes fechados. No usar un badge como prueba de CI del SHA nuevo.
+Visual: conclusion. Identify the source as recorded technical evidence; never show tokens.
 
-### 09:00–10:15 · Seguridad y decisión temporal
+## Human rehearsal record
 
-«Los escaneos completos del 13 de octubre sobre las cuatro imágenes locales conservadas muestran cero High/Critical corregibles y cero secretos. Quedan 25 CVE residuales y 119 filas por paquete-imagen; no afirmo que sean inexplotables. Dos observaciones de GnuTLS son nuevas frente al ensayo del 09/10 y su alcance ejecutable desde el producto no está demostrado.
+Record actual duration, deviations by block, delivery mode, source SHA and image identities. The scheduled 720 seconds are planning, not a measurement of the student.
 
-La aceptación anterior R-20 caducó el 9 de octubre. La propuesta actual sigue pendiente de aprobación, limitada al entorno local, datos sintéticos y digests exactos; 16 de octubre a las cero horas Europe/Madrid es una fecha propuesta, no autorizada. R-23 permanece abierto e independiente en el tooling de desarrollo.
-
-Main `c69f682` tiene diez checks correctos. Las imágenes construidas por CI tienen sus propios digests y no heredan la aprobación local ni el ensayo anterior. La fuente, el artefacto y la autorización son registros distintos.»
-
-Mostrar la [propuesta y su estado real](evidence/2026-10-13-main-closure/R20_CURRENT_PROPOSAL.md). Si más adelante se aprueba, usar únicamente el registro explícito vigente y adaptar esta narración al estado demostrado; no decir que ya está aceptada. Hasta entonces utilizar solo evidencia histórica y no iniciar el runtime.
-
-### 10:15–11:15 · IA, AWS y límites
-
-«La IA está limitada a explicar una recomendación ya calculada. No decide, no aprueba, no cambia el ROI y no escribe el Ledger. El adaptador y sus casos de fallo están implementados y probados offline; aquí no se ha efectuado una llamada real a Bedrock.
-
-AWS es una arquitectura objetivo, con Terraform y evidencia offline. No presento un despliegue, coste medido ni rollback cloud. La propuesta tiene compromisos de disponibilidad y necesita resolver sus gates de entrega e identidad externa antes de avanzar. Esta defensa funciona con archivos locales sin AWS, Keycloak, Bedrock o acceso a GitHub.»
-
-No abrir precios, consolas cloud ni endpoints externos. Si el tutor exige AWS, declarar ese requisito pendiente; no redefinirlo como satisfecho por el diseño.
-
-### 11:15–12:00 · Conclusión
-
-«El resultado demuestra un ciclo completo de trazabilidad: hechos, política, responsabilidad humana, historial y valor validado. Su contribución está en la coherencia del contrato y en la evidencia que permite evaluar cada afirmación.
-
-El alcance local tiene limitaciones explícitas: aceptación temporal de seguridad, riesgo de tooling abierto y ausencia de validación cloud e identidad externa. La entrega debe vincularse a un SHA revisado y sus checks efectivos. El siguiente trabajo es finalizar revisión y defensa; cualquier evolución cloud requiere una decisión separada.»
-
-Cerrar mostrando la matriz de requisitos y el estado real de la entrega, sin declarar una release operativa o aprobación académica no obtenida.
-
-## Respuestas breves para el tribunal
-
-| Pregunta                  | Respuesta sustentada                                                                                                                       |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| ¿Por qué un monolito?     | Un caso y transacciones relacionadas; reduce coordinación y despliegues. No se necesita separar servicios para demostrar los requisitos.   |
-| ¿Qué aporta IA?           | Explicación opcional de un resultado ya calculado, con validación y fallo aislado. El resultado determinista permanece útil sin proveedor. |
-| ¿Es segura la aplicación? | Tiene controles y evaluación; los 25 CVE residuales actuales esperan aceptación explícita. No afirmo seguridad absoluta.                                  |
-| ¿Por qué no cero CVE?     | Se remedió lo corregible autorizado y se evaluó el residuo; no se eliminaron paquetes ni cambiaron bases para manipular el contador.       |
-| ¿El Ledger es inmutable?  | Append-only bajo la identidad y contrato de aplicación verificados; no ofrece una garantía criptográfica frente al propietario de la base. |
-| ¿Se ha desplegado AWS?    | No. Es arquitectura e infraestructura probada offline, con gates pendientes.                                                               |
-| ¿Cuánto costó AWS?        | No hay coste medido ni estimación vigente aprobada en esta fase.                                                                           |
-| ¿Puede repetirse?         | Los informes, fuente exacta y manifests identifican el ensayo; su ejecución requiere imágenes disponibles y autorización vigente.          |
-
-## Registro pendiente del ensayo humano
-
-- Duración real, desviación por bloque y correcciones: **PENDIENTES**.
-- Grabación final con narración y revisión visual: **PENDIENTE**.
-- SHA main `c69f682` y CI 10/10: **VERIFICADOS**; aceptación de riesgo para entrega/digests y modo final de demo: **PENDIENTES A-S3 y preflight**.
-- Evaluación por tutor/centro: **PENDIENTE**.
+Final spoken delivery, student narration and academic review: PENDING. The automated technical recording remains a preparation artifact.

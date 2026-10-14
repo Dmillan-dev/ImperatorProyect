@@ -1,0 +1,21 @@
+{
+  "executedAtUtc": "2026-10-14T11:03:47.724367+00:00",
+  "project": "imperator-final-20261014",
+  "removedComposeContainers": 6,
+  "removedFixtureId": "37980a1a50025df3fc6d574c45faed06a16ce3c04b374f9f8d0db541bc3a8ed3",
+  "remainingProjectContainers": 0,
+  "newSyntheticVolumePreserved": "imperator-final-20261014_postgres-data",
+  "imagesPreserved": {
+    "backend": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757",
+    "frontend": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78",
+    "postgres": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9",
+    "postgres-permissions": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9",
+    "flyway-migrate": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4",
+    "flyway-validate": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4"
+  },
+  "noImagesRemoved": true,
+  "noPrune": true,
+  "noOldVolumesChanged": true,
+  "noForce": true,
+  "result": "PASS"
+}

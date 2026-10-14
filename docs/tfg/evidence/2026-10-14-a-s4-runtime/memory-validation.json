@@ -1,0 +1,17 @@
+{
+  "pdf": "D:\\Imperator\\output\\pdf\\IMPERATOR_Memoria_TFG_Local.pdf",
+  "pages": 29,
+  "font": "Arial11 body",
+  "lineSpacing": 1.5,
+  "pageSize": "A4 per institutional template",
+  "coverHasTutorOrSubmissionDate": false,
+  "author": "Daniel Millan Perez",
+  "defenceLanguage": "English",
+  "academicReview": "PENDING",
+  "humanRehearsal": "PENDING",
+  "tfgA": "IN PROGRESS",
+  "sha256": "c1851c04b3c042c8176e0e5af5f5207ec2fa6451a35aa01ff0833aef8d4053a2",
+  "visualQA": "PASS: all pages rendered and reviewed; final diagram labels checked",
+  "wordDocumentDelivered": false,
+  "editableText": "../../08_LOCAL_MVP_MEMORY.md"
+}

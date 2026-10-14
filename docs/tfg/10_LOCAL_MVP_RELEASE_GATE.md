@@ -1,35 +1,35 @@
 # Gate de entrega local — A-S3 y A-S4
 
-Estado 13/10/2026: main `c69f682` integrado, CI 10/10 PASS, **TFG-A IN PROGRESS**. [Registro post-merge](evidence/2026-10-13-main-closure/README.md). R-20 anterior caducado; propuesta 25 CVE `accepted: false`. R-23 OPEN independiente.
+Revisión 14/10/2026. [A-S3 cerrado](evidence/2026-10-14-r20-acceptance/A_S3_CLOSURE_RECORD.md), [R-20 aceptado](evidence/2026-10-14-r20-acceptance/R20_ACCEPTED_DECISION.json), **TFG-A IN PROGRESS**. Integración documental #72: `adbe45eabb3a79807ec0e55c791006927dcb3f64`, CI main 10/10 PASS; [registro](evidence/2026-10-14-a-s4-runtime/main-ci-after-as3.json). El runtime 14/10 ejecutó las imágenes conservadas y fuente de entrada `30a03da`; esta integración solo cambia documentos.
 
 ## A-S3 — Evidencia y versión
 
 | Criterio | Estado / evidencia |
 | --- | --- |
-| Fuente integrada y revisión | #68 fusionada; árbol del candidato documental idéntico |
-| CI efectiva exactoSHA | 10/10 success sobre `c69f682`; URLs archivadas |
-| Fuente/construcción/escaneo/runtime | Cadena histórica identificada; cuatro locales inspeccionados y CI separado |
-| Escaneos producción completos | 0 H/C corregibles y 0 secretos;25 CVE residuales/119 filas conservados |
-| R-20 aplicable y vigente | PENDIENTE aprobación explícita de la propuesta 25 CVE y cuatro índices |
-| R-23 | OPEN / NO FIX AVAILABLE; tooling independiente |
-| Evidencias/receipts | No sobrescribir; decisiones posteriores como nuevos registros |
-| Cierre formal A-S3 | PENDIENTE R-20 y acta de versión de entrega |
+| Fuente, construcción y runtime exacto | Correspondencia demostrada y orígenes preservados; no se infiere igualdad binaria por árbol/SBOM |
+| CI del main integrado | 10/10 PASS `adbe45e`; CI no renueva decisiones de riesgo |
+| Escaneos exactos 14/10 | 0 H/C corregibles y 0 secretos en las cuatro imágenes |
+| Riesgo residual | Matriz conservadora de 25 CVE aceptada; escaneo actual 23 H/C + dos LOW, no corregidos ni declarados inexplotables |
+| R-20 | ACCEPTED TEMPORARY, local/sintético, hasta 16/10/2026 00:00 Europe/Madrid; cuatro índices exactos, sin transferencia/renovación automática |
+| R-23 | OPEN / NO FIX AVAILABLE; disposición de tooling independiente |
+| Evidencias originales / receipts | Preservados; decisiones posteriores registradas aparte |
+| A-S3 formal | COMPLETE, gate local de evidencia/versionado |
 
-Las imágenes nuevas de CI quedan fuera de la propuesta de aceptación local. No se afirma igualdad binaria por igualdad de fuente/SBOM. D094 formalReleaseEligible es elegibilidad técnica, no aprobación académica.
+Las imágenes construidas en CI quedan fuera de la aceptación local. D094 formalReleaseEligible es elegibilidad técnica, no aprobación académica ni autorización AWS.
 
 ## A-S4 — Defensa y memoria
 
 | Criterio | Estado / salida exigida |
 | --- | --- |
-| Memoria ajustada al centro | BORRADOR; [mapa DAM](11_DAM_MEMORY_DELIVERY.md), plantilla/maquetación/revisión pendientes |
-| Requisitos/diagramas/manual/resultados | Material existente; revisión final y trazabilidad de cada afirmación |
-| Preflight de ejecución final | PENDIENTE decisión vigente antes de iniciar servicios |
-| Demo local sintética | PENDIENTE final; ensayo histórico 09/10 no se cuenta como ensayo nuevo |
-| Ensayo 12 minutos | PENDIENTE duración medida con una persona |
-| Grabación final narrada | PENDIENTE QA audio / pantalla/hash; clip 24,88 s sin audio es técnico |
-| Revisión tutor/centro | PENDIENTE; confirmar perfil/plantilla/calendario y si AWS es obligatorio |
-| TFG-A COMPLETE / MVP académico aprobado | PENDIENTE DoD y revisión académica |
+| Memoria | PDF de 29 páginas y texto preparados, sin tutor ni fecha de entrega; layout revisado |
+| Requisitos, diagramas, código, manual y bitácora | Incorporados en memoria y vinculados a evidencias; revisión académica pendiente |
+| Demo técnica sintética real 14/10 | PASS con mismas imágenes, RBAC, Flyway, persistencia y recovery |
+| Guion inglés | Preparado, diez bloques / 720 segundos planificados |
+| Ensayo humano doce minutos | PENDING medición real |
+| Grabación final narrada | PENDING archivo, duración/hash, QA audio/imagen/secretos |
+| Revisión académica / encaje DAM | PENDING, no se presupone aceptación |
+| TFG-A COMPLETE | PENDING todos los criterios DoD y revisión académica |
 
-Preparar A-S4 documentalmente es posible durante el bloqueo R-20; no permite ejecutar el MVP sin aceptación ni cerrar la fase por editar estados. La validez como DAM debe decidirla el tutor; arquitectura web puede justificarse por persistencia/API/seguridad/pruebas, pero no se presupone equivalencia con requisitos de móvil/escritorio.
+[Material A-S4](A_S4_LOCAL_DEFENSE.md), [mapa DAM](11_DAM_MEMORY_DELIVERY.md), [formulario humano](evidence/2026-10-14-a-s4-runtime/HUMAN_DEFENSE_REVIEW.md). El clip técnico sin audio y las cifras planificadas no cumplen el criterio de defensa humana. La [Definition of Done](00_TFG_MASTER_PLAN.md#7-tfg-a-definition-of-done) sigue vigente.
 
-No upgrades, cambios funcionales, Docker/imágenes base, workflows, Terraform, AWS, Bedrock ni Keycloak externo en este cierre documental. La [Definition of Done](00_TFG_MASTER_PLAN.md#7-tfg-a-definition-of-done) continúa vigente. La aceptación anterior caducó 09/10; 16/10 es solo una fecha propuesta y no se renueva automáticamente.
+No nuevos upgrades, cambios funcionales, Docker/base, workflows, Terraform ni AWS en esta preparación documental. Una nueva ejecución requiere aceptación vigente; si caduca, mantener solo la revisión de materiales históricos hasta nueva decisión.
