@@ -60,7 +60,7 @@ Visual: limits. Identify the source as recorded technical evidence; never show t
 
 ## 11:15 to 12:00 Conclusion and remaining gate
 
-The implemented result links evidence, deterministic policy, human responsibility, persistent history and validated simulated value. The evidence and version gate is complete for the accepted local scope. The memory and this technical narrated draft support the next human rehearsal. The student still needs to measure a real twelve-minute oral presentation, review the final recording and obtain academic feedback. Those results are not fabricated by generating a script or video. T F G A remains in progress until every formal criterion is verified. No product expansion or AWS deployment is needed for the authorized local work.
+The implemented result links evidence, deterministic policy, human responsibility, persistent history and validated simulated value. The evidence and version gate is complete for the accepted local scope. The memory, this English script and the silent technical clip support the next human rehearsal. The student still needs to measure a real twelve-minute oral presentation, review the final recording and obtain academic feedback. Those results are not fabricated by generating a script or video. T F G A remains in progress until every formal criterion is verified. No product expansion or AWS deployment is needed for the authorized local work.
 
 Visual: conclusion. Identify the source as recorded technical evidence; never show tokens.
 
@@ -68,4 +68,4 @@ Visual: conclusion. Identify the source as recorded technical evidence; never sh
 
 Record actual duration, deviations by block, delivery mode, source SHA and image identities. The scheduled 720 seconds are planning, not a measurement of the student.
 
-Final spoken delivery, student narration and academic review: PENDING. The automated technical recording remains a preparation artifact.
+Final spoken delivery, student narration and academic review: PENDING. No narrated recording has been produced. The existing silent technical clip is preparation evidence.
