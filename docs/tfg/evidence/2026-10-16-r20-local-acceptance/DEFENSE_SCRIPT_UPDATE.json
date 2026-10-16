@@ -1,0 +1,11 @@
+{
+  "sourceBase": "94ce8799812ecde83ebb4e0b2698bfab5e9091d8",
+  "previousScriptSha256": "301f561ea87c0e54f3d0beb3493c16c97996b2c9ce6d1f5055808029efda3b92",
+  "currentScriptSha256": "d820e6aeb0b55f9f72ee8867b187f856745457defff4e7b322871d8e50a4bee9",
+  "reason": "Align spoken security block with explicit 16 October 26-CVE acceptance, fresh scan and 19 October expiry. Original runtime and PDF evidence remain untouched.",
+  "humanRehearsal": "PENDING",
+  "narratedRecording": "PENDING",
+  "academicReview": "PENDING",
+  "plannedSeconds": 720,
+  "measuredHumanSeconds": null
+}

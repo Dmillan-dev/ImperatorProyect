@@ -1,0 +1,21 @@
+{
+  "documentaryFiles": 16,
+  "jsonFilesParsed": 25,
+  "localLinksChecked": 223,
+  "anchorLinksChecked": 15,
+  "brokenLinks": 0,
+  "ordinaryDocumentDiffCheckExit": 0,
+  "priorEvidenceByteIdentical": 914,
+  "approvedCves": 26,
+  "r20": "ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC",
+  "exclusiveExpiry": "2026-10-19T00:00:00+02:00",
+  "rawProposalPreservedAcceptedFalse": true,
+  "rawScansByteIdentical": true,
+  "dockerImagesRemoved": 3,
+  "fourAcceptedImagesPreserved": true,
+  "as3": "COMPLETE historical local record",
+  "as4": "IN PROGRESS",
+  "tfgA": "IN PROGRESS",
+  "aws": "BLOCKED",
+  "functionalCodeDependencyDockerWorkflowInfraChanges": false
+}

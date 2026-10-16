@@ -1,0 +1,16 @@
+{
+  "recordedAtUtc": "2026-10-16T08:40:42.092677+00:00",
+  "dockerInitiallyStopped": true,
+  "dockerStartedForScannerOnly": true,
+  "dockerStopCommandExit": 0,
+  "applicationContainersStarted": false,
+  "scannerContainersRemoved": true,
+  "preExistingStoppedBuildkitContainerPreserved": true,
+  "imagePullBuildTagDelete": false,
+  "volumesDeleted": false,
+  "prune": false,
+  "cachesDeleted": false,
+  "postStopDesktopStatusExit": 1,
+  "postStopDesktopStatusMessage": "Could not retrieve status. Is Docker Desktop running?",
+  "stopVerificationScope": "Desktop stop command completed successfully; status endpoint unavailable after stopping. No restart was attempted."
+}

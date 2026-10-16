@@ -1,0 +1,19 @@
+{
+  "stagedFilesReviewed": 60,
+  "ordinaryDocumentFiles": 16,
+  "ordinaryDocumentCheckExit": 0,
+  "fullCheckExit": 2,
+  "rawEvidenceWarningCount": 4,
+  "warningsOutsideEvidence": 0,
+  "rawEvidenceBytesMatchIndex": true,
+  "warningPaths": {
+    "docs/tfg/evidence/2026-10-16-r20-local-acceptance/scan/backend-full.log": 1,
+    "docs/tfg/evidence/2026-10-16-r20-local-acceptance/scan/frontend-full.log": 1,
+    "docs/tfg/evidence/2026-10-16-r20-local-acceptance/scan/migration-full.log": 1,
+    "docs/tfg/evidence/2026-10-16-r20-local-acceptance/scan/postgres-full.log": 1
+  },
+  "scope": "Documentation and new evidence only. Explicit ignored .log evidence added without changing ignore policy.",
+  "originalRootChangesNotIncluded": true,
+  "productDependencyDockerWorkflowInfraChanges": false,
+  "finalStagedFilesIncludingThisReport": 61
+}

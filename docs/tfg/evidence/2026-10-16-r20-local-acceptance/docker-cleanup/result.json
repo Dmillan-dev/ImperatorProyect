@@ -1,0 +1,26 @@
+{
+  "completedAtUtc": "2026-10-16T09:18:31.192535+00:00",
+  "removedImages": 3,
+  "removedIds": [
+    "sha256:011841aeec87092e1adf1458fb208005ae3925eb794aecadc137ffb9b8d09e70",
+    "sha256:aa6f9e2344c82cddfeef9c2bca2f0145aab30e88b5305b0648c3dc27eddb7fc6",
+    "sha256:fb37d301142af5e10bcd02cd0d38bcc8281cd1389d944700e74d19ce2bdd6615"
+  ],
+  "remainingImageCount": 10,
+  "protectedIds": [
+    "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757",
+    "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9",
+    "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4",
+    "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78"
+  ],
+  "protectedIdsDigestsAndRootfsUnchanged": true,
+  "baseAndToolImagesPreserved": true,
+  "preExistingContainersPreserved": true,
+  "volumesRemoved": false,
+  "cacheRemoved": false,
+  "forceUsed": false,
+  "pruneUsed": false,
+  "runtimeStarted": false,
+  "hostDiskSpaceRecoveredNotClaimed": "Shared layers and the VM disk prevent deriving actual host space from image sizes.",
+  "result": "PASS"
+}

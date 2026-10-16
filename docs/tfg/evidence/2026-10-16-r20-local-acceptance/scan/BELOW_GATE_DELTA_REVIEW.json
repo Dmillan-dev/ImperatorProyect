@@ -1,0 +1,641 @@
+{
+  "reviewDate": "2026-10-16",
+  "addedRows": 32,
+  "severityCounts": {
+    "MEDIUM": 16,
+    "LOW": 16
+  },
+  "newLowerSeverityUniqueCves": [
+    "CVE-2026-102473",
+    "CVE-2026-102474",
+    "CVE-2026-107161",
+    "CVE-2026-67693",
+    "CVE-2026-86409",
+    "CVE-2026-86414",
+    "CVE-2026-87862",
+    "CVE-2026-87864",
+    "CVE-2026-88647",
+    "CVE-2026-92388",
+    "CVE-2026-92389",
+    "CVE-2026-92391",
+    "CVE-2026-94266",
+    "CVE-2026-95184",
+    "CVE-2026-95209",
+    "CVE-2026-95210"
+  ],
+  "observations": [
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-102473",
+      "package": "dash",
+      "installed": "0.5.11+git20210903+057cd650a4ed-3build1",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-102473",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "dash: dash: Super-polynomial backtracking in pmatch when libc fnmatch is disabled"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-102474",
+      "package": "dash",
+      "installed": "0.5.11+git20210903+057cd650a4ed-3build1",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-102474",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "dash: dash: Heap out-of-bounds write in conv_escape via undersized Unicode escape reservation"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-107161",
+      "package": "libsasl2-2",
+      "installed": "2.1.27+dfsg2-3ubuntu1.2",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-107161",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "cyrus-sasl: Heap buffer overflow in cyrus-sasl add_to_challenge() allows malicious server to crash or compromise DIGEST-MD5 clients"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-107161",
+      "package": "libsasl2-modules-db",
+      "installed": "2.1.27+dfsg2-3ubuntu1.2",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-107161",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "cyrus-sasl: Heap buffer overflow in cyrus-sasl add_to_challenge() allows malicious server to crash or compromise DIGEST-MD5 clients"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-67693",
+      "package": "libgnutls30",
+      "installed": "3.7.3-4ubuntu1.9",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-67693",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "gnutls: gnutls: Information disclosure via contradictory Key Usage and Extended Key Usage extensions"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-86409",
+      "package": "curl",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-86409",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "stale SigV4 headers sent unintended"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-86409",
+      "package": "libcurl4",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-86409",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "stale SigV4 headers sent unintended"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-86414",
+      "package": "curl",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-86414",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "curl: curl: leaking host credentials to HTTP proxy"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-86414",
+      "package": "libcurl4",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-86414",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "curl: curl: leaking host credentials to HTTP proxy"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-87862",
+      "package": "curl",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-87862",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": null
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-87862",
+      "package": "libcurl4",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-87862",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": null
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-87864",
+      "package": "curl",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-87864",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "Title Not Available"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-87864",
+      "package": "libcurl4",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-87864",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "Title Not Available"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-88647",
+      "package": "libgnutls30",
+      "installed": "3.7.3-4ubuntu1.9",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-88647",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "gnutls: gnutls: Information disclosure via hostname verification bypass"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-92388",
+      "package": "curl",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-92388",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "curl: curl: FTP wildcard write callback mixup"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-92388",
+      "package": "libcurl4",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-92388",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "curl: curl: FTP wildcard write callback mixup"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-92389",
+      "package": "curl",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-92389",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "Title Not Available"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-92389",
+      "package": "libcurl4",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-92389",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "Title Not Available"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-92391",
+      "package": "curl",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-92391",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "Title Not Available"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-92391",
+      "package": "libcurl4",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-92391",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "Title Not Available"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-94266",
+      "package": "curl",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-94266",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "libcurl could accidentally return a URL for curl_easy_getinfo's `"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-94266",
+      "package": "libcurl4",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-94266",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "libcurl could accidentally return a URL for curl_easy_getinfo's `"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-95184",
+      "package": "libgnutls30",
+      "installed": "3.7.3-4ubuntu1.9",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-95184",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "Improper certificate validation in gnutls v3.8.13 causes the applicati ..."
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-95209",
+      "package": "libgnutls30",
+      "installed": "3.7.3-4ubuntu1.9",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-95209",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "An issue in gnutls v3.8.13 causes legitimate CA certificates to be rej ..."
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-95210",
+      "package": "libgnutls30",
+      "installed": "3.7.3-4ubuntu1.9",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-95210",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "Improper certificate validation in gnutls v3.8.13 causes the applicati ..."
+    },
+    {
+      "component": "migration",
+      "target": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4 (ubuntu 24.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-102473",
+      "package": "dash",
+      "installed": "0.5.12-6ubuntu5",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-102473",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "dash: dash: Super-polynomial backtracking in pmatch when libc fnmatch is disabled"
+    },
+    {
+      "component": "migration",
+      "target": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4 (ubuntu 24.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-102474",
+      "package": "dash",
+      "installed": "0.5.12-6ubuntu5",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-102474",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "dash: dash: Heap out-of-bounds write in conv_escape via undersized Unicode escape reservation"
+    },
+    {
+      "component": "migration",
+      "target": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4 (ubuntu 24.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-67693",
+      "package": "libgnutls30t64",
+      "installed": "3.8.3-1.1ubuntu3.6",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-67693",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "gnutls: gnutls: Information disclosure via contradictory Key Usage and Extended Key Usage extensions"
+    },
+    {
+      "component": "migration",
+      "target": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4 (ubuntu 24.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-88647",
+      "package": "libgnutls30t64",
+      "installed": "3.8.3-1.1ubuntu3.6",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-88647",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "gnutls: gnutls: Information disclosure via hostname verification bypass"
+    },
+    {
+      "component": "migration",
+      "target": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4 (ubuntu 24.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-95184",
+      "package": "libgnutls30t64",
+      "installed": "3.8.3-1.1ubuntu3.6",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-95184",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "Improper certificate validation in gnutls v3.8.13 causes the applicati ..."
+    },
+    {
+      "component": "migration",
+      "target": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4 (ubuntu 24.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-95209",
+      "package": "libgnutls30t64",
+      "installed": "3.8.3-1.1ubuntu3.6",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-95209",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "An issue in gnutls v3.8.13 causes legitimate CA certificates to be rej ..."
+    },
+    {
+      "component": "migration",
+      "target": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4 (ubuntu 24.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-95210",
+      "package": "libgnutls30t64",
+      "installed": "3.8.3-1.1ubuntu3.6",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-95210",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "Improper certificate validation in gnutls v3.8.13 causes the applicati ..."
+    }
+  ],
+  "status": "RECORDED UNDER EXISTING BELOW-HIGH POLICY; NO PATCH APPLIED",
+  "individualReachabilityReviewComplete": false,
+  "notDeclaredHarmless": true,
+  "doesNotRelaxHighCriticalOrSecretGate": true,
+  "noNewRiskIdsOpened": true
+}

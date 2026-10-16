@@ -1,0 +1,5 @@
+2026-10-16T08:29:06Z	INFO	Loaded	file_path="/work/scanner-empty.yaml"
+2026-10-16T08:29:06Z	INFO	[javadb] Downloading Java DB...
+2026-10-16T08:29:06Z	INFO	[javadb] Downloading artifact...	repo="mirror.gcr.io/aquasec/trivy-java-db:1"
+2026-10-16T08:30:32Z	INFO	[javadb] Artifact successfully downloaded	repo="mirror.gcr.io/aquasec/trivy-java-db:1"
+2026-10-16T08:30:32Z	INFO	[javadb] Java DB is cached for 3 days. If you want to update the database more frequently, "trivy clean --java-db" command clears the DB cache.

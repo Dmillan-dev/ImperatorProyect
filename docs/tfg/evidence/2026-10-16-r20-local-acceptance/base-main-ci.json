@@ -1,0 +1,76 @@
+{
+  "source": "Read-only GitHub observation earlier on 16 October; these are stored CI results, not new test runs",
+  "mainSha": "94ce8799812ecde83ebb4e0b2698bfab5e9091d8",
+  "checks": [
+    {
+      "name": "Analyze (javascript-typescript)",
+      "status": "completed",
+      "conclusion": "success",
+      "completed_at": "2026-10-14T11:21:50Z",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38555878340/job/115824757719"
+    },
+    {
+      "name": "Analyze (python)",
+      "status": "completed",
+      "conclusion": "success",
+      "completed_at": "2026-10-14T11:21:37Z",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38555878340/job/115824757663"
+    },
+    {
+      "name": "Analyze (actions)",
+      "status": "completed",
+      "conclusion": "success",
+      "completed_at": "2026-10-14T11:21:21Z",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38555878340/job/115824757657"
+    },
+    {
+      "name": "Source, dependency and configuration scan",
+      "status": "completed",
+      "conclusion": "success",
+      "completed_at": "2026-10-14T11:21:01Z",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38555879290/job/115824757548"
+    },
+    {
+      "name": "Analyze (java-kotlin)",
+      "status": "completed",
+      "conclusion": "success",
+      "completed_at": "2026-10-14T11:22:09Z",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38555878340/job/115824757391"
+    },
+    {
+      "name": "Application image scan",
+      "status": "completed",
+      "conclusion": "success",
+      "completed_at": "2026-10-14T11:23:19Z",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38555879290/job/115824757244"
+    },
+    {
+      "name": "PostgreSQL D094 supply-chain gate",
+      "status": "completed",
+      "conclusion": "success",
+      "completed_at": "2026-10-14T11:22:07Z",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38555879290/job/115824757223"
+    },
+    {
+      "name": "Full Git history secret scan",
+      "status": "completed",
+      "conclusion": "success",
+      "completed_at": "2026-10-14T11:20:49Z",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38555879290/job/115824757032"
+    },
+    {
+      "name": "submit-maven",
+      "status": "completed",
+      "conclusion": "success",
+      "completed_at": "2026-10-14T11:20:57Z",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38555877760/job/115824756557"
+    },
+    {
+      "name": "Java 21 Maven verification",
+      "status": "completed",
+      "conclusion": "success",
+      "completed_at": "2026-10-14T11:21:17Z",
+      "details_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/38555879235/job/115824756018"
+    }
+  ]
+}

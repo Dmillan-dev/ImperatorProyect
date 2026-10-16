@@ -1,0 +1,37 @@
+{
+  "reviewDate": "2026-10-16",
+  "sourceSha": "94ce8799812ecde83ebb4e0b2698bfab5e9091d8",
+  "files": [
+    {
+      "path": "infra/docker/compose.yaml",
+      "sha256": "ffe7f44a88599b3330640bc29350d357ead4d94ae8d57b7ca02b7b17cd354425"
+    },
+    {
+      "path": "backend-java/api/evidence/EvidenceController.java",
+      "sha256": "c01a5df1d60b6deeb5125fa4775350fe149ee1fceade4648205e9035e66184cc"
+    },
+    {
+      "path": "backend-java/api/evidence/EvidenceNdjsonImporter.java",
+      "sha256": "d693e283175d33240650c10da8077fa391749150391ad1972e5d6552aca25a0b"
+    },
+    {
+      "path": "frontend/next.config.ts",
+      "sha256": "2cefc23040e68582b02f0e0eb9c12e06d9edfbcdb4cace3abd230842e4d9ea33"
+    }
+  ],
+  "reviewedServiceBlocks": {
+    "frontend": "    image: imperator/frontend:${IMPERATOR_IMAGE_TAG:?Set IMPERATOR_IMAGE_TAG to the current Git SHA}\n    platform: linux/amd64\n    build:\n      context: ../..\n      dockerfile: infra/docker/frontend/Dockerfile\n      args:\n        VCS_REF: ${IMPERATOR_IMAGE_TAG:?Set IMPERATOR_IMAGE_TAG to the current Git SHA}\n    environment:\n      HOSTNAME: 0.0.0.0\n      IMPERATOR_API_ORIGIN: http://backend:8080\n      IMPERATOR_RUNTIME_PROFILE: docker-compose\n      NEXT_TELEMETRY_DISABLED: \"1\"\n      NODE_ENV: production\n      PORT: \"3000\"\n    networks:\n      - application-internal\n      - frontend-ingress\n    depends_on:\n      backend:\n        condition: service_healthy\n    ports:\n      - 127.0.0.1:${IMPERATOR_HTTP_PORT:-3000}:3000\n    healthcheck:\n      test:\n        - CMD\n        - node\n        - -e\n        - >-\n          fetch('http://127.0.0.1:3000/').then(response => {\n            if (!response.ok) process.exit(1)\n          }).catch(() => process.exit(1))\n      interval: 10s\n      timeout: 5s\n      retries: 12\n      start_period: 20s\n    restart: unless-stopped\n    stop_grace_period: 30s\n    read_only: true\n    tmpfs:\n      - /tmp:size=32m,mode=1777\n    cap_drop:\n      - ALL\n    security_opt:\n      - no-new-privileges:true\n    cpus: 0.5\n    mem_limit: 512m\n    pids_limit: 100\n    logging:\n      driver: json-file\n      options:\n        max-size: 10m\n        max-file: \"3\"\n",
+    "postgres": "    image: imperator/postgres:${IMPERATOR_IMAGE_TAG:?Set IMPERATOR_IMAGE_TAG to the current Git SHA}\n    platform: linux/amd64\n    build:\n      context: ./postgresql\n      dockerfile: Dockerfile\n      args:\n        VCS_REF: ${IMPERATOR_IMAGE_TAG:?Set IMPERATOR_IMAGE_TAG to the current Git SHA}\n    environment:\n      POSTGRES_DB: imperator\n      POSTGRES_INITDB_ARGS: --auth-host=scram-sha-256\n      POSTGRES_PASSWORD_FILE: /run/secrets/postgres-owner-password\n      POSTGRES_USER: imperator_owner\n    secrets:\n      - postgres-owner-password\n    volumes:\n      - postgres-data:/var/lib/postgresql\n    networks:\n      - data-internal\n    healthcheck:\n      test:\n        - CMD-SHELL\n        - pg_isready --host=127.0.0.1 --username=imperator_owner --dbname=imperator\n      interval: 5s\n      timeout: 5s\n      retries: 20\n      start_period: 20s\n    restart: unless-stopped\n    stop_grace_period: 30s\n    read_only: true\n    tmpfs:\n      - /tmp:size=16m,mode=1777\n      - /var/run/postgresql:size=16m,uid=999,gid=999,mode=0775\n    cap_drop:\n      - ALL\n    cap_add:\n      - CHOWN\n      - DAC_OVERRIDE\n      - FOWNER\n      - SETGID\n      - SETUID\n    security_opt:\n      - no-new-privileges:true\n    cpus: 1.0\n    mem_limit: 1024m\n    pids_limit: 200\n    logging:\n      driver: json-file\n      options:\n        max-size: 10m\n        max-file: \"3\"\n\n"
+  },
+  "explicitPrivilegedOrDevicePassThrough": false,
+  "sysAdminOrRawIoAdded": false,
+  "databaseVolumeIsNamedFilesystemVolume": true,
+  "frontendOnlyLoopback": true,
+  "applicationSearchPattern": "fdisk|sfdisk|parted|blockdev|lsblk|blkid|/dev/sd|/dev/nvme|ProcessBuilder|Runtime\\.getRuntime|child_process",
+  "applicationSearchExit": 1,
+  "applicationSearchMatches": [],
+  "evidenceInput": "EvidenceController consumes application/x-ndjson; importer decodes UTF-8 and parses JSON. raw_payload is bounded metadata, not an uploaded disk image.",
+  "componentPresence": "Trivy identifies libblkid1 2.38.1-5+deb12u3 in both exact Debian images. Treat as affected; no claim the library is absent or never executable.",
+  "reachabilityAssessment": "No direct block-partition utility invocation or raw-device pass-through identified in reviewed source/configuration. A crafted regular disk image can still reach the parser if a local/compromised actor invokes libblkid; capabilities do not prevent the parsing bug itself.",
+  "reviewLimit": "Static review, no complete transitive native callgraph, no live runtime or exploit test. Assumptions must be checked in any future runtime override."
+}

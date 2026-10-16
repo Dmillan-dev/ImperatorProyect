@@ -1,0 +1,5 @@
+Approval context: explicit question requested temporary acceptance of the 26 documented CVEs for the four exact digests, exclusively local/synthetic, until 2026-10-19 00:00 Europe/Madrid, without automatic renewal. AWS excluded; R-23 remains open.
+User response (verbatim):
+si acepto y exclusivamente local, modificame los readme principales, ponme todo bonito limpiame las imagenes antiguas y hazme chequeo para add y push de todo lo que necesite
+
+Client local date: 2026-10-16. Exact message timestamp unavailable. Registration UTC: 2026-10-16T09:17:22.125477+00:00

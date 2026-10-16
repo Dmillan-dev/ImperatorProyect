@@ -1,8 +1,8 @@
 # IMPERATOR Twelve minute local TFG defence
 
-Language: English. Prepared 14/10/2026. Prepared for student narration. The oral rehearsal, recording and academic review remain pending.
+Language: English. Updated 16/10/2026. Prepared for student narration. The oral rehearsal, recording and academic review remain pending.
 
-Source 30a03da; same four accepted image indices; R-20 expires 16/10/2026 00:00 Europe/Madrid. AWS remains blocked.
+Source 30a03da; same four accepted image indices; R-20 expires 19/10/2026 00:00 Europe/Madrid. AWS remains blocked.
 
 ## 00:00 to 01:00 Problem and scope
 
@@ -48,7 +48,7 @@ Visual: verification. Identify the source as recorded technical evidence; never 
 
 ## 09:00 to 10:15 Security and temporary risk decision
 
-Security approval and scanning are distinct facts. The owner approved the conservative set of twenty-five residual C V Es for four exact local image indices, with synthetic data only. The independent scan on October fourteenth measures zero fixable High or Critical vulnerabilities and zero secrets. Two known Gnu TLS findings are now classified Low by the scanner. They remain affected and without a fix; they are not removed from the accepted risk register or declared inexploitable. The same twenty-five finding identities and package versions remain present. The original conservative acceptance is kept. It expires exclusively on October sixteenth, at midnight Europe Madrid, without automatic renewal or transfer to new images. R twenty-three, concerning development tooling, remains open independently. Live AWS, production and real data are excluded. Full reports, dates and hashes remain available so that the decision can be reviewed.
+Security approval and scanning are separate facts. On October sixteenth, the owner explicitly accepted twenty-six conservative residual C V Es for four exact local image indices, using synthetic data only. The independent scan measures zero fixable High or Critical vulnerabilities and zero secrets. Twenty-four C V Es are currently High or Critical. A util-linux partition-parser finding has moved from Medium to High; it requires crafted disk metadata to reach the affected parser. No ordinary product entry was identified in the limited static review. That does not prove it is inexploitable. An upstream correction exists, while the installed Bookworm branch has no fixed package listed. Two known Gnu TLS C V Es remain below High, with severity varying by distribution. Other Medium and Low observations remain visible in the full reports. The acceptance expires on October nineteenth at midnight Europe Madrid, without automatic renewal or transfer. R twenty-three remains open independently. AWS, production and real data remain excluded.
 
 Visual: security. Identify the source as recorded technical evidence; never show tokens.
 

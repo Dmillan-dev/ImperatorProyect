@@ -1,0 +1,15 @@
+{
+  "sourceSha": "94ce8799812ecde83ebb4e0b2698bfab5e9091d8",
+  "referenceDecisionSha256": "b1229f00fed0afe72d20aee2488a7ca8fa780364db6e924c2b53123d7b745234",
+  "referenceDecisionExpired": true,
+  "acceptanceRenewed": false,
+  "applicationExecutionAuthorizedByThisScript": false,
+  "existingContainers": [
+    {
+      "id": "964f39e8e12d",
+      "name": "/buildx_buildkit_imperator-gosu-202610090",
+      "status": "exited"
+    }
+  ],
+  "existingContainersPreserved": true
+}

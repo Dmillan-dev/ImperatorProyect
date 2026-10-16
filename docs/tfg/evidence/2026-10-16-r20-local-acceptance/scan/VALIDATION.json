@@ -1,0 +1,19 @@
+{
+  "jsonFilesParsed": 20,
+  "localLinksChecked": 9,
+  "brokenLinks": 0,
+  "publicPackSecretFindings": 0,
+  "frozenEvidenceByteIdenticalToHead": 914,
+  "originalRootGuardedFilesUnchanged": 25,
+  "deliveryCheckoutClean": true,
+  "originalRootStagingEmpty": true,
+  "proposalAccepted": false,
+  "technicalGate": "PASS",
+  "formalSecurityGate": "NO-GO UNTIL EXPLICIT APPROVAL",
+  "candidateCves": 26,
+  "candidateBindings": 137,
+  "productCodeDependencyDockerWorkflowChanges": false,
+  "gitIndexModified": false,
+  "commitPerformed": false,
+  "pushPerformed": false
+}

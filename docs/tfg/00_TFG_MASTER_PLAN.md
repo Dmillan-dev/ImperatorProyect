@@ -1,13 +1,20 @@
 # IMPERATOR DAM TFG Master Plan
 
-## Estado vigente del 14 de octubre de 2026
+## Estado local autorizado — 16/10/2026
+
+**R-20 ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC; A-S3 cerrado; A-S4 y TFG-A IN PROGRESS; AWS BLOCKED.** Aprobación explícita de 26 CVE conservadores / 137 identidades actuales para los cuatro índices y manifiestos locales exactos, con datos sintéticos, hasta **19/10/2026 00:00 Europe/Madrid**; sin renovación ni transferencia automática. Escaneo 16/10: 0 H/C corregibles y 0 secretos. Hay 24 CVE H/C; los otros dos quedan por debajo de ese umbral, con severidad distinta por distribución. R-23 sigue OPEN independiente. [Decisión y evidencia](evidence/2026-10-16-r20-local-acceptance/README.md).
+
+La aprobación no es un escaneo nuevo ni corrige vulnerabilidades. El ensayo técnico conserva su fecha 14/10; el PDF de memoria está congelado en ese corte y se acompaña de la decisión actual. Guion inglés actualizado; ensayo oral humano, grabación narrada y revisión académica pendientes. Las secciones fechadas siguientes son historia. No se autoriza AWS ni una ampliación del producto.
+
+
+## Registro histórico del 14 de octubre de 2026
 
 **R-20 ACCEPTED TEMPORARILY; A-S3 COMPLETE local académico; A-S4 IN PROGRESS; TFG-A IN PROGRESS; AWS BLOCKED.** Aceptación explícita para los cuatro índices/manifiestos locales y el conjunto conservador de 25 CVE del 13/10, exclusivamente datos sintéticos, hasta 16/10/2026 00:00 Europe/Madrid; sin renovación ni transferencia. Escaneo independiente 14/10: 0 H/C corregibles y 0 secretos, 23 CVE H/C más dos GnuTLS conocidas ahora LOW y sin fix. R-23 OPEN independiente. [Acta y evidencia](evidence/2026-10-14-r20-acceptance/A_S3_CLOSURE_RECORD.md). Las secciones históricas siguientes se conservan y no sustituyen esta decisión.
 
 
 Preparación A-S4: [memoria PDF de 29 páginas](evidence/2026-10-14-a-s4-runtime/IMPERATOR_Memoria_TFG_Local.pdf), [guion en inglés](09_DEFENSE_SCRIPT_12_MIN.md) y [ensayo técnico real 14/10](evidence/2026-10-14-a-s4-runtime/README.md). API/UI, Flyway, RBAC, persistencia y recovery PASS; contenedores del ensayo retirados, imágenes/volumen conservados. CI main tras #72: 10/10 PASS sobre `adbe45e`. Ensayo oral humano, grabación narrada y revisión académica PENDING. La preparación de materiales no cierra A-S4 ni TFG-A.
 
-## Estado actual tras #68 — 13/10/2026
+## Registro histórico tras #68 — 13/10/2026
 
 Main `c69f682` integrado y CI 10/10 PASS. Cuatro imágenes locales identificadas contra el runtime del 09/10. Escaneos completos del 13/10: 0 H/C corregibles, 0 secretos y 25 CVE residuales / 119 filas. La aceptación R-20 anterior caducó; [propuesta actual](evidence/2026-10-13-main-closure/R20_CURRENT_PROPOSAL.md) pendiente, `accepted: false`. R-23 OPEN independiente. A-S3 formal pendiente de decisión; A-S4 ensayo/narración/tutor pendientes; TFG-A IN PROGRESS y AWS bloqueado. [Registro verificable](evidence/2026-10-13-main-closure/README.md). Las secciones fechadas anteriores se conservan como historia, sin aceptación vigente por inferencia.
 
@@ -166,7 +173,7 @@ closed only by its exit evidence, not by documenting a mitigation.
 | R-17 | Five original image package findings: OpenSSL/Jackson backend and Next frontend (`FACT`)                         | Jackson 3.1.7, Next 16.3.6 and checksum-pinned OpenSSL 3.0.2-0ubuntu1.30; Java/base digests unchanged; all three fixable-only image vulnerability/secret gates now zero           | Security / authorized local maintenance | CLOSED; dated rerun and hashes in R-17 evidence pack                                   |
 | R-18 | Windows CRLF made Linux entrypoints fail (`FACT`)                                                                | Normalize the three existing shell entrypoints to LF and enforce `*.sh text eol=lf`; migrated Docker workflow now passes                                                          | QA / authorized maintenance             | CLOSED; no shell behavior changed                                                      |
 | R-19 | Two original brace-expansion dev-transitive copies (`FACT`)                                                      | Owner-authorized 1.1.18→1.1.21 and 5.0.9→5.0.12 only; semantic lock check, installed versions, regression and finding identities verified; whole dependency gate remains separate | Security / A-S1                         | CLOSED for original finding, 2026-10-06; see R19_SECURITY_REVIEW.md                    |
-| R-20 | Conservative accepted 25 CVE / 119 bindings from 13/10 on four local immutable images; latest 23 H/C plus two known LOW | Explicit owner 14/10 approval; local/synthetic only; exclusive expiry 16/10/2026 00:00 Europe/Madrid; no renewal/transfer; 0 fixable H/C and 0 secrets mandatory; fresh review keeps accepted identity set unchanged | Owner / local synthetic only | ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC |
+| R-20 | Accepted 26 conservative residual CVEs / 137 current bindings on four exact local images; 24 current H/C CVEs | Explicit owner approval 16/10; local/synthetic only; exclusive expiry 19/10/2026 00:00 Europe/Madrid; no renewal/transfer; 0 fixable H/C and 0 secrets mandatory | Owner / local synthetic only | ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC |
 | R-21 | source-map-js/sharp fixable advisories (`FACT`)                                                                  | Explicitly authorized prepared patch applied; exactly28 required lock entries; complete regression and production audit0                                                          | Security / scoped patch only            | CLOSED for the two corrected advisories; braces separated as R-23                      |
 | R-22 | Newly corrected PCRE2/Perl Bookworm image findings (`FACT`)                                                      | Five checksum-pinned packages; exact canonical versions/scans0fixable, D094 retry/reproducibility and complete regression PASS; base digests unchanged                            | Security / no major/base refresh        | CLOSED for authorized corrected findings; residual OS R-20 separate                    |
 | R-23 | braces 3.0.3 development-tooling advisory, package absent in inspected production                                | Independent owner disposition approved; documented mitigation and review triggers; no speculative update, closure or R20 bundling                                                 | Security / development tooling          | OPEN / NO FIX AVAILABLE — DISPOSITION APPROVED                                         |
@@ -194,8 +201,8 @@ TFG-A is complete only when:
   additional finding explicitly remediated or given an approved bounded disposition,
   with full residual counts visible; no blanket High/Critical waiver
   closes a risk. The founder-approved R-20 B amendment permits only the
-  hash-bound conservative 25-CVE residual OS set approved 14/10 for the four exact local images and synthetic TFG-A rehearsal until
-  2026-10-16T00:00:00+02:00 Europe/Madrid. The fresh scan reports 23 H/C plus the two known GnuTLS CVEs now LOW; these remain within the unchanged approved identity set. The new approval and scan are separate facts. Record ACCEPTED TEMPORARILY, not CLOSED;
+  hash-bound conservative 26-CVE residual set explicitly approved 16/10 for the four exact local images and synthetic TFG-A use until
+  2026-10-19T00:00:00+02:00 Europe/Madrid. The 16/10 scan reports 24 H/C CVEs; the other two are below that threshold, with GnuTLS severity varying by distribution. All 26 remain conditional, not repaired or declared inexploitable. The approval and scan are separate facts. Record ACCEPTED TEMPORARILY, not CLOSED;
   zero fixable High/Critical and zero secrets remain mandatory. R-23 remains OPEN / NO FIX AVAILABLE under its separate approved development-tooling disposition, with full audit results visible; it is not included in the OS acceptance. R-19 is excluded;
 - documentation validation passes;
 - the final local run records PostgreSQL V3 behavior, frontend quality and
