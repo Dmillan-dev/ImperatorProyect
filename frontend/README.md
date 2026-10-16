@@ -1,43 +1,34 @@
-# frontend
+# Decision Review Workspace
 
-## Purpose
+The Next.js interface for IMPERATOR's single synthetic case, `DRC-AOA-001`. Review evidence and policy output, exercise assigned human approval and inspect the Decision Ledger and validated simulated value.
 
-Operational web interface for the single DRC-AOA-001 Decision Review Workspace
-defined by D091.
+[Project overview](../README.md) · [Local TFG guide](../docs/tfg/README.md) · [Runtime preflight](../docs/tfg/A_S4_LOCAL_DEFENSE.md#preflight-para-otra-ejecución)
 
-## Who Uses This Folder
+## What is implemented?
 
-- Authorized reviewers evaluating evidence, recommendations and business value.
-- Implementation Agent for frontend-only delivery.
-- Architecture, Security, Quality and Product Guardians during certification.
+- Next.js 16, React 19 and strict TypeScript.
+- One workspace with evidence, recommendation, review, Ledger and Business Value.
+- Relative `/api/v1/**` requests and runtime response-schema validation.
+- Role-aware presentation; actor, role and state enforcement remains on the backend.
+- Optional explanation rendering with an explicit unavailable-provider state.
 
-## Contains
+Application code calculates the amounts. The interface presents certified backend results; it does not recalculate ROI or create financial truth.
 
-- Next.js 16, React 19 and strict TypeScript application code.
-- Decision Review Workspace routes, components and presentation logic.
-- Relative `/api/v1/**` client calls and runtime response validation.
-- Unit, component, coverage and Playwright E2E tests.
+## Evidence and current limits
 
-## Current Status
+| Check                  | Evidence                                                                                           |
+| ---------------------- | -------------------------------------------------------------------------------------------------- |
+| Unit/component quality | 41 tests and coverage/format/lint/type/build checks passed in the historical 9 October evaluation. |
+| Browser acceptance     | Playwright: 9 passed / 6 intentional skips in that baseline. Skips are not passes.                 |
+| Real services          | 14 October Docker rehearsal: UI approval, API implementation/validation and unmocked UI reads.     |
+| Production image       | 16 October exact-image scan: 0 fixable H/C and 0 secrets; bounded residual risk accepted.          |
+| Academic delivery      | Memory and English script prepared; measured human defence and academic review pending.            |
 
-Sprint 4.2 is **CERTIFIED / COMPLETE** under D091.
+The [current R-20 decision](../docs/tfg/evidence/2026-10-16-r20-local-acceptance/README.md) covers four immutable local images and synthetic data until **19 October 2026 00:00 Europe/Madrid**. It does not cover other builds, AWS, production or real data. R-23 development tooling remains OPEN independently.
 
-- 41 unit/component tests pass.
-- Contractual coverage thresholds pass.
-- Format, lint, strict TypeScript, production build and dependency audit pass.
-- Playwright acceptance passes at 1440x900, 1024x768 and 390x844.
-- The backend passes 151 default tests and 34 PostgreSQL 18.6
-  integration tests.
+## Local development
 
-Sprint 4.3 certified this frontend as a non-root, read-only, SHA-tagged image in
-the loopback-only D092-D095 runtime. Sprint 4.4/D097 is COMPLETE / HOSTED PASS
-and did not expand the frontend. D099 separately authorizes the bounded,
-read-only explanation presentation whose repository implementation is HOSTED
-PASS on merge `22a9917`.
-
-## Local Development
-
-Requirements: Node.js 24 LTS and npm 11.
+Requirements: Node.js 24 and npm 11. From this directory:
 
 ```powershell
 npm ci
@@ -45,10 +36,9 @@ $env:IMPERATOR_API_ORIGIN = "http://127.0.0.1:8080"
 npm run dev
 ```
 
-The browser only calls relative `/api/v1/**` paths. `IMPERATOR_API_ORIGIN` is a
-server-side rewrite target and must never use a public client environment name.
+The browser calls relative `/api/v1/**` paths. `IMPERATOR_API_ORIGIN` is a server-side rewrite target and must never use a public client environment name. Authentication and synthetic fixtures must be configured through the documented runtime preflight.
 
-## Quality Gates
+## Quality gates
 
 ```powershell
 npm run format:check
@@ -59,19 +49,8 @@ npm run build
 npm run test:e2e
 ```
 
-## Security Boundary
+Browser tests require their documented harness. [Rehearsal and limitations](../docs/tfg/evidence/2026-10-14-a-s4-runtime/README.md).
 
-- JWTs exist in memory only and are cleared on reload, logout, expiry or `401`.
-- No token, credential or secret may be logged or stored in browser persistence.
-- The frontend presents D088 permissions; backend authorization remains
-  authoritative.
-- ROI and Business Value are rendered from certified backend responses and are
-  never recalculated here.
+## Security boundary
 
-## Never Contains
-
-- Backend business or authorization logic.
-- Java or Python source code.
-- Database migrations or infrastructure manifests.
-- Secrets, persisted tokens or provider credentials.
-- Additional product cases outside DRC-AOA-001 without a new frozen contract.
+JWTs remain in memory and are cleared on reload, logout, expiry or `401`. Tokens and credentials must not be logged or persisted in the browser. UI visibility does not replace server authorization. No additional product case or live provider validation is claimed by these frontend checks.

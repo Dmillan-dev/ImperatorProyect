@@ -4,11 +4,15 @@
 
 Primary Java domain and application runtime for IMPERATOR.
 
-## Who Uses This Folder
+## Local MVP status
 
-- Implementation Agent during Java backend sprints.
-- Architecture Guardian to verify hexagonal boundaries.
-- Quality Agent to review domain, application and adapter code once authorized.
+Java 21 / Spring Boot modular monolith with hexagonal Domain, Application, ports and adapters. PostgreSQL/JDBC and Flyway V1–V3 persist the decision graph, governance facts and explanation records.
+
+[Product overview](../README.md) · [TFG guide](../docs/tfg/README.md) · [Runtime preflight](../docs/tfg/A_S4_LOCAL_DEFENSE.md#preflight-para-otra-ejecución)
+
+Historical 9 October evaluation: **174 unit tests and 35 PostgreSQL integration tests passed**. The 14 October real-runtime rehearsal covers four synthetic roles, Flyway, persistence and readiness recovery. These are dated results, not a new test run on this documentation change.
+
+The [16 October security decision](../docs/tfg/evidence/2026-10-16-r20-local-acceptance/README.md) accepts a bounded residual for four exact local images until **19 October 2026 00:00 Europe/Madrid**, with synthetic data only. The backend image has 0 fixable H/C and 0 secrets in that scan. Overall TFG-A remains IN PROGRESS; external IdP and live AWS/provider validation retain their separate gates.
 
 ## Contains
 
@@ -31,7 +35,8 @@ Primary Java domain and application runtime for IMPERATOR.
 - D090 read-only AWS SDK outbound adapter under `imperator.adapters.out.aws`,
   with independently named GitHub and AWS runtime compositions.
 
-Current Phase 3 foundation:
+Historical implementation checkpoints:
+
 - Pure Java domain foundation exists.
 - Application use cases exist.
 - Inbound and outbound ports exist.
@@ -184,7 +189,7 @@ is found.
 - Database migrations.
 - Connector secrets or credentials.
 
-## Authorized Current Use
+## Historical authorization checkpoints
 
 Sprints 3.0 through 4.4 are complete at their documented gates. The Java 21
 Maven build is certified through GitHub Actions, and the complete Functional

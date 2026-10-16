@@ -1,13 +1,20 @@
 # TFG Requirement Traceability Matrix
 
-## Estado vigente del 14 de octubre de 2026
+## Estado local autorizado — 16/10/2026
+
+**R-20 ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC; A-S3 cerrado; A-S4 y TFG-A IN PROGRESS; AWS BLOCKED.** Aprobación explícita de 26 CVE conservadores / 137 identidades actuales para los cuatro índices y manifiestos locales exactos, con datos sintéticos, hasta **19/10/2026 00:00 Europe/Madrid**; sin renovación ni transferencia automática. Escaneo 16/10: 0 H/C corregibles y 0 secretos. Hay 24 CVE H/C; los otros dos quedan por debajo de ese umbral, con severidad distinta por distribución. R-23 sigue OPEN independiente. [Decisión y evidencia](evidence/2026-10-16-r20-local-acceptance/README.md).
+
+La aprobación no es un escaneo nuevo ni corrige vulnerabilidades. El ensayo técnico conserva su fecha 14/10; el PDF de memoria está congelado en ese corte y se acompaña de la decisión actual. Guion inglés actualizado; ensayo oral humano, grabación narrada y revisión académica pendientes. Las secciones fechadas siguientes son historia. No se autoriza AWS ni una ampliación del producto.
+
+
+## Registro histórico del 14 de octubre de 2026
 
 **R-20 ACCEPTED TEMPORARILY; A-S3 COMPLETE local académico; A-S4 IN PROGRESS; TFG-A IN PROGRESS; AWS BLOCKED.** Aceptación explícita para los cuatro índices/manifiestos locales y el conjunto conservador de 25 CVE del 13/10, exclusivamente datos sintéticos, hasta 16/10/2026 00:00 Europe/Madrid; sin renovación ni transferencia. Escaneo independiente 14/10: 0 H/C corregibles y 0 secretos, 23 CVE H/C más dos GnuTLS conocidas ahora LOW y sin fix. R-23 OPEN independiente. [Acta y evidencia](evidence/2026-10-14-r20-acceptance/A_S3_CLOSURE_RECORD.md). Las secciones históricas siguientes se conservan y no sustituyen esta decisión.
 
 
 Preparación A-S4: [memoria PDF de 29 páginas](evidence/2026-10-14-a-s4-runtime/IMPERATOR_Memoria_TFG_Local.pdf), [guion en inglés](09_DEFENSE_SCRIPT_12_MIN.md) y [ensayo técnico real 14/10](evidence/2026-10-14-a-s4-runtime/README.md). API/UI, Flyway, RBAC, persistencia y recovery PASS; contenedores del ensayo retirados, imágenes/volumen conservados. CI main tras #72: 10/10 PASS sobre `adbe45e`. Ensayo oral humano, grabación narrada y revisión académica PENDING. La preparación de materiales no cierra A-S4 ni TFG-A.
 
-## Estado actual tras #68 — 13/10/2026
+## Registro histórico tras #68 — 13/10/2026
 
 Main `c69f682` integrado y CI 10/10 PASS. Cuatro imágenes locales conservadas; 0 H/C corregibles y 0 secretos enescaneos 13/10, 25 CVEresiduales/119 filas. R-20 caducado; propuesta actual`accepted: false`. R-23 OPEN independiente. A-S3 formal pendiente R-20; A-S4: memoria/ensayo/narraciónpendientes; TFG-A IN PROGRESS y AWS bloqueado. [Registroactual](evidence/2026-10-13-main-closure/README.md). Las secciones fechadas posteriores son históricas y no renuevan aceptación.
 

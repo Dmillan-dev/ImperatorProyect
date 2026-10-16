@@ -1,0 +1,3608 @@
+{
+  "reviewDate": "2026-10-16",
+  "matrix": [
+    {
+      "cve": "CVE-2023-2953",
+      "previouslyAccepted": true,
+      "reported16October": true,
+      "currentObservations": [
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2023-2953",
+          "package": "libldap-2.5-0",
+          "installed": "2.5.13+dfsg-5",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2023-2953",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "openldap: null pointer dereference in  ber_memalloc_x  function"
+        }
+      ],
+      "newBindingsRequiringReview": [],
+      "applicabilityReviewStatus": "HISTORICAL CONDITIONAL ASSESSMENT; SAME IMAGE IDS, NO NEW PENETRATION TEST",
+      "component": "libldap BER allocator",
+      "classification": "CONDITIONAL RESIDUAL / NO PRODUCT ENTRY IDENTIFIED",
+      "componentExecutionEvidence": "PostgreSQL directly links libldap; installed and potentially executable, not absent.",
+      "exploitPrerequisites": "LDAP/BER handling reaching a null allocation dereference.",
+      "productReachabilityAssessment": "Canonical host authentication uses SCRAM, not LDAP; no product LDAP route or configured LDAP server. SQL-capable/OS-compromised/operator scenarios remain outside this entry review.",
+      "existingMitigationIds": [
+        "M1",
+        "M3",
+        "M6"
+      ],
+      "historicalAssessmentPath": "../2026-10-09-gosu-security-closure/applicability/current-cve-applicability-matrix.json",
+      "historicalEvidencePaths": [
+        "../2026-10-09-gosu-security-closure/applicability/runtime-inspection.json",
+        "../2026-10-09-gosu-security-closure/applicability/source-boundary-current.json"
+      ],
+      "historicalAssessmentScope": "Only the original service/package/version bindings from the 13 October review. Any newly reported below-gate binding is shown separately and does not inherit a proof of non-exploitability."
+    },
+    {
+      "cve": "CVE-2023-45853",
+      "previouslyAccepted": true,
+      "reported16October": true,
+      "currentObservations": [
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2023-45853",
+          "package": "zlib1g",
+          "installed": "1:1.2.13.dfsg-1",
+          "fixed": null,
+          "severity": "CRITICAL",
+          "status": "will_not_fix",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2023-45853",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "zlib: integer overflow and resultant heap-based buffer overflow in zipOpenNewFileInZip4_6"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2023-45853",
+          "package": "zlib1g",
+          "installed": "1:1.2.13.dfsg-1",
+          "fixed": null,
+          "severity": "CRITICAL",
+          "status": "will_not_fix",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2023-45853",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "zlib: integer overflow and resultant heap-based buffer overflow in zipOpenNewFileInZip4_6"
+        }
+      ],
+      "newBindingsRequiringReview": [],
+      "applicabilityReviewStatus": "HISTORICAL CONDITIONAL ASSESSMENT; SAME IMAGE IDS, NO NEW PENETRATION TEST",
+      "component": "zlib contrib/MiniZip ZIP writer",
+      "classification": "AFFECTED SUBCOMPONENT NOT PRESENT IN REVIEWED IMAGES",
+      "componentExecutionEvidence": "zlib exists, but Debian says Bookworm src:zlib does not build contrib/minizip; no MiniZip package/file found in either image.",
+      "exploitPrerequisites": "Affected MiniZip ZIP creation API with excessive filename/comment/extra-field length.",
+      "productReachabilityAssessment": "Affected optional subcomponent not identified; this is not a declaration that all zlib compression is vulnerable or fixed. No binary symbol audit was performed.",
+      "existingMitigationIds": [
+        "M4"
+      ],
+      "historicalAssessmentPath": "../2026-10-09-gosu-security-closure/applicability/current-cve-applicability-matrix.json",
+      "historicalEvidencePaths": [
+        "../2026-10-09-gosu-security-closure/applicability/runtime-inspection.json",
+        "../2026-10-09-gosu-security-closure/applicability/source-boundary-current.json"
+      ],
+      "historicalAssessmentScope": "Only the original service/package/version bindings from the 13 October review. Any newly reported below-gate binding is shown separately and does not inherit a proof of non-exploitability."
+    },
+    {
+      "cve": "CVE-2025-69720",
+      "previouslyAccepted": true,
+      "reported16October": true,
+      "currentObservations": [
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2025-69720",
+          "package": "libtinfo6",
+          "installed": "6.4-4",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2025-69720",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution."
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2025-69720",
+          "package": "ncurses-base",
+          "installed": "6.4-4",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2025-69720",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution."
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2025-69720",
+          "package": "ncurses-bin",
+          "installed": "6.4-4",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2025-69720",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution."
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2025-69720",
+          "package": "libncursesw6",
+          "installed": "6.4-4",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2025-69720",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution."
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2025-69720",
+          "package": "libtinfo6",
+          "installed": "6.4-4",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2025-69720",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution."
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2025-69720",
+          "package": "ncurses-base",
+          "installed": "6.4-4",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2025-69720",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution."
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2025-69720",
+          "package": "ncurses-bin",
+          "installed": "6.4-4",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2025-69720",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution."
+        }
+      ],
+      "newBindingsRequiringReview": [],
+      "applicabilityReviewStatus": "HISTORICAL CONDITIONAL ASSESSMENT; SAME IMAGE IDS, NO NEW PENETRATION TEST",
+      "component": "ncurses infocmp analyze_string CLI",
+      "classification": "CONDITIONAL RESIDUAL / NO PRODUCT ENTRY IDENTIFIED",
+      "componentExecutionEvidence": "infocmp is installed in both images; libtinfo package findings do not mean the server necessarily calls this CLI.",
+      "exploitPrerequisites": "Running infocmp analysis on attacker-controlled terminal/terminfo data.",
+      "productReachabilityAssessment": "No product terminal-analysis command or external terminfo input found. A local operator or OS execution foothold could invoke the tool.",
+      "existingMitigationIds": [
+        "M2",
+        "M3",
+        "M5"
+      ],
+      "historicalAssessmentPath": "../2026-10-09-gosu-security-closure/applicability/current-cve-applicability-matrix.json",
+      "historicalEvidencePaths": [
+        "../2026-10-09-gosu-security-closure/applicability/runtime-inspection.json",
+        "../2026-10-09-gosu-security-closure/applicability/source-boundary-current.json"
+      ],
+      "historicalAssessmentScope": "Only the original service/package/version bindings from the 13 October review. Any newly reported below-gate binding is shown separately and does not inherit a proof of non-exploitability."
+    },
+    {
+      "cve": "CVE-2025-7458",
+      "previouslyAccepted": true,
+      "reported16October": true,
+      "currentObservations": [
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2025-7458",
+          "package": "libsqlite3-0",
+          "installed": "3.40.1-2+deb12u2",
+          "fixed": null,
+          "severity": "CRITICAL",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2025-7458",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "sqlite: SQLite integer overflow"
+        }
+      ],
+      "newBindingsRequiringReview": [],
+      "applicabilityReviewStatus": "HISTORICAL CONDITIONAL ASSESSMENT; SAME IMAGE IDS, NO NEW PENETRATION TEST",
+      "component": "SQLite SQL expression planner",
+      "classification": "CONDITIONAL RESIDUAL / NO PRODUCT ENTRY IDENTIFIED",
+      "componentExecutionEvidence": "PostgreSQL image contains libsqlite3 3.40.1, within affected range; sqlite3 CLI absent and postgres ldd does not link it.",
+      "exploitPrerequisites": "An application using this SQLite library executes attacker-chosen SELECT with many ORDER BY expressions.",
+      "productReachabilityAssessment": "Product stores data through PostgreSQL/JDBC, not SQLite; no arbitrary SQL endpoint. Library could still be used by another tool/dynamic loader; absence of CLI is not absence of vulnerable code.",
+      "existingMitigationIds": [
+        "M1",
+        "M3",
+        "M5"
+      ],
+      "historicalAssessmentPath": "../2026-10-09-gosu-security-closure/applicability/current-cve-applicability-matrix.json",
+      "historicalEvidencePaths": [
+        "../2026-10-09-gosu-security-closure/applicability/runtime-inspection.json",
+        "../2026-10-09-gosu-security-closure/applicability/source-boundary-current.json"
+      ],
+      "historicalAssessmentScope": "Only the original service/package/version bindings from the 13 October review. Any newly reported below-gate binding is shown separately and does not inherit a proof of non-exploitability."
+    },
+    {
+      "cve": "CVE-2026-11822",
+      "previouslyAccepted": true,
+      "reported16October": true,
+      "currentObservations": [
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-11822",
+          "package": "libsqlite3-0",
+          "installed": "3.40.1-2+deb12u2",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "fix_deferred",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-11822",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "sqlite: SQLite: Arbitrary code execution via crafted FTS5 full-text search data"
+        }
+      ],
+      "newBindingsRequiringReview": [],
+      "applicabilityReviewStatus": "HISTORICAL CONDITIONAL ASSESSMENT; SAME IMAGE IDS, NO NEW PENETRATION TEST",
+      "component": "SQLite FTS5 leaf/chunk processing",
+      "classification": "CONDITIONAL RESIDUAL / NO PRODUCT ENTRY IDENTIFIED",
+      "componentExecutionEvidence": "Affected SQLite library installed in PostgreSQL image; no product SQLite storage path or direct postgres linkage observed.",
+      "exploitPrerequisites": "FTS5 MATCH on crafted SQLite database/page metadata in a build enabling FTS5.",
+      "productReachabilityAssessment": "No database-upload/SQLite/FTS5 route found. Compile flags and all possible dynamic consumers were not exhaustively proved; retain conditional residual.",
+      "existingMitigationIds": [
+        "M1",
+        "M3",
+        "M5"
+      ],
+      "historicalAssessmentPath": "../2026-10-09-gosu-security-closure/applicability/current-cve-applicability-matrix.json",
+      "historicalEvidencePaths": [
+        "../2026-10-09-gosu-security-closure/applicability/runtime-inspection.json",
+        "../2026-10-09-gosu-security-closure/applicability/source-boundary-current.json"
+      ],
+      "historicalAssessmentScope": "Only the original service/package/version bindings from the 13 October review. Any newly reported below-gate binding is shown separately and does not inherit a proof of non-exploitability."
+    },
+    {
+      "cve": "CVE-2026-11824",
+      "previouslyAccepted": true,
+      "reported16October": true,
+      "currentObservations": [
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-11824",
+          "package": "libsqlite3-0",
+          "installed": "3.40.1-2+deb12u2",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "fix_deferred",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-11824",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "sqlite: SQLite: Arbitrary code execution and crash via heap-based buffer overflow in FTS5"
+        }
+      ],
+      "newBindingsRequiringReview": [],
+      "applicabilityReviewStatus": "HISTORICAL CONDITIONAL ASSESSMENT; SAME IMAGE IDS, NO NEW PENETRATION TEST",
+      "component": "SQLite FTS5 continuation pages",
+      "classification": "CONDITIONAL RESIDUAL / NO PRODUCT ENTRY IDENTIFIED",
+      "componentExecutionEvidence": "Affected SQLite library installed in PostgreSQL image; CLI absent, library presence retained.",
+      "exploitPrerequisites": "FTS5-enabled consumer queries malicious continuation-page szLeaf metadata.",
+      "productReachabilityAssessment": "No product SQLite consumer or attacker-provided SQLite database found; exact dynamic-loader reachability and FTS5 build flags remain unproved.",
+      "existingMitigationIds": [
+        "M1",
+        "M3",
+        "M5"
+      ],
+      "historicalAssessmentPath": "../2026-10-09-gosu-security-closure/applicability/current-cve-applicability-matrix.json",
+      "historicalEvidencePaths": [
+        "../2026-10-09-gosu-security-closure/applicability/runtime-inspection.json",
+        "../2026-10-09-gosu-security-closure/applicability/source-boundary-current.json"
+      ],
+      "historicalAssessmentScope": "Only the original service/package/version bindings from the 13 October review. Any newly reported below-gate binding is shown separately and does not inherit a proof of non-exploitability."
+    },
+    {
+      "cve": "CVE-2026-16742",
+      "previouslyAccepted": true,
+      "reported16October": true,
+      "currentObservations": [
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-16742",
+          "package": "libsystemd0",
+          "installed": "252.39-1~deb12u2",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "fix_deferred",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-16742",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "systemd: systemd-homed: Local privilege escalation via missing home-record signature verification"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-16742",
+          "package": "libudev1",
+          "installed": "252.39-1~deb12u2",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "fix_deferred",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-16742",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "systemd: systemd-homed: Local privilege escalation via missing home-record signature verification"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-16742",
+          "package": "libsystemd0",
+          "installed": "252.39-1~deb12u2",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "fix_deferred",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-16742",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "systemd: systemd-homed: Local privilege escalation via missing home-record signature verification"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-16742",
+          "package": "libudev1",
+          "installed": "252.39-1~deb12u2",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "fix_deferred",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-16742",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "systemd: systemd-homed: Local privilege escalation via missing home-record signature verification"
+        }
+      ],
+      "newBindingsRequiringReview": [],
+      "applicabilityReviewStatus": "HISTORICAL CONDITIONAL ASSESSMENT; SAME IMAGE IDS, NO NEW PENETRATION TEST",
+      "component": "systemd-homed managed-user authentication",
+      "classification": "AFFECTED SUBCOMPONENT NOT PRESENT IN REVIEWED IMAGES",
+      "componentExecutionEvidence": "Shared systemd/udev packages are present; systemd-homed/homectl and a homed-managed-user service are absent.",
+      "exploitPrerequisites": "Local logged-in homed-managed user reaches the vulnerable homed group-membership path.",
+      "productReachabilityAssessment": "Specific daemon/user-management prerequisite absent; package-source association does not establish this service runs. Host systemd is not covered by this image review.",
+      "existingMitigationIds": [
+        "M2",
+        "M4"
+      ],
+      "historicalAssessmentPath": "../2026-10-09-gosu-security-closure/applicability/current-cve-applicability-matrix.json",
+      "historicalEvidencePaths": [
+        "../2026-10-09-gosu-security-closure/applicability/runtime-inspection.json",
+        "../2026-10-09-gosu-security-closure/applicability/source-boundary-current.json"
+      ],
+      "historicalAssessmentScope": "Only the original service/package/version bindings from the 13 October review. Any newly reported below-gate binding is shown separately and does not inherit a proof of non-exploitability."
+    },
+    {
+      "cve": "CVE-2026-41992",
+      "previouslyAccepted": true,
+      "reported16October": true,
+      "currentObservations": [
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-41992",
+          "package": "gzip",
+          "installed": "1.12-1",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "fix_deferred",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-41992",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "gzip: gzip: Information disclosure via global buffer overflow in LZH decompression"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-41992",
+          "package": "gzip",
+          "installed": "1.12-1",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "fix_deferred",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-41992",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "gzip: gzip: Information disclosure via global buffer overflow in LZH decompression"
+        }
+      ],
+      "newBindingsRequiringReview": [],
+      "applicabilityReviewStatus": "HISTORICAL CONDITIONAL ASSESSMENT; SAME IMAGE IDS, NO NEW PENETRATION TEST",
+      "component": "GNU gzip mixed-format decompression",
+      "classification": "CONDITIONAL RESIDUAL / NO PRODUCT ENTRY IDENTIFIED",
+      "componentExecutionEvidence": "gzip/gunzip installed. PostgreSQL entrypoint can execute gunzip for .sql.gz initialization files; never-executed claims would be false.",
+      "exploitPrerequisites": "Same decompression invocation handles crafted LZW then LZH inputs with stale shared global state.",
+      "productReachabilityAssessment": "Inspected init directory empty and no custom archive mount; Flyway files uncompressed. No application archive-decompression input route. New operator-provided compressed init scripts would require review.",
+      "existingMitigationIds": [
+        "M2",
+        "M3",
+        "M5",
+        "M6"
+      ],
+      "historicalAssessmentPath": "../2026-10-09-gosu-security-closure/applicability/current-cve-applicability-matrix.json",
+      "historicalEvidencePaths": [
+        "../2026-10-09-gosu-security-closure/applicability/runtime-inspection.json",
+        "../2026-10-09-gosu-security-closure/applicability/source-boundary-current.json"
+      ],
+      "historicalAssessmentScope": "Only the original service/package/version bindings from the 13 October review. Any newly reported below-gate binding is shown separately and does not inherit a proof of non-exploitability."
+    },
+    {
+      "cve": "CVE-2026-53613",
+      "previouslyAccepted": true,
+      "reported16October": true,
+      "currentObservations": [
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53613",
+          "package": "bsdutils",
+          "installed": "1:2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: TOCTOU in the mount program via ancestor directory swap on target path"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53613",
+          "package": "libblkid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: TOCTOU in the mount program via ancestor directory swap on target path"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53613",
+          "package": "libmount1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: TOCTOU in the mount program via ancestor directory swap on target path"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53613",
+          "package": "libsmartcols1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: TOCTOU in the mount program via ancestor directory swap on target path"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53613",
+          "package": "libuuid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: TOCTOU in the mount program via ancestor directory swap on target path"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53613",
+          "package": "mount",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: TOCTOU in the mount program via ancestor directory swap on target path"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53613",
+          "package": "util-linux",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: TOCTOU in the mount program via ancestor directory swap on target path"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53613",
+          "package": "util-linux-extra",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: TOCTOU in the mount program via ancestor directory swap on target path"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53613",
+          "package": "bsdutils",
+          "installed": "1:2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: TOCTOU in the mount program via ancestor directory swap on target path"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53613",
+          "package": "libblkid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: TOCTOU in the mount program via ancestor directory swap on target path"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53613",
+          "package": "libmount1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: TOCTOU in the mount program via ancestor directory swap on target path"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53613",
+          "package": "libsmartcols1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: TOCTOU in the mount program via ancestor directory swap on target path"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53613",
+          "package": "libuuid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: TOCTOU in the mount program via ancestor directory swap on target path"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53613",
+          "package": "mount",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: TOCTOU in the mount program via ancestor directory swap on target path"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53613",
+          "package": "util-linux",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: TOCTOU in the mount program via ancestor directory swap on target path"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53613",
+          "package": "util-linux-extra",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: TOCTOU in the mount program via ancestor directory swap on target path"
+        }
+      ],
+      "newBindingsRequiringReview": [],
+      "applicabilityReviewStatus": "HISTORICAL CONDITIONAL ASSESSMENT; SAME IMAGE IDS, NO NEW PENETRATION TEST",
+      "component": "util-linux SUID mount target-path race",
+      "classification": "CONDITIONAL RESIDUAL / NO PRODUCT ENTRY IDENTIFIED",
+      "componentExecutionEvidence": "mount/SUID executable present in both images; source findings also assigned to sibling util-linux binaries.",
+      "exploitPrerequisites": "Privileged mount with a permitted user/users fstab entry and attacker-replaceable target/ancestor during path checks.",
+      "productReachabilityAssessment": "Image fstab unconfigured, no SYS_ADMIN, no-new-privileges and no product mount operation. Operator/root capabilities or mount/fstab changes invalidate the bound.",
+      "existingMitigationIds": [
+        "M2",
+        "M3",
+        "M4"
+      ],
+      "historicalAssessmentPath": "../2026-10-09-gosu-security-closure/applicability/current-cve-applicability-matrix.json",
+      "historicalEvidencePaths": [
+        "../2026-10-09-gosu-security-closure/applicability/runtime-inspection.json",
+        "../2026-10-09-gosu-security-closure/applicability/source-boundary-current.json"
+      ],
+      "historicalAssessmentScope": "Only the original service/package/version bindings from the 13 October review. Any newly reported below-gate binding is shown separately and does not inherit a proof of non-exploitability."
+    },
+    {
+      "cve": "CVE-2026-53615",
+      "previouslyAccepted": false,
+      "reported16October": true,
+      "currentObservations": [
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "bsdutils",
+          "installed": "1:2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "libblkid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "libmount1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "libsmartcols1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "libuuid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "mount",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "util-linux",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "util-linux-extra",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "bsdutils",
+          "installed": "1:2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "libblkid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "libmount1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "libsmartcols1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "libuuid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "mount",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "util-linux",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "util-linux-extra",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        }
+      ],
+      "newBindingsRequiringReview": [
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "bsdutils",
+          "installed": "1:2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "libblkid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "libmount1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "libsmartcols1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "libuuid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "mount",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "util-linux",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "util-linux-extra",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "bsdutils",
+          "installed": "1:2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "libblkid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "libmount1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "libsmartcols1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "libuuid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "mount",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "util-linux",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-53615",
+          "package": "util-linux-extra",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+        }
+      ],
+      "applicabilityReviewStatus": "REVIEWED / CONDITIONAL RESIDUAL / EXPLICIT NEW OWNER DECISION REQUIRED",
+      "component": "util-linux libblkid DOS/EBR partition parser",
+      "classification": "Affected package retained. No ordinary product entry identified in reviewed source/configuration; not declared inexploitable.",
+      "componentExecutionEvidence": "libblkid1 2.38.1-5+deb12u3 is present in both exact Debian images. Eight source-package-related binaries/libraries per image are flagged by Trivy; this is one CVE, sixteen rows. Presence is not proof of a reachable DOS parser path, nor proof of absence.",
+      "exploitPrerequisites": "A crafted DOS extended-partition image or removable medium must be probed by libblkid. Integer overflow corrupts reported partition metadata; destructive effects require a consumer acting on it. A regular image file can suffice; no raw device is required for the parsing bug itself.",
+      "productReachabilityAssessment": "Evidence input decodes bounded UTF-8 NDJSON/JSON and preserves raw_payload metadata. Reviewed application source contains no direct calls to partition tools/native block parsers, and canonical frontend/postgres have no explicit device pass-through or privileged mode. This is a limited static assessment, not a complete transitive native callgraph or exploitation proof. A local/compromised process can invoke an affected parser on a crafted file.",
+      "existingMitigationIds": [
+        "M1",
+        "M2",
+        "M3",
+        "M5",
+        "M7"
+      ],
+      "vendorBranch": "Debian bookworm util-linux 2.38.1-5+deb12u3 remains vulnerable; no fixed Bookworm version listed by the vendor on review.",
+      "upstreamFix": "2.41.4; Debian trixie currently lists 2.41.5-0+deb13u1 fixed. This does not authorize changing base distribution or importing packages across releases.",
+      "reasonableRemediationScope": "No normal fixed Bookworm update identified in Trivy/vendor data. A custom backport/source rebuild or cross-release change would require separate design, authorization and regression; it is not applied during this review.",
+      "reviewEvidence": "CVE_2026_53615_SOURCE_REVIEW.json",
+      "sources": [
+        "https://security-tracker.debian.org/tracker/CVE-2026-53615",
+        "https://github.com/util-linux/util-linux/security/advisories/GHSA-h4rw-gv36-wmp5",
+        "https://github.com/util-linux/util-linux/commit/05c2dbadf34cc74192287f377904afaaf4061623"
+      ]
+    },
+    {
+      "cve": "CVE-2026-54369",
+      "previouslyAccepted": true,
+      "reported16October": true,
+      "currentObservations": [
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-54369",
+          "package": "libacl1",
+          "installed": "2.3.1-3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "fix_deferred",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-54369",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "acl: Symlink traversal privilege escalation via libacl functions"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-54369",
+          "package": "libacl1",
+          "installed": "2.3.1-3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "fix_deferred",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-54369",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "acl: Symlink traversal privilege escalation via libacl functions"
+        }
+      ],
+      "newBindingsRequiringReview": [],
+      "applicabilityReviewStatus": "HISTORICAL CONDITIONAL ASSESSMENT; SAME IMAGE IDS, NO NEW PENETRATION TEST",
+      "component": "libacl pathname APIs",
+      "classification": "CONDITIONAL RESIDUAL / NO PRODUCT ENTRY IDENTIFIED",
+      "componentExecutionEvidence": "libacl installed; setfacl/getfacl CLI absent. Presence of the library is not removed by absent tools.",
+      "exploitPrerequisites": "Privileged caller uses a pathname ACL API while attacker swaps an ancestor for a symlink.",
+      "productReachabilityAssessment": "No product privileged ACL caller identified; writable paths still exist and unknown consumers are not excluded. Upstream fix introduces new ABI, not a demonstrated isolated Bookworm replacement.",
+      "existingMitigationIds": [
+        "M2",
+        "M3"
+      ],
+      "historicalAssessmentPath": "../2026-10-09-gosu-security-closure/applicability/current-cve-applicability-matrix.json",
+      "historicalEvidencePaths": [
+        "../2026-10-09-gosu-security-closure/applicability/runtime-inspection.json",
+        "../2026-10-09-gosu-security-closure/applicability/source-boundary-current.json"
+      ],
+      "historicalAssessmentScope": "Only the original service/package/version bindings from the 13 October review. Any newly reported below-gate binding is shown separately and does not inherit a proof of non-exploitability."
+    },
+    {
+      "cve": "CVE-2026-6653",
+      "previouslyAccepted": true,
+      "reported16October": true,
+      "currentObservations": [
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-6653",
+          "package": "libxml2",
+          "installed": "2.9.14+dfsg-1.3~deb12u6",
+          "fixed": null,
+          "severity": "CRITICAL",
+          "status": "fix_deferred",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-6653",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "libxml2: mingw-libxml2: libxml2: Denial of Service via crafted XML input due to use-after-free"
+        }
+      ],
+      "newBindingsRequiringReview": [],
+      "applicabilityReviewStatus": "HISTORICAL CONDITIONAL ASSESSMENT; SAME IMAGE IDS, NO NEW PENETRATION TEST",
+      "component": "libxml2 internal-subset parsing",
+      "classification": "CONDITIONAL RESIDUAL / NO PRODUCT ENTRY IDENTIFIED",
+      "componentExecutionEvidence": "PostgreSQL directly loads affected libxml2; its SQL/XML built-ins expose XML parsing to SQL-capable callers.",
+      "exploitPrerequisites": "Malformed XML/DTD/entity processing reaches the backported internal-subset UAF.",
+      "productReachabilityAssessment": "No application XML/raw-SQL input route; compromised DB credentials or SQL injection could reach parsing. Exact trigger through PostgreSQL parser settings was not tested; non-exploitability is not proved.",
+      "existingMitigationIds": [
+        "M1",
+        "M3",
+        "M5"
+      ],
+      "historicalAssessmentPath": "../2026-10-09-gosu-security-closure/applicability/current-cve-applicability-matrix.json",
+      "historicalEvidencePaths": [
+        "../2026-10-09-gosu-security-closure/applicability/runtime-inspection.json",
+        "../2026-10-09-gosu-security-closure/applicability/source-boundary-current.json"
+      ],
+      "historicalAssessmentScope": "Only the original service/package/version bindings from the 13 October review. Any newly reported below-gate binding is shown separately and does not inherit a proof of non-exploitability."
+    },
+    {
+      "cve": "CVE-2026-74860",
+      "previouslyAccepted": true,
+      "reported16October": true,
+      "currentObservations": [
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-74860",
+          "package": "libxml2",
+          "installed": "2.9.14+dfsg-1.3~deb12u6",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "fix_deferred",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-74860",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "libxml2: double-free/UAF in libxml2 Python bindings"
+        }
+      ],
+      "newBindingsRequiringReview": [],
+      "applicabilityReviewStatus": "HISTORICAL CONDITIONAL ASSESSMENT; SAME IMAGE IDS, NO NEW PENETRATION TEST",
+      "component": "libxml2 Python SAX attributeDecl binding",
+      "classification": "AFFECTED SUBCOMPONENT NOT PRESENT IN REVIEWED IMAGES",
+      "componentExecutionEvidence": "Native libxml2 loaded by PostgreSQL; Python runtime, libxml2 Python binding and plpython3 extension absent.",
+      "exploitPrerequisites": "Python libxml2 SAX callback handles crafted enumerated DTD attributes.",
+      "productReachabilityAssessment": "Specific Python/SAX binding not present; native XML CVEs remain separately conditional. Installing/enabling Python/XML bindings invalidates this narrow conclusion.",
+      "existingMitigationIds": [
+        "M3",
+        "M4"
+      ],
+      "historicalAssessmentPath": "../2026-10-09-gosu-security-closure/applicability/current-cve-applicability-matrix.json",
+      "historicalEvidencePaths": [
+        "../2026-10-09-gosu-security-closure/applicability/runtime-inspection.json",
+        "../2026-10-09-gosu-security-closure/applicability/source-boundary-current.json"
+      ],
+      "historicalAssessmentScope": "Only the original service/package/version bindings from the 13 October review. Any newly reported below-gate binding is shown separately and does not inherit a proof of non-exploitability."
+    },
+    {
+      "cve": "CVE-2026-76642",
+      "previouslyAccepted": true,
+      "reported16October": true,
+      "currentObservations": [
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-76642",
+          "package": "bsdutils",
+          "installed": "1:2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-76642",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-76642",
+          "package": "libblkid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-76642",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-76642",
+          "package": "libmount1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-76642",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-76642",
+          "package": "libsmartcols1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-76642",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-76642",
+          "package": "libuuid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-76642",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-76642",
+          "package": "mount",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-76642",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-76642",
+          "package": "util-linux",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-76642",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-76642",
+          "package": "util-linux-extra",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-76642",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-76642",
+          "package": "bsdutils",
+          "installed": "1:2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-76642",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-76642",
+          "package": "libblkid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-76642",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-76642",
+          "package": "libmount1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-76642",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-76642",
+          "package": "libsmartcols1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-76642",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-76642",
+          "package": "libuuid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-76642",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-76642",
+          "package": "mount",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-76642",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-76642",
+          "package": "util-linux",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-76642",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-76642",
+          "package": "util-linux-extra",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-76642",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks"
+        }
+      ],
+      "newBindingsRequiringReview": [],
+      "applicabilityReviewStatus": "HISTORICAL CONDITIONAL ASSESSMENT; SAME IMAGE IDS, NO NEW PENETRATION TEST",
+      "component": "util-linux failed mount helper / privileged hooks",
+      "classification": "CONDITIONAL RESIDUAL / NO PRODUCT ENTRY IDENTIFIED",
+      "componentExecutionEvidence": "mount executable present; not invoked by reviewed product entrypoints.",
+      "exploitPrerequisites": "Failed mount helper still leads to X-mount.idmap/owner privileged post-mount hooks on an existing filesystem.",
+      "productReachabilityAssessment": "No authorized fstab hook or SYS_ADMIN; non-root and no-new-privileges constrain the privileged prerequisite. Does not secure an operator who runs privileged host mount commands.",
+      "existingMitigationIds": [
+        "M2",
+        "M3",
+        "M4"
+      ],
+      "historicalAssessmentPath": "../2026-10-09-gosu-security-closure/applicability/current-cve-applicability-matrix.json",
+      "historicalEvidencePaths": [
+        "../2026-10-09-gosu-security-closure/applicability/runtime-inspection.json",
+        "../2026-10-09-gosu-security-closure/applicability/source-boundary-current.json"
+      ],
+      "historicalAssessmentScope": "Only the original service/package/version bindings from the 13 October review. Any newly reported below-gate binding is shown separately and does not inherit a proof of non-exploitability."
+    },
+    {
+      "cve": "CVE-2026-78408",
+      "previouslyAccepted": true,
+      "reported16October": true,
+      "currentObservations": [
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78408",
+          "package": "bsdutils",
+          "installed": "1:2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78408",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78408",
+          "package": "libblkid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78408",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78408",
+          "package": "libmount1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78408",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78408",
+          "package": "libsmartcols1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78408",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78408",
+          "package": "libuuid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78408",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78408",
+          "package": "mount",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78408",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78408",
+          "package": "util-linux",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78408",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78408",
+          "package": "util-linux-extra",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78408",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78408",
+          "package": "bsdutils",
+          "installed": "1:2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78408",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78408",
+          "package": "libblkid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78408",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78408",
+          "package": "libmount1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78408",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78408",
+          "package": "libsmartcols1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78408",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78408",
+          "package": "libuuid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78408",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78408",
+          "package": "mount",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78408",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78408",
+          "package": "util-linux",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78408",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78408",
+          "package": "util-linux-extra",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78408",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority"
+        }
+      ],
+      "newBindingsRequiringReview": [],
+      "applicabilityReviewStatus": "HISTORICAL CONDITIONAL ASSESSMENT; SAME IMAGE IDS, NO NEW PENETRATION TEST",
+      "component": "util-linux nsenter --join-cgroup",
+      "classification": "CONDITIONAL RESIDUAL / NO PRODUCT ENTRY IDENTIFIED",
+      "componentExecutionEvidence": "nsenter installed, but no product nsenter command identified.",
+      "exploitPrerequisites": "Privileged root operator joins attacker-controlled target cgroup and inherits a writable root-opened cgroup FD into execution.",
+      "productReachabilityAssessment": "No root/SYS_ADMIN runtime entry or operator workflow using --join-cgroup is covered. Host/admin operations remain possible outside the academic service boundary.",
+      "existingMitigationIds": [
+        "M2",
+        "M3"
+      ],
+      "historicalAssessmentPath": "../2026-10-09-gosu-security-closure/applicability/current-cve-applicability-matrix.json",
+      "historicalEvidencePaths": [
+        "../2026-10-09-gosu-security-closure/applicability/runtime-inspection.json",
+        "../2026-10-09-gosu-security-closure/applicability/source-boundary-current.json"
+      ],
+      "historicalAssessmentScope": "Only the original service/package/version bindings from the 13 October review. Any newly reported below-gate binding is shown separately and does not inherit a proof of non-exploitability."
+    },
+    {
+      "cve": "CVE-2026-78409",
+      "previouslyAccepted": true,
+      "reported16October": true,
+      "currentObservations": [
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78409",
+          "package": "bsdutils",
+          "installed": "1:2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78409",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78409",
+          "package": "libblkid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78409",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78409",
+          "package": "libmount1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78409",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78409",
+          "package": "libsmartcols1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78409",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78409",
+          "package": "libuuid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78409",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78409",
+          "package": "mount",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78409",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78409",
+          "package": "util-linux",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78409",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78409",
+          "package": "util-linux-extra",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78409",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78409",
+          "package": "bsdutils",
+          "installed": "1:2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78409",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78409",
+          "package": "libblkid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78409",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78409",
+          "package": "libmount1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78409",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78409",
+          "package": "libsmartcols1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78409",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78409",
+          "package": "libuuid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78409",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78409",
+          "package": "mount",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78409",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78409",
+          "package": "util-linux",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78409",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78409",
+          "package": "util-linux-extra",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78409",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks"
+        }
+      ],
+      "newBindingsRequiringReview": [],
+      "applicabilityReviewStatus": "HISTORICAL CONDITIONAL ASSESSMENT; SAME IMAGE IDS, NO NEW PENETRATION TEST",
+      "component": "util-linux X-mount.subdir detached-tree path",
+      "classification": "CONDITIONAL RESIDUAL / NO PRODUCT ENTRY IDENTIFIED",
+      "componentExecutionEvidence": "mount installed. Current inspected WSL2 kernel6.18.33.1 meets the advisory Linux>=6.15 prerequisite; kernel version is NOT a mitigation.",
+      "exploitPrerequisites": "Permitted X-mount.subdir fstab entry plus attacker-controlled intermediate symlink redirects detached-tree attachment.",
+      "productReachabilityAssessment": "No fstab authorization, SYS_ADMIN or service mount operation. Host kernel prerequisite actually holds, so only the remaining reviewed privilege/configuration limits support reduced reachability.",
+      "existingMitigationIds": [
+        "M2",
+        "M3",
+        "M4"
+      ],
+      "historicalAssessmentPath": "../2026-10-09-gosu-security-closure/applicability/current-cve-applicability-matrix.json",
+      "historicalEvidencePaths": [
+        "../2026-10-09-gosu-security-closure/applicability/runtime-inspection.json",
+        "../2026-10-09-gosu-security-closure/applicability/source-boundary-current.json"
+      ],
+      "historicalAssessmentScope": "Only the original service/package/version bindings from the 13 October review. Any newly reported below-gate binding is shown separately and does not inherit a proof of non-exploitability."
+    },
+    {
+      "cve": "CVE-2026-78410",
+      "previouslyAccepted": true,
+      "reported16October": true,
+      "currentObservations": [
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78410",
+          "package": "bsdutils",
+          "installed": "1:2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78410",
+          "package": "libblkid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78410",
+          "package": "libmount1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78410",
+          "package": "libsmartcols1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78410",
+          "package": "libuuid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78410",
+          "package": "mount",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78410",
+          "package": "util-linux",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78410",
+          "package": "util-linux-extra",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78410",
+          "package": "bsdutils",
+          "installed": "1:2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78410",
+          "package": "libblkid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78410",
+          "package": "libmount1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78410",
+          "package": "libsmartcols1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78410",
+          "package": "libuuid1",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78410",
+          "package": "mount",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78410",
+          "package": "util-linux",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-78410",
+          "package": "util-linux-extra",
+          "installed": "2.38.1-5+deb12u3",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection"
+        }
+      ],
+      "newBindingsRequiringReview": [],
+      "applicabilityReviewStatus": "HISTORICAL CONDITIONAL ASSESSMENT; SAME IMAGE IDS, NO NEW PENETRATION TEST",
+      "component": "util-linux restricted bind mount source race",
+      "classification": "CONDITIONAL RESIDUAL / NO PRODUCT ENTRY IDENTIFIED",
+      "componentExecutionEvidence": "SUID mount remains installed; no fstab-authorized restricted bind source configured.",
+      "exploitPrerequisites": "Attacker replaces permitted bind source/ancestor; privileged mount optionally changes redirected inode owner/group/mode.",
+      "productReachabilityAssessment": "No authorized fstab source and no-new-privileges/SYS_ADMIN restrictions. Read-only root alone does not prove safety because tmpfs/data remain writable.",
+      "existingMitigationIds": [
+        "M2",
+        "M3",
+        "M4"
+      ],
+      "historicalAssessmentPath": "../2026-10-09-gosu-security-closure/applicability/current-cve-applicability-matrix.json",
+      "historicalEvidencePaths": [
+        "../2026-10-09-gosu-security-closure/applicability/runtime-inspection.json",
+        "../2026-10-09-gosu-security-closure/applicability/source-boundary-current.json"
+      ],
+      "historicalAssessmentScope": "Only the original service/package/version bindings from the 13 October review. Any newly reported below-gate binding is shown separately and does not inherit a proof of non-exploitability."
+    },
+    {
+      "cve": "CVE-2026-84782",
+      "previouslyAccepted": true,
+      "reported16October": true,
+      "currentObservations": [
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-84782",
+          "package": "libssl3",
+          "installed": "3.0.20-1~deb12u2",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-84782",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "openssl: compat-openssl: openssl: Information disclosure via DTLS handshake retransmission"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-84782",
+          "package": "openssl",
+          "installed": "3.0.20-1~deb12u2",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-84782",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "openssl: compat-openssl: openssl: Information disclosure via DTLS handshake retransmission"
+        }
+      ],
+      "newBindingsRequiringReview": [],
+      "applicabilityReviewStatus": "HISTORICAL CONDITIONAL ASSESSMENT; SAME IMAGE IDS, NO NEW PENETRATION TEST",
+      "component": "OpenSSL DTLS retransmission",
+      "classification": "REQUIRED PROTOCOL NOT USED IN REVIEWED SERVICES",
+      "componentExecutionEvidence": "PostgreSQL loads libssl3 3.0.20. Node ldd does not use Debian libssl. Loaded OpenSSL library is not absent.",
+      "exploitPrerequisites": "DTLS suspended handshake write overlaps retransmission timer, producing memory disclosure/crash.",
+      "productReachabilityAssessment": "Reviewed PostgreSQL connection is TCP; optional SSL is TLS-over-TCP, not DTLS. No product UDP/DTLS listener/configuration identified. Upstream3.0.23 premium fix is not an available public Bookworm binary; suite switch/custom OpenSSL rebuild exceeds this task.",
+      "existingMitigationIds": [
+        "M1",
+        "M6"
+      ],
+      "historicalAssessmentPath": "../2026-10-09-gosu-security-closure/applicability/current-cve-applicability-matrix.json",
+      "historicalEvidencePaths": [
+        "../2026-10-09-gosu-security-closure/applicability/runtime-inspection.json",
+        "../2026-10-09-gosu-security-closure/applicability/source-boundary-current.json"
+      ],
+      "historicalAssessmentScope": "Only the original service/package/version bindings from the 13 October review. Any newly reported below-gate binding is shown separately and does not inherit a proof of non-exploitability."
+    },
+    {
+      "cve": "CVE-2026-86138",
+      "previouslyAccepted": true,
+      "reported16October": true,
+      "currentObservations": [
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-86138",
+          "package": "libxml2",
+          "installed": "2.9.14+dfsg-1.3~deb12u6",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "fix_deferred",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-86138",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "libxml2: libxml2: Arbitrary code execution via heap-based buffer overflow"
+        }
+      ],
+      "newBindingsRequiringReview": [],
+      "applicabilityReviewStatus": "HISTORICAL CONDITIONAL ASSESSMENT; SAME IMAGE IDS, NO NEW PENETRATION TEST",
+      "component": "libxml2 xmlDictAddQString",
+      "classification": "CONDITIONAL RESIDUAL / NO PRODUCT ENTRY IDENTIFIED",
+      "componentExecutionEvidence": "Affected native XML library directly loaded by PostgreSQL.",
+      "exploitPrerequisites": "Crafted qualified-name/dictionary input reaches integer overflow and heap write.",
+      "productReachabilityAssessment": "SQL/XML capability exists, but no product XML/raw SQL endpoint. Function-specific reach and practical input thresholds through PostgreSQL remain unproved; keep residual rather than asserting safe.",
+      "existingMitigationIds": [
+        "M1",
+        "M3",
+        "M5"
+      ],
+      "historicalAssessmentPath": "../2026-10-09-gosu-security-closure/applicability/current-cve-applicability-matrix.json",
+      "historicalEvidencePaths": [
+        "../2026-10-09-gosu-security-closure/applicability/runtime-inspection.json",
+        "../2026-10-09-gosu-security-closure/applicability/source-boundary-current.json"
+      ],
+      "historicalAssessmentScope": "Only the original service/package/version bindings from the 13 October review. Any newly reported below-gate binding is shown separately and does not inherit a proof of non-exploitability."
+    },
+    {
+      "cve": "CVE-2026-86140",
+      "previouslyAccepted": true,
+      "reported16October": true,
+      "currentObservations": [
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-86140",
+          "package": "libxml2",
+          "installed": "2.9.14+dfsg-1.3~deb12u6",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "fix_deferred",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-86140",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "libxml2: libxml2: Arbitrary code execution via stack-based buffer overflow in xmlSnprintfElements"
+        }
+      ],
+      "newBindingsRequiringReview": [],
+      "applicabilityReviewStatus": "HISTORICAL CONDITIONAL ASSESSMENT; SAME IMAGE IDS, NO NEW PENETRATION TEST",
+      "component": "libxml2 xmlSnprintfElements validation formatting",
+      "classification": "CONDITIONAL RESIDUAL / NO PRODUCT ENTRY IDENTIFIED",
+      "componentExecutionEvidence": "Affected native XML library directly loaded by PostgreSQL.",
+      "exploitPrerequisites": "Crafted XML validation/content-model formatting reaches a stack overflow.",
+      "productReachabilityAssessment": "Reviewed business paths do not request XML validation. Exact validation/error path under SQL/XML calls not exhaustively mapped. DB/SQL compromise remains a residual boundary.",
+      "existingMitigationIds": [
+        "M1",
+        "M3",
+        "M5"
+      ],
+      "historicalAssessmentPath": "../2026-10-09-gosu-security-closure/applicability/current-cve-applicability-matrix.json",
+      "historicalEvidencePaths": [
+        "../2026-10-09-gosu-security-closure/applicability/runtime-inspection.json",
+        "../2026-10-09-gosu-security-closure/applicability/source-boundary-current.json"
+      ],
+      "historicalAssessmentScope": "Only the original service/package/version bindings from the 13 October review. Any newly reported below-gate binding is shown separately and does not inherit a proof of non-exploitability."
+    },
+    {
+      "cve": "CVE-2026-86142",
+      "previouslyAccepted": true,
+      "reported16October": true,
+      "currentObservations": [
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-86142",
+          "package": "libxml2",
+          "installed": "2.9.14+dfsg-1.3~deb12u6",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "fix_deferred",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-86142",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "libxml2: libxml2: Heap-based buffer overflow in xmlXPtrEval due to xpointer length saturation"
+        }
+      ],
+      "newBindingsRequiringReview": [],
+      "applicabilityReviewStatus": "HISTORICAL CONDITIONAL ASSESSMENT; SAME IMAGE IDS, NO NEW PENETRATION TEST",
+      "component": "libxml2 XPointer expression evaluation",
+      "classification": "CONDITIONAL RESIDUAL / NO PRODUCT ENTRY IDENTIFIED",
+      "componentExecutionEvidence": "Affected native library present; PostgreSQL supports XPath, which must not be equated automatically with the separate XPointer API.",
+      "exploitPrerequisites": "Oversized XPointer evaluation saturates lengths and overflows heap storage.",
+      "productReachabilityAssessment": "No XPointer business route found. Specific PostgreSQL XPointer invocation not demonstrated; keep uncertainty rather than infer reach from generic XPath or infer total absence.",
+      "existingMitigationIds": [
+        "M1",
+        "M3",
+        "M5"
+      ],
+      "historicalAssessmentPath": "../2026-10-09-gosu-security-closure/applicability/current-cve-applicability-matrix.json",
+      "historicalEvidencePaths": [
+        "../2026-10-09-gosu-security-closure/applicability/runtime-inspection.json",
+        "../2026-10-09-gosu-security-closure/applicability/source-boundary-current.json"
+      ],
+      "historicalAssessmentScope": "Only the original service/package/version bindings from the 13 October review. Any newly reported below-gate binding is shown separately and does not inherit a proof of non-exploitability."
+    },
+    {
+      "cve": "CVE-2026-86143",
+      "previouslyAccepted": true,
+      "reported16October": true,
+      "currentObservations": [
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-86143",
+          "package": "libxml2",
+          "installed": "2.9.14+dfsg-1.3~deb12u6",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "fix_deferred",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-86143",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "libxml2: libxml2: Data integrity issues due to integer overflow in write callbacks"
+        }
+      ],
+      "newBindingsRequiringReview": [],
+      "applicabilityReviewStatus": "HISTORICAL CONDITIONAL ASSESSMENT; SAME IMAGE IDS, NO NEW PENETRATION TEST",
+      "component": "libxml2 output write callback lengths",
+      "classification": "CONDITIONAL RESIDUAL / NO PRODUCT ENTRY IDENTIFIED",
+      "componentExecutionEvidence": "Affected native library loaded; callback-specific path not fully traced.",
+      "exploitPrerequisites": "Integer length overflow passes a negative/inconsistent length to a consumer write callback.",
+      "productReachabilityAssessment": "No custom product libxml2 callback/XML output path found; SQL-capable callers may serialize XML through native machinery. Exact callback/integer-size conditions through PostgreSQL unproved.",
+      "existingMitigationIds": [
+        "M1",
+        "M3",
+        "M5"
+      ],
+      "historicalAssessmentPath": "../2026-10-09-gosu-security-closure/applicability/current-cve-applicability-matrix.json",
+      "historicalEvidencePaths": [
+        "../2026-10-09-gosu-security-closure/applicability/runtime-inspection.json",
+        "../2026-10-09-gosu-security-closure/applicability/source-boundary-current.json"
+      ],
+      "historicalAssessmentScope": "Only the original service/package/version bindings from the 13 October review. Any newly reported below-gate binding is shown separately and does not inherit a proof of non-exploitability."
+    },
+    {
+      "cve": "CVE-2026-86144",
+      "previouslyAccepted": true,
+      "reported16October": true,
+      "currentObservations": [
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-86144",
+          "package": "libxml2",
+          "installed": "2.9.14+dfsg-1.3~deb12u6",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "fix_deferred",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-86144",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "libxml2: libxml2: Information disclosure, SSRF, or denial of service due to improper parseFlags propagation."
+        }
+      ],
+      "newBindingsRequiringReview": [],
+      "applicabilityReviewStatus": "HISTORICAL CONDITIONAL ASSESSMENT; SAME IMAGE IDS, NO NEW PENETRATION TEST",
+      "component": "libxml2 XInclude parse flags / loader",
+      "classification": "CONDITIONAL RESIDUAL / NO PRODUCT ENTRY IDENTIFIED",
+      "componentExecutionEvidence": "Affected native XML library present; generic XML support is not proof XInclude is invoked.",
+      "exploitPrerequisites": "XInclude processing loses parse flags and a capable loader fetches attacker-chosen resources.",
+      "productReachabilityAssessment": "No product XInclude/custom resource loader found. PG data-only internal network limits outbound access but does not prevent local resources or all DoS. Actual XInclude call path under arbitrary SQL unproved.",
+      "existingMitigationIds": [
+        "M1",
+        "M3",
+        "M6"
+      ],
+      "historicalAssessmentPath": "../2026-10-09-gosu-security-closure/applicability/current-cve-applicability-matrix.json",
+      "historicalEvidencePaths": [
+        "../2026-10-09-gosu-security-closure/applicability/runtime-inspection.json",
+        "../2026-10-09-gosu-security-closure/applicability/source-boundary-current.json"
+      ],
+      "historicalAssessmentScope": "Only the original service/package/version bindings from the 13 October review. Any newly reported below-gate binding is shown separately and does not inherit a proof of non-exploitability."
+    },
+    {
+      "cve": "CVE-2026-88647",
+      "previouslyAccepted": true,
+      "reported16October": true,
+      "currentObservations": [
+        {
+          "component": "migration",
+          "target": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4 (ubuntu 24.04)",
+          "class": "os-pkgs",
+          "type": "ubuntu",
+          "cve": "CVE-2026-88647",
+          "package": "libgnutls30t64",
+          "installed": "3.8.3-1.1ubuntu3.6",
+          "fixed": null,
+          "severity": "MEDIUM",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-88647",
+          "dataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "title": "gnutls: gnutls: Information disclosure via hostname verification bypass"
+        },
+        {
+          "component": "backend",
+          "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+          "class": "os-pkgs",
+          "type": "ubuntu",
+          "cve": "CVE-2026-88647",
+          "package": "libgnutls30",
+          "installed": "3.7.3-4ubuntu1.9",
+          "fixed": null,
+          "severity": "MEDIUM",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-88647",
+          "dataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "title": "gnutls: gnutls: Information disclosure via hostname verification bypass"
+        },
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-88647",
+          "package": "libgnutls30",
+          "installed": "3.7.9-2+deb12u7",
+          "fixed": null,
+          "severity": "LOW",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-88647",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "gnutls: gnutls: Information disclosure via hostname verification bypass"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-88647",
+          "package": "libgnutls30",
+          "installed": "3.7.9-2+deb12u7",
+          "fixed": null,
+          "severity": "LOW",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-88647",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "gnutls: gnutls: Information disclosure via hostname verification bypass"
+        }
+      ],
+      "newBindingsRequiringReview": [
+        {
+          "component": "migration",
+          "target": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4 (ubuntu 24.04)",
+          "class": "os-pkgs",
+          "type": "ubuntu",
+          "cve": "CVE-2026-88647",
+          "package": "libgnutls30t64",
+          "installed": "3.8.3-1.1ubuntu3.6",
+          "fixed": null,
+          "severity": "MEDIUM",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-88647",
+          "dataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "title": "gnutls: gnutls: Information disclosure via hostname verification bypass"
+        },
+        {
+          "component": "backend",
+          "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+          "class": "os-pkgs",
+          "type": "ubuntu",
+          "cve": "CVE-2026-88647",
+          "package": "libgnutls30",
+          "installed": "3.7.3-4ubuntu1.9",
+          "fixed": null,
+          "severity": "MEDIUM",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-88647",
+          "dataSource": {
+            "ID": "ubuntu",
+            "Name": "Ubuntu CVE Tracker",
+            "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+          },
+          "title": "gnutls: gnutls: Information disclosure via hostname verification bypass"
+        }
+      ],
+      "applicabilityReviewStatus": "HISTORICAL CONDITIONAL ASSESSMENT; SAME IMAGE IDS, NO NEW PENETRATION TEST",
+      "component": "GnuTLS certificate validation / libgnutls30",
+      "classification": "CONDITIONAL RESIDUAL / REACHABILITY NOT DEMONSTRATED",
+      "componentExecutionEvidence": "Package is present in frontend and PostgreSQL. No new dynamic probe demonstrates whether their execution reaches the affected GnuTLS certificate path.",
+      "exploitPrerequisites": "Application actually uses affected GnuTLS hostname verification with an attacker-crafted certificate.",
+      "productReachabilityAssessment": "Loopback/internal networks, synthetic input and disabled external providers constrain exposure; they do not prove the vulnerable path unreachable. Node/PostgreSQL entrypoint alone does not prove no GnuTLS use.",
+      "existingMitigationIds": [
+        "M1",
+        "M2",
+        "M3",
+        "M5"
+      ],
+      "historicalAssessmentPath": null,
+      "historicalEvidencePaths": null,
+      "historicalAssessmentScope": "Only the original service/package/version bindings from the 13 October review. Any newly reported below-gate binding is shown separately and does not inherit a proof of non-exploitability.",
+      "additionalBelowGateBindingNote": "Two new Ubuntu Medium observations in backend/migration are visible; historical Debian Low assessment is not silently transferred. Overall CVE remains below High/Critical but is conservatively included in the candidate scope."
+    },
+    {
+      "cve": "CVE-2026-88648",
+      "previouslyAccepted": true,
+      "reported16October": true,
+      "currentObservations": [
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-88648",
+          "package": "libgnutls30",
+          "installed": "3.7.9-2+deb12u7",
+          "fixed": null,
+          "severity": "LOW",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-88648",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "gnutls: gnutls: Cross-domain certificate restriction bypass via incomplete X.509 validation"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-88648",
+          "package": "libgnutls30",
+          "installed": "3.7.9-2+deb12u7",
+          "fixed": null,
+          "severity": "LOW",
+          "status": "affected",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-88648",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "gnutls: gnutls: Cross-domain certificate restriction bypass via incomplete X.509 validation"
+        }
+      ],
+      "newBindingsRequiringReview": [],
+      "applicabilityReviewStatus": "HISTORICAL CONDITIONAL ASSESSMENT; SAME IMAGE IDS, NO NEW PENETRATION TEST",
+      "component": "GnuTLS certificate validation / libgnutls30",
+      "classification": "CONDITIONAL RESIDUAL / REACHABILITY NOT DEMONSTRATED",
+      "componentExecutionEvidence": "Package is present in frontend and PostgreSQL. No new dynamic probe demonstrates whether their execution reaches the affected GnuTLS certificate path.",
+      "exploitPrerequisites": "Application actually uses affected GnuTLS X.509 constraints verification and attacker controls a subordinate certificate authority.",
+      "productReachabilityAssessment": "Loopback/internal networks, synthetic input and disabled external providers constrain exposure; they do not prove the vulnerable path unreachable. Node/PostgreSQL entrypoint alone does not prove no GnuTLS use.",
+      "existingMitigationIds": [
+        "M1",
+        "M2",
+        "M3",
+        "M5"
+      ],
+      "historicalAssessmentPath": null,
+      "historicalEvidencePaths": null,
+      "historicalAssessmentScope": "Only the original service/package/version bindings from the 13 October review. Any newly reported below-gate binding is shown separately and does not inherit a proof of non-exploitability."
+    },
+    {
+      "cve": "CVE-2026-9538",
+      "previouslyAccepted": true,
+      "reported16October": true,
+      "currentObservations": [
+        {
+          "component": "frontend",
+          "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-9538",
+          "package": "perl-base",
+          "installed": "5.36.0-7+deb12u4",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "fix_deferred",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-9538",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-9538",
+          "package": "libperl5.36",
+          "installed": "5.36.0-7+deb12u4",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "fix_deferred",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-9538",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-9538",
+          "package": "perl",
+          "installed": "5.36.0-7+deb12u4",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "fix_deferred",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-9538",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-9538",
+          "package": "perl-base",
+          "installed": "5.36.0-7+deb12u4",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "fix_deferred",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-9538",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size"
+        },
+        {
+          "component": "postgres",
+          "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+          "class": "os-pkgs",
+          "type": "debian",
+          "cve": "CVE-2026-9538",
+          "package": "perl-modules-5.36",
+          "installed": "5.36.0-7+deb12u4",
+          "fixed": null,
+          "severity": "HIGH",
+          "status": "fix_deferred",
+          "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-9538",
+          "dataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "title": "perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size"
+        }
+      ],
+      "newBindingsRequiringReview": [],
+      "applicabilityReviewStatus": "HISTORICAL CONDITIONAL ASSESSMENT; SAME IMAGE IDS, NO NEW PENETRATION TEST",
+      "component": "Perl Archive::Tar header size",
+      "classification": "CONDITIONAL RESIDUAL / NO PRODUCT ENTRY IDENTIFIED",
+      "componentExecutionEvidence": "Frontend perl-base installed but Archive::Tar absent; PostgreSQL Archive::Tar2.40 present and affected (<3.10).",
+      "exploitPrerequisites": "Archive::Tar reads an attacker-chosen tar header declaring an excessive payload length.",
+      "productReachabilityAssessment": "No product Perl/tar processing or plperl extension found. Operator scripts/OS foothold could invoke the module; memory limit bounds some exhaustion, not an upstream fix. u4 patches other Perl CVEs, not this one.",
+      "existingMitigationIds": [
+        "M2",
+        "M3",
+        "M5"
+      ],
+      "historicalAssessmentPath": "../2026-10-09-gosu-security-closure/applicability/current-cve-applicability-matrix.json",
+      "historicalEvidencePaths": [
+        "../2026-10-09-gosu-security-closure/applicability/runtime-inspection.json",
+        "../2026-10-09-gosu-security-closure/applicability/source-boundary-current.json"
+      ],
+      "historicalAssessmentScope": "Only the original service/package/version bindings from the 13 October review. Any newly reported below-gate binding is shown separately and does not inherit a proof of non-exploitability."
+    }
+  ],
+  "limits": "Known assessments are carried as historical conditional findings for unchanged image contents. Dynamic runtime/exploitability is not demonstrated today. New bindings/findings require individual review; a scan delta is not an automatic acceptance.",
+  "newHighCriticalCvesReviewed": [
+    "CVE-2026-53615"
+  ],
+  "currentUniqueHighCriticalCves": 24,
+  "conservativeAcceptanceCandidateCves": 26,
+  "original119BindingsRetained": true,
+  "newHighCriticalReviewComplete": true,
+  "candidateRiskSet": "25 historical conservative CVEs plus CVE-2026-53615. This is a proposal, not an acceptance or renewal.",
+  "allOtherScanChanges": "32 added package bindings across backend/migration, all Medium or Low; retained in unfiltered reports and SECURITY_REVALIDATION.json. They are not hidden or covered by a blanket H/C waiver."
+}

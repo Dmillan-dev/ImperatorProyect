@@ -1,0 +1,1279 @@
+{
+  "reviewDate": "2026-10-16",
+  "sourceSha": "94ce8799812ecde83ebb4e0b2698bfab5e9091d8",
+  "previousScanDate": "2026-10-14",
+  "images": [
+    {
+      "component": "migration",
+      "imageIndex": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4",
+      "highCriticalRows": 0,
+      "uniqueHighCriticalCves": 0,
+      "fixableHighCriticalRows": 0,
+      "nonFixableHighCriticalRows": 0,
+      "secretsAllSeverities": 0,
+      "reportSha256": "b51602eed3b0a6691032b7b70978aa9f437532eebf57d7e2c0db307dff1fd43d"
+    },
+    {
+      "component": "backend",
+      "imageIndex": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757",
+      "highCriticalRows": 0,
+      "uniqueHighCriticalCves": 0,
+      "fixableHighCriticalRows": 0,
+      "nonFixableHighCriticalRows": 0,
+      "secretsAllSeverities": 0,
+      "reportSha256": "13a1a5210421dad9d7428b5fafd927429af10949c8b8df69fd74cc8b3a849bfb"
+    },
+    {
+      "component": "frontend",
+      "imageIndex": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78",
+      "highCriticalRows": 57,
+      "uniqueHighCriticalCves": 12,
+      "fixableHighCriticalRows": 0,
+      "nonFixableHighCriticalRows": 57,
+      "secretsAllSeverities": 0,
+      "reportSha256": "e6b2f36caeb04827675b7d2541399d0d0817cabfbacfc6218d76ebbadb0c5919"
+    },
+    {
+      "component": "postgres",
+      "imageIndex": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9",
+      "highCriticalRows": 74,
+      "uniqueHighCriticalCves": 24,
+      "fixableHighCriticalRows": 0,
+      "nonFixableHighCriticalRows": 74,
+      "secretsAllSeverities": 0,
+      "reportSha256": "1da0744dfc0c71e1d08555131ae383a36361e77302b3fa53c2d953eac0786e29"
+    }
+  ],
+  "databaseReview": {
+    "db": {
+      "metadata": {
+        "Version": 2,
+        "NextUpdate": "2026-10-17T01:13:54.947090202Z",
+        "UpdatedAt": "2026-10-16T01:13:54.947090392Z",
+        "DownloadedAt": "2026-10-16T08:29:05.60019081Z"
+      },
+      "ageHours": 7.29,
+      "freshForThisReview": true
+    },
+    "java-db": {
+      "metadata": {
+        "Version": 1,
+        "NextUpdate": "2026-10-19T01:00:20.589203Z",
+        "UpdatedAt": "2026-10-16T01:00:20.589203513Z",
+        "DownloadedAt": "2026-10-16T08:30:32.292431531Z"
+      },
+      "ageHours": 7.51,
+      "freshForThisReview": true
+    }
+  },
+  "technicalGate": "PASS",
+  "fixableHighCriticalRows": 0,
+  "imageSecretsAllSeverities": 0,
+  "sourceGitleaksFindings": 0,
+  "currentHighCriticalRows": 131,
+  "currentUniqueHighCriticalCves": 24,
+  "currentUniqueNonFixableHighCriticalCves": 24,
+  "originalConservativeCveSet": 25,
+  "originalAcceptedPackageIdentityBindings": 119,
+  "originalBindingsStillReportedAllSeverities": 119,
+  "originalBindingsNotReportedNow": [],
+  "newHighCriticalBindingsOutsideHistoricalAcceptance": [
+    {
+      "component": "frontend",
+      "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+      "class": "os-pkgs",
+      "type": "debian",
+      "cve": "CVE-2026-53615",
+      "package": "bsdutils",
+      "installed": "1:2.38.1-5+deb12u3",
+      "fixed": null,
+      "severity": "HIGH",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+      "dataSource": {
+        "ID": "debian",
+        "Name": "Debian Security Tracker",
+        "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+      },
+      "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+    },
+    {
+      "component": "frontend",
+      "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+      "class": "os-pkgs",
+      "type": "debian",
+      "cve": "CVE-2026-53615",
+      "package": "libblkid1",
+      "installed": "2.38.1-5+deb12u3",
+      "fixed": null,
+      "severity": "HIGH",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+      "dataSource": {
+        "ID": "debian",
+        "Name": "Debian Security Tracker",
+        "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+      },
+      "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+    },
+    {
+      "component": "frontend",
+      "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+      "class": "os-pkgs",
+      "type": "debian",
+      "cve": "CVE-2026-53615",
+      "package": "libmount1",
+      "installed": "2.38.1-5+deb12u3",
+      "fixed": null,
+      "severity": "HIGH",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+      "dataSource": {
+        "ID": "debian",
+        "Name": "Debian Security Tracker",
+        "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+      },
+      "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+    },
+    {
+      "component": "frontend",
+      "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+      "class": "os-pkgs",
+      "type": "debian",
+      "cve": "CVE-2026-53615",
+      "package": "libsmartcols1",
+      "installed": "2.38.1-5+deb12u3",
+      "fixed": null,
+      "severity": "HIGH",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+      "dataSource": {
+        "ID": "debian",
+        "Name": "Debian Security Tracker",
+        "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+      },
+      "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+    },
+    {
+      "component": "frontend",
+      "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+      "class": "os-pkgs",
+      "type": "debian",
+      "cve": "CVE-2026-53615",
+      "package": "libuuid1",
+      "installed": "2.38.1-5+deb12u3",
+      "fixed": null,
+      "severity": "HIGH",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+      "dataSource": {
+        "ID": "debian",
+        "Name": "Debian Security Tracker",
+        "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+      },
+      "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+    },
+    {
+      "component": "frontend",
+      "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+      "class": "os-pkgs",
+      "type": "debian",
+      "cve": "CVE-2026-53615",
+      "package": "mount",
+      "installed": "2.38.1-5+deb12u3",
+      "fixed": null,
+      "severity": "HIGH",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+      "dataSource": {
+        "ID": "debian",
+        "Name": "Debian Security Tracker",
+        "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+      },
+      "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+    },
+    {
+      "component": "frontend",
+      "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+      "class": "os-pkgs",
+      "type": "debian",
+      "cve": "CVE-2026-53615",
+      "package": "util-linux",
+      "installed": "2.38.1-5+deb12u3",
+      "fixed": null,
+      "severity": "HIGH",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+      "dataSource": {
+        "ID": "debian",
+        "Name": "Debian Security Tracker",
+        "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+      },
+      "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+    },
+    {
+      "component": "frontend",
+      "target": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78 (debian 12.15)",
+      "class": "os-pkgs",
+      "type": "debian",
+      "cve": "CVE-2026-53615",
+      "package": "util-linux-extra",
+      "installed": "2.38.1-5+deb12u3",
+      "fixed": null,
+      "severity": "HIGH",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+      "dataSource": {
+        "ID": "debian",
+        "Name": "Debian Security Tracker",
+        "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+      },
+      "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+    },
+    {
+      "component": "postgres",
+      "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+      "class": "os-pkgs",
+      "type": "debian",
+      "cve": "CVE-2026-53615",
+      "package": "bsdutils",
+      "installed": "1:2.38.1-5+deb12u3",
+      "fixed": null,
+      "severity": "HIGH",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+      "dataSource": {
+        "ID": "debian",
+        "Name": "Debian Security Tracker",
+        "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+      },
+      "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+    },
+    {
+      "component": "postgres",
+      "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+      "class": "os-pkgs",
+      "type": "debian",
+      "cve": "CVE-2026-53615",
+      "package": "libblkid1",
+      "installed": "2.38.1-5+deb12u3",
+      "fixed": null,
+      "severity": "HIGH",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+      "dataSource": {
+        "ID": "debian",
+        "Name": "Debian Security Tracker",
+        "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+      },
+      "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+    },
+    {
+      "component": "postgres",
+      "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+      "class": "os-pkgs",
+      "type": "debian",
+      "cve": "CVE-2026-53615",
+      "package": "libmount1",
+      "installed": "2.38.1-5+deb12u3",
+      "fixed": null,
+      "severity": "HIGH",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+      "dataSource": {
+        "ID": "debian",
+        "Name": "Debian Security Tracker",
+        "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+      },
+      "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+    },
+    {
+      "component": "postgres",
+      "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+      "class": "os-pkgs",
+      "type": "debian",
+      "cve": "CVE-2026-53615",
+      "package": "libsmartcols1",
+      "installed": "2.38.1-5+deb12u3",
+      "fixed": null,
+      "severity": "HIGH",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+      "dataSource": {
+        "ID": "debian",
+        "Name": "Debian Security Tracker",
+        "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+      },
+      "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+    },
+    {
+      "component": "postgres",
+      "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+      "class": "os-pkgs",
+      "type": "debian",
+      "cve": "CVE-2026-53615",
+      "package": "libuuid1",
+      "installed": "2.38.1-5+deb12u3",
+      "fixed": null,
+      "severity": "HIGH",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+      "dataSource": {
+        "ID": "debian",
+        "Name": "Debian Security Tracker",
+        "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+      },
+      "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+    },
+    {
+      "component": "postgres",
+      "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+      "class": "os-pkgs",
+      "type": "debian",
+      "cve": "CVE-2026-53615",
+      "package": "mount",
+      "installed": "2.38.1-5+deb12u3",
+      "fixed": null,
+      "severity": "HIGH",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+      "dataSource": {
+        "ID": "debian",
+        "Name": "Debian Security Tracker",
+        "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+      },
+      "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+    },
+    {
+      "component": "postgres",
+      "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+      "class": "os-pkgs",
+      "type": "debian",
+      "cve": "CVE-2026-53615",
+      "package": "util-linux",
+      "installed": "2.38.1-5+deb12u3",
+      "fixed": null,
+      "severity": "HIGH",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+      "dataSource": {
+        "ID": "debian",
+        "Name": "Debian Security Tracker",
+        "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+      },
+      "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+    },
+    {
+      "component": "postgres",
+      "target": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9 (debian 12.15)",
+      "class": "os-pkgs",
+      "type": "debian",
+      "cve": "CVE-2026-53615",
+      "package": "util-linux-extra",
+      "installed": "2.38.1-5+deb12u3",
+      "fixed": null,
+      "severity": "HIGH",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615",
+      "dataSource": {
+        "ID": "debian",
+        "Name": "Debian Security Tracker",
+        "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+      },
+      "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser"
+    }
+  ],
+  "fixableFindings": [],
+  "addedFindingsAllSeverities": [
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-102473",
+      "package": "dash",
+      "installed": "0.5.11+git20210903+057cd650a4ed-3build1",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-102473",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "dash: dash: Super-polynomial backtracking in pmatch when libc fnmatch is disabled"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-102474",
+      "package": "dash",
+      "installed": "0.5.11+git20210903+057cd650a4ed-3build1",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-102474",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "dash: dash: Heap out-of-bounds write in conv_escape via undersized Unicode escape reservation"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-107161",
+      "package": "libsasl2-2",
+      "installed": "2.1.27+dfsg2-3ubuntu1.2",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-107161",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "cyrus-sasl: Heap buffer overflow in cyrus-sasl add_to_challenge() allows malicious server to crash or compromise DIGEST-MD5 clients"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-107161",
+      "package": "libsasl2-modules-db",
+      "installed": "2.1.27+dfsg2-3ubuntu1.2",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-107161",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "cyrus-sasl: Heap buffer overflow in cyrus-sasl add_to_challenge() allows malicious server to crash or compromise DIGEST-MD5 clients"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-67693",
+      "package": "libgnutls30",
+      "installed": "3.7.3-4ubuntu1.9",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-67693",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "gnutls: gnutls: Information disclosure via contradictory Key Usage and Extended Key Usage extensions"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-86409",
+      "package": "curl",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-86409",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "stale SigV4 headers sent unintended"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-86409",
+      "package": "libcurl4",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-86409",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "stale SigV4 headers sent unintended"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-86414",
+      "package": "curl",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-86414",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "curl: curl: leaking host credentials to HTTP proxy"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-86414",
+      "package": "libcurl4",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-86414",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "curl: curl: leaking host credentials to HTTP proxy"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-87862",
+      "package": "curl",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-87862",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": null
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-87862",
+      "package": "libcurl4",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-87862",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": null
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-87864",
+      "package": "curl",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-87864",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "Title Not Available"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-87864",
+      "package": "libcurl4",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-87864",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "Title Not Available"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-88647",
+      "package": "libgnutls30",
+      "installed": "3.7.3-4ubuntu1.9",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-88647",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "gnutls: gnutls: Information disclosure via hostname verification bypass"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-92388",
+      "package": "curl",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-92388",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "curl: curl: FTP wildcard write callback mixup"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-92388",
+      "package": "libcurl4",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-92388",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "curl: curl: FTP wildcard write callback mixup"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-92389",
+      "package": "curl",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-92389",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "Title Not Available"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-92389",
+      "package": "libcurl4",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-92389",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "Title Not Available"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-92391",
+      "package": "curl",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-92391",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "Title Not Available"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-92391",
+      "package": "libcurl4",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-92391",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "Title Not Available"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-94266",
+      "package": "curl",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-94266",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "libcurl could accidentally return a URL for curl_easy_getinfo's `"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-94266",
+      "package": "libcurl4",
+      "installed": "7.81.0-1ubuntu1.29",
+      "fixed": null,
+      "severity": "LOW",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-94266",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "libcurl could accidentally return a URL for curl_easy_getinfo's `"
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-95184",
+      "package": "libgnutls30",
+      "installed": "3.7.3-4ubuntu1.9",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-95184",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "Improper certificate validation in gnutls v3.8.13 causes the applicati ..."
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-95209",
+      "package": "libgnutls30",
+      "installed": "3.7.3-4ubuntu1.9",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-95209",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "An issue in gnutls v3.8.13 causes legitimate CA certificates to be rej ..."
+    },
+    {
+      "component": "backend",
+      "target": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757 (ubuntu 22.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-95210",
+      "package": "libgnutls30",
+      "installed": "3.7.3-4ubuntu1.9",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-95210",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "Improper certificate validation in gnutls v3.8.13 causes the applicati ..."
+    },
+    {
+      "component": "migration",
+      "target": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4 (ubuntu 24.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-102473",
+      "package": "dash",
+      "installed": "0.5.12-6ubuntu5",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-102473",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "dash: dash: Super-polynomial backtracking in pmatch when libc fnmatch is disabled"
+    },
+    {
+      "component": "migration",
+      "target": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4 (ubuntu 24.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-102474",
+      "package": "dash",
+      "installed": "0.5.12-6ubuntu5",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-102474",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "dash: dash: Heap out-of-bounds write in conv_escape via undersized Unicode escape reservation"
+    },
+    {
+      "component": "migration",
+      "target": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4 (ubuntu 24.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-67693",
+      "package": "libgnutls30t64",
+      "installed": "3.8.3-1.1ubuntu3.6",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-67693",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "gnutls: gnutls: Information disclosure via contradictory Key Usage and Extended Key Usage extensions"
+    },
+    {
+      "component": "migration",
+      "target": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4 (ubuntu 24.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-88647",
+      "package": "libgnutls30t64",
+      "installed": "3.8.3-1.1ubuntu3.6",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-88647",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "gnutls: gnutls: Information disclosure via hostname verification bypass"
+    },
+    {
+      "component": "migration",
+      "target": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4 (ubuntu 24.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-95184",
+      "package": "libgnutls30t64",
+      "installed": "3.8.3-1.1ubuntu3.6",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-95184",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "Improper certificate validation in gnutls v3.8.13 causes the applicati ..."
+    },
+    {
+      "component": "migration",
+      "target": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4 (ubuntu 24.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-95209",
+      "package": "libgnutls30t64",
+      "installed": "3.8.3-1.1ubuntu3.6",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-95209",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "An issue in gnutls v3.8.13 causes legitimate CA certificates to be rej ..."
+    },
+    {
+      "component": "migration",
+      "target": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4 (ubuntu 24.04)",
+      "class": "os-pkgs",
+      "type": "ubuntu",
+      "cve": "CVE-2026-95210",
+      "package": "libgnutls30t64",
+      "installed": "3.8.3-1.1ubuntu3.6",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-95210",
+      "dataSource": {
+        "ID": "ubuntu",
+        "Name": "Ubuntu CVE Tracker",
+        "URL": "https://git.launchpad.net/ubuntu-cve-tracker"
+      },
+      "title": "Improper certificate validation in gnutls v3.8.13 causes the applicati ..."
+    }
+  ],
+  "notReportedNowFindingsAllSeverities": [],
+  "classificationChanges": [
+    {
+      "identity": [
+        "frontend",
+        "CVE-2026-53615",
+        "bsdutils",
+        "1:2.38.1-5+deb12u3"
+      ],
+      "changedFields": [
+        "severity"
+      ],
+      "previous": {
+        "severity": "MEDIUM"
+      },
+      "current": {
+        "severity": "HIGH"
+      }
+    },
+    {
+      "identity": [
+        "frontend",
+        "CVE-2026-53615",
+        "libblkid1",
+        "2.38.1-5+deb12u3"
+      ],
+      "changedFields": [
+        "severity"
+      ],
+      "previous": {
+        "severity": "MEDIUM"
+      },
+      "current": {
+        "severity": "HIGH"
+      }
+    },
+    {
+      "identity": [
+        "frontend",
+        "CVE-2026-53615",
+        "libmount1",
+        "2.38.1-5+deb12u3"
+      ],
+      "changedFields": [
+        "severity"
+      ],
+      "previous": {
+        "severity": "MEDIUM"
+      },
+      "current": {
+        "severity": "HIGH"
+      }
+    },
+    {
+      "identity": [
+        "frontend",
+        "CVE-2026-53615",
+        "libsmartcols1",
+        "2.38.1-5+deb12u3"
+      ],
+      "changedFields": [
+        "severity"
+      ],
+      "previous": {
+        "severity": "MEDIUM"
+      },
+      "current": {
+        "severity": "HIGH"
+      }
+    },
+    {
+      "identity": [
+        "frontend",
+        "CVE-2026-53615",
+        "libuuid1",
+        "2.38.1-5+deb12u3"
+      ],
+      "changedFields": [
+        "severity"
+      ],
+      "previous": {
+        "severity": "MEDIUM"
+      },
+      "current": {
+        "severity": "HIGH"
+      }
+    },
+    {
+      "identity": [
+        "frontend",
+        "CVE-2026-53615",
+        "mount",
+        "2.38.1-5+deb12u3"
+      ],
+      "changedFields": [
+        "severity"
+      ],
+      "previous": {
+        "severity": "MEDIUM"
+      },
+      "current": {
+        "severity": "HIGH"
+      }
+    },
+    {
+      "identity": [
+        "frontend",
+        "CVE-2026-53615",
+        "util-linux",
+        "2.38.1-5+deb12u3"
+      ],
+      "changedFields": [
+        "severity"
+      ],
+      "previous": {
+        "severity": "MEDIUM"
+      },
+      "current": {
+        "severity": "HIGH"
+      }
+    },
+    {
+      "identity": [
+        "frontend",
+        "CVE-2026-53615",
+        "util-linux-extra",
+        "2.38.1-5+deb12u3"
+      ],
+      "changedFields": [
+        "severity"
+      ],
+      "previous": {
+        "severity": "MEDIUM"
+      },
+      "current": {
+        "severity": "HIGH"
+      }
+    },
+    {
+      "identity": [
+        "postgres",
+        "CVE-2026-53615",
+        "bsdutils",
+        "1:2.38.1-5+deb12u3"
+      ],
+      "changedFields": [
+        "severity"
+      ],
+      "previous": {
+        "severity": "MEDIUM"
+      },
+      "current": {
+        "severity": "HIGH"
+      }
+    },
+    {
+      "identity": [
+        "postgres",
+        "CVE-2026-53615",
+        "libblkid1",
+        "2.38.1-5+deb12u3"
+      ],
+      "changedFields": [
+        "severity"
+      ],
+      "previous": {
+        "severity": "MEDIUM"
+      },
+      "current": {
+        "severity": "HIGH"
+      }
+    },
+    {
+      "identity": [
+        "postgres",
+        "CVE-2026-53615",
+        "libmount1",
+        "2.38.1-5+deb12u3"
+      ],
+      "changedFields": [
+        "severity"
+      ],
+      "previous": {
+        "severity": "MEDIUM"
+      },
+      "current": {
+        "severity": "HIGH"
+      }
+    },
+    {
+      "identity": [
+        "postgres",
+        "CVE-2026-53615",
+        "libsmartcols1",
+        "2.38.1-5+deb12u3"
+      ],
+      "changedFields": [
+        "severity"
+      ],
+      "previous": {
+        "severity": "MEDIUM"
+      },
+      "current": {
+        "severity": "HIGH"
+      }
+    },
+    {
+      "identity": [
+        "postgres",
+        "CVE-2026-53615",
+        "libuuid1",
+        "2.38.1-5+deb12u3"
+      ],
+      "changedFields": [
+        "severity"
+      ],
+      "previous": {
+        "severity": "MEDIUM"
+      },
+      "current": {
+        "severity": "HIGH"
+      }
+    },
+    {
+      "identity": [
+        "postgres",
+        "CVE-2026-53615",
+        "mount",
+        "2.38.1-5+deb12u3"
+      ],
+      "changedFields": [
+        "severity"
+      ],
+      "previous": {
+        "severity": "MEDIUM"
+      },
+      "current": {
+        "severity": "HIGH"
+      }
+    },
+    {
+      "identity": [
+        "postgres",
+        "CVE-2026-53615",
+        "util-linux",
+        "2.38.1-5+deb12u3"
+      ],
+      "changedFields": [
+        "severity"
+      ],
+      "previous": {
+        "severity": "MEDIUM"
+      },
+      "current": {
+        "severity": "HIGH"
+      }
+    },
+    {
+      "identity": [
+        "postgres",
+        "CVE-2026-53615",
+        "util-linux-extra",
+        "2.38.1-5+deb12u3"
+      ],
+      "changedFields": [
+        "severity"
+      ],
+      "previous": {
+        "severity": "MEDIUM"
+      },
+      "current": {
+        "severity": "HIGH"
+      }
+    }
+  ],
+  "fixAvailabilityChangesWithinHistoricalScope": [],
+  "oldAcceptanceExpired": true,
+  "acceptanceRenewed": false,
+  "applicationRuntimeExecuted": false,
+  "scannerFilter": "ALL severities; no ignore-unfixed; explicit empty ignore file",
+  "remediationApplied": false,
+  "scope": "Exact four retained local image indices. No image/package/runtime change. Approval remains separate."
+}

@@ -1,10 +1,17 @@
 # TFG-A Security Closure Gate — Explicit Owner Decision 2026-10-06
 
-## Estado vigente del 14 de octubre de 2026
+## Estado local autorizado — 16/10/2026
+
+**R-20 ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC; A-S3 cerrado; A-S4 y TFG-A IN PROGRESS; AWS BLOCKED.** Aprobación explícita de 26 CVE conservadores / 137 identidades actuales para los cuatro índices y manifiestos locales exactos, con datos sintéticos, hasta **19/10/2026 00:00 Europe/Madrid**; sin renovación ni transferencia automática. Escaneo 16/10: 0 H/C corregibles y 0 secretos. Hay 24 CVE H/C; los otros dos quedan por debajo de ese umbral, con severidad distinta por distribución. R-23 sigue OPEN independiente. [Decisión y evidencia](evidence/2026-10-16-r20-local-acceptance/README.md).
+
+La aprobación no es un escaneo nuevo ni corrige vulnerabilidades. El ensayo técnico conserva su fecha 14/10; el PDF de memoria está congelado en ese corte y se acompaña de la decisión actual. Guion inglés actualizado; ensayo oral humano, grabación narrada y revisión académica pendientes. Las secciones fechadas siguientes son historia. No se autoriza AWS ni una ampliación del producto.
+
+
+## Registro histórico del 14 de octubre de 2026
 
 **R-20 ACCEPTED TEMPORARILY; A-S3 COMPLETE local académico; A-S4 IN PROGRESS; TFG-A IN PROGRESS; AWS BLOCKED.** Aceptación explícita para los cuatro índices/manifiestos locales y el conjunto conservador de 25 CVE del 13/10, exclusivamente datos sintéticos, hasta 16/10/2026 00:00 Europe/Madrid; sin renovación ni transferencia. Escaneo independiente 14/10:0H/C corregibles y 0 secretos, 23 CVE H/C más dos GnuTLS conocidas ahora LOW y sin fix. R-23 OPEN independiente. [Acta y evidencia](evidence/2026-10-14-r20-acceptance/A_S3_CLOSURE_RECORD.md). Las secciones anteriores fechadas se conservan como historia y no sustituyen esta decisión.
 
-## Estado actual tras #68 — 13/10/2026
+## Registro histórico tras #68 — 13/10/2026
 
 Main `c69f682` integrado y CI 10/10 PASS. Cuatro imágenes locales identificadas contra el runtime del 09/10. Escaneos completos del 13/10: 0 H/C corregibles, 0 secretos y 25 CVE residuales / 119 filas. La aceptación R-20 anterior caducó; [propuesta actual](evidence/2026-10-13-main-closure/R20_CURRENT_PROPOSAL.md) pendiente, `accepted: false`. R-23 OPEN independiente. A-S3 formal pendiente de decisión; A-S4 ensayo/narración/tutor pendientes; TFG-A IN PROGRESS y AWS bloqueado. [Registro verificable](evidence/2026-10-13-main-closure/README.md). Las secciones fechadas anteriores se conservan como historia, sin aceptación vigente por inferencia.
 

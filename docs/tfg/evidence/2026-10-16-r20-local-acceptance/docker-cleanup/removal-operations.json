@@ -1,0 +1,41 @@
+[
+  {
+    "id": "sha256:011841aeec87092e1adf1458fb208005ae3925eb794aecadc137ffb9b8d09e70",
+    "resolvedTag": "imperator/postgres:a931601102ee19a90b3dad8477408ac0d1854669",
+    "command": [
+      "docker",
+      "image",
+      "rm",
+      "sha256:011841aeec87092e1adf1458fb208005ae3925eb794aecadc137ffb9b8d09e70"
+    ],
+    "exitCode": 0,
+    "stdout": "Untagged: imperator/postgres:a931601102ee19a90b3dad8477408ac0d1854669\nDeleted: sha256:011841aeec87092e1adf1458fb208005ae3925eb794aecadc137ffb9b8d09e70\n",
+    "stderr": ""
+  },
+  {
+    "id": "sha256:aa6f9e2344c82cddfeef9c2bca2f0145aab30e88b5305b0648c3dc27eddb7fc6",
+    "resolvedTag": "imperator/postgres:6e79e83e909995c50a44aba3608b6ca25a0e4602",
+    "command": [
+      "docker",
+      "image",
+      "rm",
+      "sha256:aa6f9e2344c82cddfeef9c2bca2f0145aab30e88b5305b0648c3dc27eddb7fc6"
+    ],
+    "exitCode": 0,
+    "stdout": "Untagged: imperator/postgres:6e79e83e909995c50a44aba3608b6ca25a0e4602\nDeleted: sha256:aa6f9e2344c82cddfeef9c2bca2f0145aab30e88b5305b0648c3dc27eddb7fc6\n",
+    "stderr": ""
+  },
+  {
+    "id": "sha256:fb37d301142af5e10bcd02cd0d38bcc8281cd1389d944700e74d19ce2bdd6615",
+    "resolvedTag": "imperator/postgres:r22-d094-20261006",
+    "command": [
+      "docker",
+      "image",
+      "rm",
+      "sha256:fb37d301142af5e10bcd02cd0d38bcc8281cd1389d944700e74d19ce2bdd6615"
+    ],
+    "exitCode": 0,
+    "stdout": "Untagged: imperator/postgres:r22-d094-20261006\nDeleted: sha256:fb37d301142af5e10bcd02cd0d38bcc8281cd1389d944700e74d19ce2bdd6615\n",
+    "stderr": ""
+  }
+]

@@ -22,8 +22,10 @@ El presupuesto es un escenario académico: 168 horas propuestas a 15 EUR/h, 2.52
 
 ## Cierre pendiente
 
-A-S3 está cerrado y R-20 aceptado temporalmente para los cuatro índices locales hasta 16/10/2026 00:00 Europe/Madrid. [Ensayo técnico nuevo 14/10](evidence/2026-10-14-a-s4-runtime/README.md) PASS, con clip breve sin audio. Los 174/35/41 tests y Playwright 9 PASS/6 skips se citan con su baseline histórico 09/10; no se atribuyen a una nueva ejecución unitaria.
+A-S3 está cerrado y R-20 aceptado explícitamente el 16/10 para 26 CVE conservadores y los cuatro índices locales hasta 19/10/2026 00:00 Europe/Madrid. [Ensayo técnico nuevo 14/10](evidence/2026-10-14-a-s4-runtime/README.md) PASS, con clip breve sin audio. Los 174/35/41 tests y Playwright 9 PASS/6 skips se citan con su baseline histórico 09/10; no se atribuyen a una nueva ejecución unitaria.
 
 Faltan ensayo oral medido en inglés, grabación de pantalla y voz, QA final y revisión académica. Registrar hechos en el [formulario de defensa](evidence/2026-10-14-a-s4-runtime/HUMAN_DEFENSE_REVIEW.md), sin rellenar PASS por inferencia. No se solicita publicar nombre de tutor ni fecha de entrega.
 
 A-S4 y TFG-A siguen IN PROGRESS. R-23 sigue OPEN independiente. AWS, datos reales, producción y validación de proveedores externos quedan fuera de alcance.
+
+El PDF de memoria conserva el corte del 14/10. Adjuntar la [decisión de seguridad del 16/10](evidence/2026-10-16-r20-local-acceptance/README.md) al evaluarlo; no se reescribe el PDF ni su receipt para actualizar retrospectivamente sus resultados.

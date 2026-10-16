@@ -1,5 +1,8 @@
 # IMPERATOR — Memoria del TFG local
 
+> Actualización de seguridad 16/10: [R-20 aceptado para 26 CVE y cuatro imágenes locales](evidence/2026-10-16-r20-local-acceptance/README.md), hasta 19/10/2026 00:00 Europe/Madrid. El cuerpo y el PDF conservan su corte histórico del 14/10. Adjuntar este registro al revisarlos; la aprobación no cambia los resultados históricos ni acredita una defensa humana.
+
+
 [PDF maquetado, con diagramas y fragmentos de código](evidence/2026-10-14-a-s4-runtime/IMPERATOR_Memoria_TFG_Local.pdf). Este archivo conserva el texto editable; el PDF contiene las figuras y la paginación revisada.
 
 Autor: Daniel Millan Perez. DAM. Proyecto local con datos sintéticos.
