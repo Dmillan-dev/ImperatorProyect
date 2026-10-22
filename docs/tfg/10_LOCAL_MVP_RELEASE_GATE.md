@@ -1,5 +1,11 @@
 # Gate de entrega local — A-S3 y A-S4
 
+## Control vigente — 22/10/2026
+
+**Nueva ejecución local NO-GO: R-20 caducado.** El [candidato Go/Vite](evidence/2026-10-22-security-go-vite/README.md) tiene seguridad técnica PASS y una nueva propuesta `accepted: false`. Faltan decisión explícita vinculada a sus cuatro digests, integración completa y ensayo Docker del nuevo conjunto. El cierre histórico de A-S3 se conserva; no transfiere la aceptación a este candidato. A-S4 y TFG-A siguen IN PROGRESS, con ensayo humano, vídeo narrado y revisión académica pendientes. AWS BLOCKED. Los estados fechados del 16/10 siguientes son históricos.
+
+## Registro histórico — 16/10/2026
+
 Revisión 16/10/2026. **TFG-A IN PROGRESS.** [R-20 aceptado temporalmente](evidence/2026-10-16-r20-local-acceptance/R20_ACCEPTED_DECISION.json) para cuatro imágenes exactas y 26 CVE conservadores. A-S3 conserva su [acta de cierre histórico](evidence/2026-10-14-r20-acceptance/A_S3_CLOSURE_RECORD.md). Base documental `94ce879`, CI histórico 10/10 PASS; la publicación de esta actualización requiere CI de su SHA. Runtime real 14/10 y nueva revalidación de seguridad 16/10 son hechos separados.
 
 ## A-S3 — Evidencia y versión

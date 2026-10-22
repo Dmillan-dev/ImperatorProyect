@@ -1,0 +1,406 @@
+[WebServer] (node:5096) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:40616) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:12340) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] ⚠ Slow filesystem detected. The benchmark took 1038ms. If \\?\D:\Imperator\build\worktrees\tfg-local-security-go-vite-20261022\frontend\.next\dev is a network drive, consider moving it to a local folder.
+[WebServer] See more: https://nextjs.org/docs/app/guides/local-development
+[WebServer] (node:37892) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 15 tests using 3 workers
+
+(node:38920) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:30392) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:10628) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   1 [desktop] › e2e\decision-review.spec.ts:23:1 › renders the complete Decision Review Workspace without viewport overflow (1ms)
+  x   3 [mobile] › e2e\decision-review.spec.ts:23:1 › renders the complete Decision Review Workspace without viewport overflow (1ms)
+  x   2 [compact] › e2e\decision-review.spec.ts:23:1 › renders the complete Decision Review Workspace without viewport overflow (1ms)
+(node:39560) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:14812) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:24344) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   5 [desktop] › e2e\decision-review.spec.ts:67:1 › keeps AUDITOR read-only, redacts Evidence and separates unrealized value (1ms)
+  x   4 [compact] › e2e\decision-review.spec.ts:67:1 › keeps AUDITOR read-only, redacts Evidence and separates unrealized value (1ms)
+  x   6 [mobile] › e2e\decision-review.spec.ts:67:1 › keeps AUDITOR read-only, redacts Evidence and separates unrealized value (2ms)
+(node:39180) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:39632) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:33348) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   7 [desktop] › e2e\decision-review.spec.ts:91:1 › presents PLATFORM_ENGINEER and FINANCE actions exactly (2ms)
+  x   8 [compact] › e2e\decision-review.spec.ts:91:1 › presents PLATFORM_ENGINEER and FINANCE actions exactly (2ms)
+  x   9 [mobile] › e2e\decision-review.spec.ts:91:1 › presents PLATFORM_ENGINEER and FINANCE actions exactly (2ms)
+(node:37292) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:6040) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:16560) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  10 [desktop] › e2e\decision-review.spec.ts:124:1 › contains secondary 403, 404, malformed, empty and timeout failures (1ms)
+  x  11 [compact] › e2e\decision-review.spec.ts:124:1 › contains secondary 403, 404, malformed, empty and timeout failures (1ms)
+  x  12 [mobile] › e2e\decision-review.spec.ts:124:1 › contains secondary 403, 404, malformed, empty and timeout failures (2ms)
+(node:17568) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:40460) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:40032) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  13 [compact] › e2e\decision-review.spec.ts:153:1 › clears the volatile session on a 401 Decision response (2ms)
+  x  14 [desktop] › e2e\decision-review.spec.ts:153:1 › clears the volatile session on a 401 Decision response (2ms)
+  x  15 [mobile] › e2e\decision-review.spec.ts:153:1 › clears the volatile session on a 401 Decision response (2ms)
+
+
+  1) [desktop] › e2e\decision-review.spec.ts:23:1 › renders the complete Decision Review Workspace without viewport overflow 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\J4GG3R\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\decision-review-renders-th-877dc-e-without-viewport-overflow-desktop\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\decision-review-renders-th-877dc-e-without-viewport-overflow-desktop\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\decision-review-renders-th-877dc-e-without-viewport-overflow-desktop\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [desktop] › e2e\decision-review.spec.ts:67:1 › keeps AUDITOR read-only, redacts Evidence and separates unrealized value 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\J4GG3R\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\decision-review-keeps-AUDI-ca393--separates-unrealized-value-desktop\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\decision-review-keeps-AUDI-ca393--separates-unrealized-value-desktop\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\decision-review-keeps-AUDI-ca393--separates-unrealized-value-desktop\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [desktop] › e2e\decision-review.spec.ts:91:1 › presents PLATFORM_ENGINEER and FINANCE actions exactly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\J4GG3R\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\decision-review-presents-P-dbc20-and-FINANCE-actions-exactly-desktop\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\decision-review-presents-P-dbc20-and-FINANCE-actions-exactly-desktop\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\decision-review-presents-P-dbc20-and-FINANCE-actions-exactly-desktop\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [desktop] › e2e\decision-review.spec.ts:124:1 › contains secondary 403, 404, malformed, empty and timeout failures 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\J4GG3R\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\decision-review-contains-s-e3e3d--empty-and-timeout-failures-desktop\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\decision-review-contains-s-e3e3d--empty-and-timeout-failures-desktop\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\decision-review-contains-s-e3e3d--empty-and-timeout-failures-desktop\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [desktop] › e2e\decision-review.spec.ts:153:1 › clears the volatile session on a 401 Decision response 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\J4GG3R\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\decision-review-clears-the-ce518--on-a-401-Decision-response-desktop\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\decision-review-clears-the-ce518--on-a-401-Decision-response-desktop\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\decision-review-clears-the-ce518--on-a-401-Decision-response-desktop\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [compact] › e2e\decision-review.spec.ts:23:1 › renders the complete Decision Review Workspace without viewport overflow 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\J4GG3R\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\decision-review-renders-th-877dc-e-without-viewport-overflow-compact\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\decision-review-renders-th-877dc-e-without-viewport-overflow-compact\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\decision-review-renders-th-877dc-e-without-viewport-overflow-compact\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [compact] › e2e\decision-review.spec.ts:67:1 › keeps AUDITOR read-only, redacts Evidence and separates unrealized value 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\J4GG3R\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\decision-review-keeps-AUDI-ca393--separates-unrealized-value-compact\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\decision-review-keeps-AUDI-ca393--separates-unrealized-value-compact\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\decision-review-keeps-AUDI-ca393--separates-unrealized-value-compact\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [compact] › e2e\decision-review.spec.ts:91:1 › presents PLATFORM_ENGINEER and FINANCE actions exactly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\J4GG3R\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\decision-review-presents-P-dbc20-and-FINANCE-actions-exactly-compact\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\decision-review-presents-P-dbc20-and-FINANCE-actions-exactly-compact\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\decision-review-presents-P-dbc20-and-FINANCE-actions-exactly-compact\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9) [compact] › e2e\decision-review.spec.ts:124:1 › contains secondary 403, 404, malformed, empty and timeout failures 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\J4GG3R\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\decision-review-contains-s-e3e3d--empty-and-timeout-failures-compact\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\decision-review-contains-s-e3e3d--empty-and-timeout-failures-compact\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\decision-review-contains-s-e3e3d--empty-and-timeout-failures-compact\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  10) [compact] › e2e\decision-review.spec.ts:153:1 › clears the volatile session on a 401 Decision response 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\J4GG3R\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\decision-review-clears-the-ce518--on-a-401-Decision-response-compact\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\decision-review-clears-the-ce518--on-a-401-Decision-response-compact\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\decision-review-clears-the-ce518--on-a-401-Decision-response-compact\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  11) [mobile] › e2e\decision-review.spec.ts:23:1 › renders the complete Decision Review Workspace without viewport overflow 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\J4GG3R\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\decision-review-renders-th-877dc-e-without-viewport-overflow-mobile\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\decision-review-renders-th-877dc-e-without-viewport-overflow-mobile\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\decision-review-renders-th-877dc-e-without-viewport-overflow-mobile\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  12) [mobile] › e2e\decision-review.spec.ts:67:1 › keeps AUDITOR read-only, redacts Evidence and separates unrealized value 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\J4GG3R\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\decision-review-keeps-AUDI-ca393--separates-unrealized-value-mobile\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\decision-review-keeps-AUDI-ca393--separates-unrealized-value-mobile\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\decision-review-keeps-AUDI-ca393--separates-unrealized-value-mobile\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  13) [mobile] › e2e\decision-review.spec.ts:91:1 › presents PLATFORM_ENGINEER and FINANCE actions exactly 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\J4GG3R\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\decision-review-presents-P-dbc20-and-FINANCE-actions-exactly-mobile\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\decision-review-presents-P-dbc20-and-FINANCE-actions-exactly-mobile\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\decision-review-presents-P-dbc20-and-FINANCE-actions-exactly-mobile\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  14) [mobile] › e2e\decision-review.spec.ts:124:1 › contains secondary 403, 404, malformed, empty and timeout failures 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\J4GG3R\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\decision-review-contains-s-e3e3d--empty-and-timeout-failures-mobile\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\decision-review-contains-s-e3e3d--empty-and-timeout-failures-mobile\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\decision-review-contains-s-e3e3d--empty-and-timeout-failures-mobile\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  15) [mobile] › e2e\decision-review.spec.ts:153:1 › clears the volatile session on a 401 Decision response 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\J4GG3R\AppData\Local\ms-playwright\chromium_headless_shell-1243\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\decision-review-clears-the-ce518--on-a-401-Decision-response-mobile\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\decision-review-clears-the-ce518--on-a-401-Decision-response-mobile\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\decision-review-clears-the-ce518--on-a-401-Decision-response-mobile\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  15 failed
+    [desktop] › e2e\decision-review.spec.ts:23:1 › renders the complete Decision Review Workspace without viewport overflow 
+    [desktop] › e2e\decision-review.spec.ts:67:1 › keeps AUDITOR read-only, redacts Evidence and separates unrealized value 
+    [desktop] › e2e\decision-review.spec.ts:91:1 › presents PLATFORM_ENGINEER and FINANCE actions exactly 
+    [desktop] › e2e\decision-review.spec.ts:124:1 › contains secondary 403, 404, malformed, empty and timeout failures 
+    [desktop] › e2e\decision-review.spec.ts:153:1 › clears the volatile session on a 401 Decision response 
+    [compact] › e2e\decision-review.spec.ts:23:1 › renders the complete Decision Review Workspace without viewport overflow 
+    [compact] › e2e\decision-review.spec.ts:67:1 › keeps AUDITOR read-only, redacts Evidence and separates unrealized value 
+    [compact] › e2e\decision-review.spec.ts:91:1 › presents PLATFORM_ENGINEER and FINANCE actions exactly 
+    [compact] › e2e\decision-review.spec.ts:124:1 › contains secondary 403, 404, malformed, empty and timeout failures 
+    [compact] › e2e\decision-review.spec.ts:153:1 › clears the volatile session on a 401 Decision response 
+    [mobile] › e2e\decision-review.spec.ts:23:1 › renders the complete Decision Review Workspace without viewport overflow 
+    [mobile] › e2e\decision-review.spec.ts:67:1 › keeps AUDITOR read-only, redacts Evidence and separates unrealized value 
+    [mobile] › e2e\decision-review.spec.ts:91:1 › presents PLATFORM_ENGINEER and FINANCE actions exactly 
+    [mobile] › e2e\decision-review.spec.ts:124:1 › contains secondary 403, 404, malformed, empty and timeout failures 
+    [mobile] › e2e\decision-review.spec.ts:153:1 › clears the volatile session on a 401 Decision response 

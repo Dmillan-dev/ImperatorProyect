@@ -1,6 +1,10 @@
 # TFG-A Security Closure Gate — Explicit Owner Decision 2026-10-06
 
-## Estado local autorizado — 16/10/2026
+## Control vigente — 22/10/2026
+
+**R-20 EXPIRED; nueva ejecución local NO-GO hasta decisión explícita y preflight.** El candidato `641c09e` corrige Go/gosu y Vite; cuatro IDs exactos dan 0 H/C corregibles y 0 secretos, D094 y su repetición PASS. Se mantienen 26 CVE conservadores / 137 identidades, sin nuevas filas H/C respecto al corte 16/10. [Propuesta y evidencia](evidence/2026-10-22-security-go-vite/README.md), `accepted: false`. La integración completa y el ensayo Docker/RBAC/Flyway/persistencia/recovery del nuevo conjunto siguen pendientes. A-S3 conserva su cierre histórico; no se declara certificado formalmente este candidato. A-S4/TFG-A IN PROGRESS, R-23 OPEN y AWS BLOCKED.
+
+## Registro histórico — 16/10/2026
 
 **R-20 ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC; A-S3 cerrado; A-S4 y TFG-A IN PROGRESS; AWS BLOCKED.** Aprobación explícita de 26 CVE conservadores / 137 identidades actuales para los cuatro índices y manifiestos locales exactos, con datos sintéticos, hasta **19/10/2026 00:00 Europe/Madrid**; sin renovación ni transferencia automática. Escaneo 16/10: 0 H/C corregibles y 0 secretos. Hay 24 CVE H/C; los otros dos quedan por debajo de ese umbral, con severidad distinta por distribución. R-23 sigue OPEN independiente. [Decisión y evidencia](evidence/2026-10-16-r20-local-acceptance/README.md).
 

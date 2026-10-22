@@ -6,19 +6,19 @@
 
 ## Estado del cierre
 
-Revisión 16/10/2026. **TFG-A IN PROGRESS; AWS BLOCKED.**
+Revisión 22/10/2026. **TFG-A IN PROGRESS; R-20 EXPIRED / PROPOSED; AWS BLOCKED.**
 
 | Entregable                  | Estado                                                                                                                              |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | Aplicación y flujo local    | Implementados; ensayo técnico real del 14/10 PASS.                                                                                  |
-| A-S3 — Evidencia y versión  | Cerrado documentalmente; fuentes, imágenes y resultados identificados.                                                              |
-| Seguridad R-20              | Aceptación temporal explícita de 26 CVE para cuatro imágenes, exclusivamente local/sintético; vence 19/10/2026 00:00 Europe/Madrid. |
-| Gates técnicos de seguridad | Revalidación 16/10: 0 H/C corregibles y 0 secretos. R-23 sigue OPEN independiente.                                                  |
+| A-S3 — Evidencia y versión  | Cierre histórico conservado; certificación y decisión del candidato nuevo pendientes. |
+| Seguridad R-20              | La aceptación anterior venció el 19/10. Nueva propuesta para cuatro IDs y 26 CVE conservadores, `accepted: false`; solo local/sintético. |
+| Gates técnicos de seguridad | Escaneos 22/10 del candidato: 0 H/C corregibles y 0 secretos; D094 reproducible PASS. R-23 OPEN; integración y ensayo real pendientes. |
 | A-S4 — Memoria              | PDF de 29 páginas preparado; revisión académica pendiente.                                                                          |
 | A-S4 — Defensa              | Guion inglés preparado; ensayo humano medido y grabación con voz pendientes.                                                        |
 | TFG-A COMPLETE              | Pendiente de todos los criterios y revisión académica.                                                                              |
 
-[Decisión vigente y escaneos](evidence/2026-10-16-r20-local-acceptance/README.md) · [Ensayo técnico y capturas](evidence/2026-10-14-a-s4-runtime/README.md).
+[Propuesta actual y escaneos](evidence/2026-10-22-security-go-vite/README.md) · [Ensayo técnico histórico y capturas](evidence/2026-10-14-a-s4-runtime/README.md).
 
 ## Qué demuestra
 

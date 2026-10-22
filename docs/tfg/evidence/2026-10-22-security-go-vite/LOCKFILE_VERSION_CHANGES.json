@@ -1,0 +1,119 @@
+{
+  "origin": "PR #78 exact lockfile",
+  "packageJsonUnchanged": true,
+  "changes": [
+    {
+      "path": "node_modules/@oxc-project/types",
+      "before": "0.149.0",
+      "after": "0.155.0",
+      "dev": true
+    },
+    {
+      "path": "node_modules/@rolldown/binding-android-arm-eabi",
+      "before": "1.2.8",
+      "after": "1.2.15",
+      "dev": true
+    },
+    {
+      "path": "node_modules/@rolldown/binding-android-arm64",
+      "before": "1.2.8",
+      "after": "1.2.15",
+      "dev": true
+    },
+    {
+      "path": "node_modules/@rolldown/binding-darwin-arm64",
+      "before": "1.2.8",
+      "after": "1.2.15",
+      "dev": true
+    },
+    {
+      "path": "node_modules/@rolldown/binding-darwin-x64",
+      "before": "1.2.8",
+      "after": "1.2.15",
+      "dev": true
+    },
+    {
+      "path": "node_modules/@rolldown/binding-freebsd-x64",
+      "before": "1.2.8",
+      "after": "1.2.15",
+      "dev": true
+    },
+    {
+      "path": "node_modules/@rolldown/binding-linux-arm-gnueabihf",
+      "before": "1.2.8",
+      "after": "1.2.15",
+      "dev": true
+    },
+    {
+      "path": "node_modules/@rolldown/binding-linux-arm64-gnu",
+      "before": "1.2.8",
+      "after": "1.2.15",
+      "dev": true
+    },
+    {
+      "path": "node_modules/@rolldown/binding-linux-arm64-musl",
+      "before": "1.2.8",
+      "after": "1.2.15",
+      "dev": true
+    },
+    {
+      "path": "node_modules/@rolldown/binding-linux-ppc64-gnu",
+      "before": "1.2.8",
+      "after": "1.2.15",
+      "dev": true
+    },
+    {
+      "path": "node_modules/@rolldown/binding-linux-s390x-gnu",
+      "before": "1.2.8",
+      "after": "1.2.15",
+      "dev": true
+    },
+    {
+      "path": "node_modules/@rolldown/binding-linux-x64-gnu",
+      "before": "1.2.8",
+      "after": "1.2.15",
+      "dev": true
+    },
+    {
+      "path": "node_modules/@rolldown/binding-linux-x64-musl",
+      "before": "1.2.8",
+      "after": "1.2.15",
+      "dev": true
+    },
+    {
+      "path": "node_modules/@rolldown/binding-openharmony-arm64",
+      "before": "1.2.8",
+      "after": "1.2.15",
+      "dev": true
+    },
+    {
+      "path": "node_modules/@rolldown/binding-win32-arm64-msvc",
+      "before": "1.2.8",
+      "after": "1.2.15",
+      "dev": true
+    },
+    {
+      "path": "node_modules/@rolldown/binding-win32-x64-msvc",
+      "before": "1.2.8",
+      "after": "1.2.15",
+      "dev": true
+    },
+    {
+      "path": "node_modules/rolldown",
+      "before": "1.2.8",
+      "after": "1.2.15",
+      "dev": true
+    },
+    {
+      "path": "node_modules/vite",
+      "before": "8.2.2",
+      "after": "8.3.5",
+      "dev": true
+    }
+  ],
+  "npmCiPreservedBytes": true,
+  "node": "24.20.0",
+  "hostNpm": "11.19.0",
+  "declaredPackageManager": "npm@11.17.0",
+  "npmVersionChangedByThisWork": false
+}

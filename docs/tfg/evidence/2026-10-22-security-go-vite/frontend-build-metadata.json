@@ -1,0 +1,87 @@
+{
+  "buildx.build.provenance": {
+    "builder": {
+      "id": ""
+    },
+    "buildType": "https://mobyproject.org/buildkit@v1",
+    "materials": [
+      {
+        "uri": "pkg:docker/docker/dockerfile@1.7?digest=sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e\u0026platform=linux%2Famd64",
+        "digest": {
+          "sha256": "a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e"
+        }
+      },
+      {
+        "uri": "pkg:docker/docker/dockerfile@1.7?digest=sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e",
+        "digest": {
+          "sha256": "a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e"
+        }
+      },
+      {
+        "uri": "pkg:docker/node@24.20.0-bookworm-slim?digest=sha256:ba849c60be29959425b8734d57b8b4b7d56f98edd9504c9af091d5281095a71e\u0026platform=linux%2Famd64",
+        "digest": {
+          "sha256": "ba849c60be29959425b8734d57b8b4b7d56f98edd9504c9af091d5281095a71e"
+        }
+      },
+      {
+        "uri": "https://security.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-8-0_10.42-1+deb12u2_amd64.deb",
+        "digest": {
+          "sha256": "d2f7edfcc7689b9e0761c2742cc824ac86a20768bc5e8057818dc6875291fe76"
+        }
+      },
+      {
+        "uri": "https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-base_5.36.0-7+deb12u4_amd64.deb",
+        "digest": {
+          "sha256": "d7d1943aec9597629bf73075efcc5ef6dc9bda96d78e80d843156ecd448478b8"
+        }
+      }
+    ],
+    "invocation": {
+      "configSource": {
+        "entryPoint": "Dockerfile"
+      },
+      "parameters": {
+        "frontend": "gateway.v0",
+        "args": {
+          "build-arg:VCS_REF": "641c09e011e0183bb2267bb0e9c027fc2dc76752",
+          "cmdline": "docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e",
+          "source": "docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e"
+        },
+        "locals": [
+          {
+            "name": "context"
+          },
+          {
+            "name": "dockerfile"
+          }
+        ],
+        "root": {
+          "configSource": {
+            "path": "Dockerfile"
+          },
+          "request": {
+            "args": {
+              "build-arg:VCS_REF": "641c09e011e0183bb2267bb0e9c027fc2dc76752",
+              "vcs:localdir:context": ".",
+              "vcs:localdir:dockerfile": "infra\\docker\\frontend",
+              "vcs:revision": "641c09e011e0183bb2267bb0e9c027fc2dc76752",
+              "vcs:source": "https://github.com/Dmillan-dev/ImperatorProyect.git"
+            }
+          }
+        },
+        "compatibilityVersion": 30
+      },
+      "environment": {
+        "platform": "linux/amd64"
+      }
+    }
+  },
+  "buildx.build.ref": "desktop-linux/desktop-linux/a5cesk4c1g62flwhzqmk3kdac",
+  "containerimage.descriptor": {
+    "mediaType": "application/vnd.oci.image.index.v1+json",
+    "digest": "sha256:1303dd6967f86cad6340cbcaff5088e69d8925a693b64c22596a7ad2684b2530",
+    "size": 856
+  },
+  "containerimage.digest": "sha256:1303dd6967f86cad6340cbcaff5088e69d8925a693b64c22596a7ad2684b2530",
+  "image.name": "docker.io/imperator/frontend:641c09e011e0183bb2267bb0e9c027fc2dc76752"
+}

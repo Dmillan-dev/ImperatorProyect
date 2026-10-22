@@ -12,7 +12,7 @@ Java 21 / Spring Boot modular monolith with hexagonal Domain, Application, ports
 
 Historical 9 October evaluation: **174 unit tests and 35 PostgreSQL integration tests passed**. The 14 October real-runtime rehearsal covers four synthetic roles, Flyway, persistence and readiness recovery. These are dated results, not a new test run on this documentation change.
 
-The [16 October security decision](../docs/tfg/evidence/2026-10-16-r20-local-acceptance/README.md) accepts a bounded residual for four exact local images until **19 October 2026 00:00 Europe/Madrid**, with synthetic data only. The backend image has 0 fixable H/C and 0 secrets in that scan. Overall TFG-A remains IN PROGRESS; external IdP and live AWS/provider validation retain their separate gates.
+The 16 October R-20 acceptance **expired on 19 October 2026 at 00:00 Europe/Madrid**. The [22 October candidate proposal](../docs/tfg/evidence/2026-10-22-security-go-vite/README.md) remains `accepted: false`. The retained backend image has 0 fixable H/C and 0 secrets in its fresh scan; that result does not authorize a live MVP rehearsal. Overall TFG-A remains IN PROGRESS; external IdP and live AWS/provider validation retain their separate gates.
 
 ## Contains
 

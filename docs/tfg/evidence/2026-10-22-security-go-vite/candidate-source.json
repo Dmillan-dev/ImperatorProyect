@@ -1,0 +1,13 @@
+{
+  "sha": "641c09e011e0183bb2267bb0e9c027fc2dc76752",
+  "base": "ff3181c0d242737b6e8016c5dc4747cc90b775e8",
+  "files": [
+    "frontend/package-lock.json",
+    "infra/docker/postgresql/Dockerfile",
+    "infra/docker/postgresql/supply-chain-lock.json",
+    "scripts/verify-postgres-runtime-image.ps1"
+  ],
+  "message": "fix(security): patch gosu Go toolchain and Vite",
+  "acceptanceRenewed": false,
+  "generatedNextEnvRestored": true
+}

@@ -70,18 +70,18 @@ Read-only GitHub/AWS evidence adapters and the optional Bedrock explanation adap
 
 ## Current stage
 
-**Local MVP implemented and demonstrated. Academic delivery remains in progress.** Status reviewed 16 October 2026.
+**Local MVP implemented and demonstrated. Academic delivery remains in progress.** Status reviewed 22 October 2026; the security candidate is under review in [PR #79](https://github.com/Dmillan-dev/ImperatorProyect/pull/79).
 
 | Area                  | Evidence and limit                                                                                                                                                                         |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Product and runtime   | One synthetic case, four roles, Flyway, persistence after recreation and recovery demonstrated locally on 14 October.                                                                      |
-| Functional evaluation | Historical 9 October baseline: 174 unit, 35 integration and 41 frontend tests passed; Playwright 9 passed / 6 intentional skips.                                                           |
-| Exact-image security  | 16 October revalidation: **0 fixable High/Critical and 0 secrets**. The conservative 26-CVE residual set is temporarily accepted for the four exact local images; findings remain visible. |
+| Functional evaluation | 22 October candidate: 174 unit and 41 frontend tests, lint, types and build PASS; Playwright 9 passed / 6 intentional skips with intercepted API. Full integration and live candidate rehearsal remain pending. |
+| Exact-image security  | 22 October candidate: **0 fixable High/Critical and 0 secrets** across four exact image IDs. The conservative 26-CVE residual set remains visible; the new R-20 proposal is not approved. |
 | TFG delivery          | A-S3 evidence/version gate complete. Memory and English script prepared; measured human rehearsal, narrated recording and academic review pending.                                         |
 | AWS and providers     | Live AWS deployment, external identity conformance and real provider validation remain gated.                                                                                              |
 
 > [!IMPORTANT]
-> **R-20 expires on 19 October 2026 at 00:00 Europe/Madrid.** Acceptance is exclusively local, synthetic and bound to four immutable image identities, without automatic renewal or transfer. It does not repair the residual CVEs. R-23 development tooling remains independently open. [Decision, scans and mitigations](docs/tfg/evidence/2026-10-16-r20-local-acceptance/README.md).
+> **R-20 expired on 19 October 2026 at 00:00 Europe/Madrid.** The new proposal remains `accepted: false`; passing scans do not renew acceptance or authorize the live MVP. R-23 development tooling remains independently open. [Candidate digests, scans, conditions and proposed expiry](docs/tfg/evidence/2026-10-22-security-go-vite/README.md).
 
 ## Explore locally
 

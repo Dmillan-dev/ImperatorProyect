@@ -1,0 +1,80 @@
+[
+  {
+    "component": "candidate-migration",
+    "id": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4",
+    "highCriticalRows": 0,
+    "highCriticalCves": [],
+    "fixableHighCritical": [],
+    "secrets": 0,
+    "allVulnerabilityRows": 73,
+    "sourceRevision": "6e79e83e909995c50a44aba3608b6ca25a0e4602"
+  },
+  {
+    "component": "candidate-backend",
+    "id": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757",
+    "highCriticalRows": 0,
+    "highCriticalCves": [],
+    "fixableHighCritical": [],
+    "secrets": 0,
+    "allVulnerabilityRows": 72,
+    "sourceRevision": "6e79e83e909995c50a44aba3608b6ca25a0e4602"
+  },
+  {
+    "component": "candidate-frontend",
+    "id": "sha256:1303dd6967f86cad6340cbcaff5088e69d8925a693b64c22596a7ad2684b2530",
+    "highCriticalRows": 57,
+    "highCriticalCves": [
+      "CVE-2023-45853",
+      "CVE-2025-69720",
+      "CVE-2026-16742",
+      "CVE-2026-41992",
+      "CVE-2026-53613",
+      "CVE-2026-53615",
+      "CVE-2026-54369",
+      "CVE-2026-76642",
+      "CVE-2026-78408",
+      "CVE-2026-78409",
+      "CVE-2026-78410",
+      "CVE-2026-9538"
+    ],
+    "fixableHighCritical": [],
+    "secrets": 0,
+    "allVulnerabilityRows": 231,
+    "sourceRevision": "641c09e011e0183bb2267bb0e9c027fc2dc76752"
+  },
+  {
+    "component": "candidate-postgres",
+    "id": "sha256:198913121a1f94475136857bdbf640ad94bc8d11b182abba044bbffad3502d5e",
+    "highCriticalRows": 74,
+    "highCriticalCves": [
+      "CVE-2023-2953",
+      "CVE-2023-45853",
+      "CVE-2025-69720",
+      "CVE-2025-7458",
+      "CVE-2026-11822",
+      "CVE-2026-11824",
+      "CVE-2026-16742",
+      "CVE-2026-41992",
+      "CVE-2026-53613",
+      "CVE-2026-53615",
+      "CVE-2026-54369",
+      "CVE-2026-6653",
+      "CVE-2026-74860",
+      "CVE-2026-76642",
+      "CVE-2026-78408",
+      "CVE-2026-78409",
+      "CVE-2026-78410",
+      "CVE-2026-84782",
+      "CVE-2026-86138",
+      "CVE-2026-86140",
+      "CVE-2026-86142",
+      "CVE-2026-86143",
+      "CVE-2026-86144",
+      "CVE-2026-9538"
+    ],
+    "fixableHighCritical": [],
+    "secrets": 0,
+    "allVulnerabilityRows": 431,
+    "sourceRevision": "641c09e011e0183bb2267bb0e9c027fc2dc76752"
+  }
+]

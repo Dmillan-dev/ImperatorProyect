@@ -1,0 +1,117 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.imperator:imperator-backend >-------------------
+[INFO] Building IMPERATOR Backend 0.1.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- toolchains:3.3.0:select-jdk-toolchain (select-java-21) @ imperator-backend ---
+[INFO] Not using an external toolchain as the current JDK 'JDK[C:\Program Files\Java\jdk-21.0.12]' matches the requirements.
+[INFO] 
+[INFO] --- enforcer:3.6.3:enforce (enforce-build-runtime) @ imperator-backend ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[INFO] Rule 1: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ imperator-backend ---
+[INFO] skip non existing resourceDirectory D:\Imperator\build\worktrees\tfg-local-security-go-vite-20261022\src\main\resources
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ imperator-backend ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 235 source files with javac [debug release 21] to target\classes
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ imperator-backend ---
+[INFO] Copying 2 resources from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ imperator-backend ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 47 source files with javac [debug release 21] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.6.0:test (default-test) @ imperator-backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running imperator.adapters.out.aws.AwsSdkEvidenceSourceAdapterTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.566 s -- in imperator.adapters.out.aws.AwsSdkEvidenceSourceAdapterTest
+[INFO] Running imperator.adapters.out.bedrock.BedrockExplanationProviderTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.204 s -- in imperator.adapters.out.bedrock.BedrockExplanationProviderTest
+[INFO] Running imperator.adapters.out.github.GitHubRestAdapterTest
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.382 s -- in imperator.adapters.out.github.GitHubRestAdapterTest
+[INFO] Running imperator.api.businessvalue.BusinessValueRouteContractTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.400 s -- in imperator.api.businessvalue.BusinessValueRouteContractTest
+[INFO] Running imperator.api.decisions.DecisionCompositionRouteContractTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.941 s -- in imperator.api.decisions.DecisionCompositionRouteContractTest
+[INFO] Running imperator.api.decisions.DecisionContextRouteContractTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.710 s -- in imperator.api.decisions.DecisionContextRouteContractTest
+[INFO] Running imperator.api.decisions.DecisionRouteContractTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.605 s -- in imperator.api.decisions.DecisionRouteContractTest
+[INFO] Running imperator.api.decisions.RbacEvidenceVisibilityContractTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.522 s -- in imperator.api.decisions.RbacEvidenceVisibilityContractTest
+[INFO] Running imperator.api.errors.ApiErrorContractTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.614 s -- in imperator.api.errors.ApiErrorContractTest
+[INFO] Running imperator.api.evidence.EndToEndBusinessValueDemoTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 s -- in imperator.api.evidence.EndToEndBusinessValueDemoTest
+[INFO] Running imperator.api.evidence.EvidenceImportRouteContractTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.603 s -- in imperator.api.evidence.EvidenceImportRouteContractTest
+[INFO] Running imperator.api.FunctionalRestApiContractTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.582 s -- in imperator.api.FunctionalRestApiContractTest
+[INFO] Running imperator.api.ledger.LedgerCommandRouteContractTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.663 s -- in imperator.api.ledger.LedgerCommandRouteContractTest
+[INFO] Running imperator.api.ledger.LedgerReadRouteContractTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.623 s -- in imperator.api.ledger.LedgerReadRouteContractTest
+[INFO] Running imperator.api.observability.CorrelationMdcContractTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in imperator.api.observability.CorrelationMdcContractTest
+[INFO] Running imperator.api.observability.ImperatorRouteCatalogContractTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in imperator.api.observability.ImperatorRouteCatalogContractTest
+[INFO] Running imperator.api.observability.ImperatorTelemetryContractTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s -- in imperator.api.observability.ImperatorTelemetryContractTest
+[INFO] Running imperator.api.observability.ObservabilityEndpointContractTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.589 s -- in imperator.api.observability.ObservabilityEndpointContractTest
+[INFO] Running imperator.api.recommendations.RecommendationRestMapperTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in imperator.api.recommendations.RecommendationRestMapperTest
+[INFO] Running imperator.api.recommendations.RecommendationRouteContractTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.551 s -- in imperator.api.recommendations.RecommendationRouteContractTest
+[INFO] Running imperator.api.security.JwtAuthenticationContractTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.659 s -- in imperator.api.security.JwtAuthenticationContractTest
+[INFO] Running imperator.api.security.RbacAuthorizationContractTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.913 s -- in imperator.api.security.RbacAuthorizationContractTest
+[INFO] Running imperator.application.composecase.ComposeDrcAoa001UseCaseTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s -- in imperator.application.composecase.ComposeDrcAoa001UseCaseTest
+[INFO] Running imperator.application.createdecision.CreateDecisionUseCaseTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in imperator.application.createdecision.CreateDecisionUseCaseTest
+[INFO] Running imperator.application.generaterecommendation.GenerateRecommendationExplanationTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s -- in imperator.application.generaterecommendation.GenerateRecommendationExplanationTest
+[INFO] Running imperator.application.importevidence.ImportEvidenceUseCaseTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in imperator.application.importevidence.ImportEvidenceUseCaseTest
+[INFO] Running imperator.application.ledger.LedgerChainTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in imperator.application.ledger.LedgerChainTest
+[INFO] Running imperator.application.query.MvpQueryUseCasesTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in imperator.application.query.MvpQueryUseCasesTest
+[INFO] Running imperator.application.reviewdecision.ReviewLedgerGovernanceTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in imperator.application.reviewdecision.ReviewLedgerGovernanceTest
+[INFO] Running imperator.application.synchronizeevidence.SynchronizeEvidenceUseCaseTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in imperator.application.synchronizeevidence.SynchronizeEvidenceUseCaseTest
+[INFO] Running imperator.bootstrap.AwsRuntimePropertiesTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in imperator.bootstrap.AwsRuntimePropertiesTest
+[INFO] Running imperator.bootstrap.GitHubRuntimePropertiesTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in imperator.bootstrap.GitHubRuntimePropertiesTest
+[INFO] Running imperator.bootstrap.ImperatorApplicationTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.445 s -- in imperator.bootstrap.ImperatorApplicationTest
+[INFO] Running imperator.bootstrap.PostgresRuntimeConfigurationTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.419 s -- in imperator.bootstrap.PostgresRuntimeConfigurationTest
+[INFO] Running imperator.domain.decision.DrcAoa001RecommendationPolicyTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in imperator.domain.decision.DrcAoa001RecommendationPolicyTest
+[INFO] Running imperator.domain.decision.DrcAoa001ResultValidationPolicyTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in imperator.domain.decision.DrcAoa001ResultValidationPolicyTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 174, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  30.372 s
+[INFO] Finished at: 2026-10-22T15:49:57+02:00
+[INFO] ------------------------------------------------------------------------

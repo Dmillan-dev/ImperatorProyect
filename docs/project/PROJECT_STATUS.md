@@ -1,6 +1,10 @@
 # IMPERATOR Project Status
 
-## Estado local autorizado — 16/10/2026
+## Control vigente — 22/10/2026
+
+**R-20 EXPIRED / PROPOSED; TFG-A IN PROGRESS; AWS BLOCKED.** Main de partida `ff3181c` incorpora #67. Candidato `641c09e`: Go/gosu 1.26.10 y lockfile Vite 8.3.5; sin cambios funcionales ni otras actualizaciones. Cuatro imágenes exactas: 0 H/C corregibles y 0 secretos; 26 CVE conservadores / 137 identidades residuales, sin aceptación transferida. D094 reproducible, 174 unitarios y 41 frontend PASS; lint/tipos/build y Playwright 9 PASS/6 omisiones previstas. Integración completa y ensayo del nuevo conjunto pendientes. [Propuesta R-20 y evidencias](../tfg/evidence/2026-10-22-security-go-vite/README.md), `accepted: false`. R-23 OPEN; ensayo oral humano, grabación narrada y revisión académica siguen pendientes.
+
+## Registro histórico — 16/10/2026
 
 **R-20 ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC; A-S3 cerrado; A-S4 y TFG-A IN PROGRESS; AWS BLOCKED.** Aprobación explícita de 26 CVE conservadores / 137 identidades actuales para los cuatro índices y manifiestos locales exactos, con datos sintéticos, hasta **19/10/2026 00:00 Europe/Madrid**; sin renovación ni transferencia automática. Escaneo 16/10: 0 H/C corregibles y 0 secretos. Hay 24 CVE H/C; los otros dos quedan por debajo de ese umbral, con severidad distinta por distribución. R-23 sigue OPEN independiente. [Decisión y evidencia](../tfg/evidence/2026-10-16-r20-local-acceptance/README.md).
 

@@ -1,0 +1,444 @@
+{
+  "previousCandidateCves": 26,
+  "currentCandidateCvesReported": 26,
+  "residualCandidateBindings": 137,
+  "uniqueHighCriticalCves": 24,
+  "highCriticalRows": 131,
+  "fixableHighCritical": 0,
+  "newHighCriticalBindings": [],
+  "severityOrFixChanges": [
+    {
+      "current": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-86409",
+        "package": "curl",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": "7.81.0-1ubuntu1.30",
+        "severity": "LOW",
+        "status": "fixed",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-86409"
+      },
+      "previous": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-86409",
+        "package": "curl",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": null,
+        "severity": "LOW",
+        "status": "affected",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-86409"
+      }
+    },
+    {
+      "current": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-86414",
+        "package": "curl",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": "7.81.0-1ubuntu1.30",
+        "severity": "LOW",
+        "status": "fixed",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-86414"
+      },
+      "previous": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-86414",
+        "package": "curl",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": null,
+        "severity": "LOW",
+        "status": "affected",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-86414"
+      }
+    },
+    {
+      "current": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-87862",
+        "package": "curl",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": "7.81.0-1ubuntu1.30",
+        "severity": "LOW",
+        "status": "fixed",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-87862"
+      },
+      "previous": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-87862",
+        "package": "curl",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": null,
+        "severity": "LOW",
+        "status": "affected",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-87862"
+      }
+    },
+    {
+      "current": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-87864",
+        "package": "curl",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": "7.81.0-1ubuntu1.30",
+        "severity": "LOW",
+        "status": "fixed",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-87864"
+      },
+      "previous": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-87864",
+        "package": "curl",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": null,
+        "severity": "LOW",
+        "status": "affected",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-87864"
+      }
+    },
+    {
+      "current": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-92388",
+        "package": "curl",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": "7.81.0-1ubuntu1.30",
+        "severity": "LOW",
+        "status": "fixed",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-92388"
+      },
+      "previous": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-92388",
+        "package": "curl",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": null,
+        "severity": "LOW",
+        "status": "affected",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-92388"
+      }
+    },
+    {
+      "current": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-92389",
+        "package": "curl",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": "7.81.0-1ubuntu1.30",
+        "severity": "LOW",
+        "status": "fixed",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-92389"
+      },
+      "previous": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-92389",
+        "package": "curl",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": null,
+        "severity": "LOW",
+        "status": "affected",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-92389"
+      }
+    },
+    {
+      "current": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-92391",
+        "package": "curl",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": "7.81.0-1ubuntu1.30",
+        "severity": "LOW",
+        "status": "fixed",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-92391"
+      },
+      "previous": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-92391",
+        "package": "curl",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": null,
+        "severity": "LOW",
+        "status": "affected",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-92391"
+      }
+    },
+    {
+      "current": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-94266",
+        "package": "curl",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": "7.81.0-1ubuntu1.30",
+        "severity": "LOW",
+        "status": "fixed",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-94266"
+      },
+      "previous": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-94266",
+        "package": "curl",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": null,
+        "severity": "LOW",
+        "status": "affected",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-94266"
+      }
+    },
+    {
+      "current": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-86409",
+        "package": "libcurl4",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": "7.81.0-1ubuntu1.30",
+        "severity": "LOW",
+        "status": "fixed",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-86409"
+      },
+      "previous": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-86409",
+        "package": "libcurl4",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": null,
+        "severity": "LOW",
+        "status": "affected",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-86409"
+      }
+    },
+    {
+      "current": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-86414",
+        "package": "libcurl4",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": "7.81.0-1ubuntu1.30",
+        "severity": "LOW",
+        "status": "fixed",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-86414"
+      },
+      "previous": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-86414",
+        "package": "libcurl4",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": null,
+        "severity": "LOW",
+        "status": "affected",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-86414"
+      }
+    },
+    {
+      "current": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-87862",
+        "package": "libcurl4",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": "7.81.0-1ubuntu1.30",
+        "severity": "LOW",
+        "status": "fixed",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-87862"
+      },
+      "previous": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-87862",
+        "package": "libcurl4",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": null,
+        "severity": "LOW",
+        "status": "affected",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-87862"
+      }
+    },
+    {
+      "current": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-87864",
+        "package": "libcurl4",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": "7.81.0-1ubuntu1.30",
+        "severity": "LOW",
+        "status": "fixed",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-87864"
+      },
+      "previous": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-87864",
+        "package": "libcurl4",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": null,
+        "severity": "LOW",
+        "status": "affected",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-87864"
+      }
+    },
+    {
+      "current": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-92388",
+        "package": "libcurl4",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": "7.81.0-1ubuntu1.30",
+        "severity": "LOW",
+        "status": "fixed",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-92388"
+      },
+      "previous": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-92388",
+        "package": "libcurl4",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": null,
+        "severity": "LOW",
+        "status": "affected",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-92388"
+      }
+    },
+    {
+      "current": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-92389",
+        "package": "libcurl4",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": "7.81.0-1ubuntu1.30",
+        "severity": "LOW",
+        "status": "fixed",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-92389"
+      },
+      "previous": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-92389",
+        "package": "libcurl4",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": null,
+        "severity": "LOW",
+        "status": "affected",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-92389"
+      }
+    },
+    {
+      "current": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-92391",
+        "package": "libcurl4",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": "7.81.0-1ubuntu1.30",
+        "severity": "LOW",
+        "status": "fixed",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-92391"
+      },
+      "previous": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-92391",
+        "package": "libcurl4",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": null,
+        "severity": "LOW",
+        "status": "affected",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-92391"
+      }
+    },
+    {
+      "current": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-94266",
+        "package": "libcurl4",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": "7.81.0-1ubuntu1.30",
+        "severity": "LOW",
+        "status": "fixed",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-94266"
+      },
+      "previous": {
+        "component": "backend",
+        "type": "ubuntu",
+        "cve": "CVE-2026-94266",
+        "package": "libcurl4",
+        "installed": "7.81.0-1ubuntu1.29",
+        "fixed": null,
+        "severity": "LOW",
+        "status": "affected",
+        "path": null,
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-94266"
+      }
+    }
+  ],
+  "addedAllSeverityBindings": [],
+  "removedAllSeverityBindings": [
+    {
+      "component": "backend",
+      "type": "ubuntu",
+      "cve": "CVE-2026-85091",
+      "package": "zlib1g",
+      "installed": "1:1.2.11.dfsg-2ubuntu9.2",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "path": null,
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-85091"
+    }
+  ],
+  "goFindingPresent": false,
+  "residualBindingChanges": 0
+}

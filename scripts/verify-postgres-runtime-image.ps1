@@ -280,7 +280,7 @@ $gosuVersion = (Get-CheckedOutput -Command $docker -Arguments @(
     "--version"
 )) -join "`n"
 if ($gosuVersion -notmatch "^1\.19 \(" -or
-    $gosuVersion -notmatch "go1\.26\.9") {
+    $gosuVersion -notmatch "go1\.26\.10") {
     throw "Unexpected gosu runtime identity: $gosuVersion"
 }
 Invoke-Checked -Command $docker -Arguments @(

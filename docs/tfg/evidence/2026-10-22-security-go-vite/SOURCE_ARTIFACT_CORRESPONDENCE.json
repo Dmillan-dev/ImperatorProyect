@@ -1,0 +1,42 @@
+{
+  "candidateSource": "641c09e011e0183bb2267bb0e9c027fc2dc76752",
+  "images": [
+    {
+      "component": "candidate-migration",
+      "id": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4",
+      "platformManifest": "sha256:a4b1f621b007dca0d3cf099bd4d1e3246bffccddb240ffba7ee0b567ac6f1227",
+      "buildSourceSha": "6e79e83e909995c50a44aba3608b6ca25a0e4602",
+      "reused": true
+    },
+    {
+      "component": "candidate-backend",
+      "id": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757",
+      "platformManifest": "sha256:645e2aa935ab08a3765f8b62c81b7c210c27867435efa22145b12aaba179a67f",
+      "buildSourceSha": "6e79e83e909995c50a44aba3608b6ca25a0e4602",
+      "reused": true
+    },
+    {
+      "component": "candidate-frontend",
+      "id": "sha256:1303dd6967f86cad6340cbcaff5088e69d8925a693b64c22596a7ad2684b2530",
+      "buildSourceSha": "641c09e011e0183bb2267bb0e9c027fc2dc76752",
+      "reused": false,
+      "platformManifest": "sha256:04501e9e958843b6cb2c7a1e1e99eeb945187cbaddd6d6e18c6ba3b0219f8641"
+    },
+    {
+      "component": "candidate-postgres",
+      "id": "sha256:198913121a1f94475136857bdbf640ad94bc8d11b182abba044bbffad3502d5e",
+      "platformManifest": "sha256:5c52cfdda11a2f10f4c76b993f013ecaa58665733d437444e4f30001b6a9b5c1",
+      "buildSourceSha": "641c09e011e0183bb2267bb0e9c027fc2dc76752",
+      "reused": false
+    }
+  ],
+  "reusedBackendChangedInputs": [
+    "backend-java/README.md"
+  ],
+  "reusedMigrationChangedInputs": [],
+  "backendReadmeNote": "Only README changed in copied build sources; executable Java sources, Maven dependencies and runtime inputs unchanged. No claim of a new backend build or binary equality by rebuilding.",
+  "frontendManifestVerified": true,
+  "postgresRepeatRuntimeManifestMatches": true,
+  "historicalRuntimeEvidenceNotTransferred": true,
+  "currentFullRuntimeRehearsal": "PENDING"
+}
