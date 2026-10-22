@@ -1,0 +1,82 @@
+[
+  {
+    "number": 31,
+    "package": "@vitest/mocker",
+    "scope": "development",
+    "severity": "medium",
+    "ghsa": "GHSA-qxg6-89mg-rqv8",
+    "cve": "CVE-2026-112949",
+    "firstPatched": "4.1.12",
+    "summary": "Vitest: Code injection via unauthenticated manual mock registration"
+  },
+  {
+    "number": 30,
+    "package": "@vitest/mocker",
+    "scope": "development",
+    "severity": "medium",
+    "ghsa": "GHSA-xp26-3454-mjgp",
+    "cve": "CVE-2026-112950",
+    "firstPatched": "4.1.12",
+    "summary": "Vitest: Windows backslash traversal bypasses the @vitest/mocker redirect allowlist fix"
+  },
+  {
+    "number": 29,
+    "package": "vite",
+    "scope": "development",
+    "severity": "low",
+    "ghsa": "GHSA-9jrq-w75r-8gcw",
+    "cve": "CVE-2026-112945",
+    "firstPatched": "8.2.4",
+    "summary": "Vite: Cross origin script execution through Vite custom middleware"
+  },
+  {
+    "number": 28,
+    "package": "vite",
+    "scope": "development",
+    "severity": "medium",
+    "ghsa": "GHSA-rq7h-c2jc-7f22",
+    "cve": "CVE-2026-112946",
+    "firstPatched": "8.2.4",
+    "summary": "Vite: Files outside `server.fs.allow` could be served when project paths match system paths on non-Windows machine"
+  },
+  {
+    "number": 27,
+    "package": "vite",
+    "scope": "development",
+    "severity": "medium",
+    "ghsa": "GHSA-vfpm-58rq-9qcg",
+    "cve": "CVE-2026-112947",
+    "firstPatched": "8.2.4",
+    "summary": "Vite: First 4 bytes of files outside of `server.fs` setting is exposed by `?vite-wasm-instance`"
+  },
+  {
+    "number": 26,
+    "package": "vite",
+    "scope": "development",
+    "severity": "medium",
+    "ghsa": "GHSA-r825-w8mm-5pxw",
+    "cve": "CVE-2026-112944",
+    "firstPatched": "8.2.4",
+    "summary": "launch-editor: Editor CLI flag misinterpretation causing arbitrary command execution for some editors"
+  },
+  {
+    "number": 25,
+    "package": "vite",
+    "scope": "development",
+    "severity": "high",
+    "ghsa": "GHSA-587h-7wmj-h5pm",
+    "cve": "CVE-2026-112942",
+    "firstPatched": "8.2.4",
+    "summary": "launch-editor: `fs.existsSync()` existence check can be bypassed on Windows"
+  },
+  {
+    "number": 24,
+    "package": "vite",
+    "scope": "development",
+    "severity": "medium",
+    "ghsa": "GHSA-698v-4r3x-3vcv",
+    "cve": "CVE-2026-112943",
+    "firstPatched": "8.2.4",
+    "summary": "launch-editor: escapeCmdArgs() omits % escaping on Windows"
+  }
+]

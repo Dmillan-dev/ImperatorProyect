@@ -1,0 +1,6 @@
+{
+  "exitCode": 0,
+  "mode": "Existing frontend Playwright suite; intercepted synthetic API; no backend/database/MVP containers",
+  "browserCache": "D:/Imperator/build/tfg-a/security-go-vite-20261022/playwright-browsers",
+  "initialFailure": "Required pinned browser revision 1243 absent; no app assertions executed"
+}

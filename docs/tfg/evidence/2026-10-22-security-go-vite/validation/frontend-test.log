@@ -1,0 +1,13 @@
+
+> imperator-decision-review-workspace@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.11 D:/Imperator/build/worktrees/tfg-local-security-go-vite-20261022/frontend
+
+
+ Test Files  10 passed (10)
+      Tests  41 passed (41)
+   Start at  15:51:30
+   Duration  7.38s (transform 1.15s, setup 7.19s, import 3.57s, tests 5.78s, environment 28.07s)
+

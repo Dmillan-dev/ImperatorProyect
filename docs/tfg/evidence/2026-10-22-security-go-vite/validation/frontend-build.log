@@ -1,0 +1,22 @@
+
+> imperator-decision-review-workspace@0.1.0 prebuild
+> next telemetry disable
+
+Next.js' telemetry collection is already disabled.
+
+Status: Disabled
+
+You have opted-out of Next.js' anonymous telemetry program.
+No data will be collected from your machine.
+
+Learn more: https://nextjs.org/telemetry
+
+> imperator-decision-review-workspace@0.1.0 build
+> next build
+
+▲ Next.js 16.3.8 (Turbopack)
+⨯ Failed to load next.config.ts, see more info here https://nextjs.org/docs/messages/next-config-error
+
+> Build error occurred
+Error: IMPERATOR_API_ORIGIN is required
+    at Object.<anonymous> (D:\Imperator\build\worktrees\tfg-local-security-go-vite-20261022\frontend\next.config.compiled.js:13:11)

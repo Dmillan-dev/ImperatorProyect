@@ -1,0 +1,84 @@
+{
+  "referenceSource": "94ce8799812ecde83ebb4e0b2698bfab5e9091d8",
+  "candidateSource": "641c09e011e0183bb2267bb0e9c027fc2dc76752",
+  "files": [
+    {
+      "path": "infra/docker/compose.yaml",
+      "oldSha256": "271de08db7625acd1246dbdc315bfa177556af22d4cb94349bd7bb5eae649b7a",
+      "candidateSha256": "271de08db7625acd1246dbdc315bfa177556af22d4cb94349bd7bb5eae649b7a",
+      "sameBytes": true
+    },
+    {
+      "path": "infra/docker/frontend/Dockerfile",
+      "oldSha256": "c68fb320cb0eb21aba20b51da6096b20025f1130075e4859f3c1ef2164953822",
+      "candidateSha256": "c68fb320cb0eb21aba20b51da6096b20025f1130075e4859f3c1ef2164953822",
+      "sameBytes": true
+    },
+    {
+      "path": "infra/docker/postgresql/Dockerfile",
+      "oldSha256": "4fa553c034395be7dae1dba207dbf25b9128830fc2cc45cf6c1ecfceddb9a86d",
+      "candidateSha256": "51d1769a99295e0e7e85c93b32c24a951b010002c00f2e17c726509214c2621b",
+      "sameBytes": false
+    },
+    {
+      "path": "frontend/package.json",
+      "oldSha256": "e28f8ab772cd562c013227ea2dcfdc245dd6f268e8e9120fa324c7edf090fa55",
+      "candidateSha256": "e28f8ab772cd562c013227ea2dcfdc245dd6f268e8e9120fa324c7edf090fa55",
+      "sameBytes": true
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "oldSha256": "ea48414f2269d4d1e57c4292583221223e12eeadf388b6736fc8c96a6612768b",
+      "candidateSha256": "2ca7dcd7e5198043b3303347a33448516ff40870698759a7fd1a718b9f2854e7",
+      "sameBytes": false
+    },
+    {
+      "path": "frontend/eslint.config.mjs",
+      "oldSha256": "46d115c18ed68621adb9ce61537f0f2ae88cc37d6708f85f3be81d451ecf5505",
+      "candidateSha256": "46d115c18ed68621adb9ce61537f0f2ae88cc37d6708f85f3be81d451ecf5505",
+      "sameBytes": true
+    },
+    {
+      "path": "frontend/next.config.ts",
+      "oldSha256": "2cefc23040e68582b02f0e0eb9c12e06d9edfbcdb4cace3abd230842e4d9ea33",
+      "candidateSha256": "2cefc23040e68582b02f0e0eb9c12e06d9edfbcdb4cace3abd230842e4d9ea33",
+      "sameBytes": true
+    },
+    {
+      "path": "backend-java/api/evidence/EvidenceController.java",
+      "oldSha256": "ed38639ea9b7416434617c4eb65b6b48edcd7cc209df8520036cc5e4d1bee029",
+      "candidateSha256": "ed38639ea9b7416434617c4eb65b6b48edcd7cc209df8520036cc5e4d1bee029",
+      "sameBytes": true
+    },
+    {
+      "path": "backend-java/api/evidence/EvidenceNdjsonImporter.java",
+      "oldSha256": "dc5302baff4f11985d1b2ff0b06026df8d6bb9af0243301332c23101a8e4e272",
+      "candidateSha256": "dc5302baff4f11985d1b2ff0b06026df8d6bb9af0243301332c23101a8e4e272",
+      "sameBytes": true
+    },
+    {
+      "path": "backend-java/adapters/out/postgresql/PostgresMvpReadModelQueryAdapter.java",
+      "oldSha256": "1a342eaf9970159233421302cf5da3744e9cc18812d6fd4f448dab2caae0501c",
+      "candidateSha256": "1a342eaf9970159233421302cf5da3744e9cc18812d6fd4f448dab2caae0501c",
+      "sameBytes": true
+    },
+    {
+      "path": "infra/docker/postgresql/provision-app-role.sh",
+      "oldSha256": "ee57a4f3d2b7fbdb441ceb3e931625f234e5e769c4f1fb9fe7a5fddba651aed3",
+      "candidateSha256": "ee57a4f3d2b7fbdb441ceb3e931625f234e5e769c4f1fb9fe7a5fddba651aed3",
+      "sameBytes": true
+    },
+    {
+      "path": ".github/workflows/security.yml",
+      "oldSha256": "d23823b5a1539bba2775d707e0bebabf69665d4d07881fb39c959055502a8115",
+      "candidateSha256": "339c9ec6d310b21866dbfedf84ef8bef21c97bdf24cdb122baf0c6fce4e620fd",
+      "sameBytes": false
+    },
+    {
+      "path": ".github/workflows/java-ci.yml",
+      "oldSha256": "85d02731f64efab18b16a3ececb1cbad95830a5136712ad6ea6d51d42cad40ec",
+      "candidateSha256": "85d02731f64efab18b16a3ececb1cbad95830a5136712ad6ea6d51d42cad40ec",
+      "sameBytes": true
+    }
+  ]
+}

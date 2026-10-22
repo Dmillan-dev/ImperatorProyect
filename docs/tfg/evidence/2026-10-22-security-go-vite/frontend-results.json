@@ -1,0 +1,26 @@
+[
+  {
+    "task": "lint",
+    "exitCode": 0,
+    "startedUtc": "2026-10-22T13:51:10.1853269Z",
+    "finishedUtc": "2026-10-22T13:51:22.0894590Z"
+  },
+  {
+    "task": "typecheck",
+    "exitCode": 0,
+    "startedUtc": "2026-10-22T13:51:22.1205610Z",
+    "finishedUtc": "2026-10-22T13:51:25.5363275Z"
+  },
+  {
+    "task": "test",
+    "exitCode": 0,
+    "startedUtc": "2026-10-22T13:51:25.5470527Z",
+    "finishedUtc": "2026-10-22T13:51:38.2332942Z"
+  },
+  {
+    "task": "build",
+    "exitCode": 1,
+    "startedUtc": "2026-10-22T13:51:38.2377205Z",
+    "finishedUtc": "2026-10-22T13:51:42.7743913Z"
+  }
+]

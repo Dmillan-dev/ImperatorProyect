@@ -1,0 +1,6 @@
+{
+  "command": "mvnw.cmd --batch-mode --no-transfer-progress test",
+  "exitCode": 0,
+  "javaHome": "C:/Program Files/Java/jdk-21.0.12",
+  "integrationDatabaseNotStarted": true
+}

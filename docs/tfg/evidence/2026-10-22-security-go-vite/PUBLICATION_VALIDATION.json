@@ -1,0 +1,47 @@
+{
+  "checkedAtUtc": "2026-10-22T14:21:26.080132+00:00",
+  "oldEvidenceFilesByteIdentical": 959,
+  "historicalEvidenceChanged": false,
+  "existingReceiptsChanged": false,
+  "jsonFilesValidated": 49,
+  "localLinksChecked": 137,
+  "linkErrors": [],
+  "sourceCommit": "641c09e011e0183bb2267bb0e9c027fc2dc76752",
+  "r20Accepted": false,
+  "oldAcceptanceRenewed": false,
+  "ordinaryDocumentation": [
+    "README.md",
+    "backend-java/README.md",
+    "frontend/README.md",
+    "docs/project/PROJECT_STATUS.md",
+    "docs/tfg/10_LOCAL_MVP_RELEASE_GATE.md",
+    "docs/tfg/A_S3_EVIDENCE_VERSIONING.md",
+    "docs/tfg/R20_SECURITY_DECISION.md",
+    "docs/tfg/README.md",
+    "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md"
+  ],
+  "sourceCodeCommitFiles": 4,
+  "additionalUpgradesApplied": false,
+  "awsAuthorized": false,
+  "sourceGitleaks": 0,
+  "evidenceGitleaks": 0,
+  "codeCommitChecks": {
+    "success": 9,
+    "neutral": 1,
+    "failed": 0
+  },
+  "finalDocumentationHeadCi": "Re-run after publication; code-SHA CI does not substitute for final-head CI",
+  "runtimeIntegrationAndHumanDefense": "PENDING; no closure claimed",
+  "stagedWhitespaceReview": {
+    "stagedFiles": 79,
+    "ordinaryFiles": 9,
+    "evidenceFiles": 70,
+    "ordinaryCheckExit": 0,
+    "fullCheckExit": 2,
+    "warnings": 6448,
+    "warningsOutsideEvidence": 0,
+    "rawLogBytesPreserved": true,
+    "ignoredLogFilesExplicitlyAdded": 14,
+    "historicalEvidenceByteIdentical": 959
+  }
+}

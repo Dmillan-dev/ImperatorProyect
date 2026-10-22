@@ -1,0 +1,31 @@
+{
+  "images": [
+    {
+      "id": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4",
+      "sameId": true,
+      "sameRootfs": true,
+      "retained": true
+    },
+    {
+      "id": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757",
+      "sameId": true,
+      "sameRootfs": true,
+      "retained": true
+    },
+    {
+      "id": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78",
+      "sameId": true,
+      "sameRootfs": true,
+      "retained": true
+    },
+    {
+      "id": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9",
+      "sameId": true,
+      "sameRootfs": true,
+      "retained": true
+    }
+  ],
+  "deletedImages": [],
+  "prunePerformed": false,
+  "volumesDeleted": false
+}
