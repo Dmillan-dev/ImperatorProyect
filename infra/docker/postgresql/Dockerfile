@@ -48,11 +48,19 @@ ADD --checksum=sha256:3ed38ffa8320e9bf7597cefa01b6a6ace4a08ccc77cdfd15ef7d8b711d
     https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-modules-5.36_5.36.0-7+deb12u4_all.deb \
     /tmp/imperator-perl-modules-5.36.deb
 
+ADD --checksum=sha256:cb4784740daa9b3b0eaea2b444bbefa686794afbbf3d678d238c1fd9875f2efd \
+    https://security.debian.org/debian-security/pool/updates/main/o/openssl/libssl3_3.0.22-1~deb12u2_amd64.deb \
+    /tmp/imperator-libssl3.deb
+
+ADD --checksum=sha256:5cdf0b735b1c8a96ae0bf83ed328c83c2170f8320dedb035e98705b60b2d0cfe \
+    https://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_3.0.22-1~deb12u2_amd64.deb \
+    /tmp/imperator-openssl.deb
+
 LABEL org.opencontainers.image.title="IMPERATOR PostgreSQL Runtime" \
       org.opencontainers.image.description="PostgreSQL 18.6 with rebuilt gosu and a pinned Debian security patch" \
       org.opencontainers.image.source="https://github.com/Dmillan-dev/ImperatorProyect" \
       org.opencontainers.image.revision="${VCS_REF}" \
-      org.opencontainers.image.version="18.6-gosu1.19-go1.26.10-pcre2deb12u2-perldeb12u4" \
+      org.opencontainers.image.version="18.6-gosu1.19-go1.26.10-pcre2deb12u2-perldeb12u4-openssldeb12u2" \
       org.opencontainers.image.base.name="postgres:18.6-bookworm" \
       org.opencontainers.image.base.digest="sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af" \
       org.opencontainers.image.licenses="PostgreSQL AND Apache-2.0"
@@ -61,8 +69,9 @@ COPY --from=gosu-build /out/gosu /usr/local/bin/gosu
 COPY --from=gosu-build /build/gosu/LICENSE /usr/local/share/licenses/gosu/LICENSE
 COPY --chown=999:999 provision-app-role.sh /opt/imperator/provision-app-role.sh
 
-RUN dpkg --install /tmp/libpcre2-8-0.deb /tmp/imperator-perl-base.deb /tmp/imperator-perl.deb /tmp/imperator-libperl5.36.deb /tmp/imperator-perl-modules-5.36.deb \
+RUN dpkg --install /tmp/imperator-libssl3.deb /tmp/imperator-openssl.deb /tmp/libpcre2-8-0.deb /tmp/imperator-perl-base.deb /tmp/imperator-perl.deb /tmp/imperator-libperl5.36.deb /tmp/imperator-perl-modules-5.36.deb \
     && rm -f \
+        /tmp/imperator-libssl3.deb /tmp/imperator-openssl.deb \
         /tmp/libpcre2-8-0.deb \
         /tmp/imperator-perl-base.deb /tmp/imperator-perl.deb /tmp/imperator-libperl5.36.deb /tmp/imperator-perl-modules-5.36.deb \
         /var/cache/ldconfig/aux-cache \

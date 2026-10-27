@@ -4,6 +4,52 @@ import { ApiClient, ApiClientError } from "@/services/api/client";
 import { ids, json } from "./fixtures";
 
 describe("ApiClient", () => {
+  it("cancels an oversized streamed body without trusting Content-Length", async () => {
+    const cancel = vi.fn();
+    const stream = new ReadableStream<Uint8Array>({
+      start(controller) {
+        controller.enqueue(new Uint8Array(1024 * 1024));
+        controller.enqueue(new Uint8Array(1));
+      },
+      cancel,
+    });
+    const client = new ApiClient(
+      "token",
+      vi.fn(),
+      vi.fn().mockResolvedValue(
+        new Response(stream, {
+          headers: { "content-length": "1" },
+        }),
+      ),
+    );
+    await expect(
+      client.request("/api/v1/test", z.unknown()),
+    ).rejects.toMatchObject({
+      code: "RESPONSE_TOO_LARGE",
+    });
+    expect(cancel).toHaveBeenCalledOnce();
+  });
+
+  it("preserves multibyte UTF-8 split across response chunks", async () => {
+    const bytes = new TextEncoder().encode(JSON.stringify({ value: "\u20ac" }));
+    const split = bytes.indexOf(0xe2) + 1;
+    const stream = new ReadableStream<Uint8Array>({
+      start(controller) {
+        controller.enqueue(bytes.slice(0, split));
+        controller.enqueue(bytes.slice(split));
+        controller.close();
+      },
+    });
+    const client = new ApiClient(
+      "token",
+      vi.fn(),
+      vi.fn().mockResolvedValue(new Response(stream)),
+    );
+    await expect(
+      client.request("/api/v1/test", z.object({ value: z.string() })),
+    ).resolves.toEqual({ value: "\u20ac" });
+  });
+
   it("sends auth, correlation and idempotency without caching", async () => {
     const fetcher = vi.fn().mockResolvedValue(json({ ok: true }));
     const client = new ApiClient("secret-token", vi.fn(), fetcher);

@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { z } from "zod";
 import {
   businessValueSchema,
   decisionDetailSchema,
@@ -22,6 +23,20 @@ import {
 } from "./fixtures";
 
 describe("certified REST schemas", () => {
+  it("rejects pages above the backend limit before parsing their items", () => {
+    let visited = 0;
+    const item = z.unknown().transform(() => {
+      visited += 1;
+      return null;
+    });
+    const result = pageSchema(item).safeParse(page(Array(101).fill(null)));
+    expect(result.success).toBe(false);
+    expect(visited).toBe(0);
+    expect(
+      pageSchema(z.null()).safeParse(page(Array(100).fill(null))).success,
+    ).toBe(true);
+  });
+
   it("accepts every consumed response shape", () => {
     expect(decisionDetailSchema.parse(decision)).toEqual(decision);
     expect(

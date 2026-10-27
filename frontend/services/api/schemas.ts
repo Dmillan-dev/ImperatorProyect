@@ -215,7 +215,7 @@ export const businessValueSchema = z
 export function pageSchema<T extends z.ZodType>(item: T) {
   return z
     .object({
-      items: z.array(item),
+      items: z.array(item).max(100),
       page: z.number().int().nonnegative(),
       size: z.number().int().positive().max(100),
       totalItems: z.number().int().nonnegative(),
