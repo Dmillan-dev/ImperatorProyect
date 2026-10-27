@@ -1,0 +1,22 @@
+{
+  "startedUtc": "2026-10-27T00:31:54.020752+00:00",
+  "imageId": "sha256:7abef3795579f1bab7e4f5364c4ac85577a50a27378daeedfdf0ea78a495059d",
+  "syntheticOnly": true,
+  "temporaryTestDatabase": true,
+  "publicExposure": false,
+  "fullMvpRehearsal": false,
+  "namedVolumesCreated": false,
+  "r20Accepted": false,
+  "containerId": "4fba614deb50d6ca63def57e5a65a8b981c125506f9047b202f1d28389d554dc",
+  "command": [
+    "mvnw.cmd",
+    "--batch-mode",
+    "--no-transfer-progress",
+    "-Ppostgresql-integration",
+    "verify"
+  ],
+  "exitCode": 1,
+  "temporaryContainerRemoved": true,
+  "temporaryPasswordFileRemoved": true,
+  "finishedUtc": "2026-10-27T00:33:01.116584+00:00"
+}

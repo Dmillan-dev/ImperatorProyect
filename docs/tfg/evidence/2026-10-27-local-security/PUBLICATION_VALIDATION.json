@@ -1,0 +1,25 @@
+{
+  "technicalSha": "64c38c22a04f63d5cf38712064a040db0cc8bdf1",
+  "fullStagedWhitespaceExit": 2,
+  "ordinaryDocumentationWhitespaceExit": 0,
+  "warningCount": 2434,
+  "warningsByType": {
+    "trailing whitespace": 2432,
+    "new blank line at EOF": 2
+  },
+  "warningsOutsideBytePreservedEvidence": 0,
+  "stagedEvidenceByteIdentical": 52,
+  "rawEvidenceNotNormalized": true,
+  "historicalEvidenceAndReceiptsUnchanged": true,
+  "directDependenciesLimitedTo": [
+    "next",
+    "zod",
+    "eslint-config-next",
+    "vitest",
+    "@vitest/coverage-v8"
+  ],
+  "chaiUnchangedFromMain": true,
+  "githubCi": "PENDING",
+  "pushPerformed": false,
+  "r20Accepted": false
+}

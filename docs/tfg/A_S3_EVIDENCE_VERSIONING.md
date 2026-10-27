@@ -1,5 +1,11 @@
 # A-S3 Evidencia y versión
 
+## Control vigente — 27/10/2026
+
+El cierre histórico se preserva; el nuevo candidato **no está formalmente cerrado**. SHA de código `64c38c2`, [digests/capas/orígenes exactos](evidence/2026-10-27-local-security/candidate-images.json), D094 repetible, escaneos de cuatro imágenes 0 H/C corregibles / 0 secretos y regresión 174 unitarios + 35 integración + 44 frontend PASS. Backend/migration se reutilizan con correspondencia de fuentes ejecutables, sin atribuirles una nueva construcción.
+
+Faltan CI de la publicación, disposición independiente de undici de desarrollo, aprobación vigente de [R-20](evidence/2026-10-27-local-security/R20_PROPOSED_DECISION.json) y ensayo Docker completo del conjunto. El escaneo con política CI pasa, pero la auditoría de desarrollo no está limpia. No se transfiere runtime histórico, aceptación o cierre a este candidato. A-S3 actual NO-GO; A-S4/TFG-A IN PROGRESS y AWS BLOCKED. [Evidencia y límites](evidence/2026-10-27-local-security/README.md).
+
 ## Candidato en revisión — 22/10/2026
 
 El cierre histórico de A-S3 se conserva. La versión `641c09e` incorpora únicamente Go/gosu y Vite, con [identidad de artefactos, escaneos y propuesta R-20](evidence/2026-10-22-security-go-vite/README.md). R-20 está caducado; la propuesta nueva sigue `accepted: false`. El PASS de seguridad no equivale a aceptación, regresión Docker completa ni cierre de TFG-A. La publicación documental posterior referencia el SHA de construcción original y no cambia los binarios. AWS continúa bloqueado.

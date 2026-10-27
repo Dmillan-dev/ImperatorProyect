@@ -1,6 +1,12 @@
 # R-20 Current Security Decision
 
-## Current review — 22 October 2026
+## Current review — 27 October 2026
+
+**NO CURRENT ACCEPTANCE / PROPOSAL ONLY.** The [new exact-artifact proposal](evidence/2026-10-27-local-security/R20_PROPOSED_DECISION.json) remains `accepted: false`, for source `64c38c2` and four explicitly listed image indices/runtime manifests. It proposes exclusive expiry **3 November 2026 00:00 Europe/Madrid (UTC+01:00)**; that date is not authorization. The October 19 acceptance expired and the October 26 proposal was never approved.
+
+Fresh image scans: 0 fixable H/C and 0 secrets per image. OpenSSL CVE-2026-84782 is repaired; the conservative subset is now 25 CVEs / 137 package bindings, 23 H/C, plus two newly observed Medium GnuTLS bindings requiring explicit review. The complete all-severity inventory is retained separately. Integration 35 PASS, unit 174 PASS, frontend 44 PASS; the full current Docker rehearsal remains pending. A separate development undici High has a published fix and is **not** part of the R-20 non-fixable proposal. R-23 remains independent and OPEN. [Evidence, scope and limitations](evidence/2026-10-27-local-security/README.md). A-S3 current candidate NO-GO, TFG-A IN PROGRESS, AWS BLOCKED.
+
+## Historical review — 22 October 2026
 
 **EXPIRED / NEW PROPOSAL PENDING.** The latest registered acceptance expired on 19 October at 00:00 Europe/Madrid. [The new proposal](evidence/2026-10-22-security-go-vite/R20_PROPOSED_DECISION.json) remains `accepted: false`, with four exact candidate image identities, 26 conservative residual CVEs / 137 package bindings, and proposed exclusive expiry 26 October 2026 00:00 Europe/Madrid (UTC+01:00). That date is a proposal, not authorization.
 

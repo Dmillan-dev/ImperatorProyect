@@ -1,6 +1,12 @@
 # Gate de entrega local — A-S3 y A-S4
 
-## Control vigente — 22/10/2026
+## Control vigente — 27/10/2026
+
+**Entrega local actual NO-GO formal.** El [candidato de seguridad](evidence/2026-10-27-local-security/README.md), SHA `64c38c2`, consigue 0 H/C corregibles y 0 secretos en cuatro imágenes exactas, D094 reproducible y regresión 174 unitarios + 35 integración + 44 frontend PASS. No hay CI de publicación nuevo ni aceptación vigente de R-20: la [propuesta](evidence/2026-10-27-local-security/R20_PROPOSED_DECISION.json) permanece `accepted: false`, con caducidad propuesta 03/11/2026 00:00 Europe/Madrid, sin renovación automática.
+
+La auditoría de desarrollo mantiene undici High corregible como decisión separada, fuera de R-20. Pendientes también ensayo Docker conjunto/persistencia/recovery y A-S4 humana: doce minutos medidos en inglés, grabación narrada y revisión académica. La integración temporal no sustituye el ensayo de defensa. R-23 sigue OPEN; se preserva el cierre histórico A-S3 y los receipts anteriores. TFG-A IN PROGRESS; AWS/producción/datos reales bloqueados.
+
+## Registro histórico — 22/10/2026
 
 **Nueva ejecución local NO-GO: R-20 caducado.** El [candidato Go/Vite](evidence/2026-10-22-security-go-vite/README.md) tiene seguridad técnica PASS y una nueva propuesta `accepted: false`. Faltan decisión explícita vinculada a sus cuatro digests, integración completa y ensayo Docker del nuevo conjunto. El cierre histórico de A-S3 se conserva; no transfiere la aceptación a este candidato. A-S4 y TFG-A siguen IN PROGRESS, con ensayo humano, vídeo narrado y revisión académica pendientes. AWS BLOCKED. Los estados fechados del 16/10 siguientes son históricos.
 

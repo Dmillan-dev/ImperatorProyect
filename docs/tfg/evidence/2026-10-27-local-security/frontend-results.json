@@ -1,0 +1,18 @@
+[
+  {
+    "task": "lint",
+    "exitCode": 0
+  },
+  {
+    "task": "typecheck",
+    "exitCode": 0
+  },
+  {
+    "task": "test",
+    "exitCode": 0
+  },
+  {
+    "task": "build",
+    "exitCode": 0
+  }
+]

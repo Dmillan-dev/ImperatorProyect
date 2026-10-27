@@ -1,0 +1,23 @@
+{
+  "package": "undici",
+  "installed": "8.10.2",
+  "fixed": "8.12.2",
+  "direct": false,
+  "parent": "jsdom@30.1.0",
+  "devOnly": true,
+  "presentInMainLock": true,
+  "introducedByThisPatch": false,
+  "advisories": [
+    "GHSA-xjj6-f33q-929c",
+    "GHSA-4qv8-2p9j-2685",
+    "GHSA-f72v-6w45-q472"
+  ],
+  "highCve": "CVE-2026-109869",
+  "runtimePackagePresent": false,
+  "runtimeEvidence": "scan/candidate-frontend.json",
+  "reachability": "Development jsdom fetch against a malicious HTTP response can exercise the vulnerable content-encoding path. Local fixture/API interception reduces exposure during these tests, not a universal proof of safety.",
+  "status": "OPEN / FIX AVAILABLE / SEPARATE DECISION REQUIRED",
+  "patchApplied": false,
+  "proposedMinimalPatch": "Only lockfile undici 8.10.2 to 8.12.2, within existing jsdom semver; no direct dependency, jsdom or other version change. Prepared outside worktree, not applied.",
+  "r20Included": false
+}
