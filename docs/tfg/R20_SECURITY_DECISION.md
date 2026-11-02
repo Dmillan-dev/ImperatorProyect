@@ -1,6 +1,12 @@
 # R-20 Current Security Decision
 
-## Current review — 27 October 2026
+## Current review — 2 November 2026
+
+**NO CURRENT ACCEPTANCE.** The [new proposal](evidence/2026-11-02-security-alerts/R20_PROPOSED_DECISION.json), source `2539635`, remains `accepted: false`, bound to three newly built image indices and the exact retained PostgreSQL index. It proposes exclusive expiry **9 November 2026 00:00 Europe/Madrid (UTC+01:00)**; no previous unapproved proposal became authorization.
+
+The current conservative set is **23 CVEs, 21 H/C**. Debian reclassifies three historical util-linux CVEs as not affecting installed Bookworm code; new High **CVE-2026-119373 / SQLite** has no Bookworm fix and requires explicit review. Four exact images have 0 fixable H/C and 0 secrets; no residual is declared inexploitable. The GitHub/undici/Vitest fixes and Brotli/unused-driver remediation pass local regression. R-23 has an official withdrawn advisory and a separate disposition proposal, not automatic closure; Moderate minimatch tooling findings remain visible. Publication CI, owner decision and full candidate Docker rehearsal remain pending. [Evidence and viable local MVP route](evidence/2026-11-02-security-alerts/README.md). TFG-A IN PROGRESS; AWS BLOCKED.
+
+## Historical review — 27 October 2026
 
 **NO CURRENT ACCEPTANCE / PROPOSAL ONLY.** The [new exact-artifact proposal](evidence/2026-10-27-local-security/R20_PROPOSED_DECISION.json) remains `accepted: false`, for source `64c38c2` and four explicitly listed image indices/runtime manifests. It proposes exclusive expiry **3 November 2026 00:00 Europe/Madrid (UTC+01:00)**; that date is not authorization. The October 19 acceptance expired and the October 26 proposal was never approved.
 

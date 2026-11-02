@@ -1,0 +1,7 @@
+{
+  "lockPatch": "undici8.12.3 only",
+  "base": "35e43ea2829f43c4f48bd80a40a1b62bdf57129a",
+  "sha": "25396350c40ed7dc13b8aa136d85f809292d4519",
+  "imagePatches": "Brotli Jammy/Noble; remove unused GCP driver carrying Guava; Node24.22.2",
+  "parent": "c46e884e18959191fc3d522fdd94ebe8fa96040d"
+}

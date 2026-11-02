@@ -1,0 +1,22 @@
+[
+  {
+    "exitCode": 0,
+    "task": "lint",
+    "node": "24.22.2"
+  },
+  {
+    "exitCode": 0,
+    "task": "typecheck",
+    "node": "24.22.2"
+  },
+  {
+    "exitCode": 0,
+    "task": "test",
+    "node": "24.22.2"
+  },
+  {
+    "exitCode": 0,
+    "task": "build",
+    "node": "24.22.2"
+  }
+]

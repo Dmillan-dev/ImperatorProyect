@@ -1,0 +1,83 @@
+[
+  {
+    "alert": 39,
+    "package": "next",
+    "ghsa": "GHSA-673q-mjm6-r5xr",
+    "manifest": "frontend/package-lock.json",
+    "currentCandidateVersion": "16.4.2",
+    "firstPatchedVersion": "16.4.1",
+    "status": "FIXED IN CANDIDATE / MAIN ALERT STILL OPEN UNTIL MERGE"
+  },
+  {
+    "alert": 38,
+    "package": "next",
+    "ghsa": "GHSA-673q-mjm6-r5xr",
+    "manifest": "frontend/package.json",
+    "currentCandidateVersion": "16.4.2",
+    "firstPatchedVersion": "16.4.1",
+    "status": "FIXED IN CANDIDATE / MAIN ALERT STILL OPEN UNTIL MERGE"
+  },
+  {
+    "alert": 37,
+    "package": "next",
+    "ghsa": "GHSA-p3m5-59mp-jv5r",
+    "manifest": "frontend/package-lock.json",
+    "currentCandidateVersion": "16.4.2",
+    "firstPatchedVersion": "16.4.1",
+    "status": "FIXED IN CANDIDATE / MAIN ALERT STILL OPEN UNTIL MERGE"
+  },
+  {
+    "alert": 36,
+    "package": "next",
+    "ghsa": "GHSA-p3m5-59mp-jv5r",
+    "manifest": "frontend/package.json",
+    "currentCandidateVersion": "16.4.2",
+    "firstPatchedVersion": "16.4.1",
+    "status": "FIXED IN CANDIDATE / MAIN ALERT STILL OPEN UNTIL MERGE"
+  },
+  {
+    "alert": 35,
+    "package": "next",
+    "ghsa": "GHSA-2464-fhr4-w9xw",
+    "manifest": "frontend/package-lock.json",
+    "currentCandidateVersion": "16.4.2",
+    "firstPatchedVersion": "16.4.1",
+    "status": "FIXED IN CANDIDATE / MAIN ALERT STILL OPEN UNTIL MERGE"
+  },
+  {
+    "alert": 34,
+    "package": "next",
+    "ghsa": "GHSA-2464-fhr4-w9xw",
+    "manifest": "frontend/package.json",
+    "currentCandidateVersion": "16.4.2",
+    "firstPatchedVersion": "16.4.1",
+    "status": "FIXED IN CANDIDATE / MAIN ALERT STILL OPEN UNTIL MERGE"
+  },
+  {
+    "alert": 33,
+    "package": "undici",
+    "ghsa": "GHSA-xjj6-f33q-929c",
+    "manifest": "frontend/package-lock.json",
+    "currentCandidateVersion": "8.12.3",
+    "firstPatchedVersion": "8.12.2",
+    "status": "FIXED IN CANDIDATE / MAIN ALERT STILL OPEN UNTIL MERGE"
+  },
+  {
+    "alert": 31,
+    "package": "@vitest/mocker",
+    "ghsa": "GHSA-qxg6-89mg-rqv8",
+    "manifest": "frontend/package-lock.json",
+    "currentCandidateVersion": "4.1.12",
+    "firstPatchedVersion": "4.1.12",
+    "status": "FIXED IN CANDIDATE / MAIN ALERT STILL OPEN UNTIL MERGE"
+  },
+  {
+    "alert": 30,
+    "package": "@vitest/mocker",
+    "ghsa": "GHSA-xp26-3454-mjgp",
+    "manifest": "frontend/package-lock.json",
+    "currentCandidateVersion": "4.1.12",
+    "firstPatchedVersion": "4.1.12",
+    "status": "FIXED IN CANDIDATE / MAIN ALERT STILL OPEN UNTIL MERGE"
+  }
+]

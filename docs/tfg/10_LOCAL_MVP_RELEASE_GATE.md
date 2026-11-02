@@ -1,6 +1,12 @@
 # Gate de entrega local — A-S3 y A-S4
 
-## Control vigente — 27/10/2026
+## Control vigente — 02/11/2026
+
+**MVP local todavía NO-GO formal.** El [candidato de seguridad](evidence/2026-11-02-security-alerts/README.md), fuente `2539635`, cubre las nueve alertas GitHub y los nuevos H/C corregibles de imagen, con cuatro IDs exactos 0 H/C corregibles / 0 secretos, 174 unitarios + 35 integración + 44 frontend PASS y auditoría de producción 0. Moderates de tooling permanecen documentados; no se persigue un cero absoluto mediante upgrades generales.
+
+Faltan publicación/CI/revisión del reemplazo, aceptación explícita del [nuevo R-20](evidence/2026-11-02-security-alerts/R20_PROPOSED_DECISION.json) (`accepted: false`, 23 CVE conservadores / 21 H/C, nueva SQLite sin fix), disposición independiente R-23 y ensayo completo del conjunto Docker exacto. Después A-S3 formal y A-S4: memoria, ensayo humano medido de doce minutos en inglés, grabación narrada y revisión académica. No se presupone fecha/tutor ni aprobación del alcance por el centro. TFG-A IN PROGRESS; AWS/producción/datos reales bloqueados.
+
+## Registro histórico — 27/10/2026
 
 **Entrega local actual NO-GO formal.** El [candidato de seguridad](evidence/2026-10-27-local-security/README.md), SHA `64c38c2`, consigue 0 H/C corregibles y 0 secretos en cuatro imágenes exactas, D094 reproducible y regresión 174 unitarios + 35 integración + 44 frontend PASS. No hay CI de publicación nuevo ni aceptación vigente de R-20: la [propuesta](evidence/2026-10-27-local-security/R20_PROPOSED_DECISION.json) permanece `accepted: false`, con caducidad propuesta 03/11/2026 00:00 Europe/Madrid, sin renovación automática.
 

@@ -1,0 +1,14 @@
+Version: 0.74.0
+Vulnerability DB:
+  Version: 2
+  UpdatedAt: 2026-11-02 07:17:05.526948404 +0000 UTC
+  NextUpdate: 2026-11-03 07:17:05.526947983 +0000 UTC
+  DownloadedAt: 2026-11-02 10:38:00.120205218 +0000 UTC
+Java DB:
+  Version: 1
+  UpdatedAt: 2026-11-02 01:21:00.147683029 +0000 UTC
+  NextUpdate: 2026-11-05 01:21:00.147682798 +0000 UTC
+  DownloadedAt: 2026-11-02 10:39:32.9415031 +0000 UTC
+Check Bundle:
+  Digest: sha256:b591e9190cff4aa4e385b1a25bccfd9ecf178d3c77fd194e1410b7ce7e1df058
+  DownloadedAt: 2026-10-27 00:28:44.252702078 +0000 UTC

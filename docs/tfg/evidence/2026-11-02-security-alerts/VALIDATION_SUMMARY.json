@@ -1,0 +1,49 @@
+{
+  "technicalSourceSha": "25396350c40ed7dc13b8aa136d85f809292d4519",
+  "baseMain": "35e43ea2829f43c4f48bd80a40a1b62bdf57129a",
+  "githubAlerts": 9,
+  "uniqueGitHubAdvisories": 6,
+  "alertsFixedInCandidate": true,
+  "alertsOnMainStillOpenUntilMerge": true,
+  "unitTests": 174,
+  "integrationTests": 35,
+  "frontendTests": 44,
+  "frontendLintTypesBuild": "PASS on isolated Node24.22.2",
+  "playwright": {
+    "passed": 9,
+    "skipped": 6,
+    "interceptedApi": true,
+    "fullDockerRehearsal": false
+  },
+  "npmAuditProduction": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "npmAuditComplete": {
+    "info": 0,
+    "low": 0,
+    "moderate": 16,
+    "high": 0,
+    "critical": 0,
+    "total": 16
+  },
+  "trivySourceWithDevHighCritical": 0,
+  "imageFixableHighCritical": 0,
+  "imageSecrets": 0,
+  "gitleaksSourceAndHistory": 0,
+  "historyCommitsScanned": 171,
+  "postgresReusedExactId": "sha256:7abef3795579f1bab7e4f5364c4ac85577a50a27378daeedfdf0ea78a495059d",
+  "postgresFreshlyScanned": true,
+  "postgresRebuilt": false,
+  "fullMvpRuntime": false,
+  "r20Accepted": false,
+  "githubCi": "PENDING publication / local checks do not substitute GitHub CI",
+  "aS3": "FORMAL NO-GO",
+  "aS4": "PENDING human rehearsal/recording/review",
+  "tfgA": "IN PROGRESS",
+  "aws": "BLOCKED"
+}

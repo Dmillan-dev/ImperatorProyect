@@ -1,6 +1,12 @@
 # A-S3 Evidencia y versión
 
-## Control vigente — 27/10/2026
+## Control vigente — 02/11/2026
+
+Se conserva el cierre histórico; **el candidato actual no está formalmente cerrado**. [Código, tres nuevos índices y PostgreSQL retenido](evidence/2026-11-02-security-alerts/candidate-images.json), fuente `2539635`, con escaneos actuales 0 H/C corregibles / 0 secretos y regresión 174 unitarios + 35 integración + 44 frontend PASS. No se atribuye una nueva construcción a PostgreSQL ni se transfieren los resultados a imágenes de CI.
+
+Pendientes: CI/revisión y merge del reemplazo acotado, [R-20 explícito](evidence/2026-11-02-security-alerts/R20_PROPOSED_DECISION.json) para 23 CVE conservadores incluyendo la nueva SQLite, disposición R-23 por advisory retirado y ensayo completo Docker/persistencia/recovery de esos mismos artefactos. Las nueve alertas de main se cierran por recálculo tras integrar, no por descartar manualmente findings. [Ruta al MVP local](evidence/2026-11-02-security-alerts/README.md). A-S4/TFG-A IN PROGRESS; AWS BLOCKED.
+
+## Registro histórico — 27/10/2026
 
 El cierre histórico se preserva; el nuevo candidato **no está formalmente cerrado**. SHA de código `64c38c2`, [digests/capas/orígenes exactos](evidence/2026-10-27-local-security/candidate-images.json), D094 repetible, escaneos de cuatro imágenes 0 H/C corregibles / 0 secretos y regresión 174 unitarios + 35 integración + 44 frontend PASS. Backend/migration se reutilizan con correspondencia de fuentes ejecutables, sin atribuirles una nueva construcción.
 

@@ -1,0 +1,196 @@
+[
+  {
+    "number": 81,
+    "url": "https://github.com/Dmillan-dev/ImperatorProyect/pull/81",
+    "head": "08f26db41c00c0b86978c50d61b07d2e4ca6885e",
+    "title": "chore(deps): bump the npm-minor-and-patch group in /frontend with 13 updates",
+    "files": [
+      "frontend/package-lock.json",
+      "frontend/package.json"
+    ],
+    "checks": [
+      {
+        "name": "PostgreSQL D094 supply-chain gate",
+        "conclusion": "success",
+        "finishedAt": "2026-10-26T06:44:48Z"
+      },
+      {
+        "name": "Source, dependency and configuration scan",
+        "conclusion": "success",
+        "finishedAt": "2026-10-26T06:43:39Z"
+      },
+      {
+        "name": "Java 21 Maven verification",
+        "conclusion": "success",
+        "finishedAt": "2026-10-26T06:43:43Z"
+      },
+      {
+        "name": "Full Git history secret scan",
+        "conclusion": "success",
+        "finishedAt": "2026-10-26T06:43:24Z"
+      },
+      {
+        "name": "Application image scan",
+        "conclusion": "success",
+        "finishedAt": "2026-10-26T06:45:33Z"
+      },
+      {
+        "name": "CodeQL",
+        "conclusion": "neutral",
+        "finishedAt": "2026-10-26T06:42:55Z"
+      },
+      {
+        "name": "submit-maven",
+        "conclusion": "success",
+        "finishedAt": "2026-10-26T06:43:23Z"
+      }
+    ],
+    "recommendation": "Do not merge separately now; close as superseded only after the bounded replacement is reviewed, green and merged.",
+    "reason": "Broad unnecessary batch and stale October 26 green"
+  },
+  {
+    "number": 83,
+    "url": "https://github.com/Dmillan-dev/ImperatorProyect/pull/83",
+    "head": "0453ba4dc818d16f6d808869e05f44ae4acbcdf5",
+    "title": "chore(deps-dev): bump undici from 8.10.2 to 8.12.3 in /frontend",
+    "files": [
+      "frontend/package-lock.json"
+    ],
+    "checks": [
+      {
+        "name": "Full Git history secret scan",
+        "conclusion": "success",
+        "finishedAt": "2026-10-29T11:58:44Z"
+      },
+      {
+        "name": "PostgreSQL D094 supply-chain gate",
+        "conclusion": "failure",
+        "finishedAt": "2026-10-29T11:59:30Z"
+      },
+      {
+        "name": "Application image scan",
+        "conclusion": "failure",
+        "finishedAt": "2026-10-29T11:59:40Z"
+      },
+      {
+        "name": "Source, dependency and configuration scan",
+        "conclusion": "failure",
+        "finishedAt": "2026-10-29T11:58:51Z"
+      },
+      {
+        "name": "Java 21 Maven verification",
+        "conclusion": "success",
+        "finishedAt": "2026-10-29T11:59:02Z"
+      },
+      {
+        "name": "CodeQL",
+        "conclusion": "neutral",
+        "finishedAt": "2026-10-29T11:58:16Z"
+      },
+      {
+        "name": "submit-maven",
+        "conclusion": "success",
+        "finishedAt": "2026-10-29T11:58:37Z"
+      }
+    ],
+    "recommendation": "Do not merge separately now; close as superseded only after the bounded replacement is reviewed, green and merged.",
+    "reason": "Necessary patch included in this replacement; current isolated PR leaves other scan blockers."
+  },
+  {
+    "number": 84,
+    "url": "https://github.com/Dmillan-dev/ImperatorProyect/pull/84",
+    "head": "d201ebe4a3f5ac7e7599f4406668f3770d9e462d",
+    "title": "chore(deps): bump next from 16.3.8 to 16.4.1 in /frontend",
+    "files": [
+      "frontend/package-lock.json",
+      "frontend/package.json"
+    ],
+    "checks": [
+      {
+        "name": "PostgreSQL D094 supply-chain gate",
+        "conclusion": "failure",
+        "finishedAt": "2026-10-31T15:52:08Z"
+      },
+      {
+        "name": "Application image scan",
+        "conclusion": "failure",
+        "finishedAt": "2026-10-31T15:52:25Z"
+      },
+      {
+        "name": "Source, dependency and configuration scan",
+        "conclusion": "success",
+        "finishedAt": "2026-10-31T15:51:53Z"
+      },
+      {
+        "name": "Full Git history secret scan",
+        "conclusion": "success",
+        "finishedAt": "2026-10-31T15:51:29Z"
+      },
+      {
+        "name": "Java 21 Maven verification",
+        "conclusion": "success",
+        "finishedAt": "2026-10-31T15:51:53Z"
+      },
+      {
+        "name": "CodeQL",
+        "conclusion": "neutral",
+        "finishedAt": "2026-10-31T15:51:02Z"
+      },
+      {
+        "name": "submit-maven",
+        "conclusion": "success",
+        "finishedAt": "2026-10-31T15:51:30Z"
+      }
+    ],
+    "recommendation": "Do not merge separately now; close as superseded only after the bounded replacement is reviewed, green and merged.",
+    "reason": "Necessary patch included in this replacement; current isolated PR leaves other scan blockers."
+  },
+  {
+    "number": 85,
+    "url": "https://github.com/Dmillan-dev/ImperatorProyect/pull/85",
+    "head": "45e58cbccbc1f571e06dca8a6b4dd2acb0610950",
+    "title": "chore(deps): bump node from 24.20.0-bookworm-slim to 24.22.2-bookworm-slim in /infra/docker/frontend",
+    "files": [
+      "infra/docker/frontend/Dockerfile"
+    ],
+    "checks": [
+      {
+        "name": "Source, dependency and configuration scan",
+        "conclusion": "failure",
+        "finishedAt": "2026-11-02T07:20:39Z"
+      },
+      {
+        "name": "Application image scan",
+        "conclusion": "failure",
+        "finishedAt": "2026-11-02T07:21:20Z"
+      },
+      {
+        "name": "PostgreSQL D094 supply-chain gate",
+        "conclusion": "failure",
+        "finishedAt": "2026-11-02T07:21:16Z"
+      },
+      {
+        "name": "Full Git history secret scan",
+        "conclusion": "success",
+        "finishedAt": "2026-11-02T07:20:16Z"
+      },
+      {
+        "name": "Java 21 Maven verification",
+        "conclusion": "success",
+        "finishedAt": "2026-11-02T07:20:52Z"
+      },
+      {
+        "name": "CodeQL",
+        "conclusion": "neutral",
+        "finishedAt": "2026-11-02T07:19:52Z"
+      },
+      {
+        "name": "submit-maven",
+        "conclusion": "success",
+        "finishedAt": "2026-11-02T07:20:15Z"
+      }
+    ],
+    "recommendation": "Do not merge separately now; close as superseded only after the bounded replacement is reviewed, green and merged.",
+    "reason": "Necessary patch included in this replacement; current isolated PR leaves other scan blockers."
+  }
+]
