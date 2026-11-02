@@ -2,6 +2,11 @@
 
 FROM flyway/flyway:13.7.0@sha256:e613cab576abcaf09d64b652fbd5e6fd6df9057e0933a35d508e793caf91352a
 
+# CVE-2026-111497: patch only the installed Brotli runtime library.
+ADD --checksum=sha256:70b188a86d81f30d7510aab30e25d638ed5037dded6691af1533952b71ac61de \
+    https://security.ubuntu.com/ubuntu/pool/main/b/brotli/libbrotli1_1.1.0-2ubuntu0.1_amd64.deb \
+    /tmp/imperator-libbrotli1.deb
+
 # Scoped security patch; keep the pinned Flyway base unchanged.
 ADD --checksum=sha256:219f43b1cd836a4da550938db5fda93160d269d39a4edcf1f1ce698a470db797 \
     https://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl3t64_3.0.13-0ubuntu3.16_amd64.deb \
@@ -37,9 +42,11 @@ USER root
 # Remove only unused drivers containing the affected shaded Jackson copies.
 RUN chmod 0644 /flyway/lib/jackson-core-2.22.3.jar /flyway/lib/jackson-databind-2.22.3.jar \
         /flyway/lib/jackson-core-3.1.7.jar /flyway/lib/jackson-databind-3.1.7.jar \
-    && dpkg --install /tmp/imperator-libssl3t64.deb /tmp/imperator-openssl.deb \
-    && rm -f /tmp/imperator-libssl3t64.deb /tmp/imperator-openssl.deb /var/log/dpkg.log \
-    && rm -rf /flyway/drivers/aws /flyway/drivers/couchbase \
+    && dpkg --install /tmp/imperator-libbrotli1.deb /tmp/imperator-libssl3t64.deb /tmp/imperator-openssl.deb \
+    && test "$(dpkg-query --showformat='${Version}' --show libbrotli1)" = "1.1.0-2ubuntu0.1" \
+    && rm -f /tmp/imperator-libbrotli1.deb /tmp/imperator-libssl3t64.deb /tmp/imperator-openssl.deb /var/log/dpkg.log \
+    && rm -rf /flyway/drivers/aws /flyway/drivers/couchbase /flyway/drivers/gcp \
+    && test ! -e /flyway/drivers/gcp \
     && rm -f /flyway/lib/jackson-core-2.22.2.jar /flyway/lib/jackson-databind-2.22.2.jar \
         /flyway/lib/jackson-core-3.1.6.jar /flyway/lib/jackson-databind-3.1.6.jar
 RUN rm -f \

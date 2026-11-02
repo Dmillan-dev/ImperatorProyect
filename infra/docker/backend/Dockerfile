@@ -19,6 +19,11 @@ RUN sed -i 's/\r$//' mvnw \
 
 FROM eclipse-temurin:21-jre-jammy@sha256:e9aaf73145bbd1f9f6ec7f6867dd75a44f34b1a6c32a813504bf4129be2d09d7 AS runtime
 
+# CVE-2026-111497: patch only the installed Brotli runtime library.
+ADD --checksum=sha256:908295e77a65219a62114c3c79690a3c99712274d1317c3ba47ffa2f8ea52ca5 \
+    https://security.ubuntu.com/ubuntu/pool/main/b/brotli/libbrotli1_1.0.9-2ubuntu0.1_amd64.deb \
+    /tmp/imperator-libbrotli1.deb
+
 # R-17: patch only OpenSSL; preserve the pinned Java runtime and other OS packages.
 ADD --checksum=sha256:d1b4636e32ac6d3b95d583ac05ac548b1aa248414bae1c51b14f54be0f8fd7bc \
     https://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl3_3.0.2-0ubuntu1.30_amd64.deb \
@@ -27,8 +32,9 @@ ADD --checksum=sha256:a5b9484a287aba47096fa9ea9821c5c98cf95b8dd726786e7c3a3311fb
     https://security.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_3.0.2-0ubuntu1.30_amd64.deb \
     /tmp/openssl.deb
 
-RUN dpkg --install /tmp/libssl3.deb /tmp/openssl.deb \
-    && rm -f /tmp/libssl3.deb /tmp/openssl.deb /var/log/dpkg.log
+RUN dpkg --install /tmp/imperator-libbrotli1.deb /tmp/libssl3.deb /tmp/openssl.deb \
+    && test "$(dpkg-query --showformat='${Version}' --show libbrotli1)" = "1.0.9-2ubuntu0.1" \
+    && rm -f /tmp/imperator-libbrotli1.deb /tmp/libssl3.deb /tmp/openssl.deb /var/log/dpkg.log
 
 ARG VCS_REF
 
