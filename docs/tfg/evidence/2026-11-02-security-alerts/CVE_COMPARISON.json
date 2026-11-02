@@ -1,0 +1,52 @@
+{
+  "previousConservativeCves": 25,
+  "currentConservativeCves": 23,
+  "currentUniqueHighCriticalCves": 21,
+  "residualPackageBindings": 90,
+  "highCriticalRows": 82,
+  "addedHighCriticalCves": [
+    "CVE-2026-119373"
+  ],
+  "removedVendorNotAffected": [
+    {
+      "cve": "CVE-2026-76642",
+      "status": "DEBIAN BOOKWORM NOT AFFECTED",
+      "reason": "Vendor says vulnerable code was introduced after the 2.38 branch installed here; this is a vendor applicability correction, not a package repair or scanner suppression.",
+      "url": "https://security-tracker.debian.org/tracker/CVE-2026-76642",
+      "installedVersion": "2.38.1-5+deb12u3",
+      "removedFromCurrentTrivy": true
+    },
+    {
+      "cve": "CVE-2026-78408",
+      "status": "DEBIAN BOOKWORM NOT AFFECTED",
+      "reason": "Vendor says vulnerable code was introduced after the 2.38 branch installed here; this is a vendor applicability correction, not a package repair or scanner suppression.",
+      "url": "https://security-tracker.debian.org/tracker/CVE-2026-78408",
+      "installedVersion": "2.38.1-5+deb12u3",
+      "removedFromCurrentTrivy": true
+    },
+    {
+      "cve": "CVE-2026-78409",
+      "status": "DEBIAN BOOKWORM NOT AFFECTED",
+      "reason": "Vendor says vulnerable code was introduced after the 2.38 branch installed here; this is a vendor applicability correction, not a package repair or scanner suppression.",
+      "url": "https://security-tracker.debian.org/tracker/CVE-2026-78409",
+      "installedVersion": "2.38.1-5+deb12u3",
+      "removedFromCurrentTrivy": true
+    }
+  ],
+  "allFindingIdentifiers": 201,
+  "allUniqueCves": 192,
+  "otherAdvisoryIdentifiers": [
+    "DLA-4783-1",
+    "DLA-4792-1",
+    "DLA-4854-1",
+    "DLA-4867-1",
+    "TEMP-0290435-0B57B5",
+    "TEMP-0517018-A83CE6",
+    "TEMP-0628843-DBAD28",
+    "TEMP-0841856-B18BAF",
+    "TEMP-1147318-639065"
+  ],
+  "fixableHighCritical": 0,
+  "imageSecrets": 0,
+  "note": "23 is the reviewed conservative subset: 21 H/C plus two previously tracked lower-severity GnuTLS CVEs. All-severity inventories are preserved; counts are not an acceptance."
+}

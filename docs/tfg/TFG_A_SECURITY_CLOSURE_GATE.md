@@ -1,6 +1,18 @@
 # TFG-A Security Closure Gate — Explicit Owner Decision 2026-10-06
 
-## Control vigente — 22/10/2026
+## Control vigente — 02/11/2026
+
+**Imágenes: PASS técnico; cierre formal NO-GO.** Candidato `2539635`: nueve alertas GitHub cubiertas en las versiones corregidas, 174 unitarios + 35 integración + 44 frontend PASS, lint/tipos/build PASS con Node24.22.2, Playwright 9 PASS / 6 omisiones previstas. Cuatro imágenes exactas: 0 H/C corregibles y 0 secretos. Auditoría npm producción: 0; completa: 0 H/C y 16 entradas Moderate del mismo advisory minimatch.
+
+[R-20 propuesto](evidence/2026-11-02-security-alerts/R20_PROPOSED_DECISION.json), `accepted: false`: 23 CVE conservadores / 21 H/C, nueva SQLite High sin fix Bookworm. Caducidad propuesta 09/11/2026 00:00 Europe/Madrid; sin renovación o transferencia automática. R-23: advisory retirado, disposición independiente pendiente. Faltan CI/revisión del reemplazo, aprobación residual vigente, ensayo conjunto Docker/persistencia/recovery y A-S4 humana. A-S3 actual NO-GO, TFG-A IN PROGRESS y AWS BLOCKED. [Evidencias y límites](evidence/2026-11-02-security-alerts/README.md).
+
+## Registro histórico — 27/10/2026
+
+**Gate de imágenes técnico PASS; gate formal NO-GO.** El candidato `64c38c2` corrige Next/Zod/Vitest, incorpora el cambio Node de #82 y fija OpenSSL Bookworm sin modificar Maven/Spring. Cuatro imágenes exactas: 0 H/C corregibles y 0 secretos; D094 y reproducibilidad PASS. Unitarios 174, integración 35, frontend 44, lint/tipos/build PASS; Playwright 9 PASS / 6 omisiones previstas con API interceptada.
+
+[R-20 propuesto](evidence/2026-10-27-local-security/R20_PROPOSED_DECISION.json), `accepted: false`: 25 CVE conservadores (23 H/C) / 137 asociaciones, dos asociaciones Medium GnuTLS nuevas, caducidad propuesta 03/11/2026 00:00 Europe/Madrid, sin aceptación heredada. Quedan decisión independiente sobre undici de desarrollo, CI de publicación, aceptación explícita de R-20 y ensayo Docker completo/persistencia/recovery del conjunto exacto. R-23 OPEN independiente; A-S3 actual NO-GO; A-S4/TFG-A IN PROGRESS; AWS BLOCKED. [Resultados y límites](evidence/2026-10-27-local-security/README.md).
+
+## Registro histórico — 22/10/2026
 
 **R-20 EXPIRED; nueva ejecución local NO-GO hasta decisión explícita y preflight.** El candidato `641c09e` corrige Go/gosu y Vite; cuatro IDs exactos dan 0 H/C corregibles y 0 secretos, D094 y su repetición PASS. Se mantienen 26 CVE conservadores / 137 identidades, sin nuevas filas H/C respecto al corte 16/10. [Propuesta y evidencia](evidence/2026-10-22-security-go-vite/README.md), `accepted: false`. La integración completa y el ensayo Docker/RBAC/Flyway/persistencia/recovery del nuevo conjunto siguen pendientes. A-S3 conserva su cierre histórico; no se declara certificado formalmente este candidato. A-S4/TFG-A IN PROGRESS, R-23 OPEN y AWS BLOCKED.
 

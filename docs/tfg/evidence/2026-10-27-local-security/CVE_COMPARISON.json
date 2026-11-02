@@ -1,0 +1,66 @@
+{
+  "previousResidualCves": 26,
+  "currentResidualCves": 25,
+  "currentUniqueHighCriticalCves": 23,
+  "highCriticalRows": 129,
+  "residualPackageBindings": 137,
+  "removedCves": [
+    "CVE-2026-84782"
+  ],
+  "newHighCriticalCves": [],
+  "addedBindings": [
+    {
+      "component": "candidate-migration",
+      "type": "ubuntu",
+      "cve": "CVE-2026-88648",
+      "package": "libgnutls30t64",
+      "installed": "3.8.3-1.1ubuntu3.6",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "path": null,
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-88648"
+    },
+    {
+      "component": "candidate-backend",
+      "type": "ubuntu",
+      "cve": "CVE-2026-88648",
+      "package": "libgnutls30",
+      "installed": "3.7.3-4ubuntu1.9",
+      "fixed": null,
+      "severity": "MEDIUM",
+      "status": "affected",
+      "path": null,
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-88648"
+    }
+  ],
+  "removedBindings": [
+    {
+      "component": "candidate-postgres",
+      "type": "debian",
+      "cve": "CVE-2026-84782",
+      "package": "openssl",
+      "installed": "3.0.20-1~deb12u2",
+      "fixed": null,
+      "severity": "HIGH",
+      "status": "affected",
+      "path": null,
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-84782"
+    },
+    {
+      "component": "candidate-postgres",
+      "type": "debian",
+      "cve": "CVE-2026-84782",
+      "package": "libssl3",
+      "installed": "3.0.20-1~deb12u2",
+      "fixed": null,
+      "severity": "HIGH",
+      "status": "affected",
+      "path": null,
+      "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-84782"
+    }
+  ],
+  "severityOrFixChanges": [],
+  "allCvesInFullInventory": 189,
+  "note": "25 is the conservative reviewed subset (23 H/C plus two previously tracked lower severity CVEs), not all scanner CVEs; raw reports retain all severities."
+}

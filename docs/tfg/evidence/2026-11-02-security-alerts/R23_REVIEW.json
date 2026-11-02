@@ -1,0 +1,15 @@
+{
+  "queriedUtc": "2026-11-02T10:50:05.6014247Z",
+  "ghsa": "GHSA-vfj7-8cjw-p6xm",
+  "updatedAt": "2026-10-23T12:53:05Z",
+  "cve": "CVE-2026-93687",
+  "withdrawnAt": "2026-10-23T12:53:02Z",
+  "summary": "Withdrawn Advisory: braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+  "url": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+  "historicalStatus": "OPEN / NO FIX AVAILABLE",
+  "currentDisposition": "OPEN / DISPOSITION REVIEW REQUIRED",
+  "proposedDisposition": "CLOSE AS ADVISORY WITHDRAWN, not repaired; no braces update",
+  "dispositionApproved": false,
+  "dependencyChanged": false,
+  "automaticClosure": false
+}

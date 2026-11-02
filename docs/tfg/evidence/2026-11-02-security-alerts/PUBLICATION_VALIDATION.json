@@ -1,0 +1,15 @@
+{
+  "technicalSourceSha": "25396350c40ed7dc13b8aa136d85f809292d4519",
+  "fullStagedWhitespaceExit": 2,
+  "codeAndOrdinaryDocumentationWhitespaceExit": 0,
+  "warnings": 1483,
+  "warningsOutsideBytePreservedEvidence": 0,
+  "evidenceBytesPreserved": true,
+  "historicalEvidenceAndReceiptsUnchanged": true,
+  "secrets": 0,
+  "unrelatedDirectDependencyChanges": false,
+  "chaiPreserved": true,
+  "r20Accepted": false,
+  "publicationCi": "PENDING",
+  "fullRuntime": "PENDING"
+}

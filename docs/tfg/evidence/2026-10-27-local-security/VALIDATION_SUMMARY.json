@@ -1,0 +1,69 @@
+{
+  "sourceSha": "64c38c22a04f63d5cf38712064a040db0cc8bdf1",
+  "baseSha": "35e43ea2829f43c4f48bd80a40a1b62bdf57129a",
+  "backendRegressionSourceSha": "4e038a11e964f6901e91cea43b4855193f583bbd",
+  "backendCodeAndPostgresInputsUnchangedBetweenCandidates": true,
+  "unitTests": {
+    "passed": 174,
+    "failures": 0
+  },
+  "integration": {
+    "passed": 35,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "scope": "new PostgreSQL image, temporary synthetic tmpfs DB; not full Compose rehearsal"
+  },
+  "frontendTests": {
+    "passed": 44,
+    "failures": 0
+  },
+  "frontendControls": [
+    {
+      "task": "lint",
+      "exitCode": 0
+    },
+    {
+      "task": "typecheck",
+      "exitCode": 0
+    },
+    {
+      "task": "test",
+      "exitCode": 0
+    },
+    {
+      "task": "build",
+      "exitCode": 0
+    }
+  ],
+  "playwright": {
+    "passed": 9,
+    "skipped": 6,
+    "interceptedApi": true
+  },
+  "npmAuditProductionVulnerabilities": 0,
+  "npmAuditComplete": {
+    "high": 1,
+    "package": "undici",
+    "dev": true,
+    "status": "OPEN / separate decision"
+  },
+  "sourceTrivyCiPolicy": "PASS / default excludes development dependencies",
+  "sourceTrivyWithDevelopment": "High undici remains visible; full raw report retained",
+  "gitleaksTrackedSourceFindings": 0,
+  "gitleaksHistoryFindings": 0,
+  "gitleaksCommitsScanned": 169,
+  "imageFixableHighCritical": 0,
+  "imageSecrets": 0,
+  "postgresRuntimeReproducibility": true,
+  "fullComposeRuntime": false,
+  "githubCi": "PENDING / NOT PUSHED",
+  "r20Accepted": false,
+  "formalA_S3": "NO-GO",
+  "tfgA": "IN PROGRESS",
+  "aws": "BLOCKED",
+  "technicalImageGate": "PASS AT SCAN CUTOFF",
+  "furtherUpgradesApplied": false,
+  "originalDirtyCheckoutPreserved": true,
+  "deletedOldIntermediateImageCount": 1
+}

@@ -62,6 +62,7 @@ export class ApiClient {
         response.headers.get("content-length") ?? "0",
       );
       if (declaredSize > MAX_RESPONSE_BYTES) {
+        await response.body?.cancel();
         throw new ApiClientError(
           0,
           "RESPONSE_TOO_LARGE",
@@ -69,15 +70,7 @@ export class ApiClient {
           correlationId,
         );
       }
-      const text = await response.text();
-      if (new TextEncoder().encode(text).byteLength > MAX_RESPONSE_BYTES) {
-        throw new ApiClientError(
-          0,
-          "RESPONSE_TOO_LARGE",
-          "Response exceeds 1 MiB",
-          correlationId,
-        );
-      }
+      const text = await readBoundedResponse(response, correlationId);
 
       if (!response.ok) {
         const envelope = parseError(text, response.status, correlationId);
@@ -119,6 +112,37 @@ export class ApiClient {
     } finally {
       clearTimeout(timeout);
     }
+  }
+}
+
+async function readBoundedResponse(
+  response: Response,
+  correlationId: string,
+): Promise<string> {
+  if (!response.body) return "";
+  const reader = response.body.getReader();
+  const decoder = new TextDecoder();
+  let received = 0;
+  let text = "";
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      received += value.byteLength;
+      if (received > MAX_RESPONSE_BYTES) {
+        await reader.cancel();
+        throw new ApiClientError(
+          0,
+          "RESPONSE_TOO_LARGE",
+          "Response exceeds 1 MiB",
+          correlationId,
+        );
+      }
+      text += decoder.decode(value, { stream: true });
+    }
+    return text + decoder.decode();
+  } finally {
+    reader.releaseLock();
   }
 }
 

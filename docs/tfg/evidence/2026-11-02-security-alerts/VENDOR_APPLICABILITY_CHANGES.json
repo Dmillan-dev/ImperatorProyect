@@ -1,0 +1,26 @@
+[
+  {
+    "cve": "CVE-2026-76642",
+    "status": "DEBIAN BOOKWORM NOT AFFECTED",
+    "reason": "Vendor says vulnerable code was introduced after the 2.38 branch installed here; this is a vendor applicability correction, not a package repair or scanner suppression.",
+    "url": "https://security-tracker.debian.org/tracker/CVE-2026-76642",
+    "installedVersion": "2.38.1-5+deb12u3",
+    "removedFromCurrentTrivy": true
+  },
+  {
+    "cve": "CVE-2026-78408",
+    "status": "DEBIAN BOOKWORM NOT AFFECTED",
+    "reason": "Vendor says vulnerable code was introduced after the 2.38 branch installed here; this is a vendor applicability correction, not a package repair or scanner suppression.",
+    "url": "https://security-tracker.debian.org/tracker/CVE-2026-78408",
+    "installedVersion": "2.38.1-5+deb12u3",
+    "removedFromCurrentTrivy": true
+  },
+  {
+    "cve": "CVE-2026-78409",
+    "status": "DEBIAN BOOKWORM NOT AFFECTED",
+    "reason": "Vendor says vulnerable code was introduced after the 2.38 branch installed here; this is a vendor applicability correction, not a package repair or scanner suppression.",
+    "url": "https://security-tracker.debian.org/tracker/CVE-2026-78409",
+    "installedVersion": "2.38.1-5+deb12u3",
+    "removedFromCurrentTrivy": true
+  }
+]
