@@ -67,7 +67,8 @@ ADD --checksum=sha256:023a7017b75295fc7037c7a4352847f9516a36a82cc5e1650d6832d238
 RUN dpkg --install /tmp/imperator-apt.deb /tmp/imperator-libapt-pkg6.0.deb \
     && test "$(dpkg-query --showformat='${Version}' --show apt)" = "2.6.2" \
     && test "$(dpkg-query --showformat='${Version}' --show libapt-pkg6.0)" = "2.6.2" \
-    && rm -f /tmp/imperator-apt.deb /tmp/imperator-libapt-pkg6.0.deb /var/log/dpkg.log
+    && rm -f /tmp/imperator-apt.deb /tmp/imperator-libapt-pkg6.0.deb \
+        /var/log/dpkg.log /var/cache/ldconfig/aux-cache
 
 LABEL org.opencontainers.image.title="IMPERATOR PostgreSQL Runtime" \
       org.opencontainers.image.description="PostgreSQL 18.6 with rebuilt gosu and a pinned Debian security patch" \
