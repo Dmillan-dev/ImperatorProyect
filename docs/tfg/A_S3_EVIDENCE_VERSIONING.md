@@ -1,6 +1,12 @@
 # A-S3 Evidencia y versión
 
-## Control vigente — 02/11/2026
+## Control vigente — 11/11/2026
+
+**A-S3 actual NO-GO formal; cierre histórico preservado.** [Fuente `e30c16a`, construcción y cuatro imágenes exactas](evidence/2026-11-11-pr-security/candidate-images.json) se registran junto con escaneos, 174 unitarios + 35 integración + 44 frontend PASS y límites de Playwright. R-20 no tiene aceptación vigente: [41 CVE conservadores / 39 H/C y 18 nuevas observaciones](evidence/2026-11-11-pr-security/README.md), propuesta `accepted: false`, sin transferencia desde imágenes anteriores o hacia CI.
+
+Pendientes: CI/revisión de la publicación mínima, decisión explícita R-20 sobre los digests, disposición R-23 independiente y ensayo del conjunto exacto con RBAC, Flyway, persistencia y recovery. Después A-S4 humana: memoria, doce minutos reales en inglés, grabación narrada y revisión académica. TFG-A IN PROGRESS; AWS bloqueado.
+
+## Registro histórico — 02/11/2026
 
 Se conserva el cierre histórico; **el candidato actual no está formalmente cerrado**. [Código, tres nuevos índices y PostgreSQL retenido](evidence/2026-11-02-security-alerts/candidate-images.json), fuente `2539635`, con escaneos actuales 0 H/C corregibles / 0 secretos y regresión 174 unitarios + 35 integración + 44 frontend PASS. No se atribuye una nueva construcción a PostgreSQL ni se transfieren los resultados a imágenes de CI.
 

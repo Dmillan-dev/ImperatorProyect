@@ -70,18 +70,18 @@ Read-only GitHub/AWS evidence adapters and the optional Bedrock explanation adap
 
 ## Current stage
 
-**Local MVP implemented and demonstrated. Academic delivery remains in progress.** Status reviewed 22 October 2026; the security candidate is under review in [PR #79](https://github.com/Dmillan-dev/ImperatorProyect/pull/79).
+**Local MVP implemented and demonstrated. Academic delivery remains in progress.** Status reviewed 11 November 2026. The [current security candidate and release limits](docs/tfg/evidence/2026-11-11-pr-security/README.md) supersede the older scan results for release assessment.
 
 | Area                  | Evidence and limit                                                                                                                                                                         |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Product and runtime   | One synthetic case, four roles, Flyway, persistence after recreation and recovery demonstrated locally on 14 October.                                                                      |
-| Functional evaluation | 22 October candidate: 174 unit and 41 frontend tests, lint, types and build PASS; Playwright 9 passed / 6 intentional skips with intercepted API. Full integration and live candidate rehearsal remain pending. |
-| Exact-image security  | 22 October candidate: **0 fixable High/Critical and 0 secrets** across four exact image IDs. The conservative 26-CVE residual set remains visible; the new R-20 proposal is not approved. |
-| TFG delivery          | A-S3 evidence/version gate complete. Memory and English script prepared; measured human rehearsal, narrated recording and academic review pending.                                         |
+| Functional evaluation | Current candidate: 174 unit, 35 PostgreSQL integration and 44 frontend tests PASS; lint, types and production build PASS. Playwright: 9 passed / 6 intentional skips with intercepted API. |
+| Exact-image security  | Current candidate: **0 fixable High/Critical and 0 secrets** across four exact image IDs at the recorded scan cutoff. There are 39 unique H/C residual CVEs; R-20 is not approved for these artifacts. |
+| TFG delivery          | Current A-S3 formal closure remains blocked by the security decision and complete candidate runtime rehearsal. Memory and English script prepared; measured human rehearsal, narrated recording and academic review pending. |
 | AWS and providers     | Live AWS deployment, external identity conformance and real provider validation remain gated.                                                                                              |
 
 > [!IMPORTANT]
-> **R-20 expired on 19 October 2026 at 00:00 Europe/Madrid.** The new proposal remains `accepted: false`; passing scans do not renew acceptance or authorize the live MVP. R-23 development tooling remains independently open. [Candidate digests, scans, conditions and proposed expiry](docs/tfg/evidence/2026-10-22-security-go-vite/README.md).
+> **R-20 has no current acceptance.** The last approved decision expired on 19 October 2026 at 00:00 Europe/Madrid; subsequent proposals were not approvals. The current review remains `accepted: false` and distinguishes the 39 H/C residual CVEs from the complete inventory. R-23 remains a separate disposition review following its advisory's withdrawal. [Exact artifacts and release conditions](docs/tfg/evidence/2026-11-11-pr-security/README.md).
 
 ## Explore locally
 

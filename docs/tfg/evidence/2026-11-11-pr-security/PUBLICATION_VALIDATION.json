@@ -1,0 +1,22 @@
+{
+  "historicalEvidenceFilesByteIdentical": 1129,
+  "localLinksChecked": 98,
+  "brokenLocalLinks": [],
+  "allNewJsonValid": true,
+  "ordinaryWhitespaceExitCode": 0,
+  "technicalFiles": 8,
+  "codeBehaviorChanged": false,
+  "javaMavenSpringChanged": false,
+  "baseImageDigestsChanged": false,
+  "workflowsTerraformAwsChanged": false,
+  "r20Accepted": false,
+  "r23Closed": false,
+  "firstHostFrontendBuildReceiptExcluded": true,
+  "publicationCi": "PENDING final HEAD",
+  "stagedFiles": 53,
+  "fullStagedWhitespaceExitCode": 2,
+  "rawEvidenceWhitespaceWarnings": 1888,
+  "warningsOutsideNewEvidence": 0,
+  "ordinaryStagedWhitespaceExitCode": 0,
+  "newEvidenceGitleaksFindings": 0
+}

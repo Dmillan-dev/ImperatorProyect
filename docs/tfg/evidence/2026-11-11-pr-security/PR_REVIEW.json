@@ -1,0 +1,20 @@
+[
+  {
+    "number": 88,
+    "head": "688b9e56975b7a96fd9bff02fa1985f698502f0b",
+    "recommendation": "Supersede after replacement merges; do not merge the old 16.4.4 candidate.",
+    "reason": "Green checks completed 2 November, before the APT advisory; 16.4.5 contains the official security fixes absent from 16.4.4."
+  },
+  {
+    "number": 89,
+    "head": "9d84ad2ac6c951f5a27753883ae5b6eccc2ab5ba",
+    "recommendation": "Close/defer broad Maven maintenance for after local MVP; do not merge.",
+    "reason": "17 updates include Maven 3.10.0 but project enforces 3.9.16 and CI pins its checksum. Do not weaken the gate or expand Spring/Java scope for this batch."
+  },
+  {
+    "number": 90,
+    "head": "d6e8d39458ce9d1c0f73d3b4c697f7cda8082a5a",
+    "recommendation": "Close/defer broad npm maintenance after replacement security PR merges.",
+    "reason": "12 direct updates are not needed for the local security gate. Failed image jobs identify APT in unchanged bases, not proof the entire npm batch is defective."
+  }
+]

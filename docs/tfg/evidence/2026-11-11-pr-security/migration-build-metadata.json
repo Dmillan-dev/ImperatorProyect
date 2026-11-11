@@ -1,0 +1,134 @@
+{
+  "buildx.build.provenance": {
+    "builder": {
+      "id": ""
+    },
+    "buildType": "https://mobyproject.org/buildkit@v1",
+    "materials": [
+      {
+        "uri": "pkg:docker/docker/dockerfile@1.7?digest=sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e\u0026platform=linux%2Famd64",
+        "digest": {
+          "sha256": "a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e"
+        }
+      },
+      {
+        "uri": "pkg:docker/docker/dockerfile@1.7?digest=sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e",
+        "digest": {
+          "sha256": "a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e"
+        }
+      },
+      {
+        "uri": "pkg:docker/flyway/flyway@13.7.0?digest=sha256:e613cab576abcaf09d64b652fbd5e6fd6df9057e0933a35d508e793caf91352a\u0026platform=linux%2Famd64",
+        "digest": {
+          "sha256": "e613cab576abcaf09d64b652fbd5e6fd6df9057e0933a35d508e793caf91352a"
+        }
+      },
+      {
+        "uri": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.22.3/jackson-core-2.22.3.jar",
+        "digest": {
+          "sha256": "8a501126a385b25841915d839508f8a66e2a0dbc8a6709d055ef3b3e852b094c"
+        }
+      },
+      {
+        "uri": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.22.3/jackson-databind-2.22.3.jar",
+        "digest": {
+          "sha256": "556db5439e206114346043f68d200497dc96a0bca62a360a81784092ebd0e0a9"
+        }
+      },
+      {
+        "uri": "https://repo.maven.apache.org/maven2/tools/jackson/core/jackson-core/3.1.7/jackson-core-3.1.7.jar",
+        "digest": {
+          "sha256": "7608c367fd8a92666d28711519599543c180298259963184ce04d2947a8f71e7"
+        }
+      },
+      {
+        "uri": "https://repo.maven.apache.org/maven2/tools/jackson/core/jackson-databind/3.1.7/jackson-databind-3.1.7.jar",
+        "digest": {
+          "sha256": "48c781de87e2016e1f0d973748a27130f11643e7ac080173f40e2d9669d84be3"
+        }
+      },
+      {
+        "uri": "https://security.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.8.4ubuntu0.1_amd64.deb",
+        "digest": {
+          "sha256": "ad2ea7f107f250ba88b0bfdba31812a341e3247589647aa2b03b9dc4e8abf8ed"
+        }
+      },
+      {
+        "uri": "https://security.ubuntu.com/ubuntu/pool/main/a/apt/libapt-pkg6.0t64_2.8.4ubuntu0.1_amd64.deb",
+        "digest": {
+          "sha256": "a50f3e68a793f90b05f44a4b5f2f59f3ec7687e39b5d8bbd1da44c84671fa3d6"
+        }
+      },
+      {
+        "uri": "https://security.ubuntu.com/ubuntu/pool/main/b/brotli/libbrotli1_1.1.0-2ubuntu0.1_amd64.deb",
+        "digest": {
+          "sha256": "70b188a86d81f30d7510aab30e25d638ed5037dded6691af1533952b71ac61de"
+        }
+      },
+      {
+        "uri": "https://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl3t64_3.0.13-0ubuntu3.16_amd64.deb",
+        "digest": {
+          "sha256": "219f43b1cd836a4da550938db5fda93160d269d39a4edcf1f1ce698a470db797"
+        }
+      },
+      {
+        "uri": "https://security.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_3.0.13-0ubuntu3.16_amd64.deb",
+        "digest": {
+          "sha256": "675b84971ffd4467707008c25ef7520f90ea7c23ef27b7a76b0dccf1d7c4dc3f"
+        }
+      }
+    ],
+    "invocation": {
+      "configSource": {
+        "entryPoint": "Dockerfile"
+      },
+      "parameters": {
+        "frontend": "gateway.v0",
+        "args": {
+          "build-arg:SOURCE_DATE_EPOCH": "1794416933",
+          "build-arg:VCS_REF": "e30c16a7b7d5741dc3626fe11f850b6e9366bfbc",
+          "cmdline": "docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e",
+          "source": "docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e"
+        },
+        "locals": [
+          {
+            "name": "context"
+          },
+          {
+            "name": "dockerfile"
+          }
+        ],
+        "root": {
+          "configSource": {
+            "path": "Dockerfile"
+          },
+          "request": {
+            "args": {
+              "build-arg:SOURCE_DATE_EPOCH": "1794416933",
+              "build-arg:VCS_REF": "e30c16a7b7d5741dc3626fe11f850b6e9366bfbc",
+              "vcs:localdir:context": "output\\tfg\\pr-review-20261111\\final-source-snapshot",
+              "vcs:localdir:dockerfile": "output\\tfg\\pr-review-20261111\\final-source-snapshot\\infra\\aws\\images\\migration",
+              "vcs:revision": "69e4b90cbc57e4e35ce3abe764ddd517de71e33f",
+              "vcs:source": "https://github.com/Dmillan-dev/ImperatorProyect.git"
+            }
+          }
+        },
+        "compatibilityVersion": 30
+      },
+      "environment": {
+        "platform": "linux/amd64"
+      }
+    }
+  },
+  "buildx.build.ref": "desktop-linux/desktop-linux/l923j1648qt3gphmsvvoy2hrz",
+  "containerimage.descriptor": {
+    "mediaType": "application/vnd.oci.image.index.v1+json",
+    "digest": "sha256:cb87d9906327e7670108363308994894687ab6ec1b87a7821d0f60f99c280325",
+    "size": 856,
+    "annotations": {
+      "org.opencontainers.image.created": "2026-11-11T17:08:53Z"
+    }
+  },
+  "containerimage.digest": "sha256:cb87d9906327e7670108363308994894687ab6ec1b87a7821d0f60f99c280325",
+  "image.name": "docker.io/imperator/migration:e30c16a7b7d5741dc3626fe11f850b6e9366bfbc"
+}

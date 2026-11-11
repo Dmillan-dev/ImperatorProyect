@@ -1,0 +1,200 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 4.05kB done
+#1 DONE 0.1s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+#2 DONE 0.7s
+
+#3 docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+#3 resolve docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e 0.0s done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/eclipse-temurin:21-jdk-jammy@sha256:6adefddd4a20bceef702cedb0b03952fcd7691f9c7ccffe27014992abc0b46bd
+#4 DONE 0.6s
+
+#5 [internal] load metadata for docker.io/library/eclipse-temurin:21-jre-jammy@sha256:e9aaf73145bbd1f9f6ec7f6867dd75a44f34b1a6c32a813504bf4129be2d09d7
+#5 DONE 0.6s
+
+#6 [runtime  2/13] ADD --checksum=sha256:908295e77a65219a62114c3c79690a3c99712274d1317c3ba47ffa2f8ea52ca5     https://security.ubuntu.com/ubuntu/pool/main/b/brotli/libbrotli1_1.0.9-2ubuntu0.1_amd64.deb     /tmp/imperator-libbrotli1.deb
+#6 DONE 0.0s
+
+#7 [runtime  7/13] ADD --checksum=sha256:3a6fbab029e15ca7b8da642c17ec110995a6e3a0bc40eaa08e239cfc94d6c426     https://security.ubuntu.com/ubuntu/pool/main/a/apt/libapt-pkg6.0_2.4.15ubuntu0.1_amd64.deb     /tmp/imperator-libapt-pkg6.0.deb
+#7 DONE 0.0s
+
+#8 [runtime  4/13] ADD --checksum=sha256:a5b9484a287aba47096fa9ea9821c5c98cf95b8dd726786e7c3a3311fb8eb3b4     https://security.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_3.0.2-0ubuntu1.30_amd64.deb     /tmp/openssl.deb
+#8 DONE 0.0s
+
+#9 [internal] load build context
+#9 DONE 0.0s
+
+#10 [runtime  3/13] ADD --checksum=sha256:d1b4636e32ac6d3b95d583ac05ac548b1aa248414bae1c51b14f54be0f8fd7bc     https://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl3_3.0.2-0ubuntu1.30_amd64.deb     /tmp/libssl3.deb
+#10 DONE 0.0s
+
+#11 [runtime  6/13] ADD --checksum=sha256:2d4db9a3017c5364e50af5bc2f0c76828b52933b682eff4728f1211e081c6736     https://security.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.4.15ubuntu0.1_amd64.deb     /tmp/imperator-apt.deb
+#11 DONE 0.0s
+
+#12 [build 1/7] FROM docker.io/library/eclipse-temurin:21-jdk-jammy@sha256:6adefddd4a20bceef702cedb0b03952fcd7691f9c7ccffe27014992abc0b46bd
+#12 resolve docker.io/library/eclipse-temurin:21-jdk-jammy@sha256:6adefddd4a20bceef702cedb0b03952fcd7691f9c7ccffe27014992abc0b46bd 0.0s done
+#12 DONE 0.1s
+
+#13 [build 2/7] WORKDIR /workspace
+#13 CACHED
+
+#14 [runtime  1/13] FROM docker.io/library/eclipse-temurin:21-jre-jammy@sha256:e9aaf73145bbd1f9f6ec7f6867dd75a44f34b1a6c32a813504bf4129be2d09d7
+#14 resolve docker.io/library/eclipse-temurin:21-jre-jammy@sha256:e9aaf73145bbd1f9f6ec7f6867dd75a44f34b1a6c32a813504bf4129be2d09d7 0.1s done
+#14 DONE 0.1s
+
+#15 [runtime  2/13] ADD --checksum=sha256:908295e77a65219a62114c3c79690a3c99712274d1317c3ba47ffa2f8ea52ca5     https://security.ubuntu.com/ubuntu/pool/main/b/brotli/libbrotli1_1.0.9-2ubuntu0.1_amd64.deb     /tmp/imperator-libbrotli1.deb
+#15 CACHED
+
+#16 [runtime  3/13] ADD --checksum=sha256:d1b4636e32ac6d3b95d583ac05ac548b1aa248414bae1c51b14f54be0f8fd7bc     https://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl3_3.0.2-0ubuntu1.30_amd64.deb     /tmp/libssl3.deb
+#16 CACHED
+
+#17 [runtime  6/13] ADD --checksum=sha256:2d4db9a3017c5364e50af5bc2f0c76828b52933b682eff4728f1211e081c6736     https://security.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.4.15ubuntu0.1_amd64.deb     /tmp/imperator-apt.deb
+#17 CACHED
+
+#18 [runtime  5/13] RUN dpkg --install /tmp/imperator-libbrotli1.deb /tmp/libssl3.deb /tmp/openssl.deb     && test "$(dpkg-query --showformat='${Version}' --show libbrotli1)" = "1.0.9-2ubuntu0.1"     && rm -f /tmp/imperator-libbrotli1.deb /tmp/libssl3.deb /tmp/openssl.deb /var/log/dpkg.log
+#18 CACHED
+
+#19 [runtime  7/13] ADD --checksum=sha256:3a6fbab029e15ca7b8da642c17ec110995a6e3a0bc40eaa08e239cfc94d6c426     https://security.ubuntu.com/ubuntu/pool/main/a/apt/libapt-pkg6.0_2.4.15ubuntu0.1_amd64.deb     /tmp/imperator-libapt-pkg6.0.deb
+#19 CACHED
+
+#20 [runtime  4/13] ADD --checksum=sha256:a5b9484a287aba47096fa9ea9821c5c98cf95b8dd726786e7c3a3311fb8eb3b4     https://security.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_3.0.2-0ubuntu1.30_amd64.deb     /tmp/openssl.deb
+#20 CACHED
+
+#21 [runtime  8/13] RUN dpkg --install /tmp/imperator-apt.deb /tmp/imperator-libapt-pkg6.0.deb     && test "$(dpkg-query --showformat='${Version}' --show apt)" = "2.4.15ubuntu0.1"     && test "$(dpkg-query --showformat='${Version}' --show libapt-pkg6.0)" = "2.4.15ubuntu0.1"     && rm -f /tmp/imperator-apt.deb /tmp/imperator-libapt-pkg6.0.deb /var/log/dpkg.log
+#21 CACHED
+
+#9 [internal] load build context
+#9 transferring context:
+#9 transferring context: 814.99kB 0.1s done
+#9 DONE 0.2s
+
+#22 [runtime  9/13] RUN groupadd --gid 10001 imperator     && useradd --uid 10001 --gid 10001 --home-dir /opt/imperator        --no-create-home --shell /usr/sbin/nologin imperator     && mkdir -p /opt/imperator     && chown 10001:10001 /opt/imperator
+#22 DONE 2.3s
+
+#23 [runtime 10/13] WORKDIR /opt/imperator
+#23 DONE 0.1s
+
+#24 [build 3/7] RUN apt-get -o Acquire::Retries=0 update     && apt-get -o Acquire::Retries=0 install --yes --no-install-recommends unzip     && rm -rf /var/lib/apt/lists/*
+#24 2.288 Get:1 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+#24 2.329 Get:2 http://archive.ubuntu.com/ubuntu jammy InRelease [270 kB]
+#24 2.651 Get:3 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [96.7 kB]
+#24 2.665 Get:4 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+#24 2.700 Get:5 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [4,499 kB]
+#24 2.747 Get:6 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+#24 2.831 Get:7 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [266 kB]
+#24 2.889 Get:8 http://archive.ubuntu.com/ubuntu jammy/restricted amd64 Packages [164 kB]
+#24 2.923 Get:9 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [17.5 MB]
+#24 3.023 Get:10 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [8,044 kB]
+#24 3.444 Get:11 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1,328 kB]
+#24 3.726 Get:12 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages [1,792 kB]
+#24 3.768 Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [4,844 kB]
+#24 3.953 Get:14 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [8,368 kB]
+#24 4.397 Get:15 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1,631 kB]
+#24 5.008 Get:16 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [104 kB]
+#24 5.014 Get:17 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [35.6 kB]
+#24 5.016 Get:18 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [82.9 kB]
+#24 5.038 Fetched 49.4 MB in 3s (17.4 MB/s)
+#24 5.038 Reading package lists...
+#24 5.991 Reading package lists...
+#24 6.790 Building dependency tree...
+#24 6.986 Reading state information...
+#24 7.145 Suggested packages:
+#24 7.145   zip
+#24 7.174 The following NEW packages will be installed:
+#24 7.174   unzip
+#24 7.299 0 upgraded, 1 newly installed, 0 to remove and 24 not upgraded.
+#24 7.299 Need to get 175 kB of archives.
+#24 7.299 After this operation, 386 kB of additional disk space will be used.
+#24 7.299 Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 unzip amd64 6.0-26ubuntu3.2 [175 kB]
+#24 7.689 debconf: delaying package configuration, since apt-utils is not installed
+#24 7.726 Fetched 175 kB in 0s (440 kB/s)
+#24 7.762 Selecting previously unselected package unzip.
+#24 7.762 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 8183 files and directories currently installed.)
+#24 7.780 Preparing to unpack .../unzip_6.0-26ubuntu3.2_amd64.deb ...
+#24 7.789 Unpacking unzip (6.0-26ubuntu3.2) ...
+#24 7.855 Setting up unzip (6.0-26ubuntu3.2) ...
+#24 DONE 7.9s
+
+#25 [build 4/7] COPY .mvn/ .mvn/
+#25 DONE 0.1s
+
+#26 [build 5/7] COPY mvnw pom.xml ./
+#26 DONE 0.1s
+
+#27 [build 6/7] COPY backend-java/ backend-java/
+#27 DONE 0.1s
+
+#28 [build 7/7] RUN sed -i 's/\r$//' mvnw     && chmod 0755 mvnw     && ./mvnw --batch-mode --no-transfer-progress -DskipTests package     && test -f target/imperator-backend-0.1.0.jar
+#28 2.069 [INFO] Scanning for projects...
+#28 6.791 [INFO] 
+#28 6.791 [INFO] ------------------< com.imperator:imperator-backend >-------------------
+#28 6.791 [INFO] Building IMPERATOR Backend 0.1.0
+#28 6.791 [INFO]   from pom.xml
+#28 6.791 [INFO] --------------------------------[ jar ]---------------------------------
+#28 19.71 [INFO] 
+#28 19.71 [INFO] --- toolchains:3.3.0:select-jdk-toolchain (select-java-21) @ imperator-backend ---
+#28 20.14 [INFO] Not using an external toolchain as the current JDK 'JDK[/opt/java/openjdk]' matches the requirements.
+#28 20.14 [INFO] 
+#28 20.14 [INFO] --- enforcer:3.6.3:enforce (enforce-build-runtime) @ imperator-backend ---
+#28 21.14 [INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+#28 21.15 [INFO] Rule 1: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+#28 21.15 [INFO] 
+#28 21.15 [INFO] --- resources:3.5.0:resources (default-resources) @ imperator-backend ---
+#28 22.06 [INFO] skip non existing resourceDirectory /workspace/src/main/resources
+#28 22.06 [INFO] 
+#28 22.06 [INFO] --- compiler:3.15.0:compile (default-compile) @ imperator-backend ---
+#28 23.39 [INFO] Recompiling the module because of changed source code.
+#28 23.39 [INFO] Compiling 235 source files with javac [debug release 21] to target/classes
+#28 26.05 [INFO] 
+#28 26.05 [INFO] --- resources:3.5.0:testResources (default-testResources) @ imperator-backend ---
+#28 26.06 [INFO] skip non existing resourceDirectory /workspace/src/test/resources
+#28 26.06 [INFO] 
+#28 26.06 [INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ imperator-backend ---
+#28 26.06 [INFO] No sources to compile
+#28 26.06 [INFO] 
+#28 26.06 [INFO] --- surefire:3.6.0:test (default-test) @ imperator-backend ---
+#28 27.48 [INFO] Tests are skipped.
+#28 27.48 [INFO] 
+#28 27.48 [INFO] --- jar:3.5.1:jar (default-jar) @ imperator-backend ---
+#28 29.45 [INFO] Building jar: /workspace/target/imperator-backend-0.1.0.jar
+#28 29.53 [INFO] 
+#28 29.53 [INFO] --- spring-boot:4.1.1:repackage (repackage-executable-jar) @ imperator-backend ---
+#28 32.72 [INFO] Replacing main artifact /workspace/target/imperator-backend-0.1.0.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+#28 32.72 [INFO] The original artifact has been renamed to /workspace/target/imperator-backend-0.1.0.jar.original
+#28 32.72 [INFO] ------------------------------------------------------------------------
+#28 32.72 [INFO] BUILD SUCCESS
+#28 32.72 [INFO] ------------------------------------------------------------------------
+#28 32.72 [INFO] Total time:  30.671 s
+#28 32.72 [INFO] Finished at: 2026-11-11T17:09:45Z
+#28 32.72 [INFO] ------------------------------------------------------------------------
+#28 DONE 32.9s
+
+#29 [runtime 11/13] COPY --from=build --chown=10001:10001     /workspace/target/imperator-backend-0.1.0.jar     /opt/imperator/imperator-backend.jar
+#29 DONE 0.1s
+
+#30 [runtime 12/13] COPY --chown=10001:10001 infra/docker/backend/entrypoint.sh     /opt/imperator/entrypoint.sh
+#30 DONE 0.1s
+
+#31 [runtime 13/13] RUN chmod 0555 /opt/imperator/entrypoint.sh
+#31 DONE 0.3s
+
+#32 exporting to oci image format
+#32 exporting layers
+#32 exporting layers 1.1s done
+#32 exporting manifest sha256:29b0a506bfe8068570ca776d3b18e0edf02741c755cda35a55c3cc59df784c1d 0.0s done
+#32 exporting config sha256:5d8d7ed34aeb3e413d4559641282afc508fa0261008ff91b14e684303c612ef8 0.0s done
+#32 exporting attestation manifest sha256:9e0c20cbaad1cefdfa8578f0da9a1e60780aa03fb370f9d6a13e425dc700bf68
+#32 exporting attestation manifest sha256:9e0c20cbaad1cefdfa8578f0da9a1e60780aa03fb370f9d6a13e425dc700bf68 0.0s done
+#32 exporting manifest list sha256:1de68d8ccd597d11cf83549c542fd79f0dff54596c4859f53a9d1cb0b195f3ee 0.0s done
+#32 sending tarball
+#32 sending tarball 5.0s done
+#32 DONE 6.4s
+
+#33 resolving provenance for metadata file
+#33 DONE 0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/lext2o8vxaidspe1xwbq1m1ve

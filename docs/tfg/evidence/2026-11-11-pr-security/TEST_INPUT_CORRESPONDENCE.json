@@ -1,0 +1,10 @@
+{
+  "initialTestSourceSha": "9876d17ba3a527231f2d3c41c588bc8bf83dbb15",
+  "finalBuildSourceSha": "e30c16a7b7d5741dc3626fe11f850b6e9366bfbc",
+  "changedFiles": [
+    "infra/docker/backend/Dockerfile"
+  ],
+  "javaAndFrontendExecutableInputsIdentical": true,
+  "fullPostgresIntegrationRepeatedOnFinalImage": true,
+  "imageBinaryEqualityAcrossCommitsClaimed": false
+}

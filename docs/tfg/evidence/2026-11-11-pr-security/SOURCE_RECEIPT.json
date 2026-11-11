@@ -1,0 +1,10 @@
+{
+  "sourceSha": "e30c16a7b7d5741dc3626fe11f850b6e9366bfbc",
+  "sourceTree": "715361fc271038ae41bf6b2af94c5ded1ed59454",
+  "archiveSha256": "cf16930f94e866fb4bc624b1d5ac670d97d4ee17b7861c5604d98b0923a6e0c5",
+  "buildInput": "immutable git archive of technical source commit",
+  "documentationCommitHasSeparateCi": true,
+  "hostNode": "24.22.2 (portable; global Node unchanged)",
+  "npm": "11.19.1",
+  "historicalOriginalCheckoutExcluded": true
+}
