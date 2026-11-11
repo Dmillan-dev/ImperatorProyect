@@ -1,0 +1,34 @@
+[
+  {
+    "layer": 22,
+    "firstDigest": "sha256:fb2a602a4e005efb0560aefdf7ec1c26b625b649a8be685a6c286e37132632b2",
+    "repeatDigest": "sha256:9957bafd79c6f303e453af05b07bc7170f5f78bf1e298f920b24f7a69e99457c",
+    "changedEntries": [
+      {
+        "path": "var/cache/ldconfig/aux-cache",
+        "first": {
+          "size": 7066,
+          "type": "b'0'",
+          "mode": 384,
+          "uid": 0,
+          "gid": 0,
+          "mtime": 1794416875,
+          "pax": {},
+          "link": "",
+          "sha256": "4401bb551f8670d965fc3e868383f03ba8dd0f73b72e9a56a08d6fc75f92fc24"
+        },
+        "repeat": {
+          "size": 7066,
+          "type": "b'0'",
+          "mode": 384,
+          "uid": 0,
+          "gid": 0,
+          "mtime": 1794416875,
+          "pax": {},
+          "link": "",
+          "sha256": "2937d72ae1cbaec92dfd59d99eb9d477ef1112b05a324f7993ff0a1ac8e3f801"
+        }
+      }
+    ]
+  }
+]

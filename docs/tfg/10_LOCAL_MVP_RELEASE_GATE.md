@@ -2,7 +2,7 @@
 
 ## Control vigente — 11/11/2026
 
-**MVP local NO-GO formal.** El [candidato mínimo Next/APT](evidence/2026-11-11-pr-security/README.md), fuente `e30c16a`, alcanza 0 H/C corregibles y 0 secretos en cuatro imágenes exactas con la base registrada del 11/11. Pasan 174 unitarios, 35 integración PostgreSQL y 44 frontend; lint/tipos/build PASS y Playwright 9 PASS / 6 omisiones intencionales con API interceptada. No sustituye el ensayo completo del MVP.
+**MVP local NO-GO formal.** El [candidato mínimo Next/APT](evidence/2026-11-11-d094-reproducibility/README.md), fuente `49c8b67`, alcanza 0 H/C corregibles y 0 secretos en cuatro imágenes exactas con la base registrada del 11/11. Pasan 174 unitarios, 35 integración PostgreSQL y 44 frontend; lint/tipos/build PASS y Playwright 9 PASS / 6 omisiones intencionales con API interceptada. No sustituye el ensayo completo del MVP.
 
 R-20 permanece sin aceptación vigente: 39 CVE H/C residuales, conjunto conservador de revisión de 41 CVE y propuesta `accepted: false`. No se deduce aceptación de las PR o de CI. La revisión clasifica los lotes #89/#90 como mantenimiento diferido y reemplaza #88 con un parche acotado. La publicación necesita revisión y CI de su HEAD. Después: decisión explícita R-20 sobre los digests exactos, ensayo Docker completo/RBAC/Flyway/persistencia/recovery, cierre A-S3 y A-S4 humana en inglés. R-23 independiente; TFG-A IN PROGRESS y AWS bloqueado.
 

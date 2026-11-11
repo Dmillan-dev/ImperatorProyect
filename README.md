@@ -70,7 +70,7 @@ Read-only GitHub/AWS evidence adapters and the optional Bedrock explanation adap
 
 ## Current stage
 
-**Local MVP implemented and demonstrated. Academic delivery remains in progress.** Status reviewed 11 November 2026. The [current security candidate and release limits](docs/tfg/evidence/2026-11-11-pr-security/README.md) supersede the older scan results for release assessment.
+**Local MVP implemented and demonstrated. Academic delivery remains in progress.** Status reviewed 11 November 2026. The [current security candidate and release limits](docs/tfg/evidence/2026-11-11-d094-reproducibility/README.md) supersede the older scan results for release assessment.
 
 | Area                  | Evidence and limit                                                                                                                                                                         |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -81,7 +81,7 @@ Read-only GitHub/AWS evidence adapters and the optional Bedrock explanation adap
 | AWS and providers     | Live AWS deployment, external identity conformance and real provider validation remain gated.                                                                                              |
 
 > [!IMPORTANT]
-> **R-20 has no current acceptance.** The last approved decision expired on 19 October 2026 at 00:00 Europe/Madrid; subsequent proposals were not approvals. The current review remains `accepted: false` and distinguishes the 39 H/C residual CVEs from the complete inventory. R-23 remains a separate disposition review following its advisory's withdrawal. [Exact artifacts and release conditions](docs/tfg/evidence/2026-11-11-pr-security/README.md).
+> **R-20 has no current acceptance.** The last approved decision expired on 19 October 2026 at 00:00 Europe/Madrid; subsequent proposals were not approvals. The current review remains `accepted: false` and distinguishes the 39 H/C residual CVEs from the complete inventory. R-23 remains a separate disposition review following its advisory's withdrawal. [Exact artifacts and release conditions](docs/tfg/evidence/2026-11-11-d094-reproducibility/README.md).
 
 ## Explore locally
 

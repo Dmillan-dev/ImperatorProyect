@@ -1,0 +1,14 @@
+
+PSMessageDetails      : 
+Exception             : System.Management.Automation.RuntimeException: Reproducibility failed: expected sha256:01ec5a8ccc0586a1331f0e4bb6724608805a02c58b8bb2238a79fbeec23ad59a but built sha256:215ed08bb3ef91a6d87cf356182f50e0db526f14a650d70d7fa9b83bd729b288.
+TargetObject          : Reproducibility failed: expected sha256:01ec5a8ccc0586a1331f0e4bb6724608805a02c58b8bb2238a79fbeec23ad59a but built sha256:215ed08bb3ef91a6d87cf356182f50e0db526f14a650d70d7fa9b83bd729b288.
+CategoryInfo          : OperationStopped: (Reproducibility fai…0d7fa9b83bd729b288.:String) [], RuntimeException
+FullyQualifiedErrorId : Reproducibility failed: expected sha256:01ec5a8ccc0586a1331f0e4bb6724608805a02c58b8bb2238a79fbeec23ad59a but built sha256:215ed08bb3ef91a6d87cf356182f50e0db526f14a650d70d7fa9b83bd729b288.
+ErrorDetails          : 
+InvocationInfo        : System.Management.Automation.InvocationInfo
+ScriptStackTrace      : at <ScriptBlock>, /home/runner/work/ImperatorProyect/ImperatorProyect/scripts/verify-postgres-runtime-image.ps1: line 250
+                        at <ScriptBlock>, /home/runner/work/_temp/6bab66ca-a28e-4707-a5ff-f95a32e2dd04.ps1: line 9
+                        at <ScriptBlock>, <No file>: line 1
+PipelineIterationInfo : {}
+
+

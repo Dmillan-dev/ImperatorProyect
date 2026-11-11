@@ -2,7 +2,7 @@
 
 ## Control vigente — 11/11/2026
 
-**A-S3 actual NO-GO formal; cierre histórico preservado.** [Fuente `e30c16a`, construcción y cuatro imágenes exactas](evidence/2026-11-11-pr-security/candidate-images.json) se registran junto con escaneos, 174 unitarios + 35 integración + 44 frontend PASS y límites de Playwright. R-20 no tiene aceptación vigente: [41 CVE conservadores / 39 H/C y 18 nuevas observaciones](evidence/2026-11-11-pr-security/README.md), propuesta `accepted: false`, sin transferencia desde imágenes anteriores o hacia CI.
+**A-S3 actual NO-GO formal; cierre histórico preservado.** [Fuente `49c8b67`, construcción y cuatro imágenes exactas](evidence/2026-11-11-d094-reproducibility/candidate-images.json) se registran junto con escaneos, 174 unitarios + 35 integración + 44 frontend PASS y límites de Playwright. R-20 no tiene aceptación vigente: [41 CVE conservadores / 39 H/C y 18 nuevas observaciones](evidence/2026-11-11-d094-reproducibility/README.md), propuesta `accepted: false`, sin transferencia desde imágenes anteriores o hacia CI.
 
 Pendientes: CI/revisión de la publicación mínima, decisión explícita R-20 sobre los digests, disposición R-23 independiente y ensayo del conjunto exacto con RBAC, Flyway, persistencia y recovery. Después A-S4 humana: memoria, doce minutos reales en inglés, grabación narrada y revisión académica. TFG-A IN PROGRESS; AWS bloqueado.
 

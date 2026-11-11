@@ -2,9 +2,9 @@
 
 ## Control vigente — 11/11/2026
 
-**PASS técnico de imágenes; NO-GO formal.** El [candidato Next/APT](evidence/2026-11-11-pr-security/README.md), fuente `e30c16a`, registra cuatro IDs definitivos construidos desde archivo Git inmutable, 0 H/C corregibles / 0 secretos, regresión 174 unitarios + 35 integración + 44 frontend PASS y controles de frontend PASS. Playwright: 9 PASS / 6 omisiones intencionales con API interceptada; no acredita el ensayo Docker completo.
+**PASS técnico de imágenes; NO-GO formal.** El [candidato Next/APT](evidence/2026-11-11-d094-reproducibility/README.md), fuente `49c8b67`, registra cuatro IDs definitivos construidos desde archivo Git inmutable, 0 H/C corregibles / 0 secretos, regresión 174 unitarios + 35 integración + 44 frontend PASS y controles de frontend PASS. Playwright: 9 PASS / 6 omisiones intencionales con API interceptada; no acredita el ensayo Docker completo.
 
-La [revisión R-20](evidence/2026-11-11-pr-security/R20_REVIEW_REQUIRED.json) sigue `accepted: false`: 39 CVE H/C residuales, conjunto conservador de 41 CVE, 18 adiciones contrastadas con Debian. Caducidad propuesta 18/11/2026 00:00 Europe/Madrid, sin aceptación automática. Faltan CI/revisión de publicación, decisión explícita sobre estos artefactos y ensayo Docker completo. R-23 separado, A-S3 actual NO-GO formal, TFG-A IN PROGRESS; AWS bloqueado.
+La [revisión R-20](evidence/2026-11-11-d094-reproducibility/R20_REVIEW_REQUIRED.json) sigue `accepted: false`: 39 CVE H/C residuales, conjunto conservador de 41 CVE, 18 adiciones contrastadas con Debian. Caducidad propuesta 18/11/2026 00:00 Europe/Madrid, sin aceptación automática. Faltan CI/revisión de publicación, decisión explícita sobre estos artefactos y ensayo Docker completo. R-23 separado, A-S3 actual NO-GO formal, TFG-A IN PROGRESS; AWS bloqueado.
 
 ## Registro histórico — 02/11/2026
 
