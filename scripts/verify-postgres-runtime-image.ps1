@@ -131,6 +131,20 @@ foreach ($package in @($opensslPatch.packages)) {
     }
     $requiredFragments += @($package.sourceUrl, $package.sourceSha256)
 }
+$aptPatch = $lock.runtimePatches.apt
+if ($null -eq $aptPatch -or
+    (@($aptPatch.packages.package | Sort-Object) -join ",") -ne "apt,libapt-pkg6.0") {
+    throw "The pinned Bookworm APT patch requires apt and libapt-pkg6.0."
+}
+foreach ($package in @($aptPatch.packages)) {
+    if ($package.version -ne $aptPatch.version -or
+        $package.architecture -ne "amd64" -or
+        $package.sourceSha256 -notmatch "^[0-9a-f]{64}$" -or
+        -not $package.sourceUrl.StartsWith("https://security.debian.org/debian-security/")) {
+        throw "Invalid pinned APT patch entry: $($package.package)"
+    }
+    $requiredFragments += @($package.sourceUrl, $package.sourceSha256)
+}
 foreach ($fragment in $requiredFragments) {
     if (-not $dockerfile.Contains($fragment)) {
         throw "Dockerfile and supply-chain lock disagree: $fragment"
@@ -327,7 +341,7 @@ if ($pcre2Version.Trim() -ne $lock.runtimePatches.pcre2.version) {
     throw "Unexpected libpcre2 runtime version: $pcre2Version"
 }
 
-foreach ($package in @($perlPatch.packages) + @($opensslPatch.packages)) {
+foreach ($package in @($perlPatch.packages) + @($opensslPatch.packages) + @($aptPatch.packages)) {
     $installedVersion = (Get-CheckedOutput -Command $docker -Arguments @(
         "run", "--rm", "--entrypoint", "dpkg-query", $ImageTag,
         '--showformat=${Version}', "--show", $package.package
@@ -379,6 +393,7 @@ foreach ($forbiddenCve in @(
         $lock.runtimePatches.pcre2.fixedCves
         $perlPatch.fixedCves
         $opensslPatch.fixedCves
+        $aptPatch.fixedCves
     )) {
     if ((Get-Content -Raw -LiteralPath $scanJsonPath).Contains(
             $forbiddenCve

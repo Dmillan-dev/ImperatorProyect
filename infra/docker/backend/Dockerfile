@@ -36,6 +36,19 @@ RUN dpkg --install /tmp/imperator-libbrotli1.deb /tmp/libssl3.deb /tmp/openssl.d
     && test "$(dpkg-query --showformat='${Version}' --show libbrotli1)" = "1.0.9-2ubuntu0.1" \
     && rm -f /tmp/imperator-libbrotli1.deb /tmp/libssl3.deb /tmp/openssl.deb /var/log/dpkg.log
 
+# CVE-2026-109518: update only APT and its matching runtime library.
+ADD --checksum=sha256:2d4db9a3017c5364e50af5bc2f0c76828b52933b682eff4728f1211e081c6736 \
+    https://security.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.4.15ubuntu0.1_amd64.deb \
+    /tmp/imperator-apt.deb
+ADD --checksum=sha256:3a6fbab029e15ca7b8da642c17ec110995a6e3a0bc40eaa08e239cfc94d6c426 \
+    https://security.ubuntu.com/ubuntu/pool/main/a/apt/libapt-pkg6.0_2.4.15ubuntu0.1_amd64.deb \
+    /tmp/imperator-libapt-pkg6.0.deb
+
+RUN dpkg --install /tmp/imperator-apt.deb /tmp/imperator-libapt-pkg6.0.deb \
+    && test "$(dpkg-query --showformat='${Version}' --show apt)" = "2.4.15ubuntu0.1" \
+    && test "$(dpkg-query --showformat='${Version}' --show libapt-pkg6.0)" = "2.4.15ubuntu0.1" \
+    && rm -f /tmp/imperator-apt.deb /tmp/imperator-libapt-pkg6.0.deb /var/log/dpkg.log
+
 ARG VCS_REF
 
 LABEL org.opencontainers.image.title="IMPERATOR Backend" \

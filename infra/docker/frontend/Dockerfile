@@ -52,6 +52,19 @@ RUN set -eu; \
         /usr/local/bin/yarn \
         /usr/local/bin/yarnpkg
 
+# CVE-2026-109518: update only APT and its matching runtime library.
+ADD --checksum=sha256:796fc7fe18866f5b1fb27a115d7339e549d71b7ddbc15b8d6fc4226c243e96d1 \
+    https://security.debian.org/debian-security/pool/updates/main/a/apt/apt_2.6.2_amd64.deb \
+    /tmp/imperator-apt.deb
+ADD --checksum=sha256:023a7017b75295fc7037c7a4352847f9516a36a82cc5e1650d6832d238860913 \
+    https://security.debian.org/debian-security/pool/updates/main/a/apt/libapt-pkg6.0_2.6.2_amd64.deb \
+    /tmp/imperator-libapt-pkg6.0.deb
+
+RUN dpkg --install /tmp/imperator-apt.deb /tmp/imperator-libapt-pkg6.0.deb \
+    && test "$(dpkg-query --showformat='${Version}' --show apt)" = "2.6.2" \
+    && test "$(dpkg-query --showformat='${Version}' --show libapt-pkg6.0)" = "2.6.2" \
+    && rm -f /tmp/imperator-apt.deb /tmp/imperator-libapt-pkg6.0.deb /var/log/dpkg.log
+
 LABEL org.opencontainers.image.title="IMPERATOR Decision Review Workspace" \
       org.opencontainers.image.description="IMPERATOR pre-pilot Next.js runtime" \
       org.opencontainers.image.source="https://github.com/Dmillan-dev/ImperatorProyect" \
