@@ -4,8 +4,9 @@ FROM eclipse-temurin:21-jdk-jammy@sha256:6adefddd4a20bceef702cedb0b03952fcd7691f
 
 WORKDIR /workspace
 
-RUN apt-get update \
-    && apt-get install --yes --no-install-recommends unzip \
+# CVE-2026-109518 also requires download retries in this disposable builder.
+RUN apt-get -o Acquire::Retries=0 update \
+    && apt-get -o Acquire::Retries=0 install --yes --no-install-recommends unzip \
     && rm -rf /var/lib/apt/lists/*
 
 COPY .mvn/ .mvn/
