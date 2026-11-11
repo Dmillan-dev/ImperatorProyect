@@ -27,6 +27,19 @@ ADD --checksum=sha256:48c781de87e2016e1f0d973748a27130f11643e7ac080173f40e2d9669
     https://repo.maven.apache.org/maven2/tools/jackson/core/jackson-databind/3.1.7/jackson-databind-3.1.7.jar \
     /flyway/lib/jackson-databind-3.1.7.jar
 
+# CVE-2026-109518: update only APT and its matching runtime library.
+ADD --checksum=sha256:ad2ea7f107f250ba88b0bfdba31812a341e3247589647aa2b03b9dc4e8abf8ed \
+    https://security.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.8.4ubuntu0.1_amd64.deb \
+    /tmp/imperator-apt.deb
+ADD --checksum=sha256:a50f3e68a793f90b05f44a4b5f2f59f3ec7687e39b5d8bbd1da44c84671fa3d6 \
+    https://security.ubuntu.com/ubuntu/pool/main/a/apt/libapt-pkg6.0t64_2.8.4ubuntu0.1_amd64.deb \
+    /tmp/imperator-libapt-pkg6.0t64.deb
+
+RUN dpkg --install /tmp/imperator-apt.deb /tmp/imperator-libapt-pkg6.0t64.deb \
+    && test "$(dpkg-query --showformat='${Version}' --show apt)" = "2.8.4ubuntu0.1" \
+    && test "$(dpkg-query --showformat='${Version}' --show libapt-pkg6.0t64)" = "2.8.4ubuntu0.1" \
+    && rm -f /tmp/imperator-apt.deb /tmp/imperator-libapt-pkg6.0t64.deb /var/log/dpkg.log
+
 ARG VCS_REF
 
 LABEL org.opencontainers.image.title="IMPERATOR Database Migration" \

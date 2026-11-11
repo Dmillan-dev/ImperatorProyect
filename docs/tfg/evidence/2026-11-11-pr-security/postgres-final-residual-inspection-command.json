@@ -1,0 +1,22 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--pull",
+    "never",
+    "--network",
+    "none",
+    "--read-only",
+    "--cap-drop",
+    "ALL",
+    "--security-opt",
+    "no-new-privileges",
+    "--entrypoint",
+    "/bin/sh",
+    "sha256:2ff32292667031f3e04003418155652a991a30bc6c9f253060914a08ee064e95",
+    "-c",
+    "set -eu; dpkg-query -W apt libapt-pkg6.0 libkrb5-3 libsqlite3-0 zlib1g; echo KDC_BINARIES; for p in krb5kdc kadmind kadmin.local sqlite3; do command -v \"$p\" || true; done; echo DATABASE_LIBRARIES; ldd /usr/lib/postgresql/18/bin/postgres; echo GOSU_VERSION; gosu --version; echo PG_VERSION; postgres --version"
+  ],
+  "exitCode": 0
+}

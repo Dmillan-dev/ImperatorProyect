@@ -1,0 +1,10 @@
+{
+  "sourceSha": "49c8b677ad18b07404b708ea83608201f6baa203",
+  "firstRuntimeManifest": "sha256:d50f6b7acdaf691acb84ea308a0fb3b7dbbf9981a4ddd1e409e7dd35431efd5e",
+  "repeatRuntimeManifest": "sha256:d50f6b7acdaf691acb84ea308a0fb3b7dbbf9981a4ddd1e409e7dd35431efd5e",
+  "identical": true,
+  "noCacheBoth": true,
+  "ignoreRulesAdded": false,
+  "gateWeakened": false,
+  "postgresImageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a"
+}

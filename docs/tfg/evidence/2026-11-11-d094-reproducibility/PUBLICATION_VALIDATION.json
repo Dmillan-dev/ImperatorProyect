@@ -1,0 +1,17 @@
+{
+  "historicalEvidenceFilesByteIdentical": 1176,
+  "jsonValid": true,
+  "localLinksChecked": 96,
+  "brokenLinks": [],
+  "gitleaksFindings": 0,
+  "originalD094FailurePreserved": true,
+  "twoNoCacheRuntimeManifestsIdentical": true,
+  "postgresIntegrationTests": 35,
+  "postgresUnitTests": 174,
+  "postgresImageFixableHC": 0,
+  "postgresImageSecrets": 0,
+  "packageVersionsChangedInFollowup": false,
+  "gateRelaxed": false,
+  "r20Accepted": false,
+  "finalPublicationCi": "PENDING"
+}

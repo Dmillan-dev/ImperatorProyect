@@ -1,0 +1,42 @@
+{
+  "previousConservativeCves": 23,
+  "previousHighCriticalCves": 21,
+  "currentConservativeCves": 41,
+  "currentHighCriticalCves": 39,
+  "added": [
+    "CVE-2026-107364",
+    "CVE-2026-112315",
+    "CVE-2026-112316",
+    "CVE-2026-112317",
+    "CVE-2026-112318",
+    "CVE-2026-112319",
+    "CVE-2026-112320",
+    "CVE-2026-112321",
+    "CVE-2026-112322",
+    "CVE-2026-112323",
+    "CVE-2026-118380",
+    "CVE-2026-119079",
+    "CVE-2026-119374",
+    "CVE-2026-119379",
+    "CVE-2026-71199",
+    "CVE-2026-71200",
+    "CVE-2026-76844",
+    "CVE-2026-85091"
+  ],
+  "removed": [],
+  "highCriticalPackageRows": 144,
+  "conservativePackageRows": 153,
+  "allCves": 219,
+  "otherIdentifiers": [
+    "DLA-4783-1",
+    "DLA-4792-1",
+    "DLA-4854-1",
+    "DLA-4867-1",
+    "TEMP-0290435-0B57B5",
+    "TEMP-0517018-A83CE6",
+    "TEMP-0628843-DBAD28",
+    "TEMP-0841856-B18BAF",
+    "TEMP-1147318-639065"
+  ],
+  "completeInventoryIdentifiers": 228
+}

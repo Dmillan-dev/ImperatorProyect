@@ -16,13 +16,13 @@ Application code calculates the amounts. The interface presents certified backen
 
 ## Evidence and current limits
 
-| Check                  | Evidence                                                                                           |
-| ---------------------- | -------------------------------------------------------------------------------------------------- |
-| Unit/component quality | 41 tests and coverage/format/lint/type/build checks passed in the historical 9 October evaluation. |
-| Browser acceptance     | Playwright: 9 passed / 6 intentional skips in that baseline. Skips are not passes.                 |
-| Real services          | 14 October Docker rehearsal: UI approval, API implementation/validation and unmocked UI reads.     |
+| Check                  | Evidence                                                                                                    |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------- |
+| Unit/component quality | 41 tests and coverage/format/lint/type/build checks passed in the historical 9 October evaluation.          |
+| Browser acceptance     | Playwright: 9 passed / 6 intentional skips in that baseline. Skips are not passes.                          |
+| Real services          | 14 October Docker rehearsal: UI approval, API implementation/validation and unmocked UI reads.              |
 | Production image       | 22 October exact candidate image: 0 fixable H/C and 0 secrets; new risk proposal pending explicit approval. |
-| Academic delivery      | Memory and English script prepared; measured human defence and academic review pending.            |
+| Academic delivery      | Memory and English script prepared; measured human defence and academic review pending.                     |
 
 The previous R-20 acceptance **expired on 19 October 2026 at 00:00 Europe/Madrid**. The [22 October proposal](../docs/tfg/evidence/2026-10-22-security-go-vite/README.md) remains `accepted: false` for four exact candidate image identities and synthetic local data. Passing scans do not renew acceptance. R-23 development tooling remains OPEN independently; Medium Vitest findings are documented separately, with no additional upgrades applied. AWS, production and real data remain outside scope.
 

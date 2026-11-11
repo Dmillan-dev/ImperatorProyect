@@ -1,0 +1,211 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 5.50kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+#2 DONE 0.0s
+
+#3 docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+#3 resolve docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e 0.0s done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/postgres:18.6-bookworm@sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af
+#4 DONE 0.1s
+
+#5 [internal] load metadata for docker.io/library/golang:1.26.10-bookworm@sha256:632dff7351799a5a9954a48dc06670ade72ee44e8c351cdc0e5a57af2fea21af
+#5 DONE 0.1s
+
+#6 [stage-1  2/15] ADD --checksum=sha256:d2f7edfcc7689b9e0761c2742cc824ac86a20768bc5e8057818dc6875291fe76     https://security.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-8-0_10.42-1+deb12u2_amd64.deb     /tmp/libpcre2-8-0.deb
+#6 DONE 0.0s
+
+#7 [stage-1  5/15] ADD --checksum=sha256:ed8480b621ad574c25aea30d36194d0133ea74093756ecbe3dff157d0510ef7f     https://security.debian.org/debian-security/pool/updates/main/p/perl/libperl5.36_5.36.0-7+deb12u4_amd64.deb     /tmp/imperator-libperl5.36.deb
+#7 DONE 0.0s
+
+#8 [stage-1  3/15] ADD --checksum=sha256:d7d1943aec9597629bf73075efcc5ef6dc9bda96d78e80d843156ecd448478b8     https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-base_5.36.0-7+deb12u4_amd64.deb     /tmp/imperator-perl-base.deb
+#8 DONE 0.0s
+
+#9 [stage-1  7/15] ADD --checksum=sha256:cb4784740daa9b3b0eaea2b444bbefa686794afbbf3d678d238c1fd9875f2efd     https://security.debian.org/debian-security/pool/updates/main/o/openssl/libssl3_3.0.22-1~deb12u2_amd64.deb     /tmp/imperator-libssl3.deb
+#9 DONE 0.0s
+
+#10 [stage-1  6/15] ADD --checksum=sha256:3ed38ffa8320e9bf7597cefa01b6a6ace4a08ccc77cdfd15ef7d8b711dea7166     https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-modules-5.36_5.36.0-7+deb12u4_all.deb     /tmp/imperator-perl-modules-5.36.deb
+#10 DONE 0.0s
+
+#11 [stage-1  9/15] ADD --checksum=sha256:796fc7fe18866f5b1fb27a115d7339e549d71b7ddbc15b8d6fc4226c243e96d1     https://security.debian.org/debian-security/pool/updates/main/a/apt/apt_2.6.2_amd64.deb     /tmp/imperator-apt.deb
+#11 DONE 0.0s
+
+#12 [internal] load build context
+#12 DONE 0.0s
+
+#13 [stage-1  8/15] ADD --checksum=sha256:5cdf0b735b1c8a96ae0bf83ed328c83c2170f8320dedb035e98705b60b2d0cfe     https://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_3.0.22-1~deb12u2_amd64.deb     /tmp/imperator-openssl.deb
+#13 DONE 0.0s
+
+#14 [stage-1  4/15] ADD --checksum=sha256:67e7a883c5d835939638f89a750799282df243ac1446281aa92ef9e19300940b     https://security.debian.org/debian-security/pool/updates/main/p/perl/perl_5.36.0-7+deb12u4_amd64.deb     /tmp/imperator-perl.deb
+#14 DONE 0.0s
+
+#15 [stage-1 10/15] ADD --checksum=sha256:023a7017b75295fc7037c7a4352847f9516a36a82cc5e1650d6832d238860913     https://security.debian.org/debian-security/pool/updates/main/a/apt/libapt-pkg6.0_2.6.2_amd64.deb     /tmp/imperator-libapt-pkg6.0.deb
+#15 DONE 0.0s
+
+#16 [gosu-build 3/4] ADD --checksum=sha256:33d7537d588ea49458b9509bcf4554bdf5ceacc66da71e5caa1058ea3b689c3b     https://github.com/tianon/gosu/archive/6456aaa0f3c854d199d0f037f068eb97515b7513.tar.gz     /tmp/gosu-source.tar.gz
+#16 DONE 0.0s
+
+#17 [gosu-build 1/4] FROM docker.io/library/golang:1.26.10-bookworm@sha256:632dff7351799a5a9954a48dc06670ade72ee44e8c351cdc0e5a57af2fea21af
+#17 resolve docker.io/library/golang:1.26.10-bookworm@sha256:632dff7351799a5a9954a48dc06670ade72ee44e8c351cdc0e5a57af2fea21af 0.1s done
+#17 DONE 0.1s
+
+#16 [gosu-build 3/4] ADD --checksum=sha256:33d7537d588ea49458b9509bcf4554bdf5ceacc66da71e5caa1058ea3b689c3b     https://github.com/tianon/gosu/archive/6456aaa0f3c854d199d0f037f068eb97515b7513.tar.gz     /tmp/gosu-source.tar.gz
+#16 CACHED
+
+#18 [gosu-build 2/4] WORKDIR /build/gosu
+#18 CACHED
+
+#6 [stage-1  2/15] ADD --checksum=sha256:d2f7edfcc7689b9e0761c2742cc824ac86a20768bc5e8057818dc6875291fe76     https://security.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-8-0_10.42-1+deb12u2_amd64.deb     /tmp/libpcre2-8-0.deb
+#6 CACHED
+
+#14 [stage-1  4/15] ADD --checksum=sha256:67e7a883c5d835939638f89a750799282df243ac1446281aa92ef9e19300940b     https://security.debian.org/debian-security/pool/updates/main/p/perl/perl_5.36.0-7+deb12u4_amd64.deb     /tmp/imperator-perl.deb
+#14 CACHED
+
+#9 [stage-1  7/15] ADD --checksum=sha256:cb4784740daa9b3b0eaea2b444bbefa686794afbbf3d678d238c1fd9875f2efd     https://security.debian.org/debian-security/pool/updates/main/o/openssl/libssl3_3.0.22-1~deb12u2_amd64.deb     /tmp/imperator-libssl3.deb
+#9 CACHED
+
+#19 [stage-1  1/15] FROM docker.io/library/postgres:18.6-bookworm@sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af
+#19 resolve docker.io/library/postgres:18.6-bookworm@sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af 0.1s done
+#19 CACHED
+
+#15 [stage-1 10/15] ADD --checksum=sha256:023a7017b75295fc7037c7a4352847f9516a36a82cc5e1650d6832d238860913     https://security.debian.org/debian-security/pool/updates/main/a/apt/libapt-pkg6.0_2.6.2_amd64.deb     /tmp/imperator-libapt-pkg6.0.deb
+#15 CACHED
+
+#11 [stage-1  9/15] ADD --checksum=sha256:796fc7fe18866f5b1fb27a115d7339e549d71b7ddbc15b8d6fc4226c243e96d1     https://security.debian.org/debian-security/pool/updates/main/a/apt/apt_2.6.2_amd64.deb     /tmp/imperator-apt.deb
+#11 CACHED
+
+#13 [stage-1  8/15] ADD --checksum=sha256:5cdf0b735b1c8a96ae0bf83ed328c83c2170f8320dedb035e98705b60b2d0cfe     https://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_3.0.22-1~deb12u2_amd64.deb     /tmp/imperator-openssl.deb
+#13 CACHED
+
+#8 [stage-1  3/15] ADD --checksum=sha256:d7d1943aec9597629bf73075efcc5ef6dc9bda96d78e80d843156ecd448478b8     https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-base_5.36.0-7+deb12u4_amd64.deb     /tmp/imperator-perl-base.deb
+#8 CACHED
+
+#10 [stage-1  6/15] ADD --checksum=sha256:3ed38ffa8320e9bf7597cefa01b6a6ace4a08ccc77cdfd15ef7d8b711dea7166     https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-modules-5.36_5.36.0-7+deb12u4_all.deb     /tmp/imperator-perl-modules-5.36.deb
+#10 CACHED
+
+#7 [stage-1  5/15] ADD --checksum=sha256:ed8480b621ad574c25aea30d36194d0133ea74093756ecbe3dff157d0510ef7f     https://security.debian.org/debian-security/pool/updates/main/p/perl/libperl5.36_5.36.0-7+deb12u4_amd64.deb     /tmp/imperator-libperl5.36.deb
+#7 CACHED
+
+#12 [internal] load build context
+#12 transferring context: 3.74kB done
+#12 DONE 0.0s
+
+#20 [gosu-build 3/4] ADD --checksum=sha256:33d7537d588ea49458b9509bcf4554bdf5ceacc66da71e5caa1058ea3b689c3b     https://github.com/tianon/gosu/archive/6456aaa0f3c854d199d0f037f068eb97515b7513.tar.gz     /tmp/gosu-source.tar.gz
+#20 DONE 0.1s
+
+#21 [stage-1  2/15] ADD --checksum=sha256:d2f7edfcc7689b9e0761c2742cc824ac86a20768bc5e8057818dc6875291fe76     https://security.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-8-0_10.42-1+deb12u2_amd64.deb     /tmp/libpcre2-8-0.deb
+#21 DONE 0.1s
+
+#22 [stage-1  3/15] ADD --checksum=sha256:d7d1943aec9597629bf73075efcc5ef6dc9bda96d78e80d843156ecd448478b8     https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-base_5.36.0-7+deb12u4_amd64.deb     /tmp/imperator-perl-base.deb
+#22 DONE 0.1s
+
+#23 [gosu-build 4/4] RUN tar --extract         --gzip         --file /tmp/gosu-source.tar.gz         --strip-components 1     && rm /tmp/gosu-source.tar.gz     && test -f LICENSE     && CGO_ENABLED=0 GOOS=linux GOARCH=amd64        go build          -trimpath          -buildvcs=false          -ldflags='-s -w -buildid='          -o /out/gosu          .     && /out/gosu --version     && /out/gosu nobody true
+#23 ...
+
+#24 [stage-1  4/15] ADD --checksum=sha256:67e7a883c5d835939638f89a750799282df243ac1446281aa92ef9e19300940b     https://security.debian.org/debian-security/pool/updates/main/p/perl/perl_5.36.0-7+deb12u4_amd64.deb     /tmp/imperator-perl.deb
+#24 DONE 0.1s
+
+#23 [gosu-build 4/4] RUN tar --extract         --gzip         --file /tmp/gosu-source.tar.gz         --strip-components 1     && rm /tmp/gosu-source.tar.gz     && test -f LICENSE     && CGO_ENABLED=0 GOOS=linux GOARCH=amd64        go build          -trimpath          -buildvcs=false          -ldflags='-s -w -buildid='          -o /out/gosu          .     && /out/gosu --version     && /out/gosu nobody true
+#23 0.308 go: downloading github.com/moby/sys/user v0.1.0
+#23 0.308 go: downloading golang.org/x/sys v0.1.0
+#23 ...
+
+#25 [stage-1  5/15] ADD --checksum=sha256:ed8480b621ad574c25aea30d36194d0133ea74093756ecbe3dff157d0510ef7f     https://security.debian.org/debian-security/pool/updates/main/p/perl/libperl5.36_5.36.0-7+deb12u4_amd64.deb     /tmp/imperator-libperl5.36.deb
+#25 DONE 0.1s
+
+#26 [stage-1  6/15] ADD --checksum=sha256:3ed38ffa8320e9bf7597cefa01b6a6ace4a08ccc77cdfd15ef7d8b711dea7166     https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-modules-5.36_5.36.0-7+deb12u4_all.deb     /tmp/imperator-perl-modules-5.36.deb
+#26 DONE 0.1s
+
+#27 [stage-1  7/15] ADD --checksum=sha256:cb4784740daa9b3b0eaea2b444bbefa686794afbbf3d678d238c1fd9875f2efd     https://security.debian.org/debian-security/pool/updates/main/o/openssl/libssl3_3.0.22-1~deb12u2_amd64.deb     /tmp/imperator-libssl3.deb
+#27 DONE 0.1s
+
+#23 [gosu-build 4/4] RUN tar --extract         --gzip         --file /tmp/gosu-source.tar.gz         --strip-components 1     && rm /tmp/gosu-source.tar.gz     && test -f LICENSE     && CGO_ENABLED=0 GOOS=linux GOARCH=amd64        go build          -trimpath          -buildvcs=false          -ldflags='-s -w -buildid='          -o /out/gosu          .     && /out/gosu --version     && /out/gosu nobody true
+#23 ...
+
+#28 [stage-1  8/15] ADD --checksum=sha256:5cdf0b735b1c8a96ae0bf83ed328c83c2170f8320dedb035e98705b60b2d0cfe     https://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_3.0.22-1~deb12u2_amd64.deb     /tmp/imperator-openssl.deb
+#28 DONE 0.1s
+
+#29 [stage-1  9/15] ADD --checksum=sha256:796fc7fe18866f5b1fb27a115d7339e549d71b7ddbc15b8d6fc4226c243e96d1     https://security.debian.org/debian-security/pool/updates/main/a/apt/apt_2.6.2_amd64.deb     /tmp/imperator-apt.deb
+#29 DONE 0.1s
+
+#23 [gosu-build 4/4] RUN tar --extract         --gzip         --file /tmp/gosu-source.tar.gz         --strip-components 1     && rm /tmp/gosu-source.tar.gz     && test -f LICENSE     && CGO_ENABLED=0 GOOS=linux GOARCH=amd64        go build          -trimpath          -buildvcs=false          -ldflags='-s -w -buildid='          -o /out/gosu          .     && /out/gosu --version     && /out/gosu nobody true
+#23 ...
+
+#30 [stage-1 10/15] ADD --checksum=sha256:023a7017b75295fc7037c7a4352847f9516a36a82cc5e1650d6832d238860913     https://security.debian.org/debian-security/pool/updates/main/a/apt/libapt-pkg6.0_2.6.2_amd64.deb     /tmp/imperator-libapt-pkg6.0.deb
+#30 DONE 0.1s
+
+#31 [stage-1 11/15] RUN dpkg --install /tmp/imperator-apt.deb /tmp/imperator-libapt-pkg6.0.deb     && test "$(dpkg-query --showformat='${Version}' --show apt)" = "2.6.2"     && test "$(dpkg-query --showformat='${Version}' --show libapt-pkg6.0)" = "2.6.2"     && rm -f /tmp/imperator-apt.deb /tmp/imperator-libapt-pkg6.0.deb         /var/log/dpkg.log /var/cache/ldconfig/aux-cache
+#31 0.348 (Reading database ... 12163 files and directories currently installed.)
+#31 0.349 Preparing to unpack /tmp/imperator-apt.deb ...
+#31 0.407 Unpacking apt (2.6.2) over (2.6.1) ...
+#31 0.778 Preparing to unpack .../imperator-libapt-pkg6.0.deb ...
+#31 0.804 Unpacking libapt-pkg6.0:amd64 (2.6.2) over (2.6.1) ...
+#31 0.902 Setting up libapt-pkg6.0:amd64 (2.6.2) ...
+#31 0.926 Setting up apt (2.6.2) ...
+#31 1.141 Processing triggers for libc-bin (2.36-9+deb12u14) ...
+#31 DONE 1.3s
+
+#23 [gosu-build 4/4] RUN tar --extract         --gzip         --file /tmp/gosu-source.tar.gz         --strip-components 1     && rm /tmp/gosu-source.tar.gz     && test -f LICENSE     && CGO_ENABLED=0 GOOS=linux GOARCH=amd64        go build          -trimpath          -buildvcs=false          -ldflags='-s -w -buildid='          -o /out/gosu          .     && /out/gosu --version     && /out/gosu nobody true
+#23 3.477 1.19 (go1.26.10 on linux/amd64; gc)
+#23 DONE 3.5s
+
+#32 [stage-1 12/15] COPY --from=gosu-build /out/gosu /usr/local/bin/gosu
+#32 DONE 0.1s
+
+#33 [stage-1 13/15] COPY --from=gosu-build /build/gosu/LICENSE /usr/local/share/licenses/gosu/LICENSE
+#33 DONE 0.1s
+
+#34 [stage-1 14/15] COPY --chown=999:999 provision-app-role.sh /opt/imperator/provision-app-role.sh
+#34 DONE 0.1s
+
+#35 [stage-1 15/15] RUN dpkg --install /tmp/imperator-libssl3.deb /tmp/imperator-openssl.deb /tmp/libpcre2-8-0.deb /tmp/imperator-perl-base.deb /tmp/imperator-perl.deb /tmp/imperator-libperl5.36.deb /tmp/imperator-perl-modules-5.36.deb     && rm -f         /tmp/imperator-libssl3.deb /tmp/imperator-openssl.deb         /tmp/libpcre2-8-0.deb         /tmp/imperator-perl-base.deb /tmp/imperator-perl.deb /tmp/imperator-libperl5.36.deb /tmp/imperator-perl-modules-5.36.deb         /var/cache/ldconfig/aux-cache         /var/log/dpkg.log     && chmod 0755 /usr/local/bin/gosu     && chmod 0555 /opt/imperator/provision-app-role.sh     && chmod 0444 /usr/local/share/licenses/gosu/LICENSE     && gosu --version     && gosu nobody true     && postgres --version
+#35 0.264 (Reading database ... 12163 files and directories currently installed.)
+#35 0.264 Preparing to unpack /tmp/imperator-libssl3.deb ...
+#35 0.296 Unpacking libssl3:amd64 (3.0.22-1~deb12u2) over (3.0.20-1~deb12u2) ...
+#35 0.447 Preparing to unpack /tmp/imperator-openssl.deb ...
+#35 0.471 Unpacking openssl (3.0.22-1~deb12u2) over (3.0.20-1~deb12u2) ...
+#35 0.588 Preparing to unpack /tmp/libpcre2-8-0.deb ...
+#35 0.612 Unpacking libpcre2-8-0:amd64 (10.42-1+deb12u2) over (10.42-1) ...
+#35 0.703 Preparing to unpack /tmp/imperator-perl-base.deb ...
+#35 0.735 Unpacking perl-base (5.36.0-7+deb12u4) over (5.36.0-7+deb12u3) ...
+#35 6.307 Preparing to unpack /tmp/imperator-perl.deb ...
+#35 6.341 Unpacking perl (5.36.0-7+deb12u4) over (5.36.0-7+deb12u3) ...
+#35 6.552 Preparing to unpack /tmp/imperator-libperl5.36.deb ...
+#35 6.576 Unpacking libperl5.36:amd64 (5.36.0-7+deb12u4) over (5.36.0-7+deb12u3) ...
+#35 8.531 Preparing to unpack .../imperator-perl-modules-5.36.deb ...
+#35 8.555 Unpacking perl-modules-5.36 (5.36.0-7+deb12u4) over (5.36.0-7+deb12u3) ...
+#35 14.46 Setting up libssl3:amd64 (3.0.22-1~deb12u2) ...
+#35 14.49 Setting up openssl (3.0.22-1~deb12u2) ...
+#35 14.52 Setting up libpcre2-8-0:amd64 (10.42-1+deb12u2) ...
+#35 14.54 Setting up perl-base (5.36.0-7+deb12u4) ...
+#35 14.57 Setting up perl-modules-5.36 (5.36.0-7+deb12u4) ...
+#35 14.60 Setting up libperl5.36:amd64 (5.36.0-7+deb12u4) ...
+#35 14.62 Setting up perl (5.36.0-7+deb12u4) ...
+#35 14.67 Processing triggers for libc-bin (2.36-9+deb12u14) ...
+#35 14.74 1.19 (go1.26.10 on linux/amd64; gc)
+#35 14.75 postgres (PostgreSQL) 18.6 (Debian 18.6-1.pgdg12+2)
+#35 DONE 14.8s
+
+#36 exporting to oci image format
+#36 exporting layers
+#36 exporting layers 2.5s done
+#36 rewriting layers with source-date-epoch 1794417660 (2026-11-11 17:21:00 +0000 UTC)
+#36 rewriting layers with source-date-epoch 1794417660 (2026-11-11 17:21:00 +0000 UTC) 1.9s done
+#36 exporting manifest sha256:d50f6b7acdaf691acb84ea308a0fb3b7dbbf9981a4ddd1e409e7dd35431efd5e 0.0s done
+#36 exporting config sha256:8f3c068b2cc4285ff37f093417b86e5466d3cb33d67fb3ae900faf71ccc39862 0.0s done
+#36 exporting attestation manifest sha256:ca1ce2b0bcaa9a36cdcedf5209ef8440808286e9df996d7ef7721adc282c05fe
+#36 exporting attestation manifest sha256:ca1ce2b0bcaa9a36cdcedf5209ef8440808286e9df996d7ef7721adc282c05fe 0.0s done
+#36 exporting manifest list sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a 0.0s done
+#36 sending tarball
+#36 sending tarball 3.5s done
+#36 DONE 8.3s
+
+#37 resolving provenance for metadata file
+#37 DONE 0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/0p823h2bfvyh2l4r3qm7lrjfg

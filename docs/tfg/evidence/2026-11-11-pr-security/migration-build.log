@@ -1,0 +1,140 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 5.06kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+#2 DONE 0.0s
+
+#3 docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+#3 resolve docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e 0.0s done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/flyway/flyway:13.7.0@sha256:e613cab576abcaf09d64b652fbd5e6fd6df9057e0933a35d508e793caf91352a
+#4 DONE 0.0s
+
+#5 [ 2/15] ADD --checksum=sha256:70b188a86d81f30d7510aab30e25d638ed5037dded6691af1533952b71ac61de     https://security.ubuntu.com/ubuntu/pool/main/b/brotli/libbrotli1_1.1.0-2ubuntu0.1_amd64.deb     /tmp/imperator-libbrotli1.deb
+#5 DONE 0.0s
+
+#6 [ 8/15] ADD --checksum=sha256:48c781de87e2016e1f0d973748a27130f11643e7ac080173f40e2d9669d84be3     https://repo.maven.apache.org/maven2/tools/jackson/core/jackson-databind/3.1.7/jackson-databind-3.1.7.jar     /flyway/lib/jackson-databind-3.1.7.jar
+#6 DONE 0.0s
+
+#7 [10/15] ADD --checksum=sha256:a50f3e68a793f90b05f44a4b5f2f59f3ec7687e39b5d8bbd1da44c84671fa3d6     https://security.ubuntu.com/ubuntu/pool/main/a/apt/libapt-pkg6.0t64_2.8.4ubuntu0.1_amd64.deb     /tmp/imperator-libapt-pkg6.0t64.deb
+#7 DONE 0.0s
+
+#8 [ 7/15] ADD --checksum=sha256:7608c367fd8a92666d28711519599543c180298259963184ce04d2947a8f71e7     https://repo.maven.apache.org/maven2/tools/jackson/core/jackson-core/3.1.7/jackson-core-3.1.7.jar     /flyway/lib/jackson-core-3.1.7.jar
+#8 DONE 0.0s
+
+#9 [internal] load build context
+#9 DONE 0.0s
+
+#10 [ 9/15] ADD --checksum=sha256:ad2ea7f107f250ba88b0bfdba31812a341e3247589647aa2b03b9dc4e8abf8ed     https://security.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.8.4ubuntu0.1_amd64.deb     /tmp/imperator-apt.deb
+#10 DONE 0.0s
+
+#11 [ 4/15] ADD --checksum=sha256:675b84971ffd4467707008c25ef7520f90ea7c23ef27b7a76b0dccf1d7c4dc3f     https://security.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_3.0.13-0ubuntu3.16_amd64.deb     /tmp/imperator-openssl.deb
+#11 DONE 0.0s
+
+#12 [ 6/15] ADD --checksum=sha256:556db5439e206114346043f68d200497dc96a0bca62a360a81784092ebd0e0a9     https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.22.3/jackson-databind-2.22.3.jar     /flyway/lib/jackson-databind-2.22.3.jar
+#12 DONE 0.0s
+
+#13 [ 3/15] ADD --checksum=sha256:219f43b1cd836a4da550938db5fda93160d269d39a4edcf1f1ce698a470db797     https://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl3t64_3.0.13-0ubuntu3.16_amd64.deb     /tmp/imperator-libssl3t64.deb
+#13 DONE 0.0s
+
+#14 [ 5/15] ADD --checksum=sha256:8a501126a385b25841915d839508f8a66e2a0dbc8a6709d055ef3b3e852b094c     https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.22.3/jackson-core-2.22.3.jar     /flyway/lib/jackson-core-2.22.3.jar
+#14 DONE 0.0s
+
+#15 [ 1/15] FROM docker.io/flyway/flyway:13.7.0@sha256:e613cab576abcaf09d64b652fbd5e6fd6df9057e0933a35d508e793caf91352a
+#15 resolve docker.io/flyway/flyway:13.7.0@sha256:e613cab576abcaf09d64b652fbd5e6fd6df9057e0933a35d508e793caf91352a 0.0s done
+#15 DONE 0.0s
+
+#9 [internal] load build context
+#9 transferring context: 19.72kB 0.0s done
+#9 DONE 0.0s
+
+#16 [10/15] ADD --checksum=sha256:a50f3e68a793f90b05f44a4b5f2f59f3ec7687e39b5d8bbd1da44c84671fa3d6     https://security.ubuntu.com/ubuntu/pool/main/a/apt/libapt-pkg6.0t64_2.8.4ubuntu0.1_amd64.deb     /tmp/imperator-libapt-pkg6.0t64.deb
+#16 CACHED
+
+#17 [11/15] RUN dpkg --install /tmp/imperator-apt.deb /tmp/imperator-libapt-pkg6.0t64.deb     && test "$(dpkg-query --showformat='${Version}' --show apt)" = "2.8.4ubuntu0.1"     && test "$(dpkg-query --showformat='${Version}' --show libapt-pkg6.0t64)" = "2.8.4ubuntu0.1"     && rm -f /tmp/imperator-apt.deb /tmp/imperator-libapt-pkg6.0t64.deb /var/log/dpkg.log
+#17 CACHED
+
+#18 [ 7/15] ADD --checksum=sha256:7608c367fd8a92666d28711519599543c180298259963184ce04d2947a8f71e7     https://repo.maven.apache.org/maven2/tools/jackson/core/jackson-core/3.1.7/jackson-core-3.1.7.jar     /flyway/lib/jackson-core-3.1.7.jar
+#18 CACHED
+
+#19 [ 8/15] ADD --checksum=sha256:48c781de87e2016e1f0d973748a27130f11643e7ac080173f40e2d9669d84be3     https://repo.maven.apache.org/maven2/tools/jackson/core/jackson-databind/3.1.7/jackson-databind-3.1.7.jar     /flyway/lib/jackson-databind-3.1.7.jar
+#19 CACHED
+
+#20 [12/15] COPY database/migrations/ /flyway/sql/
+#20 CACHED
+
+#21 [ 2/15] ADD --checksum=sha256:70b188a86d81f30d7510aab30e25d638ed5037dded6691af1533952b71ac61de     https://security.ubuntu.com/ubuntu/pool/main/b/brotli/libbrotli1_1.1.0-2ubuntu0.1_amd64.deb     /tmp/imperator-libbrotli1.deb
+#21 CACHED
+
+#22 [ 3/15] ADD --checksum=sha256:219f43b1cd836a4da550938db5fda93160d269d39a4edcf1f1ce698a470db797     https://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl3t64_3.0.13-0ubuntu3.16_amd64.deb     /tmp/imperator-libssl3t64.deb
+#22 CACHED
+
+#23 [ 4/15] ADD --checksum=sha256:675b84971ffd4467707008c25ef7520f90ea7c23ef27b7a76b0dccf1d7c4dc3f     https://security.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_3.0.13-0ubuntu3.16_amd64.deb     /tmp/imperator-openssl.deb
+#23 CACHED
+
+#24 [ 6/15] ADD --checksum=sha256:556db5439e206114346043f68d200497dc96a0bca62a360a81784092ebd0e0a9     https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.22.3/jackson-databind-2.22.3.jar     /flyway/lib/jackson-databind-2.22.3.jar
+#24 CACHED
+
+#25 [ 9/15] ADD --checksum=sha256:ad2ea7f107f250ba88b0bfdba31812a341e3247589647aa2b03b9dc4e8abf8ed     https://security.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.8.4ubuntu0.1_amd64.deb     /tmp/imperator-apt.deb
+#25 CACHED
+
+#26 [ 5/15] ADD --checksum=sha256:8a501126a385b25841915d839508f8a66e2a0dbc8a6709d055ef3b3e852b094c     https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.22.3/jackson-core-2.22.3.jar     /flyway/lib/jackson-core-2.22.3.jar
+#26 CACHED
+
+#27 [13/15] COPY infra/docker/flyway/entrypoint.sh /opt/imperator/entrypoint.sh
+#27 CACHED
+
+#28 [14/15] RUN chmod 0644 /flyway/lib/jackson-core-2.22.3.jar /flyway/lib/jackson-databind-2.22.3.jar         /flyway/lib/jackson-core-3.1.7.jar /flyway/lib/jackson-databind-3.1.7.jar     && dpkg --install /tmp/imperator-libbrotli1.deb /tmp/imperator-libssl3t64.deb /tmp/imperator-openssl.deb     && test "$(dpkg-query --showformat='${Version}' --show libbrotli1)" = "1.1.0-2ubuntu0.1"     && rm -f /tmp/imperator-libbrotli1.deb /tmp/imperator-libssl3t64.deb /tmp/imperator-openssl.deb /var/log/dpkg.log     && rm -rf /flyway/drivers/aws /flyway/drivers/couchbase /flyway/drivers/gcp     && test ! -e /flyway/drivers/gcp     && rm -f /flyway/lib/jackson-core-2.22.2.jar /flyway/lib/jackson-databind-2.22.2.jar         /flyway/lib/jackson-core-3.1.6.jar /flyway/lib/jackson-databind-3.1.6.jar
+#28 0.309 (Reading database ... 6267 files and directories currently installed.)
+#28 0.310 Preparing to unpack /tmp/imperator-libbrotli1.deb ...
+#28 0.353 Unpacking libbrotli1:amd64 (1.1.0-2ubuntu0.1) over (1.1.0-2build2) ...
+#28 0.465 Preparing to unpack /tmp/imperator-libssl3t64.deb ...
+#28 0.489 Unpacking libssl3t64:amd64 (3.0.13-0ubuntu3.16) over (3.0.13-0ubuntu3.15) ...
+#28 0.631 Preparing to unpack /tmp/imperator-openssl.deb ...
+#28 0.655 Unpacking openssl (3.0.13-0ubuntu3.16) over (3.0.13-0ubuntu3.15) ...
+#28 0.741 Setting up libbrotli1:amd64 (1.1.0-2ubuntu0.1) ...
+#28 0.765 Setting up libssl3t64:amd64 (3.0.13-0ubuntu3.16) ...
+#28 0.789 Setting up openssl (3.0.13-0ubuntu3.16) ...
+#28 0.823 Processing triggers for libc-bin (2.39-0ubuntu8.8) ...
+#28 DONE 0.9s
+
+#29 [15/15] RUN rm -f       /flyway/drivers/databricks-jdbc-*.jar       /flyway/drivers/mssql-jdbc-*.jar     && test -z "$(find /flyway/drivers -maxdepth 1 -type f \( -name 'databricks-jdbc-*.jar' -o -name 'mssql-jdbc-*.jar' \) -print -quit)"     && test "$(find /flyway/drivers -maxdepth 1 -type f -name 'postgresql-*.jar' | wc -l)" -eq 1     && /flyway/flyway -v     && chmod 0555 /opt/imperator/entrypoint.sh     && chmod -R a-w /flyway/sql
+#29 0.888 WARNING: Storing migrations in 'sql' is not recommended and default scanning of this location may be deprecated in a future release
+#29 0.888 Flyway OSS Edition 13.7.0 by Redgate
+#29 0.888 
+#29 0.895 See release notes here: https://help.red-gate.com/help/flyway-cli13/help_7.aspx?topic=release-notes-and-older-versions/release-notes-for-flyway-engine
+#29 0.910 Plugin Name                       | Version   
+#29 0.910 --------------------------------- | ----------
+#29 0.910 DB2 for z/OS                      | 10.25.14  
+#29 0.910 QuestDB                           | 10.25.14  
+#29 0.910 OceanBase                         | 10.25.14  
+#29 0.910 YugabyteDB                        | 10.25.14  
+#29 0.910 TiDB                              | 10.25.14  
+#29 0.910 CUBRID                            | 10.25.14  
+#29 0.910 Apache Ignite                     | 10.25.14  
+#29 0.911 Timeplus                          | 10.25.14  
+#29 0.911 InterSystems IRIS Data Platform   | 10.25.14  
+#29 0.911 ClickHouse                        | 10.25.14  
+#29 0.911 DuckDB                            | 10.25.14  
+#29 DONE 1.0s
+
+#30 exporting to oci image format
+#30 exporting layers
+#30 exporting layers 0.5s done
+#30 exporting manifest sha256:d210653084c26d243e913447b084bf5b9a0a4c908c4b7eb5694055e098f3efab 0.0s done
+#30 exporting config sha256:2e832bdf9d73cad84e7fdf5ecdec96f5ceee204d0e669141da977e150c71713b 0.0s done
+#30 exporting attestation manifest sha256:dd30b4d2e8c2554b6c49432037d4970f984c108b6c16a7155b64130f3365f683
+#30 exporting attestation manifest sha256:dd30b4d2e8c2554b6c49432037d4970f984c108b6c16a7155b64130f3365f683 0.0s done
+#30 exporting manifest list sha256:cb87d9906327e7670108363308994894687ab6ec1b87a7821d0f60f99c280325 0.0s done
+#30 sending tarball
+#30 sending tarball 11.2s done
+#30 DONE 12.0s
+
+#31 resolving provenance for metadata file
+#31 DONE 0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/l923j1648qt3gphmsvvoy2hrz

@@ -1,0 +1,483 @@
+{
+  "runtimeManifest": "sha256:d50f6b7acdaf691acb84ea308a0fb3b7dbbf9981a4ddd1e409e7dd35431efd5e",
+  "manifest": {
+    "schemaVersion": 2,
+    "mediaType": "application/vnd.oci.image.manifest.v1+json",
+    "config": {
+      "mediaType": "application/vnd.oci.image.config.v1+json",
+      "digest": "sha256:8f3c068b2cc4285ff37f093417b86e5466d3cb33d67fb3ae900faf71ccc39862",
+      "size": 16852
+    },
+    "layers": [
+      {
+        "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+        "digest": "sha256:a8ac7f6c67abc236e4c745052c404112b8fab6fe8ac3a329d1ef3b867ad67c71",
+        "size": 28232655
+      },
+      {
+        "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+        "digest": "sha256:a1e3ce97a8279499a0a9bcb2417379aae28fca52dc301365b1f8bfe1c641a1d5",
+        "size": 1170
+      },
+      {
+        "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+        "digest": "sha256:37111c57f5aa35dd2ad36433dd125b416383462017b0adfc882869ee68862d50",
+        "size": 4534204
+      },
+      {
+        "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+        "digest": "sha256:41cb1fe8c0d14ec66b7b7abe5cce60ba181e92683906e3684ff5e8064aece0ba",
+        "size": 1250046
+      },
+      {
+        "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+        "digest": "sha256:227fb2bf8d7b11a11161e4292644f360b46d1893e8f4c1fc25da79042233c964",
+        "size": 8066442
+      },
+      {
+        "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+        "digest": "sha256:a39d72951262533e1ab70b13d7bac8cc215c177dc9cc39e688c347895ba04335",
+        "size": 1196463
+      },
+      {
+        "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+        "digest": "sha256:9696c0868ba1861fe5e5007a146ba8f4eb666353f0a55d0e5c4e8944f8d86eb1",
+        "size": 116
+      },
+      {
+        "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+        "digest": "sha256:4e16465a208f813fca0e07cd0409aa10dc07611de4267578457c107df76a52e1",
+        "size": 3144
+      },
+      {
+        "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+        "digest": "sha256:8e38d8544e5392718cf637e26f8a31e2e6a58620b07711b9ad095ac153ea3a4a",
+        "size": 113935777
+      },
+      {
+        "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+        "digest": "sha256:9d291e6dbf34edf2065ff886c53a20707b060d87315eb40e1fad0ebae29ae515",
+        "size": 19320
+      },
+      {
+        "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+        "digest": "sha256:0868f91773479569838111233a5534c60d1363e4d604815d8381d70a3b8353ca",
+        "size": 128
+      },
+      {
+        "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+        "digest": "sha256:80ee9aeea627de0a8e2c682b5f25931a0e6c8d15d82713aab5e8bd9c94c3b141",
+        "size": 6110
+      },
+      {
+        "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+        "digest": "sha256:88f5f2b697ce7cf0e8b16f546bb0eda2e886bd8f8c20ca5e8cd5a65c50ede8f4",
+        "size": 185
+      },
+      {
+        "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+        "digest": "sha256:0b4af5a5178fdb91f15af5b5e3d03f7fbb6e72d1f79d01d77c099d19e10a8cec",
+        "size": 261790,
+        "annotations": {
+          "buildkit/rewritten-timestamp": "1794417660"
+        }
+      },
+      {
+        "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+        "digest": "sha256:53db453a9c365f6f03cc030aefafec6d81d8b9236308a51d72d004a0577476bb",
+        "size": 1610200,
+        "annotations": {
+          "buildkit/rewritten-timestamp": "1794417660"
+        }
+      },
+      {
+        "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+        "digest": "sha256:a1b23a98ba88f45b2b6038b5c24f58ba054545703ab2bfb104f29b9a4b2b3706",
+        "size": 239550,
+        "annotations": {
+          "buildkit/rewritten-timestamp": "1794417660"
+        }
+      },
+      {
+        "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+        "digest": "sha256:e6d67b9629291feaec149fd4769910f8d30bfd1c4c73f638caa74578c6c556cd",
+        "size": 4209057,
+        "annotations": {
+          "buildkit/rewritten-timestamp": "1794417660"
+        }
+      },
+      {
+        "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+        "digest": "sha256:9612c005c4ba0bd1873fedfb604d1d53fd9b72d83deafeb473b68839a5f97f8b",
+        "size": 2818353,
+        "annotations": {
+          "buildkit/rewritten-timestamp": "1794417660"
+        }
+      },
+      {
+        "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+        "digest": "sha256:56aac7ad4284b4ab0021f0e144d01ae81788580b229743de45385f49c0bd5612",
+        "size": 2040579,
+        "annotations": {
+          "buildkit/rewritten-timestamp": "1794417660"
+        }
+      },
+      {
+        "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+        "digest": "sha256:ddda6465ae0e428cbda59b2ce7748180a7bac6ed54c8c9645b52e34eba929e0c",
+        "size": 1442265,
+        "annotations": {
+          "buildkit/rewritten-timestamp": "1794417660"
+        }
+      },
+      {
+        "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+        "digest": "sha256:461bc3efcb1a8c6549957554ae2340923b6ecbfadafef79a228e803fa0d36a75",
+        "size": 1373630,
+        "annotations": {
+          "buildkit/rewritten-timestamp": "1794417660"
+        }
+      },
+      {
+        "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+        "digest": "sha256:23c7fe03a4706445411b1fc46497e7a0a8e2ddc81282581d48880bc75acbe598",
+        "size": 907361,
+        "annotations": {
+          "buildkit/rewritten-timestamp": "1794417660"
+        }
+      },
+      {
+        "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+        "digest": "sha256:df22f605690b28d8a3b024e73a286b8f7fa006053dc2b6128fe9a72aaa927b45",
+        "size": 2622048,
+        "annotations": {
+          "buildkit/rewritten-timestamp": "1794417660"
+        }
+      },
+      {
+        "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+        "digest": "sha256:f0e71d9b008f61722f28c8855766c9c5bd416e2652e7375ae70999cb7a725ca6",
+        "size": 813796,
+        "annotations": {
+          "buildkit/rewritten-timestamp": "1794417660"
+        }
+      },
+      {
+        "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+        "digest": "sha256:d96853970cecc6f37936cd5bf7a49472c6919cf1526b937d38beb4699a32d6f1",
+        "size": 4159,
+        "annotations": {
+          "buildkit/rewritten-timestamp": "1794417660"
+        }
+      },
+      {
+        "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+        "digest": "sha256:237de4b8928e07c7a4ccd4abaa15c4558e23085417b6d3689bf3d7ded012f4c1",
+        "size": 1170,
+        "annotations": {
+          "buildkit/rewritten-timestamp": "1794417660"
+        }
+      },
+      {
+        "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+        "digest": "sha256:535bc7b272ea348faf5d2f8f7aed69e43e34729c74496af41216ea201e090230",
+        "size": 16747019,
+        "annotations": {
+          "buildkit/rewritten-timestamp": "1794417660"
+        }
+      }
+    ]
+  },
+  "config": {
+    "architecture": "amd64",
+    "config": {
+      "User": "999:999",
+      "ExposedPorts": {
+        "5432/tcp": {}
+      },
+      "Env": [
+        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/postgresql/18/bin",
+        "GOSU_VERSION=1.19",
+        "LANG=en_US.utf8",
+        "PG_MAJOR=18",
+        "PG_VERSION=18.6-1.pgdg12+2",
+        "PGDATA=/var/lib/postgresql/18/docker"
+      ],
+      "Entrypoint": [
+        "docker-entrypoint.sh"
+      ],
+      "Cmd": [
+        "postgres"
+      ],
+      "Volumes": {
+        "/var/lib/postgresql": {}
+      },
+      "Labels": {
+        "org.opencontainers.image.base.digest": "sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af",
+        "org.opencontainers.image.base.name": "postgres:18.6-bookworm",
+        "org.opencontainers.image.description": "PostgreSQL 18.6 with rebuilt gosu and a pinned Debian security patch",
+        "org.opencontainers.image.licenses": "PostgreSQL AND Apache-2.0",
+        "org.opencontainers.image.revision": "49c8b677ad18b07404b708ea83608201f6baa203",
+        "org.opencontainers.image.source": "https://github.com/Dmillan-dev/ImperatorProyect",
+        "org.opencontainers.image.title": "IMPERATOR PostgreSQL Runtime",
+        "org.opencontainers.image.version": "18.6-gosu1.19-go1.26.10-pcre2deb12u2-perldeb12u4-openssldeb12u2-apt2.6.2"
+      },
+      "StopSignal": "SIGINT"
+    },
+    "created": "2026-11-11T17:21:00Z",
+    "history": [
+      {
+        "created": "2026-08-24T00:00:00Z",
+        "created_by": "# debian.sh --arch 'amd64' out/ 'bookworm' '@1787529600'",
+        "comment": "debuerreotype 0.17"
+      },
+      {
+        "created": "2026-08-25T00:41:18.724371606Z",
+        "created_by": "RUN /bin/sh -c set -eux; \tgroupadd -r postgres --gid=999; \tuseradd -r -g postgres --uid=999 --home-dir=/var/lib/postgresql --shell=/bin/bash postgres; \tinstall --verbose --directory --owner postgres --group postgres --mode 1777 /var/lib/postgresql # buildkit",
+        "comment": "buildkit.dockerfile.v0"
+      },
+      {
+        "created": "2026-08-25T00:41:23.530353001Z",
+        "created_by": "RUN /bin/sh -c set -ex; \tapt-get update; \tapt-get install -y --no-install-recommends \t\tgnupg \t\tless \t; \trm -rf /var/lib/apt/lists/* # buildkit",
+        "comment": "buildkit.dockerfile.v0"
+      },
+      {
+        "created": "2026-08-25T00:41:30.230556162Z",
+        "created_by": "ENV GOSU_VERSION=1.19",
+        "comment": "buildkit.dockerfile.v0",
+        "empty_layer": true
+      },
+      {
+        "created": "2026-08-25T00:41:30.230556162Z",
+        "created_by": "RUN /bin/sh -c set -eux; \tsavedAptMark=\"$(apt-mark showmanual)\"; \tapt-get update; \tapt-get install -y --no-install-recommends ca-certificates wget; \trm -rf /var/lib/apt/lists/*; \tdpkgArch=\"$(dpkg --print-architecture | awk -F- '{ print $NF }')\"; \twget -O /usr/local/bin/gosu \"https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch\"; \twget -O /usr/local/bin/gosu.asc \"https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc\"; \texport GNUPGHOME=\"$(mktemp -d)\"; \tgpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; \tgpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; \tgpgconf --kill all; \trm -rf \"$GNUPGHOME\" /usr/local/bin/gosu.asc; \tapt-mark auto '.*' > /dev/null; \t[ -z \"$savedAptMark\" ] || apt-mark manual $savedAptMark > /dev/null; \tapt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \tchmod +x /usr/local/bin/gosu; \tgosu --version; \tgosu nobody true # buildkit",
+        "comment": "buildkit.dockerfile.v0"
+      },
+      {
+        "created": "2026-08-25T00:41:34.605456485Z",
+        "created_by": "RUN /bin/sh -c set -eux; \tif [ -f /etc/dpkg/dpkg.cfg.d/docker ]; then \t\tgrep -q '/usr/share/locale' /etc/dpkg/dpkg.cfg.d/docker; \t\tsed -ri '/\\/usr\\/share\\/locale/d' /etc/dpkg/dpkg.cfg.d/docker; \t\t! grep -q '/usr/share/locale' /etc/dpkg/dpkg.cfg.d/docker; \tfi; \tapt-get update; apt-get install -y --no-install-recommends locales; rm -rf /var/lib/apt/lists/*; \techo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen; \tlocale-gen; \tlocale -a | grep 'en_US.utf8' # buildkit",
+        "comment": "buildkit.dockerfile.v0"
+      },
+      {
+        "created": "2026-08-25T00:41:34.605456485Z",
+        "created_by": "ENV LANG=en_US.utf8",
+        "comment": "buildkit.dockerfile.v0",
+        "empty_layer": true
+      },
+      {
+        "created": "2026-08-25T00:41:37.349690168Z",
+        "created_by": "RUN /bin/sh -c set -eux; \tapt-get update; \tapt-get install -y --no-install-recommends \t\tlibnss-wrapper \t\txz-utils \t\tzstd \t; \trm -rf /var/lib/apt/lists/* # buildkit",
+        "comment": "buildkit.dockerfile.v0"
+      },
+      {
+        "created": "2026-08-25T00:41:37.444735859Z",
+        "created_by": "RUN /bin/sh -c mkdir /docker-entrypoint-initdb.d # buildkit",
+        "comment": "buildkit.dockerfile.v0"
+      },
+      {
+        "created": "2026-08-25T00:41:38.052945123Z",
+        "created_by": "RUN /bin/sh -c set -ex; \tkey='B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8'; \texport GNUPGHOME=\"$(mktemp -d)\"; \tmkdir -p /usr/local/share/keyrings/; \tgpg --batch --keyserver keyserver.ubuntu.com --recv-keys \"$key\"; \tgpg --batch --export --armor \"$key\" > /usr/local/share/keyrings/postgres.gpg.asc; \tgpgconf --kill all; \trm -rf \"$GNUPGHOME\" # buildkit",
+        "comment": "buildkit.dockerfile.v0"
+      },
+      {
+        "created": "2026-08-25T00:41:38.052945123Z",
+        "created_by": "ENV PG_MAJOR=18",
+        "comment": "buildkit.dockerfile.v0",
+        "empty_layer": true
+      },
+      {
+        "created": "2026-08-25T00:41:38.052945123Z",
+        "created_by": "ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/postgresql/18/bin",
+        "comment": "buildkit.dockerfile.v0",
+        "empty_layer": true
+      },
+      {
+        "created": "2026-08-25T00:41:38.052945123Z",
+        "created_by": "ENV PG_VERSION=18.6-1.pgdg12+2",
+        "comment": "buildkit.dockerfile.v0",
+        "empty_layer": true
+      },
+      {
+        "created": "2026-08-25T00:41:53.42774386Z",
+        "created_by": "RUN /bin/sh -c set -ex; \t\texport PYTHONDONTWRITEBYTECODE=1; \t\tdpkgArch=\"$(dpkg --print-architecture)\"; \taptRepo=\"[ signed-by=/usr/local/share/keyrings/postgres.gpg.asc ] http://apt.postgresql.org/pub/repos/apt bookworm-pgdg main $PG_MAJOR\"; \tcase \"$dpkgArch\" in \t\tamd64 | arm64 | ppc64el) \t\t\techo \"deb $aptRepo\" > /etc/apt/sources.list.d/pgdg.list; \t\t\tapt-get update; \t\t\t;; \t\t*) \t\t\techo \"deb-src $aptRepo\" > /etc/apt/sources.list.d/pgdg.list; \t\t\t\t\t\tsavedAptMark=\"$(apt-mark showmanual)\"; \t\t\t\t\t\ttempDir=\"$(mktemp -d)\"; \t\t\tcd \"$tempDir\"; \t\t\t\t\t\tapt-get update; \t\t\tapt-get install -y --no-install-recommends dpkg-dev; \t\t\techo \"deb [ trusted=yes ] file://$tempDir ./\" > /etc/apt/sources.list.d/temp.list; \t\t\t_update_repo() { \t\t\t\tdpkg-scanpackages . > Packages; \t\t\t\tapt-get -o Acquire::GzipIndexes=false update; \t\t\t}; \t\t\t_update_repo; \t\t\t\t\t\tnproc=\"$(nproc)\"; \t\t\texport DEB_BUILD_OPTIONS=\"nocheck parallel=$nproc\"; \t\t\tapt-get build-dep -y postgresql-common-dev; \t\t\tapt-get source --compile postgresql-common-dev; \t\t\t_update_repo; \t\t\tapt-get build-dep -y \"postgresql-$PG_MAJOR=$PG_VERSION\"; \t\t\tapt-get source --compile \"postgresql-$PG_MAJOR=$PG_VERSION\"; \t\t\t\t\t\t\t\t\tapt-mark showmanual | xargs apt-mark auto > /dev/null; \t\t\tapt-mark manual $savedAptMark; \t\t\t\t\t\tls -lAFh; \t\t\t_update_repo; \t\t\tgrep '^Package: ' Packages; \t\t\tcd /; \t\t\t;; \tesac; \t\tapt-get install -y --no-install-recommends postgresql-common; \tsed -ri 's/#(create_main_cluster) .*$/\\1 = false/' /etc/postgresql-common/createcluster.conf; \tapt-get install -y --no-install-recommends \t\t\"postgresql-$PG_MAJOR=$PG_VERSION\" \t; \tif apt-get install -s \"postgresql-$PG_MAJOR-jit\" > /dev/null 2>&1; then \t\tapt-get install -y --no-install-recommends \"postgresql-$PG_MAJOR-jit=$PG_VERSION\"; \tfi; \t\trm -rf /var/lib/apt/lists/*; \t\tif [ -n \"$tempDir\" ]; then \t\tapt-get purge -y --auto-remove; \t\trm -rf \"$tempDir\" /etc/apt/sources.list.d/temp.list; \tfi; \t\tfind /usr -name '*.pyc' -type f -exec bash -c 'for pyc; do dpkg -S \"$pyc\" &> /dev/null || rm -vf \"$pyc\"; done' -- '{}' +; \t\tpostgres --version # buildkit",
+        "comment": "buildkit.dockerfile.v0"
+      },
+      {
+        "created": "2026-08-25T00:41:53.53511433Z",
+        "created_by": "RUN /bin/sh -c set -eux; \tdpkg-divert --add --rename --divert \"/usr/share/postgresql/postgresql.conf.sample.dpkg\" \"/usr/share/postgresql/$PG_MAJOR/postgresql.conf.sample\"; \tcp -v /usr/share/postgresql/postgresql.conf.sample.dpkg /usr/share/postgresql/postgresql.conf.sample; \tln -sv ../postgresql.conf.sample \"/usr/share/postgresql/$PG_MAJOR/\"; \tsed -ri \"s!^#?(listen_addresses)\\s*=\\s*\\S+.*!\\1 = '*'!\" /usr/share/postgresql/postgresql.conf.sample; \tgrep -F \"listen_addresses = '*'\" /usr/share/postgresql/postgresql.conf.sample # buildkit",
+        "comment": "buildkit.dockerfile.v0"
+      },
+      {
+        "created": "2026-08-25T00:41:53.62392466Z",
+        "created_by": "RUN /bin/sh -c install --verbose --directory --owner postgres --group postgres --mode 3777 /var/run/postgresql # buildkit",
+        "comment": "buildkit.dockerfile.v0"
+      },
+      {
+        "created": "2026-08-25T00:41:53.62392466Z",
+        "created_by": "ENV PGDATA=/var/lib/postgresql/18/docker",
+        "comment": "buildkit.dockerfile.v0",
+        "empty_layer": true
+      },
+      {
+        "created": "2026-08-25T00:41:53.62392466Z",
+        "created_by": "VOLUME [/var/lib/postgresql]",
+        "comment": "buildkit.dockerfile.v0",
+        "empty_layer": true
+      },
+      {
+        "created": "2026-08-25T00:41:53.648101307Z",
+        "created_by": "COPY docker-entrypoint.sh docker-ensure-initdb.sh /usr/local/bin/ # buildkit",
+        "comment": "buildkit.dockerfile.v0"
+      },
+      {
+        "created": "2026-08-25T00:41:53.724803403Z",
+        "created_by": "RUN /bin/sh -c ln -sT docker-ensure-initdb.sh /usr/local/bin/docker-enforce-initdb.sh # buildkit",
+        "comment": "buildkit.dockerfile.v0"
+      },
+      {
+        "created": "2026-08-25T00:41:53.724803403Z",
+        "created_by": "ENTRYPOINT [\"docker-entrypoint.sh\"]",
+        "comment": "buildkit.dockerfile.v0",
+        "empty_layer": true
+      },
+      {
+        "created": "2026-08-25T00:41:53.724803403Z",
+        "created_by": "STOPSIGNAL SIGINT",
+        "comment": "buildkit.dockerfile.v0",
+        "empty_layer": true
+      },
+      {
+        "created": "2026-08-25T00:41:53.724803403Z",
+        "created_by": "EXPOSE map[5432/tcp:{}]",
+        "comment": "buildkit.dockerfile.v0",
+        "empty_layer": true
+      },
+      {
+        "created": "2026-08-25T00:41:53.724803403Z",
+        "created_by": "CMD [\"postgres\"]",
+        "comment": "buildkit.dockerfile.v0",
+        "empty_layer": true
+      },
+      {
+        "created": "2026-11-11T17:21:00Z",
+        "created_by": "ARG VCS_REF",
+        "comment": "buildkit.dockerfile.v0",
+        "empty_layer": true
+      },
+      {
+        "created": "2026-11-11T17:21:00Z",
+        "created_by": "ADD https://security.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-8-0_10.42-1+deb12u2_amd64.deb /tmp/libpcre2-8-0.deb # buildkit",
+        "comment": "buildkit.dockerfile.v0"
+      },
+      {
+        "created": "2026-11-11T17:21:00Z",
+        "created_by": "ADD https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-base_5.36.0-7+deb12u4_amd64.deb /tmp/imperator-perl-base.deb # buildkit",
+        "comment": "buildkit.dockerfile.v0"
+      },
+      {
+        "created": "2026-11-11T17:21:00Z",
+        "created_by": "ADD https://security.debian.org/debian-security/pool/updates/main/p/perl/perl_5.36.0-7+deb12u4_amd64.deb /tmp/imperator-perl.deb # buildkit",
+        "comment": "buildkit.dockerfile.v0"
+      },
+      {
+        "created": "2026-11-11T17:21:00Z",
+        "created_by": "ADD https://security.debian.org/debian-security/pool/updates/main/p/perl/libperl5.36_5.36.0-7+deb12u4_amd64.deb /tmp/imperator-libperl5.36.deb # buildkit",
+        "comment": "buildkit.dockerfile.v0"
+      },
+      {
+        "created": "2026-11-11T17:21:00Z",
+        "created_by": "ADD https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-modules-5.36_5.36.0-7+deb12u4_all.deb /tmp/imperator-perl-modules-5.36.deb # buildkit",
+        "comment": "buildkit.dockerfile.v0"
+      },
+      {
+        "created": "2026-11-11T17:21:00Z",
+        "created_by": "ADD https://security.debian.org/debian-security/pool/updates/main/o/openssl/libssl3_3.0.22-1~deb12u2_amd64.deb /tmp/imperator-libssl3.deb # buildkit",
+        "comment": "buildkit.dockerfile.v0"
+      },
+      {
+        "created": "2026-11-11T17:21:00Z",
+        "created_by": "ADD https://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_3.0.22-1~deb12u2_amd64.deb /tmp/imperator-openssl.deb # buildkit",
+        "comment": "buildkit.dockerfile.v0"
+      },
+      {
+        "created": "2026-11-11T17:21:00Z",
+        "created_by": "ADD https://security.debian.org/debian-security/pool/updates/main/a/apt/apt_2.6.2_amd64.deb /tmp/imperator-apt.deb # buildkit",
+        "comment": "buildkit.dockerfile.v0"
+      },
+      {
+        "created": "2026-11-11T17:21:00Z",
+        "created_by": "ADD https://security.debian.org/debian-security/pool/updates/main/a/apt/libapt-pkg6.0_2.6.2_amd64.deb /tmp/imperator-libapt-pkg6.0.deb # buildkit",
+        "comment": "buildkit.dockerfile.v0"
+      },
+      {
+        "created": "2026-11-11T17:21:00Z",
+        "created_by": "RUN |1 VCS_REF=49c8b677ad18b07404b708ea83608201f6baa203 /bin/sh -c dpkg --install /tmp/imperator-apt.deb /tmp/imperator-libapt-pkg6.0.deb     && test \"$(dpkg-query --showformat='${Version}' --show apt)\" = \"2.6.2\"     && test \"$(dpkg-query --showformat='${Version}' --show libapt-pkg6.0)\" = \"2.6.2\"     && rm -f /tmp/imperator-apt.deb /tmp/imperator-libapt-pkg6.0.deb         /var/log/dpkg.log /var/cache/ldconfig/aux-cache # buildkit",
+        "comment": "buildkit.dockerfile.v0"
+      },
+      {
+        "created": "2026-11-11T17:21:00Z",
+        "created_by": "LABEL org.opencontainers.image.title=IMPERATOR PostgreSQL Runtime org.opencontainers.image.description=PostgreSQL 18.6 with rebuilt gosu and a pinned Debian security patch org.opencontainers.image.source=https://github.com/Dmillan-dev/ImperatorProyect org.opencontainers.image.revision=49c8b677ad18b07404b708ea83608201f6baa203 org.opencontainers.image.version=18.6-gosu1.19-go1.26.10-pcre2deb12u2-perldeb12u4-openssldeb12u2-apt2.6.2 org.opencontainers.image.base.name=postgres:18.6-bookworm org.opencontainers.image.base.digest=sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af org.opencontainers.image.licenses=PostgreSQL AND Apache-2.0",
+        "comment": "buildkit.dockerfile.v0",
+        "empty_layer": true
+      },
+      {
+        "created": "2026-11-11T17:21:00Z",
+        "created_by": "COPY /out/gosu /usr/local/bin/gosu # buildkit",
+        "comment": "buildkit.dockerfile.v0"
+      },
+      {
+        "created": "2026-11-11T17:21:00Z",
+        "created_by": "COPY /build/gosu/LICENSE /usr/local/share/licenses/gosu/LICENSE # buildkit",
+        "comment": "buildkit.dockerfile.v0"
+      },
+      {
+        "created": "2026-11-11T17:21:00Z",
+        "created_by": "COPY --chown=999:999 provision-app-role.sh /opt/imperator/provision-app-role.sh # buildkit",
+        "comment": "buildkit.dockerfile.v0"
+      },
+      {
+        "created": "2026-11-11T17:21:00Z",
+        "created_by": "RUN |1 VCS_REF=49c8b677ad18b07404b708ea83608201f6baa203 /bin/sh -c dpkg --install /tmp/imperator-libssl3.deb /tmp/imperator-openssl.deb /tmp/libpcre2-8-0.deb /tmp/imperator-perl-base.deb /tmp/imperator-perl.deb /tmp/imperator-libperl5.36.deb /tmp/imperator-perl-modules-5.36.deb     && rm -f         /tmp/imperator-libssl3.deb /tmp/imperator-openssl.deb         /tmp/libpcre2-8-0.deb         /tmp/imperator-perl-base.deb /tmp/imperator-perl.deb /tmp/imperator-libperl5.36.deb /tmp/imperator-perl-modules-5.36.deb         /var/cache/ldconfig/aux-cache         /var/log/dpkg.log     && chmod 0755 /usr/local/bin/gosu     && chmod 0555 /opt/imperator/provision-app-role.sh     && chmod 0444 /usr/local/share/licenses/gosu/LICENSE     && gosu --version     && gosu nobody true     && postgres --version # buildkit",
+        "comment": "buildkit.dockerfile.v0"
+      },
+      {
+        "created": "2026-11-11T17:21:00Z",
+        "created_by": "USER 999:999",
+        "comment": "buildkit.dockerfile.v0",
+        "empty_layer": true
+      }
+    ],
+    "os": "linux",
+    "rootfs": {
+      "type": "layers",
+      "diff_ids": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9",
+        "sha256:1b1e22004b38c5b981c07a93c7d325d466cd63e14f0e806bbe93ca9d3d0c61ae",
+        "sha256:1d56b64d320cb77d83c4120f5e201de09f2d4ad5c4e974381fcd2fba5e889517",
+        "sha256:7c6cbda169190e0afe6aab0182c8cd5d28fd8e6ac214b6dceb2e473af7dbac06",
+        "sha256:874dda0b8b69493249c5ef91bbf08ee2249674d366d8435881aa8386c02b916f",
+        "sha256:f3fd4b8548dc6e138685f9409784451342091b03ca6a43abfbdac0fac91a33cd",
+        "sha256:c7c465dde784c7c0b34604beb05d97d49a22d9cd6f0098c886f619ec231e693b",
+        "sha256:0bf6c176813876858181f98ccfe7bf9fcd5c218fbba1e759a4844682d430332a",
+        "sha256:e1f9c266ea5bc34a027b84c3b35289a5e2363b4643382b7670ae1410e0c3db31",
+        "sha256:be2e0363978119ebb6164735d2221e27784ec4fb94751ef1f6b0394eef906012",
+        "sha256:cb02a482d2bfe2a8744afc86c62b9c6e986111bd99826f2af20a7874518162bb",
+        "sha256:bdd1b8d5b2d2845d9a01ba034638a54e89b157755130f7572fed2ec78c570603",
+        "sha256:105329dc535054f63fa88c61acb8567e35dec9b7711ce09df2b0a89bcead525d",
+        "sha256:0358faab94b74a335226ed67870285bbb5fe3f45fddcd1d902c435675d89ae16",
+        "sha256:fbdbf47688db67363254ba453b253affb8953bcddf16f607b22c1f5f5d23e3e8"
+      ]
+    }
+  }
+}

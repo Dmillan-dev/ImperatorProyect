@@ -56,11 +56,25 @@ ADD --checksum=sha256:5cdf0b735b1c8a96ae0bf83ed328c83c2170f8320dedb035e98705b60b
     https://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_3.0.22-1~deb12u2_amd64.deb \
     /tmp/imperator-openssl.deb
 
+# CVE-2026-109518: update only APT and its matching runtime library.
+ADD --checksum=sha256:796fc7fe18866f5b1fb27a115d7339e549d71b7ddbc15b8d6fc4226c243e96d1 \
+    https://security.debian.org/debian-security/pool/updates/main/a/apt/apt_2.6.2_amd64.deb \
+    /tmp/imperator-apt.deb
+ADD --checksum=sha256:023a7017b75295fc7037c7a4352847f9516a36a82cc5e1650d6832d238860913 \
+    https://security.debian.org/debian-security/pool/updates/main/a/apt/libapt-pkg6.0_2.6.2_amd64.deb \
+    /tmp/imperator-libapt-pkg6.0.deb
+
+RUN dpkg --install /tmp/imperator-apt.deb /tmp/imperator-libapt-pkg6.0.deb \
+    && test "$(dpkg-query --showformat='${Version}' --show apt)" = "2.6.2" \
+    && test "$(dpkg-query --showformat='${Version}' --show libapt-pkg6.0)" = "2.6.2" \
+    && rm -f /tmp/imperator-apt.deb /tmp/imperator-libapt-pkg6.0.deb \
+        /var/log/dpkg.log /var/cache/ldconfig/aux-cache
+
 LABEL org.opencontainers.image.title="IMPERATOR PostgreSQL Runtime" \
       org.opencontainers.image.description="PostgreSQL 18.6 with rebuilt gosu and a pinned Debian security patch" \
       org.opencontainers.image.source="https://github.com/Dmillan-dev/ImperatorProyect" \
       org.opencontainers.image.revision="${VCS_REF}" \
-      org.opencontainers.image.version="18.6-gosu1.19-go1.26.10-pcre2deb12u2-perldeb12u4-openssldeb12u2" \
+      org.opencontainers.image.version="18.6-gosu1.19-go1.26.10-pcre2deb12u2-perldeb12u4-openssldeb12u2-apt2.6.2" \
       org.opencontainers.image.base.name="postgres:18.6-bookworm" \
       org.opencontainers.image.base.digest="sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af" \
       org.opencontainers.image.licenses="PostgreSQL AND Apache-2.0"
