@@ -1,0 +1,19 @@
+[
+  {
+    "number": 92,
+    "recommendation": "CLOSE / DEFER MAINTENANCE; DO NOT MERGE",
+    "reason": "17 broad changes; Maven wrapper 3.10.1 contradicts enforced 3.9.16 and checksum gate. Failure reproduced in CI logs. No corresponding Java/Spring vulnerability is the open alert."
+  },
+  {
+    "number": 93,
+    "recommendation": "CLOSE / DEFER MAINTENANCE AFTER MINIMAL REPLACEMENT",
+    "reason": "12 direct updates are unnecessary for the focused fix. Its actual lockfile retains TypeScript-ESLint 8.66.0 / minimatch 10.2.6, so it does not repair alert 41.",
+    "head": "084c2fc74e724e87f1aaf646a1c9623d63857f07"
+  },
+  {
+    "number": 94,
+    "recommendation": "SECURITY PATCH REQUIRED; INCLUDED EXACTLY IN REPLACEMENT, CLOSE AS SUPERSEDED AFTER MERGE",
+    "reason": "Official Node 24.22.3 security release. Do not merge both branches independently without reconciling the same patch.",
+    "head": "6b958f05739051e7a615a7fb9a8c5f779d0c5d15"
+  }
+]

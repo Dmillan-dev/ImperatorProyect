@@ -1,0 +1,2338 @@
+[
+  {
+    "cve": "CVE-2023-2953",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2023-2953",
+        "package": "libldap-2.5-0",
+        "installed": "2.5.13+dfsg-5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "openldap: null pointer dereference in  ber_memalloc_x  function",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2023-2953"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2023-2953",
+    "executionReview": "Historical individual review remains a reference only. Reassessment and explicit owner decision are required for these current observations and exact image IDs.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2023-45853",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2023-45853",
+        "package": "zlib1g",
+        "installed": "1:1.2.13.dfsg-1",
+        "fixed": null,
+        "severity": "CRITICAL",
+        "status": "will_not_fix",
+        "title": "zlib: integer overflow and resultant heap-based buffer overflow in zipOpenNewFileInZip4_6",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2023-45853"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2023-45853",
+        "package": "zlib1g",
+        "installed": "1:1.2.13.dfsg-1",
+        "fixed": null,
+        "severity": "CRITICAL",
+        "status": "will_not_fix",
+        "title": "zlib: integer overflow and resultant heap-based buffer overflow in zipOpenNewFileInZip4_6",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2023-45853"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2023-45853",
+    "executionReview": "Historical individual review remains a reference only. Reassessment and explicit owner decision are required for these current observations and exact image IDs.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2025-6020",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2025-6020",
+        "package": "libpam-modules",
+        "installed": "1.5.2-6+deb12u2",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "linux-pam: Linux-pam directory Traversal",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2025-6020"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2025-6020",
+        "package": "libpam-modules-bin",
+        "installed": "1.5.2-6+deb12u2",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "linux-pam: Linux-pam directory Traversal",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2025-6020"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2025-6020",
+        "package": "libpam-runtime",
+        "installed": "1.5.2-6+deb12u2",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "linux-pam: Linux-pam directory Traversal",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2025-6020"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2025-6020",
+        "package": "libpam0g",
+        "installed": "1.5.2-6+deb12u2",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "linux-pam: Linux-pam directory Traversal",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2025-6020"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2025-6020",
+        "package": "libpam-modules",
+        "installed": "1.5.2-6+deb12u2",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "linux-pam: Linux-pam directory Traversal",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2025-6020"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2025-6020",
+        "package": "libpam-modules-bin",
+        "installed": "1.5.2-6+deb12u2",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "linux-pam: Linux-pam directory Traversal",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2025-6020"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2025-6020",
+        "package": "libpam-runtime",
+        "installed": "1.5.2-6+deb12u2",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "linux-pam: Linux-pam directory Traversal",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2025-6020"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2025-6020",
+        "package": "libpam0g",
+        "installed": "1.5.2-6+deb12u2",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "linux-pam: Linux-pam directory Traversal",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2025-6020"
+      }
+    ],
+    "vendorUrl": "https://security-tracker.debian.org/tracker/CVE-2025-6020",
+    "bookwormFixAvailableAtReview": false,
+    "classification": "CURRENT UNFIXED BOOKWORM PACKAGE / CONDITIONAL LOCAL RISK",
+    "executionReview": "PAM 1.5.2-6+deb12u2 is installed. Debian reports its previous fix was not applied correctly. pam_namespace requires a local-user path/symlink/race condition. No active pam_namespace line was found in /etc/pam.d of either exact affected image; frontend UID 1000 and PostgreSQL UID 999 were verified. This does not prove arbitrary native/operator/compromised-container paths safe.",
+    "requiredMitigations": [
+      "Keep the local synthetic scope, non-root users, read-only runtime, dropped capabilities and no-new-privileges.",
+      "Do not introduce PAM authentication, namespace configurations, untrusted shell accounts or user-controlled privileged paths without reassessment.",
+      "Recheck for a Bookworm security backport before any later release; no Trixie migration or source-built PAM substitution is authorized by this review."
+    ]
+  },
+  {
+    "cve": "CVE-2025-69720",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2025-69720",
+        "package": "libtinfo6",
+        "installed": "6.4-4",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2025-69720"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2025-69720",
+        "package": "ncurses-base",
+        "installed": "6.4-4",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2025-69720"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2025-69720",
+        "package": "ncurses-bin",
+        "installed": "6.4-4",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2025-69720"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2025-69720",
+        "package": "libncursesw6",
+        "installed": "6.4-4",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2025-69720"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2025-69720",
+        "package": "libtinfo6",
+        "installed": "6.4-4",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2025-69720"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2025-69720",
+        "package": "ncurses-base",
+        "installed": "6.4-4",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2025-69720"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2025-69720",
+        "package": "ncurses-bin",
+        "installed": "6.4-4",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2025-69720"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2025-69720",
+    "executionReview": "Historical individual review remains a reference only. Reassessment and explicit owner decision are required for these current observations and exact image IDs.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2025-7458",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2025-7458",
+        "package": "libsqlite3-0",
+        "installed": "3.40.1-2+deb12u2",
+        "fixed": null,
+        "severity": "CRITICAL",
+        "status": "affected",
+        "title": "sqlite: SQLite integer overflow",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2025-7458"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2025-7458",
+    "executionReview": "Historical individual review remains a reference only. Reassessment and explicit owner decision are required for these current observations and exact image IDs.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-107364",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-107364",
+        "package": "libgssapi-krb5-2",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: Unauthenticated KDC DoS based on ASN.1 decoder read overrun",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-107364"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-107364",
+        "package": "libk5crypto3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: Unauthenticated KDC DoS based on ASN.1 decoder read overrun",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-107364"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-107364",
+        "package": "libkrb5-3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: Unauthenticated KDC DoS based on ASN.1 decoder read overrun",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-107364"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-107364",
+        "package": "libkrb5support0",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: Unauthenticated KDC DoS based on ASN.1 decoder read overrun",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-107364"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-107364",
+    "executionReview": "PostgreSQL links Kerberos/GSS libraries; krb5kdc, kadmind and kadmin.local binaries were not found. KDC/admin-server exploit conditions are not a configured IMPERATOR service. Library presence is real; arbitrary native calls or a compromised container are not proved safe.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-112315",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112315",
+        "package": "libgssapi-krb5-2",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind unauthenticated memory leak DoS in RPCSEC_GSS buffer decode failure",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112315"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112315",
+        "package": "libk5crypto3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind unauthenticated memory leak DoS in RPCSEC_GSS buffer decode failure",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112315"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112315",
+        "package": "libkrb5-3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind unauthenticated memory leak DoS in RPCSEC_GSS buffer decode failure",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112315"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112315",
+        "package": "libkrb5support0",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind unauthenticated memory leak DoS in RPCSEC_GSS buffer decode failure",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112315"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-112315",
+    "executionReview": "PostgreSQL links Kerberos/GSS libraries; krb5kdc, kadmind and kadmin.local binaries were not found. KDC/admin-server exploit conditions are not a configured IMPERATOR service. Library presence is real; arbitrary native calls or a compromised container are not proved safe.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-112316",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112316",
+        "package": "libgssapi-krb5-2",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind authenticated memory leak DoS in xdr_krb5_tl_data() decode failure",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112316"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112316",
+        "package": "libk5crypto3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind authenticated memory leak DoS in xdr_krb5_tl_data() decode failure",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112316"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112316",
+        "package": "libkrb5-3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind authenticated memory leak DoS in xdr_krb5_tl_data() decode failure",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112316"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112316",
+        "package": "libkrb5support0",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind authenticated memory leak DoS in xdr_krb5_tl_data() decode failure",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112316"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-112316",
+    "executionReview": "PostgreSQL links Kerberos/GSS libraries; krb5kdc, kadmind and kadmin.local binaries were not found. KDC/admin-server exploit conditions are not a configured IMPERATOR service. Library presence is real; arbitrary native calls or a compromised container are not proved safe.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-112317",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112317",
+        "package": "libgssapi-krb5-2",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 KDC unauthenticated memory leak DoS in KDB keytab key decryption error path",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112317"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112317",
+        "package": "libk5crypto3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 KDC unauthenticated memory leak DoS in KDB keytab key decryption error path",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112317"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112317",
+        "package": "libkrb5-3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 KDC unauthenticated memory leak DoS in KDB keytab key decryption error path",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112317"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112317",
+        "package": "libkrb5support0",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 KDC unauthenticated memory leak DoS in KDB keytab key decryption error path",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112317"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-112317",
+    "executionReview": "PostgreSQL links Kerberos/GSS libraries; krb5kdc, kadmind and kadmin.local binaries were not found. KDC/admin-server exploit conditions are not a configured IMPERATOR service. Library presence is real; arbitrary native calls or a compromised container are not proved safe.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-112318",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112318",
+        "package": "libgssapi-krb5-2",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind authenticated DoS exploiting dereference of null policy name pointers",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112318"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112318",
+        "package": "libk5crypto3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind authenticated DoS exploiting dereference of null policy name pointers",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112318"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112318",
+        "package": "libkrb5-3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind authenticated DoS exploiting dereference of null policy name pointers",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112318"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112318",
+        "package": "libkrb5support0",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind authenticated DoS exploiting dereference of null policy name pointers",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112318"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-112318",
+    "executionReview": "PostgreSQL links Kerberos/GSS libraries; krb5kdc, kadmind and kadmin.local binaries were not found. KDC/admin-server exploit conditions are not a configured IMPERATOR service. Library presence is real; arbitrary native calls or a compromised container are not proved safe.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-112319",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112319",
+        "package": "libgssapi-krb5-2",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind authenticated memory exhaustion DoS via unbounded RPC XDR allocation",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112319"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112319",
+        "package": "libk5crypto3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind authenticated memory exhaustion DoS via unbounded RPC XDR allocation",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112319"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112319",
+        "package": "libkrb5-3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind authenticated memory exhaustion DoS via unbounded RPC XDR allocation",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112319"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112319",
+        "package": "libkrb5support0",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind authenticated memory exhaustion DoS via unbounded RPC XDR allocation",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112319"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-112319",
+    "executionReview": "PostgreSQL links Kerberos/GSS libraries; krb5kdc, kadmind and kadmin.local binaries were not found. KDC/admin-server exploit conditions are not a configured IMPERATOR service. Library presence is real; arbitrary native calls or a compromised container are not proved safe.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-112320",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112320",
+        "package": "libgssapi-krb5-2",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind unauthenticated memory leak DoS via GSS-RPC auth flavor switching",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112320"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112320",
+        "package": "libk5crypto3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind unauthenticated memory leak DoS via GSS-RPC auth flavor switching",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112320"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112320",
+        "package": "libkrb5-3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind unauthenticated memory leak DoS via GSS-RPC auth flavor switching",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112320"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112320",
+        "package": "libkrb5support0",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind unauthenticated memory leak DoS via GSS-RPC auth flavor switching",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112320"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-112320",
+    "executionReview": "PostgreSQL links Kerberos/GSS libraries; krb5kdc, kadmind and kadmin.local binaries were not found. KDC/admin-server exploit conditions are not a configured IMPERATOR service. Library presence is real; arbitrary native calls or a compromised container are not proved safe.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-112321",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112321",
+        "package": "libgssapi-krb5-2",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind unauthenticated memory leak DoS via AUTH_GSSAPI_INIT error paths",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112321"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112321",
+        "package": "libk5crypto3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind unauthenticated memory leak DoS via AUTH_GSSAPI_INIT error paths",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112321"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112321",
+        "package": "libkrb5-3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind unauthenticated memory leak DoS via AUTH_GSSAPI_INIT error paths",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112321"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112321",
+        "package": "libkrb5support0",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind unauthenticated memory leak DoS via AUTH_GSSAPI_INIT error paths",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112321"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-112321",
+    "executionReview": "PostgreSQL links Kerberos/GSS libraries; krb5kdc, kadmind and kadmin.local binaries were not found. KDC/admin-server exploit conditions are not a configured IMPERATOR service. Library presence is real; arbitrary native calls or a compromised container are not proved safe.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-112322",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112322",
+        "package": "libgssapi-krb5-2",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind unauthenticated CPU DoS via AUTH_GSSAPI client states cleanup",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112322"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112322",
+        "package": "libk5crypto3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind unauthenticated CPU DoS via AUTH_GSSAPI client states cleanup",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112322"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112322",
+        "package": "libkrb5-3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind unauthenticated CPU DoS via AUTH_GSSAPI client states cleanup",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112322"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112322",
+        "package": "libkrb5support0",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind unauthenticated CPU DoS via AUTH_GSSAPI client states cleanup",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112322"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-112322",
+    "executionReview": "PostgreSQL links Kerberos/GSS libraries; krb5kdc, kadmind and kadmin.local binaries were not found. KDC/admin-server exploit conditions are not a configured IMPERATOR service. Library presence is real; arbitrary native calls or a compromised container are not proved safe.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-112323",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112323",
+        "package": "libgssapi-krb5-2",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind unauthenticated memory exhaustion via failed AUTH_GSSAPI_INIT requests",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112323"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112323",
+        "package": "libk5crypto3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind unauthenticated memory exhaustion via failed AUTH_GSSAPI_INIT requests",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112323"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112323",
+        "package": "libkrb5-3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind unauthenticated memory exhaustion via failed AUTH_GSSAPI_INIT requests",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112323"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-112323",
+        "package": "libkrb5support0",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 kadmind unauthenticated memory exhaustion via failed AUTH_GSSAPI_INIT requests",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-112323"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-112323",
+    "executionReview": "PostgreSQL links Kerberos/GSS libraries; krb5kdc, kadmind and kadmin.local binaries were not found. KDC/admin-server exploit conditions are not a configured IMPERATOR service. Library presence is real; arbitrary native calls or a compromised container are not proved safe.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-11822",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-11822",
+        "package": "libsqlite3-0",
+        "installed": "3.40.1-2+deb12u2",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "fix_deferred",
+        "title": "sqlite: SQLite: Arbitrary code execution via crafted FTS5 full-text search data",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-11822"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-11822",
+    "executionReview": "Historical individual review remains a reference only. Reassessment and explicit owner decision are required for these current observations and exact image IDs.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-11824",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-11824",
+        "package": "libsqlite3-0",
+        "installed": "3.40.1-2+deb12u2",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "fix_deferred",
+        "title": "sqlite: SQLite: Arbitrary code execution and crash via heap-based buffer overflow in FTS5",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-11824"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-11824",
+    "executionReview": "Historical individual review remains a reference only. Reassessment and explicit owner decision are required for these current observations and exact image IDs.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-118380",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-118380",
+        "package": "libgssapi-krb5-2",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: kadmind: request alteration and protected information disclosure",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-118380"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-118380",
+        "package": "libk5crypto3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: kadmind: request alteration and protected information disclosure",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-118380"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-118380",
+        "package": "libkrb5-3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: kadmind: request alteration and protected information disclosure",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-118380"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-118380",
+        "package": "libkrb5support0",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: kadmind: request alteration and protected information disclosure",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-118380"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-118380",
+    "executionReview": "PostgreSQL links Kerberos/GSS libraries; krb5kdc, kadmind and kadmin.local binaries were not found. KDC/admin-server exploit conditions are not a configured IMPERATOR service. Library presence is real; arbitrary native calls or a compromised container are not proved safe.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-119079",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-119079",
+        "package": "libgssapi-krb5-2",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 KDC unauthenticated CPU DoS via quadratic ASN.1 SEQUENCE OF decoding",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-119079"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-119079",
+        "package": "libk5crypto3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 KDC unauthenticated CPU DoS via quadratic ASN.1 SEQUENCE OF decoding",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-119079"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-119079",
+        "package": "libkrb5-3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 KDC unauthenticated CPU DoS via quadratic ASN.1 SEQUENCE OF decoding",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-119079"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-119079",
+        "package": "libkrb5support0",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: MIT krb5 KDC unauthenticated CPU DoS via quadratic ASN.1 SEQUENCE OF decoding",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-119079"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-119079",
+    "executionReview": "PostgreSQL links Kerberos/GSS libraries; krb5kdc, kadmind and kadmin.local binaries were not found. KDC/admin-server exploit conditions are not a configured IMPERATOR service. Library presence is real; arbitrary native calls or a compromised container are not proved safe.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-119373",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-119373",
+        "package": "libsqlite3-0",
+        "installed": "3.40.1-2+deb12u2",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "sqlite: sqlite: Denial of service via heap-based buffer overflow in FTS5",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-119373"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-119373",
+    "executionReview": "Historical individual review remains a reference only. Reassessment and explicit owner decision are required for these current observations and exact image IDs.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-119374",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-119374",
+        "package": "libsqlite3-0",
+        "installed": "3.40.1-2+deb12u2",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "sqlite: sqlite: Arbitrary code execution via corrupted FTS5 index",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-119374"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-119374",
+    "executionReview": "SQLite library is installed; postgres ldd does not link SQLite and sqlite3 CLI was not found. Product persistence uses PostgreSQL. Crafted FTS5 database deletion or session changeset handling is not an identified product path; arbitrary native/plugin/operator paths are not declared unreachable.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-119379",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-119379",
+        "package": "libsqlite3-0",
+        "installed": "3.40.1-2+deb12u2",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "sqlite: sqlite: Arbitrary code execution via crafted session changesets",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-119379"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-119379",
+    "executionReview": "SQLite library is installed; postgres ldd does not link SQLite and sqlite3 CLI was not found. Product persistence uses PostgreSQL. Crafted FTS5 database deletion or session changeset handling is not an identified product path; arbitrary native/plugin/operator paths are not declared unreachable.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-16742",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-16742",
+        "package": "libsystemd0",
+        "installed": "252.39-1~deb12u2",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "fix_deferred",
+        "title": "systemd: systemd-homed: Local privilege escalation via missing home-record signature verification",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-16742"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-16742",
+        "package": "libudev1",
+        "installed": "252.39-1~deb12u2",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "fix_deferred",
+        "title": "systemd: systemd-homed: Local privilege escalation via missing home-record signature verification",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-16742"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-16742",
+        "package": "libsystemd0",
+        "installed": "252.39-1~deb12u2",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "fix_deferred",
+        "title": "systemd: systemd-homed: Local privilege escalation via missing home-record signature verification",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-16742"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-16742",
+        "package": "libudev1",
+        "installed": "252.39-1~deb12u2",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "fix_deferred",
+        "title": "systemd: systemd-homed: Local privilege escalation via missing home-record signature verification",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-16742"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-16742",
+    "executionReview": "Historical individual review remains a reference only. Reassessment and explicit owner decision are required for these current observations and exact image IDs.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-41992",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-41992",
+        "package": "gzip",
+        "installed": "1.12-1",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "fix_deferred",
+        "title": "gzip: gzip: Information disclosure via global buffer overflow in LZH decompression",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-41992"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-41992",
+        "package": "gzip",
+        "installed": "1.12-1",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "fix_deferred",
+        "title": "gzip: gzip: Information disclosure via global buffer overflow in LZH decompression",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-41992"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-41992",
+    "executionReview": "Historical individual review remains a reference only. Reassessment and explicit owner decision are required for these current observations and exact image IDs.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-53613",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-53613",
+        "package": "bsdutils",
+        "installed": "1:2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: TOCTOU in the mount program via ancestor directory swap on target path",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-53613",
+        "package": "libblkid1",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: TOCTOU in the mount program via ancestor directory swap on target path",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-53613",
+        "package": "libmount1",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: TOCTOU in the mount program via ancestor directory swap on target path",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-53613",
+        "package": "libsmartcols1",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: TOCTOU in the mount program via ancestor directory swap on target path",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-53613",
+        "package": "libuuid1",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: TOCTOU in the mount program via ancestor directory swap on target path",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-53613",
+        "package": "mount",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: TOCTOU in the mount program via ancestor directory swap on target path",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-53613",
+        "package": "util-linux",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: TOCTOU in the mount program via ancestor directory swap on target path",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-53613",
+        "package": "util-linux-extra",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: TOCTOU in the mount program via ancestor directory swap on target path",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-53613",
+        "package": "bsdutils",
+        "installed": "1:2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: TOCTOU in the mount program via ancestor directory swap on target path",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-53613",
+        "package": "libblkid1",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: TOCTOU in the mount program via ancestor directory swap on target path",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-53613",
+        "package": "libmount1",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: TOCTOU in the mount program via ancestor directory swap on target path",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-53613",
+        "package": "libsmartcols1",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: TOCTOU in the mount program via ancestor directory swap on target path",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-53613",
+        "package": "libuuid1",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: TOCTOU in the mount program via ancestor directory swap on target path",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-53613",
+        "package": "mount",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: TOCTOU in the mount program via ancestor directory swap on target path",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-53613",
+        "package": "util-linux",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: TOCTOU in the mount program via ancestor directory swap on target path",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-53613",
+        "package": "util-linux-extra",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: TOCTOU in the mount program via ancestor directory swap on target path",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53613"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-53613",
+    "executionReview": "Historical individual review remains a reference only. Reassessment and explicit owner decision are required for these current observations and exact image IDs.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-53615",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-53615",
+        "package": "bsdutils",
+        "installed": "1:2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-53615",
+        "package": "libblkid1",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-53615",
+        "package": "libmount1",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-53615",
+        "package": "libsmartcols1",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-53615",
+        "package": "libuuid1",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-53615",
+        "package": "mount",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-53615",
+        "package": "util-linux",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-53615",
+        "package": "util-linux-extra",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-53615",
+        "package": "bsdutils",
+        "installed": "1:2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-53615",
+        "package": "libblkid1",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-53615",
+        "package": "libmount1",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-53615",
+        "package": "libsmartcols1",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-53615",
+        "package": "libuuid1",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-53615",
+        "package": "mount",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-53615",
+        "package": "util-linux",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-53615",
+        "package": "util-linux-extra",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: Partition metadata compromise via integer overflow in DOS partition parser",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-53615"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-53615",
+    "executionReview": "Historical individual review remains a reference only. Reassessment and explicit owner decision are required for these current observations and exact image IDs.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-54369",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-54369",
+        "package": "libacl1",
+        "installed": "2.3.1-3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "fix_deferred",
+        "title": "acl: Symlink traversal privilege escalation via libacl functions",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-54369"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-54369",
+        "package": "libacl1",
+        "installed": "2.3.1-3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "fix_deferred",
+        "title": "acl: Symlink traversal privilege escalation via libacl functions",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-54369"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-54369",
+    "executionReview": "Historical individual review remains a reference only. Reassessment and explicit owner decision are required for these current observations and exact image IDs.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-6653",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-6653",
+        "package": "libxml2",
+        "installed": "2.9.14+dfsg-1.3~deb12u6",
+        "fixed": null,
+        "severity": "CRITICAL",
+        "status": "fix_deferred",
+        "title": "libxml2: mingw-libxml2: libxml2: Denial of Service via crafted XML input due to use-after-free",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-6653"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-6653",
+    "executionReview": "Historical individual review remains a reference only. Reassessment and explicit owner decision are required for these current observations and exact image IDs.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-71199",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-71199",
+        "package": "libgssapi-krb5-2",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: Alteration of authentication indicators in CAMMAC container",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-71199"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-71199",
+        "package": "libk5crypto3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: Alteration of authentication indicators in CAMMAC container",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-71199"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-71199",
+        "package": "libkrb5-3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: Alteration of authentication indicators in CAMMAC container",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-71199"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-71199",
+        "package": "libkrb5support0",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: Alteration of authentication indicators in CAMMAC container",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-71199"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-71199",
+    "executionReview": "PostgreSQL links Kerberos/GSS libraries; krb5kdc, kadmind and kadmin.local binaries were not found. KDC/admin-server exploit conditions are not a configured IMPERATOR service. Library presence is real; arbitrary native calls or a compromised container are not proved safe.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-71200",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-71200",
+        "package": "libgssapi-krb5-2",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: Unauthenticated KDC NULL pointer dereference KDC DoS via crafted PKINIT pre-auth request",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-71200"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-71200",
+        "package": "libk5crypto3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: Unauthenticated KDC NULL pointer dereference KDC DoS via crafted PKINIT pre-auth request",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-71200"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-71200",
+        "package": "libkrb5-3",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: Unauthenticated KDC NULL pointer dereference KDC DoS via crafted PKINIT pre-auth request",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-71200"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-71200",
+        "package": "libkrb5support0",
+        "installed": "1.20.1-2+deb12u5",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "krb5: Unauthenticated KDC NULL pointer dereference KDC DoS via crafted PKINIT pre-auth request",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-71200"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-71200",
+    "executionReview": "PostgreSQL links Kerberos/GSS libraries; krb5kdc, kadmind and kadmin.local binaries were not found. KDC/admin-server exploit conditions are not a configured IMPERATOR service. Library presence is real; arbitrary native calls or a compromised container are not proved safe.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-74860",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-74860",
+        "package": "libxml2",
+        "installed": "2.9.14+dfsg-1.3~deb12u6",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "fix_deferred",
+        "title": "libxml2: double-free/UAF in libxml2 Python bindings",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-74860"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-74860",
+    "executionReview": "Historical individual review remains a reference only. Reassessment and explicit owner decision are required for these current observations and exact image IDs.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-78410",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-78410",
+        "package": "bsdutils",
+        "installed": "1:2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-78410",
+        "package": "libblkid1",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-78410",
+        "package": "libmount1",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-78410",
+        "package": "libsmartcols1",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-78410",
+        "package": "libuuid1",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-78410",
+        "package": "mount",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-78410",
+        "package": "util-linux",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-78410",
+        "package": "util-linux-extra",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-78410",
+        "package": "bsdutils",
+        "installed": "1:2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-78410",
+        "package": "libblkid1",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-78410",
+        "package": "libmount1",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-78410",
+        "package": "libsmartcols1",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-78410",
+        "package": "libuuid1",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-78410",
+        "package": "mount",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-78410",
+        "package": "util-linux",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-78410",
+        "package": "util-linux-extra",
+        "installed": "2.38.1-5+deb12u3",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-78410"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-78410",
+    "executionReview": "Historical individual review remains a reference only. Reassessment and explicit owner decision are required for these current observations and exact image IDs.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-85091",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-85091",
+        "package": "zlib1g",
+        "installed": "1:1.2.13.dfsg-1",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "zlib: zlib: Heap buffer overflow in gz_vacate() allows arbitrary code execution",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-85091"
+      },
+      {
+        "component": "candidate-migration",
+        "imageId": "sha256:cb87d9906327e7670108363308994894687ab6ec1b87a7821d0f60f99c280325",
+        "cve": "CVE-2026-85091",
+        "package": "zlib1g",
+        "installed": "1:1.3.dfsg-3.1ubuntu2.2",
+        "fixed": "1:1.3.dfsg-3.1ubuntu2.3",
+        "severity": "MEDIUM",
+        "status": "fixed",
+        "title": "zlib: zlib: Heap buffer overflow in gz_vacate() allows arbitrary code execution",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-85091"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-85091",
+        "package": "zlib1g",
+        "installed": "1:1.2.13.dfsg-1",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "affected",
+        "title": "zlib: zlib: Heap buffer overflow in gz_vacate() allows arbitrary code execution",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-85091"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-85091",
+    "executionReview": "Installed zlib is linked by PostgreSQL. Vendor describes gz* write/error-buffer paths; use of the affected path through product requests has not been demonstrated. Remains a real conditional residual, not dismissed.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-86138",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-86138",
+        "package": "libxml2",
+        "installed": "2.9.14+dfsg-1.3~deb12u6",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "fix_deferred",
+        "title": "libxml2: libxml2: Arbitrary code execution via heap-based buffer overflow",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-86138"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-86138",
+    "executionReview": "Historical individual review remains a reference only. Reassessment and explicit owner decision are required for these current observations and exact image IDs.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-86140",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-86140",
+        "package": "libxml2",
+        "installed": "2.9.14+dfsg-1.3~deb12u6",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "fix_deferred",
+        "title": "libxml2: libxml2: Arbitrary code execution via stack-based buffer overflow in xmlSnprintfElements",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-86140"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-86140",
+    "executionReview": "Historical individual review remains a reference only. Reassessment and explicit owner decision are required for these current observations and exact image IDs.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-86142",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-86142",
+        "package": "libxml2",
+        "installed": "2.9.14+dfsg-1.3~deb12u6",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "fix_deferred",
+        "title": "libxml2: libxml2: Heap-based buffer overflow in xmlXPtrEval due to xpointer length saturation",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-86142"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-86142",
+    "executionReview": "Historical individual review remains a reference only. Reassessment and explicit owner decision are required for these current observations and exact image IDs.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-86143",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-86143",
+        "package": "libxml2",
+        "installed": "2.9.14+dfsg-1.3~deb12u6",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "fix_deferred",
+        "title": "libxml2: libxml2: Data integrity issues due to integer overflow in write callbacks",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-86143"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-86143",
+    "executionReview": "Historical individual review remains a reference only. Reassessment and explicit owner decision are required for these current observations and exact image IDs.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-86144",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-86144",
+        "package": "libxml2",
+        "installed": "2.9.14+dfsg-1.3~deb12u6",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "fix_deferred",
+        "title": "libxml2: libxml2: Information disclosure, SSRF, or denial of service due to improper parseFlags propagation.",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-86144"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-86144",
+    "executionReview": "Historical individual review remains a reference only. Reassessment and explicit owner decision are required for these current observations and exact image IDs.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-88647",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-backend",
+        "imageId": "sha256:1de68d8ccd597d11cf83549c542fd79f0dff54596c4859f53a9d1cb0b195f3ee",
+        "cve": "CVE-2026-88647",
+        "package": "libgnutls30",
+        "installed": "3.7.3-4ubuntu1.9",
+        "fixed": null,
+        "severity": "MEDIUM",
+        "status": "affected",
+        "title": "gnutls: gnutls: Information disclosure via hostname verification bypass",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-88647"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-88647",
+        "package": "libgnutls30",
+        "installed": "3.7.9-2+deb12u7",
+        "fixed": null,
+        "severity": "LOW",
+        "status": "affected",
+        "title": "gnutls: gnutls: Information disclosure via hostname verification bypass",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-88647"
+      },
+      {
+        "component": "candidate-migration",
+        "imageId": "sha256:cb87d9906327e7670108363308994894687ab6ec1b87a7821d0f60f99c280325",
+        "cve": "CVE-2026-88647",
+        "package": "libgnutls30t64",
+        "installed": "3.8.3-1.1ubuntu3.6",
+        "fixed": null,
+        "severity": "MEDIUM",
+        "status": "affected",
+        "title": "gnutls: gnutls: Information disclosure via hostname verification bypass",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-88647"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-88647",
+        "package": "libgnutls30",
+        "installed": "3.7.9-2+deb12u7",
+        "fixed": null,
+        "severity": "LOW",
+        "status": "affected",
+        "title": "gnutls: gnutls: Information disclosure via hostname verification bypass",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-88647"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-88647",
+    "executionReview": "Historical individual review remains a reference only. Reassessment and explicit owner decision are required for these current observations and exact image IDs.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-88648",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-backend",
+        "imageId": "sha256:1de68d8ccd597d11cf83549c542fd79f0dff54596c4859f53a9d1cb0b195f3ee",
+        "cve": "CVE-2026-88648",
+        "package": "libgnutls30",
+        "installed": "3.7.3-4ubuntu1.9",
+        "fixed": null,
+        "severity": "MEDIUM",
+        "status": "affected",
+        "title": "gnutls: gnutls: Cross-domain certificate restriction bypass via incomplete X.509 validation",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-88648"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-88648",
+        "package": "libgnutls30",
+        "installed": "3.7.9-2+deb12u7",
+        "fixed": null,
+        "severity": "LOW",
+        "status": "affected",
+        "title": "gnutls: gnutls: Cross-domain certificate restriction bypass via incomplete X.509 validation",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-88648"
+      },
+      {
+        "component": "candidate-migration",
+        "imageId": "sha256:cb87d9906327e7670108363308994894687ab6ec1b87a7821d0f60f99c280325",
+        "cve": "CVE-2026-88648",
+        "package": "libgnutls30t64",
+        "installed": "3.8.3-1.1ubuntu3.6",
+        "fixed": null,
+        "severity": "MEDIUM",
+        "status": "affected",
+        "title": "gnutls: gnutls: Cross-domain certificate restriction bypass via incomplete X.509 validation",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-88648"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-88648",
+        "package": "libgnutls30",
+        "installed": "3.7.9-2+deb12u7",
+        "fixed": null,
+        "severity": "LOW",
+        "status": "affected",
+        "title": "gnutls: gnutls: Cross-domain certificate restriction bypass via incomplete X.509 validation",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-88648"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-88648",
+    "executionReview": "Historical individual review remains a reference only. Reassessment and explicit owner decision are required for these current observations and exact image IDs.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  },
+  {
+    "cve": "CVE-2026-9538",
+    "accepted": false,
+    "declaredInexploitable": false,
+    "observations": [
+      {
+        "component": "candidate-backend",
+        "imageId": "sha256:1de68d8ccd597d11cf83549c542fd79f0dff54596c4859f53a9d1cb0b195f3ee",
+        "cve": "CVE-2026-9538",
+        "package": "perl-base",
+        "installed": "5.34.0-3ubuntu1.8",
+        "fixed": null,
+        "severity": "MEDIUM",
+        "status": "affected",
+        "title": "perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-9538"
+      },
+      {
+        "component": "candidate-frontend",
+        "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+        "cve": "CVE-2026-9538",
+        "package": "perl-base",
+        "installed": "5.36.0-7+deb12u4",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "fix_deferred",
+        "title": "perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-9538"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-9538",
+        "package": "libperl5.36",
+        "installed": "5.36.0-7+deb12u4",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "fix_deferred",
+        "title": "perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-9538"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-9538",
+        "package": "perl",
+        "installed": "5.36.0-7+deb12u4",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "fix_deferred",
+        "title": "perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-9538"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-9538",
+        "package": "perl-base",
+        "installed": "5.36.0-7+deb12u4",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "fix_deferred",
+        "title": "perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-9538"
+      },
+      {
+        "component": "candidate-postgres",
+        "imageId": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+        "cve": "CVE-2026-9538",
+        "package": "perl-modules-5.36",
+        "installed": "5.36.0-7+deb12u4",
+        "fixed": null,
+        "severity": "HIGH",
+        "status": "fix_deferred",
+        "title": "perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size",
+        "primaryUrl": "https://avd.aquasec.com/nvd/cve-2026-9538"
+      }
+    ],
+    "priorIndividualReview": "../2026-11-11-pr-security/CVE_REVIEW_MATRIX.json#CVE-2026-9538",
+    "executionReview": "Historical individual review remains a reference only. Reassessment and explicit owner decision are required for these current observations and exact image IDs.",
+    "reviewLimit": "Historical applicability analysis is a reference; current bindings are explicitly listed and no prior approval transfers to this set."
+  }
+]

@@ -1,0 +1,67 @@
+[
+  {
+    "path": "node_modules/@isaacs/nonrecursive-glob-match",
+    "before": null,
+    "after": "1.0.1"
+  },
+  {
+    "path": "node_modules/@typescript-eslint/eslint-plugin",
+    "before": "8.66.0",
+    "after": "8.73.0"
+  },
+  {
+    "path": "node_modules/@typescript-eslint/parser",
+    "before": "8.66.0",
+    "after": "8.73.0"
+  },
+  {
+    "path": "node_modules/@typescript-eslint/project-service",
+    "before": "8.66.0",
+    "after": "8.73.0"
+  },
+  {
+    "path": "node_modules/@typescript-eslint/scope-manager",
+    "before": "8.66.0",
+    "after": "8.73.0"
+  },
+  {
+    "path": "node_modules/@typescript-eslint/tsconfig-utils",
+    "before": "8.66.0",
+    "after": "8.73.0"
+  },
+  {
+    "path": "node_modules/@typescript-eslint/type-utils",
+    "before": "8.66.0",
+    "after": "8.73.0"
+  },
+  {
+    "path": "node_modules/@typescript-eslint/types",
+    "before": "8.66.0",
+    "after": "8.73.0"
+  },
+  {
+    "path": "node_modules/@typescript-eslint/typescript-estree",
+    "before": "8.66.0",
+    "after": "8.73.0"
+  },
+  {
+    "path": "node_modules/@typescript-eslint/typescript-estree/node_modules/minimatch",
+    "before": "10.2.6",
+    "after": "11.0.1"
+  },
+  {
+    "path": "node_modules/@typescript-eslint/utils",
+    "before": "8.66.0",
+    "after": "8.73.0"
+  },
+  {
+    "path": "node_modules/@typescript-eslint/visitor-keys",
+    "before": "8.66.0",
+    "after": "8.73.0"
+  },
+  {
+    "path": "node_modules/typescript-eslint",
+    "before": "8.66.0",
+    "after": "8.73.0"
+  }
+]

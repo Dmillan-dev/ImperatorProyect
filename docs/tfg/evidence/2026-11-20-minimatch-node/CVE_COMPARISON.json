@@ -1,0 +1,29 @@
+{
+  "previousConservativeCves": 41,
+  "previousHighCriticalCves": 39,
+  "currentConservativeCves": 41,
+  "currentHighCriticalCves": 39,
+  "added": [
+    "CVE-2025-6020"
+  ],
+  "removed": [
+    "CVE-2026-76844"
+  ],
+  "highCriticalPackageRows": 150,
+  "conservativePackageRows": 160,
+  "allFindingIdentifiers": 243,
+  "allUniqueCves": 234,
+  "otherIdentifiers": [
+    "DLA-4783-1",
+    "DLA-4792-1",
+    "DLA-4854-1",
+    "DLA-4867-1",
+    "TEMP-0290435-0B57B5",
+    "TEMP-0517018-A83CE6",
+    "TEMP-0628843-DBAD28",
+    "TEMP-0841856-B18BAF",
+    "TEMP-1147318-639065"
+  ],
+  "sameCountDoesNotMeanSameRisk": true,
+  "removalIsMetadataCorrectionNotPackageRepair": true
+}

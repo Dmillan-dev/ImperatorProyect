@@ -1,5 +1,13 @@
 # A-S4 — Memoria y defensa local
 
+## Control vigente — 20/11/2026
+
+**A-S4 humana pendiente; el candidato actual no hereda el cierre A-S3 de octubre.** Consultar el [gate de entrega](10_LOCAL_MVP_RELEASE_GATE.md) y la [revisión R-20](evidence/2026-11-20-minimatch-node/R20_REVIEW_REQUIRED.json), `accepted: false`, para los cuatro IDs actuales. La última aceptación aprobada terminó el 19/10; ninguna propuesta posterior autoriza ejecutar una nueva demo viva.
+
+Se puede revisar la memoria y ensayar oralmente en inglés usando capturas históricas, identificando sus fechas. Faltan medición humana real de doce minutos, grabación de pantalla con narración, QA íntegro de audio/imagen/secretos y revisión académica. El clip sin audio no satisface ese criterio. Tras decisión R-20 válida, ejecutar el ensayo completo con los mismos IDs, registrar RBAC/Flyway/persistencia/recovery y cerrar A-S3 antes del cierre final. Los materiales/estados del 14–16/10 que siguen se conservan como historia; no prueban la versión actual.
+
+## Material histórico — corte 16/10/2026
+
 Revisión 16/10/2026. **IN PROGRESS**. A-S3 está cerrado y R-20 aceptado temporalmente para cuatro imágenes locales exactas. La aceptación cubre 26 CVE conservadores y no autoriza AWS. La memoria y el guion están preparados; la defensa humana medida, grabación con voz y revisión académica siguen pendientes.
 
 ## Material preparado
@@ -25,7 +33,7 @@ Usar un proyecto aislado, secretos efímeros privados, imágenes existentes, `--
 
 La narración automática opcional no se generó: la política de ejecución de Windows rechazó el script y no se eludió. Crear voz automática tampoco habría demostrado un ensayo oral humano.
 
-## Salida
+## Salida histórica — 16/10/2026
 
 | Control | Estado |
 | --- | --- |

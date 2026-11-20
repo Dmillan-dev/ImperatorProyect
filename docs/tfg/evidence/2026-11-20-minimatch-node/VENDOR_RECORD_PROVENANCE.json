@@ -1,0 +1,14 @@
+[
+  {
+    "cve": "CVE-2025-6020",
+    "url": "https://security-tracker.debian.org/tracker/CVE-2025-6020",
+    "sha256": "4772ce36a77c1ca0c948641d4d9f8a4d0bf1a9be136d02547ca5f8930322e51e",
+    "retrievedAtUtc": "2026-11-20T12:12:50.701595+00:00"
+  },
+  {
+    "cve": "CVE-2026-76844",
+    "url": "https://security-tracker.debian.org/tracker/CVE-2026-76844",
+    "sha256": "089f82b8c9fcca107156a0bb86e050cd4a73a3e44cb5aa6b2dff873ca041a8e2",
+    "retrievedAtUtc": "2026-11-20T12:12:51.099611+00:00"
+  }
+]

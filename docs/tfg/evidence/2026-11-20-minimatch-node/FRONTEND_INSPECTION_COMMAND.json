@@ -1,0 +1,23 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--pull",
+    "never",
+    "--network",
+    "none",
+    "--read-only",
+    "--cap-drop",
+    "ALL",
+    "--security-opt",
+    "no-new-privileges",
+    "--entrypoint",
+    "node",
+    "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+    "-e",
+    "const fs=require('fs');const todo=['/app'];const found=[];while(todo.length){let p=todo.pop();for(const e of fs.readdirSync(p,{withFileTypes:true})){const f=p+'/'+e.name;if(e.isDirectory())todo.push(f);else if(e.isFile()&&e.name==='package.json'){try{const m=JSON.parse(fs.readFileSync(f,'utf8'));if(m.name==='minimatch'||m.name==='typescript-eslint'||(m.name||'').startsWith('@typescript-eslint/'))found.push({path:f,name:m.name,version:m.version});}catch{}}}}console.log(JSON.stringify({node:process.version,inspectedRoot:'/app',matchingPackages:found},null,2));"
+  ],
+  "exitCode": 0,
+  "imageId": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb"
+}

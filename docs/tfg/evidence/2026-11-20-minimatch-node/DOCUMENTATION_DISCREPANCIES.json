@@ -1,0 +1,22 @@
+[
+  {
+    "path": "docs/tfg/00_TFG_MASTER_PLAN.md",
+    "observed": "Top authorization status dated 16 October could be mistaken for a current approval.",
+    "action": "Added dated current control and explicitly labelled the original authorization historical; no historical receipt changed."
+  },
+  {
+    "path": "docs/tfg/A_S4_LOCAL_DEFENSE.md",
+    "observed": "Opening and output table still present the October A-S3 closure/acceptance.",
+    "action": "Added current blocking conditions and dated the historical output; human tasks remain pending."
+  },
+  {
+    "path": "docs/tfg/11_DAM_MEMORY_DELIVERY.md",
+    "observed": "Academic closure text refers to October acceptance as current.",
+    "action": "Added current local-DAM gate and preserved historical PDF/records."
+  },
+  {
+    "path": "frontend/README.md",
+    "observed": "Overview still cites October 41-test/Vitest and older image results.",
+    "action": "Updated ordinary overview with dated current measurements and exact limits; historical raw evidence unchanged."
+  }
+]

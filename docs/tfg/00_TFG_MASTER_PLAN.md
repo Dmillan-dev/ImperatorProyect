@@ -1,6 +1,14 @@
 # IMPERATOR DAM TFG Master Plan
 
-## Estado local autorizado — 16/10/2026
+## Control vigente — 20/11/2026
+
+**TFG-A IN PROGRESS; A-S3 actual NO-GO formal; A-S4 pendiente de ejecución humana y revisión; AWS BLOCKED.** El [candidato de seguridad](evidence/2026-11-20-minimatch-node/README.md) corrige minimatch y el runtime Node de forma acotada, sin ampliar el producto. Cuatro imágenes: 0 H/C corregibles / 0 secretos; npm completo/producción 0. Las cifras 39 H/C / 41 CVE conservadores requieren nueva decisión por el cambio PAM/zlib, aunque coincidan con el recuento anterior.
+
+R-20 no tiene aceptación vigente: última aprobación hasta 19/10; la fecha propuesta 18/11 no fue una aprobación. La [nueva revisión](evidence/2026-11-20-minimatch-node/R20_REVIEW_REQUIRED.json) sigue `accepted: false`. No se reescriben decisiones, receipts, PDF o evidencias anteriores; las aceptaciones y estados COMPLETE fechados abajo describen únicamente sus versiones históricas. El registro de riesgos antiguo no autoriza el conjunto actual.
+
+Ruta local: revisión/CI/merge del parche → decisión R-20 vinculada a digests → ensayo Docker completo/RBAC/Flyway/persistencia/recovery → cierre A-S3 → memoria actualizada, ensayo humano real de doce minutos en inglés, grabación narrada y revisión académica → verificar DoD de TFG-A. La práctica oral y revisión de la memoria pueden avanzar con material histórico fechado. No se añade AWS, móvil, escritorio ni otra funcionalidad para cerrar este alcance.
+
+## Registro histórico autorizado — 16/10/2026
 
 **R-20 ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC; A-S3 cerrado; A-S4 y TFG-A IN PROGRESS; AWS BLOCKED.** Aprobación explícita de 26 CVE conservadores / 137 identidades actuales para los cuatro índices y manifiestos locales exactos, con datos sintéticos, hasta **19/10/2026 00:00 Europe/Madrid**; sin renovación ni transferencia automática. Escaneo 16/10: 0 H/C corregibles y 0 secretos. Hay 24 CVE H/C; los otros dos quedan por debajo de ese umbral, con severidad distinta por distribución. R-23 sigue OPEN independiente. [Decisión y evidencia](evidence/2026-10-16-r20-local-acceptance/README.md).
 

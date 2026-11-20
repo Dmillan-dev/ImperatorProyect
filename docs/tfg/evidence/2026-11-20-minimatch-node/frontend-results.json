@@ -1,0 +1,32 @@
+[
+  {
+    "script": "format:check",
+    "exitCode": 0,
+    "node": "24.22.3"
+  },
+  {
+    "script": "lint",
+    "exitCode": 0,
+    "node": "24.22.3"
+  },
+  {
+    "script": "typecheck",
+    "exitCode": 0,
+    "node": "24.22.3"
+  },
+  {
+    "script": "test",
+    "exitCode": 0,
+    "node": "24.22.3"
+  },
+  {
+    "script": "build",
+    "exitCode": 0,
+    "node": "24.22.3"
+  },
+  {
+    "script": "test:e2e",
+    "exitCode": 0,
+    "node": "24.22.3"
+  }
+]

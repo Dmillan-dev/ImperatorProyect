@@ -1,0 +1,32 @@
+{
+  "alert": 41,
+  "cve": "CVE-2026-118764",
+  "ghsa": "GHSA-g3hv-75wg-m249",
+  "advisoryUrl": "https://github.com/advisories/GHSA-g3hv-75wg-m249",
+  "affectedRange": ">=7.0.0 <11.0.1",
+  "affectedInstalledPath": "node_modules/@typescript-eslint/typescript-estree/node_modules/minimatch",
+  "before": "10.2.6",
+  "after": "11.0.1",
+  "parentBefore": "8.66.0",
+  "parentAfter": "8.73.0",
+  "existingAllowedParentRange": "^8.56.0",
+  "parentNowRequiresMinimatch": "^11.0.1",
+  "scope": "transitive development tooling",
+  "directDependenciesChanged": false,
+  "rootManifestChanged": false,
+  "newOverrides": false,
+  "newRequiredTransitivePackage": "@isaacs/nonrecursive-glob-match@1.0.1",
+  "unrelatedCompatibleVersionsPreserved": [
+    "ignore@7.0.6",
+    "brace-expansion@5.0.12",
+    "semver@7.8.5"
+  ],
+  "unaffectedMinimatch3Retained": true,
+  "npmAudit": 0,
+  "productionInstalledPackageInspection": {
+    "node": "v24.22.3",
+    "inspectedRoot": "/app",
+    "matchingPackages": []
+  },
+  "githubAlertClosure": "Pending merge and default-branch dependency graph recalculation; no manual dismissal."
+}

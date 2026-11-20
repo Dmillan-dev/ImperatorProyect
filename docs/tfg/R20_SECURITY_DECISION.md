@@ -1,6 +1,14 @@
 # R-20 Current Security Decision
 
-## Current review — 11 November 2026
+## Current review — 20 November 2026
+
+**NO CURRENT ACCEPTANCE.** Main `3497859` includes #91; the [focused minimatch/Node candidate](evidence/2026-11-20-minimatch-node/README.md), source `b8bfe9a`, has 0 fixable H/C and 0 secrets in four exact IDs, with complete/production npm audits at 0. One new frontend is archive-built; the other three IDs are retained and freshly scanned, with their input correspondence preserved.
+
+The review still contains 39 unique H/C CVEs and a 41-CVE conservative set, but the inventory changed: PAM CVE-2025-6020 is added after Debian identified an incomplete Bookworm fix; CVE-2026-76844's wrong zlib association is removed following vendor metadata correction. Current bindings and conditional mitigations are recorded individually. No package or product is declared inexploitable.
+
+The [new draft](evidence/2026-11-20-minimatch-node/R20_REVIEW_REQUIRED.json) remains `accepted: false`. Proposed exclusive expiry **27 November 2026 00:00 Europe/Madrid (UTC+01:00) = 26 November 23:00 UTC** is not authorization. The prior proposed 18 November expiry was never an approval; the last approved acceptance expired 19 October. No renewal, future-image/CI transfer, AWS, production, real-data or public-exposure authorization. R-23 remains independent. Current A-S3 and live MVP release remain NO-GO formal until explicit decision, final publication review and complete exact-set runtime rehearsal.
+
+## Historical review — 11 November 2026
 
 **NO CURRENT ACCEPTANCE.** The [current artifact review](evidence/2026-11-11-d094-reproducibility/README.md) records the minimal Next/APT candidate from source `49c8b67`. Its four exact images have 0 fixable H/C and 0 secrets with the recorded 11 November databases. There are **39 unique H/C residual CVEs**, compared with 21 on 2 November; the conservative review set retains all 23 earlier identifiers and adds 18, giving **41 CVEs**. These are distinct from the complete all-severity inventory.
 
