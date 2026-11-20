@@ -1,0 +1,13 @@
+
+> imperator-decision-review-workspace@0.1.0 test
+> vitest run
+
+
+ RUN  v4.1.12 D:/Imperator/build/worktrees/tfg-minimatch-20261120/frontend
+
+
+ Test Files  10 passed (10)
+      Tests  44 passed (44)
+   Start at  13:09:46
+   Duration  8.43s (transform 1.24s, setup 8.33s, import 4.01s, tests 5.94s, environment 35.51s)
+

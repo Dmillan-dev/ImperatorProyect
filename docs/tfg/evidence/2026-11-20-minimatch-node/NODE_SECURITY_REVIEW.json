@@ -1,0 +1,21 @@
+{
+  "pr": 94,
+  "releaseUrl": "https://nodejs.org/en/blog/release/v24.22.3",
+  "before": "24.22.2",
+  "after": "24.22.3",
+  "securityRelease": true,
+  "highCves": [
+    "CVE-2026-123863",
+    "CVE-2026-123864",
+    "CVE-2026-123865",
+    "CVE-2026-123866",
+    "CVE-2026-123872",
+    "CVE-2026-123874",
+    "CVE-2026-126051"
+  ],
+  "baseDigest": "sha256:dc26ae92c9fb15cf6b1d63e20f0944b2efe0f115b20e00be48fb23fceb061c54",
+  "changesMatchPr94": true,
+  "bookwormToTrixie": false,
+  "globalNodeChanged": false,
+  "scannerCoverageLimit": "Do not infer Node native-binary safety from the Trivy OS/npm result. The official security release and exact node --version are separate controls."
+}

@@ -1,0 +1,9 @@
+PAM_PACKAGES
+libpam-modules:amd64	1.5.2-6+deb12u2
+libpam-modules-bin	1.5.2-6+deb12u2
+libpam-runtime	1.5.2-6+deb12u2
+libpam0g:amd64	1.5.2-6+deb12u2
+ACTIVE_PAM_NAMESPACE
+RUNTIME_USER
+uid=999(postgres) gid=999(postgres) groups=999(postgres)
+NODE_VERSION

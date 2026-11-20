@@ -1,6 +1,12 @@
 # TFG-A Security Closure Gate — Explicit Owner Decision 2026-10-06
 
-## Control vigente — 11/11/2026
+## Control vigente — 20/11/2026
+
+**PASS técnico de imágenes; NO-GO formal.** [Cuatro IDs actuales y escaneos](evidence/2026-11-20-minimatch-node/README.md), fuente nueva de frontend `b8bfe9a`, tres IDs retenidos: 0 H/C corregibles / 0 secretos; npm completo y producción 0. Regresión actual 174 unitarios + 44 frontend, controles de frontend PASS y Playwright 9 PASS / 6 omisiones previstas. Integración 35 PASS fechada 11/11 sobre el mismo PostgreSQL; ensayo Docker completo actual pendiente.
+
+[R-20](evidence/2026-11-20-minimatch-node/R20_REVIEW_REQUIRED.json) permanece `accepted: false`, 41 CVE conservadores / 39 H/C, con cambio de inventario PAM/zlib documentado. Nueva fecha propuesta 27/11/2026 00:00 Europe/Madrid, sin autorización implícita. Faltan CI/revisión final, aprobación explícita aplicable y ensayo completo. R-23 separado; A-S3 actual NO-GO formal; TFG-A IN PROGRESS; AWS bloqueado.
+
+## Registro histórico — 11/11/2026
 
 **PASS técnico de imágenes; NO-GO formal.** El [candidato Next/APT](evidence/2026-11-11-d094-reproducibility/README.md), fuente `49c8b67`, registra cuatro IDs definitivos construidos desde archivo Git inmutable, 0 H/C corregibles / 0 secretos, regresión 174 unitarios + 35 integración + 44 frontend PASS y controles de frontend PASS. Playwright: 9 PASS / 6 omisiones intencionales con API interceptada; no acredita el ensayo Docker completo.
 

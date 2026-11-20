@@ -16,15 +16,16 @@ Application code calculates the amounts. The interface presents certified backen
 
 ## Evidence and current limits
 
-| Check                  | Evidence                                                                                                    |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------- |
-| Unit/component quality | 41 tests and coverage/format/lint/type/build checks passed in the historical 9 October evaluation.          |
-| Browser acceptance     | Playwright: 9 passed / 6 intentional skips in that baseline. Skips are not passes.                          |
-| Real services          | 14 October Docker rehearsal: UI approval, API implementation/validation and unmocked UI reads.              |
-| Production image       | 22 October exact candidate image: 0 fixable H/C and 0 secrets; new risk proposal pending explicit approval. |
-| Academic delivery      | Memory and English script prepared; measured human defence and academic review pending.                     |
+| Check                  | Evidence                                                                                                                                           |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Unit/component quality | 20 November: 44 tests and format/lint/type/build checks PASS with portable Node 24.22.3.                                                           |
+| Browser acceptance     | 20 November: Playwright 9 passed / 6 intentional skips with intercepted synthetic API. This is not a complete Docker rehearsal.                    |
+| Dependency security    | Complete and production npm audits: 0 findings. The affected minimatch development chain is corrected through compatible TypeScript-ESLint 8.73.0. |
+| Production image       | Exact Node 24.22.3 candidate: 0 fixable H/C and 0 secrets; installed affected tooling packages absent from inspected /app.                         |
+| Real services          | The historical 14 October Docker rehearsal remains dated evidence; full current-set rehearsal is pending.                                          |
+| Academic delivery      | Memory and English script prepared; measured human defence, narrated recording and academic review pending.                                        |
 
-The previous R-20 acceptance **expired on 19 October 2026 at 00:00 Europe/Madrid**. The [22 October proposal](../docs/tfg/evidence/2026-10-22-security-go-vite/README.md) remains `accepted: false` for four exact candidate image identities and synthetic local data. Passing scans do not renew acceptance. R-23 development tooling remains OPEN independently; Medium Vitest findings are documented separately, with no additional upgrades applied. AWS, production and real data remain outside scope.
+The previous R-20 acceptance **expired on 19 October 2026 at 00:00 Europe/Madrid**. The [current review](../docs/tfg/evidence/2026-11-20-minimatch-node/README.md) remains `accepted: false` for the four exact local/synthetic image identities. The unapproved 18 November deadline was not authorization. Passing scans or merging a patch does not renew acceptance. R-23 disposition remains separate after its advisory withdrawal. AWS, production and real data remain outside scope.
 
 ## Local development
 

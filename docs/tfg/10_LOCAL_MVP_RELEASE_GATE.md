@@ -1,6 +1,14 @@
 # Gate de entrega local — A-S3 y A-S4
 
-## Control vigente — 11/11/2026
+## Control vigente — 20/11/2026
+
+**MVP local NO-GO formal; producto sin ampliación.** Main `3497859` integra #91. El [candidato mínimo minimatch/Node](evidence/2026-11-20-minimatch-node/README.md), fuente `b8bfe9a`, corrige la alerta #41 por la cadena compatible TypeScript-ESLint y aplica exactamente la actualización de seguridad Node de #94. No se incorporan los lotes Maven #92 ni npm #93; este último conserva minimatch vulnerable pese a su CI verde.
+
+20/11: 174 unitarios, 44 frontend, formato/lint/tipos/build PASS; Playwright 9 PASS / 6 omisiones intencionales con API interceptada; npm completo/producción 0. Cuatro IDs exactos: 0 H/C corregibles y 0 secretos. Los 35 tests de integración PostgreSQL siguen fechados 11/11 sobre el ID retenido; no se presentan como una ejecución de hoy. Faltan CI/revisión del HEAD final y ensayo completo del conjunto actual.
+
+R-20 sigue `accepted: false`: 39 CVE H/C y conjunto conservador de 41, con PAM añadido y corrección de metadatos zlib, no riesgo equivalente por mero recuento. La propuesta del 18/11 no fue autorización; la nueva fecha 27/11 es solo una propuesta. Orden: merge revisado del parche → decisión R-20 sobre los digests → ensayo RBAC/Flyway/persistencia/readiness/recovery → cierre A-S3 → A-S4 humana. La memoria y práctica oral con capturas históricas pueden avanzar en paralelo, identificándolas como tales. TFG-A IN PROGRESS; AWS bloqueado.
+
+## Registro histórico — 11/11/2026
 
 **MVP local NO-GO formal.** El [candidato mínimo Next/APT](evidence/2026-11-11-d094-reproducibility/README.md), fuente `49c8b67`, alcanza 0 H/C corregibles y 0 secretos en cuatro imágenes exactas con la base registrada del 11/11. Pasan 174 unitarios, 35 integración PostgreSQL y 44 frontend; lint/tipos/build PASS y Playwright 9 PASS / 6 omisiones intencionales con API interceptada. No sustituye el ensayo completo del MVP.
 

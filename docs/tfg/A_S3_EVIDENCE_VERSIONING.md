@@ -1,6 +1,12 @@
 # A-S3 Evidencia y versión
 
-## Control vigente — 11/11/2026
+## Control vigente — 20/11/2026
+
+**Candidato actual NO-GO formal; cierre histórico preservado.** [Candidato de seguridad](evidence/2026-11-20-minimatch-node/README.md) desde main `3497859`, fuente `b8bfe9a`: un frontend nuevo y tres IDs exactos retenidos con escaneos actuales y correspondencia de entradas. No se atribuyen nuevas construcciones a los componentes retenidos ni igualdad binaria a imágenes de CI. Regresión actual y pruebas históricas se distinguen por fecha.
+
+Pendientes: publicación/CI/revisión del parche acotado, [R-20 explícito](evidence/2026-11-20-minimatch-node/R20_REVIEW_REQUIRED.json) para los digests y el nuevo inventario de 41 CVE conservadores / 39 H/C, disposición R-23 independiente y ensayo completo de esos mismos artefactos. Después: congelar SHA/digests/escaneos/runtime, completar A-S4 humana y revisión académica. No nuevos productos o AWS para cerrar el MVP.
+
+## Registro histórico — 11/11/2026
 
 **A-S3 actual NO-GO formal; cierre histórico preservado.** [Fuente `49c8b67`, construcción y cuatro imágenes exactas](evidence/2026-11-11-d094-reproducibility/candidate-images.json) se registran junto con escaneos, 174 unitarios + 35 integración + 44 frontend PASS y límites de Playwright. R-20 no tiene aceptación vigente: [41 CVE conservadores / 39 H/C y 18 nuevas observaciones](evidence/2026-11-11-d094-reproducibility/README.md), propuesta `accepted: false`, sin transferencia desde imágenes anteriores o hacia CI.
 

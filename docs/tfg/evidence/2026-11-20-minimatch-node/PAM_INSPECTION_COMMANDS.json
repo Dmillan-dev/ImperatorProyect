@@ -1,0 +1,50 @@
+[
+  {
+    "component": "candidate-postgres",
+    "id": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+    "command": [
+      "docker",
+      "run",
+      "--rm",
+      "--pull",
+      "never",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--entrypoint",
+      "/bin/sh",
+      "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+      "-c",
+      "set -eu; echo PAM_PACKAGES; dpkg-query -W libpam-modules libpam-modules-bin libpam-runtime libpam0g; echo ACTIVE_PAM_NAMESPACE; grep -RnsE \"^[[:space:]]*[^#[:space:]].*pam_namespace\" /etc/pam.d || true; echo RUNTIME_USER; id; echo NODE_VERSION; if command -v node >/dev/null; then node --version; fi"
+    ],
+    "exitCode": 0
+  },
+  {
+    "component": "candidate-frontend",
+    "id": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+    "command": [
+      "docker",
+      "run",
+      "--rm",
+      "--pull",
+      "never",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--entrypoint",
+      "/bin/sh",
+      "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+      "-c",
+      "set -eu; echo PAM_PACKAGES; dpkg-query -W libpam-modules libpam-modules-bin libpam-runtime libpam0g; echo ACTIVE_PAM_NAMESPACE; grep -RnsE \"^[[:space:]]*[^#[:space:]].*pam_namespace\" /etc/pam.d || true; echo RUNTIME_USER; id; echo NODE_VERSION; if command -v node >/dev/null; then node --version; fi"
+    ],
+    "exitCode": 0
+  }
+]

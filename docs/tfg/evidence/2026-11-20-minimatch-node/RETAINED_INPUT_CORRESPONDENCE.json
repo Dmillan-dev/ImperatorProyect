@@ -1,0 +1,41 @@
+[
+  {
+    "component": "backend",
+    "retainedBuildSourceSha": "e30c16a7b7d5741dc3626fe11f850b6e9366bfbc",
+    "currentCandidateSourceSha": "b8bfe9ad388c5fad8300d21cb7495537f83db1b6",
+    "inputPaths": [
+      "pom.xml",
+      ".mvn",
+      "mvnw",
+      "backend-java",
+      "infra/docker/backend",
+      ".dockerignore"
+    ],
+    "changedInputs": [],
+    "imageIdReusedNotRebuilt": true
+  },
+  {
+    "component": "migration",
+    "retainedBuildSourceSha": "e30c16a7b7d5741dc3626fe11f850b6e9366bfbc",
+    "currentCandidateSourceSha": "b8bfe9ad388c5fad8300d21cb7495537f83db1b6",
+    "inputPaths": [
+      "database/migrations",
+      "infra/docker/flyway/entrypoint.sh",
+      "infra/aws/images/migration",
+      ".dockerignore"
+    ],
+    "changedInputs": [],
+    "imageIdReusedNotRebuilt": true
+  },
+  {
+    "component": "postgres",
+    "retainedBuildSourceSha": "49c8b677ad18b07404b708ea83608201f6baa203",
+    "currentCandidateSourceSha": "b8bfe9ad388c5fad8300d21cb7495537f83db1b6",
+    "inputPaths": [
+      "infra/docker/postgresql",
+      "scripts/verify-postgres-runtime-image.ps1"
+    ],
+    "changedInputs": [],
+    "imageIdReusedNotRebuilt": true
+  }
+]

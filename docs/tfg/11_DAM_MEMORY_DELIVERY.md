@@ -1,5 +1,11 @@
 # Entrega DAM — IMPERATOR local
 
+## Control vigente — 20/11/2026
+
+**Entrega académica pendiente.** Mantener el alcance local/sintético de Daniel Millan Perez, DAM, sin inventar tutor ni fecha de entrega. La memoria PDF congelada y las decisiones/receipts anteriores no se reescriben. Preparar un addendum con el [estado de seguridad actual](evidence/2026-11-20-minimatch-node/README.md) y distinguir las pruebas del 20/11, la integración del 11/11 y el ensayo histórico del 14/10.
+
+A-S3 actual sigue NO-GO formal y R-20 `accepted: false`; el cierre/aceptación de octubre descrito abajo es histórico. Quedan decisión vigente sobre los digests, ensayo completo del conjunto exacto y revisión formal A-S3. En A-S4: revisión final de memoria/trazabilidad, ensayo humano de doce minutos en inglés, archivo narrado con hash/duración/QA y revisión académica. AWS, producción y datos reales permanecen fuera de alcance.
+
 Autor: **Daniel Millan Perez**, DAM. La portada no incluye tutor ni fecha de entrega, según indicación del autor. Proyecto académico local con datos sintéticos. Estos criterios se extraen del material institucional aportado; la revisión y aprobación académicas siguen pendientes.
 
 IMPERATOR demuestra Java, acceso a datos PostgreSQL/JDBC/Flyway, interfaz, API, estados, transacciones, roles, pruebas y planificación mediante un caso de gestión y trazabilidad de decisiones. Debe confirmarse académicamente el encaje de la aplicación web en DAM; no se añaden móvil, escritorio, cloud o IA real sin un requisito confirmado.
