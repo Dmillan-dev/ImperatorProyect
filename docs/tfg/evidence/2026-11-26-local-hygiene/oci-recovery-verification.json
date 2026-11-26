@@ -1,0 +1,305 @@
+{
+  "createdAtUtc": "2026-11-26T17:30:17.986402+00:00",
+  "readOnly": true,
+  "archivesModified": false,
+  "candidateCount": 14,
+  "verifiedCount": 14,
+  "passed": 14,
+  "allPass": true,
+  "results": [
+    {
+      "id": "sha256:27c2d9ac7cd8f8b745a36218733060cb7a556fa20b47be46dca1f65b6aa0bd8c",
+      "path": "D:\\Imperator\\output\\tfg\\pr-review-20261111\\exact-postgres.oci.tar",
+      "expectedIndexDigest": "sha256:27c2d9ac7cd8f8b745a36218733060cb7a556fa20b47be46dca1f65b6aa0bd8c",
+      "expectedRuntimeManifest": "sha256:8e558cf0bce310aa770c3dc62f13985afa6712acaee546a227e59d7b1fe8e468",
+      "expectedBytes": 192421888,
+      "errors": [],
+      "bytes": 192421888,
+      "archiveSha256": "b1af0fc0969c3ef5add9783b9976f06c553798497b7bb6291b353901f655b381",
+      "blobCount": 33,
+      "blobHashFailures": [],
+      "rootIndexReferences": [
+        "sha256:27c2d9ac7cd8f8b745a36218733060cb7a556fa20b47be46dca1f65b6aa0bd8c"
+      ],
+      "referencedBlobCount": 33,
+      "unreferencedBlobCount": 0,
+      "descriptorEdgeCount": 32,
+      "runtimeConfigDigest": "sha256:5c893f4c49a6668b6cb0df10afda991e3e674e08ab57177e5c7e0010e62dbaf7",
+      "rootfsDiffIdsMatch": true,
+      "pass": true
+    },
+    {
+      "id": "sha256:2ff32292667031f3e04003418155652a991a30bc6c9f253060914a08ee064e95",
+      "path": "D:\\Imperator\\output\\tfg\\pr-review-20261111\\final-postgres.oci.tar",
+      "expectedIndexDigest": "sha256:2ff32292667031f3e04003418155652a991a30bc6c9f253060914a08ee064e95",
+      "expectedRuntimeManifest": "sha256:5ba8d6719c5e811bdde137b1edca766af264113547078161ccb18ab786e57d1e",
+      "expectedBytes": 192421888,
+      "errors": [],
+      "bytes": 192421888,
+      "archiveSha256": "7c7d7af9114e39ac967615b0a7133e09094fc1a38b623ea22af662c4f8493ff7",
+      "blobCount": 33,
+      "blobHashFailures": [],
+      "rootIndexReferences": [
+        "sha256:2ff32292667031f3e04003418155652a991a30bc6c9f253060914a08ee064e95"
+      ],
+      "referencedBlobCount": 33,
+      "unreferencedBlobCount": 0,
+      "descriptorEdgeCount": 32,
+      "runtimeConfigDigest": "sha256:dd358bf0f677c1329f023171fb9124c0285068c562bd4b9f2bc1e56ea7ab1aa4",
+      "rootfsDiffIdsMatch": true,
+      "pass": true
+    },
+    {
+      "id": "sha256:380ec8db0d8164147cda366b44a8a678e6d69af1007b9a6be0cd4824c5078e14",
+      "path": "D:\\Imperator\\output\\tfg\\security-20261027\\frontend-candidate.oci.tar",
+      "expectedIndexDigest": "sha256:380ec8db0d8164147cda366b44a8a678e6d69af1007b9a6be0cd4824c5078e14",
+      "expectedRuntimeManifest": "sha256:0aa25e970f54b94d238fd7137bb9c1cb9ebb2673301691160444433b7481a381",
+      "expectedBytes": 95144960,
+      "errors": [],
+      "bytes": 95144960,
+      "archiveSha256": "8e59f5ff759a39fb58d8b1165d5b52306d2f22b892161d318c428d37dfeee22b",
+      "blobCount": 17,
+      "blobHashFailures": [],
+      "rootIndexReferences": [
+        "sha256:380ec8db0d8164147cda366b44a8a678e6d69af1007b9a6be0cd4824c5078e14"
+      ],
+      "referencedBlobCount": 17,
+      "unreferencedBlobCount": 0,
+      "descriptorEdgeCount": 16,
+      "runtimeConfigDigest": "sha256:75cc73123c1bc579271141d9d2733429c9678e4faf9ab81bb97313bbbe3eaba5",
+      "rootfsDiffIdsMatch": true,
+      "pass": true
+    },
+    {
+      "id": "sha256:39e061fa5ef87f59ed6945a854fa4a3f89aefc3c1259d9b82694e0e3841ebb18",
+      "path": "D:\\Imperator\\output\\tfg\\security-20261102\\frontend.oci.tar",
+      "expectedIndexDigest": "sha256:39e061fa5ef87f59ed6945a854fa4a3f89aefc3c1259d9b82694e0e3841ebb18",
+      "expectedRuntimeManifest": "sha256:703f67e6429ac195376e41197b3b8fae0deccf8b854ca33cf6320a58a8e7792a",
+      "expectedBytes": 95150080,
+      "errors": [],
+      "bytes": 95150080,
+      "archiveSha256": "5a492005b7d32fb22abc36f8c77e8f0514971423f69d329be15b0bb191425e0e",
+      "blobCount": 17,
+      "blobHashFailures": [],
+      "rootIndexReferences": [
+        "sha256:39e061fa5ef87f59ed6945a854fa4a3f89aefc3c1259d9b82694e0e3841ebb18"
+      ],
+      "referencedBlobCount": 17,
+      "unreferencedBlobCount": 0,
+      "descriptorEdgeCount": 16,
+      "runtimeConfigDigest": "sha256:4ae3fd3850e8a21f3063aaf7a2151a9c9993a362545abfc6165ed070ae90b277",
+      "rootfsDiffIdsMatch": true,
+      "pass": true
+    },
+    {
+      "id": "sha256:46c047ba679b43b705277dcf4fe86498b1702a175fb45d515e08bc8be253e1ca",
+      "path": "D:\\Imperator\\output\\tfg\\security-20261102\\backend.oci.tar",
+      "expectedIndexDigest": "sha256:46c047ba679b43b705277dcf4fe86498b1702a175fb45d515e08bc8be253e1ca",
+      "expectedRuntimeManifest": "sha256:aa17fdb7c79e700274ef2c9c7aad6230929bd3f3fbdeacebf7cd4288c877920a",
+      "expectedBytes": 144309760,
+      "errors": [],
+      "bytes": 144309760,
+      "archiveSha256": "99e04f58f1155b26e9331cbd7743f6a4f35dc9c16026adb41924af0685c15b78",
+      "blobCount": 20,
+      "blobHashFailures": [],
+      "rootIndexReferences": [
+        "sha256:46c047ba679b43b705277dcf4fe86498b1702a175fb45d515e08bc8be253e1ca"
+      ],
+      "referencedBlobCount": 20,
+      "unreferencedBlobCount": 0,
+      "descriptorEdgeCount": 19,
+      "runtimeConfigDigest": "sha256:2b11a8df24056518c915fed1f30bc308f5e1fd2507b8f4ea7f2360340e1483b6",
+      "rootfsDiffIdsMatch": true,
+      "pass": true
+    },
+    {
+      "id": "sha256:62708cf1db059ab634af89f4e962f76f12d72f6a4686e0299ab572604c8f906f",
+      "path": "D:\\Imperator\\output\\tfg\\pr-review-20261111\\backend.oci.tar",
+      "expectedIndexDigest": "sha256:62708cf1db059ab634af89f4e962f76f12d72f6a4686e0299ab572604c8f906f",
+      "expectedRuntimeManifest": "sha256:5cdfaece66ea5c2644e55e175afb3757a6c5a07b4c34507b6634efe5b352c7a7",
+      "expectedBytes": 148812800,
+      "errors": [],
+      "bytes": 148812800,
+      "archiveSha256": "7d3e4691de4f68cd825c4c16d91238f85a68409f27d85781696a4ba90154b5e5",
+      "blobCount": 23,
+      "blobHashFailures": [],
+      "rootIndexReferences": [
+        "sha256:62708cf1db059ab634af89f4e962f76f12d72f6a4686e0299ab572604c8f906f"
+      ],
+      "referencedBlobCount": 23,
+      "unreferencedBlobCount": 0,
+      "descriptorEdgeCount": 22,
+      "runtimeConfigDigest": "sha256:cfa3a3e15f947716e8224b44ac5f800610fb832d4a9044701480013a4db0293d",
+      "rootfsDiffIdsMatch": true,
+      "pass": true
+    },
+    {
+      "id": "sha256:681d3c1c2a61f819876b921a2bb3dede8b3e08996814dc88aaa8f7001c9a03ff",
+      "path": "D:\\Imperator\\output\\tfg\\security-20261102\\migration.oci.tar",
+      "expectedIndexDigest": "sha256:681d3c1c2a61f819876b921a2bb3dede8b3e08996814dc88aaa8f7001c9a03ff",
+      "expectedRuntimeManifest": "sha256:f9be3e503dbec75a74bc28843546dff4d7a388f1e32f8ca9281dab8fa591f5f2",
+      "expectedBytes": 443734528,
+      "errors": [],
+      "bytes": 443734528,
+      "archiveSha256": "939fed87de2f7cc989dbb4c16d73285dfeb1ce06b47e66e122e6bb305607dea9",
+      "blobCount": 24,
+      "blobHashFailures": [],
+      "rootIndexReferences": [
+        "sha256:681d3c1c2a61f819876b921a2bb3dede8b3e08996814dc88aaa8f7001c9a03ff"
+      ],
+      "referencedBlobCount": 24,
+      "unreferencedBlobCount": 0,
+      "descriptorEdgeCount": 23,
+      "runtimeConfigDigest": "sha256:166b6eb62bda0b66b861dc9c85910e253c9d01f1cd0f20c4b73d7dc8f2d34cd2",
+      "rootfsDiffIdsMatch": true,
+      "pass": true
+    },
+    {
+      "id": "sha256:7196ddaa793b1e78d84303260008ddbf8c37a0180c116cb8b956e40e6d25fe87",
+      "path": "D:\\Imperator\\output\\tfg\\pr-review-20261111\\exact-frontend.oci.tar",
+      "expectedIndexDigest": "sha256:7196ddaa793b1e78d84303260008ddbf8c37a0180c116cb8b956e40e6d25fe87",
+      "expectedRuntimeManifest": "sha256:30781aefffb455cd94be8e4453e577fbf26b20aceeaa60680c7b99f8ebb938ed",
+      "expectedBytes": 99147264,
+      "errors": [],
+      "bytes": 99147264,
+      "archiveSha256": "a1e775ec74878441586bf45c1703304bfa6568acd88e85c5104c5ff52ebe8110",
+      "blobCount": 20,
+      "blobHashFailures": [],
+      "rootIndexReferences": [
+        "sha256:7196ddaa793b1e78d84303260008ddbf8c37a0180c116cb8b956e40e6d25fe87"
+      ],
+      "referencedBlobCount": 20,
+      "unreferencedBlobCount": 0,
+      "descriptorEdgeCount": 19,
+      "runtimeConfigDigest": "sha256:0d3f6d39d75e4f65b7ebdbcd6a3f8f03ff3a7c2b52a1b5e57f5b11856d174b65",
+      "rootfsDiffIdsMatch": true,
+      "pass": true
+    },
+    {
+      "id": "sha256:7242f15dc4310714d6dd7bb2953bd25441b6d18e77beb881e799d249237ad04f",
+      "path": "D:\\Imperator\\output\\tfg\\pr-review-20261111\\exact-backend.oci.tar",
+      "expectedIndexDigest": "sha256:7242f15dc4310714d6dd7bb2953bd25441b6d18e77beb881e799d249237ad04f",
+      "expectedRuntimeManifest": "sha256:5cdfaece66ea5c2644e55e175afb3757a6c5a07b4c34507b6634efe5b352c7a7",
+      "expectedBytes": 148813312,
+      "errors": [],
+      "bytes": 148813312,
+      "archiveSha256": "b27851aef322367422cf2fc0816424f72a4f0fda6d864de134f8234904516fc6",
+      "blobCount": 23,
+      "blobHashFailures": [],
+      "rootIndexReferences": [
+        "sha256:7242f15dc4310714d6dd7bb2953bd25441b6d18e77beb881e799d249237ad04f"
+      ],
+      "referencedBlobCount": 23,
+      "unreferencedBlobCount": 0,
+      "descriptorEdgeCount": 22,
+      "runtimeConfigDigest": "sha256:cfa3a3e15f947716e8224b44ac5f800610fb832d4a9044701480013a4db0293d",
+      "rootfsDiffIdsMatch": true,
+      "pass": true
+    },
+    {
+      "id": "sha256:7cd60fc0d8436d518aa3d670c7a44be7962aab3012180b872e2ffb6663b8f9fb",
+      "path": "D:\\Imperator\\output\\tfg\\pr-review-20261111\\postgres.oci.tar",
+      "expectedIndexDigest": "sha256:7cd60fc0d8436d518aa3d670c7a44be7962aab3012180b872e2ffb6663b8f9fb",
+      "expectedRuntimeManifest": "sha256:8e558cf0bce310aa770c3dc62f13985afa6712acaee546a227e59d7b1fe8e468",
+      "expectedBytes": 192421376,
+      "errors": [],
+      "bytes": 192421376,
+      "archiveSha256": "51eb0d710ae7ce429ca73ab39af133d0a47094481c514bed74631a97d7f22581",
+      "blobCount": 33,
+      "blobHashFailures": [],
+      "rootIndexReferences": [
+        "sha256:7cd60fc0d8436d518aa3d670c7a44be7962aab3012180b872e2ffb6663b8f9fb"
+      ],
+      "referencedBlobCount": 33,
+      "unreferencedBlobCount": 0,
+      "descriptorEdgeCount": 32,
+      "runtimeConfigDigest": "sha256:5c893f4c49a6668b6cb0df10afda991e3e674e08ab57177e5c7e0010e62dbaf7",
+      "rootfsDiffIdsMatch": true,
+      "pass": true
+    },
+    {
+      "id": "sha256:a4fdf8b11795d68e31baab469a2d28574147f946f57b2639882bcbfcfc9c9b44",
+      "path": "D:\\Imperator\\output\\tfg\\pr-review-20261111\\frontend.oci.tar",
+      "expectedIndexDigest": "sha256:a4fdf8b11795d68e31baab469a2d28574147f946f57b2639882bcbfcfc9c9b44",
+      "expectedRuntimeManifest": "sha256:30781aefffb455cd94be8e4453e577fbf26b20aceeaa60680c7b99f8ebb938ed",
+      "expectedBytes": 99146752,
+      "errors": [],
+      "bytes": 99146752,
+      "archiveSha256": "272468ed28e6b71b68076c3670024d0befbb0b2af6eec1d4faf229cd89db8a78",
+      "blobCount": 20,
+      "blobHashFailures": [],
+      "rootIndexReferences": [
+        "sha256:a4fdf8b11795d68e31baab469a2d28574147f946f57b2639882bcbfcfc9c9b44"
+      ],
+      "referencedBlobCount": 20,
+      "unreferencedBlobCount": 0,
+      "descriptorEdgeCount": 19,
+      "runtimeConfigDigest": "sha256:0d3f6d39d75e4f65b7ebdbcd6a3f8f03ff3a7c2b52a1b5e57f5b11856d174b65",
+      "rootfsDiffIdsMatch": true,
+      "pass": true
+    },
+    {
+      "id": "sha256:b3e87f26e87ff77f4506c21cf81c6164c6fa4ad6740efc3aeb6eec7c1ba3b52e",
+      "path": "D:\\Imperator\\output\\tfg\\pr-review-20261111\\migration.oci.tar",
+      "expectedIndexDigest": "sha256:b3e87f26e87ff77f4506c21cf81c6164c6fa4ad6740efc3aeb6eec7c1ba3b52e",
+      "expectedRuntimeManifest": "sha256:594be19f58a83c45795ace83a90c184c3b81c4a6819057e6049fdc8406b663f0",
+      "expectedBytes": 447833600,
+      "errors": [],
+      "bytes": 447833600,
+      "archiveSha256": "84e8e260dfb3b2440ecbe10d1e003fc4ae8be8c3a7399ff0f68ba514ce83bd7e",
+      "blobCount": 27,
+      "blobHashFailures": [],
+      "rootIndexReferences": [
+        "sha256:b3e87f26e87ff77f4506c21cf81c6164c6fa4ad6740efc3aeb6eec7c1ba3b52e"
+      ],
+      "referencedBlobCount": 27,
+      "unreferencedBlobCount": 0,
+      "descriptorEdgeCount": 26,
+      "runtimeConfigDigest": "sha256:b9c4df92bc99058417d17b738569700511555e08b4a9cb3a40e24b38b2e0ad40",
+      "rootfsDiffIdsMatch": true,
+      "pass": true
+    },
+    {
+      "id": "sha256:d21e274041ed938cc6d501631aa80e48ecc15c0aa54a42dd87ab64cd6fafa212",
+      "path": "D:\\Imperator\\output\\tfg\\security-20261027\\final\\frontend-candidate.oci.tar",
+      "expectedIndexDigest": "sha256:d21e274041ed938cc6d501631aa80e48ecc15c0aa54a42dd87ab64cd6fafa212",
+      "expectedRuntimeManifest": "sha256:4c6a12e9591b4e6bf1391ab1a3d63a14e8e0a9b3986925b41829d7eabfc3fb35",
+      "expectedBytes": 95145984,
+      "errors": [],
+      "bytes": 95145984,
+      "archiveSha256": "735e5118926030c5fd8d10eba1985b33975e3daa84bec6777f60c63910d1d186",
+      "blobCount": 17,
+      "blobHashFailures": [],
+      "rootIndexReferences": [
+        "sha256:d21e274041ed938cc6d501631aa80e48ecc15c0aa54a42dd87ab64cd6fafa212"
+      ],
+      "referencedBlobCount": 17,
+      "unreferencedBlobCount": 0,
+      "descriptorEdgeCount": 16,
+      "runtimeConfigDigest": "sha256:28814fe79813596e60274cc3267319da0cdd07c21bd17c93120314085063f2e9",
+      "rootfsDiffIdsMatch": true,
+      "pass": true
+    },
+    {
+      "id": "sha256:dc3eaae524aeec188940668ca72337357fce01978b197f843ad2e347b03dedf8",
+      "path": "D:\\Imperator\\output\\tfg\\pr-review-20261111\\exact-migration.oci.tar",
+      "expectedIndexDigest": "sha256:dc3eaae524aeec188940668ca72337357fce01978b197f843ad2e347b03dedf8",
+      "expectedRuntimeManifest": "sha256:594be19f58a83c45795ace83a90c184c3b81c4a6819057e6049fdc8406b663f0",
+      "expectedBytes": 447834112,
+      "errors": [],
+      "bytes": 447834112,
+      "archiveSha256": "ec2308a34c0a1c44babaee58487d1ca0023296e024ca635725143ddbef7b7040",
+      "blobCount": 27,
+      "blobHashFailures": [],
+      "rootIndexReferences": [
+        "sha256:dc3eaae524aeec188940668ca72337357fce01978b197f843ad2e347b03dedf8"
+      ],
+      "referencedBlobCount": 27,
+      "unreferencedBlobCount": 0,
+      "descriptorEdgeCount": 26,
+      "runtimeConfigDigest": "sha256:b9c4df92bc99058417d17b738569700511555e08b4a9cb3a40e24b38b2e0ad40",
+      "rootfsDiffIdsMatch": true,
+      "pass": true
+    }
+  ]
+}

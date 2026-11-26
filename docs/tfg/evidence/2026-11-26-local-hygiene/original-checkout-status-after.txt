@@ -1,0 +1,26 @@
+ M .github/workflows/security.yml
+ M .gitignore
+ M frontend/.prettierignore
+ M frontend/README.md
+ M frontend/features/decision-review/decision-review-workspace.tsx
+ M frontend/next-env.d.ts
+ M frontend/package-lock.json
+ M frontend/package.json
+ M frontend/services/api/schemas.ts
+ M frontend/styles/globals.css
+ M frontend/tests/fixtures.ts
+ M frontend/tests/workspace.test.tsx
+ M infra/docker/backend/Dockerfile
+ M infra/docker/backend/entrypoint.sh
+ M infra/docker/flyway/entrypoint.sh
+ M infra/docker/frontend/Dockerfile
+ M infra/docker/postgresql/Dockerfile
+ M infra/docker/postgresql/provision-app-role.sh
+ M infra/docker/postgresql/supply-chain-lock.json
+ M pom.xml
+ M scripts/verify-postgres-runtime-image.ps1
+ M src/test/java/imperator/adapters/out/aws/AwsEvidenceSyncIT.java
+ M src/test/java/imperator/adapters/out/github/GitHubEvidenceSyncIT.java
+ M src/test/java/imperator/api/FunctionalRestPostgresIT.java
+?? output/tfg/
+?? scripts/tfg/capture-docker-demo.mjs

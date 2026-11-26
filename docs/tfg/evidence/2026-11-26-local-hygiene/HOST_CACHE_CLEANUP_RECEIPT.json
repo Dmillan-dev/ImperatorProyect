@@ -1,0 +1,74 @@
+{
+  "startedUtc": "2026-11-26T17:32:19.0224024Z",
+  "finishedUtc": "2026-11-26T17:32:19.5076651Z",
+  "sourceDeleted": false,
+  "cleanWorktreesUnchanged": true,
+  "directories": [
+    {
+      "files": 17,
+      "path": "D:\\Imperator\\build\\worktrees\\tfg-local-security-20261027\\frontend\\.next\\cache",
+      "bytes": 33593772,
+      "removed": true
+    },
+    {
+      "files": 24,
+      "path": "D:\\Imperator\\build\\worktrees\\tfg-local-security-20261027\\frontend\\.next\\dev\\cache",
+      "bytes": 56313295,
+      "removed": true
+    },
+    {
+      "files": 15,
+      "path": "D:\\Imperator\\build\\worktrees\\tfg-local-security-go-vite-20261022\\frontend\\.next\\cache",
+      "bytes": 48640657,
+      "removed": true
+    },
+    {
+      "files": 15,
+      "path": "D:\\Imperator\\build\\worktrees\\tfg-local-security-go-vite-20261022\\frontend\\.next\\dev\\cache",
+      "bytes": 49644353,
+      "removed": true
+    },
+    {
+      "files": 22,
+      "path": "D:\\Imperator\\build\\worktrees\\tfg-minimatch-20261120\\frontend\\.next\\cache",
+      "bytes": 33462430,
+      "removed": true
+    },
+    {
+      "files": 22,
+      "path": "D:\\Imperator\\build\\worktrees\\tfg-minimatch-20261120\\frontend\\.next\\dev\\cache",
+      "bytes": 38951347,
+      "removed": true
+    },
+    {
+      "files": 22,
+      "path": "D:\\Imperator\\build\\worktrees\\tfg-pr-security-20261111\\frontend\\.next\\cache",
+      "bytes": 33557955,
+      "removed": true
+    },
+    {
+      "files": 18,
+      "path": "D:\\Imperator\\build\\worktrees\\tfg-pr-security-20261111\\frontend\\.next\\dev\\cache",
+      "bytes": 54931043,
+      "removed": true
+    },
+    {
+      "files": 17,
+      "path": "D:\\Imperator\\build\\worktrees\\tfg-security-alerts-20261102\\frontend\\.next\\cache",
+      "bytes": 33306514,
+      "removed": true
+    },
+    {
+      "files": 13,
+      "path": "D:\\Imperator\\build\\worktrees\\tfg-security-alerts-20261102\\frontend\\.next\\dev\\cache",
+      "bytes": 39478619,
+      "removed": true
+    }
+  ],
+  "evidenceDeleted": false,
+  "scope": "Only ten audited generated Next cache directories",
+  "result": "PASS",
+  "totalBytes": 421879985,
+  "nodeModulesDeleted": false,
+  "files": 185
+}

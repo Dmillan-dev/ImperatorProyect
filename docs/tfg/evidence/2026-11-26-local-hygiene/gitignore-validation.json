@@ -1,0 +1,119 @@
+{
+  "result": "PASS",
+  "cases": [
+    {
+      "path": "output/tfg/private/report.json",
+      "expectedIgnored": true,
+      "actualIgnored": true,
+      "passed": true
+    },
+    {
+      "path": "output/tfg/image.oci.tar",
+      "expectedIgnored": true,
+      "actualIgnored": true,
+      "passed": true
+    },
+    {
+      "path": "frontend/tsconfig.tsbuildinfo",
+      "expectedIgnored": true,
+      "actualIgnored": true,
+      "passed": true
+    },
+    {
+      "path": ".codex/state.json",
+      "expectedIgnored": true,
+      "actualIgnored": true,
+      "passed": true
+    },
+    {
+      "path": ".agents/local-state.json",
+      "expectedIgnored": true,
+      "actualIgnored": true,
+      "passed": true
+    },
+    {
+      "path": "frontend/test-private.p8",
+      "expectedIgnored": true,
+      "actualIgnored": true,
+      "passed": true
+    },
+    {
+      "path": "frontend/.npmrc",
+      "expectedIgnored": true,
+      "actualIgnored": true,
+      "passed": true
+    },
+    {
+      "path": "infra/aws/credentials.json",
+      "expectedIgnored": true,
+      "actualIgnored": true,
+      "passed": true
+    },
+    {
+      "path": "infra/aws/local.tfvars",
+      "expectedIgnored": true,
+      "actualIgnored": true,
+      "passed": true
+    },
+    {
+      "path": "infra/aws/state.tfstate",
+      "expectedIgnored": true,
+      "actualIgnored": true,
+      "passed": true
+    },
+    {
+      "path": "frontend/.env.local",
+      "expectedIgnored": true,
+      "actualIgnored": true,
+      "passed": true
+    },
+    {
+      "path": ".agents/README.md",
+      "expectedIgnored": false,
+      "actualIgnored": false,
+      "passed": true
+    },
+    {
+      "path": ".env.example",
+      "expectedIgnored": false,
+      "actualIgnored": false,
+      "passed": true
+    },
+    {
+      "path": "infra/aws/terraform/pilot/terraform.tfvars.example",
+      "expectedIgnored": false,
+      "actualIgnored": false,
+      "passed": true
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "expectedIgnored": false,
+      "actualIgnored": false,
+      "passed": true
+    },
+    {
+      "path": "pom.xml",
+      "expectedIgnored": false,
+      "actualIgnored": false,
+      "passed": true
+    },
+    {
+      "path": "docs/tfg/evidence/2026-11-20-minimatch-node/candidate-images.json",
+      "expectedIgnored": false,
+      "actualIgnored": false,
+      "passed": true
+    },
+    {
+      "path": "backend-java/src/main/java/Keep.java",
+      "expectedIgnored": false,
+      "actualIgnored": false,
+      "passed": true
+    },
+    {
+      "path": "output/commercial/linkedin-discovery-kit/README.md",
+      "expectedIgnored": false,
+      "actualIgnored": false,
+      "passed": true
+    }
+  ]
+}

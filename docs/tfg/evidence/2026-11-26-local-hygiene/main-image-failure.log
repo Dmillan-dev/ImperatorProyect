@@ -1,0 +1,1237 @@
+﻿2026-11-23T16:10:10.3408464Z Current runner version: '2.338.2'
+2026-11-23T16:10:10.3427539Z ##[group]Runner Image Provisioner
+2026-11-23T16:10:10.3428299Z Hosted Compute Agent
+2026-11-23T16:10:10.3428747Z Version: 20261111.635
+2026-11-23T16:10:10.3429241Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+2026-11-23T16:10:10.3430131Z Build Date: 2026-11-11T01:49:01Z
+2026-11-23T16:10:10.3430640Z Worker ID: {394119c0-daaf-46a5-a1c9-3f9a3fe724eb}
+2026-11-23T16:10:10.3431178Z Region: us-west-2
+2026-11-23T16:10:10.3431600Z Cloud: AWS
+2026-11-23T16:10:10.3431965Z ##[endgroup]
+2026-11-23T16:10:10.3432980Z ##[group]Operating System
+2026-11-23T16:10:10.3433422Z Ubuntu
+2026-11-23T16:10:10.3433807Z 24.04.5
+2026-11-23T16:10:10.3434205Z LTS
+2026-11-23T16:10:10.3434605Z ##[endgroup]
+2026-11-23T16:10:10.3435055Z ##[group]Runner Image
+2026-11-23T16:10:10.3435470Z Image: ubuntu-24.04
+2026-11-23T16:10:10.3435864Z Version: 20261116.133.1
+2026-11-23T16:10:10.3436808Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261116.133/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-23T16:10:10.3437902Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261116.133
+2026-11-23T16:10:10.3438582Z ##[endgroup]
+2026-11-23T16:10:10.3439970Z ##[group]GITHUB_TOKEN Permissions
+2026-11-23T16:10:10.3441939Z Contents: read
+2026-11-23T16:10:10.3442370Z Metadata: read
+2026-11-23T16:10:10.3442771Z ##[endgroup]
+2026-11-23T16:10:10.3444327Z Secret source: Actions
+2026-11-23T16:10:10.3445011Z Cache mode: write
+2026-11-23T16:10:10.3445538Z Prepare workflow directory
+2026-11-23T16:10:10.3678020Z Prepare all required actions
+2026-11-23T16:10:10.3714901Z Getting action download info
+2026-11-23T16:10:10.7351831Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-11-23T16:10:12.1537747Z Download action repository 'aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25' (SHA:ed142fd0673e97e23eac54620cfb913e5ce36c25)
+2026-11-23T16:10:12.5635027Z Getting action download info
+2026-11-23T16:10:12.7356589Z Download action repository 'aquasecurity/setup-trivy@3fb12ec12f41e471780db15c232d5dd185dcb514' (SHA:3fb12ec12f41e471780db15c232d5dd185dcb514)
+2026-11-23T16:10:12.9696033Z Download action repository 'actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae' (SHA:27d5ce7f107fe9357f9df03efb73ab90386fccae)
+2026-11-23T16:10:13.1635613Z Getting action download info
+2026-11-23T16:10:13.3015964Z Download action repository 'actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb' (SHA:9255dc7a253b0ccc959486e2bca901246202afeb)
+2026-11-23T16:10:13.5519672Z Download action repository 'actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8' (SHA:8e8c483db84b4bee98b60c0593521ed34d9990e8)
+2026-11-23T16:10:13.6797893Z Getting action download info
+2026-11-23T16:10:13.8724160Z Getting action download info
+2026-11-23T16:10:14.0820681Z Getting action download info
+2026-11-23T16:10:14.2650654Z Getting action download info
+2026-11-23T16:10:14.4375009Z Complete job name: Application image scan
+2026-11-23T16:10:14.4943224Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-11-23T16:10:14.4943774Z with:
+2026-11-23T16:10:14.4944078Z   persist-credentials: false
+2026-11-23T16:10:14.4944370Z   repository: Dmillan-dev/ImperatorProyect
+2026-11-23T16:10:14.4946491Z   token: ***
+2026-11-23T16:10:14.4946738Z   ssh-strict: true
+2026-11-23T16:10:14.4946964Z   ssh-user: git
+2026-11-23T16:10:14.4947185Z   clean: true
+2026-11-23T16:10:14.4947421Z   sparse-checkout-cone-mode: true
+2026-11-23T16:10:14.4947666Z   fetch-depth: 1
+2026-11-23T16:10:14.4947920Z   fetch-tags: false
+2026-11-23T16:10:14.4948138Z   show-progress: true
+2026-11-23T16:10:14.4948358Z   lfs: false
+2026-11-23T16:10:14.4948571Z   submodules: false
+2026-11-23T16:10:14.4948807Z   set-safe-directory: true
+2026-11-23T16:10:14.4949096Z   allow-unsafe-pr-checkout: false
+2026-11-23T16:10:14.4949707Z ##[endgroup]
+2026-11-23T16:10:16.9878874Z Syncing repository: Dmillan-dev/ImperatorProyect
+2026-11-23T16:10:16.9880954Z ##[group]Getting Git version info
+2026-11-23T16:10:16.9881364Z Working directory is '/home/runner/work/ImperatorProyect/ImperatorProyect'
+2026-11-23T16:10:16.9881959Z [command]/usr/bin/git version
+2026-11-23T16:10:17.2205969Z git version 2.56.1
+2026-11-23T16:10:17.2228750Z ##[endgroup]
+2026-11-23T16:10:17.2236895Z Temporarily overriding HOME='/home/runner/work/_temp/5b451c3b-f0da-4565-8d16-c4bf10e559d8' before making global git config changes
+2026-11-23T16:10:17.2237906Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-23T16:10:17.2242195Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ImperatorProyect/ImperatorProyect
+2026-11-23T16:10:17.2600596Z Deleting the contents of '/home/runner/work/ImperatorProyect/ImperatorProyect'
+2026-11-23T16:10:17.2602919Z ##[group]Determining repository object format
+2026-11-23T16:10:17.2604218Z ##[endgroup]
+2026-11-23T16:10:17.2604625Z ##[group]Initializing the repository
+2026-11-23T16:10:17.2608621Z [command]/usr/bin/git init /home/runner/work/ImperatorProyect/ImperatorProyect
+2026-11-23T16:10:17.3350936Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-23T16:10:17.3351668Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-23T16:10:17.3352079Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-23T16:10:17.3352508Z hint: call:
+2026-11-23T16:10:17.3352716Z hint:
+2026-11-23T16:10:17.3353038Z hint: 	git config --global init.defaultBranch <name>
+2026-11-23T16:10:17.3353319Z hint:
+2026-11-23T16:10:17.3353587Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-23T16:10:17.3354025Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-23T16:10:17.3354484Z hint:
+2026-11-23T16:10:17.3354766Z hint: 	git branch -m <name>
+2026-11-23T16:10:17.3355003Z hint:
+2026-11-23T16:10:17.3355307Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-23T16:10:17.3360673Z Initialized empty Git repository in /home/runner/work/ImperatorProyect/ImperatorProyect/.git/
+2026-11-23T16:10:17.3369408Z [command]/usr/bin/git remote add origin https://github.com/Dmillan-dev/ImperatorProyect
+2026-11-23T16:10:17.3422624Z ##[endgroup]
+2026-11-23T16:10:17.3423176Z ##[group]Disabling automatic garbage collection
+2026-11-23T16:10:17.3425385Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-23T16:10:17.3450110Z ##[endgroup]
+2026-11-23T16:10:17.3450735Z ##[group]Setting up auth
+2026-11-23T16:10:17.3451136Z Removing SSH command configuration
+2026-11-23T16:10:17.3455131Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-23T16:10:17.3483048Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-23T16:10:17.6736303Z Removing HTTP extra header
+2026-11-23T16:10:17.6741331Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-23T16:10:17.6770415Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-23T16:10:17.6917794Z Removing includeIf entries pointing to credentials config files
+2026-11-23T16:10:17.6922302Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-23T16:10:17.6953363Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-23T16:10:17.7097798Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-72952bfa-82d9-4e67-8f22-b5c3de888f3b.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-23T16:10:17.7127732Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/ImperatorProyect/ImperatorProyect/.git.path /home/runner/work/_temp/git-credentials-72952bfa-82d9-4e67-8f22-b5c3de888f3b.config
+2026-11-23T16:10:17.7155769Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/ImperatorProyect/ImperatorProyect/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-72952bfa-82d9-4e67-8f22-b5c3de888f3b.config
+2026-11-23T16:10:17.7173371Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-72952bfa-82d9-4e67-8f22-b5c3de888f3b.config
+2026-11-23T16:10:17.7196947Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-72952bfa-82d9-4e67-8f22-b5c3de888f3b.config
+2026-11-23T16:10:17.7216744Z ##[endgroup]
+2026-11-23T16:10:17.7217188Z ##[group]Fetching the repository
+2026-11-23T16:10:17.7221825Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +90a6af89b7759d9952ec76d2ab80ec0837256bf7:refs/remotes/origin/main
+2026-11-23T16:10:19.3723150Z From https://github.com/Dmillan-dev/ImperatorProyect
+2026-11-23T16:10:19.3723842Z  * [new ref]         90a6af89b7759d9952ec76d2ab80ec0837256bf7 -> origin/main
+2026-11-23T16:10:19.3732061Z [command]/usr/bin/git branch --list --remote origin/main
+2026-11-23T16:10:19.3766623Z   origin/main
+2026-11-23T16:10:19.3771510Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+2026-11-23T16:10:19.3790160Z 90a6af89b7759d9952ec76d2ab80ec0837256bf7
+2026-11-23T16:10:19.3792388Z ##[endgroup]
+2026-11-23T16:10:19.3792826Z ##[group]Determining the checkout info
+2026-11-23T16:10:19.3793471Z ##[endgroup]
+2026-11-23T16:10:19.3797459Z [command]/usr/bin/git sparse-checkout disable
+2026-11-23T16:10:19.3857340Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-23T16:10:19.3880852Z ##[group]Checking out the ref
+2026-11-23T16:10:19.3884322Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-11-23T16:10:19.6822772Z Switched to a new branch 'main'
+2026-11-23T16:10:19.6828581Z branch 'main' set up to track 'origin/main'.
+2026-11-23T16:10:19.6854727Z ##[endgroup]
+2026-11-23T16:10:19.6899172Z [command]/usr/bin/git log -1 --format=%H
+2026-11-23T16:10:19.6920849Z 90a6af89b7759d9952ec76d2ab80ec0837256bf7
+2026-11-23T16:10:19.6927376Z ##[group]Removing auth
+2026-11-23T16:10:19.6927797Z Removing SSH command configuration
+2026-11-23T16:10:19.6930701Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-23T16:10:19.6955804Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-23T16:10:19.7110339Z Removing HTTP extra header
+2026-11-23T16:10:19.7112470Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-23T16:10:19.7135010Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-23T16:10:19.7284164Z Removing includeIf entries pointing to credentials config files
+2026-11-23T16:10:19.7290825Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-23T16:10:19.7321208Z includeif.gitdir:/home/runner/work/ImperatorProyect/ImperatorProyect/.git.path
+2026-11-23T16:10:19.7322026Z includeif.gitdir:/home/runner/work/ImperatorProyect/ImperatorProyect/.git/worktrees/*.path
+2026-11-23T16:10:19.7322715Z includeif.gitdir:/github/workspace/.git.path
+2026-11-23T16:10:19.7323123Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-23T16:10:19.7331552Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/ImperatorProyect/ImperatorProyect/.git.path
+2026-11-23T16:10:19.7345276Z /home/runner/work/_temp/git-credentials-72952bfa-82d9-4e67-8f22-b5c3de888f3b.config
+2026-11-23T16:10:19.7371022Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/ImperatorProyect/ImperatorProyect/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-72952bfa\-82d9\-4e67\-8f22\-b5c3de888f3b\.config
+2026-11-23T16:10:19.7378548Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/ImperatorProyect/ImperatorProyect/.git/worktrees/*.path
+2026-11-23T16:10:19.7396371Z /home/runner/work/_temp/git-credentials-72952bfa-82d9-4e67-8f22-b5c3de888f3b.config
+2026-11-23T16:10:19.7402442Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/ImperatorProyect/ImperatorProyect/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-72952bfa\-82d9\-4e67\-8f22\-b5c3de888f3b\.config
+2026-11-23T16:10:19.7425501Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-11-23T16:10:19.7442512Z /github/runner_temp/git-credentials-72952bfa-82d9-4e67-8f22-b5c3de888f3b.config
+2026-11-23T16:10:19.7447582Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-72952bfa\-82d9\-4e67\-8f22\-b5c3de888f3b\.config
+2026-11-23T16:10:19.7470627Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-23T16:10:19.7487357Z /github/runner_temp/git-credentials-72952bfa-82d9-4e67-8f22-b5c3de888f3b.config
+2026-11-23T16:10:19.7492230Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-72952bfa\-82d9\-4e67\-8f22\-b5c3de888f3b\.config
+2026-11-23T16:10:19.7514843Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-23T16:10:19.7660176Z Removing credentials config '/home/runner/work/_temp/git-credentials-72952bfa-82d9-4e67-8f22-b5c3de888f3b.config'
+2026-11-23T16:10:19.7666257Z ##[endgroup]
+2026-11-23T16:10:19.7827793Z ##[group]Run docker build --file infra/docker/backend/Dockerfile --build-arg VCS_REF=90a6af89b7759d9952ec76d2ab80ec0837256bf7 --tag imperator/backend:90a6af89b7759d9952ec76d2ab80ec0837256bf7 .
+2026-11-23T16:10:19.7828847Z [36;1mdocker build --file infra/docker/backend/Dockerfile --build-arg VCS_REF=90a6af89b7759d9952ec76d2ab80ec0837256bf7 --tag imperator/backend:90a6af89b7759d9952ec76d2ab80ec0837256bf7 .[0m
+2026-11-23T16:10:20.0324291Z shell: /usr/bin/bash -e {0}
+2026-11-23T16:10:20.0324886Z ##[endgroup]
+2026-11-23T16:10:24.9585708Z #0 building with "default" instance using docker driver
+2026-11-23T16:10:24.9586207Z 
+2026-11-23T16:10:24.9586394Z #1 [internal] load build definition from Dockerfile
+2026-11-23T16:10:24.9586688Z #1 transferring dockerfile: 3.95kB done
+2026-11-23T16:10:24.9586960Z #1 DONE 0.0s
+2026-11-23T16:10:24.9587067Z 
+2026-11-23T16:10:24.9587653Z #2 resolve image config for docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+2026-11-23T16:10:25.1521033Z #2 ...
+2026-11-23T16:10:25.1521283Z 
+2026-11-23T16:10:25.1521507Z #3 [auth] docker/dockerfile:pull token for registry-1.docker.io
+2026-11-23T16:10:25.1521976Z #3 DONE 0.0s
+2026-11-23T16:10:25.3024980Z 
+2026-11-23T16:10:25.3026027Z #2 resolve image config for docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+2026-11-23T16:10:25.7227136Z #2 DONE 0.9s
+2026-11-23T16:10:25.8261267Z 
+2026-11-23T16:10:25.8263055Z #4 docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+2026-11-23T16:10:25.8264059Z #4 resolve docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e done
+2026-11-23T16:10:25.8265512Z #4 sha256:96918c57e42509b97f10c074d80672ecdbd3bb7dcd38c1bd95960cf291207416 0B / 11.98MB 0.1s
+2026-11-23T16:10:25.8266265Z #4 sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e 8.40kB / 8.40kB done
+2026-11-23T16:10:25.8267309Z #4 sha256:b5f3b260a9678e1d83d2fce86eeddf79420b79147eaba2a25986f47133d73720 482B / 482B done
+2026-11-23T16:10:25.8267956Z #4 sha256:68ebc061390d9a7d6e194f9d58309c754a53cb8b4e3b0d89593920f42f4a9da4 1.26kB / 1.26kB done
+2026-11-23T16:10:25.9813239Z #4 sha256:96918c57e42509b97f10c074d80672ecdbd3bb7dcd38c1bd95960cf291207416 11.98MB / 11.98MB 0.1s done
+2026-11-23T16:10:25.9814304Z #4 extracting sha256:96918c57e42509b97f10c074d80672ecdbd3bb7dcd38c1bd95960cf291207416 0.1s done
+2026-11-23T16:10:26.0847181Z #4 DONE 0.3s
+2026-11-23T16:10:26.0847423Z 
+2026-11-23T16:10:26.0847855Z #5 [internal] load metadata for docker.io/library/eclipse-temurin:21-jre-jammy@sha256:e9aaf73145bbd1f9f6ec7f6867dd75a44f34b1a6c32a813504bf4129be2d09d7
+2026-11-23T16:10:26.4088721Z #5 ...
+2026-11-23T16:10:26.4088991Z 
+2026-11-23T16:10:26.4089194Z #6 [auth] library/eclipse-temurin:pull token for registry-1.docker.io
+2026-11-23T16:10:26.4090059Z #6 DONE 0.0s
+2026-11-23T16:10:26.5590712Z 
+2026-11-23T16:10:26.5591761Z #7 [internal] load metadata for docker.io/library/eclipse-temurin:21-jdk-jammy@sha256:6adefddd4a20bceef702cedb0b03952fcd7691f9c7ccffe27014992abc0b46bd
+2026-11-23T16:10:26.8018067Z #7 DONE 0.7s
+2026-11-23T16:10:26.8018543Z 
+2026-11-23T16:10:26.8019944Z #5 [internal] load metadata for docker.io/library/eclipse-temurin:21-jre-jammy@sha256:e9aaf73145bbd1f9f6ec7f6867dd75a44f34b1a6c32a813504bf4129be2d09d7
+2026-11-23T16:10:26.9198086Z #5 DONE 0.7s
+2026-11-23T16:10:26.9198492Z 
+2026-11-23T16:10:26.9200954Z #8 [build 1/7] FROM docker.io/library/eclipse-temurin:21-jdk-jammy@sha256:6adefddd4a20bceef702cedb0b03952fcd7691f9c7ccffe27014992abc0b46bd
+2026-11-23T16:10:26.9203154Z #8 resolve docker.io/library/eclipse-temurin:21-jdk-jammy@sha256:6adefddd4a20bceef702cedb0b03952fcd7691f9c7ccffe27014992abc0b46bd done
+2026-11-23T16:10:27.0940054Z #8 ...
+2026-11-23T16:10:27.0940438Z 
+2026-11-23T16:10:27.0940547Z #9 [internal] load build context
+2026-11-23T16:10:27.0941044Z #9 transferring context: 795.40kB 0.0s done
+2026-11-23T16:10:27.0941399Z #9 DONE 0.0s
+2026-11-23T16:10:27.0941516Z 
+2026-11-23T16:10:27.0942365Z #10 [runtime  2/13] ADD --checksum=sha256:908295e77a65219a62114c3c79690a3c99712274d1317c3ba47ffa2f8ea52ca5     https://security.ubuntu.com/ubuntu/pool/main/b/brotli/libbrotli1_1.0.9-2ubuntu0.1_amd64.deb     /tmp/imperator-libbrotli1.deb
+2026-11-23T16:10:27.0943128Z #10 DONE 0.1s
+2026-11-23T16:10:27.0943219Z 
+2026-11-23T16:10:27.0943790Z #11 [runtime  4/13] ADD --checksum=sha256:a5b9484a287aba47096fa9ea9821c5c98cf95b8dd726786e7c3a3311fb8eb3b4     https://security.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_3.0.2-0ubuntu1.30_amd64.deb     /tmp/openssl.deb
+2026-11-23T16:10:27.0944462Z #11 DONE 0.1s
+2026-11-23T16:10:27.0944592Z 
+2026-11-23T16:10:27.0945066Z #12 [runtime  6/13] ADD --checksum=sha256:2d4db9a3017c5364e50af5bc2f0c76828b52933b682eff4728f1211e081c6736     https://security.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.4.15ubuntu0.1_amd64.deb     /tmp/imperator-apt.deb
+2026-11-23T16:10:27.0946064Z #12 DONE 0.1s
+2026-11-23T16:10:27.0946211Z 
+2026-11-23T16:10:27.0947063Z #13 [runtime  7/13] ADD --checksum=sha256:3a6fbab029e15ca7b8da642c17ec110995a6e3a0bc40eaa08e239cfc94d6c426     https://security.ubuntu.com/ubuntu/pool/main/a/apt/libapt-pkg6.0_2.4.15ubuntu0.1_amd64.deb     /tmp/imperator-libapt-pkg6.0.deb
+2026-11-23T16:10:27.0948115Z #13 DONE 0.1s
+2026-11-23T16:10:27.0948248Z 
+2026-11-23T16:10:27.0948796Z #14 [runtime  3/13] ADD --checksum=sha256:d1b4636e32ac6d3b95d583ac05ac548b1aa248414bae1c51b14f54be0f8fd7bc     https://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl3_3.0.2-0ubuntu1.30_amd64.deb     /tmp/libssl3.deb
+2026-11-23T16:10:27.0949883Z #14 DONE 0.1s
+2026-11-23T16:10:27.0949997Z 
+2026-11-23T16:10:27.0950369Z #8 [build 1/7] FROM docker.io/library/eclipse-temurin:21-jdk-jammy@sha256:6adefddd4a20bceef702cedb0b03952fcd7691f9c7ccffe27014992abc0b46bd
+2026-11-23T16:10:27.0951142Z #8 sha256:2b17cc0004c84957341e3691ff6420ded81e3f852ec4d4a12041d6aadc36dd3a 1.94kB / 1.94kB done
+2026-11-23T16:10:27.0952025Z #8 sha256:5dbea755c2a9e483734013a3c90a2d730ea4f8d3014063c96d17f974d83c3e3d 5.77kB / 5.77kB done
+2026-11-23T16:10:27.0952618Z #8 sha256:20c3783cc497b5b0df1fc5f92bd64c3d2fbb24057c88692c8fda205b6ea8a2f2 0B / 29.75MB 0.1s
+2026-11-23T16:10:27.0953337Z #8 sha256:cd02dd4b5ae410365348724a0f98dab212c3dedfd724ac91dd23dfde7a63ae48 0B / 20.66MB 0.1s
+2026-11-23T16:10:27.0954016Z #8 sha256:e6d2061f1c9be574234e918ff8c8edf77a94b3e1d973a62f9d2657ec61cb1e04 0B / 158.12MB 0.1s
+2026-11-23T16:10:27.0954736Z #8 sha256:6adefddd4a20bceef702cedb0b03952fcd7691f9c7ccffe27014992abc0b46bd 5.26kB / 5.26kB done
+2026-11-23T16:10:27.1953169Z #8 sha256:20c3783cc497b5b0df1fc5f92bd64c3d2fbb24057c88692c8fda205b6ea8a2f2 29.75MB / 29.75MB 0.2s done
+2026-11-23T16:10:27.1953901Z #8 sha256:cd02dd4b5ae410365348724a0f98dab212c3dedfd724ac91dd23dfde7a63ae48 20.66MB / 20.66MB 0.2s done
+2026-11-23T16:10:27.1954485Z #8 sha256:e6d2061f1c9be574234e918ff8c8edf77a94b3e1d973a62f9d2657ec61cb1e04 23.07MB / 158.12MB 0.3s
+2026-11-23T16:10:27.1955145Z #8 sha256:aed2af937eb546a765301f8771e5a339a37f99446c70128fed77c047dde08ffc 160B / 160B 0.3s done
+2026-11-23T16:10:27.1956149Z #8 sha256:4106b8dd0d41ce5ba6a3e376935650f3a89a1178c00a768aafd0d4e3db2c1b7b 2.46kB / 2.46kB 0.3s done
+2026-11-23T16:10:27.1956739Z #8 extracting sha256:20c3783cc497b5b0df1fc5f92bd64c3d2fbb24057c88692c8fda205b6ea8a2f2
+2026-11-23T16:10:27.3161093Z #8 sha256:e6d2061f1c9be574234e918ff8c8edf77a94b3e1d973a62f9d2657ec61cb1e04 52.43MB / 158.12MB 0.4s
+2026-11-23T16:10:27.4174912Z #8 sha256:e6d2061f1c9be574234e918ff8c8edf77a94b3e1d973a62f9d2657ec61cb1e04 77.59MB / 158.12MB 0.5s
+2026-11-23T16:10:27.5196703Z #8 sha256:e6d2061f1c9be574234e918ff8c8edf77a94b3e1d973a62f9d2657ec61cb1e04 102.76MB / 158.12MB 0.6s
+2026-11-23T16:10:27.6202241Z #8 sha256:e6d2061f1c9be574234e918ff8c8edf77a94b3e1d973a62f9d2657ec61cb1e04 132.12MB / 158.12MB 0.7s
+2026-11-23T16:10:27.7274523Z #8 sha256:e6d2061f1c9be574234e918ff8c8edf77a94b3e1d973a62f9d2657ec61cb1e04 158.12MB / 158.12MB 0.8s
+2026-11-23T16:10:27.8442732Z #8 sha256:e6d2061f1c9be574234e918ff8c8edf77a94b3e1d973a62f9d2657ec61cb1e04 158.12MB / 158.12MB 0.9s done
+2026-11-23T16:10:27.8443615Z #8 extracting sha256:20c3783cc497b5b0df1fc5f92bd64c3d2fbb24057c88692c8fda205b6ea8a2f2 0.7s done
+2026-11-23T16:10:27.8444126Z #8 extracting sha256:cd02dd4b5ae410365348724a0f98dab212c3dedfd724ac91dd23dfde7a63ae48
+2026-11-23T16:10:28.5107653Z #8 extracting sha256:cd02dd4b5ae410365348724a0f98dab212c3dedfd724ac91dd23dfde7a63ae48 0.6s done
+2026-11-23T16:10:28.5108760Z #8 extracting sha256:e6d2061f1c9be574234e918ff8c8edf77a94b3e1d973a62f9d2657ec61cb1e04
+2026-11-23T16:10:29.1229986Z #8 ...
+2026-11-23T16:10:29.1235811Z 
+2026-11-23T16:10:29.1237104Z #15 [runtime  1/13] FROM docker.io/library/eclipse-temurin:21-jre-jammy@sha256:e9aaf73145bbd1f9f6ec7f6867dd75a44f34b1a6c32a813504bf4129be2d09d7
+2026-11-23T16:10:29.1238987Z #15 resolve docker.io/library/eclipse-temurin:21-jre-jammy@sha256:e9aaf73145bbd1f9f6ec7f6867dd75a44f34b1a6c32a813504bf4129be2d09d7 done
+2026-11-23T16:10:29.1240102Z #15 sha256:e9aaf73145bbd1f9f6ec7f6867dd75a44f34b1a6c32a813504bf4129be2d09d7 5.26kB / 5.26kB done
+2026-11-23T16:10:29.1241185Z #15 sha256:14731f0ec76c841877c8858e1a29413d7acacda5c5ce567eaf6e5f19913b7cb1 1.94kB / 1.94kB done
+2026-11-23T16:10:29.1242212Z #15 sha256:7f60ac89e58910e103bf03ecb0ae65f2dafca99d1e612b7d75db5d23848c7432 5.37kB / 5.37kB done
+2026-11-23T16:10:29.1243281Z #15 sha256:20c3783cc497b5b0df1fc5f92bd64c3d2fbb24057c88692c8fda205b6ea8a2f2 29.75MB / 29.75MB 0.2s done
+2026-11-23T16:10:29.1244138Z #15 sha256:2b841c180a91f75f5d01a2aed904d56f2c6a0808b2346236f853ab6a26841b07 53.10MB / 53.10MB 0.5s done
+2026-11-23T16:10:29.1245286Z #15 sha256:283c139709fe7bcd89a1cc7c302b901b0d9729aaa0536d1eaa8d46d48c8e9cd6 16.11MB / 16.11MB 0.4s done
+2026-11-23T16:10:29.1245884Z #15 sha256:63613abe73dc47abe044fc4ab923aeaf0ea86c58ced1fe5e23e632f9176a93ea 160B / 160B 0.5s done
+2026-11-23T16:10:29.1246895Z #15 sha256:ce110be0146dbad245d038711c5d2bb77782715c20216ddd46bde4b6ebf07a22 2.46kB / 2.46kB 0.6s done
+2026-11-23T16:10:29.1248030Z #15 extracting sha256:283c139709fe7bcd89a1cc7c302b901b0d9729aaa0536d1eaa8d46d48c8e9cd6 0.6s done
+2026-11-23T16:10:29.1249249Z #15 extracting sha256:2b841c180a91f75f5d01a2aed904d56f2c6a0808b2346236f853ab6a26841b07 0.7s done
+2026-11-23T16:10:29.1250419Z #15 extracting sha256:63613abe73dc47abe044fc4ab923aeaf0ea86c58ced1fe5e23e632f9176a93ea done
+2026-11-23T16:10:29.1251380Z #15 extracting sha256:ce110be0146dbad245d038711c5d2bb77782715c20216ddd46bde4b6ebf07a22 done
+2026-11-23T16:10:29.1252139Z #15 DONE 2.2s
+2026-11-23T16:10:29.2323824Z 
+2026-11-23T16:10:29.2328613Z #8 [build 1/7] FROM docker.io/library/eclipse-temurin:21-jdk-jammy@sha256:6adefddd4a20bceef702cedb0b03952fcd7691f9c7ccffe27014992abc0b46bd
+2026-11-23T16:10:29.8777706Z #8 extracting sha256:e6d2061f1c9be574234e918ff8c8edf77a94b3e1d973a62f9d2657ec61cb1e04 1.2s done
+2026-11-23T16:10:30.1701419Z #8 extracting sha256:aed2af937eb546a765301f8771e5a339a37f99446c70128fed77c047dde08ffc
+2026-11-23T16:10:30.3201429Z #8 extracting sha256:aed2af937eb546a765301f8771e5a339a37f99446c70128fed77c047dde08ffc done
+2026-11-23T16:10:30.8076377Z #8 extracting sha256:4106b8dd0d41ce5ba6a3e376935650f3a89a1178c00a768aafd0d4e3db2c1b7b
+2026-11-23T16:10:30.9089879Z #8 ...
+2026-11-23T16:10:30.9090122Z 
+2026-11-23T16:10:30.9091280Z #16 [runtime  2/13] ADD --checksum=sha256:908295e77a65219a62114c3c79690a3c99712274d1317c3ba47ffa2f8ea52ca5     https://security.ubuntu.com/ubuntu/pool/main/b/brotli/libbrotli1_1.0.9-2ubuntu0.1_amd64.deb     /tmp/imperator-libbrotli1.deb
+2026-11-23T16:10:30.9092927Z #16 DONE 1.8s
+2026-11-23T16:10:30.9093081Z 
+2026-11-23T16:10:30.9093721Z #8 [build 1/7] FROM docker.io/library/eclipse-temurin:21-jdk-jammy@sha256:6adefddd4a20bceef702cedb0b03952fcd7691f9c7ccffe27014992abc0b46bd
+2026-11-23T16:10:30.9095194Z #8 extracting sha256:4106b8dd0d41ce5ba6a3e376935650f3a89a1178c00a768aafd0d4e3db2c1b7b done
+2026-11-23T16:10:31.1907111Z #8 ...
+2026-11-23T16:10:31.1908173Z 
+2026-11-23T16:10:31.1909401Z #17 [runtime  3/13] ADD --checksum=sha256:d1b4636e32ac6d3b95d583ac05ac548b1aa248414bae1c51b14f54be0f8fd7bc     https://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl3_3.0.2-0ubuntu1.30_amd64.deb     /tmp/libssl3.deb
+2026-11-23T16:10:31.1910523Z #17 DONE 0.3s
+2026-11-23T16:10:31.3865512Z 
+2026-11-23T16:10:31.3866872Z #8 [build 1/7] FROM docker.io/library/eclipse-temurin:21-jdk-jammy@sha256:6adefddd4a20bceef702cedb0b03952fcd7691f9c7ccffe27014992abc0b46bd
+2026-11-23T16:10:31.3867580Z #8 DONE 4.3s
+2026-11-23T16:10:31.3867692Z 
+2026-11-23T16:10:31.3867821Z #18 [build 2/7] WORKDIR /workspace
+2026-11-23T16:10:31.3868080Z #18 DONE 0.0s
+2026-11-23T16:10:31.3868227Z 
+2026-11-23T16:10:31.3868840Z #19 [runtime  4/13] ADD --checksum=sha256:a5b9484a287aba47096fa9ea9821c5c98cf95b8dd726786e7c3a3311fb8eb3b4     https://security.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_3.0.2-0ubuntu1.30_amd64.deb     /tmp/openssl.deb
+2026-11-23T16:10:31.3869829Z #19 DONE 0.0s
+2026-11-23T16:10:31.3869972Z 
+2026-11-23T16:10:31.3870698Z #20 [runtime  5/13] RUN dpkg --install /tmp/imperator-libbrotli1.deb /tmp/libssl3.deb /tmp/openssl.deb     && test "$(dpkg-query --showformat='${Version}' --show libbrotli1)" = "1.0.9-2ubuntu0.1"     && rm -f /tmp/imperator-libbrotli1.deb /tmp/libssl3.deb /tmp/openssl.deb /var/log/dpkg.log
+2026-11-23T16:10:31.3981333Z #20 0.162 (Reading database ... 7915 files and directories currently installed.)
+2026-11-23T16:10:31.5077883Z #20 0.162 Preparing to unpack /tmp/imperator-libbrotli1.deb ...
+2026-11-23T16:10:31.5078441Z #20 0.163 Unpacking libbrotli1:amd64 (1.0.9-2ubuntu0.1) over (1.0.9-2build6) ...
+2026-11-23T16:10:31.5078939Z #20 0.180 Preparing to unpack /tmp/libssl3.deb ...
+2026-11-23T16:10:31.5079311Z #20 0.181 Unpacking libssl3:amd64 (3.0.2-0ubuntu1.30) over (3.0.2-0ubuntu1.29) ...
+2026-11-23T16:10:31.5079889Z #20 0.214 Preparing to unpack /tmp/openssl.deb ...
+2026-11-23T16:10:31.5080280Z #20 0.215 Unpacking openssl (3.0.2-0ubuntu1.30) over (3.0.2-0ubuntu1.29) ...
+2026-11-23T16:10:31.5080646Z #20 0.229 Setting up libbrotli1:amd64 (1.0.9-2ubuntu0.1) ...
+2026-11-23T16:10:31.5081032Z #20 0.230 Setting up libssl3:amd64 (3.0.2-0ubuntu1.30) ...
+2026-11-23T16:10:31.6255254Z #20 0.273 debconf: unable to initialize frontend: Dialog
+2026-11-23T16:10:31.6256705Z #20 0.273 debconf: (TERM is not set, so the dialog frontend is not usable.)
+2026-11-23T16:10:31.6257211Z #20 0.273 debconf: falling back to frontend: Readline
+2026-11-23T16:10:31.6257982Z #20 0.273 debconf: unable to initialize frontend: Readline
+2026-11-23T16:10:31.6264428Z #20 0.273 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.34.0 /usr/local/share/perl/5.34.0 /usr/lib/x86_64-linux-gnu/perl5/5.34 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.34 /usr/share/perl/5.34 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+2026-11-23T16:10:31.6265916Z #20 0.273 debconf: falling back to frontend: Teletype
+2026-11-23T16:10:31.6266407Z #20 0.287 Setting up openssl (3.0.2-0ubuntu1.30) ...
+2026-11-23T16:10:31.6266752Z #20 0.290 Processing triggers for libc-bin (2.35-0ubuntu3.14) ...
+2026-11-23T16:10:31.6267040Z #20 DONE 0.3s
+2026-11-23T16:10:31.6267201Z 
+2026-11-23T16:10:31.6267795Z #21 [runtime  6/13] ADD --checksum=sha256:2d4db9a3017c5364e50af5bc2f0c76828b52933b682eff4728f1211e081c6736     https://security.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.4.15ubuntu0.1_amd64.deb     /tmp/imperator-apt.deb
+2026-11-23T16:10:31.6268509Z #21 DONE 0.0s
+2026-11-23T16:10:31.6268599Z 
+2026-11-23T16:10:31.6269215Z #22 [runtime  7/13] ADD --checksum=sha256:3a6fbab029e15ca7b8da642c17ec110995a6e3a0bc40eaa08e239cfc94d6c426     https://security.ubuntu.com/ubuntu/pool/main/a/apt/libapt-pkg6.0_2.4.15ubuntu0.1_amd64.deb     /tmp/imperator-libapt-pkg6.0.deb
+2026-11-23T16:10:31.6270178Z #22 DONE 0.0s
+2026-11-23T16:10:31.6270339Z 
+2026-11-23T16:10:31.6271561Z #23 [runtime  8/13] RUN dpkg --install /tmp/imperator-apt.deb /tmp/imperator-libapt-pkg6.0.deb     && test "$(dpkg-query --showformat='${Version}' --show apt)" = "2.4.15ubuntu0.1"     && test "$(dpkg-query --showformat='${Version}' --show libapt-pkg6.0)" = "2.4.15ubuntu0.1"     && rm -f /tmp/imperator-apt.deb /tmp/imperator-libapt-pkg6.0.deb /var/log/dpkg.log
+2026-11-23T16:10:31.7413553Z #23 0.099 (Reading database ... 7915 files and directories currently installed.)
+2026-11-23T16:10:31.7414629Z #23 0.099 Preparing to unpack /tmp/imperator-apt.deb ...
+2026-11-23T16:10:31.7416587Z #23 0.115 Unpacking apt (2.4.15ubuntu0.1) over (2.4.14) ...
+2026-11-23T16:10:31.7418149Z #23 0.164 Preparing to unpack .../imperator-libapt-pkg6.0.deb ...
+2026-11-23T16:10:31.7419233Z #23 0.166 Unpacking libapt-pkg6.0:amd64 (2.4.15ubuntu0.1) over (2.4.14) ...
+2026-11-23T16:10:31.7420033Z #23 0.187 Setting up libapt-pkg6.0:amd64 (2.4.15ubuntu0.1) ...
+2026-11-23T16:10:31.8614672Z #23 0.190 Setting up apt (2.4.15ubuntu0.1) ...
+2026-11-23T16:10:32.0560950Z #23 0.358 Processing triggers for libc-bin (2.35-0ubuntu3.14) ...
+2026-11-23T16:10:32.0561453Z #23 DONE 0.4s
+2026-11-23T16:10:32.0561651Z 
+2026-11-23T16:10:32.0562331Z #24 [runtime  9/13] RUN groupadd --gid 10001 imperator     && useradd --uid 10001 --gid 10001 --home-dir /opt/imperator        --no-create-home --shell /usr/sbin/nologin imperator     && mkdir -p /opt/imperator     && chown 10001:10001 /opt/imperator
+2026-11-23T16:10:32.0563335Z #24 DONE 0.1s
+2026-11-23T16:10:32.0563482Z 
+2026-11-23T16:10:32.0564035Z #25 [build 3/7] RUN apt-get -o Acquire::Retries=0 update     && apt-get -o Acquire::Retries=0 install --yes --no-install-recommends unzip     && rm -rf /var/lib/apt/lists/*
+2026-11-23T16:10:32.0564954Z #25 0.272 Get:1 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+2026-11-23T16:10:32.0565613Z #25 0.280 Get:2 http://archive.ubuntu.com/ubuntu jammy InRelease [270 kB]
+2026-11-23T16:10:32.0566143Z #25 0.389 Get:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+2026-11-23T16:10:32.0567394Z #25 0.444 Get:4 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [8,111 kB]
+2026-11-23T16:10:32.0568271Z #25 0.480 Get:5 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+2026-11-23T16:10:32.0568856Z #25 0.512 Get:6 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages [1,792 kB]
+2026-11-23T16:10:32.0569731Z #25 0.523 Get:7 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1,329 kB]
+2026-11-23T16:10:32.0570707Z #25 0.532 Get:8 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [96.7 kB]
+2026-11-23T16:10:32.0571485Z #25 0.535 Get:9 http://archive.ubuntu.com/ubuntu jammy/restricted amd64 Packages [164 kB]
+2026-11-23T16:10:32.0572131Z #25 0.536 Get:10 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [4,547 kB]
+2026-11-23T16:10:32.0572860Z #25 0.543 Get:11 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [17.5 MB]
+2026-11-23T16:10:32.0573522Z #25 0.625 Get:12 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [266 kB]
+2026-11-23T16:10:32.0574035Z #25 0.626 Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [4,884 kB]
+2026-11-23T16:10:32.0574566Z #25 0.647 Get:14 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1,631 kB]
+2026-11-23T16:10:32.0575118Z #25 0.655 Get:15 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [104 kB]
+2026-11-23T16:10:32.0575627Z #25 0.656 Get:16 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [8,422 kB]
+2026-11-23T16:10:32.0576133Z #25 0.696 Get:17 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [35.6 kB]
+2026-11-23T16:10:32.0576618Z #25 0.696 Get:18 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [82.9 kB]
+2026-11-23T16:10:32.2098575Z #25 ...
+2026-11-23T16:10:32.2098748Z 
+2026-11-23T16:10:32.2099037Z #26 [runtime 10/13] WORKDIR /opt/imperator
+2026-11-23T16:10:32.2099374Z #26 DONE 0.0s
+2026-11-23T16:10:32.3600504Z 
+2026-11-23T16:10:32.3601696Z #25 [build 3/7] RUN apt-get -o Acquire::Retries=0 update     && apt-get -o Acquire::Retries=0 install --yes --no-install-recommends unzip     && rm -rf /var/lib/apt/lists/*
+2026-11-23T16:10:33.2210537Z #25 1.985 Fetched 49.6 MB in 2s (27.3 MB/s)
+2026-11-23T16:10:34.0027804Z #25 1.985 Reading package lists...
+2026-11-23T16:10:34.8270577Z #25 2.800 Reading package lists...
+2026-11-23T16:10:34.9863668Z #25 3.603 Building dependency tree...
+2026-11-23T16:10:34.9864166Z #25 3.750 Reading state information...
+2026-11-23T16:10:35.1390985Z #25 3.903 Suggested packages:
+2026-11-23T16:10:35.1391372Z #25 3.903   zip
+2026-11-23T16:10:35.2732139Z #25 3.923 The following NEW packages will be installed:
+2026-11-23T16:10:35.2732570Z #25 3.923   unzip
+2026-11-23T16:10:35.2732944Z #25 3.955 0 upgraded, 1 newly installed, 0 to remove and 25 not upgraded.
+2026-11-23T16:10:35.2733352Z #25 3.955 Need to get 175 kB of archives.
+2026-11-23T16:10:35.2733703Z #25 3.955 After this operation, 386 kB of additional disk space will be used.
+2026-11-23T16:10:35.2734314Z #25 3.955 Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 unzip amd64 6.0-26ubuntu3.2 [175 kB]
+2026-11-23T16:10:35.2734861Z #25 4.037 debconf: delaying package configuration, since apt-utils is not installed
+2026-11-23T16:10:35.3763948Z #25 4.055 Fetched 175 kB in 0s (4,606 kB/s)
+2026-11-23T16:10:35.3764388Z #25 4.063 Selecting previously unselected package unzip.
+2026-11-23T16:10:35.3764703Z #25 4.063 (Reading database ... 
+2026-11-23T16:10:35.3764974Z (Reading database ... 5%
+2026-11-23T16:10:35.3765214Z (Reading database ... 10%
+2026-11-23T16:10:35.3765505Z (Reading database ... 15%
+2026-11-23T16:10:35.3765744Z (Reading database ... 20%
+2026-11-23T16:10:35.3765974Z (Reading database ... 25%
+2026-11-23T16:10:35.3766250Z (Reading database ... 30%
+2026-11-23T16:10:35.3766477Z (Reading database ... 35%
+2026-11-23T16:10:35.3766707Z (Reading database ... 40%
+2026-11-23T16:10:35.3766957Z (Reading database ... 45%
+2026-11-23T16:10:35.3767179Z (Reading database ... 50%
+2026-11-23T16:10:35.3767400Z (Reading database ... 55%
+2026-11-23T16:10:35.3767887Z (Reading database ... 60%
+2026-11-23T16:10:35.3768225Z (Reading database ... 65%
+2026-11-23T16:10:35.3768536Z (Reading database ... 70%
+2026-11-23T16:10:35.3768799Z (Reading database ... 75%
+2026-11-23T16:10:35.3769031Z (Reading database ... 80%
+2026-11-23T16:10:35.3769342Z (Reading database ... 85%
+2026-11-23T16:10:35.3769802Z (Reading database ... 90%
+2026-11-23T16:10:35.3770048Z (Reading database ... 95%
+2026-11-23T16:10:35.3770275Z (Reading database ... 100%
+2026-11-23T16:10:35.3770884Z (Reading database ... 8183 files and directories currently installed.)
+2026-11-23T16:10:35.3771406Z #25 4.067 Preparing to unpack .../unzip_6.0-26ubuntu3.2_amd64.deb ...
+2026-11-23T16:10:35.3771805Z #25 4.068 Unpacking unzip (6.0-26ubuntu3.2) ...
+2026-11-23T16:10:35.3772216Z #25 4.079 Setting up unzip (6.0-26ubuntu3.2) ...
+2026-11-23T16:10:35.3772564Z #25 DONE 4.1s
+2026-11-23T16:10:35.3772820Z 
+2026-11-23T16:10:35.3772964Z #27 [build 4/7] COPY .mvn/ .mvn/
+2026-11-23T16:10:35.3773332Z #27 DONE 0.0s
+2026-11-23T16:10:35.3773502Z 
+2026-11-23T16:10:35.3773607Z #28 [build 5/7] COPY mvnw pom.xml ./
+2026-11-23T16:10:35.3773863Z #28 DONE 0.0s
+2026-11-23T16:10:35.3774039Z 
+2026-11-23T16:10:35.3774181Z #29 [build 6/7] COPY backend-java/ backend-java/
+2026-11-23T16:10:35.3774484Z #29 DONE 0.0s
+2026-11-23T16:10:35.5278972Z 
+2026-11-23T16:10:35.5280293Z #30 [build 7/7] RUN sed -i 's/\r$//' mvnw     && chmod 0755 mvnw     && ./mvnw --batch-mode --no-transfer-progress -DskipTests package     && test -f target/imperator-backend-0.1.0.jar
+2026-11-23T16:10:36.6419897Z #30 1.263 [INFO] Scanning for projects...
+2026-11-23T16:10:38.5856065Z #30 3.208 [INFO] 
+2026-11-23T16:10:38.7368120Z #30 3.209 [INFO] ------------------< com.imperator:imperator-backend >-------------------
+2026-11-23T16:10:38.7368958Z #30 3.209 [INFO] Building IMPERATOR Backend 0.1.0
+2026-11-23T16:10:38.7369563Z #30 3.209 [INFO]   from pom.xml
+2026-11-23T16:10:38.7370056Z #30 3.209 [INFO] --------------------------------[ jar ]---------------------------------
+2026-11-23T16:10:43.8738663Z #30 8.497 [INFO] 
+2026-11-23T16:10:43.8739391Z #30 8.497 [INFO] --- toolchains:3.3.0:select-jdk-toolchain (select-java-21) @ imperator-backend ---
+2026-11-23T16:10:44.1326514Z #30 8.755 [INFO] Not using an external toolchain as the current JDK 'JDK[/opt/java/openjdk]' matches the requirements.
+2026-11-23T16:10:44.1328171Z #30 8.755 [INFO] 
+2026-11-23T16:10:44.1328924Z #30 8.755 [INFO] --- enforcer:3.6.3:enforce (enforce-build-runtime) @ imperator-backend ---
+2026-11-23T16:10:44.6962820Z #30 9.319 [INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+2026-11-23T16:10:44.8564895Z #30 9.329 [INFO] Rule 1: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+2026-11-23T16:10:44.8565488Z #30 9.329 [INFO] 
+2026-11-23T16:10:44.8565846Z #30 9.329 [INFO] --- resources:3.5.0:resources (default-resources) @ imperator-backend ---
+2026-11-23T16:10:45.3862667Z #30 10.01 [INFO] skip non existing resourceDirectory /workspace/src/main/resources
+2026-11-23T16:10:45.5367078Z #30 10.01 [INFO] 
+2026-11-23T16:10:45.5367656Z #30 10.01 [INFO] --- compiler:3.15.0:compile (default-compile) @ imperator-backend ---
+2026-11-23T16:10:46.1180354Z #30 10.74 [INFO] Recompiling the module because of changed source code.
+2026-11-23T16:10:46.2731795Z #30 10.75 [INFO] Compiling 235 source files with javac [debug release 21] to target/classes
+2026-11-23T16:10:48.6031637Z #30 13.23 [INFO] 
+2026-11-23T16:10:48.6032725Z #30 13.23 [INFO] --- resources:3.5.0:testResources (default-testResources) @ imperator-backend ---
+2026-11-23T16:10:48.7631362Z #30 13.23 [INFO] skip non existing resourceDirectory /workspace/src/test/resources
+2026-11-23T16:10:48.7631776Z #30 13.23 [INFO] 
+2026-11-23T16:10:48.7632295Z #30 13.23 [INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ imperator-backend ---
+2026-11-23T16:10:48.7632685Z #30 13.24 [INFO] No sources to compile
+2026-11-23T16:10:48.7632933Z #30 13.24 [INFO] 
+2026-11-23T16:10:48.7633307Z #30 13.24 [INFO] --- surefire:3.6.0:test (default-test) @ imperator-backend ---
+2026-11-23T16:10:49.2945703Z #30 13.92 [INFO] Tests are skipped.
+2026-11-23T16:10:49.2946382Z #30 13.92 [INFO] 
+2026-11-23T16:10:49.2947685Z #30 13.92 [INFO] --- jar:3.5.1:jar (default-jar) @ imperator-backend ---
+2026-11-23T16:10:50.1889758Z #30 14.81 [INFO] Building jar: /workspace/target/imperator-backend-0.1.0.jar
+2026-11-23T16:10:50.3979780Z #30 14.87 [INFO] 
+2026-11-23T16:10:50.3980427Z #30 14.87 [INFO] --- spring-boot:4.1.1:repackage (repackage-executable-jar) @ imperator-backend ---
+2026-11-23T16:10:51.9531643Z #30 16.58 [INFO] Replacing main artifact /workspace/target/imperator-backend-0.1.0.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+2026-11-23T16:10:51.9537275Z #30 16.58 [INFO] The original artifact has been renamed to /workspace/target/imperator-backend-0.1.0.jar.original
+2026-11-23T16:10:51.9538486Z #30 16.58 [INFO] ------------------------------------------------------------------------
+2026-11-23T16:10:51.9539293Z #30 16.58 [INFO] BUILD SUCCESS
+2026-11-23T16:10:51.9540095Z #30 16.58 [INFO] ------------------------------------------------------------------------
+2026-11-23T16:10:52.0831229Z #30 16.58 [INFO] Total time:  15.329 s
+2026-11-23T16:10:52.0831768Z #30 16.58 [INFO] Finished at: 2026-11-23T16:10:51Z
+2026-11-23T16:10:52.0832140Z #30 16.58 [INFO] ------------------------------------------------------------------------
+2026-11-23T16:10:52.0832479Z #30 DONE 16.7s
+2026-11-23T16:10:52.0832623Z 
+2026-11-23T16:10:52.0832978Z #31 [runtime 11/13] COPY --from=build --chown=10001:10001     /workspace/target/imperator-backend-0.1.0.jar     /opt/imperator/imperator-backend.jar
+2026-11-23T16:10:52.2014586Z #31 DONE 0.0s
+2026-11-23T16:10:52.2014831Z 
+2026-11-23T16:10:52.2015230Z #32 [runtime 12/13] COPY --chown=10001:10001 infra/docker/backend/entrypoint.sh     /opt/imperator/entrypoint.sh
+2026-11-23T16:10:52.2015915Z #32 DONE 0.0s
+2026-11-23T16:10:52.2016036Z 
+2026-11-23T16:10:52.2016524Z #33 [runtime 13/13] RUN chmod 0555 /opt/imperator/entrypoint.sh
+2026-11-23T16:10:52.2016944Z #33 DONE 0.1s
+2026-11-23T16:10:52.2958271Z 
+2026-11-23T16:10:52.2958784Z #34 exporting to image
+2026-11-23T16:10:52.2959119Z #34 exporting layers 0.1s done
+2026-11-23T16:10:52.2959773Z #34 writing image sha256:d56d364c00f472cf7ee8fb900c388bfb24418e4cd1d7f465498a1a441cde8590 done
+2026-11-23T16:10:52.2960451Z #34 naming to docker.io/imperator/backend:90a6af89b7759d9952ec76d2ab80ec0837256bf7 done
+2026-11-23T16:10:52.2960971Z #34 DONE 0.1s
+2026-11-23T16:10:52.3152687Z ##[group]Run aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25
+2026-11-23T16:10:52.3153067Z with:
+2026-11-23T16:10:52.3153414Z   image-ref: imperator/backend:90a6af89b7759d9952ec76d2ab80ec0837256bf7
+2026-11-23T16:10:52.3153767Z   scanners: vuln,secret
+2026-11-23T16:10:52.3154012Z   severity: HIGH,CRITICAL
+2026-11-23T16:10:52.3154269Z   ignore-unfixed: true
+2026-11-23T16:10:52.3154495Z   exit-code: 1
+2026-11-23T16:10:52.3154738Z   format: table
+2026-11-23T16:10:52.3154965Z   hide-progress: true
+2026-11-23T16:10:52.3155300Z   scan-type: image
+2026-11-23T16:10:52.3155540Z   scan-ref: .
+2026-11-23T16:10:52.3155753Z   vuln-type: os,library
+2026-11-23T16:10:52.3156119Z   cache-dir: /home/runner/work/ImperatorProyect/ImperatorProyect/.cache/trivy
+2026-11-23T16:10:52.3156473Z   list-all-pkgs: false
+2026-11-23T16:10:52.3156691Z   version: v0.70.0
+2026-11-23T16:10:52.3156922Z   cache: true
+2026-11-23T16:10:52.3157135Z   skip-setup-trivy: false
+2026-11-23T16:10:52.3159343Z   token-setup-trivy: ***
+2026-11-23T16:10:52.3159798Z ##[endgroup]
+2026-11-23T16:10:52.3214810Z ##[start-action display=Install Trivy;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy]
+2026-11-23T16:10:52.3293488Z ##[group]Run aquasecurity/setup-trivy@3fb12ec12f41e471780db15c232d5dd185dcb514
+2026-11-23T16:10:52.3293877Z with:
+2026-11-23T16:10:52.3294121Z   version: v0.70.0
+2026-11-23T16:10:52.3294356Z   cache: true
+2026-11-23T16:10:52.3296527Z   token: ***
+2026-11-23T16:10:52.3296753Z   path: $HOME/.local/bin
+2026-11-23T16:10:52.3297048Z   github-server-url: https://github.com
+2026-11-23T16:10:52.3297461Z ##[endgroup]
+2026-11-23T16:10:52.3304208Z ##[start-action display=Binary dir;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.binary-dir]
+2026-11-23T16:10:52.3317630Z ##[group]Run echo "dir=$HOME/.local/bin/trivy-bin" >> $GITHUB_OUTPUT
+2026-11-23T16:10:52.3318077Z [36;1mecho "dir=$HOME/.local/bin/trivy-bin" >> $GITHUB_OUTPUT[0m
+2026-11-23T16:10:52.3346263Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-23T16:10:52.3346677Z ##[endgroup]
+2026-11-23T16:10:52.3411685Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.binary-dir;outcome=success;conclusion=success;duration_ms=10]
+2026-11-23T16:10:52.3415710Z ##[start-action display=Check the version for caching;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run]
+2026-11-23T16:10:52.3421922Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-11-23T16:10:52.3423937Z ##[start-action display=Restore Trivy binary from cache;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.cache]
+2026-11-23T16:10:52.3455306Z ##[group]Run actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb
+2026-11-23T16:10:52.3455657Z with:
+2026-11-23T16:10:52.3455871Z   path: /home/runner/.local/bin/trivy-bin
+2026-11-23T16:10:52.3456178Z   key: trivy-binary-v0.70.0-Linux-X64
+2026-11-23T16:10:52.3456452Z   enableCrossOsArchive: false
+2026-11-23T16:10:52.3456768Z   fail-on-cache-miss: false
+2026-11-23T16:10:52.3457004Z   lookup-only: false
+2026-11-23T16:10:52.3457208Z ##[endgroup]
+2026-11-23T16:10:52.7528556Z Cache hit for: trivy-binary-v0.70.0-Linux-X64
+2026-11-23T16:10:54.1413458Z Received 0 of 43751223 (0.0%), 0.0 MBs/sec
+2026-11-23T16:10:54.8272743Z Received 43751223 of 43751223 (100.0%), 24.7 MBs/sec
+2026-11-23T16:10:54.8273320Z Cache Size: ~42 MB (43751223 B)
+2026-11-23T16:10:54.8313004Z [command]/usr/bin/tar -xf /home/runner/work/_temp/746f5874-874f-4716-a9ca-458ec65733c2/cache.tzst -P -C /home/runner/work/ImperatorProyect/ImperatorProyect --use-compress-program unzstd
+2026-11-23T16:10:55.0048667Z Cache restored successfully
+2026-11-23T16:10:55.3154563Z Cache restored from key: trivy-binary-v0.70.0-Linux-X64
+2026-11-23T16:10:55.3248092Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.cache;outcome=success;conclusion=success;duration_ms=2982]
+2026-11-23T16:10:55.3252783Z ##[start-action display=Checkout install script;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__actions_checkout]
+2026-11-23T16:10:55.3261897Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__actions_checkout;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-11-23T16:10:55.3264288Z ##[start-action display=Install Trivy;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run_2]
+2026-11-23T16:10:55.3270850Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run_2;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-11-23T16:10:55.3273834Z ##[start-action display=Add Trivy binary to $GITHUB_PATH;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run_3]
+2026-11-23T16:10:55.3410619Z ##[group]Run echo /home/runner/.local/bin/trivy-bin >> $GITHUB_PATH
+2026-11-23T16:10:55.3410967Z [36;1mecho /home/runner/.local/bin/trivy-bin >> $GITHUB_PATH[0m
+2026-11-23T16:10:55.3438042Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-23T16:10:55.3438293Z ##[endgroup]
+2026-11-23T16:10:55.3483030Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__run_3;outcome=success;conclusion=success;duration_ms=20]
+2026-11-23T16:10:55.3484869Z ##[start-action display=Save Trivy binary to cache;id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__actions_cache]
+2026-11-23T16:10:55.3490047Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy.__actions_cache;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-11-23T16:10:55.3499725Z ##[end-action id=__aquasecurity_trivy-action.__aquasecurity_setup-trivy;outcome=success;conclusion=success;duration_ms=3028]
+2026-11-23T16:10:55.3501496Z ##[start-action display=Get current date;id=__aquasecurity_trivy-action.date]
+2026-11-23T16:10:55.3511618Z ##[group]Run echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+2026-11-23T16:10:55.3511930Z [36;1mecho "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT[0m
+2026-11-23T16:10:55.3534726Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-23T16:10:55.3534997Z ##[endgroup]
+2026-11-23T16:10:55.3585889Z ##[end-action id=__aquasecurity_trivy-action.date;outcome=success;conclusion=success;duration_ms=8]
+2026-11-23T16:10:55.3587502Z ##[start-action display=Restore DB from cache;id=__aquasecurity_trivy-action.__actions_cache]
+2026-11-23T16:10:55.3614250Z ##[group]Run actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae
+2026-11-23T16:10:55.3614554Z with:
+2026-11-23T16:10:55.3614802Z   path: /home/runner/work/ImperatorProyect/ImperatorProyect/.cache/trivy
+2026-11-23T16:10:55.3615110Z   key: cache-trivy-2026-11-23
+2026-11-23T16:10:55.3615339Z   restore-keys: cache-trivy-
+2026-11-23T16:10:55.3615537Z   enableCrossOsArchive: false
+2026-11-23T16:10:55.3615723Z   fail-on-cache-miss: false
+2026-11-23T16:10:55.3615903Z   lookup-only: false
+2026-11-23T16:10:55.3616070Z   save-always: false
+2026-11-23T16:10:55.3616236Z ##[endgroup]
+2026-11-23T16:10:55.8016777Z Cache hit for: cache-trivy-2026-11-23
+2026-11-23T16:10:57.1495347Z Received 0 of 101855479 (0.0%), 0.0 MBs/sec
+2026-11-23T16:10:58.1505793Z Received 67108864 of 101855479 (65.9%), 32.0 MBs/sec
+2026-11-23T16:10:59.0818653Z Received 101855479 of 101855479 (100.0%), 33.1 MBs/sec
+2026-11-23T16:10:59.0819685Z Cache Size: ~97 MB (101855479 B)
+2026-11-23T16:10:59.0858921Z [command]/usr/bin/tar -xf /home/runner/work/_temp/533fd170-a509-402e-a732-7b03a2c15311/cache.tzst -P -C /home/runner/work/ImperatorProyect/ImperatorProyect --use-compress-program unzstd
+2026-11-23T16:11:00.1392071Z Cache restored successfully
+2026-11-23T16:11:00.1492101Z Cache restored from key: cache-trivy-2026-11-23
+2026-11-23T16:11:00.1587750Z ##[end-action id=__aquasecurity_trivy-action.__actions_cache;outcome=success;conclusion=success;duration_ms=4799]
+2026-11-23T16:11:00.1595532Z ##[start-action display=Set GitHub Path;id=__aquasecurity_trivy-action.__run]
+2026-11-23T16:11:00.1616512Z ##[group]Run echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH
+2026-11-23T16:11:00.1616831Z [36;1mecho "$GITHUB_ACTION_PATH" >> $GITHUB_PATH[0m
+2026-11-23T16:11:00.1643851Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-23T16:11:00.1644121Z env:
+2026-11-23T16:11:00.1644492Z   GITHUB_ACTION_PATH: /home/runner/work/_actions/aquasecurity/trivy-action/ed142fd0673e97e23eac54620cfb913e5ce36c25
+2026-11-23T16:11:00.1644883Z ##[endgroup]
+2026-11-23T16:11:00.1725463Z ##[end-action id=__aquasecurity_trivy-action.__run;outcome=success;conclusion=success;duration_ms=12]
+2026-11-23T16:11:00.1727174Z ##[start-action display=Clear Trivy Envs file;id=__aquasecurity_trivy-action.__run_2]
+2026-11-23T16:11:00.1757125Z ##[group]Run rm -f trivy_envs.txt
+2026-11-23T16:11:00.1757436Z [36;1mrm -f trivy_envs.txt[0m
+2026-11-23T16:11:00.1757704Z [36;1mtouch trivy_envs.txt[0m
+2026-11-23T16:11:00.1780356Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-23T16:11:00.1780623Z ##[endgroup]
+2026-11-23T16:11:00.1864375Z ##[end-action id=__aquasecurity_trivy-action.__run_2;outcome=success;conclusion=success;duration_ms=13]
+2026-11-23T16:11:00.1867736Z ##[start-action display=Set Trivy environment variables;id=__aquasecurity_trivy-action.__run_3]
+2026-11-23T16:11:00.2065944Z ##[group]Run # Note: There is currently no way to distinguish between undefined variables and empty strings in GitHub Actions.
+2026-11-23T16:11:00.2066631Z [36;1m# Note: There is currently no way to distinguish between undefined variables and empty strings in GitHub Actions.[0m
+2026-11-23T16:11:00.2067119Z [36;1m# This limitation affects how we handle default values and empty inputs.[0m
+2026-11-23T16:11:00.2067507Z [36;1m# For more information, see: https://github.com/actions/runner/issues/924[0m
+2026-11-23T16:11:00.2067960Z [36;1m[0m
+2026-11-23T16:11:00.2068240Z [36;1m# The following logic implements the configuration priority described in the README:[0m
+2026-11-23T16:11:00.2068562Z [36;1m#[0m
+2026-11-23T16:11:00.2068723Z [36;1m# Inputs[0m
+2026-11-23T16:11:00.2068898Z [36;1m# Environment Variables[0m
+2026-11-23T16:11:00.2069105Z [36;1m# Config File[0m
+2026-11-23T16:11:00.2069284Z [36;1m# Defaults[0m
+2026-11-23T16:11:00.2069600Z [36;1m#[0m
+2026-11-23T16:11:00.2069937Z [36;1m# As noted above defaults are awkward to handle as GitHub Actions will inject those values as the input[0m
+2026-11-23T16:11:00.2070415Z [36;1m# if the caller doesn't provide them, thus if the input matches the default we don't set it as we[0m
+2026-11-23T16:11:00.2070918Z [36;1m# can't tell the difference.  Plus if we did set it when it was the default value then it could potentially[0m
+2026-11-23T16:11:00.2071461Z [36;1m# override an external environment variable, or something in the callers configuration file, which then wouldn't[0m
+2026-11-23T16:11:00.2071900Z [36;1m# match the configuration priority that is documented.[0m
+2026-11-23T16:11:00.2072167Z [36;1mset_env_var_if_provided() {[0m
+2026-11-23T16:11:00.2072373Z [36;1m  local var_name="$1"[0m
+2026-11-23T16:11:00.2072570Z [36;1m  local input_value="$2"[0m
+2026-11-23T16:11:00.2072774Z [36;1m  local default_value="$3"[0m
+2026-11-23T16:11:00.2072966Z [36;1m[0m
+2026-11-23T16:11:00.2073203Z [36;1m  if [ -n "$input_value" ] && [ "$input_value" != "$default_value" ]; then[0m
+2026-11-23T16:11:00.2073552Z [36;1m    # If action was provided with explicit input by the caller set that[0m
+2026-11-23T16:11:00.2073931Z [36;1m    # Use printf %q to safely escape special characters and prevent command injection[0m
+2026-11-23T16:11:00.2074328Z [36;1m    printf 'export %s=%q\n' "$var_name" "$input_value" >> trivy_envs.txt[0m
+2026-11-23T16:11:00.2074598Z [36;1m  fi[0m
+2026-11-23T16:11:00.2074747Z [36;1m}[0m
+2026-11-23T16:11:00.2074893Z [36;1m[0m
+2026-11-23T16:11:00.2075109Z [36;1m# Set environment variables, handling those with default values[0m
+2026-11-23T16:11:00.2075536Z [36;1m# cf. https://aquasecurity.github.io/trivy/latest/docs/configuration/#environment-variables[0m
+2026-11-23T16:11:00.2075955Z [36;1mset_env_var_if_provided "TRIVY_INPUT" "$INPUT_INPUT" ""[0m
+2026-11-23T16:11:00.2076350Z [36;1mset_env_var_if_provided "TRIVY_EXIT_CODE" "$INPUT_EXIT_CODE" ""[0m
+2026-11-23T16:11:00.2076719Z [36;1mset_env_var_if_provided "TRIVY_IGNORE_UNFIXED" "$INPUT_IGNORE_UNFIXED" "false"[0m
+2026-11-23T16:11:00.2077102Z [36;1mset_env_var_if_provided "TRIVY_PKG_TYPES" "$INPUT_VULN_TYPE" "os,library"[0m
+2026-11-23T16:11:00.2077540Z [36;1mset_env_var_if_provided "TRIVY_SEVERITY" "$INPUT_SEVERITY" "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL"[0m
+2026-11-23T16:11:00.2077947Z [36;1mset_env_var_if_provided "TRIVY_FORMAT" "$INPUT_FORMAT" "table"[0m
+2026-11-23T16:11:00.2078276Z [36;1mset_env_var_if_provided "TRIVY_TEMPLATE" "$INPUT_TEMPLATE" ""[0m
+2026-11-23T16:11:00.2078601Z [36;1mset_env_var_if_provided "TRIVY_OUTPUT" "$INPUT_OUTPUT" ""[0m
+2026-11-23T16:11:00.2078917Z [36;1mset_env_var_if_provided "TRIVY_SKIP_DIRS" "$INPUT_SKIP_DIRS" ""[0m
+2026-11-23T16:11:00.2079250Z [36;1mset_env_var_if_provided "TRIVY_SKIP_FILES" "$INPUT_SKIP_FILES" ""[0m
+2026-11-23T16:11:00.2079704Z [36;1mset_env_var_if_provided "TRIVY_TIMEOUT" "$INPUT_TIMEOUT" ""[0m
+2026-11-23T16:11:00.2080047Z [36;1mset_env_var_if_provided "TRIVY_IGNORE_POLICY" "$INPUT_IGNORE_POLICY" ""[0m
+2026-11-23T16:11:00.2080384Z [36;1mset_env_var_if_provided "TRIVY_QUIET" "$INPUT_HIDE_PROGRESS" ""[0m
+2026-11-23T16:11:00.2080735Z [36;1mset_env_var_if_provided "TRIVY_LIST_ALL_PKGS" "$INPUT_LIST_ALL_PKGS" "false"[0m
+2026-11-23T16:11:00.2081103Z [36;1mset_env_var_if_provided "TRIVY_SCANNERS" "$INPUT_SCANNERS" ""[0m
+2026-11-23T16:11:00.2081417Z [36;1mset_env_var_if_provided "TRIVY_CONFIG" "$INPUT_TRIVY_CONFIG" ""[0m
+2026-11-23T16:11:00.2081739Z [36;1mset_env_var_if_provided "TRIVY_TF_VARS" "$INPUT_TF_VARS" ""[0m
+2026-11-23T16:11:00.2082120Z [36;1mset_env_var_if_provided "TRIVY_DOCKER_HOST" "$INPUT_DOCKER_HOST" ""[0m
+2026-11-23T16:11:00.2101793Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-23T16:11:00.2102051Z env:
+2026-11-23T16:11:00.2102210Z   INPUT_INPUT: 
+2026-11-23T16:11:00.2102378Z   INPUT_EXIT_CODE: 1
+2026-11-23T16:11:00.2102563Z   INPUT_IGNORE_UNFIXED: true
+2026-11-23T16:11:00.2102773Z   INPUT_VULN_TYPE: os,library
+2026-11-23T16:11:00.2102968Z   INPUT_SEVERITY: HIGH,CRITICAL
+2026-11-23T16:11:00.2103167Z   INPUT_FORMAT: table
+2026-11-23T16:11:00.2103334Z   INPUT_TEMPLATE: 
+2026-11-23T16:11:00.2103492Z   INPUT_OUTPUT: 
+2026-11-23T16:11:00.2103652Z   INPUT_SKIP_DIRS: 
+2026-11-23T16:11:00.2103813Z   INPUT_SKIP_FILES: 
+2026-11-23T16:11:00.2103969Z   INPUT_TIMEOUT: 
+2026-11-23T16:11:00.2104138Z   INPUT_IGNORE_POLICY: 
+2026-11-23T16:11:00.2104316Z   INPUT_HIDE_PROGRESS: true
+2026-11-23T16:11:00.2104512Z   INPUT_LIST_ALL_PKGS: false
+2026-11-23T16:11:00.2104835Z   INPUT_SCANNERS: vuln,secret
+2026-11-23T16:11:00.2105044Z   INPUT_TRIVY_CONFIG: 
+2026-11-23T16:11:00.2105206Z   INPUT_TF_VARS: 
+2026-11-23T16:11:00.2105364Z   INPUT_DOCKER_HOST: 
+2026-11-23T16:11:00.2105531Z ##[endgroup]
+2026-11-23T16:11:00.2148904Z ##[end-action id=__aquasecurity_trivy-action.__run_3;outcome=success;conclusion=success;duration_ms=28]
+2026-11-23T16:11:00.2151650Z ##[start-action display=Run Trivy;id=__aquasecurity_trivy-action.__run_4]
+2026-11-23T16:11:00.2196326Z ##[group]Run entrypoint.sh
+2026-11-23T16:11:00.2196541Z [36;1mentrypoint.sh[0m
+2026-11-23T16:11:00.2215223Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-23T16:11:00.2215489Z env:
+2026-11-23T16:11:00.2215668Z   INPUT_SCAN_TYPE: image
+2026-11-23T16:11:00.2215944Z   INPUT_IMAGE_REF: imperator/backend:90a6af89b7759d9952ec76d2ab80ec0837256bf7
+2026-11-23T16:11:00.2216237Z   INPUT_SCAN_REF: .
+2026-11-23T16:11:00.2216413Z   INPUT_TRIVYIGNORES: 
+2026-11-23T16:11:00.2216604Z   INPUT_GITHUB_PAT: 
+2026-11-23T16:11:00.2216802Z   INPUT_LIMIT_SEVERITIES_FOR_SARIF: 
+2026-11-23T16:11:00.2217106Z   TRIVY_CACHE_DIR: /home/runner/work/ImperatorProyect/ImperatorProyect/.cache/trivy
+2026-11-23T16:11:00.2217414Z ##[endgroup]
+2026-11-23T16:11:00.2273549Z Running Trivy with options: trivy image imperator/backend:90a6af89b7759d9952ec76d2ab80ec0837256bf7
+2026-11-23T16:11:24.3229069Z 
+2026-11-23T16:11:24.3229962Z Report Summary
+2026-11-23T16:11:24.3230213Z 
+2026-11-23T16:11:24.3231271Z ┌───────────────────────────────────────────────────────────────────────────┬────────┬─────────────────┬─────────┐
+2026-11-23T16:11:24.3231883Z │                                  Target                                   │  Type  │ Vulnerabilities │ Secrets │
+2026-11-23T16:11:24.3232416Z ├───────────────────────────────────────────────────────────────────────────┼────────┼─────────────────┼─────────┤
+2026-11-23T16:11:24.3233565Z │ imperator/backend:90a6af89b7759d9952ec76d2ab80ec0837256bf7 (ubuntu 22.04) │ ubuntu │        0        │    -    │
+2026-11-23T16:11:24.3234299Z ├───────────────────────────────────────────────────────────────────────────┼────────┼─────────────────┼─────────┤
+2026-11-23T16:11:24.3234946Z │ opt/imperator/imperator-backend.jar                                       │  jar   │        0        │    -    │
+2026-11-23T16:11:24.3235599Z └───────────────────────────────────────────────────────────────────────────┴────────┴─────────────────┴─────────┘
+2026-11-23T16:11:24.3235995Z Legend:
+2026-11-23T16:11:24.3236191Z - '-': Not scanned
+2026-11-23T16:11:24.3236441Z - '0': Clean (no security findings detected)
+2026-11-23T16:11:24.3236644Z 
+2026-11-23T16:11:24.3284933Z ##[end-action id=__aquasecurity_trivy-action.__run_4;outcome=success;conclusion=success;duration_ms=24113]
+2026-11-23T16:11:24.3287050Z ##[start-action display=Remove Trivy Envs file;id=__aquasecurity_trivy-action.__run_5]
+2026-11-23T16:11:24.3377826Z ##[group]Run rm -f trivy_envs.txt
+2026-11-23T16:11:24.3378051Z [36;1mrm -f trivy_envs.txt[0m
+2026-11-23T16:11:24.3405963Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-23T16:11:24.3406228Z ##[endgroup]
+2026-11-23T16:11:24.3502361Z ##[end-action id=__aquasecurity_trivy-action.__run_5;outcome=success;conclusion=success;duration_ms=21]
+2026-11-23T16:11:24.3522756Z ##[group]Run docker build --file infra/docker/frontend/Dockerfile --build-arg VCS_REF=90a6af89b7759d9952ec76d2ab80ec0837256bf7 --tag imperator/frontend:90a6af89b7759d9952ec76d2ab80ec0837256bf7 .
+2026-11-23T16:11:24.3523727Z [36;1mdocker build --file infra/docker/frontend/Dockerfile --build-arg VCS_REF=90a6af89b7759d9952ec76d2ab80ec0837256bf7 --tag imperator/frontend:90a6af89b7759d9952ec76d2ab80ec0837256bf7 .[0m
+2026-11-23T16:11:24.3545504Z shell: /usr/bin/bash -e {0}
+2026-11-23T16:11:24.3545720Z ##[endgroup]
+2026-11-23T16:11:24.6788016Z #0 building with "default" instance using docker driver
+2026-11-23T16:11:24.6788466Z 
+2026-11-23T16:11:24.6789055Z #1 [internal] load build definition from Dockerfile
+2026-11-23T16:11:24.6789710Z #1 transferring dockerfile: 3.80kB done
+2026-11-23T16:11:24.6790016Z #1 DONE 0.0s
+2026-11-23T16:11:24.6790134Z 
+2026-11-23T16:11:24.6790629Z #2 resolve image config for docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+2026-11-23T16:11:24.6791251Z #2 DONE 0.0s
+2026-11-23T16:11:24.6791376Z 
+2026-11-23T16:11:24.6791676Z #3 docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+2026-11-23T16:11:24.6792184Z #3 CACHED
+2026-11-23T16:11:24.6792308Z 
+2026-11-23T16:11:24.6792784Z #4 [internal] load metadata for docker.io/library/node:24.22.3-bookworm-slim@sha256:dc26ae92c9fb15cf6b1d63e20f0944b2efe0f115b20e00be48fb23fceb061c54
+2026-11-23T16:11:25.0174360Z #4 ...
+2026-11-23T16:11:25.0174564Z 
+2026-11-23T16:11:25.0174769Z #5 [auth] library/node:pull token for registry-1.docker.io
+2026-11-23T16:11:25.0175046Z #5 DONE 0.0s
+2026-11-23T16:11:25.1677539Z 
+2026-11-23T16:11:25.1678512Z #4 [internal] load metadata for docker.io/library/node:24.22.3-bookworm-slim@sha256:dc26ae92c9fb15cf6b1d63e20f0944b2efe0f115b20e00be48fb23fceb061c54
+2026-11-23T16:11:25.6344613Z #4 DONE 0.8s
+2026-11-23T16:11:29.3658639Z 
+2026-11-23T16:11:29.3659613Z #6 [internal] load build context
+2026-11-23T16:11:29.3659942Z #6 transferring context: 477.86kB 0.0s done
+2026-11-23T16:11:29.3660163Z #6 DONE 0.0s
+2026-11-23T16:11:29.3660259Z 
+2026-11-23T16:11:29.3660984Z #7 [runtime  2/10] ADD --checksum=sha256:d2f7edfcc7689b9e0761c2742cc824ac86a20768bc5e8057818dc6875291fe76     https://security.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-8-0_10.42-1+deb12u2_amd64.deb     /tmp/libpcre2-8-0.deb
+2026-11-23T16:11:29.3662797Z #7 DONE 0.1s
+2026-11-23T16:11:29.3662916Z 
+2026-11-23T16:11:29.3663599Z #8 [runtime  6/10] ADD --checksum=sha256:023a7017b75295fc7037c7a4352847f9516a36a82cc5e1650d6832d238860913     https://security.debian.org/debian-security/pool/updates/main/a/apt/libapt-pkg6.0_2.6.2_amd64.deb     /tmp/imperator-libapt-pkg6.0.deb
+2026-11-23T16:11:29.3664336Z #8 DONE 0.1s
+2026-11-23T16:11:29.3664431Z 
+2026-11-23T16:11:29.3664957Z #9 [runtime  5/10] ADD --checksum=sha256:796fc7fe18866f5b1fb27a115d7339e549d71b7ddbc15b8d6fc4226c243e96d1     https://security.debian.org/debian-security/pool/updates/main/a/apt/apt_2.6.2_amd64.deb     /tmp/imperator-apt.deb
+2026-11-23T16:11:29.3665623Z #9 DONE 0.1s
+2026-11-23T16:11:29.3665716Z 
+2026-11-23T16:11:29.3666284Z #10 [runtime  3/10] ADD --checksum=sha256:d7d1943aec9597629bf73075efcc5ef6dc9bda96d78e80d843156ecd448478b8     https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-base_5.36.0-7+deb12u4_amd64.deb     /tmp/imperator-perl-base.deb
+2026-11-23T16:11:29.3667010Z #10 DONE 0.1s
+2026-11-23T16:11:29.3667103Z 
+2026-11-23T16:11:29.3667413Z #11 [runtime  1/10] FROM docker.io/library/node:24.22.3-bookworm-slim@sha256:dc26ae92c9fb15cf6b1d63e20f0944b2efe0f115b20e00be48fb23fceb061c54
+2026-11-23T16:11:29.3668082Z #11 resolve docker.io/library/node:24.22.3-bookworm-slim@sha256:dc26ae92c9fb15cf6b1d63e20f0944b2efe0f115b20e00be48fb23fceb061c54 done
+2026-11-23T16:11:29.3668909Z #11 sha256:dd051e1b8c92ff101fa3071ab97ea4924885942f15644e01c3dc095764e863e3 0B / 28.25MB 0.1s
+2026-11-23T16:11:29.3669683Z #11 sha256:22a7c5e442cd30f0c37eb73f2f6d91be1c6b63bd1c4278641b042fe77b260f33 3.31kB / 3.31kB 0.1s done
+2026-11-23T16:11:29.3670181Z #11 sha256:5030a48eb5b08bea228f0db8440fed216cf91b5ca4d999bc2a692c2eb0a60114 0B / 51.10MB 0.1s
+2026-11-23T16:11:29.3670636Z #11 sha256:e727da478d47d626146e734dd426cad789beb1fe49c55a06a175621d30f31064 0B / 1.71MB 0.1s
+2026-11-23T16:11:29.3671107Z #11 sha256:dc26ae92c9fb15cf6b1d63e20f0944b2efe0f115b20e00be48fb23fceb061c54 3.93kB / 3.93kB done
+2026-11-23T16:11:29.3671587Z #11 sha256:0e2646ab57e77b7a384a0cb59b6815b182c77e1f9c3ba36bd8435bd9c4e6680e 1.93kB / 1.93kB done
+2026-11-23T16:11:29.3672061Z #11 sha256:5ba3c1ded6eada2ea16582327a87c672fb3889fca362ee3ac0d78ed742b583c0 6.71kB / 6.71kB done
+2026-11-23T16:11:29.5566838Z #11 sha256:dd051e1b8c92ff101fa3071ab97ea4924885942f15644e01c3dc095764e863e3 7.34MB / 28.25MB 0.2s
+2026-11-23T16:11:29.5567643Z #11 extracting sha256:dd051e1b8c92ff101fa3071ab97ea4924885942f15644e01c3dc095764e863e3
+2026-11-23T16:11:29.6576743Z #11 sha256:dd051e1b8c92ff101fa3071ab97ea4924885942f15644e01c3dc095764e863e3 28.25MB / 28.25MB 0.3s done
+2026-11-23T16:11:29.6585704Z #11 sha256:5030a48eb5b08bea228f0db8440fed216cf91b5ca4d999bc2a692c2eb0a60114 26.21MB / 51.10MB 0.3s
+2026-11-23T16:11:29.6586549Z #11 sha256:e727da478d47d626146e734dd426cad789beb1fe49c55a06a175621d30f31064 1.71MB / 1.71MB 0.2s done
+2026-11-23T16:11:29.6587388Z #11 sha256:c34f02d00fde0767e1607c15d336cb71414e607acb0b4e63680a37c007b76204 0B / 448B 0.3s
+2026-11-23T16:11:29.7591466Z #11 sha256:5030a48eb5b08bea228f0db8440fed216cf91b5ca4d999bc2a692c2eb0a60114 51.10MB / 51.10MB 0.4s done
+2026-11-23T16:11:29.7592182Z #11 sha256:c34f02d00fde0767e1607c15d336cb71414e607acb0b4e63680a37c007b76204 448B / 448B 0.3s done
+2026-11-23T16:11:30.3069997Z #11 extracting sha256:dd051e1b8c92ff101fa3071ab97ea4924885942f15644e01c3dc095764e863e3 0.6s done
+2026-11-23T16:11:30.3070591Z #11 extracting sha256:22a7c5e442cd30f0c37eb73f2f6d91be1c6b63bd1c4278641b042fe77b260f33 done
+2026-11-23T16:11:30.3071073Z #11 extracting sha256:5030a48eb5b08bea228f0db8440fed216cf91b5ca4d999bc2a692c2eb0a60114 0.1s
+2026-11-23T16:11:31.1610536Z #11 extracting sha256:5030a48eb5b08bea228f0db8440fed216cf91b5ca4d999bc2a692c2eb0a60114 0.8s done
+2026-11-23T16:11:31.1611655Z #11 extracting sha256:e727da478d47d626146e734dd426cad789beb1fe49c55a06a175621d30f31064 0.0s done
+2026-11-23T16:11:31.1612635Z #11 extracting sha256:c34f02d00fde0767e1607c15d336cb71414e607acb0b4e63680a37c007b76204 done
+2026-11-23T16:11:31.1613396Z #11 DONE 1.8s
+2026-11-23T16:11:31.1613652Z 
+2026-11-23T16:11:31.1613832Z #12 [dependencies 2/4] WORKDIR /app
+2026-11-23T16:11:31.1614691Z #12 DONE 0.1s
+2026-11-23T16:11:31.1614887Z 
+2026-11-23T16:11:31.1615630Z #13 [runtime  2/10] ADD --checksum=sha256:d2f7edfcc7689b9e0761c2742cc824ac86a20768bc5e8057818dc6875291fe76     https://security.debian.org/debian-security/pool/updates/main/p/pcre2/libpcre2-8-0_10.42-1+deb12u2_amd64.deb     /tmp/libpcre2-8-0.deb
+2026-11-23T16:11:31.2909221Z #13 DONE 0.1s
+2026-11-23T16:11:31.2910501Z 
+2026-11-23T16:11:31.2911960Z #14 [runtime  3/10] ADD --checksum=sha256:d7d1943aec9597629bf73075efcc5ef6dc9bda96d78e80d843156ecd448478b8     https://security.debian.org/debian-security/pool/updates/main/p/perl/perl-base_5.36.0-7+deb12u4_amd64.deb     /tmp/imperator-perl-base.deb
+2026-11-23T16:11:31.2912991Z #14 DONE 0.0s
+2026-11-23T16:11:31.2913198Z 
+2026-11-23T16:11:31.2913628Z #15 [dependencies 3/4] COPY frontend/package.json frontend/package-lock.json ./
+2026-11-23T16:11:31.2914044Z #15 DONE 0.0s
+2026-11-23T16:11:31.2914326Z 
+2026-11-23T16:11:31.2915735Z #16 [runtime  4/10] RUN set -eu;     dpkg --install /tmp/libpcre2-8-0.deb /tmp/imperator-perl-base.deb;     rm -f /tmp/libpcre2-8-0.deb /tmp/imperator-perl-base.deb /var/log/dpkg.log;     rm -rf         /opt/yarn-v1.22.22         /usr/local/lib/node_modules/corepack         /usr/local/lib/node_modules/npm;     rm -f         /usr/local/bin/corepack         /usr/local/bin/npm         /usr/local/bin/npx         /usr/local/bin/pnpx         /usr/local/bin/yarn         /usr/local/bin/yarnpkg
+2026-11-23T16:11:31.2917401Z #16 0.120 (Reading database ... 6096 files and directories currently installed.)
+2026-11-23T16:11:31.4741906Z #16 0.121 Preparing to unpack /tmp/libpcre2-8-0.deb ...
+2026-11-23T16:11:31.4742605Z #16 0.123 Unpacking libpcre2-8-0:amd64 (10.42-1+deb12u2) over (10.42-1+deb12u2) ...
+2026-11-23T16:11:31.4743305Z #16 0.147 Preparing to unpack /tmp/imperator-perl-base.deb ...
+2026-11-23T16:11:31.4743845Z #16 0.153 Unpacking perl-base (5.36.0-7+deb12u4) over (5.36.0-7+deb12u4) ...
+2026-11-23T16:11:31.6025944Z #16 0.432 Setting up libpcre2-8-0:amd64 (10.42-1+deb12u2) ...
+2026-11-23T16:11:31.8021576Z #16 0.433 Setting up perl-base (5.36.0-7+deb12u4) ...
+2026-11-23T16:11:31.8024012Z #16 0.437 Processing triggers for libc-bin (2.36-9+deb12u14) ...
+2026-11-23T16:11:31.8025898Z #16 DONE 0.5s
+2026-11-23T16:11:31.8026183Z 
+2026-11-23T16:11:31.8026976Z #17 [runtime  5/10] ADD --checksum=sha256:796fc7fe18866f5b1fb27a115d7339e549d71b7ddbc15b8d6fc4226c243e96d1     https://security.debian.org/debian-security/pool/updates/main/a/apt/apt_2.6.2_amd64.deb     /tmp/imperator-apt.deb
+2026-11-23T16:11:31.8028049Z #17 DONE 0.0s
+2026-11-23T16:11:31.8031005Z 
+2026-11-23T16:11:31.8031876Z #18 [runtime  6/10] ADD --checksum=sha256:023a7017b75295fc7037c7a4352847f9516a36a82cc5e1650d6832d238860913     https://security.debian.org/debian-security/pool/updates/main/a/apt/libapt-pkg6.0_2.6.2_amd64.deb     /tmp/imperator-libapt-pkg6.0.deb
+2026-11-23T16:11:31.8032968Z #18 DONE 0.0s
+2026-11-23T16:11:31.8033193Z 
+2026-11-23T16:11:31.8034244Z #19 [runtime  7/10] RUN dpkg --install /tmp/imperator-apt.deb /tmp/imperator-libapt-pkg6.0.deb     && test "$(dpkg-query --showformat='${Version}' --show apt)" = "2.6.2"     && test "$(dpkg-query --showformat='${Version}' --show libapt-pkg6.0)" = "2.6.2"     && rm -f /tmp/imperator-apt.deb /tmp/imperator-libapt-pkg6.0.deb /var/log/dpkg.log
+2026-11-23T16:11:31.8036444Z #19 0.111 (Reading database ... 6096 files and directories currently installed.)
+2026-11-23T16:11:31.9301005Z #19 0.111 Preparing to unpack /tmp/imperator-apt.deb ...
+2026-11-23T16:11:31.9301766Z #19 0.132 Unpacking apt (2.6.2) over (2.6.2) ...
+2026-11-23T16:11:31.9302318Z #19 0.238 Preparing to unpack .../imperator-libapt-pkg6.0.deb ...
+2026-11-23T16:11:32.1374920Z #19 0.240 Unpacking libapt-pkg6.0:amd64 (2.6.2) over (2.6.2) ...
+2026-11-23T16:11:32.1375714Z #19 0.297 Setting up libapt-pkg6.0:amd64 (2.6.2) ...
+2026-11-23T16:11:32.1376219Z #19 0.298 Setting up apt (2.6.2) ...
+2026-11-23T16:11:32.1376718Z #19 0.444 Processing triggers for libc-bin (2.36-9+deb12u14) ...
+2026-11-23T16:11:32.3195072Z #19 DONE 0.5s
+2026-11-23T16:11:32.3195286Z 
+2026-11-23T16:11:32.3195366Z #20 [runtime  8/10] WORKDIR /app
+2026-11-23T16:11:32.3195590Z #20 DONE 0.0s
+2026-11-23T16:11:32.3195678Z 
+2026-11-23T16:11:32.3195765Z #21 [dependencies 4/4] RUN npm ci
+2026-11-23T16:11:38.6695456Z #21 7.497 
+2026-11-23T16:11:38.6695810Z #21 7.497 added 469 packages, and audited 470 packages in 7s
+2026-11-23T16:11:38.6696062Z #21 7.497 
+2026-11-23T16:11:38.6696292Z #21 7.497 172 packages are looking for funding
+2026-11-23T16:11:38.6696533Z #21 7.497   run `npm fund` for details
+2026-11-23T16:11:38.8226194Z #21 7.498 
+2026-11-23T16:11:38.8226459Z #21 7.498 found 0 vulnerabilities
+2026-11-23T16:11:38.8226859Z #21 7.499 npm warn install-scripts 1 package has install scripts not yet covered by allowScripts:
+2026-11-23T16:11:38.8227324Z #21 7.499 npm warn install-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+2026-11-23T16:11:38.8227658Z #21 7.499 npm warn install-scripts
+2026-11-23T16:11:38.8228062Z #21 7.499 npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+2026-11-23T16:11:38.8228432Z #21 7.500 npm notice
+2026-11-23T16:11:38.8228723Z #21 7.500 npm notice New major version of npm available! 11.19.1 -> 12.2.3
+2026-11-23T16:11:38.8229662Z #21 7.500 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+2026-11-23T16:11:38.8230008Z #21 7.500 npm notice To update run: npm install -g npm@12.2.3
+2026-11-23T16:11:38.8230455Z #21 7.500 npm notice
+2026-11-23T16:11:40.3930159Z #21 DONE 9.2s
+2026-11-23T16:11:41.6529699Z 
+2026-11-23T16:11:41.6530684Z #22 [build 3/5] COPY --from=dependencies /app/node_modules ./node_modules
+2026-11-23T16:11:44.1043893Z #22 DONE 2.5s
+2026-11-23T16:11:44.2653708Z 
+2026-11-23T16:11:44.2654186Z #23 [build 4/5] COPY frontend/ ./
+2026-11-23T16:11:44.2654512Z #23 DONE 0.0s
+2026-11-23T16:11:44.2654633Z 
+2026-11-23T16:11:44.2654723Z #24 [build 5/5] RUN npm run build
+2026-11-23T16:11:44.3898103Z #24 0.275 
+2026-11-23T16:11:44.3898489Z #24 0.275 > imperator-decision-review-workspace@0.1.0 prebuild
+2026-11-23T16:11:44.3898801Z #24 0.275 > next telemetry disable
+2026-11-23T16:11:44.3899022Z #24 0.275 
+2026-11-23T16:11:44.5044952Z #24 0.390 Next.js' telemetry collection is already disabled.
+2026-11-23T16:11:44.6631581Z #24 0.390 
+2026-11-23T16:11:44.6631912Z #24 0.390 Status: Disabled
+2026-11-23T16:11:44.6632151Z #24 0.390 
+2026-11-23T16:11:44.6632475Z #24 0.390 You have opted-out of Next.js' anonymous telemetry program.
+2026-11-23T16:11:44.6632875Z #24 0.390 No data will be collected from your machine.
+2026-11-23T16:11:44.6633136Z #24 0.390 
+2026-11-23T16:11:44.6633355Z #24 0.390 Learn more: https://nextjs.org/telemetry
+2026-11-23T16:11:44.6633574Z #24 0.398 
+2026-11-23T16:11:44.6633780Z #24 0.398 > imperator-decision-review-workspace@0.1.0 build
+2026-11-23T16:11:44.6634033Z #24 0.398 > next build
+2026-11-23T16:11:44.6634190Z #24 0.398 
+2026-11-23T16:11:44.7686632Z #24 0.654 ▲ Next.js 16.4.5 (Turbopack)
+2026-11-23T16:11:44.9745705Z #24 0.681 ✓ Running next.config.ts took 26ms
+2026-11-23T16:11:44.9746217Z #24 0.694 
+2026-11-23T16:11:44.9746496Z #24 0.709   Creating an optimized production build ...
+2026-11-23T16:11:47.7773340Z #24 3.662 ✓ Compiled successfully in 2.9s
+2026-11-23T16:11:47.9344838Z #24 3.669   Running TypeScript ...
+2026-11-23T16:11:50.7099712Z #24 6.595   Finished TypeScript in 2.9s ...
+2026-11-23T16:11:50.8622698Z #24 6.597   Collecting page data using 3 workers ...
+2026-11-23T16:11:51.0701281Z #24 6.953   Generating static pages using 3 workers (0/3) ...
+2026-11-23T16:11:51.2089978Z #24 7.093 ✓ Generating static pages using 3 workers (3/3) in 139ms
+2026-11-23T16:11:51.3203623Z #24 7.104   Finalizing page optimization ...
+2026-11-23T16:11:51.3204223Z #24 7.205 
+2026-11-23T16:11:51.5233094Z #24 7.206 Route (app)
+2026-11-23T16:11:51.7536151Z #24 7.206 ┌ ○ /
+2026-11-23T16:11:51.7536548Z #24 7.206 ├ ○ /_not-found
+2026-11-23T16:11:51.7536883Z #24 7.206 └ ƒ /decisions/[decisionId]
+2026-11-23T16:11:51.7537171Z #24 7.206 
+2026-11-23T16:11:51.7537377Z #24 7.206 
+2026-11-23T16:11:51.7537688Z #24 7.206 ○  (Static)   prerendered as static content
+2026-11-23T16:11:51.7538130Z #24 7.206 ƒ  (Dynamic)  server-rendered on demand
+2026-11-23T16:11:51.7538449Z #24 7.206 
+2026-11-23T16:11:51.7538699Z #24 7.246 npm notice
+2026-11-23T16:11:51.7539070Z #24 7.246 npm notice New major version of npm available! 11.19.1 -> 12.2.3
+2026-11-23T16:11:51.7539779Z #24 7.246 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+2026-11-23T16:11:51.7540305Z #24 7.246 npm notice To update run: npm install -g npm@12.2.3
+2026-11-23T16:11:51.7540673Z #24 7.246 npm notice
+2026-11-23T16:11:51.7540903Z #24 DONE 7.3s
+2026-11-23T16:11:51.7541083Z 
+2026-11-23T16:11:51.7541322Z #25 [runtime  9/10] COPY --from=build --chown=node:node /app/.next/standalone ./
+2026-11-23T16:11:51.7541745Z #25 DONE 0.1s
+2026-11-23T16:11:51.7541873Z 
+2026-11-23T16:11:51.7542123Z #26 [runtime 10/10] COPY --from=build --chown=node:node /app/.next/static ./.next/static
+2026-11-23T16:11:51.7542578Z #26 DONE 0.0s
+2026-11-23T16:11:51.7542709Z 
+2026-11-23T16:11:51.7542805Z #27 exporting to image
+2026-11-23T16:11:51.7543068Z #27 exporting layers 0.1s done
+2026-11-23T16:11:51.7628163Z #27 writing image sha256:5ac8ac21589a82935d9de4965570b072fb03a741bc43524774d24fec42f1e481 done
+2026-11-23T16:11:51.7631820Z #27 naming to docker.io/imperator/frontend:90a6af89b7759d9952ec76d2ab80ec0837256bf7 done
+2026-11-23T16:11:51.7633447Z #27 DONE 0.1s
+2026-11-23T16:11:51.7703792Z ##[group]Run set -euo pipefail
+2026-11-23T16:11:51.7704146Z [36;1mset -euo pipefail[0m
+2026-11-23T16:11:51.7704444Z [36;1mactual_version=$(docker run --rm \[0m
+2026-11-23T16:11:51.7704800Z [36;1m  --entrypoint dpkg-query \[0m
+2026-11-23T16:11:51.7705223Z [36;1m  imperator/frontend:90a6af89b7759d9952ec76d2ab80ec0837256bf7 \[0m
+2026-11-23T16:11:51.7705679Z [36;1m  '--showformat=${Version}' \[0m
+2026-11-23T16:11:51.7705990Z [36;1m  --show libpcre2-8-0)[0m
+2026-11-23T16:11:51.7706313Z [36;1mtest "$actual_version" = "10.42-1+deb12u2"[0m
+2026-11-23T16:11:51.7738224Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-23T16:11:51.7738626Z ##[endgroup]
+2026-11-23T16:11:52.3680092Z ##[group]Run aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25
+2026-11-23T16:11:52.3680454Z with:
+2026-11-23T16:11:52.3680700Z   image-ref: imperator/frontend:90a6af89b7759d9952ec76d2ab80ec0837256bf7
+2026-11-23T16:11:52.3680993Z   scanners: vuln,secret
+2026-11-23T16:11:52.3681186Z   severity: HIGH,CRITICAL
+2026-11-23T16:11:52.3681369Z   ignore-unfixed: true
+2026-11-23T16:11:52.3681550Z   exit-code: 1
+2026-11-23T16:11:52.3681708Z   format: table
+2026-11-23T16:11:52.3681872Z   hide-progress: true
+2026-11-23T16:11:52.3682052Z   scan-type: image
+2026-11-23T16:11:52.3682268Z   scan-ref: .
+2026-11-23T16:11:52.3682429Z   vuln-type: os,library
+2026-11-23T16:11:52.3682715Z   cache-dir: /home/runner/work/ImperatorProyect/ImperatorProyect/.cache/trivy
+2026-11-23T16:11:52.3683016Z   list-all-pkgs: false
+2026-11-23T16:11:52.3683192Z   version: v0.70.0
+2026-11-23T16:11:52.3683349Z   cache: true
+2026-11-23T16:11:52.3683510Z   skip-setup-trivy: false
+2026-11-23T16:11:52.3685524Z   token-setup-trivy: ***
+2026-11-23T16:11:52.3685710Z ##[endgroup]
+2026-11-23T16:11:52.3691452Z ##[start-action display=Install Trivy;id=__aquasecurity_trivy-action_2.__aquasecurity_setup-trivy]
+2026-11-23T16:11:52.3749190Z ##[group]Run aquasecurity/setup-trivy@3fb12ec12f41e471780db15c232d5dd185dcb514
+2026-11-23T16:11:52.3749757Z with:
+2026-11-23T16:11:52.3749921Z   version: v0.70.0
+2026-11-23T16:11:52.3750087Z   cache: true
+2026-11-23T16:11:52.3752075Z   token: ***
+2026-11-23T16:11:52.3752245Z   path: $HOME/.local/bin
+2026-11-23T16:11:52.3752447Z   github-server-url: https://github.com
+2026-11-23T16:11:52.3752683Z ##[endgroup]
+2026-11-23T16:11:52.3757573Z ##[start-action display=Binary dir;id=__aquasecurity_trivy-action_2.__aquasecurity_setup-trivy.binary-dir]
+2026-11-23T16:11:52.3768600Z ##[group]Run echo "dir=$HOME/.local/bin/trivy-bin" >> $GITHUB_OUTPUT
+2026-11-23T16:11:52.3768948Z [36;1mecho "dir=$HOME/.local/bin/trivy-bin" >> $GITHUB_OUTPUT[0m
+2026-11-23T16:11:52.3795816Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-23T16:11:52.3796098Z ##[endgroup]
+2026-11-23T16:11:52.3907073Z ##[end-action id=__aquasecurity_trivy-action_2.__aquasecurity_setup-trivy.binary-dir;outcome=success;conclusion=success;duration_ms=14]
+2026-11-23T16:11:52.3909889Z ##[start-action display=Check the version for caching;id=__aquasecurity_trivy-action_2.__aquasecurity_setup-trivy.__run]
+2026-11-23T16:11:52.3914883Z ##[end-action id=__aquasecurity_trivy-action_2.__aquasecurity_setup-trivy.__run;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-11-23T16:11:52.3917050Z ##[start-action display=Restore Trivy binary from cache;id=__aquasecurity_trivy-action_2.__aquasecurity_setup-trivy.cache]
+2026-11-23T16:11:52.3949114Z ##[group]Run actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb
+2026-11-23T16:11:52.3949774Z with:
+2026-11-23T16:11:52.3950013Z   path: /home/runner/.local/bin/trivy-bin
+2026-11-23T16:11:52.3950339Z   key: trivy-binary-v0.70.0-Linux-X64
+2026-11-23T16:11:52.3950676Z   enableCrossOsArchive: false
+2026-11-23T16:11:52.3950959Z   fail-on-cache-miss: false
+2026-11-23T16:11:52.3951384Z   lookup-only: false
+2026-11-23T16:11:52.3951626Z ##[endgroup]
+2026-11-23T16:11:52.7586845Z Cache hit for: trivy-binary-v0.70.0-Linux-X64
+2026-11-23T16:11:54.1000455Z Received 0 of 43751223 (0.0%), 0.0 MBs/sec
+2026-11-23T16:11:55.1008591Z Received 39556919 of 43751223 (90.4%), 18.9 MBs/sec
+2026-11-23T16:11:56.1007828Z Received 39556919 of 43751223 (90.4%), 12.6 MBs/sec
+2026-11-23T16:11:57.1015365Z Received 39556919 of 43751223 (90.4%), 9.4 MBs/sec
+2026-11-23T16:11:57.7731194Z Received 43751223 of 43751223 (100.0%), 8.9 MBs/sec
+2026-11-23T16:11:57.7731630Z Cache Size: ~42 MB (43751223 B)
+2026-11-23T16:11:57.7754834Z [command]/usr/bin/tar -xf /home/runner/work/_temp/c1f9299d-03d0-4b3f-b014-f22ac0776094/cache.tzst -P -C /home/runner/work/ImperatorProyect/ImperatorProyect --use-compress-program unzstd
+2026-11-23T16:11:57.9519361Z Cache restored successfully
+2026-11-23T16:11:57.9592986Z Cache restored from key: trivy-binary-v0.70.0-Linux-X64
+2026-11-23T16:11:57.9668457Z ##[end-action id=__aquasecurity_trivy-action_2.__aquasecurity_setup-trivy.cache;outcome=success;conclusion=success;duration_ms=5575]
+2026-11-23T16:11:57.9670829Z ##[start-action display=Checkout install script;id=__aquasecurity_trivy-action_2.__aquasecurity_setup-trivy.__actions_checkout]
+2026-11-23T16:11:57.9674615Z ##[end-action id=__aquasecurity_trivy-action_2.__aquasecurity_setup-trivy.__actions_checkout;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-11-23T16:11:57.9676157Z ##[start-action display=Install Trivy;id=__aquasecurity_trivy-action_2.__aquasecurity_setup-trivy.__run_2]
+2026-11-23T16:11:57.9680064Z ##[end-action id=__aquasecurity_trivy-action_2.__aquasecurity_setup-trivy.__run_2;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-11-23T16:11:57.9681604Z ##[start-action display=Add Trivy binary to $GITHUB_PATH;id=__aquasecurity_trivy-action_2.__aquasecurity_setup-trivy.__run_3]
+2026-11-23T16:11:57.9693717Z ##[group]Run echo /home/runner/.local/bin/trivy-bin >> $GITHUB_PATH
+2026-11-23T16:11:57.9694093Z [36;1mecho /home/runner/.local/bin/trivy-bin >> $GITHUB_PATH[0m
+2026-11-23T16:11:57.9721511Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-23T16:11:57.9721783Z ##[endgroup]
+2026-11-23T16:11:57.9772577Z ##[end-action id=__aquasecurity_trivy-action_2.__aquasecurity_setup-trivy.__run_3;outcome=success;conclusion=success;duration_ms=9]
+2026-11-23T16:11:57.9775483Z ##[start-action display=Save Trivy binary to cache;id=__aquasecurity_trivy-action_2.__aquasecurity_setup-trivy.__actions_cache]
+2026-11-23T16:11:57.9783156Z ##[end-action id=__aquasecurity_trivy-action_2.__aquasecurity_setup-trivy.__actions_cache;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-11-23T16:11:57.9788742Z ##[end-action id=__aquasecurity_trivy-action_2.__aquasecurity_setup-trivy;outcome=success;conclusion=success;duration_ms=5609]
+2026-11-23T16:11:57.9791360Z ##[start-action display=Get current date;id=__aquasecurity_trivy-action_2.date]
+2026-11-23T16:11:57.9806717Z ##[group]Run echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+2026-11-23T16:11:57.9807177Z [36;1mecho "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT[0m
+2026-11-23T16:11:57.9839263Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-23T16:11:57.9839916Z ##[endgroup]
+2026-11-23T16:11:57.9896639Z ##[end-action id=__aquasecurity_trivy-action_2.date;outcome=success;conclusion=success;duration_ms=10]
+2026-11-23T16:11:57.9898247Z ##[start-action display=Restore DB from cache;id=__aquasecurity_trivy-action_2.__actions_cache]
+2026-11-23T16:11:57.9925349Z ##[group]Run actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae
+2026-11-23T16:11:57.9925621Z with:
+2026-11-23T16:11:57.9925878Z   path: /home/runner/work/ImperatorProyect/ImperatorProyect/.cache/trivy
+2026-11-23T16:11:57.9926182Z   key: cache-trivy-2026-11-23
+2026-11-23T16:11:57.9926397Z   restore-keys: cache-trivy-
+2026-11-23T16:11:57.9926595Z   enableCrossOsArchive: false
+2026-11-23T16:11:57.9926819Z   fail-on-cache-miss: false
+2026-11-23T16:11:57.9927008Z   lookup-only: false
+2026-11-23T16:11:57.9927182Z   save-always: false
+2026-11-23T16:11:57.9927477Z ##[endgroup]
+2026-11-23T16:11:58.3428130Z Cache hit for: cache-trivy-2026-11-23
+2026-11-23T16:11:59.6826393Z Received 0 of 101855479 (0.0%), 0.0 MBs/sec
+2026-11-23T16:12:00.6877510Z Received 71303168 of 101855479 (70.0%), 34.0 MBs/sec
+2026-11-23T16:12:01.0059159Z Received 101855479 of 101855479 (100.0%), 41.8 MBs/sec
+2026-11-23T16:12:01.0110902Z Cache Size: ~97 MB (101855479 B)
+2026-11-23T16:12:01.0152907Z [command]/usr/bin/tar -xf /home/runner/work/_temp/aed4acd5-c428-4411-bdff-85b857cf72c4/cache.tzst -P -C /home/runner/work/ImperatorProyect/ImperatorProyect --use-compress-program unzstd
+2026-11-23T16:12:02.1786543Z Cache restored successfully
+2026-11-23T16:12:02.1883393Z Cache restored from key: cache-trivy-2026-11-23
+2026-11-23T16:12:02.1947476Z ##[end-action id=__aquasecurity_trivy-action_2.__actions_cache;outcome=success;conclusion=success;duration_ms=4204]
+2026-11-23T16:12:02.1951030Z ##[start-action display=Set GitHub Path;id=__aquasecurity_trivy-action_2.__run]
+2026-11-23T16:12:02.2002996Z ##[group]Run echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH
+2026-11-23T16:12:02.2003314Z [36;1mecho "$GITHUB_ACTION_PATH" >> $GITHUB_PATH[0m
+2026-11-23T16:12:02.2031310Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-23T16:12:02.2031616Z env:
+2026-11-23T16:12:02.2031976Z   GITHUB_ACTION_PATH: /home/runner/work/_actions/aquasecurity/trivy-action/ed142fd0673e97e23eac54620cfb913e5ce36c25
+2026-11-23T16:12:02.2032379Z ##[endgroup]
+2026-11-23T16:12:02.2134822Z ##[end-action id=__aquasecurity_trivy-action_2.__run;outcome=success;conclusion=success;duration_ms=18]
+2026-11-23T16:12:02.2137140Z ##[start-action display=Clear Trivy Envs file;id=__aquasecurity_trivy-action_2.__run_2]
+2026-11-23T16:12:02.2265842Z ##[group]Run rm -f trivy_envs.txt
+2026-11-23T16:12:02.2266096Z [36;1mrm -f trivy_envs.txt[0m
+2026-11-23T16:12:02.2266308Z [36;1mtouch trivy_envs.txt[0m
+2026-11-23T16:12:02.2290278Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-23T16:12:02.2290674Z ##[endgroup]
+2026-11-23T16:12:02.2566761Z ##[end-action id=__aquasecurity_trivy-action_2.__run_2;outcome=success;conclusion=success;duration_ms=42]
+2026-11-23T16:12:02.2573660Z ##[start-action display=Set Trivy environment variables;id=__aquasecurity_trivy-action_2.__run_3]
+2026-11-23T16:12:02.2856887Z ##[group]Run # Note: There is currently no way to distinguish between undefined variables and empty strings in GitHub Actions.
+2026-11-23T16:12:02.2857548Z [36;1m# Note: There is currently no way to distinguish between undefined variables and empty strings in GitHub Actions.[0m
+2026-11-23T16:12:02.2858045Z [36;1m# This limitation affects how we handle default values and empty inputs.[0m
+2026-11-23T16:12:02.2858457Z [36;1m# For more information, see: https://github.com/actions/runner/issues/924[0m
+2026-11-23T16:12:02.2858762Z [36;1m[0m
+2026-11-23T16:12:02.2859069Z [36;1m# The following logic implements the configuration priority described in the README:[0m
+2026-11-23T16:12:02.2859386Z [36;1m#[0m
+2026-11-23T16:12:02.2859758Z [36;1m# Inputs[0m
+2026-11-23T16:12:02.2859958Z [36;1m# Environment Variables[0m
+2026-11-23T16:12:02.2860166Z [36;1m# Config File[0m
+2026-11-23T16:12:02.2860354Z [36;1m# Defaults[0m
+2026-11-23T16:12:02.2860528Z [36;1m#[0m
+2026-11-23T16:12:02.2860844Z [36;1m# As noted above defaults are awkward to handle as GitHub Actions will inject those values as the input[0m
+2026-11-23T16:12:02.2861341Z [36;1m# if the caller doesn't provide them, thus if the input matches the default we don't set it as we[0m
+2026-11-23T16:12:02.2861839Z [36;1m# can't tell the difference.  Plus if we did set it when it was the default value then it could potentially[0m
+2026-11-23T16:12:02.2862381Z [36;1m# override an external environment variable, or something in the callers configuration file, which then wouldn't[0m
+2026-11-23T16:12:02.2862833Z [36;1m# match the configuration priority that is documented.[0m
+2026-11-23T16:12:02.2863109Z [36;1mset_env_var_if_provided() {[0m
+2026-11-23T16:12:02.2863467Z [36;1m  local var_name="$1"[0m
+2026-11-23T16:12:02.2863672Z [36;1m  local input_value="$2"[0m
+2026-11-23T16:12:02.2863896Z [36;1m  local default_value="$3"[0m
+2026-11-23T16:12:02.2864105Z [36;1m[0m
+2026-11-23T16:12:02.2864348Z [36;1m  if [ -n "$input_value" ] && [ "$input_value" != "$default_value" ]; then[0m
+2026-11-23T16:12:02.2864720Z [36;1m    # If action was provided with explicit input by the caller set that[0m
+2026-11-23T16:12:02.2865128Z [36;1m    # Use printf %q to safely escape special characters and prevent command injection[0m
+2026-11-23T16:12:02.2865525Z [36;1m    printf 'export %s=%q\n' "$var_name" "$input_value" >> trivy_envs.txt[0m
+2026-11-23T16:12:02.2865817Z [36;1m  fi[0m
+2026-11-23T16:12:02.2865981Z [36;1m}[0m
+2026-11-23T16:12:02.2866133Z [36;1m[0m
+2026-11-23T16:12:02.2866374Z [36;1m# Set environment variables, handling those with default values[0m
+2026-11-23T16:12:02.2866891Z [36;1m# cf. https://aquasecurity.github.io/trivy/latest/docs/configuration/#environment-variables[0m
+2026-11-23T16:12:02.2867316Z [36;1mset_env_var_if_provided "TRIVY_INPUT" "$INPUT_INPUT" ""[0m
+2026-11-23T16:12:02.2867653Z [36;1mset_env_var_if_provided "TRIVY_EXIT_CODE" "$INPUT_EXIT_CODE" ""[0m
+2026-11-23T16:12:02.2868048Z [36;1mset_env_var_if_provided "TRIVY_IGNORE_UNFIXED" "$INPUT_IGNORE_UNFIXED" "false"[0m
+2026-11-23T16:12:02.2868465Z [36;1mset_env_var_if_provided "TRIVY_PKG_TYPES" "$INPUT_VULN_TYPE" "os,library"[0m
+2026-11-23T16:12:02.2868905Z [36;1mset_env_var_if_provided "TRIVY_SEVERITY" "$INPUT_SEVERITY" "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL"[0m
+2026-11-23T16:12:02.2869320Z [36;1mset_env_var_if_provided "TRIVY_FORMAT" "$INPUT_FORMAT" "table"[0m
+2026-11-23T16:12:02.2869820Z [36;1mset_env_var_if_provided "TRIVY_TEMPLATE" "$INPUT_TEMPLATE" ""[0m
+2026-11-23T16:12:02.2870208Z [36;1mset_env_var_if_provided "TRIVY_OUTPUT" "$INPUT_OUTPUT" ""[0m
+2026-11-23T16:12:02.2870586Z [36;1mset_env_var_if_provided "TRIVY_SKIP_DIRS" "$INPUT_SKIP_DIRS" ""[0m
+2026-11-23T16:12:02.2870942Z [36;1mset_env_var_if_provided "TRIVY_SKIP_FILES" "$INPUT_SKIP_FILES" ""[0m
+2026-11-23T16:12:02.2871290Z [36;1mset_env_var_if_provided "TRIVY_TIMEOUT" "$INPUT_TIMEOUT" ""[0m
+2026-11-23T16:12:02.2871636Z [36;1mset_env_var_if_provided "TRIVY_IGNORE_POLICY" "$INPUT_IGNORE_POLICY" ""[0m
+2026-11-23T16:12:02.2871999Z [36;1mset_env_var_if_provided "TRIVY_QUIET" "$INPUT_HIDE_PROGRESS" ""[0m
+2026-11-23T16:12:02.2872388Z [36;1mset_env_var_if_provided "TRIVY_LIST_ALL_PKGS" "$INPUT_LIST_ALL_PKGS" "false"[0m
+2026-11-23T16:12:02.2872769Z [36;1mset_env_var_if_provided "TRIVY_SCANNERS" "$INPUT_SCANNERS" ""[0m
+2026-11-23T16:12:02.2873104Z [36;1mset_env_var_if_provided "TRIVY_CONFIG" "$INPUT_TRIVY_CONFIG" ""[0m
+2026-11-23T16:12:02.2873423Z [36;1mset_env_var_if_provided "TRIVY_TF_VARS" "$INPUT_TF_VARS" ""[0m
+2026-11-23T16:12:02.2873752Z [36;1mset_env_var_if_provided "TRIVY_DOCKER_HOST" "$INPUT_DOCKER_HOST" ""[0m
+2026-11-23T16:12:02.2901139Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-23T16:12:02.2901491Z env:
+2026-11-23T16:12:02.2901738Z   INPUT_INPUT: 
+2026-11-23T16:12:02.2901957Z   INPUT_EXIT_CODE: 1
+2026-11-23T16:12:02.2902186Z   INPUT_IGNORE_UNFIXED: true
+2026-11-23T16:12:02.2902447Z   INPUT_VULN_TYPE: os,library
+2026-11-23T16:12:02.2902713Z   INPUT_SEVERITY: HIGH,CRITICAL
+2026-11-23T16:12:02.2902947Z   INPUT_FORMAT: table
+2026-11-23T16:12:02.2903129Z   INPUT_TEMPLATE: 
+2026-11-23T16:12:02.2903304Z   INPUT_OUTPUT: 
+2026-11-23T16:12:02.2903469Z   INPUT_SKIP_DIRS: 
+2026-11-23T16:12:02.2903643Z   INPUT_SKIP_FILES: 
+2026-11-23T16:12:02.2903813Z   INPUT_TIMEOUT: 
+2026-11-23T16:12:02.2903988Z   INPUT_IGNORE_POLICY: 
+2026-11-23T16:12:02.2904177Z   INPUT_HIDE_PROGRESS: true
+2026-11-23T16:12:02.2904369Z   INPUT_LIST_ALL_PKGS: false
+2026-11-23T16:12:02.2904577Z   INPUT_SCANNERS: vuln,secret
+2026-11-23T16:12:02.2904772Z   INPUT_TRIVY_CONFIG: 
+2026-11-23T16:12:02.2904947Z   INPUT_TF_VARS: 
+2026-11-23T16:12:02.2905123Z   INPUT_DOCKER_HOST: 
+2026-11-23T16:12:02.2905299Z ##[endgroup]
+2026-11-23T16:12:02.2972569Z ##[end-action id=__aquasecurity_trivy-action_2.__run_3;outcome=success;conclusion=success;duration_ms=39]
+2026-11-23T16:12:02.2975233Z ##[start-action display=Run Trivy;id=__aquasecurity_trivy-action_2.__run_4]
+2026-11-23T16:12:02.3277411Z ##[group]Run entrypoint.sh
+2026-11-23T16:12:02.3277667Z [36;1mentrypoint.sh[0m
+2026-11-23T16:12:02.3305140Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-23T16:12:02.3305426Z env:
+2026-11-23T16:12:02.3305607Z   INPUT_SCAN_TYPE: image
+2026-11-23T16:12:02.3305900Z   INPUT_IMAGE_REF: imperator/frontend:90a6af89b7759d9952ec76d2ab80ec0837256bf7
+2026-11-23T16:12:02.3306207Z   INPUT_SCAN_REF: .
+2026-11-23T16:12:02.3306393Z   INPUT_TRIVYIGNORES: 
+2026-11-23T16:12:02.3306572Z   INPUT_GITHUB_PAT: 
+2026-11-23T16:12:02.3306760Z   INPUT_LIMIT_SEVERITIES_FOR_SARIF: 
+2026-11-23T16:12:02.3307214Z   TRIVY_CACHE_DIR: /home/runner/work/ImperatorProyect/ImperatorProyect/.cache/trivy
+2026-11-23T16:12:02.3307539Z ##[endgroup]
+2026-11-23T16:12:02.3399691Z Running Trivy with options: trivy image imperator/frontend:90a6af89b7759d9952ec76d2ab80ec0837256bf7
+2026-11-23T16:12:04.4445687Z 
+2026-11-23T16:12:04.4446389Z Report Summary
+2026-11-23T16:12:04.4446599Z 
+2026-11-23T16:12:04.4447165Z ┌────────────────────────────────────────────────────────────────────────────┬──────────┬─────────────────┬─────────┐
+2026-11-23T16:12:04.4447658Z │                                   Target                                   │   Type   │ Vulnerabilities │ Secrets │
+2026-11-23T16:12:04.4448158Z ├────────────────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+2026-11-23T16:12:04.4448787Z │ imperator/frontend:90a6af89b7759d9952ec76d2ab80ec0837256bf7 (debian 12.15) │  debian  │        0        │    -    │
+2026-11-23T16:12:04.4449721Z ├────────────────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+2026-11-23T16:12:04.4450478Z │ app/node_modules/@img/colour/package.json                                  │ node-pkg │        0        │    -    │
+2026-11-23T16:12:04.4451336Z ├────────────────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+2026-11-23T16:12:04.4452070Z │ app/node_modules/@img/sharp-libvips-linux-x64/package.json                 │ node-pkg │        0        │    -    │
+2026-11-23T16:12:04.4453048Z ├────────────────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+2026-11-23T16:12:04.4453793Z │ app/node_modules/@img/sharp-linux-x64/package.json                         │ node-pkg │        0        │    -    │
+2026-11-23T16:12:04.4454489Z ├────────────────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+2026-11-23T16:12:04.4455115Z │ app/node_modules/@next/env/package.json                                    │ node-pkg │        0        │    -    │
+2026-11-23T16:12:04.4455745Z ├────────────────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+2026-11-23T16:12:04.4456669Z │ app/node_modules/@swc/helpers/package.json                                 │ node-pkg │        0        │    -    │
+2026-11-23T16:12:04.4457302Z ├────────────────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+2026-11-23T16:12:04.4457907Z │ app/node_modules/client-only/package.json                                  │ node-pkg │        0        │    -    │
+2026-11-23T16:12:04.4458671Z ├────────────────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+2026-11-23T16:12:04.4459297Z │ app/node_modules/detect-libc/package.json                                  │ node-pkg │        0        │    -    │
+2026-11-23T16:12:04.4460752Z ├────────────────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+2026-11-23T16:12:04.4461438Z │ app/node_modules/next/dist/compiled/@edge-runtime/cookies/package.json     │ node-pkg │        0        │    -    │
+2026-11-23T16:12:04.4462197Z ├────────────────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+2026-11-23T16:12:04.4462864Z │ app/node_modules/next/dist/compiled/@edge-runtime/ponyfill/package.json    │ node-pkg │        0        │    -    │
+2026-11-23T16:12:04.4463579Z ├────────────────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+2026-11-23T16:12:04.4464242Z │ app/node_modules/next/dist/compiled/@edge-runtime/primitives/package.json  │ node-pkg │        0        │    -    │
+2026-11-23T16:12:04.4464967Z ├────────────────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+2026-11-23T16:12:04.4465633Z │ app/node_modules/next/dist/compiled/react-is/package.json                  │ node-pkg │        0        │    -    │
+2026-11-23T16:12:04.4466325Z ├────────────────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+2026-11-23T16:12:04.4467085Z │ app/node_modules/next/dist/compiled/regenerator-runtime/package.json       │ node-pkg │        0        │    -    │
+2026-11-23T16:12:04.4467837Z ├────────────────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+2026-11-23T16:12:04.4468415Z │ app/node_modules/next/package.json                                         │ node-pkg │        0        │    -    │
+2026-11-23T16:12:04.4469025Z ├────────────────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+2026-11-23T16:12:04.4469819Z │ app/node_modules/react-dom/package.json                                    │ node-pkg │        0        │    -    │
+2026-11-23T16:12:04.4470612Z ├────────────────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+2026-11-23T16:12:04.4471211Z │ app/node_modules/react/package.json                                        │ node-pkg │        0        │    -    │
+2026-11-23T16:12:04.4471866Z ├────────────────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+2026-11-23T16:12:04.4472479Z │ app/node_modules/semver/package.json                                       │ node-pkg │        0        │    -    │
+2026-11-23T16:12:04.4473131Z ├────────────────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+2026-11-23T16:12:04.4473758Z │ app/node_modules/sharp/node_modules/semver/package.json                    │ node-pkg │        0        │    -    │
+2026-11-23T16:12:04.4474433Z ├────────────────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+2026-11-23T16:12:04.4475039Z │ app/node_modules/sharp/package.json                                        │ node-pkg │        0        │    -    │
+2026-11-23T16:12:04.4475630Z ├────────────────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+2026-11-23T16:12:04.4476281Z │ app/node_modules/styled-jsx/package.json                                   │ node-pkg │        0        │    -    │
+2026-11-23T16:12:04.4476957Z ├────────────────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+2026-11-23T16:12:04.4477505Z │ app/package.json                                                           │ node-pkg │        0        │    -    │
+2026-11-23T16:12:04.4478089Z └────────────────────────────────────────────────────────────────────────────┴──────────┴─────────────────┴─────────┘
+2026-11-23T16:12:04.4478457Z Legend:
+2026-11-23T16:12:04.4478651Z - '-': Not scanned
+2026-11-23T16:12:04.4478884Z - '0': Clean (no security findings detected)
+2026-11-23T16:12:04.4479082Z 
+2026-11-23T16:12:04.4512970Z ##[end-action id=__aquasecurity_trivy-action_2.__run_4;outcome=success;conclusion=success;duration_ms=2153]
+2026-11-23T16:12:04.4514913Z ##[start-action display=Remove Trivy Envs file;id=__aquasecurity_trivy-action_2.__run_5]
+2026-11-23T16:12:04.4564697Z ##[group]Run rm -f trivy_envs.txt
+2026-11-23T16:12:04.4564954Z [36;1mrm -f trivy_envs.txt[0m
+2026-11-23T16:12:04.4591480Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-23T16:12:04.4591778Z ##[endgroup]
+2026-11-23T16:12:04.4671325Z ##[end-action id=__aquasecurity_trivy-action_2.__run_5;outcome=success;conclusion=success;duration_ms=15]
+2026-11-23T16:12:04.5017375Z ##[group]Run docker build --file infra/aws/images/migration/Dockerfile --build-arg VCS_REF=90a6af89b7759d9952ec76d2ab80ec0837256bf7 --tag imperator/migration:90a6af89b7759d9952ec76d2ab80ec0837256bf7 .
+2026-11-23T16:12:04.5018379Z [36;1mdocker build --file infra/aws/images/migration/Dockerfile --build-arg VCS_REF=90a6af89b7759d9952ec76d2ab80ec0837256bf7 --tag imperator/migration:90a6af89b7759d9952ec76d2ab80ec0837256bf7 .[0m
+2026-11-23T16:12:04.5043383Z shell: /usr/bin/bash -e {0}
+2026-11-23T16:12:04.5043631Z ##[endgroup]
+2026-11-23T16:12:04.9150717Z #0 building with "default" instance using docker driver
+2026-11-23T16:12:04.9150976Z 
+2026-11-23T16:12:04.9151227Z #1 [internal] load build definition from Dockerfile
+2026-11-23T16:12:04.9151522Z #1 transferring dockerfile: 4.97kB done
+2026-11-23T16:12:04.9151803Z #1 DONE 0.0s
+2026-11-23T16:12:04.9151935Z 
+2026-11-23T16:12:04.9152609Z #2 resolve image config for docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+2026-11-23T16:12:04.9153113Z #2 DONE 0.0s
+2026-11-23T16:12:04.9153225Z 
+2026-11-23T16:12:04.9153501Z #3 docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+2026-11-23T16:12:04.9153901Z #3 CACHED
+2026-11-23T16:12:04.9294642Z 
+2026-11-23T16:12:04.9296284Z #4 [internal] load metadata for docker.io/flyway/flyway:13.7.0@sha256:e613cab576abcaf09d64b652fbd5e6fd6df9057e0933a35d508e793caf91352a
+2026-11-23T16:12:05.2560542Z #4 ...
+2026-11-23T16:12:05.2561216Z 
+2026-11-23T16:12:05.2561391Z #5 [auth] flyway/flyway:pull token for registry-1.docker.io
+2026-11-23T16:12:05.2561679Z #5 DONE 0.0s
+2026-11-23T16:12:05.4053134Z 
+2026-11-23T16:12:05.4054010Z #4 [internal] load metadata for docker.io/flyway/flyway:13.7.0@sha256:e613cab576abcaf09d64b652fbd5e6fd6df9057e0933a35d508e793caf91352a
+2026-11-23T16:12:05.6887086Z #4 DONE 0.8s
+2026-11-23T16:12:09.9773867Z 
+2026-11-23T16:12:09.9774640Z #6 [internal] load build context
+2026-11-23T16:12:09.9775210Z #6 transferring context: 19.23kB done
+2026-11-23T16:12:09.9775519Z #6 DONE 0.0s
+2026-11-23T16:12:09.9775661Z 
+2026-11-23T16:12:09.9776790Z #7 [ 6/15] ADD --checksum=sha256:556db5439e206114346043f68d200497dc96a0bca62a360a81784092ebd0e0a9     https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.22.3/jackson-databind-2.22.3.jar     /flyway/lib/jackson-databind-2.22.3.jar
+2026-11-23T16:12:09.9778686Z #7 ERROR: digest mismatch sha256:807ceab071b2ca7c7f79de3502b6aa2dab97795dc0f8054a1a7c7c13189bb94f: sha256:556db5439e206114346043f68d200497dc96a0bca62a360a81784092ebd0e0a9
+2026-11-23T16:12:09.9779779Z 
+2026-11-23T16:12:09.9780444Z #8 [ 2/15] ADD --checksum=sha256:70b188a86d81f30d7510aab30e25d638ed5037dded6691af1533952b71ac61de     https://security.ubuntu.com/ubuntu/pool/main/b/brotli/libbrotli1_1.1.0-2ubuntu0.1_amd64.deb     /tmp/imperator-libbrotli1.deb
+2026-11-23T16:12:09.9781250Z #8 CANCELED
+2026-11-23T16:12:09.9781355Z 
+2026-11-23T16:12:09.9782057Z #9 [ 3/15] ADD --checksum=sha256:219f43b1cd836a4da550938db5fda93160d269d39a4edcf1f1ce698a470db797     https://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl3t64_3.0.13-0ubuntu3.16_amd64.deb     /tmp/imperator-libssl3t64.deb
+2026-11-23T16:12:09.9782747Z #9 CANCELED
+2026-11-23T16:12:09.9782843Z 
+2026-11-23T16:12:09.9783370Z #10 [ 4/15] ADD --checksum=sha256:675b84971ffd4467707008c25ef7520f90ea7c23ef27b7a76b0dccf1d7c4dc3f     https://security.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_3.0.13-0ubuntu3.16_amd64.deb     /tmp/imperator-openssl.deb
+2026-11-23T16:12:09.9784116Z #10 CANCELED
+2026-11-23T16:12:09.9784217Z 
+2026-11-23T16:12:09.9784490Z #11 [ 1/15] FROM docker.io/flyway/flyway:13.7.0@sha256:e613cab576abcaf09d64b652fbd5e6fd6df9057e0933a35d508e793caf91352a
+2026-11-23T16:12:09.9785084Z #11 resolve docker.io/flyway/flyway:13.7.0@sha256:e613cab576abcaf09d64b652fbd5e6fd6df9057e0933a35d508e793caf91352a done
+2026-11-23T16:12:09.9785876Z #11 sha256:b0d6c4dc8a6c0e7aa7c49b04835a249b38478c6742ab82889fe3f870937beab4 7.12kB / 7.12kB done
+2026-11-23T16:12:09.9786378Z #11 sha256:e613cab576abcaf09d64b652fbd5e6fd6df9057e0933a35d508e793caf91352a 1.61kB / 1.61kB done
+2026-11-23T16:12:09.9786897Z #11 sha256:e978228fa3985759e2bf521f452747fa14132296115ace53dae0d473d523ba3a 1.62kB / 1.62kB done
+2026-11-23T16:12:09.9787250Z #11 CANCELED
+2026-11-23T16:12:09.9787350Z 
+2026-11-23T16:12:09.9787912Z #12 [ 7/15] ADD --checksum=sha256:7608c367fd8a92666d28711519599543c180298259963184ce04d2947a8f71e7     https://repo.maven.apache.org/maven2/tools/jackson/core/jackson-core/3.1.7/jackson-core-3.1.7.jar     /flyway/lib/jackson-core-3.1.7.jar
+2026-11-23T16:12:09.9788986Z #12 ERROR: digest mismatch sha256:807ceab071b2ca7c7f79de3502b6aa2dab97795dc0f8054a1a7c7c13189bb94f: sha256:7608c367fd8a92666d28711519599543c180298259963184ce04d2947a8f71e7
+2026-11-23T16:12:09.9789587Z 
+2026-11-23T16:12:09.9790196Z #13 [ 8/15] ADD --checksum=sha256:48c781de87e2016e1f0d973748a27130f11643e7ac080173f40e2d9669d84be3     https://repo.maven.apache.org/maven2/tools/jackson/core/jackson-databind/3.1.7/jackson-databind-3.1.7.jar     /flyway/lib/jackson-databind-3.1.7.jar
+2026-11-23T16:12:09.9791272Z #13 ERROR: digest mismatch sha256:807ceab071b2ca7c7f79de3502b6aa2dab97795dc0f8054a1a7c7c13189bb94f: sha256:48c781de87e2016e1f0d973748a27130f11643e7ac080173f40e2d9669d84be3
+2026-11-23T16:12:09.9791715Z 
+2026-11-23T16:12:09.9792274Z #14 [ 5/15] ADD --checksum=sha256:8a501126a385b25841915d839508f8a66e2a0dbc8a6709d055ef3b3e852b094c     https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.22.3/jackson-core-2.22.3.jar     /flyway/lib/jackson-core-2.22.3.jar
+2026-11-23T16:12:09.9793427Z #14 ERROR: digest mismatch sha256:807ceab071b2ca7c7f79de3502b6aa2dab97795dc0f8054a1a7c7c13189bb94f: sha256:8a501126a385b25841915d839508f8a66e2a0dbc8a6709d055ef3b3e852b094c
+2026-11-23T16:12:09.9793890Z 
+2026-11-23T16:12:09.9794378Z #15 [ 9/15] ADD --checksum=sha256:ad2ea7f107f250ba88b0bfdba31812a341e3247589647aa2b03b9dc4e8abf8ed     https://security.ubuntu.com/ubuntu/pool/main/a/apt/apt_2.8.4ubuntu0.1_amd64.deb     /tmp/imperator-apt.deb
+2026-11-23T16:12:09.9794971Z #15 CANCELED
+2026-11-23T16:12:09.9795068Z 
+2026-11-23T16:12:09.9795629Z #16 [10/15] ADD --checksum=sha256:a50f3e68a793f90b05f44a4b5f2f59f3ec7687e39b5d8bbd1da44c84671fa3d6     https://security.ubuntu.com/ubuntu/pool/main/a/apt/libapt-pkg6.0t64_2.8.4ubuntu0.1_amd64.deb     /tmp/imperator-libapt-pkg6.0t64.deb
+2026-11-23T16:12:09.9796289Z #16 CANCELED
+2026-11-23T16:12:09.9796442Z ------
+2026-11-23T16:12:09.9797055Z  > [ 7/15] ADD --checksum=sha256:7608c367fd8a92666d28711519599543c180298259963184ce04d2947a8f71e7     https://repo.maven.apache.org/maven2/tools/jackson/core/jackson-core/3.1.7/jackson-core-3.1.7.jar     /flyway/lib/jackson-core-3.1.7.jar:
+2026-11-23T16:12:09.9797751Z ------
+2026-11-23T16:12:09.9797898Z ------
+2026-11-23T16:12:09.9798603Z  > [ 6/15] ADD --checksum=sha256:556db5439e206114346043f68d200497dc96a0bca62a360a81784092ebd0e0a9     https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.22.3/jackson-databind-2.22.3.jar     /flyway/lib/jackson-databind-2.22.3.jar:
+2026-11-23T16:12:09.9799314Z ------
+2026-11-23T16:12:09.9799631Z ------
+2026-11-23T16:12:09.9800296Z  > [ 8/15] ADD --checksum=sha256:48c781de87e2016e1f0d973748a27130f11643e7ac080173f40e2d9669d84be3     https://repo.maven.apache.org/maven2/tools/jackson/core/jackson-databind/3.1.7/jackson-databind-3.1.7.jar     /flyway/lib/jackson-databind-3.1.7.jar:
+2026-11-23T16:12:09.9800998Z ------
+2026-11-23T16:12:09.9801146Z ------
+2026-11-23T16:12:09.9801794Z  > [ 5/15] ADD --checksum=sha256:8a501126a385b25841915d839508f8a66e2a0dbc8a6709d055ef3b3e852b094c     https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.22.3/jackson-core-2.22.3.jar     /flyway/lib/jackson-core-2.22.3.jar:
+2026-11-23T16:12:09.9802511Z ------
+2026-11-23T16:12:09.9803131Z ERROR: failed to build: failed to solve: digest mismatch sha256:807ceab071b2ca7c7f79de3502b6aa2dab97795dc0f8054a1a7c7c13189bb94f: sha256:48c781de87e2016e1f0d973748a27130f11643e7ac080173f40e2d9669d84be3
+2026-11-23T16:12:09.9850504Z ##[error]Process completed with exit code 1.
+2026-11-23T16:12:10.0012347Z Post job cleanup.
+2026-11-23T16:12:10.0015808Z ##[start-action display=Restore DB from cache;id=__1f60428a-99b0-4b69-8caa-3e4c1f7304a6.__actions_cache]
+2026-11-23T16:12:10.0017355Z ##[end-action id=__1f60428a-99b0-4b69-8caa-3e4c1f7304a6.__actions_cache;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-11-23T16:12:10.0018695Z ##[start-action display=Install Trivy;id=__1f60428a-99b0-4b69-8caa-3e4c1f7304a6.__aquasecurity_setup-trivy]
+2026-11-23T16:12:10.0075518Z Post job cleanup.
+2026-11-23T16:12:10.0079183Z ##[end-action id=__1f60428a-99b0-4b69-8caa-3e4c1f7304a6.__aquasecurity_setup-trivy;outcome=success;conclusion=success;duration_ms=5]
+2026-11-23T16:12:10.0200502Z Post job cleanup.
+2026-11-23T16:12:10.0203244Z ##[start-action display=Restore DB from cache;id=__8608c645-f9bd-4169-9e51-018dd625c24d.__actions_cache]
+2026-11-23T16:12:10.0204711Z ##[end-action id=__8608c645-f9bd-4169-9e51-018dd625c24d.__actions_cache;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-11-23T16:12:10.0206029Z ##[start-action display=Install Trivy;id=__8608c645-f9bd-4169-9e51-018dd625c24d.__aquasecurity_setup-trivy]
+2026-11-23T16:12:10.0261210Z Post job cleanup.
+2026-11-23T16:12:10.0264898Z ##[end-action id=__8608c645-f9bd-4169-9e51-018dd625c24d.__aquasecurity_setup-trivy;outcome=success;conclusion=success;duration_ms=5]
+2026-11-23T16:12:10.0390715Z Post job cleanup.
+2026-11-23T16:12:10.1030490Z [command]/usr/bin/git version
+2026-11-23T16:12:10.1070430Z git version 2.56.1
+2026-11-23T16:12:10.1094863Z Temporarily overriding HOME='/home/runner/work/_temp/77724fea-4bc4-4e5c-a5f5-7362d6e30869' before making global git config changes
+2026-11-23T16:12:10.1095806Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-23T16:12:10.1098436Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ImperatorProyect/ImperatorProyect
+2026-11-23T16:12:10.1124245Z Removing SSH command configuration
+2026-11-23T16:12:10.1129061Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-23T16:12:10.1156653Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-23T16:12:10.1314570Z Removing HTTP extra header
+2026-11-23T16:12:10.1317789Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-23T16:12:10.1343657Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-23T16:12:10.1510338Z Removing includeIf entries pointing to credentials config files
+2026-11-23T16:12:10.1515101Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-23T16:12:10.1540138Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-23T16:12:10.1855607Z Cleaning up orphan processes

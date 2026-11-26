@@ -1,0 +1,164 @@
+{
+  "checks": [
+    {
+      "name": "PostgreSQL D094 supply-chain gate",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/45213414392/job/137827982320"
+    },
+    {
+      "name": "Application image scan",
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/45213414392/job/137827982081"
+    },
+    {
+      "name": "Full Git history secret scan",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/45213414392/job/137827981996"
+    },
+    {
+      "name": "Source, dependency and configuration scan",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/45213414392/job/137827981959"
+    },
+    {
+      "name": "Dependabot",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/45131654231/job/137548295163"
+    },
+    {
+      "name": "Dependabot",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/45130285949/job/137543979726"
+    },
+    {
+      "name": "Dependabot",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/45127854789/job/137536269872"
+    },
+    {
+      "name": "Dependabot",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/45126932209/job/137533304619"
+    },
+    {
+      "name": "Dependabot",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/45126927083/job/137533290988"
+    },
+    {
+      "name": "Dependabot",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/45124781170/job/137526522614"
+    },
+    {
+      "name": "Dependabot",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/45124554470/job/137525811428"
+    },
+    {
+      "name": "Analyze (actions)",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/45111552992/job/137484823441"
+    },
+    {
+      "name": "Analyze (javascript-typescript)",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/45111552992/job/137484823377"
+    },
+    {
+      "name": "Analyze (java-kotlin)",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/45111552992/job/137484823335"
+    },
+    {
+      "name": "Analyze (python)",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/45111552992/job/137484823129"
+    },
+    {
+      "name": "Dependabot",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/44737533538/job/136292595711"
+    },
+    {
+      "name": "Analyze (java-kotlin)",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/44737344290/job/136291952275"
+    },
+    {
+      "name": "Analyze (python)",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/44737344290/job/136291952232"
+    },
+    {
+      "name": "Analyze (actions)",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/44737344290/job/136291952152"
+    },
+    {
+      "name": "Analyze (javascript-typescript)",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/44737344290/job/136291951915"
+    },
+    {
+      "name": "submit-maven",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/44737344034/job/136291951022"
+    },
+    {
+      "name": "Source, dependency and configuration scan",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/44737344920/job/136291947123"
+    },
+    {
+      "name": "Application image scan",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/44737344920/job/136291947064"
+    },
+    {
+      "name": "PostgreSQL D094 supply-chain gate",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/44737344920/job/136291947000"
+    },
+    {
+      "name": "Full Git history secret scan",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/44737344920/job/136291946811"
+    },
+    {
+      "name": "Java 21 Maven verification",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/actions/runs/44737344924/job/136291946489"
+    }
+  ],
+  "codeScanningOpen": 0,
+  "queriedAtUtc": "2026-11-26T17:33:17.3774474Z",
+  "dependabotOpen": 0,
+  "main": "90a6af89b7759d9952ec76d2ab80ec0837256bf7"
+}

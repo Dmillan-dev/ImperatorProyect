@@ -70,18 +70,20 @@ Read-only GitHub/AWS evidence adapters and the optional Bedrock explanation adap
 
 ## Current stage
 
-**Local MVP implemented and demonstrated. Academic delivery remains in progress.** Status reviewed 20 November 2026. The [current security candidate and release limits](docs/tfg/evidence/2026-11-20-minimatch-node/README.md) include the focused minimatch/Node fixes and distinguish current checks from the historical demo.
+**Local MVP implemented and demonstrated. Academic delivery remains in progress.** Status reviewed 26 November 2026. The [current review and release limits](docs/tfg/evidence/2026-11-26-local-hygiene/README.md) distinguish fresh security checks from the historical demo. Main includes the focused minimatch/Node fixes; GitHub has zero open Dependabot and CodeQL alerts at this review.
 
 | Area                  | Evidence and limit                                                                                                                                                                         |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Product and runtime   | One synthetic case, four roles, Flyway, persistence after recreation and recovery demonstrated locally on 14 October.                                                                      |
 | Functional evaluation | 20 November: 174 unit and 44 frontend tests, format/lint/types/build PASS; Playwright 9 passed / 6 intentional skips with intercepted API. PostgreSQL integration: 35 PASS on 11 November, on the exact retained image. |
-| Exact-image security  | 20 November: **0 fixable High/Critical and 0 secrets** across four exact image IDs; full and production npm audits: 0 findings. There are 39 unique H/C residual CVEs; the inventory changed and R-20 is not approved for this set. |
+| Exact-image security  | 26 November: **0 fixable High/Critical and 0 secrets** across four exact retained image IDs. There are 40 unique H/C residual CVEs (42 in the conservative review set); R-20 is not approved for this set. The last full/production npm audits are dated 20 November, with 0 findings. |
 | TFG delivery          | Current A-S3 formal closure remains blocked by the security decision and complete candidate runtime rehearsal. Memory and English script prepared; measured human rehearsal, narrated recording and academic review pending. |
 | AWS and providers     | Live AWS deployment, external identity conformance and real provider validation remain gated.                                                                                              |
 
 > [!IMPORTANT]
-> **R-20 has no current acceptance.** The last approved decision expired on 19 October 2026 at 00:00 Europe/Madrid. The unapproved 18 November proposal did not renew it. The new review remains `accepted: false`, identifies the PAM residual and vendor metadata correction, and keeps R-23 disposition separate. [Exact artifacts and release conditions](docs/tfg/evidence/2026-11-20-minimatch-node/README.md).
+> **R-20 has no current acceptance.** The last approved decision expired on 19 October 2026 at 00:00 Europe/Madrid. The unapproved 18 November proposal did not renew it. The new review remains `accepted: false`, adds the Zstandard residual and keeps R-23 disposition separate. [Exact artifacts and release conditions](docs/tfg/evidence/2026-11-26-local-hygiene/README.md).
+
+**Next:** approve a digest-bound local security decision, rehearse the exact runtime, then complete the English narrated defence and academic review. [Local MVP → AWS gates](docs/tfg/06_LOCAL_VS_AWS.md#sprints-de-cierre-y-transición). AWS readiness follows local closure; deployment needs separate authorization.
 
 ## Explore locally
 

@@ -1,6 +1,12 @@
 # IMPERATOR DAM TFG Master Plan
 
-## Control vigente — 20/11/2026
+## Control vigente — 26/11/2026
+
+**TFG-A IN PROGRESS; A-S3 BLOCKED; A-S4 PENDING; AWS NOT AUTHORIZED.** Main `90a6af8` integra #95. La [revisión vigente](evidence/2026-11-26-local-hygiene/README.md) registra 0 alertas GitHub, cuatro IDs conservados con 0 H/C corregibles / 0 secretos y limpieza acotada. Hay 40 CVE H/C / 42 conservadores, incluido el nuevo Zstandard: R-20 sigue `accepted: false`, sin nueva caducidad asignada ni renovación de la aprobación expirada. R-23 requiere disposición separada.
+
+Siguiente: decisión aplicable, ensayo completo del conjunto exacto, cierre formal A-S3 y defensa humana A-S4 en inglés con grabación/revisión académica. Después, readiness AWS offline con R-03/R-04/R-05 y gates operativos separados. Los registros siguientes preservan sus fechas y no autorizan ejecutar el candidato actual.
+
+## Registro histórico — 20/11/2026
 
 **TFG-A IN PROGRESS; A-S3 actual NO-GO formal; A-S4 pendiente de ejecución humana y revisión; AWS BLOCKED.** El [candidato de seguridad](evidence/2026-11-20-minimatch-node/README.md) corrige minimatch y el runtime Node de forma acotada, sin ampliar el producto. Cuatro imágenes: 0 H/C corregibles / 0 secretos; npm completo/producción 0. Las cifras 39 H/C / 41 CVE conservadores requieren nueva decisión por el cambio PAM/zlib, aunque coincidan con el recuento anterior.
 
@@ -208,10 +214,24 @@ TFG-A is complete only when:
 - current image security policy and repeated frontend audit pass, with any
   additional finding explicitly remediated or given an approved bounded disposition,
   with full residual counts visible; no blanket High/Critical waiver
-  closes a risk. The founder-approved R-20 B amendment permits only the
-  hash-bound conservative 26-CVE residual set explicitly approved 16/10 for the four exact local images and synthetic TFG-A use until
-  2026-10-19T00:00:00+02:00 Europe/Madrid. The 16/10 scan reports 24 H/C CVEs; the other two are below that threshold, with GnuTLS severity varying by distribution. All 26 remain conditional, not repaired or declared inexploitable. The approval and scan are separate facts. Record ACCEPTED TEMPORARILY, not CLOSED;
-  zero fixable High/Critical and zero secrets remain mandatory. R-23 remains OPEN / NO FIX AVAILABLE under its separate approved development-tooling disposition, with full audit results visible; it is not included in the OS acceptance. R-19 is excluded;
+  closes a risk. **Current control, 26/11/2026:** main `90a6af8` includes #95;
+  GitHub reports 0 open Dependabot and CodeQL alerts; the four exact retained
+  local image IDs scanned on 26/11 report 0 fixable High/Critical and 0 secrets.
+  The changed residual inventory requires an explicit applicable R-20 decision
+  for those digests. R-20 has no current acceptance: the 20/11 proposal remains
+  `accepted: false` and its proposed expiry of 27/11/2026 00:00 Europe/Madrid
+  (UTC+01:00) is not approval. A-S3 remains BLOCKED and A-S4 PENDING.
+  **Historical decision only:** the founder-approved R-20 B amendment covered
+  the hash-bound conservative 26-CVE set approved 16/10 for four exact local
+  images and synthetic TFG-A use until 2026-10-19T00:00:00+02:00 Europe/Madrid.
+  That scan reported 24 H/C CVEs and two below that threshold, with GnuTLS
+  severity varying by distribution. The approval expired, does not transfer,
+  and never declared those CVEs repaired or inexploitable. Approval and scan
+  remain separate facts. A new approved disposition is ACCEPTED TEMPORARILY,
+  not CLOSED; zero fixable High/Critical and zero secrets remain mandatory.
+  R-23 is independently OPEN / DISPOSITION REVIEW REQUIRED after advisory
+  withdrawal; its historical OPEN / NO FIX AVAILABLE disposition does not
+  close the current review. It is not included in the OS acceptance. R-19 is excluded;
 - documentation validation passes;
 - the final local run records PostgreSQL V3 behavior, frontend quality and
   browser acceptance; unavailable Docker/runtime checks remain explicitly

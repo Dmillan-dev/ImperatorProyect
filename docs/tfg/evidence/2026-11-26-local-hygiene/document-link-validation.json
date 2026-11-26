@@ -1,0 +1,1231 @@
+{
+  "result": "PASS",
+  "localLinks": 245,
+  "checks": [
+    {
+      "document": "README.md",
+      "target": "docs/tfg/evidence/2026-10-14-a-s4-runtime/capture/01-deterministic-recommendation.png",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/tfg/evidence/2026-10-14-a-s4-runtime/README.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/tfg/05_ARCHITECTURE.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/tfg/06_LOCAL_VS_AWS.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/tfg/06_LOCAL_VS_AWS.md#sprints-de-cierre-y-transici\u00f3n",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "backend-java/README.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "frontend/README.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/tfg/A_S4_LOCAL_DEFENSE.md#preflight-para-otra-ejecuci\u00c3\u00b3n",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "backend-java/README.md#persistence-certification",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "frontend/README.md#quality-gates",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/tfg/README.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/tfg/05_ARCHITECTURE.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/tfg/03_TRACEABILITY_MATRIX.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/tfg/evidence/2026-10-16-r20-local-acceptance/README.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/tfg/evidence/2026-10-14-a-s4-runtime/IMPERATOR_Memoria_TFG_Local.pdf",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/tfg/09_DEFENSE_SCRIPT_12_MIN.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/tfg/05_ARCHITECTURE.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/portfolio/featured-project.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/project/PROJECT_STATUS.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "SECURITY.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "LICENSE",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/R20_SECURITY_DECISION.md",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/10_LOCAL_MVP_RELEASE_GATE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/06_LOCAL_VS_AWS.md",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/evidence/2026-10-22-security-go-vite/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/evidence/2026-10-16-r20-local-acceptance/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/evidence/2026-10-14-r20-acceptance/A_S3_CLOSURE_RECORD.md",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/evidence/2026-10-14-a-s4-runtime/IMPERATOR_Memoria_TFG_Local.pdf",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/09_DEFENSE_SCRIPT_12_MIN.md",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/evidence/2026-10-14-a-s4-runtime/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/evidence/2026-10-13-main-closure/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/evidence/2026-10-13-postmerge-certification/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/08_LOCAL_MVP_MEMORY.md",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/09_DEFENSE_SCRIPT_12_MIN.md",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/A_S4_LOCAL_DEFENSE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/10_LOCAL_MVP_RELEASE_GATE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/evidence/2026-10-07-a-s3-a-s4/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/evidence/2026-10-06-a-s2-acceptance/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/A_S3_EVIDENCE_VERSIONING.md",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/R19_SECURITY_REVIEW.md",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/evidence/2026-10-06-r19/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/evidence/2026-10-02-r17/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/evidence/TFG_A_R17_2026-10-02.json",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/R17_SECURITY_REVIEW.md",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/00_TFG_MASTER_PLAN.md#6-risks-and-scope-control",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/04_EVIDENCE_REGISTER.md",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/R17_SECURITY_REVIEW.md",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/evidence/2026-10-06-a-s2-acceptance/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/project/PROJECT_STATUS.md",
+      "target": "../tfg/evidence/2026-10-06-r19/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/00_TFG_MASTER_PLAN.md",
+      "target": "evidence/2026-11-26-local-hygiene/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/00_TFG_MASTER_PLAN.md",
+      "target": "evidence/2026-11-20-minimatch-node/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/00_TFG_MASTER_PLAN.md",
+      "target": "evidence/2026-11-20-minimatch-node/R20_REVIEW_REQUIRED.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/00_TFG_MASTER_PLAN.md",
+      "target": "evidence/2026-10-16-r20-local-acceptance/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/00_TFG_MASTER_PLAN.md",
+      "target": "evidence/2026-10-14-r20-acceptance/A_S3_CLOSURE_RECORD.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/00_TFG_MASTER_PLAN.md",
+      "target": "evidence/2026-10-14-a-s4-runtime/IMPERATOR_Memoria_TFG_Local.pdf",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/00_TFG_MASTER_PLAN.md",
+      "target": "09_DEFENSE_SCRIPT_12_MIN.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/00_TFG_MASTER_PLAN.md",
+      "target": "evidence/2026-10-14-a-s4-runtime/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/00_TFG_MASTER_PLAN.md",
+      "target": "evidence/2026-10-13-main-closure/R20_CURRENT_PROPOSAL.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/00_TFG_MASTER_PLAN.md",
+      "target": "evidence/2026-10-13-main-closure/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/00_TFG_MASTER_PLAN.md",
+      "target": "evidence/2026-10-13-postmerge-certification/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/00_TFG_MASTER_PLAN.md",
+      "target": "evidence/2026-10-06-a-s2-acceptance/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/00_TFG_MASTER_PLAN.md",
+      "target": "TFG_A_SECURITY_CLOSURE_GATE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/00_TFG_MASTER_PLAN.md",
+      "target": "A_S3_EVIDENCE_VERSIONING.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/00_TFG_MASTER_PLAN.md",
+      "target": "04_EVIDENCE_REGISTER.md#discrepancy-dispositions",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/00_TFG_MASTER_PLAN.md",
+      "target": "10_LOCAL_MVP_RELEASE_GATE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/00_TFG_MASTER_PLAN.md",
+      "target": "08_LOCAL_MVP_MEMORY.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/00_TFG_MASTER_PLAN.md",
+      "target": "09_DEFENSE_SCRIPT_12_MIN.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "evidence/2026-11-26-local-hygiene/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "R20_SECURITY_DECISION.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "A_S3_EVIDENCE_VERSIONING.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "10_LOCAL_MVP_RELEASE_GATE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "A_S4_LOCAL_DEFENSE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "evidence/2026-10-16-r20-local-acceptance/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "evidence/2026-10-14-r20-acceptance/A_S3_CLOSURE_RECORD.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "evidence/2026-10-14-a-s4-runtime/IMPERATOR_Memoria_TFG_Local.pdf",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "09_DEFENSE_SCRIPT_12_MIN.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "evidence/2026-10-14-a-s4-runtime/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "evidence/2026-10-13-main-closure/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "evidence/2026-10-13-postmerge-certification/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "evidence/2026-10-06-a-s2-acceptance/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "TFG_A_SECURITY_CLOSURE_GATE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "A_S3_EVIDENCE_VERSIONING.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "../../infra/aws/terraform/bootstrap/main.tf",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "../../.github/workflows/aws-pilot-publish.yml",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "00_TFG_MASTER_PLAN.md#6-risks-and-scope-control",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "evidence/TFG_A_R17_2026-10-02.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "evidence/2026-10-02-r17/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "R17_SECURITY_REVIEW.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "evidence/TFG_A_2026-10-01_MAINTENANCE.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "evidence/2026-10-01-local/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "../../src/test/java/imperator/adapters/out/aws/AwsEvidenceSyncIT.java",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "../../src/test/java/imperator/adapters/out/github/GitHubEvidenceSyncIT.java",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "../../src/test/java/imperator/api/FunctionalRestPostgresIT.java",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "evidence/TFG_A_2026-10-01.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "R17_SECURITY_REVIEW.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "evidence/TFG_A_R20_2026-10-02.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "R20_SECURITY_DECISION.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "evidence/TFG_A_R20_CLOSURE_PREPARATION_2026-10-02.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "evidence/2026-10-02-r20-closure/image-binding-resolution.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "evidence/2026-10-02-r20-acceptance/acceptance.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "evidence/TFG_A_SECURITY_CLOSURE_GATE_2026-10-02.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "TFG_A_SECURITY_CLOSURE_GATE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "R19_SECURITY_REVIEW.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "evidence/TFG_A_R19_2026-10-06.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "evidence/TFG_A_SECURITY_CLOSURE_GATE_2026-10-06.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "R19_SECURITY_REVIEW.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "evidence/TFG_A_R21_R22_2026-10-06.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "evidence/TFG_A_SECURITY_CLOSURE_GATE_R21_R22_2026-10-06.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "evidence/2026-10-06-a-s2-acceptance/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "A_S3_EVIDENCE_VERSIONING.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "evidence/2026-10-07-a-s3-a-s4/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "08_LOCAL_MVP_MEMORY.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "09_DEFENSE_SCRIPT_12_MIN.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/04_EVIDENCE_REGISTER.md",
+      "target": "A_S4_LOCAL_DEFENSE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/06_LOCAL_VS_AWS.md",
+      "target": "evidence/2026-11-26-local-hygiene/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/06_LOCAL_VS_AWS.md",
+      "target": "../runbooks/aws-pilot-deployment.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/06_LOCAL_VS_AWS.md",
+      "target": "evidence/2026-10-06-a-s2-acceptance/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/06_LOCAL_VS_AWS.md",
+      "target": "TFG_A_SECURITY_CLOSURE_GATE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/06_LOCAL_VS_AWS.md",
+      "target": "A_S3_EVIDENCE_VERSIONING.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/06_LOCAL_VS_AWS.md",
+      "target": "04_EVIDENCE_REGISTER.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/06_LOCAL_VS_AWS.md",
+      "target": "R20_SECURITY_DECISION.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/06_LOCAL_VS_AWS.md",
+      "target": "10_LOCAL_MVP_RELEASE_GATE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/10_LOCAL_MVP_RELEASE_GATE.md",
+      "target": "evidence/2026-11-26-local-hygiene/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/10_LOCAL_MVP_RELEASE_GATE.md",
+      "target": "evidence/2026-11-26-local-hygiene/R20_REVIEW_REQUIRED.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/10_LOCAL_MVP_RELEASE_GATE.md",
+      "target": "evidence/2026-11-20-minimatch-node/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/10_LOCAL_MVP_RELEASE_GATE.md",
+      "target": "evidence/2026-11-11-d094-reproducibility/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/10_LOCAL_MVP_RELEASE_GATE.md",
+      "target": "evidence/2026-11-02-security-alerts/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/10_LOCAL_MVP_RELEASE_GATE.md",
+      "target": "evidence/2026-11-02-security-alerts/R20_PROPOSED_DECISION.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/10_LOCAL_MVP_RELEASE_GATE.md",
+      "target": "evidence/2026-10-27-local-security/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/10_LOCAL_MVP_RELEASE_GATE.md",
+      "target": "evidence/2026-10-27-local-security/R20_PROPOSED_DECISION.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/10_LOCAL_MVP_RELEASE_GATE.md",
+      "target": "evidence/2026-10-22-security-go-vite/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/10_LOCAL_MVP_RELEASE_GATE.md",
+      "target": "evidence/2026-10-16-r20-local-acceptance/R20_ACCEPTED_DECISION.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/10_LOCAL_MVP_RELEASE_GATE.md",
+      "target": "evidence/2026-10-14-r20-acceptance/A_S3_CLOSURE_RECORD.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/10_LOCAL_MVP_RELEASE_GATE.md",
+      "target": "A_S4_LOCAL_DEFENSE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/10_LOCAL_MVP_RELEASE_GATE.md",
+      "target": "11_DAM_MEMORY_DELIVERY.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/10_LOCAL_MVP_RELEASE_GATE.md",
+      "target": "evidence/2026-10-14-a-s4-runtime/HUMAN_DEFENSE_REVIEW.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/10_LOCAL_MVP_RELEASE_GATE.md",
+      "target": "00_TFG_MASTER_PLAN.md#7-tfg-a-definition-of-done",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S3_EVIDENCE_VERSIONING.md",
+      "target": "evidence/2026-11-26-local-hygiene/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S3_EVIDENCE_VERSIONING.md",
+      "target": "evidence/2026-11-26-local-hygiene/R20_REVIEW_REQUIRED.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S3_EVIDENCE_VERSIONING.md",
+      "target": "evidence/2026-11-20-minimatch-node/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S3_EVIDENCE_VERSIONING.md",
+      "target": "evidence/2026-11-20-minimatch-node/R20_REVIEW_REQUIRED.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S3_EVIDENCE_VERSIONING.md",
+      "target": "evidence/2026-11-11-d094-reproducibility/candidate-images.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S3_EVIDENCE_VERSIONING.md",
+      "target": "evidence/2026-11-11-d094-reproducibility/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S3_EVIDENCE_VERSIONING.md",
+      "target": "evidence/2026-11-02-security-alerts/candidate-images.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S3_EVIDENCE_VERSIONING.md",
+      "target": "evidence/2026-11-02-security-alerts/R20_PROPOSED_DECISION.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S3_EVIDENCE_VERSIONING.md",
+      "target": "evidence/2026-11-02-security-alerts/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S3_EVIDENCE_VERSIONING.md",
+      "target": "evidence/2026-10-27-local-security/candidate-images.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S3_EVIDENCE_VERSIONING.md",
+      "target": "evidence/2026-10-27-local-security/R20_PROPOSED_DECISION.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S3_EVIDENCE_VERSIONING.md",
+      "target": "evidence/2026-10-27-local-security/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S3_EVIDENCE_VERSIONING.md",
+      "target": "evidence/2026-10-22-security-go-vite/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S3_EVIDENCE_VERSIONING.md",
+      "target": "evidence/2026-10-16-r20-local-acceptance/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S3_EVIDENCE_VERSIONING.md",
+      "target": "evidence/2026-10-14-r20-acceptance/A_S3_CLOSURE_RECORD.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S3_EVIDENCE_VERSIONING.md",
+      "target": "evidence/2026-10-14-r20-acceptance/A_S3_CLOSURE_RECORD.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S3_EVIDENCE_VERSIONING.md",
+      "target": "evidence/2026-10-14-r20-acceptance/R20_ACCEPTED_DECISION.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S3_EVIDENCE_VERSIONING.md",
+      "target": "evidence/2026-10-14-r20-acceptance/scan-delta-review.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S4_LOCAL_DEFENSE.md",
+      "target": "evidence/2026-11-26-local-hygiene/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S4_LOCAL_DEFENSE.md",
+      "target": "evidence/2026-11-26-local-hygiene/R20_REVIEW_REQUIRED.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S4_LOCAL_DEFENSE.md",
+      "target": "10_LOCAL_MVP_RELEASE_GATE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S4_LOCAL_DEFENSE.md",
+      "target": "evidence/2026-11-20-minimatch-node/R20_REVIEW_REQUIRED.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S4_LOCAL_DEFENSE.md",
+      "target": "08_LOCAL_MVP_MEMORY.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S4_LOCAL_DEFENSE.md",
+      "target": "evidence/2026-10-14-a-s4-runtime/IMPERATOR_Memoria_TFG_Local.pdf",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S4_LOCAL_DEFENSE.md",
+      "target": "evidence/2026-10-16-r20-local-acceptance/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S4_LOCAL_DEFENSE.md",
+      "target": "09_DEFENSE_SCRIPT_12_MIN.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S4_LOCAL_DEFENSE.md",
+      "target": "evidence/2026-10-14-a-s4-runtime/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S4_LOCAL_DEFENSE.md",
+      "target": "evidence/2026-10-14-a-s4-runtime/cleanup.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S4_LOCAL_DEFENSE.md",
+      "target": "evidence/2026-10-14-a-s4-runtime/capture/rehearsal.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S4_LOCAL_DEFENSE.md",
+      "target": "evidence/2026-10-14-a-s4-runtime/capture/video-qa.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S4_LOCAL_DEFENSE.md",
+      "target": "03_TRACEABILITY_MATRIX.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S4_LOCAL_DEFENSE.md",
+      "target": "11_DAM_MEMORY_DELIVERY.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S4_LOCAL_DEFENSE.md",
+      "target": "10_LOCAL_MVP_RELEASE_GATE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S4_LOCAL_DEFENSE.md",
+      "target": "R20_SECURITY_DECISION.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/A_S4_LOCAL_DEFENSE.md",
+      "target": "evidence/2026-10-14-a-s4-runtime/HUMAN_DEFENSE_REVIEW.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/R20_SECURITY_DECISION.md",
+      "target": "evidence/2026-11-26-local-hygiene/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/R20_SECURITY_DECISION.md",
+      "target": "evidence/2026-11-26-local-hygiene/R20_REVIEW_REQUIRED.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/R20_SECURITY_DECISION.md",
+      "target": "evidence/2026-11-20-minimatch-node/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/R20_SECURITY_DECISION.md",
+      "target": "evidence/2026-11-20-minimatch-node/R20_REVIEW_REQUIRED.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/R20_SECURITY_DECISION.md",
+      "target": "evidence/2026-11-11-d094-reproducibility/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/R20_SECURITY_DECISION.md",
+      "target": "evidence/2026-11-11-d094-reproducibility/R20_REVIEW_REQUIRED.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/R20_SECURITY_DECISION.md",
+      "target": "evidence/2026-11-02-security-alerts/R20_PROPOSED_DECISION.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/R20_SECURITY_DECISION.md",
+      "target": "evidence/2026-11-02-security-alerts/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/R20_SECURITY_DECISION.md",
+      "target": "evidence/2026-10-27-local-security/R20_PROPOSED_DECISION.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/R20_SECURITY_DECISION.md",
+      "target": "evidence/2026-10-27-local-security/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/R20_SECURITY_DECISION.md",
+      "target": "evidence/2026-10-22-security-go-vite/R20_PROPOSED_DECISION.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/R20_SECURITY_DECISION.md",
+      "target": "evidence/2026-10-22-security-go-vite/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/R20_SECURITY_DECISION.md",
+      "target": "evidence/2026-10-06-r20-applicability/r20-current-version-proposal.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/R20_SECURITY_DECISION.md",
+      "target": "evidence/2026-10-06-a-s2-acceptance/r20-current-acceptance.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/R20_SECURITY_DECISION.md",
+      "target": "evidence/2026-10-06-a-s2-acceptance/r23-approved-open-disposition.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/R20_SECURITY_DECISION.md",
+      "target": "R20_APPLICABILITY_REVIEW.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/R20_SECURITY_DECISION.md",
+      "target": "TFG_A_SECURITY_CLOSURE_GATE.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/R20_SECURITY_DECISION.md",
+      "target": "A_S3_EVIDENCE_VERSIONING.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/R20_SECURITY_DECISION.md",
+      "target": "evidence/2026-10-02-r20-acceptance/acceptance.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/R20_SECURITY_DECISION.md",
+      "target": "evidence/2026-10-06-a-s2-acceptance/approved-38-files.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "target": "evidence/2026-11-26-local-hygiene/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "target": "evidence/2026-11-26-local-hygiene/R20_REVIEW_REQUIRED.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "target": "evidence/2026-11-20-minimatch-node/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "target": "evidence/2026-11-20-minimatch-node/R20_REVIEW_REQUIRED.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "target": "evidence/2026-11-11-d094-reproducibility/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "target": "evidence/2026-11-11-d094-reproducibility/R20_REVIEW_REQUIRED.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "target": "evidence/2026-11-02-security-alerts/R20_PROPOSED_DECISION.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "target": "evidence/2026-11-02-security-alerts/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "target": "evidence/2026-10-27-local-security/R20_PROPOSED_DECISION.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "target": "evidence/2026-10-27-local-security/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "target": "evidence/2026-10-22-security-go-vite/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "target": "evidence/2026-10-16-r20-local-acceptance/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "target": "evidence/2026-10-14-r20-acceptance/A_S3_CLOSURE_RECORD.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "target": "evidence/2026-10-13-main-closure/R20_CURRENT_PROPOSAL.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "target": "evidence/2026-10-13-main-closure/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "target": "evidence/2026-10-13-postmerge-certification/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "target": "evidence/2026-10-06-a-s2-acceptance/owner-authorization.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "target": "evidence/2026-10-06-a-s2-acceptance/r20-current-acceptance.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "target": "evidence/2026-10-06-a-s2-acceptance/r23-approved-open-disposition.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "target": "evidence/TFG_A_SECURITY_CLOSURE_GATE_ACCEPTED_2026-10-06.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "target": "evidence/2026-10-06-r21-r22/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "target": "R20_APPLICABILITY_REVIEW.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/TFG_A_SECURITY_CLOSURE_GATE.md",
+      "target": "A_S3_EVIDENCE_VERSIONING.md",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "target": "canonical-images.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "target": "summary-baseline.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "target": "scan-commands.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "target": "scan/database-metadata.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "target": "scan/baseline-backend.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "target": "scan/baseline-frontend.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "target": "scan/baseline-migration.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "target": "scan/baseline-postgres.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "target": "residual-review.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "target": "R20_REVIEW_REQUIRED.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "target": "github-status.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "target": "main-checks.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "target": "pr92-checks.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "target": "pr92-files.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "target": "pr93-checks.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "target": "pr93-files.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "target": "DOCKER_CLEANUP_PLAN.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "target": "oci-recovery-verification.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "target": "DOCKER_CLEANUP_RECEIPT.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "target": "docker-system-df-before.jsonl",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "target": "docker-system-df-after.jsonl",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "target": "HOST_CACHE_CLEANUP_RECEIPT.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "target": "gitignore-validation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "target": "docker-context-validation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "target": "validation/validate_contexts.py",
+      "exists": true
+    },
+    {
+      "document": "docs/tfg/evidence/2026-11-26-local-hygiene/README.md",
+      "target": "../../06_LOCAL_VS_AWS.md",
+      "exists": true
+    }
+  ]
+}

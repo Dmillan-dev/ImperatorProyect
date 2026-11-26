@@ -1,6 +1,14 @@
 # R-20 Current Security Decision
 
-## Current review — 20 November 2026
+## Current review — 26 November 2026
+
+**NO CURRENT ACCEPTANCE.** Main `90a6af8` includes #95. The [26 November review](evidence/2026-11-26-local-hygiene/README.md) re-scans the same four exact retained images: **0 fixable H/C and 0 secrets**. There are **40 unique H/C CVEs / 153 bindings** and **42 conservative CVEs / 221 bindings**, versus 39/41 on 20 November. These counts are separate from the full all-severity inventory of 253 CVEs and 16 other identifiers.
+
+The new Zstandard CVE-2026-124851 affects three package bindings. Upstream 1.6.0 fixes it; Debian Bookworm has no corrected package published in the recorded vendor data. Malformed compressed input plus observable output is the published condition; native runtime reachability is not established or excluded. No residual is declared fixed or inexploitable, and no speculative package upgrade is applied.
+
+The [new review draft](evidence/2026-11-26-local-hygiene/R20_REVIEW_REQUIRED.json) remains **`accepted: false`**, with no approver or new expiry assigned. The last approval expired 19 October. The 27 November timestamp in the earlier unapproved proposal is not authorization. A new owner decision must explicitly name the exact digests, local/synthetic scope, mitigations and exclusive expiry with timezone. No automatic renewal or transfer to future/CI images, AWS, production, real data or public exposure. R-23 remains independent. A-S3 is BLOCKED; the complete exact-set runtime rehearsal and human A-S4 delivery remain pending.
+
+## Historical review — 20 November 2026
 
 **NO CURRENT ACCEPTANCE.** Main `3497859` includes #91; the [focused minimatch/Node candidate](evidence/2026-11-20-minimatch-node/README.md), source `b8bfe9a`, has 0 fixable H/C and 0 secrets in four exact IDs, with complete/production npm audits at 0. One new frontend is archive-built; the other three IDs are retained and freshly scanned, with their input correspondence preserved.
 

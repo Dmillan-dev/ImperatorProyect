@@ -13,6 +13,8 @@ Thumbs.db
 *.pem
 *.key
 *.p12
+*.p8
+*.ppk
 *.pfx
 *.jks
 *.keystore
@@ -20,6 +22,10 @@ id_rsa
 id_rsa.*
 id_ed25519
 id_ed25519.*
+id_ecdsa
+id_ecdsa.*
+.npmrc
+.pypirc
 credentials
 credentials.*
 .aws/
@@ -65,3 +71,12 @@ output/commercial/discovery-candidates/
 
 # Local/generated PDF exports; public portfolio artifacts are curated separately
 output/pdf/
+
+# Machine-local Codex metadata; retain the repository guide
+/.codex/
+/.agents/*
+!/.agents/README.md
+
+# Local scan logs, OCI archives and rehearsal output; curated evidence lives in docs/tfg/evidence
+/output/tfg/
+/frontend/tsconfig.tsbuildinfo
