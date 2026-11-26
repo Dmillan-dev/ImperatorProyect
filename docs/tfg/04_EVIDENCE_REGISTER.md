@@ -1,6 +1,16 @@
 # TFG Evidence Register
 
-## Estado local autorizado — 16/10/2026
+[Auditoría vigente, inventario residual y recibos de limpieza](evidence/2026-11-26-local-hygiene/README.md): **40 CVE H/C / 42 conservadores**, 0 H/C corregibles / 0 secretos; Zstandard nuevo requiere revisión explícita. No se amplía la aceptación ni se autoriza AWS.
+
+## Control vigente — 26/11/2026
+
+**A-S3 BLOCKED; A-S4 PENDING; TFG-A IN PROGRESS; R-20 NO CURRENT ACCEPTANCE; AWS NOT AUTHORIZED.** `main` es `90a6af89b7759d9952ec76d2ab80ec0837256bf7` (PR #95 integrada). La consulta GitHub del 26/11 registra 0 alertas Dependabot y 0 alertas CodeQL abiertas. El escaneo del 26/11 sobre los cuatro IDs locales exactos conservados registra **0 H/C corregibles y 0 secretos**; no acredita por sí solo un ensayo funcional nuevo.
+
+El inventario residual actualizado debe acompañar la revisión de aplicabilidad para esos digests. No se transfiere el inventario ni la aceptación del 20/11 u octubre. La última aceptación R-20 caducó el 19/10; la propuesta del 20/11 sigue `accepted: false`, con caducidad propuesta 27/11/2026 00:00 Europe/Madrid (UTC+01:00), sin aprobación ni renovación automática. R-23 permanece **OPEN / DISPOSITION REVIEW REQUIRED**, separado, tras la retirada del advisory.
+
+Los registros siguientes preservan resultados y decisiones en su fecha; sus expresiones de aceptación o cierre son históricas. Para el estado vigente, consultar [R-20](R20_SECURITY_DECISION.md), [A-S3](A_S3_EVIDENCE_VERSIONING.md), [gate local](10_LOCAL_MVP_RELEASE_GATE.md) y [A-S4](A_S4_LOCAL_DEFENSE.md). El ensayo completo del conjunto actual, la decisión de riesgo y los entregables humanos de defensa siguen pendientes. AWS requiere sus gates propios; el trabajo offline de R-03/R-04/R-05 no autoriza autenticación, publicación, plan ni apply.
+
+## Registro histórico de aceptación local — 16/10/2026
 
 **R-20 ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC; A-S3 cerrado; A-S4 y TFG-A IN PROGRESS; AWS BLOCKED.** Aprobación explícita de 26 CVE conservadores / 137 identidades actuales para los cuatro índices y manifiestos locales exactos, con datos sintéticos, hasta **19/10/2026 00:00 Europe/Madrid**; sin renovación ni transferencia automática. Escaneo 16/10: 0 H/C corregibles y 0 secretos. Hay 24 CVE H/C; los otros dos quedan por debajo de ese umbral, con severidad distinta por distribución. R-23 sigue OPEN independiente. [Decisión y evidencia](evidence/2026-10-16-r20-local-acceptance/README.md).
 
@@ -26,11 +36,11 @@ Fresh full four-image scans: 0 fixable High/Critical and 0 secrets at all severi
 
 **A-S3 formal: PENDING applicable explicit risk decision and publication review; A-S4: PENDING; TFG-A: IN PROGRESS; AWS: BLOCKED.** The current record supersedes dated state claims below while preserving historical evidence and receipts. See [post-merge verification](evidence/2026-10-13-postmerge-certification/README.md).
 
-## Current Owner Decision And Sprint — 2026-10-06
+## Historical Owner Decision And Sprint — 2026-10-06
 
 **A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00: 00+02:00 Europe/Madrid = 2026-10-08T22:00: 00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](A_S3_EVIDENCE_VERSIONING.md).
 
-Document status: **TFG-A IN PROGRESS / R-19/R-21/R-22 CORRECTED FINDINGS CLOSED; A-S2 TECHNICAL AND FORMAL GO; A-S3 ACTIVE; CURRENT R-20 BINDING APPROVED; FUTURE EXECUTION PREFLIGHT REQUIRED**
+Historical document status (06/10/2026): **TFG-A IN PROGRESS / R-19/R-21/R-22 CORRECTED FINDINGS CLOSED; A-S2 TECHNICAL AND FORMAL GO; A-S3 ACTIVE; R-20 BINDING APPROVED AT THAT DATE; FUTURE EXECUTION PREFLIGHT REQUIRED**
 
 ## Execution Classification
 
@@ -92,7 +102,7 @@ Source changes for ECR/IAM/delivery are explicitly outside TFG-A. The new local
 maintenance and security findings are tracked as R-07/R-16/R-17/R-18. See
 [risk IDs and exit conditions](00_TFG_MASTER_PLAN.md#6-risks-and-scope-control).
 
-## Current R-17 Verification — 2026-10-02
+## Historical R-17 Verification — 2026-10-02
 
 The [current R-17 index](evidence/TFG_A_R17_2026-10-02.json),
 [durable pack](evidence/2026-10-02-r17/README.md) and
@@ -294,7 +304,7 @@ the [gate index](evidence/TFG_A_SECURITY_CLOSURE_GATE_2026-10-02.json).
 Zero fixable High/Critical and zero secrets remain mandatory. No new functional
 regression, accepted release, TFG-B work or AWS execution is claimed.
 
-## A-S1 R-19 / A-S2 Current Evidence — 2026-10-06
+## A-S1 R-19 / A-S2 Historical Evidence — 2026-10-06
 
 Current local assessment: **2026-10-06**. **R-19 CLOSED for the two authorized
 brace-expansion copies**. The [Security Closure Gate](TFG_A_SECURITY_CLOSURE_GATE.md)
@@ -318,7 +328,7 @@ is certified as the release. Historical October 2 zero-fixable image results
 remain dated evidence; fresh provider fixes supersede them for current status.
 The supplied PR screenshots do not verify live GitHub checks or authorize merges.
 
-## R-21/R-22 Current Evidence Pack — 2026-10-06
+## R-21/R-22 Historical Evidence Pack — 2026-10-06
 
 The [new index](evidence/TFG_A_R21_R22_2026-10-06.json) binds authorized patches,174/35/41 tests, browser 9pass/6intentional skips, exact OCI manifests/layers, immutable image scans, full residual matrix 115rows/23 CVEs, all-severity secrets 0, D094 reproducibility retry and scoped cleanup. [Gate index](evidence/TFG_A_SECURITY_CLOSURE_GATE_R21_R22_2026-10-06.json): technicalGO / formalclosurePENDING. Original October 2 approval and the earlier R-19 pack/index retain their bytes and original dated status. No accepted release SHA, hosted CI or external/AWS/institutional certification is claimed.
 

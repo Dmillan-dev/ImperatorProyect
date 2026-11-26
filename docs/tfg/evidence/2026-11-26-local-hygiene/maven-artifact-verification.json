@@ -1,0 +1,92 @@
+{
+  "result": "PASS",
+  "checkedAtUtc": "2026-11-26T17:39:00.053600+00:00",
+  "reason": "Investigate 23 November main image job returning same unexpected digest for four distinct pinned JARs",
+  "pinsChanged": false,
+  "artifacts": [
+    {
+      "url": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.22.3/jackson-core-2.22.3.jar",
+      "pinnedSha256": "8a501126a385b25841915d839508f8a66e2a0dbc8a6709d055ef3b3e852b094c",
+      "checks": [
+        {
+          "url": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.22.3/jackson-core-2.22.3.jar",
+          "httpStatus": 200,
+          "bytes": 594776,
+          "sha256": "8a501126a385b25841915d839508f8a66e2a0dbc8a6709d055ef3b3e852b094c",
+          "passed": true
+        },
+        {
+          "url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.22.3/jackson-core-2.22.3.jar",
+          "httpStatus": 200,
+          "bytes": 594776,
+          "sha256": "8a501126a385b25841915d839508f8a66e2a0dbc8a6709d055ef3b3e852b094c",
+          "passed": true
+        }
+      ],
+      "publisherSha256": "8a501126a385b25841915d839508f8a66e2a0dbc8a6709d055ef3b3e852b094c"
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.22.3/jackson-databind-2.22.3.jar",
+      "pinnedSha256": "556db5439e206114346043f68d200497dc96a0bca62a360a81784092ebd0e0a9",
+      "checks": [
+        {
+          "url": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.22.3/jackson-databind-2.22.3.jar",
+          "httpStatus": 200,
+          "bytes": 1709604,
+          "sha256": "556db5439e206114346043f68d200497dc96a0bca62a360a81784092ebd0e0a9",
+          "passed": true
+        },
+        {
+          "url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.22.3/jackson-databind-2.22.3.jar",
+          "httpStatus": 200,
+          "bytes": 1709604,
+          "sha256": "556db5439e206114346043f68d200497dc96a0bca62a360a81784092ebd0e0a9",
+          "passed": true
+        }
+      ],
+      "publisherSha256": "556db5439e206114346043f68d200497dc96a0bca62a360a81784092ebd0e0a9"
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/tools/jackson/core/jackson-core/3.1.7/jackson-core-3.1.7.jar",
+      "pinnedSha256": "7608c367fd8a92666d28711519599543c180298259963184ce04d2947a8f71e7",
+      "checks": [
+        {
+          "url": "https://repo.maven.apache.org/maven2/tools/jackson/core/jackson-core/3.1.7/jackson-core-3.1.7.jar",
+          "httpStatus": 200,
+          "bytes": 602666,
+          "sha256": "7608c367fd8a92666d28711519599543c180298259963184ce04d2947a8f71e7",
+          "passed": true
+        },
+        {
+          "url": "https://repo1.maven.org/maven2/tools/jackson/core/jackson-core/3.1.7/jackson-core-3.1.7.jar",
+          "httpStatus": 200,
+          "bytes": 602666,
+          "sha256": "7608c367fd8a92666d28711519599543c180298259963184ce04d2947a8f71e7",
+          "passed": true
+        }
+      ],
+      "publisherSha256": "7608c367fd8a92666d28711519599543c180298259963184ce04d2947a8f71e7"
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/tools/jackson/core/jackson-databind/3.1.7/jackson-databind-3.1.7.jar",
+      "pinnedSha256": "48c781de87e2016e1f0d973748a27130f11643e7ac080173f40e2d9669d84be3",
+      "checks": [
+        {
+          "url": "https://repo.maven.apache.org/maven2/tools/jackson/core/jackson-databind/3.1.7/jackson-databind-3.1.7.jar",
+          "httpStatus": 200,
+          "bytes": 1951590,
+          "sha256": "48c781de87e2016e1f0d973748a27130f11643e7ac080173f40e2d9669d84be3",
+          "passed": true
+        },
+        {
+          "url": "https://repo1.maven.org/maven2/tools/jackson/core/jackson-databind/3.1.7/jackson-databind-3.1.7.jar",
+          "httpStatus": 200,
+          "bytes": 1951590,
+          "sha256": "48c781de87e2016e1f0d973748a27130f11643e7ac080173f40e2d9669d84be3",
+          "passed": true
+        }
+      ],
+      "publisherSha256": "48c781de87e2016e1f0d973748a27130f11643e7ac080173f40e2d9669d84be3"
+    }
+  ]
+}

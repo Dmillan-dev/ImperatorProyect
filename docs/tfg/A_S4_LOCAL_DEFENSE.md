@@ -1,6 +1,12 @@
 # A-S4 — Memoria y defensa local
 
-## Control vigente — 20/11/2026
+## Control vigente — 26/11/2026
+
+**A-S4 PENDING; A-S3 BLOCKED; TFG-A IN PROGRESS.** La [revisión de cuatro imágenes](evidence/2026-11-26-local-hygiene/README.md) tiene 0 H/C corregibles / 0 secretos y nuevo residual Zstandard. La [decisión actual](evidence/2026-11-26-local-hygiene/R20_REVIEW_REQUIRED.json) sigue `accepted: false`: no autoriza un nuevo ensayo vivo. Materiales históricos pueden revisarse y practicarse oralmente offline, conservando sus fechas.
+
+Tras decisión válida y ensayo técnico del conjunto exacto: memoria final trazable a la versión, doce minutos humanos medidos en inglés, grabación íntegra de pantalla con narración, QA completo y revisión académica. No se inventan tutor ni fecha de entrega. Los clips antiguos sin audio y las pruebas con API interceptada no satisfacen la defensa. AWS sigue bloqueado.
+
+## Registro histórico — 20/11/2026
 
 **A-S4 humana pendiente; el candidato actual no hereda el cierre A-S3 de octubre.** Consultar el [gate de entrega](10_LOCAL_MVP_RELEASE_GATE.md) y la [revisión R-20](evidence/2026-11-20-minimatch-node/R20_REVIEW_REQUIRED.json), `accepted: false`, para los cuatro IDs actuales. La última aceptación aprobada terminó el 19/10; ninguna propuesta posterior autoriza ejecutar una nueva demo viva.
 
@@ -20,7 +26,7 @@ Revisión 16/10/2026. **IN PROGRESS**. A-S3 está cerrado y R-20 aceptado tempor
 
 ## Preflight para otra ejecución
 
-Consultar la [decisión R-20](evidence/2026-10-16-r20-local-acceptance/R20_ACCEPTED_DECISION.json): aceptación local/sintética hasta **19/10/2026 00:00 Europe/Madrid**, sin renovación automática. Verificar cuatro índices exactos, mitigaciones, 0 H/C corregibles y 0 secretos. Las imágenes de CI y las futuras imágenes no heredan la aceptación. Si caduca o cambia el alcance/artefacto/riesgo, detener la ejecución y solicitar una decisión válida; se puede revisar material histórico offline.
+Consultar la [revisión R-20 vigente](R20_SECURITY_DECISION.md) y su decisión explícita firmada, si existe. Al 26/11 no existe aceptación vigente: la última aprobada caducó el 19/10/2026. Detener el preflight vivo hasta una decisión válida, sin renovación automática. Verificar cuatro índices exactos, mitigaciones, 0 H/C corregibles y 0 secretos. Las imágenes de CI y las futuras imágenes no heredan la aceptación. Si caduca o cambia el alcance/artefacto/riesgo, detener la ejecución y solicitar una decisión válida; se puede revisar material histórico offline.
 
 Usar un proyecto aislado, secretos efímeros privados, imágenes existentes, `--no-build --pull never`, loopback, proveedores externos desactivados y volumen sintético. No mostrar JWT, claves, contraseñas, terminal con secretos ni notificaciones. El ensayo 14/10 retiró sus contenedores; no hay una demo viva dejada en ejecución. La configuración genérica de Compose no sustituye el fixture y preflight documentados.
 

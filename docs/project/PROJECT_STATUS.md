@@ -1,6 +1,20 @@
 # IMPERATOR Project Status
 
-## Control vigente — 22/10/2026
+[Auditoría vigente, inventario residual y recibos de limpieza](../tfg/evidence/2026-11-26-local-hygiene/README.md): **40 CVE H/C / 42 conservadores**, 0 H/C corregibles / 0 secretos; Zstandard nuevo requiere revisión explícita. No se amplía la aceptación ni se autoriza AWS.
+
+## Control vigente — 26/11/2026
+
+**R-20 NO CURRENT ACCEPTANCE; A-S3 BLOCKED; A-S4 PENDING; TFG-A IN PROGRESS; AWS NOT AUTHORIZED.** `main` verificado: `90a6af89b7759d9952ec76d2ab80ec0837256bf7`, con PR #95 integrada. Consulta GitHub del 26/11: 0 alertas Dependabot abiertas y 0 alertas CodeQL abiertas. Estos resultados del repositorio no sustituyen la validación de imágenes ni el ensayo de runtime.
+
+Escaneo del 26/11 de los cuatro IDs locales exactos conservados: **0 High/Critical corregibles y 0 secretos**. El inventario residual ha cambiado; la nueva revisión debe usar los informes fechados y los digests exactos, sin heredar un recuento ni una aceptación anteriores. No se afirma que los residuales estén corregidos o sean inexplotables.
+
+R-20 permanece sin aceptación vigente: la última aprobación caducó el **19/10/2026 00:00 Europe/Madrid**. La propuesta del 20/11 mantiene `accepted: false`; su caducidad propuesta, **27/11/2026 00:00 Europe/Madrid (UTC+01:00)**, no constituye autorización. R-23 sigue **OPEN / DISPOSITION REVIEW REQUIRED** tras la retirada del advisory, con revisión independiente y sin cierre automático.
+
+Siguiente cierre local: decisión explícita R-20 para los artefactos actuales; ensayo completo con esas mismas imágenes (cuatro roles/RBAC, Flyway, persistencia y recuperación); cierre formal A-S3; después memoria, ensayo humano de doce minutos en inglés, grabación narrada y revisión académica A-S4. Los registros fechados que siguen son históricos, incluidas sus aceptaciones y cierres.
+
+AWS permanece bloqueado. La preparación offline existente debe resolver R-03 (correspondencia ECR), R-04 (IAM) y R-05 (aprobación del plan/publicación), además de D101/D095 y coste vigente antes de cualquier ejecución externa. Bootstrap/publicación/plan y piloto apply requieren decisiones operativas separadas. Véanse [R-20](../tfg/R20_SECURITY_DECISION.md), [gate local](../tfg/10_LOCAL_MVP_RELEASE_GATE.md) y [transición AWS](../tfg/06_LOCAL_VS_AWS.md).
+
+## Registro histórico — 22/10/2026
 
 **R-20 EXPIRED / PROPOSED; TFG-A IN PROGRESS; AWS BLOCKED.** Main de partida `ff3181c` incorpora #67. Candidato `641c09e`: Go/gosu 1.26.10 y lockfile Vite 8.3.5; sin cambios funcionales ni otras actualizaciones. Cuatro imágenes exactas: 0 H/C corregibles y 0 secretos; 26 CVE conservadores / 137 identidades residuales, sin aceptación transferida. D094 reproducible, 174 unitarios y 41 frontend PASS; lint/tipos/build y Playwright 9 PASS/6 omisiones previstas. Integración completa y ensayo del nuevo conjunto pendientes. [Propuesta R-20 y evidencias](../tfg/evidence/2026-10-22-security-go-vite/README.md), `accepted: false`. R-23 OPEN; ensayo oral humano, grabación narrada y revisión académica siguen pendientes.
 
@@ -38,7 +52,7 @@ Docker daemon is stopped at the current check; no fresh runtime PASS is claimed.
 TFG-A remains IN PROGRESS. R20/R23 dispositions, exact images, expiry and D101/AWS gates are unchanged.
 See [closure criteria](../tfg/10_LOCAL_MVP_RELEASE_GATE.md) and [dated review](../tfg/evidence/2026-10-07-a-s3-a-s4/README.md).
 
-## Current Owner Decision And Sprint — 2026-10-06
+## Historical Owner Decision And Sprint — 2026-10-06
 
 **A-S2 technical GO / formal GO for the exact approved local synthetic record. TFG-A remains IN PROGRESS. A-S3 is authorized for evidence/versioning only; A-S4 is later and AWS remains blocked.** R-20 is ACCEPTED / TEMPORARY / LOCAL-SYNTHETIC for the current 23-CVE residual, not declared inexploitable. Exclusive expiry **2026-10-09T00:00: 00+02:00 Europe/Madrid = 2026-10-08T22:00: 00Z**; no renewal or future-image transfer. R-23 disposition is independently approved while status remains **OPEN / NO FIX AVAILABLE**; it is not closed or included in R-20. Zero fixable High/Critical and zero secrets remain mandatory. No further upgrade is authorized. See the [registered decisions](../tfg/evidence/2026-10-06-a-s2-acceptance/README.md), [security gate](../tfg/TFG_A_SECURITY_CLOSURE_GATE.md) and [A-S3 work order](../tfg/A_S3_EVIDENCE_VERSIONING.md).
 
@@ -49,7 +63,7 @@ founder-authorized TFG-A start, bounded maintenance and D101 scheduling
 deferral. Current local results are recorded separately below; historical
 certifications, D087/D088/D095 and external execution gates remain unchanged.
 
-## Current Gate
+## Historical Gate Baseline — 2026-10-06
 
 | Field                                       | Value                                                                                                                                |
 | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
@@ -167,12 +181,12 @@ certifications, D087/D088/D095 and external execution gates remain unchanged.
 | AWS Integration                            | CERTIFIED / COMPLETE                                  | D090 one-account, one-Region, read-only AWS SDK synchronization produces deterministic `E-AWS-001` through `E-AWS-004` Evidence and passed PostgreSQL 18.4 certification                                                                                       |
 | Frontend runtime                           | CERTIFIED / COMPLETE                                  | D091 single-case Decision Review Workspace passed all frontend gates and unchanged backend/PostgreSQL regression                                                                                                                                               |
 | DRC-AOA-001 runtime composition            | CERTIFIED / COMPLETE                                  | D093 R16 composes one idempotent Decision/Recommendation graph through existing D081/D082 boundaries                                                                                                                                                           |
-| Local container runtime                    | D098 historical COMPLETE / HOSTED PASS                | Current R-21/R-22 local regression PASS; fixable H/C backend 0/frontend 0/PostgreSQL0 and secrets 0; full residuals retained; A-S2 technical/formal GO; current R-20 ACCEPTED TEMPORARILY; R-23 OPEN/disposition approved; no new hosted or release certification |
+| Local container runtime                    | D098 historical COMPLETE / HOSTED PASS                | Historical R-21/R-22 regression and bounded A-S2 acceptance; the 26/11 control above governs current R-20, R-23 and A-S3 status; no new runtime or release certification |
 | Observability runtime                      | D097 CERTIFIED / HOSTED PASS                          | Safe ECS logs, bounded metrics, MDC correlation, probes and internal Actuator pass; Prometheus/Grafana runtime services, dashboards and alerts are absent                                                                                                      |
 | Java backend CI                            | D099 HOSTED PASS                                      | Java 21 verification for merge `22a9917` passed together with CodeQL and the required security gates                                                                                                                                                           |
 | AWS deployment preparation                 | D100 IMPLEMENTATION COMPLETE / HOSTED REPOSITORY PASS | Locked Terraform bootstrap/pilot roots and OIDC workflows pass hosted offline validation; no AWS authentication, plan/apply, image publication, resource or live deployment is claimed                                                                         |
 
-## Current TFG-A R-17 Verification
+## Historical TFG-A R-17 Verification — 2026-10-02
 
 On 2026-10-02 the founder authorized only fixes necessary for the five image
 findings. Jackson 3.1.7, Next 16.3.6 and checksum-pinned OpenSSL/libssl 3
@@ -491,10 +505,10 @@ this historical Trivy snapshot. Before explicit B approval, R-20 was OPEN alongs
 TFG-A is IN PROGRESS. No suppression, blanket base upgrade or risk acceptance
 was added. See [the security assessment](../tfg/R17_SECURITY_REVIEW.md).
 
-## Current A-S1 / A-S2 Control — R-21/R-22, 2026-10-06
+## Historical A-S1 / A-S2 Control — R-21/R-22, 2026-10-06
 
 **Authorized R-21/R-22 corrected findings CLOSED. A-S2 technical and formal GO; A-S3 evidence/versioning ACTIVE. TFG-A IN PROGRESS.** Complete local 174/35/41 and quality/runtime regression PASS; Playwright 9 PASS/6intentional skips. Exact canonical image fixable High/Critical 0/0/0, all-severity secrets 0, production npm audit 0. Full residual scans remain visible: frontend 48High/1Critical, PostgreSQL63High/3Critical, braces development 1High/five npm package aggregates.
 
-The current owner dispositions are registered in the [A-S2 acceptance pack](../tfg/evidence/2026-10-06-a-s2-acceptance/README.md). R20 exact current binding is accepted temporarily until the original exclusive expiry; R23 independently remains OPEN/no-fix with approved disposition. A-S3 evidence/versioning is active. No new hosted/external/institutional approval is claimed.
+The historical 06/10 owner dispositions are registered in the [A-S2 acceptance pack](../tfg/evidence/2026-10-06-a-s2-acceptance/README.md). R20 exact current binding is accepted temporarily until the original exclusive expiry; R23 independently remains OPEN/no-fix with approved disposition. A-S3 evidence/versioning is active. No new hosted/external/institutional approval is claimed.
 
 A-S2 is formally closed for the exact bounded security record. A-S3 evidence/versioning is authorized; A-S4 remains later and TFG-B/AWS remain blocked; no general update or PR #57–59 merge. The [earlier R-19 checkpoint](../tfg/evidence/2026-10-06-r19/README.md) remains dated historical evidence, not the current technical gate. D101 and narrated defense remain separate prerequisites.

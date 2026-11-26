@@ -1,6 +1,14 @@
 # Gate de entrega local — A-S3 y A-S4
 
-## Control vigente — 20/11/2026
+## Control vigente — 26/11/2026
+
+**PASS técnico de seguridad; NO-GO formal.** Main `90a6af8` integra #95. La [revisión y limpieza del 26/11](evidence/2026-11-26-local-hygiene/README.md) confirma cuatro IDs conservados con **0 H/C corregibles y 0 secretos**, GitHub con 0 Dependabot / 0 CodeQL abiertos y limpieza acotada de imágenes/cachés. No se reconstruyó el runtime ni se ejecutó un ensayo funcional nuevo.
+
+El nuevo inventario contiene **40 CVE H/C / 42 CVE conservadores**: se añade Zstandard CVE-2026-124851, corregido upstream pero sin paquete corregido publicado en Bookworm. [R-20 actual](evidence/2026-11-26-local-hygiene/R20_REVIEW_REQUIRED.json) sigue `accepted: false`, sin nueva caducidad asignada ni aceptación transferida. R-23 es independiente. Los lotes #92/#93 se recomiendan diferir/cerrar sin fusionar; los checks y el riesgo se valoran sobre sus HEAD actuales.
+
+La regresión previa conserva su fecha: 174 unitarios y 44 frontend el 20/11, 35 integración el 11/11; Playwright con API interceptada no sustituye el ensayo Docker. Faltan decisión explícita, ensayo completo del conjunto exacto y cierre formal A-S3; después defensa humana A-S4. **A-S3 BLOCKED; A-S4 PENDING; TFG-A IN PROGRESS; AWS NOT AUTHORIZED.** La nueva publicación requiere CI propio, sin trasladar identidad de imágenes locales a las construidas por CI.
+
+## Registro histórico — 20/11/2026
 
 **MVP local NO-GO formal; producto sin ampliación.** Main `3497859` integra #91. El [candidato mínimo minimatch/Node](evidence/2026-11-20-minimatch-node/README.md), fuente `b8bfe9a`, corrige la alerta #41 por la cadena compatible TypeScript-ESLint y aplica exactamente la actualización de seguridad Node de #94. No se incorporan los lotes Maven #92 ni npm #93; este último conserva minimatch vulnerable pese a su CI verde.
 

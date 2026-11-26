@@ -1,0 +1,1565 @@
+{
+  "startedUtc": "2026-11-26T17:31:35.575078+00:00",
+  "scope": "14 exact recoverable superseded IMPERATOR intermediate images",
+  "force": false,
+  "prune": false,
+  "baseToolsContainersVolumesBuildCacheExcluded": true,
+  "results": [
+    {
+      "id": "sha256:27c2d9ac7cd8f8b745a36218733060cb7a556fa20b47be46dca1f65b6aa0bd8c",
+      "tags": [
+        "imperator/postgres:9876d17ba3a527231f2d3c41c588bc8bf83dbb15"
+      ],
+      "command": [
+        "docker",
+        "image",
+        "rm",
+        "--no-prune",
+        "sha256:27c2d9ac7cd8f8b745a36218733060cb7a556fa20b47be46dca1f65b6aa0bd8c"
+      ],
+      "exitCode": 0,
+      "stdout": "Untagged: imperator/postgres:9876d17ba3a527231f2d3c41c588bc8bf83dbb15\nDeleted: sha256:27c2d9ac7cd8f8b745a36218733060cb7a556fa20b47be46dca1f65b6aa0bd8c\n",
+      "stderr": "",
+      "recoveryArchive": {
+        "path": "D:\\Imperator\\output\\tfg\\pr-review-20261111\\exact-postgres.oci.tar",
+        "indexDigest": "sha256:27c2d9ac7cd8f8b745a36218733060cb7a556fa20b47be46dca1f65b6aa0bd8c",
+        "runtimeManifest": "sha256:8e558cf0bce310aa770c3dc62f13985afa6712acaee546a227e59d7b1fe8e468",
+        "bytes": 192421888
+      },
+      "recoveryArchiveSha256": "b1af0fc0969c3ef5add9783b9976f06c553798497b7bb6291b353901f655b381"
+    },
+    {
+      "id": "sha256:2ff32292667031f3e04003418155652a991a30bc6c9f253060914a08ee064e95",
+      "tags": [
+        "imperator/postgres:e30c16a7b7d5741dc3626fe11f850b6e9366bfbc"
+      ],
+      "command": [
+        "docker",
+        "image",
+        "rm",
+        "--no-prune",
+        "sha256:2ff32292667031f3e04003418155652a991a30bc6c9f253060914a08ee064e95"
+      ],
+      "exitCode": 0,
+      "stdout": "Untagged: imperator/postgres:e30c16a7b7d5741dc3626fe11f850b6e9366bfbc\nDeleted: sha256:2ff32292667031f3e04003418155652a991a30bc6c9f253060914a08ee064e95\n",
+      "stderr": "",
+      "recoveryArchive": {
+        "path": "D:\\Imperator\\output\\tfg\\pr-review-20261111\\final-postgres.oci.tar",
+        "indexDigest": "sha256:2ff32292667031f3e04003418155652a991a30bc6c9f253060914a08ee064e95",
+        "runtimeManifest": "sha256:5ba8d6719c5e811bdde137b1edca766af264113547078161ccb18ab786e57d1e",
+        "bytes": 192421888
+      },
+      "recoveryArchiveSha256": "7c7d7af9114e39ac967615b0a7133e09094fc1a38b623ea22af662c4f8493ff7"
+    },
+    {
+      "id": "sha256:380ec8db0d8164147cda366b44a8a678e6d69af1007b9a6be0cd4824c5078e14",
+      "tags": [
+        "imperator/frontend:4e038a11e964f6901e91cea43b4855193f583bbd"
+      ],
+      "command": [
+        "docker",
+        "image",
+        "rm",
+        "--no-prune",
+        "sha256:380ec8db0d8164147cda366b44a8a678e6d69af1007b9a6be0cd4824c5078e14"
+      ],
+      "exitCode": 0,
+      "stdout": "Untagged: imperator/frontend:4e038a11e964f6901e91cea43b4855193f583bbd\nDeleted: sha256:380ec8db0d8164147cda366b44a8a678e6d69af1007b9a6be0cd4824c5078e14\n",
+      "stderr": "",
+      "recoveryArchive": {
+        "path": "D:\\Imperator\\output\\tfg\\security-20261027\\frontend-candidate.oci.tar",
+        "indexDigest": "sha256:380ec8db0d8164147cda366b44a8a678e6d69af1007b9a6be0cd4824c5078e14",
+        "runtimeManifest": "sha256:0aa25e970f54b94d238fd7137bb9c1cb9ebb2673301691160444433b7481a381",
+        "bytes": 95144960
+      },
+      "recoveryArchiveSha256": "8e59f5ff759a39fb58d8b1165d5b52306d2f22b892161d318c428d37dfeee22b"
+    },
+    {
+      "id": "sha256:39e061fa5ef87f59ed6945a854fa4a3f89aefc3c1259d9b82694e0e3841ebb18",
+      "tags": [
+        "imperator/frontend:25396350c40ed7dc13b8aa136d85f809292d4519"
+      ],
+      "command": [
+        "docker",
+        "image",
+        "rm",
+        "--no-prune",
+        "sha256:39e061fa5ef87f59ed6945a854fa4a3f89aefc3c1259d9b82694e0e3841ebb18"
+      ],
+      "exitCode": 0,
+      "stdout": "Untagged: imperator/frontend:25396350c40ed7dc13b8aa136d85f809292d4519\nDeleted: sha256:39e061fa5ef87f59ed6945a854fa4a3f89aefc3c1259d9b82694e0e3841ebb18\n",
+      "stderr": "",
+      "recoveryArchive": {
+        "path": "D:\\Imperator\\output\\tfg\\security-20261102\\frontend.oci.tar",
+        "indexDigest": "sha256:39e061fa5ef87f59ed6945a854fa4a3f89aefc3c1259d9b82694e0e3841ebb18",
+        "runtimeManifest": "sha256:703f67e6429ac195376e41197b3b8fae0deccf8b854ca33cf6320a58a8e7792a",
+        "bytes": 95150080
+      },
+      "recoveryArchiveSha256": "5a492005b7d32fb22abc36f8c77e8f0514971423f69d329be15b0bb191425e0e"
+    },
+    {
+      "id": "sha256:46c047ba679b43b705277dcf4fe86498b1702a175fb45d515e08bc8be253e1ca",
+      "tags": [
+        "imperator/backend:25396350c40ed7dc13b8aa136d85f809292d4519"
+      ],
+      "command": [
+        "docker",
+        "image",
+        "rm",
+        "--no-prune",
+        "sha256:46c047ba679b43b705277dcf4fe86498b1702a175fb45d515e08bc8be253e1ca"
+      ],
+      "exitCode": 0,
+      "stdout": "Untagged: imperator/backend:25396350c40ed7dc13b8aa136d85f809292d4519\nDeleted: sha256:46c047ba679b43b705277dcf4fe86498b1702a175fb45d515e08bc8be253e1ca\n",
+      "stderr": "",
+      "recoveryArchive": {
+        "path": "D:\\Imperator\\output\\tfg\\security-20261102\\backend.oci.tar",
+        "indexDigest": "sha256:46c047ba679b43b705277dcf4fe86498b1702a175fb45d515e08bc8be253e1ca",
+        "runtimeManifest": "sha256:aa17fdb7c79e700274ef2c9c7aad6230929bd3f3fbdeacebf7cd4288c877920a",
+        "bytes": 144309760
+      },
+      "recoveryArchiveSha256": "99e04f58f1155b26e9331cbd7743f6a4f35dc9c16026adb41924af0685c15b78"
+    },
+    {
+      "id": "sha256:62708cf1db059ab634af89f4e962f76f12d72f6a4686e0299ab572604c8f906f",
+      "tags": [],
+      "command": [
+        "docker",
+        "image",
+        "rm",
+        "--no-prune",
+        "sha256:62708cf1db059ab634af89f4e962f76f12d72f6a4686e0299ab572604c8f906f"
+      ],
+      "exitCode": 0,
+      "stdout": "Deleted: sha256:62708cf1db059ab634af89f4e962f76f12d72f6a4686e0299ab572604c8f906f\n",
+      "stderr": "",
+      "recoveryArchive": {
+        "path": "D:\\Imperator\\output\\tfg\\pr-review-20261111\\backend.oci.tar",
+        "indexDigest": "sha256:62708cf1db059ab634af89f4e962f76f12d72f6a4686e0299ab572604c8f906f",
+        "runtimeManifest": "sha256:5cdfaece66ea5c2644e55e175afb3757a6c5a07b4c34507b6634efe5b352c7a7",
+        "bytes": 148812800
+      },
+      "recoveryArchiveSha256": "7d3e4691de4f68cd825c4c16d91238f85a68409f27d85781696a4ba90154b5e5"
+    },
+    {
+      "id": "sha256:681d3c1c2a61f819876b921a2bb3dede8b3e08996814dc88aaa8f7001c9a03ff",
+      "tags": [
+        "imperator/migration:25396350c40ed7dc13b8aa136d85f809292d4519"
+      ],
+      "command": [
+        "docker",
+        "image",
+        "rm",
+        "--no-prune",
+        "sha256:681d3c1c2a61f819876b921a2bb3dede8b3e08996814dc88aaa8f7001c9a03ff"
+      ],
+      "exitCode": 0,
+      "stdout": "Untagged: imperator/migration:25396350c40ed7dc13b8aa136d85f809292d4519\nDeleted: sha256:681d3c1c2a61f819876b921a2bb3dede8b3e08996814dc88aaa8f7001c9a03ff\n",
+      "stderr": "",
+      "recoveryArchive": {
+        "path": "D:\\Imperator\\output\\tfg\\security-20261102\\migration.oci.tar",
+        "indexDigest": "sha256:681d3c1c2a61f819876b921a2bb3dede8b3e08996814dc88aaa8f7001c9a03ff",
+        "runtimeManifest": "sha256:f9be3e503dbec75a74bc28843546dff4d7a388f1e32f8ca9281dab8fa591f5f2",
+        "bytes": 443734528
+      },
+      "recoveryArchiveSha256": "939fed87de2f7cc989dbb4c16d73285dfeb1ce06b47e66e122e6bb305607dea9"
+    },
+    {
+      "id": "sha256:7196ddaa793b1e78d84303260008ddbf8c37a0180c116cb8b956e40e6d25fe87",
+      "tags": [
+        "imperator/frontend:9876d17ba3a527231f2d3c41c588bc8bf83dbb15"
+      ],
+      "command": [
+        "docker",
+        "image",
+        "rm",
+        "--no-prune",
+        "sha256:7196ddaa793b1e78d84303260008ddbf8c37a0180c116cb8b956e40e6d25fe87"
+      ],
+      "exitCode": 0,
+      "stdout": "Untagged: imperator/frontend:9876d17ba3a527231f2d3c41c588bc8bf83dbb15\nDeleted: sha256:7196ddaa793b1e78d84303260008ddbf8c37a0180c116cb8b956e40e6d25fe87\n",
+      "stderr": "",
+      "recoveryArchive": {
+        "path": "D:\\Imperator\\output\\tfg\\pr-review-20261111\\exact-frontend.oci.tar",
+        "indexDigest": "sha256:7196ddaa793b1e78d84303260008ddbf8c37a0180c116cb8b956e40e6d25fe87",
+        "runtimeManifest": "sha256:30781aefffb455cd94be8e4453e577fbf26b20aceeaa60680c7b99f8ebb938ed",
+        "bytes": 99147264
+      },
+      "recoveryArchiveSha256": "a1e775ec74878441586bf45c1703304bfa6568acd88e85c5104c5ff52ebe8110"
+    },
+    {
+      "id": "sha256:7242f15dc4310714d6dd7bb2953bd25441b6d18e77beb881e799d249237ad04f",
+      "tags": [
+        "imperator/backend:9876d17ba3a527231f2d3c41c588bc8bf83dbb15"
+      ],
+      "command": [
+        "docker",
+        "image",
+        "rm",
+        "--no-prune",
+        "sha256:7242f15dc4310714d6dd7bb2953bd25441b6d18e77beb881e799d249237ad04f"
+      ],
+      "exitCode": 0,
+      "stdout": "Untagged: imperator/backend:9876d17ba3a527231f2d3c41c588bc8bf83dbb15\nDeleted: sha256:7242f15dc4310714d6dd7bb2953bd25441b6d18e77beb881e799d249237ad04f\n",
+      "stderr": "",
+      "recoveryArchive": {
+        "path": "D:\\Imperator\\output\\tfg\\pr-review-20261111\\exact-backend.oci.tar",
+        "indexDigest": "sha256:7242f15dc4310714d6dd7bb2953bd25441b6d18e77beb881e799d249237ad04f",
+        "runtimeManifest": "sha256:5cdfaece66ea5c2644e55e175afb3757a6c5a07b4c34507b6634efe5b352c7a7",
+        "bytes": 148813312
+      },
+      "recoveryArchiveSha256": "b27851aef322367422cf2fc0816424f72a4f0fda6d864de134f8234904516fc6"
+    },
+    {
+      "id": "sha256:7cd60fc0d8436d518aa3d670c7a44be7962aab3012180b872e2ffb6663b8f9fb",
+      "tags": [],
+      "command": [
+        "docker",
+        "image",
+        "rm",
+        "--no-prune",
+        "sha256:7cd60fc0d8436d518aa3d670c7a44be7962aab3012180b872e2ffb6663b8f9fb"
+      ],
+      "exitCode": 0,
+      "stdout": "Deleted: sha256:7cd60fc0d8436d518aa3d670c7a44be7962aab3012180b872e2ffb6663b8f9fb\n",
+      "stderr": "",
+      "recoveryArchive": {
+        "path": "D:\\Imperator\\output\\tfg\\pr-review-20261111\\postgres.oci.tar",
+        "indexDigest": "sha256:7cd60fc0d8436d518aa3d670c7a44be7962aab3012180b872e2ffb6663b8f9fb",
+        "runtimeManifest": "sha256:8e558cf0bce310aa770c3dc62f13985afa6712acaee546a227e59d7b1fe8e468",
+        "bytes": 192421376
+      },
+      "recoveryArchiveSha256": "51eb0d710ae7ce429ca73ab39af133d0a47094481c514bed74631a97d7f22581"
+    },
+    {
+      "id": "sha256:a4fdf8b11795d68e31baab469a2d28574147f946f57b2639882bcbfcfc9c9b44",
+      "tags": [],
+      "command": [
+        "docker",
+        "image",
+        "rm",
+        "--no-prune",
+        "sha256:a4fdf8b11795d68e31baab469a2d28574147f946f57b2639882bcbfcfc9c9b44"
+      ],
+      "exitCode": 0,
+      "stdout": "Deleted: sha256:a4fdf8b11795d68e31baab469a2d28574147f946f57b2639882bcbfcfc9c9b44\n",
+      "stderr": "",
+      "recoveryArchive": {
+        "path": "D:\\Imperator\\output\\tfg\\pr-review-20261111\\frontend.oci.tar",
+        "indexDigest": "sha256:a4fdf8b11795d68e31baab469a2d28574147f946f57b2639882bcbfcfc9c9b44",
+        "runtimeManifest": "sha256:30781aefffb455cd94be8e4453e577fbf26b20aceeaa60680c7b99f8ebb938ed",
+        "bytes": 99146752
+      },
+      "recoveryArchiveSha256": "272468ed28e6b71b68076c3670024d0befbb0b2af6eec1d4faf229cd89db8a78"
+    },
+    {
+      "id": "sha256:b3e87f26e87ff77f4506c21cf81c6164c6fa4ad6740efc3aeb6eec7c1ba3b52e",
+      "tags": [],
+      "command": [
+        "docker",
+        "image",
+        "rm",
+        "--no-prune",
+        "sha256:b3e87f26e87ff77f4506c21cf81c6164c6fa4ad6740efc3aeb6eec7c1ba3b52e"
+      ],
+      "exitCode": 0,
+      "stdout": "Deleted: sha256:b3e87f26e87ff77f4506c21cf81c6164c6fa4ad6740efc3aeb6eec7c1ba3b52e\n",
+      "stderr": "",
+      "recoveryArchive": {
+        "path": "D:\\Imperator\\output\\tfg\\pr-review-20261111\\migration.oci.tar",
+        "indexDigest": "sha256:b3e87f26e87ff77f4506c21cf81c6164c6fa4ad6740efc3aeb6eec7c1ba3b52e",
+        "runtimeManifest": "sha256:594be19f58a83c45795ace83a90c184c3b81c4a6819057e6049fdc8406b663f0",
+        "bytes": 447833600
+      },
+      "recoveryArchiveSha256": "84e8e260dfb3b2440ecbe10d1e003fc4ae8be8c3a7399ff0f68ba514ce83bd7e"
+    },
+    {
+      "id": "sha256:d21e274041ed938cc6d501631aa80e48ecc15c0aa54a42dd87ab64cd6fafa212",
+      "tags": [
+        "imperator/frontend:64c38c22a04f63d5cf38712064a040db0cc8bdf1"
+      ],
+      "command": [
+        "docker",
+        "image",
+        "rm",
+        "--no-prune",
+        "sha256:d21e274041ed938cc6d501631aa80e48ecc15c0aa54a42dd87ab64cd6fafa212"
+      ],
+      "exitCode": 0,
+      "stdout": "Untagged: imperator/frontend:64c38c22a04f63d5cf38712064a040db0cc8bdf1\nDeleted: sha256:d21e274041ed938cc6d501631aa80e48ecc15c0aa54a42dd87ab64cd6fafa212\n",
+      "stderr": "",
+      "recoveryArchive": {
+        "path": "D:\\Imperator\\output\\tfg\\security-20261027\\final\\frontend-candidate.oci.tar",
+        "indexDigest": "sha256:d21e274041ed938cc6d501631aa80e48ecc15c0aa54a42dd87ab64cd6fafa212",
+        "runtimeManifest": "sha256:4c6a12e9591b4e6bf1391ab1a3d63a14e8e0a9b3986925b41829d7eabfc3fb35",
+        "bytes": 95145984
+      },
+      "recoveryArchiveSha256": "735e5118926030c5fd8d10eba1985b33975e3daa84bec6777f60c63910d1d186"
+    },
+    {
+      "id": "sha256:dc3eaae524aeec188940668ca72337357fce01978b197f843ad2e347b03dedf8",
+      "tags": [
+        "imperator/migration:9876d17ba3a527231f2d3c41c588bc8bf83dbb15"
+      ],
+      "command": [
+        "docker",
+        "image",
+        "rm",
+        "--no-prune",
+        "sha256:dc3eaae524aeec188940668ca72337357fce01978b197f843ad2e347b03dedf8"
+      ],
+      "exitCode": 0,
+      "stdout": "Untagged: imperator/migration:9876d17ba3a527231f2d3c41c588bc8bf83dbb15\nDeleted: sha256:dc3eaae524aeec188940668ca72337357fce01978b197f843ad2e347b03dedf8\n",
+      "stderr": "",
+      "recoveryArchive": {
+        "path": "D:\\Imperator\\output\\tfg\\pr-review-20261111\\exact-migration.oci.tar",
+        "indexDigest": "sha256:dc3eaae524aeec188940668ca72337357fce01978b197f843ad2e347b03dedf8",
+        "runtimeManifest": "sha256:594be19f58a83c45795ace83a90c184c3b81c4a6819057e6049fdc8406b663f0",
+        "bytes": 447834112
+      },
+      "recoveryArchiveSha256": "ec2308a34c0a1c44babaee58487d1ca0023296e024ca635725143ddbef7b7040"
+    }
+  ],
+  "protectedBefore": [
+    {
+      "id": "sha256:1303dd6967f86cad6340cbcaff5088e69d8925a693b64c22596a7ad2684b2530",
+      "repoTags": [
+        "imperator/frontend:641c09e011e0183bb2267bb0e9c027fc2dc76752"
+      ],
+      "repoDigests": [
+        "imperator/frontend@sha256:1303dd6967f86cad6340cbcaff5088e69d8925a693b64c22596a7ad2684b2530"
+      ],
+      "rootfsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:1e7371fc32429a7e51d407ce762d5d819c5eebbf44c3652bd0d353ed14a09e31",
+        "sha256:42593510e34eca2ac84ebf9c6a22e16ced5956957367dc8688d9de06db2882a9",
+        "sha256:a009183396c313f4e54f120823c621c6e9a7bbc59225e9ddb36b0815bc1e41f9",
+        "sha256:22e1bcb0042509176dd832fe400ab2be89af37a71954be3f17f81859cf289dcf",
+        "sha256:f4a70b5aee39526c874cdb8a0e4e169057012b3173ce62cd5b0a89aa070a8f4a",
+        "sha256:e580f330e7ef657842d39e4765f9c804e1e967a321a1f96fe209cc4ea579d9b7",
+        "sha256:4084f68c23928556ce71eb53262d7af0b1193c71e9a26d03fccbfea85b70d72d",
+        "sha256:f5656e509fc736fd8f38fa532e8cd2e4336566b2d376cbe21550aca6310b185c",
+        "sha256:6d6db487dd470e5878868ea511aa30f726fde99f996a1bf663aa3c86821b9324",
+        "sha256:9b7cdadeab5e6521d292038fbcd9bc000d721b98d1787713c4da9569add8b5c2"
+      ],
+      "sourceRevision": "641c09e011e0183bb2267bb0e9c027fc2dc76752"
+    },
+    {
+      "id": "sha256:198913121a1f94475136857bdbf640ad94bc8d11b182abba044bbffad3502d5e",
+      "repoTags": [
+        "imperator/postgres:641c09e011e0183bb2267bb0e9c027fc2dc76752-repeat"
+      ],
+      "repoDigests": [
+        "imperator/postgres@sha256:198913121a1f94475136857bdbf640ad94bc8d11b182abba044bbffad3502d5e"
+      ],
+      "rootfsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9",
+        "sha256:6dfaf6d263609f54d6f446b0174bd5c25a0d7e9c23afe8167425c52ad087928a",
+        "sha256:b1efaa5661ce695796a5cae92d35a729bc702d5a03c334673a01ab5ab746cb57",
+        "sha256:f9b069253cd469b9a45500a76571282a687d5bd716d78fbb24dc948350942cd2",
+        "sha256:9d0d6c276a9e7a0588d159dcd118b3d6374908870b6d8ced1d87912332d30311",
+        "sha256:449b57d4d895e4b5121957aa6a26bd7d2acdd737b35dcd6150451ef894616c8f",
+        "sha256:4b1a52aade9faaadf7999690778d7370ae515f208b485c43fefd9fc842725153",
+        "sha256:0fddb58d7c66f2614b3a98e8b2be27a47c98512ee83cee86298135b6f4ab26b8",
+        "sha256:b80be5e294bfab2e9ac93af7cd150b6b72c4e6c2345ef78b97a64e5c0115ed0b",
+        "sha256:9c85861fb1e604a59bedf88f360e05274e8f63e04a45bf4363fc76a678e43da4"
+      ],
+      "sourceRevision": "641c09e011e0183bb2267bb0e9c027fc2dc76752"
+    },
+    {
+      "id": "sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af",
+      "repoTags": [
+        "postgres:18.6-bookworm",
+        "postgres@sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af"
+      ],
+      "repoDigests": [
+        "postgres@sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af"
+      ],
+      "rootfsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9"
+      ],
+      "sourceRevision": null
+    },
+    {
+      "id": "sha256:1de68d8ccd597d11cf83549c542fd79f0dff54596c4859f53a9d1cb0b195f3ee",
+      "repoTags": [
+        "imperator/backend:e30c16a7b7d5741dc3626fe11f850b6e9366bfbc"
+      ],
+      "repoDigests": [
+        "imperator/backend@sha256:1de68d8ccd597d11cf83549c542fd79f0dff54596c4859f53a9d1cb0b195f3ee"
+      ],
+      "rootfsDiffIds": [
+        "sha256:ea16cace89338c84eb6bcb91a7efdfcae6838fff359efe951858227436486c34",
+        "sha256:d5878fe0c5eb7212a581d6344bb4e24b6cfc886a7ee85d54203765275a422952",
+        "sha256:40ce23912dbe1d52f377ac170d913284a3c74561447514c63c05cb9379a2a04d",
+        "sha256:d58da301ac9add0a0f31176f925eb1b93e1c2bd147b07555f467cb884fd27e5b",
+        "sha256:8a8eb12d782f1d342a52c3c49dd69e27c2c3f196e0e3fe833a5d2200477be3fa",
+        "sha256:203a4c03670f482649d938fb01338aabbc5aaeb0167701938edfa89ac67e7c18",
+        "sha256:70bcd81e0c40bae48ef31d1af40903af3ffb05e1006b3a9750f6daf5efb8bfb5",
+        "sha256:3b3df70c70e280be7bf240040999cb2cee607b6071b1144202006ffdda93e216",
+        "sha256:3f88913fffb4dfb78313fa8f239544df10d08a4b96e998af9a7b445ee070e45c",
+        "sha256:81a4019f81eae14df17a28827f5ba2b16cee59c36a698837ec2331e544a2bbea",
+        "sha256:f8bec613707ff7e059dbe9c63c2029ed3284472203afc15d0f2c7d783d9d1b90",
+        "sha256:98e62bcdcf3c4414a3839a459cf17dda3ef6649fdbd8511e352a44db542d081f",
+        "sha256:97792739c262134006726954598dcc90b0ee4a99bc127c5a539dc683640d7ab1",
+        "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "sha256:092767c750cd3e3e88cc5e8ea4766485ac1ff4f124177e97fab567335b7fa465",
+        "sha256:4283184f9c8ec8d3ba527b1e4a793321752043ac239761bd4b67f96c7d68b771",
+        "sha256:65449f34ec4ae45b248f63acdbb7d242592c139303791e81ea8f9fd1f65f7d15"
+      ],
+      "sourceRevision": "e30c16a7b7d5741dc3626fe11f850b6e9366bfbc"
+    },
+    {
+      "id": "sha256:28a898719c18a33f4e8000685287fa36fd0dd9560c6440227d3a732d79bb41d8",
+      "repoTags": [],
+      "repoDigests": [],
+      "rootfsDiffIds": [
+        "sha256:31ad4a471c6852bfec14d757cc75a566c82a9769f12c3918cf6bf52cc0eeb3d0",
+        "sha256:9e9bc5278a8efa54d9329f5f42b4ec0da201272578db760f8548911b99eacb54",
+        "sha256:a146b4e0e943a503fd1d53af8e1bf7da0ec2d2ad5b1695e5f6fdefbe6e70b878",
+        "sha256:7921c597567b135939893974ad31119c2e3e601d7cfaa8c2da9aa76687407ec8",
+        "sha256:e9bc039a0970c9827be735873de2d0ce68e65bedf98ba8c0362d3d26e0cc4d79",
+        "sha256:372dc489706056a7e1df426a030b8fbe4f7a2533fc9adfe7f33a51da3651b4bb",
+        "sha256:6625c6ed3078e6c82a103f4d16335e933a85cc46bbb56d5b64e0f725b188763a"
+      ],
+      "sourceRevision": null
+    },
+    {
+      "id": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757",
+      "repoTags": [
+        "imperator/backend:6e79e83e909995c50a44aba3608b6ca25a0e4602"
+      ],
+      "repoDigests": [
+        "imperator/backend@sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757"
+      ],
+      "rootfsDiffIds": [
+        "sha256:ea16cace89338c84eb6bcb91a7efdfcae6838fff359efe951858227436486c34",
+        "sha256:d5878fe0c5eb7212a581d6344bb4e24b6cfc886a7ee85d54203765275a422952",
+        "sha256:40ce23912dbe1d52f377ac170d913284a3c74561447514c63c05cb9379a2a04d",
+        "sha256:d58da301ac9add0a0f31176f925eb1b93e1c2bd147b07555f467cb884fd27e5b",
+        "sha256:8a8eb12d782f1d342a52c3c49dd69e27c2c3f196e0e3fe833a5d2200477be3fa",
+        "sha256:d7f19b798e334ffedafe1eb5a3fa4e68d3e8fb109ddda6b90c8bd7e4ae6dd759",
+        "sha256:463f642a7dc5d79421ff78022f9fb42f351f13d702157d6651bd53d5cd9b85cd",
+        "sha256:50e9ae5943b32bb00f0393e2eddab4f16f23095b5e65f25b6969ebc077f9ae56",
+        "sha256:6e30ad2e7351d2ab25191de27200450b654d3e715144e152fb2d276942611bad",
+        "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "sha256:1b48e97c669e1df23112599c9f746c62e7092775f7b672c853fd3b27efb42666",
+        "sha256:b2ff91256caeda62eb097f6c5bbdd815eddd52ef277cb68f5708fca0e825e006",
+        "sha256:fc587afced0af48ddeef751a5bb27667aa37b9dd160b51f70d917329049dce93"
+      ],
+      "sourceRevision": "6e79e83e909995c50a44aba3608b6ca25a0e4602"
+    },
+    {
+      "id": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9",
+      "repoTags": [
+        "imperator/postgres:a931601102ee19a90b3dad8477408ac0d1854669-repeat"
+      ],
+      "repoDigests": [
+        "imperator/postgres@sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9"
+      ],
+      "rootfsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9",
+        "sha256:51d1f73453905c7ea75006a1b17e55891a3929bca8bb358964dfd55407c4d10e",
+        "sha256:a8f346634069e9b2a0b4485201f78838346eba9efeea8e53bdabe786744d50c9",
+        "sha256:b2b0a23bff0a544c7d1e5ad7ae9deaaee17a047989e0b11bd0c07cc452a7f349",
+        "sha256:7cd03c4209297980436c76675fc397bd151472995096cb40faba6b3df9e9a238",
+        "sha256:8a5d8e6a4a5568ed15642838862c731247f7d94c230fe7b49add919d8dbdac04",
+        "sha256:0d73013876ec6c24de0863064d7ca7e4dad73f0f1bd724b3c71c34fc470ae03c",
+        "sha256:fdbfd71702f77cc5a2283f30e7ba2a8946a4074c30429ea1ef8731fbe69da5f8",
+        "sha256:b9c3148d88999a6aaeebb47bc23d420f4405a8651a1259b5e5be7692dd75e274",
+        "sha256:7bb63604b794c848d8a72ff3411a8591d000e4e8a7cdb9a74b9a6178eea71054"
+      ],
+      "sourceRevision": "a931601102ee19a90b3dad8477408ac0d1854669"
+    },
+    {
+      "id": "sha256:62b1e65e8869bc4b4c6aa4fa2b21595256c7c2f6018a9d9ad61caf87187c1969",
+      "repoTags": [
+        "aquasec/trivy:0.74.0"
+      ],
+      "repoDigests": [
+        "aquasec/trivy@sha256:62b1e65e8869bc4b4c6aa4fa2b21595256c7c2f6018a9d9ad61caf87187c1969"
+      ],
+      "rootfsDiffIds": [
+        "sha256:34884abbe92863fce933ed7c39c0e045631af0ed86d5cc0dfbdf9fdca426ce3c",
+        "sha256:0d1aad113ca3ca312e5a7fd48d2a6afbf48c394461d9b18d760ace7e7e37957b",
+        "sha256:0d6dd896789a57ae1d5fee1e800aea345bd20ef1d1ccb768a09cf60730e94ab9",
+        "sha256:9921bb797236daf91fa3e437771401fb52bd39a00b6c554a8b4dfa077789d56e"
+      ],
+      "sourceRevision": "e1fd17a0ea4a8cf24bc4b4dd7e2cfbf4bb31b994"
+    },
+    {
+      "id": "sha256:72bb8b1cb2ad9c32c16753198e43ec2d5e167d5f64b4c0cb93d2a3d42077e6a0",
+      "repoTags": [
+        "imperator/postgres:4e038a11e964f6901e91cea43b4855193f583bbd-repeat"
+      ],
+      "repoDigests": [
+        "imperator/postgres@sha256:72bb8b1cb2ad9c32c16753198e43ec2d5e167d5f64b4c0cb93d2a3d42077e6a0"
+      ],
+      "rootfsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9",
+        "sha256:00ffe057686d3de96c5ae8ff14e207a23df13bc1dd3545c08270d7bd6476e974",
+        "sha256:321f006ec3f7e8b250ceb9bb6ec0306a7f5cf91447449faa64f7b4a89fab2bda",
+        "sha256:512c884af3cf6b456b6418f50e642b1480d5e46304c5e9ac35ad88e16f5e6f08",
+        "sha256:3a86f13f2b89a84d0e1f4c92da1c4d0711617a6547d1cb3d169e8f59aded4282",
+        "sha256:6697d04cafb460154fa12c6f9e1cc00bf3e9e82c4e46d8f4a5548562125cfc32",
+        "sha256:21dd1d8e94f88ef0696efeda979d673c56da97f1e70c471319727917e8837f05",
+        "sha256:09dd5145c2ead5471d77936373233fb637f497858a8e3b5d366310cc7cef2163",
+        "sha256:aa0a9e17c1c3dd1bec0bf80cde73b282266e8300f848342a4f345e8eb02b9b79",
+        "sha256:9b0426db1c9d93568501948e36749993afc461c6920a502a101ac832b019495b",
+        "sha256:f1c1e051262833ac1fe15edad32760c3325c089c3d324e342f1955698cf9f46d",
+        "sha256:9f0fa3f80b5268701305c5a9a03f4374bb9252da6435260e4fbc335c73f863fd"
+      ],
+      "sourceRevision": "4e038a11e964f6901e91cea43b4855193f583bbd"
+    },
+    {
+      "id": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+      "repoTags": [],
+      "repoDigests": [],
+      "rootfsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9",
+        "sha256:1b1e22004b38c5b981c07a93c7d325d466cd63e14f0e806bbe93ca9d3d0c61ae",
+        "sha256:1d56b64d320cb77d83c4120f5e201de09f2d4ad5c4e974381fcd2fba5e889517",
+        "sha256:7c6cbda169190e0afe6aab0182c8cd5d28fd8e6ac214b6dceb2e473af7dbac06",
+        "sha256:874dda0b8b69493249c5ef91bbf08ee2249674d366d8435881aa8386c02b916f",
+        "sha256:f3fd4b8548dc6e138685f9409784451342091b03ca6a43abfbdac0fac91a33cd",
+        "sha256:c7c465dde784c7c0b34604beb05d97d49a22d9cd6f0098c886f619ec231e693b",
+        "sha256:0bf6c176813876858181f98ccfe7bf9fcd5c218fbba1e759a4844682d430332a",
+        "sha256:e1f9c266ea5bc34a027b84c3b35289a5e2363b4643382b7670ae1410e0c3db31",
+        "sha256:be2e0363978119ebb6164735d2221e27784ec4fb94751ef1f6b0394eef906012",
+        "sha256:cb02a482d2bfe2a8744afc86c62b9c6e986111bd99826f2af20a7874518162bb",
+        "sha256:bdd1b8d5b2d2845d9a01ba034638a54e89b157755130f7572fed2ec78c570603",
+        "sha256:105329dc535054f63fa88c61acb8567e35dec9b7711ce09df2b0a89bcead525d",
+        "sha256:0358faab94b74a335226ed67870285bbb5fe3f45fddcd1d902c435675d89ae16",
+        "sha256:fbdbf47688db67363254ba453b253affb8953bcddf16f607b22c1f5f5d23e3e8"
+      ],
+      "sourceRevision": "49c8b677ad18b07404b708ea83608201f6baa203"
+    },
+    {
+      "id": "sha256:7abef3795579f1bab7e4f5364c4ac85577a50a27378daeedfdf0ea78a495059d",
+      "repoTags": [
+        "imperator/postgres:4e038a11e964f6901e91cea43b4855193f583bbd"
+      ],
+      "repoDigests": [
+        "imperator/postgres@sha256:7abef3795579f1bab7e4f5364c4ac85577a50a27378daeedfdf0ea78a495059d"
+      ],
+      "rootfsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9",
+        "sha256:00ffe057686d3de96c5ae8ff14e207a23df13bc1dd3545c08270d7bd6476e974",
+        "sha256:321f006ec3f7e8b250ceb9bb6ec0306a7f5cf91447449faa64f7b4a89fab2bda",
+        "sha256:512c884af3cf6b456b6418f50e642b1480d5e46304c5e9ac35ad88e16f5e6f08",
+        "sha256:3a86f13f2b89a84d0e1f4c92da1c4d0711617a6547d1cb3d169e8f59aded4282",
+        "sha256:6697d04cafb460154fa12c6f9e1cc00bf3e9e82c4e46d8f4a5548562125cfc32",
+        "sha256:21dd1d8e94f88ef0696efeda979d673c56da97f1e70c471319727917e8837f05",
+        "sha256:09dd5145c2ead5471d77936373233fb637f497858a8e3b5d366310cc7cef2163",
+        "sha256:aa0a9e17c1c3dd1bec0bf80cde73b282266e8300f848342a4f345e8eb02b9b79",
+        "sha256:9b0426db1c9d93568501948e36749993afc461c6920a502a101ac832b019495b",
+        "sha256:f1c1e051262833ac1fe15edad32760c3325c089c3d324e342f1955698cf9f46d",
+        "sha256:9f0fa3f80b5268701305c5a9a03f4374bb9252da6435260e4fbc335c73f863fd"
+      ],
+      "sourceRevision": "4e038a11e964f6901e91cea43b4855193f583bbd"
+    },
+    {
+      "id": "sha256:8ae8baa65a569f291d685674e04626bdd540b664a5f053f7f997aeb3e7dcef97",
+      "repoTags": [],
+      "repoDigests": [],
+      "rootfsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9",
+        "sha256:e69107a42a8410a8f5ca219401a874e1ad6699572858e93cc3a9ba55c0cd42a7",
+        "sha256:1b72ab989c0419457c3c94facae7d8a17413b60064cfa87130e218e2a0409fea",
+        "sha256:f50a1e7088f51a5fb742f581f22df6a24b0990849bed82ea4ea873b72dc7305e",
+        "sha256:012401d54d31e6139e8c4ddd2c32d9ef5d1209713113b5326a1469b7708e0435",
+        "sha256:1fc8d58b870123942082bc967d044938be9ebd87dd7acbd754c0666ead85406f",
+        "sha256:03cab1e168fcb53ab643851122d4969af807ddbf7090eb9a65ccc4fa6ac26961",
+        "sha256:c8a2a6fa28daf4a4dff2b54044227988472fed7b329e46d17f3a6d62cfabeabb",
+        "sha256:c0145240b919aae43458172c18b3d4e9b981097c1c7bf2363e31e2956fd1c686",
+        "sha256:65d20a089f1759459f828561d05ef3de577dd01e65622051454afa630567f74a"
+      ],
+      "sourceRevision": "6e79e83e909995c50a44aba3608b6ca25a0e4602"
+    },
+    {
+      "id": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+      "repoTags": [
+        "imperator/frontend:b8bfe9ad388c5fad8300d21cb7495537f83db1b6"
+      ],
+      "repoDigests": [
+        "imperator/frontend@sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb"
+      ],
+      "rootfsDiffIds": [
+        "sha256:1d7b9dd8778ebc4d9bf2f64436dd358640718cb349f5640b33bebaea4ffd62c2",
+        "sha256:c27ab88fafec68ca9b1080bea7193b34310bda81d57deff844ec0e840678043c",
+        "sha256:693614b710c81946f0090935d2d4662683183849f5d05f68f86feb4f5f607991",
+        "sha256:41f6c93f01302ead0aff469c2ab84c334869994b2d41db185ebe564a7bf785c0",
+        "sha256:59b3e51ddd55476ff9add71df4310765cbd9c10ee03ea0e94eae5ef594f05674",
+        "sha256:376730a31b593be35d43714d23277eff6bebd6d04abd6219d9f1fac8a602c70e",
+        "sha256:48a3a1ac0f1e055c995e62e33fdb46dee528c51b49f007376532c532ed95445b",
+        "sha256:7b0d43ebc661fd2f674bfa3155b08b64a7d5000b142c4d91a5460b1e6beecba6",
+        "sha256:55963f17193d5ba8063924c4922482164f440943df26195ff1f23b807a4379b2",
+        "sha256:8f6eb93ae0605d8b298a6ad57e0f0f863ea0721abe6389a6a589cd02c2d4c0c8",
+        "sha256:3fc65ea862662bb741dfd4bc7157d6464c242911d54c0cb7f50bdcaa44140c65",
+        "sha256:15efe8a128e2ffeecdef8cb7aaa5e30d08fc82ec41b56b2d2693b3bbb8b87d07",
+        "sha256:c2309c1effe9807b558c18adebfcda41c33dac07e21f7f0744e148348c14a27f",
+        "sha256:d360c42a9f5882eb3b90b51eeb4688a2f7055af93986f55318988e5370c85b7d"
+      ],
+      "sourceRevision": "b8bfe9ad388c5fad8300d21cb7495537f83db1b6"
+    },
+    {
+      "id": "sha256:a5638366fda1059fc9899979bee5329f4eaab8406a6c5293fbc24065b3d69c1e",
+      "repoTags": [
+        "imperator/frontend:e30c16a7b7d5741dc3626fe11f850b6e9366bfbc"
+      ],
+      "repoDigests": [
+        "imperator/frontend@sha256:a5638366fda1059fc9899979bee5329f4eaab8406a6c5293fbc24065b3d69c1e"
+      ],
+      "rootfsDiffIds": [
+        "sha256:44a87794b739d471ec360bec56cc0ceac640d06bbf579ee7d9061a0b88d09818",
+        "sha256:37c40ad5f08f04ba15bc41c7c17bcf6d05ffd2368bd1349737223238463ff5f1",
+        "sha256:0c8e8a9c490363e16546df896dc5b4469f653d6b8970d16a2c068ef1beeb47e8",
+        "sha256:9b0553d4623023f993f29fe906810c6605be84f078d9385bc8bf8fcd1394bea3",
+        "sha256:9a71666269e7d4de204e0f3193f03910a0366ecf57e995ffb68be800e607313c",
+        "sha256:eadb526b9c2e4f4e5b9c4aad0769fe9cdeeef4488f2cad78a674af089cabff15",
+        "sha256:2d0154b47a73af42033d2dbed17104d2a73163f29b35789c230474812025811f",
+        "sha256:30342d74f953d7b4d5efa9429641aa445bd9fd9e873e22ef3af1f819a540b437",
+        "sha256:0cfde13d3ccdb2ce7b24453f9c072d233ed0ac907079fd45dd54bfd2b965f6ca",
+        "sha256:01ac1628551465e712b8534d9b7512513cd774b1d3cfaaad6954e62db067ff73",
+        "sha256:f9378a08481184b29d60ade369300a2ef46e2d3868ee79c13dc8601eae50e519",
+        "sha256:ccf9be762997803b85df023fb12655f3f92ea0ddf8c1aeaa1ae4721e73fbef98",
+        "sha256:e3e4e4a005222e30965ac3254b3e6439caf4349edb1eba60ffcfcfbcef30f6cb",
+        "sha256:4b788e99aba77bbfa7a6fa8f08499e93bb0d7e7a7dbe81400b6400a16f9d4044"
+      ],
+      "sourceRevision": "e30c16a7b7d5741dc3626fe11f850b6e9366bfbc"
+    },
+    {
+      "id": "sha256:a7aad9503eaab4191056dc85b040b6f069c224fd8e609963bad995fd14571a34",
+      "repoTags": [],
+      "repoDigests": [],
+      "rootfsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9",
+        "sha256:e422e9d3c0e265242ad0cedf951a6c4563f505a4cfe5a93a201f04bb29709a9d",
+        "sha256:9aa7f43ecb49e0df8faebd7ff73f7111a0a8466326a37a153a2e6a76b20373f8",
+        "sha256:169f5a1cafcfd7686bfd3ddf3c32ed974ce974e935175ac209b1566cb198d428",
+        "sha256:f47194171d422c866858eac1e789718e9df343a83199e342675a24d53ef0ddc7",
+        "sha256:2a9e225a4fcf01071293c7070d9232b1a25a6bb4741bc6ceb40304a2b38cf66a",
+        "sha256:9810de2f25a4ae882f4ce1f7d65399a79aca8826c3f752d28f50a9b5f6b7c182",
+        "sha256:34f3b9fabe4c7fd70f279eed140c0fc2ac37ea49eb36e9f4c4ee4a5dcd27e5d5",
+        "sha256:34405020329511f3243bf2857b56003eca656cf27b47ff67b20ffb81e8cea0b5",
+        "sha256:4cb081c07d2bc210ab3946c4d4d1db64e98b18ff7c92ca307c4305f7ede908df"
+      ],
+      "sourceRevision": "8dbe410f008892069c232b3bc9a797f53881f40e"
+    },
+    {
+      "id": "sha256:ba849c60be29959425b8734d57b8b4b7d56f98edd9504c9af091d5281095a71e",
+      "repoTags": [
+        "node@sha256:ba849c60be29959425b8734d57b8b4b7d56f98edd9504c9af091d5281095a71e"
+      ],
+      "repoDigests": [
+        "node@sha256:ba849c60be29959425b8734d57b8b4b7d56f98edd9504c9af091d5281095a71e"
+      ],
+      "rootfsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:1e7371fc32429a7e51d407ce762d5d819c5eebbf44c3652bd0d353ed14a09e31",
+        "sha256:42593510e34eca2ac84ebf9c6a22e16ced5956957367dc8688d9de06db2882a9",
+        "sha256:a009183396c313f4e54f120823c621c6e9a7bbc59225e9ddb36b0815bc1e41f9",
+        "sha256:22e1bcb0042509176dd832fe400ab2be89af37a71954be3f17f81859cf289dcf"
+      ],
+      "sourceRevision": null
+    },
+    {
+      "id": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4",
+      "repoTags": [
+        "imperator/migration:6e79e83e909995c50a44aba3608b6ca25a0e4602"
+      ],
+      "repoDigests": [
+        "imperator/migration@sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4"
+      ],
+      "rootfsDiffIds": [
+        "sha256:6078cde548a521a729def2ee7875e9f65513c18f0d4bac4db817417617d7006a",
+        "sha256:b8d7fd3be942c6754b8c24a647bff268c3c7b71f5d0f711879c053de22b80d69",
+        "sha256:f19e7e183eab6bfe437afb09b64fdafd5b49eb93ef21e23a6b10b78fa4813017",
+        "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "sha256:f128ccf192e1c4c4b7ad75f7fd40b8c022065fe8b7402d3d7a5ad443903b2484",
+        "sha256:c639865e099fce1aa027b05f46d2fb40fd7407c73a0d67c0f71af68c0239c554",
+        "sha256:077de81b63ddc93acb0e9d3bd62a5a9ba6d335fe2a769ef33c37436ece475ad8",
+        "sha256:da5627f807b30d01deab68d7449f48805fba1dece0a06111df63f55b7b14648b",
+        "sha256:d064986c29d3932e31035cde02f53709c8fc79d66c10ba57abdc2d8be276dc95",
+        "sha256:195346ec4b10a7807e504524064379a468fda524d2c2ba50165fc09c3ce4ed3d",
+        "sha256:12e84d0635237e3d13816153826174fb50854a54c8d3569672a6cc2534408296",
+        "sha256:bdfa8ac008cabe76c0bc956fc98f3324c9bba789bbde5a2e162f3aa495e0f160",
+        "sha256:8fe07b99fc928c3de0ded235ac72b6c508597d723f6f954d515178a3d73e7826",
+        "sha256:c966c94815f2a5a3e704acee7ace1d8bc6212190e802d3102b57bf654f442d41",
+        "sha256:e734fdcdcb02b6e22c8d0864cfbd597856d5cc5f37e2b5b6018931e9be0fa571",
+        "sha256:a48f375ed8ed762bda11cc5d5c328b8a616bde828cbc968a093ebab160409684",
+        "sha256:42ab6457935aaead5aed9540b5832e7e98d73711b73b70045debcccd9c187396"
+      ],
+      "sourceRevision": "6e79e83e909995c50a44aba3608b6ca25a0e4602"
+    },
+    {
+      "id": "sha256:cb87d9906327e7670108363308994894687ab6ec1b87a7821d0f60f99c280325",
+      "repoTags": [
+        "imperator/migration:e30c16a7b7d5741dc3626fe11f850b6e9366bfbc"
+      ],
+      "repoDigests": [
+        "imperator/migration@sha256:cb87d9906327e7670108363308994894687ab6ec1b87a7821d0f60f99c280325"
+      ],
+      "rootfsDiffIds": [
+        "sha256:6078cde548a521a729def2ee7875e9f65513c18f0d4bac4db817417617d7006a",
+        "sha256:b8d7fd3be942c6754b8c24a647bff268c3c7b71f5d0f711879c053de22b80d69",
+        "sha256:f19e7e183eab6bfe437afb09b64fdafd5b49eb93ef21e23a6b10b78fa4813017",
+        "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "sha256:f128ccf192e1c4c4b7ad75f7fd40b8c022065fe8b7402d3d7a5ad443903b2484",
+        "sha256:c639865e099fce1aa027b05f46d2fb40fd7407c73a0d67c0f71af68c0239c554",
+        "sha256:077de81b63ddc93acb0e9d3bd62a5a9ba6d335fe2a769ef33c37436ece475ad8",
+        "sha256:22789f68df62ba38493133f10674f6202c4420f16080df4840d10153fa70ce6f",
+        "sha256:67768fdcce2bbd7ca5f7e58716e55f717caa55fafd4392bd04bd2d355d21ac53",
+        "sha256:02d0f21b7ac47bc6e5aa6fa07c591cde0f524123ac13e90da8666f8a75782298",
+        "sha256:8932a21aa0003ec16692e8221665d015a3d8a08ce62f79af7b1b6ee078b4595f",
+        "sha256:e84f8a72b2fc9c29e528d4c9d60a71f4c934172bc1169ed50ded533d05a595ec",
+        "sha256:350d4b7f783b331c378f4f8be2e03f0ba164dbee1ffa70e07901ffc7919a5eaa",
+        "sha256:4c96179a0be888528ff8b0bf4560e58178b35e8a9c1c8e5885773bd2d7acef11",
+        "sha256:28bc096478fd1a76fdbe9849c8e46e682daedbe673f49a24d89515a432c9fb3d",
+        "sha256:e960bfe7857744ea4511734bb06875669bc1668215079dd3a9d9f7145ada982d",
+        "sha256:5ee0da5d5fbea58fd12b704c2e22565ddea10b1639a557fb1a1655a378c48520",
+        "sha256:1b9246ead9c367cb3d9dd32df66cffafb44f1bf3c21e265e807bbfaece3d373e",
+        "sha256:c6fdf7f4fd7002661cab675f5072a6275567862d22e483df0263266875d163af",
+        "sha256:21806fca26c055e4cd785e53b34c902dd6e890fa5ae5a59eb75ba5ca66c5fe7c",
+        "sha256:1090dd51b30685c54ac5923ecb6135b3c20b279320f4b2af047db32cd89533d2"
+      ],
+      "sourceRevision": "e30c16a7b7d5741dc3626fe11f850b6e9366bfbc"
+    },
+    {
+      "id": "sha256:cec9f139f45e93c5c69c60f8b07cfad9f43f4ef6b6a6cd917527fea5ff2e3dea",
+      "repoTags": [
+        "moby/buildkit:buildx-stable-1",
+        "moby/buildkit@sha256:cec9f139f45e93c5c69c60f8b07cfad9f43f4ef6b6a6cd917527fea5ff2e3dea"
+      ],
+      "repoDigests": [
+        "moby/buildkit@sha256:cec9f139f45e93c5c69c60f8b07cfad9f43f4ef6b6a6cd917527fea5ff2e3dea"
+      ],
+      "rootfsDiffIds": [
+        "sha256:e63b02c2b5c761df2cb95e657d744f27d95da4e051235a13c80b88cd68eab188",
+        "sha256:5df6f5aa836a4601162ac5ecb008950c91feb572000815602459793c42dca7b1",
+        "sha256:cdd4410d6615ee2ea70728d991fa2f8c2280333650f098846503628b7e37bb96",
+        "sha256:eb7cca3ba15556e566c8cea450e57b713eae02054b6c4c3756d6def086c24e42",
+        "sha256:d68a48267de265b394adbea3aeb88ae2a7328c3f234f058209b0fcbc4325a26f",
+        "sha256:bf28c013e3f4b41457f5812ee9f9960838dd85b8532baaa155f8b568b943defe",
+        "sha256:1e93bc705ada7fd5744e8b64eb0c5af7861abfa0396695ce69ad734bc61cae2a"
+      ],
+      "sourceRevision": null
+    },
+    {
+      "id": "sha256:db6195c21e90872063ff257ec38edcb8d3c77259b25a7a8fee67189511079511",
+      "repoTags": [
+        "flyway/flyway@sha256:db6195c21e90872063ff257ec38edcb8d3c77259b25a7a8fee67189511079511"
+      ],
+      "repoDigests": [
+        "flyway/flyway@sha256:db6195c21e90872063ff257ec38edcb8d3c77259b25a7a8fee67189511079511"
+      ],
+      "rootfsDiffIds": [
+        "sha256:f103cd120fdd6cbc7f3d0e1d5bfb3e16290c32ead7b822d15c34460ecdf64b29",
+        "sha256:d6894159ffd8a85f9292f0cd878718fce981fe205716b57ebed5a0379f59b479",
+        "sha256:71c4c99aabd1af5aaecb42ca0bd70f1807bcbb1a144b6b3c72ff3cf135168b68",
+        "sha256:1b8d084c3ea64efa1b0fda608db9fe911b3244cbd87d3da685d9284e0705b2cf",
+        "sha256:0418a609d665a23d39d1a8ebeb88b737a30f6cd402bcb7385de71bda3e8bbfa6",
+        "sha256:009d7f8a3f2900d78e3bb1170d9b3172a5276f7c23f56d0ee5b8394bb9a670eb",
+        "sha256:b0972a481c0909c2f7eebd885ab4ad4a4522b08f78093468dbbf18c7f4f38617"
+      ],
+      "sourceRevision": null
+    },
+    {
+      "id": "sha256:e0e65766c35235eaae9903b1d29620aa01a6daef8e9fafb573dd0c8c9873da06",
+      "repoTags": [],
+      "repoDigests": [],
+      "rootfsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9",
+        "sha256:84d6f8d753b6fd6b4e3c5d1ed0a99001e7f4d29d0cfe8a99a648c4b3d525be2b",
+        "sha256:87a9588a5dcbffb3a43ea2c8d829280b93653dff3606f7718446bbd78e7cc01a",
+        "sha256:fa7ce5f3c197b8389b71f01417f9470e5af10d231d55eb9919d47ea17a4e4ed8",
+        "sha256:dfd10ec7a00bdb340491aa6a54fcba92d520606ffe6bd515f51698999d6aa29b",
+        "sha256:116c10e7574855640a3f42b8c55a9dde05723b27ab5c84fe9f09a9c0c0747335",
+        "sha256:2a10aa1527ccf27a84c5d9ebfeedc2bee8c894cfe60144d09c53564ff7c25d48",
+        "sha256:a9a38218ecae75a005a6d72d929157ffd951ab3c41919da9421fd8daddbd48d0",
+        "sha256:75d59dd327c47794a432bd343e62fd51fa2ebbad4d625bb976c1fe64ba879b9b",
+        "sha256:08691a989b3984b60fdbf0b5d6636fd247757cc6a9633c026a592434096ae0c4"
+      ],
+      "sourceRevision": "b602bbe1dde92a902c17272d59cd9f0c10b9efe5"
+    },
+    {
+      "id": "sha256:e9aaf73145bbd1f9f6ec7f6867dd75a44f34b1a6c32a813504bf4129be2d09d7",
+      "repoTags": [
+        "eclipse-temurin@sha256:e9aaf73145bbd1f9f6ec7f6867dd75a44f34b1a6c32a813504bf4129be2d09d7"
+      ],
+      "repoDigests": [
+        "eclipse-temurin@sha256:e9aaf73145bbd1f9f6ec7f6867dd75a44f34b1a6c32a813504bf4129be2d09d7"
+      ],
+      "rootfsDiffIds": [
+        "sha256:ea16cace89338c84eb6bcb91a7efdfcae6838fff359efe951858227436486c34",
+        "sha256:d5878fe0c5eb7212a581d6344bb4e24b6cfc886a7ee85d54203765275a422952",
+        "sha256:40ce23912dbe1d52f377ac170d913284a3c74561447514c63c05cb9379a2a04d",
+        "sha256:d58da301ac9add0a0f31176f925eb1b93e1c2bd147b07555f467cb884fd27e5b",
+        "sha256:8a8eb12d782f1d342a52c3c49dd69e27c2c3f196e0e3fe833a5d2200477be3fa"
+      ],
+      "sourceRevision": null
+    },
+    {
+      "id": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78",
+      "repoTags": [
+        "imperator/frontend:6e79e83e909995c50a44aba3608b6ca25a0e4602"
+      ],
+      "repoDigests": [
+        "imperator/frontend@sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78"
+      ],
+      "rootfsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:1e7371fc32429a7e51d407ce762d5d819c5eebbf44c3652bd0d353ed14a09e31",
+        "sha256:42593510e34eca2ac84ebf9c6a22e16ced5956957367dc8688d9de06db2882a9",
+        "sha256:a009183396c313f4e54f120823c621c6e9a7bbc59225e9ddb36b0815bc1e41f9",
+        "sha256:22e1bcb0042509176dd832fe400ab2be89af37a71954be3f17f81859cf289dcf",
+        "sha256:f4a70b5aee39526c874cdb8a0e4e169057012b3173ce62cd5b0a89aa070a8f4a",
+        "sha256:e580f330e7ef657842d39e4765f9c804e1e967a321a1f96fe209cc4ea579d9b7",
+        "sha256:faebe21be79115e519dbfb7200c7305d1201bac8e947d507447bffbf3661f0fa",
+        "sha256:ce98c07a760955d312f53bd503fd52bd672ca1f7e5ff9d0e13a09c11e1db9bd9",
+        "sha256:b1c01269cc60a0f2525351344eeeea84652ec862662a507241af0cada337fd12",
+        "sha256:326304fc03f9919223228508eb82f7f7c9b7665823749322cf94cf71e54f840f"
+      ],
+      "sourceRevision": "6e79e83e909995c50a44aba3608b6ca25a0e4602"
+    }
+  ],
+  "containersBefore": [
+    {
+      "id": "964f39e8e12d6f7b7789506741f7d64e9f4816629e6d48bd2064fc9b77e9883f",
+      "imageId": "sha256:cec9f139f45e93c5c69c60f8b07cfad9f43f4ef6b6a6cd917527fea5ff2e3dea",
+      "status": "exited"
+    }
+  ],
+  "finishedUtc": "2026-11-26T17:31:44.952714+00:00",
+  "result": "PASS",
+  "removedImageIds": 14,
+  "remainingImageIds": 23,
+  "retainedIdentitiesUnchanged": true,
+  "containersUnchanged": true,
+  "protectedAfter": [
+    {
+      "id": "sha256:1303dd6967f86cad6340cbcaff5088e69d8925a693b64c22596a7ad2684b2530",
+      "repoTags": [
+        "imperator/frontend:641c09e011e0183bb2267bb0e9c027fc2dc76752"
+      ],
+      "repoDigests": [
+        "imperator/frontend@sha256:1303dd6967f86cad6340cbcaff5088e69d8925a693b64c22596a7ad2684b2530"
+      ],
+      "rootfsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:1e7371fc32429a7e51d407ce762d5d819c5eebbf44c3652bd0d353ed14a09e31",
+        "sha256:42593510e34eca2ac84ebf9c6a22e16ced5956957367dc8688d9de06db2882a9",
+        "sha256:a009183396c313f4e54f120823c621c6e9a7bbc59225e9ddb36b0815bc1e41f9",
+        "sha256:22e1bcb0042509176dd832fe400ab2be89af37a71954be3f17f81859cf289dcf",
+        "sha256:f4a70b5aee39526c874cdb8a0e4e169057012b3173ce62cd5b0a89aa070a8f4a",
+        "sha256:e580f330e7ef657842d39e4765f9c804e1e967a321a1f96fe209cc4ea579d9b7",
+        "sha256:4084f68c23928556ce71eb53262d7af0b1193c71e9a26d03fccbfea85b70d72d",
+        "sha256:f5656e509fc736fd8f38fa532e8cd2e4336566b2d376cbe21550aca6310b185c",
+        "sha256:6d6db487dd470e5878868ea511aa30f726fde99f996a1bf663aa3c86821b9324",
+        "sha256:9b7cdadeab5e6521d292038fbcd9bc000d721b98d1787713c4da9569add8b5c2"
+      ],
+      "sourceRevision": "641c09e011e0183bb2267bb0e9c027fc2dc76752"
+    },
+    {
+      "id": "sha256:198913121a1f94475136857bdbf640ad94bc8d11b182abba044bbffad3502d5e",
+      "repoTags": [
+        "imperator/postgres:641c09e011e0183bb2267bb0e9c027fc2dc76752-repeat"
+      ],
+      "repoDigests": [
+        "imperator/postgres@sha256:198913121a1f94475136857bdbf640ad94bc8d11b182abba044bbffad3502d5e"
+      ],
+      "rootfsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9",
+        "sha256:6dfaf6d263609f54d6f446b0174bd5c25a0d7e9c23afe8167425c52ad087928a",
+        "sha256:b1efaa5661ce695796a5cae92d35a729bc702d5a03c334673a01ab5ab746cb57",
+        "sha256:f9b069253cd469b9a45500a76571282a687d5bd716d78fbb24dc948350942cd2",
+        "sha256:9d0d6c276a9e7a0588d159dcd118b3d6374908870b6d8ced1d87912332d30311",
+        "sha256:449b57d4d895e4b5121957aa6a26bd7d2acdd737b35dcd6150451ef894616c8f",
+        "sha256:4b1a52aade9faaadf7999690778d7370ae515f208b485c43fefd9fc842725153",
+        "sha256:0fddb58d7c66f2614b3a98e8b2be27a47c98512ee83cee86298135b6f4ab26b8",
+        "sha256:b80be5e294bfab2e9ac93af7cd150b6b72c4e6c2345ef78b97a64e5c0115ed0b",
+        "sha256:9c85861fb1e604a59bedf88f360e05274e8f63e04a45bf4363fc76a678e43da4"
+      ],
+      "sourceRevision": "641c09e011e0183bb2267bb0e9c027fc2dc76752"
+    },
+    {
+      "id": "sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af",
+      "repoTags": [
+        "postgres:18.6-bookworm",
+        "postgres@sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af"
+      ],
+      "repoDigests": [
+        "postgres@sha256:1c59e2c3c818eaa0f0628f695b36e7c9e362d6b219b36a54a32df645cbd7e1af"
+      ],
+      "rootfsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9"
+      ],
+      "sourceRevision": null
+    },
+    {
+      "id": "sha256:1de68d8ccd597d11cf83549c542fd79f0dff54596c4859f53a9d1cb0b195f3ee",
+      "repoTags": [
+        "imperator/backend:e30c16a7b7d5741dc3626fe11f850b6e9366bfbc"
+      ],
+      "repoDigests": [
+        "imperator/backend@sha256:1de68d8ccd597d11cf83549c542fd79f0dff54596c4859f53a9d1cb0b195f3ee"
+      ],
+      "rootfsDiffIds": [
+        "sha256:ea16cace89338c84eb6bcb91a7efdfcae6838fff359efe951858227436486c34",
+        "sha256:d5878fe0c5eb7212a581d6344bb4e24b6cfc886a7ee85d54203765275a422952",
+        "sha256:40ce23912dbe1d52f377ac170d913284a3c74561447514c63c05cb9379a2a04d",
+        "sha256:d58da301ac9add0a0f31176f925eb1b93e1c2bd147b07555f467cb884fd27e5b",
+        "sha256:8a8eb12d782f1d342a52c3c49dd69e27c2c3f196e0e3fe833a5d2200477be3fa",
+        "sha256:203a4c03670f482649d938fb01338aabbc5aaeb0167701938edfa89ac67e7c18",
+        "sha256:70bcd81e0c40bae48ef31d1af40903af3ffb05e1006b3a9750f6daf5efb8bfb5",
+        "sha256:3b3df70c70e280be7bf240040999cb2cee607b6071b1144202006ffdda93e216",
+        "sha256:3f88913fffb4dfb78313fa8f239544df10d08a4b96e998af9a7b445ee070e45c",
+        "sha256:81a4019f81eae14df17a28827f5ba2b16cee59c36a698837ec2331e544a2bbea",
+        "sha256:f8bec613707ff7e059dbe9c63c2029ed3284472203afc15d0f2c7d783d9d1b90",
+        "sha256:98e62bcdcf3c4414a3839a459cf17dda3ef6649fdbd8511e352a44db542d081f",
+        "sha256:97792739c262134006726954598dcc90b0ee4a99bc127c5a539dc683640d7ab1",
+        "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "sha256:092767c750cd3e3e88cc5e8ea4766485ac1ff4f124177e97fab567335b7fa465",
+        "sha256:4283184f9c8ec8d3ba527b1e4a793321752043ac239761bd4b67f96c7d68b771",
+        "sha256:65449f34ec4ae45b248f63acdbb7d242592c139303791e81ea8f9fd1f65f7d15"
+      ],
+      "sourceRevision": "e30c16a7b7d5741dc3626fe11f850b6e9366bfbc"
+    },
+    {
+      "id": "sha256:28a898719c18a33f4e8000685287fa36fd0dd9560c6440227d3a732d79bb41d8",
+      "repoTags": [],
+      "repoDigests": [],
+      "rootfsDiffIds": [
+        "sha256:31ad4a471c6852bfec14d757cc75a566c82a9769f12c3918cf6bf52cc0eeb3d0",
+        "sha256:9e9bc5278a8efa54d9329f5f42b4ec0da201272578db760f8548911b99eacb54",
+        "sha256:a146b4e0e943a503fd1d53af8e1bf7da0ec2d2ad5b1695e5f6fdefbe6e70b878",
+        "sha256:7921c597567b135939893974ad31119c2e3e601d7cfaa8c2da9aa76687407ec8",
+        "sha256:e9bc039a0970c9827be735873de2d0ce68e65bedf98ba8c0362d3d26e0cc4d79",
+        "sha256:372dc489706056a7e1df426a030b8fbe4f7a2533fc9adfe7f33a51da3651b4bb",
+        "sha256:6625c6ed3078e6c82a103f4d16335e933a85cc46bbb56d5b64e0f725b188763a"
+      ],
+      "sourceRevision": null
+    },
+    {
+      "id": "sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757",
+      "repoTags": [
+        "imperator/backend:6e79e83e909995c50a44aba3608b6ca25a0e4602"
+      ],
+      "repoDigests": [
+        "imperator/backend@sha256:298f4094799ca9c95e0a72ee65c04d19d42950cddcda2c0f5e9810c1bcc44757"
+      ],
+      "rootfsDiffIds": [
+        "sha256:ea16cace89338c84eb6bcb91a7efdfcae6838fff359efe951858227436486c34",
+        "sha256:d5878fe0c5eb7212a581d6344bb4e24b6cfc886a7ee85d54203765275a422952",
+        "sha256:40ce23912dbe1d52f377ac170d913284a3c74561447514c63c05cb9379a2a04d",
+        "sha256:d58da301ac9add0a0f31176f925eb1b93e1c2bd147b07555f467cb884fd27e5b",
+        "sha256:8a8eb12d782f1d342a52c3c49dd69e27c2c3f196e0e3fe833a5d2200477be3fa",
+        "sha256:d7f19b798e334ffedafe1eb5a3fa4e68d3e8fb109ddda6b90c8bd7e4ae6dd759",
+        "sha256:463f642a7dc5d79421ff78022f9fb42f351f13d702157d6651bd53d5cd9b85cd",
+        "sha256:50e9ae5943b32bb00f0393e2eddab4f16f23095b5e65f25b6969ebc077f9ae56",
+        "sha256:6e30ad2e7351d2ab25191de27200450b654d3e715144e152fb2d276942611bad",
+        "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "sha256:1b48e97c669e1df23112599c9f746c62e7092775f7b672c853fd3b27efb42666",
+        "sha256:b2ff91256caeda62eb097f6c5bbdd815eddd52ef277cb68f5708fca0e825e006",
+        "sha256:fc587afced0af48ddeef751a5bb27667aa37b9dd160b51f70d917329049dce93"
+      ],
+      "sourceRevision": "6e79e83e909995c50a44aba3608b6ca25a0e4602"
+    },
+    {
+      "id": "sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9",
+      "repoTags": [
+        "imperator/postgres:a931601102ee19a90b3dad8477408ac0d1854669-repeat"
+      ],
+      "repoDigests": [
+        "imperator/postgres@sha256:3cb24d97e30a53f79de131660d8f0fcdb62f3cbc205c7b3f1710a0415834cfd9"
+      ],
+      "rootfsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9",
+        "sha256:51d1f73453905c7ea75006a1b17e55891a3929bca8bb358964dfd55407c4d10e",
+        "sha256:a8f346634069e9b2a0b4485201f78838346eba9efeea8e53bdabe786744d50c9",
+        "sha256:b2b0a23bff0a544c7d1e5ad7ae9deaaee17a047989e0b11bd0c07cc452a7f349",
+        "sha256:7cd03c4209297980436c76675fc397bd151472995096cb40faba6b3df9e9a238",
+        "sha256:8a5d8e6a4a5568ed15642838862c731247f7d94c230fe7b49add919d8dbdac04",
+        "sha256:0d73013876ec6c24de0863064d7ca7e4dad73f0f1bd724b3c71c34fc470ae03c",
+        "sha256:fdbfd71702f77cc5a2283f30e7ba2a8946a4074c30429ea1ef8731fbe69da5f8",
+        "sha256:b9c3148d88999a6aaeebb47bc23d420f4405a8651a1259b5e5be7692dd75e274",
+        "sha256:7bb63604b794c848d8a72ff3411a8591d000e4e8a7cdb9a74b9a6178eea71054"
+      ],
+      "sourceRevision": "a931601102ee19a90b3dad8477408ac0d1854669"
+    },
+    {
+      "id": "sha256:62b1e65e8869bc4b4c6aa4fa2b21595256c7c2f6018a9d9ad61caf87187c1969",
+      "repoTags": [
+        "aquasec/trivy:0.74.0"
+      ],
+      "repoDigests": [
+        "aquasec/trivy@sha256:62b1e65e8869bc4b4c6aa4fa2b21595256c7c2f6018a9d9ad61caf87187c1969"
+      ],
+      "rootfsDiffIds": [
+        "sha256:34884abbe92863fce933ed7c39c0e045631af0ed86d5cc0dfbdf9fdca426ce3c",
+        "sha256:0d1aad113ca3ca312e5a7fd48d2a6afbf48c394461d9b18d760ace7e7e37957b",
+        "sha256:0d6dd896789a57ae1d5fee1e800aea345bd20ef1d1ccb768a09cf60730e94ab9",
+        "sha256:9921bb797236daf91fa3e437771401fb52bd39a00b6c554a8b4dfa077789d56e"
+      ],
+      "sourceRevision": "e1fd17a0ea4a8cf24bc4b4dd7e2cfbf4bb31b994"
+    },
+    {
+      "id": "sha256:72bb8b1cb2ad9c32c16753198e43ec2d5e167d5f64b4c0cb93d2a3d42077e6a0",
+      "repoTags": [
+        "imperator/postgres:4e038a11e964f6901e91cea43b4855193f583bbd-repeat"
+      ],
+      "repoDigests": [
+        "imperator/postgres@sha256:72bb8b1cb2ad9c32c16753198e43ec2d5e167d5f64b4c0cb93d2a3d42077e6a0"
+      ],
+      "rootfsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9",
+        "sha256:00ffe057686d3de96c5ae8ff14e207a23df13bc1dd3545c08270d7bd6476e974",
+        "sha256:321f006ec3f7e8b250ceb9bb6ec0306a7f5cf91447449faa64f7b4a89fab2bda",
+        "sha256:512c884af3cf6b456b6418f50e642b1480d5e46304c5e9ac35ad88e16f5e6f08",
+        "sha256:3a86f13f2b89a84d0e1f4c92da1c4d0711617a6547d1cb3d169e8f59aded4282",
+        "sha256:6697d04cafb460154fa12c6f9e1cc00bf3e9e82c4e46d8f4a5548562125cfc32",
+        "sha256:21dd1d8e94f88ef0696efeda979d673c56da97f1e70c471319727917e8837f05",
+        "sha256:09dd5145c2ead5471d77936373233fb637f497858a8e3b5d366310cc7cef2163",
+        "sha256:aa0a9e17c1c3dd1bec0bf80cde73b282266e8300f848342a4f345e8eb02b9b79",
+        "sha256:9b0426db1c9d93568501948e36749993afc461c6920a502a101ac832b019495b",
+        "sha256:f1c1e051262833ac1fe15edad32760c3325c089c3d324e342f1955698cf9f46d",
+        "sha256:9f0fa3f80b5268701305c5a9a03f4374bb9252da6435260e4fbc335c73f863fd"
+      ],
+      "sourceRevision": "4e038a11e964f6901e91cea43b4855193f583bbd"
+    },
+    {
+      "id": "sha256:76e1ba4c80150e71c05167928eb709e0d89df66df4ce0c5bd64026ba5dcedc5a",
+      "repoTags": [],
+      "repoDigests": [],
+      "rootfsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9",
+        "sha256:1b1e22004b38c5b981c07a93c7d325d466cd63e14f0e806bbe93ca9d3d0c61ae",
+        "sha256:1d56b64d320cb77d83c4120f5e201de09f2d4ad5c4e974381fcd2fba5e889517",
+        "sha256:7c6cbda169190e0afe6aab0182c8cd5d28fd8e6ac214b6dceb2e473af7dbac06",
+        "sha256:874dda0b8b69493249c5ef91bbf08ee2249674d366d8435881aa8386c02b916f",
+        "sha256:f3fd4b8548dc6e138685f9409784451342091b03ca6a43abfbdac0fac91a33cd",
+        "sha256:c7c465dde784c7c0b34604beb05d97d49a22d9cd6f0098c886f619ec231e693b",
+        "sha256:0bf6c176813876858181f98ccfe7bf9fcd5c218fbba1e759a4844682d430332a",
+        "sha256:e1f9c266ea5bc34a027b84c3b35289a5e2363b4643382b7670ae1410e0c3db31",
+        "sha256:be2e0363978119ebb6164735d2221e27784ec4fb94751ef1f6b0394eef906012",
+        "sha256:cb02a482d2bfe2a8744afc86c62b9c6e986111bd99826f2af20a7874518162bb",
+        "sha256:bdd1b8d5b2d2845d9a01ba034638a54e89b157755130f7572fed2ec78c570603",
+        "sha256:105329dc535054f63fa88c61acb8567e35dec9b7711ce09df2b0a89bcead525d",
+        "sha256:0358faab94b74a335226ed67870285bbb5fe3f45fddcd1d902c435675d89ae16",
+        "sha256:fbdbf47688db67363254ba453b253affb8953bcddf16f607b22c1f5f5d23e3e8"
+      ],
+      "sourceRevision": "49c8b677ad18b07404b708ea83608201f6baa203"
+    },
+    {
+      "id": "sha256:7abef3795579f1bab7e4f5364c4ac85577a50a27378daeedfdf0ea78a495059d",
+      "repoTags": [
+        "imperator/postgres:4e038a11e964f6901e91cea43b4855193f583bbd"
+      ],
+      "repoDigests": [
+        "imperator/postgres@sha256:7abef3795579f1bab7e4f5364c4ac85577a50a27378daeedfdf0ea78a495059d"
+      ],
+      "rootfsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9",
+        "sha256:00ffe057686d3de96c5ae8ff14e207a23df13bc1dd3545c08270d7bd6476e974",
+        "sha256:321f006ec3f7e8b250ceb9bb6ec0306a7f5cf91447449faa64f7b4a89fab2bda",
+        "sha256:512c884af3cf6b456b6418f50e642b1480d5e46304c5e9ac35ad88e16f5e6f08",
+        "sha256:3a86f13f2b89a84d0e1f4c92da1c4d0711617a6547d1cb3d169e8f59aded4282",
+        "sha256:6697d04cafb460154fa12c6f9e1cc00bf3e9e82c4e46d8f4a5548562125cfc32",
+        "sha256:21dd1d8e94f88ef0696efeda979d673c56da97f1e70c471319727917e8837f05",
+        "sha256:09dd5145c2ead5471d77936373233fb637f497858a8e3b5d366310cc7cef2163",
+        "sha256:aa0a9e17c1c3dd1bec0bf80cde73b282266e8300f848342a4f345e8eb02b9b79",
+        "sha256:9b0426db1c9d93568501948e36749993afc461c6920a502a101ac832b019495b",
+        "sha256:f1c1e051262833ac1fe15edad32760c3325c089c3d324e342f1955698cf9f46d",
+        "sha256:9f0fa3f80b5268701305c5a9a03f4374bb9252da6435260e4fbc335c73f863fd"
+      ],
+      "sourceRevision": "4e038a11e964f6901e91cea43b4855193f583bbd"
+    },
+    {
+      "id": "sha256:8ae8baa65a569f291d685674e04626bdd540b664a5f053f7f997aeb3e7dcef97",
+      "repoTags": [],
+      "repoDigests": [],
+      "rootfsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9",
+        "sha256:e69107a42a8410a8f5ca219401a874e1ad6699572858e93cc3a9ba55c0cd42a7",
+        "sha256:1b72ab989c0419457c3c94facae7d8a17413b60064cfa87130e218e2a0409fea",
+        "sha256:f50a1e7088f51a5fb742f581f22df6a24b0990849bed82ea4ea873b72dc7305e",
+        "sha256:012401d54d31e6139e8c4ddd2c32d9ef5d1209713113b5326a1469b7708e0435",
+        "sha256:1fc8d58b870123942082bc967d044938be9ebd87dd7acbd754c0666ead85406f",
+        "sha256:03cab1e168fcb53ab643851122d4969af807ddbf7090eb9a65ccc4fa6ac26961",
+        "sha256:c8a2a6fa28daf4a4dff2b54044227988472fed7b329e46d17f3a6d62cfabeabb",
+        "sha256:c0145240b919aae43458172c18b3d4e9b981097c1c7bf2363e31e2956fd1c686",
+        "sha256:65d20a089f1759459f828561d05ef3de577dd01e65622051454afa630567f74a"
+      ],
+      "sourceRevision": "6e79e83e909995c50a44aba3608b6ca25a0e4602"
+    },
+    {
+      "id": "sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb",
+      "repoTags": [
+        "imperator/frontend:b8bfe9ad388c5fad8300d21cb7495537f83db1b6"
+      ],
+      "repoDigests": [
+        "imperator/frontend@sha256:9822adfced859b70ff1975e52593e116de57ff0502d2b1f03b1ebf15e6cb5bfb"
+      ],
+      "rootfsDiffIds": [
+        "sha256:1d7b9dd8778ebc4d9bf2f64436dd358640718cb349f5640b33bebaea4ffd62c2",
+        "sha256:c27ab88fafec68ca9b1080bea7193b34310bda81d57deff844ec0e840678043c",
+        "sha256:693614b710c81946f0090935d2d4662683183849f5d05f68f86feb4f5f607991",
+        "sha256:41f6c93f01302ead0aff469c2ab84c334869994b2d41db185ebe564a7bf785c0",
+        "sha256:59b3e51ddd55476ff9add71df4310765cbd9c10ee03ea0e94eae5ef594f05674",
+        "sha256:376730a31b593be35d43714d23277eff6bebd6d04abd6219d9f1fac8a602c70e",
+        "sha256:48a3a1ac0f1e055c995e62e33fdb46dee528c51b49f007376532c532ed95445b",
+        "sha256:7b0d43ebc661fd2f674bfa3155b08b64a7d5000b142c4d91a5460b1e6beecba6",
+        "sha256:55963f17193d5ba8063924c4922482164f440943df26195ff1f23b807a4379b2",
+        "sha256:8f6eb93ae0605d8b298a6ad57e0f0f863ea0721abe6389a6a589cd02c2d4c0c8",
+        "sha256:3fc65ea862662bb741dfd4bc7157d6464c242911d54c0cb7f50bdcaa44140c65",
+        "sha256:15efe8a128e2ffeecdef8cb7aaa5e30d08fc82ec41b56b2d2693b3bbb8b87d07",
+        "sha256:c2309c1effe9807b558c18adebfcda41c33dac07e21f7f0744e148348c14a27f",
+        "sha256:d360c42a9f5882eb3b90b51eeb4688a2f7055af93986f55318988e5370c85b7d"
+      ],
+      "sourceRevision": "b8bfe9ad388c5fad8300d21cb7495537f83db1b6"
+    },
+    {
+      "id": "sha256:a5638366fda1059fc9899979bee5329f4eaab8406a6c5293fbc24065b3d69c1e",
+      "repoTags": [
+        "imperator/frontend:e30c16a7b7d5741dc3626fe11f850b6e9366bfbc"
+      ],
+      "repoDigests": [
+        "imperator/frontend@sha256:a5638366fda1059fc9899979bee5329f4eaab8406a6c5293fbc24065b3d69c1e"
+      ],
+      "rootfsDiffIds": [
+        "sha256:44a87794b739d471ec360bec56cc0ceac640d06bbf579ee7d9061a0b88d09818",
+        "sha256:37c40ad5f08f04ba15bc41c7c17bcf6d05ffd2368bd1349737223238463ff5f1",
+        "sha256:0c8e8a9c490363e16546df896dc5b4469f653d6b8970d16a2c068ef1beeb47e8",
+        "sha256:9b0553d4623023f993f29fe906810c6605be84f078d9385bc8bf8fcd1394bea3",
+        "sha256:9a71666269e7d4de204e0f3193f03910a0366ecf57e995ffb68be800e607313c",
+        "sha256:eadb526b9c2e4f4e5b9c4aad0769fe9cdeeef4488f2cad78a674af089cabff15",
+        "sha256:2d0154b47a73af42033d2dbed17104d2a73163f29b35789c230474812025811f",
+        "sha256:30342d74f953d7b4d5efa9429641aa445bd9fd9e873e22ef3af1f819a540b437",
+        "sha256:0cfde13d3ccdb2ce7b24453f9c072d233ed0ac907079fd45dd54bfd2b965f6ca",
+        "sha256:01ac1628551465e712b8534d9b7512513cd774b1d3cfaaad6954e62db067ff73",
+        "sha256:f9378a08481184b29d60ade369300a2ef46e2d3868ee79c13dc8601eae50e519",
+        "sha256:ccf9be762997803b85df023fb12655f3f92ea0ddf8c1aeaa1ae4721e73fbef98",
+        "sha256:e3e4e4a005222e30965ac3254b3e6439caf4349edb1eba60ffcfcfbcef30f6cb",
+        "sha256:4b788e99aba77bbfa7a6fa8f08499e93bb0d7e7a7dbe81400b6400a16f9d4044"
+      ],
+      "sourceRevision": "e30c16a7b7d5741dc3626fe11f850b6e9366bfbc"
+    },
+    {
+      "id": "sha256:a7aad9503eaab4191056dc85b040b6f069c224fd8e609963bad995fd14571a34",
+      "repoTags": [],
+      "repoDigests": [],
+      "rootfsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9",
+        "sha256:e422e9d3c0e265242ad0cedf951a6c4563f505a4cfe5a93a201f04bb29709a9d",
+        "sha256:9aa7f43ecb49e0df8faebd7ff73f7111a0a8466326a37a153a2e6a76b20373f8",
+        "sha256:169f5a1cafcfd7686bfd3ddf3c32ed974ce974e935175ac209b1566cb198d428",
+        "sha256:f47194171d422c866858eac1e789718e9df343a83199e342675a24d53ef0ddc7",
+        "sha256:2a9e225a4fcf01071293c7070d9232b1a25a6bb4741bc6ceb40304a2b38cf66a",
+        "sha256:9810de2f25a4ae882f4ce1f7d65399a79aca8826c3f752d28f50a9b5f6b7c182",
+        "sha256:34f3b9fabe4c7fd70f279eed140c0fc2ac37ea49eb36e9f4c4ee4a5dcd27e5d5",
+        "sha256:34405020329511f3243bf2857b56003eca656cf27b47ff67b20ffb81e8cea0b5",
+        "sha256:4cb081c07d2bc210ab3946c4d4d1db64e98b18ff7c92ca307c4305f7ede908df"
+      ],
+      "sourceRevision": "8dbe410f008892069c232b3bc9a797f53881f40e"
+    },
+    {
+      "id": "sha256:ba849c60be29959425b8734d57b8b4b7d56f98edd9504c9af091d5281095a71e",
+      "repoTags": [
+        "node@sha256:ba849c60be29959425b8734d57b8b4b7d56f98edd9504c9af091d5281095a71e"
+      ],
+      "repoDigests": [
+        "node@sha256:ba849c60be29959425b8734d57b8b4b7d56f98edd9504c9af091d5281095a71e"
+      ],
+      "rootfsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:1e7371fc32429a7e51d407ce762d5d819c5eebbf44c3652bd0d353ed14a09e31",
+        "sha256:42593510e34eca2ac84ebf9c6a22e16ced5956957367dc8688d9de06db2882a9",
+        "sha256:a009183396c313f4e54f120823c621c6e9a7bbc59225e9ddb36b0815bc1e41f9",
+        "sha256:22e1bcb0042509176dd832fe400ab2be89af37a71954be3f17f81859cf289dcf"
+      ],
+      "sourceRevision": null
+    },
+    {
+      "id": "sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4",
+      "repoTags": [
+        "imperator/migration:6e79e83e909995c50a44aba3608b6ca25a0e4602"
+      ],
+      "repoDigests": [
+        "imperator/migration@sha256:c53c77aeba010ddfa1538aa75a62b20e5d826baba2869cf50b06c86512a2b8b4"
+      ],
+      "rootfsDiffIds": [
+        "sha256:6078cde548a521a729def2ee7875e9f65513c18f0d4bac4db817417617d7006a",
+        "sha256:b8d7fd3be942c6754b8c24a647bff268c3c7b71f5d0f711879c053de22b80d69",
+        "sha256:f19e7e183eab6bfe437afb09b64fdafd5b49eb93ef21e23a6b10b78fa4813017",
+        "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "sha256:f128ccf192e1c4c4b7ad75f7fd40b8c022065fe8b7402d3d7a5ad443903b2484",
+        "sha256:c639865e099fce1aa027b05f46d2fb40fd7407c73a0d67c0f71af68c0239c554",
+        "sha256:077de81b63ddc93acb0e9d3bd62a5a9ba6d335fe2a769ef33c37436ece475ad8",
+        "sha256:da5627f807b30d01deab68d7449f48805fba1dece0a06111df63f55b7b14648b",
+        "sha256:d064986c29d3932e31035cde02f53709c8fc79d66c10ba57abdc2d8be276dc95",
+        "sha256:195346ec4b10a7807e504524064379a468fda524d2c2ba50165fc09c3ce4ed3d",
+        "sha256:12e84d0635237e3d13816153826174fb50854a54c8d3569672a6cc2534408296",
+        "sha256:bdfa8ac008cabe76c0bc956fc98f3324c9bba789bbde5a2e162f3aa495e0f160",
+        "sha256:8fe07b99fc928c3de0ded235ac72b6c508597d723f6f954d515178a3d73e7826",
+        "sha256:c966c94815f2a5a3e704acee7ace1d8bc6212190e802d3102b57bf654f442d41",
+        "sha256:e734fdcdcb02b6e22c8d0864cfbd597856d5cc5f37e2b5b6018931e9be0fa571",
+        "sha256:a48f375ed8ed762bda11cc5d5c328b8a616bde828cbc968a093ebab160409684",
+        "sha256:42ab6457935aaead5aed9540b5832e7e98d73711b73b70045debcccd9c187396"
+      ],
+      "sourceRevision": "6e79e83e909995c50a44aba3608b6ca25a0e4602"
+    },
+    {
+      "id": "sha256:cb87d9906327e7670108363308994894687ab6ec1b87a7821d0f60f99c280325",
+      "repoTags": [
+        "imperator/migration:e30c16a7b7d5741dc3626fe11f850b6e9366bfbc"
+      ],
+      "repoDigests": [
+        "imperator/migration@sha256:cb87d9906327e7670108363308994894687ab6ec1b87a7821d0f60f99c280325"
+      ],
+      "rootfsDiffIds": [
+        "sha256:6078cde548a521a729def2ee7875e9f65513c18f0d4bac4db817417617d7006a",
+        "sha256:b8d7fd3be942c6754b8c24a647bff268c3c7b71f5d0f711879c053de22b80d69",
+        "sha256:f19e7e183eab6bfe437afb09b64fdafd5b49eb93ef21e23a6b10b78fa4813017",
+        "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "sha256:f128ccf192e1c4c4b7ad75f7fd40b8c022065fe8b7402d3d7a5ad443903b2484",
+        "sha256:c639865e099fce1aa027b05f46d2fb40fd7407c73a0d67c0f71af68c0239c554",
+        "sha256:077de81b63ddc93acb0e9d3bd62a5a9ba6d335fe2a769ef33c37436ece475ad8",
+        "sha256:22789f68df62ba38493133f10674f6202c4420f16080df4840d10153fa70ce6f",
+        "sha256:67768fdcce2bbd7ca5f7e58716e55f717caa55fafd4392bd04bd2d355d21ac53",
+        "sha256:02d0f21b7ac47bc6e5aa6fa07c591cde0f524123ac13e90da8666f8a75782298",
+        "sha256:8932a21aa0003ec16692e8221665d015a3d8a08ce62f79af7b1b6ee078b4595f",
+        "sha256:e84f8a72b2fc9c29e528d4c9d60a71f4c934172bc1169ed50ded533d05a595ec",
+        "sha256:350d4b7f783b331c378f4f8be2e03f0ba164dbee1ffa70e07901ffc7919a5eaa",
+        "sha256:4c96179a0be888528ff8b0bf4560e58178b35e8a9c1c8e5885773bd2d7acef11",
+        "sha256:28bc096478fd1a76fdbe9849c8e46e682daedbe673f49a24d89515a432c9fb3d",
+        "sha256:e960bfe7857744ea4511734bb06875669bc1668215079dd3a9d9f7145ada982d",
+        "sha256:5ee0da5d5fbea58fd12b704c2e22565ddea10b1639a557fb1a1655a378c48520",
+        "sha256:1b9246ead9c367cb3d9dd32df66cffafb44f1bf3c21e265e807bbfaece3d373e",
+        "sha256:c6fdf7f4fd7002661cab675f5072a6275567862d22e483df0263266875d163af",
+        "sha256:21806fca26c055e4cd785e53b34c902dd6e890fa5ae5a59eb75ba5ca66c5fe7c",
+        "sha256:1090dd51b30685c54ac5923ecb6135b3c20b279320f4b2af047db32cd89533d2"
+      ],
+      "sourceRevision": "e30c16a7b7d5741dc3626fe11f850b6e9366bfbc"
+    },
+    {
+      "id": "sha256:cec9f139f45e93c5c69c60f8b07cfad9f43f4ef6b6a6cd917527fea5ff2e3dea",
+      "repoTags": [
+        "moby/buildkit:buildx-stable-1",
+        "moby/buildkit@sha256:cec9f139f45e93c5c69c60f8b07cfad9f43f4ef6b6a6cd917527fea5ff2e3dea"
+      ],
+      "repoDigests": [
+        "moby/buildkit@sha256:cec9f139f45e93c5c69c60f8b07cfad9f43f4ef6b6a6cd917527fea5ff2e3dea"
+      ],
+      "rootfsDiffIds": [
+        "sha256:e63b02c2b5c761df2cb95e657d744f27d95da4e051235a13c80b88cd68eab188",
+        "sha256:5df6f5aa836a4601162ac5ecb008950c91feb572000815602459793c42dca7b1",
+        "sha256:cdd4410d6615ee2ea70728d991fa2f8c2280333650f098846503628b7e37bb96",
+        "sha256:eb7cca3ba15556e566c8cea450e57b713eae02054b6c4c3756d6def086c24e42",
+        "sha256:d68a48267de265b394adbea3aeb88ae2a7328c3f234f058209b0fcbc4325a26f",
+        "sha256:bf28c013e3f4b41457f5812ee9f9960838dd85b8532baaa155f8b568b943defe",
+        "sha256:1e93bc705ada7fd5744e8b64eb0c5af7861abfa0396695ce69ad734bc61cae2a"
+      ],
+      "sourceRevision": null
+    },
+    {
+      "id": "sha256:db6195c21e90872063ff257ec38edcb8d3c77259b25a7a8fee67189511079511",
+      "repoTags": [
+        "flyway/flyway@sha256:db6195c21e90872063ff257ec38edcb8d3c77259b25a7a8fee67189511079511"
+      ],
+      "repoDigests": [
+        "flyway/flyway@sha256:db6195c21e90872063ff257ec38edcb8d3c77259b25a7a8fee67189511079511"
+      ],
+      "rootfsDiffIds": [
+        "sha256:f103cd120fdd6cbc7f3d0e1d5bfb3e16290c32ead7b822d15c34460ecdf64b29",
+        "sha256:d6894159ffd8a85f9292f0cd878718fce981fe205716b57ebed5a0379f59b479",
+        "sha256:71c4c99aabd1af5aaecb42ca0bd70f1807bcbb1a144b6b3c72ff3cf135168b68",
+        "sha256:1b8d084c3ea64efa1b0fda608db9fe911b3244cbd87d3da685d9284e0705b2cf",
+        "sha256:0418a609d665a23d39d1a8ebeb88b737a30f6cd402bcb7385de71bda3e8bbfa6",
+        "sha256:009d7f8a3f2900d78e3bb1170d9b3172a5276f7c23f56d0ee5b8394bb9a670eb",
+        "sha256:b0972a481c0909c2f7eebd885ab4ad4a4522b08f78093468dbbf18c7f4f38617"
+      ],
+      "sourceRevision": null
+    },
+    {
+      "id": "sha256:e0e65766c35235eaae9903b1d29620aa01a6daef8e9fafb573dd0c8c9873da06",
+      "repoTags": [],
+      "repoDigests": [],
+      "rootfsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:953ae59cb8aef1c92fd8d786cb8e383aaef8d77cd030e7ef9d58ba3e10402c79",
+        "sha256:249ede5db45080a19f59a8825cb8b1d5d6965c1b203c9073c41fb2114692e7cb",
+        "sha256:9fafd66bdc9644ac2c1f5b7ad14e8acc6b3ad9d39ce52a9e38d706f026014e66",
+        "sha256:ee4a7fccc18d29b80e3e04dca9b378b32a8614547f6d09f7219957d8f243fe2e",
+        "sha256:5c5795df4bc70f823fb5e39bc86976fc8a43d79c9353978b0d25a5168bd9b93b",
+        "sha256:64c7823eb3299b18f6b9d00813a5e16e89816f4b4a4c31643a84bc9976926a94",
+        "sha256:a6b7280d0399001ed1638336b12ccdb46a3f4e01a04dd7d710cd0f0f8253b636",
+        "sha256:299284b4b6b42e8568631d755983c4e746d42d1dbb6887695edc9878a5c52da2",
+        "sha256:f2b368a3ddf25bb4043c2131bed83155c376b7f5ddfe0d93f03570c1747f48ee",
+        "sha256:ba4ada44fdb09d35be38b8c9fc9934190357605d7130750bcdd74a4158607d08",
+        "sha256:2fc0c2c6f77d8524d58336e3a3abb21dd8e4ec2c691370c56a05d736902ec905",
+        "sha256:38755cf796e4fa8aadc0f7555d862bc64a38f0710cc80526f6423eab7665b4a9",
+        "sha256:84d6f8d753b6fd6b4e3c5d1ed0a99001e7f4d29d0cfe8a99a648c4b3d525be2b",
+        "sha256:87a9588a5dcbffb3a43ea2c8d829280b93653dff3606f7718446bbd78e7cc01a",
+        "sha256:fa7ce5f3c197b8389b71f01417f9470e5af10d231d55eb9919d47ea17a4e4ed8",
+        "sha256:dfd10ec7a00bdb340491aa6a54fcba92d520606ffe6bd515f51698999d6aa29b",
+        "sha256:116c10e7574855640a3f42b8c55a9dde05723b27ab5c84fe9f09a9c0c0747335",
+        "sha256:2a10aa1527ccf27a84c5d9ebfeedc2bee8c894cfe60144d09c53564ff7c25d48",
+        "sha256:a9a38218ecae75a005a6d72d929157ffd951ab3c41919da9421fd8daddbd48d0",
+        "sha256:75d59dd327c47794a432bd343e62fd51fa2ebbad4d625bb976c1fe64ba879b9b",
+        "sha256:08691a989b3984b60fdbf0b5d6636fd247757cc6a9633c026a592434096ae0c4"
+      ],
+      "sourceRevision": "b602bbe1dde92a902c17272d59cd9f0c10b9efe5"
+    },
+    {
+      "id": "sha256:e9aaf73145bbd1f9f6ec7f6867dd75a44f34b1a6c32a813504bf4129be2d09d7",
+      "repoTags": [
+        "eclipse-temurin@sha256:e9aaf73145bbd1f9f6ec7f6867dd75a44f34b1a6c32a813504bf4129be2d09d7"
+      ],
+      "repoDigests": [
+        "eclipse-temurin@sha256:e9aaf73145bbd1f9f6ec7f6867dd75a44f34b1a6c32a813504bf4129be2d09d7"
+      ],
+      "rootfsDiffIds": [
+        "sha256:ea16cace89338c84eb6bcb91a7efdfcae6838fff359efe951858227436486c34",
+        "sha256:d5878fe0c5eb7212a581d6344bb4e24b6cfc886a7ee85d54203765275a422952",
+        "sha256:40ce23912dbe1d52f377ac170d913284a3c74561447514c63c05cb9379a2a04d",
+        "sha256:d58da301ac9add0a0f31176f925eb1b93e1c2bd147b07555f467cb884fd27e5b",
+        "sha256:8a8eb12d782f1d342a52c3c49dd69e27c2c3f196e0e3fe833a5d2200477be3fa"
+      ],
+      "sourceRevision": null
+    },
+    {
+      "id": "sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78",
+      "repoTags": [
+        "imperator/frontend:6e79e83e909995c50a44aba3608b6ca25a0e4602"
+      ],
+      "repoDigests": [
+        "imperator/frontend@sha256:ec95fa1037974181cc6cb30041d82f4d888a056605c9a405899112c3842a9a78"
+      ],
+      "rootfsDiffIds": [
+        "sha256:1d69a5fd31932841d7825ef4780c06f008eea65aaa9f3110fe09d5832ed5c7d8",
+        "sha256:1e7371fc32429a7e51d407ce762d5d819c5eebbf44c3652bd0d353ed14a09e31",
+        "sha256:42593510e34eca2ac84ebf9c6a22e16ced5956957367dc8688d9de06db2882a9",
+        "sha256:a009183396c313f4e54f120823c621c6e9a7bbc59225e9ddb36b0815bc1e41f9",
+        "sha256:22e1bcb0042509176dd832fe400ab2be89af37a71954be3f17f81859cf289dcf",
+        "sha256:f4a70b5aee39526c874cdb8a0e4e169057012b3173ce62cd5b0a89aa070a8f4a",
+        "sha256:e580f330e7ef657842d39e4765f9c804e1e967a321a1f96fe209cc4ea579d9b7",
+        "sha256:faebe21be79115e519dbfb7200c7305d1201bac8e947d507447bffbf3661f0fa",
+        "sha256:ce98c07a760955d312f53bd503fd52bd672ca1f7e5ff9d0e13a09c11e1db9bd9",
+        "sha256:b1c01269cc60a0f2525351344eeeea84652ec862662a507241af0cada337fd12",
+        "sha256:326304fc03f9919223228508eb82f7f7c9b7665823749322cf94cf71e54f840f"
+      ],
+      "sourceRevision": "6e79e83e909995c50a44aba3608b6ca25a0e4602"
+    }
+  ],
+  "containersAfter": [
+    {
+      "id": "964f39e8e12d6f7b7789506741f7d64e9f4816629e6d48bd2064fc9b77e9883f",
+      "imageId": "sha256:cec9f139f45e93c5c69c60f8b07cfad9f43f4ef6b6a6cd917527fea5ff2e3dea",
+      "status": "exited"
+    }
+  ]
+}

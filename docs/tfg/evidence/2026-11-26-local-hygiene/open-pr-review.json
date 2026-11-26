@@ -1,0 +1,20 @@
+[
+  {
+    "number": 93,
+    "title": "chore(deps): bump the npm-minor-and-patch group across 1 directory with 12 updates",
+    "state": "open",
+    "draft": false,
+    "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/pull/93",
+    "headSha": "ad1b3fbfec027dd2f965b01dac96593098621e47",
+    "baseSha": "90a6af89b7759d9952ec76d2ab80ec0837256bf7"
+  },
+  {
+    "number": 92,
+    "title": "chore(deps): bump the maven-minor-and-patch group across 1 directory with 17 updates",
+    "state": "open",
+    "draft": false,
+    "html_url": "https://github.com/Dmillan-dev/ImperatorProyect/pull/92",
+    "headSha": "d1b7f0e205aae1dd8a28df4da73db57d6fe2b903",
+    "baseSha": "90a6af89b7759d9952ec76d2ab80ec0837256bf7"
+  }
+]
